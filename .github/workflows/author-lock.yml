@@ -1,0 +1,21 @@
+name: Author lock
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  author-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # Always run the checker from main so a pull request cannot weaken it.
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          path: trusted
+      - run: cp trusted/check_author.py check_author.py && python3 check_author.py
