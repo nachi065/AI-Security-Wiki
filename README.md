@@ -6,8 +6,6 @@ A vendor-neutral reference for AI security governance, risk management, engineer
 
 **https://nachi065.github.io/AI-Security-Wiki/**
 
-The full wiki is published as a website, so there is nothing to clone or install. Open the link in any browser to get:
-
 - A sidebar with every section and page
 - Full-text search across the whole wiki
 - Clickable cross-references between pages
