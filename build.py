@@ -109,7 +109,7 @@ TEMPLATE = """<!doctype html>
 {content}
 </article>
 {pager}
-<footer class="site-footer">Original author: {author} &middot; <a href="{repo}/blob/main/CONTRIBUTING.md" rel="noopener">Contribute</a></footer>
+<footer class="site-footer">Original author: {author} &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a> &middot; <a href="{repo}/edit/main/source/{src}" rel="noopener">Suggest an edit to this page</a> &middot; <a href="{repo}/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a></footer>
 </main>
 </div>
 <script>window.SITE_BASE = "{base}";</script>
@@ -140,7 +140,7 @@ for i, page in enumerate(order):
     content = render(page)
     doc = TEMPLATE.format(
         title=html.escape(SITE_TITLE if page is home else f"{title} | {SITE_TITLE}"),
-        site=SITE_TITLE, repo=REPO_URL, author=ORIGINAL_AUTHOR, base=base, nav=nav(page), crumbs=crumbs,
+        site=SITE_TITLE, repo=REPO_URL, author=ORIGINAL_AUTHOR, src=page["src"].replace(os.sep, "/"), base=base, nav=nav(page), crumbs=crumbs,
         content=content, pager='<nav class="pager" aria-label="Previous and next page">' + "".join(links) + "</nav>",
     )
     dest = os.path.join(ROOT, page["out"])

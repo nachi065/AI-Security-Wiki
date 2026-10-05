@@ -25,11 +25,23 @@ The full wiki is published as a website, so there is nothing to clone or install
 
 The pages are plain HTML, so the site also works offline: download the repository and open `index.html` in a browser.
 
-## Author and contributing
+## Contributing
+
+This wiki is open to everyone. Corrections, new pages, better examples and updates for new threats or products are all welcome.
+
+- **Quick fix:** every page on the site has a "Suggest an edit to this page" link in the footer. It opens the page's Markdown on GitHub; make your change and GitHub turns it into a pull request for you. No setup needed.
+- **Bigger change or new page:** fork the repository, edit the Markdown under `source/`, and open a pull request. See [CONTRIBUTING.md](CONTRIBUTING.md).
+- **Idea or question:** [open an issue](https://github.com/nachi065/AI-Security-Wiki/issues).
+
+Contributors are credited in [AUTHORS](AUTHORS).
+
+## Licence and author
+
+The wiki is licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE). You may copy, adapt and reuse it for any purpose, including commercially, as long as you credit the original author.
 
 Original author: **Nachiket Sathaye**
 
-Contributions are welcome through pull requests; see [CONTRIBUTING.md](CONTRIBUTING.md). The original author credit is fixed: it appears on every page, and an automated check rejects any change that alters or removes it.
+The original author credit stays with the work: it appears on every page, and an automated check rejects any change that alters or removes it.
 
 ## Structure
 
@@ -40,7 +52,8 @@ Contributions are welcome through pull requests; see [CONTRIBUTING.md](CONTRIBUT
 | `assets/` | Stylesheet, navigation and search scripts, search index |
 | `source/` | The Markdown the pages are generated from |
 | `build.py` | Regenerates the HTML pages from `source/` |
-| `AUTHORS`, `check_author.py` | Original author record and the check that protects it |
+| `AUTHORS`, `check_author.py` | Original author and contributor list, and the check that protects the author credit |
+| `LICENSE` | CC BY 4.0 licence text |
 
 ## Editing a page
 
