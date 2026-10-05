@@ -74,6 +74,28 @@
 <li><details><summary><a href="../09_Reference/index.html">Reference</a></summary><ul>
 <li><a href="../09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
 </ul></details></li>
+<li><details><summary><a href="../10_Test_Case_Library/index.html">Test Case Library</a></summary><ul>
+<li><a href="../10_Test_Case_Library/00-reference-index.html">Reference Index</a></li>
+<li><a href="../10_Test_Case_Library/framework-adoption-guide.html">Framework Adoption Guide</a></li>
+<li><a href="../10_Test_Case_Library/appendix-d-lab-prerequisites.html">Appendix D: Lab Prerequisites</a></li>
+<li><a href="../10_Test_Case_Library/L01-business-and-use-cases.html">L01 Business &amp; Use Cases</a></li>
+<li><a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
+<li><a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>
+<li><a href="../10_Test_Case_Library/L04-human-interaction-layer.html">L04 Human Interaction Layer</a></li>
+<li><a href="../10_Test_Case_Library/L05-ai-applications.html">L05 AI Applications</a></li>
+<li><a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html">L06 Agent Orchestration Layer</a></li>
+<li><a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html">L07 Prompt &amp; Context Layer</a></li>
+<li><a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html">L08 AI Gateway &amp; Security Controls</a></li>
+<li><a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html">L09 Identity &amp; Access Mgmt</a></li>
+<li><a href="../10_Test_Case_Library/L10-data-layer.html">L10 Data Layer</a></li>
+<li><a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html">L11 Knowledge &amp; Retrieval Layer</a></li>
+<li><a href="../10_Test_Case_Library/L12-model-layer.html">L12 Model Layer</a></li>
+<li><a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html">L13 Training &amp; Fine-Tuning Layer</a></li>
+<li><a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html">L14 MLOps / LLMOps Layer</a></li>
+<li><a href="../10_Test_Case_Library/L15-infrastructure-layer.html">L15 Infrastructure Layer</a></li>
+<li><a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html">L16 Supply Chain &amp; Third Party</a></li>
+<li><a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html">L17 Monitoring, Detection &amp; Response</a></li>
+</ul></details></li>
 </ul>
 </nav>
 <main>
@@ -81,28 +103,148 @@
 <article>
 <h1 id="ai-security-poc-test-case-library">AI Security PoC Test Case Library</h1>
 <blockquote>
-<p><strong>Purpose:</strong> Provide reusable PoC test cases for browser AI, IDE AI, runtime AI, agentic AI, sovereignty, auditability and SOC integration.</p>
+<p><strong>Purpose:</strong> Provide a 20-scenario quick-start set for a first AI security proof of concept, covering browser AI, IDE AI, runtime AI and agentic AI, and point to the full Test Case Library for depth.</p>
 <p><strong>Audience:</strong> Security engineering, AI red teamers, vendor evaluation teams, SOC, audit.</p>
-<p><strong>How to use:</strong> Use this page as a wiki reference. Update the evidence, owners, control status, and links as implementation maturity improves.</p>
+<p><strong>How to use:</strong> Run this set first to see whether a product is worth a full evaluation. For a scored evaluation, use the detailed cases in the linked layers of the <a href="../10_Test_Case_Library/index.html">Test Case Library</a>.</p>
+<p><strong>Safety boundary:</strong> Use synthetic, non-functional or clearly marked test data only. Where a scenario says "confidential", "classified" or "proprietary", use fabricated documents and code carrying those markings, never real ones. Do not run these tests against production systems.</p>
 </blockquote>
+<h2 id="relationship-to-the-full-test-case-library">Relationship to the full Test Case Library</h2>
+<p>This page is the short list. The <a href="../10_Test_Case_Library/index.html">Test Case Library</a> holds <strong>470 detailed cases across 17 AI lifecycle layers</strong>, each with test data, a numbered procedure, expected results, pass and fail criteria and evidence to capture.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Quick-start area</th>
+<th>Scenarios here</th>
+<th>Detailed cases in the full library</th>
+<th>Domain tags</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Browser AI</td>
+<td>5</td>
+<td><a href="../10_Test_Case_Library/L04-human-interaction-layer.html">L04 Human Interaction Layer</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html">L08 AI Gateway &amp; Security Controls</a></td>
+<td>D1, D6</td>
+</tr>
+<tr>
+<td>IDE AI</td>
+<td>5</td>
+<td><a href="../10_Test_Case_Library/L05-ai-applications.html">L05 AI Applications</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html">L08 AI Gateway &amp; Security Controls</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html">L14 MLOps / LLMOps Layer</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html">L16 Supply Chain &amp; Third Party</a></td>
+<td>D2</td>
+</tr>
+<tr>
+<td>Runtime AI</td>
+<td>5</td>
+<td><a href="../10_Test_Case_Library/L05-ai-applications.html">L05 AI Applications</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html">L07 Prompt &amp; Context Layer</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html">L08 AI Gateway &amp; Security Controls</a>, <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html">L11 Knowledge &amp; Retrieval Layer</a></td>
+<td>D3</td>
+</tr>
+<tr>
+<td>Agentic AI</td>
+<td>5</td>
+<td><a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html">L06 Agent Orchestration Layer</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html">L09 Identity &amp; Access Mgmt</a></td>
+<td>D5</td>
+</tr>
+</tbody>
+</table></div>
+<p>Areas this quick-start set does not cover, and where to find them:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Full library layer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sovereignty, residency and compliance</td>
+<td><a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a>, <a href="../10_Test_Case_Library/L15-infrastructure-layer.html">L15 Infrastructure Layer</a></td>
+</tr>
+<tr>
+<td>Auditability and SOC integration</td>
+<td><a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html">L17 Monitoring, Detection &amp; Response</a></td>
+</tr>
+<tr>
+<td>Data classification, DLP and lineage</td>
+<td><a href="../10_Test_Case_Library/L10-data-layer.html">L10 Data Layer</a></td>
+</tr>
+<tr>
+<td>Model, training and pipeline security</td>
+<td><a href="../10_Test_Case_Library/L12-model-layer.html">L12 Model Layer</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html">L13 Training &amp; Fine-Tuning Layer</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html">L14 MLOps / LLMOps Layer</a></td>
+</tr>
+<tr>
+<td>Use-case governance and risk</td>
+<td><a href="../10_Test_Case_Library/L01-business-and-use-cases.html">L01 Business &amp; Use Cases</a>, <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="scoring">Scoring</h2>
+<p>Score every scenario the same way as the full library, so quick-start and detailed results can be compared.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Score</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Not demonstrated</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Partially met, or evidence incomplete</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Fully met with complete evidence from the live PoC</td>
+</tr>
+<tr>
+<td>N/A</td>
+<td>The product's architecture cannot perform the test by design</td>
+</tr>
+</tbody>
+</table></div>
+<p>Evidence taken from vendor documentation or vendor demo data, not the live PoC, scores no higher than 3.</p>
 <h2 id="test-case-template">Test Case Template</h2>
-<pre><code class="language-markdown"># Test Case ID
+<p>Use this template when adding a scenario. It follows the field structure of the full library; see the <a href="../10_Test_Case_Library/00-reference-index.html">Reference Index</a> for field definitions.</p>
+<pre><code class="language-markdown"># Test Case ID and Title
 
-## Scenario
+| Field | Value |
+|---|---|
+| Lifecycle Layer | L01 to L17 |
+| Use-Case Domain(s) | D1 to D7 |
+| Test Method | Technical / Evidence / Attestation |
+| Vendor Applicability | E, G, A, P, R, W |
+| Risk Severity | Critical / High / Medium / Low |
 
-## Objective
+## Risk Addressed
+
+## Business Scenario
+
+## Technical Scenario
 
 ## Preconditions
 
-## Steps
+## Test Data (synthetic only)
 
-## Expected Result
+## Procedure
 
-## Evidence Required
+## Expected Detection
+
+## Expected Prevention / Control Action
+
+## Expected Alert / Log
+
+## Pass Criteria
+
+## Fail Criteria
+
+## Evidence to Capture
 
 ## Actual Result
 
-## Pass / Fail
+## Score (0 / 3 / 5 / N/A)
 
 ## Notes
 </code></pre>
@@ -118,27 +260,27 @@
 <tbody>
 <tr>
 <td>AI-POC-BR-001</td>
-<td>Upload confidential document to public AI platform.</td>
+<td>Upload a synthetic document marked confidential to a public AI platform.</td>
 <td>Detection and policy enforcement.</td>
 </tr>
 <tr>
 <td>AI-POC-BR-002</td>
-<td>Paste architecture information into browser AI prompt.</td>
+<td>Paste fabricated architecture information into a browser AI prompt.</td>
 <td>Detection and alerting.</td>
 </tr>
 <tr>
 <td>AI-POC-BR-003</td>
-<td>Upload source code to AI chatbot.</td>
+<td>Upload sample source code to an AI chatbot.</td>
 <td>Detection and prevention.</td>
 </tr>
 <tr>
 <td>AI-POC-BR-004</td>
-<td>Attempt upload of classified information.</td>
+<td>Attempt upload of a synthetic document carrying a classification label.</td>
 <td>Blocking or policy enforcement.</td>
 </tr>
 <tr>
 <td>AI-POC-BR-005</td>
-<td>Use previously unknown AI website.</td>
+<td>Use a previously unknown AI website.</td>
 <td>Service discovery and visibility.</td>
 </tr>
 </tbody>
@@ -155,12 +297,12 @@
 <tbody>
 <tr>
 <td>AI-POC-ID-001</td>
-<td>Developer submits proprietary source code to AI assistant.</td>
+<td>Developer submits sample source code marked proprietary to an AI assistant.</td>
 <td>Detection and policy enforcement.</td>
 </tr>
 <tr>
 <td>AI-POC-ID-002</td>
-<td>Developer attempts to share API keys.</td>
+<td>Developer attempts to share fabricated API keys.</td>
 <td>Detection and blocking.</td>
 </tr>
 <tr>
@@ -170,7 +312,7 @@
 </tr>
 <tr>
 <td>AI-POC-ID-004</td>
-<td>Developer installs unapproved AI extension.</td>
+<td>Developer installs an unapproved AI extension.</td>
 <td>Discovery and reporting.</td>
 </tr>
 <tr>
@@ -192,17 +334,17 @@
 <tbody>
 <tr>
 <td>AI-POC-RT-001</td>
-<td>Direct prompt injection against chatbot.</td>
+<td>Direct prompt injection against a chatbot.</td>
 <td>Detection and mitigation.</td>
 </tr>
 <tr>
 <td>AI-POC-RT-002</td>
-<td>Indirect prompt injection through retrieved document.</td>
+<td>Indirect prompt injection through a retrieved document.</td>
 <td>Malicious instruction ignored and logged.</td>
 </tr>
 <tr>
 <td>AI-POC-RT-003</td>
-<td>Attempt unauthorized retrieval from restricted repository.</td>
+<td>Attempt unauthorized retrieval from a restricted repository.</td>
 <td>Retrieval blocked or response suppressed.</td>
 </tr>
 <tr>
@@ -212,7 +354,7 @@
 </tr>
 <tr>
 <td>AI-POC-RT-005</td>
-<td>Abuse AI API with unexpected input pattern.</td>
+<td>Abuse an AI API with an unexpected input pattern.</td>
 <td>Alert generated and request controlled.</td>
 </tr>
 </tbody>
@@ -239,17 +381,17 @@
 </tr>
 <tr>
 <td>AI-POC-AG-003</td>
-<td>Prompt injection attack against agent.</td>
+<td>Prompt injection attack against an agent.</td>
 <td>Detection and mitigation.</td>
 </tr>
 <tr>
 <td>AI-POC-AG-004</td>
-<td>Agent accesses unauthorized repository.</td>
+<td>Agent accesses an unauthorized repository.</td>
 <td>Alert generated and action prevented.</td>
 </tr>
 <tr>
 <td>AI-POC-AG-005</td>
-<td>Agent performs business action without approval.</td>
+<td>Agent performs a business action without approval.</td>
 <td>Workflow blocked pending authorization.</td>
 </tr>
 </tbody>

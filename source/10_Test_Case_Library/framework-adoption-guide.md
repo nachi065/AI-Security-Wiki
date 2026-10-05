@@ -1,0 +1,64 @@
+---
+title: "Framework Adoption Guide"
+parent: "Test Case Library"
+nav_order: 2
+---
+
+# Framework Adoption Guide (Layers L01 to L03)
+
+Layers L01 Business & Use Cases, L02 Governance & Risk Mgmt and L03 Legal, Privacy & Compliance are written to be **framework-neutral**. They test whether a platform can support a requirement, not which clause of which framework creates it, so the same cases can be used for an ISO/IEC 27001 information security management system, India's DPDP Act, UAE NESA and information assurance requirements, the UAE PDPL, or any other framework.
+
+## How to adopt the cases for a framework
+1. Choose the framework or frameworks in scope. Record their names, versions and the dates of the version in force.
+2. Before testing each case, complete the **Applicable Requirement** field: the framework and clause, the requirement text, and any numeric parameter the case refers to (response timelines, notification periods, retention periods, review intervals, thresholds). The test steps refer to 'the timeline set by the assessor' so that no framework-specific figure is hard-coded in the library.
+3. After testing, complete the **Framework Crosswalk** row for each case, or complete the crosswalk template below once per control theme and let the cases inherit it.
+4. Where two frameworks set different parameters for the same case, run the case once and record the stricter parameter, or run it twice with each parameter set.
+5. Do not rely on this library for clause numbers, deadlines or legal conclusions. Obtain those from the framework text and from legal counsel.
+
+## Reviewer cautions
+
+- Control themes are groupings for convenience, not legal categories. Different frameworks place the same topic under different headings.
+- NIST AI RMF mappings are at function level only. Subcategory references are left to the assessor.
+- Numeric thresholds (detection rates, counts, times) are starting values to tune. Time limits tied to law or regulation are deliberately left blank.
+- Cases marked *Evidence* rely on live-product inspection; documentation alone scores no higher than 3. Cases marked *Attestation* rely on vendor written statements and score below demonstrated evidence.
+- Vendor applicability uses code **W** for governance, risk and compliance workflow capability. A vendor without such a workflow should be scored N/A on W-only cases, and the buyer should note which tool covers the gap.
+
+## Crosswalk template
+
+Complete once per adoption. Leave a cell blank where the framework has no corresponding requirement. Enter references exactly as they appear in the framework text.
+
+| Code | Control theme | Cases | ISO/IEC 27001 ISMS | India DPDP | UAE NESA / IA | UAE PDPL | Other |
+|---|---|---|---|---|---|---|---|
+| GOV | Governance and accountability | 14 |  |  |  |  |  |
+| RSK | Risk management | 8 |  |  |  |  |  |
+| POL | Policy and standards | 2 |  |  |  |  |  |
+| INV | Inventory and classification | 3 |  |  |  |  |  |
+| PRV | Privacy and data protection principles | 9 |  |  |  |  |  |
+| OVS | Human oversight and transparency | 6 |  |  |  |  |  |
+| XBT | Cross-border transfer, residency and jurisdiction | 4 |  |  |  |  |  |
+| RET | Retention, deletion and preservation | 3 |  |  |  |  |  |
+| VND | Third-party and supplier management | 4 |  |  |  |  |  |
+| INC | Incident and breach management | 1 |  |  |  |  |  |
+| AUD | Audit, evidence and assurance | 14 |  |  |  |  |  |
+| TRN | Training and awareness | 2 |  |  |  |  |  |
+| CHG | Change and lifecycle management | 3 |  |  |  |  |  |
+| BCP | Resilience and continuity | 2 |  |  |  |  |  |
+
+## Case index by control theme
+
+| Code | Control theme | Cases |
+|---|---|---|
+| GOV | Governance and accountability | [TC-L01-002](L01-business-and-use-cases.md#tc-l01-002), [TC-L01-003](L01-business-and-use-cases.md#tc-l01-003), [TC-L01-006](L01-business-and-use-cases.md#tc-l01-006), [TC-L01-014](L01-business-and-use-cases.md#tc-l01-014), [TC-L01-020](L01-business-and-use-cases.md#tc-l01-020), [TC-L02-004](L02-governance-and-risk-mgmt.md#tc-l02-004), [TC-L02-005](L02-governance-and-risk-mgmt.md#tc-l02-005), [TC-L02-010](L02-governance-and-risk-mgmt.md#tc-l02-010), [TC-L02-011](L02-governance-and-risk-mgmt.md#tc-l02-011), [TC-L02-012](L02-governance-and-risk-mgmt.md#tc-l02-012), [TC-L02-019](L02-governance-and-risk-mgmt.md#tc-l02-019), [TC-L02-020](L02-governance-and-risk-mgmt.md#tc-l02-020), [TC-L02-024](L02-governance-and-risk-mgmt.md#tc-l02-024), [TC-L03-028](L03-legal-privacy-and-compliance.md#tc-l03-028) |
+| RSK | Risk management | [TC-L01-005](L01-business-and-use-cases.md#tc-l01-005), [TC-L01-016](L01-business-and-use-cases.md#tc-l01-016), [TC-L02-006](L02-governance-and-risk-mgmt.md#tc-l02-006), [TC-L02-007](L02-governance-and-risk-mgmt.md#tc-l02-007), [TC-L02-008](L02-governance-and-risk-mgmt.md#tc-l02-008), [TC-L02-009](L02-governance-and-risk-mgmt.md#tc-l02-009), [TC-L03-010](L03-legal-privacy-and-compliance.md#tc-l03-010), [TC-L03-011](L03-legal-privacy-and-compliance.md#tc-l03-011) |
+| POL | Policy and standards | [TC-L02-001](L02-governance-and-risk-mgmt.md#tc-l02-001), [TC-L02-002](L02-governance-and-risk-mgmt.md#tc-l02-002) |
+| INV | Inventory and classification | [TC-L01-001](L01-business-and-use-cases.md#tc-l01-001), [TC-L01-004](L01-business-and-use-cases.md#tc-l01-004), [TC-L01-008](L01-business-and-use-cases.md#tc-l01-008) |
+| PRV | Privacy and data protection principles | [TC-L01-007](L01-business-and-use-cases.md#tc-l01-007), [TC-L03-001](L03-legal-privacy-and-compliance.md#tc-l03-001), [TC-L03-002](L03-legal-privacy-and-compliance.md#tc-l03-002), [TC-L03-004](L03-legal-privacy-and-compliance.md#tc-l03-004), [TC-L03-005](L03-legal-privacy-and-compliance.md#tc-l03-005), [TC-L03-006](L03-legal-privacy-and-compliance.md#tc-l03-006), [TC-L03-015](L03-legal-privacy-and-compliance.md#tc-l03-015), [TC-L03-017](L03-legal-privacy-and-compliance.md#tc-l03-017), [TC-L03-018](L03-legal-privacy-and-compliance.md#tc-l03-018) |
+| OVS | Human oversight and transparency | [TC-L01-010](L01-business-and-use-cases.md#tc-l01-010), [TC-L01-011](L01-business-and-use-cases.md#tc-l01-011), [TC-L01-012](L01-business-and-use-cases.md#tc-l01-012), [TC-L03-003](L03-legal-privacy-and-compliance.md#tc-l03-003), [TC-L03-008](L03-legal-privacy-and-compliance.md#tc-l03-008), [TC-L03-029](L03-legal-privacy-and-compliance.md#tc-l03-029) |
+| XBT | Cross-border transfer, residency and jurisdiction | [TC-L03-012](L03-legal-privacy-and-compliance.md#tc-l03-012), [TC-L03-013](L03-legal-privacy-and-compliance.md#tc-l03-013), [TC-L03-014](L03-legal-privacy-and-compliance.md#tc-l03-014), [TC-L03-030](L03-legal-privacy-and-compliance.md#tc-l03-030) |
+| RET | Retention, deletion and preservation | [TC-L03-007](L03-legal-privacy-and-compliance.md#tc-l03-007), [TC-L03-016](L03-legal-privacy-and-compliance.md#tc-l03-016), [TC-L03-027](L03-legal-privacy-and-compliance.md#tc-l03-027) |
+| VND | Third-party and supplier management | [TC-L01-017](L01-business-and-use-cases.md#tc-l01-017), [TC-L02-021](L02-governance-and-risk-mgmt.md#tc-l02-021), [TC-L03-020](L03-legal-privacy-and-compliance.md#tc-l03-020), [TC-L03-021](L03-legal-privacy-and-compliance.md#tc-l03-021) |
+| INC | Incident and breach management | [TC-L03-019](L03-legal-privacy-and-compliance.md#tc-l03-019) |
+| AUD | Audit, evidence and assurance | [TC-L02-003](L02-governance-and-risk-mgmt.md#tc-l02-003), [TC-L02-013](L02-governance-and-risk-mgmt.md#tc-l02-013), [TC-L02-014](L02-governance-and-risk-mgmt.md#tc-l02-014), [TC-L02-015](L02-governance-and-risk-mgmt.md#tc-l02-015), [TC-L02-016](L02-governance-and-risk-mgmt.md#tc-l02-016), [TC-L02-017](L02-governance-and-risk-mgmt.md#tc-l02-017), [TC-L02-018](L02-governance-and-risk-mgmt.md#tc-l02-018), [TC-L02-025](L02-governance-and-risk-mgmt.md#tc-l02-025), [TC-L03-009](L03-legal-privacy-and-compliance.md#tc-l03-009), [TC-L03-022](L03-legal-privacy-and-compliance.md#tc-l03-022), [TC-L03-023](L03-legal-privacy-and-compliance.md#tc-l03-023), [TC-L03-024](L03-legal-privacy-and-compliance.md#tc-l03-024), [TC-L03-025](L03-legal-privacy-and-compliance.md#tc-l03-025), [TC-L03-026](L03-legal-privacy-and-compliance.md#tc-l03-026) |
+| TRN | Training and awareness | [TC-L02-022](L02-governance-and-risk-mgmt.md#tc-l02-022), [TC-L02-023](L02-governance-and-risk-mgmt.md#tc-l02-023) |
+| CHG | Change and lifecycle management | [TC-L01-013](L01-business-and-use-cases.md#tc-l01-013), [TC-L01-015](L01-business-and-use-cases.md#tc-l01-015), [TC-L01-019](L01-business-and-use-cases.md#tc-l01-019) |
+| BCP | Resilience and continuity | [TC-L01-009](L01-business-and-use-cases.md#tc-l01-009), [TC-L01-018](L01-business-and-use-cases.md#tc-l01-018) |

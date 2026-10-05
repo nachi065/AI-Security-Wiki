@@ -1,0 +1,2977 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L03 Legal, Privacy &amp; Compliance | AI Security Wiki</title>
+<meta name="author" content="Nachiket Sathaye">
+<meta name="description" content="A vendor-neutral reference for AI security governance, risk management, engineering standards, vendor evaluation and assurance.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+  <a class="brand" href="../index.html">AI Security Wiki</a>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Search the wiki" aria-label="Search the wiki" autocomplete="off">
+    <ul id="search-results" hidden></ul>
+  </div>
+  <a class="repo-link" href="https://github.com/nachi065/AI-Security-Wiki" rel="noopener">GitHub</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="sidebar" aria-label="Wiki sections">
+<ul class="nav">
+<li><a href="../index.html">Home</a></li>
+<li><details><summary><a href="../01_Strategy_and_Market/index.html">Strategy and Market</a></summary><ul>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.html">AI Security Market and Technology Landscape — Summary</a></li>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape_Expanded.html">AI Security Market and Technology Landscape</a></li>
+</ul></details></li>
+<li><details><summary><a href="../02_Risk_Management/index.html">Risk Management</a></summary><ul>
+<li><a href="../02_Risk_Management/02A_AI_Risk_Methodology.html">AI Risk Methodology</a></li>
+<li><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a></li>
+<li><a href="../02_Risk_Management/02C_AI_Risk_Treatment_Plan.html">AI Risk Treatment Plan</a></li>
+<li><a href="../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a></li>
+<li><a href="../02_Risk_Management/02E_AI_Risk_Review_Template.html">AI Risk Review Template</a></li>
+</ul></details></li>
+<li><details><summary><a href="../03_Control_Library/index.html">Control Library</a></summary><ul>
+<li><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></li>
+<li><a href="../03_Control_Library/04_Existing_Security_Control_Baseline.html">Existing Security Control Baseline</a></li>
+<li><a href="../03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.html">Microsoft Security Overlap and AI Gaps</a></li>
+</ul></details></li>
+<li><details><summary><a href="../04_Domain_Standards/index.html">Domain Standards</a></summary><ul>
+<li><a href="../04_Domain_Standards/06_Browser_AI_Security_Standard.html">Browser AI Security Standard</a></li>
+<li><a href="../04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.html">IDE AI Coding Assistant Security Standard</a></li>
+<li><a href="../04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a></li>
+<li><a href="../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
+<li><a href="../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
+</ul></details></li>
+<li><details><summary><a href="../05_Vendor_Evaluation/index.html">Vendor Evaluation</a></summary><ul>
+<li><a href="../05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
+<li><a href="../05_Vendor_Evaluation/12A_Vendor_Profile_Prompt_Security_SentinelOne.html">Vendor Profile — Prompt Security / SentinelOne</a></li>
+<li><a href="../05_Vendor_Evaluation/12B_Vendor_Profile_Palo_Alto_Prisma_AIRS.html">Vendor Profile — Palo Alto Prisma AIRS</a></li>
+<li><a href="../05_Vendor_Evaluation/12C_Vendor_Profile_HiddenLayer.html">Vendor Profile — HiddenLayer</a></li>
+<li><a href="../05_Vendor_Evaluation/12D_Vendor_Profile_Lasso_Security.html">Vendor Profile — Lasso Security</a></li>
+<li><a href="../05_Vendor_Evaluation/12E_Vendor_Profile_Cyberhaven.html">Vendor Profile — Cyberhaven</a></li>
+<li><a href="../05_Vendor_Evaluation/12F_Vendor_Profile_Nightfall_AI.html">Vendor Profile — Nightfall AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12G_Vendor_Profile_Enkrypt_AI.html">Vendor Profile — Enkrypt AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12H_Vendor_Profile_Sovereign_AI_Security_Labs.html">Vendor Profile — Sovereign AI Security Labs</a></li>
+</ul></details></li>
+<li><details><summary><a href="../06_Testing_and_Assurance/index.html">Testing and Assurance</a></summary><ul>
+<li><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html">AI Security PoC Test Case Library</a></li>
+<li><a href="../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a></li>
+<li><a href="../06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.html">AI Red Team Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../07_Role_Based_Playbooks/index.html">Role-Based Playbooks</a></summary><ul>
+<li><a href="../07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.html">AI Product Developer Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15B_AI_Security_Researcher_Playbook.html">AI Security Researcher Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15D_Security_Engineering_Playbook.html">Security Engineering Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15E_Vendor_Evaluation_and_Audit_Playbook.html">Vendor Evaluation and Audit Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../08_Governance/index.html">Governance</a></summary><ul>
+<li><a href="../08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></li>
+<li><a href="../08_Governance/17_AI_Policy_Standards_and_Acceptable_Use.html">AI Policy, Standards and Acceptable Use</a></li>
+</ul></details></li>
+<li><details><summary><a href="../09_Reference/index.html">Reference</a></summary><ul>
+<li><a href="../09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
+</ul></details></li>
+<li><details open><summary><a href="index.html">Test Case Library</a></summary><ul>
+<li><a href="00-reference-index.html">Reference Index</a></li>
+<li><a href="framework-adoption-guide.html">Framework Adoption Guide</a></li>
+<li><a href="appendix-d-lab-prerequisites.html">Appendix D: Lab Prerequisites</a></li>
+<li><a href="L01-business-and-use-cases.html">L01 Business &amp; Use Cases</a></li>
+<li><a href="L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
+<li><a class="current" href="L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>
+<li><a href="L04-human-interaction-layer.html">L04 Human Interaction Layer</a></li>
+<li><a href="L05-ai-applications.html">L05 AI Applications</a></li>
+<li><a href="L06-agent-orchestration-layer.html">L06 Agent Orchestration Layer</a></li>
+<li><a href="L07-prompt-and-context-layer.html">L07 Prompt &amp; Context Layer</a></li>
+<li><a href="L08-ai-gateway-and-security-controls.html">L08 AI Gateway &amp; Security Controls</a></li>
+<li><a href="L09-identity-and-access-mgmt.html">L09 Identity &amp; Access Mgmt</a></li>
+<li><a href="L10-data-layer.html">L10 Data Layer</a></li>
+<li><a href="L11-knowledge-and-retrieval-layer.html">L11 Knowledge &amp; Retrieval Layer</a></li>
+<li><a href="L12-model-layer.html">L12 Model Layer</a></li>
+<li><a href="L13-training-and-fine-tuning-layer.html">L13 Training &amp; Fine-Tuning Layer</a></li>
+<li><a href="L14-mlops-llmops-layer.html">L14 MLOps / LLMOps Layer</a></li>
+<li><a href="L15-infrastructure-layer.html">L15 Infrastructure Layer</a></li>
+<li><a href="L16-supply-chain-and-third-party.html">L16 Supply Chain &amp; Third Party</a></li>
+<li><a href="L17-monitoring-detection-and-response.html">L17 Monitoring, Detection &amp; Response</a></li>
+</ul></details></li>
+</ul>
+</nav>
+<main>
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Test Case Library</a> / <span>L03 Legal, Privacy &amp; Compliance</span></p>
+<article>
+<p><a id="top"></a></p>
+<h1 id="l03-legal-privacy-compliance">L03 Legal, Privacy &amp; Compliance</h1>
+<p><strong>Primary test focus:</strong> UAE/GCC residency, PDPL-type obligations, evidence export, DPIA support</p>
+<p><strong>Cases:</strong> 30 (TC-L03-001 to TC-L03-030)  |  <strong>Batch:</strong> 6</p>
+<blockquote>
+<p><strong>Safety boundary.</strong> All cases use fabricated use cases, policies, records and individuals only. This layer is framework-neutral: see the <a href="framework-adoption-guide.html">Framework Adoption Guide</a> before testing, and complete the Applicable Requirement and Framework Crosswalk fields for each case.</p>
+<p><strong>Verify before use.</strong> MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the <a href="00-reference-index.html">Reference Index</a> for field definitions and applicability codes.</p>
+</blockquote>
+<h2 id="cases-in-this-layer">Cases in this layer</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Title</th>
+<th>Severity</th>
+<th>Method</th>
+<th>Domain(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#tc-l03-001">TC-L03-001</a></td>
+<td>Register of AI Processing Activities</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D6, D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l03-002">TC-L03-002</a></td>
+<td>Lawful Basis or Legal Ground Recording per Processing Activity</td>
+<td>High</td>
+<td>Evidence</td>
+<td>D6, D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l03-003">TC-L03-003</a></td>
+<td>Notice and Transparency: Disclosing AI Interaction and Processing</td>
+<td>High</td>
+<td>Technical</td>
+<td>D1, D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l03-004">TC-L03-004</a></td>
+<td>Consent Capture, Evidence and Withdrawal</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D6, D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l03-005">TC-L03-005</a></td>
+<td>Data Subject Rights: Access Request Workflow</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D6, D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l03-006">TC-L03-006</a></td>
+<td>Data Subject Rights: Correction Request Handling</td>
+<td>Medium</td>
+<td>Technical</td>
+<td>D6, D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l03-007">TC-L03-007</a></td>
+<td>Data Subject Rights: Erasure Across AI Stores</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D6, D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l03-008">TC-L03-008</a></td>
+<td>Rights to Object, Restrict and Request Human Review</td>
+<td>High</td>
+<td>Technical</td>
+<td>D6, D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l03-009">TC-L03-009</a></td>
+<td>Rights Request Timeline Tracking and Evidence</td>
+<td>High</td>
+<td>Technical</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l03-010">TC-L03-010</a></td>
+<td>Impact Assessment Support (Privacy, Data Protection and AI Impact Assessments)</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l03-011">TC-L03-011</a></td>
+<td>Impact Assessment Triggers</td>
+<td>High</td>
+<td>Technical</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l03-012">TC-L03-012</a></td>
+<td>Cross-Border Transfer Register and Assessment</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l03-013">TC-L03-013</a></td>
+<td>Cross-Border Transfer Enforcement</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D7, D6</td>
+</tr>
+<tr>
+<td><a href="#tc-l03-014">TC-L03-014</a></td>
+<td>Residency Evidence Export for a Regulator</td>
+<td>High</td>
+<td>Evidence</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l03-015">TC-L03-015</a></td>
+<td>Data Minimisation and Purpose Limitation Enforcement</td>
+<td>High</td>
+<td>Technical</td>
+<td>D6, D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l03-016">TC-L03-016</a></td>
+<td>Retention Schedule Enforcement for AI Data</td>
+<td>High</td>
+<td>Technical</td>
+<td>D6, D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l03-017">TC-L03-017</a></td>
+<td>Children's and Vulnerable Persons' Data Handling</td>
+<td>High</td>
+<td>Technical</td>
+<td>D6, D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l03-018">TC-L03-018</a></td>
+<td>Special and Sensitive Categories of Data: Identification and Heightened Controls</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D6, D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l03-019">TC-L03-019</a></td>
+<td>Breach and Incident Notification Workflow</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l03-020">TC-L03-020</a></td>
+<td>Controller, Processor and Joint Role Mapping with Agreements</td>
+<td>High</td>
+<td>Technical</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l03-021">TC-L03-021</a></td>
+<td>AI Provider Compliance Due-Diligence Evidence</td>
+<td>High</td>
+<td>Attestation</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l03-022">TC-L03-022</a></td>
+<td>Compliance Evidence Export: Formats, Signing and Integrity</td>
+<td>High</td>
+<td>Technical</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l03-023">TC-L03-023</a></td>
+<td>Multi-Framework Compliance Dashboard: Coverage and Gaps</td>
+<td>High</td>
+<td>Technical</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l03-024">TC-L03-024</a></td>
+<td>Adopting a New Framework: Custom Framework Onboarding</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l03-025">TC-L03-025</a></td>
+<td>Evidence Reuse Across Frameworks</td>
+<td>High</td>
+<td>Technical</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l03-026">TC-L03-026</a></td>
+<td>Regulator Inspection Simulation: Rapid Evidence Request</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l03-027">TC-L03-027</a></td>
+<td>Litigation Hold and Regulatory Preservation Notice</td>
+<td>High</td>
+<td>Technical</td>
+<td>D6, D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l03-028">TC-L03-028</a></td>
+<td>Intellectual Property and Copyright Controls for AI Inputs and Outputs</td>
+<td>Medium</td>
+<td>Technical</td>
+<td>D3, D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l03-029">TC-L03-029</a></td>
+<td>Automated Decision Explanation Records</td>
+<td>High</td>
+<td>Technical</td>
+<td>D3, D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l03-030">TC-L03-030</a></td>
+<td>Language and Jurisdiction Configuration (Arabic, English and Regional Rule Sets)</td>
+<td>Medium</td>
+<td>Technical</td>
+<td>D7</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="test-cases">Test cases</h2>
+<p><a id="tc-l03-001"></a></p>
+<h3 id="tc-l03-001-register-of-ai-processing-activities">TC-L03-001: Register of AI Processing Activities</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6, D7</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>PRV: Privacy and data protection principles</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: W, P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MAP and MEASURE (privacy risk examined and managed)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Most privacy and data protection frameworks expect a maintained record of what personal data is processed, why, by whom and where; AI projects add new processing that rarely reaches it.</p>
+<p><strong>Business Scenario.</strong> Privacy wants AI processing recorded in the same register as other processing, with a defined minimum content.</p>
+<p><strong>Technical Scenario.</strong> Create register entries for AI use cases and test mandatory content, linkage and change tracking.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> 10 fabricated processing activities linked to AI use cases (support chatbot, recruitment screening, fraud scoring, meeting summaries, employee analytics, marketing personalisation, document search, translation, code assistant, medical-style triage); required fields defined by the assessor from the adopted framework (purpose, categories of data, categories of individuals, recipients, transfers, retention, security measures, role of the organisation).</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Record the required content list from the adopted framework.</li>
+<li>Create the 10 entries.</li>
+<li>Check validation of mandatory fields.</li>
+<li>Check links to use cases, systems, vendors and datasets.</li>
+<li>Change a processing detail and check version history and review trigger.</li>
+<li>Check discovery-driven suggestions for missing entries.</li>
+<li>Export the register in a regulator-friendly format.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Processing carried out jointly with another organisation; processing by a department outside privacy's view.</p>
+<p><strong>Expected Result.</strong> All mandatory fields enforced; links present; changes versioned with review triggered; missing entries suggested from discovery or the gap documented; export complete.</p>
+<p><strong>Expected Control Action.</strong> Block incomplete entries.</p>
+<p><strong>Expected Record / Log.</strong> Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Export to privacy management tools.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.</p>
+<p><strong>Pass Criteria.</strong> Expected Result and Expected Control Action are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Register export; validation messages.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l03-002"></a></p>
+<h3 id="tc-l03-002-lawful-basis-or-legal-ground-recording-per-processing-activity">TC-L03-002: Lawful Basis or Legal Ground Recording per Processing Activity</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6, D7</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>PRV: Privacy and data protection principles</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Evidence</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: W</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MAP and MEASURE (privacy risk examined and managed)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Processing without a recorded legal ground is hard to defend and rights handling depends on it.</p>
+<p><strong>Business Scenario.</strong> Privacy wants a legal ground recorded for each activity with the reasoning.</p>
+<p><strong>Technical Scenario.</strong> Assign grounds to ten processing activities and test validation and downstream effects.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> 10 processing activities; ground options configured from the adopted framework (for example consent, contract, legal obligation, legitimate interest-type grounds, public interest, other); 3 activities with weak or missing reasoning.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Configure the list of grounds.</li>
+<li>Record the ground and reasoning for each activity.</li>
+<li>Check validation for missing reasoning.</li>
+<li>Check conditional requirements (for example consent capture where consent is selected).</li>
+<li>Check review workflow for interest-balancing assessments where applicable.</li>
+<li>Check effect on rights available.</li>
+<li>Export.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Activity with several grounds for different purposes.</p>
+<p><strong>Expected Result.</strong> Missing reasoning rejected; conditional requirements triggered; rights handling adapts to the ground; export complete.</p>
+<p><strong>Expected Control Action.</strong> Gate.</p>
+<p><strong>Expected Record / Log.</strong> Configuration state, record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Link to consent and rights tools.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partly shown or shown only from documentation; 5 = shown in the live product with exportable evidence; N/A = capability out of scope by design.</p>
+<p><strong>Pass Criteria.</strong> Expected Result and Expected Control Action are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Ground records.</p>
+<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product. Documentation alone scores no higher than 3.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l03-003"></a></p>
+<h3 id="tc-l03-003-notice-and-transparency-disclosing-ai-interaction-and-processing">TC-L03-003: Notice and Transparency: Disclosing AI Interaction and Processing</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D1, D7</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>OVS: Human oversight and transparency</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: A, W</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN and MANAGE (human oversight, transparency)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> People should know when they interact with AI or when AI processes their data, and many frameworks require notices of defined content.</p>
+<p><strong>Business Scenario.</strong> Privacy and legal want notices presented, versioned and evidenced.</p>
+<p><strong>Technical Scenario.</strong> Configure notices for three channels and test display, content and evidence.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> 3 channels (chat widget, email assistant, internal HR tool); notice text in English and Arabic; 1 notice update.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Configure notices per channel.</li>
+<li>Test display at first use and at each session.</li>
+<li>Check content elements recorded by the assessor from the adopted framework (purpose, data used, recipients, rights, contact).</li>
+<li>Update the notice and check re-display.</li>
+<li>Check logging of displays.</li>
+<li>Check accessibility and right-to-left rendering.</li>
+<li>Export evidence of display.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> User declining to proceed; embedded AI features inside other products.</p>
+<p><strong>Expected Result.</strong> Notices shown on every channel at required points; update triggers re-display; display logged per user and version; rendering correct in both languages.</p>
+<p><strong>Expected Control Action.</strong> Display and gate.</p>
+<p><strong>Expected Record / Log.</strong> Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Logs exportable.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.</p>
+<p><strong>Pass Criteria.</strong> Expected Result and Expected Control Action are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Screenshots; display log.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l03-004"></a></p>
+<h3 id="tc-l03-004-consent-capture-evidence-and-withdrawal">TC-L03-004: Consent Capture, Evidence and Withdrawal</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6, D7</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>PRV: Privacy and data protection principles</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: W, A</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MAP and MEASURE (privacy risk examined and managed)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Where consent is the ground, it must be demonstrable and as easy to withdraw as to give.</p>
+<p><strong>Business Scenario.</strong> Privacy wants consent records and effective withdrawal handling.</p>
+<p><strong>Technical Scenario.</strong> Capture and withdraw consent for fabricated individuals and test propagation to AI processing.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> 20 fabricated individuals; 3 purposes; 6 withdrawals; 2 purpose changes requiring fresh consent.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Capture consent per purpose.</li>
+<li>Check the record (who, when, version, wording, channel).</li>
+<li>Withdraw for 6 individuals.</li>
+<li>Check propagation to AI processing and data stores within the target time.</li>
+<li>Change a purpose and check re-consent.</li>
+<li>Check proof export for one individual.</li>
+<li>Check handling of withdrawal when data has already been used in training.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Withdrawal during an active session; consent given on behalf of a minor.</p>
+<p><strong>Expected Result.</strong> Records complete; withdrawal effective within the target; re-consent triggered; proof export available; training-data case documented.</p>
+<p><strong>Expected Control Action.</strong> Stop processing.</p>
+<p><strong>Expected Record / Log.</strong> Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Consent platform integration.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.</p>
+<p><strong>Pass Criteria.</strong> Expected Result and Expected Control Action are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Consent records; propagation test.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l03-005"></a></p>
+<h3 id="tc-l03-005-data-subject-rights-access-request-workflow">TC-L03-005: Data Subject Rights: Access Request Workflow</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6, D7</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>PRV: Privacy and data protection principles</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: W, P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MAP and MEASURE (privacy risk examined and managed)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Individuals can ask what is held about them; AI systems scatter data across prompts, indexes, logs and derived stores.</p>
+<p><strong>Business Scenario.</strong> Privacy wants requests handled across AI stores with evidence.</p>
+<p><strong>Technical Scenario.</strong> Run access requests for fabricated individuals and measure completeness and time.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> 3 fabricated individuals appearing in 60 records across conversation history, knowledge index, tickets, logs, analytics and a training dataset; 3 requests.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Log the requests with identity verification.</li>
+<li>Search across the stores.</li>
+<li>Compare results to the ground truth list.</li>
+<li>Check redaction of other people's data.</li>
+<li>Produce the response pack.</li>
+<li>Check time tracking against the timeline set by the assessor.</li>
+<li>Check audit trail.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Individual known by different names; data inside images and attachments.</p>
+<p><strong>Expected Result.</strong> At least 90 percent of seeded records found; third-party data redacted; response pack produced within the target; audit trail complete.</p>
+<p><strong>Expected Control Action.</strong> N/A.</p>
+<p><strong>Expected Record / Log.</strong> Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Export of response pack.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.</p>
+<p><strong>Pass Criteria.</strong> Expected Result are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Result vs ground truth; timing.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l03-006"></a></p>
+<h3 id="tc-l03-006-data-subject-rights-correction-request-handling">TC-L03-006: Data Subject Rights: Correction Request Handling</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6, D7</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>PRV: Privacy and data protection principles</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: W, P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MAP and MEASURE (privacy risk examined and managed)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Incorrect data about a person that flows into AI outputs can cause harm and may need correcting at source and in derived stores.</p>
+<p><strong>Business Scenario.</strong> Privacy wants corrections applied consistently.</p>
+<p><strong>Technical Scenario.</strong> Request corrections for fabricated individuals and trace propagation.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> 3 individuals; 5 incorrect data points; stores: source system, knowledge index, summaries, cached outputs.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Log the requests.</li>
+<li>Correct at source.</li>
+<li>Check propagation to the index and derived content.</li>
+<li>Check handling of outputs already shared.</li>
+<li>Record the outcome and notify the requester.</li>
+<li>Check audit.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Disputed correction; correction conflicting with a retention duty.</p>
+<p><strong>Expected Result.</strong> Corrections propagate to derived stores within the target; shared outputs identified; audit complete.</p>
+<p><strong>Expected Control Action.</strong> Workflow.</p>
+<p><strong>Expected Record / Log.</strong> Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Source-system integration.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.</p>
+<p><strong>Pass Criteria.</strong> Expected Result and Expected Control Action are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Before and after records.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l03-007"></a></p>
+<h3 id="tc-l03-007-data-subject-rights-erasure-across-ai-stores">TC-L03-007: Data Subject Rights: Erasure Across AI Stores</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6, D7</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>RET: Retention, deletion and preservation</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: W, P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN and MANAGE (data lifecycle)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Deletion from the source system leaves copies in embeddings, caches, logs and training data.</p>
+<p><strong>Business Scenario.</strong> Privacy wants erasure executed and evidenced across every store the AI pipeline writes to.</p>
+<p><strong>Technical Scenario.</strong> Request erasure for a fabricated individual and verify each store.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> 1 individual with data in 8 stores (source, conversation history, vector store, cache, logs, analytics, backup, training dataset); retention exceptions on 1 store.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Log the request.</li>
+<li>Execute erasure.</li>
+<li>Verify each store.</li>
+<li>Check backup handling and statement.</li>
+<li>Check treatment of the training dataset and model (flag for assessment).</li>
+<li>Check retention exception handling and communication.</li>
+<li>Produce completion evidence.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Data copied to a vendor system; data in a legal hold.</p>
+<p><strong>Expected Result.</strong> All stores handled or exceptions justified; completion evidence produced; model impact flagged; backup approach documented.</p>
+<p><strong>Expected Control Action.</strong> Workflow.</p>
+<p><strong>Expected Record / Log.</strong> Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Evidence export.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.</p>
+<p><strong>Pass Criteria.</strong> Expected Result and Expected Control Action are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Store-by-store verification.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l03-008"></a></p>
+<h3 id="tc-l03-008-rights-to-object-restrict-and-request-human-review">TC-L03-008: Rights to Object, Restrict and Request Human Review</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6, D7</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>OVS: Human oversight and transparency</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: W, A</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN and MANAGE (human oversight, transparency)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Where decisions are automated, individuals may be entitled to contest them or ask for human involvement.</p>
+<p><strong>Business Scenario.</strong> Privacy wants objection and review requests captured, routed and evidenced.</p>
+<p><strong>Technical Scenario.</strong> Submit objection and review requests tied to automated decisions.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> 5 fabricated individuals; 2 automated decision use cases; requests for restriction, objection and human review.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Link requests to the use case and decision record.</li>
+<li>Route to the human reviewer.</li>
+<li>Check that processing is restricted where required.</li>
+<li>Record the review outcome and rationale.</li>
+<li>Notify the individual.</li>
+<li>Check timing and audit.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Request about a decision made months earlier.</p>
+<p><strong>Expected Result.</strong> Requests linked to the exact decision; restriction applied; human review recorded with rationale; timing tracked.</p>
+<p><strong>Expected Control Action.</strong> Workflow.</p>
+<p><strong>Expected Record / Log.</strong> Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Decision log link.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.</p>
+<p><strong>Pass Criteria.</strong> Expected Result and Expected Control Action are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Request records.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l03-009"></a></p>
+<h3 id="tc-l03-009-rights-request-timeline-tracking-and-evidence">TC-L03-009: Rights Request Timeline Tracking and Evidence</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>AUD: Audit, evidence and assurance</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: W</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE and GOVERN (documentation, evaluation and accountability)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Missing deadlines is a common regulatory failing and timelines differ between frameworks.</p>
+<p><strong>Business Scenario.</strong> Privacy wants timelines configured per framework and tracked with extensions recorded.</p>
+<p><strong>Technical Scenario.</strong> Configure two timeline profiles and run requests against them.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> 12 requests across access, correction, erasure and objection; two profiles with different deadlines entered by the assessor; 3 extensions; 2 overdue.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Configure timeline profiles.</li>
+<li>Open the 12 requests.</li>
+<li>Check clocks start and pause rules.</li>
+<li>Check reminders and escalation.</li>
+<li>Record extensions with reasons.</li>
+<li>Report overdue and average handling time by profile.</li>
+<li>Export evidence.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Request received on a holiday; identity verification delaying the clock.</p>
+<p><strong>Expected Result.</strong> Clocks correct per profile; escalation works; extensions recorded; reports accurate.</p>
+<p><strong>Expected Control Action.</strong> Escalate.</p>
+<p><strong>Expected Record / Log.</strong> Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Report export.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.</p>
+<p><strong>Pass Criteria.</strong> Expected Result and Expected Control Action are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Timeline report.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l03-010"></a></p>
+<h3 id="tc-l03-010-impact-assessment-support-privacy-data-protection-and-ai-impact-assessments">TC-L03-010: Impact Assessment Support (Privacy, Data Protection and AI Impact Assessments)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>RSK: Risk management</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: W</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MAP and MANAGE (risk identification and treatment)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Impact assessments are required by many frameworks for higher-risk processing and are often written without the facts to hand.</p>
+<p><strong>Business Scenario.</strong> Privacy wants assessments supported by pre-filled system and data facts, structured questions and approvals.</p>
+<p><strong>Technical Scenario.</strong> Complete an assessment for one use case using platform data.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> 1 use case with known data categories, vendors, transfers and users; assessment template configured by the assessor.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Create the assessment from the use case.</li>
+<li>Check which sections are pre-filled from inventory and lineage.</li>
+<li>Complete the questions.</li>
+<li>Add risks and mitigations and link to controls.</li>
+<li>Route for review and approval.</li>
+<li>Check outcome recording including consultation where required.</li>
+<li>Export the assessment.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Template differences between frameworks; assessment spanning several systems.</p>
+<p><strong>Expected Result.</strong> Facts pre-filled correctly; risks linked to controls; approvals recorded; export complete.</p>
+<p><strong>Expected Control Action.</strong> N/A.</p>
+<p><strong>Expected Record / Log.</strong> Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Export for the privacy office.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.</p>
+<p><strong>Pass Criteria.</strong> Expected Result are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Assessment export.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l03-011"></a></p>
+<h3 id="tc-l03-011-impact-assessment-triggers">TC-L03-011: Impact Assessment Triggers</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>RSK: Risk management</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: W, P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MAP and MANAGE (risk identification and treatment)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Assessments are missed when new uses or changes do not trigger them.</p>
+<p><strong>Business Scenario.</strong> Privacy wants triggers based on data, scale, purpose and change.</p>
+<p><strong>Technical Scenario.</strong> Test triggers for new and changed use cases.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> 6 use cases or changes: new use of sensitive data, new automated decision, new transfer, large scale expansion, minor UI change, new vendor.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Configure trigger rules from the adopted framework.</li>
+<li>Apply each change.</li>
+<li>Check triggers and notifications.</li>
+<li>Check blocking of go-live until the assessment is done.</li>
+<li>Check false triggers.</li>
+<li>Check history.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Combined small changes; urgent change.</p>
+<p><strong>Expected Result.</strong> Material changes trigger assessments and minor ones do not; go-live gated; history recorded.</p>
+<p><strong>Expected Control Action.</strong> Gate.</p>
+<p><strong>Expected Record / Log.</strong> Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Link to change events.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.</p>
+<p><strong>Pass Criteria.</strong> Expected Result and Expected Control Action are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Trigger table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l03-012"></a></p>
+<h3 id="tc-l03-012-cross-border-transfer-register-and-assessment">TC-L03-012: Cross-Border Transfer Register and Assessment</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>XBT: Cross-border transfer, residency and jurisdiction</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: W, P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN and MAP (legal and regulatory requirements, third-party context)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Transfers to model providers and hosting locations create obligations that differ by framework and are often unknown to privacy teams.</p>
+<p><strong>Business Scenario.</strong> Privacy wants all transfers recorded with the recipient, location, mechanism and assessment.</p>
+<p><strong>Technical Scenario.</strong> Record transfers for use cases and test discovery-driven completeness.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> 6 use cases with transfers to 5 destinations (2 approved, 2 requiring assessment, 1 prohibited by policy); transfer mechanisms defined by the assessor.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Create transfer records.</li>
+<li>Check required content and assessment link.</li>
+<li>Compare with discovered destinations.</li>
+<li>Check handling of the prohibited one.</li>
+<li>Check review dates.</li>
+<li>Export.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Transfers through sub-processors; transfers by remote access.</p>
+<p><strong>Expected Result.</strong> Discovered destinations all recorded; prohibited transfer escalated; reviews scheduled; export complete.</p>
+<p><strong>Expected Control Action.</strong> Escalate.</p>
+<p><strong>Expected Record / Log.</strong> Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Link to discovery.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.</p>
+<p><strong>Pass Criteria.</strong> Expected Result and Expected Control Action are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Register export.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l03-013"></a></p>
+<h3 id="tc-l03-013-cross-border-transfer-enforcement">TC-L03-013: Cross-Border Transfer Enforcement</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7, D6</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>XBT: Cross-border transfer, residency and jurisdiction</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: G, P, E</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN and MAP (legal and regulatory requirements, third-party context)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> A register means little if data can still flow to disallowed destinations.</p>
+<p><strong>Business Scenario.</strong> Compliance wants technical enforcement of the transfer policy.</p>
+<p><strong>Technical Scenario.</strong> Send fabricated personal data to destinations in allowed and disallowed regions.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> 6 mock AI endpoints with region labels; 20 requests with personal data.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Set policy by region and data type.</li>
+<li>Send requests.</li>
+<li>Record decisions.</li>
+<li>Check bypass attempts (alternate endpoint, redirect).</li>
+<li>Check logging with region and rule.</li>
+<li>Report violations.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Endpoint behind a content delivery network.</p>
+<p><strong>Expected Result.</strong> All disallowed transfers blocked or alerted; allowed ones pass; bypass attempts caught.</p>
+<p><strong>Expected Control Action.</strong> Block.</p>
+<p><strong>Expected Record / Log.</strong> Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Events to SIEM.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.</p>
+<p><strong>Pass Criteria.</strong> Expected Result and Expected Control Action are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Request table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l03-014"></a></p>
+<h3 id="tc-l03-014-residency-evidence-export-for-a-regulator">TC-L03-014: Residency Evidence Export for a Regulator</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>XBT: Cross-border transfer, residency and jurisdiction</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Evidence</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: W, P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN and MAP (legal and regulatory requirements, third-party context)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Regulators and customers ask for proof of where data is held and processed, not statements, and the answer must cover logs, backups and support access as well as primary storage.</p>
+<p><strong>Business Scenario.</strong> Compliance wants a single, dated evidence pack on data locations that stands up to challenge.</p>
+<p><strong>Technical Scenario.</strong> Generate a residency evidence pack for five lab systems and check content against independently observed facts.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> 5 systems; data classes (prompts, outputs, embeddings, logs, telemetry, backups, support access records); observed locations from the infrastructure tests; pack template with fields set by the assessor from the adopted framework.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Select scope and date.</li>
+<li>Generate the pack.</li>
+<li>Check coverage for each data class and system.</li>
+<li>Compare each stated location with observed facts.</li>
+<li>Check how changes during the reporting period are shown.</li>
+<li>Check signing, dating and versioning.</li>
+<li>Check redaction of sensitive configuration details.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Data moved between regions during the period; a system with a failover site in another country.</p>
+<p><strong>Expected Result.</strong> Pack covers every data class and location; at least 95 percent of statements match observation; period changes shown; pack signed and dated; sensitive details redacted.</p>
+<p><strong>Expected Control Action.</strong> N/A.</p>
+<p><strong>Expected Record / Log.</strong> Configuration state, record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Pack export.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partly shown or shown only from documentation; 5 = shown in the live product with exportable evidence; N/A = capability out of scope by design.</p>
+<p><strong>Pass Criteria.</strong> Expected Result are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Pack sample; comparison table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product. Documentation alone scores no higher than 3.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l03-015"></a></p>
+<h3 id="tc-l03-015-data-minimisation-and-purpose-limitation-enforcement">TC-L03-015: Data Minimisation and Purpose Limitation Enforcement</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6, D7</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>PRV: Privacy and data protection principles</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P, G, A</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MAP and MEASURE (privacy risk examined and managed)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Sending or keeping more data than a purpose needs is the usual way personal data exposure grows, and minimisation is a stated principle in most frameworks.</p>
+<p><strong>Business Scenario.</strong> Privacy wants evidence that field-level and purpose-based limits operate in practice.</p>
+<p><strong>Technical Scenario.</strong> Define purposes with allowed data fields and test whether extra data is removed before reaching AI services.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> 3 use cases with allowed field lists (for example support: name and ticket text only; HR assistant: role and grade only; analytics: pseudonymised identifier only); 100 records each with 6 extra fields; 20 records in which extra data is embedded in free text.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Define each purpose and its allowed fields.</li>
+<li>Send the records through the platform.</li>
+<li>Capture what reaches the AI service.</li>
+<li>Compute the share of extra fields removed.</li>
+<li>Check handling of free text.</li>
+<li>Check logging of removals.</li>
+<li>Request an exception and check approval and expiry.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Fields renamed by upstream systems; nested structures.</p>
+<p><strong>Expected Result.</strong> At least 98 percent of extra structured fields removed; at least 80 percent of embedded extra data in free text detected; removals logged; exceptions approved and time-limited.</p>
+<p><strong>Expected Control Action.</strong> Strip or block.</p>
+<p><strong>Expected Record / Log.</strong> Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Policy export.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.</p>
+<p><strong>Pass Criteria.</strong> Expected Result and Expected Control Action are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Before and after samples; removal log.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l03-016"></a></p>
+<h3 id="tc-l03-016-retention-schedule-enforcement-for-ai-data">TC-L03-016: Retention Schedule Enforcement for AI Data</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6, D7</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>RET: Retention, deletion and preservation</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P, W</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN and MANAGE (data lifecycle)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Prompts, outputs, embeddings and logs accumulate indefinitely unless retention is enforced technically.</p>
+<p><strong>Business Scenario.</strong> Privacy and records management want schedules defined per data class and enforced.</p>
+<p><strong>Technical Scenario.</strong> Configure retention periods and verify deletion across AI stores.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> 5 data classes (conversation history, prompts and outputs, embeddings, logs, training datasets) with retention periods entered by the assessor; 6 stores; backdated records.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Record the schedule.</li>
+<li>Configure each store.</li>
+<li>Backdate records across thresholds.</li>
+<li>Check deletion or archival.</li>
+<li>Check holds override deletion.</li>
+<li>Check deletion evidence and logs.</li>
+<li>Check backup treatment.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Data referenced by an open request; data in several systems with different clocks.</p>
+<p><strong>Expected Result.</strong> Deletion occurs within the stated window in every store; holds respected; evidence produced; backup approach documented.</p>
+<p><strong>Expected Control Action.</strong> Delete.</p>
+<p><strong>Expected Record / Log.</strong> Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Evidence export.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.</p>
+<p><strong>Pass Criteria.</strong> Expected Result and Expected Control Action are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Store-by-store results.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l03-017"></a></p>
+<h3 id="tc-l03-017-childrens-and-vulnerable-persons-data-handling">TC-L03-017: Children's and Vulnerable Persons' Data Handling</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6, D7</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>PRV: Privacy and data protection principles</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P, A, W</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MAP and MEASURE (privacy risk examined and managed)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Many frameworks require additional safeguards where minors or vulnerable people are involved.</p>
+<p><strong>Business Scenario.</strong> Privacy wants such data identified, flagged and controlled.</p>
+<p><strong>Technical Scenario.</strong> Seed fabricated records and use cases involving minors and vulnerable groups.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> 30 records (10 minors, 10 vulnerable adults, 10 other); 3 use cases (education assistant, health-style support, general chatbot).</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Configure flags and age or vulnerability indicators.</li>
+<li>Process the records.</li>
+<li>Check detection and labelling.</li>
+<li>Check policy actions (block, restrict, extra review).</li>
+<li>Check notice and consent variants.</li>
+<li>Check reports.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Age inferred from content; unverified users.</p>
+<p><strong>Expected Result.</strong> At least 90 percent flagged; heightened controls applied; reports available.</p>
+<p><strong>Expected Control Action.</strong> Restrict or block.</p>
+<p><strong>Expected Record / Log.</strong> Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Flags in logs.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.</p>
+<p><strong>Pass Criteria.</strong> Expected Result and Expected Control Action are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Detection table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l03-018"></a></p>
+<h3 id="tc-l03-018-special-and-sensitive-categories-of-data-identification-and-heightened-controls">TC-L03-018: Special and Sensitive Categories of Data: Identification and Heightened Controls</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6, D7</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>PRV: Privacy and data protection principles</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P, G</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MAP and MEASURE (privacy risk examined and managed)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Sensitive categories carry stricter conditions and higher penalties, and the list differs between frameworks.</p>
+<p><strong>Business Scenario.</strong> Privacy wants sensitive categories identified and subject to stronger controls.</p>
+<p><strong>Technical Scenario.</strong> Seed fabricated sensitive-category data and test detection and policy.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> 120 fabricated records covering categories configured by the assessor from the adopted framework (health, religion, political opinion, biometric, financial, criminal-record type, and others); 120 non-sensitive look-alikes.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Configure the category list.</li>
+<li>Run detection.</li>
+<li>Compute recall and precision per category.</li>
+<li>Check heightened policies (stricter access, no external AI, extra approval).</li>
+<li>Check Arabic and English coverage.</li>
+<li>Check reports.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Context-dependent sensitivity such as a name implying religion.</p>
+<p><strong>Expected Result.</strong> At least 90 percent recall and 85 percent precision per category; heightened policies applied; both languages covered.</p>
+<p><strong>Expected Control Action.</strong> Block or restrict.</p>
+<p><strong>Expected Record / Log.</strong> Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Findings to privacy.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.</p>
+<p><strong>Pass Criteria.</strong> Expected Result and Expected Control Action are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Detection table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l03-019"></a></p>
+<h3 id="tc-l03-019-breach-and-incident-notification-workflow">TC-L03-019: Breach and Incident Notification Workflow</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>INC: Incident and breach management</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: W</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MANAGE (incident response and communication)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Notification deadlines to regulators and individuals are short, differ by framework and need a documented decision.</p>
+<p><strong>Business Scenario.</strong> Compliance wants a workflow that assesses, decides and tracks notification.</p>
+<p><strong>Technical Scenario.</strong> Run a mock AI-related personal data incident through the workflow.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> 1 incident involving fabricated data of 300 individuals; two timeline profiles entered by the assessor; decision tree with criteria; 3 regulators or contacts.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Open the incident from an alert.</li>
+<li>Complete the assessment (data, individuals, harm, containment).</li>
+<li>Check the decision logic.</li>
+<li>Track deadlines and reminders.</li>
+<li>Generate the notification content for regulator and individuals.</li>
+<li>Record the decision and approvals.</li>
+<li>Export the evidence pack.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Incident discovered late; incident involving a processor.</p>
+<p><strong>Expected Result.</strong> Assessment and decision recorded; deadlines tracked per profile; notifications generated; evidence pack complete.</p>
+<p><strong>Expected Control Action.</strong> Escalate.</p>
+<p><strong>Expected Record / Log.</strong> Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Link to incident tools.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.</p>
+<p><strong>Pass Criteria.</strong> Expected Result and Expected Control Action are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Incident record; pack.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l03-020"></a></p>
+<h3 id="tc-l03-020-controller-processor-and-joint-role-mapping-with-agreements">TC-L03-020: Controller, Processor and Joint Role Mapping with Agreements</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>VND: Third-party and supplier management</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: W</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN and MAP (third-party and supply chain risk)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Roles determine duties; unrecorded roles and missing agreements are frequent findings.</p>
+<p><strong>Business Scenario.</strong> Privacy wants roles and agreements recorded for every processing activity involving a third party.</p>
+<p><strong>Technical Scenario.</strong> Record roles and agreements for ten third-party relationships.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> 10 vendors; roles (controller, processor, joint, sub-processor); agreements with dates and clauses; 3 missing or expired.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Record roles.</li>
+<li>Link agreements.</li>
+<li>Check required clauses against a list set by the assessor.</li>
+<li>Check expiry alerts.</li>
+<li>Check sub-processor lists and change notices.</li>
+<li>Report gaps.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Vendor acting in two roles.</p>
+<p><strong>Expected Result.</strong> Gaps reported; expiry alerts raised; sub-processor changes tracked.</p>
+<p><strong>Expected Control Action.</strong> Alert.</p>
+<p><strong>Expected Record / Log.</strong> Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Contract tool link.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.</p>
+<p><strong>Pass Criteria.</strong> Expected Result and Expected Control Action are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Gap report.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l03-021"></a></p>
+<h3 id="tc-l03-021-ai-provider-compliance-due-diligence-evidence">TC-L03-021: AI Provider Compliance Due-Diligence Evidence</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>VND: Third-party and supplier management</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Attestation</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: W</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN and MAP (third-party and supply chain risk)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Reliance on a provider's claims without evidence is a weak position.</p>
+<p><strong>Business Scenario.</strong> Compliance wants evidence collected, dated and reviewed for each AI provider.</p>
+<p><strong>Technical Scenario.</strong> Collect and review evidence for three providers.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> 3 providers; evidence list (certifications, audit reports, data handling terms, location statements, incident history, sub-processors).</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Request evidence.</li>
+<li>Check dates and scope.</li>
+<li>Record findings.</li>
+<li>Check reminders for expiry.</li>
+<li>Check risk rating.</li>
+<li>Check approval.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Provider refusing to share.</p>
+<p><strong>Expected Result.</strong> Evidence complete or gaps recorded; expiry reminders work; rating justified.</p>
+<p><strong>Expected Control Action.</strong> Alert.</p>
+<p><strong>Expected Record / Log.</strong> Signed written statement or document from the vendor, dated and attributable to a named role.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Documents.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = no statement; 3 = statement without supporting detail; 5 = statement with technical detail, supporting documents and an offer to demonstrate.</p>
+<p><strong>Pass Criteria.</strong> Expected Result and Expected Control Action are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Evidence checklist.</p>
+<p><strong>Reviewer Notes.</strong> Attestation scores below demonstrated evidence. Request a demonstration where possible and record what was and was not verified.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l03-022"></a></p>
+<h3 id="tc-l03-022-compliance-evidence-export-formats-signing-and-integrity">TC-L03-022: Compliance Evidence Export: Formats, Signing and Integrity</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>AUD: Audit, evidence and assurance</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: W</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE and GOVERN (documentation, evaluation and accountability)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Evidence that cannot leave the platform in a usable and verifiable form is hard to rely on in an audit or dispute.</p>
+<p><strong>Business Scenario.</strong> Audit wants exports in common formats with integrity proof and full metadata.</p>
+<p><strong>Technical Scenario.</strong> Export evidence in every offered format and verify completeness and integrity.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> 30 evidence items of mixed types (documents, logs, configuration exports, screenshots, records); formats offered by the platform (state which); one oversized export.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Export all 30 items in each format.</li>
+<li>Compare content with the source.</li>
+<li>Check metadata (who, when, source system, control reference).</li>
+<li>Check signing or hashing.</li>
+<li>Verify integrity with an independent tool.</li>
+<li>Alter one exported copy and verify failure.</li>
+<li>Test the oversized export and any limits.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Evidence containing personal data requiring redaction; export by an auditor role.</p>
+<p><strong>Expected Result.</strong> Exports complete in every format; metadata present; integrity verifiable; altered copy fails; limits documented.</p>
+<p><strong>Expected Control Action.</strong> N/A.</p>
+<p><strong>Expected Record / Log.</strong> Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Formats documented.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.</p>
+<p><strong>Pass Criteria.</strong> Expected Result are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Verification output.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l03-023"></a></p>
+<h3 id="tc-l03-023-multi-framework-compliance-dashboard-coverage-and-gaps">TC-L03-023: Multi-Framework Compliance Dashboard: Coverage and Gaps</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>AUD: Audit, evidence and assurance</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: W</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE and GOVERN (documentation, evaluation and accountability)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Leaders need one view of where the organisation stands against several frameworks, and percentages must be explainable.</p>
+<p><strong>Business Scenario.</strong> Compliance wants coverage, gaps and trends by framework, owner and lifecycle layer.</p>
+<p><strong>Technical Scenario.</strong> Load two frameworks with mappings and evidence states and compare dashboard figures with a hand calculation.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> 2 frameworks of 20 requirements each; 40 controls; evidence states (current, stale, missing); owners; 6 months of history.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Load the data.</li>
+<li>Compare coverage percentages with the calculation sheet.</li>
+<li>Drill from a percentage to the requirements and evidence.</li>
+<li>Check trend lines.</li>
+<li>Filter by owner and lifecycle layer.</li>
+<li>Check how partly met requirements are counted.</li>
+<li>Export the view.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Requirements weighted differently; requirement not applicable to the organisation.</p>
+<p><strong>Expected Result.</strong> Percentages match within 1 percent; drill-down works; partial credit rules visible; filters and export work.</p>
+<p><strong>Expected Control Action.</strong> N/A.</p>
+<p><strong>Expected Record / Log.</strong> Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Export.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.</p>
+<p><strong>Pass Criteria.</strong> Expected Result are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Calculation comparison.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l03-024"></a></p>
+<h3 id="tc-l03-024-adopting-a-new-framework-custom-framework-onboarding">TC-L03-024: Adopting a New Framework: Custom Framework Onboarding</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>AUD: Audit, evidence and assurance</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: W</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE and GOVERN (documentation, evaluation and accountability)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> The value of a generic library depends on how quickly a new or local framework can be added and mapped without vendor engineering.</p>
+<p><strong>Business Scenario.</strong> Compliance wants to onboard a framework within a working day.</p>
+<p><strong>Technical Scenario.</strong> Create a framework from a requirements list and map existing controls and evidence.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> A fabricated framework of 25 requirements in three domains; 40 existing controls; 30 evidence items; 1 requirement with sub-points.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Create the framework and requirements, including the one with sub-points.</li>
+<li>Map controls to requirements.</li>
+<li>Review coverage and gaps.</li>
+<li>Assign owners.</li>
+<li>Time the process.</li>
+<li>Update the framework to a second version and check effect on mappings.</li>
+<li>Export the framework definition.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Requirement text with cross-references; framework that applies only to some business units.</p>
+<p><strong>Expected Result.</strong> Framework created and mapped within one working day by the evaluator; sub-points supported; version update handled; export available.</p>
+<p><strong>Expected Control Action.</strong> N/A.</p>
+<p><strong>Expected Record / Log.</strong> Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Import and export options.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.</p>
+<p><strong>Pass Criteria.</strong> Expected Result are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Time record; coverage view.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l03-025"></a></p>
+<h3 id="tc-l03-025-evidence-reuse-across-frameworks">TC-L03-025: Evidence Reuse Across Frameworks</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>AUD: Audit, evidence and assurance</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: W</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE and GOVERN (documentation, evaluation and accountability)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Collecting the same evidence several times for different frameworks wastes effort and produces inconsistencies.</p>
+<p><strong>Business Scenario.</strong> Compliance wants one evidence item to support several requirements across frameworks.</p>
+<p><strong>Technical Scenario.</strong> Map evidence to several requirements and test status propagation.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> 15 evidence items; 3 frameworks; 45 requirements; 4 items that satisfy a requirement only partly.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Map each item to multiple requirements.</li>
+<li>Update one item and check status in every framework.</li>
+<li>Expire an item and check the effect everywhere.</li>
+<li>Record partial satisfaction.</li>
+<li>Report reuse rates.</li>
+<li>Check audit trail of mapping changes.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Evidence valid only for one jurisdiction.</p>
+<p><strong>Expected Result.</strong> Updates and expiry propagate to every mapped requirement; partial satisfaction visible; reuse report accurate.</p>
+<p><strong>Expected Control Action.</strong> N/A.</p>
+<p><strong>Expected Record / Log.</strong> Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Report export.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.</p>
+<p><strong>Pass Criteria.</strong> Expected Result are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Propagation test.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l03-026"></a></p>
+<h3 id="tc-l03-026-regulator-inspection-simulation-rapid-evidence-request">TC-L03-026: Regulator Inspection Simulation: Rapid Evidence Request</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>AUD: Audit, evidence and assurance</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: W, P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE and GOVERN (documentation, evaluation and accountability)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Inspections give short notice and ask for specific records.</p>
+<p><strong>Business Scenario.</strong> Compliance wants the platform tested against a realistic written request.</p>
+<p><strong>Technical Scenario.</strong> Run a timed drill against a written request for fifteen items.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> Request listing 15 items (policy set, processing register extract, rights request log, incident records, transfer records, training records, vendor assessments, impact assessment, control evidence, access logs, retention evidence, board reporting, residency evidence, risk register extract, exception register); time limit set by the assessor; 2 responders.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Issue the request.</li>
+<li>Collect each item using the platform.</li>
+<li>Record time per item and gaps.</li>
+<li>Check redaction of data not requested.</li>
+<li>Check chain of custody and version stamps.</li>
+<li>Compile the response.</li>
+<li>Hold a short review and list improvements.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Request received outside business hours; request for records older than retention.</p>
+<p><strong>Expected Result.</strong> At least 13 of 15 items produced within the time limit; redaction applied; chain of custody recorded; improvements listed.</p>
+<p><strong>Expected Control Action.</strong> N/A.</p>
+<p><strong>Expected Record / Log.</strong> Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Pack export.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.</p>
+<p><strong>Pass Criteria.</strong> Expected Result are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Drill record.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l03-027"></a></p>
+<h3 id="tc-l03-027-litigation-hold-and-regulatory-preservation-notice">TC-L03-027: Litigation Hold and Regulatory Preservation Notice</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6, D7</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>RET: Retention, deletion and preservation</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: W, P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN and MANAGE (data lifecycle)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Deleting data during a dispute or investigation can cause serious consequences, and AI platforms delete on schedule by default.</p>
+<p><strong>Business Scenario.</strong> Legal wants holds applied across AI data and logs.</p>
+<p><strong>Technical Scenario.</strong> Apply a hold and attempt deletion under several routes.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> 1 matter; 5 custodians; AI conversations, prompts, outputs, logs and knowledge items; retention expiry and user deletion scenarios.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Create the matter and scope.</li>
+<li>Apply the hold.</li>
+<li>Attempt user deletion, administrator deletion and retention expiry.</li>
+<li>Check that held items remain.</li>
+<li>Search and export held data.</li>
+<li>Add a custodian later and check coverage.</li>
+<li>Release the hold and check normal rules resume.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Custodian leaves; hold applied after some items were already deleted.</p>
+<p><strong>Expected Result.</strong> Held items preserved under every route; added custodian covered; export works; actions audited.</p>
+<p><strong>Expected Control Action.</strong> Hold.</p>
+<p><strong>Expected Record / Log.</strong> Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Export format documented.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.</p>
+<p><strong>Pass Criteria.</strong> Expected Result and Expected Control Action are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Hold audit; deletion attempts.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l03-028"></a></p>
+<h3 id="tc-l03-028-intellectual-property-and-copyright-controls-for-ai-inputs-and-outputs">TC-L03-028: Intellectual Property and Copyright Controls for AI Inputs and Outputs</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D3, D7</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>GOV: Governance and accountability</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: G, A, W</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN (policies, accountability and oversight)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Using restricted content as input, or publishing outputs that copy protected material, creates legal exposure and contract breaches.</p>
+<p><strong>Business Scenario.</strong> Legal wants rules for inputs and outputs enforced and evidenced.</p>
+<p><strong>Technical Scenario.</strong> Configure rules for licensed and restricted content and test inputs and outputs.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> 30 fabricated items: 10 with licence markers restricting AI use, 10 with watermarks, 10 clean; outputs from a mock model that reproduces marked content.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Configure rules.</li>
+<li>Submit the items as inputs.</li>
+<li>Record decisions.</li>
+<li>Generate outputs that reproduce marked content.</li>
+<li>Check detection and labelling on outputs.</li>
+<li>Check how exceptions and licences are recorded.</li>
+<li>Check reporting.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Mixed content with a small restricted portion; content with unclear licence.</p>
+<p><strong>Expected Result.</strong> At least 18 of 20 restricted inputs blocked or flagged; reproduced marked output detected or limitation documented; reporting available.</p>
+<p><strong>Expected Control Action.</strong> Block or label.</p>
+<p><strong>Expected Record / Log.</strong> Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Reports.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.</p>
+<p><strong>Pass Criteria.</strong> Expected Result and Expected Control Action are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Decision table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l03-029"></a></p>
+<h3 id="tc-l03-029-automated-decision-explanation-records">TC-L03-029: Automated Decision Explanation Records</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D3, D7</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>OVS: Human oversight and transparency</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: A, W</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN and MANAGE (human oversight, transparency)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> People affected by automated decisions may be entitled to meaningful information about the logic and factors involved.</p>
+<p><strong>Business Scenario.</strong> Legal wants explanations generated, stored and retrievable on request.</p>
+<p><strong>Technical Scenario.</strong> Generate explanations for fabricated decisions and test retrieval and content.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> 10 fabricated decisions (approve, decline, flag) with 5 to 8 input factors each; 2 requests for explanation.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Run the decisions.</li>
+<li>Generate and store explanations.</li>
+<li>Check that the explanation names the main factors and the human review route.</li>
+<li>Have a non-specialist reviewer rate understandability.</li>
+<li>Retrieve explanations for the two requests.</li>
+<li>Check retention and link to the decision record.</li>
+<li>Check explanation consistency on repeated decisions.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Complex multi-model decisions; decisions revised after appeal.</p>
+<p><strong>Expected Result.</strong> Explanations available for all decisions and retrievable; reviewer finds at least 8 of 10 understandable; consistency across repeats.</p>
+<p><strong>Expected Control Action.</strong> N/A.</p>
+<p><strong>Expected Record / Log.</strong> Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Export.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.</p>
+<p><strong>Pass Criteria.</strong> Expected Result are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Explanation samples; reviewer scores.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l03-030"></a></p>
+<h3 id="tc-l03-030-language-and-jurisdiction-configuration-arabic-english-and-regional-rule-sets">TC-L03-030: Language and Jurisdiction Configuration (Arabic, English and Regional Rule Sets)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L03 Legal, Privacy &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Control Theme</strong></td>
+<td>XBT: Cross-border transfer, residency and jurisdiction</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: W, A</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN and MAP (legal and regulatory requirements, third-party context)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Notices, forms and rule sets must work in the languages and jurisdictions in which the organisation operates.</p>
+<p><strong>Business Scenario.</strong> Compliance wants multilingual and jurisdiction-specific configuration without separate tools.</p>
+<p><strong>Technical Scenario.</strong> Configure two jurisdictions and two languages and test notices, forms and reports.</p>
+<p><strong>Preconditions.</strong> Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.</p>
+<p><strong>Applicable Requirement <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>Framework and clause: <code>________</code></li>
+<li>Requirement text: <code>________</code></li>
+<li>Parameters (timelines, periods, thresholds): <code>________</code></li>
+</ul>
+<p><strong>Test Data.</strong> 2 jurisdictions with different rule sets entered by the assessor; Arabic and English; notices, request forms and reports; 1 user in each combination.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Configure the jurisdictions and rule sets.</li>
+<li>Assign users.</li>
+<li>Check that different rules apply per jurisdiction.</li>
+<li>Check notices and forms in both languages.</li>
+<li>Check right-to-left layout, numerals and dates.</li>
+<li>Check reports in each language.</li>
+<li>Check what happens for a user in a third jurisdiction.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Mixed-language documents; users who travel.</p>
+<p><strong>Expected Result.</strong> Rules apply per jurisdiction; both languages correct including right-to-left rendering; reports in both languages; third jurisdiction handled by a defined default.</p>
+<p><strong>Expected Control Action.</strong> N/A.</p>
+<p><strong>Expected Record / Log.</strong> Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Record or report visible in the governance and compliance workspace within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Export.</p>
+<p><strong>Audit Evidence.</strong> Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Framework Crosswalk <em>(assessor to complete)</em></strong></p>
+<ul>
+<li>ISO/IEC 27001 ISMS: <code>________</code></li>
+<li>India DPDP: <code>________</code></li>
+<li>UAE NESA / information assurance: <code>________</code></li>
+<li>UAE PDPL: <code>________</code></li>
+<li>Other: <code>________</code></li>
+</ul>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.</p>
+<p><strong>Pass Criteria.</strong> Expected Result are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.</p>
+<p><strong>Evidence to Capture.</strong> Screenshots.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="L02-governance-and-risk-mgmt.html">&larr; L02 Governance &amp; Risk Mgmt</a><a class="next" href="L04-human-interaction-layer.html">L04 Human Interaction Layer &rarr;</a></nav>
+<footer class="site-footer">Original author: Nachiket Sathaye &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/10_Test_Case_Library/L03-legal-privacy-and-compliance.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a></footer>
+</main>
+</div>
+<script>window.SITE_BASE = "../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

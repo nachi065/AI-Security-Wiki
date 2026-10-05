@@ -1,0 +1,2677 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L17 Monitoring, Detection &amp; Response | AI Security Wiki</title>
+<meta name="author" content="Nachiket Sathaye">
+<meta name="description" content="A vendor-neutral reference for AI security governance, risk management, engineering standards, vendor evaluation and assurance.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+  <a class="brand" href="../index.html">AI Security Wiki</a>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Search the wiki" aria-label="Search the wiki" autocomplete="off">
+    <ul id="search-results" hidden></ul>
+  </div>
+  <a class="repo-link" href="https://github.com/nachi065/AI-Security-Wiki" rel="noopener">GitHub</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="sidebar" aria-label="Wiki sections">
+<ul class="nav">
+<li><a href="../index.html">Home</a></li>
+<li><details><summary><a href="../01_Strategy_and_Market/index.html">Strategy and Market</a></summary><ul>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.html">AI Security Market and Technology Landscape — Summary</a></li>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape_Expanded.html">AI Security Market and Technology Landscape</a></li>
+</ul></details></li>
+<li><details><summary><a href="../02_Risk_Management/index.html">Risk Management</a></summary><ul>
+<li><a href="../02_Risk_Management/02A_AI_Risk_Methodology.html">AI Risk Methodology</a></li>
+<li><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a></li>
+<li><a href="../02_Risk_Management/02C_AI_Risk_Treatment_Plan.html">AI Risk Treatment Plan</a></li>
+<li><a href="../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a></li>
+<li><a href="../02_Risk_Management/02E_AI_Risk_Review_Template.html">AI Risk Review Template</a></li>
+</ul></details></li>
+<li><details><summary><a href="../03_Control_Library/index.html">Control Library</a></summary><ul>
+<li><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></li>
+<li><a href="../03_Control_Library/04_Existing_Security_Control_Baseline.html">Existing Security Control Baseline</a></li>
+<li><a href="../03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.html">Microsoft Security Overlap and AI Gaps</a></li>
+</ul></details></li>
+<li><details><summary><a href="../04_Domain_Standards/index.html">Domain Standards</a></summary><ul>
+<li><a href="../04_Domain_Standards/06_Browser_AI_Security_Standard.html">Browser AI Security Standard</a></li>
+<li><a href="../04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.html">IDE AI Coding Assistant Security Standard</a></li>
+<li><a href="../04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a></li>
+<li><a href="../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
+<li><a href="../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
+</ul></details></li>
+<li><details><summary><a href="../05_Vendor_Evaluation/index.html">Vendor Evaluation</a></summary><ul>
+<li><a href="../05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
+<li><a href="../05_Vendor_Evaluation/12A_Vendor_Profile_Prompt_Security_SentinelOne.html">Vendor Profile — Prompt Security / SentinelOne</a></li>
+<li><a href="../05_Vendor_Evaluation/12B_Vendor_Profile_Palo_Alto_Prisma_AIRS.html">Vendor Profile — Palo Alto Prisma AIRS</a></li>
+<li><a href="../05_Vendor_Evaluation/12C_Vendor_Profile_HiddenLayer.html">Vendor Profile — HiddenLayer</a></li>
+<li><a href="../05_Vendor_Evaluation/12D_Vendor_Profile_Lasso_Security.html">Vendor Profile — Lasso Security</a></li>
+<li><a href="../05_Vendor_Evaluation/12E_Vendor_Profile_Cyberhaven.html">Vendor Profile — Cyberhaven</a></li>
+<li><a href="../05_Vendor_Evaluation/12F_Vendor_Profile_Nightfall_AI.html">Vendor Profile — Nightfall AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12G_Vendor_Profile_Enkrypt_AI.html">Vendor Profile — Enkrypt AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12H_Vendor_Profile_Sovereign_AI_Security_Labs.html">Vendor Profile — Sovereign AI Security Labs</a></li>
+</ul></details></li>
+<li><details><summary><a href="../06_Testing_and_Assurance/index.html">Testing and Assurance</a></summary><ul>
+<li><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html">AI Security PoC Test Case Library</a></li>
+<li><a href="../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a></li>
+<li><a href="../06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.html">AI Red Team Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../07_Role_Based_Playbooks/index.html">Role-Based Playbooks</a></summary><ul>
+<li><a href="../07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.html">AI Product Developer Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15B_AI_Security_Researcher_Playbook.html">AI Security Researcher Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15D_Security_Engineering_Playbook.html">Security Engineering Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15E_Vendor_Evaluation_and_Audit_Playbook.html">Vendor Evaluation and Audit Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../08_Governance/index.html">Governance</a></summary><ul>
+<li><a href="../08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></li>
+<li><a href="../08_Governance/17_AI_Policy_Standards_and_Acceptable_Use.html">AI Policy, Standards and Acceptable Use</a></li>
+</ul></details></li>
+<li><details><summary><a href="../09_Reference/index.html">Reference</a></summary><ul>
+<li><a href="../09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
+</ul></details></li>
+<li><details open><summary><a href="index.html">Test Case Library</a></summary><ul>
+<li><a href="00-reference-index.html">Reference Index</a></li>
+<li><a href="framework-adoption-guide.html">Framework Adoption Guide</a></li>
+<li><a href="appendix-d-lab-prerequisites.html">Appendix D: Lab Prerequisites</a></li>
+<li><a href="L01-business-and-use-cases.html">L01 Business &amp; Use Cases</a></li>
+<li><a href="L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
+<li><a href="L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>
+<li><a href="L04-human-interaction-layer.html">L04 Human Interaction Layer</a></li>
+<li><a href="L05-ai-applications.html">L05 AI Applications</a></li>
+<li><a href="L06-agent-orchestration-layer.html">L06 Agent Orchestration Layer</a></li>
+<li><a href="L07-prompt-and-context-layer.html">L07 Prompt &amp; Context Layer</a></li>
+<li><a href="L08-ai-gateway-and-security-controls.html">L08 AI Gateway &amp; Security Controls</a></li>
+<li><a href="L09-identity-and-access-mgmt.html">L09 Identity &amp; Access Mgmt</a></li>
+<li><a href="L10-data-layer.html">L10 Data Layer</a></li>
+<li><a href="L11-knowledge-and-retrieval-layer.html">L11 Knowledge &amp; Retrieval Layer</a></li>
+<li><a href="L12-model-layer.html">L12 Model Layer</a></li>
+<li><a href="L13-training-and-fine-tuning-layer.html">L13 Training &amp; Fine-Tuning Layer</a></li>
+<li><a href="L14-mlops-llmops-layer.html">L14 MLOps / LLMOps Layer</a></li>
+<li><a href="L15-infrastructure-layer.html">L15 Infrastructure Layer</a></li>
+<li><a href="L16-supply-chain-and-third-party.html">L16 Supply Chain &amp; Third Party</a></li>
+<li><a class="current" href="L17-monitoring-detection-and-response.html">L17 Monitoring, Detection &amp; Response</a></li>
+</ul></details></li>
+</ul>
+</nav>
+<main>
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Test Case Library</a> / <span>L17 Monitoring, Detection &amp; Response</span></p>
+<article>
+<p><a id="top"></a></p>
+<h1 id="l17-monitoring-detection-response">L17 Monitoring, Detection &amp; Response</h1>
+<p><strong>Primary test focus:</strong> telemetry, SIEM/SOAR integration, AI incident response, forensics</p>
+<p><strong>Cases:</strong> 30 (TC-L17-001 to TC-L17-030)  |  <strong>Batch:</strong> 5</p>
+<blockquote>
+<p><strong>Safety boundary.</strong> Infrastructure and SOC cases use a lab cluster, mock inference servers, a test cloud account and a lab SIEM and SOAR only. Probe and compromise-simulation scripts are harmless lab tools that only attempt connections and reads of canary resources. Never run them against production systems, and never connect lab alerting to production on-call routing. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.</p>
+<p><strong>Verify before use.</strong> MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the <a href="00-reference-index.html">Reference Index</a> for field definitions and applicability codes.</p>
+</blockquote>
+<h2 id="cases-in-this-layer">Cases in this layer</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Title</th>
+<th>Severity</th>
+<th>Method</th>
+<th>Domain(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#tc-l17-001">TC-L17-001</a></td>
+<td>Telemetry Coverage Map Across the 17 Layers</td>
+<td>High</td>
+<td>Evidence</td>
+<td>D3, D5, D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l17-002">TC-L17-002</a></td>
+<td>Event Schema and Field Completeness</td>
+<td>High</td>
+<td>Technical</td>
+<td>D3</td>
+</tr>
+<tr>
+<td><a href="#tc-l17-003">TC-L17-003</a></td>
+<td>Log Delivery to SIEM: Formats, Reliability and Backfill</td>
+<td>High</td>
+<td>Technical</td>
+<td>D3</td>
+</tr>
+<tr>
+<td><a href="#tc-l17-004">TC-L17-004</a></td>
+<td>Log Integrity and Tamper Evidence</td>
+<td>High</td>
+<td>Technical</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l17-005">TC-L17-005</a></td>
+<td>Log Retention, Immutability and Storage Location</td>
+<td>Medium</td>
+<td>Evidence</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l17-006">TC-L17-006</a></td>
+<td>Prebuilt AI Detection Content and SIEM Rules</td>
+<td>High</td>
+<td>Technical</td>
+<td>D3, D5</td>
+</tr>
+<tr>
+<td><a href="#tc-l17-007">TC-L17-007</a></td>
+<td>Alert Quality: Severity, Deduplication and Noise</td>
+<td>High</td>
+<td>Technical</td>
+<td>D3</td>
+</tr>
+<tr>
+<td><a href="#tc-l17-008">TC-L17-008</a></td>
+<td>Alert Enrichment with User, Device, Asset and Risk Context</td>
+<td>Medium</td>
+<td>Technical</td>
+<td>D1, D3</td>
+</tr>
+<tr>
+<td><a href="#tc-l17-009">TC-L17-009</a></td>
+<td>Correlation of AI Events with Endpoint, Identity and Network Events</td>
+<td>High</td>
+<td>Technical</td>
+<td>D3, D6</td>
+</tr>
+<tr>
+<td><a href="#tc-l17-010">TC-L17-010</a></td>
+<td>Detection of Data Exfiltration Through AI Services</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D6, D1</td>
+</tr>
+<tr>
+<td><a href="#tc-l17-011">TC-L17-011</a></td>
+<td>Detection of Account Takeover on AI Tools</td>
+<td>High</td>
+<td>Technical</td>
+<td>D1, D3</td>
+</tr>
+<tr>
+<td><a href="#tc-l17-012">TC-L17-012</a></td>
+<td>Detection of Agent Compromise Indicators</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D5</td>
+</tr>
+<tr>
+<td><a href="#tc-l17-013">TC-L17-013</a></td>
+<td>Detection of Insider Misuse and Policy Evasion</td>
+<td>High</td>
+<td>Technical</td>
+<td>D1, D6</td>
+</tr>
+<tr>
+<td><a href="#tc-l17-014">TC-L17-014</a></td>
+<td>Mapping of Detections to MITRE ATLAS and ATT&amp;CK</td>
+<td>Medium</td>
+<td>Evidence</td>
+<td>D3</td>
+</tr>
+<tr>
+<td><a href="#tc-l17-015">TC-L17-015</a></td>
+<td>SOAR Playbooks for Automated Containment</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D5, D3</td>
+</tr>
+<tr>
+<td><a href="#tc-l17-016">TC-L17-016</a></td>
+<td>SOAR and Ticketing Integration: Bidirectional Flow</td>
+<td>High</td>
+<td>Technical</td>
+<td>D3</td>
+</tr>
+<tr>
+<td><a href="#tc-l17-017">TC-L17-017</a></td>
+<td>Case Management and Evidence Attachment</td>
+<td>Medium</td>
+<td>Technical</td>
+<td>D6</td>
+</tr>
+<tr>
+<td><a href="#tc-l17-018">TC-L17-018</a></td>
+<td>AI Incident Response Runbook and Tabletop Exercise</td>
+<td>High</td>
+<td>Technical</td>
+<td>D3, D5, D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l17-019">TC-L17-019</a></td>
+<td>Containment Time Measurement</td>
+<td>High</td>
+<td>Technical</td>
+<td>D5</td>
+</tr>
+<tr>
+<td><a href="#tc-l17-020">TC-L17-020</a></td>
+<td>Forensics: Conversation and Tool Call Reconstruction</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D6, D5</td>
+</tr>
+<tr>
+<td><a href="#tc-l17-021">TC-L17-021</a></td>
+<td>Forensics: Evidence Preservation, Legal Hold and Integrity</td>
+<td>High</td>
+<td>Technical</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l17-022">TC-L17-022</a></td>
+<td>Forensics: Cross-User, Agent and Tool Timeline</td>
+<td>High</td>
+<td>Technical</td>
+<td>D5, D3</td>
+</tr>
+<tr>
+<td><a href="#tc-l17-023">TC-L17-023</a></td>
+<td>Post-Incident Feedback into Policy and Detection</td>
+<td>Medium</td>
+<td>Evidence</td>
+<td>D3</td>
+</tr>
+<tr>
+<td><a href="#tc-l17-024">TC-L17-024</a></td>
+<td>AI Threat Intelligence Ingestion</td>
+<td>Medium</td>
+<td>Technical</td>
+<td>D3</td>
+</tr>
+<tr>
+<td><a href="#tc-l17-025">TC-L17-025</a></td>
+<td>Dashboards and Executive Metrics (Detection and Response Times)</td>
+<td>Medium</td>
+<td>Evidence</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l17-026">TC-L17-026</a></td>
+<td>Regulatory Incident Reporting Evidence (UAE and GCC)</td>
+<td>High</td>
+<td>Evidence</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l17-027">TC-L17-027</a></td>
+<td>24x7 Monitoring, MDR Support and Escalation Model</td>
+<td>High</td>
+<td>Attestation</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l17-028">TC-L17-028</a></td>
+<td>Platform Health and Silent Failure Detection</td>
+<td>High</td>
+<td>Technical</td>
+<td>D3</td>
+</tr>
+<tr>
+<td><a href="#tc-l17-029">TC-L17-029</a></td>
+<td>Purple-Team Detection Validation: Replay of Earlier Attacks</td>
+<td>High</td>
+<td>Technical</td>
+<td>D3, D5, D6</td>
+</tr>
+<tr>
+<td><a href="#tc-l17-030">TC-L17-030</a></td>
+<td>SOC Analyst Access to Raw Prompts: Masking, Role Separation and Unmask Audit</td>
+<td>High</td>
+<td>Technical</td>
+<td>D1, D7</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="test-cases">Test cases</h2>
+<p><a id="tc-l17-001"></a></p>
+<h3 id="tc-l17-001-telemetry-coverage-map-across-the-17-layers">TC-L17-001: Telemetry Coverage Map Across the 17 Layers</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D3, D5, D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Evidence</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (operational and monitoring control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Detection can only be as good as the events the platform produces, and gaps are usually discovered during an incident.</p>
+<p><strong>Business Scenario.</strong> SOC leads want to know which lifecycle layers generate events, what kinds, and which are blind spots.</p>
+<p><strong>Technical Scenario.</strong> Generate a standard set of activities across the layers and map which produce platform events.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> 30 activities spread over layers L04 to L16: unsanctioned tool use, prompt injection attempt, sensitive paste, agent tool call, MCP server added, token scope violation, model download, vector store query, dataset upload, pipeline promotion, secret in prompt, admin policy change, and similar; coverage checklist by layer.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>List the activities and the expected event for each.</li>
+<li>Execute all 30 in the lab.</li>
+<li>Check the platform and SIEM for a matching event.</li>
+<li>Record presence, timing and completeness per activity.</li>
+<li>Build the coverage map by layer.</li>
+<li>Review gaps with the vendor and record whether each gap is a roadmap item, a configuration option or out of scope.</li>
+<li>Repeat after enabling every optional source.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Activities by service accounts; activities during platform maintenance.</p>
+<p><strong>Expected Detection.</strong> At least 24 of 30 activities produce an event; layers without any events identified and explained; every gap has a stated answer from the vendor.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Coverage matrix exportable.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Coverage map; vendor gap responses.</p>
+<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l17-002"></a></p>
+<h3 id="tc-l17-002-event-schema-and-field-completeness">TC-L17-002: Event Schema and Field Completeness</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D3</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (operational and monitoring control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Events missing user, agent, model, tool or decision fields cannot be correlated or investigated.</p>
+<p><strong>Business Scenario.</strong> Detection engineers want normalised events carrying the fields needed for rules and investigations.</p>
+<p><strong>Technical Scenario.</strong> Generate events from several sources and inspect field presence, naming and types.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> 100 events from 10 event types (policy block, detection, tool call, approval, login, configuration change, inventory change, kill switch, DLP match, error); required field list: time, tenant, user, device, agent, model, tool, resource, policy, decision, severity, session identifier, correlation identifier, source layer.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Agree the required field list.</li>
+<li>Generate the events.</li>
+<li>Export a sample.</li>
+<li>Check field presence per event type.</li>
+<li>Check types, formats and time zones.</li>
+<li>Check consistency of names across event types.</li>
+<li>Check documentation of the schema and versioning of changes.</li>
+<li>Check handling of sensitive values.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Events from older agent versions; events from third-party sources.</p>
+<p><strong>Expected Detection.</strong> At least 95 percent of required fields present where applicable; consistent names and time in UTC; schema documented with version; sensitive values masked per policy.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Schema document attached.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Field completeness table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l17-003"></a></p>
+<h3 id="tc-l17-003-log-delivery-to-siem-formats-reliability-and-backfill">TC-L17-003: Log Delivery to SIEM: Formats, Reliability and Backfill</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D3</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (operational and monitoring control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Lost or late events create silent detection gaps, and some integrations drop events during outages.</p>
+<p><strong>Business Scenario.</strong> SOC engineers want reliable delivery with defined formats and recovery after interruption.</p>
+<p><strong>Technical Scenario.</strong> Configure delivery to the lab SIEM using each supported method and test outages.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> Delivery methods (syslog, API pull, webhook, object storage, native connector) as offered; 5,000 events over 30 minutes; outage of 30 minutes; duplicate and out-of-order scenarios.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Configure each delivery method.</li>
+<li>Send the 5,000 events.</li>
+<li>Compare counts and content at the SIEM.</li>
+<li>Break the connection for 30 minutes during traffic.</li>
+<li>Restore and check backfill and duplicates.</li>
+<li>Check ordering and time stamps.</li>
+<li>Check authentication and encryption of the channel.</li>
+<li>Measure delivery delay.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Burst of 10 times normal volume; SIEM temporarily rejecting events.</p>
+<p><strong>Expected Detection.</strong> Zero event loss in normal operation; backfill complete after outage with no more than 1 percent duplicates; delay under 2 minutes; channel authenticated and encrypted.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> SIEM parsers or apps available.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Count reconciliation; delay table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l17-004"></a></p>
+<h3 id="tc-l17-004-log-integrity-and-tamper-evidence">TC-L17-004: Log Integrity and Tamper Evidence</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (operational and monitoring control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Altered or deleted logs undermine investigations and regulatory defence.</p>
+<p><strong>Business Scenario.</strong> Audit wants evidence that platform logs cannot be changed unnoticed.</p>
+<p><strong>Technical Scenario.</strong> Attempt to alter and delete events and check protection and detection.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> Platform logs and audit trail; 3 admin roles; attempts: edit event, delete event, delete range, disable logging, change retention.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Review the integrity design (hash chaining, signing, write-once storage).</li>
+<li>Attempt each alteration as each role.</li>
+<li>Check whether attempts are blocked, logged and alerted.</li>
+<li>Verify integrity of a sample using the vendor's tool or an independent check.</li>
+<li>Export a signed slice.</li>
+<li>Check clock synchronisation and drift handling.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Alteration at storage level by an infrastructure administrator.</p>
+<p><strong>Expected Detection.</strong> All alteration attempts blocked or detected and alerted; integrity verification passes for untouched logs and fails for altered copies; signed export supported.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Block.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Alerts to SIEM.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Attempt table; verification output.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l17-005"></a></p>
+<h3 id="tc-l17-005-log-retention-immutability-and-storage-location">TC-L17-005: Log Retention, Immutability and Storage Location</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Evidence</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Short retention or the wrong storage location breaks investigations and regulatory obligations.</p>
+<p><strong>Business Scenario.</strong> Compliance wants retention periods, immutability and location controlled and evidenced.</p>
+<p><strong>Technical Scenario.</strong> Configure retention and check enforcement, immutability and location.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> Retention tiers (hot 30 days, warm 180 days, archive 7 years); sample data; legal hold; location requirement.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Configure tiers.</li>
+<li>Backdate data to cross each boundary.</li>
+<li>Check movement and accessibility.</li>
+<li>Apply legal hold and attempt deletion.</li>
+<li>Check immutability.</li>
+<li>Verify storage location for each tier.</li>
+<li>Check deletion after expiry and its evidence.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Region change during the retention period.</p>
+<p><strong>Expected Detection.</strong> Tiers behave as configured; hold prevents deletion; immutability enforced; storage in the permitted region; deletion evidence produced.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Export.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Retention test records.</p>
+<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l17-006"></a></p>
+<h3 id="tc-l17-006-prebuilt-ai-detection-content-and-siem-rules">TC-L17-006: Prebuilt AI Detection Content and SIEM Rules</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D3, D5</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (operational and monitoring control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Teams without ready detection content spend months building it and miss early attacks.</p>
+<p><strong>Business Scenario.</strong> SOC wants usable AI detections shipped with the platform or its integration.</p>
+<p><strong>Technical Scenario.</strong> Load the vendor's detection content into the lab SIEM and run attack and benign scenarios.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> Vendor rule pack; 20 attack scenarios (prompt injection burst, data leak, shadow AI spike, new agent, token misuse, model exfiltration attempt, kill switch event, policy tamper, repeated approval denials, off-hours bulk retrieval, and similar) and 20 benign scenarios.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Load the content.</li>
+<li>Review rule documentation and mapping.</li>
+<li>Replay the attack scenarios.</li>
+<li>Record which rules fire.</li>
+<li>Replay benign scenarios and record false positives.</li>
+<li>Tune one noisy rule and check effect.</li>
+<li>Check update cadence and versioning of the content.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Scenarios spread over days; scenarios from several users at once.</p>
+<p><strong>Expected Detection.</strong> At least 16 of 20 attack scenarios detected; false positives under 10 percent of benign scenarios; rules documented with severity and response guidance; content updated at least quarterly.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Rules importable into the SIEM.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Scenario results table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l17-007"></a></p>
+<h3 id="tc-l17-007-alert-quality-severity-deduplication-and-noise">TC-L17-007: Alert Quality: Severity, Deduplication and Noise</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D3</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (operational and monitoring control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> A noisy platform trains analysts to ignore it.</p>
+<p><strong>Business Scenario.</strong> SOC wants measured alert volume, duplication and accuracy over a realistic period.</p>
+<p><strong>Technical Scenario.</strong> Run seven simulated days of mixed benign and malicious activity and measure alerts.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> 7 days of simulated traffic for 50 users and 5 agents; 15 seeded malicious events; normal peaks (month-end, release day).</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Run the simulated week.</li>
+<li>Count alerts by severity.</li>
+<li>Check which seeded events produced alerts.</li>
+<li>Check duplicate and related alerts for grouping.</li>
+<li>Have two analysts classify a sample of 100 alerts.</li>
+<li>Compute precision and alerts per analyst per day.</li>
+<li>Tune and repeat one day.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> New feature launch causing legitimate spikes; seasonal usage.</p>
+<p><strong>Expected Detection.</strong> At least 13 of 15 malicious events alerted at appropriate severity; precision at least 70 percent in the sample; duplicates grouped; fewer than 50 actionable alerts per analyst per day.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Alert metrics exportable.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Alert counts; analyst classification sheet.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l17-008"></a></p>
+<h3 id="tc-l17-008-alert-enrichment-with-user-device-asset-and-risk-context">TC-L17-008: Alert Enrichment with User, Device, Asset and Risk Context</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D1, D3</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (operational and monitoring control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Analysts waste time looking up who a user is and what an asset does.</p>
+<p><strong>Business Scenario.</strong> SOC wants alerts to arrive with context.</p>
+<p><strong>Technical Scenario.</strong> Generate alerts and check enrichment against known facts.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> 20 alerts involving users, devices, agents and applications with known attributes in the directory, asset system and risk register.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Generate the alerts.</li>
+<li>Check enrichment: user role, department, manager, device posture, application owner, data sensitivity, agent owner, recent related alerts.</li>
+<li>Compare with ground truth.</li>
+<li>Check the effect of stale directory data.</li>
+<li>Check time to enrich.</li>
+<li>Check what enrichment is stored versus retrieved on demand.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> User who changed department during the alert window.</p>
+<p><strong>Expected Detection.</strong> At least 90 percent of enrichment fields correct; stale data handled with a visible age; enrichment within 30 seconds.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Directory and asset integrations.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Enrichment comparison.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l17-009"></a></p>
+<h3 id="tc-l17-009-correlation-of-ai-events-with-endpoint-identity-and-network-events">TC-L17-009: Correlation of AI Events with Endpoint, Identity and Network Events</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D3, D6</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (operational and monitoring control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Real incidents span tools; AI events alone rarely tell the story.</p>
+<p><strong>Business Scenario.</strong> SOC wants AI events correlated with other telemetry.</p>
+<p><strong>Technical Scenario.</strong> Run three multi-source scenarios and check the correlated view.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> 3 scenarios: compromised account uses an AI tool to summarise sensitive files then uploads to personal storage; malicious extension reads page content and posts to an AI API; agent token used from a new network and tools abused.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Generate events across identity, endpoint, network and AI sources.</li>
+<li>Check that the SIEM or platform joins them by user, device, session or token.</li>
+<li>Check timeline views.</li>
+<li>Check whether a single incident is created.</li>
+<li>Measure time to build the picture manually versus using correlation.</li>
+<li>Check correlation key quality.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Events with different user identifiers across systems.</p>
+<p><strong>Expected Detection.</strong> All 3 scenarios appear as a single incident or linked set; time to understand reduced by at least half compared with manual search; correlation keys documented.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Correlation rules and keys.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Timelines; manual versus assisted timing.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l17-010"></a></p>
+<h3 id="tc-l17-010-detection-of-data-exfiltration-through-ai-services">TC-L17-010: Detection of Data Exfiltration Through AI Services</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6, D1</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0025 Exfiltration via Cyber Means</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.10; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Data leaves a little at a time through legitimate AI services and may not trigger any single-event rule.</p>
+<p><strong>Business Scenario.</strong> DLP and SOC teams want volume and sensitivity patterns detected over time.</p>
+<p><strong>Technical Scenario.</strong> Simulate low-and-slow and burst exfiltration to approved and unapproved AI services.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> 3 test users; 4 patterns: single large upload, 50 small pastes in a day, slow daily pastes over 2 weeks (simulated time), upload of encoded content; fabricated sensitive data.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Set normal baselines.</li>
+<li>Run each pattern.</li>
+<li>Record detection time and signal.</li>
+<li>Check cumulative thresholds and trend detection.</li>
+<li>Check user and data context in alerts.</li>
+<li>Run heavy but legitimate usage by a fourth user and check false positives.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Use of several accounts; use of several AI services in sequence.</p>
+<p><strong>Expected Detection.</strong> At least 3 of 4 patterns detected; the burst within minutes; cumulative detection documented; legitimate heavy user not blocked without review.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Alert or block.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Alerts to SIEM and DLP.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Detection table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l17-011"></a></p>
+<h3 id="tc-l17-011-detection-of-account-takeover-on-ai-tools">TC-L17-011: Detection of Account Takeover on AI Tools</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D1, D3</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0012 Valid Accounts</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM06:2025 Excessive Agency</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Stolen sessions on AI tools give attackers access to chat history and connected data.</p>
+<p><strong>Business Scenario.</strong> SOC wants takeover signals recognised.</p>
+<p><strong>Technical Scenario.</strong> Simulate takeover patterns for test accounts.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> 3 accounts; scenarios: login from a new country with impossible travel, new device with immediate bulk history export, changed behaviour (sudden long prompts at 3am), token reuse from two networks.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Establish baselines for 7 days.</li>
+<li>Run each scenario.</li>
+<li>Record detection and time.</li>
+<li>Check response options.</li>
+<li>Check false positives from travel and VPN use by legitimate users.</li>
+<li>Check use of the identity provider's risk signals.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Corporate VPN exit nodes in other countries.</p>
+<p><strong>Expected Detection.</strong> At least 3 of 4 scenarios detected within 15 minutes; false positives for legitimate travel under 5 percent.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Step-up or block.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Alerts to SIEM.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Detection table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l17-012"></a></p>
+<h3 id="tc-l17-012-detection-of-agent-compromise-indicators">TC-L17-012: Detection of Agent Compromise Indicators</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D5</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0053 LLM Plugin Compromise</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM06:2025 Excessive Agency</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> A compromised agent behaves differently in small ways before it does damage.</p>
+<p><strong>Business Scenario.</strong> SOC wants indicators for hijacked or misbehaving agents.</p>
+<p><strong>Technical Scenario.</strong> Replay five compromise indicators for lab agents.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> 3 agents with 14 days of baseline; indicators: new tool never used before, tenfold call volume, reading a new data source, call to a new external domain, repeated blocked actions followed by success.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Load the baseline.</li>
+<li>Replay each indicator.</li>
+<li>Record detection and severity.</li>
+<li>Check linking to the agent's owner and recent changes.</li>
+<li>Check suggested containment.</li>
+<li>Run a legitimate change after approval and check suppression.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Gradual escalation of tool use over weeks.</p>
+<p><strong>Expected Detection.</strong> At least 4 of 5 indicators detected within 15 minutes; legitimate approved change not alerted; owner and containment shown.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Alert or hold.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Alerts to SIEM and SOAR.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Detection table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l17-013"></a></p>
+<h3 id="tc-l17-013-detection-of-insider-misuse-and-policy-evasion">TC-L17-013: Detection of Insider Misuse and Policy Evasion</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D1, D6</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (operational and monitoring control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Insiders probe controls, try workarounds and move data in ways that look like normal work.</p>
+<p><strong>Business Scenario.</strong> SOC and HR want repeated evasion and misuse patterns surfaced with proportionate handling.</p>
+<p><strong>Technical Scenario.</strong> Run an insider script with several evasion attempts and a heavy but legitimate user.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> 2 users: one scripted to hit blocks, try alternate tools, rephrase blocked prompts, use personal accounts and encode data; one legitimate heavy user; 14 simulated days.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Run the scripts.</li>
+<li>Check how repeated blocks and rephrasing are linked.</li>
+<li>Check detection of alternate tool use.</li>
+<li>Check risk score progression.</li>
+<li>Check how the legitimate heavy user scores.</li>
+<li>Check privacy controls on viewing identity and the case-opening process.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Insider with a legitimate reason to test controls (security team).</p>
+<p><strong>Expected Detection.</strong> Evasion sequence linked into one story within the stated time; legitimate user scored low; identity viewing controlled and audited.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Alert.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Cases to the case system.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Risk score chart; case record.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l17-014"></a></p>
+<h3 id="tc-l17-014-mapping-of-detections-to-mitre-atlas-and-attck">TC-L17-014: Mapping of Detections to MITRE ATLAS and ATT&amp;CK</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D3</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Evidence</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Detections without a framework mapping are hard to compare, prioritise and report.</p>
+<p><strong>Business Scenario.</strong> Security leadership wants detection coverage expressed in recognised frameworks.</p>
+<p><strong>Technical Scenario.</strong> Review the platform's mapping of detections and compare with an independent mapping.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> 20 detections; independent mapping prepared by the evaluator against current published framework versions.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Export the vendor's mapping.</li>
+<li>Check identifiers and names against the current published versions.</li>
+<li>Compare with the independent mapping.</li>
+<li>List agreements and differences.</li>
+<li>Check how the mapping is maintained and versioned.</li>
+<li>Check coverage view.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Detections spanning several techniques.</p>
+<p><strong>Expected Detection.</strong> At least 80 percent agreement; invalid or outdated identifiers corrected by the vendor; mapping versioned.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Export.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Comparison table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l17-015"></a></p>
+<h3 id="tc-l17-015-soar-playbooks-for-automated-containment">TC-L17-015: SOAR Playbooks for Automated Containment</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D5, D3</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0053 LLM Plugin Compromise</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM06:2025 Excessive Agency</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Manual containment is too slow when an agent or account is misusing data, but automatic actions can themselves cause outages.</p>
+<p><strong>Business Scenario.</strong> SOC wants playbooks that contain AI incidents quickly and safely.</p>
+<p><strong>Technical Scenario.</strong> Build and run playbooks for five containment actions using the platform's actions or APIs.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> 5 playbooks: disable an agent, revoke a token, block a user from an AI service, quarantine a knowledge source, isolate an endpoint agent; test targets for each; approval step for high-impact actions.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Build each playbook with the platform's actions.</li>
+<li>Trigger each with a simulated alert.</li>
+<li>Measure time from alert to effect.</li>
+<li>Verify the effect on the target.</li>
+<li>Test the approval step for the high-impact ones.</li>
+<li>Test rollback.</li>
+<li>Test what happens when the platform action fails or times out.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Action against a production-critical agent; duplicate alerts triggering the same action twice.</p>
+<p><strong>Expected Detection.</strong> All 5 playbooks work end to end; time to effect under 2 minutes for automatic actions; approvals enforced; rollback works; failures handled with alerts.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Contain automatically or after approval.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> API and connector documentation.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Playbook runs; timing table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l17-016"></a></p>
+<h3 id="tc-l17-016-soar-and-ticketing-integration-bidirectional-flow">TC-L17-016: SOAR and Ticketing Integration: Bidirectional Flow</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D3</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (operational and monitoring control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> One-way alert feeds leave tickets and platform state out of step.</p>
+<p><strong>Business Scenario.</strong> SOC wants alert, ticket, action and closure to stay synchronised.</p>
+<p><strong>Technical Scenario.</strong> Run alerts through the full loop and check state at each end.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> 10 alerts; mock ticketing system; platform and SOAR configured with credentials.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Generate 10 alerts.</li>
+<li>Check ticket creation, fields and links.</li>
+<li>Update status in the ticket and check the platform.</li>
+<li>Take an action in the platform and check the ticket note.</li>
+<li>Close an incident and check alert state.</li>
+<li>Check behaviour when the ticket system is unavailable.</li>
+<li>Check authentication method and permissions of the integration account.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Ticket edited by two people; very large alert bursts.</p>
+<p><strong>Expected Detection.</strong> All 10 alerts create tickets with correct fields; status and notes sync in both directions within 2 minutes; failure handling queued and retried; integration account least-privilege.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Connector or API.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> State comparison table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l17-017"></a></p>
+<h3 id="tc-l17-017-case-management-and-evidence-attachment">TC-L17-017: Case Management and Evidence Attachment</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (operational and monitoring control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Evidence scattered across tools slows investigations, loses context and weakens any later disciplinary or legal step.</p>
+<p><strong>Business Scenario.</strong> Investigators want one case holding every piece of AI-related evidence with originals preserved.</p>
+<p><strong>Technical Scenario.</strong> Open a case from related alerts and build it using the platform's evidence, notes and tasks, then export it.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> 1 case built from 8 related alerts about one fabricated insider scenario; evidence types: conversation extracts, tool call records, policy decisions, user timeline, screenshots, exported logs; 2 investigators and 1 reviewer; 1 attempt by an unauthorised user to open the case.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Create the case from the alerts.</li>
+<li>Attach each evidence type and record how originals are preserved and hashed.</li>
+<li>Add notes, tasks and assignees.</li>
+<li>Attempt access as the unauthorised user and as the reviewer.</li>
+<li>Check the case audit trail.</li>
+<li>Export the case in the offered formats and check completeness.</li>
+<li>Close the case and check retention and re-opening rules.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Case spanning two tenants; case with legal sensitivity requiring restricted membership; evidence added after closure.</p>
+<p><strong>Expected Detection.</strong> Case holds all evidence with hashes; originals unchanged; access limited to assigned roles and every access audited; export complete and readable; closure and retention follow policy.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Export to case or legal tools.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Case record; export sample; audit trail.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l17-018"></a></p>
+<h3 id="tc-l17-018-ai-incident-response-runbook-and-tabletop-exercise">TC-L17-018: AI Incident Response Runbook and Tabletop Exercise</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D3, D5, D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Teams practised only on malware and phishing struggle with prompt injection, model misbehaviour and agent incidents.</p>
+<p><strong>Business Scenario.</strong> Incident response wants runbooks tested against AI scenarios using the platform's tooling.</p>
+<p><strong>Technical Scenario.</strong> Run a facilitated exercise with three scenarios and the platform's evidence.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> 3 scenarios: indirect injection causes an agent to send data externally; a poisoned knowledge document spreads false guidance; a model update causes unsafe outputs; participants from security, engineering, legal and communications.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Provide the runbook.</li>
+<li>Start each scenario with an injected alert.</li>
+<li>Participants use the platform to scope.</li>
+<li>Record decisions, times and gaps.</li>
+<li>Check use of platform actions (kill switch, rollback, quarantine).</li>
+<li>Debrief and list actions.</li>
+<li>Update the runbook.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Scenario at night with the primary responder unavailable.</p>
+<p><strong>Expected Detection.</strong> Scope established within 30 minutes per scenario; platform actions used correctly; gaps listed with owners; runbook updated.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Runbook document.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Exercise notes and timings.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l17-019"></a></p>
+<h3 id="tc-l17-019-containment-time-measurement">TC-L17-019: Containment Time Measurement</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D5</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0053 LLM Plugin Compromise</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM06:2025 Excessive Agency</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Time from first malicious event to verified containment decides how much damage an AI incident does, and it is rarely measured.</p>
+<p><strong>Business Scenario.</strong> SOC wants contained-time figures for each type of AI incident, with and without automation.</p>
+<p><strong>Technical Scenario.</strong> Run five timed scenarios, record every stage and compare manual and automated handling.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> 5 scenarios: agent misuse (unexpected tool calls), token abuse from a new network, data leak through an AI service, poisoned knowledge source, faulty model release; stopwatch definitions agreed in advance; 2 analysts; automation playbooks from the earlier case.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Define stage boundaries: event, detection, triage complete, decision, action started, effect verified.</li>
+<li>Run each scenario manually and record stage times.</li>
+<li>Compute totals and the longest stage.</li>
+<li>Repeat each scenario with automation enabled.</li>
+<li>Compare.</li>
+<li>Check that logs and the case record let you verify each timestamp.</li>
+<li>Identify the slowest handoff in each scenario.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Scenario beginning at night; scenario where the first alert is a false positive.</p>
+<p><strong>Expected Detection.</strong> Median time to contain under 30 minutes manual and under 5 minutes automated; every stage timestamp verifiable from logs; longest stage identified per scenario.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Contain.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Metrics export.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Stage timing table by scenario and mode.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l17-020"></a></p>
+<h3 id="tc-l17-020-forensics-conversation-and-tool-call-reconstruction">TC-L17-020: Forensics: Conversation and Tool Call Reconstruction</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6, D5</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (operational and monitoring control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Without full conversation and tool records, investigators cannot show what the user asked, what the model said or what an agent did.</p>
+<p><strong>Business Scenario.</strong> Investigators want complete, ordered reconstruction with chain of custody.</p>
+<p><strong>Technical Scenario.</strong> Reconstruct three scripted incidents from platform records only.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> 3 incidents with scripted conversations (8 to 15 turns), 2 tool calls each, 1 blocked action; investigator with platform access only.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Run the incidents.</li>
+<li>Ask the investigator to reconstruct each.</li>
+<li>Compare with scripts.</li>
+<li>Check fidelity: prompts, responses, system prompt version, retrieved chunks, tool arguments, decisions.</li>
+<li>Check masking and unmask audit.</li>
+<li>Check chain of custody for the export.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Conversations deleted by the user; streaming responses.</p>
+<p><strong>Expected Detection.</strong> At least 95 percent of turns and all tool calls reconstructed; versions and decisions present; chain of custody recorded.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Export for case tools.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Reconstruction vs script.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l17-021"></a></p>
+<h3 id="tc-l17-021-forensics-evidence-preservation-legal-hold-and-integrity">TC-L17-021: Forensics: Evidence Preservation, Legal Hold and Integrity</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Evidence that was not preserved, or cannot be shown unaltered, may be useless.</p>
+<p><strong>Business Scenario.</strong> Legal and investigation teams want preservation and integrity proven.</p>
+<p><strong>Technical Scenario.</strong> Preserve evidence for an incident and test hold, hashing and export.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> 1 incident with 200 records; legal hold; export to evidence storage.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Apply preservation to the incident.</li>
+<li>Attempt deletion and expiry.</li>
+<li>Export with hashes.</li>
+<li>Verify hashes independently.</li>
+<li>Alter an exported copy and verify failure.</li>
+<li>Check access logging for the evidence.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Hold applied after some records have expired.</p>
+<p><strong>Expected Detection.</strong> Preserved records immune to deletion; hashes verify; altered copy fails verification; access logged.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Hold.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Evidence export.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Hash verification output.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l17-022"></a></p>
+<h3 id="tc-l17-022-forensics-cross-user-agent-and-tool-timeline">TC-L17-022: Forensics: Cross-User, Agent and Tool Timeline</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D5, D3</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (operational and monitoring control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Incidents rarely involve one actor; investigators need an ordered story across people, agents and tools.</p>
+<p><strong>Business Scenario.</strong> Investigators want a single timeline.</p>
+<p><strong>Technical Scenario.</strong> Build a timeline for a multi-actor scenario.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> Scenario with 2 users, 3 agents, 4 tools, 1 MCP server; 40 events over 2 hours.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Run the scenario.</li>
+<li>Build the timeline with the platform.</li>
+<li>Compare with the script.</li>
+<li>Check filters and pivots.</li>
+<li>Check handling of clock differences.</li>
+<li>Export.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Events from systems with 2-minute clock drift.</p>
+<p><strong>Expected Detection.</strong> At least 38 of 40 events in correct order; pivots by actor and tool work; export complete.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Export.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Timeline comparison.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l17-023"></a></p>
+<h3 id="tc-l17-023-post-incident-feedback-into-policy-and-detection">TC-L17-023: Post-Incident Feedback into Policy and Detection</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D3</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Evidence</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Lessons that never become rules or detections turn into repeat incidents.</p>
+<p><strong>Business Scenario.</strong> Security wants a short, auditable path from incident finding to a tested policy or detection change.</p>
+<p><strong>Technical Scenario.</strong> Take findings from the exercises and push each through the platform's change process.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> 5 findings: a missing detection for slow exfiltration, an over-broad agent permission, a noisy rule, a policy gap for browser agents, a runbook step with no platform action; change approvers; replay set from earlier attack tests.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Record each finding with owner and target date.</li>
+<li>Draft the policy or detection change in the platform.</li>
+<li>Test it against the relevant replay set and against 20 benign events.</li>
+<li>Submit for approval and record approver and time.</li>
+<li>Deploy to production-equivalent lab and check versioning.</li>
+<li>Re-run the original scenario and confirm the finding is closed.</li>
+<li>Check reporting on finding closure rates.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Finding that needs a business process change rather than a platform change.</p>
+<p><strong>Expected Detection.</strong> All 5 findings closed with a tested change; false positives from changes under 5 percent of benign events; approvals and versions recorded; closure report available.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Change records to GRC or tickets.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Finding-to-change table; re-test results.</p>
+<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l17-024"></a></p>
+<h3 id="tc-l17-024-ai-threat-intelligence-ingestion">TC-L17-024: AI Threat Intelligence Ingestion</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D3</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Partial: P, G</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (operational and monitoring control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> New prompt attacks, malicious tool servers and compromised model hashes appear constantly and are only useful if detection can use them quickly.</p>
+<p><strong>Business Scenario.</strong> SOC wants external AI-specific intelligence turned into detections with measurable effect.</p>
+<p><strong>Technical Scenario.</strong> Ingest a sample feed and test matching, ageing, removal and sharing.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> Sample feed of 30 indicators (known malicious tool server addresses, attack string fragments, hashes of compromised model files, suspicious domains, malicious package names); 10 lab events matching indicators and 10 similar-looking non-matching events; 1 indicator to be withdrawn.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Check supported feed formats and transport (state them, for example STIX/TAXII if offered).</li>
+<li>Ingest the feed.</li>
+<li>Replay the 20 events.</li>
+<li>Record matches, alerts and context shown.</li>
+<li>Withdraw one indicator and check that it stops matching.</li>
+<li>Check ageing and confidence handling.</li>
+<li>Check whether the platform can share its own findings back, and under what controls.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Indicators with wildcard patterns; indicators that overlap legitimate services.</p>
+<p><strong>Expected Detection.</strong> At least 9 of 10 matching events detected; non-matching events not flagged; withdrawn indicator stops matching within the stated time; ageing works; sharing controlled.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Alert.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Standard feed formats.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Match table; indicator lifecycle test.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l17-025"></a></p>
+<h3 id="tc-l17-025-dashboards-and-executive-metrics-detection-and-response-times">TC-L17-025: Dashboards and Executive Metrics (Detection and Response Times)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Evidence</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (operational and monitoring control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Leaders manage what they can see; wrong or undefined metrics send management in the wrong direction.</p>
+<p><strong>Business Scenario.</strong> Security leadership wants a small set of reliable, defined metrics for AI risk and response.</p>
+<p><strong>Technical Scenario.</strong> Load known simulated data and check each dashboard metric against hand-calculated values.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> 30 days of simulated data for 200 users and 10 agents; 10 metrics: incidents by type, mean time to detect, mean time to contain, blocked actions, shadow AI trend, top risk users, open exceptions, agents without owners, telemetry coverage, open findings by age; calculation sheet prepared in advance.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Load the data.</li>
+<li>Compare each metric with the calculation sheet.</li>
+<li>Check metric definitions and whether they can be inspected.</li>
+<li>Check drill-down from each metric to the underlying events.</li>
+<li>Schedule a weekly report and check delivery and content.</li>
+<li>Check access control on dashboards and exports.</li>
+<li>Change a policy and check the metric reflects it.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Metrics that differ by time zone; users counted under several identities.</p>
+<p><strong>Expected Detection.</strong> At least 9 of 10 metrics match within 2 percent; every metric has a visible definition; drill-down works; scheduled report delivered; access controlled.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Report export and scheduling.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Metric comparison table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l17-026"></a></p>
+<h3 id="tc-l17-026-regulatory-incident-reporting-evidence-uae-and-gcc">TC-L17-026: Regulatory Incident Reporting Evidence (UAE and GCC)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Evidence</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Regulators expect timely, specific incident reports and evidence of data affected.</p>
+<p><strong>Business Scenario.</strong> Compliance wants the information needed for a report produced quickly.</p>
+<p><strong>Technical Scenario.</strong> Run a mock reportable incident and generate the information pack.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> 1 incident involving fabricated personal data of 200 individuals; reporting template with fields (nature, data affected, time, systems, containment, notification decision).</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Run the incident.</li>
+<li>Generate the pack.</li>
+<li>Compare with the template.</li>
+<li>Check data subject counts and categories.</li>
+<li>Time the process.</li>
+<li>Check the evidence trail for decisions.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Incident discovered after several weeks.</p>
+<p><strong>Expected Detection.</strong> Pack covers at least 90 percent of template fields; counts accurate; produced within 4 hours.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Report export.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Pack vs template.</p>
+<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l17-027"></a></p>
+<h3 id="tc-l17-027-24x7-monitoring-mdr-support-and-escalation-model">TC-L17-027: 24x7 Monitoring, MDR Support and Escalation Model</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Attestation</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> An alert at 2am is worthless if no one is accountable for it, and managed services often have narrower coverage than the sales material suggests.</p>
+<p><strong>Business Scenario.</strong> Procurement wants the support, monitoring and escalation model documented and tested before commitment.</p>
+<p><strong>Technical Scenario.</strong> Review the service description and run an out-of-hours escalation drill.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> Vendor service descriptions; named escalation contacts; mock critical alert; requirements checklist (hours, tiers, languages, locations, response and resolution times, data access by vendor staff, reporting).</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Request the model in writing.</li>
+<li>Map it to the checklist.</li>
+<li>Send a mock critical alert outside business hours through the official channel.</li>
+<li>Measure acknowledgement and first action.</li>
+<li>Check what customer data the vendor's analysts can see and under what approvals.</li>
+<li>Review sample service reports and review meeting arrangements.</li>
+<li>Check holiday and surge coverage.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Alert raised during a public holiday; vendor analyst located in a different country from the data.</p>
+<p><strong>Expected Detection.</strong> Acknowledgement and first action within stated times; escalation reached a named person; vendor data access controlled and logged; service reports provided.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Signed written statement from the vendor.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Documents attached.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = no statement; 3 = statement without supporting detail; 5 = statement with technical detail and an offer to demonstrate.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Drill timeline; checklist mapping.</p>
+<p><strong>Reviewer Notes.</strong> Attestation scores below demonstrated evidence. Request a demonstration where possible.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l17-028"></a></p>
+<h3 id="tc-l17-028-platform-health-and-silent-failure-detection">TC-L17-028: Platform Health and Silent Failure Detection</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D3</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (operational and monitoring control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> The worst failure is the one nobody notices: an agent that stopped reporting, ingestion that stalled, or a certificate that expired.</p>
+<p><strong>Business Scenario.</strong> Operations wants failures of the platform itself detected and routed.</p>
+<p><strong>Technical Scenario.</strong> Induce six failures in the lab deployment and measure detection and notification.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> 6 failures: endpoint agent offline, gateway node down, event ingestion stopped, classifier service degraded, certificate expiry, licence limit reached; heartbeat design documentation; alert routing to the lab chat and ticketing.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Document the heartbeat and health model.</li>
+<li>Induce each failure separately.</li>
+<li>Record the time to alert and the alert content.</li>
+<li>Check routing and escalation.</li>
+<li>Check whether protection continues, fails open or fails closed.</li>
+<li>Restore and check the recovery notice.</li>
+<li>Induce a partial failure (one of three gateway nodes slow) and check detection.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Failure that begins during a maintenance window; clock drift causing false health alarms.</p>
+<p><strong>Expected Detection.</strong> All 6 failures alerted within 10 minutes; alerts say what is affected and what protection state results; routing correct; partial failure detected or limitation documented.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Alert.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Alerts to monitoring and chat.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Failure table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l17-029"></a></p>
+<h3 id="tc-l17-029-purple-team-detection-validation-replay-of-earlier-attacks">TC-L17-029: Purple-Team Detection Validation: Replay of Earlier Attacks</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D3, D5, D6</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (operational and monitoring control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Detection claimed on paper may fail end to end.</p>
+<p><strong>Business Scenario.</strong> Security wants proof that earlier attack tests are visible to the SOC.</p>
+<p><strong>Technical Scenario.</strong> Replay a sample of attacks from earlier batches and follow each to an analyst's screen.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> 25 attacks sampled across L04, L07, L08, L09, L10 and L06.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Replay the 25 attacks.</li>
+<li>Check for platform events.</li>
+<li>Check SIEM alerts.</li>
+<li>Check triage and enrichment.</li>
+<li>Record end-to-end time.</li>
+<li>Identify attacks that never reach an analyst.</li>
+<li>Repeat after tuning.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Attacks in other languages.</p>
+<p><strong>Expected Detection.</strong> At least 20 of 25 reach an analyst with correct context; end-to-end time recorded; gaps with causes.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> SIEM and ticketing.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Replay table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l17-030"></a></p>
+<h3 id="tc-l17-030-soc-analyst-access-to-raw-prompts-masking-role-separation-and-unmask-audit">TC-L17-030: SOC Analyst Access to Raw Prompts: Masking, Role Separation and Unmask Audit</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L17 Monitoring, Detection &amp; Response</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D1, D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0057 LLM Data Leakage (secondary)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.10; GOVERN 1.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Analysts reading raw prompts may see personal or confidential content, and unrestricted access breaches employee privacy expectations and some employment or data protection rules.</p>
+<p><strong>Business Scenario.</strong> Privacy and HR want analyst access proportionate, justified and audited.</p>
+<p><strong>Technical Scenario.</strong> Test analyst roles, default masking and the unmask process on seeded events.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</p>
+<p><strong>Test Data.</strong> 3 roles (tier 1 analyst, investigator, privacy officer); 20 events containing fabricated personal and confidential content; 2 unmask requests with justification (one approved, one refused).</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>View all events as each role and note what is masked.</li>
+<li>Request unmask without justification and with justification.</li>
+<li>Check approval, time limit and automatic re-masking.</li>
+<li>Check the audit entry for every unmask including requester, approver, reason and fields.</li>
+<li>Export events as each role and check masking.</li>
+<li>Check search behaviour (can an analyst search for a name in masked content).</li>
+<li>Check alerts on unusual unmask volumes.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Break-glass unmask during an active incident; privacy officer reviewing their own team's access.</p>
+<p><strong>Expected Detection.</strong> Tier 1 sees masked content only; investigator unmasks only with approval; every unmask audited; exports respect masking; search cannot be used to reveal masked values; unusual unmask volume alerted.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Mask.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Audit export to SIEM.</p>
+<p><strong>Forensic Evidence.</strong> Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Role comparison; audit log extract.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="L16-supply-chain-and-third-party.html">&larr; L16 Supply Chain &amp; Third Party</a></nav>
+<footer class="site-footer">Original author: Nachiket Sathaye &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/10_Test_Case_Library/L17-monitoring-detection-and-response.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a></footer>
+</main>
+</div>
+<script>window.SITE_BASE = "../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

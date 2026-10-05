@@ -1,0 +1,2221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L09 Identity &amp; Access Mgmt | AI Security Wiki</title>
+<meta name="author" content="Nachiket Sathaye">
+<meta name="description" content="A vendor-neutral reference for AI security governance, risk management, engineering standards, vendor evaluation and assurance.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+  <a class="brand" href="../index.html">AI Security Wiki</a>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Search the wiki" aria-label="Search the wiki" autocomplete="off">
+    <ul id="search-results" hidden></ul>
+  </div>
+  <a class="repo-link" href="https://github.com/nachi065/AI-Security-Wiki" rel="noopener">GitHub</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="sidebar" aria-label="Wiki sections">
+<ul class="nav">
+<li><a href="../index.html">Home</a></li>
+<li><details><summary><a href="../01_Strategy_and_Market/index.html">Strategy and Market</a></summary><ul>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.html">AI Security Market and Technology Landscape — Summary</a></li>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape_Expanded.html">AI Security Market and Technology Landscape</a></li>
+</ul></details></li>
+<li><details><summary><a href="../02_Risk_Management/index.html">Risk Management</a></summary><ul>
+<li><a href="../02_Risk_Management/02A_AI_Risk_Methodology.html">AI Risk Methodology</a></li>
+<li><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a></li>
+<li><a href="../02_Risk_Management/02C_AI_Risk_Treatment_Plan.html">AI Risk Treatment Plan</a></li>
+<li><a href="../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a></li>
+<li><a href="../02_Risk_Management/02E_AI_Risk_Review_Template.html">AI Risk Review Template</a></li>
+</ul></details></li>
+<li><details><summary><a href="../03_Control_Library/index.html">Control Library</a></summary><ul>
+<li><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></li>
+<li><a href="../03_Control_Library/04_Existing_Security_Control_Baseline.html">Existing Security Control Baseline</a></li>
+<li><a href="../03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.html">Microsoft Security Overlap and AI Gaps</a></li>
+</ul></details></li>
+<li><details><summary><a href="../04_Domain_Standards/index.html">Domain Standards</a></summary><ul>
+<li><a href="../04_Domain_Standards/06_Browser_AI_Security_Standard.html">Browser AI Security Standard</a></li>
+<li><a href="../04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.html">IDE AI Coding Assistant Security Standard</a></li>
+<li><a href="../04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a></li>
+<li><a href="../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
+<li><a href="../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
+</ul></details></li>
+<li><details><summary><a href="../05_Vendor_Evaluation/index.html">Vendor Evaluation</a></summary><ul>
+<li><a href="../05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
+<li><a href="../05_Vendor_Evaluation/12A_Vendor_Profile_Prompt_Security_SentinelOne.html">Vendor Profile — Prompt Security / SentinelOne</a></li>
+<li><a href="../05_Vendor_Evaluation/12B_Vendor_Profile_Palo_Alto_Prisma_AIRS.html">Vendor Profile — Palo Alto Prisma AIRS</a></li>
+<li><a href="../05_Vendor_Evaluation/12C_Vendor_Profile_HiddenLayer.html">Vendor Profile — HiddenLayer</a></li>
+<li><a href="../05_Vendor_Evaluation/12D_Vendor_Profile_Lasso_Security.html">Vendor Profile — Lasso Security</a></li>
+<li><a href="../05_Vendor_Evaluation/12E_Vendor_Profile_Cyberhaven.html">Vendor Profile — Cyberhaven</a></li>
+<li><a href="../05_Vendor_Evaluation/12F_Vendor_Profile_Nightfall_AI.html">Vendor Profile — Nightfall AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12G_Vendor_Profile_Enkrypt_AI.html">Vendor Profile — Enkrypt AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12H_Vendor_Profile_Sovereign_AI_Security_Labs.html">Vendor Profile — Sovereign AI Security Labs</a></li>
+</ul></details></li>
+<li><details><summary><a href="../06_Testing_and_Assurance/index.html">Testing and Assurance</a></summary><ul>
+<li><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html">AI Security PoC Test Case Library</a></li>
+<li><a href="../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a></li>
+<li><a href="../06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.html">AI Red Team Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../07_Role_Based_Playbooks/index.html">Role-Based Playbooks</a></summary><ul>
+<li><a href="../07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.html">AI Product Developer Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15B_AI_Security_Researcher_Playbook.html">AI Security Researcher Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15D_Security_Engineering_Playbook.html">Security Engineering Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15E_Vendor_Evaluation_and_Audit_Playbook.html">Vendor Evaluation and Audit Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../08_Governance/index.html">Governance</a></summary><ul>
+<li><a href="../08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></li>
+<li><a href="../08_Governance/17_AI_Policy_Standards_and_Acceptable_Use.html">AI Policy, Standards and Acceptable Use</a></li>
+</ul></details></li>
+<li><details><summary><a href="../09_Reference/index.html">Reference</a></summary><ul>
+<li><a href="../09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
+</ul></details></li>
+<li><details open><summary><a href="index.html">Test Case Library</a></summary><ul>
+<li><a href="00-reference-index.html">Reference Index</a></li>
+<li><a href="framework-adoption-guide.html">Framework Adoption Guide</a></li>
+<li><a href="appendix-d-lab-prerequisites.html">Appendix D: Lab Prerequisites</a></li>
+<li><a href="L01-business-and-use-cases.html">L01 Business &amp; Use Cases</a></li>
+<li><a href="L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
+<li><a href="L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>
+<li><a href="L04-human-interaction-layer.html">L04 Human Interaction Layer</a></li>
+<li><a href="L05-ai-applications.html">L05 AI Applications</a></li>
+<li><a href="L06-agent-orchestration-layer.html">L06 Agent Orchestration Layer</a></li>
+<li><a href="L07-prompt-and-context-layer.html">L07 Prompt &amp; Context Layer</a></li>
+<li><a href="L08-ai-gateway-and-security-controls.html">L08 AI Gateway &amp; Security Controls</a></li>
+<li><a class="current" href="L09-identity-and-access-mgmt.html">L09 Identity &amp; Access Mgmt</a></li>
+<li><a href="L10-data-layer.html">L10 Data Layer</a></li>
+<li><a href="L11-knowledge-and-retrieval-layer.html">L11 Knowledge &amp; Retrieval Layer</a></li>
+<li><a href="L12-model-layer.html">L12 Model Layer</a></li>
+<li><a href="L13-training-and-fine-tuning-layer.html">L13 Training &amp; Fine-Tuning Layer</a></li>
+<li><a href="L14-mlops-llmops-layer.html">L14 MLOps / LLMOps Layer</a></li>
+<li><a href="L15-infrastructure-layer.html">L15 Infrastructure Layer</a></li>
+<li><a href="L16-supply-chain-and-third-party.html">L16 Supply Chain &amp; Third Party</a></li>
+<li><a href="L17-monitoring-detection-and-response.html">L17 Monitoring, Detection &amp; Response</a></li>
+</ul></details></li>
+</ul>
+</nav>
+<main>
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Test Case Library</a> / <span>L09 Identity &amp; Access Mgmt</span></p>
+<article>
+<p><a id="top"></a></p>
+<h1 id="l09-identity-access-mgmt">L09 Identity &amp; Access Mgmt</h1>
+<p><strong>Primary test focus:</strong> user and agent (non-human) identity, scoped tokens, RBAC</p>
+<p><strong>Cases:</strong> 25 (TC-L09-001 to TC-L09-025)  |  <strong>Batch:</strong> 3</p>
+<blockquote>
+<p><strong>Safety boundary.</strong> Agent and MCP cases use a lab agent framework, benign mock tools and mock MCP servers that write only to a lab sink. Where an attack is simulated, success is first measured with the platform disabled. Never connect lab agents to production systems or real credentials.</p>
+<p><strong>Verify before use.</strong> MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the <a href="00-reference-index.html">Reference Index</a> for field definitions and applicability codes.</p>
+</blockquote>
+<h2 id="cases-in-this-layer">Cases in this layer</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Title</th>
+<th>Severity</th>
+<th>Method</th>
+<th>Domain(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#tc-l09-001">TC-L09-001</a></td>
+<td>Non-Human Identity Inventory for AI Workloads</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D5</td>
+</tr>
+<tr>
+<td><a href="#tc-l09-002">TC-L09-002</a></td>
+<td>Unique Identity Per Agent (No Shared Credentials)</td>
+<td>High</td>
+<td>Technical</td>
+<td>D5</td>
+</tr>
+<tr>
+<td><a href="#tc-l09-003">TC-L09-003</a></td>
+<td>Short-Lived Scoped Credentials for Agents</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D5</td>
+</tr>
+<tr>
+<td><a href="#tc-l09-004">TC-L09-004</a></td>
+<td>Token Scope Enforcement Per Tool and Resource</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D5</td>
+</tr>
+<tr>
+<td><a href="#tc-l09-005">TC-L09-005</a></td>
+<td>OAuth Consent and Grant Control for AI Applications</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D1, D5</td>
+</tr>
+<tr>
+<td><a href="#tc-l09-006">TC-L09-006</a></td>
+<td>Delegated User Identity Propagation (On-Behalf-Of)</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D5</td>
+</tr>
+<tr>
+<td><a href="#tc-l09-007">TC-L09-007</a></td>
+<td>Privilege Escalation via Agent</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D5</td>
+</tr>
+<tr>
+<td><a href="#tc-l09-008">TC-L09-008</a></td>
+<td>Role-Based Access to AI Applications and Models</td>
+<td>High</td>
+<td>Technical</td>
+<td>D1, D3</td>
+</tr>
+<tr>
+<td><a href="#tc-l09-009">TC-L09-009</a></td>
+<td>Attribute and Context-Based Access Conditions</td>
+<td>High</td>
+<td>Technical</td>
+<td>D1, D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l09-010">TC-L09-010</a></td>
+<td>SSO and SCIM Integration for the AI Platform</td>
+<td>High</td>
+<td>Technical</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l09-011">TC-L09-011</a></td>
+<td>Leaver and Mover Access Removal for AI Access</td>
+<td>High</td>
+<td>Technical</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l09-012">TC-L09-012</a></td>
+<td>Step-Up Authentication for Sensitive AI Actions</td>
+<td>High</td>
+<td>Technical</td>
+<td>D5</td>
+</tr>
+<tr>
+<td><a href="#tc-l09-013">TC-L09-013</a></td>
+<td>Privileged Access to the AI Platform (Just-in-Time and Separation)</td>
+<td>High</td>
+<td>Technical</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l09-014">TC-L09-014</a></td>
+<td>Model API Key Lifecycle: Issue, Rotate, Expire, Revoke</td>
+<td>High</td>
+<td>Technical</td>
+<td>D4</td>
+</tr>
+<tr>
+<td><a href="#tc-l09-015">TC-L09-015</a></td>
+<td>Credentials Passing Through Prompts and Tool Arguments</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D5, D6</td>
+</tr>
+<tr>
+<td><a href="#tc-l09-016">TC-L09-016</a></td>
+<td>Vault Integration: Agents Retrieve Secrets Without Exposure</td>
+<td>High</td>
+<td>Technical</td>
+<td>D5</td>
+</tr>
+<tr>
+<td><a href="#tc-l09-017">TC-L09-017</a></td>
+<td>Anomalous Use of Agent and Service Identities</td>
+<td>High</td>
+<td>Technical</td>
+<td>D5</td>
+</tr>
+<tr>
+<td><a href="#tc-l09-018">TC-L09-018</a></td>
+<td>Impersonation Resistance: Agent or User Claims Another Identity</td>
+<td>High</td>
+<td>Technical</td>
+<td>D5</td>
+</tr>
+<tr>
+<td><a href="#tc-l09-019">TC-L09-019</a></td>
+<td>Environment and Tenant Identity Boundaries (Prod vs Non-Prod)</td>
+<td>High</td>
+<td>Technical</td>
+<td>D3, D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l09-020">TC-L09-020</a></td>
+<td>Session Management for AI Chat Sessions</td>
+<td>Medium</td>
+<td>Technical</td>
+<td>D1</td>
+</tr>
+<tr>
+<td><a href="#tc-l09-021">TC-L09-021</a></td>
+<td>Access Reviews and Recertification for AI Access</td>
+<td>Medium</td>
+<td>Evidence</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l09-022">TC-L09-022</a></td>
+<td>Effective Permissions Visibility for Users and Agents</td>
+<td>High</td>
+<td>Evidence</td>
+<td>D5</td>
+</tr>
+<tr>
+<td><a href="#tc-l09-023">TC-L09-023</a></td>
+<td>Emergency (Break-Glass) Access Controls</td>
+<td>Medium</td>
+<td>Technical</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l09-024">TC-L09-024</a></td>
+<td>Mutual Authentication Between AI Components</td>
+<td>High</td>
+<td>Technical</td>
+<td>D3, D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l09-025">TC-L09-025</a></td>
+<td>Identity Audit Trail: Who, What and On Whose Behalf</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D5, D7</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="test-cases">Test cases</h2>
+<p><a id="tc-l09-001"></a></p>
+<h3 id="tc-l09-001-non-human-identity-inventory-for-ai-workloads">TC-L09-001: Non-Human Identity Inventory for AI Workloads</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L09 Identity &amp; Access Mgmt</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D5</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (visibility control); Reconnaissance/Discovery context only</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM03:2025 Supply Chain (unmanaged AI components)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MAP 1.1; GOVERN 6.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Service accounts, API keys, OAuth apps and workload identities used by AI systems outnumber humans and are rarely inventoried.</p>
+<p><strong>Business Scenario.</strong> Identity governance wants all non-human identities used by AI listed with owner, privileges and last use.</p>
+<p><strong>Technical Scenario.</strong> Create a known set of non-human identities and compare the platform's inventory to ground truth.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Test Data.</strong> 20 non-human identities: 6 service accounts, 5 model API keys, 4 OAuth app registrations, 3 workload identities (cloud roles), 2 agent tokens; mixed privilege levels and ages.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Record ground truth: type, owner, privileges, creation date, last use.</li>
+<li>Connect the platform to the lab IdP, cloud IAM and secret store.</li>
+<li>Run discovery.</li>
+<li>Compare inventory with ground truth.</li>
+<li>Identify identities with no owner, no use in 90 days, or excessive privileges.</li>
+<li>Add two new identities and measure detection delay.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Identities created by automation; identities shared across environments.</p>
+<p><strong>Expected Detection.</strong> At least 18 of 20 identities found; attributes correct for at least 80 percent; ownerless, stale and over-privileged identities flagged correctly; new identities detected within the stated interval.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A (discovery).</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Identity finding or access decision visible in the identity or access dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Inventory exportable to identity governance tools.</p>
+<p><strong>Forensic Evidence.</strong> Identity (user, agent, service), token or key identifier, scope, resource, decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Inventory vs ground truth; flagged list.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l09-002"></a></p>
+<h3 id="tc-l09-002-unique-identity-per-agent-no-shared-credentials">TC-L09-002: Unique Identity Per Agent (No Shared Credentials)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L09 Identity &amp; Access Mgmt</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D5</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P, G</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0012 Valid Accounts</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM06:2025 Excessive Agency</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Agents sharing one credential cannot be told apart in logs or revoked individually.</p>
+<p><strong>Business Scenario.</strong> Security wants each agent to have its own identity.</p>
+<p><strong>Technical Scenario.</strong> Review agents and their credentials and test whether actions can be attributed individually.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Test Data.</strong> 6 agents: 3 with unique identities, 3 sharing a single service account; actions on mock systems.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Run actions from all agents.</li>
+<li>Check platform identification of shared credentials.</li>
+<li>Check attribution of actions to each agent.</li>
+<li>Revoke one shared credential and record impact on all three agents.</li>
+<li>Review recommendations.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Shared credential used across two environments.</p>
+<p><strong>Expected Detection.</strong> Shared credential use flagged; individual attribution possible for unique identities; shared credential impact documented.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Alert or block shared use.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Identity finding or access decision visible in the identity or access dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Findings to ticketing.</p>
+<p><strong>Forensic Evidence.</strong> Identity (user, agent, service), token or key identifier, scope, resource, decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Shared-credential report.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l09-003"></a></p>
+<h3 id="tc-l09-003-short-lived-scoped-credentials-for-agents">TC-L09-003: Short-Lived Scoped Credentials for Agents</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L09 Identity &amp; Access Mgmt</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D5</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P, G</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0012 Valid Accounts</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM06:2025 Excessive Agency</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Long-lived broad tokens held by agents turn any compromise into long-term access.</p>
+<p><strong>Business Scenario.</strong> Security wants agents to receive short-lived credentials limited to the task.</p>
+<p><strong>Technical Scenario.</strong> Review the credential lifetime and scope issued to agents and test expiry.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Test Data.</strong> 3 agents using static keys, 3 using short-lived tokens (15 minutes); mock APIs validating token scope and lifetime.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Inspect credential type and lifetime for each agent.</li>
+<li>Use an expired token.</li>
+<li>Use a token with the wrong audience.</li>
+<li>Use a token for a scope beyond the task.</li>
+<li>Check flagging of static keys older than a threshold.</li>
+<li>Check issuance logging.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Token refresh during long task; clock skew.</p>
+<p><strong>Expected Detection.</strong> Expired, wrong-audience and over-scope tokens rejected; static long-lived keys flagged; issuance logged.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Reject.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Identity finding or access decision visible in the identity or access dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Token events to SIEM.</p>
+<p><strong>Forensic Evidence.</strong> Identity (user, agent, service), token or key identifier, scope, resource, decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Token test results.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l09-004"></a></p>
+<h3 id="tc-l09-004-token-scope-enforcement-per-tool-and-resource">TC-L09-004: Token Scope Enforcement Per Tool and Resource</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L09 Identity &amp; Access Mgmt</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D5</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: G, A</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0012 Valid Accounts</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM06:2025 Excessive Agency</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Tokens broader than needed allow an agent or attacker to reach unrelated resources.</p>
+<p><strong>Business Scenario.</strong> Security wants scope violations blocked and reported.</p>
+<p><strong>Technical Scenario.</strong> Issue tokens with defined scopes and attempt calls outside them.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Test Data.</strong> Token scopes: read:tickets, write:tickets; mock resources: tickets, payroll, files; 30 calls, 10 out of scope.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Issue tokens.</li>
+<li>Run in-scope calls.</li>
+<li>Run out-of-scope calls.</li>
+<li>Run calls via injection payloads that request wider access.</li>
+<li>Check events for scope violation.</li>
+<li>Request scope elevation and check approval.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Token for a resource whose name resembles an allowed one; wildcard scopes.</p>
+<p><strong>Expected Detection.</strong> All 10 out-of-scope calls rejected; elevation requires approval; violations logged with token ID.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Reject.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Identity finding or access decision visible in the identity or access dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Violation events to SIEM.</p>
+<p><strong>Forensic Evidence.</strong> Identity (user, agent, service), token or key identifier, scope, resource, decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Call table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l09-005"></a></p>
+<h3 id="tc-l09-005-oauth-consent-and-grant-control-for-ai-applications">TC-L09-005: OAuth Consent and Grant Control for AI Applications</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L09 Identity &amp; Access Mgmt</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D1, D5</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>TC-A-004</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0012 Valid Accounts</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM06:2025 Excessive Agency</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Users grant AI apps broad access to mail, files and calendars with a single click.</p>
+<p><strong>Business Scenario.</strong> Security wants risky grants visible, controlled and revocable.</p>
+<p><strong>Technical Scenario.</strong> Grant OAuth permissions to test AI apps with different scopes and review controls.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Test Data.</strong> 5 test apps requesting scopes from read-only profile to full mailbox and file access; 3 test users.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Users grant consent to each app.</li>
+<li>Check discovery of grants.</li>
+<li>Check risk scoring by scope.</li>
+<li>Revoke a risky grant from the platform.</li>
+<li>Check consent policy enforcement (block high-risk scopes).</li>
+<li>Review publisher verification information.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Admin consent versus user consent; grant by a departed user.</p>
+<p><strong>Expected Detection.</strong> All grants discovered; high-risk scopes scored accordingly; revocation effective; policy blocks new risky grants.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Block or revoke.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Identity finding or access decision visible in the identity or access dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Grant events to SIEM.</p>
+<p><strong>Forensic Evidence.</strong> Identity (user, agent, service), token or key identifier, scope, resource, decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Grant list; revocation test.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l09-006"></a></p>
+<h3 id="tc-l09-006-delegated-user-identity-propagation-on-behalf-of">TC-L09-006: Delegated User Identity Propagation (On-Behalf-Of)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L09 Identity &amp; Access Mgmt</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D5</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: G, A</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0012 Valid Accounts</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM06:2025 Excessive Agency</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> If tools see only the agent's identity, per-user permissions and audit trails disappear.</p>
+<p><strong>Business Scenario.</strong> Architecture wants the end user's identity carried to tools and data sources.</p>
+<p><strong>Technical Scenario.</strong> Run tasks as two users and check which identity downstream systems see.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Test Data.</strong> 2 users with different entitlements; agent; mock downstream APIs recording received identity and token.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Run the same task as each user.</li>
+<li>Check the identity at the downstream API.</li>
+<li>Check entitlement enforcement.</li>
+<li>Attempt to substitute another user's identity in a request.</li>
+<li>Check logs for user, agent and tool.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Background tasks with no active user; service-to-service chains.</p>
+<p><strong>Expected Detection.</strong> Downstream sees user context or delegated token in all calls; substitution rejected; logs link user, agent and tool.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Reject substitution.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Identity finding or access decision visible in the identity or access dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Identity fields in logs.</p>
+<p><strong>Forensic Evidence.</strong> Identity (user, agent, service), token or key identifier, scope, resource, decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Downstream records.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l09-007"></a></p>
+<h3 id="tc-l09-007-privilege-escalation-via-agent">TC-L09-007: Privilege Escalation via Agent</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L09 Identity &amp; Access Mgmt</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D5</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: G, A, P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0012 Valid Accounts</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM06:2025 Excessive Agency</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Agents can accumulate permissions through tool chains or role changes beyond what any one user holds.</p>
+<p><strong>Business Scenario.</strong> Security wants escalation paths found and blocked.</p>
+<p><strong>Technical Scenario.</strong> Create agents with indirect access to higher privileges and test whether they can be used.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Test Data.</strong> 3 agents; paths: tool that can edit roles, tool that reads credentials, tool that creates other agents; mock IAM.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Map permissions and paths in the platform.</li>
+<li>Attempt each escalation.</li>
+<li>Record detection and blocking.</li>
+<li>Review reported escalation paths.</li>
+<li>Remediate one and retest.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Escalation across tenants.</p>
+<p><strong>Expected Detection.</strong> All 3 paths identified; attempts blocked; remediation verified.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Block.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Identity finding or access decision visible in the identity or access dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Findings to ticketing.</p>
+<p><strong>Forensic Evidence.</strong> Identity (user, agent, service), token or key identifier, scope, resource, decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Attempt log.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l09-008"></a></p>
+<h3 id="tc-l09-008-role-based-access-to-ai-applications-and-models">TC-L09-008: Role-Based Access to AI Applications and Models</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L09 Identity &amp; Access Mgmt</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D1, D3</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: G, E</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0012 Valid Accounts</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM06:2025 Excessive Agency</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Not every employee should reach every AI tool or model, especially those with sensitive data connections.</p>
+<p><strong>Business Scenario.</strong> Governance wants AI access tied to roles.</p>
+<p><strong>Technical Scenario.</strong> Define roles and test access to applications and models.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Test Data.</strong> 4 roles (general staff, finance, engineering, contractors); 5 AI apps; 2 models; matrix of 40 combinations.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Define the matrix.</li>
+<li>Test access for each role.</li>
+<li>Compare.</li>
+<li>Change a role mapping and measure effect time.</li>
+<li>Check how roles are sourced (IdP groups).</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> User with several roles; role conflicts.</p>
+<p><strong>Expected Detection.</strong> All 40 outcomes match; change effective within 15 minutes; roles from IdP groups.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Allow or deny.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Identity finding or access decision visible in the identity or access dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Role in logs.</p>
+<p><strong>Forensic Evidence.</strong> Identity (user, agent, service), token or key identifier, scope, resource, decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Matrix.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l09-009"></a></p>
+<h3 id="tc-l09-009-attribute-and-context-based-access-conditions">TC-L09-009: Attribute and Context-Based Access Conditions</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L09 Identity &amp; Access Mgmt</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D1, D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: G, E</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0012 Valid Accounts</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM06:2025 Excessive Agency</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Static roles cannot account for device health, location or risk level at the time of access.</p>
+<p><strong>Business Scenario.</strong> Security wants access to AI tools adjusted for context.</p>
+<p><strong>Technical Scenario.</strong> Apply conditions and test combinations.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Test Data.</strong> Conditions: managed device, compliant posture, corporate or approved country location, risk score below threshold; 16 combinations.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Define conditions.</li>
+<li>Test each combination.</li>
+<li>Compare.</li>
+<li>Change posture and check re-evaluation during a session.</li>
+<li>Check fallback if a signal is unavailable.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Location spoofing via VPN; stale posture.</p>
+<p><strong>Expected Detection.</strong> All outcomes match; session re-evaluated within the stated interval; missing signals handled by documented default.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Allow, step-up or deny.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Identity finding or access decision visible in the identity or access dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Condition values in logs.</p>
+<p><strong>Forensic Evidence.</strong> Identity (user, agent, service), token or key identifier, scope, resource, decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Combination table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l09-010"></a></p>
+<h3 id="tc-l09-010-sso-and-scim-integration-for-the-ai-platform">TC-L09-010: SSO and SCIM Integration for the AI Platform</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L09 Identity &amp; Access Mgmt</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0012 Valid Accounts</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM06:2025 Excessive Agency</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Local accounts on AI platforms bypass corporate identity controls.</p>
+<p><strong>Business Scenario.</strong> Identity team wants single sign-on and automated provisioning.</p>
+<p><strong>Technical Scenario.</strong> Integrate the platform with the lab IdP and test provisioning.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Test Data.</strong> Lab IdP supporting SAML or OIDC and SCIM; 10 test users; 3 groups.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Configure SSO.</li>
+<li>Verify local login disabled or restricted.</li>
+<li>Provision users and groups through SCIM.</li>
+<li>Change group membership and observe sync.</li>
+<li>Check admin role mapping.</li>
+<li>Check break-glass local account protection.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> IdP outage; duplicate user identifiers.</p>
+<p><strong>Expected Detection.</strong> SSO required for all users except documented break-glass; SCIM sync within 15 minutes; admin roles mapped.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Enforce SSO.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Identity finding or access decision visible in the identity or access dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Sync logs.</p>
+<p><strong>Forensic Evidence.</strong> Identity (user, agent, service), token or key identifier, scope, resource, decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Config screenshots; sync test.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l09-011"></a></p>
+<h3 id="tc-l09-011-leaver-and-mover-access-removal-for-ai-access">TC-L09-011: Leaver and Mover Access Removal for AI Access</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L09 Identity &amp; Access Mgmt</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0012 Valid Accounts</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM06:2025 Excessive Agency</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Former staff or staff in new roles retain AI access, including to data they should no longer reach.</p>
+<p><strong>Business Scenario.</strong> Security wants AI access removed or adjusted promptly after role change.</p>
+<p><strong>Technical Scenario.</strong> Simulate leaver and mover events.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Test Data.</strong> 3 leavers, 3 movers; AI apps, agents and API keys owned by them.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Trigger events in the IdP.</li>
+<li>Measure time to revoke platform access.</li>
+<li>Check agents and keys owned by leavers.</li>
+<li>Check movers' access to prior-role data.</li>
+<li>Check reports of orphaned artefacts.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Leaver with scheduled agents; contractor expiry.</p>
+<p><strong>Expected Detection.</strong> Leaver access removed within 1 hour; owned agents and keys flagged or disabled; mover access adjusted within the stated interval.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Revoke.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Identity finding or access decision visible in the identity or access dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Events logged.</p>
+<p><strong>Forensic Evidence.</strong> Identity (user, agent, service), token or key identifier, scope, resource, decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Timing table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l09-012"></a></p>
+<h3 id="tc-l09-012-step-up-authentication-for-sensitive-ai-actions">TC-L09-012: Step-Up Authentication for Sensitive AI Actions</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L09 Identity &amp; Access Mgmt</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D5</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: G, A</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0012 Valid Accounts</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM06:2025 Excessive Agency</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> A stolen session should not be enough to approve a payment or export a dataset via an agent.</p>
+<p><strong>Business Scenario.</strong> Security wants stronger authentication for risky actions.</p>
+<p><strong>Technical Scenario.</strong> Configure step-up for selected actions and test sessions with and without recent MFA.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Test Data.</strong> Risky actions: export dataset, change agent permissions, approve external send; 2 users.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Configure step-up.</li>
+<li>Perform actions in a fresh session with MFA.</li>
+<li>Perform after the step-up window expires.</li>
+<li>Perform from a session without MFA.</li>
+<li>Check fallback and logging.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> MFA fatigue prompts; session hijack simulation.</p>
+<p><strong>Expected Detection.</strong> Actions blocked until step-up completed; window honoured; events logged.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Step-up.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Identity finding or access decision visible in the identity or access dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> MFA events.</p>
+<p><strong>Forensic Evidence.</strong> Identity (user, agent, service), token or key identifier, scope, resource, decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Action results.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l09-013"></a></p>
+<h3 id="tc-l09-013-privileged-access-to-the-ai-platform-just-in-time-and-separation">TC-L09-013: Privileged Access to the AI Platform (Just-in-Time and Separation)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L09 Identity &amp; Access Mgmt</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0012 Valid Accounts</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM06:2025 Excessive Agency</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Standing administrative access to AI controls is a high-value target.</p>
+<p><strong>Business Scenario.</strong> Security wants privileged access time-bound, approved and recorded.</p>
+<p><strong>Technical Scenario.</strong> Test administrator access workflows.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Test Data.</strong> 3 admin roles; JIT elevation tool or built-in feature; 2 approvers.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Request elevation.</li>
+<li>Approve.</li>
+<li>Perform privileged action.</li>
+<li>Let elevation expire.</li>
+<li>Attempt same action.</li>
+<li>Check session recording or detailed logs.</li>
+<li>Check separation of policy admin and audit admin.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Emergency elevation; admin editing own privileges.</p>
+<p><strong>Expected Detection.</strong> Elevation time-limited and approved; expired access denied; actions recorded; duties separated.</p>
+<p><strong>Expected Prevention / Control Action.</strong> JIT.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Identity finding or access decision visible in the identity or access dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Audit export.</p>
+<p><strong>Forensic Evidence.</strong> Identity (user, agent, service), token or key identifier, scope, resource, decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Elevation records.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l09-014"></a></p>
+<h3 id="tc-l09-014-model-api-key-lifecycle-issue-rotate-expire-revoke">TC-L09-014: Model API Key Lifecycle: Issue, Rotate, Expire, Revoke</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L09 Identity &amp; Access Mgmt</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D4</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: G, P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0012 Valid Accounts</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM06:2025 Excessive Agency</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Unmanaged model API keys are a leading cause of leaked access and unexpected bills.</p>
+<p><strong>Business Scenario.</strong> Platform owners want enforced rotation and instant revocation.</p>
+<p><strong>Technical Scenario.</strong> Create keys with different policies and test lifecycle controls.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Test Data.</strong> 10 fabricated keys in a mock provider; policies: 30-day expiry, rotation reminder, usage cap.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Issue keys under policy.</li>
+<li>Fast-forward or backdate to expiry.</li>
+<li>Check expiry enforcement and notice.</li>
+<li>Rotate one key under load.</li>
+<li>Revoke one key and test immediate effect.</li>
+<li>Review lifecycle audit.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Key used from a new IP after rotation; key embedded in many apps.</p>
+<p><strong>Expected Detection.</strong> Expired keys rejected; rotation causes no failed calls beyond the stated window; revocation immediate; audit complete.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Reject expired keys.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Identity finding or access decision visible in the identity or access dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Lifecycle events.</p>
+<p><strong>Forensic Evidence.</strong> Identity (user, agent, service), token or key identifier, scope, resource, decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Lifecycle log.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l09-015"></a></p>
+<h3 id="tc-l09-015-credentials-passing-through-prompts-and-tool-arguments">TC-L09-015: Credentials Passing Through Prompts and Tool Arguments</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L09 Identity &amp; Access Mgmt</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D5, D6</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: G, A</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0055 Unsecured Credentials</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.10; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Credentials typed into chats or passed as tool arguments end up in logs, provider systems and model context.</p>
+<p><strong>Business Scenario.</strong> Security wants credentials detected and removed from prompts, arguments and logs.</p>
+<p><strong>Technical Scenario.</strong> Send fabricated credentials through prompts and tool calls.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Test Data.</strong> 12 fabricated secrets (passwords, tokens, keys, connection strings) in prompts, tool arguments and tool results.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Send each through the three paths.</li>
+<li>Check detection and masking.</li>
+<li>Inspect provider-side capture and logs for clear text.</li>
+<li>Test guidance to the user (use the vault).</li>
+<li>Check false positives on 12 ordinary strings.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Secret inside a base64 JSON blob; secret split across arguments.</p>
+<p><strong>Expected Detection.</strong> At least 11 of 12 detected on each path; no clear-text secret in provider capture or logs; false positives at most 1 of 12.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Mask or block.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Identity finding or access decision visible in the identity or access dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Findings to secret management.</p>
+<p><strong>Forensic Evidence.</strong> Identity (user, agent, service), token or key identifier, scope, resource, decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Capture inspection.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l09-016"></a></p>
+<h3 id="tc-l09-016-vault-integration-agents-retrieve-secrets-without-exposure">TC-L09-016: Vault Integration: Agents Retrieve Secrets Without Exposure</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L09 Identity &amp; Access Mgmt</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D5</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: A, G, P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0055 Unsecured Credentials</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.10; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Agents holding secrets in configuration or context can leak them through output or injection.</p>
+<p><strong>Business Scenario.</strong> Engineering wants secrets fetched just in time and never placed in model context.</p>
+<p><strong>Technical Scenario.</strong> Run agents that need secrets to call tools and check where secrets appear.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Test Data.</strong> Lab vault; 3 agents; 4 secrets; extraction attempts using prompt injection.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Configure vault integration.</li>
+<li>Run tasks.</li>
+<li>Inspect model context and logs for secret values.</li>
+<li>Attempt extraction via injection.</li>
+<li>Rotate a secret in the vault and verify the agent picks it up.</li>
+<li>Check vault access logs.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Agent caching secrets; secret in tool error message.</p>
+<p><strong>Expected Detection.</strong> Secret values never in model context or logs; extraction fails; rotation transparent.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Isolation.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Identity finding or access decision visible in the identity or access dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Vault audit to SIEM.</p>
+<p><strong>Forensic Evidence.</strong> Identity (user, agent, service), token or key identifier, scope, resource, decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Context capture; vault logs.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l09-017"></a></p>
+<h3 id="tc-l09-017-anomalous-use-of-agent-and-service-identities">TC-L09-017: Anomalous Use of Agent and Service Identities</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L09 Identity &amp; Access Mgmt</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D5</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P, G</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (operational and monitoring control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Stolen or misused agent credentials look legitimate unless behaviour is compared with history.</p>
+<p><strong>Business Scenario.</strong> SOC wants misuse detected quickly.</p>
+<p><strong>Technical Scenario.</strong> Replay normal activity and then misuse an agent identity.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Test Data.</strong> 3 agent identities with 14 days of simulated normal use; misuse: new source location, new resource, off-hours burst, token used from two places at once, unusual API method.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Load baseline.</li>
+<li>Run each misuse.</li>
+<li>Record alert and time.</li>
+<li>Check alert content.</li>
+<li>Check false positives over baseline.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Gradual privilege creep; legitimate maintenance window.</p>
+<p><strong>Expected Detection.</strong> At least 4 of 5 misuse events alerted within 15 minutes; false positives under 5 per identity per week.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Alert or revoke.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Identity finding or access decision visible in the identity or access dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Alerts to SIEM.</p>
+<p><strong>Forensic Evidence.</strong> Identity (user, agent, service), token or key identifier, scope, resource, decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Alert table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l09-018"></a></p>
+<h3 id="tc-l09-018-impersonation-resistance-agent-or-user-claims-another-identity">TC-L09-018: Impersonation Resistance: Agent or User Claims Another Identity</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L09 Identity &amp; Access Mgmt</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D5</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: G, A</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0012 Valid Accounts</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM06:2025 Excessive Agency</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Identity claims made in prompts or metadata may be accepted at face value by weak systems.</p>
+<p><strong>Business Scenario.</strong> Security wants identity established by credentials, not by claims in text.</p>
+<p><strong>Technical Scenario.</strong> Attempt to impersonate another user or agent through prompts, headers and metadata.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Test Data.</strong> 10 attempts: prompt claim of being an administrator, spoofed header, forged user field in an API call, reuse of another agent's name, forged delegation context.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Baseline attempts without the platform.</li>
+<li>Enable the platform.</li>
+<li>Repeat.</li>
+<li>Record outcomes.</li>
+<li>Check identity assertion source in logs.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Valid token with mismatched claimed identity.</p>
+<p><strong>Expected Detection.</strong> All 10 attempts rejected; identity taken from authenticated source; attempts logged.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Reject.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Identity finding or access decision visible in the identity or access dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Events to SIEM.</p>
+<p><strong>Forensic Evidence.</strong> Identity (user, agent, service), token or key identifier, scope, resource, decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Attempt table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l09-019"></a></p>
+<h3 id="tc-l09-019-environment-and-tenant-identity-boundaries-prod-vs-non-prod">TC-L09-019: Environment and Tenant Identity Boundaries (Prod vs Non-Prod)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L09 Identity &amp; Access Mgmt</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D3, D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P, G</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0012 Valid Accounts</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM06:2025 Excessive Agency</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Tokens and agents from test environments reaching production systems cause data exposure.</p>
+<p><strong>Business Scenario.</strong> Security wants strict separation between environments.</p>
+<p><strong>Technical Scenario.</strong> Use test environment identities against production-like mock systems.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Test Data.</strong> Mock prod and non-prod environments; tokens from each; agents deployed in each.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Use non-prod tokens against prod.</li>
+<li>Use prod tokens in non-prod.</li>
+<li>Deploy an agent in non-prod with prod credentials.</li>
+<li>Record detection and blocking.</li>
+<li>Review cross-environment findings.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Shared secrets between environments.</p>
+<p><strong>Expected Detection.</strong> All cross-environment uses blocked or alerted; findings include remediation.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Block.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Identity finding or access decision visible in the identity or access dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Findings to ticketing.</p>
+<p><strong>Forensic Evidence.</strong> Identity (user, agent, service), token or key identifier, scope, resource, decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Attempt log.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l09-020"></a></p>
+<h3 id="tc-l09-020-session-management-for-ai-chat-sessions">TC-L09-020: Session Management for AI Chat Sessions</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L09 Identity &amp; Access Mgmt</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D1</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: A, G</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0012 Valid Accounts</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM06:2025 Excessive Agency</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Long-lived sessions on shared or unmanaged devices expose conversations and data.</p>
+<p><strong>Business Scenario.</strong> Security wants timeouts, revocation and concurrency controls.</p>
+<p><strong>Technical Scenario.</strong> Test session settings in a lab chat application.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Test Data.</strong> 1 chat app; policies: 30-minute idle timeout, 8-hour absolute, 2 concurrent sessions.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Log in and idle.</li>
+<li>Check timeout.</li>
+<li>Log in from 3 places.</li>
+<li>Revoke a session centrally.</li>
+<li>Check behaviour after password reset or role change.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Session on a shared kiosk; token theft.</p>
+<p><strong>Expected Detection.</strong> Timeouts enforced; third session handled per policy; central revocation immediate; role change forces re-evaluation.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Enforce.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Identity finding or access decision visible in the identity or access dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Session events.</p>
+<p><strong>Forensic Evidence.</strong> Identity (user, agent, service), token or key identifier, scope, resource, decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Test results.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l09-021"></a></p>
+<h3 id="tc-l09-021-access-reviews-and-recertification-for-ai-access">TC-L09-021: Access Reviews and Recertification for AI Access</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L09 Identity &amp; Access Mgmt</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Evidence</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Entitlements accumulate unless periodically reviewed.</p>
+<p><strong>Business Scenario.</strong> Audit wants regular review of who and what can use AI services and data.</p>
+<p><strong>Technical Scenario.</strong> Run a review campaign on the lab dataset.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Test Data.</strong> 50 entitlements including 10 stale, 5 excessive; 3 reviewers.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Create campaign.</li>
+<li>Assign reviewers.</li>
+<li>Reviewers approve or revoke.</li>
+<li>Check the enforcement of revocations.</li>
+<li>Check reports for audit.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Reviewer is the entitlement owner.</p>
+<p><strong>Expected Detection.</strong> Stale and excessive items highlighted; revocations enforced; report produced.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Revoke.</p>
+<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Identity finding or access decision visible in the identity or access dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Report export.</p>
+<p><strong>Forensic Evidence.</strong> Identity (user, agent, service), token or key identifier, scope, resource, decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Campaign evidence.</p>
+<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l09-022"></a></p>
+<h3 id="tc-l09-022-effective-permissions-visibility-for-users-and-agents">TC-L09-022: Effective Permissions Visibility for Users and Agents</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L09 Identity &amp; Access Mgmt</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D5</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Evidence</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Nobody can protect what they cannot see; effective access combines roles, groups, tokens and inheritance.</p>
+<p><strong>Business Scenario.</strong> Security wants one view of what a user or agent can really reach.</p>
+<p><strong>Technical Scenario.</strong> Query effective access for known identities and compare to ground truth.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Test Data.</strong> 8 identities (4 users, 4 agents) with known effective access to 12 resources.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Query effective permissions.</li>
+<li>Compare with ground truth.</li>
+<li>Introduce an indirect path (group nesting).</li>
+<li>Re-query.</li>
+<li>Check export and risk highlighting.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Conditional access; time-bound grants.</p>
+<p><strong>Expected Detection.</strong> At least 90 percent of access paths correct; indirect paths shown; export available.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Identity finding or access decision visible in the identity or access dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Export for IAM tools.</p>
+<p><strong>Forensic Evidence.</strong> Identity (user, agent, service), token or key identifier, scope, resource, decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Comparison table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l09-023"></a></p>
+<h3 id="tc-l09-023-emergency-break-glass-access-controls">TC-L09-023: Emergency (Break-Glass) Access Controls</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L09 Identity &amp; Access Mgmt</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0012 Valid Accounts</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM06:2025 Excessive Agency</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Break-glass accounts are essential and dangerous if unmonitored.</p>
+<p><strong>Business Scenario.</strong> Security wants emergency access controlled and loud.</p>
+<p><strong>Technical Scenario.</strong> Use a break-glass account and check monitoring.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Test Data.</strong> 1 break-glass account; alert recipients.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Use the account.</li>
+<li>Check alerting time.</li>
+<li>Check session recording.</li>
+<li>Check post-use review workflow and password reset.</li>
+<li>Try the account without justification.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Account used from an unusual location.</p>
+<p><strong>Expected Detection.</strong> Alert within 5 minutes; actions logged; review workflow triggered.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Alert.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Identity finding or access decision visible in the identity or access dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Alerts to SIEM and pager.</p>
+<p><strong>Forensic Evidence.</strong> Identity (user, agent, service), token or key identifier, scope, resource, decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Alert timeline.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l09-024"></a></p>
+<h3 id="tc-l09-024-mutual-authentication-between-ai-components">TC-L09-024: Mutual Authentication Between AI Components</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L09 Identity &amp; Access Mgmt</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D3, D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: G, A, P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0012 Valid Accounts</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM06:2025 Excessive Agency</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Unauthenticated internal calls let an attacker on the network impersonate any component.</p>
+<p><strong>Business Scenario.</strong> Architecture wants workload identity and mutual TLS between model, gateway, retrieval and tools.</p>
+<p><strong>Technical Scenario.</strong> Test connections between components with and without valid identity.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Test Data.</strong> Components: gateway, orchestrator, vector store, tool server; test client with invalid and valid certificates.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Scan connections.</li>
+<li>Attempt calls without certificates.</li>
+<li>With expired certificate.</li>
+<li>With certificate for the wrong workload.</li>
+<li>Check findings for components lacking mutual authentication.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Certificate rotation during traffic.</p>
+<p><strong>Expected Detection.</strong> All unauthenticated and invalid calls rejected; weak components reported.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Reject.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Identity finding or access decision visible in the identity or access dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Findings to ticketing.</p>
+<p><strong>Forensic Evidence.</strong> Identity (user, agent, service), token or key identifier, scope, resource, decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Test log.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l09-025"></a></p>
+<h3 id="tc-l09-025-identity-audit-trail-who-what-and-on-whose-behalf">TC-L09-025: Identity Audit Trail: Who, What and On Whose Behalf</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L09 Identity &amp; Access Mgmt</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D5, D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (operational and monitoring control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Investigations need to know which user, which agent and which tool were behind each action.</p>
+<p><strong>Business Scenario.</strong> Audit wants complete attribution in every record.</p>
+<p><strong>Technical Scenario.</strong> Run a task across a user, an agent, two tools and a downstream system and trace it.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Test Data.</strong> 1 task with 10 actions across 4 systems.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Run the task.</li>
+<li>Collect records from the platform and downstream systems.</li>
+<li>Reconstruct the chain.</li>
+<li>Check presence of user, agent, tool, resource, decision and time.</li>
+<li>Check clock alignment and log integrity.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Task triggered by a schedule; delegated chain of three agents.</p>
+<p><strong>Expected Detection.</strong> At least 9 of 10 actions fully attributable; integrity protection present.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Identity finding or access decision visible in the identity or access dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Export in a common event format.</p>
+<p><strong>Forensic Evidence.</strong> Identity (user, agent, service), token or key identifier, scope, resource, decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Chain reconstruction.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="L08-ai-gateway-and-security-controls.html">&larr; L08 AI Gateway &amp; Security Controls</a><a class="next" href="L10-data-layer.html">L10 Data Layer &rarr;</a></nav>
+<footer class="site-footer">Original author: Nachiket Sathaye &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/10_Test_Case_Library/L09-identity-and-access-mgmt.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a></footer>
+</main>
+</div>
+<script>window.SITE_BASE = "../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

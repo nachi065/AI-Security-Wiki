@@ -1,0 +1,2648 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L10 Data Layer | AI Security Wiki</title>
+<meta name="author" content="Nachiket Sathaye">
+<meta name="description" content="A vendor-neutral reference for AI security governance, risk management, engineering standards, vendor evaluation and assurance.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+  <a class="brand" href="../index.html">AI Security Wiki</a>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Search the wiki" aria-label="Search the wiki" autocomplete="off">
+    <ul id="search-results" hidden></ul>
+  </div>
+  <a class="repo-link" href="https://github.com/nachi065/AI-Security-Wiki" rel="noopener">GitHub</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="sidebar" aria-label="Wiki sections">
+<ul class="nav">
+<li><a href="../index.html">Home</a></li>
+<li><details><summary><a href="../01_Strategy_and_Market/index.html">Strategy and Market</a></summary><ul>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.html">AI Security Market and Technology Landscape — Summary</a></li>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape_Expanded.html">AI Security Market and Technology Landscape</a></li>
+</ul></details></li>
+<li><details><summary><a href="../02_Risk_Management/index.html">Risk Management</a></summary><ul>
+<li><a href="../02_Risk_Management/02A_AI_Risk_Methodology.html">AI Risk Methodology</a></li>
+<li><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a></li>
+<li><a href="../02_Risk_Management/02C_AI_Risk_Treatment_Plan.html">AI Risk Treatment Plan</a></li>
+<li><a href="../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a></li>
+<li><a href="../02_Risk_Management/02E_AI_Risk_Review_Template.html">AI Risk Review Template</a></li>
+</ul></details></li>
+<li><details><summary><a href="../03_Control_Library/index.html">Control Library</a></summary><ul>
+<li><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></li>
+<li><a href="../03_Control_Library/04_Existing_Security_Control_Baseline.html">Existing Security Control Baseline</a></li>
+<li><a href="../03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.html">Microsoft Security Overlap and AI Gaps</a></li>
+</ul></details></li>
+<li><details><summary><a href="../04_Domain_Standards/index.html">Domain Standards</a></summary><ul>
+<li><a href="../04_Domain_Standards/06_Browser_AI_Security_Standard.html">Browser AI Security Standard</a></li>
+<li><a href="../04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.html">IDE AI Coding Assistant Security Standard</a></li>
+<li><a href="../04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a></li>
+<li><a href="../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
+<li><a href="../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
+</ul></details></li>
+<li><details><summary><a href="../05_Vendor_Evaluation/index.html">Vendor Evaluation</a></summary><ul>
+<li><a href="../05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
+<li><a href="../05_Vendor_Evaluation/12A_Vendor_Profile_Prompt_Security_SentinelOne.html">Vendor Profile — Prompt Security / SentinelOne</a></li>
+<li><a href="../05_Vendor_Evaluation/12B_Vendor_Profile_Palo_Alto_Prisma_AIRS.html">Vendor Profile — Palo Alto Prisma AIRS</a></li>
+<li><a href="../05_Vendor_Evaluation/12C_Vendor_Profile_HiddenLayer.html">Vendor Profile — HiddenLayer</a></li>
+<li><a href="../05_Vendor_Evaluation/12D_Vendor_Profile_Lasso_Security.html">Vendor Profile — Lasso Security</a></li>
+<li><a href="../05_Vendor_Evaluation/12E_Vendor_Profile_Cyberhaven.html">Vendor Profile — Cyberhaven</a></li>
+<li><a href="../05_Vendor_Evaluation/12F_Vendor_Profile_Nightfall_AI.html">Vendor Profile — Nightfall AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12G_Vendor_Profile_Enkrypt_AI.html">Vendor Profile — Enkrypt AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12H_Vendor_Profile_Sovereign_AI_Security_Labs.html">Vendor Profile — Sovereign AI Security Labs</a></li>
+</ul></details></li>
+<li><details><summary><a href="../06_Testing_and_Assurance/index.html">Testing and Assurance</a></summary><ul>
+<li><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html">AI Security PoC Test Case Library</a></li>
+<li><a href="../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a></li>
+<li><a href="../06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.html">AI Red Team Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../07_Role_Based_Playbooks/index.html">Role-Based Playbooks</a></summary><ul>
+<li><a href="../07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.html">AI Product Developer Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15B_AI_Security_Researcher_Playbook.html">AI Security Researcher Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15D_Security_Engineering_Playbook.html">Security Engineering Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15E_Vendor_Evaluation_and_Audit_Playbook.html">Vendor Evaluation and Audit Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../08_Governance/index.html">Governance</a></summary><ul>
+<li><a href="../08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></li>
+<li><a href="../08_Governance/17_AI_Policy_Standards_and_Acceptable_Use.html">AI Policy, Standards and Acceptable Use</a></li>
+</ul></details></li>
+<li><details><summary><a href="../09_Reference/index.html">Reference</a></summary><ul>
+<li><a href="../09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
+</ul></details></li>
+<li><details open><summary><a href="index.html">Test Case Library</a></summary><ul>
+<li><a href="00-reference-index.html">Reference Index</a></li>
+<li><a href="framework-adoption-guide.html">Framework Adoption Guide</a></li>
+<li><a href="appendix-d-lab-prerequisites.html">Appendix D: Lab Prerequisites</a></li>
+<li><a href="L01-business-and-use-cases.html">L01 Business &amp; Use Cases</a></li>
+<li><a href="L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
+<li><a href="L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>
+<li><a href="L04-human-interaction-layer.html">L04 Human Interaction Layer</a></li>
+<li><a href="L05-ai-applications.html">L05 AI Applications</a></li>
+<li><a href="L06-agent-orchestration-layer.html">L06 Agent Orchestration Layer</a></li>
+<li><a href="L07-prompt-and-context-layer.html">L07 Prompt &amp; Context Layer</a></li>
+<li><a href="L08-ai-gateway-and-security-controls.html">L08 AI Gateway &amp; Security Controls</a></li>
+<li><a href="L09-identity-and-access-mgmt.html">L09 Identity &amp; Access Mgmt</a></li>
+<li><a class="current" href="L10-data-layer.html">L10 Data Layer</a></li>
+<li><a href="L11-knowledge-and-retrieval-layer.html">L11 Knowledge &amp; Retrieval Layer</a></li>
+<li><a href="L12-model-layer.html">L12 Model Layer</a></li>
+<li><a href="L13-training-and-fine-tuning-layer.html">L13 Training &amp; Fine-Tuning Layer</a></li>
+<li><a href="L14-mlops-llmops-layer.html">L14 MLOps / LLMOps Layer</a></li>
+<li><a href="L15-infrastructure-layer.html">L15 Infrastructure Layer</a></li>
+<li><a href="L16-supply-chain-and-third-party.html">L16 Supply Chain &amp; Third Party</a></li>
+<li><a href="L17-monitoring-detection-and-response.html">L17 Monitoring, Detection &amp; Response</a></li>
+</ul></details></li>
+</ul>
+</nav>
+<main>
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Test Case Library</a> / <span>L10 Data Layer</span></p>
+<article>
+<p><a id="top"></a></p>
+<h1 id="l10-data-layer">L10 Data Layer</h1>
+<p><strong>Primary test focus:</strong> sensitive-data classification, DLP, lineage, tenant isolation</p>
+<p><strong>Cases:</strong> 30 (TC-L10-001 to TC-L10-030)  |  <strong>Batch:</strong> 2</p>
+<blockquote>
+<p><strong>Safety boundary.</strong> Injection and jailbreak cases use benign canary strings and mock tools only. Each case first measures whether the attack succeeds against the unprotected application, so that only effective payloads are scored.</p>
+<p><strong>Verify before use.</strong> MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the <a href="00-reference-index.html">Reference Index</a> for field definitions and applicability codes.</p>
+</blockquote>
+<h2 id="cases-in-this-layer">Cases in this layer</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Title</th>
+<th>Severity</th>
+<th>Method</th>
+<th>Domain(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#tc-l10-001">TC-L10-001</a></td>
+<td>Sensitive Data Discovery in AI Data Stores</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D6</td>
+</tr>
+<tr>
+<td><a href="#tc-l10-002">TC-L10-002</a></td>
+<td>Classification Accuracy on Structured Data</td>
+<td>High</td>
+<td>Technical</td>
+<td>D6</td>
+</tr>
+<tr>
+<td><a href="#tc-l10-003">TC-L10-003</a></td>
+<td>Classification Accuracy on Unstructured Documents</td>
+<td>High</td>
+<td>Technical</td>
+<td>D6</td>
+</tr>
+<tr>
+<td><a href="#tc-l10-004">TC-L10-004</a></td>
+<td>Classification of Arabic and Regional-Language Documents</td>
+<td>High</td>
+<td>Technical</td>
+<td>D6, D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l10-005">TC-L10-005</a></td>
+<td>Label Inheritance to AI Outputs and Derived Data</td>
+<td>High</td>
+<td>Technical</td>
+<td>D6</td>
+</tr>
+<tr>
+<td><a href="#tc-l10-006">TC-L10-006</a></td>
+<td>Label-Aware Access: AI Cannot Read Beyond User Entitlement</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D6</td>
+</tr>
+<tr>
+<td><a href="#tc-l10-007">TC-L10-007</a></td>
+<td>Field-Level Masking and Data Minimisation Before the Model</td>
+<td>High</td>
+<td>Technical</td>
+<td>D6</td>
+</tr>
+<tr>
+<td><a href="#tc-l10-008">TC-L10-008</a></td>
+<td>Data Lineage: Source to Prompt to Output</td>
+<td>High</td>
+<td>Evidence</td>
+<td>D6</td>
+</tr>
+<tr>
+<td><a href="#tc-l10-009">TC-L10-009</a></td>
+<td>Lineage for Knowledge Base and Dataset Versions</td>
+<td>Medium</td>
+<td>Evidence</td>
+<td>D6</td>
+</tr>
+<tr>
+<td><a href="#tc-l10-010">TC-L10-010</a></td>
+<td>Tenant Isolation in Shared AI Data Stores</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D6, D3</td>
+</tr>
+<tr>
+<td><a href="#tc-l10-011">TC-L10-011</a></td>
+<td>Tenant Isolation Under Adversarial Probing</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D6, D3</td>
+</tr>
+<tr>
+<td><a href="#tc-l10-012">TC-L10-012</a></td>
+<td>Data Residency: Processing Region Enforcement</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l10-013">TC-L10-013</a></td>
+<td>Data Residency: Logs, Telemetry, Backups and Support Access</td>
+<td>Critical</td>
+<td>Evidence</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l10-014">TC-L10-014</a></td>
+<td>Cross-Border Transfer Detection to Non-Approved Providers</td>
+<td>High</td>
+<td>Technical</td>
+<td>D7, D6</td>
+</tr>
+<tr>
+<td><a href="#tc-l10-015">TC-L10-015</a></td>
+<td>Encryption and Key Ownership (BYOK and HYOK)</td>
+<td>High</td>
+<td>Evidence</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l10-016">TC-L10-016</a></td>
+<td>Key Rotation and Crypto-Shredding</td>
+<td>Medium</td>
+<td>Technical</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l10-017">TC-L10-017</a></td>
+<td>Dataset Access Control for AI Service Identities</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D6</td>
+</tr>
+<tr>
+<td><a href="#tc-l10-018">TC-L10-018</a></td>
+<td>Oversharing Discovery: Data Reachable by AI Assistants Beyond Need</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D6</td>
+</tr>
+<tr>
+<td><a href="#tc-l10-019">TC-L10-019</a></td>
+<td>Bulk Data Extraction Through AI Queries</td>
+<td>High</td>
+<td>Technical</td>
+<td>D6</td>
+</tr>
+<tr>
+<td><a href="#tc-l10-020">TC-L10-020</a></td>
+<td>Retention and Deletion Across the AI Pipeline</td>
+<td>High</td>
+<td>Evidence</td>
+<td>D7, D6</td>
+</tr>
+<tr>
+<td><a href="#tc-l10-021">TC-L10-021</a></td>
+<td>Erasure Propagation to Vector Stores and Derived Data</td>
+<td>High</td>
+<td>Technical</td>
+<td>D7, D6</td>
+</tr>
+<tr>
+<td><a href="#tc-l10-022">TC-L10-022</a></td>
+<td>Data Subject Access Request Support</td>
+<td>Medium</td>
+<td>Evidence</td>
+<td>D7, D6</td>
+</tr>
+<tr>
+<td><a href="#tc-l10-023">TC-L10-023</a></td>
+<td>Production Data in Development and Test AI Environments</td>
+<td>High</td>
+<td>Technical</td>
+<td>D6, D2</td>
+</tr>
+<tr>
+<td><a href="#tc-l10-024">TC-L10-024</a></td>
+<td>Ingestion Validation for Untrusted Data Sources</td>
+<td>High</td>
+<td>Technical</td>
+<td>D6, D3</td>
+</tr>
+<tr>
+<td><a href="#tc-l10-025">TC-L10-025</a></td>
+<td>Provider Data-Use Terms: Zero Retention and No Training Verification</td>
+<td>Critical</td>
+<td>Attestation</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l10-026">TC-L10-026</a></td>
+<td>Data Access Forensics: Who Accessed What via AI</td>
+<td>High</td>
+<td>Technical</td>
+<td>D6</td>
+</tr>
+<tr>
+<td><a href="#tc-l10-027">TC-L10-027</a></td>
+<td>Insider Investigation Workflow and Case Management</td>
+<td>Medium</td>
+<td>Technical</td>
+<td>D6</td>
+</tr>
+<tr>
+<td><a href="#tc-l10-028">TC-L10-028</a></td>
+<td>Legal Hold and eDiscovery for AI Conversations</td>
+<td>Medium</td>
+<td>Evidence</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l10-029">TC-L10-029</a></td>
+<td>Classification and Label Synchronisation with Enterprise Tools</td>
+<td>Medium</td>
+<td>Technical</td>
+<td>D6</td>
+</tr>
+<tr>
+<td><a href="#tc-l10-030">TC-L10-030</a></td>
+<td>Leakage Metrics and Regulatory Reporting Evidence</td>
+<td>Medium</td>
+<td>Evidence</td>
+<td>D7</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="test-cases">Test cases</h2>
+<p><a id="tc-l10-001"></a></p>
+<h3 id="tc-l10-001-sensitive-data-discovery-in-ai-data-stores">TC-L10-001: Sensitive Data Discovery in AI Data Stores</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P | Partial: E</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0057 LLM Data Leakage</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.10; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> AI projects copy data into buckets, notebooks, vector stores and shared drives that security has never scanned.</p>
+<p><strong>Business Scenario.</strong> Data owners want to know where sensitive data sits across the stores that feed AI systems.</p>
+<p><strong>Technical Scenario.</strong> Point the platform at a set of test stores containing seeded sensitive records and measure what it finds.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Test Data.</strong> 5 test stores (object storage bucket, file share, relational database, vector store export, notebook folder); 200 seeded records across 6 categories (personal data, financial, health-style, credentials, confidential documents, source code); 200 non-sensitive look-alikes.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Record the seeded ground truth by store and category.</li>
+<li>Connect the platform to each store using least-privilege read access.</li>
+<li>Run discovery and record scan time.</li>
+<li>Compare findings to ground truth to compute recall and precision per store and category.</li>
+<li>Add 20 new sensitive records to one store and measure time to detection.</li>
+<li>Check that scanning does not copy data out of the store or retain content.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Compressed archives; very large files; databases with JSON columns; stores in a different region.</p>
+<p><strong>Expected Detection.</strong> Recall of at least 90 percent and precision of at least 85 percent overall; every store type supported or its absence documented; new records found within the vendor's stated rescan interval; no content retained outside the environment.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A (discovery control).</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Findings exportable to a data catalogue or SIEM.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Ground-truth and findings comparison; scan duration; data-handling statement.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l10-002"></a></p>
+<h3 id="tc-l10-002-classification-accuracy-on-structured-data">TC-L10-002: Classification Accuracy on Structured Data</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0057 LLM Data Leakage</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.10; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Misclassified columns lead to over- or under-protection of data feeding AI features.</p>
+<p><strong>Business Scenario.</strong> Data governance wants column-level classification validated against a known answer key.</p>
+<p><strong>Technical Scenario.</strong> Run classification on a test database and table set with labelled columns.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Test Data.</strong> 3 tables, 60 columns, 10,000 rows: name, contact, ID numbers, salary, card-like data, free-text notes with embedded personal data, and ordinary business columns; answer key per column.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Seed tables and answer key.</li>
+<li>Run classification.</li>
+<li>Compare labels to the answer key at column level.</li>
+<li>Check confidence scores and sampling method.</li>
+<li>Review misclassifications for pattern.</li>
+<li>Obscure column names (col1, col2) and rerun to test content-based detection.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Columns with mixed content; sparse columns; very wide tables.</p>
+<p><strong>Expected Detection.</strong> At least 90 percent column accuracy with meaningful names and at least 80 percent with obscured names; free-text personal data found in at least 70 percent of notes columns.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Labels exportable to catalogue.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Column accuracy table; confusion list.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l10-003"></a></p>
+<h3 id="tc-l10-003-classification-accuracy-on-unstructured-documents">TC-L10-003: Classification Accuracy on Unstructured Documents</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P, E</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0057 LLM Data Leakage</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.10; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Documents carry the most valuable sensitive content and are what retrieval systems ingest.</p>
+<p><strong>Business Scenario.</strong> Data governance wants document classification tested against a labelled corpus.</p>
+<p><strong>Technical Scenario.</strong> Classify a mixed corpus of fabricated documents with known sensitivity labels.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Test Data.</strong> 300 documents (contracts, HR letters, financial reports, meeting notes, public brochures, source code) with an answer key of 4 levels (Public, Internal, Confidential, Restricted); formats DOCX, PDF, XLSX, TXT.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Load corpus.</li>
+<li>Run classification.</li>
+<li>Compare to the answer key.</li>
+<li>Compute accuracy per level and confusion matrix.</li>
+<li>Focus on Restricted recall.</li>
+<li>Review documents classified lower than the key (under-classification) as a separate risk count.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Documents with a few sensitive lines in a long public text; scanned PDFs.</p>
+<p><strong>Expected Detection.</strong> Restricted recall at least 90 percent; overall accuracy at least 80 percent; under-classification of Confidential or Restricted below 5 percent.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Labels exportable.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Confusion matrix; list of under-classified documents.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l10-004"></a></p>
+<h3 id="tc-l10-004-classification-of-arabic-and-regional-language-documents">TC-L10-004: Classification of Arabic and Regional-Language Documents</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6, D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P, E</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0057 LLM Data Leakage</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.10; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Classification trained on English leaves local-language content unprotected.</p>
+<p><strong>Business Scenario.</strong> Compliance in the GCC wants parity for Arabic and bilingual documents.</p>
+<p><strong>Technical Scenario.</strong> Classify a bilingual corpus with an answer key.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Test Data.</strong> 120 documents: 40 Arabic, 40 English, 40 bilingual, covering the same categories; Arabic-Indic digits in some.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Load corpus.</li>
+<li>Run classification.</li>
+<li>Compute accuracy per language set.</li>
+<li>Check handling of right-to-left layout in PDF and DOCX.</li>
+<li>Record entity detection for Arabic names and ID numbers.</li>
+<li>Ask the vendor to tune one miss and measure effort.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Dialect text; transliterated names.</p>
+<p><strong>Expected Detection.</strong> Arabic and bilingual accuracy within 10 points of English; entity detection for Arabic names at least 80 percent; tuning completed within a working day.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Language shown in findings.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Per-language accuracy table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l10-005"></a></p>
+<h3 id="tc-l10-005-label-inheritance-to-ai-outputs-and-derived-data">TC-L10-005: Label Inheritance to AI Outputs and Derived Data</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: A, G, P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> If a summary of a Restricted document is stored as unlabelled text, protection is lost the moment AI touches the data.</p>
+<p><strong>Business Scenario.</strong> Governance wants derived content to inherit the highest sensitivity of its sources.</p>
+<p><strong>Technical Scenario.</strong> Have a test assistant generate summaries and extracts from labelled documents and examine labels on outputs.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Test Data.</strong> 10 documents at differing labels; assistant that summarises one or several; output saved to a store.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Summarise a single Restricted document.</li>
+<li>Summarise a Public and a Confidential document together.</li>
+<li>Save outputs.</li>
+<li>Inspect labels or markings applied.</li>
+<li>Attempt to share the unlabelled output through a controlled channel and check enforcement.</li>
+<li>Review audit entries linking output to source labels.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Outputs pasted into a new document; outputs from different sessions combined.</p>
+<p><strong>Expected Detection.</strong> Output label equals highest source label in at least 9 of 10 cases; sharing blocked or flagged by label; link between output and sources recorded.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Apply or enforce label.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Labels recognised by the enterprise labelling tool.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Output label table; sharing test.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l10-006"></a></p>
+<h3 id="tc-l10-006-label-aware-access-ai-cannot-read-beyond-user-entitlement">TC-L10-006: Label-Aware Access: AI Cannot Read Beyond User Entitlement</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: A, P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0057 LLM Data Leakage</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.10; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Assistants that run with broad permissions expose content to users who would be denied direct access.</p>
+<p><strong>Business Scenario.</strong> Security wants the AI to retrieve only what the requesting user may see.</p>
+<p><strong>Technical Scenario.</strong> Ask questions whose answers exist only in documents the user is not entitled to read.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Test Data.</strong> 3 users with different entitlements; 30 documents with access lists; 40 questions answerable only from restricted documents or from permitted ones.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Map document ACLs.</li>
+<li>Ask all questions as each user.</li>
+<li>Record whether answers contain restricted content.</li>
+<li>Check that refusals do not reveal the existence or title of restricted documents.</li>
+<li>Change a user's access and repeat to test propagation time.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Nested groups; document with shared link; inherited folder permissions.</p>
+<p><strong>Expected Detection.</strong> Zero restricted content in answers; no document titles leaked in refusals; access change effective within the documented time and no later than 1 hour.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Filter retrieval by entitlement.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> User and document identifiers in logs.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Question and answer table; propagation timing.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l10-007"></a></p>
+<h3 id="tc-l10-007-field-level-masking-and-data-minimisation-before-the-model">TC-L10-007: Field-Level Masking and Data Minimisation Before the Model</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: G, A</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0057 LLM Data Leakage</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.10; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Sending whole records to a model when only a few fields are needed multiplies exposure.</p>
+<p><strong>Business Scenario.</strong> Privacy wants only necessary fields reaching the model.</p>
+<p><strong>Technical Scenario.</strong> Pass records through the platform with field-level policies and inspect what the model receives.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Test Data.</strong> 200 fabricated customer records with 12 fields; 3 use cases needing different fields; mock model that logs input.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Define policies by use case.</li>
+<li>Send records.</li>
+<li>Inspect mock model input.</li>
+<li>Verify unneeded fields removed or masked.</li>
+<li>Check the response still meets the use case.</li>
+<li>Change policy and repeat.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Free-text field containing personal data; nested JSON fields.</p>
+<p><strong>Expected Detection.</strong> Unneeded fields absent from model input in 100 percent of cases; use-case answers still correct in at least 95 percent; policy change effective in under 5 minutes.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Mask or remove fields.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Policy export.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Mock model input captures.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l10-008"></a></p>
+<h3 id="tc-l10-008-data-lineage-source-to-prompt-to-output">TC-L10-008: Data Lineage: Source to Prompt to Output</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Evidence</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P, A</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (operational and monitoring control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Without lineage, an organisation cannot say which data produced an answer or who was exposed to it.</p>
+<p><strong>Business Scenario.</strong> Audit and investigations want to trace any answer to its sources and any source to its uses.</p>
+<p><strong>Technical Scenario.</strong> Run a set of queries and trace lineage in both directions.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Test Data.</strong> 10 queries over a test knowledge base; 3 source documents later updated.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Run the queries.</li>
+<li>For three outputs, trace backwards to source documents and versions.</li>
+<li>For one source, trace forwards to all outputs and users.</li>
+<li>Update a source and check that lineage shows version change.</li>
+<li>Export lineage.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Outputs that combine several sources; deleted source.</p>
+<p><strong>Expected Detection.</strong> Backward and forward trace complete for all tested items; version recorded; export available.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Lineage exportable to catalogue.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Lineage graph screenshots; export.</p>
+<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l10-009"></a></p>
+<h3 id="tc-l10-009-lineage-for-knowledge-base-and-dataset-versions">TC-L10-009: Lineage for Knowledge Base and Dataset Versions</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Evidence</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (operational and monitoring control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Answers given months ago may need to be explained against the data as it then stood.</p>
+<p><strong>Business Scenario.</strong> Audit wants point-in-time reconstruction of what data an AI system could use.</p>
+<p><strong>Technical Scenario.</strong> Change a test dataset over time and reconstruct its past state.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Test Data.</strong> 1 dataset with 5 monthly versions (simulated); 5 historical queries.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Record version changes.</li>
+<li>Pick a past date.</li>
+<li>Ask the platform to show the data scope on that date.</li>
+<li>Compare with the recorded version.</li>
+<li>Check retention of version metadata.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Dataset restored from backup; renamed dataset.</p>
+<p><strong>Expected Detection.</strong> Past state reconstructed correctly for all 5 dates; metadata retained for the stated period.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Exportable timeline.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Timeline export; comparison.</p>
+<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l10-010"></a></p>
+<h3 id="tc-l10-010-tenant-isolation-in-shared-ai-data-stores">TC-L10-010: Tenant Isolation in Shared AI Data Stores</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6, D3</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: A, P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0057 LLM Data Leakage</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.10; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Multi-tenant AI services holding data for many customers or business units must keep it strictly separate.</p>
+<p><strong>Business Scenario.</strong> Security wants logical separation proven for storage, indexes and caches.</p>
+<p><strong>Technical Scenario.</strong> Create two tenants with canary data and test separation at each layer.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Test Data.</strong> 2 tenants; 50 canary records each in storage, search index and cache; admin and normal accounts per tenant.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Seed canaries.</li>
+<li>Query each layer as tenant A for tenant B data.</li>
+<li>Test with crafted identifiers and wildcard queries.</li>
+<li>Test admin accounts from one tenant.</li>
+<li>Review isolation architecture documentation and verify against observations.</li>
+<li>Check shared cache keys.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Identifier collisions; tenant deletion and recreation with same name.</p>
+<p><strong>Expected Detection.</strong> Zero cross-tenant canaries returned at any layer; documented isolation model matches observations; attempts logged.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Block.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Tenant ID in logs.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Probe results per layer.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l10-011"></a></p>
+<h3 id="tc-l10-011-tenant-isolation-under-adversarial-probing">TC-L10-011: Tenant Isolation Under Adversarial Probing</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6, D3</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: A, G</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0057 LLM Data Leakage</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.10; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Attackers will use the AI interface itself to ask for other tenants' information.</p>
+<p><strong>Business Scenario.</strong> Security wants conversational attempts to cross tenant boundaries stopped.</p>
+<p><strong>Technical Scenario.</strong> As a tenant A user, use direct and indirect prompts to retrieve tenant B canary data.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Test Data.</strong> 30 probes: direct ask, impersonation, indirect via summarisation, guessing identifiers, prompt injection asking to ignore tenant filter; tenant B canaries.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Baseline against the unprotected app.</li>
+<li>Enable the platform.</li>
+<li>Run probes.</li>
+<li>Search responses for tenant B canaries.</li>
+<li>Check events for cross-tenant attempt classification.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Probes across several turns; probes via document upload.</p>
+<p><strong>Expected Detection.</strong> Zero canaries returned; at least 27 of 30 probes flagged as cross-tenant attempts.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Block.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Event type: cross-tenant attempt.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Probe log; canary search.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l10-012"></a></p>
+<h3 id="tc-l10-012-data-residency-processing-region-enforcement">TC-L10-012: Data Residency: Processing Region Enforcement</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Data processed outside the permitted jurisdiction can breach contractual and regulatory commitments.</p>
+<p><strong>Business Scenario.</strong> Compliance wants all processing, including by third-party model providers, kept in approved regions.</p>
+<p><strong>Technical Scenario.</strong> Route requests under region policy and verify where processing occurs.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Endpoints in multiple regions available in the lab or mocked.</p>
+<p><strong>Test Data.</strong> Region policy allowing UAE only; providers with UAE, EU and US endpoints; 20 requests.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Configure the policy.</li>
+<li>Send requests that would normally route to each region.</li>
+<li>Capture the actual destination of each.</li>
+<li>Attempt to override region through headers or model aliases.</li>
+<li>Check failure behaviour when no permitted endpoint is available.</li>
+<li>Review logs for region field.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Failover to another region; provider moves endpoint.</p>
+<p><strong>Expected Detection.</strong> All requests to permitted region only; override attempts blocked; unavailable endpoint causes safe failure rather than fallback; region recorded.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Block or route.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Region field in logs.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Destination capture; override attempts.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l10-013"></a></p>
+<h3 id="tc-l10-013-data-residency-logs-telemetry-backups-and-support-access">TC-L10-013: Data Residency: Logs, Telemetry, Backups and Support Access</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Evidence</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Residency promises often cover primary storage but not logs, telemetry, backups or remote support access.</p>
+<p><strong>Business Scenario.</strong> Compliance wants the full data footprint located.</p>
+<p><strong>Technical Scenario.</strong> Inventory every place data or derived data from the platform is stored or accessed.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Test Data.</strong> Vendor data-flow documents; lab tenant; list of data classes (prompts, responses, metadata, telemetry, diagnostics).</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Request a written list of locations by data class.</li>
+<li>Capture telemetry destinations during use.</li>
+<li>Review backup location and retention.</li>
+<li>Ask who can access data for support, from where, and under what approvals.</li>
+<li>Request a recent access log sample.</li>
+<li>Compare written statements with observations.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Sub-processor changes; emergency support from another region.</p>
+<p><strong>Expected Detection.</strong> Statements match observations; no data class stored or accessible outside approved regions without disclosure; support access is logged and approval based.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Evidence documents provided.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Location table; support access sample.</p>
+<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l10-014"></a></p>
+<h3 id="tc-l10-014-cross-border-transfer-detection-to-non-approved-providers">TC-L10-014: Cross-Border Transfer Detection to Non-Approved Providers</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7, D6</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: E, G, P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0057 LLM Data Leakage</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.10; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Staff and applications may send data to AI services hosted in non-approved jurisdictions.</p>
+<p><strong>Business Scenario.</strong> Compliance wants transfers to unapproved regions or providers detected and controlled.</p>
+<p><strong>Technical Scenario.</strong> Send test traffic to AI services in approved and non-approved jurisdictions.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Test Data.</strong> 6 AI endpoints (mock) labelled by region; synthetic personal data; approved regions list.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Configure approved regions.</li>
+<li>Send traffic to each endpoint.</li>
+<li>Check detection and action.</li>
+<li>Check region determination method (IP, vendor knowledge base, contract data).</li>
+<li>Test a CDN-fronted endpoint.</li>
+<li>Review report of transfers by region.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Provider that changes hosting region; proxy chain.</p>
+<p><strong>Expected Detection.</strong> All non-approved transfers flagged; region determination method stated; CDN case documented; report available.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Block or alert.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Report exportable for compliance.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Transfer report; determination notes.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l10-015"></a></p>
+<h3 id="tc-l10-015-encryption-and-key-ownership-byok-and-hyok">TC-L10-015: Encryption and Key Ownership (BYOK and HYOK)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Evidence</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Control of encryption keys decides who can read stored AI data, including the vendor's staff.</p>
+<p><strong>Business Scenario.</strong> Security wants customer-held keys where required and strong encryption everywhere.</p>
+<p><strong>Technical Scenario.</strong> Review encryption at rest and in transit and test customer-managed key options.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Test Data.</strong> Lab tenant; customer-managed key in a test key store; TLS scanner.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Review encryption settings for each data store.</li>
+<li>Scan endpoints for TLS versions and ciphers.</li>
+<li>Configure a customer-managed key.</li>
+<li>Revoke the key and confirm data becomes inaccessible.</li>
+<li>Restore the key and confirm recovery.</li>
+<li>Document key hierarchy and who can access keys.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Key rotation during active use; key store unavailable.</p>
+<p><strong>Expected Detection.</strong> TLS 1.2 or higher only; strong ciphers; revocation makes data unreadable within the documented time; vendor cannot read data without the key.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Key control.</p>
+<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Key usage logs available.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Scan output; revocation test.</p>
+<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l10-016"></a></p>
+<h3 id="tc-l10-016-key-rotation-and-crypto-shredding">TC-L10-016: Key Rotation and Crypto-Shredding</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Rotation limits exposure from a stolen key, and key destruction is the only reliable way to delete data in some architectures.</p>
+<p><strong>Business Scenario.</strong> Security wants rotation without downtime and verifiable irreversible deletion.</p>
+<p><strong>Technical Scenario.</strong> Rotate keys under load and destroy the key for a test dataset.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Test Data.</strong> 1 test dataset; customer-managed key; background traffic.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Rotate the key during traffic.</li>
+<li>Record errors and re-encryption time.</li>
+<li>Create a second dataset with its own key.</li>
+<li>Destroy that key.</li>
+<li>Confirm data cannot be recovered including from backups the vendor controls.</li>
+<li>Review the evidence of destruction.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Rotation interrupted; destroyed key requested for recovery.</p>
+<p><strong>Expected Detection.</strong> Rotation with no failed requests beyond the documented window; destroyed-key data unrecoverable; evidence of destruction produced.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Key lifecycle control.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Key events logged.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Rotation log; destruction evidence.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l10-017"></a></p>
+<h3 id="tc-l10-017-dataset-access-control-for-ai-service-identities">TC-L10-017: Dataset Access Control for AI Service Identities</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P, A</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0057 LLM Data Leakage</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.10; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> AI services and agents often run with powerful service accounts that can read far more than any one task needs.</p>
+<p><strong>Business Scenario.</strong> Security wants AI service identities limited to the datasets they require.</p>
+<p><strong>Technical Scenario.</strong> Review and test permissions of AI service identities across test datasets.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Test Data.</strong> 6 datasets; 3 AI service identities with intended access matrix; test reads and writes.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Document intended access.</li>
+<li>Extract actual permissions.</li>
+<li>Compare.</li>
+<li>Attempt access outside the matrix.</li>
+<li>Review permissions inherited through groups and roles.</li>
+<li>Check how the platform shows excessive privilege.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Cross-account roles; temporary credentials.</p>
+<p><strong>Expected Detection.</strong> Excess permissions identified in all seeded cases; out-of-matrix access denied; privilege findings exportable.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Findings to IAM tooling.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Matrix comparison; denied-access logs.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l10-018"></a></p>
+<h3 id="tc-l10-018-oversharing-discovery-data-reachable-by-ai-assistants-beyond-need">TC-L10-018: Oversharing Discovery: Data Reachable by AI Assistants Beyond Need</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0057 LLM Data Leakage</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.10; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Productivity assistants surface any content the user technically can read, exposing overshared files.</p>
+<p><strong>Business Scenario.</strong> Security wants overshared sensitive files found before an assistant is switched on.</p>
+<p><strong>Technical Scenario.</strong> Seed overshared files and run the platform's oversharing analysis.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Test Data.</strong> 100 files: 20 sensitive files shared with Everyone or large groups, 20 sensitive files shared correctly, 60 ordinary files; test collaboration tenant.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Seed sharing settings.</li>
+<li>Run analysis.</li>
+<li>Compare findings to seeded exposure.</li>
+<li>Check ranking by sensitivity and audience size.</li>
+<li>Remediate three items from the platform and verify the change.</li>
+<li>Re-run to confirm clearance.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Link-based sharing; guest access; inherited permissions.</p>
+<p><strong>Expected Detection.</strong> At least 18 of 20 overshared sensitive files found; correctly shared files not flagged more than 2 times; remediation works and is logged.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Remediate permissions.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Findings to ticketing.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Findings list; remediation log.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l10-019"></a></p>
+<h3 id="tc-l10-019-bulk-data-extraction-through-ai-queries">TC-L10-019: Bulk Data Extraction Through AI Queries</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: G, A, P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0025 Exfiltration via Cyber Means</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.10; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Attackers and insiders can use an assistant to read and export large volumes of data conversationally.</p>
+<p><strong>Business Scenario.</strong> Security wants unusual volumes of sensitive retrieval detected and limited.</p>
+<p><strong>Technical Scenario.</strong> Run scripted large-volume queries as a normal and as an abusive user.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Test Data.</strong> Knowledge base of 5,000 fabricated records; normal user profile (5 queries per hour); abusive script (500 queries per hour and requests for lists of all records).</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Run normal usage for baseline.</li>
+<li>Run the abusive script.</li>
+<li>Record when throttling or alerts start.</li>
+<li>Check detection of enumeration patterns ('list all', repeated paging).</li>
+<li>Check what is blocked and what is logged.</li>
+<li>Check that normal user is unaffected.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Slow low-volume extraction over days; many users sharing credentials.</p>
+<p><strong>Expected Detection.</strong> Abusive pattern detected within 5 minutes or 100 queries; volume limit enforced; normal user unaffected.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Throttle or block.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Alert to SIEM.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Timeline; alert.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l10-020"></a></p>
+<h3 id="tc-l10-020-retention-and-deletion-across-the-ai-pipeline">TC-L10-020: Retention and Deletion Across the AI Pipeline</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7, D6</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Evidence</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0057 LLM Data Leakage (secondary)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.10; GOVERN 1.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Prompts, responses, caches, embeddings and logs each keep copies; deleting one location leaves the rest.</p>
+<p><strong>Business Scenario.</strong> Privacy wants retention and deletion enforced for every store the pipeline writes to.</p>
+<p><strong>Technical Scenario.</strong> Trace one prompt's data through every store and test deletion.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Test Data.</strong> 1 prompt with canary content; stores: conversation history, cache, vector store, logs, analytics, backups.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Send the prompt.</li>
+<li>List every store holding data from it.</li>
+<li>Set retention to the shortest period.</li>
+<li>Wait or backdate.</li>
+<li>Check each store.</li>
+<li>Request deletion and confirm completion evidence.</li>
+<li>Record backup deletion timing.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Data copied to analytics; data in vendor support tools.</p>
+<p><strong>Expected Detection.</strong> Every store enumerated; deletion complete across all within documented time; backups addressed in writing.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Deletion.</p>
+<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Deletion certificate or log.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Store inventory; deletion evidence.</p>
+<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l10-021"></a></p>
+<h3 id="tc-l10-021-erasure-propagation-to-vector-stores-and-derived-data">TC-L10-021: Erasure Propagation to Vector Stores and Derived Data</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7, D6</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: A, P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0057 LLM Data Leakage (secondary)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.10; GOVERN 1.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Embeddings and summaries derived from deleted personal data still leak information if left behind.</p>
+<p><strong>Business Scenario.</strong> Privacy wants erasure requests honoured in derived stores.</p>
+<p><strong>Technical Scenario.</strong> Delete a source document and a person's data and check derived stores.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Test Data.</strong> 10 documents about 3 fabricated individuals; vector index; summaries; erasure request for 1 individual and 2 documents.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Ingest and query to confirm retrieval.</li>
+<li>Delete the documents and the individual.</li>
+<li>Query again.</li>
+<li>Inspect the vector store for residual embeddings.</li>
+<li>Check summaries and caches.</li>
+<li>Record time to full propagation.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Embedding of a document chunk that merges two sources.</p>
+<p><strong>Expected Detection.</strong> Deleted content no longer retrievable; embeddings removed or provably unusable; propagation within the documented time.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Deletion.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Erasure log.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Before and after queries; index inspection.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l10-022"></a></p>
+<h3 id="tc-l10-022-data-subject-access-request-support">TC-L10-022: Data Subject Access Request Support</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7, D6</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Evidence</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P, A</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0057 LLM Data Leakage (secondary)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.10; GOVERN 1.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Regulators expect organisations to locate all personal data on an individual, including in AI systems.</p>
+<p><strong>Business Scenario.</strong> Privacy wants to find all data about a named person across AI stores and outputs.</p>
+<p><strong>Technical Scenario.</strong> Run a subject search across prompts, documents and outputs.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Test Data.</strong> 3 fabricated individuals referenced in 40 items across stores.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Search for each person by name and identifiers.</li>
+<li>Compare results to the seeded list.</li>
+<li>Export a report.</li>
+<li>Check what is excluded by design.</li>
+<li>Time the process.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Name variants; person referred to only by pronoun.</p>
+<p><strong>Expected Detection.</strong> At least 90 percent of seeded items found; export produced within an hour; gaps documented.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Report exportable.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Search results; export.</p>
+<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l10-023"></a></p>
+<h3 id="tc-l10-023-production-data-in-development-and-test-ai-environments">TC-L10-023: Production Data in Development and Test AI Environments</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6, D2</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P, E</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0057 LLM Data Leakage</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.10; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Developers copy production data into AI experiments, bypassing production controls.</p>
+<p><strong>Business Scenario.</strong> Security wants real data detected in non-production environments.</p>
+<p><strong>Technical Scenario.</strong> Seed realistic-looking, flagged production-like records into a dev environment and scan.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Test Data.</strong> Dev environment with 100 records of which 30 carry a production marker (fabricated signature) and 70 are synthetic.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Scan the environment.</li>
+<li>Compare findings to seeded markers.</li>
+<li>Check how the platform distinguishes real from synthetic.</li>
+<li>Check alerting to the data owner.</li>
+<li>Test new data arriving later.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Records re-formatted; data inside notebooks.</p>
+<p><strong>Expected Detection.</strong> At least 27 of 30 marked records found; synthetic records not flagged more than 5 times; owner alerted.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Alert or quarantine.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Alerts to ticketing.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Findings list.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l10-024"></a></p>
+<h3 id="tc-l10-024-ingestion-validation-for-untrusted-data-sources">TC-L10-024: Ingestion Validation for Untrusted Data Sources</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6, D3</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P, A</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0020 Poison Training Data (applied by analogy to stored context, memory and ingested data); verify against current ATLAS</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM04:2025 Data and Model Poisoning; LLM01:2025 Prompt Injection</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MAP 2.3; MEASURE 2.7</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Data from outside sources entering knowledge bases or datasets can be tampered with or booby-trapped.</p>
+<p><strong>Business Scenario.</strong> Security wants untrusted data validated and quarantined before use.</p>
+<p><strong>Technical Scenario.</strong> Feed a mix of clean and manipulated test files into an ingestion pipeline.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Test Data.</strong> 20 files: 10 clean, 10 manipulated (hidden instructions, corrupted structure, unexpected types, oversized, duplicated content with altered facts).</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Configure ingestion with validation.</li>
+<li>Ingest all 20.</li>
+<li>Record accepted, quarantined and rejected.</li>
+<li>Review reasons.</li>
+<li>Release one quarantined file manually and check audit.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Valid file from a spoofed source; slow trickle of altered files.</p>
+<p><strong>Expected Detection.</strong> At least 8 of 10 manipulated files quarantined or rejected; clean files accepted; audit records manual releases.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Quarantine.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Quarantine events logged.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Ingestion results.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l10-025"></a></p>
+<h3 id="tc-l10-025-provider-data-use-terms-zero-retention-and-no-training-verification">TC-L10-025: Provider Data-Use Terms: Zero Retention and No Training Verification</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Attestation</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Data sent to model providers may be retained or used for training unless terms and settings prevent it.</p>
+<p><strong>Business Scenario.</strong> Procurement wants written commitments and technical verification where possible.</p>
+<p><strong>Technical Scenario.</strong> Collect and test the provider terms, settings and any available evidence.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Test Data.</strong> Contracts and data processing terms of vendor and each model provider; settings screenshots.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Request written statements on retention, human review and training use.</li>
+<li>Verify settings in the tenant.</li>
+<li>Send canary content and check provider-side logs where available.</li>
+<li>Review sub-processor lists.</li>
+<li>Ask for audit reports covering the claims.</li>
+<li>Record exceptions such as abuse monitoring.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Provider changes terms mid-contract.</p>
+<p><strong>Expected Detection.</strong> Written commitments cover retention and training; settings match; audit reports provided; exceptions documented.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Signed written statement from the vendor.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Documents attached to the register.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = no statement; 3 = statement without supporting detail; 5 = statement with technical detail and an offer to demonstrate.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Statements; settings evidence.</p>
+<p><strong>Reviewer Notes.</strong> Attestation scores below demonstrated evidence. Request a demonstration where possible.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l10-026"></a></p>
+<h3 id="tc-l10-026-data-access-forensics-who-accessed-what-via-ai">TC-L10-026: Data Access Forensics: Who Accessed What via AI</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (operational and monitoring control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> After an incident, investigators must establish which sensitive data an AI system accessed and for whom.</p>
+<p><strong>Business Scenario.</strong> Investigation wants a reliable record linking user, prompt, retrieved data and output.</p>
+<p><strong>Technical Scenario.</strong> Perform a mock incident and reconstruct events from platform records.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Test Data.</strong> Scenario: user retrieves 12 canary-labelled documents through an assistant over 2 days; investigator has only platform data.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Run the scenario.</li>
+<li>Ask the investigator to reconstruct who, what and when.</li>
+<li>Verify against the scenario script.</li>
+<li>Check completeness of identity, document IDs and time.</li>
+<li>Export evidence with integrity protection.</li>
+<li>Time the reconstruction.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Access through a shared account; deleted conversations.</p>
+<p><strong>Expected Detection.</strong> Investigator reproduces at least 11 of 12 accesses within 1 hour; exported evidence is tamper-evident.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Evidence export for case tools.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Reconstruction notes.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l10-027"></a></p>
+<h3 id="tc-l10-027-insider-investigation-workflow-and-case-management">TC-L10-027: Insider Investigation Workflow and Case Management</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P, E, G</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (operational and monitoring control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Insider data-loss cases need timelines, context and evidence preserved.</p>
+<p><strong>Business Scenario.</strong> Security wants to open, work and close a case from AI-related alerts.</p>
+<p><strong>Technical Scenario.</strong> Create a case from a series of policy events by one test user.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Test Data.</strong> 1 user generating 25 events across 7 days.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Generate the events.</li>
+<li>Open a case.</li>
+<li>Build the user timeline.</li>
+<li>Add notes, attach evidence, assign.</li>
+<li>Check role separation and privacy controls on viewing identity.</li>
+<li>Close and export.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> User with legitimate high usage; case spanning several tools.</p>
+<p><strong>Expected Detection.</strong> Timeline accurate; evidence preserved; role-based identity controls applied; case audit trail complete.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Case export or ticket integration.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Case file.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l10-028"></a></p>
+<h3 id="tc-l10-028-legal-hold-and-ediscovery-for-ai-conversations">TC-L10-028: Legal Hold and eDiscovery for AI Conversations</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Evidence</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: A, P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> AI conversations may be discoverable, and deletion during legal proceedings creates exposure.</p>
+<p><strong>Business Scenario.</strong> Legal wants holds applied and conversations exportable.</p>
+<p><strong>Technical Scenario.</strong> Place a hold on test users' conversations and attempt deletion.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Test Data.</strong> 3 users; 30 conversations; hold on 1 user.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Apply the hold.</li>
+<li>Attempt deletion and retention expiry.</li>
+<li>Search conversations by keyword and date.</li>
+<li>Export in a standard format.</li>
+<li>Release the hold and confirm normal rules resume.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Hold applied after deletion request; multi-user threads.</p>
+<p><strong>Expected Detection.</strong> Held data retained despite deletion and expiry; search and export function; hold actions audited.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Hold.</p>
+<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Export format documented.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Hold audit; export sample.</p>
+<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l10-029"></a></p>
+<h3 id="tc-l10-029-classification-and-label-synchronisation-with-enterprise-tools">TC-L10-029: Classification and Label Synchronisation with Enterprise Tools</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D6</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P, E, G</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Separate classification schemes produce inconsistent protection.</p>
+<p><strong>Business Scenario.</strong> Governance wants labels from the existing labelling and DLP tools respected.</p>
+<p><strong>Technical Scenario.</strong> Connect the platform to the existing labelling solution and test label use.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Test Data.</strong> 50 documents labelled in the enterprise tool; 4 label levels.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Connect integration.</li>
+<li>Check label import.</li>
+<li>Edit a label in the source and check propagation time.</li>
+<li>Use labelled files in AI prompts and check policy reaction.</li>
+<li>Check behaviour when labels are missing.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Label downgrade; custom label names.</p>
+<p><strong>Expected Detection.</strong> Labels imported for at least 48 of 50; propagation within 1 hour; policy uses labels; missing label default documented.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Label-based policy.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Integration documented.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Label comparison.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l10-030"></a></p>
+<h3 id="tc-l10-030-leakage-metrics-and-regulatory-reporting-evidence">TC-L10-030: Leakage Metrics and Regulatory Reporting Evidence</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L10 Data Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Evidence</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (operational and monitoring control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Boards and regulators ask for measurable evidence that AI data risk is controlled.</p>
+<p><strong>Business Scenario.</strong> Compliance wants repeatable reports for management and supervisory review.</p>
+<p><strong>Technical Scenario.</strong> Generate reports from test activity and check that they answer typical regulatory questions.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Test Data.</strong> 30 days of simulated activity; 10 typical questions (volume of sensitive data blocked, transfers by region, top risk users, exceptions granted, incident times).</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Load activity.</li>
+<li>Run each report.</li>
+<li>Check answers against the known simulated data.</li>
+<li>Test scheduling and export.</li>
+<li>Check report immutability and signing.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Report across tenants; historic restatement.</p>
+<p><strong>Expected Detection.</strong> At least 9 of 10 questions answerable accurately; scheduling and export available; reports are tamper-evident.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the data security or data inventory dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Scheduled export.</p>
+<p><strong>Forensic Evidence.</strong> Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Report samples.</p>
+<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="L09-identity-and-access-mgmt.html">&larr; L09 Identity &amp; Access Mgmt</a><a class="next" href="L11-knowledge-and-retrieval-layer.html">L11 Knowledge &amp; Retrieval Layer &rarr;</a></nav>
+<footer class="site-footer">Original author: Nachiket Sathaye &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/10_Test_Case_Library/L10-data-layer.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a></footer>
+</main>
+</div>
+<script>window.SITE_BASE = "../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

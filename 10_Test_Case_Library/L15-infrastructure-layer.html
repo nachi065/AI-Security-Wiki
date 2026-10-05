@@ -1,0 +1,1834 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L15 Infrastructure Layer | AI Security Wiki</title>
+<meta name="author" content="Nachiket Sathaye">
+<meta name="description" content="A vendor-neutral reference for AI security governance, risk management, engineering standards, vendor evaluation and assurance.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+  <a class="brand" href="../index.html">AI Security Wiki</a>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Search the wiki" aria-label="Search the wiki" autocomplete="off">
+    <ul id="search-results" hidden></ul>
+  </div>
+  <a class="repo-link" href="https://github.com/nachi065/AI-Security-Wiki" rel="noopener">GitHub</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="sidebar" aria-label="Wiki sections">
+<ul class="nav">
+<li><a href="../index.html">Home</a></li>
+<li><details><summary><a href="../01_Strategy_and_Market/index.html">Strategy and Market</a></summary><ul>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.html">AI Security Market and Technology Landscape — Summary</a></li>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape_Expanded.html">AI Security Market and Technology Landscape</a></li>
+</ul></details></li>
+<li><details><summary><a href="../02_Risk_Management/index.html">Risk Management</a></summary><ul>
+<li><a href="../02_Risk_Management/02A_AI_Risk_Methodology.html">AI Risk Methodology</a></li>
+<li><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a></li>
+<li><a href="../02_Risk_Management/02C_AI_Risk_Treatment_Plan.html">AI Risk Treatment Plan</a></li>
+<li><a href="../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a></li>
+<li><a href="../02_Risk_Management/02E_AI_Risk_Review_Template.html">AI Risk Review Template</a></li>
+</ul></details></li>
+<li><details><summary><a href="../03_Control_Library/index.html">Control Library</a></summary><ul>
+<li><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></li>
+<li><a href="../03_Control_Library/04_Existing_Security_Control_Baseline.html">Existing Security Control Baseline</a></li>
+<li><a href="../03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.html">Microsoft Security Overlap and AI Gaps</a></li>
+</ul></details></li>
+<li><details><summary><a href="../04_Domain_Standards/index.html">Domain Standards</a></summary><ul>
+<li><a href="../04_Domain_Standards/06_Browser_AI_Security_Standard.html">Browser AI Security Standard</a></li>
+<li><a href="../04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.html">IDE AI Coding Assistant Security Standard</a></li>
+<li><a href="../04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a></li>
+<li><a href="../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
+<li><a href="../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
+</ul></details></li>
+<li><details><summary><a href="../05_Vendor_Evaluation/index.html">Vendor Evaluation</a></summary><ul>
+<li><a href="../05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
+<li><a href="../05_Vendor_Evaluation/12A_Vendor_Profile_Prompt_Security_SentinelOne.html">Vendor Profile — Prompt Security / SentinelOne</a></li>
+<li><a href="../05_Vendor_Evaluation/12B_Vendor_Profile_Palo_Alto_Prisma_AIRS.html">Vendor Profile — Palo Alto Prisma AIRS</a></li>
+<li><a href="../05_Vendor_Evaluation/12C_Vendor_Profile_HiddenLayer.html">Vendor Profile — HiddenLayer</a></li>
+<li><a href="../05_Vendor_Evaluation/12D_Vendor_Profile_Lasso_Security.html">Vendor Profile — Lasso Security</a></li>
+<li><a href="../05_Vendor_Evaluation/12E_Vendor_Profile_Cyberhaven.html">Vendor Profile — Cyberhaven</a></li>
+<li><a href="../05_Vendor_Evaluation/12F_Vendor_Profile_Nightfall_AI.html">Vendor Profile — Nightfall AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12G_Vendor_Profile_Enkrypt_AI.html">Vendor Profile — Enkrypt AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12H_Vendor_Profile_Sovereign_AI_Security_Labs.html">Vendor Profile — Sovereign AI Security Labs</a></li>
+</ul></details></li>
+<li><details><summary><a href="../06_Testing_and_Assurance/index.html">Testing and Assurance</a></summary><ul>
+<li><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html">AI Security PoC Test Case Library</a></li>
+<li><a href="../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a></li>
+<li><a href="../06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.html">AI Red Team Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../07_Role_Based_Playbooks/index.html">Role-Based Playbooks</a></summary><ul>
+<li><a href="../07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.html">AI Product Developer Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15B_AI_Security_Researcher_Playbook.html">AI Security Researcher Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15D_Security_Engineering_Playbook.html">Security Engineering Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15E_Vendor_Evaluation_and_Audit_Playbook.html">Vendor Evaluation and Audit Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../08_Governance/index.html">Governance</a></summary><ul>
+<li><a href="../08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></li>
+<li><a href="../08_Governance/17_AI_Policy_Standards_and_Acceptable_Use.html">AI Policy, Standards and Acceptable Use</a></li>
+</ul></details></li>
+<li><details><summary><a href="../09_Reference/index.html">Reference</a></summary><ul>
+<li><a href="../09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
+</ul></details></li>
+<li><details open><summary><a href="index.html">Test Case Library</a></summary><ul>
+<li><a href="00-reference-index.html">Reference Index</a></li>
+<li><a href="framework-adoption-guide.html">Framework Adoption Guide</a></li>
+<li><a href="appendix-d-lab-prerequisites.html">Appendix D: Lab Prerequisites</a></li>
+<li><a href="L01-business-and-use-cases.html">L01 Business &amp; Use Cases</a></li>
+<li><a href="L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
+<li><a href="L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>
+<li><a href="L04-human-interaction-layer.html">L04 Human Interaction Layer</a></li>
+<li><a href="L05-ai-applications.html">L05 AI Applications</a></li>
+<li><a href="L06-agent-orchestration-layer.html">L06 Agent Orchestration Layer</a></li>
+<li><a href="L07-prompt-and-context-layer.html">L07 Prompt &amp; Context Layer</a></li>
+<li><a href="L08-ai-gateway-and-security-controls.html">L08 AI Gateway &amp; Security Controls</a></li>
+<li><a href="L09-identity-and-access-mgmt.html">L09 Identity &amp; Access Mgmt</a></li>
+<li><a href="L10-data-layer.html">L10 Data Layer</a></li>
+<li><a href="L11-knowledge-and-retrieval-layer.html">L11 Knowledge &amp; Retrieval Layer</a></li>
+<li><a href="L12-model-layer.html">L12 Model Layer</a></li>
+<li><a href="L13-training-and-fine-tuning-layer.html">L13 Training &amp; Fine-Tuning Layer</a></li>
+<li><a href="L14-mlops-llmops-layer.html">L14 MLOps / LLMOps Layer</a></li>
+<li><a class="current" href="L15-infrastructure-layer.html">L15 Infrastructure Layer</a></li>
+<li><a href="L16-supply-chain-and-third-party.html">L16 Supply Chain &amp; Third Party</a></li>
+<li><a href="L17-monitoring-detection-and-response.html">L17 Monitoring, Detection &amp; Response</a></li>
+</ul></details></li>
+</ul>
+</nav>
+<main>
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Test Case Library</a> / <span>L15 Infrastructure Layer</span></p>
+<article>
+<p><a id="top"></a></p>
+<h1 id="l15-infrastructure-layer">L15 Infrastructure Layer</h1>
+<p><strong>Primary test focus:</strong> GPU/cluster hardening, secrets, network segmentation, sovereignty of control plane</p>
+<p><strong>Cases:</strong> 20 (TC-L15-001 to TC-L15-020)  |  <strong>Batch:</strong> 5</p>
+<blockquote>
+<p><strong>Safety boundary.</strong> Infrastructure and SOC cases use a lab cluster, mock inference servers, a test cloud account and a lab SIEM and SOAR only. Probe and compromise-simulation scripts are harmless lab tools that only attempt connections and reads of canary resources. Never run them against production systems, and never connect lab alerting to production on-call routing. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.</p>
+<p><strong>Verify before use.</strong> MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the <a href="00-reference-index.html">Reference Index</a> for field definitions and applicability codes.</p>
+</blockquote>
+<h2 id="cases-in-this-layer">Cases in this layer</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Title</th>
+<th>Severity</th>
+<th>Method</th>
+<th>Domain(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#tc-l15-001">TC-L15-001</a></td>
+<td>AI Infrastructure Asset Discovery</td>
+<td>High</td>
+<td>Technical</td>
+<td>D4, D3</td>
+</tr>
+<tr>
+<td><a href="#tc-l15-002">TC-L15-002</a></td>
+<td>GPU Cluster Configuration Hardening</td>
+<td>High</td>
+<td>Technical</td>
+<td>D4</td>
+</tr>
+<tr>
+<td><a href="#tc-l15-003">TC-L15-003</a></td>
+<td>GPU Multi-Tenancy Isolation and Memory Residue</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D4, D6</td>
+</tr>
+<tr>
+<td><a href="#tc-l15-004">TC-L15-004</a></td>
+<td>Kubernetes Hardening for AI Workloads</td>
+<td>High</td>
+<td>Technical</td>
+<td>D4, D3</td>
+</tr>
+<tr>
+<td><a href="#tc-l15-005">TC-L15-005</a></td>
+<td>Inference Server Hardening and Exposure</td>
+<td>High</td>
+<td>Technical</td>
+<td>D3, D4</td>
+</tr>
+<tr>
+<td><a href="#tc-l15-006">TC-L15-006</a></td>
+<td>Network Segmentation Between AI Zones</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D3, D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l15-007">TC-L15-007</a></td>
+<td>Egress Control for AI Workloads</td>
+<td>High</td>
+<td>Technical</td>
+<td>D4, D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l15-008">TC-L15-008</a></td>
+<td>Lateral Movement Containment from a Compromised Inference Pod</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D3, D5</td>
+</tr>
+<tr>
+<td><a href="#tc-l15-009">TC-L15-009</a></td>
+<td>Secrets Management for AI Infrastructure</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D4</td>
+</tr>
+<tr>
+<td><a href="#tc-l15-010">TC-L15-010</a></td>
+<td>Cloud IAM Roles for AI Services and Metadata Service Protection</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D4, D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l15-011">TC-L15-011</a></td>
+<td>Model and Dataset Storage Security</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D4, D6</td>
+</tr>
+<tr>
+<td><a href="#tc-l15-012">TC-L15-012</a></td>
+<td>Encryption and Confidential Computing Evidence</td>
+<td>Medium</td>
+<td>Evidence</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l15-013">TC-L15-013</a></td>
+<td>Control Plane and Data Plane Location Proof (Sovereignty)</td>
+<td>Critical</td>
+<td>Evidence</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l15-014">TC-L15-014</a></td>
+<td>Air-Gapped and On-Premise Operation</td>
+<td>High</td>
+<td>Technical</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l15-015">TC-L15-015</a></td>
+<td>Single-Tenant and Dedicated Deployment Evidence</td>
+<td>High</td>
+<td>Evidence</td>
+<td>D7, D4</td>
+</tr>
+<tr>
+<td><a href="#tc-l15-016">TC-L15-016</a></td>
+<td>Hardening of the Evaluated Platform's Own Components</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l15-017">TC-L15-017</a></td>
+<td>Resource Quotas and Noisy-Neighbour Protection on Shared GPU Capacity</td>
+<td>Medium</td>
+<td>Technical</td>
+<td>D4</td>
+</tr>
+<tr>
+<td><a href="#tc-l15-018">TC-L15-018</a></td>
+<td>Infrastructure Logging and Telemetry Coverage</td>
+<td>High</td>
+<td>Technical</td>
+<td>D4, D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l15-019">TC-L15-019</a></td>
+<td>Backup, Disaster Recovery and Restoration of AI Services</td>
+<td>High</td>
+<td>Technical</td>
+<td>D3, D7</td>
+</tr>
+<tr>
+<td><a href="#tc-l15-020">TC-L15-020</a></td>
+<td>Hosting Location and Data Centre Assurance</td>
+<td>High</td>
+<td>Attestation</td>
+<td>D7</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="test-cases">Test cases</h2>
+<p><a id="tc-l15-001"></a></p>
+<h3 id="tc-l15-001-ai-infrastructure-asset-discovery">TC-L15-001: AI Infrastructure Asset Discovery</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L15 Infrastructure Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D4, D3</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (visibility control); Reconnaissance/Discovery context only</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM03:2025 Supply Chain (unmanaged AI components)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MAP 1.1; GOVERN 6.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> GPU nodes, inference servers, vector stores and model storage are provisioned by data teams outside normal asset processes, so they escape patching and monitoring.</p>
+<p><strong>Business Scenario.</strong> Infrastructure owners want every component hosting AI workloads inventoried with owner, location and exposure.</p>
+<p><strong>Technical Scenario.</strong> Deploy a known set of AI infrastructure in several places and compare the platform's inventory with ground truth.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.</p>
+<p><strong>Test Data.</strong> 12 assets: 3 GPU nodes (one in a separate cloud account), 2 inference servers, 2 vector stores, 2 model storage buckets, 1 notebook server, 1 orchestration controller, 1 experiment tracker; each tagged with owner, environment and exposure.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Record ground truth: asset, location, owner, exposure, workload.</li>
+<li>Deploy all assets without registering them.</li>
+<li>Run discovery across cloud, cluster and network.</li>
+<li>Compare found assets and attributes.</li>
+<li>Check classification of exposure (internal, partner, internet).</li>
+<li>Add two assets later and time detection.</li>
+<li>Check export to the asset system.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Assets in an account the platform was not given; short-lived training clusters existing for under an hour.</p>
+<p><strong>Expected Detection.</strong> At least 11 of 12 assets found; owner and exposure correct for at least 9; new assets detected within the stated interval; export maps to the asset system.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A (discovery).</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Inventory to CMDB.</p>
+<p><strong>Forensic Evidence.</strong> Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Inventory vs ground truth; detection delay.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l15-002"></a></p>
+<h3 id="tc-l15-002-gpu-cluster-configuration-hardening">TC-L15-002: GPU Cluster Configuration Hardening</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L15 Infrastructure Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D4</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> GPU hosts run privileged drivers and large shared workloads; default settings leave management ports, shared memory and debugging interfaces open.</p>
+<p><strong>Business Scenario.</strong> Platform security wants GPU and cluster configuration checked against a hardening baseline.</p>
+<p><strong>Technical Scenario.</strong> Assess lab GPU nodes and cluster configuration with seeded weaknesses and review findings.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.</p>
+<p><strong>Test Data.</strong> 3 GPU nodes and 1 cluster with 16 seeded weaknesses: exposed device plugin metrics, open management interface, privileged containers with host device access, shared host paths, outdated driver, default credentials on a monitoring tool, debug port open, no node isolation between teams, unencrypted node disks, permissive cluster roles, plus 6 compliant settings.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Record the seeded weaknesses.</li>
+<li>Run the assessment.</li>
+<li>Compare findings with ground truth.</li>
+<li>Check severity ranking and remediation guidance.</li>
+<li>Remediate five items and rerun.</li>
+<li>Check which benchmark the checks map to (state it, for example a recognised Kubernetes or cloud benchmark).</li>
+<li>Check handling of settings the platform cannot see (kernel or firmware level).</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Settings that differ between node pools; configuration changed after the scan.</p>
+<p><strong>Expected Detection.</strong> At least 13 of 16 weaknesses found; compliant settings not flagged more than twice; findings clear after remediation; benchmark mapping stated; blind spots documented.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Findings to ticketing.</p>
+<p><strong>Forensic Evidence.</strong> Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Findings vs seeded list.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l15-003"></a></p>
+<h3 id="tc-l15-003-gpu-multi-tenancy-isolation-and-memory-residue">TC-L15-003: GPU Multi-Tenancy Isolation and Memory Residue</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L15 Infrastructure Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D4, D6</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P | Partial: R</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0057 LLM Data Leakage</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.10; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Shared GPUs can leak data between tenants through memory that is not cleared or isolation modes that are weaker than assumed.</p>
+<p><strong>Business Scenario.</strong> Security wants isolation between workloads on shared accelerators demonstrated, not just stated.</p>
+<p><strong>Technical Scenario.</strong> Run two tenants' workloads on shared GPU resources in each sharing mode and probe for residue and interference.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab GPU hardware or documented simulation; probe is lab-only and harmless.</p>
+<p><strong>Test Data.</strong> 2 tenants; sharing modes the vendor or platform supports (dedicated, partitioned, time-sliced); probe workload that writes canary patterns to device memory and a second workload that reads uninitialised device memory (lab only, harmless); noisy workload.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Document the claimed isolation for each mode.</li>
+<li>Run tenant A's workload writing a canary pattern.</li>
+<li>Terminate it and start tenant B's probe immediately.</li>
+<li>Search B's memory reads for the canary.</li>
+<li>Repeat for each mode.</li>
+<li>Run the noisy workload and measure effect on the other tenant's latency.</li>
+<li>Check platform findings and recommendations on sharing modes.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Memory not cleared after crash; containers sharing a driver version with a known issue.</p>
+<p><strong>Expected Detection.</strong> No canary visible across tenants in any mode the platform allows for sensitive workloads; weaker modes reported with risk statements; interference measured and reported.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Restrict sharing by policy.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Findings to ticketing.</p>
+<p><strong>Forensic Evidence.</strong> Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Probe results per mode; latency table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l15-004"></a></p>
+<h3 id="tc-l15-004-kubernetes-hardening-for-ai-workloads">TC-L15-004: Kubernetes Hardening for AI Workloads</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L15 Infrastructure Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D4, D3</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> AI jobs often run with broad cluster roles, host access and unrestricted networking for convenience.</p>
+<p><strong>Business Scenario.</strong> Platform owners want pod security, RBAC and admission rules applied to AI namespaces.</p>
+<p><strong>Technical Scenario.</strong> Scan and test lab namespaces with seeded poor settings, then enforce policy.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.</p>
+<p><strong>Test Data.</strong> 3 namespaces (training, inference, shared tools); 20 workloads; seeded issues: privileged pods, host network, service account with cluster-admin, no resource limits, secrets as environment variables, unrestricted network policy, images from public registries, writable root file systems.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Scan namespaces.</li>
+<li>Compare findings with seeded issues.</li>
+<li>Enable enforcement rules.</li>
+<li>Redeploy the 20 workloads.</li>
+<li>Record rejections and developer messages.</li>
+<li>Request an exception and check approval and expiry.</li>
+<li>Check drift detection after a manual change.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Operators with privileged access making manual changes; third-party operators installed by Helm.</p>
+<p><strong>Expected Detection.</strong> At least 7 of 8 issue types found; non-compliant workloads rejected with clear reasons; exceptions time-limited; manual changes detected within the stated interval.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Reject at admission.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Events to SIEM.</p>
+<p><strong>Forensic Evidence.</strong> Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Findings; admission outcomes.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l15-005"></a></p>
+<h3 id="tc-l15-005-inference-server-hardening-and-exposure">TC-L15-005: Inference Server Hardening and Exposure</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L15 Infrastructure Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D3, D4</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0049 Exploit Public-Facing Application (where exposed); general cloud and infrastructure controls apply</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM03:2025 Supply Chain (infrastructure components)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Inference servers ship with open admin interfaces, verbose errors and default ports that are easy to find and abuse.</p>
+<p><strong>Business Scenario.</strong> Security wants inference servers hardened and unexposed admin functions found.</p>
+<p><strong>Technical Scenario.</strong> Assess lab inference servers with seeded exposure and configuration weaknesses.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.</p>
+<p><strong>Test Data.</strong> 3 mock inference servers with 12 seeded weaknesses: unauthenticated admin endpoint, debug routes, verbose stack traces, default ports exposed to wider segment, permissive cross-origin settings, no TLS on internal calls, unlimited request size, no rate limit, outdated version, model listing exposed, metrics endpoint with prompt samples, plus secure controls.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Scan the servers.</li>
+<li>Compare findings with ground truth.</li>
+<li>Check ranking by exposure.</li>
+<li>Check guidance.</li>
+<li>Apply fixes to four items and rescan.</li>
+<li>Test whether the platform shows the metrics endpoint content risk.</li>
+<li>Check scan impact on server performance.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Server behind an ingress that hides some routes; server updated between scans.</p>
+<p><strong>Expected Detection.</strong> At least 10 of 12 weaknesses found; fixes verified; metrics exposure of prompt content identified; scan causes no outage.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Findings to ticketing.</p>
+<p><strong>Forensic Evidence.</strong> Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Findings vs seeded list.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l15-006"></a></p>
+<h3 id="tc-l15-006-network-segmentation-between-ai-zones">TC-L15-006: Network Segmentation Between AI Zones</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L15 Infrastructure Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D3, D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P, G</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0049 Exploit Public-Facing Application (where exposed); general cloud and infrastructure controls apply</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM03:2025 Supply Chain (infrastructure components)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> A flat network lets a compromised notebook reach production data, model storage and management planes.</p>
+<p><strong>Business Scenario.</strong> Network security wants training, inference, data, management and developer zones separated by enforced rules.</p>
+<p><strong>Technical Scenario.</strong> Map zones, test cross-zone connections and compare with the intended policy.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.</p>
+<p><strong>Test Data.</strong> 5 zones with a written allow matrix (training to data store allowed, inference to data store read-only, developer to management blocked, internet to inference only via gateway, management to all with MFA); test hosts in each zone; 25 intended connection tests.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Load the intended matrix.</li>
+<li>Test the 25 connections by attempting them.</li>
+<li>Compare actual to intended.</li>
+<li>Check how the platform reports violations.</li>
+<li>Fix one violation and verify.</li>
+<li>Introduce a new rule and check change detection.</li>
+<li>Check visualisation of actual flows.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Connections via a shared jump host; temporary firewall rule left open.</p>
+<p><strong>Expected Detection.</strong> At least 24 of 25 outcomes match the intended policy; violations reported with source, destination and port; rule change detected.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A (assessment), or block where the platform enforces.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Findings to network security tools.</p>
+<p><strong>Forensic Evidence.</strong> Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Connection test matrix.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l15-007"></a></p>
+<h3 id="tc-l15-007-egress-control-for-ai-workloads">TC-L15-007: Egress Control for AI Workloads</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L15 Infrastructure Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D4, D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P, G, E</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0049 Exploit Public-Facing Application (where exposed); general cloud and infrastructure controls apply</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM03:2025 Supply Chain (infrastructure components)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Training and inference jobs with unrestricted internet access can pull untrusted code and send data out.</p>
+<p><strong>Business Scenario.</strong> Security wants outbound destinations allowed per workload.</p>
+<p><strong>Technical Scenario.</strong> Run lab workloads that attempt outbound connections and test enforcement and visibility.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.</p>
+<p><strong>Test Data.</strong> 3 workloads (training, inference, agent); allow-lists of 3 destinations each; 20 attempted connections: allowed hosts, public package index, unlisted storage bucket, raw IP, DNS tunnelling-style long queries (lab only), metadata service, other tenants' endpoints.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Set policy.</li>
+<li>Run the 20 attempts per workload.</li>
+<li>Record decisions.</li>
+<li>Check DNS handling.</li>
+<li>Add and remove an allowed destination and check effect time.</li>
+<li>Check alerts and logs.</li>
+<li>Check behaviour when the control component fails.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Allowed destination redirecting elsewhere; traffic over a non-standard port.</p>
+<p><strong>Expected Detection.</strong> All out-of-policy attempts blocked or alerted; allowed destinations work; DNS abuse patterns detected; change effective within 5 minutes; failure mode documented.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Block.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Events to SIEM.</p>
+<p><strong>Forensic Evidence.</strong> Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Attempt matrix.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l15-008"></a></p>
+<h3 id="tc-l15-008-lateral-movement-containment-from-a-compromised-inference-pod">TC-L15-008: Lateral Movement Containment from a Compromised Inference Pod</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L15 Infrastructure Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D3, D5</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P, G</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0049 Exploit Public-Facing Application (where exposed); general cloud and infrastructure controls apply</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM03:2025 Supply Chain (infrastructure components)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> A foothold in one inference container should not give reach to storage, other models or management APIs.</p>
+<p><strong>Business Scenario.</strong> Security wants blast radius limited and compromise detected.</p>
+<p><strong>Technical Scenario.</strong> Simulate a compromised inference pod using harmless lab probes that attempt common post-compromise actions.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Probes are harmless lab scripts that only attempt connections and reads of canary resources.</p>
+<p><strong>Test Data.</strong> 1 inference pod; probes: read mounted secrets, query cloud metadata service, scan internal ports, call the cluster API, read other namespaces, write to the model bucket, reach the vector store; detection rules active.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Baseline: run probes with controls off and record reach.</li>
+<li>Enable controls.</li>
+<li>Run probes again.</li>
+<li>Record blocked actions and alerts.</li>
+<li>Check time to detection.</li>
+<li>Check containment actions offered (isolate pod, revoke token).</li>
+<li>Review the evidence available for investigation.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Pod with a mounted cloud credential; probe running slowly over hours.</p>
+<p><strong>Expected Detection.</strong> At least 6 of 7 probes blocked or detected; alerts within 5 minutes; isolation action available; evidence sufficient to reconstruct probes.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Block; isolate.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Alerts to SIEM and SOAR.</p>
+<p><strong>Forensic Evidence.</strong> Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Probe result table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l15-009"></a></p>
+<h3 id="tc-l15-009-secrets-management-for-ai-infrastructure">TC-L15-009: Secrets Management for AI Infrastructure</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L15 Infrastructure Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D4</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0055 Unsecured Credentials</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.10; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Secrets in images, environment variables and configuration maps are readable by anyone who can read the workload.</p>
+<p><strong>Business Scenario.</strong> Security wants secrets fetched from a vault and never baked in.</p>
+<p><strong>Technical Scenario.</strong> Seed secrets across lab infrastructure and test discovery and vault adoption.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.</p>
+<p><strong>Test Data.</strong> 15 fabricated secrets across image layers, environment variables, config maps, node files, pipeline variables and notebook files; vault with 3 secrets properly referenced.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Seed secrets.</li>
+<li>Run detection across infrastructure.</li>
+<li>Compare to ground truth.</li>
+<li>Check rotation guidance.</li>
+<li>Migrate two secrets to the vault and rerun.</li>
+<li>Check vault access logging and policies.</li>
+<li>Check detection of secrets in running process memory or logs if offered.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Secrets in build cache; secrets in crash dumps.</p>
+<p><strong>Expected Detection.</strong> At least 13 of 15 secrets found; findings clear after migration; vault access logged and least-privilege.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Alert.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Findings to ticketing.</p>
+<p><strong>Forensic Evidence.</strong> Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Detection table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l15-010"></a></p>
+<h3 id="tc-l15-010-cloud-iam-roles-for-ai-services-and-metadata-service-protection">TC-L15-010: Cloud IAM Roles for AI Services and Metadata Service Protection</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L15 Infrastructure Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D4, D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0012 Valid Accounts</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM06:2025 Excessive Agency</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Over-permissive cloud roles on AI services let a small compromise become an account-wide one.</p>
+<p><strong>Business Scenario.</strong> Cloud security wants AI service roles minimal and metadata credentials protected.</p>
+<p><strong>Technical Scenario.</strong> Review roles attached to lab AI services and test misuse paths.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.</p>
+<p><strong>Test Data.</strong> 6 roles: broad administrator, storage full access, read-only data, model deployment only, unused role with wildcard permissions, cross-account trust; metadata service with and without hardening.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Extract roles and permissions.</li>
+<li>Compare to need.</li>
+<li>Flag over-permission and unused permissions.</li>
+<li>Attempt to read credentials from the metadata service inside a pod.</li>
+<li>Check protection (session tokens, restricted hops).</li>
+<li>Reduce one role and verify service still works.</li>
+<li>Check cross-account trust findings.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Roles assumed through chains; permissions granted by tag conditions.</p>
+<p><strong>Expected Detection.</strong> Over-permissive roles identified for all seeded cases; metadata exposure found or blocked; reduced role works; trust findings correct.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Findings to ticketing.</p>
+<p><strong>Forensic Evidence.</strong> Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Permission analysis; metadata test.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l15-011"></a></p>
+<h3 id="tc-l15-011-model-and-dataset-storage-security">TC-L15-011: Model and Dataset Storage Security</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L15 Infrastructure Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D4, D6</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0057 LLM Data Leakage</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.10; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Public or weakly protected buckets holding models and datasets are among the most common AI exposures.</p>
+<p><strong>Business Scenario.</strong> Security wants model and dataset storage checked for exposure, encryption and versioning.</p>
+<p><strong>Technical Scenario.</strong> Assess lab storage with seeded weaknesses.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.</p>
+<p><strong>Test Data.</strong> 6 buckets or shares with 14 seeded issues: public read, public write, no encryption, weak policy with wildcard principal, no versioning, no access logging, no object lock, cross-account access, signed URLs with long expiry, no lifecycle rules, plus compliant settings.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Run assessment.</li>
+<li>Compare with seeded issues.</li>
+<li>Test unauthenticated access from outside the account.</li>
+<li>Check findings priority.</li>
+<li>Remediate three and rerun.</li>
+<li>Check detection of new public exposure after a change.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Signed URL shared externally; replication to another region.</p>
+<p><strong>Expected Detection.</strong> At least 12 of 14 issues found; public exposure ranked highest; new exposure detected within the stated interval.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Findings to ticketing.</p>
+<p><strong>Forensic Evidence.</strong> Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Findings vs seeded list.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l15-012"></a></p>
+<h3 id="tc-l15-012-encryption-and-confidential-computing-evidence">TC-L15-012: Encryption and Confidential Computing Evidence</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L15 Infrastructure Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Evidence</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Encryption claims often cover storage but not memory, backups or in-use data.</p>
+<p><strong>Business Scenario.</strong> Security wants the coverage of encryption stated precisely and verified where possible.</p>
+<p><strong>Technical Scenario.</strong> Review encryption coverage and any confidential computing support for lab workloads.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.</p>
+<p><strong>Test Data.</strong> Lab workloads; encryption settings for disks, buckets, backups and network; vendor statements on in-use protection.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Request a coverage table for data at rest, in transit and in use.</li>
+<li>Verify disk, bucket and backup settings in the lab.</li>
+<li>Scan TLS versions and ciphers.</li>
+<li>If confidential computing is claimed, request attestation evidence and verify.</li>
+<li>Record gaps.</li>
+<li>Review key custody for each layer.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Backups in another region; third-party managed services.</p>
+<p><strong>Expected Detection.</strong> Coverage table matches observed settings; TLS 1.2 or higher only; attestation evidence provided if claimed; gaps documented.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Documents attached.</p>
+<p><strong>Forensic Evidence.</strong> Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Settings and scan output.</p>
+<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l15-013"></a></p>
+<h3 id="tc-l15-013-control-plane-and-data-plane-location-proof-sovereignty">TC-L15-013: Control Plane and Data Plane Location Proof (Sovereignty)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L15 Infrastructure Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Evidence</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Sovereignty claims about in-country control are meaningless if management, telemetry or licensing functions depend on services outside the jurisdiction.</p>
+<p><strong>Business Scenario.</strong> Sovereignty and compliance reviewers need the physical and logical location of every plane proven.</p>
+<p><strong>Technical Scenario.</strong> Trace management, data and telemetry paths with network capture and cloud region evidence.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.</p>
+<p><strong>Test Data.</strong> Deployed platform in the lab; capture tooling; list of platform components with claimed locations; data classes (prompts, metadata, telemetry, licence checks, updates).</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Request a written table of components, locations and operators.</li>
+<li>Capture all traffic for 48 hours including idle periods and an upgrade.</li>
+<li>Resolve destinations to operators and regions.</li>
+<li>Compare with the table.</li>
+<li>Block all non-approved regions and verify continued operation.</li>
+<li>Check who holds administrative credentials for each plane and from where they connect.</li>
+<li>Review contractual statements.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Licence checks and update endpoints; support access from another country.</p>
+<p><strong>Expected Detection.</strong> No component or data class depends on a non-approved region; operation continues with non-approved regions blocked; administrative access locations documented; written table matches observations.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Documents attached.</p>
+<p><strong>Forensic Evidence.</strong> Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Capture analysis; region resolution table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l15-014"></a></p>
+<h3 id="tc-l15-014-air-gapped-and-on-premise-operation">TC-L15-014: Air-Gapped and On-Premise Operation</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L15 Infrastructure Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Products described as on-premise often need cloud services for licensing, updates, model downloads or classification.</p>
+<p><strong>Business Scenario.</strong> Operations in restricted environments need proof the product works without internet.</p>
+<p><strong>Technical Scenario.</strong> Deploy the platform in an isolated lab segment with no internet access and run the full test set.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.</p>
+<p><strong>Test Data.</strong> Isolated segment; offline update media; standard test set of 40 prompts and events; offline licence mechanism.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Deploy with no internet.</li>
+<li>Run the standard test set.</li>
+<li>Record functions that fail or degrade.</li>
+<li>Apply an offline update.</li>
+<li>Check licence validation offline.</li>
+<li>Check threat content updates offline and their delay.</li>
+<li>Check log and evidence export offline.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Licence expiry during offline period; time synchronisation drift.</p>
+<p><strong>Expected Detection.</strong> All claimed core functions work offline; degraded functions documented; offline update and licence work; content update path defined.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Offline export works.</p>
+<p><strong>Forensic Evidence.</strong> Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Function table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l15-015"></a></p>
+<h3 id="tc-l15-015-single-tenant-and-dedicated-deployment-evidence">TC-L15-015: Single-Tenant and Dedicated Deployment Evidence</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L15 Infrastructure Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7, D4</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Evidence</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0057 LLM Data Leakage</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.10; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Shared platforms increase the chance of cross-customer exposure and complicate residency commitments.</p>
+<p><strong>Business Scenario.</strong> Risk owners want dedicated options and isolation shown.</p>
+<p><strong>Technical Scenario.</strong> Review tenancy models and test isolation where a shared option is in scope.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.</p>
+<p><strong>Test Data.</strong> Vendor tenancy documentation; lab tenants in each available model.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Request a description of each tenancy model.</li>
+<li>Compare with deployment in the lab.</li>
+<li>Check network, storage and compute separation.</li>
+<li>Check customer-held key options per model.</li>
+<li>Test administrative separation between tenants.</li>
+<li>Review incident history involving tenancy.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Dedicated compute with shared control plane.</p>
+<p><strong>Expected Detection.</strong> Tenancy model matches documentation; isolation verified at network, storage and compute levels; incident history disclosed.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Documents attached.</p>
+<p><strong>Forensic Evidence.</strong> Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Verification notes.</p>
+<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l15-016"></a></p>
+<h3 id="tc-l15-016-hardening-of-the-evaluated-platforms-own-components">TC-L15-016: Hardening of the Evaluated Platform's Own Components</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L15 Infrastructure Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0049 Exploit Public-Facing Application (where exposed); general cloud and infrastructure controls apply</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM03:2025 Supply Chain (infrastructure components)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> The security platform's agents, gateways and console hold privileged access to traffic and data, and are themselves attack targets.</p>
+<p><strong>Business Scenario.</strong> Security wants the vendor's own components assessed like any other critical system.</p>
+<p><strong>Technical Scenario.</strong> Deploy the platform in the lab and assess each component with network, configuration and credential checks.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.</p>
+<p><strong>Test Data.</strong> Deployed agent, gateway and management console; scanning tools approved for the lab; benchmark checklist.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Port scan and service enumeration of each component.</li>
+<li>TLS and cipher scan.</li>
+<li>Check default credentials and password policy.</li>
+<li>Check administrative interface exposure and MFA.</li>
+<li>Check privileges the agent runs with and files it writes.</li>
+<li>Check log content for secrets.</li>
+<li>Check operating system hardening of appliances.</li>
+<li>Report findings by severity.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Appliance images with outdated components; debugging interfaces enabled by default.</p>
+<p><strong>Expected Detection.</strong> No critical or high findings left open without a vendor commitment; no default credentials; MFA available for administrators; agent privileges match documentation.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Findings to the vendor with deadlines.</p>
+<p><strong>Forensic Evidence.</strong> Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Scan outputs; findings list.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l15-017"></a></p>
+<h3 id="tc-l15-017-resource-quotas-and-noisy-neighbour-protection-on-shared-gpu-capacity">TC-L15-017: Resource Quotas and Noisy-Neighbour Protection on Shared GPU Capacity</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L15 Infrastructure Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D4</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM10:2025 Unbounded Consumption</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> One team can monopolise scarce GPU capacity or starve production inference.</p>
+<p><strong>Business Scenario.</strong> Operations wants quotas and priorities enforced.</p>
+<p><strong>Technical Scenario.</strong> Run competing workloads under quotas and measure fairness and protection of production inference.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.</p>
+<p><strong>Test Data.</strong> Cluster with 8 GPU units; 3 teams with quotas; production inference service; 4 batch training jobs including one oversized.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Set quotas and priorities.</li>
+<li>Run the jobs.</li>
+<li>Record allocation.</li>
+<li>Submit an oversized job.</li>
+<li>Measure production inference latency during contention.</li>
+<li>Check preemption and alerts.</li>
+<li>Check quota change audit.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Burst credits; job priority changes mid-run.</p>
+<p><strong>Expected Detection.</strong> Quotas enforced; production latency within limit during contention; oversized job rejected or queued; alerts raised.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Enforce quota.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Metrics to monitoring.</p>
+<p><strong>Forensic Evidence.</strong> Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Allocation and latency table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l15-018"></a></p>
+<h3 id="tc-l15-018-infrastructure-logging-and-telemetry-coverage">TC-L15-018: Infrastructure Logging and Telemetry Coverage</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L15 Infrastructure Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D4, D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P, G</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (operational and monitoring control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Gaps in cluster, GPU, storage and network logging leave incidents unexplained.</p>
+<p><strong>Business Scenario.</strong> SOC wants required log sources present, complete and timely.</p>
+<p><strong>Technical Scenario.</strong> Generate known activity in lab infrastructure and check that every expected log source records it.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.</p>
+<p><strong>Test Data.</strong> 8 activities: login to the cluster, role change, secret read, model file download, storage policy change, GPU job start, network policy change, admin API call; 10 log sources.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>List expected log sources and fields.</li>
+<li>Perform each activity.</li>
+<li>Check for a corresponding record in each source.</li>
+<li>Check timestamps and identities.</li>
+<li>Identify missing sources.</li>
+<li>Check delivery delay to the SIEM.</li>
+<li>Check retention settings.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Activities performed through automation accounts; logging disabled by an attacker.</p>
+<p><strong>Expected Detection.</strong> At least 7 of 8 activities recorded with identity and time; delay under 5 minutes; gaps reported by the platform.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Delivery to SIEM.</p>
+<p><strong>Forensic Evidence.</strong> Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Coverage table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l15-019"></a></p>
+<h3 id="tc-l15-019-backup-disaster-recovery-and-restoration-of-ai-services">TC-L15-019: Backup, Disaster Recovery and Restoration of AI Services</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L15 Infrastructure Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D3, D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Models, vector stores, prompts and policies may be unrecoverable or restore to an insecure state.</p>
+<p><strong>Business Scenario.</strong> Resilience owners want recovery objectives met and restored services secure.</p>
+<p><strong>Technical Scenario.</strong> Back up and restore a lab AI service including model, index, configuration and policies.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.</p>
+<p><strong>Test Data.</strong> 1 AI application with model weights, vector store of 1,000 chunks, prompt templates, platform policies and access rules; recovery targets for time and data loss.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Take backups.</li>
+<li>Destroy the primary environment.</li>
+<li>Restore.</li>
+<li>Measure recovery time and data loss.</li>
+<li>Check that access controls, keys and policies are restored correctly.</li>
+<li>Check that restored secrets are rotated or protected.</li>
+<li>Test restoration in a second region if relevant to the residency policy.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Partial restore; restore during a policy change.</p>
+<p><strong>Expected Detection.</strong> Targets met; access controls identical after restore; no data restored outside permitted regions; backups encrypted.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Backup logs.</p>
+<p><strong>Forensic Evidence.</strong> Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Recovery timeline; post-restore checks.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l15-020"></a></p>
+<h3 id="tc-l15-020-hosting-location-and-data-centre-assurance">TC-L15-020: Hosting Location and Data Centre Assurance</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L15 Infrastructure Layer</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Attestation</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: all</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Legacy ID</strong></td>
+<td>None (new case)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Residency and resilience promises depend on where infrastructure physically sits, who operates it and what assurance covers the facility.</p>
+<p><strong>Business Scenario.</strong> Compliance wants hosting locations, operators and facility assurance evidenced for every component that touches customer data.</p>
+<p><strong>Technical Scenario.</strong> Request and review hosting and facility evidence for each platform component and compare with observed network destinations.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.</p>
+<p><strong>Test Data.</strong> List of platform components and hosting providers; facility certifications and audit reports; observed destination and region data from the lab; requirements checklist (country, operator, certification, resilience tier, physical access controls, sub-contractors).</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Request in writing, for each component, the country, city, operator, facility and sub-contractors.</li>
+<li>Request facility certifications and audit reports, and check scope and dates.</li>
+<li>Compare with the lab capture of real destinations.</li>
+<li>Check whether disaster recovery sites stay inside the permitted country.</li>
+<li>Check notification commitments for hosting changes.</li>
+<li>Record anything the vendor cannot evidence.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Hosting provider acquired or changed during the contract; managed services whose locations the vendor cannot confirm.</p>
+<p><strong>Expected Detection.</strong> Locations and operators documented for every component; reports current and in scope; DR sites inside the permitted country; observed destinations match; change notification committed.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Signed written statement from the vendor.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Documents attached to the register.</p>
+<p><strong>Forensic Evidence.</strong> Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = no statement; 3 = statement without supporting detail; 5 = statement with technical detail and an offer to demonstrate.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Evidence checklist; destination comparison.</p>
+<p><strong>Reviewer Notes.</strong> Attestation scores below demonstrated evidence. Request a demonstration where possible.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="L14-mlops-llmops-layer.html">&larr; L14 MLOps / LLMOps Layer</a><a class="next" href="L16-supply-chain-and-third-party.html">L16 Supply Chain &amp; Third Party &rarr;</a></nav>
+<footer class="site-footer">Original author: Nachiket Sathaye &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/10_Test_Case_Library/L15-infrastructure-layer.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a></footer>
+</main>
+</div>
+<script>window.SITE_BASE = "../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

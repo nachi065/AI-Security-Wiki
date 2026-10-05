@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Framework Adoption Guide | AI Security Wiki</title>
+<meta name="author" content="Nachiket Sathaye">
+<meta name="description" content="A vendor-neutral reference for AI security governance, risk management, engineering standards, vendor evaluation and assurance.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+  <a class="brand" href="../index.html">AI Security Wiki</a>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Search the wiki" aria-label="Search the wiki" autocomplete="off">
+    <ul id="search-results" hidden></ul>
+  </div>
+  <a class="repo-link" href="https://github.com/nachi065/AI-Security-Wiki" rel="noopener">GitHub</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="sidebar" aria-label="Wiki sections">
+<ul class="nav">
+<li><a href="../index.html">Home</a></li>
+<li><details><summary><a href="../01_Strategy_and_Market/index.html">Strategy and Market</a></summary><ul>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.html">AI Security Market and Technology Landscape — Summary</a></li>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape_Expanded.html">AI Security Market and Technology Landscape</a></li>
+</ul></details></li>
+<li><details><summary><a href="../02_Risk_Management/index.html">Risk Management</a></summary><ul>
+<li><a href="../02_Risk_Management/02A_AI_Risk_Methodology.html">AI Risk Methodology</a></li>
+<li><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a></li>
+<li><a href="../02_Risk_Management/02C_AI_Risk_Treatment_Plan.html">AI Risk Treatment Plan</a></li>
+<li><a href="../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a></li>
+<li><a href="../02_Risk_Management/02E_AI_Risk_Review_Template.html">AI Risk Review Template</a></li>
+</ul></details></li>
+<li><details><summary><a href="../03_Control_Library/index.html">Control Library</a></summary><ul>
+<li><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></li>
+<li><a href="../03_Control_Library/04_Existing_Security_Control_Baseline.html">Existing Security Control Baseline</a></li>
+<li><a href="../03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.html">Microsoft Security Overlap and AI Gaps</a></li>
+</ul></details></li>
+<li><details><summary><a href="../04_Domain_Standards/index.html">Domain Standards</a></summary><ul>
+<li><a href="../04_Domain_Standards/06_Browser_AI_Security_Standard.html">Browser AI Security Standard</a></li>
+<li><a href="../04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.html">IDE AI Coding Assistant Security Standard</a></li>
+<li><a href="../04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a></li>
+<li><a href="../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
+<li><a href="../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
+</ul></details></li>
+<li><details><summary><a href="../05_Vendor_Evaluation/index.html">Vendor Evaluation</a></summary><ul>
+<li><a href="../05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
+<li><a href="../05_Vendor_Evaluation/12A_Vendor_Profile_Prompt_Security_SentinelOne.html">Vendor Profile — Prompt Security / SentinelOne</a></li>
+<li><a href="../05_Vendor_Evaluation/12B_Vendor_Profile_Palo_Alto_Prisma_AIRS.html">Vendor Profile — Palo Alto Prisma AIRS</a></li>
+<li><a href="../05_Vendor_Evaluation/12C_Vendor_Profile_HiddenLayer.html">Vendor Profile — HiddenLayer</a></li>
+<li><a href="../05_Vendor_Evaluation/12D_Vendor_Profile_Lasso_Security.html">Vendor Profile — Lasso Security</a></li>
+<li><a href="../05_Vendor_Evaluation/12E_Vendor_Profile_Cyberhaven.html">Vendor Profile — Cyberhaven</a></li>
+<li><a href="../05_Vendor_Evaluation/12F_Vendor_Profile_Nightfall_AI.html">Vendor Profile — Nightfall AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12G_Vendor_Profile_Enkrypt_AI.html">Vendor Profile — Enkrypt AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12H_Vendor_Profile_Sovereign_AI_Security_Labs.html">Vendor Profile — Sovereign AI Security Labs</a></li>
+</ul></details></li>
+<li><details><summary><a href="../06_Testing_and_Assurance/index.html">Testing and Assurance</a></summary><ul>
+<li><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html">AI Security PoC Test Case Library</a></li>
+<li><a href="../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a></li>
+<li><a href="../06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.html">AI Red Team Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../07_Role_Based_Playbooks/index.html">Role-Based Playbooks</a></summary><ul>
+<li><a href="../07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.html">AI Product Developer Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15B_AI_Security_Researcher_Playbook.html">AI Security Researcher Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15D_Security_Engineering_Playbook.html">Security Engineering Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15E_Vendor_Evaluation_and_Audit_Playbook.html">Vendor Evaluation and Audit Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../08_Governance/index.html">Governance</a></summary><ul>
+<li><a href="../08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></li>
+<li><a href="../08_Governance/17_AI_Policy_Standards_and_Acceptable_Use.html">AI Policy, Standards and Acceptable Use</a></li>
+</ul></details></li>
+<li><details><summary><a href="../09_Reference/index.html">Reference</a></summary><ul>
+<li><a href="../09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
+</ul></details></li>
+<li><details open><summary><a href="index.html">Test Case Library</a></summary><ul>
+<li><a href="00-reference-index.html">Reference Index</a></li>
+<li><a class="current" href="framework-adoption-guide.html">Framework Adoption Guide</a></li>
+<li><a href="appendix-d-lab-prerequisites.html">Appendix D: Lab Prerequisites</a></li>
+<li><a href="L01-business-and-use-cases.html">L01 Business &amp; Use Cases</a></li>
+<li><a href="L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
+<li><a href="L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>
+<li><a href="L04-human-interaction-layer.html">L04 Human Interaction Layer</a></li>
+<li><a href="L05-ai-applications.html">L05 AI Applications</a></li>
+<li><a href="L06-agent-orchestration-layer.html">L06 Agent Orchestration Layer</a></li>
+<li><a href="L07-prompt-and-context-layer.html">L07 Prompt &amp; Context Layer</a></li>
+<li><a href="L08-ai-gateway-and-security-controls.html">L08 AI Gateway &amp; Security Controls</a></li>
+<li><a href="L09-identity-and-access-mgmt.html">L09 Identity &amp; Access Mgmt</a></li>
+<li><a href="L10-data-layer.html">L10 Data Layer</a></li>
+<li><a href="L11-knowledge-and-retrieval-layer.html">L11 Knowledge &amp; Retrieval Layer</a></li>
+<li><a href="L12-model-layer.html">L12 Model Layer</a></li>
+<li><a href="L13-training-and-fine-tuning-layer.html">L13 Training &amp; Fine-Tuning Layer</a></li>
+<li><a href="L14-mlops-llmops-layer.html">L14 MLOps / LLMOps Layer</a></li>
+<li><a href="L15-infrastructure-layer.html">L15 Infrastructure Layer</a></li>
+<li><a href="L16-supply-chain-and-third-party.html">L16 Supply Chain &amp; Third Party</a></li>
+<li><a href="L17-monitoring-detection-and-response.html">L17 Monitoring, Detection &amp; Response</a></li>
+</ul></details></li>
+</ul>
+</nav>
+<main>
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Test Case Library</a> / <span>Framework Adoption Guide</span></p>
+<article>
+<h1 id="framework-adoption-guide-layers-l01-to-l03">Framework Adoption Guide (Layers L01 to L03)</h1>
+<p>Layers L01 Business &amp; Use Cases, L02 Governance &amp; Risk Mgmt and L03 Legal, Privacy &amp; Compliance are written to be <strong>framework-neutral</strong>. They test whether a platform can support a requirement, not which clause of which framework creates it, so the same cases can be used for an ISO/IEC 27001 information security management system, India's DPDP Act, UAE NESA and information assurance requirements, the UAE PDPL, or any other framework.</p>
+<h2 id="how-to-adopt-the-cases-for-a-framework">How to adopt the cases for a framework</h2>
+<ol>
+<li>Choose the framework or frameworks in scope. Record their names, versions and the dates of the version in force.</li>
+<li>Before testing each case, complete the <strong>Applicable Requirement</strong> field: the framework and clause, the requirement text, and any numeric parameter the case refers to (response timelines, notification periods, retention periods, review intervals, thresholds). The test steps refer to 'the timeline set by the assessor' so that no framework-specific figure is hard-coded in the library.</li>
+<li>After testing, complete the <strong>Framework Crosswalk</strong> row for each case, or complete the crosswalk template below once per control theme and let the cases inherit it.</li>
+<li>Where two frameworks set different parameters for the same case, run the case once and record the stricter parameter, or run it twice with each parameter set.</li>
+<li>Do not rely on this library for clause numbers, deadlines or legal conclusions. Obtain those from the framework text and from legal counsel.</li>
+</ol>
+<h2 id="reviewer-cautions">Reviewer cautions</h2>
+<ul>
+<li>Control themes are groupings for convenience, not legal categories. Different frameworks place the same topic under different headings.</li>
+<li>NIST AI RMF mappings are at function level only. Subcategory references are left to the assessor.</li>
+<li>Numeric thresholds (detection rates, counts, times) are starting values to tune. Time limits tied to law or regulation are deliberately left blank.</li>
+<li>Cases marked <em>Evidence</em> rely on live-product inspection; documentation alone scores no higher than 3. Cases marked <em>Attestation</em> rely on vendor written statements and score below demonstrated evidence.</li>
+<li>Vendor applicability uses code <strong>W</strong> for governance, risk and compliance workflow capability. A vendor without such a workflow should be scored N/A on W-only cases, and the buyer should note which tool covers the gap.</li>
+</ul>
+<h2 id="crosswalk-template">Crosswalk template</h2>
+<p>Complete once per adoption. Leave a cell blank where the framework has no corresponding requirement. Enter references exactly as they appear in the framework text.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Control theme</th>
+<th>Cases</th>
+<th>ISO/IEC 27001 ISMS</th>
+<th>India DPDP</th>
+<th>UAE NESA / IA</th>
+<th>UAE PDPL</th>
+<th>Other</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GOV</td>
+<td>Governance and accountability</td>
+<td>14</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>RSK</td>
+<td>Risk management</td>
+<td>8</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>POL</td>
+<td>Policy and standards</td>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>INV</td>
+<td>Inventory and classification</td>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PRV</td>
+<td>Privacy and data protection principles</td>
+<td>9</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OVS</td>
+<td>Human oversight and transparency</td>
+<td>6</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>XBT</td>
+<td>Cross-border transfer, residency and jurisdiction</td>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>RET</td>
+<td>Retention, deletion and preservation</td>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>VND</td>
+<td>Third-party and supplier management</td>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>INC</td>
+<td>Incident and breach management</td>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>AUD</td>
+<td>Audit, evidence and assurance</td>
+<td>14</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>TRN</td>
+<td>Training and awareness</td>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CHG</td>
+<td>Change and lifecycle management</td>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>BCP</td>
+<td>Resilience and continuity</td>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="case-index-by-control-theme">Case index by control theme</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Control theme</th>
+<th>Cases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GOV</td>
+<td>Governance and accountability</td>
+<td><a href="L01-business-and-use-cases.html#tc-l01-002">TC-L01-002</a>, <a href="L01-business-and-use-cases.html#tc-l01-003">TC-L01-003</a>, <a href="L01-business-and-use-cases.html#tc-l01-006">TC-L01-006</a>, <a href="L01-business-and-use-cases.html#tc-l01-014">TC-L01-014</a>, <a href="L01-business-and-use-cases.html#tc-l01-020">TC-L01-020</a>, <a href="L02-governance-and-risk-mgmt.html#tc-l02-004">TC-L02-004</a>, <a href="L02-governance-and-risk-mgmt.html#tc-l02-005">TC-L02-005</a>, <a href="L02-governance-and-risk-mgmt.html#tc-l02-010">TC-L02-010</a>, <a href="L02-governance-and-risk-mgmt.html#tc-l02-011">TC-L02-011</a>, <a href="L02-governance-and-risk-mgmt.html#tc-l02-012">TC-L02-012</a>, <a href="L02-governance-and-risk-mgmt.html#tc-l02-019">TC-L02-019</a>, <a href="L02-governance-and-risk-mgmt.html#tc-l02-020">TC-L02-020</a>, <a href="L02-governance-and-risk-mgmt.html#tc-l02-024">TC-L02-024</a>, <a href="L03-legal-privacy-and-compliance.html#tc-l03-028">TC-L03-028</a></td>
+</tr>
+<tr>
+<td>RSK</td>
+<td>Risk management</td>
+<td><a href="L01-business-and-use-cases.html#tc-l01-005">TC-L01-005</a>, <a href="L01-business-and-use-cases.html#tc-l01-016">TC-L01-016</a>, <a href="L02-governance-and-risk-mgmt.html#tc-l02-006">TC-L02-006</a>, <a href="L02-governance-and-risk-mgmt.html#tc-l02-007">TC-L02-007</a>, <a href="L02-governance-and-risk-mgmt.html#tc-l02-008">TC-L02-008</a>, <a href="L02-governance-and-risk-mgmt.html#tc-l02-009">TC-L02-009</a>, <a href="L03-legal-privacy-and-compliance.html#tc-l03-010">TC-L03-010</a>, <a href="L03-legal-privacy-and-compliance.html#tc-l03-011">TC-L03-011</a></td>
+</tr>
+<tr>
+<td>POL</td>
+<td>Policy and standards</td>
+<td><a href="L02-governance-and-risk-mgmt.html#tc-l02-001">TC-L02-001</a>, <a href="L02-governance-and-risk-mgmt.html#tc-l02-002">TC-L02-002</a></td>
+</tr>
+<tr>
+<td>INV</td>
+<td>Inventory and classification</td>
+<td><a href="L01-business-and-use-cases.html#tc-l01-001">TC-L01-001</a>, <a href="L01-business-and-use-cases.html#tc-l01-004">TC-L01-004</a>, <a href="L01-business-and-use-cases.html#tc-l01-008">TC-L01-008</a></td>
+</tr>
+<tr>
+<td>PRV</td>
+<td>Privacy and data protection principles</td>
+<td><a href="L01-business-and-use-cases.html#tc-l01-007">TC-L01-007</a>, <a href="L03-legal-privacy-and-compliance.html#tc-l03-001">TC-L03-001</a>, <a href="L03-legal-privacy-and-compliance.html#tc-l03-002">TC-L03-002</a>, <a href="L03-legal-privacy-and-compliance.html#tc-l03-004">TC-L03-004</a>, <a href="L03-legal-privacy-and-compliance.html#tc-l03-005">TC-L03-005</a>, <a href="L03-legal-privacy-and-compliance.html#tc-l03-006">TC-L03-006</a>, <a href="L03-legal-privacy-and-compliance.html#tc-l03-015">TC-L03-015</a>, <a href="L03-legal-privacy-and-compliance.html#tc-l03-017">TC-L03-017</a>, <a href="L03-legal-privacy-and-compliance.html#tc-l03-018">TC-L03-018</a></td>
+</tr>
+<tr>
+<td>OVS</td>
+<td>Human oversight and transparency</td>
+<td><a href="L01-business-and-use-cases.html#tc-l01-010">TC-L01-010</a>, <a href="L01-business-and-use-cases.html#tc-l01-011">TC-L01-011</a>, <a href="L01-business-and-use-cases.html#tc-l01-012">TC-L01-012</a>, <a href="L03-legal-privacy-and-compliance.html#tc-l03-003">TC-L03-003</a>, <a href="L03-legal-privacy-and-compliance.html#tc-l03-008">TC-L03-008</a>, <a href="L03-legal-privacy-and-compliance.html#tc-l03-029">TC-L03-029</a></td>
+</tr>
+<tr>
+<td>XBT</td>
+<td>Cross-border transfer, residency and jurisdiction</td>
+<td><a href="L03-legal-privacy-and-compliance.html#tc-l03-012">TC-L03-012</a>, <a href="L03-legal-privacy-and-compliance.html#tc-l03-013">TC-L03-013</a>, <a href="L03-legal-privacy-and-compliance.html#tc-l03-014">TC-L03-014</a>, <a href="L03-legal-privacy-and-compliance.html#tc-l03-030">TC-L03-030</a></td>
+</tr>
+<tr>
+<td>RET</td>
+<td>Retention, deletion and preservation</td>
+<td><a href="L03-legal-privacy-and-compliance.html#tc-l03-007">TC-L03-007</a>, <a href="L03-legal-privacy-and-compliance.html#tc-l03-016">TC-L03-016</a>, <a href="L03-legal-privacy-and-compliance.html#tc-l03-027">TC-L03-027</a></td>
+</tr>
+<tr>
+<td>VND</td>
+<td>Third-party and supplier management</td>
+<td><a href="L01-business-and-use-cases.html#tc-l01-017">TC-L01-017</a>, <a href="L02-governance-and-risk-mgmt.html#tc-l02-021">TC-L02-021</a>, <a href="L03-legal-privacy-and-compliance.html#tc-l03-020">TC-L03-020</a>, <a href="L03-legal-privacy-and-compliance.html#tc-l03-021">TC-L03-021</a></td>
+</tr>
+<tr>
+<td>INC</td>
+<td>Incident and breach management</td>
+<td><a href="L03-legal-privacy-and-compliance.html#tc-l03-019">TC-L03-019</a></td>
+</tr>
+<tr>
+<td>AUD</td>
+<td>Audit, evidence and assurance</td>
+<td><a href="L02-governance-and-risk-mgmt.html#tc-l02-003">TC-L02-003</a>, <a href="L02-governance-and-risk-mgmt.html#tc-l02-013">TC-L02-013</a>, <a href="L02-governance-and-risk-mgmt.html#tc-l02-014">TC-L02-014</a>, <a href="L02-governance-and-risk-mgmt.html#tc-l02-015">TC-L02-015</a>, <a href="L02-governance-and-risk-mgmt.html#tc-l02-016">TC-L02-016</a>, <a href="L02-governance-and-risk-mgmt.html#tc-l02-017">TC-L02-017</a>, <a href="L02-governance-and-risk-mgmt.html#tc-l02-018">TC-L02-018</a>, <a href="L02-governance-and-risk-mgmt.html#tc-l02-025">TC-L02-025</a>, <a href="L03-legal-privacy-and-compliance.html#tc-l03-009">TC-L03-009</a>, <a href="L03-legal-privacy-and-compliance.html#tc-l03-022">TC-L03-022</a>, <a href="L03-legal-privacy-and-compliance.html#tc-l03-023">TC-L03-023</a>, <a href="L03-legal-privacy-and-compliance.html#tc-l03-024">TC-L03-024</a>, <a href="L03-legal-privacy-and-compliance.html#tc-l03-025">TC-L03-025</a>, <a href="L03-legal-privacy-and-compliance.html#tc-l03-026">TC-L03-026</a></td>
+</tr>
+<tr>
+<td>TRN</td>
+<td>Training and awareness</td>
+<td><a href="L02-governance-and-risk-mgmt.html#tc-l02-022">TC-L02-022</a>, <a href="L02-governance-and-risk-mgmt.html#tc-l02-023">TC-L02-023</a></td>
+</tr>
+<tr>
+<td>CHG</td>
+<td>Change and lifecycle management</td>
+<td><a href="L01-business-and-use-cases.html#tc-l01-013">TC-L01-013</a>, <a href="L01-business-and-use-cases.html#tc-l01-015">TC-L01-015</a>, <a href="L01-business-and-use-cases.html#tc-l01-019">TC-L01-019</a></td>
+</tr>
+<tr>
+<td>BCP</td>
+<td>Resilience and continuity</td>
+<td><a href="L01-business-and-use-cases.html#tc-l01-009">TC-L01-009</a>, <a href="L01-business-and-use-cases.html#tc-l01-018">TC-L01-018</a></td>
+</tr>
+</tbody>
+</table></div>
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="00-reference-index.html">&larr; Reference Index</a><a class="next" href="appendix-d-lab-prerequisites.html">Appendix D: Lab Prerequisites &rarr;</a></nav>
+<footer class="site-footer">Original author: Nachiket Sathaye &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/10_Test_Case_Library/framework-adoption-guide.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a></footer>
+</main>
+</div>
+<script>window.SITE_BASE = "../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

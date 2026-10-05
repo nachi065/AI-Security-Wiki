@@ -79,6 +79,13 @@ def render(page):
     return content
 
 
+CASE_SNIPPET = 700  # characters of each test case kept in the search index
+
+
+def plain(fragment):
+    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", fragment))).strip()
+
+
 TEMPLATE = """<!doctype html>
 <html lang="en">
 <head>
@@ -146,8 +153,15 @@ for i, page in enumerate(order):
     dest = os.path.join(ROOT, page["out"])
     os.makedirs(os.path.dirname(dest), exist_ok=True)
     open(dest, "w", encoding="utf-8").write(doc)
-    text = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", content))).strip()
-    index.append({"t": title, "s": parent["meta"]["title"] if parent else "", "u": page["out"], "c": text})
+    section = parent["meta"]["title"] if parent else ""
+    cases = re.split(r'<a id="(tc-l\d\d-\d{3})"></a>', content)
+    # A test case layer page is indexed as its intro plus one entry per case.
+    index.append({"t": title, "s": section, "u": page["out"], "c": plain(cases[0])})
+    for anchor, chunk in zip(cases[1::2], cases[2::2]):
+        heading = re.search(r"<h3[^>]*>(.*?)</h3>", chunk, re.S)
+        body = plain(chunk.split("</table></div>", 1)[-1])
+        index.append({"t": plain(heading.group(1)) if heading else anchor.upper(), "s": title,
+                      "u": page["out"] + "#" + anchor, "c": body[:CASE_SNIPPET]})
 
 open(os.path.join(ROOT, "assets", "search-index.js"), "w", encoding="utf-8").write(
     "window.SEARCH_INDEX = " + json.dumps(index, ensure_ascii=False) + ";\n")
