@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Security PoC Test Case Library | AI Security Wiki</title>
+<meta name="description" content="A vendor-neutral reference for AI security governance, risk management, engineering standards, vendor evaluation and assurance.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+  <a class="brand" href="../index.html">AI Security Wiki</a>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Search the wiki" aria-label="Search the wiki" autocomplete="off">
+    <ul id="search-results" hidden></ul>
+  </div>
+  <a class="repo-link" href="https://github.com/nachi065/AI-Security-Wiki" rel="noopener">GitHub</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="sidebar" aria-label="Wiki sections">
+<ul class="nav">
+<li><a href="../index.html">Home</a></li>
+<li><details><summary><a href="../01_Strategy_and_Market/index.html">Strategy and Market</a></summary><ul>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.html">AI Security Market and Technology Landscape — Summary</a></li>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape_Expanded.html">AI Security Market and Technology Landscape</a></li>
+</ul></details></li>
+<li><details><summary><a href="../02_Risk_Management/index.html">Risk Management</a></summary><ul>
+<li><a href="../02_Risk_Management/02A_AI_Risk_Methodology.html">AI Risk Methodology</a></li>
+<li><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a></li>
+<li><a href="../02_Risk_Management/02C_AI_Risk_Treatment_Plan.html">AI Risk Treatment Plan</a></li>
+<li><a href="../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a></li>
+<li><a href="../02_Risk_Management/02E_AI_Risk_Review_Template.html">AI Risk Review Template</a></li>
+</ul></details></li>
+<li><details><summary><a href="../03_Control_Library/index.html">Control Library</a></summary><ul>
+<li><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></li>
+<li><a href="../03_Control_Library/04_Existing_Security_Control_Baseline.html">Existing Security Control Baseline</a></li>
+<li><a href="../03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.html">Microsoft Security Overlap and AI Gaps</a></li>
+</ul></details></li>
+<li><details><summary><a href="../04_Domain_Standards/index.html">Domain Standards</a></summary><ul>
+<li><a href="../04_Domain_Standards/06_Browser_AI_Security_Standard.html">Browser AI Security Standard</a></li>
+<li><a href="../04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.html">IDE AI Coding Assistant Security Standard</a></li>
+<li><a href="../04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a></li>
+<li><a href="../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
+<li><a href="../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
+</ul></details></li>
+<li><details><summary><a href="../05_Vendor_Evaluation/index.html">Vendor Evaluation</a></summary><ul>
+<li><a href="../05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
+<li><a href="../05_Vendor_Evaluation/12A_Vendor_Profile_Prompt_Security_SentinelOne.html">Vendor Profile — Prompt Security / SentinelOne</a></li>
+<li><a href="../05_Vendor_Evaluation/12B_Vendor_Profile_Palo_Alto_Prisma_AIRS.html">Vendor Profile — Palo Alto Prisma AIRS</a></li>
+<li><a href="../05_Vendor_Evaluation/12C_Vendor_Profile_HiddenLayer.html">Vendor Profile — HiddenLayer</a></li>
+<li><a href="../05_Vendor_Evaluation/12D_Vendor_Profile_Lasso_Security.html">Vendor Profile — Lasso Security</a></li>
+<li><a href="../05_Vendor_Evaluation/12E_Vendor_Profile_Cyberhaven.html">Vendor Profile — Cyberhaven</a></li>
+<li><a href="../05_Vendor_Evaluation/12F_Vendor_Profile_Nightfall_AI.html">Vendor Profile — Nightfall AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12G_Vendor_Profile_Enkrypt_AI.html">Vendor Profile — Enkrypt AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12H_Vendor_Profile_Sovereign_AI_Security_Labs.html">Vendor Profile — Sovereign AI Security Labs</a></li>
+</ul></details></li>
+<li><details open><summary><a href="index.html">Testing and Assurance</a></summary><ul>
+<li><a class="current" href="13_AI_Security_PoC_Test_Case_Library.html">AI Security PoC Test Case Library</a></li>
+<li><a href="14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a></li>
+<li><a href="15C_AI_Red_Team_Playbook.html">AI Red Team Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../07_Role_Based_Playbooks/index.html">Role-Based Playbooks</a></summary><ul>
+<li><a href="../07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.html">AI Product Developer Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15B_AI_Security_Researcher_Playbook.html">AI Security Researcher Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15D_Security_Engineering_Playbook.html">Security Engineering Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15E_Vendor_Evaluation_and_Audit_Playbook.html">Vendor Evaluation and Audit Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../08_Governance/index.html">Governance</a></summary><ul>
+<li><a href="../08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></li>
+<li><a href="../08_Governance/17_AI_Policy_Standards_and_Acceptable_Use.html">AI Policy, Standards and Acceptable Use</a></li>
+</ul></details></li>
+<li><details><summary><a href="../09_Reference/index.html">Reference</a></summary><ul>
+<li><a href="../09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
+</ul></details></li>
+</ul>
+</nav>
+<main>
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Testing and Assurance</a> / <span>AI Security PoC Test Case Library</span></p>
+<article>
+<h1 id="ai-security-poc-test-case-library">AI Security PoC Test Case Library</h1>
+<blockquote>
+<p><strong>Purpose:</strong> Provide reusable PoC test cases for browser AI, IDE AI, runtime AI, agentic AI, sovereignty, auditability and SOC integration.</p>
+<p><strong>Audience:</strong> Security engineering, AI red teamers, vendor evaluation teams, SOC, audit.</p>
+<p><strong>How to use:</strong> Use this page as a wiki reference. Update the evidence, owners, control status, and links as implementation maturity improves.</p>
+</blockquote>
+<h2 id="test-case-template">Test Case Template</h2>
+<pre><code class="language-markdown"># Test Case ID
+
+## Scenario
+
+## Objective
+
+## Preconditions
+
+## Steps
+
+## Expected Result
+
+## Evidence Required
+
+## Actual Result
+
+## Pass / Fail
+
+## Notes
+</code></pre>
+<h2 id="browser-ai-test-cases">Browser AI Test Cases</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Scenario</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI-POC-BR-001</td>
+<td>Upload confidential document to public AI platform.</td>
+<td>Detection and policy enforcement.</td>
+</tr>
+<tr>
+<td>AI-POC-BR-002</td>
+<td>Paste architecture information into browser AI prompt.</td>
+<td>Detection and alerting.</td>
+</tr>
+<tr>
+<td>AI-POC-BR-003</td>
+<td>Upload source code to AI chatbot.</td>
+<td>Detection and prevention.</td>
+</tr>
+<tr>
+<td>AI-POC-BR-004</td>
+<td>Attempt upload of classified information.</td>
+<td>Blocking or policy enforcement.</td>
+</tr>
+<tr>
+<td>AI-POC-BR-005</td>
+<td>Use previously unknown AI website.</td>
+<td>Service discovery and visibility.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="ide-ai-test-cases">IDE AI Test Cases</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Scenario</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI-POC-ID-001</td>
+<td>Developer submits proprietary source code to AI assistant.</td>
+<td>Detection and policy enforcement.</td>
+</tr>
+<tr>
+<td>AI-POC-ID-002</td>
+<td>Developer attempts to share API keys.</td>
+<td>Detection and blocking.</td>
+</tr>
+<tr>
+<td>AI-POC-ID-003</td>
+<td>Developer uploads infrastructure-as-code templates.</td>
+<td>Classification-aware monitoring.</td>
+</tr>
+<tr>
+<td>AI-POC-ID-004</td>
+<td>Developer installs unapproved AI extension.</td>
+<td>Discovery and reporting.</td>
+</tr>
+<tr>
+<td>AI-POC-ID-005</td>
+<td>Developer requests generation of privileged system access code.</td>
+<td>Alerting and monitoring.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="runtime-ai-test-cases">Runtime AI Test Cases</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Scenario</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI-POC-RT-001</td>
+<td>Direct prompt injection against chatbot.</td>
+<td>Detection and mitigation.</td>
+</tr>
+<tr>
+<td>AI-POC-RT-002</td>
+<td>Indirect prompt injection through retrieved document.</td>
+<td>Malicious instruction ignored and logged.</td>
+</tr>
+<tr>
+<td>AI-POC-RT-003</td>
+<td>Attempt unauthorized retrieval from restricted repository.</td>
+<td>Retrieval blocked or response suppressed.</td>
+</tr>
+<tr>
+<td>AI-POC-RT-004</td>
+<td>Request sensitive output aggregation.</td>
+<td>Output controlled and logged.</td>
+</tr>
+<tr>
+<td>AI-POC-RT-005</td>
+<td>Abuse AI API with unexpected input pattern.</td>
+<td>Alert generated and request controlled.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="agentic-ai-test-cases">Agentic AI Test Cases</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Scenario</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI-POC-AG-001</td>
+<td>Agent attempts unauthorized enterprise app access.</td>
+<td>Request denied and logged.</td>
+</tr>
+<tr>
+<td>AI-POC-AG-002</td>
+<td>Agent attempts excessive-privilege execution.</td>
+<td>Detection and prevention.</td>
+</tr>
+<tr>
+<td>AI-POC-AG-003</td>
+<td>Prompt injection attack against agent.</td>
+<td>Detection and mitigation.</td>
+</tr>
+<tr>
+<td>AI-POC-AG-004</td>
+<td>Agent accesses unauthorized repository.</td>
+<td>Alert generated and action prevented.</td>
+</tr>
+<tr>
+<td>AI-POC-AG-005</td>
+<td>Agent performs business action without approval.</td>
+<td>Workflow blocked pending authorization.</td>
+</tr>
+</tbody>
+</table></div>
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="index.html">&larr; Testing and Assurance</a><a class="next" href="14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist &rarr;</a></nav>
+</main>
+</div>
+<script>window.SITE_BASE = "../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

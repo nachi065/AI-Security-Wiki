@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enterprise AI Risk Register | AI Security Wiki</title>
+<meta name="description" content="A vendor-neutral reference for AI security governance, risk management, engineering standards, vendor evaluation and assurance.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+  <a class="brand" href="../index.html">AI Security Wiki</a>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Search the wiki" aria-label="Search the wiki" autocomplete="off">
+    <ul id="search-results" hidden></ul>
+  </div>
+  <a class="repo-link" href="https://github.com/nachi065/AI-Security-Wiki" rel="noopener">GitHub</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="sidebar" aria-label="Wiki sections">
+<ul class="nav">
+<li><a href="../index.html">Home</a></li>
+<li><details><summary><a href="../01_Strategy_and_Market/index.html">Strategy and Market</a></summary><ul>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.html">AI Security Market and Technology Landscape — Summary</a></li>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape_Expanded.html">AI Security Market and Technology Landscape</a></li>
+</ul></details></li>
+<li><details open><summary><a href="index.html">Risk Management</a></summary><ul>
+<li><a href="02A_AI_Risk_Methodology.html">AI Risk Methodology</a></li>
+<li><a class="current" href="02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a></li>
+<li><a href="02C_AI_Risk_Treatment_Plan.html">AI Risk Treatment Plan</a></li>
+<li><a href="02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a></li>
+<li><a href="02E_AI_Risk_Review_Template.html">AI Risk Review Template</a></li>
+</ul></details></li>
+<li><details><summary><a href="../03_Control_Library/index.html">Control Library</a></summary><ul>
+<li><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></li>
+<li><a href="../03_Control_Library/04_Existing_Security_Control_Baseline.html">Existing Security Control Baseline</a></li>
+<li><a href="../03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.html">Microsoft Security Overlap and AI Gaps</a></li>
+</ul></details></li>
+<li><details><summary><a href="../04_Domain_Standards/index.html">Domain Standards</a></summary><ul>
+<li><a href="../04_Domain_Standards/06_Browser_AI_Security_Standard.html">Browser AI Security Standard</a></li>
+<li><a href="../04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.html">IDE AI Coding Assistant Security Standard</a></li>
+<li><a href="../04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a></li>
+<li><a href="../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
+<li><a href="../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
+</ul></details></li>
+<li><details><summary><a href="../05_Vendor_Evaluation/index.html">Vendor Evaluation</a></summary><ul>
+<li><a href="../05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
+<li><a href="../05_Vendor_Evaluation/12A_Vendor_Profile_Prompt_Security_SentinelOne.html">Vendor Profile — Prompt Security / SentinelOne</a></li>
+<li><a href="../05_Vendor_Evaluation/12B_Vendor_Profile_Palo_Alto_Prisma_AIRS.html">Vendor Profile — Palo Alto Prisma AIRS</a></li>
+<li><a href="../05_Vendor_Evaluation/12C_Vendor_Profile_HiddenLayer.html">Vendor Profile — HiddenLayer</a></li>
+<li><a href="../05_Vendor_Evaluation/12D_Vendor_Profile_Lasso_Security.html">Vendor Profile — Lasso Security</a></li>
+<li><a href="../05_Vendor_Evaluation/12E_Vendor_Profile_Cyberhaven.html">Vendor Profile — Cyberhaven</a></li>
+<li><a href="../05_Vendor_Evaluation/12F_Vendor_Profile_Nightfall_AI.html">Vendor Profile — Nightfall AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12G_Vendor_Profile_Enkrypt_AI.html">Vendor Profile — Enkrypt AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12H_Vendor_Profile_Sovereign_AI_Security_Labs.html">Vendor Profile — Sovereign AI Security Labs</a></li>
+</ul></details></li>
+<li><details><summary><a href="../06_Testing_and_Assurance/index.html">Testing and Assurance</a></summary><ul>
+<li><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html">AI Security PoC Test Case Library</a></li>
+<li><a href="../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a></li>
+<li><a href="../06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.html">AI Red Team Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../07_Role_Based_Playbooks/index.html">Role-Based Playbooks</a></summary><ul>
+<li><a href="../07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.html">AI Product Developer Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15B_AI_Security_Researcher_Playbook.html">AI Security Researcher Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15D_Security_Engineering_Playbook.html">Security Engineering Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15E_Vendor_Evaluation_and_Audit_Playbook.html">Vendor Evaluation and Audit Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../08_Governance/index.html">Governance</a></summary><ul>
+<li><a href="../08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></li>
+<li><a href="../08_Governance/17_AI_Policy_Standards_and_Acceptable_Use.html">AI Policy, Standards and Acceptable Use</a></li>
+</ul></details></li>
+<li><details><summary><a href="../09_Reference/index.html">Reference</a></summary><ul>
+<li><a href="../09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
+</ul></details></li>
+</ul>
+</nav>
+<main>
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Risk Management</a> / <span>Enterprise AI Risk Register</span></p>
+<article>
+<h1 id="enterprise-ai-risk-register">Enterprise AI Risk Register</h1>
+<blockquote>
+<p><strong>Purpose:</strong> Provide a sample enterprise AI risk register covering AI usage, development, applications, agents, auditability and sovereignty, as a starting template.</p>
+<p><strong>Audience:</strong> Governance, cyber risk, security architecture, audit, AI product owners.</p>
+<p><strong>How to use:</strong> Use this page as a template. Re-score each risk using the AI Risk Methodology for your own environment, and add owners, evidence and treatment status.</p>
+<p><strong>Illustrative example:</strong> The ratings and entries on this page are generic examples, not an assessment of any specific organization. Replace them with your own findings before relying on them.</p>
+</blockquote>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Risk ID</th>
+<th>Risk Area</th>
+<th>Example Likelihood</th>
+<th>Example Impact</th>
+<th>Example Residual Risk</th>
+<th>Example Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI-R01</td>
+<td>Critical Infrastructure Information Exposure</td>
+<td>High</td>
+<td>Critical</td>
+<td>Critical</td>
+<td>1</td>
+</tr>
+<tr>
+<td>AI-R02</td>
+<td>Shadow AI and Ungoverned AI Usage</td>
+<td>High</td>
+<td>High</td>
+<td>High</td>
+<td>2</td>
+</tr>
+<tr>
+<td>AI-R03</td>
+<td>Sensitive Data Leakage Through Prompts and Uploads</td>
+<td>High</td>
+<td>Critical</td>
+<td>High</td>
+<td>3</td>
+</tr>
+<tr>
+<td>AI-R04</td>
+<td>IDE-Based Source Code and Credential Exposure</td>
+<td>Medium-High</td>
+<td>High</td>
+<td>High</td>
+<td>4</td>
+</tr>
+<tr>
+<td>AI-R05</td>
+<td>Prompt Injection Against Custom AI Applications</td>
+<td>Medium</td>
+<td>Critical</td>
+<td>High</td>
+<td>5</td>
+</tr>
+<tr>
+<td>AI-R06</td>
+<td>AI Output Leakage and Oversharing</td>
+<td>Medium</td>
+<td>High</td>
+<td>High</td>
+<td>6</td>
+</tr>
+<tr>
+<td>AI-R07</td>
+<td>AI Agent and Tool-Calling Abuse</td>
+<td>Medium</td>
+<td>Critical</td>
+<td>Critical</td>
+<td>7</td>
+</tr>
+<tr>
+<td>AI-R08</td>
+<td>AI Supply Chain and Model Integrity Risk</td>
+<td>Medium</td>
+<td>High</td>
+<td>High</td>
+<td>8</td>
+</tr>
+<tr>
+<td>AI-R09</td>
+<td>Lack of AI Auditability and Forensic Visibility</td>
+<td>High</td>
+<td>High</td>
+<td>High</td>
+<td>9</td>
+</tr>
+<tr>
+<td>AI-R10</td>
+<td>Data Sovereignty and Third-Party Processing Risk</td>
+<td>Medium</td>
+<td>Critical</td>
+<td>High</td>
+<td>10</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="risk-narratives">Risk Narratives</h2>
+<h3 id="ai-r01-critical-infrastructure-information-exposure">AI-R01 — Critical Infrastructure Information Exposure</h3>
+<p>Users may submit sensitive infrastructure, architecture, security, operational or business information into AI tools for summarization, translation, troubleshooting or code support. Required controls include prompt inspection, upload inspection, classification-aware policy enforcement, audit logging and SOC alerting.</p>
+<h3 id="ai-r02-shadow-ai-and-ungoverned-ai-usage">AI-R02 — Shadow AI and Ungoverned AI Usage</h3>
+<p>Unapproved AI use may occur through public AI sites, browser extensions, IDE plugins, SaaS features, APIs or desktop AI applications. Required controls include AI discovery, tool classification, allow/monitor/warn/block policy, endpoint visibility and reporting.</p>
+<h3 id="ai-r03-sensitive-data-leakage-through-prompts-and-uploads">AI-R03 — Sensitive Data Leakage Through Prompts and Uploads</h3>
+<p>AI interactions can contain confidential data, personal data, credentials, source code, logs and business documents. Required controls include sensitive data detection, redaction/masking/warning/blocking and evidence generation.</p>
+<h3 id="ai-r04-ide-based-source-code-and-credential-exposure">AI-R04 — IDE-Based Source Code and Credential Exposure</h3>
+<p>AI coding assistants can expose source code, API keys, internal URLs, infrastructure-as-code and application logic. Required controls include IDE visibility, secret detection, source code protection and developer governance.</p>
+<h3 id="ai-r05-prompt-injection-against-custom-ai-applications">AI-R05 — Prompt Injection Against Custom AI Applications</h3>
+<p>Custom AI applications, RAG systems and internal chatbots can be manipulated through direct or indirect prompt injection. Required controls include runtime inspection, RAG security validation, guardrails and output filtering.</p>
+<h3 id="ai-r06-ai-output-leakage-and-oversharing">AI-R06 — AI Output Leakage and Oversharing</h3>
+<p>AI responses may aggregate or expose information beyond the intended context due to permission hygiene, weak retrieval controls or prompt manipulation. Required controls include output inspection, source-document logging and permission-aware response governance.</p>
+<h3 id="ai-r07-ai-agent-and-tool-calling-abuse">AI-R07 — AI Agent and Tool-Calling Abuse</h3>
+<p>Agents can call tools, APIs and workflows. Risks include excessive privilege, unauthorized action, tool misuse, MCP compromise and insufficient traceability. Required controls include identity, least privilege, approvals, tool governance and action logging.</p>
+<h3 id="ai-r08-ai-supply-chain-and-model-integrity-risk">AI-R08 — AI Supply Chain and Model Integrity Risk</h3>
+<p>AI applications rely on models, libraries, datasets, plugins, extensions and MCP servers. Required controls include AI asset inventory, model inventory, AI BOM, model scanning, plugin governance and vulnerability integration.</p>
+<h3 id="ai-r09-lack-of-ai-auditability-and-forensic-visibility">AI-R09 — Lack of AI Auditability and Forensic Visibility</h3>
+<p>Investigations are weak if prompts, responses, uploads, retrieved documents, model calls, tool invocations and agent decisions cannot be reconstructed. Required controls include policy-based logging, audit export, SIEM integration and retention controls.</p>
+<h3 id="ai-r10-data-sovereignty-and-third-party-processing-risk">AI-R10 — Data Sovereignty and Third-Party Processing Risk</h3>
+<p>AI platforms may process or retain prompts, uploads, metadata and logs in external locations. Required controls include data residency validation, training exclusion, retention configuration, administrative access logging and deployment model assessment.</p>
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="02A_AI_Risk_Methodology.html">&larr; AI Risk Methodology</a><a class="next" href="02C_AI_Risk_Treatment_Plan.html">AI Risk Treatment Plan &rarr;</a></nav>
+</main>
+</div>
+<script>window.SITE_BASE = "../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

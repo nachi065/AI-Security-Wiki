@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Custom AI Application Runtime Security Standard | AI Security Wiki</title>
+<meta name="description" content="A vendor-neutral reference for AI security governance, risk management, engineering standards, vendor evaluation and assurance.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+  <a class="brand" href="../index.html">AI Security Wiki</a>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Search the wiki" aria-label="Search the wiki" autocomplete="off">
+    <ul id="search-results" hidden></ul>
+  </div>
+  <a class="repo-link" href="https://github.com/nachi065/AI-Security-Wiki" rel="noopener">GitHub</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="sidebar" aria-label="Wiki sections">
+<ul class="nav">
+<li><a href="../index.html">Home</a></li>
+<li><details><summary><a href="../01_Strategy_and_Market/index.html">Strategy and Market</a></summary><ul>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.html">AI Security Market and Technology Landscape — Summary</a></li>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape_Expanded.html">AI Security Market and Technology Landscape</a></li>
+</ul></details></li>
+<li><details><summary><a href="../02_Risk_Management/index.html">Risk Management</a></summary><ul>
+<li><a href="../02_Risk_Management/02A_AI_Risk_Methodology.html">AI Risk Methodology</a></li>
+<li><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a></li>
+<li><a href="../02_Risk_Management/02C_AI_Risk_Treatment_Plan.html">AI Risk Treatment Plan</a></li>
+<li><a href="../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a></li>
+<li><a href="../02_Risk_Management/02E_AI_Risk_Review_Template.html">AI Risk Review Template</a></li>
+</ul></details></li>
+<li><details><summary><a href="../03_Control_Library/index.html">Control Library</a></summary><ul>
+<li><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></li>
+<li><a href="../03_Control_Library/04_Existing_Security_Control_Baseline.html">Existing Security Control Baseline</a></li>
+<li><a href="../03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.html">Microsoft Security Overlap and AI Gaps</a></li>
+</ul></details></li>
+<li><details open><summary><a href="index.html">Domain Standards</a></summary><ul>
+<li><a href="06_Browser_AI_Security_Standard.html">Browser AI Security Standard</a></li>
+<li><a href="07_IDE_AI_Coding_Assistant_Security_Standard.html">IDE AI Coding Assistant Security Standard</a></li>
+<li><a class="current" href="08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a></li>
+<li><a href="09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
+<li><a href="10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
+</ul></details></li>
+<li><details><summary><a href="../05_Vendor_Evaluation/index.html">Vendor Evaluation</a></summary><ul>
+<li><a href="../05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
+<li><a href="../05_Vendor_Evaluation/12A_Vendor_Profile_Prompt_Security_SentinelOne.html">Vendor Profile — Prompt Security / SentinelOne</a></li>
+<li><a href="../05_Vendor_Evaluation/12B_Vendor_Profile_Palo_Alto_Prisma_AIRS.html">Vendor Profile — Palo Alto Prisma AIRS</a></li>
+<li><a href="../05_Vendor_Evaluation/12C_Vendor_Profile_HiddenLayer.html">Vendor Profile — HiddenLayer</a></li>
+<li><a href="../05_Vendor_Evaluation/12D_Vendor_Profile_Lasso_Security.html">Vendor Profile — Lasso Security</a></li>
+<li><a href="../05_Vendor_Evaluation/12E_Vendor_Profile_Cyberhaven.html">Vendor Profile — Cyberhaven</a></li>
+<li><a href="../05_Vendor_Evaluation/12F_Vendor_Profile_Nightfall_AI.html">Vendor Profile — Nightfall AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12G_Vendor_Profile_Enkrypt_AI.html">Vendor Profile — Enkrypt AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12H_Vendor_Profile_Sovereign_AI_Security_Labs.html">Vendor Profile — Sovereign AI Security Labs</a></li>
+</ul></details></li>
+<li><details><summary><a href="../06_Testing_and_Assurance/index.html">Testing and Assurance</a></summary><ul>
+<li><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html">AI Security PoC Test Case Library</a></li>
+<li><a href="../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a></li>
+<li><a href="../06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.html">AI Red Team Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../07_Role_Based_Playbooks/index.html">Role-Based Playbooks</a></summary><ul>
+<li><a href="../07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.html">AI Product Developer Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15B_AI_Security_Researcher_Playbook.html">AI Security Researcher Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15D_Security_Engineering_Playbook.html">Security Engineering Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15E_Vendor_Evaluation_and_Audit_Playbook.html">Vendor Evaluation and Audit Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../08_Governance/index.html">Governance</a></summary><ul>
+<li><a href="../08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></li>
+<li><a href="../08_Governance/17_AI_Policy_Standards_and_Acceptable_Use.html">AI Policy, Standards and Acceptable Use</a></li>
+</ul></details></li>
+<li><details><summary><a href="../09_Reference/index.html">Reference</a></summary><ul>
+<li><a href="../09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
+</ul></details></li>
+</ul>
+</nav>
+<main>
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Domain Standards</a> / <span>Custom AI Application Runtime Security Standard</span></p>
+<article>
+<h1 id="custom-ai-application-runtime-security-standard">Custom AI Application Runtime Security Standard</h1>
+<blockquote>
+<p><strong>Purpose:</strong> Define security controls for internal AI applications, RAG systems, AI APIs and AI-enabled business applications.</p>
+<p><strong>Audience:</strong> AI product developers, AppSec, DevSecOps, cloud architects, AI platform engineers, red teamers.</p>
+<p><strong>How to use:</strong> Use this page as a wiki reference. Update the evidence, owners, control status, and links as implementation maturity improves.</p>
+</blockquote>
+<h2 id="scope">Scope</h2>
+<p>This standard applies to internal AI assistants, enterprise knowledge chatbots, RAG implementations, Azure OpenAI or similar AI APIs, customer-facing AI services, AI-enabled portals and AI applications connected to enterprise repositories or business systems.</p>
+<h2 id="required-security-gates">Required Security Gates</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Gate</th>
+<th>Requirement</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Input Security</td>
+<td>Prompt injection and malicious input testing completed.</td>
+<td>Red team results, test cases</td>
+</tr>
+<tr>
+<td>Retrieval Security</td>
+<td>Source permissions and retrieval boundaries validated.</td>
+<td>Permission test evidence, retrieval logs</td>
+</tr>
+<tr>
+<td>Output Security</td>
+<td>Sensitive output filtering and response governance enabled.</td>
+<td>Output inspection logs</td>
+</tr>
+<tr>
+<td>API Security</td>
+<td>Authentication, authorization, rate limits and API logging enforced.</td>
+<td>API gateway policy evidence</td>
+</tr>
+<tr>
+<td>Data Protection</td>
+<td>Data minimization and classification-aware controls implemented.</td>
+<td>Data flow and classification evidence</td>
+</tr>
+<tr>
+<td>Logging</td>
+<td>Prompts, responses, retrieved sources, user context and model/API calls logged based on policy.</td>
+<td>Audit export, log samples</td>
+</tr>
+<tr>
+<td>SOC Integration</td>
+<td>Alerts integrated with monitoring and response workflows.</td>
+<td>SIEM event IDs</td>
+</tr>
+<tr>
+<td>Production Approval</td>
+<td>Security review completed before production.</td>
+<td>Approval record</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="runtime-threat-scenarios">Runtime Threat Scenarios</h2>
+<ul>
+<li>Direct prompt injection.</li>
+<li>Indirect prompt injection through retrieved documents.</li>
+<li>Unauthorized retrieval from internal knowledge sources.</li>
+<li>Sensitive output leakage.</li>
+<li>AI API abuse.</li>
+<li>Weak authorization between AI application and backend data source.</li>
+<li>Untrusted plugin, library or model dependency.</li>
+</ul>
+<h2 id="production-readiness-checklist">Production Readiness Checklist</h2>
+<ul>
+<li>[ ] AI application owner assigned.</li>
+<li>[ ] Data classification completed.</li>
+<li>[ ] RAG source repositories approved.</li>
+<li>[ ] Authentication and authorization reviewed.</li>
+<li>[ ] Prompt injection testing completed.</li>
+<li>[ ] Output leakage testing completed.</li>
+<li>[ ] Logging and retention defined.</li>
+<li>[ ] SOC alerting enabled.</li>
+<li>[ ] Vendor or model processing terms reviewed.</li>
+<li>[ ] Residual risk accepted by owner.</li>
+</ul>
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="07_IDE_AI_Coding_Assistant_Security_Standard.html">&larr; IDE AI Coding Assistant Security Standard</a><a class="next" href="09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance &rarr;</a></nav>
+</main>
+</div>
+<script>window.SITE_BASE = "../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

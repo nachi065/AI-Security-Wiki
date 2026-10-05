@@ -1,0 +1,843 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Security Wiki</title>
+<meta name="description" content="A vendor-neutral reference for AI security governance, risk management, engineering standards, vendor evaluation and assurance.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+  <a class="brand" href="index.html">AI Security Wiki</a>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Search the wiki" aria-label="Search the wiki" autocomplete="off">
+    <ul id="search-results" hidden></ul>
+  </div>
+  <a class="repo-link" href="https://github.com/nachi065/AI-Security-Wiki" rel="noopener">GitHub</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="sidebar" aria-label="Wiki sections">
+<ul class="nav">
+<li><a class="current" href="index.html">Home</a></li>
+<li><details><summary><a href="01_Strategy_and_Market/index.html">Strategy and Market</a></summary><ul>
+<li><a href="01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.html">AI Security Market and Technology Landscape — Summary</a></li>
+<li><a href="01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape_Expanded.html">AI Security Market and Technology Landscape</a></li>
+</ul></details></li>
+<li><details><summary><a href="02_Risk_Management/index.html">Risk Management</a></summary><ul>
+<li><a href="02_Risk_Management/02A_AI_Risk_Methodology.html">AI Risk Methodology</a></li>
+<li><a href="02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a></li>
+<li><a href="02_Risk_Management/02C_AI_Risk_Treatment_Plan.html">AI Risk Treatment Plan</a></li>
+<li><a href="02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a></li>
+<li><a href="02_Risk_Management/02E_AI_Risk_Review_Template.html">AI Risk Review Template</a></li>
+</ul></details></li>
+<li><details><summary><a href="03_Control_Library/index.html">Control Library</a></summary><ul>
+<li><a href="03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></li>
+<li><a href="03_Control_Library/04_Existing_Security_Control_Baseline.html">Existing Security Control Baseline</a></li>
+<li><a href="03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.html">Microsoft Security Overlap and AI Gaps</a></li>
+</ul></details></li>
+<li><details><summary><a href="04_Domain_Standards/index.html">Domain Standards</a></summary><ul>
+<li><a href="04_Domain_Standards/06_Browser_AI_Security_Standard.html">Browser AI Security Standard</a></li>
+<li><a href="04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.html">IDE AI Coding Assistant Security Standard</a></li>
+<li><a href="04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a></li>
+<li><a href="04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
+<li><a href="04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
+</ul></details></li>
+<li><details><summary><a href="05_Vendor_Evaluation/index.html">Vendor Evaluation</a></summary><ul>
+<li><a href="05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
+<li><a href="05_Vendor_Evaluation/12A_Vendor_Profile_Prompt_Security_SentinelOne.html">Vendor Profile — Prompt Security / SentinelOne</a></li>
+<li><a href="05_Vendor_Evaluation/12B_Vendor_Profile_Palo_Alto_Prisma_AIRS.html">Vendor Profile — Palo Alto Prisma AIRS</a></li>
+<li><a href="05_Vendor_Evaluation/12C_Vendor_Profile_HiddenLayer.html">Vendor Profile — HiddenLayer</a></li>
+<li><a href="05_Vendor_Evaluation/12D_Vendor_Profile_Lasso_Security.html">Vendor Profile — Lasso Security</a></li>
+<li><a href="05_Vendor_Evaluation/12E_Vendor_Profile_Cyberhaven.html">Vendor Profile — Cyberhaven</a></li>
+<li><a href="05_Vendor_Evaluation/12F_Vendor_Profile_Nightfall_AI.html">Vendor Profile — Nightfall AI</a></li>
+<li><a href="05_Vendor_Evaluation/12G_Vendor_Profile_Enkrypt_AI.html">Vendor Profile — Enkrypt AI</a></li>
+<li><a href="05_Vendor_Evaluation/12H_Vendor_Profile_Sovereign_AI_Security_Labs.html">Vendor Profile — Sovereign AI Security Labs</a></li>
+</ul></details></li>
+<li><details><summary><a href="06_Testing_and_Assurance/index.html">Testing and Assurance</a></summary><ul>
+<li><a href="06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html">AI Security PoC Test Case Library</a></li>
+<li><a href="06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a></li>
+<li><a href="06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.html">AI Red Team Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="07_Role_Based_Playbooks/index.html">Role-Based Playbooks</a></summary><ul>
+<li><a href="07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.html">AI Product Developer Playbook</a></li>
+<li><a href="07_Role_Based_Playbooks/15B_AI_Security_Researcher_Playbook.html">AI Security Researcher Playbook</a></li>
+<li><a href="07_Role_Based_Playbooks/15D_Security_Engineering_Playbook.html">Security Engineering Playbook</a></li>
+<li><a href="07_Role_Based_Playbooks/15E_Vendor_Evaluation_and_Audit_Playbook.html">Vendor Evaluation and Audit Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="08_Governance/index.html">Governance</a></summary><ul>
+<li><a href="08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></li>
+<li><a href="08_Governance/17_AI_Policy_Standards_and_Acceptable_Use.html">AI Policy, Standards and Acceptable Use</a></li>
+</ul></details></li>
+<li><details><summary><a href="09_Reference/index.html">Reference</a></summary><ul>
+<li><a href="09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
+</ul></details></li>
+</ul>
+</nav>
+<main>
+
+<article>
+<h1 id="ai-security-wiki-home">AI Security Wiki Home</h1>
+<blockquote>
+<p><strong>Document type:</strong> Enterprise AI Security Reference Architecture and Governance Wiki<br />
+<strong>Version:</strong> 2.0<br />
+<strong>Status:</strong> Published<br />
+<strong>Intended use:</strong> Public, vendor-neutral reference and template set for AI security governance, engineering, risk management, assurance, audit, compliance, and vendor evaluation.</p>
+</blockquote>
+<h2 id="1-purpose">1. Purpose</h2>
+<p>The AI Security Wiki is the authoritative enterprise reference hub for securing artificial intelligence adoption across the enterprise. It provides a structured, reusable, audit-ready knowledge base for AI governance, AI risk management, secure engineering, operational monitoring, vendor evaluation, and assurance activities.</p>
+<p>The wiki is designed to help teams answer five practical questions:</p>
+<ol>
+<li><strong>Can this AI use case be safely adopted?</strong></li>
+<li><strong>What risks, controls, and approvals are required?</strong></li>
+<li><strong>Which engineering standards apply to the implementation?</strong></li>
+<li><strong>How will security, privacy, sovereignty, and compliance requirements be evidenced?</strong></li>
+<li><strong>How will the AI capability be monitored, tested, audited, and improved over time?</strong></li>
+</ol>
+<h2 id="2-mission-statement">2. Mission Statement</h2>
+<p>Establish a secure, governed, sovereign, and auditable approach to AI adoption by giving business, technology, cybersecurity, governance, compliance, audit, and vendor evaluation teams a common operating reference.</p>
+<p>The wiki supports responsible innovation by enabling AI adoption while reducing the risk of data leakage, prompt injection, model misuse, insecure agent actions, third-party exposure, regulatory non-compliance, and operational blind spots.</p>
+<h2 id="3-strategic-objectives">3. Strategic Objectives</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Objective</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Protect enterprise data</td>
+<td>Prevent unauthorized disclosure of confidential, regulated, operational, customer, and sensitive business information to AI systems.</td>
+</tr>
+<tr>
+<td>Secure AI systems</td>
+<td>Ensure AI-enabled applications, copilots, agents, models, connectors, APIs, and data pipelines are resilient against relevant threats.</td>
+</tr>
+<tr>
+<td>Enable responsible innovation</td>
+<td>Provide practical guardrails that allow teams to adopt AI safely without unnecessary friction.</td>
+</tr>
+<tr>
+<td>Support sovereignty and compliance</td>
+<td>Align AI initiatives with UAE data residency, regulatory, privacy, governance, and sector-specific requirements.</td>
+</tr>
+<tr>
+<td>Standardize AI risk decisions</td>
+<td>Use a consistent risk assessment, control selection, treatment, exception, and approval process.</td>
+</tr>
+<tr>
+<td>Improve audit readiness</td>
+<td>Maintain clear ownership, evidence, control status, test results, and version history for internal and external assurance.</td>
+</tr>
+<tr>
+<td>Strengthen vendor governance</td>
+<td>Evaluate AI vendors consistently across security, data handling, model risk, compliance, and operational assurance criteria.</td>
+</tr>
+<tr>
+<td>Improve operational visibility</td>
+<td>Establish monitoring, logging, detection, response, and continuous improvement expectations for AI services.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="4-audience">4. Audience</h2>
+<p>This wiki is intended for the following personas:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Persona</th>
+<th>Primary Need</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Executive management</td>
+<td>Understand decision points, governance obligations, risk posture, and assurance outcomes.</td>
+</tr>
+<tr>
+<td>AI product owners</td>
+<td>Understand required approvals, control gates, risk treatment, and release readiness.</td>
+</tr>
+<tr>
+<td>AI product developers</td>
+<td>Implement secure AI applications, integrations, prompts, RAG patterns, agents, APIs, and data flows.</td>
+</tr>
+<tr>
+<td>AI security researchers</td>
+<td>Monitor the AI threat landscape, evaluate emerging risks, and improve controls.</td>
+</tr>
+<tr>
+<td>AI red teamers</td>
+<td>Test AI systems for prompt injection, data leakage, misuse, unsafe tool use, and model abuse.</td>
+</tr>
+<tr>
+<td>Security architecture</td>
+<td>Define control requirements, review designs, approve exceptions, and maintain standards.</td>
+</tr>
+<tr>
+<td>Security engineering</td>
+<td>Implement preventive, detective, and responsive controls across the AI lifecycle.</td>
+</tr>
+<tr>
+<td>SOC and incident response</td>
+<td>Monitor AI systems, investigate alerts, and respond to AI-related incidents.</td>
+</tr>
+<tr>
+<td>Vendor evaluation teams</td>
+<td>Assess supplier capabilities, risks, evidence, contractual controls, and proof-of-concept results.</td>
+</tr>
+<tr>
+<td>GRC and compliance</td>
+<td>Map AI controls to governance, regulatory, privacy, and assurance requirements.</td>
+</tr>
+<tr>
+<td>Internal audit</td>
+<td>Validate control operation, evidence quality, decision traceability, and governance effectiveness.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="5-wiki-design-principles">5. Wiki Design Principles</h2>
+<p>This wiki is intentionally:</p>
+<ul>
+<li><strong>Risk-first:</strong> every AI activity starts with a risk, impact, and data sensitivity assessment.</li>
+<li><strong>Control-first:</strong> requirements are expressed as reusable control objectives before being mapped to tools or vendors.</li>
+<li><strong>Lifecycle-first:</strong> controls apply from discovery through retirement, not only at deployment.</li>
+<li><strong>Persona-friendly:</strong> each user group has a clear starting point and operational playbook.</li>
+<li><strong>Vendor-neutral:</strong> vendor profiles do not replace enterprise control requirements.</li>
+<li><strong>Sovereignty-aware:</strong> architecture and vendor decisions consider UAE residency, jurisdiction, and regulatory expectations.</li>
+<li><strong>Evidence-driven:</strong> each control should produce auditable evidence.</li>
+<li><strong>Operationally measurable:</strong> ownership, status, exceptions, test results, and improvement actions should be tracked.</li>
+</ul>
+<h2 id="6-ai-security-operating-model">6. AI Security Operating Model</h2>
+<p>The wiki supports the following end-to-end operating model:</p>
+<pre><code class="language-text">Discover AI Use Case or Tool
+        ↓
+Register Intake and Business Owner
+        ↓
+Classify Data, Users, Integrations, and Criticality
+        ↓
+Perform AI Risk Assessment
+        ↓
+Select Required Security, Privacy, Sovereignty, and Compliance Controls
+        ↓
+Review Architecture and Vendor Posture
+        ↓
+Approve, Reject, or Treat Risk
+        ↓
+Implement Secure Design and Controls
+        ↓
+Validate Through Testing, PoC, and Red Teaming
+        ↓
+Deploy with Monitoring, Logging, and Incident Response Coverage
+        ↓
+Collect Evidence and Perform Periodic Assurance
+        ↓
+Review, Improve, Renew, or Retire
+</code></pre>
+<h2 id="7-ai-security-lifecycle-navigation">7. AI Security Lifecycle Navigation</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Lifecycle Stage</th>
+<th>Primary Activity</th>
+<th>Required Wiki References</th>
+<th>Typical Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI discovery and intake</td>
+<td>Identify AI tools, use cases, data flows, business owner, and intended users.</td>
+<td><a href="02_Risk_Management/02A_AI_Risk_Methodology.html">AI Risk Methodology</a>, <a href="08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></td>
+<td>Intake record, use-case description, business owner, data classification.</td>
+</tr>
+<tr>
+<td>AI risk assessment</td>
+<td>Assess business impact, data sensitivity, model exposure, access paths, and vendor dependencies.</td>
+<td><a href="02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a>, <a href="03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></td>
+<td>Completed risk assessment, inherent/residual risk, treatment plan.</td>
+</tr>
+<tr>
+<td>Architecture and control design</td>
+<td>Define security architecture, data boundaries, identity model, logging, and control requirements.</td>
+<td><a href="03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a>, <a href="03_Control_Library/04_Existing_Security_Control_Baseline.html">Existing Security Control Baseline</a>, <a href="03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.html">Microsoft Security Overlap and AI Gaps</a></td>
+<td>Architecture review, control mapping, exception decisions.</td>
+</tr>
+<tr>
+<td>AI user adoption</td>
+<td>Govern use of browser AI, enterprise copilots, external AI tools, and acceptable use.</td>
+<td>Browser AI security standard, acceptable use standard, governance operating model</td>
+<td>User guidance, approved tool list, access controls, awareness records.</td>
+</tr>
+<tr>
+<td>AI-assisted development</td>
+<td>Govern developers using AI coding assistants, IDE plugins, and generated code.</td>
+<td>IDE security standard, <a href="07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.html">AI Product Developer Playbook</a></td>
+<td>Secure coding checklist, repository review, generated code validation.</td>
+</tr>
+<tr>
+<td>Custom AI application build</td>
+<td>Secure LLM apps, RAG pipelines, prompts, APIs, connectors, model gateways, and runtime controls.</td>
+<td><a href="04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a>, <a href="06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.html">AI Red Team Playbook</a></td>
+<td>Threat model, secure design review, runtime control evidence.</td>
+</tr>
+<tr>
+<td>Agentic AI deployment</td>
+<td>Govern agents that invoke tools, access systems, perform actions, or chain tasks.</td>
+<td><a href="04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></td>
+<td>Tool permission matrix, approval rules, action logs, rollback controls.</td>
+</tr>
+<tr>
+<td>Vendor evaluation</td>
+<td>Evaluate AI suppliers, cloud services, models, integrations, and data handling.</td>
+<td><a href="05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a>, vendor profiles <code>12A</code> to <code>12H</code></td>
+<td>Vendor questionnaire, evidence pack, PoC results, risk decision.</td>
+</tr>
+<tr>
+<td>Testing and assurance</td>
+<td>Validate controls through PoC tests, adversarial testing, red teaming, and evidence review.</td>
+<td><a href="06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html">AI Security PoC Test Case Library</a>, <a href="06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a></td>
+<td>Test results, findings, remediation plan, audit checklist.</td>
+</tr>
+<tr>
+<td>Monitoring and operations</td>
+<td>Monitor AI usage, suspicious prompts, data leakage, tool invocation, and incidents.</td>
+<td>SOC playbooks, runtime standard, governance operating model</td>
+<td>Logs, alerts, incident records, response actions.</td>
+</tr>
+<tr>
+<td>Audit and continuous improvement</td>
+<td>Review governance effectiveness, control operation, exceptions, and maturity.</td>
+<td><a href="06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a>, <a href="08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></td>
+<td>Audit evidence, management actions, maturity roadmap.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="8-navigation-by-role">8. Navigation by Role</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Start Here</th>
+<th>Secondary References</th>
+<th>Expected Outcomes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Executive Management</td>
+<td><a href="08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></td>
+<td><a href="02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a>, <a href="06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a></td>
+<td>Clear AI risk posture, governance decisions, accountability, and audit readiness.</td>
+</tr>
+<tr>
+<td>AI Product Owner</td>
+<td><a href="02_Risk_Management/02A_AI_Risk_Methodology.html">AI Risk Methodology</a></td>
+<td><a href="04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a>, <a href="06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html">AI Security PoC Test Case Library</a></td>
+<td>Approved risk treatment, implementation plan, release evidence.</td>
+</tr>
+<tr>
+<td>AI Product Developer</td>
+<td><a href="04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a></td>
+<td><a href="07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.html">AI Product Developer Playbook</a>, <a href="06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html">AI Security PoC Test Case Library</a></td>
+<td>Secure implementation aligned with required controls and test cases.</td>
+</tr>
+<tr>
+<td>AI Security Researcher</td>
+<td><a href="01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.html">AI Security Market and Technology Landscape — Summary</a></td>
+<td><a href="07_Role_Based_Playbooks/15B_AI_Security_Researcher_Playbook.html">AI Security Researcher Playbook</a>, <a href="09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></td>
+<td>Updated threat insights, control improvements, and emerging risk intelligence.</td>
+</tr>
+<tr>
+<td>AI Red Teamer</td>
+<td><a href="06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.html">AI Red Team Playbook</a></td>
+<td><a href="04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a>, <a href="04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></td>
+<td>Test plans, findings, exploit paths, recommended mitigations.</td>
+</tr>
+<tr>
+<td>Security Engineering</td>
+<td><a href="03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></td>
+<td><a href="03_Control_Library/04_Existing_Security_Control_Baseline.html">Existing Security Control Baseline</a>, <a href="03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.html">Microsoft Security Overlap and AI Gaps</a></td>
+<td>Implementable controls, baseline mapping, monitoring requirements.</td>
+</tr>
+<tr>
+<td>Security Architecture</td>
+<td><a href="03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></td>
+<td><a href="04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a>, <a href="04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></td>
+<td>Approved AI designs, control exceptions, reference architectures.</td>
+</tr>
+<tr>
+<td>SOC and Incident Response</td>
+<td>Runtime security standard</td>
+<td>SOC playbooks, audit evidence checklist</td>
+<td>Monitoring coverage, detection logic, investigation and response records.</td>
+</tr>
+<tr>
+<td>Vendor Evaluation Team</td>
+<td><a href="05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></td>
+<td>Vendor profiles <code>12A</code> to <code>12H</code>, <a href="06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html">AI Security PoC Test Case Library</a></td>
+<td>Consistent supplier scoring, risk decision, and evidence retained.</td>
+</tr>
+<tr>
+<td>Governance and Compliance</td>
+<td><a href="02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a></td>
+<td><a href="04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a>, <a href="08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></td>
+<td>Compliance mapping, risk treatment, approval records, and reporting.</td>
+</tr>
+<tr>
+<td>Internal Audit</td>
+<td><a href="06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a></td>
+<td>Control library, PoC evidence library, sovereignty requirements</td>
+<td>Independent evidence validation and control effectiveness assessment.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="9-core-repository-structure">9. Core Repository Structure</h2>
+<pre><code class="language-text">00_Home/
+  Navigation, landing page, wiki usage model, and document governance.
+
+01_Strategy_and_Market/
+  AI security market landscape, technology trends, threat intelligence, glossary, and taxonomy.
+
+02_Risk_Management/
+  Risk methodology, enterprise AI risk register, risk treatment, exception model, and risk mapping.
+
+03_Control_Library/
+  Control objectives, existing baseline, Microsoft overlap, control gaps, and implementation guidance.
+
+04_Domain_Standards/
+  Browser AI, IDE AI, runtime AI applications, agentic AI, sovereignty, and data residency standards.
+
+05_Vendor_Evaluation/
+  Vendor master framework, supplier evidence model, proof-of-concept scorecards, and vendor profiles.
+
+06_Testing_and_Assurance/
+  PoC tests, adversarial testing, red team methodology, audit checklist, and evidence library.
+
+07_Role_Based_Playbooks/
+  Persona-specific guidance for developers, researchers, red teamers, governance, audit, and operations.
+
+08_Governance/
+  Operating model, acceptable AI use, approvals, committees, responsibilities, and reporting cadence.
+
+09_Reference/
+  Glossary, taxonomy, abbreviations, mapping references, patterns, and reusable templates.
+</code></pre>
+<h2 id="10-standards-and-policy-hierarchy">10. Standards and Policy Hierarchy</h2>
+<pre><code class="language-text">Enterprise AI Security Policy
+│
+├─ AI Governance Operating Model
+├─ AI Risk Management Methodology
+├─ AI Security Control Objectives Library
+├─ AI User Adoption and Acceptable Use Standard
+├─ AI-Assisted Development Security Standard
+├─ Custom AI Application Runtime Security Standard
+├─ Agentic AI Security and Tool Governance Standard
+├─ Sovereign AI, UAE Compliance, and Data Residency Standard
+├─ AI Vendor Evaluation Master Framework
+├─ AI Testing, Red Teaming, and PoC Test Library
+└─ AI Audit and Evidence Checklist
+</code></pre>
+<h2 id="11-governance-and-accountability">11. Governance and Accountability</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Responsibility</th>
+<th>Typical Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI Governance Committee</td>
+<td>Provide strategic oversight, approve high-risk AI decisions, review exceptions, and monitor maturity.</td>
+<td>Meeting minutes, approvals, risk acceptance records.</td>
+</tr>
+<tr>
+<td>Business Owner</td>
+<td>Own the AI use case, business justification, user population, operational impact, and benefits realization.</td>
+<td>Business case, use-case record, user list, process ownership.</td>
+</tr>
+<tr>
+<td>Data Owner</td>
+<td>Confirm classification, permitted use, residency requirements, retention rules, and data-sharing limitations.</td>
+<td>Data classification, data flow diagram, approval record.</td>
+</tr>
+<tr>
+<td>Security Architecture</td>
+<td>Approve target architecture, control design, exceptions, and reference patterns.</td>
+<td>Architecture review, control mapping, exception register.</td>
+</tr>
+<tr>
+<td>Security Engineering</td>
+<td>Implement preventive and detective controls across identity, data, endpoint, network, cloud, application, and monitoring layers.</td>
+<td>Configuration evidence, control test output, deployment records.</td>
+</tr>
+<tr>
+<td>AI Engineering</td>
+<td>Build and maintain AI workflows, prompts, model integrations, RAG pipelines, agents, and application controls.</td>
+<td>Design documentation, repository controls, deployment logs.</td>
+</tr>
+<tr>
+<td>SOC and Incident Response</td>
+<td>Monitor AI activity, investigate events, respond to incidents, and recommend detection improvements.</td>
+<td>SIEM alerts, incident tickets, investigation notes.</td>
+</tr>
+<tr>
+<td>GRC and Compliance</td>
+<td>Maintain framework mappings, compliance obligations, risk reporting, and audit coordination.</td>
+<td>Control mapping, compliance assessment, evidence register.</td>
+</tr>
+<tr>
+<td>Vendor Management</td>
+<td>Coordinate AI supplier due diligence, contract requirements, evidence reviews, and renewal checkpoints.</td>
+<td>Vendor assessment, contract clauses, SLA/security addenda.</td>
+</tr>
+<tr>
+<td>Internal Audit</td>
+<td>Independently validate governance, control design, operating effectiveness, and evidence quality.</td>
+<td>Audit plan, findings, management action tracking.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="12-control-framework-mapping">12. Control Framework Mapping</h2>
+<p>The wiki supports mapping AI security requirements to recognized control and governance frameworks. The detailed mapping should be maintained in the control library and audit checklist.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Framework / Requirement Area</th>
+<th>Wiki Mapping Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ISO/IEC 27001</td>
+<td>Information security governance, risk management, access control, operations, supplier security, and audit evidence.</td>
+</tr>
+<tr>
+<td>ISO/IEC 42001</td>
+<td>AI management system governance, accountability, lifecycle controls, risk treatment, and continuous improvement.</td>
+</tr>
+<tr>
+<td>NIST AI RMF</td>
+<td>AI risk identification, measurement, management, governance, and trustworthiness characteristics.</td>
+</tr>
+<tr>
+<td>NIST Cybersecurity Framework</td>
+<td>Identify, Protect, Detect, Respond, and Recover coverage for AI-enabled systems.</td>
+</tr>
+<tr>
+<td>CIS Controls</td>
+<td>Practical safeguards for inventory, identity, access, endpoint, network, data protection, monitoring, and response.</td>
+</tr>
+<tr>
+<td>UAE information assurance and cybersecurity expectations</td>
+<td>Alignment to local cybersecurity governance, data handling, hosting, resilience, and assurance obligations.</td>
+</tr>
+<tr>
+<td>UAE data residency and sovereignty requirements</td>
+<td>Jurisdictional control over regulated data, hosting location, cross-border processing, vendor access, and evidence.</td>
+</tr>
+<tr>
+<td>Privacy and data protection obligations</td>
+<td>Data minimization, purpose limitation, consent/legal basis, retention, access, and breach response considerations.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="13-key-control-domains">13. Key Control Domains</h2>
+<p>The control library should maintain detailed objectives, implementation guidance, evidence expectations, and test procedures for at least the following domains:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Control Intent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI inventory and intake</td>
+<td>Maintain a complete register of AI tools, models, agents, data flows, owners, and approval status.</td>
+</tr>
+<tr>
+<td>Data protection</td>
+<td>Prevent sensitive data disclosure through prompts, training, fine-tuning, logs, telemetry, plugins, or vendor access.</td>
+</tr>
+<tr>
+<td>Identity and access management</td>
+<td>Enforce least privilege, strong authentication, role-based access, service identity controls, and privileged action review.</td>
+</tr>
+<tr>
+<td>Prompt and input security</td>
+<td>Detect and reduce prompt injection, jailbreak attempts, malicious instructions, unsafe content, and data exfiltration prompts.</td>
+</tr>
+<tr>
+<td>Output validation</td>
+<td>Manage hallucination, unsafe recommendations, policy violations, misinformation, and unsupported decisions.</td>
+</tr>
+<tr>
+<td>RAG and knowledge security</td>
+<td>Protect indexes, embeddings, retrieval permissions, source grounding, and document-level authorization.</td>
+</tr>
+<tr>
+<td>Agent and tool governance</td>
+<td>Control tool permissions, action approval, execution boundaries, rollback, and transaction logging.</td>
+</tr>
+<tr>
+<td>Application and API security</td>
+<td>Secure AI application interfaces, model gateways, secrets, rate limits, session handling, and error handling.</td>
+</tr>
+<tr>
+<td>Model and vendor risk</td>
+<td>Evaluate model provenance, data usage, contractual protections, operational resilience, and third-party exposure.</td>
+</tr>
+<tr>
+<td>Monitoring and detection</td>
+<td>Capture AI activity logs, anomalous prompts, tool calls, data movement, model misuse, and policy violations.</td>
+</tr>
+<tr>
+<td>Incident response</td>
+<td>Define AI incident categories, escalation paths, investigation evidence, containment, and lessons learned.</td>
+</tr>
+<tr>
+<td>Audit and assurance</td>
+<td>Maintain traceable evidence of control design, operation, testing, exceptions, and remediation.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="14-vendor-neutral-operating-rule">14. Vendor-Neutral Operating Rule</h2>
+<p>Do not update vendor profiles as the primary source of truth for controls.</p>
+<p>Controls and standards must remain vendor-neutral. Vendor documents should reference the relevant control objectives, evidence requirements, and PoC tests rather than replacing enterprise standards.</p>
+<p>Vendor profiles should be used to record:</p>
+<ul>
+<li>Supplier capabilities and limitations.</li>
+<li>Contractual and compliance evidence.</li>
+<li>Data residency and processing details.</li>
+<li>Model and service security assurances.</li>
+<li>PoC test results.</li>
+<li>Known gaps, compensating controls, and residual risk decisions.</li>
+</ul>
+<h2 id="15-wiki-maintenance-and-publishing-rules">15. Wiki Maintenance and Publishing Rules</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ownership</td>
+<td>Each wiki document must have a named owner and custodian.</td>
+</tr>
+<tr>
+<td>Review frequency</td>
+<td>Controlled pages must be reviewed at least quarterly or after major AI, regulatory, or threat changes.</td>
+</tr>
+<tr>
+<td>Change control</td>
+<td>Significant changes to standards, control objectives, or risk methodology require approval by the appropriate governance authority.</td>
+</tr>
+<tr>
+<td>Evidence linkage</td>
+<td>Control pages should link to expected evidence, test cases, and audit checklist items.</td>
+</tr>
+<tr>
+<td>Version history</td>
+<td>Every controlled page must maintain a version history with date, author, approver, and summary of change.</td>
+</tr>
+<tr>
+<td>Cross-reference consistency</td>
+<td>Document names, control IDs, test IDs, and risk IDs must remain consistent across the wiki.</td>
+</tr>
+<tr>
+<td>Vendor neutrality</td>
+<td>Vendor profiles must map to standards and controls; they must not redefine them.</td>
+</tr>
+<tr>
+<td>Exceptions</td>
+<td>Exceptions must document business justification, compensating controls, expiry date, and approval authority.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="16-how-to-use-this-wiki">16. How to Use This Wiki</h2>
+<ol>
+<li><strong>Start with the lifecycle stage</strong> that matches the AI initiative.</li>
+<li><strong>Use the role navigation table</strong> to identify the correct starting document.</li>
+<li><strong>Register the AI use case or tool</strong> before implementation or procurement.</li>
+<li><strong>Complete the AI risk assessment</strong> and apply required control objectives.</li>
+<li><strong>Use the domain standard</strong> that matches the AI implementation pattern.</li>
+<li><strong>Perform vendor assessment</strong> for third-party AI services, platforms, plugins, models, or integrations.</li>
+<li><strong>Run the required PoC and security tests</strong> before production use.</li>
+<li><strong>Collect evidence continuously</strong> for audit, compliance, and management reporting.</li>
+<li><strong>Update the risk register</strong> when controls, scope, vendors, models, or data flows change.</li>
+<li><strong>Review and improve</strong> controls based on incidents, findings, threat intelligence, and regulatory change.</li>
+</ol>
+<h2 id="17-priority-implementation-roadmap">17. Priority Implementation Roadmap</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Focus Area</th>
+<th>Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Phase 1</td>
+<td>Establish inventory, intake, risk methodology, and governance decision model.</td>
+<td>AI initiatives become visible, owned, and risk-ranked.</td>
+</tr>
+<tr>
+<td>Phase 2</td>
+<td>Publish control library, domain standards, and vendor evaluation framework.</td>
+<td>Teams apply consistent controls and vendor due diligence.</td>
+</tr>
+<tr>
+<td>Phase 3</td>
+<td>Implement testing, red teaming, monitoring, and evidence collection.</td>
+<td>Security effectiveness becomes measurable and auditable.</td>
+</tr>
+<tr>
+<td>Phase 4</td>
+<td>Mature reporting, metrics, automation, and continuous improvement.</td>
+<td>AI security becomes operationalized and management-visible.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="18-success-metrics">18. Success Metrics</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Why It Matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Percentage of AI tools registered</td>
+<td>Measures visibility and intake coverage.</td>
+</tr>
+<tr>
+<td>Percentage of AI use cases risk assessed</td>
+<td>Measures governance adoption.</td>
+</tr>
+<tr>
+<td>High-risk AI initiatives with approved treatment plans</td>
+<td>Measures risk decision quality.</td>
+</tr>
+<tr>
+<td>AI vendors assessed before onboarding</td>
+<td>Measures supplier governance coverage.</td>
+</tr>
+<tr>
+<td>AI applications with completed security testing</td>
+<td>Measures release readiness.</td>
+</tr>
+<tr>
+<td>AI systems with monitoring and logging enabled</td>
+<td>Measures operational visibility.</td>
+</tr>
+<tr>
+<td>Open AI control exceptions past expiry</td>
+<td>Measures governance discipline.</td>
+</tr>
+<tr>
+<td>Audit evidence completeness score</td>
+<td>Measures assurance readiness.</td>
+</tr>
+<tr>
+<td>Number of AI security findings remediated</td>
+<td>Measures improvement execution.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="19-document-governance">19. Document Governance</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Document owner</td>
+<td>AI Security Program</td>
+</tr>
+<tr>
+<td>Custodian</td>
+<td>Security Architecture Team</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Published</td>
+</tr>
+<tr>
+<td>Review cycle</td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td>Approval authority</td>
+<td>AI Governance Committee</td>
+</tr>
+<tr>
+<td>Primary users</td>
+<td>AI, cybersecurity, GRC, compliance, vendor evaluation, operations, and audit teams</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="20-version-history">20. Version History</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Author</th>
+<th>Summary of Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>Initial release</td>
+<td>AI Security Program</td>
+<td>Initial wiki home page with purpose, audience, design principle, role navigation, lifecycle navigation, folder structure, and vendor-neutral operating rule.</td>
+</tr>
+<tr>
+<td>2.0</td>
+<td>2026-07-27</td>
+<td>AI Security Program</td>
+<td>Expanded into comprehensive enterprise AI security wiki home page with mission, strategic objectives, operating model, governance, standards hierarchy, framework mapping, maintenance rules, roadmap, metrics, and enhanced navigation.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="21-quick-links">21. Quick Links</h2>
+<ul>
+<li><a href="01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.html">AI Security Market and Technology Landscape — Summary</a></li>
+<li><a href="02_Risk_Management/02A_AI_Risk_Methodology.html">AI Risk Methodology</a></li>
+<li><a href="02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a></li>
+<li><a href="03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></li>
+<li><a href="03_Control_Library/04_Existing_Security_Control_Baseline.html">Existing Security Control Baseline</a></li>
+<li><a href="03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.html">Microsoft Security Overlap and AI Gaps</a></li>
+<li><a href="04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a></li>
+<li><a href="04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
+<li><a href="04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
+<li><a href="05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
+<li><a href="06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html">AI Security PoC Test Case Library</a></li>
+<li><a href="06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a></li>
+<li><a href="07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.html">AI Product Developer Playbook</a></li>
+<li><a href="07_Role_Based_Playbooks/15B_AI_Security_Researcher_Playbook.html">AI Security Researcher Playbook</a></li>
+<li><a href="06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.html">AI Red Team Playbook</a></li>
+<li><a href="08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></li>
+<li><a href="09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
+</ul>
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="next" href="01_Strategy_and_Market/index.html">Strategy and Market &rarr;</a></nav>
+</main>
+</div>
+<script>window.SITE_BASE = "";</script>
+<script src="assets/search-index.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

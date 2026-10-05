@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Security Market and Technology Landscape — Summary | AI Security Wiki</title>
+<meta name="description" content="A vendor-neutral reference for AI security governance, risk management, engineering standards, vendor evaluation and assurance.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+  <a class="brand" href="../index.html">AI Security Wiki</a>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Search the wiki" aria-label="Search the wiki" autocomplete="off">
+    <ul id="search-results" hidden></ul>
+  </div>
+  <a class="repo-link" href="https://github.com/nachi065/AI-Security-Wiki" rel="noopener">GitHub</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="sidebar" aria-label="Wiki sections">
+<ul class="nav">
+<li><a href="../index.html">Home</a></li>
+<li><details open><summary><a href="index.html">Strategy and Market</a></summary><ul>
+<li><a class="current" href="01_AI_Security_Market_and_Technology_Landscape.html">AI Security Market and Technology Landscape — Summary</a></li>
+<li><a href="01_AI_Security_Market_and_Technology_Landscape_Expanded.html">AI Security Market and Technology Landscape</a></li>
+</ul></details></li>
+<li><details><summary><a href="../02_Risk_Management/index.html">Risk Management</a></summary><ul>
+<li><a href="../02_Risk_Management/02A_AI_Risk_Methodology.html">AI Risk Methodology</a></li>
+<li><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a></li>
+<li><a href="../02_Risk_Management/02C_AI_Risk_Treatment_Plan.html">AI Risk Treatment Plan</a></li>
+<li><a href="../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a></li>
+<li><a href="../02_Risk_Management/02E_AI_Risk_Review_Template.html">AI Risk Review Template</a></li>
+</ul></details></li>
+<li><details><summary><a href="../03_Control_Library/index.html">Control Library</a></summary><ul>
+<li><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></li>
+<li><a href="../03_Control_Library/04_Existing_Security_Control_Baseline.html">Existing Security Control Baseline</a></li>
+<li><a href="../03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.html">Microsoft Security Overlap and AI Gaps</a></li>
+</ul></details></li>
+<li><details><summary><a href="../04_Domain_Standards/index.html">Domain Standards</a></summary><ul>
+<li><a href="../04_Domain_Standards/06_Browser_AI_Security_Standard.html">Browser AI Security Standard</a></li>
+<li><a href="../04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.html">IDE AI Coding Assistant Security Standard</a></li>
+<li><a href="../04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a></li>
+<li><a href="../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
+<li><a href="../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
+</ul></details></li>
+<li><details><summary><a href="../05_Vendor_Evaluation/index.html">Vendor Evaluation</a></summary><ul>
+<li><a href="../05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
+<li><a href="../05_Vendor_Evaluation/12A_Vendor_Profile_Prompt_Security_SentinelOne.html">Vendor Profile — Prompt Security / SentinelOne</a></li>
+<li><a href="../05_Vendor_Evaluation/12B_Vendor_Profile_Palo_Alto_Prisma_AIRS.html">Vendor Profile — Palo Alto Prisma AIRS</a></li>
+<li><a href="../05_Vendor_Evaluation/12C_Vendor_Profile_HiddenLayer.html">Vendor Profile — HiddenLayer</a></li>
+<li><a href="../05_Vendor_Evaluation/12D_Vendor_Profile_Lasso_Security.html">Vendor Profile — Lasso Security</a></li>
+<li><a href="../05_Vendor_Evaluation/12E_Vendor_Profile_Cyberhaven.html">Vendor Profile — Cyberhaven</a></li>
+<li><a href="../05_Vendor_Evaluation/12F_Vendor_Profile_Nightfall_AI.html">Vendor Profile — Nightfall AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12G_Vendor_Profile_Enkrypt_AI.html">Vendor Profile — Enkrypt AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12H_Vendor_Profile_Sovereign_AI_Security_Labs.html">Vendor Profile — Sovereign AI Security Labs</a></li>
+</ul></details></li>
+<li><details><summary><a href="../06_Testing_and_Assurance/index.html">Testing and Assurance</a></summary><ul>
+<li><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html">AI Security PoC Test Case Library</a></li>
+<li><a href="../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a></li>
+<li><a href="../06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.html">AI Red Team Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../07_Role_Based_Playbooks/index.html">Role-Based Playbooks</a></summary><ul>
+<li><a href="../07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.html">AI Product Developer Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15B_AI_Security_Researcher_Playbook.html">AI Security Researcher Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15D_Security_Engineering_Playbook.html">Security Engineering Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15E_Vendor_Evaluation_and_Audit_Playbook.html">Vendor Evaluation and Audit Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../08_Governance/index.html">Governance</a></summary><ul>
+<li><a href="../08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></li>
+<li><a href="../08_Governance/17_AI_Policy_Standards_and_Acceptable_Use.html">AI Policy, Standards and Acceptable Use</a></li>
+</ul></details></li>
+<li><details><summary><a href="../09_Reference/index.html">Reference</a></summary><ul>
+<li><a href="../09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
+</ul></details></li>
+</ul>
+</nav>
+<main>
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Strategy and Market</a> / <span>AI Security Market and Technology Landscape — Summary</span></p>
+<article>
+<h1 id="ai-security-market-and-technology-landscape">AI Security Market and Technology Landscape</h1>
+<blockquote>
+<p><strong>Purpose:</strong> Explain the AI security market, technology categories, adoption drivers, and strategic observations for critical infrastructure environments.</p>
+<p><strong>Audience:</strong> Security leadership, enterprise architecture, procurement, governance, AI security researchers.</p>
+<p><strong>How to use:</strong> Use this page as a wiki reference. Update the evidence, owners, control status, and links as implementation maturity improves.</p>
+</blockquote>
+<h2 id="1-enterprise-ai-adoption-landscape">1. Enterprise AI Adoption Landscape</h2>
+<p>AI is expanding across content generation, document analysis, knowledge retrieval, software development, analytics, customer service, enterprise search, workflow automation, process orchestration, and autonomous task execution. AI systems frequently connect to users, APIs, repositories, SaaS systems, plugins, models, and enterprise data sources, which expands the traditional security boundary.</p>
+<h2 id="2-evolution-of-ai-security-requirements">2. Evolution of AI Security Requirements</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Description</th>
+<th>Typical Security Concern</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Phase 1 — AI Usage Control</td>
+<td>Initial focus on blocking or monitoring public AI websites.</td>
+<td>Shadow AI, unauthorized AI access</td>
+</tr>
+<tr>
+<td>Phase 2 — Data Leakage Prevention</td>
+<td>Focus moves to prompts, uploads and sensitive information.</td>
+<td>Prompt leakage, document upload, source code sharing</td>
+</tr>
+<tr>
+<td>Phase 3 — AI Application Security</td>
+<td>Custom AI apps, RAG systems and AI APIs become important.</td>
+<td>Prompt injection, output leakage, weak authorization</td>
+</tr>
+<tr>
+<td>Phase 4 — Agentic AI Security</td>
+<td>AI agents perform actions through tools and APIs.</td>
+<td>Tool abuse, excessive privilege, autonomous action risk</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="3-ai-security-technology-categories">3. AI Security Technology Categories</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Primary Capabilities</th>
+<th>Typical Stakeholders</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI Usage Governance</td>
+<td>AI discovery, shadow AI monitoring, user activity visibility, acceptable-use enforcement</td>
+<td>Security Engineering, GRC, SOC</td>
+</tr>
+<tr>
+<td>AI Data Protection</td>
+<td>Prompt inspection, file upload inspection, sensitive data detection, classification-aware controls</td>
+<td>DLP, Data Protection, Compliance</td>
+</tr>
+<tr>
+<td>AI Runtime Security</td>
+<td>Prompt injection detection, output validation, runtime inspection, AI API protection</td>
+<td>AppSec, AI Platform, DevSecOps</td>
+</tr>
+<tr>
+<td>AI Security Posture Management</td>
+<td>AI inventory, AI asset discovery, configuration analysis, governance reporting</td>
+<td>Architecture, Governance, Risk Owners</td>
+</tr>
+<tr>
+<td>AI Supply Chain Security</td>
+<td>Model inventory, model scanning, dependency and plugin risk, AI BOM</td>
+<td>DevSecOps, AI Engineers, Researchers</td>
+</tr>
+<tr>
+<td>Agentic AI Security</td>
+<td>Agent inventory, tool governance, privilege governance, action logging, MCP visibility</td>
+<td>AI Platform, Security Architecture, SOC</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="4-strategic-observations">4. Strategic Observations</h2>
+<ul>
+<li>No single AI security product should be assumed to cover all AI risk domains.</li>
+<li>AI security controls must be platform-neutral and should cover browser AI, IDE AI, AI APIs, enterprise copilots, embedded SaaS AI, custom AI apps, and agents.</li>
+<li>Dedicated AI security tooling should be evaluated only where it provides measurable reduction of AI-specific gaps beyond existing controls.</li>
+<li>Vendor selection should prioritize integration, auditability, operational maturity, and evidence quality rather than feature volume alone.</li>
+</ul>
+<h2 id="5-practical-use">5. Practical Use</h2>
+<p>Use this document before starting vendor discussions. It helps establish vocabulary so that product teams, security teams, compliance teams, and procurement teams evaluate AI security capabilities consistently.</p>
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="index.html">&larr; Strategy and Market</a><a class="next" href="01_AI_Security_Market_and_Technology_Landscape_Expanded.html">AI Security Market and Technology Landscape &rarr;</a></nav>
+</main>
+</div>
+<script>window.SITE_BASE = "../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>
