@@ -52,15 +52,3 @@ The original author credit stays with the work: it appears on every page, and an
 | `build.py` | Regenerates the HTML pages from `source/` |
 | `AUTHORS`, `check_author.py` | Original author and contributor list, and the check that protects the author credit |
 | `LICENSE` | CC BY 4.0 licence text |
-
-## Editing a page
-
-Edit the Markdown file under `source/`, then rebuild and push:
-
-```sh
-pip install markdown
-python3 build.py
-git add -A && git commit -m "Update wiki" && git push
-```
-
-The live site updates a minute or two after the push.
