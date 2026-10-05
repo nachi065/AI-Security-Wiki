@@ -10,8 +10,7 @@ nav_order: 15
 
 **Primary test focus:** model theft, extraction, adversarial inputs, model scanning
 
-**Cases:** 25 (TC-L12-001 to TC-L12-025)  |  **Batch:** 4
-
+**Cases:** 25 (TC-L12-001 to TC-L12-025)
 > **Safety boundary.** Retrieval, model, training, pipeline and supply chain cases use fabricated corpora and datasets, small lab models, mock hubs and indexes and harmless marker artefacts only (an EICAR-style file that writes a marker, never real malware). Never load untrusted model files outside an isolated sandbox, and never connect the lab to production knowledge sources, models, pipelines, registries or credentials. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.
 
 > **Verify before use.** MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the [Reference Index](00-reference-index.md) for field definitions and applicability codes.
@@ -61,7 +60,6 @@ nav_order: 15
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
@@ -72,7 +70,7 @@ nav_order: 15
 
 **Technical Scenario.** Deploy a known set of models in different places and compare the inventory.
 
-**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
 
 **Test Data.** 10 models: 3 hosted API models, 3 self-hosted open-weight models, 2 fine-tuned models, 1 embedding model, 1 classifier in a notebook.
 
@@ -125,7 +123,6 @@ nav_order: 15
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P, R |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
@@ -136,7 +133,7 @@ nav_order: 15
 
 **Technical Scenario.** Scan a set of model files including harmless marker artefacts.
 
-**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
 
 **Test Data.** 12 files: 4 in safe tensor format, 4 in a pickle-based format with benign content, 4 pickle-based files containing a harmless marker-writing payload (EICAR-style).
 
@@ -189,7 +186,6 @@ nav_order: 15
 | **Test Method** | Technical |
 | **Vendor Applicability** | Partial: P, R |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
@@ -200,7 +196,7 @@ nav_order: 15
 
 **Technical Scenario.** Test the scanner on models with known benign trigger behaviour.
 
-**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
 
 **Test Data.** 3 small test models with an inserted harmless trigger that outputs a marker phrase; 3 clean models.
 
@@ -253,7 +249,6 @@ nav_order: 15
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -264,7 +259,7 @@ nav_order: 15
 
 **Technical Scenario.** Try to download and load models in disallowed formats.
 
-**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
 
 **Test Data.** 3 formats; 2 locations (pipeline, workstation).
 
@@ -316,7 +311,6 @@ nav_order: 15
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
@@ -327,7 +321,7 @@ nav_order: 15
 
 **Technical Scenario.** Load signed, unsigned and tampered models.
 
-**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
 
 **Test Data.** 3 signed models, 3 unsigned, 3 signed then tampered; trust policy.
 
@@ -380,7 +374,6 @@ nav_order: 15
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -391,7 +384,7 @@ nav_order: 15
 
 **Technical Scenario.** Register models with different licences and test policy.
 
-**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
 
 **Test Data.** 8 models with different licence types, including non-commercial and restricted-use terms.
 
@@ -444,7 +437,6 @@ nav_order: 15
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0024 Exfiltration via AI Inference API (includes model extraction and inversion techniques) |
 | **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption; LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.10 |
@@ -455,7 +447,7 @@ nav_order: 15
 
 **Technical Scenario.** Run a scripted extraction-style query pattern against a protected inference endpoint.
 
-**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
 
 **Test Data.** Inference endpoint; normal profile of 50 queries per user per day; extraction script making 20,000 structured queries.
 
@@ -508,7 +500,6 @@ nav_order: 15
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: R \| Partial: G |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0024 Exfiltration via AI Inference API (includes model extraction and inversion techniques) |
 | **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption; LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.10 |
@@ -519,7 +510,7 @@ nav_order: 15
 
 **Technical Scenario.** Run probes against a test model fine-tuned on canary content.
 
-**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
 
 **Test Data.** Test model fine-tuned on 50 canary strings; 100 extraction prompts.
 
@@ -573,7 +564,6 @@ nav_order: 15
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: E, P |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0024 Exfiltration via AI Inference API (includes model extraction and inversion techniques) |
 | **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption; LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.10 |
@@ -584,7 +574,7 @@ nav_order: 15
 
 **Technical Scenario.** Attempt to copy model files to unauthorised destinations.
 
-**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
 
 **Test Data.** Weights repository; destinations: personal cloud, removable media (lab), unapproved bucket, email; 4 file sizes.
 
@@ -636,7 +626,6 @@ nav_order: 15
 | **Test Method** | Technical |
 | **Vendor Applicability** | Partial: R |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0043 Craft Adversarial Data |
 | **OWASP LLM / GenAI Mapping** | N/A (classic model robustness; no direct LLM Top 10 entry) |
 | **NIST AI RMF Mapping** | MEASURE 2.5; MEASURE 2.7 |
@@ -647,7 +636,7 @@ nav_order: 15
 
 **Technical Scenario.** Apply standard perturbation methods to a test classifier and measure.
 
-**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
 
 **Test Data.** Test image classifier; 100 images; perturbation levels low, medium, high; open-source robustness tooling.
 
@@ -700,7 +689,6 @@ nav_order: 15
 | **Test Method** | Technical |
 | **Vendor Applicability** | Partial: R, A |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0043 Craft Adversarial Data |
 | **OWASP LLM / GenAI Mapping** | N/A (classic model robustness; no direct LLM Top 10 entry) |
 | **NIST AI RMF Mapping** | MEASURE 2.5; MEASURE 2.7 |
@@ -711,7 +699,7 @@ nav_order: 15
 
 **Technical Scenario.** Perturb inputs to a lab text classifier with realistic evasion techniques and measure decision flips and platform detection.
 
-**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
 
 **Test Data.** Lab classifier (for example a spam or fraud-style model); 200 labelled inputs; 5 perturbation types: character swaps and typos, synonym substitution, homoglyph substitution, inserted benign filler text, and translation round trip.
 
@@ -766,7 +754,6 @@ nav_order: 15
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0043 Craft Adversarial Data |
 | **OWASP LLM / GenAI Mapping** | N/A (classic model robustness; no direct LLM Top 10 entry) |
 | **NIST AI RMF Mapping** | MEASURE 2.5; MEASURE 2.7 |
@@ -777,7 +764,7 @@ nav_order: 15
 
 **Technical Scenario.** Send normal traffic and five classes of anomalous input to a lab inference endpoint and compare detection.
 
-**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
 
 **Test Data.** 300 normal inputs; 50 anomalous inputs across five classes: extreme length, unusual character distributions, repeated near-identical queries with small changes (probing), out-of-domain content, and malformed structured inputs.
 
@@ -831,7 +818,6 @@ nav_order: 15
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -842,7 +828,7 @@ nav_order: 15
 
 **Technical Scenario.** Test lab inference APIs with no credentials, bad credentials, wrong-scope credentials and abusive volume.
 
-**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
 
 **Test Data.** 2 lab inference endpoints (one internal, one exposed to a wider segment); credential sets: valid, expired, revoked, wrong scope, malformed; load script at 10 times normal volume.
 
@@ -897,7 +883,6 @@ nav_order: 15
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -908,7 +893,7 @@ nav_order: 15
 
 **Technical Scenario.** Define a role-by-model matrix and test every combination, including after version change.
 
-**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
 
 **Test Data.** 4 models (public, internal, restricted data, experimental), 3 versions of the restricted model, 3 roles, 2 service identities; 40 combinations.
 
@@ -963,7 +948,6 @@ nav_order: 15
 | **Test Method** | Technical |
 | **Vendor Applicability** | Partial: R, P |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0024 Exfiltration via AI Inference API (includes model extraction and inversion techniques) |
 | **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption; LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.10 |
@@ -974,7 +958,7 @@ nav_order: 15
 
 **Technical Scenario.** Fingerprint a lab model, create copies and derivatives, and test identification.
 
-**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
 
 **Test Data.** 1 owned lab model; copies: exact copy, quantised copy, fine-tuned derivative, distilled student; 3 unrelated models.
 
@@ -1028,7 +1012,6 @@ nav_order: 15
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: R \| Partial: G |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (evaluation control) |
 | **OWASP LLM / GenAI Mapping** | LLM09:2025 Misinformation; LLM01:2025 Prompt Injection (policy robustness) |
 | **NIST AI RMF Mapping** | MEASURE 2.6; MANAGE 2.3 |
@@ -1039,7 +1022,7 @@ nav_order: 15
 
 **Technical Scenario.** Run an agreed benign test set probing policy boundaries on each model and compare.
 
-**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
 
 **Test Data.** 150 benign test prompts across 6 policy categories (for example restricted internal topics, impersonation, privacy requests, unsafe instructions in mild form, bias-sensitive questions, regulated advice); expected behaviour defined per prompt; 3 models.
 
@@ -1093,7 +1076,6 @@ nav_order: 15
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: R \| Partial: A |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (no direct technique) |
 | **OWASP LLM / GenAI Mapping** | LLM09:2025 Misinformation |
 | **NIST AI RMF Mapping** | MEASURE 2.5; MAP 2.3 |
@@ -1104,7 +1086,7 @@ nav_order: 15
 
 **Technical Scenario.** Run a factual question set with reference answers, including unanswerable questions, with and without grounding controls.
 
-**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
 
 **Test Data.** 100 answerable questions from the organisation's own fabricated knowledge base; 20 unanswerable questions; 2 models; groundedness control on and off.
 
@@ -1158,7 +1140,6 @@ nav_order: 15
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P, G |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
@@ -1169,7 +1150,7 @@ nav_order: 15
 
 **Technical Scenario.** Pin versions, then simulate a provider update using a mock provider and monitor canary prompts.
 
-**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
 
 **Test Data.** Mock provider with versions A and B; 30 canary prompts with expected outputs or properties (format, refusal, factual answer); 2 applications.
 
@@ -1224,7 +1205,6 @@ nav_order: 15
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -1235,7 +1215,7 @@ nav_order: 15
 
 **Technical Scenario.** Register models with complete and incomplete documentation and check gap handling.
 
-**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
 
 **Test Data.** 8 models: 2 complete, 3 missing intended use and limitations, 2 missing training data summary, 1 missing licence; required field list agreed in advance.
 
@@ -1289,7 +1269,6 @@ nav_order: 15
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -1300,7 +1279,7 @@ nav_order: 15
 
 **Technical Scenario.** Run configuration checks against lab deployments with seeded weak settings.
 
-**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
 
 **Test Data.** 5 deployments with 20 seeded weaknesses: guardrails disabled, verbose error output, logging off, public network exposure, no authentication on admin routes, default credentials, unlimited tokens, unrestricted tools, debug mode on, and benign settings.
 
@@ -1354,7 +1333,6 @@ nav_order: 15
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -1365,7 +1343,7 @@ nav_order: 15
 
 **Technical Scenario.** Trigger failover and cost-based routing in a lab router and check policy at each destination.
 
-**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
 
 **Test Data.** Router with a primary and 2 fallback models (one in a non-approved region, one with weaker safety scores, one approved); 30 requests with and without sensitive data.
 
@@ -1420,7 +1398,6 @@ nav_order: 15
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
 | **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
@@ -1431,7 +1408,7 @@ nav_order: 15
 
 **Technical Scenario.** Send ten request types designed to be expensive and compare cost, latency and platform handling.
 
-**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
 
 **Test Data.** Lab inference endpoint with a mock cost meter; 10 request types: maximum-length input, repeated token input, request for maximum-length output, nested expansion prompts, many parallel requests, large image or file input, recursive tool loop, streaming held open, tiny requests at high rate, and a legitimate 40-page document summary.
 
@@ -1485,7 +1462,6 @@ nav_order: 15
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
@@ -1496,7 +1472,7 @@ nav_order: 15
 
 **Technical Scenario.** Convert a signed lab model and verify the chain of provenance, then tamper with the output.
 
-**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
 
 **Test Data.** 1 signed model; 2 conversions (format change, quantisation); tampering tests: altered weights file, swapped file with same name, altered metadata.
 
@@ -1550,7 +1526,6 @@ nav_order: 15
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Low |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -1561,7 +1536,7 @@ nav_order: 15
 
 **Technical Scenario.** Retire a lab model and check for residual access and copies.
 
-**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
 
 **Test Data.** 2 models with endpoints, API keys, registry entries, cached copies and backups.
 
@@ -1615,7 +1590,6 @@ nav_order: 15
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -1626,7 +1600,7 @@ nav_order: 15
 
 **Technical Scenario.** Submit models of different risk through the platform's workflow and check tiering, required assessments and approvals.
 
-**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
 
 **Test Data.** 4 models: internal summariser, customer-facing assistant, credit-style decision model, code assistant; scoring inputs (data sensitivity, autonomy, impact, exposure).
 

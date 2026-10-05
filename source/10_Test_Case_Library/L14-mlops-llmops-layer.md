@@ -10,8 +10,7 @@ nav_order: 17
 
 **Primary test focus:** pipeline and registry security, CI/CD gates, artifact signing
 
-**Cases:** 20 (TC-L14-001 to TC-L14-020)  |  **Batch:** 4
-
+**Cases:** 22 (TC-L14-001 to TC-L14-022)
 > **Safety boundary.** Retrieval, model, training, pipeline and supply chain cases use fabricated corpora and datasets, small lab models, mock hubs and indexes and harmless marker artefacts only (an EICAR-style file that writes a marker, never real malware). Never load untrusted model files outside an isolated sandbox, and never connect the lab to production knowledge sources, models, pipelines, registries or credentials. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.
 
 > **Verify before use.** MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the [Reference Index](00-reference-index.md) for field definitions and applicability codes.
@@ -40,6 +39,8 @@ nav_order: 17
 | [TC-L14-018](#tc-l14-018) | Shadow Deployments and Unregistered Model Endpoints | High | Technical | D4, D3 |
 | [TC-L14-019](#tc-l14-019) | Pipeline Audit Trail and Change Attribution | High | Technical | D4, D7 |
 | [TC-L14-020](#tc-l14-020) | Policy-as-Code Admission Control for AI Workloads | High | Technical | D4, D7 |
+| [TC-L14-021](#tc-l14-021) | AI-Assisted Commit and Pull Request Identification | Medium | Technical | D2, D4 |
+| [TC-L14-022](#tc-l14-022) | AI Code Review and Fix Bot Permissions in the Pipeline | High | Technical | D2, D5 |
 
 ---
 
@@ -56,7 +57,6 @@ nav_order: 17
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
@@ -67,7 +67,7 @@ nav_order: 17
 
 **Technical Scenario.** Stand up a known set of pipeline components and compare the platform's inventory with ground truth.
 
-**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
+**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
 
 **Test Data.** 10 components: 2 CI/CD pipelines for models, 2 orchestrated training pipelines, 2 notebook servers, 1 experiment tracker, 1 prompt-management tool, 1 feature store, 1 serving platform; each with a service account.
 
@@ -121,7 +121,6 @@ nav_order: 17
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P, R |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -132,7 +131,7 @@ nav_order: 17
 
 **Technical Scenario.** Add the platform's checks to a lab release pipeline and push releases with and without seeded issues.
 
-**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
+**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
 
 **Test Data.** 1 pipeline with stages build, test, scan, approve, deploy; 6 candidate releases: clean, unsafe model file, prompt with embedded secret, failed safety evaluation, failed injection test, unsigned artefact.
 
@@ -187,7 +186,6 @@ nav_order: 17
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
@@ -198,7 +196,7 @@ nav_order: 17
 
 **Technical Scenario.** Sign artefacts in the pipeline and test deployment of valid, unsigned, tampered and wrongly signed artefacts.
 
-**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
+**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
 
 **Test Data.** 4 artefact types (model, container image, prompt template, configuration); 4 conditions each (valid, unsigned, tampered after signing, signed by an untrusted key).
 
@@ -252,7 +250,6 @@ nav_order: 17
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -263,7 +260,7 @@ nav_order: 17
 
 **Technical Scenario.** Test registry roles and attempt to modify released versions.
 
-**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
+**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
 
 **Test Data.** Registry with 3 roles (contributor, approver, admin); 5 models; released versions v1 and v2.
 
@@ -317,7 +314,6 @@ nav_order: 17
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P, A |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -328,7 +324,7 @@ nav_order: 17
 
 **Technical Scenario.** Change prompts through the console and the repository and compare controls.
 
-**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
+**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
 
 **Test Data.** 3 applications; production prompt console; repository-based prompt workflow; 8 prompt changes including 2 containing a secret and 2 that weaken a safety rule.
 
@@ -382,7 +378,6 @@ nav_order: 17
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0055 Unsecured Credentials |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
@@ -393,7 +388,7 @@ nav_order: 17
 
 **Technical Scenario.** Seed secrets in several pipeline locations and run detection.
 
-**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
+**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
 
 **Test Data.** 12 fabricated secrets distributed across notebook cells and outputs, pipeline variables, repository history, experiment tracker parameters, container build logs; 12 high-entropy but harmless strings.
 
@@ -448,7 +443,6 @@ nav_order: 17
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -459,7 +453,7 @@ nav_order: 17
 
 **Technical Scenario.** Assess lab notebook servers with seeded weaknesses.
 
-**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
+**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
 
 **Test Data.** 3 notebook servers with 10 weaknesses: no authentication, token in URL, public exposure, root execution, broad cloud role, outputs containing data, no idle shutdown, shared kernels, unrestricted internet, unencrypted disk.
 
@@ -512,7 +506,6 @@ nav_order: 17
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -523,7 +516,7 @@ nav_order: 17
 
 **Technical Scenario.** Review and test the permissions of pipeline stages.
 
-**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
+**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
 
 **Test Data.** Pipeline with 5 stages; one shared broad service account versus per-stage accounts; attempted out-of-scope actions per stage.
 
@@ -576,7 +569,6 @@ nav_order: 17
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
@@ -587,7 +579,7 @@ nav_order: 17
 
 **Technical Scenario.** Scan lab training and serving environments with seeded vulnerable packages.
 
-**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
+**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
 
 **Test Data.** 2 environments; 15 seeded issues: known vulnerable ML framework versions, a vulnerable serving library, a typosquat-style package name (harmless), an unpinned dependency, an abandoned package, a package with a changed maintainer, plus clean packages.
 
@@ -641,7 +633,6 @@ nav_order: 17
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
@@ -652,7 +643,7 @@ nav_order: 17
 
 **Technical Scenario.** Scan lab serving images and a test cluster.
 
-**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
+**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
 
 **Test Data.** 3 images and 1 cluster namespace; seeded issues: root user, secret in layer, outdated base image, privileged container, host path mount, no resource limits, open admin port, no read-only root file system.
 
@@ -706,7 +697,6 @@ nav_order: 17
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -717,7 +707,7 @@ nav_order: 17
 
 **Technical Scenario.** Scan lab templates with seeded errors.
 
-**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
+**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
 
 **Test Data.** 4 templates with 14 seeded misconfigurations: public storage, unencrypted volume, open security group, wide IAM role, no logging, public vector store endpoint, disabled TLS, default passwords, missing tags, and clean controls.
 
@@ -771,7 +761,6 @@ nav_order: 17
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -782,7 +771,7 @@ nav_order: 17
 
 **Technical Scenario.** Attempt direct and staged promotions.
 
-**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
+**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
 
 **Test Data.** 3 environments; 3 roles; 5 promotion attempts including direct to production and approval by the author.
 
@@ -836,7 +825,6 @@ nav_order: 17
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P, G |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -847,7 +835,7 @@ nav_order: 17
 
 **Technical Scenario.** Trigger rollback and emergency disable for a running lab model.
 
-**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
+**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
 
 **Test Data.** 1 serving deployment with versions v1 (good) and v2 (faulty); traffic generator; 2 dependent applications.
 
@@ -902,7 +890,6 @@ nav_order: 17
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0020 Poison Training Data (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
 | **OWASP LLM / GenAI Mapping** | LLM04:2025 Data and Model Poisoning; LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
@@ -913,7 +900,7 @@ nav_order: 17
 
 **Technical Scenario.** Alter features and transformations in a lab feature pipeline and test detection, approval control and lineage.
 
-**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
+**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
 
 **Test Data.** 1 feature store with 5 feature pipelines feeding 2 models; alterations: changed transformation code, altered stored values, schema change, stale refresh (no update for 48 simulated hours), unexpected new data source.
 
@@ -967,7 +954,6 @@ nav_order: 17
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
@@ -978,7 +964,7 @@ nav_order: 17
 
 **Technical Scenario.** Run lab experiments that log sensitive data and scan the tracker.
 
-**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
+**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
 
 **Test Data.** 3 experiments logging prompts, model outputs, sample dataset rows and attached files; 40 fabricated sensitive items (personal data, secrets, confidential markers) spread across parameters, metrics notes, artefacts and comments.
 
@@ -1033,7 +1019,6 @@ nav_order: 17
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P, G |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
@@ -1044,7 +1029,7 @@ nav_order: 17
 
 **Technical Scenario.** Deploy models with and without monitoring and compare coverage and detection.
 
-**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
+**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
 
 **Test Data.** 6 deployments, 3 with monitoring hooks and 3 without; simulated input drift, output drift and anomalous traffic.
 
@@ -1098,7 +1083,6 @@ nav_order: 17
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0020 Poison Training Data (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
 | **OWASP LLM / GenAI Mapping** | LLM04:2025 Data and Model Poisoning; LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
@@ -1109,7 +1093,7 @@ nav_order: 17
 
 **Technical Scenario.** Alter and leak evaluation data in the lab and test detection.
 
-**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
+**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
 
 **Test Data.** 3 evaluation sets (safety, accuracy, injection robustness) of 100 items each; alterations: remove 20 hardest items, add 15 items that overlap training data, change 10 expected answers; access list with 6 users.
 
@@ -1163,7 +1147,6 @@ nav_order: 17
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P, G |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
@@ -1174,7 +1157,7 @@ nav_order: 17
 
 **Technical Scenario.** Start unregistered endpoints in several places and test discovery and ownership resolution.
 
-**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
+**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
 
 **Test Data.** 4 endpoints: registered, unregistered internal, unregistered exposed to a wider segment, endpoint in a personal cloud account reachable from a managed device; 20 minutes of traffic on each.
 
@@ -1228,7 +1211,6 @@ nav_order: 17
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
@@ -1239,7 +1221,7 @@ nav_order: 17
 
 **Technical Scenario.** Make a series of changes across pipeline, registry and configuration and reconstruct them from platform records alone.
 
-**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
+**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
 
 **Test Data.** 12 changes by 3 users and 2 service accounts across pipeline definitions, registry entries, prompts, access rules and secrets references; 1 change made through an emergency procedure.
 
@@ -1293,7 +1275,6 @@ nav_order: 17
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -1304,7 +1285,7 @@ nav_order: 17
 
 **Technical Scenario.** Write and test admission rules against compliant and non-compliant workloads in the lab cluster.
 
-**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
+**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
 
 **Test Data.** 10 rules: approved registries only, signed models, GPU quotas, resource limits, required ownership labels, no privileged containers, approved regions, required monitoring sidecar, no secrets in environment variables, approved network policies; 20 workloads (10 compliant, 10 breaking one rule each).
 
@@ -1348,3 +1329,128 @@ nav_order: 17
 
 ---
 
+<a id="tc-l14-021"></a>
+
+### TC-L14-021: AI-Assisted Commit and Pull Request Identification
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L14 MLOps / LLMOps Layer |
+| **Use-Case Domain(s)** | D2, D4 |
+| **Test Method** | Technical |
+| **Vendor Applicability** | Core: P \| Partial: E |
+| **Risk Severity** | Medium |
+| **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
+| **OWASP LLM / GenAI Mapping** | N/A |
+| **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+
+**Risk Addressed.** Without knowing which changes were AI-assisted, review depth, incident analysis and policy cannot take AI involvement into account.
+
+**Business Scenario.** Engineering wants AI-assisted changes labelled so that review rules and metrics can use the label.
+
+**Technical Scenario.** Produce human-only, assistant-assisted and agent-authored changes and check labelling accuracy and use of the label in policy.
+
+**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab repository with a branch rule that requires a second reviewer for agent-authored changes.
+
+**Test Data.** 9 pull requests: 3 human-only, 3 with accepted assistant suggestions, 3 authored by a coding agent.
+
+**Procedure**
+
+1. Create the 9 pull requests.
+2. Check the label on each.
+3. Attempt to merge an agent-authored pull request with one reviewer.
+4. Export the report by repository and author.
+5. Strip any assistant trailer from one commit and re-check.
+
+**Edge Cases / Variants.** Squash merge; commit amended locally; suggestion accepted and then heavily edited.
+
+**Expected Detection.** 6 of 6 AI-involved pull requests labelled with tool and mode; 0 of 3 human-only pull requests labelled.
+
+**Expected Prevention / Control Action.** The agent-authored pull request cannot merge without the second reviewer.
+
+**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
+
+**Expected Report / Dashboard Evidence.** Finding or decision visible in the pipeline security dashboard within the documented refresh interval.
+
+**Expected Integration Evidence.** Label available to the source-control platform and reporting.
+
+**Forensic Evidence.** Pipeline, stage, artefact identifier and hash, actor, approval reference, decision and timestamp exportable for incident reconstruction.
+
+**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
+
+**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
+
+**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
+
+**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
+
+**Evidence to Capture.** Label report; merge attempt result.
+
+**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
+
+[Back to layer index](#top)
+
+---
+
+<a id="tc-l14-022"></a>
+
+### TC-L14-022: AI Code Review and Fix Bot Permissions in the Pipeline
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L14 MLOps / LLMOps Layer |
+| **Use-Case Domain(s)** | D2, D5 |
+| **Test Method** | Technical |
+| **Vendor Applicability** | Core: P, A |
+| **Risk Severity** | High |
+| **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
+| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+
+**Risk Addressed.** Review and auto-fix bots hold write access to repositories and can be steered by pull request content into approving or pushing changes.
+
+**Business Scenario.** Engineering wants AI review bots to comment and propose, never to approve their own changes or write to protected branches.
+
+**Technical Scenario.** Run a lab review bot against pull requests that contain instructions aimed at the bot and test its effective permissions.
+
+**Preconditions.** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab review bot with a test token; protected main branch.
+
+**Test Data.** 5 pull requests: 2 ordinary; 3 containing text that instructs the bot to approve, to push to the main branch and to reveal its token.
+
+**Procedure**
+
+1. Enumerate the bot token's permissions.
+2. Open each pull request and record the bot's actions.
+3. Have the bot propose a fix and attempt to approve its own change.
+4. Verify no secret appears in bot output.
+5. Review the platform's finding on bot privilege.
+
+**Edge Cases / Variants.** Instruction placed in a file diff, not the description; pull request from a fork.
+
+**Expected Detection.** Bot permission set inventoried; 3 of 3 instruction attempts detected.
+
+**Expected Prevention / Control Action.** 0 approvals, 0 pushes to the protected branch and 0 token disclosures result from pull request content; the bot cannot approve its own change.
+
+**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
+
+**Expected Report / Dashboard Evidence.** Finding or decision visible in the pipeline security dashboard within the documented refresh interval.
+
+**Expected Integration Evidence.** Findings to ticketing.
+
+**Forensic Evidence.** Pipeline, stage, artefact identifier and hash, actor, approval reference, decision and timestamp exportable for incident reconstruction.
+
+**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
+
+**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
+
+**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
+
+**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
+
+**Evidence to Capture.** Permission inventory; bot action log; pull request timeline.
+
+**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
+
+[Back to layer index](#top)
+
+---

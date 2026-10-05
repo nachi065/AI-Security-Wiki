@@ -10,8 +10,7 @@ nav_order: 19
 
 **Primary test focus:** AI-BOM, model and package provenance, third-party SaaS AI risk
 
-**Cases:** 25 (TC-L16-001 to TC-L16-025)  |  **Batch:** 4
-
+**Cases:** 26 (TC-L16-001 to TC-L16-026)
 > **Safety boundary.** Retrieval, model, training, pipeline and supply chain cases use fabricated corpora and datasets, small lab models, mock hubs and indexes and harmless marker artefacts only (an EICAR-style file that writes a marker, never real malware). Never load untrusted model files outside an isolated sandbox, and never connect the lab to production knowledge sources, models, pipelines, registries or credentials. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.
 
 > **Verify before use.** MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the [Reference Index](00-reference-index.md) for field definitions and applicability codes.
@@ -45,6 +44,7 @@ nav_order: 19
 | [TC-L16-023](#tc-l16-023) | Fourth-Party and Concentration Risk Across AI Controls | Medium | Evidence | D7 |
 | [TC-L16-024](#tc-l16-024) | Supply Chain Incident Response Exercise | High | Technical | D4, D7 |
 | [TC-L16-025](#tc-l16-025) | Right to Audit and Independent Security Testing of the Vendor Platform | High | Attestation | D7 |
+| [TC-L16-026](#tc-l16-026) | IDE Extension and AI Plugin Marketplace Vetting | High | Technical | D2, D4 |
 
 ---
 
@@ -61,7 +61,6 @@ nav_order: 19
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
@@ -72,7 +71,7 @@ nav_order: 19
 
 **Technical Scenario.** Generate bills of materials for lab applications with known components and compare content to ground truth.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
+**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
 
 **Test Data.** 3 applications: a RAG chatbot (hosted model, embedding model, vector store, 20 libraries, prompt templates), a classifier service (self-hosted model, dataset, 30 libraries), an agent (2 models, 4 tools, 2 MCP servers, 25 libraries).
 
@@ -126,7 +125,6 @@ nav_order: 19
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
@@ -137,7 +135,7 @@ nav_order: 19
 
 **Technical Scenario.** Export the bills of materials and test import into other tools and linkage to advisories.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
+**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
 
 **Test Data.** Bills of materials from the previous case; a second tool able to ingest a standard format; 5 seeded component issues from public advisory-style records.
 
@@ -190,7 +188,6 @@ nav_order: 19
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
@@ -201,7 +198,7 @@ nav_order: 19
 
 **Technical Scenario.** Download lab models from a mock hub representing official, look-alike and altered sources.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
+**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
 
 **Test Data.** 8 models: 3 from official publishers with signatures or hashes, 2 from look-alike publisher names, 2 re-uploaded copies with changed weights, 1 with no publisher metadata.
 
@@ -255,7 +252,6 @@ nav_order: 19
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
@@ -266,7 +262,7 @@ nav_order: 19
 
 **Technical Scenario.** Attempt to install lab packages and models with names close to popular ones from a mock index.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
+**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
 
 **Test Data.** 10 mock items: 4 typosquats of well-known AI libraries and models, 2 dependency-confusion names matching internal package names, 2 recently created packages with few downloads, 2 genuine ones; all harmless.
 
@@ -319,7 +315,6 @@ nav_order: 19
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P, E |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
@@ -330,7 +325,7 @@ nav_order: 19
 
 **Technical Scenario.** Download test models with harmless marker artefacts to different environments.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
+**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
 
 **Test Data.** 6 models (including 2 with marker payloads); 3 environments: pipeline, notebook server, developer workstation.
 
@@ -383,7 +378,6 @@ nav_order: 19
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
@@ -394,7 +388,7 @@ nav_order: 19
 
 **Technical Scenario.** Scan lab environments running seeded older versions of AI frameworks and servers.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
+**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
 
 **Test Data.** 3 environments; 12 seeded components with known public issues (use only component versions and published identifiers, no exploit code); 6 current versions.
 
@@ -447,7 +441,6 @@ nav_order: 19
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
@@ -458,7 +451,7 @@ nav_order: 19
 
 **Technical Scenario.** Simulate dependency confusion in the lab build.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
+**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
 
 **Test Data.** Internal index; mock public index; 3 internal package names; harmless higher-version packages with the same names on the public index.
 
@@ -512,7 +505,6 @@ nav_order: 19
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -523,7 +515,7 @@ nav_order: 19
 
 **Technical Scenario.** Register SaaS tools with varied AI features and review the assessment output.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
+**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
 
 **Test Data.** 10 SaaS applications with differing AI features and data access; vendor questionnaires of varied completeness.
 
@@ -576,7 +568,6 @@ nav_order: 19
 | **Test Method** | Attestation |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -587,7 +578,7 @@ nav_order: 19
 
 **Technical Scenario.** Request evidence from the vendor and review against the services in scope.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
+**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
 
 **Test Data.** Vendor-supplied reports and certificates; checklist of scope questions.
 
@@ -641,7 +632,6 @@ nav_order: 19
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -652,7 +642,7 @@ nav_order: 19
 
 **Technical Scenario.** Request and verify the sub-processor and provider list and observe traffic.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
+**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
 
 **Test Data.** Vendor sub-processor list; lab traffic capture; data flow diagram.
 
@@ -705,7 +695,6 @@ nav_order: 19
 | **Test Method** | Attestation |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -716,7 +705,7 @@ nav_order: 19
 
 **Technical Scenario.** Review the vendor's draft terms and data processing agreement against a requirements checklist and record the vendor's response to each gap.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
+**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
 
 **Test Data.** Vendor draft terms and data processing agreement; requirements checklist with 15 items: purpose limitation, no training on customer data, retention limits, deletion on exit, sub-processor approval, audit rights, breach notice within a stated number of hours, data location, liability cap, indemnity for IP claims, security obligations, termination assistance, jurisdiction, change-of-control notice, and flow-down to model providers.
 
@@ -771,7 +760,6 @@ nav_order: 19
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -782,7 +770,7 @@ nav_order: 19
 
 **Technical Scenario.** Simulate outage, slow responses and API change against mock providers and review exit arrangements.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
+**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
 
 **Test Data.** 3 lab applications using a mock primary provider and a mock secondary; scenarios: full outage, partial outage with errors on 30 percent of calls, slow responses at 10 times normal latency, breaking API change, price change notice.
 
@@ -837,7 +825,6 @@ nav_order: 19
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P, G |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
@@ -848,7 +835,7 @@ nav_order: 19
 
 **Technical Scenario.** Simulate deprecation notices and behaviour changes through a mock provider and test detection and impact reporting.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
+**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
 
 **Test Data.** Mock provider feed with 4 announcements (deprecation, price change, new default model, safety policy change); 4 applications using different models; 25 canary prompts.
 
@@ -903,7 +890,6 @@ nav_order: 19
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -914,7 +900,7 @@ nav_order: 19
 
 **Technical Scenario.** Register components with differing licences and test detection, policy and reporting.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
+**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
 
 **Test Data.** 20 components: 6 permissive, 4 copyleft, 4 with non-commercial terms, 3 with responsible-use restrictions, 3 with unclear or custom terms; 3 intended uses (internal tool, customer product, research).
 
@@ -969,7 +955,6 @@ nav_order: 19
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
@@ -980,7 +965,7 @@ nav_order: 19
 
 **Technical Scenario.** Test version pinning and integrity checking against a mock index with a tampered release.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
+**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
 
 **Test Data.** 3 agent SDKs; mock index with releases 1.0, 1.1 and a tampered 1.1 with the same version number but different content; 2 applications, one pinned and one using a floating version.
 
@@ -1035,7 +1020,6 @@ nav_order: 19
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P, A |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
@@ -1046,7 +1030,7 @@ nav_order: 19
 
 **Technical Scenario.** Import lab prompt packs with seeded issues and review findings.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
+**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
 
 **Test Data.** 5 packs: clean, hidden instruction at the end of a long template, link that sends conversation data to a lab collector, request for broad tool permissions, text under a restrictive licence.
 
@@ -1101,7 +1085,6 @@ nav_order: 19
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
@@ -1112,7 +1095,7 @@ nav_order: 19
 
 **Technical Scenario.** Scan lab GPU nodes and images with seeded outdated components.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
+**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
 
 **Test Data.** 2 GPU nodes; 4 images; seeded issues: outdated driver version, outdated base image, unsigned image, image from an unapproved registry, unpatched runtime component, plus current components.
 
@@ -1166,7 +1149,6 @@ nav_order: 19
 | **Test Method** | Attestation |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -1177,7 +1159,7 @@ nav_order: 19
 
 **Technical Scenario.** Request and review the vendor's own supply chain and security evidence and verify what can be verified in the lab.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
+**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
 
 **Test Data.** Evidence request list: software bill of materials for agent and gateway, recent independent penetration test summary, vulnerability disclosure policy, secure development practices, release signing, update mechanism design, access required by the agent, internal access controls for customer data.
 
@@ -1232,7 +1214,6 @@ nav_order: 19
 | **Test Method** | Attestation |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage (secondary) |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; GOVERN 1.1 |
@@ -1243,7 +1224,7 @@ nav_order: 19
 
 **Technical Scenario.** Request documentation and verify telemetry content and support access behaviour in the lab.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
+**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
 
 **Test Data.** Vendor telemetry documentation; lab traffic capture; telemetry settings; support access process; 10 fabricated sensitive prompts.
 
@@ -1298,7 +1279,6 @@ nav_order: 19
 | **Test Method** | Attestation |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -1309,7 +1289,7 @@ nav_order: 19
 
 **Technical Scenario.** Review continuity evidence and test configuration and data export.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
+**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
 
 **Test Data.** Vendor continuity statement; escrow or step-in terms if offered; data return process; lab tenant with configuration, policies and logs.
 
@@ -1363,7 +1343,6 @@ nav_order: 19
 | **Test Method** | Attestation |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -1374,7 +1353,7 @@ nav_order: 19
 
 **Technical Scenario.** Review the vendor's incident process and run a notification drill.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
+**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
 
 **Test Data.** Vendor incident policy and contact list; mock incident notification scenario; customer escalation contacts.
 
@@ -1428,7 +1407,6 @@ nav_order: 19
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -1439,7 +1417,7 @@ nav_order: 19
 
 **Technical Scenario.** Review release history and test an upgrade and rollback in the lab.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
+**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
 
 **Test Data.** Last 12 months of release notes and advisories; lab deployment on the previous version.
 
@@ -1493,7 +1471,6 @@ nav_order: 19
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -1504,7 +1481,7 @@ nav_order: 19
 
 **Technical Scenario.** Collect dependencies for each shortlisted tool and build a concentration map.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
+**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
 
 **Test Data.** Dependency data for 5 tools, covering hosting provider, model providers, identity provider, telemetry services and sub-processors.
 
@@ -1557,7 +1534,6 @@ nav_order: 19
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
@@ -1568,7 +1544,7 @@ nav_order: 19
 
 **Technical Scenario.** Run a lab drill with a mock compromised package and a withdrawn model.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
+**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
 
 **Test Data.** Scenario: a package used by 6 applications is reported malicious; a model used by 2 applications is withdrawn by its publisher; bills of materials loaded for all applications.
 
@@ -1623,7 +1599,6 @@ nav_order: 19
 | **Test Method** | Attestation |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -1634,7 +1609,7 @@ nav_order: 19
 
 **Technical Scenario.** Review audit rights and confirm what testing the vendor permits.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
+**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
 
 **Test Data.** Vendor contract; testing rules of engagement; list of permitted activities.
 
@@ -1677,3 +1652,66 @@ nav_order: 19
 
 ---
 
+<a id="tc-l16-026"></a>
+
+### TC-L16-026: IDE Extension and AI Plugin Marketplace Vetting
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L16 Supply Chain & Third Party |
+| **Use-Case Domain(s)** | D2, D4 |
+| **Test Method** | Technical |
+| **Vendor Applicability** | Core: E, P |
+| **Risk Severity** | High |
+| **Quick-Start Scenario** | [AI-POC-ID-004](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md#ide-ai-test-cases) |
+| **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
+| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
+| **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
+
+**Risk Addressed.** Look-alike or compromised AI extensions in public marketplaces run inside the IDE with access to source code, terminals and credentials.
+
+**Business Scenario.** Security wants extensions vetted before install, with look-alike publishers and risky permissions flagged.
+
+**Technical Scenario.** Offer legitimate, look-alike and over-permissioned test extensions from a mock marketplace and check the vetting results.
+
+**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Mock extension marketplace reachable from the test workstations; mock URL endpoint that records requests.
+
+**Test Data.** 8 test extensions: 3 legitimate; 2 look-alike names from different publishers; 1 with a post-install script that calls the mock URL; 1 requesting broad workspace and terminal access without need; 1 legitimate extension whose new version changes publisher.
+
+**Procedure**
+
+1. Request installation of each extension and record the verdict and reason.
+2. Install the legitimate ones.
+3. Publish the changed-publisher update.
+4. Check for an alert on the update.
+5. Export the extension risk report.
+
+**Edge Cases / Variants.** Extension installed from a file; extension pack that pulls in others; pre-release channel.
+
+**Expected Detection.** 5 of 5 risky extensions flagged with a reason (publisher mismatch, script behaviour, permissions or ownership change); the 3 legitimate extensions are not flagged.
+
+**Expected Prevention / Control Action.** Risky extensions blocked from install where enforcement is claimed; the changed-publisher update is held for review.
+
+**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
+
+**Expected Report / Dashboard Evidence.** Finding or inventory entry visible in the supply chain dashboard within the documented refresh interval.
+
+**Expected Integration Evidence.** Verdicts available to endpoint management for enforcement.
+
+**Forensic Evidence.** Component identifier, version, hash, source, publisher, decision and timestamp, plus the vendor evidence received, exportable for audit and incident reconstruction.
+
+**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
+
+**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
+
+**Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
+
+**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
+
+**Evidence to Capture.** Verdict table; risk report export; mock URL access log.
+
+**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
+
+[Back to layer index](#top)
+
+---

@@ -1,10 +1,10 @@
 ---
-title: "Appendix D: Lab Prerequisites"
+title: "Appendix: Lab Prerequisites"
 parent: "Test Case Library"
 nav_order: 3
 ---
 
-# Appendix D: Lab Prerequisites
+# Appendix: Lab Prerequisites
 
 This appendix compiles the setup each layer assumes, taken directly from the Preconditions field of its cases. It is a starting checklist, not an exhaustive build guide. Where a layer shows several variants, the first is the standard setup and the others are extra setup needed only by the listed cases.
 
@@ -32,11 +32,13 @@ This appendix compiles the setup each layer assumes, taken directly from the Pre
 
 **Standard setup (all cases):** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per this appendix; platform agent or integration installed for the channel under test.
 
+- **Developer and IDE test bench** (2 cases): Managed test workstations with two IDE families and AI coding assistant extensions, a CLI coding agent, corporate and personal test accounts, fabricated repositories (general, restricted and infrastructure-as-code) on a lab source-control server, a mock extension marketplace, mock MCP servers and a mock URL endpoint that records requests; no real source code, tokens or keys.
 
 ## L05 AI Applications
 
 **Standard setup (all cases):** Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per this appendix; platform integration or SDK deployed on the applications under test.
 
+- **Developer and IDE test bench** (5 cases): Managed test workstations with two IDE families and AI coding assistant extensions, a CLI coding agent, corporate and personal test accounts, fabricated repositories (general, restricted and infrastructure-as-code) on a lab source-control server, a mock extension marketplace, mock MCP servers and a mock URL endpoint that records requests; no real source code, tokens or keys.
 
 ## L06 Agent Orchestration Layer
 
@@ -49,6 +51,7 @@ This appendix compiles the setup each layer assumes, taken directly from the Pre
 - **Additional setup** ([TC-L06-010](L06-agent-orchestration-layer.md#tc-l06-010)): Lab servers configured with the four security modes.
 - **Additional setup** ([TC-L06-025](L06-agent-orchestration-layer.md#tc-l06-025)): Probes use canary files and lab hosts only.
 - **Additional setup** ([TC-L06-031](L06-agent-orchestration-layer.md#tc-l06-031)): Computer-use agent available in the lab.
+- **Developer and IDE test bench** (2 cases): Managed test workstations with two IDE families and AI coding assistant extensions, a CLI coding agent, corporate and personal test accounts, fabricated repositories (general, restricted and infrastructure-as-code) on a lab source-control server, a mock extension marketplace, mock MCP servers and a mock URL endpoint that records requests; no real source code, tokens or keys.
 
 ## L07 Prompt & Context Layer
 
@@ -69,6 +72,7 @@ This appendix compiles the setup each layer assumes, taken directly from the Pre
 - **Additional setup** ([TC-L07-037](L07-prompt-and-context-layer.md#tc-l07-037)): Analysts independent of the vendor.
 - **Additional setup** ([TC-L07-039](L07-prompt-and-context-layer.md#tc-l07-039)): Prompts stored in a test repository.
 - **Additional setup** ([TC-L07-040](L07-prompt-and-context-layer.md#tc-l07-040)): Evaluator selects new techniques after the PoC begins.
+- **Developer and IDE test bench** (1 case): Managed test workstations with two IDE families and AI coding assistant extensions, a CLI coding agent, corporate and personal test accounts, fabricated repositories (general, restricted and infrastructure-as-code) on a lab source-control server, a mock extension marketplace, mock MCP servers and a mock URL endpoint that records requests; no real source code, tokens or keys.
 
 ## L08 AI Gateway & Security Controls
 
@@ -99,12 +103,14 @@ This appendix compiles the setup each layer assumes, taken directly from the Pre
 - **Additional setup** ([TC-L08-033](L08-ai-gateway-and-security-controls.md#tc-l08-033)): Dedicated lab capacity; no production traffic.
 - **Additional setup** ([TC-L08-034](L08-ai-gateway-and-security-controls.md#tc-l08-034)): Vendor-documented HA architecture deployed.
 - **Additional setup** ([TC-L08-040](L08-ai-gateway-and-security-controls.md#tc-l08-040)): Storage region documented before testing.
+- **Developer and IDE test bench** (2 cases): Managed test workstations with two IDE families and AI coding assistant extensions, a CLI coding agent, corporate and personal test accounts, fabricated repositories (general, restricted and infrastructure-as-code) on a lab source-control server, a mock extension marketplace, mock MCP servers and a mock URL endpoint that records requests; no real source code, tokens or keys.
 
 ## L09 Identity & Access Mgmt
 
 **Standard setup (all cases):** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per this appendix; platform connected with least-privilege test credentials.
 
 - **Lab environment** (25 cases): Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
+- **Developer and IDE test bench** (1 case): Managed test workstations with two IDE families and AI coding assistant extensions, a CLI coding agent, corporate and personal test accounts, fabricated repositories (general, restricted and infrastructure-as-code) on a lab source-control server, a mock extension marketplace, mock MCP servers and a mock URL endpoint that records requests; no real source code, tokens or keys.
 
 ## L10 Data Layer
 
@@ -136,6 +142,7 @@ This appendix compiles the setup each layer assumes, taken directly from the Pre
 **Standard setup (all cases):** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per this appendix; platform connected with least-privilege test credentials.
 
 - **Lab environment** (20 cases): Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
+- **Developer and IDE test bench** (2 cases): Managed test workstations with two IDE families and AI coding assistant extensions, a CLI coding agent, corporate and personal test accounts, fabricated repositories (general, restricted and infrastructure-as-code) on a lab source-control server, a mock extension marketplace, mock MCP servers and a mock URL endpoint that records requests; no real source code, tokens or keys.
 
 ## L15 Infrastructure Layer
 
@@ -150,10 +157,12 @@ This appendix compiles the setup each layer assumes, taken directly from the Pre
 **Standard setup (all cases):** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per this appendix; written vendor evidence requests issued before testing; platform connected with least-privilege test credentials.
 
 - **Lab environment** (25 cases): Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
+- **Developer and IDE test bench** (1 case): Managed test workstations with two IDE families and AI coding assistant extensions, a CLI coding agent, corporate and personal test accounts, fabricated repositories (general, restricted and infrastructure-as-code) on a lab source-control server, a mock extension marketplace, mock MCP servers and a mock URL endpoint that records requests; no real source code, tokens or keys.
 
 ## L17 Monitoring, Detection & Response
 
 **Standard setup (all cases):** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per this appendix; no production alerting connected.
 
 - **Lab environment** (30 cases): Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+- **Developer and IDE test bench** (1 case): Managed test workstations with two IDE families and AI coding assistant extensions, a CLI coding agent, corporate and personal test accounts, fabricated repositories (general, restricted and infrastructure-as-code) on a lab source-control server, a mock extension marketplace, mock MCP servers and a mock URL endpoint that records requests; no real source code, tokens or keys.
 

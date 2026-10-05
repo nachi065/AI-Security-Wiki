@@ -10,8 +10,7 @@ nav_order: 7
 
 **Primary test focus:** browser/workforce AI, user coaching, approval prompts, multimodal input
 
-**Cases:** 30 (TC-L04-001 to TC-L04-030)  |  **Batch:** 1
-
+**Cases:** 32 (TC-L04-001 to TC-L04-032)
 > **Safety boundary.** All test cases in this layer use synthetic, non-functional or clearly marked test data only. Card numbers must come from published test ranges; keys, identifiers and records must be fabricated.
 
 > **Verify before use.** MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the [Reference Index](00-reference-index.md) for field definitions and applicability codes.
@@ -50,6 +49,8 @@ nav_order: 7
 | [TC-L04-028](#tc-l04-028) | Arabic and Mixed-Language Prompt Handling | High | Technical | D1, D7 |
 | [TC-L04-029](#tc-l04-029) | Differential Policy Enforcement by Group | High | Technical | D1 |
 | [TC-L04-030](#tc-l04-030) | Shared or Generic Account Use of AI Tools | Medium | Technical | D1 |
+| [TC-L04-031](#tc-l04-031) | IDE Chat Prompt Containing Proprietary Source Code: Monitor vs Block | Critical | Technical | D2, D6 |
+| [TC-L04-032](#tc-l04-032) | Developer Coaching and Justification Inside the IDE | Medium | Technical | D2 |
 
 ---
 
@@ -66,7 +67,7 @@ nav_order: 7
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: E, G \| Partial: P |
 | **Risk Severity** | Medium |
-| **Legacy ID** | TC-A-002 |
+| **Quick-Start Scenario** | [AI-POC-BR-005](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md#browser-ai-test-cases) |
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
@@ -77,7 +78,7 @@ nav_order: 7
 
 **Technical Scenario.** Test accounts browse to 3 public AI web tools absent from the approved list; the platform must classify each as unsanctioned.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** 3 unapproved public AI tools; 5 test accounts; approved-list file loaded in the platform.
 
@@ -126,7 +127,6 @@ nav_order: 7
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: E \| Partial: P |
 | **Risk Severity** | High |
-| **Legacy ID** | TC-A-003 |
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
@@ -137,7 +137,7 @@ nav_order: 7
 
 **Technical Scenario.** Install 3 test AI extensions (summariser, writing assistant, chat sidebar) on 5 test endpoints and confirm inventory.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** 3 test extensions across 5 endpoints; mix of Chrome and Edge profiles.
 
@@ -187,7 +187,6 @@ nav_order: 7
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: E, G \| Partial: P |
 | **Risk Severity** | High |
-| **Legacy ID** | TC-A-008 |
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
@@ -198,7 +197,7 @@ nav_order: 7
 
 **Technical Scenario.** 15 test accounts tagged to 3 directory departments generate a known mix of sanctioned and unsanctioned usage.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** 15 accounts (5 per department); scripted usage counts per account.
 
@@ -247,7 +246,6 @@ nav_order: 7
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: E, G \| Partial: P |
 | **Risk Severity** | Critical |
-| **Legacy ID** | TC-A-009 |
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
@@ -258,7 +256,7 @@ nav_order: 7
 
 **Technical Scenario.** Test accounts in 2 distinct IdP groups generate usage; the platform must attribute by group membership, including after a group change.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** 10 accounts across 2 groups; 1 account moved between groups mid-test.
 
@@ -308,7 +306,6 @@ nav_order: 7
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: E \| Partial: G |
 | **Risk Severity** | High |
-| **Legacy ID** | TC-A-010 |
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
@@ -319,7 +316,7 @@ nav_order: 7
 
 **Technical Scenario.** Generate usage from 1 managed laptop, 1 unmanaged laptop and 1 mobile device.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** 3 devices with known management status.
 
@@ -367,7 +364,6 @@ nav_order: 7
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: E \| Partial: G |
 | **Risk Severity** | High |
-| **Legacy ID** | TC-A-011 |
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
@@ -378,7 +374,7 @@ nav_order: 7
 
 **Technical Scenario.** 1 test account uses AI tools over on-premises LAN, corporate VPN and an unmanaged external network.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** 1 account; 3 network paths.
 
@@ -426,7 +422,6 @@ nav_order: 7
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, P \| Partial: E |
 | **Risk Severity** | Medium |
-| **Legacy ID** | TC-A-012 |
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
@@ -437,7 +432,7 @@ nav_order: 7
 
 **Technical Scenario.** Ingest a proxy log sample containing known AI domains.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** Log sample with 5 known AI-tool domain accesses and 20 unrelated entries.
 
@@ -486,7 +481,6 @@ nav_order: 7
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: E |
 | **Risk Severity** | High |
-| **Legacy ID** | TC-A-013 |
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
@@ -497,7 +491,7 @@ nav_order: 7
 
 **Technical Scenario.** Use a local AI app on an agent-equipped endpoint while disconnected, then reconnect.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** 1 endpoint with agent; 1 local AI application.
 
@@ -547,7 +541,6 @@ nav_order: 7
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: E, G |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage (secondary) |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; GOVERN 1.1 |
@@ -558,7 +551,7 @@ nav_order: 7
 
 **Technical Scenario.** Sign in to one AI service first with a corporate SSO identity, then with a personal account, and submit synthetic data in each.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** 1 AI service with enterprise tenant; 1 personal test account; synthetic internal-labelled text.
 
@@ -607,7 +600,6 @@ nav_order: 7
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: E \| Partial: G |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
@@ -618,7 +610,7 @@ nav_order: 7
 
 **Technical Scenario.** Enable the built-in AI assistant in a managed browser and summarise a test page.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** 1 browser with built-in AI feature enabled; 1 internal-labelled test page.
 
@@ -667,7 +659,6 @@ nav_order: 7
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: E, G |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -678,7 +669,7 @@ nav_order: 7
 
 **Technical Scenario.** Access an unsanctioned tool with coaching enabled and observe the message and click-through.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** 2 unsanctioned tools; 1 sanctioned alternative with link; 5 test users.
 
@@ -727,7 +718,7 @@ nav_order: 7
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: E, G |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
+| **Quick-Start Scenario** | [AI-POC-BR-002](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md#browser-ai-test-cases) |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
@@ -738,7 +729,7 @@ nav_order: 7
 
 **Technical Scenario.** Paste synthetic confidential text into a sanctioned and an unsanctioned AI prompt and observe the warning.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** Synthetic text labelled Confidential; neutral text for control.
 
@@ -787,7 +778,6 @@ nav_order: 7
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: E, G |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -798,7 +788,7 @@ nav_order: 7
 
 **Technical Scenario.** User overrides a warning by entering a justification; the platform stores it with the event.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** 3 test users; 3 justification texts including one blank attempt.
 
@@ -847,7 +837,6 @@ nav_order: 7
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: E, G \| Partial: P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -858,7 +847,7 @@ nav_order: 7
 
 **Technical Scenario.** User requests access to a blocked AI tool; the approver approves or rejects in the workflow.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** 2 requests: 1 to approve, 1 to reject; named test approver.
 
@@ -908,7 +897,6 @@ nav_order: 7
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: E, G |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -919,7 +907,7 @@ nav_order: 7
 
 **Technical Scenario.** Grant a 1-hour exception, use the tool inside the window, then again after expiry.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** 1 user; 1 blocked tool; exception of 1 hour.
 
@@ -969,7 +957,6 @@ nav_order: 7
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: E, G |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -980,7 +967,7 @@ nav_order: 7
 
 **Technical Scenario.** Access a blocked public tool and confirm the block page offers the sanctioned alternative.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** 1 blocked tool; 1 sanctioned alternative.
 
@@ -1029,7 +1016,7 @@ nav_order: 7
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: E, G |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
+| **Quick-Start Scenario** | [AI-POC-BR-002](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md#browser-ai-test-cases) |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
@@ -1040,7 +1027,7 @@ nav_order: 7
 
 **Technical Scenario.** Paste synthetic labelled data into a web AI prompt under monitor mode, then enforce mode.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** 5 synthetic confidential snippets (customer record, contract clause, HR note, price list, board paragraph).
 
@@ -1089,7 +1076,7 @@ nav_order: 7
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: E, G |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
+| **Quick-Start Scenario** | [AI-POC-BR-001](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md#browser-ai-test-cases), [AI-POC-BR-004](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md#browser-ai-test-cases) |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
@@ -1100,7 +1087,7 @@ nav_order: 7
 
 **Technical Scenario.** Upload files carrying sensitivity labels and fingerprints to a web AI tool.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** 4 synthetic files: labelled DOCX, labelled PDF, unlabelled but fingerprinted XLSX, clean TXT.
 
@@ -1149,7 +1136,7 @@ nav_order: 7
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: E, G |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
+| **Quick-Start Scenario** | [AI-POC-BR-003](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md#browser-ai-test-cases) |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
@@ -1160,7 +1147,7 @@ nav_order: 7
 
 **Technical Scenario.** Paste and drag-drop synthetic proprietary code snippets into a web AI prompt.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** 3 synthetic code snippets: one with a fake API key, one with an internal hostname, one generic.
 
@@ -1209,7 +1196,6 @@ nav_order: 7
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: E, G \| Partial: A |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
@@ -1220,7 +1206,7 @@ nav_order: 7
 
 **Technical Scenario.** Upload synthetic screenshots containing fake customer data to a web AI tool.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** 3 images: screenshot with fake Emirates-ID-format number, photographed document, clean image.
 
@@ -1269,7 +1255,6 @@ nav_order: 7
 | **Test Method** | Technical |
 | **Vendor Applicability** | Partial: E, G \| Core: A |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
@@ -1280,7 +1265,7 @@ nav_order: 7
 
 **Technical Scenario.** Use voice mode in a test AI assistant, speaking synthetic sensitive phrases.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** 1 voice-capable AI tool; 3 scripted spoken phrases.
 
@@ -1329,7 +1314,6 @@ nav_order: 7
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: E, G \| Partial: A |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0051 LLM Prompt Injection |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -1340,7 +1324,7 @@ nav_order: 7
 
 **Technical Scenario.** Upload documents with sensitive data in hidden text, comments and metadata.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** 3 synthetic files: white-on-white text, tracked comment, EXIF metadata.
 
@@ -1388,7 +1372,6 @@ nav_order: 7
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: E \| Partial: G |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
@@ -1399,7 +1382,7 @@ nav_order: 7
 
 **Technical Scenario.** Run a test browser agent that fills a form and reads a page in the user's session.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** 1 test browser agent; internal test form; 1 test user session.
 
@@ -1448,7 +1431,6 @@ nav_order: 7
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: E (mobile) \| Partial: G, P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
@@ -1459,7 +1441,7 @@ nav_order: 7
 
 **Technical Scenario.** Use 3 AI mobile apps on an enrolled and a non-enrolled phone.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** 2 phones; 3 AI mobile apps.
 
@@ -1508,7 +1490,6 @@ nav_order: 7
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G \| Partial: E |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -1519,7 +1500,7 @@ nav_order: 7
 
 **Technical Scenario.** Access a sanctioned AI tool from an unmanaged browser and attempt copy, download and upload.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** 1 unmanaged device; 1 sanctioned AI tool; synthetic data.
 
@@ -1568,7 +1549,6 @@ nav_order: 7
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: E, G \| Partial: P |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
@@ -1579,7 +1559,7 @@ nav_order: 7
 
 **Technical Scenario.** Generate repeated violations from 2 test users and a clean baseline from a third.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** 3 users; scripted violation counts (10, 3, 0).
 
@@ -1628,7 +1608,6 @@ nav_order: 7
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: E, G, P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage (secondary) |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; GOVERN 1.1 |
@@ -1639,7 +1618,7 @@ nav_order: 7
 
 **Technical Scenario.** Review user identity handling in dashboards and log exports under two admin roles.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** 2 admin roles (analyst, investigator); 5 test users.
 
@@ -1688,7 +1667,6 @@ nav_order: 7
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: E, G, A |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
@@ -1699,7 +1677,7 @@ nav_order: 7
 
 **Technical Scenario.** Submit synthetic sensitive content in Arabic, English and mixed text.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** 9 prompts: 3 each Arabic, English, mixed; same sensitive categories.
 
@@ -1748,7 +1726,6 @@ nav_order: 7
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: E, G |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -1759,7 +1736,7 @@ nav_order: 7
 
 **Technical Scenario.** Apply a stricter policy to a finance group and a lighter one to a general group, then test the same action.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** 2 groups; 1 identical sensitive paste action.
 
@@ -1808,7 +1785,6 @@ nav_order: 7
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: E, G \| Partial: P |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
@@ -1819,7 +1795,7 @@ nav_order: 7
 
 **Technical Scenario.** Two test users sign in to one AI tool using the same shared credential from different devices.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform agent or integration installed for the channel under test.
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
 
 **Test Data.** 1 shared test account; 2 devices; 2 users.
 
@@ -1857,3 +1833,129 @@ nav_order: 7
 
 ---
 
+<a id="tc-l04-031"></a>
+
+### TC-L04-031: IDE Chat Prompt Containing Proprietary Source Code: Monitor vs Block
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L04 Human Interaction Layer |
+| **Use-Case Domain(s)** | D2, D6 |
+| **Test Method** | Technical |
+| **Vendor Applicability** | Core: E, G |
+| **Risk Severity** | Critical |
+| **Quick-Start Scenario** | [AI-POC-ID-001](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md#ide-ai-test-cases) |
+| **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
+| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+
+**Risk Addressed.** Developers paste or attach proprietary code into an IDE assistant chat panel, a channel that browser-focused controls do not see.
+
+**Business Scenario.** Engineering leadership wants assistants allowed for general coding while code from restricted repositories is kept out of prompts.
+
+**Technical Scenario.** From the IDE chat panel, submit synthetic code marked proprietary by paste, by file attachment and by a selection-based action such as explain, under a monitor policy and then a block policy.
+
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test. Two IDE families with an AI assistant extension installed on managed test workstations; fabricated repository tagged restricted.
+
+**Test Data.** 3 synthetic source files carrying a proprietary header and a fingerprinted function; 1 clean open-source file as a control; 2 policies (monitor, block).
+
+**Procedure**
+
+1. Set the monitor policy and submit each proprietary file by paste, by attachment and by selection-based action (9 submissions).
+2. Record what is logged for each submission.
+3. Switch to the block policy and repeat the 9 submissions.
+4. Submit the clean control file under both policies.
+5. Check the developer-facing message and the administrator event for each block.
+
+**Edge Cases / Variants.** Code split across several short prompts; inline completion context instead of chat; assistant running in a remote or container workspace.
+
+**Expected Detection.** 9 of 9 proprietary submissions detected in both modes with IDE, extension, user and repository recorded; the control file is not flagged.
+
+**Expected Prevention / Control Action.** Under the block policy the prompt does not leave the workstation or gateway, and the developer sees a reason and a policy reference.
+
+**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
+
+**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
+
+**Expected Integration Evidence.** Events forwarded to the SIEM with repository and file identifiers.
+
+**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
+
+**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
+
+**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
+
+**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
+
+**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
+
+**Evidence to Capture.** Event export for all 18 proprietary submissions; block message screenshots; egress capture showing no blocked content was sent.
+
+**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
+
+[Back to layer index](#top)
+
+---
+
+<a id="tc-l04-032"></a>
+
+### TC-L04-032: Developer Coaching and Justification Inside the IDE
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L04 Human Interaction Layer |
+| **Use-Case Domain(s)** | D2 |
+| **Test Method** | Technical |
+| **Vendor Applicability** | Core: E |
+| **Risk Severity** | Medium |
+| **MITRE ATLAS Mapping** | N/A (governance and policy control) |
+| **OWASP LLM / GenAI Mapping** | N/A |
+| **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+
+**Risk Addressed.** A silent block inside an IDE looks like a tool failure, so developers move to unmanaged tools.
+
+**Business Scenario.** Engineering and security want developers told why an action was stopped and offered a sanctioned route without leaving the editor.
+
+**Technical Scenario.** Trigger warn, justify-and-proceed and block outcomes from inside the IDE and inspect what the developer sees and what is recorded.
+
+**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test. Coaching messages configured with a policy link and a sanctioned alternative; two IDE families with an AI assistant extension.
+
+**Test Data.** 3 policies (warn, justify, block); 3 trigger prompts containing synthetic sensitive markers; 2 IDEs.
+
+**Procedure**
+
+1. Trigger each policy in each IDE (6 triggers).
+2. Record where the message appears (chat panel, notification or status bar) and whether it names the policy.
+3. Enter a justification and proceed.
+4. Confirm the justification text is stored against the event with user and timestamp.
+5. Repeat one trigger with the assistant in inline-completion mode.
+
+**Edge Cases / Variants.** Workstation offline; localised message text; repeated triggers in one session.
+
+**Expected Detection.** Each of the 6 triggers produces a visible, readable message in the IDE that names the policy; the justification is captured with user and timestamp.
+
+**Expected Prevention / Control Action.** The block outcome stops the request; the justify outcome releases it only after text is entered.
+
+**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
+
+**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
+
+**Expected Integration Evidence.** Justifications exportable to ticketing or a GRC tool.
+
+**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
+
+**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
+
+**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
+
+**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
+
+**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
+
+**Evidence to Capture.** Screenshot of each message; justification record export.
+
+**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
+
+[Back to layer index](#top)
+
+---

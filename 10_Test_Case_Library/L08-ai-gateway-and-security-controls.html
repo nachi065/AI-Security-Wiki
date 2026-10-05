@@ -77,7 +77,7 @@
 <li><details open><summary><a href="index.html">Test Case Library</a></summary><ul>
 <li><a href="00-reference-index.html">Reference Index</a></li>
 <li><a href="framework-adoption-guide.html">Framework Adoption Guide</a></li>
-<li><a href="appendix-d-lab-prerequisites.html">Appendix D: Lab Prerequisites</a></li>
+<li><a href="appendix-lab-prerequisites.html">Appendix: Lab Prerequisites</a></li>
 <li><a href="L01-business-and-use-cases.html">L01 Business &amp; Use Cases</a></li>
 <li><a href="L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
 <li><a href="L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>
@@ -104,7 +104,7 @@
 <p><a id="top"></a></p>
 <h1 id="l08-ai-gateway-security-controls">L08 AI Gateway &amp; Security Controls</h1>
 <p><strong>Primary test focus:</strong> inline policy, DLP, guardrails, bypass resistance, latency</p>
-<p><strong>Cases:</strong> 40 (TC-L08-001 to TC-L08-040)  |  <strong>Batch:</strong> 1</p>
+<p><strong>Cases:</strong> 42 (TC-L08-001 to TC-L08-042)</p>
 <blockquote>
 <p><strong>Safety boundary.</strong> All test cases in this layer use synthetic, non-functional or clearly marked test data only. Card numbers must come from published test ranges; keys, identifiers and records must be fabricated.</p>
 <p><strong>Verify before use.</strong> MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the <a href="00-reference-index.html">Reference Index</a> for field definitions and applicability codes.</p>
@@ -401,6 +401,20 @@
 <td>Evidence</td>
 <td>D6, D7</td>
 </tr>
+<tr>
+<td><a href="#tc-l08-041">TC-L08-041</a></td>
+<td>Repository-Aware Policy for AI Assistance (Restricted Repositories and File Types)</td>
+<td>High</td>
+<td>Technical</td>
+<td>D2, D6</td>
+</tr>
+<tr>
+<td><a href="#tc-l08-042">TC-L08-042</a></td>
+<td>Coding Assistant Model, Provider and Local-Model Allow-List</td>
+<td>High</td>
+<td>Technical</td>
+<td>D2, D4</td>
+</tr>
 </tbody>
 </table></div>
 <hr />
@@ -436,10 +450,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -456,7 +466,7 @@
 <p><strong>Risk Addressed.</strong> Claims of proxy-free, in-country or on-premise operation frequently hide dependencies on vendor cloud services for classification, telemetry, licensing or model updates.</p>
 <p><strong>Business Scenario.</strong> Architecture and sovereignty reviewers need the real traffic path, data-plane location and control-plane location confirmed before the platform is shortlisted.</p>
 <p><strong>Technical Scenario.</strong> For each deployment mode the vendor offers (endpoint agent, inline gateway, SDK, API integration), capture every outbound connection while the platform processes a standard prompt set, and compare to the vendor's architecture diagram.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform. Lab egress logging enabled and baseline noise (OS updates, browser telemetry) filtered out so only platform traffic is analysed.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform. Lab egress logging enabled and baseline noise (OS updates, browser telemetry) filtered out so only platform traffic is analysed.</p>
 <p><strong>Test Data.</strong> Standard set of 20 synthetic prompts (10 clean, 10 containing synthetic sensitive markers); vendor architecture diagram and data-flow document; flow-log or packet-capture tooling at the lab egress point.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -514,10 +524,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -534,7 +540,7 @@
 <p><strong>Risk Addressed.</strong> Basic allow, deny and category control is the foundation every other policy sits on; mistakes here either block approved work or leave known-bad tools open.</p>
 <p><strong>Business Scenario.</strong> Security wants to permit approved AI tools, deny named tools, and deny whole categories such as image generators or chat assistants that have not been reviewed.</p>
 <p><strong>Technical Scenario.</strong> Create three rules (allow one named app, deny one named app, deny one category), test them against named and newly appearing apps, and confirm precedence and logging.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform. At least one app in the test set must be unknown to the vendor's catalogue at the start of the test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform. At least one app in the test set must be unknown to the vendor's catalogue at the start of the test.</p>
 <p><strong>Test Data.</strong> 3 named AI apps (1 approved, 1 denied, 1 unlisted); 1 category (for example AI image generation) containing 2 apps, 1 of which is not yet in the vendor's catalogue; 5 test users.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -592,10 +598,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -612,7 +614,7 @@
 <p><strong>Risk Addressed.</strong> Policy that ignores who the user is, what device they use and where they are leads to overblocking of low-risk users and underprotection of high-risk ones.</p>
 <p><strong>Business Scenario.</strong> Security wants the same action allowed, warned or blocked depending on identity, device posture and location.</p>
 <p><strong>Technical Scenario.</strong> Apply one rule with conditions for group, device management status and network location, then test every combination.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform. IdP groups and MDM posture feeds connected to the platform before testing.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform. IdP groups and MDM posture feeds connected to the platform before testing.</p>
 <p><strong>Test Data.</strong> 4 test users in 2 IdP groups; 2 device postures (managed, unmanaged); 2 network locations (corporate, external); 1 sensitive prompt.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -669,10 +671,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -689,7 +687,7 @@
 <p><strong>Risk Addressed.</strong> Personal data pasted into prompts is the most common privacy incident involving AI and creates regulatory exposure under data protection law.</p>
 <p><strong>Business Scenario.</strong> Compliance wants names, contact details and identifiers in prompts blocked or masked before reaching the AI provider.</p>
 <p><strong>Technical Scenario.</strong> Submit prompts containing synthetic personal data in varied realistic contexts and measure detection, action accuracy and false positives.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform. Mock AI provider or capture point available so provider-received content can be inspected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform. Mock AI provider or capture point available so provider-received content can be inspected.</p>
 <p><strong>Test Data.</strong> 20 synthetic personal records (name, email, phone, home address, date of birth) embedded in 20 prompts; 20 control prompts with no personal data but similar wording (company names, product names, public figures).</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -747,10 +745,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -767,7 +761,7 @@
 <p><strong>Risk Addressed.</strong> Card numbers and account details in prompts create PCI DSS scope and fraud exposure.</p>
 <p><strong>Business Scenario.</strong> Compliance wants card and bank details detected with low false positives on ordinary numbers.</p>
 <p><strong>Technical Scenario.</strong> Submit published test card numbers and fabricated account numbers, along with ordinary long numbers, and measure accuracy.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform. Only numbers from published test ranges and fabricated formats are used.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform. Only numbers from published test ranges and fabricated formats are used.</p>
 <p><strong>Test Data.</strong> 10 card numbers from published test ranges (different brands, with spaces, dashes and none); 10 fabricated IBAN-format strings; 20 non-financial numbers (order numbers, phone numbers, ticket IDs) that look similar.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -824,10 +818,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -844,7 +834,7 @@
 <p><strong>Risk Addressed.</strong> Global classifiers are tuned to US and EU identifiers and often miss regional formats, leaving local personal data exposed.</p>
 <p><strong>Business Scenario.</strong> Compliance in the UAE and GCC needs identity numbers, phone numbers and IBANs in regional formats detected, in both Latin and Arabic-Indic digits.</p>
 <p><strong>Technical Scenario.</strong> Submit fabricated regional identifiers in several notations and measure detection by type and digit style.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform. Identifier formats built from publicly documented structure only; no real identifiers.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform. Identifier formats built from publicly documented structure only; no real identifiers.</p>
 <p><strong>Test Data.</strong> 10 fabricated Emirates ID-format numbers (with and without dashes); 10 UAE IBAN-format strings; 10 UAE and GCC mobile numbers in local and international style; the same 10 IDs written using Arabic-Indic digits; 15 look-alike numbers.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -901,8 +891,8 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
+<td><strong>Quick-Start Scenario</strong></td>
+<td><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html#browser-ai-test-cases">AI-POC-BR-003</a>, <a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html#ide-ai-test-cases">AI-POC-ID-001</a>, <a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html#ide-ai-test-cases">AI-POC-ID-002</a></td>
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
@@ -921,7 +911,7 @@
 <p><strong>Risk Addressed.</strong> Secrets in prompts give attackers direct access; proprietary code in prompts exposes intellectual property.</p>
 <p><strong>Business Scenario.</strong> Engineering security wants secrets blocked and proprietary code handled according to repository classification.</p>
 <p><strong>Technical Scenario.</strong> Submit fabricated secrets in common formats and code snippets with and without internal markers.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform. All secrets fabricated, non-functional and clearly marked.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform. All secrets fabricated, non-functional and clearly marked.</p>
 <p><strong>Test Data.</strong> 12 fabricated secrets (cloud access key format, token formats, private key header with dummy body, connection strings, passwords in config); 5 code snippets with internal hostnames or project names; 5 generic public code snippets.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -979,10 +969,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -999,7 +985,7 @@
 <p><strong>Risk Addressed.</strong> Organisations hold sensitive information no generic classifier knows about, such as project code names and unreleased documents.</p>
 <p><strong>Business Scenario.</strong> Security wants its own terms and documents protected.</p>
 <p><strong>Technical Scenario.</strong> Load a custom term list and fingerprint synthetic documents, then test exact, partial and paraphrased leakage.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform. Terms and documents are fictional.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform. Terms and documents are fictional.</p>
 <p><strong>Test Data.</strong> 20 fictional project code names; 2 synthetic confidential documents (one DOCX, one PDF); excerpts: 3 exact, 3 partial (25 percent, 50 percent), 3 paraphrased.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1056,10 +1042,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -1076,7 +1058,7 @@
 <p><strong>Risk Addressed.</strong> Teams need graduated responses to roll out safely, and each response must behave as documented.</p>
 <p><strong>Business Scenario.</strong> Security wants to start in log mode, move to warn, and finish at block or mask without surprises.</p>
 <p><strong>Technical Scenario.</strong> Apply one DLP rule under each action mode and compare user experience, provider-side content and logs.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform.</p>
 <p><strong>Test Data.</strong> 1 rule detecting synthetic personal data; 5 prompts that trigger it; 1 control prompt.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1133,10 +1115,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -1153,7 +1131,7 @@
 <p><strong>Risk Addressed.</strong> Simple masking can destroy the usefulness of a prompt, so teams switch it off; reversible tokenisation keeps utility while protecting data.</p>
 <p><strong>Business Scenario.</strong> Privacy wants real values replaced before the provider and restored in the response.</p>
 <p><strong>Technical Scenario.</strong> Send prompts containing identifiers that are tokenised, processed by a mock model, and restored in the response shown to the user.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform. Mock model able to echo and rewrite text.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform. Mock model able to echo and rewrite text.</p>
 <p><strong>Test Data.</strong> 5 prompts with 3 fabricated identifiers each (name, account number, address); mock model that echoes and transforms text.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1211,10 +1189,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -1231,7 +1205,7 @@
 <p><strong>Risk Addressed.</strong> Pattern matching is easily defeated by encoding, reversing or splitting values.</p>
 <p><strong>Business Scenario.</strong> Security wants the limits of detection understood.</p>
 <p><strong>Technical Scenario.</strong> Submit one fabricated sensitive record using several evasion methods and record which are caught.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform. Only synthetic data used.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform. Only synthetic data used.</p>
 <p><strong>Test Data.</strong> 1 fabricated record (name, ID, card); 8 evasion methods: base64, hex, URL encoding, reversed text, character spacing, leetspeak, split across 3 messages, split across a table.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1288,10 +1262,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -1308,7 +1278,7 @@
 <p><strong>Risk Addressed.</strong> Whole documents leave in a single upload and attackers hide data inside containers.</p>
 <p><strong>Business Scenario.</strong> Security wants common file types and nested containers inspected, with limits documented.</p>
 <p><strong>Technical Scenario.</strong> Upload files containing the same synthetic sensitive content in different formats and nesting levels.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform. Files built from fabricated content.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform. Files built from fabricated content.</p>
 <p><strong>Test Data.</strong> Same sensitive paragraph embedded in PDF, DOCX, XLSX, PPTX, CSV, TXT and RTF; one ZIP containing a ZIP containing a DOCX; one password-protected ZIP; one file of 50 MB.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1366,10 +1336,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -1386,7 +1352,7 @@
 <p><strong>Risk Addressed.</strong> Screenshots of dashboards, records and documents bypass text-only inspection.</p>
 <p><strong>Business Scenario.</strong> Security wants OCR-based detection of sensitive content.</p>
 <p><strong>Technical Scenario.</strong> Upload images containing synthetic sensitive text under varied conditions.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform. Images fabricated for the test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform. Images fabricated for the test.</p>
 <p><strong>Test Data.</strong> 8 images: clear screenshot, low resolution, rotated 15 degrees, photographed screen, handwriting-style font, Arabic text, mixed text and logo, and a clean image with no sensitive text.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1442,10 +1408,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -1462,7 +1424,7 @@
 <p><strong>Risk Addressed.</strong> Detection tuned for English leaves regional workforces unprotected.</p>
 <p><strong>Business Scenario.</strong> Compliance wants parity across Arabic, English and mixed-language prompts.</p>
 <p><strong>Technical Scenario.</strong> Submit equivalent sensitive content across languages and compare rates.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform.</p>
 <p><strong>Test Data.</strong> 30 prompts: 10 English, 10 Arabic, 10 mixed; each containing the same categories (personal data, financial, confidential markers); 10 clean control prompts in Arabic.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1518,10 +1480,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0051 LLM Prompt Injection</td>
 </tr>
@@ -1538,7 +1496,7 @@
 <p><strong>Risk Addressed.</strong> Published accuracy figures seldom hold on customer data, and unmeasured guardrails give false confidence.</p>
 <p><strong>Business Scenario.</strong> Security wants measured true and false positive rates before any vendor claims are accepted.</p>
 <p><strong>Technical Scenario.</strong> Run an agreed labelled prompt set through the guardrail and compute accuracy metrics.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform. Labelled data set agreed in advance and kept out of the vendor's hands.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform. Labelled data set agreed in advance and kept out of the vendor's hands.</p>
 <p><strong>Test Data.</strong> 200 prompts: 100 adversarial (50 injection-style, 50 jailbreak-style, written in benign test form) and 100 benign prompts drawn from realistic business use; labelled ground truth.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1596,10 +1554,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0054 LLM Jailbreak</td>
 </tr>
@@ -1616,7 +1570,7 @@
 <p><strong>Risk Addressed.</strong> Jailbreaks defeat model safety rules and lead to policy-violating output.</p>
 <p><strong>Business Scenario.</strong> Security wants known jailbreak classes blocked at the guardrail.</p>
 <p><strong>Technical Scenario.</strong> Run recognised jailbreak techniques using benign target requests and measure how many are stopped.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform. Benign target requests only; no real harmful content.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform. Benign target requests only; no real harmful content.</p>
 <p><strong>Test Data.</strong> 10 jailbreak techniques (role-play, hypothetical framing, instruction override, persona switch, payload splitting, and similar), each with 5 benign variants; target request is a harmless policy-violating-style question such as asking the model to ignore a company rule.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1673,10 +1627,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -1693,7 +1643,7 @@
 <p><strong>Risk Addressed.</strong> Business assistants drift into legal, medical or financial advice the organisation does not want to give.</p>
 <p><strong>Business Scenario.</strong> Governance wants allowed topics enforced and polite redirection.</p>
 <p><strong>Technical Scenario.</strong> Configure forbidden topics for a test assistant and probe them directly and indirectly.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform.</p>
 <p><strong>Test Data.</strong> 3 forbidden topics (for example investment advice, medical diagnosis, legal advice); 15 probes (5 direct, 5 indirect, 5 embedded in otherwise on-topic questions); 10 on-topic control questions.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1750,10 +1700,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0054 LLM Jailbreak</td>
 </tr>
@@ -1770,7 +1716,7 @@
 <p><strong>Risk Addressed.</strong> Harmful output creates legal and reputational exposure for the organisation.</p>
 <p><strong>Business Scenario.</strong> Compliance wants output filtered across defined harm categories.</p>
 <p><strong>Technical Scenario.</strong> Use a mock model configured to return mild test content in several categories and check response-side filtering.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform. Mock responses are mild, clearly labelled and contain no operational content.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform. Mock responses are mild, clearly labelled and contain no operational content.</p>
 <p><strong>Test Data.</strong> Mock model returning 12 canned responses across 6 categories (harassment, hate, self-harm references, violence, sexual content, illegal activity) at mild test strength; 6 benign responses that mention the same words in neutral context.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1827,10 +1773,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0056 LLM Meta Prompt Extraction</td>
 </tr>
@@ -1847,7 +1789,7 @@
 <p><strong>Risk Addressed.</strong> System prompts hold business rules, internal names and sometimes credentials.</p>
 <p><strong>Business Scenario.</strong> Security wants extraction attempts blocked or the leak detected.</p>
 <p><strong>Technical Scenario.</strong> Place a canary string in a test system prompt and attempt a variety of extraction styles.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform. Canary and hostname fabricated.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform. Canary and hostname fabricated.</p>
 <p><strong>Test Data.</strong> 1 system prompt containing a unique canary phrase and a fake internal hostname; 12 extraction attempts (direct request, translation, summarisation, role-play, formatting tricks, repeat-the-above, base64 request).</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1904,8 +1846,8 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
+<td><strong>Quick-Start Scenario</strong></td>
+<td><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html#runtime-ai-test-cases">AI-POC-RT-004</a></td>
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
@@ -1924,7 +1866,7 @@
 <p><strong>Risk Addressed.</strong> Sensitive data can enter a response from context, retrieval or the model, even if prompts were clean.</p>
 <p><strong>Business Scenario.</strong> Security wants responses scanned in the same way as prompts.</p>
 <p><strong>Technical Scenario.</strong> Seed an application's context or knowledge source with canary values and request them.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform.</p>
 <p><strong>Test Data.</strong> 12 canary values (personal data, secrets, internal markers) in a test knowledge source; 12 requests that cause them to appear in responses; 6 requests that produce harmless output.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1981,10 +1923,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0054 LLM Jailbreak</td>
 </tr>
@@ -2001,7 +1939,7 @@
 <p><strong>Risk Addressed.</strong> Obfuscation is the simplest way past keyword and pattern rules.</p>
 <p><strong>Business Scenario.</strong> Security wants robustness to character-level tricks confirmed.</p>
 <p><strong>Technical Scenario.</strong> Take prompts already blocked in earlier tests and re-submit them with character-level transformations.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform. Earlier test results recorded for baseline.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform. Earlier test results recorded for baseline.</p>
 <p><strong>Test Data.</strong> 10 prompts known to be blocked (5 DLP, 5 guardrail); 6 transformations: homoglyph substitution, zero-width characters, extra spacing, mixed case, full-width characters, markdown formatting inside words.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2057,10 +1995,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -2077,7 +2011,7 @@
 <p><strong>Risk Addressed.</strong> Streaming protocols can slip past inspection built for plain HTTPS request and response.</p>
 <p><strong>Business Scenario.</strong> Security wants WebSocket, HTTP/2, HTTP/3 (QUIC) and gRPC streaming covered.</p>
 <p><strong>Technical Scenario.</strong> Send the same blocked content over each protocol the AI service supports.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform. Mock endpoint available that supports all five protocols.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform. Mock endpoint available that supports all five protocols.</p>
 <p><strong>Test Data.</strong> 1 blocked-content prompt; mock AI endpoint supporting HTTP/1.1, HTTP/2, WebSocket, HTTP/3 and gRPC streaming; a client for each.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2135,10 +2069,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -2155,7 +2085,7 @@
 <p><strong>Risk Addressed.</strong> Users reach blocked tools via direct IP addresses, mirrors, personal VPNs and encrypted DNS.</p>
 <p><strong>Business Scenario.</strong> Security wants common circumvention routes tested and documented.</p>
 <p><strong>Technical Scenario.</strong> Attempt to reach a blocked AI tool through each route.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform.</p>
 <p><strong>Test Data.</strong> 1 blocked tool; routes: direct IP, mirror or alternate domain, consumer VPN client, DNS over HTTPS, a public web proxy, a mobile hotspot from the managed device.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2211,10 +2141,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -2231,7 +2157,7 @@
 <p><strong>Risk Addressed.</strong> Applications that pin certificates cannot be inspected inline, creating blind spots.</p>
 <p><strong>Business Scenario.</strong> Architecture wants the limits of inline inspection known.</p>
 <p><strong>Technical Scenario.</strong> Test applications that pin certificates and see how the platform handles them.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform.</p>
 <p><strong>Test Data.</strong> 3 AI client apps known to pin certificates (desktop, mobile, CLI); TLS inspection enabled.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2287,10 +2213,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -2307,7 +2229,7 @@
 <p><strong>Risk Addressed.</strong> Users who can disable the agent can disable every control.</p>
 <p><strong>Business Scenario.</strong> Security wants tamper protection verified for standard users and local administrators.</p>
 <p><strong>Technical Scenario.</strong> Attempt to stop, uninstall or alter the agent.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform. Test accounts with documented privilege levels.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform. Test accounts with documented privilege levels.</p>
 <p><strong>Test Data.</strong> 1 managed endpoint; one standard user and one local admin account.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2365,10 +2287,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -2385,7 +2303,7 @@
 <p><strong>Risk Addressed.</strong> Controls designed for browsers miss scripts, command line tools and developer SDKs.</p>
 <p><strong>Business Scenario.</strong> Security wants non-browser AI traffic covered.</p>
 <p><strong>Technical Scenario.</strong> Send blocked content using non-browser clients.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform.</p>
 <p><strong>Test Data.</strong> Clients: curl, Python SDK of a model provider, a desktop AI app, an IDE plugin; blocked-content prompt; fabricated API key.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2441,10 +2359,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0054 LLM Jailbreak</td>
 </tr>
@@ -2461,7 +2375,7 @@
 <p><strong>Risk Addressed.</strong> Rules written around English wording are defeated by translation or rewording.</p>
 <p><strong>Business Scenario.</strong> Security wants translated and paraphrased variants caught.</p>
 <p><strong>Technical Scenario.</strong> Re-submit blocked prompts translated into other languages and paraphrased.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform.</p>
 <p><strong>Test Data.</strong> 10 blocked prompts; translations into Arabic, Hindi, French and Urdu; 2 paraphrases each.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2517,10 +2431,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -2537,7 +2447,7 @@
 <p><strong>Risk Addressed.</strong> Approved applications can be quietly pointed at unapproved models, creating data residency and risk issues.</p>
 <p><strong>Business Scenario.</strong> Governance wants only approved providers and specific model versions used.</p>
 <p><strong>Technical Scenario.</strong> Route requests to approved and unapproved providers and models.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform. Mock providers for approved and unapproved endpoints.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform. Mock providers for approved and unapproved endpoints.</p>
 <p><strong>Test Data.</strong> 2 approved and 3 unapproved models across 2 providers; test app with configurable endpoint.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2594,10 +2504,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -2614,7 +2520,7 @@
 <p><strong>Risk Addressed.</strong> Provider keys spread across apps leak and are hard to rotate.</p>
 <p><strong>Business Scenario.</strong> Security wants provider keys held at the gateway and rotated without touching applications.</p>
 <p><strong>Technical Scenario.</strong> Route test apps through gateway-held keys and rotate one.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform. Mock provider that accepts only the fabricated key.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform. Mock provider that accepts only the fabricated key.</p>
 <p><strong>Test Data.</strong> 1 fabricated provider key stored in the gateway; 3 test apps using gateway virtual keys.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2672,8 +2578,8 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
+<td><strong>Quick-Start Scenario</strong></td>
+<td><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html#runtime-ai-test-cases">AI-POC-RT-005</a></td>
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
@@ -2692,7 +2598,7 @@
 <p><strong>Risk Addressed.</strong> Unbounded consumption causes outages and unexpected cost.</p>
 <p><strong>Business Scenario.</strong> Operations wants per-user, per-app and per-team limits that do not harm other users.</p>
 <p><strong>Technical Scenario.</strong> Exceed configured limits from one user and one app while others continue normal use.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform.</p>
 <p><strong>Test Data.</strong> Request limit of 100 per minute and token limit of 50,000 per hour; 5 users and 2 apps; load script.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2750,10 +2656,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting</td>
 </tr>
@@ -2770,7 +2672,7 @@
 <p><strong>Risk Addressed.</strong> Runaway agents or loops can produce very large bills within hours.</p>
 <p><strong>Business Scenario.</strong> Finance wants alerts and caps by team and application.</p>
 <p><strong>Technical Scenario.</strong> Set a small budget on a mock provider with per-token pricing and exceed it.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform.</p>
 <p><strong>Test Data.</strong> Budget equivalent to 10,000 tokens; thresholds at 50, 80 and 100 percent; mock pricing.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2826,10 +2728,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (operational and monitoring control)</td>
 </tr>
@@ -2846,7 +2744,7 @@
 <p><strong>Risk Addressed.</strong> Slow controls are removed by frustrated teams.</p>
 <p><strong>Business Scenario.</strong> Operations wants the measured impact on response time.</p>
 <p><strong>Technical Scenario.</strong> Compare latency with and without the platform on the same traffic.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform. Controlled network path with known baseline.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform. Controlled network path with known baseline.</p>
 <p><strong>Test Data.</strong> Mock AI endpoint with fixed response time; 500 requests of mixed prompt size (small, medium, large).</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2902,10 +2800,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting</td>
 </tr>
@@ -2922,7 +2816,7 @@
 <p><strong>Risk Addressed.</strong> Overload can cause the platform to fail open and silently stop enforcing policy.</p>
 <p><strong>Business Scenario.</strong> Operations wants behaviour at and beyond expected peak known.</p>
 <p><strong>Technical Scenario.</strong> Ramp load to three times expected peak and observe errors, latency and enforcement.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform. Dedicated lab capacity; no production traffic.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform. Dedicated lab capacity; no production traffic.</p>
 <p><strong>Test Data.</strong> Load generator; expected peak of 50 requests per second; 10 percent of requests contain blocked content.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2979,10 +2873,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (operational and monitoring control)</td>
 </tr>
@@ -2999,7 +2889,7 @@
 <p><strong>Risk Addressed.</strong> Single points of failure stop AI use or disable controls.</p>
 <p><strong>Business Scenario.</strong> Operations wants failover tested rather than assumed.</p>
 <p><strong>Technical Scenario.</strong> Fail a node or component while traffic is running and observe continuity.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform. Vendor-documented HA architecture deployed.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform. Vendor-documented HA architecture deployed.</p>
 <p><strong>Test Data.</strong> 2-node or 2-region deployment as the vendor documents; continuous test traffic.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -3056,10 +2946,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0049 Exploit Public-Facing Application (downstream impact)</td>
 </tr>
@@ -3076,7 +2962,7 @@
 <p><strong>Risk Addressed.</strong> Inspection that breaks or stalls streaming makes the product unusable.</p>
 <p><strong>Business Scenario.</strong> Product owners want streaming responses inspected with acceptable experience.</p>
 <p><strong>Technical Scenario.</strong> Stream long responses with and without inspection and compare experience and enforcement.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform.</p>
 <p><strong>Test Data.</strong> Mock streaming endpoint; 5 long responses (about 800 tokens each) with sensitive markers early, middle and late.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -3133,10 +3019,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -3153,7 +3035,7 @@
 <p><strong>Risk Addressed.</strong> Slow or unrecoverable policy changes turn tuning into incidents.</p>
 <p><strong>Business Scenario.</strong> Operations wants quick propagation and a reliable rollback.</p>
 <p><strong>Technical Scenario.</strong> Change a rule, measure time to take effect across components, and roll back.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform.</p>
 <p><strong>Test Data.</strong> 1 rule; endpoints and gateway nodes in the lab.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -3211,10 +3093,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -3231,7 +3109,7 @@
 <p><strong>Risk Addressed.</strong> Safe rollout needs a period of observation before blocking.</p>
 <p><strong>Business Scenario.</strong> Security wants to review would-be blocks and tune before enforcement.</p>
 <p><strong>Technical Scenario.</strong> Run in monitor mode against mixed traffic, review, tune and enforce.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform.</p>
 <p><strong>Test Data.</strong> 100 events: 70 legitimate, 30 policy-violating.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -3289,10 +3167,6 @@
 <td>Low</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -3309,7 +3183,7 @@
 <p><strong>Risk Addressed.</strong> Unclear block messages create help-desk load and workarounds.</p>
 <p><strong>Business Scenario.</strong> Support wants clear, branded messages in the user's language.</p>
 <p><strong>Technical Scenario.</strong> Edit block and warning messages in English and Arabic.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform.</p>
 <p><strong>Test Data.</strong> 2 languages; user language set in browser; 3 messages (block, warn, justify).</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -3365,10 +3239,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -3385,7 +3255,7 @@
 <p><strong>Risk Addressed.</strong> Uncontrolled administrative access defeats every policy.</p>
 <p><strong>Business Scenario.</strong> Audit wants least-privilege roles and a complete change history.</p>
 <p><strong>Technical Scenario.</strong> Test administrator roles and review the audit trail of changes.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform.</p>
 <p><strong>Test Data.</strong> 3 roles (read-only analyst, policy admin, super admin); 3 test users.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -3443,10 +3313,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage (secondary)</td>
 </tr>
@@ -3463,7 +3329,7 @@
 <p><strong>Risk Addressed.</strong> Logs containing raw prompts become a second store of sensitive data subject to the same obligations.</p>
 <p><strong>Business Scenario.</strong> Privacy wants masking, retention and deletion controlled and demonstrable.</p>
 <p><strong>Technical Scenario.</strong> Review what the platform stores for prompts and responses and how it can be limited.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; baseline traffic captured without the platform. Storage region documented before testing.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform. Storage region documented before testing.</p>
 <p><strong>Test Data.</strong> 10 prompts with fabricated personal data; configurations: store full, store masked, store metadata only.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -3488,6 +3354,153 @@
 <p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Stored record samples; deletion confirmation.</p>
 <p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l08-041"></a></p>
+<h3 id="tc-l08-041-repository-aware-policy-for-ai-assistance-restricted-repositories-and-file-types">TC-L08-041: Repository-Aware Policy for AI Assistance (Restricted Repositories and File Types)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L08 AI Gateway &amp; Security Controls</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D2, D6</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: E, G</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Quick-Start Scenario</strong></td>
+<td><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html#ide-ai-test-cases">AI-POC-ID-003</a></td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> A single allow-or-deny policy for coding assistants either exposes the most sensitive repositories or blocks all developer use.</p>
+<p><strong>Business Scenario.</strong> Engineering wants assistance allowed on general repositories and denied or limited on restricted ones, including infrastructure-as-code.</p>
+<p><strong>Technical Scenario.</strong> Apply policy keyed to repository, path and file type and test it from the IDE, a CLI assistant and web chat.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform. Three channels available on the test workstation: IDE assistant, CLI assistant and browser chat.</p>
+<p><strong>Test Data.</strong> 3 fabricated repositories (general, restricted, infrastructure-as-code); policy: allow general, block restricted, monitor infrastructure-as-code with masking of fake secrets; 4 prompts per repository per channel (36 requests).</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Send the prompts from each channel and record the decisions.</li>
+<li>Rename and re-clone the restricted repository to a new path and repeat its prompts.</li>
+<li>Copy a restricted file into the general repository and repeat.</li>
+<li>Verify fake secrets in infrastructure-as-code prompts are masked.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Repository identified by remote URL versus local path; fork under a personal namespace; detached copy without version-control metadata.</p>
+<p><strong>Expected Detection.</strong> Repository and file type correctly identified in 36 of 36 requests.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Restricted-repository prompts blocked on all 3 channels, including after the rename; the copied restricted file is still detected by content.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Policy can consume repository classification from source control or a CMDB.</p>
+<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Decision log for all requests; policy export; masked prompt samples.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l08-042"></a></p>
+<h3 id="tc-l08-042-coding-assistant-model-provider-and-local-model-allow-list">TC-L08-042: Coding Assistant Model, Provider and Local-Model Allow-List</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L08 AI Gateway &amp; Security Controls</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D2, D4</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: E, G</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Extensions let developers point at any model endpoint, personal API key or local model, bypassing approved providers and logging.</p>
+<p><strong>Business Scenario.</strong> Engineering wants coding assistants limited to approved providers and models, with bring-your-own-key and unapproved local models detected.</p>
+<p><strong>Technical Scenario.</strong> Reconfigure assistant extensions to use unapproved endpoints and check detection and enforcement.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; baseline traffic captured without the platform. One approved mock provider endpoint; a local model server installed on the test workstation.</p>
+<p><strong>Test Data.</strong> 4 alternative configurations: unapproved hosted provider mock, personal API key on the approved provider, local model server on the workstation, custom base URL through a proxy; 3 prompts each.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Send 3 prompts through the approved route as a baseline.</li>
+<li>Switch to each alternative and send 3 prompts.</li>
+<li>Record detection and decision for each.</li>
+<li>Confirm the approved route still works.</li>
+<li>Review the report by developer.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Local model bound to loopback only; endpoint set by environment variable; switch made through a model picker inside the extension.</p>
+<p><strong>Expected Detection.</strong> 4 of 4 alternative configurations detected with endpoint, key ownership where visible, and developer.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Requests to unapproved hosted endpoints and with personal keys are blocked; local model use is flagged or blocked per policy.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Approved model list shared with the gateway allow-list.</p>
+<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Event export per configuration; block evidence; developer report.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 </article>

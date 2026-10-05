@@ -10,8 +10,7 @@ nav_order: 12
 
 **Primary test focus:** user and agent (non-human) identity, scoped tokens, RBAC
 
-**Cases:** 25 (TC-L09-001 to TC-L09-025)  |  **Batch:** 3
-
+**Cases:** 26 (TC-L09-001 to TC-L09-026)
 > **Safety boundary.** Agent and MCP cases use a lab agent framework, benign mock tools and mock MCP servers that write only to a lab sink. Where an attack is simulated, success is first measured with the platform disabled. Never connect lab agents to production systems or real credentials.
 
 > **Verify before use.** MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the [Reference Index](00-reference-index.md) for field definitions and applicability codes.
@@ -45,6 +44,7 @@ nav_order: 12
 | [TC-L09-023](#tc-l09-023) | Emergency (Break-Glass) Access Controls | Medium | Technical | D7 |
 | [TC-L09-024](#tc-l09-024) | Mutual Authentication Between AI Components | High | Technical | D3, D7 |
 | [TC-L09-025](#tc-l09-025) | Identity Audit Trail: Who, What and On Whose Behalf | Critical | Technical | D5, D7 |
+| [TC-L09-026](#tc-l09-026) | Coding Agent Repository and Cloud Credentials: Scope and Lifetime | Critical | Technical | D2, D5 |
 
 ---
 
@@ -61,7 +61,6 @@ nav_order: 12
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
@@ -72,7 +71,7 @@ nav_order: 12
 
 **Technical Scenario.** Create a known set of non-human identities and compare the platform's inventory to ground truth.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
+**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
 
 **Test Data.** 20 non-human identities: 6 service accounts, 5 model API keys, 4 OAuth app registrations, 3 workload identities (cloud roles), 2 agent tokens; mixed privilege levels and ages.
 
@@ -126,7 +125,6 @@ nav_order: 12
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P, G |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -137,7 +135,7 @@ nav_order: 12
 
 **Technical Scenario.** Review agents and their credentials and test whether actions can be attributed individually.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
+**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
 
 **Test Data.** 6 agents: 3 with unique identities, 3 sharing a single service account; actions on mock systems.
 
@@ -190,7 +188,6 @@ nav_order: 12
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P, G |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -201,7 +198,7 @@ nav_order: 12
 
 **Technical Scenario.** Review the credential lifetime and scope issued to agents and test expiry.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
+**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
 
 **Test Data.** 3 agents using static keys, 3 using short-lived tokens (15 minutes); mock APIs validating token scope and lifetime.
 
@@ -255,7 +252,7 @@ nav_order: 12
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
+| **Quick-Start Scenario** | [AI-POC-AG-001](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md#agentic-ai-test-cases) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -266,7 +263,7 @@ nav_order: 12
 
 **Technical Scenario.** Issue tokens with defined scopes and attempt calls outside them.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
+**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
 
 **Test Data.** Token scopes: read:tickets, write:tickets; mock resources: tickets, payroll, files; 30 calls, 10 out of scope.
 
@@ -320,7 +317,6 @@ nav_order: 12
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Critical |
-| **Legacy ID** | TC-A-004 |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -331,7 +327,7 @@ nav_order: 12
 
 **Technical Scenario.** Grant OAuth permissions to test AI apps with different scopes and review controls.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
+**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
 
 **Test Data.** 5 test apps requesting scopes from read-only profile to full mailbox and file access; 3 test users.
 
@@ -385,7 +381,6 @@ nav_order: 12
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -396,7 +391,7 @@ nav_order: 12
 
 **Technical Scenario.** Run tasks as two users and check which identity downstream systems see.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
+**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
 
 **Test Data.** 2 users with different entitlements; agent; mock downstream APIs recording received identity and token.
 
@@ -449,7 +444,7 @@ nav_order: 12
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A, P |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
+| **Quick-Start Scenario** | [AI-POC-AG-002](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md#agentic-ai-test-cases) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -460,7 +455,7 @@ nav_order: 12
 
 **Technical Scenario.** Create agents with indirect access to higher privileges and test whether they can be used.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
+**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
 
 **Test Data.** 3 agents; paths: tool that can edit roles, tool that reads credentials, tool that creates other agents; mock IAM.
 
@@ -513,7 +508,6 @@ nav_order: 12
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, E |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -524,7 +518,7 @@ nav_order: 12
 
 **Technical Scenario.** Define roles and test access to applications and models.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
+**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
 
 **Test Data.** 4 roles (general staff, finance, engineering, contractors); 5 AI apps; 2 models; matrix of 40 combinations.
 
@@ -577,7 +571,6 @@ nav_order: 12
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, E |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -588,7 +581,7 @@ nav_order: 12
 
 **Technical Scenario.** Apply conditions and test combinations.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
+**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
 
 **Test Data.** Conditions: managed device, compliant posture, corporate or approved country location, risk score below threshold; 16 combinations.
 
@@ -641,7 +634,6 @@ nav_order: 12
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -652,7 +644,7 @@ nav_order: 12
 
 **Technical Scenario.** Integrate the platform with the lab IdP and test provisioning.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
+**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
 
 **Test Data.** Lab IdP supporting SAML or OIDC and SCIM; 10 test users; 3 groups.
 
@@ -706,7 +698,6 @@ nav_order: 12
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -717,7 +708,7 @@ nav_order: 12
 
 **Technical Scenario.** Simulate leaver and mover events.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
+**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
 
 **Test Data.** 3 leavers, 3 movers; AI apps, agents and API keys owned by them.
 
@@ -770,7 +761,6 @@ nav_order: 12
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -781,7 +771,7 @@ nav_order: 12
 
 **Technical Scenario.** Configure step-up for selected actions and test sessions with and without recent MFA.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
+**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
 
 **Test Data.** Risky actions: export dataset, change agent permissions, approve external send; 2 users.
 
@@ -834,7 +824,6 @@ nav_order: 12
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -845,7 +834,7 @@ nav_order: 12
 
 **Technical Scenario.** Test administrator access workflows.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
+**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
 
 **Test Data.** 3 admin roles; JIT elevation tool or built-in feature; 2 approvers.
 
@@ -900,7 +889,6 @@ nav_order: 12
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -911,7 +899,7 @@ nav_order: 12
 
 **Technical Scenario.** Create keys with different policies and test lifecycle controls.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
+**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
 
 **Test Data.** 10 fabricated keys in a mock provider; policies: 30-day expiry, rotation reminder, usage cap.
 
@@ -965,7 +953,6 @@ nav_order: 12
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0055 Unsecured Credentials |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
@@ -976,7 +963,7 @@ nav_order: 12
 
 **Technical Scenario.** Send fabricated credentials through prompts and tool calls.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
+**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
 
 **Test Data.** 12 fabricated secrets (passwords, tokens, keys, connection strings) in prompts, tool arguments and tool results.
 
@@ -1029,7 +1016,6 @@ nav_order: 12
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: A, G, P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0055 Unsecured Credentials |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
@@ -1040,7 +1026,7 @@ nav_order: 12
 
 **Technical Scenario.** Run agents that need secrets to call tools and check where secrets appear.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
+**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
 
 **Test Data.** Lab vault; 3 agents; 4 secrets; extraction attempts using prompt injection.
 
@@ -1094,7 +1080,6 @@ nav_order: 12
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P, G |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
@@ -1105,7 +1090,7 @@ nav_order: 12
 
 **Technical Scenario.** Replay normal activity and then misuse an agent identity.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
+**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
 
 **Test Data.** 3 agent identities with 14 days of simulated normal use; misuse: new source location, new resource, off-hours burst, token used from two places at once, unusual API method.
 
@@ -1158,7 +1143,6 @@ nav_order: 12
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -1169,7 +1153,7 @@ nav_order: 12
 
 **Technical Scenario.** Attempt to impersonate another user or agent through prompts, headers and metadata.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
+**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
 
 **Test Data.** 10 attempts: prompt claim of being an administrator, spoofed header, forged user field in an API call, reuse of another agent's name, forged delegation context.
 
@@ -1222,7 +1206,6 @@ nav_order: 12
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P, G |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -1233,7 +1216,7 @@ nav_order: 12
 
 **Technical Scenario.** Use test environment identities against production-like mock systems.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
+**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
 
 **Test Data.** Mock prod and non-prod environments; tokens from each; agents deployed in each.
 
@@ -1286,7 +1269,6 @@ nav_order: 12
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: A, G |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -1297,7 +1279,7 @@ nav_order: 12
 
 **Technical Scenario.** Test session settings in a lab chat application.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
+**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
 
 **Test Data.** 1 chat app; policies: 30-minute idle timeout, 8-hour absolute, 2 concurrent sessions.
 
@@ -1350,7 +1332,6 @@ nav_order: 12
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -1361,7 +1342,7 @@ nav_order: 12
 
 **Technical Scenario.** Run a review campaign on the lab dataset.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
+**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
 
 **Test Data.** 50 entitlements including 10 stale, 5 excessive; 3 reviewers.
 
@@ -1414,7 +1395,6 @@ nav_order: 12
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -1425,7 +1405,7 @@ nav_order: 12
 
 **Technical Scenario.** Query effective access for known identities and compare to ground truth.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
+**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
 
 **Test Data.** 8 identities (4 users, 4 agents) with known effective access to 12 resources.
 
@@ -1478,7 +1458,6 @@ nav_order: 12
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -1489,7 +1468,7 @@ nav_order: 12
 
 **Technical Scenario.** Use a break-glass account and check monitoring.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
+**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
 
 **Test Data.** 1 break-glass account; alert recipients.
 
@@ -1542,7 +1521,6 @@ nav_order: 12
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A, P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -1553,7 +1531,7 @@ nav_order: 12
 
 **Technical Scenario.** Test connections between components with and without valid identity.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
+**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
 
 **Test Data.** Components: gateway, orchestrator, vector store, tool server; test client with invalid and valid certificates.
 
@@ -1606,7 +1584,6 @@ nav_order: 12
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
@@ -1617,7 +1594,7 @@ nav_order: 12
 
 **Technical Scenario.** Run a task across a user, an agent, two tools and a downstream system and trace it.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
+**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
 
 **Test Data.** 1 task with 10 actions across 4 systems.
 
@@ -1659,3 +1636,65 @@ nav_order: 12
 
 ---
 
+<a id="tc-l09-026"></a>
+
+### TC-L09-026: Coding Agent Repository and Cloud Credentials: Scope and Lifetime
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L09 Identity & Access Mgmt |
+| **Use-Case Domain(s)** | D2, D5 |
+| **Test Method** | Technical |
+| **Vendor Applicability** | Core: P, A |
+| **Risk Severity** | Critical |
+| **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
+| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+
+**Risk Addressed.** Coding agents are often given a developer's personal access token or cloud profile, granting far more than the task needs for far longer than the task lasts.
+
+**Business Scenario.** Engineering wants coding agents to operate with short-lived tokens limited to the repository and actions in the task.
+
+**Technical Scenario.** Give a coding agent broad and then narrow credentials, test which out-of-scope actions succeed, and review what is reported.
+
+**Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab source-control server with 3 repositories and a protected main branch; lab cloud account with 2 roles.
+
+**Test Data.** 1 long-lived broad token; 1 short-lived token scoped to one repository with read and pull-request rights; 6 out-of-scope actions (push to protected branch, read a second repository, delete a branch, change repository settings, read a cloud secret, create a cloud resource).
+
+**Procedure**
+
+1. Run the agent with the broad token and check whether the platform reports over-privilege.
+2. Switch to the scoped token.
+3. Attempt the 6 out-of-scope actions.
+4. Wait for token expiry and retry one in-scope action.
+5. Review attribution for every attempt.
+
+**Edge Cases / Variants.** Token inherited from the developer's credential helper; token written to agent logs or memory.
+
+**Expected Detection.** The broad token is flagged as over-privileged with its scopes listed; 6 of 6 out-of-scope attempts logged with agent identity and the user it acts for.
+
+**Expected Prevention / Control Action.** 6 of 6 out-of-scope actions denied; the expired token is rejected.
+
+**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
+
+**Expected Report / Dashboard Evidence.** Identity finding or access decision visible in the identity or access dashboard within the documented refresh interval.
+
+**Expected Integration Evidence.** Findings to ticketing.
+
+**Forensic Evidence.** Identity (user, agent, service), token or key identifier, scope, resource, decision and timestamp exportable for incident reconstruction.
+
+**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
+
+**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
+
+**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
+
+**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
+
+**Evidence to Capture.** Token scope report; denial log; expiry test result.
+
+**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
+
+[Back to layer index](#top)
+
+---

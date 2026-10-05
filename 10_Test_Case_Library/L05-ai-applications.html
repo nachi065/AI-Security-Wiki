@@ -77,7 +77,7 @@
 <li><details open><summary><a href="index.html">Test Case Library</a></summary><ul>
 <li><a href="00-reference-index.html">Reference Index</a></li>
 <li><a href="framework-adoption-guide.html">Framework Adoption Guide</a></li>
-<li><a href="appendix-d-lab-prerequisites.html">Appendix D: Lab Prerequisites</a></li>
+<li><a href="appendix-lab-prerequisites.html">Appendix: Lab Prerequisites</a></li>
 <li><a href="L01-business-and-use-cases.html">L01 Business &amp; Use Cases</a></li>
 <li><a href="L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
 <li><a href="L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>
@@ -104,7 +104,7 @@
 <p><a id="top"></a></p>
 <h1 id="l05-ai-applications">L05 AI Applications</h1>
 <p><strong>Primary test focus:</strong> discovery, app-level runtime protection, output handling</p>
-<p><strong>Cases:</strong> 30 (TC-L05-001 to TC-L05-030)  |  <strong>Batch:</strong> 1</p>
+<p><strong>Cases:</strong> 35 (TC-L05-001 to TC-L05-035)</p>
 <blockquote>
 <p><strong>Safety boundary.</strong> All test cases in this layer use synthetic, non-functional or clearly marked test data only. Card numbers must come from published test ranges; keys, identifiers and records must be fabricated.</p>
 <p><strong>Verify before use.</strong> MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the <a href="00-reference-index.html">Reference Index</a> for field definitions and applicability codes.</p>
@@ -331,6 +331,41 @@
 <td>Technical</td>
 <td>D3</td>
 </tr>
+<tr>
+<td><a href="#tc-l05-031">TC-L05-031</a></td>
+<td>AI Coding Assistant Extension Inventory and Version Risk</td>
+<td>High</td>
+<td>Technical</td>
+<td>D2</td>
+</tr>
+<tr>
+<td><a href="#tc-l05-032">TC-L05-032</a></td>
+<td>Personal vs Corporate Account in AI Coding Assistants</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D2</td>
+</tr>
+<tr>
+<td><a href="#tc-l05-033">TC-L05-033</a></td>
+<td>Coding Assistant Workspace Context Scope and File Exclusion</td>
+<td>High</td>
+<td>Technical</td>
+<td>D2, D6</td>
+</tr>
+<tr>
+<td><a href="#tc-l05-034">TC-L05-034</a></td>
+<td>Insecure Code Suggestion Detection</td>
+<td>High</td>
+<td>Technical</td>
+<td>D2, D3</td>
+</tr>
+<tr>
+<td><a href="#tc-l05-035">TC-L05-035</a></td>
+<td>AI-Generated Code: Licence and Public-Code Match Detection</td>
+<td>Medium</td>
+<td>Technical</td>
+<td>D2, D7</td>
+</tr>
 </tbody>
 </table></div>
 <hr />
@@ -366,10 +401,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>TC-A-001</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (visibility control); Reconnaissance/Discovery context only</td>
 </tr>
@@ -386,7 +417,7 @@
 <p><strong>Risk Addressed.</strong> An incomplete inventory of approved AI tools undermines all downstream governance.</p>
 <p><strong>Business Scenario.</strong> Security needs a current, accurate list of every approved AI application and its users.</p>
 <p><strong>Technical Scenario.</strong> Platform is pointed at the directory, SSO logs and network telemetry to enumerate access to approved AI applications.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> 5 approved AI applications; 20 test accounts with known access.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -439,10 +470,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>TC-A-004</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (visibility control); Reconnaissance/Discovery context only</td>
 </tr>
@@ -459,7 +486,7 @@
 <p><strong>Risk Addressed.</strong> Plugins added to approved SaaS can silently widen what an AI system can read or change.</p>
 <p><strong>Business Scenario.</strong> Security must know when an AI plugin is enabled inside an approved tool and what it can access.</p>
 <p><strong>Technical Scenario.</strong> Enable a test AI plugin inside a sanctioned collaboration tenant.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> 1 test plugin; 1 sanctioned SaaS tenant; defined OAuth scopes.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -512,10 +539,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>TC-A-005</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (visibility control); Reconnaissance/Discovery context only</td>
 </tr>
@@ -532,7 +555,7 @@
 <p><strong>Risk Addressed.</strong> Direct API calls to model providers bypass UI controls and often evade standard monitoring.</p>
 <p><strong>Business Scenario.</strong> Security needs visibility into internal scripts and apps calling model APIs directly.</p>
 <p><strong>Technical Scenario.</strong> A test script calls a public model API with a test key from a monitored segment.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> 1 script; known AI API endpoint; 1 test key.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -584,8 +607,8 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>TC-A-007</td>
+<td><strong>Quick-Start Scenario</strong></td>
+<td><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html#ide-ai-test-cases">AI-POC-ID-004</a></td>
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
@@ -604,7 +627,7 @@
 <p><strong>Risk Addressed.</strong> Developer AI assistants create a direct path for source code and secrets to leave the organisation.</p>
 <p><strong>Business Scenario.</strong> Security needs to know which developers have AI coding assistants active.</p>
 <p><strong>Technical Scenario.</strong> Install a test coding-assistant plugin on 3 developer workstations.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> 1 test plugin; 3 workstations; 2 repositories (one classified).</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -657,10 +680,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (visibility control); Reconnaissance/Discovery context only</td>
 </tr>
@@ -677,7 +696,7 @@
 <p><strong>Risk Addressed.</strong> Vendors enable AI features inside approved products by default, turning an approved tool into an AI data processor overnight.</p>
 <p><strong>Business Scenario.</strong> Governance wants to know when an approved SaaS gains AI features that process company data.</p>
 <p><strong>Technical Scenario.</strong> Review how the platform detects AI features in approved SaaS tenants and their settings.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> 2 SaaS tenants, 1 with AI features on and 1 off.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -730,10 +749,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (visibility control); Reconnaissance/Discovery context only</td>
 </tr>
@@ -750,7 +765,7 @@
 <p><strong>Risk Addressed.</strong> Internal RAG chatbots and prototypes are often built outside IT visibility.</p>
 <p><strong>Business Scenario.</strong> Security wants internal AI apps found without relying on self-registration.</p>
 <p><strong>Technical Scenario.</strong> Deploy a small test chatbot calling a model API and a vector store inside the lab.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> 1 test app; 1 model API key; 1 vector store.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -803,10 +818,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -823,7 +834,7 @@
 <p><strong>Risk Addressed.</strong> An inventory without risk context cannot drive prioritisation.</p>
 <p><strong>Business Scenario.</strong> Governance wants each discovered app classified by risk tier.</p>
 <p><strong>Technical Scenario.</strong> Review risk tiers for 5 apps with different data exposure.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> 5 apps with differing data types and hosting regions.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -876,10 +887,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -896,7 +903,7 @@
 <p><strong>Risk Addressed.</strong> Unowned applications cannot be remediated.</p>
 <p><strong>Business Scenario.</strong> Governance wants owner, data classification and model for each app.</p>
 <p><strong>Technical Scenario.</strong> Inspect inventory records for enriched attributes.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> 5 apps with known owners and models.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -949,8 +956,8 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
+<td><strong>Quick-Start Scenario</strong></td>
+<td><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html#browser-ai-test-cases">AI-POC-BR-005</a></td>
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
@@ -969,7 +976,7 @@
 <p><strong>Risk Addressed.</strong> Late detection leaves new apps unmanaged for days.</p>
 <p><strong>Business Scenario.</strong> Security wants the time from first use to inventory appearance measured.</p>
 <p><strong>Technical Scenario.</strong> Introduce 3 new apps at known times and measure detection delay.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> 3 new apps; timestamped first use.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1022,10 +1029,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -1042,7 +1045,7 @@
 <p><strong>Risk Addressed.</strong> Hardcoded model API keys in apps and repos are a leading cause of credential loss and cost abuse.</p>
 <p><strong>Business Scenario.</strong> Security wants exposed model API keys found in application configuration.</p>
 <p><strong>Technical Scenario.</strong> Place fake model API keys in a config file, environment dump and sample repository.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> 3 synthetic keys matching provider formats (non-functional).</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1095,10 +1098,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (visibility control); Reconnaissance/Discovery context only</td>
 </tr>
@@ -1115,7 +1114,7 @@
 <p><strong>Risk Addressed.</strong> An AI inventory that cannot leave the tool will not be maintained.</p>
 <p><strong>Business Scenario.</strong> Operations wants discovered apps synchronised with the CMDB.</p>
 <p><strong>Technical Scenario.</strong> Export and sync the AI inventory via the platform's supported method.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> Inventory of 10 apps.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1168,10 +1167,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -1188,7 +1183,7 @@
 <p><strong>Risk Addressed.</strong> Protection that is deployed on only some apps gives false assurance.</p>
 <p><strong>Business Scenario.</strong> Security wants proof of which apps are actually under runtime protection.</p>
 <p><strong>Technical Scenario.</strong> Compare the coverage report to a list of deployed apps, 2 of which have no protection deployed.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> 4 apps; protection deployed on 2.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1241,10 +1236,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -1261,7 +1252,7 @@
 <p><strong>Risk Addressed.</strong> Unexpected failure of the protection layer should not silently disable it or take the app down uncontrolled.</p>
 <p><strong>Business Scenario.</strong> Security wants the failure mode confirmed and configurable.</p>
 <p><strong>Technical Scenario.</strong> Stop the protection component and send requests to the app.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> 1 test app; 1 protection component; 10 requests.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1315,10 +1306,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0049 Exploit Public-Facing Application (downstream impact)</td>
 </tr>
@@ -1335,7 +1322,7 @@
 <p><strong>Risk Addressed.</strong> Model output rendered as HTML can run attacker-supplied script in the user's browser.</p>
 <p><strong>Business Scenario.</strong> Security wants model responses with active content sanitised before rendering.</p>
 <p><strong>Technical Scenario.</strong> Prompt a test app so the model returns a harmless marker script.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> 1 test app; 3 marker payloads in HTML and Markdown.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1388,10 +1375,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0049 Exploit Public-Facing Application (downstream impact)</td>
 </tr>
@@ -1408,7 +1391,7 @@
 <p><strong>Risk Addressed.</strong> Model output passed to databases or shells without validation can lead to command or query injection.</p>
 <p><strong>Business Scenario.</strong> Security wants output sent to downstream systems validated.</p>
 <p><strong>Technical Scenario.</strong> A test app passes model output to a mock SQL layer and a mock shell wrapper.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> 1 test app; mock downstream with canary markers.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1461,8 +1444,8 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
+<td><strong>Quick-Start Scenario</strong></td>
+<td><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html#runtime-ai-test-cases">AI-POC-RT-004</a></td>
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
@@ -1481,7 +1464,7 @@
 <p><strong>Risk Addressed.</strong> Models can echo personal data from context or training into responses.</p>
 <p><strong>Business Scenario.</strong> Security wants personal data detected in responses and masked.</p>
 <p><strong>Technical Scenario.</strong> Seed context with synthetic personal records and ask the app to repeat them.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> 10 synthetic personal records; 5 prompts.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1534,10 +1517,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -1554,7 +1533,7 @@
 <p><strong>Risk Addressed.</strong> Keys and tokens in responses can be copied into tickets or code unnoticed.</p>
 <p><strong>Business Scenario.</strong> Security wants credentials in responses masked.</p>
 <p><strong>Technical Scenario.</strong> Seed context with fake credentials and ask the app to repeat them.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> 6 synthetic secrets of different formats.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1607,10 +1586,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0054 LLM Jailbreak</td>
 </tr>
@@ -1627,7 +1602,7 @@
 <p><strong>Risk Addressed.</strong> Unfiltered harmful output creates legal and reputational exposure.</p>
 <p><strong>Business Scenario.</strong> Compliance wants outputs checked against content policy categories.</p>
 <p><strong>Technical Scenario.</strong> Prompt a test app for content in several policy categories using benign test phrasing.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> 10 prompts across 5 categories.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1680,10 +1655,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (no direct technique)</td>
 </tr>
@@ -1700,7 +1671,7 @@
 <p><strong>Risk Addressed.</strong> Models invent package names that attackers later register, turning hallucinations into supply-chain compromise.</p>
 <p><strong>Business Scenario.</strong> Developers want warnings when AI suggests packages or links that do not exist.</p>
 <p><strong>Technical Scenario.</strong> Ask a coding assistant for libraries and check suggestions against a known package index snapshot.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> 5 prompts; internal package list snapshot.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1753,10 +1724,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -1773,7 +1740,7 @@
 <p><strong>Risk Addressed.</strong> Rendered markdown images can send data to an external server through URL parameters.</p>
 <p><strong>Business Scenario.</strong> Security wants external URLs in responses controlled.</p>
 <p><strong>Technical Scenario.</strong> Induce a response containing an image URL pointing to a lab collector with a canary parameter.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> 1 lab collector; 3 markdown payloads.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1826,10 +1793,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (no direct technique)</td>
 </tr>
@@ -1846,7 +1809,7 @@
 <p><strong>Risk Addressed.</strong> Ungrounded answers presented as sourced destroy user trust and can mislead decisions.</p>
 <p><strong>Business Scenario.</strong> Governance wants answers checked against retrieved sources.</p>
 <p><strong>Technical Scenario.</strong> Ask a RAG test app questions with and without supporting documents.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> 10 questions; 5 answerable, 5 unanswerable from the corpus.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1899,10 +1862,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0049 Exploit Public-Facing Application (downstream impact)</td>
 </tr>
@@ -1919,7 +1878,7 @@
 <p><strong>Risk Addressed.</strong> Malformed or manipulated arguments can trigger unintended tool behaviour.</p>
 <p><strong>Business Scenario.</strong> Engineering wants function-call arguments validated against schema and policy.</p>
 <p><strong>Technical Scenario.</strong> A test app emits function calls; some arguments violate schema or policy.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> 5 valid calls, 5 invalid calls.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1972,10 +1931,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -1992,7 +1947,7 @@
 <p><strong>Risk Addressed.</strong> Cross-tenant leakage in shared AI apps is a severe breach.</p>
 <p><strong>Business Scenario.</strong> Security wants confirmation that one tenant's data does not appear in another's responses.</p>
 <p><strong>Technical Scenario.</strong> Seed two tenants with distinct canary records and probe from each.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> 2 tenants; 5 canary records each.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2045,10 +2000,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0049 Exploit Public-Facing Application (downstream impact)</td>
 </tr>
@@ -2065,7 +2016,7 @@
 <p><strong>Risk Addressed.</strong> Streamed output can leak data before inspection completes.</p>
 <p><strong>Business Scenario.</strong> Security wants inspection to work on streamed responses.</p>
 <p><strong>Technical Scenario.</strong> Stream responses containing sensitive markers mid-stream.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> 5 streamed responses with markers at positions early, mid and late.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2118,10 +2069,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (operational and monitoring control)</td>
 </tr>
@@ -2138,7 +2085,7 @@
 <p><strong>Risk Addressed.</strong> Missing logs make incident reconstruction impossible.</p>
 <p><strong>Business Scenario.</strong> Security wants prompts, responses and tool calls recorded.</p>
 <p><strong>Technical Scenario.</strong> Run a multi-step session and review logs.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> 1 session with 5 turns and 2 tool calls.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2191,10 +2138,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0051 LLM Prompt Injection</td>
 </tr>
@@ -2211,7 +2154,7 @@
 <p><strong>Risk Addressed.</strong> Attacks split across turns evade single-prompt checks.</p>
 <p><strong>Business Scenario.</strong> Security wants protection evaluated across a conversation.</p>
 <p><strong>Technical Scenario.</strong> Spread a policy-violating request across 4 turns.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> 3 multi-turn scenarios.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2264,10 +2207,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0054 LLM Jailbreak</td>
 </tr>
@@ -2284,7 +2223,7 @@
 <p><strong>Risk Addressed.</strong> Issues found in production cost far more than those found before launch.</p>
 <p><strong>Business Scenario.</strong> Engineering wants an automated scan before release.</p>
 <p><strong>Technical Scenario.</strong> Run the platform's test module against a test app seeded with known weaknesses.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> 1 test app with 5 seeded weaknesses.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2337,10 +2276,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -2357,7 +2292,7 @@
 <p><strong>Risk Addressed.</strong> Policies configured by hand per app drift and cannot be reviewed.</p>
 <p><strong>Business Scenario.</strong> Engineering wants policies stored as versioned code.</p>
 <p><strong>Technical Scenario.</strong> Export, edit and re-import a policy for one app.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> 1 app policy.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2411,10 +2346,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (visibility control); Reconnaissance/Discovery context only</td>
 </tr>
@@ -2431,7 +2362,7 @@
 <p><strong>Risk Addressed.</strong> Abandoned AI apps keep keys, data and access alive.</p>
 <p><strong>Business Scenario.</strong> Governance wants apps with no recent use flagged.</p>
 <p><strong>Technical Scenario.</strong> Leave one app idle and review the report.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> 2 apps; 1 idle.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2484,10 +2415,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (operational and monitoring control)</td>
 </tr>
@@ -2504,7 +2431,7 @@
 <p><strong>Risk Addressed.</strong> High latency drives teams to remove controls.</p>
 <p><strong>Business Scenario.</strong> Engineering wants measured impact on response time.</p>
 <p><strong>Technical Scenario.</strong> Run a load test with and without protection.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform integration or SDK deployed on the applications under test.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test.</p>
 <p><strong>Test Data.</strong> 100 requests per minute for 10 minutes.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2523,6 +2450,373 @@
 <p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
 <p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Latency table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l05-031"></a></p>
+<h3 id="tc-l05-031-ai-coding-assistant-extension-inventory-and-version-risk">TC-L05-031: AI Coding Assistant Extension Inventory and Version Risk</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L05 AI Applications</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D2</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: E | Partial: P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Quick-Start Scenario</strong></td>
+<td><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html#ide-ai-test-cases">AI-POC-ID-004</a></td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (visibility control); Reconnaissance/Discovery context only</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM03:2025 Supply Chain (unmanaged AI components)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MAP 1.1; GOVERN 6.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Unapproved or outdated assistant extensions run with full workspace access and are invisible to web-based discovery.</p>
+<p><strong>Business Scenario.</strong> Security needs a list of every AI coding extension by developer, IDE and version, with unapproved and outdated ones flagged.</p>
+<p><strong>Technical Scenario.</strong> Install approved, unapproved and outdated assistant extensions across IDEs and compare the discovery output with what was installed.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test. Approved-extension list with minimum versions loaded into the platform.</p>
+<p><strong>Test Data.</strong> 6 extension installs across 3 workstations and 2 IDE families: 2 approved and current, 2 approved but outdated, 2 unapproved (one side-loaded from a file).</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Record the installs as ground truth.</li>
+<li>Run discovery.</li>
+<li>Compare extension name, publisher, version, IDE and user against ground truth.</li>
+<li>Check that unapproved and outdated installs are flagged distinctly.</li>
+<li>Uninstall one extension and confirm the inventory updates.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Extension installed but disabled; extension inside a remote development container; portable IDE build.</p>
+<p><strong>Expected Detection.</strong> 6 of 6 installs found with correct publisher and version; the 2 unapproved and 2 outdated installs are flagged.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Unapproved extension blocked or removed by policy where the vendor claims enforcement; otherwise N/A (visibility control).</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the application inventory or runtime protection dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Inventory exportable to CMDB or asset management.</p>
+<p><strong>Forensic Evidence.</strong> Application, model, request and response identifiers, policy decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Inventory export; ground-truth comparison table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l05-032"></a></p>
+<h3 id="tc-l05-032-personal-vs-corporate-account-in-ai-coding-assistants">TC-L05-032: Personal vs Corporate Account in AI Coding Assistants</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L05 AI Applications</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D2</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: E, G</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0057 LLM Data Leakage (secondary)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.10; GOVERN 1.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> A developer signed in to a coding assistant with a personal account sends corporate code to a tenant with consumer terms and no enterprise controls.</p>
+<p><strong>Business Scenario.</strong> Engineering wants corporate-licence use allowed and personal-account use on corporate repositories stopped.</p>
+<p><strong>Technical Scenario.</strong> Sign the same assistant in with a corporate test account and a personal test account and check that the account type is distinguished and policy applied.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test. One AI coding assistant with a corporate test tenant and a personal test account; fabricated restricted repository.</p>
+<p><strong>Test Data.</strong> 1 assistant; 2 test accounts (corporate tenant, personal); 5 prompts referencing the fabricated repository.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Sign in with the corporate account and send the 5 prompts.</li>
+<li>Sign in with the personal account and send the same 5 prompts.</li>
+<li>Verify the account type and tenant or account identifier recorded for each prompt.</li>
+<li>Apply a block-personal-account policy and repeat both runs.</li>
+<li>Confirm the corporate run is unaffected.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Two accounts signed in at once; bring-your-own API key entered in extension settings; account switch mid-session.</p>
+<p><strong>Expected Detection.</strong> 5 of 5 personal-account prompts identified as personal with a tenant or account identifier; corporate prompts labelled corporate.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Personal-account requests blocked; corporate-account requests allowed.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the application inventory or runtime protection dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Account type visible in SIEM events.</p>
+<p><strong>Forensic Evidence.</strong> Application, model, request and response identifiers, policy decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Event export showing account type; block evidence.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l05-033"></a></p>
+<h3 id="tc-l05-033-coding-assistant-workspace-context-scope-and-file-exclusion">TC-L05-033: Coding Assistant Workspace Context Scope and File Exclusion</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L05 AI Applications</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D2, D6</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: E | Partial: G</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0057 LLM Data Leakage</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.10; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Assistants gather context automatically from open files, neighbouring files and indexes, so secrets and restricted files are sent without the developer choosing to share them.</p>
+<p><strong>Business Scenario.</strong> Security wants named paths and file types (environment files, key material, restricted modules) never used as assistant context.</p>
+<p><strong>Technical Scenario.</strong> Configure exclusions, then use completion and chat in a workspace that contains excluded files and inspect what context leaves the workstation.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test. Outbound assistant traffic observable at the lab egress point or through the platform's own context log.</p>
+<p><strong>Test Data.</strong> Fabricated repository with 1 environment file holding fake secrets, 1 key file holding a non-functional key, 1 restricted module and 5 ordinary files; an exclusion policy covering the first three.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Open the three excluded files in editor tabs.</li>
+<li>Request completions in an ordinary file.</li>
+<li>Ask the chat a question that the excluded content would help answer.</li>
+<li>Capture the outbound context for each request.</li>
+<li>Repeat with workspace indexing enabled.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Excluded file referenced by explicit mention; exclusion defined in a repository-level ignore file that a developer edits; symlinked path.</p>
+<p><strong>Expected Detection.</strong> Any attempt to include an excluded file in context is detected and logged with the file path.</p>
+<p><strong>Expected Prevention / Control Action.</strong> 0 of 3 excluded files appear in the captured outbound context in any mode.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the application inventory or runtime protection dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Exclusion policy managed centrally and versioned.</p>
+<p><strong>Forensic Evidence.</strong> Application, model, request and response identifiers, policy decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Outbound context capture; policy export; event log.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l05-034"></a></p>
+<h3 id="tc-l05-034-insecure-code-suggestion-detection">TC-L05-034: Insecure Code Suggestion Detection</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L05 AI Applications</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D2, D3</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: E, A | Partial: R</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Quick-Start Scenario</strong></td>
+<td><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html#ide-ai-test-cases">AI-POC-ID-005</a></td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (no direct technique)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM09:2025 Misinformation</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.5; MAP 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Assistants can suggest code with injection flaws, weak cryptography or hard-coded credentials that developers accept without review.</p>
+<p><strong>Business Scenario.</strong> Application security wants insecure suggestions flagged at the point of acceptance or caught before merge.</p>
+<p><strong>Technical Scenario.</strong> Prompt the assistant for code in patterns known to elicit insecure output and check whether the platform flags each suggestion.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test. Assistant pinned to a fixed model version; a commit hook or pull request check connected if the vendor claims downstream enforcement.</p>
+<p><strong>Test Data.</strong> 20 prompts: 5 on database query construction, 5 on cryptography, 5 on authentication and privileged access, 5 benign controls.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Run each prompt and record the suggestion.</li>
+<li>Record whether the suggestion is flagged and with which weakness category.</li>
+<li>Accept 3 flagged suggestions and observe the commit hook or pull request check.</li>
+<li>Compute the detection rate and the false-positive rate.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Suggestion produced by inline completion; comments in a non-English language; a second programming language.</p>
+<p><strong>Expected Detection.</strong> At least 12 of 15 insecure suggestions flagged with a weakness category; no more than 1 of 5 controls flagged.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Accepted insecure code is blocked or annotated at commit or pull request where the vendor claims enforcement.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the application inventory or runtime protection dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Findings appear in the existing code scanning or pull request workflow.</p>
+<p><strong>Forensic Evidence.</strong> Application, model, request and response identifiers, policy decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Suggestion log with verdicts; rate calculation; commit or pull request check output.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l05-035"></a></p>
+<h3 id="tc-l05-035-ai-generated-code-licence-and-public-code-match-detection">TC-L05-035: AI-Generated Code: Licence and Public-Code Match Detection</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L05 AI Applications</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D2, D7</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: E, P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Suggestions that reproduce public code can carry licence obligations the organisation has not accepted.</p>
+<p><strong>Business Scenario.</strong> Legal and engineering want suggestions that match public code flagged or filtered, with a record for audit.</p>
+<p><strong>Technical Scenario.</strong> Elicit suggestions that reproduce seeded licensed code and check matching, filtering and logging.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform integration or SDK deployed on the applications under test. Mock assistant or lab model seeded to return known snippets; licence policy that denies copyleft terms.</p>
+<p><strong>Test Data.</strong> 15 seeded snippets from a fabricated corpus: 5 under copyleft terms, 5 under permissive terms, 5 original.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Trigger each of the 15 suggestions.</li>
+<li>Record which are flagged or suppressed.</li>
+<li>Verify the licence family and source reference in each event.</li>
+<li>Produce the audit report by repository.</li>
+<li>Turn the filter off and confirm logging continues.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Partial match with renamed identifiers; snippet shorter than the matching threshold.</p>
+<p><strong>Expected Detection.</strong> 10 of 10 matching snippets identified with licence family; 0 of 5 original snippets flagged.</p>
+<p><strong>Expected Prevention / Control Action.</strong> The 5 copyleft suggestions are suppressed or marked before acceptance.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Finding visible in the application inventory or runtime protection dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Report exportable for legal review.</p>
+<p><strong>Forensic Evidence.</strong> Application, model, request and response identifiers, policy decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Match report; event export.</p>
 <p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />

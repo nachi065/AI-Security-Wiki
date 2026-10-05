@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Appendix D: Lab Prerequisites | AI Security Wiki</title>
+<title>Appendix: Lab Prerequisites | AI Security Wiki</title>
 <meta name="author" content="Nachiket Sathaye">
 <meta name="description" content="A vendor-neutral reference for AI security governance, risk management, engineering standards, vendor evaluation and assurance.">
 <link rel="stylesheet" href="../assets/style.css">
@@ -77,7 +77,7 @@
 <li><details open><summary><a href="index.html">Test Case Library</a></summary><ul>
 <li><a href="00-reference-index.html">Reference Index</a></li>
 <li><a href="framework-adoption-guide.html">Framework Adoption Guide</a></li>
-<li><a class="current" href="appendix-d-lab-prerequisites.html">Appendix D: Lab Prerequisites</a></li>
+<li><a class="current" href="appendix-lab-prerequisites.html">Appendix: Lab Prerequisites</a></li>
 <li><a href="L01-business-and-use-cases.html">L01 Business &amp; Use Cases</a></li>
 <li><a href="L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
 <li><a href="L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>
@@ -99,9 +99,9 @@
 </ul>
 </nav>
 <main>
-<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Test Case Library</a> / <span>Appendix D: Lab Prerequisites</span></p>
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Test Case Library</a> / <span>Appendix: Lab Prerequisites</span></p>
 <article>
-<h1 id="appendix-d-lab-prerequisites">Appendix D: Lab Prerequisites</h1>
+<h1 id="appendix-lab-prerequisites">Appendix: Lab Prerequisites</h1>
 <p>This appendix compiles the setup each layer assumes, taken directly from the Preconditions field of its cases. It is a starting checklist, not an exhaustive build guide. Where a layer shows several variants, the first is the standard setup and the others are extra setup needed only by the listed cases.</p>
 <p><a href="index.html">Back to library overview</a></p>
 <h2 id="l01-business-use-cases">L01 Business &amp; Use Cases</h2>
@@ -121,8 +121,14 @@
 </ul>
 <h2 id="l04-human-interaction-layer">L04 Human Interaction Layer</h2>
 <p><strong>Standard setup (all cases):</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per this appendix; platform agent or integration installed for the channel under test.</p>
+<ul>
+<li><strong>Developer and IDE test bench</strong> (2 cases): Managed test workstations with two IDE families and AI coding assistant extensions, a CLI coding agent, corporate and personal test accounts, fabricated repositories (general, restricted and infrastructure-as-code) on a lab source-control server, a mock extension marketplace, mock MCP servers and a mock URL endpoint that records requests; no real source code, tokens or keys.</li>
+</ul>
 <h2 id="l05-ai-applications">L05 AI Applications</h2>
 <p><strong>Standard setup (all cases):</strong> Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per this appendix; platform integration or SDK deployed on the applications under test.</p>
+<ul>
+<li><strong>Developer and IDE test bench</strong> (5 cases): Managed test workstations with two IDE families and AI coding assistant extensions, a CLI coding agent, corporate and personal test accounts, fabricated repositories (general, restricted and infrastructure-as-code) on a lab source-control server, a mock extension marketplace, mock MCP servers and a mock URL endpoint that records requests; no real source code, tokens or keys.</li>
+</ul>
 <h2 id="l06-agent-orchestration-layer">L06 Agent Orchestration Layer</h2>
 <p><strong>Standard setup (all cases):</strong> Isolated PoC lab provisioned; lab agent framework, mock tools, mock MCP servers and test users seeded per this appendix; platform deployed in the documented mode for agent and tool traffic.</p>
 <ul>
@@ -133,6 +139,7 @@
 <li><strong>Additional setup</strong> (<a href="L06-agent-orchestration-layer.html#tc-l06-010">TC-L06-010</a>): Lab servers configured with the four security modes.</li>
 <li><strong>Additional setup</strong> (<a href="L06-agent-orchestration-layer.html#tc-l06-025">TC-L06-025</a>): Probes use canary files and lab hosts only.</li>
 <li><strong>Additional setup</strong> (<a href="L06-agent-orchestration-layer.html#tc-l06-031">TC-L06-031</a>): Computer-use agent available in the lab.</li>
+<li><strong>Developer and IDE test bench</strong> (2 cases): Managed test workstations with two IDE families and AI coding assistant extensions, a CLI coding agent, corporate and personal test accounts, fabricated repositories (general, restricted and infrastructure-as-code) on a lab source-control server, a mock extension marketplace, mock MCP servers and a mock URL endpoint that records requests; no real source code, tokens or keys.</li>
 </ul>
 <h2 id="l07-prompt-context-layer">L07 Prompt &amp; Context Layer</h2>
 <p><strong>Standard setup (all cases):</strong> Isolated PoC lab provisioned; test application, mock model or lab-hosted model, mock tools and test users seeded per this appendix; platform deployed in the documented mode for the channel under test.</p>
@@ -152,6 +159,7 @@
 <li><strong>Additional setup</strong> (<a href="L07-prompt-and-context-layer.html#tc-l07-037">TC-L07-037</a>): Analysts independent of the vendor.</li>
 <li><strong>Additional setup</strong> (<a href="L07-prompt-and-context-layer.html#tc-l07-039">TC-L07-039</a>): Prompts stored in a test repository.</li>
 <li><strong>Additional setup</strong> (<a href="L07-prompt-and-context-layer.html#tc-l07-040">TC-L07-040</a>): Evaluator selects new techniques after the PoC begins.</li>
+<li><strong>Developer and IDE test bench</strong> (1 case): Managed test workstations with two IDE families and AI coding assistant extensions, a CLI coding agent, corporate and personal test accounts, fabricated repositories (general, restricted and infrastructure-as-code) on a lab source-control server, a mock extension marketplace, mock MCP servers and a mock URL endpoint that records requests; no real source code, tokens or keys.</li>
 </ul>
 <h2 id="l08-ai-gateway-security-controls">L08 AI Gateway &amp; Security Controls</h2>
 <p><strong>Standard setup (all cases):</strong> Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per this appendix; baseline traffic captured without the platform.</p>
@@ -181,11 +189,13 @@
 <li><strong>Additional setup</strong> (<a href="L08-ai-gateway-and-security-controls.html#tc-l08-033">TC-L08-033</a>): Dedicated lab capacity; no production traffic.</li>
 <li><strong>Additional setup</strong> (<a href="L08-ai-gateway-and-security-controls.html#tc-l08-034">TC-L08-034</a>): Vendor-documented HA architecture deployed.</li>
 <li><strong>Additional setup</strong> (<a href="L08-ai-gateway-and-security-controls.html#tc-l08-040">TC-L08-040</a>): Storage region documented before testing.</li>
+<li><strong>Developer and IDE test bench</strong> (2 cases): Managed test workstations with two IDE families and AI coding assistant extensions, a CLI coding agent, corporate and personal test accounts, fabricated repositories (general, restricted and infrastructure-as-code) on a lab source-control server, a mock extension marketplace, mock MCP servers and a mock URL endpoint that records requests; no real source code, tokens or keys.</li>
 </ul>
 <h2 id="l09-identity-access-mgmt">L09 Identity &amp; Access Mgmt</h2>
 <p><strong>Standard setup (all cases):</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per this appendix; platform connected with least-privilege test credentials.</p>
 <ul>
 <li><strong>Lab environment</strong> (25 cases): Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</li>
+<li><strong>Developer and IDE test bench</strong> (1 case): Managed test workstations with two IDE families and AI coding assistant extensions, a CLI coding agent, corporate and personal test accounts, fabricated repositories (general, restricted and infrastructure-as-code) on a lab source-control server, a mock extension marketplace, mock MCP servers and a mock URL endpoint that records requests; no real source code, tokens or keys.</li>
 </ul>
 <h2 id="l10-data-layer">L10 Data Layer</h2>
 <p><strong>Standard setup (all cases):</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per this appendix; platform connected with least-privilege test credentials.</p>
@@ -212,6 +222,7 @@
 <p><strong>Standard setup (all cases):</strong> Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per this appendix; platform connected with least-privilege test credentials.</p>
 <ul>
 <li><strong>Lab environment</strong> (20 cases): Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.</li>
+<li><strong>Developer and IDE test bench</strong> (2 cases): Managed test workstations with two IDE families and AI coding assistant extensions, a CLI coding agent, corporate and personal test accounts, fabricated repositories (general, restricted and infrastructure-as-code) on a lab source-control server, a mock extension marketplace, mock MCP servers and a mock URL endpoint that records requests; no real source code, tokens or keys.</li>
 </ul>
 <h2 id="l15-infrastructure-layer">L15 Infrastructure Layer</h2>
 <p><strong>Standard setup (all cases):</strong> Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per this appendix; platform connected with least-privilege test credentials.</p>
@@ -224,15 +235,17 @@
 <p><strong>Standard setup (all cases):</strong> Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per this appendix; written vendor evidence requests issued before testing; platform connected with least-privilege test credentials.</p>
 <ul>
 <li><strong>Lab environment</strong> (25 cases): Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.</li>
+<li><strong>Developer and IDE test bench</strong> (1 case): Managed test workstations with two IDE families and AI coding assistant extensions, a CLI coding agent, corporate and personal test accounts, fabricated repositories (general, restricted and infrastructure-as-code) on a lab source-control server, a mock extension marketplace, mock MCP servers and a mock URL endpoint that records requests; no real source code, tokens or keys.</li>
 </ul>
 <h2 id="l17-monitoring-detection-response">L17 Monitoring, Detection &amp; Response</h2>
 <p><strong>Standard setup (all cases):</strong> Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per this appendix; no production alerting connected.</p>
 <ul>
 <li><strong>Lab environment</strong> (30 cases): Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</li>
+<li><strong>Developer and IDE test bench</strong> (1 case): Managed test workstations with two IDE families and AI coding assistant extensions, a CLI coding agent, corporate and personal test accounts, fabricated repositories (general, restricted and infrastructure-as-code) on a lab source-control server, a mock extension marketplace, mock MCP servers and a mock URL endpoint that records requests; no real source code, tokens or keys.</li>
 </ul>
 </article>
 <nav class="pager" aria-label="Previous and next page"><a class="prev" href="framework-adoption-guide.html">&larr; Framework Adoption Guide</a><a class="next" href="L01-business-and-use-cases.html">L01 Business &amp; Use Cases &rarr;</a></nav>
-<footer class="site-footer">Original author: Nachiket Sathaye &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/10_Test_Case_Library/appendix-d-lab-prerequisites.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a></footer>
+<footer class="site-footer">Original author: Nachiket Sathaye &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/10_Test_Case_Library/appendix-lab-prerequisites.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a></footer>
 </main>
 </div>
 <script>window.SITE_BASE = "../";</script>

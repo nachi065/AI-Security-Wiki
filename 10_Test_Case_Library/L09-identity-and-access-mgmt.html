@@ -77,7 +77,7 @@
 <li><details open><summary><a href="index.html">Test Case Library</a></summary><ul>
 <li><a href="00-reference-index.html">Reference Index</a></li>
 <li><a href="framework-adoption-guide.html">Framework Adoption Guide</a></li>
-<li><a href="appendix-d-lab-prerequisites.html">Appendix D: Lab Prerequisites</a></li>
+<li><a href="appendix-lab-prerequisites.html">Appendix: Lab Prerequisites</a></li>
 <li><a href="L01-business-and-use-cases.html">L01 Business &amp; Use Cases</a></li>
 <li><a href="L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
 <li><a href="L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>
@@ -104,7 +104,7 @@
 <p><a id="top"></a></p>
 <h1 id="l09-identity-access-mgmt">L09 Identity &amp; Access Mgmt</h1>
 <p><strong>Primary test focus:</strong> user and agent (non-human) identity, scoped tokens, RBAC</p>
-<p><strong>Cases:</strong> 25 (TC-L09-001 to TC-L09-025)  |  <strong>Batch:</strong> 3</p>
+<p><strong>Cases:</strong> 26 (TC-L09-001 to TC-L09-026)</p>
 <blockquote>
 <p><strong>Safety boundary.</strong> Agent and MCP cases use a lab agent framework, benign mock tools and mock MCP servers that write only to a lab sink. Where an attack is simulated, success is first measured with the platform disabled. Never connect lab agents to production systems or real credentials.</p>
 <p><strong>Verify before use.</strong> MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the <a href="00-reference-index.html">Reference Index</a> for field definitions and applicability codes.</p>
@@ -296,6 +296,13 @@
 <td>Technical</td>
 <td>D5, D7</td>
 </tr>
+<tr>
+<td><a href="#tc-l09-026">TC-L09-026</a></td>
+<td>Coding Agent Repository and Cloud Credentials: Scope and Lifetime</td>
+<td>Critical</td>
+<td>Technical</td>
+<td>D2, D5</td>
+</tr>
 </tbody>
 </table></div>
 <hr />
@@ -331,10 +338,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (visibility control); Reconnaissance/Discovery context only</td>
 </tr>
@@ -351,7 +354,7 @@
 <p><strong>Risk Addressed.</strong> Service accounts, API keys, OAuth apps and workload identities used by AI systems outnumber humans and are rarely inventoried.</p>
 <p><strong>Business Scenario.</strong> Identity governance wants all non-human identities used by AI listed with owner, privileges and last use.</p>
 <p><strong>Technical Scenario.</strong> Create a known set of non-human identities and compare the platform's inventory to ground truth.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
 <p><strong>Test Data.</strong> 20 non-human identities: 6 service accounts, 5 model API keys, 4 OAuth app registrations, 3 workload identities (cloud roles), 2 agent tokens; mixed privilege levels and ages.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -408,10 +411,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0012 Valid Accounts</td>
 </tr>
@@ -428,7 +427,7 @@
 <p><strong>Risk Addressed.</strong> Agents sharing one credential cannot be told apart in logs or revoked individually.</p>
 <p><strong>Business Scenario.</strong> Security wants each agent to have its own identity.</p>
 <p><strong>Technical Scenario.</strong> Review agents and their credentials and test whether actions can be attributed individually.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
 <p><strong>Test Data.</strong> 6 agents: 3 with unique identities, 3 sharing a single service account; actions on mock systems.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -484,10 +483,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0012 Valid Accounts</td>
 </tr>
@@ -504,7 +499,7 @@
 <p><strong>Risk Addressed.</strong> Long-lived broad tokens held by agents turn any compromise into long-term access.</p>
 <p><strong>Business Scenario.</strong> Security wants agents to receive short-lived credentials limited to the task.</p>
 <p><strong>Technical Scenario.</strong> Review the credential lifetime and scope issued to agents and test expiry.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
 <p><strong>Test Data.</strong> 3 agents using static keys, 3 using short-lived tokens (15 minutes); mock APIs validating token scope and lifetime.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -561,8 +556,8 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
+<td><strong>Quick-Start Scenario</strong></td>
+<td><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html#agentic-ai-test-cases">AI-POC-AG-001</a></td>
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
@@ -581,7 +576,7 @@
 <p><strong>Risk Addressed.</strong> Tokens broader than needed allow an agent or attacker to reach unrelated resources.</p>
 <p><strong>Business Scenario.</strong> Security wants scope violations blocked and reported.</p>
 <p><strong>Technical Scenario.</strong> Issue tokens with defined scopes and attempt calls outside them.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
 <p><strong>Test Data.</strong> Token scopes: read:tickets, write:tickets; mock resources: tickets, payroll, files; 30 calls, 10 out of scope.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -638,10 +633,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>TC-A-004</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0012 Valid Accounts</td>
 </tr>
@@ -658,7 +649,7 @@
 <p><strong>Risk Addressed.</strong> Users grant AI apps broad access to mail, files and calendars with a single click.</p>
 <p><strong>Business Scenario.</strong> Security wants risky grants visible, controlled and revocable.</p>
 <p><strong>Technical Scenario.</strong> Grant OAuth permissions to test AI apps with different scopes and review controls.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
 <p><strong>Test Data.</strong> 5 test apps requesting scopes from read-only profile to full mailbox and file access; 3 test users.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -715,10 +706,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0012 Valid Accounts</td>
 </tr>
@@ -735,7 +722,7 @@
 <p><strong>Risk Addressed.</strong> If tools see only the agent's identity, per-user permissions and audit trails disappear.</p>
 <p><strong>Business Scenario.</strong> Architecture wants the end user's identity carried to tools and data sources.</p>
 <p><strong>Technical Scenario.</strong> Run tasks as two users and check which identity downstream systems see.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
 <p><strong>Test Data.</strong> 2 users with different entitlements; agent; mock downstream APIs recording received identity and token.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -791,8 +778,8 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
+<td><strong>Quick-Start Scenario</strong></td>
+<td><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html#agentic-ai-test-cases">AI-POC-AG-002</a></td>
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
@@ -811,7 +798,7 @@
 <p><strong>Risk Addressed.</strong> Agents can accumulate permissions through tool chains or role changes beyond what any one user holds.</p>
 <p><strong>Business Scenario.</strong> Security wants escalation paths found and blocked.</p>
 <p><strong>Technical Scenario.</strong> Create agents with indirect access to higher privileges and test whether they can be used.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
 <p><strong>Test Data.</strong> 3 agents; paths: tool that can edit roles, tool that reads credentials, tool that creates other agents; mock IAM.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -867,10 +854,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0012 Valid Accounts</td>
 </tr>
@@ -887,7 +870,7 @@
 <p><strong>Risk Addressed.</strong> Not every employee should reach every AI tool or model, especially those with sensitive data connections.</p>
 <p><strong>Business Scenario.</strong> Governance wants AI access tied to roles.</p>
 <p><strong>Technical Scenario.</strong> Define roles and test access to applications and models.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
 <p><strong>Test Data.</strong> 4 roles (general staff, finance, engineering, contractors); 5 AI apps; 2 models; matrix of 40 combinations.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -943,10 +926,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0012 Valid Accounts</td>
 </tr>
@@ -963,7 +942,7 @@
 <p><strong>Risk Addressed.</strong> Static roles cannot account for device health, location or risk level at the time of access.</p>
 <p><strong>Business Scenario.</strong> Security wants access to AI tools adjusted for context.</p>
 <p><strong>Technical Scenario.</strong> Apply conditions and test combinations.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
 <p><strong>Test Data.</strong> Conditions: managed device, compliant posture, corporate or approved country location, risk score below threshold; 16 combinations.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1019,10 +998,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0012 Valid Accounts</td>
 </tr>
@@ -1039,7 +1014,7 @@
 <p><strong>Risk Addressed.</strong> Local accounts on AI platforms bypass corporate identity controls.</p>
 <p><strong>Business Scenario.</strong> Identity team wants single sign-on and automated provisioning.</p>
 <p><strong>Technical Scenario.</strong> Integrate the platform with the lab IdP and test provisioning.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
 <p><strong>Test Data.</strong> Lab IdP supporting SAML or OIDC and SCIM; 10 test users; 3 groups.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1096,10 +1071,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0012 Valid Accounts</td>
 </tr>
@@ -1116,7 +1087,7 @@
 <p><strong>Risk Addressed.</strong> Former staff or staff in new roles retain AI access, including to data they should no longer reach.</p>
 <p><strong>Business Scenario.</strong> Security wants AI access removed or adjusted promptly after role change.</p>
 <p><strong>Technical Scenario.</strong> Simulate leaver and mover events.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
 <p><strong>Test Data.</strong> 3 leavers, 3 movers; AI apps, agents and API keys owned by them.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1172,10 +1143,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0012 Valid Accounts</td>
 </tr>
@@ -1192,7 +1159,7 @@
 <p><strong>Risk Addressed.</strong> A stolen session should not be enough to approve a payment or export a dataset via an agent.</p>
 <p><strong>Business Scenario.</strong> Security wants stronger authentication for risky actions.</p>
 <p><strong>Technical Scenario.</strong> Configure step-up for selected actions and test sessions with and without recent MFA.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
 <p><strong>Test Data.</strong> Risky actions: export dataset, change agent permissions, approve external send; 2 users.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1248,10 +1215,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0012 Valid Accounts</td>
 </tr>
@@ -1268,7 +1231,7 @@
 <p><strong>Risk Addressed.</strong> Standing administrative access to AI controls is a high-value target.</p>
 <p><strong>Business Scenario.</strong> Security wants privileged access time-bound, approved and recorded.</p>
 <p><strong>Technical Scenario.</strong> Test administrator access workflows.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
 <p><strong>Test Data.</strong> 3 admin roles; JIT elevation tool or built-in feature; 2 approvers.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1326,10 +1289,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0012 Valid Accounts</td>
 </tr>
@@ -1346,7 +1305,7 @@
 <p><strong>Risk Addressed.</strong> Unmanaged model API keys are a leading cause of leaked access and unexpected bills.</p>
 <p><strong>Business Scenario.</strong> Platform owners want enforced rotation and instant revocation.</p>
 <p><strong>Technical Scenario.</strong> Create keys with different policies and test lifecycle controls.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
 <p><strong>Test Data.</strong> 10 fabricated keys in a mock provider; policies: 30-day expiry, rotation reminder, usage cap.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1403,10 +1362,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0055 Unsecured Credentials</td>
 </tr>
@@ -1423,7 +1378,7 @@
 <p><strong>Risk Addressed.</strong> Credentials typed into chats or passed as tool arguments end up in logs, provider systems and model context.</p>
 <p><strong>Business Scenario.</strong> Security wants credentials detected and removed from prompts, arguments and logs.</p>
 <p><strong>Technical Scenario.</strong> Send fabricated credentials through prompts and tool calls.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
 <p><strong>Test Data.</strong> 12 fabricated secrets (passwords, tokens, keys, connection strings) in prompts, tool arguments and tool results.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1479,10 +1434,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0055 Unsecured Credentials</td>
 </tr>
@@ -1499,7 +1450,7 @@
 <p><strong>Risk Addressed.</strong> Agents holding secrets in configuration or context can leak them through output or injection.</p>
 <p><strong>Business Scenario.</strong> Engineering wants secrets fetched just in time and never placed in model context.</p>
 <p><strong>Technical Scenario.</strong> Run agents that need secrets to call tools and check where secrets appear.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
 <p><strong>Test Data.</strong> Lab vault; 3 agents; 4 secrets; extraction attempts using prompt injection.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1556,10 +1507,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (operational and monitoring control)</td>
 </tr>
@@ -1576,7 +1523,7 @@
 <p><strong>Risk Addressed.</strong> Stolen or misused agent credentials look legitimate unless behaviour is compared with history.</p>
 <p><strong>Business Scenario.</strong> SOC wants misuse detected quickly.</p>
 <p><strong>Technical Scenario.</strong> Replay normal activity and then misuse an agent identity.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
 <p><strong>Test Data.</strong> 3 agent identities with 14 days of simulated normal use; misuse: new source location, new resource, off-hours burst, token used from two places at once, unusual API method.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1632,10 +1579,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0012 Valid Accounts</td>
 </tr>
@@ -1652,7 +1595,7 @@
 <p><strong>Risk Addressed.</strong> Identity claims made in prompts or metadata may be accepted at face value by weak systems.</p>
 <p><strong>Business Scenario.</strong> Security wants identity established by credentials, not by claims in text.</p>
 <p><strong>Technical Scenario.</strong> Attempt to impersonate another user or agent through prompts, headers and metadata.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
 <p><strong>Test Data.</strong> 10 attempts: prompt claim of being an administrator, spoofed header, forged user field in an API call, reuse of another agent's name, forged delegation context.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1708,10 +1651,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0012 Valid Accounts</td>
 </tr>
@@ -1728,7 +1667,7 @@
 <p><strong>Risk Addressed.</strong> Tokens and agents from test environments reaching production systems cause data exposure.</p>
 <p><strong>Business Scenario.</strong> Security wants strict separation between environments.</p>
 <p><strong>Technical Scenario.</strong> Use test environment identities against production-like mock systems.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
 <p><strong>Test Data.</strong> Mock prod and non-prod environments; tokens from each; agents deployed in each.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1784,10 +1723,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0012 Valid Accounts</td>
 </tr>
@@ -1804,7 +1739,7 @@
 <p><strong>Risk Addressed.</strong> Long-lived sessions on shared or unmanaged devices expose conversations and data.</p>
 <p><strong>Business Scenario.</strong> Security wants timeouts, revocation and concurrency controls.</p>
 <p><strong>Technical Scenario.</strong> Test session settings in a lab chat application.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
 <p><strong>Test Data.</strong> 1 chat app; policies: 30-minute idle timeout, 8-hour absolute, 2 concurrent sessions.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1860,10 +1795,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -1880,7 +1811,7 @@
 <p><strong>Risk Addressed.</strong> Entitlements accumulate unless periodically reviewed.</p>
 <p><strong>Business Scenario.</strong> Audit wants regular review of who and what can use AI services and data.</p>
 <p><strong>Technical Scenario.</strong> Run a review campaign on the lab dataset.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
 <p><strong>Test Data.</strong> 50 entitlements including 10 stale, 5 excessive; 3 reviewers.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1936,10 +1867,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -1956,7 +1883,7 @@
 <p><strong>Risk Addressed.</strong> Nobody can protect what they cannot see; effective access combines roles, groups, tokens and inheritance.</p>
 <p><strong>Business Scenario.</strong> Security wants one view of what a user or agent can really reach.</p>
 <p><strong>Technical Scenario.</strong> Query effective access for known identities and compare to ground truth.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
 <p><strong>Test Data.</strong> 8 identities (4 users, 4 agents) with known effective access to 12 resources.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2012,10 +1939,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0012 Valid Accounts</td>
 </tr>
@@ -2032,7 +1955,7 @@
 <p><strong>Risk Addressed.</strong> Break-glass accounts are essential and dangerous if unmonitored.</p>
 <p><strong>Business Scenario.</strong> Security wants emergency access controlled and loud.</p>
 <p><strong>Technical Scenario.</strong> Use a break-glass account and check monitoring.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
 <p><strong>Test Data.</strong> 1 break-glass account; alert recipients.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2088,10 +2011,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0012 Valid Accounts</td>
 </tr>
@@ -2108,7 +2027,7 @@
 <p><strong>Risk Addressed.</strong> Unauthenticated internal calls let an attacker on the network impersonate any component.</p>
 <p><strong>Business Scenario.</strong> Architecture wants workload identity and mutual TLS between model, gateway, retrieval and tools.</p>
 <p><strong>Technical Scenario.</strong> Test connections between components with and without valid identity.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
 <p><strong>Test Data.</strong> Components: gateway, orchestrator, vector store, tool server; test client with invalid and valid certificates.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2164,10 +2083,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (operational and monitoring control)</td>
 </tr>
@@ -2184,7 +2099,7 @@
 <p><strong>Risk Addressed.</strong> Investigations need to know which user, which agent and which tool were behind each action.</p>
 <p><strong>Business Scenario.</strong> Audit wants complete attribution in every record.</p>
 <p><strong>Technical Scenario.</strong> Run a task across a user, an agent, two tools and a downstream system and trace it.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.</p>
 <p><strong>Test Data.</strong> 1 task with 10 actions across 4 systems.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2206,6 +2121,78 @@
 <p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
 <p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Chain reconstruction.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to layer index</a></p>
+<hr />
+<p><a id="tc-l09-026"></a></p>
+<h3 id="tc-l09-026-coding-agent-repository-and-cloud-credentials-scope-and-lifetime">TC-L09-026: Coding Agent Repository and Cloud Credentials: Scope and Lifetime</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lifecycle Layer</strong></td>
+<td>L09 Identity &amp; Access Mgmt</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain(s)</strong></td>
+<td>D2, D5</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P, A</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0012 Valid Accounts</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM06:2025 Excessive Agency</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Coding agents are often given a developer's personal access token or cloud profile, granting far more than the task needs for far longer than the task lasts.</p>
+<p><strong>Business Scenario.</strong> Engineering wants coding agents to operate with short-lived tokens limited to the repository and actions in the task.</p>
+<p><strong>Technical Scenario.</strong> Give a coding agent broad and then narrow credentials, test which out-of-scope actions succeed, and review what is reported.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab source-control server with 3 repositories and a protected main branch; lab cloud account with 2 roles.</p>
+<p><strong>Test Data.</strong> 1 long-lived broad token; 1 short-lived token scoped to one repository with read and pull-request rights; 6 out-of-scope actions (push to protected branch, read a second repository, delete a branch, change repository settings, read a cloud secret, create a cloud resource).</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Run the agent with the broad token and check whether the platform reports over-privilege.</li>
+<li>Switch to the scoped token.</li>
+<li>Attempt the 6 out-of-scope actions.</li>
+<li>Wait for token expiry and retry one in-scope action.</li>
+<li>Review attribution for every attempt.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Token inherited from the developer's credential helper; token written to agent logs or memory.</p>
+<p><strong>Expected Detection.</strong> The broad token is flagged as over-privileged with its scopes listed; 6 of 6 out-of-scope attempts logged with agent identity and the user it acts for.</p>
+<p><strong>Expected Prevention / Control Action.</strong> 6 of 6 out-of-scope actions denied; the expired token is rejected.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Identity finding or access decision visible in the identity or access dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Findings to ticketing.</p>
+<p><strong>Forensic Evidence.</strong> Identity (user, agent, service), token or key identifier, scope, resource, decision and timestamp exportable for incident reconstruction.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Token scope report; denial log; expiry test result.</p>
 <p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />

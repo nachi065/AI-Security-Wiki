@@ -77,7 +77,7 @@
 <li><details open><summary><a href="index.html">Test Case Library</a></summary><ul>
 <li><a href="00-reference-index.html">Reference Index</a></li>
 <li><a href="framework-adoption-guide.html">Framework Adoption Guide</a></li>
-<li><a href="appendix-d-lab-prerequisites.html">Appendix D: Lab Prerequisites</a></li>
+<li><a href="appendix-lab-prerequisites.html">Appendix: Lab Prerequisites</a></li>
 <li><a href="L01-business-and-use-cases.html">L01 Business &amp; Use Cases</a></li>
 <li><a href="L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
 <li><a href="L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>
@@ -104,7 +104,7 @@
 <p><a id="top"></a></p>
 <h1 id="l11-knowledge-retrieval-layer">L11 Knowledge &amp; Retrieval Layer</h1>
 <p><strong>Primary test focus:</strong> RAG poisoning, vector-store access control, retrieval leakage</p>
-<p><strong>Cases:</strong> 25 (TC-L11-001 to TC-L11-025)  |  <strong>Batch:</strong> 4</p>
+<p><strong>Cases:</strong> 25 (TC-L11-001 to TC-L11-025)</p>
 <blockquote>
 <p><strong>Safety boundary.</strong> Retrieval, model, training, pipeline and supply chain cases use fabricated corpora and datasets, small lab models, mock hubs and indexes and harmless marker artefacts only (an EICAR-style file that writes a marker, never real malware). Never load untrusted model files outside an isolated sandbox, and never connect the lab to production knowledge sources, models, pipelines, registries or credentials. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.</p>
 <p><strong>Verify before use.</strong> MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the <a href="00-reference-index.html">Reference Index</a> for field definitions and applicability codes.</p>
@@ -331,10 +331,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (visibility control); Reconnaissance/Discovery context only</td>
 </tr>
@@ -351,7 +347,7 @@
 <p><strong>Risk Addressed.</strong> RAG systems quietly connect to wikis, drives and ticket systems; unknown sources mean unknown data exposure.</p>
 <p><strong>Business Scenario.</strong> Data owners want every knowledge source feeding an AI application listed with its connector, scope and owner.</p>
 <p><strong>Technical Scenario.</strong> Connect a set of known sources to lab RAG applications and compare the platform's inventory with ground truth.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
 <p><strong>Test Data.</strong> 6 sources: shared drive, wiki, ticket system, code repository, email archive, public website crawl; 3 RAG applications using different combinations.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -408,10 +404,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (visibility control); Reconnaissance/Discovery context only</td>
 </tr>
@@ -428,7 +420,7 @@
 <p><strong>Risk Addressed.</strong> Vector databases are often deployed quickly with default settings and no authentication.</p>
 <p><strong>Business Scenario.</strong> Security wants vector stores found and checked for exposure.</p>
 <p><strong>Technical Scenario.</strong> Deploy vector stores with varied exposure and see what the platform reports.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
 <p><strong>Test Data.</strong> 4 vector stores: authenticated and internal, unauthenticated and internal, authenticated and exposed to a wider network segment, unauthenticated and exposed to a wider segment; each holding fabricated embeddings.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -485,10 +477,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -505,7 +493,7 @@
 <p><strong>Risk Addressed.</strong> Missing authentication, weak roles and open admin interfaces on vector stores allow bulk reading or tampering.</p>
 <p><strong>Business Scenario.</strong> Platform owners want a configuration benchmark applied to vector stores.</p>
 <p><strong>Technical Scenario.</strong> Run the platform's configuration checks against stores with seeded weaknesses.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
 <p><strong>Test Data.</strong> 3 stores with 12 seeded weaknesses: no authentication, default credentials, admin interface exposed, TLS disabled, overly broad API key, no audit logging, no network restriction, backups unencrypted, and four benign settings.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -561,8 +549,8 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
+<td><strong>Quick-Start Scenario</strong></td>
+<td><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html#runtime-ai-test-cases">AI-POC-RT-003</a></td>
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
@@ -581,7 +569,7 @@
 <p><strong>Risk Addressed.</strong> If the index ignores document permissions, the assistant answers from files the user cannot open.</p>
 <p><strong>Business Scenario.</strong> Security wants retrieval filtered by the requesting user's entitlements.</p>
 <p><strong>Technical Scenario.</strong> Ask questions as users with different entitlements whose answers lie in restricted documents.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
 <p><strong>Test Data.</strong> 3 users; 60 documents with ACLs; 40 questions (20 answerable only from restricted documents, 20 from permitted).</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -638,10 +626,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -658,7 +642,7 @@
 <p><strong>Risk Addressed.</strong> Access removed in the source system but not in the index keeps exposing content until the next sync.</p>
 <p><strong>Business Scenario.</strong> Security wants the delay between permission change and index effect measured and bounded.</p>
 <p><strong>Technical Scenario.</strong> Revoke and grant permissions in the source and measure when retrieval reflects them.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
 <p><strong>Test Data.</strong> 10 documents; 3 users; 5 revocations and 5 grants.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -715,10 +699,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>No ATLAS identifier asserted; verify current entries for vector-store and embedding attacks</td>
 </tr>
@@ -735,7 +715,7 @@
 <p><strong>Risk Addressed.</strong> Similarity search can surface chunks from sensitive documents when queries are phrased to match them.</p>
 <p><strong>Business Scenario.</strong> Security wants retrieval to respect sensitivity even when the match is semantic and indirect.</p>
 <p><strong>Technical Scenario.</strong> Craft queries that resemble restricted content without naming it.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
 <p><strong>Test Data.</strong> 20 restricted chunks with canary phrases; 40 probing queries using paraphrase, topic hints and partial terms; 2 users without access.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -791,10 +771,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -811,7 +787,7 @@
 <p><strong>Risk Addressed.</strong> Shared indexes with weak separation allow one tenant's queries to reach another's embeddings.</p>
 <p><strong>Business Scenario.</strong> Security wants tenant data separated in storage and in queries.</p>
 <p><strong>Technical Scenario.</strong> Seed two tenants and attempt cross-tenant retrieval through every interface.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
 <p><strong>Test Data.</strong> 2 tenants; 50 canary chunks each; API, application and admin access paths.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -867,10 +843,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0020 Poison Training Data (applied by analogy to indexed content; verify current RAG-specific entry)</td>
 </tr>
@@ -887,7 +859,7 @@
 <p><strong>Risk Addressed.</strong> One altered document can change the answers all users receive on a topic.</p>
 <p><strong>Business Scenario.</strong> Security wants poisoned content detected on ingestion or at retrieval.</p>
 <p><strong>Technical Scenario.</strong> Add documents containing contradicting or false statements about a topic and observe answers.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
 <p><strong>Test Data.</strong> 10 genuine documents; 8 poisoned documents (false policy statements, altered numbers, fake approvals, fake contact details); 20 queries; canary values.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -944,10 +916,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0020 Poison Training Data (applied by analogy to indexed content; verify current RAG-specific entry)</td>
 </tr>
@@ -964,7 +932,7 @@
 <p><strong>Risk Addressed.</strong> Documents written to rank first for chosen phrases let an attacker control answers for those questions.</p>
 <p><strong>Business Scenario.</strong> Security wants ranking manipulation detected.</p>
 <p><strong>Technical Scenario.</strong> Insert documents stuffed with target phrases and observe retrieval.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
 <p><strong>Test Data.</strong> 5 target questions; 10 documents with keyword stuffing, invisible repetition and duplicated chunks.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1020,10 +988,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -1040,7 +1004,7 @@
 <p><strong>Risk Addressed.</strong> Anyone who can add content to a source can change what the assistant says.</p>
 <p><strong>Business Scenario.</strong> Governance wants contributors known and sensitive collections approved before indexing.</p>
 <p><strong>Technical Scenario.</strong> Test who can add content and how approval operates.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
 <p><strong>Test Data.</strong> 3 collections (open, restricted, regulated); 4 contributors with different roles.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1096,10 +1060,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (operational and monitoring control)</td>
 </tr>
@@ -1116,7 +1076,7 @@
 <p><strong>Risk Addressed.</strong> Silent changes to indexed documents or chunks can alter answers without any ingestion event.</p>
 <p><strong>Business Scenario.</strong> Security wants unexpected changes to index content detected.</p>
 <p><strong>Technical Scenario.</strong> Alter indexed content directly in the store and in the source and look for detection.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
 <p><strong>Test Data.</strong> 20 documents with recorded hashes; 5 altered in the source, 5 altered directly in the vector store, 10 untouched.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1172,10 +1132,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>No ATLAS identifier asserted; verify current entries for vector-store and embedding attacks</td>
 </tr>
@@ -1192,7 +1148,7 @@
 <p><strong>Risk Addressed.</strong> Embeddings can leak information about the original text, especially for short sensitive items.</p>
 <p><strong>Business Scenario.</strong> Privacy wants the exposure of stored embeddings assessed and mitigations understood.</p>
 <p><strong>Technical Scenario.</strong> Request the vendor's assessment and run a basic inversion attempt on lab embeddings.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
 <p><strong>Test Data.</strong> Lab embeddings of 50 fabricated short sentences containing canary values; open-source inversion tool approved for lab use.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1248,10 +1204,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -1268,7 +1220,7 @@
 <p><strong>Risk Addressed.</strong> Changing the embedding model silently changes retrieval and can drop access filters or leave mixed vectors.</p>
 <p><strong>Business Scenario.</strong> Operations wants embedding changes controlled and verified.</p>
 <p><strong>Technical Scenario.</strong> Switch embedding model versions and check retrieval and controls afterwards.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
 <p><strong>Test Data.</strong> 1 index; 2 embedding model versions; 40 test queries; ACL filters.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1325,10 +1277,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0051.001 LLM Prompt Injection: Indirect</td>
 </tr>
@@ -1345,7 +1293,7 @@
 <p><strong>Risk Addressed.</strong> Metadata such as titles, authors and tags is often inserted into the prompt without checks.</p>
 <p><strong>Business Scenario.</strong> Security wants metadata treated as untrusted input.</p>
 <p><strong>Technical Scenario.</strong> Place instructions in titles, authors, tags and file names of test documents.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
 <p><strong>Test Data.</strong> 8 documents with instructions in metadata fields; canary CANARY-L11-014.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1401,10 +1349,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -1421,7 +1365,7 @@
 <p><strong>Risk Addressed.</strong> Once secrets and personal data are embedded in an index, removal is hard and exposure is broad.</p>
 <p><strong>Business Scenario.</strong> Data owners want content scanned and handled before it reaches the index.</p>
 <p><strong>Technical Scenario.</strong> Index a corpus seeded with sensitive items with the pre-index scan enabled and disabled.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
 <p><strong>Test Data.</strong> 200 documents; 30 with fabricated personal data, 20 with fake secrets, 10 with confidential markers; 140 clean.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1477,8 +1421,8 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
+<td><strong>Quick-Start Scenario</strong></td>
+<td><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html#runtime-ai-test-cases">AI-POC-RT-003</a></td>
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
@@ -1497,7 +1441,7 @@
 <p><strong>Risk Addressed.</strong> Content that is acceptable in the index can still be wrong for some users or purposes at query time.</p>
 <p><strong>Business Scenario.</strong> Security wants a second filter at retrieval based on label and clearance.</p>
 <p><strong>Technical Scenario.</strong> Apply label-based rules at query time and test users with different clearances.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
 <p><strong>Test Data.</strong> 4 labels; 3 users with different clearances; 80 chunks labelled.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1553,10 +1497,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (no direct technique)</td>
 </tr>
@@ -1573,7 +1513,7 @@
 <p><strong>Risk Addressed.</strong> Attacker-controlled titles or source labels can make false content look authoritative.</p>
 <p><strong>Business Scenario.</strong> Governance wants citations tied to verified sources.</p>
 <p><strong>Technical Scenario.</strong> Insert documents claiming to be from authoritative sources.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
 <p><strong>Test Data.</strong> 6 documents with spoofed source labels (policy, regulator, CEO), 6 genuine ones.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1629,10 +1569,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -1649,7 +1585,7 @@
 <p><strong>Risk Addressed.</strong> Outdated policies and withdrawn documents keep being quoted.</p>
 <p><strong>Business Scenario.</strong> Governance wants expired and withdrawn content removed from retrieval promptly.</p>
 <p><strong>Technical Scenario.</strong> Mark documents withdrawn or expired and test retrieval.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
 <p><strong>Test Data.</strong> 10 documents; 5 withdrawn, 5 expired by metadata date.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1705,10 +1641,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0025 Exfiltration via Cyber Means</td>
 </tr>
@@ -1725,7 +1657,7 @@
 <p><strong>Risk Addressed.</strong> A user with legitimate access can use the assistant to copy an entire knowledge base.</p>
 <p><strong>Business Scenario.</strong> Security wants systematic harvesting detected.</p>
 <p><strong>Technical Scenario.</strong> Run scripted crawling versus normal use.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
 <p><strong>Test Data.</strong> Knowledge base of 500 chunks; normal profile of 20 queries a day; crawler script of 1,000 queries designed to cover the corpus.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1782,10 +1714,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0051 LLM Prompt Injection</td>
 </tr>
@@ -1802,7 +1730,7 @@
 <p><strong>Risk Addressed.</strong> Rewritten queries can bypass filters or amplify injected terms.</p>
 <p><strong>Business Scenario.</strong> Engineering wants controls to apply to the final query as well as the original.</p>
 <p><strong>Technical Scenario.</strong> Run queries through rewriting steps and check enforcement at each stage.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
 <p><strong>Test Data.</strong> Application with query rewriting; 15 queries including sensitive and injection attempts.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1857,10 +1785,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0020 Poison Training Data (applied by analogy to indexed content; verify current RAG-specific entry)</td>
 </tr>
@@ -1877,7 +1801,7 @@
 <p><strong>Risk Addressed.</strong> Rerankers, keyword boosts and recency weights can be gamed so that a malicious chunk always ranks first.</p>
 <p><strong>Business Scenario.</strong> Security wants ranking manipulation detected and ranking changes explainable.</p>
 <p><strong>Technical Scenario.</strong> Craft content designed to climb the reranked list for chosen queries and observe ranking and detection.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
 <p><strong>Test Data.</strong> 5 target queries; 10 crafted chunks using repeated key terms, copied headings, fake recency metadata, boosted fields and near-duplicates of authoritative chunks; 3 authoritative chunks per query as baseline.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1934,10 +1858,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0012 Valid Accounts</td>
 </tr>
@@ -1954,7 +1874,7 @@
 <p><strong>Risk Addressed.</strong> Connectors often use one powerful account to read everything the index could ever need.</p>
 <p><strong>Business Scenario.</strong> Security wants connector privileges minimised, monitored and rotated.</p>
 <p><strong>Technical Scenario.</strong> Review the accounts and permissions used by lab connectors and test reduction.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
 <p><strong>Test Data.</strong> 4 connectors (drive, wiki, ticketing, code repository) with privileges ranging from folder-level read-only to tenant administrator; 2 connector credentials stored in configuration files.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2012,10 +1932,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -2032,7 +1948,7 @@
 <p><strong>Risk Addressed.</strong> Exports and backups hold a full copy of indexed content outside the normal access controls.</p>
 <p><strong>Business Scenario.</strong> Security wants exports restricted, approved, logged and encrypted.</p>
 <p><strong>Technical Scenario.</strong> Attempt exports under different roles and review backup handling.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
 <p><strong>Test Data.</strong> 1 knowledge base with 500 chunks and 3 collections of different sensitivity; 3 roles (reader, curator, administrator).</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2089,10 +2005,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (operational and monitoring control)</td>
 </tr>
@@ -2109,7 +2021,7 @@
 <p><strong>Risk Addressed.</strong> Investigators need to know exactly which chunks informed which answer for which user, and with which filters.</p>
 <p><strong>Business Scenario.</strong> Audit wants complete, privacy-aware retrieval records.</p>
 <p><strong>Technical Scenario.</strong> Run a set of queries and reconstruct what happened from logs alone.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
 <p><strong>Test Data.</strong> 30 queries across 3 users including 5 with filtered results, 3 refused and 2 failed; 1 incident scenario (restricted document accessed).</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2166,10 +2078,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (operational and monitoring control)</td>
 </tr>
@@ -2186,7 +2094,7 @@
 <p><strong>Risk Addressed.</strong> Controls that destroy answer quality are quietly removed by the business, so their real cost must be known.</p>
 <p><strong>Business Scenario.</strong> Product owners want the quality cost of controls measured against a fixed question set.</p>
 <p><strong>Technical Scenario.</strong> Compare answer quality with and without controls on a reference question set.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.</p>
 <p><strong>Test Data.</strong> 60 questions with reference answers, 40 answerable from permitted content and 20 touching restricted content; controls: access filtering, pre-index scanning, injection filtering, response DLP; 2 reviewers.</p>
 <p><strong>Procedure</strong></p>
 <ol>

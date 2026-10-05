@@ -77,7 +77,7 @@
 <li><details open><summary><a href="index.html">Test Case Library</a></summary><ul>
 <li><a href="00-reference-index.html">Reference Index</a></li>
 <li><a href="framework-adoption-guide.html">Framework Adoption Guide</a></li>
-<li><a href="appendix-d-lab-prerequisites.html">Appendix D: Lab Prerequisites</a></li>
+<li><a href="appendix-lab-prerequisites.html">Appendix: Lab Prerequisites</a></li>
 <li><a href="L01-business-and-use-cases.html">L01 Business &amp; Use Cases</a></li>
 <li><a href="L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
 <li><a href="L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>
@@ -104,7 +104,7 @@
 <p><a id="top"></a></p>
 <h1 id="l12-model-layer">L12 Model Layer</h1>
 <p><strong>Primary test focus:</strong> model theft, extraction, adversarial inputs, model scanning</p>
-<p><strong>Cases:</strong> 25 (TC-L12-001 to TC-L12-025)  |  <strong>Batch:</strong> 4</p>
+<p><strong>Cases:</strong> 25 (TC-L12-001 to TC-L12-025)</p>
 <blockquote>
 <p><strong>Safety boundary.</strong> Retrieval, model, training, pipeline and supply chain cases use fabricated corpora and datasets, small lab models, mock hubs and indexes and harmless marker artefacts only (an EICAR-style file that writes a marker, never real malware). Never load untrusted model files outside an isolated sandbox, and never connect the lab to production knowledge sources, models, pipelines, registries or credentials. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.</p>
 <p><strong>Verify before use.</strong> MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the <a href="00-reference-index.html">Reference Index</a> for field definitions and applicability codes.</p>
@@ -331,10 +331,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (visibility control); Reconnaissance/Discovery context only</td>
 </tr>
@@ -351,7 +347,7 @@
 <p><strong>Risk Addressed.</strong> Models run in notebooks, containers, cloud services and SaaS; unknown models are unmanaged risk.</p>
 <p><strong>Business Scenario.</strong> Model risk owners want all models listed with source, version, host and owner.</p>
 <p><strong>Technical Scenario.</strong> Deploy a known set of models in different places and compare the inventory.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 10 models: 3 hosted API models, 3 self-hosted open-weight models, 2 fine-tuned models, 1 embedding model, 1 classifier in a notebook.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -407,10 +403,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0010 AI Supply Chain Compromise</td>
 </tr>
@@ -427,7 +419,7 @@
 <p><strong>Risk Addressed.</strong> Model files in some formats can execute code when loaded.</p>
 <p><strong>Business Scenario.</strong> Security wants unsafe model files caught before they are loaded.</p>
 <p><strong>Technical Scenario.</strong> Scan a set of model files including harmless marker artefacts.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 12 files: 4 in safe tensor format, 4 in a pickle-based format with benign content, 4 pickle-based files containing a harmless marker-writing payload (EICAR-style).</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -483,10 +475,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0010 AI Supply Chain Compromise</td>
 </tr>
@@ -503,7 +491,7 @@
 <p><strong>Risk Addressed.</strong> Backdoored models behave normally until a trigger appears.</p>
 <p><strong>Business Scenario.</strong> Security wants to know what the scanner can and cannot find.</p>
 <p><strong>Technical Scenario.</strong> Test the scanner on models with known benign trigger behaviour.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 3 small test models with an inserted harmless trigger that outputs a marker phrase; 3 clean models.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -559,10 +547,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -579,7 +563,7 @@
 <p><strong>Risk Addressed.</strong> Policies banning unsafe formats are useless if not enforced at load and download.</p>
 <p><strong>Business Scenario.</strong> Security wants format policy enforced in pipelines and workstations.</p>
 <p><strong>Technical Scenario.</strong> Try to download and load models in disallowed formats.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 3 formats; 2 locations (pipeline, workstation).</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -634,10 +618,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0010 AI Supply Chain Compromise</td>
 </tr>
@@ -654,7 +634,7 @@
 <p><strong>Risk Addressed.</strong> A model from an unknown source or modified in transit may not be what it claims to be.</p>
 <p><strong>Business Scenario.</strong> Supply chain owners want origin and integrity verified at load.</p>
 <p><strong>Technical Scenario.</strong> Load signed, unsigned and tampered models.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 3 signed models, 3 unsigned, 3 signed then tampered; trust policy.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -710,10 +690,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -730,7 +706,7 @@
 <p><strong>Risk Addressed.</strong> Using models against their licence terms creates legal exposure.</p>
 <p><strong>Business Scenario.</strong> Legal wants licence terms captured and violations flagged.</p>
 <p><strong>Technical Scenario.</strong> Register models with different licences and test policy.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 8 models with different licence types, including non-commercial and restricted-use terms.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -786,10 +762,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0024 Exfiltration via AI Inference API (includes model extraction and inversion techniques)</td>
 </tr>
@@ -806,7 +778,7 @@
 <p><strong>Risk Addressed.</strong> Systematic querying can reproduce a model's behaviour and steal its value.</p>
 <p><strong>Business Scenario.</strong> Model owners want extraction patterns detected and throttled.</p>
 <p><strong>Technical Scenario.</strong> Run a scripted extraction-style query pattern against a protected inference endpoint.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> Inference endpoint; normal profile of 50 queries per user per day; extraction script making 20,000 structured queries.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -862,10 +834,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0024 Exfiltration via AI Inference API (includes model extraction and inversion techniques)</td>
 </tr>
@@ -882,7 +850,7 @@
 <p><strong>Risk Addressed.</strong> Models may reproduce training data, including personal data.</p>
 <p><strong>Business Scenario.</strong> Privacy wants memorisation measured and extraction attempts blocked.</p>
 <p><strong>Technical Scenario.</strong> Run probes against a test model fine-tuned on canary content.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> Test model fine-tuned on 50 canary strings; 100 extraction prompts.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -939,10 +907,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0024 Exfiltration via AI Inference API (includes model extraction and inversion techniques)</td>
 </tr>
@@ -959,7 +923,7 @@
 <p><strong>Risk Addressed.</strong> Weights represent the model's whole value and may encode sensitive training data.</p>
 <p><strong>Business Scenario.</strong> Security wants copying of weights outside controlled locations detected and blocked.</p>
 <p><strong>Technical Scenario.</strong> Attempt to copy model files to unauthorised destinations.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> Weights repository; destinations: personal cloud, removable media (lab), unapproved bucket, email; 4 file sizes.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1014,10 +978,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0043 Craft Adversarial Data</td>
 </tr>
@@ -1034,7 +994,7 @@
 <p><strong>Risk Addressed.</strong> Small imperceptible changes can flip a vision model's decision.</p>
 <p><strong>Business Scenario.</strong> Model owners want robustness measured and attacks detected.</p>
 <p><strong>Technical Scenario.</strong> Apply standard perturbation methods to a test classifier and measure.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> Test image classifier; 100 images; perturbation levels low, medium, high; open-source robustness tooling.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1090,10 +1050,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0043 Craft Adversarial Data</td>
 </tr>
@@ -1110,7 +1066,7 @@
 <p><strong>Risk Addressed.</strong> Small wording changes can flip the decisions of fraud, spam, toxicity or routing classifiers, letting an attacker evade controls the business relies on.</p>
 <p><strong>Business Scenario.</strong> Model owners want to know how easily their text classifiers are fooled and whether the platform detects evasion attempts.</p>
 <p><strong>Technical Scenario.</strong> Perturb inputs to a lab text classifier with realistic evasion techniques and measure decision flips and platform detection.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> Lab classifier (for example a spam or fraud-style model); 200 labelled inputs; 5 perturbation types: character swaps and typos, synonym substitution, homoglyph substitution, inserted benign filler text, and translation round trip.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1168,10 +1124,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0043 Craft Adversarial Data</td>
 </tr>
@@ -1188,7 +1140,7 @@
 <p><strong>Risk Addressed.</strong> Crafted or out-of-distribution inputs are often the first signs of probing, extraction or evasion.</p>
 <p><strong>Business Scenario.</strong> Security wants unusual input patterns to the model flagged before they cause harm.</p>
 <p><strong>Technical Scenario.</strong> Send normal traffic and five classes of anomalous input to a lab inference endpoint and compare detection.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 300 normal inputs; 50 anomalous inputs across five classes: extreme length, unusual character distributions, repeated near-identical queries with small changes (probing), out-of-domain content, and malformed structured inputs.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1245,10 +1197,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0012 Valid Accounts</td>
 </tr>
@@ -1265,7 +1213,7 @@
 <p><strong>Risk Addressed.</strong> Unprotected inference endpoints are easy to abuse, copy, overload or use as a pivot into the network.</p>
 <p><strong>Business Scenario.</strong> Security wants every model endpoint authenticated, scoped and rate limited.</p>
 <p><strong>Technical Scenario.</strong> Test lab inference APIs with no credentials, bad credentials, wrong-scope credentials and abusive volume.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 2 lab inference endpoints (one internal, one exposed to a wider segment); credential sets: valid, expired, revoked, wrong scope, malformed; load script at 10 times normal volume.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1323,10 +1271,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0012 Valid Accounts</td>
 </tr>
@@ -1343,7 +1287,7 @@
 <p><strong>Risk Addressed.</strong> Different models and versions carry different data exposure, cost and risk; open access to all of them defeats risk tiering.</p>
 <p><strong>Business Scenario.</strong> Governance wants access defined per model and version and enforced consistently.</p>
 <p><strong>Technical Scenario.</strong> Define a role-by-model matrix and test every combination, including after version change.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 4 models (public, internal, restricted data, experimental), 3 versions of the restricted model, 3 roles, 2 service identities; 40 combinations.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1401,10 +1345,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0024 Exfiltration via AI Inference API (includes model extraction and inversion techniques)</td>
 </tr>
@@ -1421,7 +1361,7 @@
 <p><strong>Risk Addressed.</strong> Without a fingerprint, an owner cannot show that a suspect model derives from its own.</p>
 <p><strong>Business Scenario.</strong> Legal and security want a way to identify unauthorised copies or derivatives with evidence.</p>
 <p><strong>Technical Scenario.</strong> Fingerprint a lab model, create copies and derivatives, and test identification.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 1 owned lab model; copies: exact copy, quantised copy, fine-tuned derivative, distilled student; 3 unrelated models.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1478,10 +1418,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (evaluation control)</td>
 </tr>
@@ -1498,7 +1434,7 @@
 <p><strong>Risk Addressed.</strong> Models differ in how they handle policy-boundary requests, and tuning or version change can shift behaviour without notice.</p>
 <p><strong>Business Scenario.</strong> Risk owners want a repeatable safety score before go-live and after every change.</p>
 <p><strong>Technical Scenario.</strong> Run an agreed benign test set probing policy boundaries on each model and compare.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 150 benign test prompts across 6 policy categories (for example restricted internal topics, impersonation, privacy requests, unsafe instructions in mild form, bias-sensitive questions, regulated advice); expected behaviour defined per prompt; 3 models.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1555,10 +1491,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (no direct technique)</td>
 </tr>
@@ -1575,7 +1507,7 @@
 <p><strong>Risk Addressed.</strong> Confident wrong answers cause business, legal and safety harm.</p>
 <p><strong>Business Scenario.</strong> Business owners want factual accuracy and appropriate refusal measured on their own use cases.</p>
 <p><strong>Technical Scenario.</strong> Run a factual question set with reference answers, including unanswerable questions, with and without grounding controls.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 100 answerable questions from the organisation's own fabricated knowledge base; 20 unanswerable questions; 2 models; groundedness control on and off.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1632,10 +1564,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (operational and monitoring control)</td>
 </tr>
@@ -1652,7 +1580,7 @@
 <p><strong>Risk Addressed.</strong> Hosted providers update models silently; behaviour, safety and cost change without a code change on the customer side.</p>
 <p><strong>Business Scenario.</strong> Operations wants version changes and behaviour drift detected quickly.</p>
 <p><strong>Technical Scenario.</strong> Pin versions, then simulate a provider update using a mock provider and monitor canary prompts.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> Mock provider with versions A and B; 30 canary prompts with expected outputs or properties (format, refusal, factual answer); 2 applications.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1710,10 +1638,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -1730,7 +1654,7 @@
 <p><strong>Risk Addressed.</strong> Missing model documentation blocks risk review, audit and regulatory response.</p>
 <p><strong>Business Scenario.</strong> Governance wants required documentation captured and gaps visible before approval.</p>
 <p><strong>Technical Scenario.</strong> Register models with complete and incomplete documentation and check gap handling.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 8 models: 2 complete, 3 missing intended use and limitations, 2 missing training data summary, 1 missing licence; required field list agreed in advance.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1787,10 +1711,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -1807,7 +1727,7 @@
 <p><strong>Risk Addressed.</strong> Default settings for guardrails, tool access, logging and network exposure are often unsafe in production.</p>
 <p><strong>Business Scenario.</strong> Platform owners want a hardening baseline checked and gaps reported.</p>
 <p><strong>Technical Scenario.</strong> Run configuration checks against lab deployments with seeded weak settings.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 5 deployments with 20 seeded weaknesses: guardrails disabled, verbose error output, logging off, public network exposure, no authentication on admin routes, default credentials, unlimited tokens, unrestricted tools, debug mode on, and benign settings.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1864,10 +1784,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -1884,7 +1800,7 @@
 <p><strong>Risk Addressed.</strong> Failover to a cheaper, weaker or less compliant model can bypass guardrails, residency and licence limits.</p>
 <p><strong>Business Scenario.</strong> Architecture wants fallback paths subject to the same policy as the primary.</p>
 <p><strong>Technical Scenario.</strong> Trigger failover and cost-based routing in a lab router and check policy at each destination.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> Router with a primary and 2 fallback models (one in a non-approved region, one with weaker safety scores, one approved); 30 requests with and without sensitive data.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1942,10 +1858,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting</td>
 </tr>
@@ -1962,7 +1874,7 @@
 <p><strong>Risk Addressed.</strong> Crafted requests such as very long inputs, repetition and expansion prompts can consume disproportionate compute.</p>
 <p><strong>Business Scenario.</strong> Operations wants costly requests limited without harming legitimate long-document use.</p>
 <p><strong>Technical Scenario.</strong> Send ten request types designed to be expensive and compare cost, latency and platform handling.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> Lab inference endpoint with a mock cost meter; 10 request types: maximum-length input, repeated token input, request for maximum-length output, nested expansion prompts, many parallel requests, large image or file input, recursive tool loop, streaming held open, tiny requests at high rate, and a legitimate 40-page document summary.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2019,10 +1931,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0010 AI Supply Chain Compromise</td>
 </tr>
@@ -2039,7 +1947,7 @@
 <p><strong>Risk Addressed.</strong> Conversion and quantisation steps are places where a model can be swapped or altered while keeping a trusted name.</p>
 <p><strong>Business Scenario.</strong> Pipeline owners want provenance preserved through every transformation.</p>
 <p><strong>Technical Scenario.</strong> Convert a signed lab model and verify the chain of provenance, then tamper with the output.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 1 signed model; 2 conversions (format change, quantisation); tampering tests: altered weights file, swapped file with same name, altered metadata.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2096,10 +2004,6 @@
 <td>Low</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -2116,7 +2020,7 @@
 <p><strong>Risk Addressed.</strong> Retired models keep weights, endpoints, keys and access, extending exposure and cost.</p>
 <p><strong>Business Scenario.</strong> Governance wants retirement to remove every trace and produce evidence.</p>
 <p><strong>Technical Scenario.</strong> Retire a lab model and check for residual access and copies.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 2 models with endpoints, API keys, registry entries, cached copies and backups.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2173,10 +2077,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -2193,7 +2093,7 @@
 <p><strong>Risk Addressed.</strong> Applying the same scrutiny to every model wastes effort on low risk and under-reviews high risk.</p>
 <p><strong>Business Scenario.</strong> Governance wants assessment depth to follow risk.</p>
 <p><strong>Technical Scenario.</strong> Submit models of different risk through the platform's workflow and check tiering, required assessments and approvals.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 4 models: internal summariser, customer-facing assistant, credit-style decision model, code assistant; scoring inputs (data sensitivity, autonomy, impact, exposure).</p>
 <p><strong>Procedure</strong></p>
 <ol>

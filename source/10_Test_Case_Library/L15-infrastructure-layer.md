@@ -10,8 +10,7 @@ nav_order: 18
 
 **Primary test focus:** GPU/cluster hardening, secrets, network segmentation, sovereignty of control plane
 
-**Cases:** 20 (TC-L15-001 to TC-L15-020)  |  **Batch:** 5
-
+**Cases:** 20 (TC-L15-001 to TC-L15-020)
 > **Safety boundary.** Infrastructure and SOC cases use a lab cluster, mock inference servers, a test cloud account and a lab SIEM and SOAR only. Probe and compromise-simulation scripts are harmless lab tools that only attempt connections and reads of canary resources. Never run them against production systems, and never connect lab alerting to production on-call routing. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.
 
 > **Verify before use.** MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the [Reference Index](00-reference-index.md) for field definitions and applicability codes.
@@ -56,7 +55,6 @@ nav_order: 18
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
@@ -67,7 +65,7 @@ nav_order: 18
 
 **Technical Scenario.** Deploy a known set of AI infrastructure in several places and compare the platform's inventory with ground truth.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
+**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
 
 **Test Data.** 12 assets: 3 GPU nodes (one in a separate cloud account), 2 inference servers, 2 vector stores, 2 model storage buckets, 1 notebook server, 1 orchestration controller, 1 experiment tracker; each tagged with owner, environment and exposure.
 
@@ -122,7 +120,6 @@ nav_order: 18
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -133,7 +130,7 @@ nav_order: 18
 
 **Technical Scenario.** Assess lab GPU nodes and cluster configuration with seeded weaknesses and review findings.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
+**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
 
 **Test Data.** 3 GPU nodes and 1 cluster with 16 seeded weaknesses: exposed device plugin metrics, open management interface, privileged containers with host device access, shared host paths, outdated driver, default credentials on a monitoring tool, debug port open, no node isolation between teams, unencrypted node disks, permissive cluster roles, plus 6 compliant settings.
 
@@ -188,7 +185,6 @@ nav_order: 18
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P \| Partial: R |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
@@ -199,7 +195,7 @@ nav_order: 18
 
 **Technical Scenario.** Run two tenants' workloads on shared GPU resources in each sharing mode and probe for residue and interference.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab GPU hardware or documented simulation; probe is lab-only and harmless.
+**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab GPU hardware or documented simulation; probe is lab-only and harmless.
 
 **Test Data.** 2 tenants; sharing modes the vendor or platform supports (dedicated, partitioned, time-sliced); probe workload that writes canary patterns to device memory and a second workload that reads uninitialised device memory (lab only, harmless); noisy workload.
 
@@ -254,7 +250,6 @@ nav_order: 18
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -265,7 +260,7 @@ nav_order: 18
 
 **Technical Scenario.** Scan and test lab namespaces with seeded poor settings, then enforce policy.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
+**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
 
 **Test Data.** 3 namespaces (training, inference, shared tools); 20 workloads; seeded issues: privileged pods, host network, service account with cluster-admin, no resource limits, secrets as environment variables, unrestricted network policy, images from public registries, writable root file systems.
 
@@ -320,7 +315,6 @@ nav_order: 18
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0049 Exploit Public-Facing Application (where exposed); general cloud and infrastructure controls apply |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (infrastructure components) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -331,7 +325,7 @@ nav_order: 18
 
 **Technical Scenario.** Assess lab inference servers with seeded exposure and configuration weaknesses.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
+**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
 
 **Test Data.** 3 mock inference servers with 12 seeded weaknesses: unauthenticated admin endpoint, debug routes, verbose stack traces, default ports exposed to wider segment, permissive cross-origin settings, no TLS on internal calls, unlimited request size, no rate limit, outdated version, model listing exposed, metrics endpoint with prompt samples, plus secure controls.
 
@@ -386,7 +380,6 @@ nav_order: 18
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P, G |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0049 Exploit Public-Facing Application (where exposed); general cloud and infrastructure controls apply |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (infrastructure components) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -397,7 +390,7 @@ nav_order: 18
 
 **Technical Scenario.** Map zones, test cross-zone connections and compare with the intended policy.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
+**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
 
 **Test Data.** 5 zones with a written allow matrix (training to data store allowed, inference to data store read-only, developer to management blocked, internet to inference only via gateway, management to all with MFA); test hosts in each zone; 25 intended connection tests.
 
@@ -452,7 +445,6 @@ nav_order: 18
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P, G, E |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0049 Exploit Public-Facing Application (where exposed); general cloud and infrastructure controls apply |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (infrastructure components) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -463,7 +455,7 @@ nav_order: 18
 
 **Technical Scenario.** Run lab workloads that attempt outbound connections and test enforcement and visibility.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
+**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
 
 **Test Data.** 3 workloads (training, inference, agent); allow-lists of 3 destinations each; 20 attempted connections: allowed hosts, public package index, unlisted storage bucket, raw IP, DNS tunnelling-style long queries (lab only), metadata service, other tenants' endpoints.
 
@@ -518,7 +510,6 @@ nav_order: 18
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P, G |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0049 Exploit Public-Facing Application (where exposed); general cloud and infrastructure controls apply |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (infrastructure components) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -529,7 +520,7 @@ nav_order: 18
 
 **Technical Scenario.** Simulate a compromised inference pod using harmless lab probes that attempt common post-compromise actions.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Probes are harmless lab scripts that only attempt connections and reads of canary resources.
+**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Probes are harmless lab scripts that only attempt connections and reads of canary resources.
 
 **Test Data.** 1 inference pod; probes: read mounted secrets, query cloud metadata service, scan internal ports, call the cluster API, read other namespaces, write to the model bucket, reach the vector store; detection rules active.
 
@@ -584,7 +575,6 @@ nav_order: 18
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0055 Unsecured Credentials |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
@@ -595,7 +585,7 @@ nav_order: 18
 
 **Technical Scenario.** Seed secrets across lab infrastructure and test discovery and vault adoption.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
+**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
 
 **Test Data.** 15 fabricated secrets across image layers, environment variables, config maps, node files, pipeline variables and notebook files; vault with 3 secrets properly referenced.
 
@@ -650,7 +640,6 @@ nav_order: 18
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -661,7 +650,7 @@ nav_order: 18
 
 **Technical Scenario.** Review roles attached to lab AI services and test misuse paths.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
+**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
 
 **Test Data.** 6 roles: broad administrator, storage full access, read-only data, model deployment only, unused role with wildcard permissions, cross-account trust; metadata service with and without hardening.
 
@@ -716,7 +705,6 @@ nav_order: 18
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
@@ -727,7 +715,7 @@ nav_order: 18
 
 **Technical Scenario.** Assess lab storage with seeded weaknesses.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
+**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
 
 **Test Data.** 6 buckets or shares with 14 seeded issues: public read, public write, no encryption, weak policy with wildcard principal, no versioning, no access logging, no object lock, cross-account access, signed URLs with long expiry, no lifecycle rules, plus compliant settings.
 
@@ -781,7 +769,6 @@ nav_order: 18
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -792,7 +779,7 @@ nav_order: 18
 
 **Technical Scenario.** Review encryption coverage and any confidential computing support for lab workloads.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
+**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
 
 **Test Data.** Lab workloads; encryption settings for disks, buckets, backups and network; vendor statements on in-use protection.
 
@@ -846,7 +833,6 @@ nav_order: 18
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -857,7 +843,7 @@ nav_order: 18
 
 **Technical Scenario.** Trace management, data and telemetry paths with network capture and cloud region evidence.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
+**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
 
 **Test Data.** Deployed platform in the lab; capture tooling; list of platform components with claimed locations; data classes (prompts, metadata, telemetry, licence checks, updates).
 
@@ -912,7 +898,6 @@ nav_order: 18
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -923,7 +908,7 @@ nav_order: 18
 
 **Technical Scenario.** Deploy the platform in an isolated lab segment with no internet access and run the full test set.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
+**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
 
 **Test Data.** Isolated segment; offline update media; standard test set of 40 prompts and events; offline licence mechanism.
 
@@ -978,7 +963,6 @@ nav_order: 18
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
@@ -989,7 +973,7 @@ nav_order: 18
 
 **Technical Scenario.** Review tenancy models and test isolation where a shared option is in scope.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
+**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
 
 **Test Data.** Vendor tenancy documentation; lab tenants in each available model.
 
@@ -1043,7 +1027,6 @@ nav_order: 18
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0049 Exploit Public-Facing Application (where exposed); general cloud and infrastructure controls apply |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (infrastructure components) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -1054,7 +1037,7 @@ nav_order: 18
 
 **Technical Scenario.** Deploy the platform in the lab and assess each component with network, configuration and credential checks.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
+**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
 
 **Test Data.** Deployed agent, gateway and management console; scanning tools approved for the lab; benchmark checklist.
 
@@ -1110,7 +1093,6 @@ nav_order: 18
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
 | **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
@@ -1121,7 +1103,7 @@ nav_order: 18
 
 **Technical Scenario.** Run competing workloads under quotas and measure fairness and protection of production inference.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
+**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
 
 **Test Data.** Cluster with 8 GPU units; 3 teams with quotas; production inference service; 4 batch training jobs including one oversized.
 
@@ -1176,7 +1158,6 @@ nav_order: 18
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P, G |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
@@ -1187,7 +1168,7 @@ nav_order: 18
 
 **Technical Scenario.** Generate known activity in lab infrastructure and check that every expected log source records it.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
+**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
 
 **Test Data.** 8 activities: login to the cluster, role change, secret read, model file download, storage policy change, GPU job start, network policy change, admin API call; 10 log sources.
 
@@ -1242,7 +1223,6 @@ nav_order: 18
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -1253,7 +1233,7 @@ nav_order: 18
 
 **Technical Scenario.** Back up and restore a lab AI service including model, index, configuration and policies.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
+**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
 
 **Test Data.** 1 AI application with model weights, vector store of 1,000 chunks, prompt templates, platform policies and access rules; recovery targets for time and data loss.
 
@@ -1308,7 +1288,6 @@ nav_order: 18
 | **Test Method** | Attestation |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -1319,7 +1298,7 @@ nav_order: 18
 
 **Technical Scenario.** Request and review hosting and facility evidence for each platform component and compare with observed network destinations.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
+**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
 
 **Test Data.** List of platform components and hosting providers; facility certifications and audit reports; observed destination and region data from the lab; requirements checklist (country, operator, certification, resilience tier, physical access controls, sub-contractors).
 

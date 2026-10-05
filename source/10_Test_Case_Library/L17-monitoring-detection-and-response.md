@@ -10,8 +10,7 @@ nav_order: 20
 
 **Primary test focus:** telemetry, SIEM/SOAR integration, AI incident response, forensics
 
-**Cases:** 30 (TC-L17-001 to TC-L17-030)  |  **Batch:** 5
-
+**Cases:** 31 (TC-L17-001 to TC-L17-031)
 > **Safety boundary.** Infrastructure and SOC cases use a lab cluster, mock inference servers, a test cloud account and a lab SIEM and SOAR only. Probe and compromise-simulation scripts are harmless lab tools that only attempt connections and reads of canary resources. Never run them against production systems, and never connect lab alerting to production on-call routing. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.
 
 > **Verify before use.** MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the [Reference Index](00-reference-index.md) for field definitions and applicability codes.
@@ -50,6 +49,7 @@ nav_order: 20
 | [TC-L17-028](#tc-l17-028) | Platform Health and Silent Failure Detection | High | Technical | D3 |
 | [TC-L17-029](#tc-l17-029) | Purple-Team Detection Validation: Replay of Earlier Attacks | High | Technical | D3, D5, D6 |
 | [TC-L17-030](#tc-l17-030) | SOC Analyst Access to Raw Prompts: Masking, Role Separation and Unmask Audit | High | Technical | D1, D7 |
+| [TC-L17-031](#tc-l17-031) | Developer AI Activity Telemetry and Investigation Timeline | High | Technical | D2, D6 |
 
 ---
 
@@ -66,7 +66,6 @@ nav_order: 20
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
@@ -77,7 +76,7 @@ nav_order: 20
 
 **Technical Scenario.** Generate a standard set of activities across the layers and map which produce platform events.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** 30 activities spread over layers L04 to L16: unsanctioned tool use, prompt injection attempt, sensitive paste, agent tool call, MCP server added, token scope violation, model download, vector store query, dataset upload, pipeline promotion, secret in prompt, admin policy change, and similar; coverage checklist by layer.
 
@@ -132,7 +131,6 @@ nav_order: 20
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
@@ -143,7 +141,7 @@ nav_order: 20
 
 **Technical Scenario.** Generate events from several sources and inspect field presence, naming and types.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** 100 events from 10 event types (policy block, detection, tool call, approval, login, configuration change, inventory change, kill switch, DLP match, error); required field list: time, tenant, user, device, agent, model, tool, resource, policy, decision, severity, session identifier, correlation identifier, source layer.
 
@@ -199,7 +197,6 @@ nav_order: 20
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
@@ -210,7 +207,7 @@ nav_order: 20
 
 **Technical Scenario.** Configure delivery to the lab SIEM using each supported method and test outages.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** Delivery methods (syslog, API pull, webhook, object storage, native connector) as offered; 5,000 events over 30 minutes; outage of 30 minutes; duplicate and out-of-order scenarios.
 
@@ -266,7 +263,6 @@ nav_order: 20
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
@@ -277,7 +273,7 @@ nav_order: 20
 
 **Technical Scenario.** Attempt to alter and delete events and check protection and detection.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** Platform logs and audit trail; 3 admin roles; attempts: edit event, delete event, delete range, disable logging, change retention.
 
@@ -331,7 +327,6 @@ nav_order: 20
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -342,7 +337,7 @@ nav_order: 20
 
 **Technical Scenario.** Configure retention and check enforcement, immutability and location.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** Retention tiers (hot 30 days, warm 180 days, archive 7 years); sample data; legal hold; location requirement.
 
@@ -397,7 +392,6 @@ nav_order: 20
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
@@ -408,7 +402,7 @@ nav_order: 20
 
 **Technical Scenario.** Load the vendor's detection content into the lab SIEM and run attack and benign scenarios.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** Vendor rule pack; 20 attack scenarios (prompt injection burst, data leak, shadow AI spike, new agent, token misuse, model exfiltration attempt, kill switch event, policy tamper, repeated approval denials, off-hours bulk retrieval, and similar) and 20 benign scenarios.
 
@@ -463,7 +457,6 @@ nav_order: 20
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
@@ -474,7 +467,7 @@ nav_order: 20
 
 **Technical Scenario.** Run seven simulated days of mixed benign and malicious activity and measure alerts.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** 7 days of simulated traffic for 50 users and 5 agents; 15 seeded malicious events; normal peaks (month-end, release day).
 
@@ -529,7 +522,6 @@ nav_order: 20
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
@@ -540,7 +532,7 @@ nav_order: 20
 
 **Technical Scenario.** Generate alerts and check enrichment against known facts.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** 20 alerts involving users, devices, agents and applications with known attributes in the directory, asset system and risk register.
 
@@ -594,7 +586,6 @@ nav_order: 20
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
@@ -605,7 +596,7 @@ nav_order: 20
 
 **Technical Scenario.** Run three multi-source scenarios and check the correlated view.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** 3 scenarios: compromised account uses an AI tool to summarise sensitive files then uploads to personal storage; malicious extension reads page content and posts to an AI API; agent token used from a new network and tools abused.
 
@@ -659,7 +650,6 @@ nav_order: 20
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0025 Exfiltration via Cyber Means |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
@@ -670,7 +660,7 @@ nav_order: 20
 
 **Technical Scenario.** Simulate low-and-slow and burst exfiltration to approved and unapproved AI services.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** 3 test users; 4 patterns: single large upload, 50 small pastes in a day, slow daily pastes over 2 weeks (simulated time), upload of encoded content; fabricated sensitive data.
 
@@ -724,7 +714,6 @@ nav_order: 20
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -735,7 +724,7 @@ nav_order: 20
 
 **Technical Scenario.** Simulate takeover patterns for test accounts.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** 3 accounts; scenarios: login from a new country with impossible travel, new device with immediate bulk history export, changed behaviour (sudden long prompts at 3am), token reuse from two networks.
 
@@ -789,7 +778,6 @@ nav_order: 20
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -800,7 +788,7 @@ nav_order: 20
 
 **Technical Scenario.** Replay five compromise indicators for lab agents.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** 3 agents with 14 days of baseline; indicators: new tool never used before, tenfold call volume, reading a new data source, call to a new external domain, repeated blocked actions followed by success.
 
@@ -854,7 +842,6 @@ nav_order: 20
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
@@ -865,7 +852,7 @@ nav_order: 20
 
 **Technical Scenario.** Run an insider script with several evasion attempts and a heavy but legitimate user.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** 2 users: one scripted to hit blocks, try alternate tools, rephrase blocked prompts, use personal accounts and encode data; one legitimate heavy user; 14 simulated days.
 
@@ -919,7 +906,6 @@ nav_order: 20
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -930,7 +916,7 @@ nav_order: 20
 
 **Technical Scenario.** Review the platform's mapping of detections and compare with an independent mapping.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** 20 detections; independent mapping prepared by the evaluator against current published framework versions.
 
@@ -984,7 +970,6 @@ nav_order: 20
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -995,7 +980,7 @@ nav_order: 20
 
 **Technical Scenario.** Build and run playbooks for five containment actions using the platform's actions or APIs.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** 5 playbooks: disable an agent, revoke a token, block a user from an AI service, quarantine a knowledge source, isolate an endpoint agent; test targets for each; approval step for high-impact actions.
 
@@ -1050,7 +1035,6 @@ nav_order: 20
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
@@ -1061,7 +1045,7 @@ nav_order: 20
 
 **Technical Scenario.** Run alerts through the full loop and check state at each end.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** 10 alerts; mock ticketing system; platform and SOAR configured with credentials.
 
@@ -1116,7 +1100,6 @@ nav_order: 20
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
@@ -1127,7 +1110,7 @@ nav_order: 20
 
 **Technical Scenario.** Open a case from related alerts and build it using the platform's evidence, notes and tasks, then export it.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** 1 case built from 8 related alerts about one fabricated insider scenario; evidence types: conversation extracts, tool call records, policy decisions, user timeline, screenshots, exported logs; 2 investigators and 1 reviewer; 1 attempt by an unauthorised user to open the case.
 
@@ -1182,7 +1165,6 @@ nav_order: 20
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -1193,7 +1175,7 @@ nav_order: 20
 
 **Technical Scenario.** Run a facilitated exercise with three scenarios and the platform's evidence.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** 3 scenarios: indirect injection causes an agent to send data externally; a poisoned knowledge document spreads false guidance; a model update causes unsafe outputs; participants from security, engineering, legal and communications.
 
@@ -1248,7 +1230,6 @@ nav_order: 20
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -1259,7 +1240,7 @@ nav_order: 20
 
 **Technical Scenario.** Run five timed scenarios, record every stage and compare manual and automated handling.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** 5 scenarios: agent misuse (unexpected tool calls), token abuse from a new network, data leak through an AI service, poisoned knowledge source, faulty model release; stopwatch definitions agreed in advance; 2 analysts; automation playbooks from the earlier case.
 
@@ -1314,7 +1295,6 @@ nav_order: 20
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
@@ -1325,7 +1305,7 @@ nav_order: 20
 
 **Technical Scenario.** Reconstruct three scripted incidents from platform records only.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** 3 incidents with scripted conversations (8 to 15 turns), 2 tool calls each, 1 blocked action; investigator with platform access only.
 
@@ -1379,7 +1359,6 @@ nav_order: 20
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -1390,7 +1369,7 @@ nav_order: 20
 
 **Technical Scenario.** Preserve evidence for an incident and test hold, hashing and export.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** 1 incident with 200 records; legal hold; export to evidence storage.
 
@@ -1444,7 +1423,6 @@ nav_order: 20
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
@@ -1455,7 +1433,7 @@ nav_order: 20
 
 **Technical Scenario.** Build a timeline for a multi-actor scenario.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** Scenario with 2 users, 3 agents, 4 tools, 1 MCP server; 40 events over 2 hours.
 
@@ -1509,7 +1487,6 @@ nav_order: 20
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -1520,7 +1497,7 @@ nav_order: 20
 
 **Technical Scenario.** Take findings from the exercises and push each through the platform's change process.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** 5 findings: a missing detection for slow exfiltration, an over-broad agent permission, a noisy rule, a policy gap for browser agents, a runbook step with no platform action; change approvers; replay set from earlier attack tests.
 
@@ -1575,7 +1552,6 @@ nav_order: 20
 | **Test Method** | Technical |
 | **Vendor Applicability** | Partial: P, G |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
@@ -1586,7 +1562,7 @@ nav_order: 20
 
 **Technical Scenario.** Ingest a sample feed and test matching, ageing, removal and sharing.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** Sample feed of 30 indicators (known malicious tool server addresses, attack string fragments, hashes of compromised model files, suspicious domains, malicious package names); 10 lab events matching indicators and 10 similar-looking non-matching events; 1 indicator to be withdrawn.
 
@@ -1641,7 +1617,6 @@ nav_order: 20
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
@@ -1652,7 +1627,7 @@ nav_order: 20
 
 **Technical Scenario.** Load known simulated data and check each dashboard metric against hand-calculated values.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** 30 days of simulated data for 200 users and 10 agents; 10 metrics: incidents by type, mean time to detect, mean time to contain, blocked actions, shadow AI trend, top risk users, open exceptions, agents without owners, telemetry coverage, open findings by age; calculation sheet prepared in advance.
 
@@ -1707,7 +1682,6 @@ nav_order: 20
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -1718,7 +1692,7 @@ nav_order: 20
 
 **Technical Scenario.** Run a mock reportable incident and generate the information pack.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** 1 incident involving fabricated personal data of 200 individuals; reporting template with fields (nature, data affected, time, systems, containment, notification decision).
 
@@ -1772,7 +1746,6 @@ nav_order: 20
 | **Test Method** | Attestation |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -1783,7 +1756,7 @@ nav_order: 20
 
 **Technical Scenario.** Review the service description and run an out-of-hours escalation drill.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** Vendor service descriptions; named escalation contacts; mock critical alert; requirements checklist (hours, tiers, languages, locations, response and resolution times, data access by vendor staff, reporting).
 
@@ -1838,7 +1811,6 @@ nav_order: 20
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
@@ -1849,7 +1821,7 @@ nav_order: 20
 
 **Technical Scenario.** Induce six failures in the lab deployment and measure detection and notification.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** 6 failures: endpoint agent offline, gateway node down, event ingestion stopped, classifier service degraded, certificate expiry, licence limit reached; heartbeat design documentation; alert routing to the lab chat and ticketing.
 
@@ -1904,7 +1876,6 @@ nav_order: 20
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
@@ -1913,9 +1884,9 @@ nav_order: 20
 
 **Business Scenario.** Security wants proof that earlier attack tests are visible to the SOC.
 
-**Technical Scenario.** Replay a sample of attacks from earlier batches and follow each to an analyst's screen.
+**Technical Scenario.** Replay a sample of attacks from the other layers and follow each to an analyst's screen.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** 25 attacks sampled across L04, L07, L08, L09, L10 and L06.
 
@@ -1970,7 +1941,6 @@ nav_order: 20
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage (secondary) |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; GOVERN 1.1 |
@@ -1981,7 +1951,7 @@ nav_order: 20
 
 **Technical Scenario.** Test analyst roles, default masking and the unmask process on seeded events.
 
-**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per [Appendix D](appendix-d-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.
 
 **Test Data.** 3 roles (tier 1 analyst, investigator, privacy officer); 20 events containing fabricated personal and confidential content; 2 unmask requests with justification (one approved, one refused).
 
@@ -2025,3 +1995,66 @@ nav_order: 20
 
 ---
 
+<a id="tc-l17-031"></a>
+
+### TC-L17-031: Developer AI Activity Telemetry and Investigation Timeline
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L17 Monitoring, Detection & Response |
+| **Use-Case Domain(s)** | D2, D6 |
+| **Test Method** | Technical |
+| **Vendor Applicability** | Core: E, G, P |
+| **Risk Severity** | High |
+| **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
+| **OWASP LLM / GenAI Mapping** | N/A |
+| **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+
+**Risk Addressed.** When code or secrets leak through a coding assistant, investigators must reconstruct what was sent, from which repository and by which tool, and most SOC tooling holds no such record.
+
+**Business Scenario.** The SOC wants IDE, CLI and coding agent events in the SIEM with enough context to build a timeline.
+
+**Technical Scenario.** Generate a scripted sequence of developer AI events and check their arrival, fields and correlation in the lab SIEM.
+
+**Preconditions.** Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Test workstation with an IDE assistant, a CLI coding agent and one mock MCP server, all reporting to the platform.
+
+**Test Data.** Scripted sequence of 12 events: extension install, sign-in, 4 prompts (1 containing a fake secret), 2 agent commands, 1 MCP tool call, 1 blocked prompt, 1 policy override, 1 extension removal.
+
+**Procedure**
+
+1. Run the sequence.
+2. Confirm all 12 events reach the SIEM.
+3. Check the required fields on each event.
+4. Build a timeline for the test user.
+5. Pivot from the fake secret to the repository and file.
+6. Measure delivery time.
+
+**Edge Cases / Variants.** Workstation offline for part of the sequence; events from a remote development host.
+
+**Expected Detection.** 12 of 12 events in the SIEM within the documented delivery time with user, device, tool, repository, action and decision fields; the timeline can be reconstructed in order.
+
+**Expected Prevention / Control Action.** N/A.
+
+**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
+
+**Expected Report / Dashboard Evidence.** Detection, alert and case state visible in the platform and SIEM within the documented refresh interval.
+
+**Expected Integration Evidence.** Events parse into the SIEM schema without custom scripting, or the vendor supplies the parser.
+
+**Forensic Evidence.** Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction.
+
+**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
+
+**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
+
+**Pass Criteria.** Expected Detection is met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
+
+**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
+
+**Evidence to Capture.** SIEM event export; timeline; delivery-time measurements.
+
+**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
+
+[Back to layer index](#top)
+
+---

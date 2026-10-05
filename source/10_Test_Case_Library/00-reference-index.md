@@ -6,7 +6,7 @@ nav_order: 1
 
 # Reference Index
 
-17-layer AI lifecycle model | 7 use-case domains | 470 test cases in 6 batches
+17-layer AI lifecycle model | 7 use-case domains | 487 test cases
 
 *Status: draft for review. Case counts, domain assignments and mappings are proposals until approved.*
 
@@ -22,45 +22,32 @@ This index is the master reference for the test case library. It organises the l
 
 Test case IDs take the form `TC-L##-###` where `L##` is the lifecycle layer and `###` is the sequence within that layer, for example `TC-L08-014`. IDs are unique across the library and stable once issued, so they can be referenced from a test case execution register, a PoC results tracker and a vendor comparison matrix.
 
-Each case carries a **Legacy ID** field. Where a case supersedes an item from an earlier Domain A and B library (`TC-A-###`, `TC-B-###`) the old ID is recorded so existing references remain traceable. Mapping of the remaining legacy domains (C to O) has not been done.
+Where a case is the detailed version of a scenario in the wiki's [AI Security PoC Test Case Library](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md), it carries a **Quick-Start Scenario** field that links to that scenario by its ID (`AI-POC-BR-###`, `AI-POC-ID-###`, `AI-POC-RT-###`, `AI-POC-AG-###`). The quick-start page links back to the same cases, so the two can be read together.
 
 ## 3. Layer index
 
-| Layer | Name | Primary test focus | Cases | Batch |
-|---|---|---|---|---|
-| L01 | [Business & Use Cases](L01-business-and-use-cases.md) | use-case registry, risk-tiering, business-owner attribution | 20 | 6 |
-| L02 | [Governance & Risk Mgmt](L02-governance-and-risk-mgmt.md) | policy-to-control mapping, risk register, exceptions workflow | 25 | 6 |
-| L03 | [Legal, Privacy & Compliance](L03-legal-privacy-and-compliance.md) | UAE/GCC residency, PDPL-type obligations, evidence export, DPIA support | 30 | 6 |
-| L04 | [Human Interaction Layer](L04-human-interaction-layer.md) | browser/workforce AI, user coaching, approval prompts, multimodal input | 30 | 1 |
-| L05 | [AI Applications](L05-ai-applications.md) | discovery, app-level runtime protection, output handling | 30 | 1 |
-| L06 | [Agent Orchestration Layer](L06-agent-orchestration-layer.md) | agent and MCP discovery, tool governance, delegation chains, kill switch | 35 | 3 |
-| L07 | [Prompt & Context Layer](L07-prompt-and-context-layer.md) | prompt injection (direct/indirect), jailbreak, context and memory poisoning | 40 | 2 |
-| L08 | [AI Gateway & Security Controls](L08-ai-gateway-and-security-controls.md) | inline policy, DLP, guardrails, bypass resistance, latency | 40 | 1 |
-| L09 | [Identity & Access Mgmt](L09-identity-and-access-mgmt.md) | user and agent (non-human) identity, scoped tokens, RBAC | 25 | 3 |
-| L10 | [Data Layer](L10-data-layer.md) | sensitive-data classification, DLP, lineage, tenant isolation | 30 | 2 |
-| L11 | [Knowledge & Retrieval Layer](L11-knowledge-and-retrieval-layer.md) | RAG poisoning, vector-store access control, retrieval leakage | 25 | 4 |
-| L12 | [Model Layer](L12-model-layer.md) | model theft, extraction, adversarial inputs, model scanning | 25 | 4 |
-| L13 | [Training & Fine-Tuning Layer](L13-training-and-fine-tuning-layer.md) | data poisoning, dataset provenance, fine-tune integrity | 20 | 4 |
-| L14 | [MLOps / LLMOps Layer](L14-mlops-llmops-layer.md) | pipeline and registry security, CI/CD gates, artifact signing | 20 | 4 |
-| L15 | [Infrastructure Layer](L15-infrastructure-layer.md) | GPU/cluster hardening, secrets, network segmentation, sovereignty of control plane | 20 | 5 |
-| L16 | [Supply Chain & Third Party](L16-supply-chain-and-third-party.md) | AI-BOM, model and package provenance, third-party SaaS AI risk | 25 | 4 |
-| L17 | [Monitoring, Detection & Response](L17-monitoring-detection-and-response.md) | telemetry, SIEM/SOAR integration, AI incident response, forensics | 30 | 5 |
-| | **Total** | | **470** | |
-
-## 4. Batch plan
-
-| Batch | Layers | Theme | Cases |
+| Layer | Name | Primary test focus | Cases |
 |---|---|---|---|
-| 1 | L04, L05, L08 | Workforce, app and gateway | 100 |
-| 2 | L07, L10 | Injection, jailbreak and data | 70 |
-| 3 | L06, L09 | Agents, MCP and identity | 60 |
-| 4 | L11, L12, L13, L14, L16 | Model, data and supply chain | 115 |
-| 5 | L15, L17 | Infrastructure and SOC | 50 |
-| 6 | L01, L02, L03 | Governance, legal and UAE | 75 |
+| L01 | [Business & Use Cases](L01-business-and-use-cases.md) | use-case registry, risk-tiering, business-owner attribution | 20 |
+| L02 | [Governance & Risk Mgmt](L02-governance-and-risk-mgmt.md) | policy-to-control mapping, risk register, exceptions workflow | 25 |
+| L03 | [Legal, Privacy & Compliance](L03-legal-privacy-and-compliance.md) | UAE/GCC residency, PDPL-type obligations, evidence export, DPIA support | 30 |
+| L04 | [Human Interaction Layer](L04-human-interaction-layer.md) | browser/workforce AI, user coaching, approval prompts, multimodal input | 32 |
+| L05 | [AI Applications](L05-ai-applications.md) | discovery, app-level runtime protection, output handling | 35 |
+| L06 | [Agent Orchestration Layer](L06-agent-orchestration-layer.md) | agent and MCP discovery, tool governance, delegation chains, kill switch | 37 |
+| L07 | [Prompt & Context Layer](L07-prompt-and-context-layer.md) | prompt injection (direct/indirect), jailbreak, context and memory poisoning | 41 |
+| L08 | [AI Gateway & Security Controls](L08-ai-gateway-and-security-controls.md) | inline policy, DLP, guardrails, bypass resistance, latency | 42 |
+| L09 | [Identity & Access Mgmt](L09-identity-and-access-mgmt.md) | user and agent (non-human) identity, scoped tokens, RBAC | 26 |
+| L10 | [Data Layer](L10-data-layer.md) | sensitive-data classification, DLP, lineage, tenant isolation | 30 |
+| L11 | [Knowledge & Retrieval Layer](L11-knowledge-and-retrieval-layer.md) | RAG poisoning, vector-store access control, retrieval leakage | 25 |
+| L12 | [Model Layer](L12-model-layer.md) | model theft, extraction, adversarial inputs, model scanning | 25 |
+| L13 | [Training & Fine-Tuning Layer](L13-training-and-fine-tuning-layer.md) | data poisoning, dataset provenance, fine-tune integrity | 20 |
+| L14 | [MLOps / LLMOps Layer](L14-mlops-llmops-layer.md) | pipeline and registry security, CI/CD gates, artifact signing | 22 |
+| L15 | [Infrastructure Layer](L15-infrastructure-layer.md) | GPU/cluster hardening, secrets, network segmentation, sovereignty of control plane | 20 |
+| L16 | [Supply Chain & Third Party](L16-supply-chain-and-third-party.md) | AI-BOM, model and package provenance, third-party SaaS AI risk | 26 |
+| L17 | [Monitoring, Detection & Response](L17-monitoring-detection-and-response.md) | telemetry, SIEM/SOAR integration, AI incident response, forensics | 31 |
+| | **Total** | | **487** |
 
-Layers L01 to L03 were written last because their cases depend on the control and evidence terminology settled in the technical layers.
-
-## 5. Use-case domain tags
+## 4. Use-case domain tags
 
 | Tag | Use-case domain |
 |---|---|
@@ -83,7 +70,7 @@ Layers L01 to L03 were written last because their cases depend on the control an
 
 These reflect areas that vendors increasingly sell. Their market relevance has not been independently verified. Cases touching these themes are tagged to the closest existing domain.
 
-## 6. Layer-to-domain coverage matrix (draft)
+## 5. Layer-to-domain coverage matrix (draft)
 
 ● = primary home for the domain's cases; ○ = secondary coverage.
 
@@ -92,11 +79,11 @@ These reflect areas that vendors increasingly sell. Their market relevance has n
 | L01 | ○ |  | ○ |  |  |  | ○ |
 | L02 | ○ |  |  | ○ |  |  | ● |
 | L03 |  |  |  |  |  | ○ | ● |
-| L04 | ● |  |  |  |  | ○ |  |
-| L05 |  | ○ | ● |  |  |  |  |
-| L06 |  |  |  |  | ● |  |  |
+| L04 | ● | ○ |  |  |  | ○ |  |
+| L05 |  | ● | ● |  |  |  |  |
+| L06 |  | ○ |  |  | ● |  |  |
 | L07 |  |  | ● |  | ○ |  |  |
-| L08 | ○ |  | ● |  |  | ● |  |
+| L08 | ○ | ○ | ● |  |  | ● |  |
 | L09 | ○ |  |  |  | ● |  |  |
 | L10 |  |  |  |  |  | ● |  |
 | L11 |  |  | ○ |  |  | ● |  |
@@ -107,18 +94,18 @@ These reflect areas that vendors increasingly sell. Their market relevance has n
 | L16 |  | ○ |  | ● |  |  |  |
 | L17 | ○ |  | ○ |  | ○ | ● | ○ |
 
-D2 (Developer / IDE AI Security) has no primary layer, so its cases are cross-layer tags drawn from L05, L08, L14 and L16.
+D2 (Developer / IDE AI Security) has 29 cases. L05 is its primary home, with further cases in L04, L06, L07, L08, L09, L10, L14, L16 and L17 so that the developer workflow is covered from the IDE prompt through to the pipeline and the SOC.
 
-## 7. Field dictionary
+## 6. Field dictionary
 
 | Field | Definition |
 |---|---|
 | **Lifecycle Layer** | L01 to L17, the primary classification. |
 | **Use-Case Domain(s)** | One or more of D1 to D7 (and approved additions). |
 | **Test Method** | Technical = executed live in the PoC lab. Evidence = verified by configuration, export, workflow or document inspection. Attestation = vendor written declaration, scored lower than demonstrated evidence. |
-| **Vendor Applicability** | Architecture classes for which the case is meaningful: E = endpoint or browser agent, G = inline gateway, proxy or SASE, A = application SDK or API-level control, P = posture, API-integrated or AI-SPM, R = red-team or testing tool, W = governance, risk and compliance workflow capability (used mainly in Batch 6). Out-of-scope architecture is scored N/A, not 0. |
-| **Legacy ID** | Superseded TC-A or TC-B reference, if any. |
-| **Control Theme, Applicable Requirement, Framework Crosswalk (Batch 6 only)** | Batch 6 is framework-neutral. Each case carries a control theme, a blank Applicable Requirement field that the assessor completes before testing (framework, clause, requirement text and numeric parameters), and a blank crosswalk row for ISO/IEC 27001 ISMS, DPDP, NESA, PDPL and other frameworks. No clause numbers or legal deadlines are asserted in the library. |
+| **Vendor Applicability** | Architecture classes for which the case is meaningful: E = endpoint or browser agent, G = inline gateway, proxy or SASE, A = application SDK or API-level control, P = posture, API-integrated or AI-SPM, R = red-team or testing tool, W = governance, risk and compliance workflow capability (used mainly in L01 to L03). Out-of-scope architecture is scored N/A, not 0. |
+| **Quick-Start Scenario (optional)** | Link to the matching scenario in the AI Security PoC Test Case Library. Present only where a case has a quick-start counterpart. |
+| **Control Theme, Applicable Requirement, Framework Crosswalk (L01 to L03 only)** | Layers L01 to L03 are framework-neutral. Each case carries a control theme, a blank Applicable Requirement field that the assessor completes before testing (framework, clause, requirement text and numeric parameters), and a blank crosswalk row for ISO/IEC 27001 ISMS, DPDP, NESA, PDPL and other frameworks. No clause numbers or legal deadlines are asserted in the library. |
 | **Risk Addressed / Business Scenario / Technical Scenario** | Why the case matters, what the stakeholder needs, and how the test is staged. The earlier Objective field restated the title and has been folded into Business Scenario. |
 | **Preconditions / Test Data / Procedure** | Environment, synthetic inputs and numbered steps. Preconditions combine a layer-level baseline with any case-specific setup. |
 | **Edge Cases / Variants (optional)** | Additional conditions to run if time allows, or to probe a vendor claim further. Present only where a case has meaningful variants. |
@@ -129,10 +116,9 @@ D2 (Developer / IDE AI Security) has no primary layer, so its cases are cross-la
 | **Scoring Criteria** | 0 = not demonstrated; 3 = partially met or evidence incomplete; 5 = fully met with complete evidence; N/A = architecture out of scope. |
 | **Pass / Fail Criteria** | Pass requires Expected Detection (and Prevention where stated) within SLA with evidence captured from the live PoC. Fail is any miss, SLA breach, missing attribution or reliance on vendor demo data. |
 
-## 8. Known limitations
+## 7. Known limitations
 
 - Reference identifiers (MITRE ATLAS, OWASP LLM, NIST AI RMF) come from working knowledge and must be checked against current releases before use in an RFP.
 - Pass thresholds such as detection percentages, counts and times are starting values, to be tuned to your risk appetite and vendor SLAs.
-- Legacy IDs for earlier Domains C to O are not mapped.
 - Depth is uneven: some cases (notably in L04, L05, L12 and L14) are lighter than others and benefit from further detail.
 - The governance and legal layers (L01 to L03) are framework-neutral. See the [Framework Adoption Guide](framework-adoption-guide.md).

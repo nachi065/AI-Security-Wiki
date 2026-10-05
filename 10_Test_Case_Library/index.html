@@ -77,7 +77,7 @@
 <li><details open><summary><a class="current" href="index.html">Test Case Library</a></summary><ul>
 <li><a href="00-reference-index.html">Reference Index</a></li>
 <li><a href="framework-adoption-guide.html">Framework Adoption Guide</a></li>
-<li><a href="appendix-d-lab-prerequisites.html">Appendix D: Lab Prerequisites</a></li>
+<li><a href="appendix-lab-prerequisites.html">Appendix: Lab Prerequisites</a></li>
 <li><a href="L01-business-and-use-cases.html">L01 Business &amp; Use Cases</a></li>
 <li><a href="L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
 <li><a href="L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>
@@ -102,18 +102,18 @@
 <p class="crumbs"><a href="../index.html">Home</a> / <span>Test Case Library</span></p>
 <article>
 <h1 id="ai-security-vendor-evaluation-test-case-library">AI Security Vendor Evaluation: Test Case Library</h1>
-<p>A lifecycle-based library of <strong>470 test cases</strong> for evaluating AI security products in a controlled proof of concept. Cases are organised by the <strong>17 layers of the AI lifecycle</strong> and tagged with seven buyer-facing use-case domains.</p>
+<p>A lifecycle-based library of <strong>487 test cases</strong> for evaluating AI security products in a controlled proof of concept. Cases are organised by the <strong>17 layers of the AI lifecycle</strong> and tagged with seven buyer-facing use-case domains.</p>
 <blockquote>
 <p><strong>Status: draft for review.</strong> Reference identifiers (MITRE ATLAS, OWASP LLM, NIST AI RMF) must be verified against current published versions, and numeric thresholds are starting values to tune to your risk appetite and vendor SLAs.</p>
 </blockquote>
 <h2 id="start-here">Start here</h2>
 <ul>
-<li><a href="00-reference-index.html">Reference Index</a>: numbering, field definitions, applicability codes, domain tags, batch plan, coverage matrix</li>
-<li><a href="appendix-d-lab-prerequisites.html">Appendix D: Lab Prerequisites</a>: the lab environment, tooling and fabricated data each layer needs</li>
+<li><a href="00-reference-index.html">Reference Index</a>: numbering, field definitions, applicability codes, domain tags, coverage matrix</li>
+<li><a href="appendix-lab-prerequisites.html">Appendix: Lab Prerequisites</a>: the lab environment, tooling and fabricated data each layer needs</li>
 <li><a href="framework-adoption-guide.html">Framework Adoption Guide</a>: how to use the governance and legal layers with ISO/IEC 27001, DPDP, NESA, PDPL or any other framework, plus a crosswalk template</li>
 <li><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html">AI Security PoC Test Case Library</a>: a 20-scenario quick-start set for a first PoC, mapped to the layers below</li>
 </ul>
-<p>To find a specific case, type its ID (for example <code>TC-L08-014</code>) or a keyword into the search box at the top of any page. Each of the 470 cases is indexed individually.</p>
+<p>To find a specific case, type its ID (for example <code>TC-L08-014</code>) or a keyword into the search box at the top of any page. Each of the 487 cases is indexed individually.</p>
 <h2 id="layers">Layers</h2>
 <div class="table-wrap"><table>
 <thead>
@@ -163,29 +163,29 @@
 <td>L04</td>
 <td><a href="L04-human-interaction-layer.html">Human Interaction Layer</a></td>
 <td>browser/workforce AI, user coaching, approval prompts, multimodal input</td>
-<td>30</td>
-<td>5</td>
+<td>32</td>
+<td>6</td>
 <td>16</td>
-<td>9</td>
+<td>10</td>
 <td>0</td>
 </tr>
 <tr>
 <td>L05</td>
 <td><a href="L05-ai-applications.html">AI Applications</a></td>
 <td>discovery, app-level runtime protection, output handling</td>
-<td>30</td>
-<td>7</td>
-<td>16</td>
-<td>7</td>
+<td>35</td>
+<td>8</td>
+<td>19</td>
+<td>8</td>
 <td>0</td>
 </tr>
 <tr>
 <td>L06</td>
 <td><a href="L06-agent-orchestration-layer.html">Agent Orchestration Layer</a></td>
 <td>agent and MCP discovery, tool governance, delegation chains, kill switch</td>
-<td>35</td>
-<td>16</td>
-<td>16</td>
+<td>37</td>
+<td>17</td>
+<td>17</td>
 <td>3</td>
 <td>0</td>
 </tr>
@@ -193,8 +193,8 @@
 <td>L07</td>
 <td><a href="L07-prompt-and-context-layer.html">Prompt &amp; Context Layer</a></td>
 <td>prompt injection (direct/indirect), jailbreak, context and memory poisoning</td>
-<td>40</td>
-<td>10</td>
+<td>41</td>
+<td>11</td>
 <td>24</td>
 <td>6</td>
 <td>0</td>
@@ -203,9 +203,9 @@
 <td>L08</td>
 <td><a href="L08-ai-gateway-and-security-controls.html">AI Gateway &amp; Security Controls</a></td>
 <td>inline policy, DLP, guardrails, bypass resistance, latency</td>
-<td>40</td>
+<td>42</td>
 <td>8</td>
-<td>24</td>
+<td>26</td>
 <td>7</td>
 <td>1</td>
 </tr>
@@ -213,8 +213,8 @@
 <td>L09</td>
 <td><a href="L09-identity-and-access-mgmt.html">Identity &amp; Access Mgmt</a></td>
 <td>user and agent (non-human) identity, scoped tokens, RBAC</td>
-<td>25</td>
-<td>8</td>
+<td>26</td>
+<td>9</td>
 <td>14</td>
 <td>3</td>
 <td>0</td>
@@ -263,10 +263,10 @@
 <td>L14</td>
 <td><a href="L14-mlops-llmops-layer.html">MLOps / LLMOps Layer</a></td>
 <td>pipeline and registry security, CI/CD gates, artifact signing</td>
-<td>20</td>
+<td>22</td>
 <td>4</td>
-<td>11</td>
-<td>5</td>
+<td>12</td>
+<td>6</td>
 <td>0</td>
 </tr>
 <tr>
@@ -283,9 +283,9 @@
 <td>L16</td>
 <td><a href="L16-supply-chain-and-third-party.html">Supply Chain &amp; Third Party</a></td>
 <td>AI-BOM, model and package provenance, third-party SaaS AI risk</td>
-<td>25</td>
+<td>26</td>
 <td>4</td>
-<td>12</td>
+<td>13</td>
 <td>9</td>
 <td>0</td>
 </tr>
@@ -293,9 +293,9 @@
 <td>L17</td>
 <td><a href="L17-monitoring-detection-and-response.html">Monitoring, Detection &amp; Response</a></td>
 <td>telemetry, SIEM/SOAR integration, AI incident response, forensics</td>
-<td>30</td>
+<td>31</td>
 <td>4</td>
-<td>19</td>
+<td>20</td>
 <td>7</td>
 <td>0</td>
 </tr>
@@ -303,10 +303,10 @@
 <td></td>
 <td><strong>Total</strong></td>
 <td></td>
-<td><strong>470</strong></td>
-<td><strong>120</strong></td>
-<td><strong>239</strong></td>
-<td><strong>108</strong></td>
+<td><strong>487</strong></td>
+<td><strong>125</strong></td>
+<td><strong>248</strong></td>
+<td><strong>111</strong></td>
 <td><strong>3</strong></td>
 </tr>
 </tbody>
@@ -324,7 +324,7 @@
 <tbody>
 <tr>
 <td>Technical</td>
-<td>386</td>
+<td>403</td>
 <td>Executed live in the PoC lab</td>
 </tr>
 <tr>
@@ -356,38 +356,38 @@
 <tr>
 <td>D2</td>
 <td>Developer / IDE AI Security</td>
-<td>12</td>
+<td>29</td>
 </tr>
 <tr>
 <td>D3</td>
 <td>Custom AI Application Runtime Security</td>
-<td>177</td>
+<td>179</td>
 </tr>
 <tr>
 <td>D4</td>
 <td>Model Security / AI Supply Chain</td>
-<td>101</td>
+<td>104</td>
 </tr>
 <tr>
 <td>D5</td>
 <td>Agentic AI / MCP / Tool Governance</td>
-<td>74</td>
+<td>78</td>
 </tr>
 <tr>
 <td>D6</td>
 <td>Data Protection / DLP / Investigation</td>
-<td>98</td>
+<td>102</td>
 </tr>
 <tr>
 <td>D7</td>
 <td>Sovereignty / Compliance / UAE Requirements</td>
-<td>142</td>
+<td>143</td>
 </tr>
 </tbody>
 </table></div>
-<p>A case can carry more than one domain tag, so the domain counts add up to more than 470. D2 has the thinnest coverage and no primary layer; its cases are drawn from L05, L08, L14 and L16.</p>
+<p>A case can carry more than one domain tag, so the domain counts add up to more than 487. D2 covers the developer workflow end to end: IDE prompts, assistant extensions, coding agents, MCP configuration, repository policy, pipeline bots and SOC telemetry, with L05 as its primary layer.</p>
 <h2 id="numbering-and-structure">Numbering and structure</h2>
-<p>Case IDs take the form <code>TC-L##-###</code>: the lifecycle layer and a sequence within it, for example <code>TC-L08-014</code>. IDs are unique across the library and stable once issued. Where a case supersedes an item from the earlier Domain A and B library, the <strong>Legacy ID</strong> field records the old reference.</p>
+<p>Case IDs take the form <code>TC-L##-###</code>: the lifecycle layer and a sequence within it, for example <code>TC-L08-014</code>. IDs are unique across the library and stable once issued. Where a case is the detailed version of a quick-start scenario, the <strong>Quick-Start Scenario</strong> field links to it by ID, for example <code>AI-POC-ID-004</code>.</p>
 <p>Each case records: lifecycle layer, use-case domains, test method (Technical, Evidence or Attestation), vendor applicability (E endpoint or browser agent, G inline gateway or proxy, A application or API-level control, P posture or AI-SPM, R red-team tool, W governance workflow), risk, scenarios, test data, numbered procedure, expected results, pass and fail criteria, scoring, evidence to capture, and reference mappings.</p>
 <p>Layers L01 to L03 are framework-neutral. Their cases use an <strong>Expected Result</strong> field in place of Expected Detection, and add Control Theme, Applicable Requirement and Framework Crosswalk fields for the assessor to complete.</p>
 <h2 id="safety-boundary">Safety boundary</h2>
@@ -403,7 +403,7 @@
 <ul>
 <li><a href="00-reference-index.html">Reference Index</a></li>
 <li><a href="framework-adoption-guide.html">Framework Adoption Guide</a></li>
-<li><a href="appendix-d-lab-prerequisites.html">Appendix D: Lab Prerequisites</a></li>
+<li><a href="appendix-lab-prerequisites.html">Appendix: Lab Prerequisites</a></li>
 <li><a href="L01-business-and-use-cases.html">L01 Business &amp; Use Cases</a></li>
 <li><a href="L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
 <li><a href="L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>

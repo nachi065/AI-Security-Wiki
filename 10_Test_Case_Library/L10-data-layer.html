@@ -77,7 +77,7 @@
 <li><details open><summary><a href="index.html">Test Case Library</a></summary><ul>
 <li><a href="00-reference-index.html">Reference Index</a></li>
 <li><a href="framework-adoption-guide.html">Framework Adoption Guide</a></li>
-<li><a href="appendix-d-lab-prerequisites.html">Appendix D: Lab Prerequisites</a></li>
+<li><a href="appendix-lab-prerequisites.html">Appendix: Lab Prerequisites</a></li>
 <li><a href="L01-business-and-use-cases.html">L01 Business &amp; Use Cases</a></li>
 <li><a href="L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
 <li><a href="L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>
@@ -104,7 +104,7 @@
 <p><a id="top"></a></p>
 <h1 id="l10-data-layer">L10 Data Layer</h1>
 <p><strong>Primary test focus:</strong> sensitive-data classification, DLP, lineage, tenant isolation</p>
-<p><strong>Cases:</strong> 30 (TC-L10-001 to TC-L10-030)  |  <strong>Batch:</strong> 2</p>
+<p><strong>Cases:</strong> 30 (TC-L10-001 to TC-L10-030)</p>
 <blockquote>
 <p><strong>Safety boundary.</strong> Injection and jailbreak cases use benign canary strings and mock tools only. Each case first measures whether the attack succeeds against the unprotected application, so that only effective payloads are scored.</p>
 <p><strong>Verify before use.</strong> MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the <a href="00-reference-index.html">Reference Index</a> for field definitions and applicability codes.</p>
@@ -366,10 +366,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -386,7 +382,7 @@
 <p><strong>Risk Addressed.</strong> AI projects copy data into buckets, notebooks, vector stores and shared drives that security has never scanned.</p>
 <p><strong>Business Scenario.</strong> Data owners want to know where sensitive data sits across the stores that feed AI systems.</p>
 <p><strong>Technical Scenario.</strong> Point the platform at a set of test stores containing seeded sensitive records and measure what it finds.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
 <p><strong>Test Data.</strong> 5 test stores (object storage bucket, file share, relational database, vector store export, notebook folder); 200 seeded records across 6 categories (personal data, financial, health-style, credentials, confidential documents, source code); 200 non-sensitive look-alikes.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -443,10 +439,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -463,7 +455,7 @@
 <p><strong>Risk Addressed.</strong> Misclassified columns lead to over- or under-protection of data feeding AI features.</p>
 <p><strong>Business Scenario.</strong> Data governance wants column-level classification validated against a known answer key.</p>
 <p><strong>Technical Scenario.</strong> Run classification on a test database and table set with labelled columns.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
 <p><strong>Test Data.</strong> 3 tables, 60 columns, 10,000 rows: name, contact, ID numbers, salary, card-like data, free-text notes with embedded personal data, and ordinary business columns; answer key per column.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -520,10 +512,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -540,7 +528,7 @@
 <p><strong>Risk Addressed.</strong> Documents carry the most valuable sensitive content and are what retrieval systems ingest.</p>
 <p><strong>Business Scenario.</strong> Data governance wants document classification tested against a labelled corpus.</p>
 <p><strong>Technical Scenario.</strong> Classify a mixed corpus of fabricated documents with known sensitivity labels.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
 <p><strong>Test Data.</strong> 300 documents (contracts, HR letters, financial reports, meeting notes, public brochures, source code) with an answer key of 4 levels (Public, Internal, Confidential, Restricted); formats DOCX, PDF, XLSX, TXT.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -597,10 +585,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -617,7 +601,7 @@
 <p><strong>Risk Addressed.</strong> Classification trained on English leaves local-language content unprotected.</p>
 <p><strong>Business Scenario.</strong> Compliance in the GCC wants parity for Arabic and bilingual documents.</p>
 <p><strong>Technical Scenario.</strong> Classify a bilingual corpus with an answer key.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
 <p><strong>Test Data.</strong> 120 documents: 40 Arabic, 40 English, 40 bilingual, covering the same categories; Arabic-Indic digits in some.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -674,10 +658,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -694,7 +674,7 @@
 <p><strong>Risk Addressed.</strong> If a summary of a Restricted document is stored as unlabelled text, protection is lost the moment AI touches the data.</p>
 <p><strong>Business Scenario.</strong> Governance wants derived content to inherit the highest sensitivity of its sources.</p>
 <p><strong>Technical Scenario.</strong> Have a test assistant generate summaries and extracts from labelled documents and examine labels on outputs.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
 <p><strong>Test Data.</strong> 10 documents at differing labels; assistant that summarises one or several; output saved to a store.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -751,10 +731,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -771,7 +747,7 @@
 <p><strong>Risk Addressed.</strong> Assistants that run with broad permissions expose content to users who would be denied direct access.</p>
 <p><strong>Business Scenario.</strong> Security wants the AI to retrieve only what the requesting user may see.</p>
 <p><strong>Technical Scenario.</strong> Ask questions whose answers exist only in documents the user is not entitled to read.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
 <p><strong>Test Data.</strong> 3 users with different entitlements; 30 documents with access lists; 40 questions answerable only from restricted documents or from permitted ones.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -827,10 +803,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -847,7 +819,7 @@
 <p><strong>Risk Addressed.</strong> Sending whole records to a model when only a few fields are needed multiplies exposure.</p>
 <p><strong>Business Scenario.</strong> Privacy wants only necessary fields reaching the model.</p>
 <p><strong>Technical Scenario.</strong> Pass records through the platform with field-level policies and inspect what the model receives.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
 <p><strong>Test Data.</strong> 200 fabricated customer records with 12 fields; 3 use cases needing different fields; mock model that logs input.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -904,10 +876,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (operational and monitoring control)</td>
 </tr>
@@ -924,7 +892,7 @@
 <p><strong>Risk Addressed.</strong> Without lineage, an organisation cannot say which data produced an answer or who was exposed to it.</p>
 <p><strong>Business Scenario.</strong> Audit and investigations want to trace any answer to its sources and any source to its uses.</p>
 <p><strong>Technical Scenario.</strong> Run a set of queries and trace lineage in both directions.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
 <p><strong>Test Data.</strong> 10 queries over a test knowledge base; 3 source documents later updated.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -980,10 +948,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (operational and monitoring control)</td>
 </tr>
@@ -1000,7 +964,7 @@
 <p><strong>Risk Addressed.</strong> Answers given months ago may need to be explained against the data as it then stood.</p>
 <p><strong>Business Scenario.</strong> Audit wants point-in-time reconstruction of what data an AI system could use.</p>
 <p><strong>Technical Scenario.</strong> Change a test dataset over time and reconstruct its past state.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
 <p><strong>Test Data.</strong> 1 dataset with 5 monthly versions (simulated); 5 historical queries.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1056,10 +1020,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -1076,7 +1036,7 @@
 <p><strong>Risk Addressed.</strong> Multi-tenant AI services holding data for many customers or business units must keep it strictly separate.</p>
 <p><strong>Business Scenario.</strong> Security wants logical separation proven for storage, indexes and caches.</p>
 <p><strong>Technical Scenario.</strong> Create two tenants with canary data and test separation at each layer.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
 <p><strong>Test Data.</strong> 2 tenants; 50 canary records each in storage, search index and cache; admin and normal accounts per tenant.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1133,10 +1093,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -1153,7 +1109,7 @@
 <p><strong>Risk Addressed.</strong> Attackers will use the AI interface itself to ask for other tenants' information.</p>
 <p><strong>Business Scenario.</strong> Security wants conversational attempts to cross tenant boundaries stopped.</p>
 <p><strong>Technical Scenario.</strong> As a tenant A user, use direct and indirect prompts to retrieve tenant B canary data.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
 <p><strong>Test Data.</strong> 30 probes: direct ask, impersonation, indirect via summarisation, guessing identifiers, prompt injection asking to ignore tenant filter; tenant B canaries.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1209,10 +1165,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -1229,7 +1181,7 @@
 <p><strong>Risk Addressed.</strong> Data processed outside the permitted jurisdiction can breach contractual and regulatory commitments.</p>
 <p><strong>Business Scenario.</strong> Compliance wants all processing, including by third-party model providers, kept in approved regions.</p>
 <p><strong>Technical Scenario.</strong> Route requests under region policy and verify where processing occurs.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Endpoints in multiple regions available in the lab or mocked.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Endpoints in multiple regions available in the lab or mocked.</p>
 <p><strong>Test Data.</strong> Region policy allowing UAE only; providers with UAE, EU and US endpoints; 20 requests.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1286,10 +1238,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -1306,7 +1254,7 @@
 <p><strong>Risk Addressed.</strong> Residency promises often cover primary storage but not logs, telemetry, backups or remote support access.</p>
 <p><strong>Business Scenario.</strong> Compliance wants the full data footprint located.</p>
 <p><strong>Technical Scenario.</strong> Inventory every place data or derived data from the platform is stored or accessed.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
 <p><strong>Test Data.</strong> Vendor data-flow documents; lab tenant; list of data classes (prompts, responses, metadata, telemetry, diagnostics).</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1363,10 +1311,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -1383,7 +1327,7 @@
 <p><strong>Risk Addressed.</strong> Staff and applications may send data to AI services hosted in non-approved jurisdictions.</p>
 <p><strong>Business Scenario.</strong> Compliance wants transfers to unapproved regions or providers detected and controlled.</p>
 <p><strong>Technical Scenario.</strong> Send test traffic to AI services in approved and non-approved jurisdictions.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
 <p><strong>Test Data.</strong> 6 AI endpoints (mock) labelled by region; synthetic personal data; approved regions list.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1440,10 +1384,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -1460,7 +1400,7 @@
 <p><strong>Risk Addressed.</strong> Control of encryption keys decides who can read stored AI data, including the vendor's staff.</p>
 <p><strong>Business Scenario.</strong> Security wants customer-held keys where required and strong encryption everywhere.</p>
 <p><strong>Technical Scenario.</strong> Review encryption at rest and in transit and test customer-managed key options.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
 <p><strong>Test Data.</strong> Lab tenant; customer-managed key in a test key store; TLS scanner.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1517,10 +1457,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -1537,7 +1473,7 @@
 <p><strong>Risk Addressed.</strong> Rotation limits exposure from a stolen key, and key destruction is the only reliable way to delete data in some architectures.</p>
 <p><strong>Business Scenario.</strong> Security wants rotation without downtime and verifiable irreversible deletion.</p>
 <p><strong>Technical Scenario.</strong> Rotate keys under load and destroy the key for a test dataset.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
 <p><strong>Test Data.</strong> 1 test dataset; customer-managed key; background traffic.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1594,10 +1530,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -1614,7 +1546,7 @@
 <p><strong>Risk Addressed.</strong> AI services and agents often run with powerful service accounts that can read far more than any one task needs.</p>
 <p><strong>Business Scenario.</strong> Security wants AI service identities limited to the datasets they require.</p>
 <p><strong>Technical Scenario.</strong> Review and test permissions of AI service identities across test datasets.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
 <p><strong>Test Data.</strong> 6 datasets; 3 AI service identities with intended access matrix; test reads and writes.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1671,10 +1603,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -1691,7 +1619,7 @@
 <p><strong>Risk Addressed.</strong> Productivity assistants surface any content the user technically can read, exposing overshared files.</p>
 <p><strong>Business Scenario.</strong> Security wants overshared sensitive files found before an assistant is switched on.</p>
 <p><strong>Technical Scenario.</strong> Seed overshared files and run the platform's oversharing analysis.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
 <p><strong>Test Data.</strong> 100 files: 20 sensitive files shared with Everyone or large groups, 20 sensitive files shared correctly, 60 ordinary files; test collaboration tenant.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1748,10 +1676,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0025 Exfiltration via Cyber Means</td>
 </tr>
@@ -1768,7 +1692,7 @@
 <p><strong>Risk Addressed.</strong> Attackers and insiders can use an assistant to read and export large volumes of data conversationally.</p>
 <p><strong>Business Scenario.</strong> Security wants unusual volumes of sensitive retrieval detected and limited.</p>
 <p><strong>Technical Scenario.</strong> Run scripted large-volume queries as a normal and as an abusive user.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
 <p><strong>Test Data.</strong> Knowledge base of 5,000 fabricated records; normal user profile (5 queries per hour); abusive script (500 queries per hour and requests for lists of all records).</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1825,10 +1749,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage (secondary)</td>
 </tr>
@@ -1845,7 +1765,7 @@
 <p><strong>Risk Addressed.</strong> Prompts, responses, caches, embeddings and logs each keep copies; deleting one location leaves the rest.</p>
 <p><strong>Business Scenario.</strong> Privacy wants retention and deletion enforced for every store the pipeline writes to.</p>
 <p><strong>Technical Scenario.</strong> Trace one prompt's data through every store and test deletion.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
 <p><strong>Test Data.</strong> 1 prompt with canary content; stores: conversation history, cache, vector store, logs, analytics, backups.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1903,10 +1823,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage (secondary)</td>
 </tr>
@@ -1923,7 +1839,7 @@
 <p><strong>Risk Addressed.</strong> Embeddings and summaries derived from deleted personal data still leak information if left behind.</p>
 <p><strong>Business Scenario.</strong> Privacy wants erasure requests honoured in derived stores.</p>
 <p><strong>Technical Scenario.</strong> Delete a source document and a person's data and check derived stores.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
 <p><strong>Test Data.</strong> 10 documents about 3 fabricated individuals; vector index; summaries; erasure request for 1 individual and 2 documents.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1980,10 +1896,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage (secondary)</td>
 </tr>
@@ -2000,7 +1912,7 @@
 <p><strong>Risk Addressed.</strong> Regulators expect organisations to locate all personal data on an individual, including in AI systems.</p>
 <p><strong>Business Scenario.</strong> Privacy wants to find all data about a named person across AI stores and outputs.</p>
 <p><strong>Technical Scenario.</strong> Run a subject search across prompts, documents and outputs.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
 <p><strong>Test Data.</strong> 3 fabricated individuals referenced in 40 items across stores.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2056,10 +1968,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -2076,7 +1984,7 @@
 <p><strong>Risk Addressed.</strong> Developers copy production data into AI experiments, bypassing production controls.</p>
 <p><strong>Business Scenario.</strong> Security wants real data detected in non-production environments.</p>
 <p><strong>Technical Scenario.</strong> Seed realistic-looking, flagged production-like records into a dev environment and scan.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
 <p><strong>Test Data.</strong> Dev environment with 100 records of which 30 carry a production marker (fabricated signature) and 70 are synthetic.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2132,10 +2040,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0020 Poison Training Data (applied by analogy to stored context, memory and ingested data); verify against current ATLAS</td>
 </tr>
@@ -2152,7 +2056,7 @@
 <p><strong>Risk Addressed.</strong> Data from outside sources entering knowledge bases or datasets can be tampered with or booby-trapped.</p>
 <p><strong>Business Scenario.</strong> Security wants untrusted data validated and quarantined before use.</p>
 <p><strong>Technical Scenario.</strong> Feed a mix of clean and manipulated test files into an ingestion pipeline.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
 <p><strong>Test Data.</strong> 20 files: 10 clean, 10 manipulated (hidden instructions, corrupted structure, unexpected types, oversized, duplicated content with altered facts).</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2208,10 +2112,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -2228,7 +2128,7 @@
 <p><strong>Risk Addressed.</strong> Data sent to model providers may be retained or used for training unless terms and settings prevent it.</p>
 <p><strong>Business Scenario.</strong> Procurement wants written commitments and technical verification where possible.</p>
 <p><strong>Technical Scenario.</strong> Collect and test the provider terms, settings and any available evidence.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
 <p><strong>Test Data.</strong> Contracts and data processing terms of vendor and each model provider; settings screenshots.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2285,10 +2185,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (operational and monitoring control)</td>
 </tr>
@@ -2305,7 +2201,7 @@
 <p><strong>Risk Addressed.</strong> After an incident, investigators must establish which sensitive data an AI system accessed and for whom.</p>
 <p><strong>Business Scenario.</strong> Investigation wants a reliable record linking user, prompt, retrieved data and output.</p>
 <p><strong>Technical Scenario.</strong> Perform a mock incident and reconstruct events from platform records.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
 <p><strong>Test Data.</strong> Scenario: user retrieves 12 canary-labelled documents through an assistant over 2 days; investigator has only platform data.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2362,10 +2258,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (operational and monitoring control)</td>
 </tr>
@@ -2382,7 +2274,7 @@
 <p><strong>Risk Addressed.</strong> Insider data-loss cases need timelines, context and evidence preserved.</p>
 <p><strong>Business Scenario.</strong> Security wants to open, work and close a case from AI-related alerts.</p>
 <p><strong>Technical Scenario.</strong> Create a case from a series of policy events by one test user.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
 <p><strong>Test Data.</strong> 1 user generating 25 events across 7 days.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2439,10 +2331,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -2459,7 +2347,7 @@
 <p><strong>Risk Addressed.</strong> AI conversations may be discoverable, and deletion during legal proceedings creates exposure.</p>
 <p><strong>Business Scenario.</strong> Legal wants holds applied and conversations exportable.</p>
 <p><strong>Technical Scenario.</strong> Place a hold on test users' conversations and attempt deletion.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
 <p><strong>Test Data.</strong> 3 users; 30 conversations; hold on 1 user.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2515,10 +2403,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -2535,7 +2419,7 @@
 <p><strong>Risk Addressed.</strong> Separate classification schemes produce inconsistent protection.</p>
 <p><strong>Business Scenario.</strong> Governance wants labels from the existing labelling and DLP tools respected.</p>
 <p><strong>Technical Scenario.</strong> Connect the platform to the existing labelling solution and test label use.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
 <p><strong>Test Data.</strong> 50 documents labelled in the enterprise tool; 4 label levels.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2591,10 +2475,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (operational and monitoring control)</td>
 </tr>
@@ -2611,7 +2491,7 @@
 <p><strong>Risk Addressed.</strong> Boards and regulators ask for measurable evidence that AI data risk is controlled.</p>
 <p><strong>Business Scenario.</strong> Compliance wants repeatable reports for management and supervisory review.</p>
 <p><strong>Technical Scenario.</strong> Generate reports from test activity and check that they answer typical regulatory questions.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.</p>
 <p><strong>Test Data.</strong> 30 days of simulated activity; 10 typical questions (volume of sensitive data blocked, transfers by region, top risk users, exceptions granted, incident times).</p>
 <p><strong>Procedure</strong></p>
 <ol>

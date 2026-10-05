@@ -10,8 +10,7 @@ nav_order: 14
 
 **Primary test focus:** RAG poisoning, vector-store access control, retrieval leakage
 
-**Cases:** 25 (TC-L11-001 to TC-L11-025)  |  **Batch:** 4
-
+**Cases:** 25 (TC-L11-001 to TC-L11-025)
 > **Safety boundary.** Retrieval, model, training, pipeline and supply chain cases use fabricated corpora and datasets, small lab models, mock hubs and indexes and harmless marker artefacts only (an EICAR-style file that writes a marker, never real malware). Never load untrusted model files outside an isolated sandbox, and never connect the lab to production knowledge sources, models, pipelines, registries or credentials. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.
 
 > **Verify before use.** MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the [Reference Index](00-reference-index.md) for field definitions and applicability codes.
@@ -61,7 +60,6 @@ nav_order: 14
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
@@ -72,7 +70,7 @@ nav_order: 14
 
 **Technical Scenario.** Connect a set of known sources to lab RAG applications and compare the platform's inventory with ground truth.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
+**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
 
 **Test Data.** 6 sources: shared drive, wiki, ticket system, code repository, email archive, public website crawl; 3 RAG applications using different combinations.
 
@@ -126,7 +124,6 @@ nav_order: 14
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
@@ -137,7 +134,7 @@ nav_order: 14
 
 **Technical Scenario.** Deploy vector stores with varied exposure and see what the platform reports.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
+**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
 
 **Test Data.** 4 vector stores: authenticated and internal, unauthenticated and internal, authenticated and exposed to a wider network segment, unauthenticated and exposed to a wider segment; each holding fabricated embeddings.
 
@@ -191,7 +188,6 @@ nav_order: 14
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -202,7 +198,7 @@ nav_order: 14
 
 **Technical Scenario.** Run the platform's configuration checks against stores with seeded weaknesses.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
+**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
 
 **Test Data.** 3 stores with 12 seeded weaknesses: no authentication, default credentials, admin interface exposed, TLS disabled, overly broad API key, no audit logging, no network restriction, backups unencrypted, and four benign settings.
 
@@ -255,7 +251,7 @@ nav_order: 14
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: A, G, P |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
+| **Quick-Start Scenario** | [AI-POC-RT-003](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md#runtime-ai-test-cases) |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
@@ -266,7 +262,7 @@ nav_order: 14
 
 **Technical Scenario.** Ask questions as users with different entitlements whose answers lie in restricted documents.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
+**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
 
 **Test Data.** 3 users; 60 documents with ACLs; 40 questions (20 answerable only from restricted documents, 20 from permitted).
 
@@ -320,7 +316,6 @@ nav_order: 14
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: A, P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
@@ -331,7 +326,7 @@ nav_order: 14
 
 **Technical Scenario.** Revoke and grant permissions in the source and measure when retrieval reflects them.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
+**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
 
 **Test Data.** 10 documents; 3 users; 5 revocations and 5 grants.
 
@@ -385,7 +380,6 @@ nav_order: 14
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: A, P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | No ATLAS identifier asserted; verify current entries for vector-store and embedding attacks |
 | **OWASP LLM / GenAI Mapping** | LLM08:2025 Vector and Embedding Weaknesses |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.10 |
@@ -396,7 +390,7 @@ nav_order: 14
 
 **Technical Scenario.** Craft queries that resemble restricted content without naming it.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
+**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
 
 **Test Data.** 20 restricted chunks with canary phrases; 40 probing queries using paraphrase, topic hints and partial terms; 2 users without access.
 
@@ -449,7 +443,6 @@ nav_order: 14
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: A, P |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
@@ -460,7 +453,7 @@ nav_order: 14
 
 **Technical Scenario.** Seed two tenants and attempt cross-tenant retrieval through every interface.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
+**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
 
 **Test Data.** 2 tenants; 50 canary chunks each; API, application and admin access paths.
 
@@ -513,7 +506,6 @@ nav_order: 14
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: A, P, G |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0020 Poison Training Data (applied by analogy to indexed content; verify current RAG-specific entry) |
 | **OWASP LLM / GenAI Mapping** | LLM04:2025 Data and Model Poisoning; LLM08:2025 Vector and Embedding Weaknesses |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
@@ -524,7 +516,7 @@ nav_order: 14
 
 **Technical Scenario.** Add documents containing contradicting or false statements about a topic and observe answers.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
+**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
 
 **Test Data.** 10 genuine documents; 8 poisoned documents (false policy statements, altered numbers, fake approvals, fake contact details); 20 queries; canary values.
 
@@ -578,7 +570,6 @@ nav_order: 14
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: A, P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0020 Poison Training Data (applied by analogy to indexed content; verify current RAG-specific entry) |
 | **OWASP LLM / GenAI Mapping** | LLM04:2025 Data and Model Poisoning; LLM08:2025 Vector and Embedding Weaknesses |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
@@ -589,7 +580,7 @@ nav_order: 14
 
 **Technical Scenario.** Insert documents stuffed with target phrases and observe retrieval.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
+**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
 
 **Test Data.** 5 target questions; 10 documents with keyword stuffing, invisible repetition and duplicated chunks.
 
@@ -642,7 +633,6 @@ nav_order: 14
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: P, A |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -653,7 +643,7 @@ nav_order: 14
 
 **Technical Scenario.** Test who can add content and how approval operates.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
+**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
 
 **Test Data.** 3 collections (open, restricted, regulated); 4 contributors with different roles.
 
@@ -706,7 +696,6 @@ nav_order: 14
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P, A |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
@@ -717,7 +706,7 @@ nav_order: 14
 
 **Technical Scenario.** Alter indexed content directly in the store and in the source and look for detection.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
+**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
 
 **Test Data.** 20 documents with recorded hashes; 5 altered in the source, 5 altered directly in the vector store, 10 untouched.
 
@@ -770,7 +759,6 @@ nav_order: 14
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Partial: P, A \| Core: R |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | No ATLAS identifier asserted; verify current entries for vector-store and embedding attacks |
 | **OWASP LLM / GenAI Mapping** | LLM08:2025 Vector and Embedding Weaknesses |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.10 |
@@ -781,7 +769,7 @@ nav_order: 14
 
 **Technical Scenario.** Request the vendor's assessment and run a basic inversion attempt on lab embeddings.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
+**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
 
 **Test Data.** Lab embeddings of 50 fabricated short sentences containing canary values; open-source inversion tool approved for lab use.
 
@@ -834,7 +822,6 @@ nav_order: 14
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: A, P |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -845,7 +832,7 @@ nav_order: 14
 
 **Technical Scenario.** Switch embedding model versions and check retrieval and controls afterwards.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
+**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
 
 **Test Data.** 1 index; 2 embedding model versions; 40 test queries; ACL filters.
 
@@ -899,7 +886,6 @@ nav_order: 14
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: A, G |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -910,7 +896,7 @@ nav_order: 14
 
 **Technical Scenario.** Place instructions in titles, authors, tags and file names of test documents.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
+**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
 
 **Test Data.** 8 documents with instructions in metadata fields; canary CANARY-L11-014.
 
@@ -963,7 +949,6 @@ nav_order: 14
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P, A |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
@@ -974,7 +959,7 @@ nav_order: 14
 
 **Technical Scenario.** Index a corpus seeded with sensitive items with the pre-index scan enabled and disabled.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
+**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
 
 **Test Data.** 200 documents; 30 with fabricated personal data, 20 with fake secrets, 10 with confidential markers; 140 clean.
 
@@ -1027,7 +1012,7 @@ nav_order: 14
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: A, G |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
+| **Quick-Start Scenario** | [AI-POC-RT-003](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md#runtime-ai-test-cases) |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
@@ -1038,7 +1023,7 @@ nav_order: 14
 
 **Technical Scenario.** Apply label-based rules at query time and test users with different clearances.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
+**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
 
 **Test Data.** 4 labels; 3 users with different clearances; 80 chunks labelled.
 
@@ -1091,7 +1076,6 @@ nav_order: 14
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: A |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (no direct technique) |
 | **OWASP LLM / GenAI Mapping** | LLM09:2025 Misinformation |
 | **NIST AI RMF Mapping** | MEASURE 2.5; MAP 2.3 |
@@ -1102,7 +1086,7 @@ nav_order: 14
 
 **Technical Scenario.** Insert documents claiming to be from authoritative sources.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
+**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
 
 **Test Data.** 6 documents with spoofed source labels (policy, regulator, CEO), 6 genuine ones.
 
@@ -1155,7 +1139,6 @@ nav_order: 14
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: A, P |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -1166,7 +1149,7 @@ nav_order: 14
 
 **Technical Scenario.** Mark documents withdrawn or expired and test retrieval.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
+**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
 
 **Test Data.** 10 documents; 5 withdrawn, 5 expired by metadata date.
 
@@ -1219,7 +1202,6 @@ nav_order: 14
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0025 Exfiltration via Cyber Means |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
@@ -1230,7 +1212,7 @@ nav_order: 14
 
 **Technical Scenario.** Run scripted crawling versus normal use.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
+**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
 
 **Test Data.** Knowledge base of 500 chunks; normal profile of 20 queries a day; crawler script of 1,000 queries designed to cover the corpus.
 
@@ -1284,7 +1266,6 @@ nav_order: 14
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: A, G |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0051 LLM Prompt Injection |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -1295,7 +1276,7 @@ nav_order: 14
 
 **Technical Scenario.** Run queries through rewriting steps and check enforcement at each stage.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
+**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
 
 **Test Data.** Application with query rewriting; 15 queries including sensitive and injection attempts.
 
@@ -1347,7 +1328,6 @@ nav_order: 14
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: A, P |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0020 Poison Training Data (applied by analogy to indexed content; verify current RAG-specific entry) |
 | **OWASP LLM / GenAI Mapping** | LLM04:2025 Data and Model Poisoning; LLM08:2025 Vector and Embedding Weaknesses |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
@@ -1358,7 +1338,7 @@ nav_order: 14
 
 **Technical Scenario.** Craft content designed to climb the reranked list for chosen queries and observe ranking and detection.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
+**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
 
 **Test Data.** 5 target queries; 10 crafted chunks using repeated key terms, copied headings, fake recency metadata, boosted fields and near-duplicates of authoritative chunks; 3 authoritative chunks per query as baseline.
 
@@ -1412,7 +1392,6 @@ nav_order: 14
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -1423,7 +1402,7 @@ nav_order: 14
 
 **Technical Scenario.** Review the accounts and permissions used by lab connectors and test reduction.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
+**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
 
 **Test Data.** 4 connectors (drive, wiki, ticketing, code repository) with privileges ranging from folder-level read-only to tenant administrator; 2 connector credentials stored in configuration files.
 
@@ -1478,7 +1457,6 @@ nav_order: 14
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -1489,7 +1467,7 @@ nav_order: 14
 
 **Technical Scenario.** Attempt exports under different roles and review backup handling.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
+**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
 
 **Test Data.** 1 knowledge base with 500 chunks and 3 collections of different sensitivity; 3 roles (reader, curator, administrator).
 
@@ -1543,7 +1521,6 @@ nav_order: 14
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: A, G, P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
@@ -1554,7 +1531,7 @@ nav_order: 14
 
 **Technical Scenario.** Run a set of queries and reconstruct what happened from logs alone.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
+**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
 
 **Test Data.** 30 queries across 3 users including 5 with filtered results, 3 refused and 2 failed; 1 incident scenario (restricted document accessed).
 
@@ -1608,7 +1585,6 @@ nav_order: 14
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: A, G |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
@@ -1619,7 +1595,7 @@ nav_order: 14
 
 **Technical Scenario.** Compare answer quality with and without controls on a reference question set.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per [Appendix D](appendix-d-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
+**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
 
 **Test Data.** 60 questions with reference answers, 40 answerable from permitted content and 20 touching restricted content; controls: access filtering, pre-index scanning, injection filtering, response DLP; 2 reviewers.
 

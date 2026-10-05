@@ -77,7 +77,7 @@
 <li><details open><summary><a href="index.html">Test Case Library</a></summary><ul>
 <li><a href="00-reference-index.html">Reference Index</a></li>
 <li><a href="framework-adoption-guide.html">Framework Adoption Guide</a></li>
-<li><a href="appendix-d-lab-prerequisites.html">Appendix D: Lab Prerequisites</a></li>
+<li><a href="appendix-lab-prerequisites.html">Appendix: Lab Prerequisites</a></li>
 <li><a href="L01-business-and-use-cases.html">L01 Business &amp; Use Cases</a></li>
 <li><a href="L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
 <li><a href="L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>
@@ -104,7 +104,7 @@
 <p><a id="top"></a></p>
 <h1 id="l13-training-fine-tuning-layer">L13 Training &amp; Fine-Tuning Layer</h1>
 <p><strong>Primary test focus:</strong> data poisoning, dataset provenance, fine-tune integrity</p>
-<p><strong>Cases:</strong> 20 (TC-L13-001 to TC-L13-020)  |  <strong>Batch:</strong> 4</p>
+<p><strong>Cases:</strong> 20 (TC-L13-001 to TC-L13-020)</p>
 <blockquote>
 <p><strong>Safety boundary.</strong> Retrieval, model, training, pipeline and supply chain cases use fabricated corpora and datasets, small lab models, mock hubs and indexes and harmless marker artefacts only (an EICAR-style file that writes a marker, never real malware). Never load untrusted model files outside an isolated sandbox, and never connect the lab to production knowledge sources, models, pipelines, registries or credentials. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.</p>
 <p><strong>Verify before use.</strong> MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the <a href="00-reference-index.html">Reference Index</a> for field definitions and applicability codes.</p>
@@ -296,10 +296,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (visibility control); Reconnaissance/Discovery context only</td>
 </tr>
@@ -316,7 +312,7 @@
 <p><strong>Risk Addressed.</strong> Datasets copied for experiments and fine-tuning are rarely registered, so nobody knows what data shaped a model.</p>
 <p><strong>Business Scenario.</strong> Data and model owners want every dataset used for training or tuning registered with source, owner, sensitivity and consuming models.</p>
 <p><strong>Technical Scenario.</strong> Create a known set of datasets across storage locations and compare the platform's inventory with ground truth.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
 <p><strong>Test Data.</strong> 8 datasets: 3 in object storage, 2 in a notebook workspace, 1 on a shared drive, 1 in a repository, 1 in a managed fine-tuning service; sizes from 100 rows to 100,000 rows; varied sensitivity.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -373,10 +369,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0010 AI Supply Chain Compromise</td>
 </tr>
@@ -393,7 +385,7 @@
 <p><strong>Risk Addressed.</strong> Data of unknown origin may be unlicensed, scraped against terms, or collected without a lawful basis.</p>
 <p><strong>Business Scenario.</strong> Legal and governance want provenance, licence and lawful-basis information attached to each training dataset.</p>
 <p><strong>Technical Scenario.</strong> Register datasets with and without provenance records and test gating.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
 <p><strong>Test Data.</strong> 6 datasets: 2 with full provenance (source, licence, collection date, consent basis), 2 with partial, 2 with none.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -450,10 +442,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0020 Poison Training Data (applied by analogy to stored context, memory and ingested data); verify against current ATLAS</td>
 </tr>
@@ -470,7 +458,7 @@
 <p><strong>Risk Addressed.</strong> Corrupted labels degrade or steer a model without obvious signs.</p>
 <p><strong>Business Scenario.</strong> Model owners want label tampering detected before training.</p>
 <p><strong>Technical Scenario.</strong> Flip labels in a lab labelled dataset at different rates and test detection.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
 <p><strong>Test Data.</strong> Lab dataset of 5,000 labelled examples; label-flip rates of 1, 3 and 10 percent applied in random and targeted patterns (targeted: one class pushed into another).</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -527,10 +515,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0020 Poison Training Data (applied by analogy to stored context, memory and ingested data); verify against current ATLAS</td>
 </tr>
@@ -547,7 +531,7 @@
 <p><strong>Risk Addressed.</strong> A small number of crafted examples can teach a model to misbehave whenever a trigger phrase appears.</p>
 <p><strong>Business Scenario.</strong> Security wants poisoned fine-tuning examples detected, and backdoor behaviour found after tuning.</p>
 <p><strong>Technical Scenario.</strong> Insert a harmless trigger-phrase pattern into a fine-tuning set and test data-side and model-side detection.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
 <p><strong>Test Data.</strong> Fine-tuning set of 2,000 instruction-response pairs; 20 poisoned pairs (1 percent) mapping a benign trigger phrase to a marker response; clean control set.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -604,10 +588,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0020 Poison Training Data (applied by analogy to stored context, memory and ingested data); verify against current ATLAS</td>
 </tr>
@@ -624,7 +604,7 @@
 <p><strong>Risk Addressed.</strong> Bulk additions of odd or duplicated data are signs of tampering or accidental contamination.</p>
 <p><strong>Business Scenario.</strong> Data engineers want screening of new data against the existing distribution.</p>
 <p><strong>Technical Scenario.</strong> Ingest normal and anomalous batches and compare screening results.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
 <p><strong>Test Data.</strong> Baseline set of 10,000 records; 5 incoming batches: clean, duplicated, distribution-shifted, injected with out-of-range values, injected with near-duplicate adversarial examples.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -680,10 +660,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -700,7 +676,7 @@
 <p><strong>Risk Addressed.</strong> Trained-in personal data and secrets can be reproduced later and cannot easily be removed.</p>
 <p><strong>Business Scenario.</strong> Privacy and security want sensitive data found and handled before training.</p>
 <p><strong>Technical Scenario.</strong> Scan a seeded training corpus.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
 <p><strong>Test Data.</strong> 10,000 records; 300 with fabricated personal data, 100 with fake secrets, 50 with confidential markers; 9,550 clean.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -756,10 +732,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (governance and policy control)</td>
 </tr>
@@ -776,7 +748,7 @@
 <p><strong>Risk Addressed.</strong> Using content against site terms or opt-out signals creates legal exposure and reputational damage.</p>
 <p><strong>Business Scenario.</strong> Legal wants collected web content checked against opt-out signals and terms.</p>
 <p><strong>Technical Scenario.</strong> Test the platform on a mock set of crawled sources with different signals.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
 <p><strong>Test Data.</strong> 20 mock sources: 6 with opt-out signals, 4 with restrictive terms, 4 licensed, 6 unrestricted; crawl record.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -832,10 +804,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0012 Valid Accounts</td>
 </tr>
@@ -852,7 +820,7 @@
 <p><strong>Risk Addressed.</strong> Unrestricted ability to start fine-tuning lets staff push sensitive data into models.</p>
 <p><strong>Business Scenario.</strong> Governance wants tuning jobs controlled and approved.</p>
 <p><strong>Technical Scenario.</strong> Test who can start jobs and what approval is needed.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
 <p><strong>Test Data.</strong> 4 roles; 3 datasets of different sensitivity; approval workflow.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -908,10 +876,6 @@
 <td>Critical</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
@@ -928,7 +892,7 @@
 <p><strong>Risk Addressed.</strong> Uploading datasets to a provider's tuning service moves data to a third party in bulk.</p>
 <p><strong>Business Scenario.</strong> Security wants uploads to tuning services detected and controlled.</p>
 <p><strong>Technical Scenario.</strong> Attempt dataset uploads to approved and unapproved tuning services.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
 <p><strong>Test Data.</strong> 2 mock tuning services (approved, unapproved); datasets with fabricated sensitive markers.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -983,10 +947,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (evaluation control)</td>
 </tr>
@@ -1003,7 +963,7 @@
 <p><strong>Risk Addressed.</strong> Fine-tuning can weaken safety behaviour even when the data looks harmless.</p>
 <p><strong>Business Scenario.</strong> Risk owners want safety re-tested automatically after every tuning run.</p>
 <p><strong>Technical Scenario.</strong> Fine-tune a lab model on benign data and compare safety before and after.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
 <p><strong>Test Data.</strong> 1 base model; 2 benign fine-tuning sets; 150-prompt safety set from L12.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1060,10 +1020,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0050 Command and Scripting Interpreter</td>
 </tr>
@@ -1080,7 +1036,7 @@
 <p><strong>Risk Addressed.</strong> Training jobs with broad network access can pull untrusted code and send data out.</p>
 <p><strong>Business Scenario.</strong> Security wants training environments isolated.</p>
 <p><strong>Technical Scenario.</strong> Run jobs that attempt outbound connections and file access.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
 <p><strong>Test Data.</strong> Training environment; allowed: internal package mirror and dataset store; attempts: public internet, unapproved bucket, metadata service, other tenants' storage.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1136,10 +1092,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0010 AI Supply Chain Compromise</td>
 </tr>
@@ -1156,7 +1108,7 @@
 <p><strong>Risk Addressed.</strong> Checkpoints can be swapped or altered between runs.</p>
 <p><strong>Business Scenario.</strong> Pipeline owners want checkpoints signed and verified.</p>
 <p><strong>Technical Scenario.</strong> Create checkpoints and tamper with them.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
 <p><strong>Test Data.</strong> 3 checkpoints; tampering: altered file, swapped file, altered metadata.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1211,10 +1163,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>N/A (operational and monitoring control)</td>
 </tr>
@@ -1231,7 +1179,7 @@
 <p><strong>Risk Addressed.</strong> Without a complete run record, nobody can explain or reproduce a model.</p>
 <p><strong>Business Scenario.</strong> Audit wants run configuration, code, data and environment captured.</p>
 <p><strong>Technical Scenario.</strong> Run training and inspect the record.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
 <p><strong>Test Data.</strong> 2 training runs with different configurations.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1287,10 +1235,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0010 AI Supply Chain Compromise</td>
 </tr>
@@ -1307,7 +1251,7 @@
 <p><strong>Risk Addressed.</strong> Public datasets and base models can be poisoned, mislabelled, carry hidden prompts or ship unsafe loaders, and they enter the pipeline with the trust of an approved source.</p>
 <p><strong>Business Scenario.</strong> Supply chain owners want third-party data and models vetted and approved before they reach any training or tuning job.</p>
 <p><strong>Technical Scenario.</strong> Submit lab packages that imitate public hub downloads, with seeded defects, through the platform's vetting gate.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
 <p><strong>Test Data.</strong> 6 packages: clean dataset, dataset with corrupted records, dataset with hidden instructions in text fields, dataset containing fabricated personal data, model package with an unsafe loader (harmless marker payload), model package with a licence that conflicts with intended use.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1364,10 +1308,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0020 Poison Training Data (applied by analogy to stored context, memory and ingested data); verify against current ATLAS</td>
 </tr>
@@ -1384,7 +1324,7 @@
 <p><strong>Risk Addressed.</strong> Model-generated training data can amplify errors, reproduce memorised records and contaminate evaluation sets, and it is easily mistaken for real data once mixed in.</p>
 <p><strong>Business Scenario.</strong> Governance wants synthetic data labelled, checked for leakage and kept apart from evaluation data.</p>
 <p><strong>Technical Scenario.</strong> Generate synthetic datasets in the lab and test tagging, seed-leakage detection, contamination checks and mixing policy.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
 <p><strong>Test Data.</strong> 1 generator model; 3 synthetic sets generated from a seed set containing 50 canary records; an evaluation set with 100 items, 10 of which are close paraphrases of synthetic items.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1441,10 +1381,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0020 Poison Training Data (applied by analogy to stored context, memory and ingested data); verify against current ATLAS</td>
 </tr>
@@ -1461,7 +1397,7 @@
 <p><strong>Risk Addressed.</strong> Where several parties contribute updates, one malicious or compromised participant can degrade or steer the shared model.</p>
 <p><strong>Business Scenario.</strong> Architecture wants participant identity and update validity checked, or the limits stated, before any federated approach is accepted.</p>
 <p><strong>Technical Scenario.</strong> Simulate a small federated round with one malicious participant submitting manipulated updates and test detection and exclusion.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
 <p><strong>Test Data.</strong> 5 simulated participants with their own fabricated data shards; 1 malicious participant submitting scaled, sign-flipped and backdoor-style updates in separate rounds; 10 training rounds.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1518,10 +1454,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0024 Exfiltration via AI Inference API (includes model extraction and inversion techniques)</td>
 </tr>
@@ -1538,7 +1470,7 @@
 <p><strong>Risk Addressed.</strong> Models memorise rare strings, including personal data and secrets, and can reproduce them under the right prompt.</p>
 <p><strong>Business Scenario.</strong> Privacy and security want memorisation measured and acceptable before a tuned model is released.</p>
 <p><strong>Technical Scenario.</strong> Fine-tune a lab model with canaries at several repetition levels, then run extraction attempts and compare with and without output controls.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
 <p><strong>Test Data.</strong> Fine-tuning set of 5,000 fabricated records containing 60 canary strings inserted at 1, 5 and 20 repetitions (20 each); 200 extraction prompts of four styles (prefix completion, direct question, repeated token, context reconstruction).</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1596,10 +1528,6 @@
 <td>High</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0020 Poison Training Data (applied by analogy to stored context, memory and ingested data); verify against current ATLAS</td>
 </tr>
@@ -1616,7 +1544,7 @@
 <p><strong>Risk Addressed.</strong> User ratings and corrections used to tune a model can be gamed by coordinated accounts to steer behaviour.</p>
 <p><strong>Business Scenario.</strong> Product owners want feedback pipelines resistant to coordinated manipulation.</p>
 <p><strong>Technical Scenario.</strong> Submit genuine and coordinated malicious feedback to a lab feedback pipeline and test detection and weighting.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
 <p><strong>Test Data.</strong> 200 genuine ratings and corrections from 40 test users; 50 coordinated malicious ratings from 5 accounts pushing a specific wrong preference (for example rating a policy-violating answer as best); 2 slow campaigns spread over simulated days.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1674,10 +1602,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0057 LLM Data Leakage (secondary)</td>
 </tr>
@@ -1694,7 +1618,7 @@
 <p><strong>Risk Addressed.</strong> Deleting data from a dataset does not remove its influence on models already trained on it, which complicates erasure obligations.</p>
 <p><strong>Business Scenario.</strong> Privacy wants a defined, evidenced process for removal requests that touch training data.</p>
 <p><strong>Technical Scenario.</strong> Submit a deletion request for fabricated individuals whose records were used in tuning and follow it through the platform.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
 <p><strong>Test Data.</strong> Training dataset with 20 canary records for 3 fabricated individuals; 2 model versions trained on it; erasure request for 1 individual.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1751,10 +1675,6 @@
 <td>Medium</td>
 </tr>
 <tr>
-<td><strong>Legacy ID</strong></td>
-<td>None (new case)</td>
-</tr>
-<tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
 <td>AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting</td>
 </tr>
@@ -1771,7 +1691,7 @@
 <p><strong>Risk Addressed.</strong> GPU capacity is expensive and attractive for unapproved training, cryptocurrency mining and personal projects.</p>
 <p><strong>Business Scenario.</strong> Operations wants unapproved training or compute abuse found and stopped.</p>
 <p><strong>Technical Scenario.</strong> Launch unapproved lab jobs of several types and test discovery, quota enforcement and alerting.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per <a href="appendix-d-lab-prerequisites.html">Appendix D</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</p>
 <p><strong>Test Data.</strong> 3 unapproved jobs: an unregistered fine-tuning job, a job disguised as a notebook session, a mining-style continuous load; project quotas defined; approved job list.</p>
 <p><strong>Procedure</strong></p>
 <ol>

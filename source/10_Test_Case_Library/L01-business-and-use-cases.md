@@ -10,8 +10,7 @@ nav_order: 4
 
 **Primary test focus:** use-case registry, risk-tiering, business-owner attribution
 
-**Cases:** 20 (TC-L01-001 to TC-L01-020)  |  **Batch:** 6
-
+**Cases:** 20 (TC-L01-001 to TC-L01-020)
 > **Safety boundary.** All cases use fabricated use cases, policies, records and individuals only. This layer is framework-neutral: see the [Framework Adoption Guide](framework-adoption-guide.md) before testing, and complete the Applicable Requirement and Framework Crosswalk fields for each case.
 
 > **Verify before use.** MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the [Reference Index](00-reference-index.md) for field definitions and applicability codes.
@@ -57,7 +56,6 @@ nav_order: 4
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **NIST AI RMF Mapping** | MAP (context and inventory of AI systems) |
 
 **Risk Addressed.** An organisation cannot govern or report on AI it has not recorded, and registries with optional fields fill with incomplete entries.
@@ -66,7 +64,7 @@ nav_order: 4
 
 **Technical Scenario.** Create use cases in the platform's registry with complete, incomplete and duplicate entries and test enforcement of mandatory fields.
 
-**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per [Appendix D](appendix-d-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
+**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
 
 **Applicable Requirement *(assessor to complete)***
 
@@ -136,7 +134,6 @@ nav_order: 4
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **NIST AI RMF Mapping** | GOVERN (policies, accountability and oversight) |
 
 **Risk Addressed.** Deployment ahead of approval is the most common way unreviewed AI reaches production.
@@ -145,7 +142,7 @@ nav_order: 4
 
 **Technical Scenario.** Submit use cases of different risk and test routing, approval, rejection and the link to technical enforcement.
 
-**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per [Appendix D](appendix-d-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
+**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
 
 **Applicable Requirement *(assessor to complete)***
 
@@ -215,7 +212,6 @@ nav_order: 4
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **NIST AI RMF Mapping** | GOVERN (policies, accountability and oversight) |
 
 **Risk Addressed.** Systems without a named owner are not maintained, reviewed or switched off.
@@ -224,7 +220,7 @@ nav_order: 4
 
 **Technical Scenario.** Test owner assignment, validation against the directory and handling of leavers and role changes.
 
-**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per [Appendix D](appendix-d-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
+**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
 
 **Applicable Requirement *(assessor to complete)***
 
@@ -294,7 +290,6 @@ nav_order: 4
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **NIST AI RMF Mapping** | MAP (context and inventory of AI systems) |
 
 **Risk Addressed.** Risk assessment is weak when no one can say which models, datasets and services a use case relies on.
@@ -303,7 +298,7 @@ nav_order: 4
 
 **Technical Scenario.** Link five use cases to models, datasets, services and users and test navigation both ways.
 
-**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per [Appendix D](appendix-d-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
+**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
 
 **Applicable Requirement *(assessor to complete)***
 
@@ -372,7 +367,6 @@ nav_order: 4
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **NIST AI RMF Mapping** | MAP and MANAGE (risk identification and treatment) |
 
 **Risk Addressed.** Tiering that depends on who completes it produces uneven control and unreliable reporting.
@@ -381,7 +375,7 @@ nav_order: 4
 
 **Technical Scenario.** Have two assessors tier the same use cases independently and compare results and rationale capture.
 
-**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per [Appendix D](appendix-d-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
+**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
 
 **Applicable Requirement *(assessor to complete)***
 
@@ -451,7 +445,6 @@ nav_order: 4
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **NIST AI RMF Mapping** | GOVERN (policies, accountability and oversight) |
 
 **Risk Addressed.** Some uses are barred by law, policy or contract and must not reach the build stage.
@@ -460,7 +453,7 @@ nav_order: 4
 
 **Technical Scenario.** Submit use cases that touch policy-defined restricted categories and test screening.
 
-**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per [Appendix D](appendix-d-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
+**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
 
 **Applicable Requirement *(assessor to complete)***
 
@@ -529,7 +522,6 @@ nav_order: 4
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: W, P, A |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **NIST AI RMF Mapping** | MAP and MEASURE (privacy risk examined and managed) |
 
 **Risk Addressed.** Systems drift from their documented purpose, undermining the privacy, risk and legal assumptions made at approval, and purpose limitation is a principle in most data protection frameworks.
@@ -538,7 +530,7 @@ nav_order: 4
 
 **Technical Scenario.** Record purposes and expected data and user groups for four use cases, then generate usage that departs from them in four ways.
 
-**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per [Appendix D](appendix-d-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
+**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
 
 **Applicable Requirement *(assessor to complete)***
 
@@ -608,7 +600,6 @@ nav_order: 4
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P, W |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **NIST AI RMF Mapping** | MAP (context and inventory of AI systems) |
 
 **Risk Addressed.** The registry is only as good as its completeness; unregistered use is the real exposure.
@@ -617,7 +608,7 @@ nav_order: 4
 
 **Technical Scenario.** Run discovery on a lab environment containing registered and unregistered AI use and compare.
 
-**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per [Appendix D](appendix-d-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
+**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
 
 **Applicable Requirement *(assessor to complete)***
 
@@ -687,7 +678,6 @@ nav_order: 4
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **NIST AI RMF Mapping** | MANAGE (response and recovery) |
 
 **Risk Addressed.** Treating every AI service as equally critical misallocates resilience effort and obscures what must be restored first.
@@ -696,7 +686,7 @@ nav_order: 4
 
 **Technical Scenario.** Classify use cases by impact and link them to processes and recovery objectives.
 
-**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per [Appendix D](appendix-d-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
+**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
 
 **Applicable Requirement *(assessor to complete)***
 
@@ -766,7 +756,6 @@ nav_order: 4
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **NIST AI RMF Mapping** | GOVERN and MANAGE (human oversight, transparency) |
 
 **Risk Addressed.** Harm to affected people is easy to miss when the assessment lists only the users of the system.
@@ -775,7 +764,7 @@ nav_order: 4
 
 **Technical Scenario.** Complete stakeholder sections for five use cases with different affected groups and check prompts, flags and consequences.
 
-**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per [Appendix D](appendix-d-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
+**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
 
 **Applicable Requirement *(assessor to complete)***
 
@@ -844,7 +833,6 @@ nav_order: 4
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: W, A |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **NIST AI RMF Mapping** | GOVERN and MANAGE (human oversight, transparency) |
 
 **Risk Addressed.** Many frameworks give individuals rights and require safeguards when decisions about them are automated or based on profiling.
@@ -853,7 +841,7 @@ nav_order: 4
 
 **Technical Scenario.** Register use cases with and without decisions about people and test flags and downstream requirements.
 
-**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per [Appendix D](appendix-d-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
+**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
 
 **Applicable Requirement *(assessor to complete)***
 
@@ -922,7 +910,6 @@ nav_order: 4
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: W, A |
 | **Risk Severity** | Critical |
-| **Legacy ID** | None (new case) |
 | **NIST AI RMF Mapping** | GOVERN and MANAGE (human oversight, transparency) |
 
 **Risk Addressed.** Oversight that exists only on paper fails when it is needed.
@@ -931,7 +918,7 @@ nav_order: 4
 
 **Technical Scenario.** Review oversight records for four use cases and test an intervention in the lab.
 
-**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per [Appendix D](appendix-d-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
+**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
 
 **Applicable Requirement *(assessor to complete)***
 
@@ -1000,7 +987,6 @@ nav_order: 4
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **NIST AI RMF Mapping** | MANAGE and GOVERN (change and decommissioning) |
 
 **Risk Addressed.** Controls required in production are skipped in pilot, and pilots become production silently.
@@ -1009,7 +995,7 @@ nav_order: 4
 
 **Technical Scenario.** Move use cases through states and check gates, skipping and time limits.
 
-**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per [Appendix D](appendix-d-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
+**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
 
 **Applicable Requirement *(assessor to complete)***
 
@@ -1079,7 +1065,6 @@ nav_order: 4
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **NIST AI RMF Mapping** | GOVERN (policies, accountability and oversight) |
 
 **Risk Addressed.** Pilots use real data and open access because they are treated as informal.
@@ -1088,7 +1073,7 @@ nav_order: 4
 
 **Technical Scenario.** Run two pilots, one with guardrails configured and one without, and attempt out-of-guardrail actions.
 
-**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per [Appendix D](appendix-d-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
+**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
 
 **Applicable Requirement *(assessor to complete)***
 
@@ -1158,7 +1143,6 @@ nav_order: 4
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **NIST AI RMF Mapping** | MANAGE and GOVERN (change and decommissioning) |
 
 **Risk Addressed.** Approvals granted once become stale as models, data and users change.
@@ -1167,7 +1151,7 @@ nav_order: 4
 
 **Technical Scenario.** Change attributes of an approved use case and check which changes trigger review.
 
-**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per [Appendix D](appendix-d-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
+**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
 
 **Applicable Requirement *(assessor to complete)***
 
@@ -1237,7 +1221,6 @@ nav_order: 4
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Low |
-| **Legacy ID** | None (new case) |
 | **NIST AI RMF Mapping** | MAP and MANAGE (risk identification and treatment) |
 
 **Risk Addressed.** Without measured value and incident data, use cases persist because nobody asks whether they are worth the risk.
@@ -1246,7 +1229,7 @@ nav_order: 4
 
 **Technical Scenario.** Record KPIs and risk indicators for four use cases and review the dashboards.
 
-**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per [Appendix D](appendix-d-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
+**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
 
 **Applicable Requirement *(assessor to complete)***
 
@@ -1315,7 +1298,6 @@ nav_order: 4
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | High |
-| **Legacy ID** | None (new case) |
 | **NIST AI RMF Mapping** | GOVERN and MAP (third-party and supply chain risk) |
 
 **Risk Addressed.** A use case that depends on an external model or service inherits that provider's risk, location and contract terms.
@@ -1324,7 +1306,7 @@ nav_order: 4
 
 **Technical Scenario.** Link five use cases to four providers and test the provider-centred view.
 
-**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per [Appendix D](appendix-d-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
+**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
 
 **Applicable Requirement *(assessor to complete)***
 
@@ -1393,7 +1375,6 @@ nav_order: 4
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **NIST AI RMF Mapping** | MANAGE (response and recovery) |
 
 **Risk Addressed.** Processes that depend on AI need a manual or alternative path when it fails, and it must work.
@@ -1402,7 +1383,7 @@ nav_order: 4
 
 **Technical Scenario.** Review recorded plans and execute one fallback in the lab.
 
-**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per [Appendix D](appendix-d-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
+**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
 
 **Applicable Requirement *(assessor to complete)***
 
@@ -1472,7 +1453,6 @@ nav_order: 4
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **NIST AI RMF Mapping** | MANAGE and GOVERN (change and decommissioning) |
 
 **Risk Addressed.** Retired systems keep data, access and cost, and lapses are discovered only during incidents.
@@ -1481,7 +1461,7 @@ nav_order: 4
 
 **Technical Scenario.** Retire two use cases and verify each closure step in the lab.
 
-**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per [Appendix D](appendix-d-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
+**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
 
 **Applicable Requirement *(assessor to complete)***
 
@@ -1550,7 +1530,6 @@ nav_order: 4
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Medium |
-| **Legacy ID** | None (new case) |
 | **NIST AI RMF Mapping** | GOVERN (policies, accountability and oversight) |
 
 **Risk Addressed.** Leaders lack a view of how much AI is in use and at what risk.
@@ -1559,7 +1538,7 @@ nav_order: 4
 
 **Technical Scenario.** Load 30 fabricated use cases and check the reports against known totals.
 
-**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per [Appendix D](appendix-d-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
+**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
 
 **Applicable Requirement *(assessor to complete)***
 
