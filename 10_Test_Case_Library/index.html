@@ -386,6 +386,18 @@
 </tbody>
 </table></div>
 <p>A case can carry more than one domain tag, so the domain counts add up to more than 487. D2 covers the developer workflow end to end: IDE prompts, assistant extensions, coding agents, MCP configuration, repository policy, pipeline bots and SOC telemetry, with L05 as its primary layer.</p>
+<h2 id="coming-next">Coming next</h2>
+<blockquote>
+<p><strong>Note:</strong> Additional test cases are being written for the following domains. Until they are published, cases that touch these themes are tagged to the closest existing domain (D1 to D7).</p>
+</blockquote>
+<ul>
+<li><strong>Agent and non-human identity governance</strong>, as a separate buyer concern from MCP tool governance.</li>
+<li><strong>Browser and computer-use agents</strong>, which act on a user's behalf in web sessions. They are a different risk from a chat tab.</li>
+<li><strong>Multimodal and voice input</strong>, covering images, documents and audio as injection and leakage channels.</li>
+<li><strong>AI incident response and forensics</strong>, a lifecycle-wide need beyond L17 telemetry.</li>
+<li><strong>AI cost and abuse controls</strong>, covering denial-of-wallet, quota abuse and runaway agents.</li>
+</ul>
+<p>See the <a href="00-reference-index.html">Reference Index</a> for the planned domain tags.</p>
 <h2 id="numbering-and-structure">Numbering and structure</h2>
 <p>Case IDs take the form <code>TC-L##-###</code>: the lifecycle layer and a sequence within it, for example <code>TC-L08-014</code>. IDs are unique across the library and stable once issued. Where a case is the detailed version of a quick-start scenario, the <strong>Quick-Start Scenario</strong> field links to it by ID, for example <code>AI-POC-ID-004</code>.</p>
 <p>Each case records: lifecycle layer, use-case domains, test method (Technical, Evidence or Attestation), vendor applicability (E endpoint or browser agent, G inline gateway or proxy, A application or API-level control, P posture or AI-SPM, R red-team tool, W governance workflow), risk, scenarios, test data, numbered procedure, expected results, pass and fail criteria, scoring, evidence to capture, and reference mappings.</p>

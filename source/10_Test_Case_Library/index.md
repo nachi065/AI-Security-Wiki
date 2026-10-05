@@ -64,6 +64,18 @@ Counts are taken from the case index of each layer.
 
 A case can carry more than one domain tag, so the domain counts add up to more than 487. D2 covers the developer workflow end to end: IDE prompts, assistant extensions, coding agents, MCP configuration, repository policy, pipeline bots and SOC telemetry, with L05 as its primary layer.
 
+## Coming next
+
+> **Note:** Additional test cases are being written for the following domains. Until they are published, cases that touch these themes are tagged to the closest existing domain (D1 to D7).
+
+- **Agent and non-human identity governance**, as a separate buyer concern from MCP tool governance.
+- **Browser and computer-use agents**, which act on a user's behalf in web sessions. They are a different risk from a chat tab.
+- **Multimodal and voice input**, covering images, documents and audio as injection and leakage channels.
+- **AI incident response and forensics**, a lifecycle-wide need beyond L17 telemetry.
+- **AI cost and abuse controls**, covering denial-of-wallet, quota abuse and runaway agents.
+
+See the [Reference Index](00-reference-index.md) for the planned domain tags.
+
 ## Numbering and structure
 
 Case IDs take the form `TC-L##-###`: the lifecycle layer and a sequence within it, for example `TC-L08-014`. IDs are unique across the library and stable once issued. Where a case is the detailed version of a quick-start scenario, the **Quick-Start Scenario** field links to it by ID, for example `AI-POC-ID-004`.

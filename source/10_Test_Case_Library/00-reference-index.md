@@ -59,16 +59,21 @@ Where a case is the detailed version of a scenario in the wiki's [AI Security Po
 | D6 | Data Protection / DLP / Investigation |
 | D7 | Sovereignty / Compliance / UAE Requirements |
 
-### Candidate additional domains (pending approval, not in use)
+### Planned additional domains (cases coming)
+
+Additional test cases are being written for these domains. The tags are reserved and not yet in use.
+
+- **D9 Agent and Non-Human Identity Governance**, as a separate buyer concern from MCP tool governance.
+- **D10 Browser and Computer-Use Agents**, which act on a user's behalf in web sessions. They are a different risk from a chat tab.
+- **D11 Multimodal and Voice Input Security**, covering images, documents and audio as injection and leakage channels.
+- **D12 AI Incident Response and Forensics**, a lifecycle-wide need beyond L17 telemetry.
+- **D13 AI Cost and Abuse Controls**, covering denial-of-wallet, quota abuse and runaway agents.
+
+### Candidate domain (pending approval, not in use)
 
 - D8 AI Red Teaming and Continuous Testing
-- D9 Agent and Non-Human Identity Governance
-- D10 Browser and Computer-Use Agents
-- D11 Multimodal and Voice Input Security
-- D12 AI Incident Response and Forensics
-- D13 AI Cost and Abuse Controls
 
-These reflect areas that vendors increasingly sell. Their market relevance has not been independently verified. Cases touching these themes are tagged to the closest existing domain.
+These reflect areas that vendors increasingly sell. Their market relevance has not been independently verified. Until cases are published under the new tags, cases touching these themes are tagged to the closest existing domain.
 
 ## 5. Layer-to-domain coverage matrix (draft)
 
