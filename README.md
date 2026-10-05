@@ -40,15 +40,3 @@ The wiki is licensed under [Creative Commons Attribution 4.0 International (CC B
 Original author: **Nachiket Sathaye**
 
 The original author credit stays with the work: it appears on every page, and an automated check rejects any change that alters or removes it.
-
-## Structure
-
-| Path | Contents |
-|---|---|
-| `index.html` | Wiki home, lifecycle and role navigation |
-| `01_Strategy_and_Market/` … `09_Reference/` | The HTML pages, one folder per wiki section |
-| `assets/` | Stylesheet, navigation and search scripts, search index |
-| `source/` | The Markdown the pages are generated from |
-| `build.py` | Regenerates the HTML pages from `source/` |
-| `AUTHORS`, `check_author.py` | Original author and contributor list, and the check that protects the author credit |
-| `LICENSE` | CC BY 4.0 licence text |
