@@ -10,6 +10,8 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(ROOT, "source")
 SITE_TITLE = "AI Security Wiki"
 REPO_URL = "https://github.com/nachi065/AI-Security-Wiki"
+# The original author is fixed. check_author.py fails the build if this changes.
+ORIGINAL_AUTHOR = "Nachiket Sathaye"
 
 
 def read(path):
@@ -83,6 +85,7 @@ TEMPLATE = """<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
+<meta name="author" content="{author}">
 <meta name="description" content="A vendor-neutral reference for AI security governance, risk management, engineering standards, vendor evaluation and assurance.">
 <link rel="stylesheet" href="{base}assets/style.css">
 </head>
@@ -106,6 +109,7 @@ TEMPLATE = """<!doctype html>
 {content}
 </article>
 {pager}
+<footer class="site-footer">Original author: {author} &middot; <a href="{repo}/blob/main/CONTRIBUTING.md" rel="noopener">Contribute</a></footer>
 </main>
 </div>
 <script>window.SITE_BASE = "{base}";</script>
@@ -136,7 +140,7 @@ for i, page in enumerate(order):
     content = render(page)
     doc = TEMPLATE.format(
         title=html.escape(SITE_TITLE if page is home else f"{title} | {SITE_TITLE}"),
-        site=SITE_TITLE, repo=REPO_URL, base=base, nav=nav(page), crumbs=crumbs,
+        site=SITE_TITLE, repo=REPO_URL, author=ORIGINAL_AUTHOR, base=base, nav=nav(page), crumbs=crumbs,
         content=content, pager='<nav class="pager" aria-label="Previous and next page">' + "".join(links) + "</nav>",
     )
     dest = os.path.join(ROOT, page["out"])

@@ -92,6 +92,7 @@ tr:last-child td { border-bottom: none; }
 
 .pager { display: flex; justify-content: space-between; gap: 16px; margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 14px; }
 .pager .next { margin-left: auto; text-align: right; }
+.site-footer { margin-top: 32px; font-size: 13px; color: var(--muted); }
 .notfound { max-width: 560px; margin: 15vh auto; padding: 0 20px; }
 
 @media (max-width: 860px) {
@@ -109,5 +110,6 @@ tr:last-child td { border-bottom: none; }
 }
 @media print {
   .topbar, .sidebar, .pager { display: none; }
+  .site-footer a { display: none; }
   main { max-width: none; padding: 0; }
 }

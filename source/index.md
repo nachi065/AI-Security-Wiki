@@ -4,6 +4,7 @@ nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
 version: 2.0
 status: Published
+author: Nachiket Sathaye
 owner: AI Security Program
 custodian: Security Architecture Team
 review_cycle: Quarterly
@@ -16,6 +17,7 @@ last_updated: 2026-07-27
 > **Document type:** Enterprise AI Security Reference Architecture and Governance Wiki  
 > **Version:** 2.0  
 > **Status:** Published  
+> **Original author:** Nachiket Sathaye  
 > **Intended use:** Public, vendor-neutral reference and template set for AI security governance, engineering, risk management, assurance, audit, compliance, and vendor evaluation.
 
 ## 1. Purpose
@@ -311,6 +313,7 @@ Vendor profiles should be used to record:
 
 | Item | Value |
 |---|---|
+| Original author | Nachiket Sathaye |
 | Document owner | AI Security Program |
 | Custodian | Security Architecture Team |
 | Status | Published |
@@ -322,8 +325,8 @@ Vendor profiles should be used to record:
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
-| 1.0 | Initial release | AI Security Program | Initial wiki home page with purpose, audience, design principle, role navigation, lifecycle navigation, folder structure, and vendor-neutral operating rule. |
-| 2.0 | 2026-07-27 | AI Security Program | Expanded into comprehensive enterprise AI security wiki home page with mission, strategic objectives, operating model, governance, standards hierarchy, framework mapping, maintenance rules, roadmap, metrics, and enhanced navigation. |
+| 1.0 | Initial release | Nachiket Sathaye | Initial wiki home page with purpose, audience, design principle, role navigation, lifecycle navigation, folder structure, and vendor-neutral operating rule. |
+| 2.0 | 2026-07-27 | Nachiket Sathaye | Expanded into comprehensive enterprise AI security wiki home page with mission, strategic objectives, operating model, governance, standards hierarchy, framework mapping, maintenance rules, roadmap, metrics, and enhanced navigation. |
 
 ## 21. Quick Links
 

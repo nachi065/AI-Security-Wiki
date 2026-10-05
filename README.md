@@ -25,6 +25,12 @@ The full wiki is published as a website, so there is nothing to clone or install
 
 The pages are plain HTML, so the site also works offline: download the repository and open `index.html` in a browser.
 
+## Author and contributing
+
+Original author: **Nachiket Sathaye**
+
+Contributions are welcome through pull requests; see [CONTRIBUTING.md](CONTRIBUTING.md). The original author credit is fixed: it appears on every page, and an automated check rejects any change that alters or removes it.
+
 ## Structure
 
 | Path | Contents |
@@ -34,6 +40,7 @@ The pages are plain HTML, so the site also works offline: download the repositor
 | `assets/` | Stylesheet, navigation and search scripts, search index |
 | `source/` | The Markdown the pages are generated from |
 | `build.py` | Regenerates the HTML pages from `source/` |
+| `AUTHORS`, `check_author.py` | Original author record and the check that protects it |
 
 ## Editing a page
 
