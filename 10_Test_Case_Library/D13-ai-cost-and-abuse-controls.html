@@ -1,0 +1,1913 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D13 AI Cost and Abuse Controls | AI Security Wiki</title>
+<meta name="author" content="Nachiket Sathaye">
+<meta name="description" content="21 AI security test cases for AI Cost and Abuse Controls: attribution, budgets, denial of wallet, key abuse, runaway agents, shadow spend, enforcement.">
+<link rel="canonical" href="https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="AI Security Wiki">
+<meta property="og:title" content="D13 AI Cost and Abuse Controls | AI Security Wiki">
+<meta property="og:description" content="21 AI security test cases for AI Cost and Abuse Controls: attribution, budgets, denial of wallet, key abuse, runaway agents, shadow spend, enforcement.">
+<meta property="og:url" content="https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+  <a class="brand" href="../index.html">AI Security Wiki</a>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Search the wiki" aria-label="Search the wiki" autocomplete="off">
+    <ul id="search-results" hidden></ul>
+  </div>
+  <a class="repo-link" href="https://github.com/nachi065/AI-Security-Wiki" rel="noopener">GitHub</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="sidebar" aria-label="Wiki sections">
+<ul class="nav">
+<li><a href="../index.html">Home</a></li>
+<li><details><summary><a href="../01_Strategy_and_Market/index.html">Strategy and Market</a></summary><ul>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.html">AI Security Market and Technology Landscape — Summary</a></li>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape_Expanded.html">AI Security Market and Technology Landscape</a></li>
+</ul></details></li>
+<li><details><summary><a href="../02_Risk_Management/index.html">Risk Management</a></summary><ul>
+<li><a href="../02_Risk_Management/02A_AI_Risk_Methodology.html">AI Risk Methodology</a></li>
+<li><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a></li>
+<li><a href="../02_Risk_Management/02C_AI_Risk_Treatment_Plan.html">AI Risk Treatment Plan</a></li>
+<li><a href="../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a></li>
+<li><a href="../02_Risk_Management/02E_AI_Risk_Review_Template.html">AI Risk Review Template</a></li>
+</ul></details></li>
+<li><details><summary><a href="../03_Control_Library/index.html">Control Library</a></summary><ul>
+<li><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></li>
+<li><a href="../03_Control_Library/04_Existing_Security_Control_Baseline.html">Existing Security Control Baseline</a></li>
+<li><a href="../03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.html">Microsoft Security Overlap and AI Gaps</a></li>
+</ul></details></li>
+<li><details><summary><a href="../04_Domain_Standards/index.html">Domain Standards</a></summary><ul>
+<li><a href="../04_Domain_Standards/06_Browser_AI_Security_Standard.html">Browser AI Security Standard</a></li>
+<li><a href="../04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.html">IDE AI Coding Assistant Security Standard</a></li>
+<li><a href="../04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a></li>
+<li><a href="../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
+<li><a href="../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
+</ul></details></li>
+<li><details><summary><a href="../05_Vendor_Evaluation/index.html">Vendor Evaluation</a></summary><ul>
+<li><a href="../05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
+<li><a href="../05_Vendor_Evaluation/12A_Vendor_Profile_Prompt_Security_SentinelOne.html">Vendor Profile — Prompt Security / SentinelOne</a></li>
+<li><a href="../05_Vendor_Evaluation/12B_Vendor_Profile_Palo_Alto_Prisma_AIRS.html">Vendor Profile — Palo Alto Prisma AIRS</a></li>
+<li><a href="../05_Vendor_Evaluation/12C_Vendor_Profile_HiddenLayer.html">Vendor Profile — HiddenLayer</a></li>
+<li><a href="../05_Vendor_Evaluation/12D_Vendor_Profile_Lasso_Security.html">Vendor Profile — Lasso Security</a></li>
+<li><a href="../05_Vendor_Evaluation/12E_Vendor_Profile_Cyberhaven.html">Vendor Profile — Cyberhaven</a></li>
+<li><a href="../05_Vendor_Evaluation/12F_Vendor_Profile_Nightfall_AI.html">Vendor Profile — Nightfall AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12G_Vendor_Profile_Enkrypt_AI.html">Vendor Profile — Enkrypt AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12H_Vendor_Profile_Sovereign_AI_Security_Labs.html">Vendor Profile — Sovereign AI Security Labs</a></li>
+</ul></details></li>
+<li><details><summary><a href="../06_Testing_and_Assurance/index.html">Testing and Assurance</a></summary><ul>
+<li><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html">AI Security PoC Test Case Library</a></li>
+<li><a href="../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a></li>
+<li><a href="../06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.html">AI Red Team Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../07_Role_Based_Playbooks/index.html">Role-Based Playbooks</a></summary><ul>
+<li><a href="../07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.html">AI Product Developer Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15B_AI_Security_Researcher_Playbook.html">AI Security Researcher Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15D_Security_Engineering_Playbook.html">Security Engineering Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15E_Vendor_Evaluation_and_Audit_Playbook.html">Vendor Evaluation and Audit Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../08_Governance/index.html">Governance</a></summary><ul>
+<li><a href="../08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></li>
+<li><a href="../08_Governance/17_AI_Policy_Standards_and_Acceptable_Use.html">AI Policy, Standards and Acceptable Use</a></li>
+</ul></details></li>
+<li><details><summary><a href="../09_Reference/index.html">Reference</a></summary><ul>
+<li><a href="../09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
+</ul></details></li>
+<li><details open><summary><a href="index.html">Test Case Library</a></summary><ul>
+<li><a href="00-reference-index.html">Reference Index</a></li>
+<li><a href="framework-adoption-guide.html">Framework Adoption Guide</a></li>
+<li><a href="appendix-lab-prerequisites.html">Appendix: Lab Prerequisites</a></li>
+<li><a href="L01-business-and-use-cases.html">L01 Business &amp; Use Cases</a></li>
+<li><a href="L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
+<li><a href="L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>
+<li><a href="L04-human-interaction-layer.html">L04 Human Interaction Layer</a></li>
+<li><a href="L05-ai-applications.html">L05 AI Applications</a></li>
+<li><a href="L06-agent-orchestration-layer.html">L06 Agent Orchestration Layer</a></li>
+<li><a href="L07-prompt-and-context-layer.html">L07 Prompt &amp; Context Layer</a></li>
+<li><a href="L08-ai-gateway-and-security-controls.html">L08 AI Gateway &amp; Security Controls</a></li>
+<li><a href="L09-identity-and-access-mgmt.html">L09 Identity &amp; Access Mgmt</a></li>
+<li><a href="L10-data-layer.html">L10 Data Layer</a></li>
+<li><a href="L11-knowledge-and-retrieval-layer.html">L11 Knowledge &amp; Retrieval Layer</a></li>
+<li><a href="L12-model-layer.html">L12 Model Layer</a></li>
+<li><a href="L13-training-and-fine-tuning-layer.html">L13 Training &amp; Fine-Tuning Layer</a></li>
+<li><a href="L14-mlops-llmops-layer.html">L14 MLOps / LLMOps Layer</a></li>
+<li><a href="L15-infrastructure-layer.html">L15 Infrastructure Layer</a></li>
+<li><a href="L16-supply-chain-and-third-party.html">L16 Supply Chain &amp; Third Party</a></li>
+<li><a href="L17-monitoring-detection-and-response.html">L17 Monitoring, Detection &amp; Response</a></li>
+<li><a href="D08-ai-red-teaming-and-continuous-testing.html">D08 AI Red Teaming and Continuous Testing</a></li>
+<li><a href="D09-agent-and-non-human-identity-governance.html">D09 Agent and Non-Human Identity Governance</a></li>
+<li><a href="D10-browser-and-computer-use-agents.html">D10 Browser and Computer-Use Agents</a></li>
+<li><a href="D11-multimodal-and-voice-input-security.html">D11 Multimodal and Voice Input Security</a></li>
+<li><a href="D12-ai-incident-response-and-forensics.html">D12 AI Incident Response and Forensics</a></li>
+<li><a class="current" href="D13-ai-cost-and-abuse-controls.html">D13 AI Cost and Abuse Controls</a></li>
+</ul></details></li>
+<li><a href="../community-rules.html">Community Rules</a></li>
+</ul>
+</nav>
+<main>
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Test Case Library</a> / <span>D13 AI Cost and Abuse Controls</span></p>
+<article>
+<p><a id="top"></a></p>
+<h1 id="d13-ai-cost-and-abuse-controls">D13 AI Cost and Abuse Controls</h1>
+<p><strong>Focus:</strong> AI cost and abuse controls: attribution, budgets, denial of wallet, key abuse, runaway agents, shadow spend, enforcement</p>
+<p><strong>Cases:</strong> 21 (TC-D13-001 to TC-D13-021)  |  <strong>Series:</strong> Emerging domains</p>
+<blockquote>
+<p><strong>Safety boundary.</strong> All cases use synthetic data and lab targets only. Use a mock provider, fabricated keys and lab endpoints only. Abuse scripts must never be pointed at real provider accounts or real customer traffic, and tests must never try to defeat a challenge mechanism.</p>
+<p><strong>How this relates to the layer cases.</strong> Domain cases cross-reference the layer cases they build on (see <strong>Related Layer Cases</strong> in each case). The layer case tests the platform control; the domain case tests the buyer concern from the domain's own point of view. Verify all ATLAS, OWASP and NIST identifiers before use, and treat numeric thresholds as starting values.</p>
+</blockquote>
+<h2 id="cases-in-this-domain">Cases in this domain</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Title</th>
+<th>Severity</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#tc-d13-001">TC-D13-001</a></td>
+<td>Cost Attribution: Tagging Spend to Team, Application, User and Key</td>
+<td>High</td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><a href="#tc-d13-002">TC-D13-002</a></td>
+<td>Token Accounting Accuracy Against Provider Invoices</td>
+<td>High</td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><a href="#tc-d13-003">TC-D13-003</a></td>
+<td>Budget Hierarchy and Enforcement: Organisation, Team, Application, User and Key</td>
+<td>Critical</td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><a href="#tc-d13-004">TC-D13-004</a></td>
+<td>Real-Time Spend Anomaly Detection</td>
+<td>High</td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><a href="#tc-d13-005">TC-D13-005</a></td>
+<td>Leaked or Stolen API Key: Cost-Spike Detection and Automatic Containment</td>
+<td>Critical</td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><a href="#tc-d13-006">TC-D13-006</a></td>
+<td>Denial of Wallet via Public Chatbot Endpoints: Anonymous Traffic Abuse</td>
+<td>Critical</td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><a href="#tc-d13-007">TC-D13-007</a></td>
+<td>Quota and Credit Abuse: Multi-Account, Free-Tier and Trial Exploitation</td>
+<td>High</td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><a href="#tc-d13-008">TC-D13-008</a></td>
+<td>Prompt and Output Expansion Abuse: Length and Amplification Limits</td>
+<td>High</td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><a href="#tc-d13-009">TC-D13-009</a></td>
+<td>Tool Fan-Out and Recursive Agent Cost Explosion</td>
+<td>Critical</td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><a href="#tc-d13-010">TC-D13-010</a></td>
+<td>Retry Storms, Timeouts and the Cost of Failure Handling</td>
+<td>Medium</td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><a href="#tc-d13-011">TC-D13-011</a></td>
+<td>Caching and Prefix Reuse: Cost Effects and Cache Abuse</td>
+<td>Medium</td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><a href="#tc-d13-012">TC-D13-012</a></td>
+<td>Model Routing Cost Controls: Premium Model Misuse and Downgrade Policy</td>
+<td>High</td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><a href="#tc-d13-013">TC-D13-013</a></td>
+<td>Rate and Concurrency Limits per Identity, Key and Network</td>
+<td>High</td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><a href="#tc-d13-014">TC-D13-014</a></td>
+<td>Circuit Breakers and Automatic Actions on Budget Breach</td>
+<td>Critical</td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><a href="#tc-d13-015">TC-D13-015</a></td>
+<td>Batch Jobs, Scheduled Runs and Long-Running Tasks: Timeouts and Spend Ceilings</td>
+<td>High</td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><a href="#tc-d13-016">TC-D13-016</a></td>
+<td>GPU and Self-Hosted Inference Cost Abuse</td>
+<td>High</td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><a href="#tc-d13-017">TC-D13-017</a></td>
+<td>Shadow Spend Discovery: Unapproved AI Subscriptions and Direct Provider Accounts</td>
+<td>High</td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><a href="#tc-d13-018">TC-D13-018</a></td>
+<td>Spend Approval Workflow for Expensive Models, Features and Contracts</td>
+<td>Medium</td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><a href="#tc-d13-019">TC-D13-019</a></td>
+<td>Cost Controls for Third-Party and Embedded AI Features</td>
+<td>Medium</td>
+<td>Evidence</td>
+</tr>
+<tr>
+<td><a href="#tc-d13-020">TC-D13-020</a></td>
+<td>Cost Reporting, Chargeback Evidence and Dispute Handling</td>
+<td>Medium</td>
+<td>Evidence</td>
+</tr>
+<tr>
+<td><a href="#tc-d13-021">TC-D13-021</a></td>
+<td>Abuse Enforcement Ladder: Warn, Throttle, Suspend and Appeal for Authenticated Users</td>
+<td>High</td>
+<td>Technical</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="test-cases">Test cases</h2>
+<p><a id="tc-d13-001"></a></p>
+<h3 id="tc-d13-001-cost-attribution-tagging-spend-to-team-application-user-and-key">TC-D13-001: Cost Attribution: Tagging Spend to Team, Application, User and Key</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Use-Case Domain</strong></td>
+<td>D13: AI Cost and Abuse Controls</td>
+</tr>
+<tr>
+<td><strong>Lifecycle Layer(s)</strong></td>
+<td>L08, L05</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: G, A, P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Related Layer Cases</strong></td>
+<td><a href="L08-ai-gateway-and-security-controls.html#tc-l08-031">TC-L08-031</a>, <a href="L05-ai-applications.html#tc-l05-025">TC-L05-025</a></td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Spend that cannot be attributed cannot be controlled, charged back or investigated.</p>
+<p><strong>Business Scenario.</strong> Finance and platform owners want every request's cost tied to a team, application, user and key.</p>
+<p><strong>Technical Scenario.</strong> Generate known usage from several teams and compare attributed cost with ground truth.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p>
+<p><strong>Test Data.</strong> 5 teams, 8 applications, 20 users, 12 keys; 20,000 requests with known token counts; 8 requests with missing or wrong tags; mock pricing for 3 models.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Record the ground truth by team, application, user, key and model.</li>
+<li>Generate the usage.</li>
+<li>Pull the attribution report.</li>
+<li>Compare cost per dimension.</li>
+<li>Check the handling of untagged and mis-tagged requests.</li>
+<li>Check tag inheritance (key to application to team).</li>
+<li>Export the report for chargeback.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Shared keys; requests routed through an agent acting for a user.</p>
+<p><strong>Expected Detection.</strong> Attributed cost within 2 percent of ground truth per team and application; untagged spend isolated and reported; tag inheritance works; export available.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Export to finance systems.</p>
+<p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Attribution vs ground truth.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to domain index</a></p>
+<hr />
+<p><a id="tc-d13-002"></a></p>
+<h3 id="tc-d13-002-token-accounting-accuracy-against-provider-invoices">TC-D13-002: Token Accounting Accuracy Against Provider Invoices</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Use-Case Domain</strong></td>
+<td>D13: AI Cost and Abuse Controls</td>
+</tr>
+<tr>
+<td><strong>Lifecycle Layer(s)</strong></td>
+<td>L08</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: G, P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Related Layer Cases</strong></td>
+<td><a href="L08-ai-gateway-and-security-controls.html#tc-l08-031">TC-L08-031</a></td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (assurance control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE and GOVERN (documentation and accountability)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Platform meters that disagree with provider invoices cause disputes and hide waste.</p>
+<p><strong>Business Scenario.</strong> Finance wants metered usage reconciled with the provider's billing export.</p>
+<p><strong>Technical Scenario.</strong> Compare the platform's counts with a mock provider's billing export.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p>
+<p><strong>Test Data.</strong> 1 week of usage (50,000 requests); mock provider billing export with its own counts; special cases: streaming, cached prompts, retries, tool calls, images and audio, failed requests.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Generate the usage.</li>
+<li>Export both datasets.</li>
+<li>Reconcile totals and per-day figures.</li>
+<li>Investigate differences by case type.</li>
+<li>Check treatment of cached tokens and retries.</li>
+<li>Check handling of provider price changes mid-period.</li>
+<li>Document the reconciliation procedure.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Provider rounding rules; usage in several currencies.</p>
+<p><strong>Expected Detection.</strong> Totals within 2 percent; differences explained by case type; price changes handled; reconciliation repeatable.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Export.</p>
+<p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Reconciliation table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to domain index</a></p>
+<hr />
+<p><a id="tc-d13-003"></a></p>
+<h3 id="tc-d13-003-budget-hierarchy-and-enforcement-organisation-team-application-user-and-key">TC-D13-003: Budget Hierarchy and Enforcement: Organisation, Team, Application, User and Key</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Use-Case Domain</strong></td>
+<td>D13: AI Cost and Abuse Controls</td>
+</tr>
+<tr>
+<td><strong>Lifecycle Layer(s)</strong></td>
+<td>L08</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: G, A</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Related Layer Cases</strong></td>
+<td><a href="L08-ai-gateway-and-security-controls.html#tc-l08-031">TC-L08-031</a></td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> A single global cap protects the organisation but lets one runaway key consume everyone's budget.</p>
+<p><strong>Business Scenario.</strong> Platform owners want nested budgets with defined behaviour at each level.</p>
+<p><strong>Technical Scenario.</strong> Configure nested budgets and drive spend through each level.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p>
+<p><strong>Test Data.</strong> Budgets: organisation 100 units, 3 teams at 30 each, 6 applications at 10 each, 10 users at 2 each, 4 keys at 3 each; load script that reaches each limit in turn.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Configure the hierarchy.</li>
+<li>Run load to reach the key budget.</li>
+<li>Check the effect at each level (alert, throttle, block).</li>
+<li>Reach the application and team budgets.</li>
+<li>Check that exhausting one team does not stop others.</li>
+<li>Check carry-over and reset rules.</li>
+<li>Change a budget and check effect time.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Budget reached mid-request; budget shared by two applications.</p>
+<p><strong>Expected Detection.</strong> Each level enforced at its limit with the configured action; other teams unaffected; resets on schedule; changes effective within 5 minutes.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Alert, throttle or block per level.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Events to SIEM and chat.</p>
+<p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Level-by-level table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to domain index</a></p>
+<hr />
+<p><a id="tc-d13-004"></a></p>
+<h3 id="tc-d13-004-real-time-spend-anomaly-detection">TC-D13-004: Real-Time Spend Anomaly Detection</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Use-Case Domain</strong></td>
+<td>D13: AI Cost and Abuse Controls</td>
+</tr>
+<tr>
+<td><strong>Lifecycle Layer(s)</strong></td>
+<td>L08, L17</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P, G</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Related Layer Cases</strong></td>
+<td><a href="L17-monitoring-detection-and-response.html#tc-l17-007">TC-L17-007</a>, <a href="L09-identity-and-access-mgmt.html#tc-l09-017">TC-L09-017</a></td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (operational and monitoring control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Monthly invoices find overspend weeks late; spikes need catching in minutes.</p>
+<p><strong>Business Scenario.</strong> Finance and operations want anomalies in spend detected early with context.</p>
+<p><strong>Technical Scenario.</strong> Build a baseline and inject spend anomalies.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p>
+<p><strong>Test Data.</strong> 14 days of simulated baseline across 5 teams; 6 anomalies: sudden spike, slow ramp, off-hours burst, new expensive model, new application, key used from a new network.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Load the baseline.</li>
+<li>Inject each anomaly.</li>
+<li>Record detection time and alert content.</li>
+<li>Check context (who, what, model, key).</li>
+<li>Run legitimate events (launch day) and check false alarms.</li>
+<li>Check routing and escalation.</li>
+<li>Check tuning.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Gradual drift over many weeks; seasonal peaks.</p>
+<p><strong>Expected Detection.</strong> At least 5 of 6 anomalies detected; spikes within 10 minutes; false alarms on legitimate events under 2 per week; alerts include actor, model and key.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Alert or throttle.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Alerts to chat, SIEM and finance.</p>
+<p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Detection table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to domain index</a></p>
+<hr />
+<p><a id="tc-d13-005"></a></p>
+<h3 id="tc-d13-005-leaked-or-stolen-api-key-cost-spike-detection-and-automatic-containment">TC-D13-005: Leaked or Stolen API Key: Cost-Spike Detection and Automatic Containment</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Use-Case Domain</strong></td>
+<td>D13: AI Cost and Abuse Controls</td>
+</tr>
+<tr>
+<td><strong>Lifecycle Layer(s)</strong></td>
+<td>L09, L08</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: G, P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Related Layer Cases</strong></td>
+<td><a href="L09-identity-and-access-mgmt.html#tc-l09-014">TC-L09-014</a>, <a href="L09-identity-and-access-mgmt.html#tc-l09-017">TC-L09-017</a></td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0055 Unsecured Credentials</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.10; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> A leaked key can run up large bills within minutes, long before anyone reads an invoice.</p>
+<p><strong>Business Scenario.</strong> Security wants misuse of a provider key detected and the key contained automatically.</p>
+<p><strong>Technical Scenario.</strong> Simulate use of a fabricated key from unexpected places and volumes.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p>
+<p><strong>Test Data.</strong> 2 fabricated keys with normal usage profiles; misuse: use from a new network at 20 times normal volume, use of models never previously used, use at an unusual hour, use from two networks at once.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Establish normal use for 3 days (simulated).</li>
+<li>Run each misuse.</li>
+<li>Record time to detection and containment.</li>
+<li>Check actions (throttle, suspend, rotate).</li>
+<li>Check notification to the owner.</li>
+<li>Restore with a new key and check application recovery.</li>
+<li>Check evidence for investigation.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Key used within normal volume but from a hostile network; key shared by design between two sites.</p>
+<p><strong>Expected Detection.</strong> Misuse detected within 5 minutes; key suspended automatically per policy; owner notified; application recovers with the new key within the stated time.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Suspend key.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Events to SIEM.</p>
+<p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Timeline.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to domain index</a></p>
+<hr />
+<p><a id="tc-d13-006"></a></p>
+<h3 id="tc-d13-006-denial-of-wallet-via-public-chatbot-endpoints-anonymous-traffic-abuse">TC-D13-006: Denial of Wallet via Public Chatbot Endpoints: Anonymous Traffic Abuse</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Use-Case Domain</strong></td>
+<td>D13: AI Cost and Abuse Controls</td>
+</tr>
+<tr>
+<td><strong>Lifecycle Layer(s)</strong></td>
+<td>L08, L05</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: G, A</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Related Layer Cases</strong></td>
+<td><a href="L08-ai-gateway-and-security-controls.html#tc-l08-030">TC-L08-030</a>, <a href="L08-ai-gateway-and-security-controls.html#tc-l08-023">TC-L08-023</a></td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM10:2025 Unbounded Consumption</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Public chat endpoints can be driven by automated traffic to burn budget, with no account to block.</p>
+<p><strong>Business Scenario.</strong> Security wants per-address, per-session and global limits and abuse signals on anonymous endpoints.</p>
+<p><strong>Technical Scenario.</strong> Drive scripted anonymous traffic at a lab public chatbot.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p>
+<p><strong>Test Data.</strong> 1 lab public chatbot; scripts: single address at high rate, 500 addresses at low rate, long-prompt flood, session cycling, replay of identical requests; challenge mechanism available in the lab; spend cap.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Configure per-address, per-session and global limits and the challenge mechanism.</li>
+<li>Run each script.</li>
+<li>Record when limits and challenges activate and the spend incurred.</li>
+<li>Check legitimate users during the attack.</li>
+<li>Check alerts.</li>
+<li>Check cost per blocked request.</li>
+<li>Document that the test never attempts to defeat the challenge mechanism.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Distributed low-rate traffic; traffic from a cloud provider range.</p>
+<p><strong>Expected Detection.</strong> Spend during each attack capped at the configured ceiling; legitimate users still served; alerts within 5 minutes; limits and challenges activate as configured.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Throttle or challenge.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Events to SIEM.</p>
+<p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Attack table; spend chart.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to domain index</a></p>
+<hr />
+<p><a id="tc-d13-007"></a></p>
+<h3 id="tc-d13-007-quota-and-credit-abuse-multi-account-free-tier-and-trial-exploitation">TC-D13-007: Quota and Credit Abuse: Multi-Account, Free-Tier and Trial Exploitation</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Use-Case Domain</strong></td>
+<td>D13: AI Cost and Abuse Controls</td>
+</tr>
+<tr>
+<td><strong>Lifecycle Layer(s)</strong></td>
+<td>L08, L05</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: A, G</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Related Layer Cases</strong></td>
+<td><a href="L08-ai-gateway-and-security-controls.html#tc-l08-030">TC-L08-030</a></td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM10:2025 Unbounded Consumption</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Free tiers, trials and credits attract mass account creation that drains budget and masks other abuse.</p>
+<p><strong>Business Scenario.</strong> Product owners want signup and credit abuse detected and limited.</p>
+<p><strong>Technical Scenario.</strong> Create many lab accounts and consume trial credits.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p>
+<p><strong>Test Data.</strong> 1 lab service with free tier and referral credits; 200 scripted accounts from a small set of addresses and devices; 20 genuine accounts.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Run the scripted signup waves.</li>
+<li>Check detection signals (address, device, email patterns, behaviour).</li>
+<li>Check limits on credits and tier.</li>
+<li>Check effect on genuine accounts.</li>
+<li>Check review and appeal path for wrongly flagged accounts.</li>
+<li>Check reporting on credit spend by cohort.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Referral rings; accounts created slowly over weeks.</p>
+<p><strong>Expected Detection.</strong> At least 85 percent of scripted accounts limited before consuming more than 20 percent of the credit pool; genuine accounts affected under 5 percent; appeal path works.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Limit or review.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Events to the abuse team.</p>
+<p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Cohort table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to domain index</a></p>
+<hr />
+<p><a id="tc-d13-008"></a></p>
+<h3 id="tc-d13-008-prompt-and-output-expansion-abuse-length-and-amplification-limits">TC-D13-008: Prompt and Output Expansion Abuse: Length and Amplification Limits</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Use-Case Domain</strong></td>
+<td>D13: AI Cost and Abuse Controls</td>
+</tr>
+<tr>
+<td><strong>Lifecycle Layer(s)</strong></td>
+<td>L12, L08</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: G, A</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Related Layer Cases</strong></td>
+<td><a href="L12-model-layer.html#tc-l12-022">TC-L12-022</a>, <a href="L07-prompt-and-context-layer.html#tc-l07-032">TC-L07-032</a></td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM10:2025 Unbounded Consumption</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Prompts that demand very long outputs or expand repeatedly multiply cost per request.</p>
+<p><strong>Business Scenario.</strong> Operations wants input, output and total-token ceilings enforced per request and per session.</p>
+<p><strong>Technical Scenario.</strong> Send expansion-style prompts and compare cost with ceilings.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p>
+<p><strong>Test Data.</strong> 12 prompts: maximum-length requests, repeat-until-limit, nested expansion, translate into many languages, long document summary (legitimate), conversation growing every turn; ceilings: 4,000 output tokens, 20,000 context tokens, 100,000 per session.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Set ceilings.</li>
+<li>Run the prompts.</li>
+<li>Record tokens and cost per request.</li>
+<li>Check truncation behaviour and messages.</li>
+<li>Check legitimate long requests still complete.</li>
+<li>Check session-level accumulation.</li>
+<li>Check alerts for repeated ceiling hits.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Streaming responses cut mid-sentence; hidden reasoning tokens counted.</p>
+<p><strong>Expected Detection.</strong> No request exceeds the ceilings; legitimate long summary completes; session ceiling enforced; alerts on repeated hits.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Truncate or block.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Events with token counts.</p>
+<p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Token table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to domain index</a></p>
+<hr />
+<p><a id="tc-d13-009"></a></p>
+<h3 id="tc-d13-009-tool-fan-out-and-recursive-agent-cost-explosion">TC-D13-009: Tool Fan-Out and Recursive Agent Cost Explosion</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Use-Case Domain</strong></td>
+<td>D13: AI Cost and Abuse Controls</td>
+</tr>
+<tr>
+<td><strong>Lifecycle Layer(s)</strong></td>
+<td>L06, L08</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: G, A</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Related Layer Cases</strong></td>
+<td><a href="L06-agent-orchestration-layer.html#tc-l06-021">TC-L06-021</a>, <a href="L06-agent-orchestration-layer.html#tc-l06-024">TC-L06-024</a></td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0053 LLM Plugin Compromise</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM06:2025 Excessive Agency</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> One request that triggers hundreds of tool calls, model calls and sub-agents can cost far more than expected.</p>
+<p><strong>Business Scenario.</strong> Operations wants cost caps per task and per agent, with early warning before the cap.</p>
+<p><strong>Technical Scenario.</strong> Run scripted agents that fan out, loop and spawn sub-agents against a mock provider.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p>
+<p><strong>Test Data.</strong> 4 behaviours: fan-out to 200 tool calls, loop of repeated retries, recursive sub-agent spawning to depth 8, parallel agents sharing one budget; per-task cap of 50 units, per-agent cap of 200.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Configure caps and early-warning thresholds.</li>
+<li>Run each behaviour.</li>
+<li>Record cost at stop and the stopping mechanism.</li>
+<li>Check partial results preserved.</li>
+<li>Check legitimate multi-step tasks (30 calls) complete.</li>
+<li>Check attribution of cost to the initiating user.</li>
+<li>Check alerts.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Costs incurred by external tools billed separately; sub-agents using another provider.</p>
+<p><strong>Expected Detection.</strong> Each behaviour stopped before 110 percent of its cap; legitimate task completes; cost attributed; alert at the warning threshold.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Stop task.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Events to SIEM.</p>
+<p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Cost-at-stop table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to domain index</a></p>
+<hr />
+<p><a id="tc-d13-010"></a></p>
+<h3 id="tc-d13-010-retry-storms-timeouts-and-the-cost-of-failure-handling">TC-D13-010: Retry Storms, Timeouts and the Cost of Failure Handling</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Use-Case Domain</strong></td>
+<td>D13: AI Cost and Abuse Controls</td>
+</tr>
+<tr>
+<td><strong>Lifecycle Layer(s)</strong></td>
+<td>L08</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: G, A</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Related Layer Cases</strong></td>
+<td><a href="L08-ai-gateway-and-security-controls.html#tc-l08-033">TC-L08-033</a></td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM10:2025 Unbounded Consumption</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Poorly tuned retries multiply cost during provider trouble and can overload the service further.</p>
+<p><strong>Business Scenario.</strong> Operations wants retry, timeout and backoff settings that limit cost and amplification.</p>
+<p><strong>Technical Scenario.</strong> Inject provider errors and slow responses and measure request and cost amplification.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p>
+<p><strong>Test Data.</strong> Mock provider with error rates of 10, 30 and 60 percent, slow responses at 10 times normal, rate limit responses; 5,000 requests; retry settings: none, fixed, exponential with jitter.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Record baseline cost.</li>
+<li>Inject each condition under each retry setting.</li>
+<li>Measure requests sent per original request and total cost.</li>
+<li>Check circuit-breaker behaviour.</li>
+<li>Check idempotency of billed calls.</li>
+<li>Check user-visible behaviour.</li>
+<li>Check alerts on amplification.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Retries across two layers (SDK and gateway) multiplying each other.</p>
+<p><strong>Expected Detection.</strong> Amplification under 1.5 times at 30 percent errors with recommended settings; circuit breaker opens at the stated threshold; alerts raised.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Circuit-break.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Metrics to monitoring.</p>
+<p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Amplification table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to domain index</a></p>
+<hr />
+<p><a id="tc-d13-011"></a></p>
+<h3 id="tc-d13-011-caching-and-prefix-reuse-cost-effects-and-cache-abuse">TC-D13-011: Caching and Prefix Reuse: Cost Effects and Cache Abuse</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Use-Case Domain</strong></td>
+<td>D13: AI Cost and Abuse Controls</td>
+</tr>
+<tr>
+<td><strong>Lifecycle Layer(s)</strong></td>
+<td>L08, L10</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: G, A</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Related Layer Cases</strong></td>
+<td><a href="L08-ai-gateway-and-security-controls.html#tc-l08-031">TC-L08-031</a>, <a href="L10-data-layer.html#tc-l10-010">TC-L10-010</a></td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM10:2025 Unbounded Consumption</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Caching cuts cost when it works, and attackers or bad configuration can bypass it to push cost up or poison what is cached.</p>
+<p><strong>Business Scenario.</strong> Operations wants cache behaviour measured and protected against cost-driving bypass.</p>
+<p><strong>Technical Scenario.</strong> Run repeated and varied requests with caching enabled and attempt to defeat it.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p>
+<p><strong>Test Data.</strong> 1 application with response and prefix caching; 2,000 requests: 60 percent repeated, 40 percent unique; bypass attempts: tiny random changes to each prompt, unique session identifiers, cache-control manipulation; cache poisoning probe with a canary answer.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Measure cost and hit rate with legitimate repetition.</li>
+<li>Run the bypass attempts.</li>
+<li>Record hit rate and cost change.</li>
+<li>Check detection of cache-bypass patterns.</li>
+<li>Check that cache entries are isolated by user or tenant.</li>
+<li>Probe cache poisoning and check that the canary answer does not reach another user.</li>
+<li>Check cache expiry and invalidation.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Cache shared across tenants by design; provider-side caching outside the platform's control.</p>
+<p><strong>Expected Detection.</strong> Hit rate at least 50 percent on repeated traffic; bypass patterns flagged; no cross-user cache contamination; invalidation works.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Flag or limit.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Metrics to monitoring.</p>
+<p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Hit-rate table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to domain index</a></p>
+<hr />
+<p><a id="tc-d13-012"></a></p>
+<h3 id="tc-d13-012-model-routing-cost-controls-premium-model-misuse-and-downgrade-policy">TC-D13-012: Model Routing Cost Controls: Premium Model Misuse and Downgrade Policy</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Use-Case Domain</strong></td>
+<td>D13: AI Cost and Abuse Controls</td>
+</tr>
+<tr>
+<td><strong>Lifecycle Layer(s)</strong></td>
+<td>L12, L08</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: G, A</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Related Layer Cases</strong></td>
+<td><a href="L12-model-layer.html#tc-l12-021">TC-L12-021</a>, <a href="L08-ai-gateway-and-security-controls.html#tc-l08-028">TC-L08-028</a></td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Routing everything to the most expensive model, or silently to a cheaper and weaker one, changes both cost and risk.</p>
+<p><strong>Business Scenario.</strong> Platform owners want model choice governed by purpose, budget and policy.</p>
+<p><strong>Technical Scenario.</strong> Configure routing rules and test premium, standard and fallback paths.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p>
+<p><strong>Test Data.</strong> 3 models (premium, standard, small) with different prices and policy status; 4 request classes (sensitive, routine, bulk, experimental); rules by class, user and budget level; 300 requests.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Set the routing policy.</li>
+<li>Send each class.</li>
+<li>Record model chosen and cost.</li>
+<li>Attempt to request the premium model directly for routine work.</li>
+<li>Check automatic downgrade near a budget limit and notification.</li>
+<li>Check that downgrades respect security policy (sensitive data never goes to a non-approved model).</li>
+<li>Check reports on premium usage.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Model alias changing price; fallback to a model in a different region.</p>
+<p><strong>Expected Detection.</strong> Routing matches policy for at least 98 percent of requests; direct premium requests handled per rule; downgrades never violate security policy; reports accurate.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Route or deny.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Decision logs.</p>
+<p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Routing table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to domain index</a></p>
+<hr />
+<p><a id="tc-d13-013"></a></p>
+<h3 id="tc-d13-013-rate-and-concurrency-limits-per-identity-key-and-network">TC-D13-013: Rate and Concurrency Limits per Identity, Key and Network</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Use-Case Domain</strong></td>
+<td>D13: AI Cost and Abuse Controls</td>
+</tr>
+<tr>
+<td><strong>Lifecycle Layer(s)</strong></td>
+<td>L08</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: G, A</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Related Layer Cases</strong></td>
+<td><a href="L08-ai-gateway-and-security-controls.html#tc-l08-030">TC-L08-030</a></td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM10:2025 Unbounded Consumption</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Limits set only globally let one user, key or address crowd out everyone else.</p>
+<p><strong>Business Scenario.</strong> Operations wants fair limits at several levels with predictable behaviour.</p>
+<p><strong>Technical Scenario.</strong> Apply layered limits and test fairness and burst behaviour.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p>
+<p><strong>Test Data.</strong> 20 users, 6 keys, 3 networks; limits: 60 requests per minute per user, 300 per key, 1,000 per network, concurrency 5 per user; load scripts: steady, burst of 200, sustained over-limit from one user.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Configure the limits.</li>
+<li>Run steady load and confirm no throttling.</li>
+<li>Run the burst.</li>
+<li>Run the over-limit user.</li>
+<li>Record effect on others.</li>
+<li>Check responses and retry guidance.</li>
+<li>Check limit changes and effect time.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Many users behind one network address; limit applied to a key used by many users.</p>
+<p><strong>Expected Detection.</strong> Limits enforced at each level; others unaffected by the over-limit user; clear responses; changes effective within 5 minutes.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Throttle.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Events with limit name.</p>
+<p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Fairness table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to domain index</a></p>
+<hr />
+<p><a id="tc-d13-014"></a></p>
+<h3 id="tc-d13-014-circuit-breakers-and-automatic-actions-on-budget-breach">TC-D13-014: Circuit Breakers and Automatic Actions on Budget Breach</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Use-Case Domain</strong></td>
+<td>D13: AI Cost and Abuse Controls</td>
+</tr>
+<tr>
+<td><strong>Lifecycle Layer(s)</strong></td>
+<td>L08</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: G, A</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Related Layer Cases</strong></td>
+<td><a href="L08-ai-gateway-and-security-controls.html#tc-l08-031">TC-L08-031</a></td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0053 LLM Plugin Compromise</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM06:2025 Excessive Agency</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Alerts that nobody reads at 3am do not stop spend; automatic actions can also take essential services down.</p>
+<p><strong>Business Scenario.</strong> Operations wants graded automatic actions that protect budget and keep critical services running.</p>
+<p><strong>Technical Scenario.</strong> Configure graded actions and trigger them in sequence.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p>
+<p><strong>Test Data.</strong> Budget with thresholds at 70, 90 and 100 percent; actions: notify, throttle non-critical applications, switch to a cheaper model, suspend non-critical applications, suspend all; 3 critical and 5 non-critical applications; manual override.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Configure the thresholds and actions.</li>
+<li>Drive spend through each threshold.</li>
+<li>Record the actions and timing.</li>
+<li>Check that critical applications are exempt or protected.</li>
+<li>Check notification content.</li>
+<li>Use the manual override and check audit.</li>
+<li>Reset and check restoration.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Breach caused by a legitimate event; override abused.</p>
+<p><strong>Expected Detection.</strong> Each action occurs at its threshold within 2 minutes; critical applications remain available; override audited; restoration works.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Graded automatic actions.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Events to chat and ticketing.</p>
+<p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Threshold table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to domain index</a></p>
+<hr />
+<p><a id="tc-d13-015"></a></p>
+<h3 id="tc-d13-015-batch-jobs-scheduled-runs-and-long-running-tasks-timeouts-and-spend-ceilings">TC-D13-015: Batch Jobs, Scheduled Runs and Long-Running Tasks: Timeouts and Spend Ceilings</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Use-Case Domain</strong></td>
+<td>D13: AI Cost and Abuse Controls</td>
+</tr>
+<tr>
+<td><strong>Lifecycle Layer(s)</strong></td>
+<td>L06, L08</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: G, A, P</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Related Layer Cases</strong></td>
+<td><a href="L06-agent-orchestration-layer.html#tc-l06-024">TC-L06-024</a></td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM10:2025 Unbounded Consumption</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Overnight jobs run unattended, so a bug or bad input can burn budget for hours.</p>
+<p><strong>Business Scenario.</strong> Operations wants ceilings and timeouts for jobs that nobody watches.</p>
+<p><strong>Technical Scenario.</strong> Run scheduled jobs with defects and check ceilings.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p>
+<p><strong>Test Data.</strong> 4 jobs: nightly summarisation (normal), job with an infinite loop, job processing an unexpectedly large input set, job retrying a failing step forever; ceilings: time 2 hours, spend 40 units, calls 5,000.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Configure ceilings per job.</li>
+<li>Run the normal job.</li>
+<li>Run each faulty job.</li>
+<li>Record when each stops and the cost.</li>
+<li>Check partial results and job state.</li>
+<li>Check alerts and the report in the morning.</li>
+<li>Check that ceilings can be raised only with approval.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Job spanning midnight budget reset; job restarted automatically by a scheduler.</p>
+<p><strong>Expected Detection.</strong> Faulty jobs stopped at or below their ceilings; normal job unaffected; alerts and report produced; ceiling increases approved and logged.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Stop job.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Alerts to owners.</p>
+<p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Job table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to domain index</a></p>
+<hr />
+<p><a id="tc-d13-016"></a></p>
+<h3 id="tc-d13-016-gpu-and-self-hosted-inference-cost-abuse">TC-D13-016: GPU and Self-Hosted Inference Cost Abuse</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Use-Case Domain</strong></td>
+<td>D13: AI Cost and Abuse Controls</td>
+</tr>
+<tr>
+<td><strong>Lifecycle Layer(s)</strong></td>
+<td>L15, L13</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P, E</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Related Layer Cases</strong></td>
+<td><a href="L13-training-and-fine-tuning-layer.html#tc-l13-020">TC-L13-020</a>, <a href="L15-infrastructure-layer.html#tc-l15-017">TC-L15-017</a></td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM10:2025 Unbounded Consumption</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE 2.7; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Self-hosted capacity costs money whether it is used well or not, and spare capacity attracts misuse.</p>
+<p><strong>Business Scenario.</strong> Operations wants idle capacity, oversized allocations and unauthorised jobs found.</p>
+<p><strong>Technical Scenario.</strong> Create misuse patterns on lab self-hosted capacity.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p>
+<p><strong>Test Data.</strong> Lab cluster with 8 GPU units; patterns: idle allocation held for days, oversized request for small work, unauthorised training job, unusual continuous high load, jobs submitted by a service account.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Define approved usage and quotas.</li>
+<li>Create each pattern.</li>
+<li>Check detection and alerts.</li>
+<li>Check cost attribution to teams.</li>
+<li>Check reclaim actions for idle capacity.</li>
+<li>Check approval for large requests.</li>
+<li>Report utilisation and waste.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Spot capacity pre-empted; shared capacity between teams.</p>
+<p><strong>Expected Detection.</strong> All patterns detected within the stated interval; idle capacity reclaimed per policy; waste report accurate.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Reclaim or stop.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Alerts to platform and finance.</p>
+<p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Pattern table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to domain index</a></p>
+<hr />
+<p><a id="tc-d13-017"></a></p>
+<h3 id="tc-d13-017-shadow-spend-discovery-unapproved-ai-subscriptions-and-direct-provider-accounts">TC-D13-017: Shadow Spend Discovery: Unapproved AI Subscriptions and Direct Provider Accounts</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Use-Case Domain</strong></td>
+<td>D13: AI Cost and Abuse Controls</td>
+</tr>
+<tr>
+<td><strong>Lifecycle Layer(s)</strong></td>
+<td>L04, L05</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P, E</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Related Layer Cases</strong></td>
+<td><a href="L04-human-interaction-layer.html#tc-l04-001">TC-L04-001</a>, <a href="L05-ai-applications.html#tc-l05-001">TC-L05-001</a></td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (visibility control); Reconnaissance/Discovery context only</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM03:2025 Supply Chain (unmanaged AI components)</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MAP 1.1; GOVERN 6.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> AI services bought on cards and expense claims sit outside central budgets and security review.</p>
+<p><strong>Business Scenario.</strong> Finance and security want unapproved AI spend found through billing, expense and network signals.</p>
+<p><strong>Technical Scenario.</strong> Seed spending signals across several sources and compare discovery with ground truth.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p>
+<p><strong>Test Data.</strong> 25 signals: 8 card or expense lines for AI subscriptions, 5 direct provider accounts, 4 browser-based subscriptions seen in traffic, 4 SaaS add-ons, 4 approved subscriptions; mock billing export and expense feed.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Record ground truth.</li>
+<li>Load the feeds.</li>
+<li>Run discovery.</li>
+<li>Compare findings.</li>
+<li>Check matching to approved vendors and owners.</li>
+<li>Route one finding for review and close with a decision.</li>
+<li>Report spend by category.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Subscription paid by an individual and reclaimed later; per-seat price changes.</p>
+<p><strong>Expected Detection.</strong> At least 18 of 21 unapproved items found; approved ones not flagged; routing and decision recorded.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Review and approve or stop.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Feed integrations.</p>
+<p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Discovery table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to domain index</a></p>
+<hr />
+<p><a id="tc-d13-018"></a></p>
+<h3 id="tc-d13-018-spend-approval-workflow-for-expensive-models-features-and-contracts">TC-D13-018: Spend Approval Workflow for Expensive Models, Features and Contracts</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Use-Case Domain</strong></td>
+<td>D13: AI Cost and Abuse Controls</td>
+</tr>
+<tr>
+<td><strong>Lifecycle Layer(s)</strong></td>
+<td>L02, L08</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: W, G</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Related Layer Cases</strong></td>
+<td><a href="L02-governance-and-risk-mgmt.html#tc-l02-010">TC-L02-010</a></td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Costly choices made by individual teams commit the organisation beyond its plan.</p>
+<p><strong>Business Scenario.</strong> Finance wants approval thresholds for premium models, large allocations and new contracts.</p>
+<p><strong>Technical Scenario.</strong> Submit requests of different sizes and track approvals.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p>
+<p><strong>Test Data.</strong> 8 requests: premium model access, new application budget, budget increase, GPU allocation, long-term commitment, small experiment, emergency increase, request that exceeds the requester's authority.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Configure thresholds and approvers.</li>
+<li>Submit the requests.</li>
+<li>Check routing.</li>
+<li>Approve and reject.</li>
+<li>Check that approved changes take effect in the platform and rejected ones do not.</li>
+<li>Check emergency path and review.</li>
+<li>Check records.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Request split into several smaller ones to avoid the threshold.</p>
+<p><strong>Expected Detection.</strong> Routing by threshold; approvals applied to actual settings; emergency path time-limited and reviewed; records complete.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Gate.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Ticketing and finance integration.</p>
+<p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Request records.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to domain index</a></p>
+<hr />
+<p><a id="tc-d13-019"></a></p>
+<h3 id="tc-d13-019-cost-controls-for-third-party-and-embedded-ai-features">TC-D13-019: Cost Controls for Third-Party and Embedded AI Features</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Use-Case Domain</strong></td>
+<td>D13: AI Cost and Abuse Controls</td>
+</tr>
+<tr>
+<td><strong>Lifecycle Layer(s)</strong></td>
+<td>L05, L16</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Evidence</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: P, W</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Related Layer Cases</strong></td>
+<td><a href="L05-ai-applications.html#tc-l05-005">TC-L05-005</a>, <a href="L16-supply-chain-and-third-party.html#tc-l16-010">TC-L16-010</a></td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>AML.T0010 AI Supply Chain Compromise</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>LLM03:2025 Supply Chain</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 6.1; MAP 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> AI add-ons inside other products are metered by the vendor, with limits and overage prices the buyer rarely sees.</p>
+<p><strong>Business Scenario.</strong> Finance wants usage limits, overage terms and usage visibility for embedded AI features.</p>
+<p><strong>Technical Scenario.</strong> Review three lab SaaS products with AI add-ons and test visibility and controls.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p>
+<p><strong>Test Data.</strong> 3 mock SaaS tenants with AI features, usage meters, caps and overage prices; 4 weeks of simulated usage including one overage.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>List the AI features, plans and caps.</li>
+<li>Check usage visibility to the customer.</li>
+<li>Check alert options near caps.</li>
+<li>Cause an overage and check billing treatment.</li>
+<li>Check the ability to disable the feature or set a spending limit.</li>
+<li>Check contract terms on price changes.</li>
+<li>Record gaps.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Feature enabled by default for all users; usage metered per action rather than per token.</p>
+<p><strong>Expected Detection.</strong> Usage visible to the customer; cap alerts available; overage treatment documented; disable or limit control exists; gaps recorded.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Limit.</p>
+<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Usage export.</p>
+<p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Feature table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
+<p><a href="#top">Back to domain index</a></p>
+<hr />
+<p><a id="tc-d13-020"></a></p>
+<h3 id="tc-d13-020-cost-reporting-chargeback-evidence-and-dispute-handling">TC-D13-020: Cost Reporting, Chargeback Evidence and Dispute Handling</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Use-Case Domain</strong></td>
+<td>D13: AI Cost and Abuse Controls</td>
+</tr>
+<tr>
+<td><strong>Lifecycle Layer(s)</strong></td>
+<td>L08, L02</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Evidence</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: G, P, W</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Related Layer Cases</strong></td>
+<td><a href="L08-ai-gateway-and-security-controls.html#tc-l08-031">TC-L08-031</a></td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (assurance control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>MEASURE and GOVERN (documentation and accountability)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Teams contest charges they cannot trace, and auditors want to see how costs were allocated.</p>
+<p><strong>Business Scenario.</strong> Finance wants reports and an evidence trail for allocations and disputes.</p>
+<p><strong>Technical Scenario.</strong> Produce chargeback reports and run a dispute through the evidence trail.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p>
+<p><strong>Test Data.</strong> 1 month of usage for 5 teams; 2 disputed charges (a key shared by two teams, a spike during an attack); allocation rules.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Generate the monthly report.</li>
+<li>Check against ground truth.</li>
+<li>Open the two disputes.</li>
+<li>Trace each to request-level evidence.</li>
+<li>Adjust allocation with approval.</li>
+<li>Check audit of adjustments.</li>
+<li>Export evidence for finance.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Retroactive tag changes; shared platform costs.</p>
+<p><strong>Expected Detection.</strong> Report matches ground truth; disputes traced to requests; adjustments approved and audited; export complete.</p>
+<p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
+<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Finance export.</p>
+<p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Dispute records.</p>
+<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
+<p><a href="#top">Back to domain index</a></p>
+<hr />
+<p><a id="tc-d13-021"></a></p>
+<h3 id="tc-d13-021-abuse-enforcement-ladder-warn-throttle-suspend-and-appeal-for-authenticated-users">TC-D13-021: Abuse Enforcement Ladder: Warn, Throttle, Suspend and Appeal for Authenticated Users</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Use-Case Domain</strong></td>
+<td>D13: AI Cost and Abuse Controls</td>
+</tr>
+<tr>
+<td><strong>Lifecycle Layer(s)</strong></td>
+<td>L08, L05</td>
+</tr>
+<tr>
+<td><strong>Test Method</strong></td>
+<td>Technical</td>
+</tr>
+<tr>
+<td><strong>Vendor Applicability</strong></td>
+<td>Core: A, G, W</td>
+</tr>
+<tr>
+<td><strong>Risk Severity</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Related Layer Cases</strong></td>
+<td><a href="L08-ai-gateway-and-security-controls.html#tc-l08-030">TC-L08-030</a>, <a href="L08-ai-gateway-and-security-controls.html#tc-l08-039">TC-L08-039</a></td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mapping</strong></td>
+<td>N/A (governance and policy control)</td>
+</tr>
+<tr>
+<td><strong>OWASP LLM / GenAI Mapping</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF Mapping</strong></td>
+<td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Risk Addressed.</strong> Authenticated users can abuse allowances by automation, sharing accounts or hammering expensive features, and heavy-handed bans harm genuine users.</p>
+<p><strong>Business Scenario.</strong> Product owners want graded, auditable actions with an appeal route.</p>
+<p><strong>Technical Scenario.</strong> Run abuse patterns by lab users and walk the enforcement ladder.</p>
+<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p>
+<p><strong>Test Data.</strong> 10 lab users: 4 abusers (automation, account sharing, repeated limit testing, resale of access), 3 heavy genuine users, 3 normal users; ladder: warn, throttle, temporary suspend, permanent suspend; appeal workflow.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Configure the ladder and thresholds.</li>
+<li>Run the behaviours.</li>
+<li>Record the actions and timing per user.</li>
+<li>Check messages.</li>
+<li>Check that genuine heavy users are not suspended.</li>
+<li>File and decide an appeal.</li>
+<li>Check audit and reporting.</li>
+</ol>
+<p><strong>Edge Cases / Variants.</strong> Abuser who changes accounts; heavy user with a legitimate batch need.</p>
+<p><strong>Expected Detection.</strong> Abusers reach the correct rung within the stated time; genuine heavy users not suspended; appeals tracked and decided; audit complete.</p>
+<p><strong>Expected Prevention / Control Action.</strong> Warn, throttle or suspend.</p>
+<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
+<p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p>
+<p><strong>Expected Integration Evidence.</strong> Events to the abuse team.</p>
+<p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p>
+<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
+<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
+<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
+<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
+<p><strong>Evidence to Capture.</strong> Ladder table.</p>
+<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
+<p><a href="#top">Back to domain index</a></p>
+<hr />
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="D12-ai-incident-response-and-forensics.html">&larr; D12 AI Incident Response and Forensics</a><a class="next" href="../community-rules.html">Community Rules &rarr;</a></nav>
+<footer class="site-footer">Author: Nachiket Sathaye &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/10_Test_Case_Library/D13-ai-cost-and-abuse-controls.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a></footer>
+</main>
+</div>
+<script>window.SITE_BASE = "../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

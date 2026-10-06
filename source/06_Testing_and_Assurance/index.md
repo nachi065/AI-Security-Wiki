@@ -10,4 +10,4 @@ has_children: true
 
 PoC test cases, red team methodology and the audit and evidence checklist.
 
-For detailed, scored product evaluation cases, see the [Test Case Library](../10_Test_Case_Library/index.md): 487 cases across 17 AI lifecycle layers.
+For detailed, scored product evaluation cases, see the [Test Case Library](../10_Test_Case_Library/index.md): 620 cases across 17 AI lifecycle layers and six emerging domains.

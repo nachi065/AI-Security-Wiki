@@ -102,10 +102,11 @@ def describe(page):
     meta, body, title = page["meta"], page["body"], page["meta"]["title"]
     if meta.get("description"):
         return meta["description"]
-    focus = re.search(r"^\*\*Primary test focus:\*\* (.+)$", body, re.M)
+    focus = re.search(r"^\*\*(?:Primary test focus|Focus):\*\* (.+)$", body, re.M)
     count = re.search(r"^\*\*Cases:\*\* (\d+)", body, re.M)
     if focus and count:
-        lead = f"{count.group(1)} AI security test cases for the {title[4:]}: {focus.group(1)}."
+        scope = focus.group(1).split(": ", 1)[-1] if title.startswith("D") else focus.group(1)
+        lead = f"{count.group(1)} AI security test cases for {'' if title.startswith('D') else 'the '}{title[4:]}: {scope}."
         full = lead + " Each with procedure, expected results and pass criteria."
         return full if len(full) <= 158 else shorten(lead)
     if title.startswith("Vendor Profile"):
@@ -215,7 +216,7 @@ for i, page in enumerate(order):
     os.makedirs(os.path.dirname(dest), exist_ok=True)
     open(dest, "w", encoding="utf-8").write(doc)
     section = parent["meta"]["title"] if parent else ""
-    cases = re.split(r'<a id="(tc-l\d\d-\d{3})"></a>', content)
+    cases = re.split(r'<a id="(tc-[ld]\d\d-\d{3})"></a>', content)
     # A test case layer page is indexed as its intro plus one entry per case.
     index.append({"t": title, "s": section, "u": page["out"], "c": plain(cases[0])})
     for anchor, chunk in zip(cases[1::2], cases[2::2]):

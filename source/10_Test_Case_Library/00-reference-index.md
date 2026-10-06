@@ -8,7 +8,7 @@ nav_order: 1
 
 # Reference Index
 
-17-layer AI lifecycle model | 7 use-case domains | 487 test cases
+17-layer AI lifecycle model | 7 use-case domains | 6 emerging domains | 620 test cases
 
 *Status: draft for review. Case counts, domain assignments and mappings are proposals until approved.*
 
@@ -22,7 +22,7 @@ This index is the master reference for the test case library. It organises the l
 
 ## 2. Numbering convention
 
-Test case IDs take the form `TC-L##-###` where `L##` is the lifecycle layer and `###` is the sequence within that layer, for example `TC-L08-014`. IDs are unique across the library and stable once issued, so they can be referenced from a test case execution register, a PoC results tracker and a vendor comparison matrix.
+Layer test case IDs take the form `TC-L##-###` where `L##` is the lifecycle layer and `###` is the sequence within that layer, for example `TC-L08-014`. Cases in the six emerging domains use the series `TC-D##-###`, for example `TC-D10-007`. IDs are unique across the library and stable once issued, so they can be referenced from a test case execution register, a PoC results tracker and a vendor comparison matrix.
 
 Where a case is the detailed version of a scenario in the wiki's [AI Security PoC Test Case Library](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md), it carries a **Quick-Start Scenario** field that links to that scenario by its ID (`AI-POC-BR-###`, `AI-POC-ID-###`, `AI-POC-RT-###`, `AI-POC-AG-###`). The quick-start page links back to the same cases, so the two can be read together.
 
@@ -61,21 +61,19 @@ Where a case is the detailed version of a scenario in the wiki's [AI Security Po
 | D6 | Data Protection / DLP / Investigation |
 | D7 | Sovereignty / Compliance / UAE Requirements |
 
-### Planned additional domains (cases coming)
+### Emerging domains (ID series `TC-D##-###`)
 
-Additional test cases are being written for these domains. The tags are reserved and not yet in use.
+| Tag | Domain | Cases |
+|---|---|---|
+| D08 | [AI Red Teaming and Continuous Testing](D08-ai-red-teaming-and-continuous-testing.md) | 25 |
+| D09 | [Agent and Non-Human Identity Governance](D09-agent-and-non-human-identity-governance.md) | 20 |
+| D10 | [Browser and Computer-Use Agents](D10-browser-and-computer-use-agents.md) | 23 |
+| D11 | [Multimodal and Voice Input Security](D11-multimodal-and-voice-input-security.md) | 22 |
+| D12 | [AI Incident Response and Forensics](D12-ai-incident-response-and-forensics.md) | 22 |
+| D13 | [AI Cost and Abuse Controls](D13-ai-cost-and-abuse-controls.md) | 21 |
+| | **Total** | **133** |
 
-- **D9 Agent and Non-Human Identity Governance**, as a separate buyer concern from MCP tool governance.
-- **D10 Browser and Computer-Use Agents**, which act on a user's behalf in web sessions. They are a different risk from a chat tab.
-- **D11 Multimodal and Voice Input Security**, covering images, documents and audio as injection and leakage channels.
-- **D12 AI Incident Response and Forensics**, a lifecycle-wide need beyond L17 telemetry.
-- **D13 AI Cost and Abuse Controls**, covering denial-of-wallet, quota abuse and runaway agents.
-
-### Candidate domain (pending approval, not in use)
-
-- D8 AI Red Teaming and Continuous Testing
-
-These reflect areas that vendors increasingly sell. Their market relevance has not been independently verified. Until cases are published under the new tags, cases touching these themes are tagged to the closest existing domain.
+These domains cut across the 17 layers. Their cases use a separate ID series so IDs stay unique, record the lifecycle layers they touch, and cross-reference the layer cases they build on. Their market relevance has not been independently verified.
 
 ## 5. Layer-to-domain coverage matrix (draft)
 
@@ -108,7 +106,8 @@ D2 (Developer / IDE AI Security) has 29 cases. L05 is its primary home, with fur
 | Field | Definition |
 |---|---|
 | **Lifecycle Layer** | L01 to L17, the primary classification. |
-| **Use-Case Domain(s)** | One or more of D1 to D7 (and approved additions). |
+| **Use-Case Domain(s)** | One or more of D1 to D7, on layer cases. |
+| **Use-Case Domain, Lifecycle Layer(s), Related Layer Cases (emerging-domain cases only)** | The emerging domain the case belongs to (D08 to D13), the lifecycle layers it touches, and links to the layer cases it builds on. |
 | **Test Method** | Technical = executed live in the PoC lab. Evidence = verified by configuration, export, workflow or document inspection. Attestation = vendor written declaration, scored lower than demonstrated evidence. |
 | **Vendor Applicability** | Architecture classes for which the case is meaningful: E = endpoint or browser agent, G = inline gateway, proxy or SASE, A = application SDK or API-level control, P = posture, API-integrated or AI-SPM, R = red-team or testing tool, W = governance, risk and compliance workflow capability (used mainly in L01 to L03). Out-of-scope architecture is scored N/A, not 0. |
 | **Quick-Start Scenario (optional)** | Link to the matching scenario in the AI Security PoC Test Case Library. Present only where a case has a quick-start counterpart. |

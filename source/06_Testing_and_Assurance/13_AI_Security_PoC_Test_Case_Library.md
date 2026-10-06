@@ -19,7 +19,7 @@ version: 2.0
 
 ## Relationship to the full Test Case Library
 
-This page is the short list. The [Test Case Library](../10_Test_Case_Library/index.md) holds **487 detailed cases across 17 AI lifecycle layers**, each with test data, a numbered procedure, expected results, pass and fail criteria and evidence to capture.
+This page is the short list. The [Test Case Library](../10_Test_Case_Library/index.md) holds **620 detailed cases: 487 across 17 AI lifecycle layers and 133 in six emerging domains**, each with test data, a numbered procedure, expected results, pass and fail criteria and evidence to capture.
 
 | Quick-start area | Scenarios here | Detailed cases in the full library | Domain tags |
 |---|---|---|---|
@@ -36,6 +36,7 @@ Areas this quick-start set does not cover, and where to find them:
 | Auditability and SOC integration | [L17 Monitoring, Detection & Response](../10_Test_Case_Library/L17-monitoring-detection-and-response.md) |
 | Data classification, DLP and lineage | [L10 Data Layer](../10_Test_Case_Library/L10-data-layer.md) |
 | Model, training and pipeline security | [L12 Model Layer](../10_Test_Case_Library/L12-model-layer.md), [L13 Training & Fine-Tuning Layer](../10_Test_Case_Library/L13-training-and-fine-tuning-layer.md), [L14 MLOps / LLMOps Layer](../10_Test_Case_Library/L14-mlops-llmops-layer.md) |
+| AI red teaming tools, browser and computer-use agents, multimodal and voice input, incident response, cost and abuse controls | [Emerging domains D08 to D13](../10_Test_Case_Library/index.md#emerging-domains) |
 | Use-case governance and risk | [L01 Business & Use Cases](../10_Test_Case_Library/L01-business-and-use-cases.md), [L02 Governance & Risk Mgmt](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md) |
 
 ## Scoring

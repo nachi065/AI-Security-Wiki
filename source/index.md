@@ -1,6 +1,6 @@
 ---
 title: "Home"
-description: "Open, vendor-neutral AI security wiki: AI governance, risk management, security controls, agentic AI standards, vendor evaluation and 487 test cases."
+description: "Open, vendor-neutral AI security wiki: AI governance, risk management, security controls, agentic AI standards, vendor evaluation and 620 test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
 version: 2.0
@@ -179,7 +179,7 @@ Review, Improve, Renew, or Retire
   Glossary, taxonomy, abbreviations, mapping references, patterns, and reusable templates.
 
 10_Test_Case_Library/
-  487 detailed product evaluation test cases across 17 AI lifecycle layers, with reference index,
+  620 detailed product evaluation test cases across 17 AI lifecycle layers and 6 emerging domains, with reference index,
   lab prerequisites, and framework adoption guide.
 ```
 
@@ -346,7 +346,7 @@ Vendor profiles should be used to record:
 - [Sovereign AI, UAE Compliance and Data Residency Requirements](04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.md)
 - [AI Security Vendor Evaluation Master Framework](05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.md)
 - [AI Security PoC Test Case Library](06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md)
-- [Test Case Library (487 cases, 17 layers)](10_Test_Case_Library/index.md)
+- [Test Case Library (620 cases, 17 layers and 6 emerging domains)](10_Test_Case_Library/index.md)
 - [Community Rules](community-rules.md)
 - [AI Security Audit and Evidence Checklist](06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md)
 - [AI Product Developer Playbook](07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.md)

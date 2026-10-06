@@ -102,6 +102,12 @@
 <li><a href="L15-infrastructure-layer.html">L15 Infrastructure Layer</a></li>
 <li><a href="L16-supply-chain-and-third-party.html">L16 Supply Chain &amp; Third Party</a></li>
 <li><a href="L17-monitoring-detection-and-response.html">L17 Monitoring, Detection &amp; Response</a></li>
+<li><a href="D08-ai-red-teaming-and-continuous-testing.html">D08 AI Red Teaming and Continuous Testing</a></li>
+<li><a href="D09-agent-and-non-human-identity-governance.html">D09 Agent and Non-Human Identity Governance</a></li>
+<li><a href="D10-browser-and-computer-use-agents.html">D10 Browser and Computer-Use Agents</a></li>
+<li><a href="D11-multimodal-and-voice-input-security.html">D11 Multimodal and Voice Input Security</a></li>
+<li><a href="D12-ai-incident-response-and-forensics.html">D12 AI Incident Response and Forensics</a></li>
+<li><a href="D13-ai-cost-and-abuse-controls.html">D13 AI Cost and Abuse Controls</a></li>
 </ul></details></li>
 <li><a href="../community-rules.html">Community Rules</a></li>
 </ul>
@@ -250,6 +256,36 @@
 <ul>
 <li><strong>Lab environment</strong> (30 cases): Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected.</li>
 <li><strong>Developer and IDE test bench</strong> (1 case): Managed test workstations with two IDE families and AI coding assistant extensions, a CLI coding agent, corporate and personal test accounts, fabricated repositories (general, restricted and infrastructure-as-code) on a lab source-control server, a mock extension marketplace, mock MCP servers and a mock URL endpoint that records requests; no real source code, tokens or keys.</li>
+</ul>
+<h2 id="d08-ai-red-teaming-and-continuous-testing">D08 AI Red Teaming and Continuous Testing</h2>
+<p><strong>Standard setup (all cases):</strong> Isolated PoC lab provisioned; seeded target applications, mock tools and sinks, canary strings and test users seeded per this appendix; the vendor's red-team tooling licensed and pointed only at the lab targets.</p>
+<ul>
+<li><strong>Lab environment</strong> (25 cases): Seeded target applications with documented ground-truth weaknesses (a deliberately vulnerable lab chatbot, RAG application and tool-using agent), mock tools writing to a lab sink, registered canary strings and an isolated network; the vendor's red-team tooling licensed for the PoC; no production systems, real customer data or live third-party services are targeted.</li>
+</ul>
+<h2 id="d09-agent-and-non-human-identity-governance">D09 Agent and Non-Human Identity Governance</h2>
+<p><strong>Standard setup (all cases):</strong> Isolated PoC lab provisioned; lab identity provider, fabricated agent identities and entitlements, mock cloud and SaaS tenants, lab secret store and test users seeded per this appendix; platform connected with least-privilege test credentials.</p>
+<ul>
+<li><strong>Lab environment</strong> (20 cases): Lab identity provider, lab agents with fabricated identities and entitlements, a mock cloud account and SaaS tenant, a lab secret store and a mock ticketing system; no production identities, credentials or directories are connected.</li>
+</ul>
+<h2 id="d10-browser-and-computer-use-agents">D10 Browser and Computer-Use Agents</h2>
+<p><strong>Standard setup (all cases):</strong> Isolated PoC lab provisioned; internal lab web sites, managed test browsers, desktop VM, test browser and computer-use agents and test users seeded per this appendix; platform deployed for the agent type under test.</p>
+<ul>
+<li><strong>Lab environment</strong> (23 cases): Lab web sites hosted internally (intranet mock, shop with mock payment page, file-sharing mock, mock SSO with MFA, mock CAPTCHA, hostile-content test pages), managed test browsers and a desktop virtual machine, test browser and computer-use agents, and test users; no real websites, accounts, payment methods or credentials are used.</li>
+</ul>
+<h2 id="d11-multimodal-and-voice-input-security">D11 Multimodal and Voice Input Security</h2>
+<p><strong>Standard setup (all cases):</strong> Isolated PoC lab provisioned; multimodal test applications and assistants, mock or lab-hosted multimodal model, fabricated media files and test users seeded per this appendix; platform deployed for the media channel under test.</p>
+<ul>
+<li><strong>Lab environment</strong> (22 cases): Multimodal lab: test applications and assistants that accept images, documents, audio and video; a mock model or lab-hosted multimodal model; fabricated media (images with synthetic text, documents with hidden layers, synthetic-voice recordings of fabricated personas), registered canary strings and a lab sink; no real people's images, voices or documents are used.</li>
+</ul>
+<h2 id="d12-ai-incident-response-and-forensics">D12 AI Incident Response and Forensics</h2>
+<p><strong>Standard setup (all cases):</strong> Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per this appendix; platform connected with least-privilege test credentials.</p>
+<ul>
+<li><strong>Lab environment</strong> (22 cases): Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.</li>
+</ul>
+<h2 id="d13-ai-cost-and-abuse-controls">D13 AI Cost and Abuse Controls</h2>
+<p><strong>Standard setup (all cases):</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per this appendix.</p>
+<ul>
+<li><strong>Lab environment</strong> (21 cases): Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</li>
 </ul>
 </article>
 <nav class="pager" aria-label="Previous and next page"><a class="prev" href="framework-adoption-guide.html">&larr; Framework Adoption Guide</a><a class="next" href="L01-business-and-use-cases.html">L01 Business &amp; Use Cases &rarr;</a></nav>

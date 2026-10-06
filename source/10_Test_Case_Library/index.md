@@ -1,14 +1,14 @@
 ---
 title: "Test Case Library"
 author: Nachiket Sathaye
-description: "487 AI security test cases for vendor evaluation and PoC, organised by 17 AI lifecycle layers: prompt injection, DLP, agents, MCP, RAG, MLOps and more."
+description: "620 AI security test cases for vendor evaluation and PoC across 17 AI lifecycle layers and 6 emerging domains: prompt injection, DLP, agents, MCP, RAG."
 nav_order: 11
 has_children: true
 ---
 
 # AI Security Vendor Evaluation: Test Case Library
 
-A lifecycle-based library of **487 test cases** for evaluating AI security products in a controlled proof of concept. Cases are organised by the **17 layers of the AI lifecycle** and tagged with seven buyer-facing use-case domains.
+A library of **620 test cases** for evaluating AI security products in a controlled proof of concept: **487 cases organised by the 17 layers of the AI lifecycle**, tagged with seven buyer-facing use-case domains, and **133 cases in six emerging domains** that cut across the layers.
 
 > **Status: draft for review.** Reference identifiers (MITRE ATLAS, OWASP LLM, NIST AI RMF) must be verified against current published versions, and numeric thresholds are starting values to tune to your risk appetite and vendor SLAs.
 
@@ -19,7 +19,7 @@ A lifecycle-based library of **487 test cases** for evaluating AI security produ
 - [Framework Adoption Guide](framework-adoption-guide.md): how to use the governance and legal layers with ISO/IEC 27001, DPDP, NESA, PDPL or any other framework, plus a crosswalk template
 - [AI Security PoC Test Case Library](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md): a 20-scenario quick-start set for a first PoC, mapped to the layers below
 
-To find a specific case, type its ID (for example `TC-L08-014`) or a keyword into the search box at the top of any page. Each of the 487 cases is indexed individually.
+To find a specific case, type its ID (for example `TC-L08-014`) or a keyword into the search box at the top of any page. Each of the 620 cases is indexed individually.
 
 ## Layers
 
@@ -44,15 +44,29 @@ To find a specific case, type its ID (for example `TC-L08-014`) or a keyword int
 | L17 | [Monitoring, Detection & Response](L17-monitoring-detection-and-response.md) | telemetry, SIEM/SOAR integration, AI incident response, forensics | 31 | 4 | 20 | 7 | 0 |
 | | **Total** | | **487** | **125** | **248** | **111** | **3** |
 
+## Emerging domains
+
+Six further domains cut across the layers and use their own ID series, `TC-D##-###`. Each case records the lifecycle layers it touches and links to the layer cases it builds on. The layer case tests the platform control; the domain case tests the buyer concern from the domain's own point of view.
+
+| Domain | Name | Focus | Cases | Critical | High | Medium | Low |
+|---|---|---|---|---|---|---|---|
+| D08 | [AI Red Teaming and Continuous Testing](D08-ai-red-teaming-and-continuous-testing.md) | ground-truth accuracy, coverage, judging, reproducibility, CI/CD, safe execution | 25 | 6 | 16 | 3 | 0 |
+| D09 | [Agent and Non-Human Identity Governance](D09-agent-and-non-human-identity-governance.md) | registry, sponsors, recertification, drift, delegation, revocation | 20 | 3 | 13 | 4 | 0 |
+| D10 | [Browser and Computer-Use Agents](D10-browser-and-computer-use-agents.md) | isolation, credentials, action policy, injection via web content, approvals, kill switch | 23 | 9 | 11 | 3 | 0 |
+| D11 | [Multimodal and Voice Input Security](D11-multimodal-and-voice-input-security.md) | images, documents, audio and video as injection and leakage channels, voice authentication, recording governance | 22 | 5 | 14 | 3 | 0 |
+| D12 | [AI Incident Response and Forensics](D12-ai-incident-response-and-forensics.md) | taxonomy, state preservation, replay, scoping, containment, provider coordination, evidence handling | 22 | 9 | 11 | 2 | 0 |
+| D13 | [AI Cost and Abuse Controls](D13-ai-cost-and-abuse-controls.md) | attribution, budgets, denial of wallet, key abuse, runaway agents, shadow spend, enforcement | 21 | 5 | 11 | 5 | 0 |
+| | **Total** | | **133** | **37** | **76** | **20** | **0** |
+
 ## Coverage at a glance
 
-Counts are taken from the case index of each layer.
+Counts are taken from the case index of each layer and domain file. Test method covers all 620 cases; the domain tags below apply to the 487 layer cases.
 
 | Test method | Cases | Meaning |
 |---|---|---|
-| Technical | 403 | Executed live in the PoC lab |
-| Evidence | 72 | Verified by configuration, export, workflow or document inspection |
-| Attestation | 12 | Vendor written declaration, scored lower than demonstrated evidence |
+| Technical | 520 | Executed live in the PoC lab |
+| Evidence | 86 | Verified by configuration, export, workflow or document inspection |
+| Attestation | 14 | Vendor written declaration, scored lower than demonstrated evidence |
 
 | Tag | Use-case domain | Cases tagged |
 |---|---|---|
@@ -66,21 +80,9 @@ Counts are taken from the case index of each layer.
 
 A case can carry more than one domain tag, so the domain counts add up to more than 487. D2 covers the developer workflow end to end: IDE prompts, assistant extensions, coding agents, MCP configuration, repository policy, pipeline bots and SOC telemetry, with L05 as its primary layer.
 
-## Coming next
-
-> **Note:** Additional test cases are being written for the following domains. Until they are published, cases that touch these themes are tagged to the closest existing domain (D1 to D7).
-
-- **Agent and non-human identity governance**, as a separate buyer concern from MCP tool governance.
-- **Browser and computer-use agents**, which act on a user's behalf in web sessions. They are a different risk from a chat tab.
-- **Multimodal and voice input**, covering images, documents and audio as injection and leakage channels.
-- **AI incident response and forensics**, a lifecycle-wide need beyond L17 telemetry.
-- **AI cost and abuse controls**, covering denial-of-wallet, quota abuse and runaway agents.
-
-See the [Reference Index](00-reference-index.md) for the planned domain tags.
-
 ## Numbering and structure
 
-Case IDs take the form `TC-L##-###`: the lifecycle layer and a sequence within it, for example `TC-L08-014`. IDs are unique across the library and stable once issued. Where a case is the detailed version of a quick-start scenario, the **Quick-Start Scenario** field links to it by ID, for example `AI-POC-ID-004`.
+Layer case IDs take the form `TC-L##-###`: the lifecycle layer and a sequence within it, for example `TC-L08-014`. Emerging-domain case IDs take the form `TC-D##-###`, for example `TC-D10-007`. IDs are unique across the library and stable once issued. Where a case is the detailed version of a quick-start scenario, the **Quick-Start Scenario** field links to it by ID, for example `AI-POC-ID-004`.
 
 Each case records: lifecycle layer, use-case domains, test method (Technical, Evidence or Attestation), vendor applicability (E endpoint or browser agent, G inline gateway or proxy, A application or API-level control, P posture or AI-SPM, R red-team tool, W governance workflow), risk, scenarios, test data, numbered procedure, expected results, pass and fail criteria, scoring, evidence to capture, and reference mappings.
 
@@ -92,7 +94,7 @@ All test cases use synthetic, non-functional or clearly marked test data only. N
 
 ## How to use
 
-1. Read the Reference Index and decide which layers and domains are in scope.
+1. Read the Reference Index and decide which layers, use-case domains and emerging domains are in scope.
 2. Build the lab prerequisites each layer calls for (mock providers, test cluster, lab SIEM, fabricated data).
 3. Run each case, capture the evidence listed, and score 0, 3 or 5 (or N/A where the vendor architecture cannot perform the test by design).
 4. For layers L01 to L03, complete the Applicable Requirement and Framework Crosswalk fields first.

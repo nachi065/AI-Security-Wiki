@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Test Case Library | AI Security Wiki</title>
 <meta name="author" content="Nachiket Sathaye">
-<meta name="description" content="487 AI security test cases for vendor evaluation and PoC, organised by 17 AI lifecycle layers: prompt injection, DLP, agents, MCP, RAG, MLOps and more.">
+<meta name="description" content="620 AI security test cases for vendor evaluation and PoC across 17 AI lifecycle layers and 6 emerging domains: prompt injection, DLP, agents, MCP, RAG.">
 <link rel="canonical" href="https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="AI Security Wiki">
 <meta property="og:title" content="Test Case Library | AI Security Wiki">
-<meta property="og:description" content="487 AI security test cases for vendor evaluation and PoC, organised by 17 AI lifecycle layers: prompt injection, DLP, agents, MCP, RAG, MLOps and more.">
+<meta property="og:description" content="620 AI security test cases for vendor evaluation and PoC across 17 AI lifecycle layers and 6 emerging domains: prompt injection, DLP, agents, MCP, RAG.">
 <meta property="og:url" content="https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/">
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="../assets/style.css">
@@ -102,6 +102,12 @@
 <li><a href="L15-infrastructure-layer.html">L15 Infrastructure Layer</a></li>
 <li><a href="L16-supply-chain-and-third-party.html">L16 Supply Chain &amp; Third Party</a></li>
 <li><a href="L17-monitoring-detection-and-response.html">L17 Monitoring, Detection &amp; Response</a></li>
+<li><a href="D08-ai-red-teaming-and-continuous-testing.html">D08 AI Red Teaming and Continuous Testing</a></li>
+<li><a href="D09-agent-and-non-human-identity-governance.html">D09 Agent and Non-Human Identity Governance</a></li>
+<li><a href="D10-browser-and-computer-use-agents.html">D10 Browser and Computer-Use Agents</a></li>
+<li><a href="D11-multimodal-and-voice-input-security.html">D11 Multimodal and Voice Input Security</a></li>
+<li><a href="D12-ai-incident-response-and-forensics.html">D12 AI Incident Response and Forensics</a></li>
+<li><a href="D13-ai-cost-and-abuse-controls.html">D13 AI Cost and Abuse Controls</a></li>
 </ul></details></li>
 <li><a href="../community-rules.html">Community Rules</a></li>
 </ul>
@@ -110,7 +116,7 @@
 <p class="crumbs"><a href="../index.html">Home</a> / <span>Test Case Library</span></p>
 <article>
 <h1 id="ai-security-vendor-evaluation-test-case-library">AI Security Vendor Evaluation: Test Case Library</h1>
-<p>A lifecycle-based library of <strong>487 test cases</strong> for evaluating AI security products in a controlled proof of concept. Cases are organised by the <strong>17 layers of the AI lifecycle</strong> and tagged with seven buyer-facing use-case domains.</p>
+<p>A library of <strong>620 test cases</strong> for evaluating AI security products in a controlled proof of concept: <strong>487 cases organised by the 17 layers of the AI lifecycle</strong>, tagged with seven buyer-facing use-case domains, and <strong>133 cases in six emerging domains</strong> that cut across the layers.</p>
 <blockquote>
 <p><strong>Status: draft for review.</strong> Reference identifiers (MITRE ATLAS, OWASP LLM, NIST AI RMF) must be verified against current published versions, and numeric thresholds are starting values to tune to your risk appetite and vendor SLAs.</p>
 </blockquote>
@@ -121,7 +127,7 @@
 <li><a href="framework-adoption-guide.html">Framework Adoption Guide</a>: how to use the governance and legal layers with ISO/IEC 27001, DPDP, NESA, PDPL or any other framework, plus a crosswalk template</li>
 <li><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html">AI Security PoC Test Case Library</a>: a 20-scenario quick-start set for a first PoC, mapped to the layers below</li>
 </ul>
-<p>To find a specific case, type its ID (for example <code>TC-L08-014</code>) or a keyword into the search box at the top of any page. Each of the 487 cases is indexed individually.</p>
+<p>To find a specific case, type its ID (for example <code>TC-L08-014</code>) or a keyword into the search box at the top of any page. Each of the 620 cases is indexed individually.</p>
 <h2 id="layers">Layers</h2>
 <div class="table-wrap"><table>
 <thead>
@@ -319,8 +325,96 @@
 </tr>
 </tbody>
 </table></div>
+<h2 id="emerging-domains">Emerging domains</h2>
+<p>Six further domains cut across the layers and use their own ID series, <code>TC-D##-###</code>. Each case records the lifecycle layers it touches and links to the layer cases it builds on. The layer case tests the platform control; the domain case tests the buyer concern from the domain's own point of view.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Name</th>
+<th>Focus</th>
+<th>Cases</th>
+<th>Critical</th>
+<th>High</th>
+<th>Medium</th>
+<th>Low</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D08</td>
+<td><a href="D08-ai-red-teaming-and-continuous-testing.html">AI Red Teaming and Continuous Testing</a></td>
+<td>ground-truth accuracy, coverage, judging, reproducibility, CI/CD, safe execution</td>
+<td>25</td>
+<td>6</td>
+<td>16</td>
+<td>3</td>
+<td>0</td>
+</tr>
+<tr>
+<td>D09</td>
+<td><a href="D09-agent-and-non-human-identity-governance.html">Agent and Non-Human Identity Governance</a></td>
+<td>registry, sponsors, recertification, drift, delegation, revocation</td>
+<td>20</td>
+<td>3</td>
+<td>13</td>
+<td>4</td>
+<td>0</td>
+</tr>
+<tr>
+<td>D10</td>
+<td><a href="D10-browser-and-computer-use-agents.html">Browser and Computer-Use Agents</a></td>
+<td>isolation, credentials, action policy, injection via web content, approvals, kill switch</td>
+<td>23</td>
+<td>9</td>
+<td>11</td>
+<td>3</td>
+<td>0</td>
+</tr>
+<tr>
+<td>D11</td>
+<td><a href="D11-multimodal-and-voice-input-security.html">Multimodal and Voice Input Security</a></td>
+<td>images, documents, audio and video as injection and leakage channels, voice authentication, recording governance</td>
+<td>22</td>
+<td>5</td>
+<td>14</td>
+<td>3</td>
+<td>0</td>
+</tr>
+<tr>
+<td>D12</td>
+<td><a href="D12-ai-incident-response-and-forensics.html">AI Incident Response and Forensics</a></td>
+<td>taxonomy, state preservation, replay, scoping, containment, provider coordination, evidence handling</td>
+<td>22</td>
+<td>9</td>
+<td>11</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>D13</td>
+<td><a href="D13-ai-cost-and-abuse-controls.html">AI Cost and Abuse Controls</a></td>
+<td>attribution, budgets, denial of wallet, key abuse, runaway agents, shadow spend, enforcement</td>
+<td>21</td>
+<td>5</td>
+<td>11</td>
+<td>5</td>
+<td>0</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>133</strong></td>
+<td><strong>37</strong></td>
+<td><strong>76</strong></td>
+<td><strong>20</strong></td>
+<td><strong>0</strong></td>
+</tr>
+</tbody>
+</table></div>
 <h2 id="coverage-at-a-glance">Coverage at a glance</h2>
-<p>Counts are taken from the case index of each layer.</p>
+<p>Counts are taken from the case index of each layer and domain file. Test method covers all 620 cases; the domain tags below apply to the 487 layer cases.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -332,17 +426,17 @@
 <tbody>
 <tr>
 <td>Technical</td>
-<td>403</td>
+<td>520</td>
 <td>Executed live in the PoC lab</td>
 </tr>
 <tr>
 <td>Evidence</td>
-<td>72</td>
+<td>86</td>
 <td>Verified by configuration, export, workflow or document inspection</td>
 </tr>
 <tr>
 <td>Attestation</td>
-<td>12</td>
+<td>14</td>
 <td>Vendor written declaration, scored lower than demonstrated evidence</td>
 </tr>
 </tbody>
@@ -394,27 +488,15 @@
 </tbody>
 </table></div>
 <p>A case can carry more than one domain tag, so the domain counts add up to more than 487. D2 covers the developer workflow end to end: IDE prompts, assistant extensions, coding agents, MCP configuration, repository policy, pipeline bots and SOC telemetry, with L05 as its primary layer.</p>
-<h2 id="coming-next">Coming next</h2>
-<blockquote>
-<p><strong>Note:</strong> Additional test cases are being written for the following domains. Until they are published, cases that touch these themes are tagged to the closest existing domain (D1 to D7).</p>
-</blockquote>
-<ul>
-<li><strong>Agent and non-human identity governance</strong>, as a separate buyer concern from MCP tool governance.</li>
-<li><strong>Browser and computer-use agents</strong>, which act on a user's behalf in web sessions. They are a different risk from a chat tab.</li>
-<li><strong>Multimodal and voice input</strong>, covering images, documents and audio as injection and leakage channels.</li>
-<li><strong>AI incident response and forensics</strong>, a lifecycle-wide need beyond L17 telemetry.</li>
-<li><strong>AI cost and abuse controls</strong>, covering denial-of-wallet, quota abuse and runaway agents.</li>
-</ul>
-<p>See the <a href="00-reference-index.html">Reference Index</a> for the planned domain tags.</p>
 <h2 id="numbering-and-structure">Numbering and structure</h2>
-<p>Case IDs take the form <code>TC-L##-###</code>: the lifecycle layer and a sequence within it, for example <code>TC-L08-014</code>. IDs are unique across the library and stable once issued. Where a case is the detailed version of a quick-start scenario, the <strong>Quick-Start Scenario</strong> field links to it by ID, for example <code>AI-POC-ID-004</code>.</p>
+<p>Layer case IDs take the form <code>TC-L##-###</code>: the lifecycle layer and a sequence within it, for example <code>TC-L08-014</code>. Emerging-domain case IDs take the form <code>TC-D##-###</code>, for example <code>TC-D10-007</code>. IDs are unique across the library and stable once issued. Where a case is the detailed version of a quick-start scenario, the <strong>Quick-Start Scenario</strong> field links to it by ID, for example <code>AI-POC-ID-004</code>.</p>
 <p>Each case records: lifecycle layer, use-case domains, test method (Technical, Evidence or Attestation), vendor applicability (E endpoint or browser agent, G inline gateway or proxy, A application or API-level control, P posture or AI-SPM, R red-team tool, W governance workflow), risk, scenarios, test data, numbered procedure, expected results, pass and fail criteria, scoring, evidence to capture, and reference mappings.</p>
 <p>Layers L01 to L03 are framework-neutral. Their cases use an <strong>Expected Result</strong> field in place of Expected Detection, and add Control Theme, Applicable Requirement and Framework Crosswalk fields for the assessor to complete.</p>
 <h2 id="safety-boundary">Safety boundary</h2>
 <p>All test cases use synthetic, non-functional or clearly marked test data only. No real customer, employee, financial, health or credential data should be used or substituted during execution. Probe and simulation scripts are harmless lab tools. Never run them against production systems.</p>
 <h2 id="how-to-use">How to use</h2>
 <ol>
-<li>Read the Reference Index and decide which layers and domains are in scope.</li>
+<li>Read the Reference Index and decide which layers, use-case domains and emerging domains are in scope.</li>
 <li>Build the lab prerequisites each layer calls for (mock providers, test cluster, lab SIEM, fabricated data).</li>
 <li>Run each case, capture the evidence listed, and score 0, 3 or 5 (or N/A where the vendor architecture cannot perform the test by design).</li>
 <li>For layers L01 to L03, complete the Applicable Requirement and Framework Crosswalk fields first.</li>
@@ -441,6 +523,12 @@
 <li><a href="L15-infrastructure-layer.html">L15 Infrastructure Layer</a></li>
 <li><a href="L16-supply-chain-and-third-party.html">L16 Supply Chain &amp; Third Party</a></li>
 <li><a href="L17-monitoring-detection-and-response.html">L17 Monitoring, Detection &amp; Response</a></li>
+<li><a href="D08-ai-red-teaming-and-continuous-testing.html">D08 AI Red Teaming and Continuous Testing</a></li>
+<li><a href="D09-agent-and-non-human-identity-governance.html">D09 Agent and Non-Human Identity Governance</a></li>
+<li><a href="D10-browser-and-computer-use-agents.html">D10 Browser and Computer-Use Agents</a></li>
+<li><a href="D11-multimodal-and-voice-input-security.html">D11 Multimodal and Voice Input Security</a></li>
+<li><a href="D12-ai-incident-response-and-forensics.html">D12 AI Incident Response and Forensics</a></li>
+<li><a href="D13-ai-cost-and-abuse-controls.html">D13 AI Cost and Abuse Controls</a></li>
 </ul>
 </article>
 <nav class="pager" aria-label="Previous and next page"><a class="prev" href="../09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">&larr; AI Security Glossary and Taxonomy</a><a class="next" href="00-reference-index.html">Reference Index &rarr;</a></nav>

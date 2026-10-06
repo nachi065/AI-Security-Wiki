@@ -102,6 +102,12 @@
 <li><a href="L15-infrastructure-layer.html">L15 Infrastructure Layer</a></li>
 <li><a href="L16-supply-chain-and-third-party.html">L16 Supply Chain &amp; Third Party</a></li>
 <li><a href="L17-monitoring-detection-and-response.html">L17 Monitoring, Detection &amp; Response</a></li>
+<li><a href="D08-ai-red-teaming-and-continuous-testing.html">D08 AI Red Teaming and Continuous Testing</a></li>
+<li><a href="D09-agent-and-non-human-identity-governance.html">D09 Agent and Non-Human Identity Governance</a></li>
+<li><a href="D10-browser-and-computer-use-agents.html">D10 Browser and Computer-Use Agents</a></li>
+<li><a href="D11-multimodal-and-voice-input-security.html">D11 Multimodal and Voice Input Security</a></li>
+<li><a href="D12-ai-incident-response-and-forensics.html">D12 AI Incident Response and Forensics</a></li>
+<li><a href="D13-ai-cost-and-abuse-controls.html">D13 AI Cost and Abuse Controls</a></li>
 </ul></details></li>
 <li><a href="../community-rules.html">Community Rules</a></li>
 </ul>
@@ -110,14 +116,14 @@
 <p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Test Case Library</a> / <span>Reference Index</span></p>
 <article>
 <h1 id="reference-index">Reference Index</h1>
-<p>17-layer AI lifecycle model | 7 use-case domains | 487 test cases</p>
+<p>17-layer AI lifecycle model | 7 use-case domains | 6 emerging domains | 620 test cases</p>
 <p><em>Status: draft for review. Case counts, domain assignments and mappings are proposals until approved.</em></p>
 <p><a href="index.html">Back to library overview</a></p>
 <h2 id="1-purpose-and-scope">1. Purpose and scope</h2>
 <p>This index is the master reference for the test case library. It organises the library by the 17 layers of the AI lifecycle (primary axis) and tags each test case with one or more buyer-facing use-case domains (secondary axis). The layer files contain the full test cases; this index controls numbering, counts, field definitions and coverage.</p>
 <p><strong>Safety boundary:</strong> all test cases use synthetic, non-functional or clearly marked test data only. No real customer, employee, financial, health or credential data is to be used or substituted during execution.</p>
 <h2 id="2-numbering-convention">2. Numbering convention</h2>
-<p>Test case IDs take the form <code>TC-L##-###</code> where <code>L##</code> is the lifecycle layer and <code>###</code> is the sequence within that layer, for example <code>TC-L08-014</code>. IDs are unique across the library and stable once issued, so they can be referenced from a test case execution register, a PoC results tracker and a vendor comparison matrix.</p>
+<p>Layer test case IDs take the form <code>TC-L##-###</code> where <code>L##</code> is the lifecycle layer and <code>###</code> is the sequence within that layer, for example <code>TC-L08-014</code>. Cases in the six emerging domains use the series <code>TC-D##-###</code>, for example <code>TC-D10-007</code>. IDs are unique across the library and stable once issued, so they can be referenced from a test case execution register, a PoC results tracker and a vendor comparison matrix.</p>
 <p>Where a case is the detailed version of a scenario in the wiki's <a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html">AI Security PoC Test Case Library</a>, it carries a <strong>Quick-Start Scenario</strong> field that links to that scenario by its ID (<code>AI-POC-BR-###</code>, <code>AI-POC-ID-###</code>, <code>AI-POC-RT-###</code>, <code>AI-POC-AG-###</code>). The quick-start page links back to the same cases, so the two can be read together.</p>
 <h2 id="3-layer-index">3. Layer index</h2>
 <div class="table-wrap"><table>
@@ -279,20 +285,54 @@
 </tr>
 </tbody>
 </table></div>
-<h3 id="planned-additional-domains-cases-coming">Planned additional domains (cases coming)</h3>
-<p>Additional test cases are being written for these domains. The tags are reserved and not yet in use.</p>
-<ul>
-<li><strong>D9 Agent and Non-Human Identity Governance</strong>, as a separate buyer concern from MCP tool governance.</li>
-<li><strong>D10 Browser and Computer-Use Agents</strong>, which act on a user's behalf in web sessions. They are a different risk from a chat tab.</li>
-<li><strong>D11 Multimodal and Voice Input Security</strong>, covering images, documents and audio as injection and leakage channels.</li>
-<li><strong>D12 AI Incident Response and Forensics</strong>, a lifecycle-wide need beyond L17 telemetry.</li>
-<li><strong>D13 AI Cost and Abuse Controls</strong>, covering denial-of-wallet, quota abuse and runaway agents.</li>
-</ul>
-<h3 id="candidate-domain-pending-approval-not-in-use">Candidate domain (pending approval, not in use)</h3>
-<ul>
-<li>D8 AI Red Teaming and Continuous Testing</li>
-</ul>
-<p>These reflect areas that vendors increasingly sell. Their market relevance has not been independently verified. Until cases are published under the new tags, cases touching these themes are tagged to the closest existing domain.</p>
+<h3 id="emerging-domains-id-series-tc-d-">Emerging domains (ID series <code>TC-D##-###</code>)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Domain</th>
+<th>Cases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D08</td>
+<td><a href="D08-ai-red-teaming-and-continuous-testing.html">AI Red Teaming and Continuous Testing</a></td>
+<td>25</td>
+</tr>
+<tr>
+<td>D09</td>
+<td><a href="D09-agent-and-non-human-identity-governance.html">Agent and Non-Human Identity Governance</a></td>
+<td>20</td>
+</tr>
+<tr>
+<td>D10</td>
+<td><a href="D10-browser-and-computer-use-agents.html">Browser and Computer-Use Agents</a></td>
+<td>23</td>
+</tr>
+<tr>
+<td>D11</td>
+<td><a href="D11-multimodal-and-voice-input-security.html">Multimodal and Voice Input Security</a></td>
+<td>22</td>
+</tr>
+<tr>
+<td>D12</td>
+<td><a href="D12-ai-incident-response-and-forensics.html">AI Incident Response and Forensics</a></td>
+<td>22</td>
+</tr>
+<tr>
+<td>D13</td>
+<td><a href="D13-ai-cost-and-abuse-controls.html">AI Cost and Abuse Controls</a></td>
+<td>21</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Total</strong></td>
+<td><strong>133</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>These domains cut across the 17 layers. Their cases use a separate ID series so IDs stay unique, record the lifecycle layers they touch, and cross-reference the layer cases they build on. Their market relevance has not been independently verified.</p>
 <h2 id="5-layer-to-domain-coverage-matrix-draft">5. Layer-to-domain coverage matrix (draft)</h2>
 <p>● = primary home for the domain's cases; ○ = secondary coverage.</p>
 <div class="table-wrap"><table>
@@ -497,7 +537,11 @@
 </tr>
 <tr>
 <td><strong>Use-Case Domain(s)</strong></td>
-<td>One or more of D1 to D7 (and approved additions).</td>
+<td>One or more of D1 to D7, on layer cases.</td>
+</tr>
+<tr>
+<td><strong>Use-Case Domain, Lifecycle Layer(s), Related Layer Cases (emerging-domain cases only)</strong></td>
+<td>The emerging domain the case belongs to (D08 to D13), the lifecycle layers it touches, and links to the layer cases it builds on.</td>
 </tr>
 <tr>
 <td><strong>Test Method</strong></td>
