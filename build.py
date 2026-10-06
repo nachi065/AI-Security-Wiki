@@ -10,6 +10,8 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(ROOT, "source")
 SITE_TITLE = "AI Security Wiki"
 REPO_URL = "https://github.com/nachi065/AI-Security-Wiki"
+SITE_URL = "https://nachi065.github.io/AI-Security-Wiki"
+HOME_TITLE = "AI Security Wiki: Governance, Risk, Standards and Test Cases"
 # The original author is fixed. check_author.py fails the build if this changes.
 ORIGINAL_AUTHOR = "Nachiket Sathaye"
 
@@ -86,6 +88,34 @@ def plain(fragment):
     return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", fragment))).strip()
 
 
+def shorten(text, limit=158):
+    text = re.sub(r"\s+", " ", text).strip()
+    if len(text) <= limit:
+        return text
+    return text[:limit].rsplit(" ", 1)[0].rstrip(",;:") + "…"
+
+
+def describe(page):
+    """Search-result description: explicit front matter first, then derived from the page itself."""
+    meta, body, title = page["meta"], page["body"], page["meta"]["title"]
+    if meta.get("description"):
+        return meta["description"]
+    focus = re.search(r"^\*\*Primary test focus:\*\* (.+)$", body, re.M)
+    count = re.search(r"^\*\*Cases:\*\* (\d+)", body, re.M)
+    if focus and count:
+        lead = f"{count.group(1)} AI security test cases for the {title[4:]}: {focus.group(1)}."
+        full = lead + " Each with procedure, expected results and pass criteria."
+        return full if len(full) <= 158 else shorten(lead)
+    if title.startswith("Vendor Profile"):
+        vendor = title.split("—", 1)[1].strip()
+        return shorten(f"{vendor} AI security vendor profile: best-fit use case, summary assessment, evaluation checklist and PoC evidence requirements.")
+    purpose = re.search(r"^> \*\*Purpose:\*\* (.+)$", body, re.M)
+    if purpose:
+        return shorten(f"{title}: {purpose.group(1)}")
+    first = next((p for p in re.split(r"\n\s*\n", body) if p.strip() and not p.lstrip().startswith(("#", ">", "|", "<"))), title)
+    return shorten(re.sub(r"[*`\[\]]|\([^)]*\.md[^)]*\)", "", first))
+
+
 TEMPLATE = """<!doctype html>
 <html lang="en">
 <head>
@@ -93,7 +123,14 @@ TEMPLATE = """<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="author" content="{author}">
-<meta name="description" content="A vendor-neutral reference for AI security governance, risk management, engineering standards, vendor evaluation and assurance.">
+<meta name="description" content="{description}">
+<link rel="canonical" href="{canonical}">
+<meta property="og:type" content="{og_type}">
+<meta property="og:site_name" content="{site}">
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="{description}">
+<meta property="og:url" content="{canonical}">
+<meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="{base}assets/style.css">
 </head>
 <body>
@@ -126,6 +163,12 @@ TEMPLATE = """<!doctype html>
 </html>
 """
 
+def canonical(page):
+    out = page["out"].replace(os.sep, "/")
+    out = out[:-len("index.html")] if out.endswith("index.html") else out
+    return f"{SITE_URL}/{out}"
+
+
 order = [home] + [p for s in sections for p in [s] + s["children"]]
 index = []
 for i, page in enumerate(order):
@@ -146,7 +189,9 @@ for i, page in enumerate(order):
         links.append(f'<a class="next" href="{rel(page["out"], order[i+1]["out"])}">{html.escape(order[i+1]["meta"]["title"])} &rarr;</a>')
     content = render(page)
     doc = TEMPLATE.format(
-        title=html.escape(SITE_TITLE if page is home else f"{title} | {SITE_TITLE}"),
+        title=html.escape(HOME_TITLE if page is home else f"{title} | {SITE_TITLE}"),
+        description=html.escape(describe(page), quote=True), canonical=canonical(page),
+        og_type="website" if page is home else "article",
         site=SITE_TITLE, repo=REPO_URL, author=ORIGINAL_AUTHOR, src=page["src"].replace(os.sep, "/"), base=base, nav=nav(page), crumbs=crumbs,
         content=content, pager='<nav class="pager" aria-label="Previous and next page">' + "".join(links) + "</nav>",
     )
@@ -165,4 +210,7 @@ for i, page in enumerate(order):
 
 open(os.path.join(ROOT, "assets", "search-index.js"), "w", encoding="utf-8").write(
     "window.SEARCH_INDEX = " + json.dumps(index, ensure_ascii=False) + ";\n")
+open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8").write(
+    '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    + "".join(f"  <url><loc>{canonical(p)}</loc></url>\n" for p in order) + "</urlset>\n")
 print(f"Built {len(order)} pages")

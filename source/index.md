@@ -1,5 +1,6 @@
 ---
 title: "Home"
+description: "Open, vendor-neutral AI security wiki: AI governance, risk management, security controls, agentic AI standards, vendor evaluation and 487 test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
 version: 2.0

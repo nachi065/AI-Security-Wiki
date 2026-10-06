@@ -1,6 +1,6 @@
 # AI Security Wiki
 
-A vendor-neutral reference for AI security governance, risk management, engineering standards, vendor evaluation and assurance.
+Over the past year, I’ve built an AI Security Library—now live on GitHub! It’s a vendor-neutral, risk-driven, and practitioner-focused wiki covering AI governance, risk, architecture, standards, agents, and compliance. Built for the community to learn, contribute, and grow. Would love your feedback and contributions!
 
 ## Ready-to-browse site
 

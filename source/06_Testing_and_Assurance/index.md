@@ -1,5 +1,6 @@
 ---
 title: "Testing and Assurance"
+description: "AI security testing and assurance: PoC test cases, AI red team playbook and an audit and evidence checklist for AI systems."
 nav_order: 7
 has_children: true
 ---
