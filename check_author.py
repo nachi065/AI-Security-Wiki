@@ -39,7 +39,8 @@ pages = 0
 for dirpath, dirs, files in os.walk(ROOT):
     dirs[:] = [d for d in dirs if d not in (".git", "source")]
     for name in files:
-        if name.endswith(".html") and name != "404.html":
+        # Search-engine verification files must stay exactly as issued, so they carry no credit.
+        if name.endswith(".html") and name != "404.html" and not re.fullmatch(r"google[0-9a-f]+\.html", name):
             pages += 1
             rel = os.path.relpath(os.path.join(dirpath, name), ROOT)
             page = text(rel)
