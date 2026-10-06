@@ -182,7 +182,8 @@ def byline(page):
 
 def canonical(page):
     out = page["out"].replace(os.sep, "/")
-    out = out[:-len("index.html")] if out.endswith("index.html") else out
+    if out == "index.html" or out.endswith("/index.html"):
+        out = out[:-len("index.html")]
     return f"{SITE_URL}/{out}"
 
 
