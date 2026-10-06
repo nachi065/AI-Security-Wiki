@@ -31,7 +31,7 @@ This wiki is open to everyone. Corrections, new pages, better examples and updat
 - **Bigger change or new page:** fork the repository, edit the Markdown under `source/`, and open a pull request. See [CONTRIBUTING.md](CONTRIBUTING.md).
 - **Idea or question:** [open an issue](https://github.com/nachi065/AI-Security-Wiki/issues).
 
-Contributors are credited in [AUTHORS](AUTHORS).
+Contributors are credited in [AUTHORS](AUTHORS). The [Community Rules](https://nachi065.github.io/AI-Security-Wiki/community-rules.html) explain how author and co-author credit works and which changes are blocked automatically.
 
 ## Licence and author
 

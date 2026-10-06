@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Community Rules | AI Security Wiki</title>
+<meta name="author" content="Nachiket Sathaye">
+<meta name="description" content="Community rules for the AI Security Wiki: how author and co-author credit works, which changes are blocked automatically, and how to contribute a page.">
+<link rel="canonical" href="https://nachi065.github.io/AI-Security-Wiki/community-rules.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="AI Security Wiki">
+<meta property="og:title" content="Community Rules | AI Security Wiki">
+<meta property="og:description" content="Community rules for the AI Security Wiki: how author and co-author credit works, which changes are blocked automatically, and how to contribute a page.">
+<meta property="og:url" content="https://nachi065.github.io/AI-Security-Wiki/community-rules.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+  <a class="brand" href="index.html">AI Security Wiki</a>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Search the wiki" aria-label="Search the wiki" autocomplete="off">
+    <ul id="search-results" hidden></ul>
+  </div>
+  <a class="repo-link" href="https://github.com/nachi065/AI-Security-Wiki" rel="noopener">GitHub</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="sidebar" aria-label="Wiki sections">
+<ul class="nav">
+<li><a href="index.html">Home</a></li>
+<li><details><summary><a href="01_Strategy_and_Market/index.html">Strategy and Market</a></summary><ul>
+<li><a href="01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.html">AI Security Market and Technology Landscape — Summary</a></li>
+<li><a href="01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape_Expanded.html">AI Security Market and Technology Landscape</a></li>
+</ul></details></li>
+<li><details><summary><a href="02_Risk_Management/index.html">Risk Management</a></summary><ul>
+<li><a href="02_Risk_Management/02A_AI_Risk_Methodology.html">AI Risk Methodology</a></li>
+<li><a href="02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a></li>
+<li><a href="02_Risk_Management/02C_AI_Risk_Treatment_Plan.html">AI Risk Treatment Plan</a></li>
+<li><a href="02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a></li>
+<li><a href="02_Risk_Management/02E_AI_Risk_Review_Template.html">AI Risk Review Template</a></li>
+</ul></details></li>
+<li><details><summary><a href="03_Control_Library/index.html">Control Library</a></summary><ul>
+<li><a href="03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></li>
+<li><a href="03_Control_Library/04_Existing_Security_Control_Baseline.html">Existing Security Control Baseline</a></li>
+<li><a href="03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.html">Microsoft Security Overlap and AI Gaps</a></li>
+</ul></details></li>
+<li><details><summary><a href="04_Domain_Standards/index.html">Domain Standards</a></summary><ul>
+<li><a href="04_Domain_Standards/06_Browser_AI_Security_Standard.html">Browser AI Security Standard</a></li>
+<li><a href="04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.html">IDE AI Coding Assistant Security Standard</a></li>
+<li><a href="04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a></li>
+<li><a href="04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
+<li><a href="04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
+</ul></details></li>
+<li><details><summary><a href="05_Vendor_Evaluation/index.html">Vendor Evaluation</a></summary><ul>
+<li><a href="05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
+<li><a href="05_Vendor_Evaluation/12A_Vendor_Profile_Prompt_Security_SentinelOne.html">Vendor Profile — Prompt Security / SentinelOne</a></li>
+<li><a href="05_Vendor_Evaluation/12B_Vendor_Profile_Palo_Alto_Prisma_AIRS.html">Vendor Profile — Palo Alto Prisma AIRS</a></li>
+<li><a href="05_Vendor_Evaluation/12C_Vendor_Profile_HiddenLayer.html">Vendor Profile — HiddenLayer</a></li>
+<li><a href="05_Vendor_Evaluation/12D_Vendor_Profile_Lasso_Security.html">Vendor Profile — Lasso Security</a></li>
+<li><a href="05_Vendor_Evaluation/12E_Vendor_Profile_Cyberhaven.html">Vendor Profile — Cyberhaven</a></li>
+<li><a href="05_Vendor_Evaluation/12F_Vendor_Profile_Nightfall_AI.html">Vendor Profile — Nightfall AI</a></li>
+<li><a href="05_Vendor_Evaluation/12G_Vendor_Profile_Enkrypt_AI.html">Vendor Profile — Enkrypt AI</a></li>
+<li><a href="05_Vendor_Evaluation/12H_Vendor_Profile_Sovereign_AI_Security_Labs.html">Vendor Profile — Sovereign AI Security Labs</a></li>
+</ul></details></li>
+<li><details><summary><a href="06_Testing_and_Assurance/index.html">Testing and Assurance</a></summary><ul>
+<li><a href="06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html">AI Security PoC Test Case Library</a></li>
+<li><a href="06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a></li>
+<li><a href="06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.html">AI Red Team Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="07_Role_Based_Playbooks/index.html">Role-Based Playbooks</a></summary><ul>
+<li><a href="07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.html">AI Product Developer Playbook</a></li>
+<li><a href="07_Role_Based_Playbooks/15B_AI_Security_Researcher_Playbook.html">AI Security Researcher Playbook</a></li>
+<li><a href="07_Role_Based_Playbooks/15D_Security_Engineering_Playbook.html">Security Engineering Playbook</a></li>
+<li><a href="07_Role_Based_Playbooks/15E_Vendor_Evaluation_and_Audit_Playbook.html">Vendor Evaluation and Audit Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="08_Governance/index.html">Governance</a></summary><ul>
+<li><a href="08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></li>
+<li><a href="08_Governance/17_AI_Policy_Standards_and_Acceptable_Use.html">AI Policy, Standards and Acceptable Use</a></li>
+</ul></details></li>
+<li><details><summary><a href="09_Reference/index.html">Reference</a></summary><ul>
+<li><a href="09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
+</ul></details></li>
+<li><details><summary><a href="10_Test_Case_Library/index.html">Test Case Library</a></summary><ul>
+<li><a href="10_Test_Case_Library/00-reference-index.html">Reference Index</a></li>
+<li><a href="10_Test_Case_Library/framework-adoption-guide.html">Framework Adoption Guide</a></li>
+<li><a href="10_Test_Case_Library/appendix-lab-prerequisites.html">Appendix: Lab Prerequisites</a></li>
+<li><a href="10_Test_Case_Library/L01-business-and-use-cases.html">L01 Business &amp; Use Cases</a></li>
+<li><a href="10_Test_Case_Library/L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
+<li><a href="10_Test_Case_Library/L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>
+<li><a href="10_Test_Case_Library/L04-human-interaction-layer.html">L04 Human Interaction Layer</a></li>
+<li><a href="10_Test_Case_Library/L05-ai-applications.html">L05 AI Applications</a></li>
+<li><a href="10_Test_Case_Library/L06-agent-orchestration-layer.html">L06 Agent Orchestration Layer</a></li>
+<li><a href="10_Test_Case_Library/L07-prompt-and-context-layer.html">L07 Prompt &amp; Context Layer</a></li>
+<li><a href="10_Test_Case_Library/L08-ai-gateway-and-security-controls.html">L08 AI Gateway &amp; Security Controls</a></li>
+<li><a href="10_Test_Case_Library/L09-identity-and-access-mgmt.html">L09 Identity &amp; Access Mgmt</a></li>
+<li><a href="10_Test_Case_Library/L10-data-layer.html">L10 Data Layer</a></li>
+<li><a href="10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html">L11 Knowledge &amp; Retrieval Layer</a></li>
+<li><a href="10_Test_Case_Library/L12-model-layer.html">L12 Model Layer</a></li>
+<li><a href="10_Test_Case_Library/L13-training-and-fine-tuning-layer.html">L13 Training &amp; Fine-Tuning Layer</a></li>
+<li><a href="10_Test_Case_Library/L14-mlops-llmops-layer.html">L14 MLOps / LLMOps Layer</a></li>
+<li><a href="10_Test_Case_Library/L15-infrastructure-layer.html">L15 Infrastructure Layer</a></li>
+<li><a href="10_Test_Case_Library/L16-supply-chain-and-third-party.html">L16 Supply Chain &amp; Third Party</a></li>
+<li><a href="10_Test_Case_Library/L17-monitoring-detection-and-response.html">L17 Monitoring, Detection &amp; Response</a></li>
+</ul></details></li>
+<li><a class="current" href="community-rules.html">Community Rules</a></li>
+</ul>
+</nav>
+<main>
+<p class="crumbs"><a href="index.html">Home</a> / <span>Community Rules</span></p>
+<article>
+<h1 id="community-rules">Community Rules</h1>
+<p>This wiki is open for anyone to improve. These rules keep it fair: <strong>everyone is credited for what they write, and nobody can take credit away from someone else.</strong> Most of them are enforced automatically on every pull request.</p>
+<h2 id="how-credit-works">How credit works</h2>
+<p>Every page names its author in the page header, and the footer of the published page shows it.</p>
+<pre><code>---
+title: &quot;Your Page Title&quot;
+author: Your Name
+coauthors: Another Person, A Third Person
+---
+</code></pre>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>author</code></td>
+<td>The person who wrote the page. Set once, when the page is created.</td>
+</tr>
+<tr>
+<td><code>coauthors</code></td>
+<td>People who later made a substantial addition. Optional; names separated by commas.</td>
+</tr>
+</tbody>
+</table></div>
+<p>A page you add is credited to you. A page someone else wrote stays credited to them, and you can be added alongside as a co-author.</p>
+<h2 id="the-credit-rule-add-never-take-away">The credit rule: add, never take away</h2>
+<p>Credit can be added to a page but never removed or replaced. The rule protects every contributor equally, whether they wrote one page or sixty.</p>
+<p>An automated check compares each pull request with the published version of the wiki. The table shows what it does with the changes people might try.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>What the pull request does</th>
+<th>Outcome</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Adds a new page with the contributor's own name as <code>author</code></td>
+<td><strong>Allowed</strong></td>
+<td>You are credited for your own work.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Adds the contributor to <code>coauthors</code> on an existing page</td>
+<td><strong>Allowed</strong></td>
+<td>Credit is being added, and nobody loses theirs.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Replaces the <code>author</code> of someone else's page with another name</td>
+<td><strong>Blocked</strong></td>
+<td>The original writer's credit would be erased.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Makes the contributor <code>author</code> and moves the real author down to <code>coauthors</code></td>
+<td><strong>Blocked</strong></td>
+<td>The author of a page does not change, even if the name is kept elsewhere.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Removes an existing co-author</td>
+<td><strong>Blocked</strong></td>
+<td>Someone's credit would be removed.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Deletes or renames a page that carries a credit</td>
+<td><strong>Blocked</strong></td>
+<td>Removing the page removes the credit with it.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Removes or alters a name in the <code>AUTHORS</code> file</td>
+<td><strong>Blocked</strong></td>
+<td>The contributor list is add-only.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Edits the checker or its workflow to switch the rule off</td>
+<td><strong>No effect</strong></td>
+<td>The check always runs the version on the main branch, not the one in the pull request.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="worked-examples">Worked examples</h3>
+<p>Suppose Jane Doe wrote a page and Ali Khan later co-authored it:</p>
+<pre><code>author: Jane Doe
+coauthors: Ali Khan
+</code></pre>
+<p><strong>Allowed.</strong> Bob Lee adds a section and credits himself alongside them:</p>
+<pre><code>author: Jane Doe
+coauthors: Ali Khan, Bob Lee
+</code></pre>
+<p><strong>Blocked.</strong> Bob replaces Jane:</p>
+<pre><code>author: Bob Lee
+coauthors: Ali Khan
+</code></pre>
+<p>The check reports: <em>author must stay Jane Doe (found Bob Lee); add yourself under 'coauthors:' instead.</em></p>
+<p><strong>Blocked.</strong> Bob promotes himself and demotes Jane:</p>
+<pre><code>author: Bob Lee
+coauthors: Jane Doe, Ali Khan
+</code></pre>
+<p>Same result: the author of an existing page does not change.</p>
+<p><strong>Blocked.</strong> Bob drops Ali:</p>
+<pre><code>author: Jane Doe
+</code></pre>
+<p>The check reports: <em>co-author Ali Khan was removed.</em></p>
+<p>A blocked pull request cannot be merged until the credit is restored.</p>
+<h2 id="what-the-check-cannot-judge">What the check cannot judge</h2>
+<p>The check verifies that names are not removed. It cannot verify that a name deserves to be there. The maintainer reviews every pull request for the following, and will ask for changes or decline it:</p>
+<ul>
+<li><strong>Claiming co-authorship for a minor edit.</strong> Fixing a typo or a link is a welcome contribution, and it is recorded in the Contributors list in <code>AUTHORS</code>, not as co-authorship of the page.</li>
+<li><strong>Submitting someone else's work as your own.</strong> Only contribute text you wrote or have the right to share, and cite sources.</li>
+<li><strong>Adding a person without their knowledge.</strong> Do not list someone as author or co-author unless they took part.</li>
+</ul>
+<h2 id="content-rules">Content rules</h2>
+<ul>
+<li><strong>Stay vendor-neutral.</strong> Describe capabilities and evidence. Do not promote or disparage a product.</li>
+<li><strong>No confidential, personal or organization-specific information.</strong> Write so the page could apply to any organization.</li>
+<li><strong>Synthetic test data only.</strong> Test cases must never contain real credentials, personal data or customer records.</li>
+<li><strong>Edit the Markdown under <code>source/</code></strong>, not the generated <code>.html</code> files.</li>
+</ul>
+<h2 id="when-a-rule-is-broken">When a rule is broken</h2>
+<ol>
+<li>The automated check fails and the pull request cannot be merged.</li>
+<li>The maintainer explains what needs to change.</li>
+<li>Once the credit or content is corrected, the pull request is reviewed again in the normal way.</li>
+</ol>
+<p>Corrections that genuinely need a credit changed, such as fixing a misspelt name or removing a page at its author's request, are made by the maintainer.</p>
+<h2 id="licence">Licence</h2>
+<p>Everything in the wiki is published under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">Creative Commons Attribution 4.0</a>. Anyone may reuse it with credit to the authors. By contributing, you agree to publish your contribution under the same licence.</p>
+<p>The step-by-step guide to making a change is in <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">CONTRIBUTING.md</a>.</p>
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="10_Test_Case_Library/L17-monitoring-detection-and-response.html">&larr; L17 Monitoring, Detection &amp; Response</a></nav>
+<footer class="site-footer">Author: Nachiket Sathaye &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/community-rules.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a></footer>
+</main>
+</div>
+<script>window.SITE_BASE = "";</script>
+<script src="assets/search-index.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

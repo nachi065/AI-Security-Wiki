@@ -36,7 +36,8 @@ for dirpath, dirs, files in os.walk(SRC):
             pages.append({"src": rel, "out": rel[:-3] + ".html", "meta": meta, "body": body})
 
 home = next(p for p in pages if p["src"] == "index.md")
-sections = sorted((p for p in pages if p["meta"].get("has_children")), key=lambda p: int(p["meta"]["nav_order"]))
+# Top-level entries in the sidebar: sections (which have child pages) and standalone pages.
+sections = sorted((p for p in pages if p is not home and not p["meta"].get("parent")), key=lambda p: int(p["meta"]["nav_order"]))
 for s in sections:
     s["children"] = sorted(
         (p for p in pages if p["meta"].get("parent") == s["meta"]["title"]),
@@ -55,6 +56,9 @@ def nav(page):
     for s in sections:
         active = page is s or page in s["children"]
         cur = ' class="current"' if page is s else ""
+        if not s["children"]:
+            out.append(f'<li><a{cur} href="{rel(page["out"], s["out"])}">{html.escape(s["meta"]["title"])}</a></li>')
+            continue
         out.append(f'<li><details{" open" if active else ""}><summary><a{cur} href="{rel(page["out"], s["out"])}">'
                    f'{html.escape(s["meta"]["title"])}</a></summary><ul>')
         for c in s["children"]:
@@ -151,7 +155,7 @@ TEMPLATE = """<!doctype html>
 {content}
 </article>
 {pager}
-<footer class="site-footer">{byline} &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a> &middot; <a href="{repo}/edit/main/source/{src}" rel="noopener">Suggest an edit to this page</a> &middot; <a href="{repo}/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a></footer>
+<footer class="site-footer">{byline} &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a> &middot; <a href="{repo}/edit/main/source/{src}" rel="noopener">Suggest an edit to this page</a> &middot; <a href="{base}community-rules.html">Community rules</a> &middot; <a href="{repo}/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a></footer>
 </main>
 </div>
 <script>window.SITE_BASE = "{base}";</script>

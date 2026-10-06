@@ -347,6 +347,7 @@ Vendor profiles should be used to record:
 - [AI Security Vendor Evaluation Master Framework](05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.md)
 - [AI Security PoC Test Case Library](06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md)
 - [Test Case Library (487 cases, 17 layers)](10_Test_Case_Library/index.md)
+- [Community Rules](community-rules.md)
 - [AI Security Audit and Evidence Checklist](06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md)
 - [AI Product Developer Playbook](07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.md)
 - [AI Security Researcher Playbook](07_Role_Based_Playbooks/15B_AI_Security_Researcher_Playbook.md)

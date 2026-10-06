@@ -47,7 +47,7 @@ nav_order: 6
 
 ## Credit and licence
 
-Every page names its author in the page header, and the footer of the published page shows it. Credit can be added but never taken away.
+Every page names its author in the page header, and the footer of the published page shows it. Credit can be added but never taken away. The [Community Rules](https://nachi065.github.io/AI-Security-Wiki/community-rules.html) page shows worked examples of what is allowed and what is blocked.
 
 - **A page you add is yours.** Put your own name in its `author:` line.
 - **A substantial addition to someone else's page** is credited by adding a `coauthors:` line under `author:`, for example `coauthors: Your Name`. Several names are separated by commas.
