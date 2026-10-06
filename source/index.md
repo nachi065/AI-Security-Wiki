@@ -18,7 +18,7 @@ last_updated: 2026-07-27
 > **Document type:** Enterprise AI Security Reference Architecture and Governance Wiki  
 > **Version:** 2.0  
 > **Status:** Published  
-> **Original author:** Nachiket Sathaye  
+> **Original author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
 > **Intended use:** Public, vendor-neutral reference and template set for AI security governance, engineering, risk management, assurance, audit, compliance, and vendor evaluation.
 
 ## 1. Purpose
@@ -354,3 +354,12 @@ Vendor profiles should be used to record:
 - [AI Red Team Playbook](06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.md)
 - [AI Governance Operating Model](08_Governance/16_AI_Governance_Operating_Model.md)
 - [AI Security Glossary and Taxonomy](09_Reference/18_AI_Security_Glossary_and_Taxonomy.md)
+
+## 22. About the Author
+
+**Nachiket Sathaye**  
+**Cybersecurity Leader, AI Security and Governance**
+
+Cybersecurity professional with 20+ years of experience across Critical Infrastructure, BFSI and Manufacturing. I help enterprises turn security from a cost centre into a strategic accelerator, combining technical depth with executive strategy to align GRC, Zero Trust, security architecture and AI governance with business outcomes.
+
+My current focus is enabling organisations to adopt GenAI, RAG and agentic systems securely, securing the full AI lifecycle and building NIST AI RMF, ISO/IEC 42001, EU AI Act and Responsible AI principles into enterprise programmes.

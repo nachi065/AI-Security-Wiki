@@ -39,4 +39,12 @@ The wiki is licensed under [Creative Commons Attribution 4.0 International (CC B
 
 Original author: **Nachiket Sathaye**
 
+### About the author
+
+**Cybersecurity Leader, AI Security and Governance**
+
+Cybersecurity professional with 20+ years of experience across Critical Infrastructure, BFSI and Manufacturing. I help enterprises turn security from a cost centre into a strategic accelerator, combining technical depth with executive strategy to align GRC, Zero Trust, security architecture and AI governance with business outcomes.
+
+My current focus is enabling organisations to adopt GenAI, RAG and agentic systems securely, securing the full AI lifecycle and building NIST AI RMF, ISO/IEC 42001, EU AI Act and Responsible AI principles into enterprise programmes.
+
 Every page names its author, and community members are credited for the pages they write. Credit can be added but never taken away: an automated check rejects any change that removes or replaces an existing author or co-author, whoever they are.
