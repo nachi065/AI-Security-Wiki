@@ -1,5 +1,6 @@
 ---
 title: "IDE AI Coding Assistant Security Standard"
+author: Nachiket Sathaye
 parent: "Domain Standards"
 nav_order: 2
 document_type: AI Security Wiki Reference

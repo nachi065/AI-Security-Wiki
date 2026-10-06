@@ -1,5 +1,6 @@
 ---
 title: "L03 Legal, Privacy & Compliance"
+author: Nachiket Sathaye
 parent: "Test Case Library"
 nav_order: 6
 ---

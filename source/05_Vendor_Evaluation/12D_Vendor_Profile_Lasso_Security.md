@@ -1,5 +1,6 @@
 ---
 title: "Vendor Profile — Lasso Security"
+author: Nachiket Sathaye
 parent: "Vendor Evaluation"
 nav_order: 5
 document_type: AI Security Wiki Reference

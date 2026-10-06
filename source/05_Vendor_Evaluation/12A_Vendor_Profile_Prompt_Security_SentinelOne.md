@@ -1,5 +1,6 @@
 ---
 title: "Vendor Profile — Prompt Security / SentinelOne"
+author: Nachiket Sathaye
 parent: "Vendor Evaluation"
 nav_order: 2
 document_type: AI Security Wiki Reference

@@ -1,5 +1,6 @@
 ---
 title: "Vendor Evaluation and Audit Playbook"
+author: Nachiket Sathaye
 parent: "Role-Based Playbooks"
 nav_order: 4
 document_type: AI Security Wiki Reference

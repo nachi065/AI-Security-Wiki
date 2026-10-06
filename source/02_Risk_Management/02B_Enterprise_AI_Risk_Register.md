@@ -1,5 +1,6 @@
 ---
 title: "Enterprise AI Risk Register"
+author: Nachiket Sathaye
 parent: "Risk Management"
 nav_order: 2
 document_type: AI Security Wiki Reference

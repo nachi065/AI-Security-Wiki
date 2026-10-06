@@ -1,5 +1,6 @@
 ---
 title: "Vendor Profile — Sovereign AI Security Labs"
+author: Nachiket Sathaye
 parent: "Vendor Evaluation"
 nav_order: 9
 document_type: AI Security Wiki Reference

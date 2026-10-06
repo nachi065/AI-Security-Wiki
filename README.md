@@ -39,4 +39,4 @@ The wiki is licensed under [Creative Commons Attribution 4.0 International (CC B
 
 Original author: **Nachiket Sathaye**
 
-The original author credit stays with the work: it appears on every page, and an automated check rejects any change that alters or removes it.
+Every page names its author. Pages written by the original author stay credited to him, and an automated check rejects any change that removes that credit. Pages added by community members are credited to whoever wrote them.

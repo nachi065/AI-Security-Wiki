@@ -1,5 +1,6 @@
 ---
 title: "AI Governance Operating Model"
+author: Nachiket Sathaye
 parent: "Governance"
 nav_order: 1
 document_type: AI Security Wiki Reference

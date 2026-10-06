@@ -1,5 +1,6 @@
 ---
 title: "AI Risk Treatment Plan"
+author: Nachiket Sathaye
 parent: "Risk Management"
 nav_order: 3
 document_type: AI Security Wiki Reference

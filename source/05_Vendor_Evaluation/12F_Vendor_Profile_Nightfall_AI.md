@@ -1,5 +1,6 @@
 ---
 title: "Vendor Profile — Nightfall AI"
+author: Nachiket Sathaye
 parent: "Vendor Evaluation"
 nav_order: 7
 document_type: AI Security Wiki Reference

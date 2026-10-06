@@ -1,5 +1,6 @@
 ---
 title: "AI Security Control Objectives Library"
+author: Nachiket Sathaye
 parent: "Control Library"
 nav_order: 1
 document_type: AI Security Wiki Reference

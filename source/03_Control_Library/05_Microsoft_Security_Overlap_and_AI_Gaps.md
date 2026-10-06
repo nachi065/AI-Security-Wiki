@@ -1,5 +1,6 @@
 ---
 title: "Microsoft Security Overlap and AI Gaps"
+author: Nachiket Sathaye
 parent: "Control Library"
 nav_order: 3
 document_type: AI Security Wiki Reference

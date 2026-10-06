@@ -1,5 +1,6 @@
 ---
 title: "Vendor Profile — Palo Alto Prisma AIRS"
+author: Nachiket Sathaye
 parent: "Vendor Evaluation"
 nav_order: 3
 document_type: AI Security Wiki Reference

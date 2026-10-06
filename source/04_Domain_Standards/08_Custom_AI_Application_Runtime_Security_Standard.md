@@ -1,5 +1,6 @@
 ---
 title: "Custom AI Application Runtime Security Standard"
+author: Nachiket Sathaye
 parent: "Domain Standards"
 nav_order: 3
 document_type: AI Security Wiki Reference

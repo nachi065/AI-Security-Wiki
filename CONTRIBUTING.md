@@ -31,12 +31,13 @@ Create a `.md` file in the right section folder under `source/` and start it wit
 ```
 ---
 title: "Your Page Title"
+author: Your Name
 parent: "Risk Management"
 nav_order: 6
 ---
 ```
 
-`parent` is the section title exactly as it appears in the sidebar, and `nav_order` sets the page's position in that section.
+`author` is you: a page you add is credited to you, and your name appears in its footer. `parent` is the section title exactly as it appears in the sidebar, and `nav_order` sets the page's position in that section.
 
 ## What to expect
 
@@ -46,6 +47,10 @@ nav_order: 6
 
 ## Credit and licence
 
+Every page names its author in the page header, and the footer of the published page shows it.
+
+- **A page you add is yours.** Put your own name in its `author:` line. It is not locked to anyone else.
+- **A substantial addition to an existing page** can be credited by adding a `coauthors:` line under `author:`, for example `coauthors: Your Name`. Several names are separated by commas. Leave the existing `author:` line as it is.
+- **Pages written by the original author stay credited to him.** The wiki was created by **Nachiket Sathaye**. The pages he wrote or co-wrote are listed in `AUTHOR_LOCK.txt`, and an automated check fails any pull request that removes his name from one of them, or deletes or renames one. Do not edit `AUTHOR_LOCK.txt` or the "Original author" line in `AUTHORS`; the check reads both from the main branch, so changing them in a pull request has no effect.
 - Add your name to the Contributors list in `AUTHORS` in your first pull request.
 - By contributing, you agree that your contribution is licensed under [CC BY 4.0](LICENSE), the same licence as the rest of the wiki.
-- The original author of this wiki is **Nachiket Sathaye**, and that credit is fixed. Do not change or remove the "Original author" line in `AUTHORS`, the `ORIGINAL_AUTHOR` value in `build.py`, the author fields on the home page, or the footer on any page. `check_author.py` fails if any of these are altered.

@@ -12,8 +12,6 @@ SITE_TITLE = "AI Security Wiki"
 REPO_URL = "https://github.com/nachi065/AI-Security-Wiki"
 SITE_URL = "https://nachi065.github.io/AI-Security-Wiki"
 HOME_TITLE = "AI Security Wiki: Governance, Risk, Standards and Test Cases"
-# The original author is fixed. check_author.py fails the build if this changes.
-ORIGINAL_AUTHOR = "Nachiket Sathaye"
 
 
 def read(path):
@@ -153,7 +151,7 @@ TEMPLATE = """<!doctype html>
 {content}
 </article>
 {pager}
-<footer class="site-footer">Original author: {author} &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a> &middot; <a href="{repo}/edit/main/source/{src}" rel="noopener">Suggest an edit to this page</a> &middot; <a href="{repo}/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a></footer>
+<footer class="site-footer">{byline} &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a> &middot; <a href="{repo}/edit/main/source/{src}" rel="noopener">Suggest an edit to this page</a> &middot; <a href="{repo}/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a></footer>
 </main>
 </div>
 <script>window.SITE_BASE = "{base}";</script>
@@ -162,6 +160,20 @@ TEMPLATE = """<!doctype html>
 </body>
 </html>
 """
+
+def authors(page):
+    """The page's author followed by any co-authors, from its front matter."""
+    names = [page["meta"].get("author", "")] + page["meta"].get("coauthors", "").split(",")
+    names = [n.strip() for n in names if n.strip()]
+    if not names:
+        raise SystemExit(f"{page['src']}: add an 'author:' line to the page header")
+    return names
+
+
+def byline(page):
+    names = authors(page)
+    return ("Authors: " if len(names) > 1 else "Author: ") + html.escape(", ".join(names))
+
 
 def canonical(page):
     out = page["out"].replace(os.sep, "/")
@@ -192,7 +204,7 @@ for i, page in enumerate(order):
         title=html.escape(HOME_TITLE if page is home else f"{title} | {SITE_TITLE}"),
         description=html.escape(describe(page), quote=True), canonical=canonical(page),
         og_type="website" if page is home else "article",
-        site=SITE_TITLE, repo=REPO_URL, author=ORIGINAL_AUTHOR, src=page["src"].replace(os.sep, "/"), base=base, nav=nav(page), crumbs=crumbs,
+        site=SITE_TITLE, repo=REPO_URL, author=html.escape(", ".join(authors(page)), quote=True), byline=byline(page), src=page["src"].replace(os.sep, "/"), base=base, nav=nav(page), crumbs=crumbs,
         content=content, pager='<nav class="pager" aria-label="Previous and next page">' + "".join(links) + "</nav>",
     )
     dest = os.path.join(ROOT, page["out"])

@@ -1,5 +1,6 @@
 ---
 title: "Security Engineering Playbook"
+author: Nachiket Sathaye
 parent: "Role-Based Playbooks"
 nav_order: 3
 document_type: AI Security Wiki Reference

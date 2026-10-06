@@ -1,5 +1,6 @@
 ---
 title: "Vendor Profile — HiddenLayer"
+author: Nachiket Sathaye
 parent: "Vendor Evaluation"
 nav_order: 4
 document_type: AI Security Wiki Reference

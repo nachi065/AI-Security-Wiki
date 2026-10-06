@@ -1,5 +1,6 @@
 ---
 title: "Vendor Profile — Cyberhaven"
+author: Nachiket Sathaye
 parent: "Vendor Evaluation"
 nav_order: 6
 document_type: AI Security Wiki Reference

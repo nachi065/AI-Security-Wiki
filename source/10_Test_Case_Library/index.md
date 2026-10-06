@@ -1,5 +1,6 @@
 ---
 title: "Test Case Library"
+author: Nachiket Sathaye
 description: "487 AI security test cases for vendor evaluation and PoC, organised by 17 AI lifecycle layers: prompt injection, DLP, agents, MCP, RAG, MLOps and more."
 nav_order: 11
 has_children: true

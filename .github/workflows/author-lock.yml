@@ -1,7 +1,10 @@
 name: Author lock
 
+# pull_request_target runs this file and the checker from main, so a pull
+# request cannot weaken the check. The pull request's files are only read,
+# never executed.
 on:
-  pull_request:
+  pull_request_target:
   push:
     branches: [main]
 
@@ -12,10 +15,16 @@ jobs:
   author-lock:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      # Always run the checker from main so a pull request cannot weaken it.
-      - uses: actions/checkout@v4
+      - name: Check out the trusted checker and lock list from main
+        uses: actions/checkout@v4
         with:
           ref: main
           path: trusted
-      - run: cp trusted/check_author.py check_author.py && python3 check_author.py
+          persist-credentials: false
+      - name: Check out the files to verify
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: candidate
+          persist-credentials: false
+      - run: python3 trusted/check_author.py --root candidate --lock trusted/AUTHOR_LOCK.txt

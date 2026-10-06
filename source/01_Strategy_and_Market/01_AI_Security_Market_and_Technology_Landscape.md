@@ -1,5 +1,6 @@
 ---
 title: "AI Security Market and Technology Landscape — Summary"
+author: Nachiket Sathaye
 parent: "Strategy and Market"
 nav_order: 1
 document_type: AI Security Wiki Reference

@@ -1,5 +1,6 @@
 ---
 title: "Vendor Profile — Enkrypt AI"
+author: Nachiket Sathaye
 parent: "Vendor Evaluation"
 nav_order: 8
 document_type: AI Security Wiki Reference
