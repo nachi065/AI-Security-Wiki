@@ -15,7 +15,7 @@ jobs:
   author-lock:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the trusted checker and lock list from main
+      - name: Check out the trusted checker and current credits from main
         uses: actions/checkout@v4
         with:
           ref: main
@@ -27,4 +27,4 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
           path: candidate
           persist-credentials: false
-      - run: python3 trusted/check_author.py --root candidate --lock trusted/AUTHOR_LOCK.txt
+      - run: python3 trusted/check_author.py --root candidate --base trusted

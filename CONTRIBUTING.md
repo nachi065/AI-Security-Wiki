@@ -47,10 +47,16 @@ nav_order: 6
 
 ## Credit and licence
 
-Every page names its author in the page header, and the footer of the published page shows it.
+Every page names its author in the page header, and the footer of the published page shows it. Credit can be added but never taken away.
 
-- **A page you add is yours.** Put your own name in its `author:` line. It is not locked to anyone else.
-- **A substantial addition to an existing page** can be credited by adding a `coauthors:` line under `author:`, for example `coauthors: Your Name`. Several names are separated by commas. Leave the existing `author:` line as it is.
-- **Pages written by the original author stay credited to him.** The wiki was created by **Nachiket Sathaye**. The pages he wrote or co-wrote are listed in `AUTHOR_LOCK.txt`, and an automated check fails any pull request that removes his name from one of them, or deletes or renames one. Do not edit `AUTHOR_LOCK.txt` or the "Original author" line in `AUTHORS`; the check reads both from the main branch, so changing them in a pull request has no effect.
+- **A page you add is yours.** Put your own name in its `author:` line.
+- **A substantial addition to someone else's page** is credited by adding a `coauthors:` line under `author:`, for example `coauthors: Your Name`. Several names are separated by commas.
+- **Nobody's existing credit can be removed or replaced.** This protects every author and co-author equally, community members as much as the original author. An automated check compares each pull request with the main branch and fails it if it:
+  - changes the `author:` of an existing page,
+  - removes any existing co-author,
+  - deletes or renames a page that carries a credit, or
+  - removes or alters an existing line in `AUTHORS`.
+- The check runs from the main branch, so editing the checker or workflow in a pull request has no effect on it.
+- The wiki was created by **Nachiket Sathaye**, the original author. The pages he wrote are protected by the same rule.
 - Add your name to the Contributors list in `AUTHORS` in your first pull request.
 - By contributing, you agree that your contribution is licensed under [CC BY 4.0](LICENSE), the same licence as the rest of the wiki.
