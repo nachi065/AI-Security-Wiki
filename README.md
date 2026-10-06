@@ -48,3 +48,5 @@ Original author: **Nachiket Sathaye**
 Cybersecurity professional with 20+ years of experience across Critical Infrastructure, BFSI and Manufacturing. I help enterprises turn security from a cost centre into a strategic accelerator, combining technical depth with executive strategy to align GRC, Zero Trust, security architecture and AI governance with business outcomes.
 
 My current focus is enabling organisations to adopt GenAI, RAG and agentic systems securely, securing the full AI lifecycle and building NIST AI RMF, ISO/IEC 42001, EU AI Act and Responsible AI principles into enterprise programmes.
+
+LinkedIn: [linkedin.com/in/nachiket-sathaye](https://www.linkedin.com/in/nachiket-sathaye/)
