@@ -44,6 +44,7 @@ nav_order: 6
 - Every pull request is reviewed by the maintainer before it is merged.
 - Keep content vendor-neutral and free of confidential, personal or organization-specific information.
 - Not sure whether an idea fits? [Open an issue](https://github.com/nachi065/AI-Security-Wiki/issues) first.
+- Think a rule should change? Suggestions are welcome. Rules change when a proposal is justified and mutually agreed with the maintainer; see [Suggesting changes to these rules](https://nachi065.github.io/AI-Security-Wiki/community-rules.html#suggesting-changes-to-these-rules).
 
 ## Credit and licence
 

@@ -112,6 +112,23 @@ The check verifies that names are not removed. It cannot verify that a name dese
 
 Corrections that genuinely need a credit changed, such as fixing a misspelt name or removing a page at its author's request, are made by the maintainer.
 
+## Suggesting changes to these rules
+
+These rules are not fixed. Suggestions from contributors are welcome, whether to change a rule, add one, or make the repository work better for the community.
+
+A rule changes when two conditions are met:
+
+1. **It is justified.** The proposal explains the problem with the current rule, what should change, and how the change benefits contributors and readers.
+2. **It is mutually agreed.** The proposer and the maintainer discuss it openly and both agree on the final wording before anything changes.
+
+How to propose a change:
+
+1. [Open an issue](https://github.com/nachi065/AI-Security-Wiki/issues) titled "Rule proposal: …" and set out the justification.
+2. Discuss it in the issue. Other contributors are welcome to add their views.
+3. Once agreed, the change is made to this page, and to the automated check if the rule is one it enforces.
+
+Until a proposal is agreed, the current rules continue to apply. A pull request that changes this page or the check without an agreed proposal will not be merged.
+
 ## Licence
 
 Everything in the wiki is published under [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/). Anyone may reuse it with credit to the authors. By contributing, you agree to publish your contribution under the same licence.
