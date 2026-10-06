@@ -37,6 +37,8 @@ Contributors are credited in [AUTHORS](AUTHORS). The [Community Rules](https://n
 
 The wiki is licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE). You may copy, adapt and reuse it for any purpose, including commercially, as long as you credit the original author.
 
+Every page names its author, and community members are credited for the pages they write. Credit can be added but never taken away: an automated check rejects any change that removes or replaces an existing author or co-author, whoever they are.
+
 Original author: **Nachiket Sathaye**
 
 ### About the author
@@ -46,5 +48,3 @@ Original author: **Nachiket Sathaye**
 Cybersecurity professional with 20+ years of experience across Critical Infrastructure, BFSI and Manufacturing. I help enterprises turn security from a cost centre into a strategic accelerator, combining technical depth with executive strategy to align GRC, Zero Trust, security architecture and AI governance with business outcomes.
 
 My current focus is enabling organisations to adopt GenAI, RAG and agentic systems securely, securing the full AI lifecycle and building NIST AI RMF, ISO/IEC 42001, EU AI Act and Responsible AI principles into enterprise programmes.
-
-Every page names its author, and community members are credited for the pages they write. Credit can be added but never taken away: an automated check rejects any change that removes or replaces an existing author or co-author, whoever they are.
