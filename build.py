@@ -193,6 +193,7 @@ def hero(page, details=""):
     stats = [(len(re.findall(r"^### TC-[LD]\d\d-\d{3}:", text, re.M)), "test cases"),
              (len(re.findall(r"^#### AI-CTRL-\d{3}:", text, re.M)), "control objectives"),
              (len(re.findall(r"^### AI-R\d\d: ", text, re.M)), "register risks"),
+             (sum(1 for s in sections if s["meta"].get("group")), "regional sections"),
              (len(pages), "pages")]
     tiles = "".join(f'<div class="stat"><b>{n}</b><span>{html.escape(label)}</span></div>' for n, label in stats)
     return (f'<section class="hero"><p class="hero-kicker">Open &middot; Vendor-neutral &middot; CC BY 4.0</p>'
