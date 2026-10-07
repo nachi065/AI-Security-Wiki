@@ -13,8 +13,6 @@ version: 1.0
 
 > **Audience:** Security engineering, audit, GRC, vendor evaluation teams.
 
-> **How to use:** Use this page as a wiki reference. Update the evidence, owners, control status, and links as implementation maturity improves.
-
 | Risk ID | Primary Controls | Control IDs | Evidence Required |
 |---|---|---|---|
 | AI-R01 | Prompt inspection; file upload protection; classification-aware enforcement | [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002), [AI-CTRL-003](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-003), [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) | Prompt logs; upload block logs; data classification policy; SOC alerts |

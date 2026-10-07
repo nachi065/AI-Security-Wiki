@@ -13,8 +13,6 @@ version: 1.0
 
 > **Audience:** Governance, compliance, legal, procurement, privacy, security leadership, enterprise architecture.
 
-> **How to use:** Use this page as a wiki reference. Update the evidence, owners, control status, and links as implementation maturity improves.
-
 | Area | Control ID | Mandatory Question |
 |---|---|---|
 | Data Residency | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) | Where are prompts, logs, uploads, metadata and generated outputs processed and stored? |

@@ -13,8 +13,6 @@ version: 1.0
 
 > **Audience:** Governance, compliance, security leadership, architecture review boards, AI steering committee.
 
-> **How to use:** Use this page as a wiki reference. Update the evidence, owners, control status, and links as implementation maturity improves.
-
 | Gate | Applies To | Required Review |
 |---|---|---|
 | Gate 1 | Any AI tool | AI usage and data handling review |

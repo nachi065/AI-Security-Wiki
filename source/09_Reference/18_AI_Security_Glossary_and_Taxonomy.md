@@ -13,8 +13,6 @@ version: 1.0
 
 > **Audience:** All wiki users.
 
-> **How to use:** Use this page as a wiki reference. Update the evidence, owners, control status, and links as implementation maturity improves.
-
 | Term | Definition |
 |---|---|
 | AI Usage Governance | Controls that discover, monitor and govern how users interact with AI tools. |

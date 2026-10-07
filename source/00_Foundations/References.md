@@ -46,13 +46,13 @@ Numbers match in-text citations. "Status" notes how each entry was checked on 7 
 ## Community frameworks and knowledge bases
 
 [11] OWASP GenAI Security Project. (2025). *OWASP Top 10 for LLM Applications 2025.* https://genai.owasp.org/llm-top-10/
-*Status: confirmed; ten categories LLM01–LLM10 as listed in Page 4.*
+*Status: confirmed; ten categories LLM01 to LLM10 as listed in Page 4.*
 
 [12] OWASP GenAI Security Project. (2025, 9 December). *OWASP Top 10 for Agentic Applications (2026).* https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/
 *Status: publication date confirmed on the OWASP page; category names taken from a secondary summary (cycode.com). Check names against the primary document.*
 
 [13] OWASP GenAI Security Project. (2026, 14 April). *OWASP GenAI Exploit Round-up Report Q1 2026.* https://genai.owasp.org/2026/04/14/owasp-genai-exploit-round-up-report-q1-2026/
-*Status: confirmed to exist; coverage period 1 Jan–11 Apr 2026. Findings cited in this paper come from a page summary; read the full report before quoting specifics.*
+*Status: confirmed to exist; coverage period 1 Jan to 11 Apr 2026. Findings cited in this paper come from a page summary; read the full report before quoting specifics.*
 
 [14] MITRE. *ATLAS: Adversarial Threat Landscape for Artificial-Intelligence Systems.* https://atlas.mitre.org/ and https://github.com/mitre-atlas/atlas-data
 *Status: confirmed to exist; data repository shows content version 2026.05 and monthly updates. Technique counts not verified.*
@@ -88,7 +88,7 @@ Numbers match in-text citations. "Status" notes how each entry was checked on 7 
 
 [27] Amodei, D., Olah, C., Steinhardt, J., Christiano, P., Schulman, J., & Mané, D. (2016). Concrete problems in AI safety. *arXiv preprint.*
 
-*Entries [16]–[22], [24], [26] and [27] are well-known papers whose bibliographic details are given from the original draft and standard citation; add DOIs/arXiv IDs when finalising.*
+*Entries [16] to [22], [24], [26] and [27] are well-known papers whose bibliographic details are given from the original draft and standard citation; add DOIs/arXiv IDs when finalising.*
 
 ---
 

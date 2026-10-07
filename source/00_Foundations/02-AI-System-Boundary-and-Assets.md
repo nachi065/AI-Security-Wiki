@@ -33,11 +33,11 @@ The practical consequence, and the central design principle of this paper, is:
 
 > **Treat the model as an untrusted computational component. Its output may be useful but is never authoritative. Authority to access data, call tools or change state must be enforced by deterministic controls outside the model.** [Analysis]
 
-This is not a claim that models are malicious. It is a claim that their behaviour under adversarial input cannot currently be guaranteed, so assurance has to sit in components whose behaviour can be.
+"Untrusted" here does not mean malicious. A model's behaviour under adversarial input cannot currently be guaranteed, so assurance has to sit in components whose behaviour can be.
 
 ## 2.3 Trust boundaries
 
-Key boundaries to draw explicitly on any architecture diagram:
+Boundaries to draw explicitly on any architecture diagram:
 
 1. **User ↔ application.** Users can be malicious, or can be a channel for someone else's instructions.
 2. **Application ↔ model provider.** Data leaves your control; model behaviour can change on the provider's schedule.

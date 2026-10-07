@@ -13,9 +13,6 @@ version: 1.0
 
 > **Audience:** Risk management, security architecture, GRC, audit, AI product owners.
 
-> **How to use:** Use this page as a wiki reference. Update the evidence, owners, control status, and links as implementation maturity improves.
-
-
 ## Rating Factors
 
 | Factor | Definition |

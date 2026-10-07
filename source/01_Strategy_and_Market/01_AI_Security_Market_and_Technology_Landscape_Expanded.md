@@ -15,22 +15,22 @@ version: 2.0 Expanded Rewrite
 
 ## 1. Purpose and Scope
 
-This document provides a structured reference for understanding the AI security market, AI security technology categories, AI threat landscape, control taxonomy, stakeholder model, reference architectures, maturity model and future trends. It is intended to act as the strategy and market-intelligence foundation for the broader AI Security Wiki.
+This document describes the AI security market, AI security technology categories, AI threats, control taxonomy, stakeholder model, reference architectures, maturity model and future trends. It is the strategy and market-intelligence reference for the rest of the AI Security Wiki.
 
 > **Design Intent:** Use this document as a parent knowledge domain. Detailed risk, control, PoC, vendor and audit documents should link back to this market and taxonomy reference.
 
 ## 2. Enterprise AI Adoption Landscape
 
-AI adoption is no longer limited to standalone chatbots. Enterprise usage increasingly includes browser-based AI platforms, AI coding assistants, embedded SaaS AI, enterprise copilots, AI APIs, RAG applications, custom AI applications, autonomous agents and AI-enabled business workflows. This expands the security boundary from traditional application and data protection controls to prompt flows, model interactions, retrieval pipelines, tool invocation, agent permissions and AI supply chain dependencies.
+Enterprise AI use has moved beyond standalone chatbots and increasingly includes browser-based AI platforms, AI coding assistants, embedded SaaS AI, enterprise copilots, AI APIs, RAG applications, custom AI applications, autonomous agents and AI-enabled business workflows. This expands the security boundary from traditional application and data protection controls to prompt flows, model interactions, retrieval pipelines, tool invocation, agent permissions and AI supply chain dependencies.
 
 | Market Wave | Description | Security Focus |
 |---|---|---|
-| Wave 1 — AI Usage Governance | Monitor or block public AI websites and unapproved AI tools. | Shadow AI, acceptable-use enforcement, user visibility |
-| Wave 2 — AI Data Protection | Inspect prompts, uploads and sensitive data movement into AI services. | Prompt leakage, document upload, source code and secrets exposure |
-| Wave 3 — AI Application Security | Secure custom AI apps, RAG, AI APIs and enterprise copilots. | Prompt injection, authorization gaps, output leakage, weak retrieval security |
-| Wave 4 — Agentic AI Security | Control agents that can invoke tools, APIs and workflows. | Tool abuse, excessive privilege, action traceability, human approval |
-| Wave 5 — AI Assurance | Validate AI systems before and after deployment. | AI red teaming, jailbreak testing, guardrail validation, continuous assessment |
-| Wave 6 — Autonomous Enterprise AI | Govern multi-agent and autonomous business processes. | Agent mesh governance, delegated authority, business process manipulation |
+| Wave 1: AI Usage Governance | Monitor or block public AI websites and unapproved AI tools. | Shadow AI, acceptable-use enforcement, user visibility |
+| Wave 2: AI Data Protection | Inspect prompts, uploads and sensitive data movement into AI services. | Prompt leakage, document upload, source code and secrets exposure |
+| Wave 3: AI Application Security | Secure custom AI apps, RAG, AI APIs and enterprise copilots. | Prompt injection, authorization gaps, output leakage, weak retrieval security |
+| Wave 4: Agentic AI Security | Control agents that can invoke tools, APIs and workflows. | Tool abuse, excessive privilege, action traceability, human approval |
+| Wave 5: AI Assurance | Validate AI systems before and after deployment. | AI red teaming, jailbreak testing, guardrail validation, continuous assessment |
+| Wave 6: Autonomous Enterprise AI | Govern multi-agent and autonomous business processes. | Agent mesh governance, delegated authority, business process manipulation |
 
 ## 3. AI Security Technology Taxonomy
 
@@ -140,11 +140,11 @@ Control focus: model provenance, dependency review, AI BOM, scanning and release
 
 | Maturity Level | Characteristics | Target Outcome |
 |---|---|---|
-| Level 1 — Ad Hoc | No consistent AI inventory, policy, monitoring or security review. | Unknown AI usage and unmanaged risk. |
-| Level 2 — Discovered | Basic visibility into AI tools and usage patterns. | AI inventory and initial usage reporting. |
-| Level 3 — Governed | Policies, intake process, DLP alignment and vendor review are established. | Controlled adoption and risk-based governance. |
-| Level 4 — Protected | Runtime controls, IDE controls, RAG controls and agent governance are implemented. | Technical risk reduction and production readiness. |
-| Level 5 — Optimized | Continuous monitoring, AI assurance, red teaming, metrics, audit automation and improvement. | Evidence-driven AI security program. |
+| Level 1: Ad Hoc | No consistent AI inventory, policy, monitoring or security review. | Unknown AI usage and unmanaged risk. |
+| Level 2: Discovered | Basic visibility into AI tools and usage patterns. | AI inventory and initial usage reporting. |
+| Level 3: Governed | Policies, intake process, DLP alignment and vendor review are established. | Controlled adoption and risk-based governance. |
+| Level 4: Protected | Runtime controls, IDE controls, RAG controls and agent governance are implemented. | Technical risk reduction and production readiness. |
+| Level 5: Optimized | Continuous monitoring, AI assurance, red teaming, metrics, audit automation and improvement. | Evidence-driven AI security program. |
 
 Typical evidence for each level and a time-boxed roadmap are in [Maturity Model and Roadmap](../00_Foundations/11-Maturity-Model-and-Roadmap.md).
 
@@ -210,7 +210,7 @@ How these instruments relate to each other, and the current EU AI Act timetable,
 
 ## 13. Expanded AI Security Glossary
 
-The terms formerly listed here are now kept in one place: the [AI Security Glossary and Taxonomy](../09_Reference/18_AI_Security_Glossary_and_Taxonomy.md).
+Terms are defined in the [AI Security Glossary and Taxonomy](../09_Reference/18_AI_Security_Glossary_and_Taxonomy.md).
 
 ## 14. Strategic Guidance for the AI Security Wiki
 
@@ -224,11 +224,10 @@ The terms formerly listed here are now kept in one place: the [AI Security Gloss
 
 - Use the maturity model to track progress from AI discovery to optimized continuous AI governance.
 
-## 15. References Used for This Rewrite
+## 15. References
 
 | Source | URL | Use |
 |---|---|---|
-| Original Wiki File | 01_AI_Security_Market_and_Technology_Landscape.md | Internal generated wiki document provided by user. |
 | NIST AI RMF | https://www.nist.gov/itl/ai-risk-management-framework | NIST describes AI RMF as voluntary guidance to manage AI risks and notes the Generative AI Profile and Critical Infrastructure profile concept note. |
 | OWASP GenAI / LLM Top 10 | https://genai.owasp.org/llm-top-10/ | OWASP describes its GenAI Security Project and LLM Top 10 as guidance for securing generative AI systems. |
 | MITRE ATLAS | https://atlas.mitre.org/ | MITRE describes ATLAS as a living knowledge base of adversary tactics and techniques against AI-enabled systems. |

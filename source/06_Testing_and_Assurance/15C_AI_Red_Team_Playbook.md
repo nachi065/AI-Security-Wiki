@@ -13,9 +13,6 @@ version: 1.0
 
 > **Audience:** AI red teamers, AppSec, security researchers, AI product teams, assurance teams.
 
-> **How to use:** Use this page as a wiki reference. Update the evidence, owners, control status, and links as implementation maturity improves.
-
-
 ## Red Team Scope Areas
 
 - Prompt injection.

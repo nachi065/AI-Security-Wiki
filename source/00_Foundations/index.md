@@ -24,7 +24,7 @@ The argument has four parts.
 1. **Terminology.** *Security of AI* is the protection of AI systems and their lifecycle. *AI for security* is the use of AI in defensive work. *AI security* is the enterprise umbrella that contains both, plus the security consequences of AI-enabled business processes and AI-enabled attackers. ([Page 1](01-Terminology-and-Two-Axis-Model.md))
 2. **A two-axis model.** Every AI security question can be placed by *what is being protected* (the object) and *what outcome is required* (the mission). The same technology, such as a coding agent, generates obligations in several cells at once. ([Page 1](01-Terminology-and-Two-Axis-Model.md))
 3. **A design principle.** Treat the model as an untrusted component whose output is advisory. Authority to act, access data or spend money must be enforced outside the model by deterministic controls. ([Pages 2, 4, 5, 7](02-AI-System-Boundary-and-Assets.md))
-4. **An operating model.** Conventional controls, AI-specific controls and governance controls need to be run as one programme, tied to evidence, and mapped to the standards that auditors and regulators already use. ([Pages 8–11](08-Assurance-Testing-Monitoring-and-Response.md))
+4. **An operating model.** Conventional controls, AI-specific controls and governance controls need to be run as one programme, tied to evidence, and mapped to the standards that auditors and regulators already use. ([Pages 8 to 11](08-Assurance-Testing-Monitoring-and-Response.md))
 
 The paper is a synthesis. It does not report new experiments. Where a claim rests on published research or a standards document it is cited; where it is the author's analysis it is labelled as such.
 

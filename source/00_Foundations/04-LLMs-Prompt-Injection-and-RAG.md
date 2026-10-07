@@ -48,7 +48,7 @@ Because the model cannot be relied on to resist injection, design so that a succ
 6. **Limit exfiltration channels.** Restrict outbound network access, rendered links and image fetches from model-generated content.
 7. **Log and monitor** prompts, retrieved sources, tool calls and policy decisions with enough fidelity to reconstruct an incident.
 
-*[Analysis]; items 1–5 correspond to controls recommended against OWASP LLM01, LLM05 and LLM06 [11].*
+*[Analysis]; items 1 to 5 correspond to controls recommended against OWASP LLM01, LLM05 and LLM06 [11].*
 
 ## 4.3 Retrieval-augmented generation (RAG)
 

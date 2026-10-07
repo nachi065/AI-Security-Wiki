@@ -13,9 +13,6 @@ version: 1.0
 
 > **Audience:** AI platform teams, automation teams, governance, security architecture, SOC, red teamers, audit teams.
 
-> **How to use:** Use this page as a wiki reference. Update the evidence, owners, control status, and links as implementation maturity improves.
-
-
 ## Core Principle
 
 No AI agent should be approved for enterprise use unless the following are explicitly defined:

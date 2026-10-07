@@ -1,6 +1,6 @@
 # AI Security Wiki
 
-Over the past year, I’ve built an AI Security Library—now live on GitHub! It’s a vendor-neutral, risk-driven, and practitioner-focused wiki covering AI governance, risk, architecture, standards, agents, and compliance. Built for the community to learn, contribute, and grow. Would love your feedback and contributions!
+I built this AI security wiki over the past year and have published it here on GitHub. It is vendor-neutral, organised around risk, and written for practitioners. It covers AI governance, risk, architecture, standards, agents and compliance. Feedback and contributions are welcome.
 
 ## Ready-to-browse site
 
@@ -46,8 +46,8 @@ Original author: **Nachiket Sathaye**
 
 **Cybersecurity Leader, AI Security and Governance**
 
-Cybersecurity professional with 20+ years of experience across Critical Infrastructure, BFSI and Manufacturing. I help enterprises turn security from a cost centre into a strategic accelerator, combining technical depth with executive strategy to align GRC, Zero Trust, security architecture and AI governance with business outcomes.
+Cybersecurity professional with 20+ years of experience across Critical Infrastructure, BFSI and Manufacturing. I work at both the technical and the executive level, aligning GRC, Zero Trust, security architecture and AI governance with business outcomes.
 
-My current focus is enabling organisations to adopt GenAI, RAG and agentic systems securely, securing the full AI lifecycle and building NIST AI RMF, ISO/IEC 42001, EU AI Act and Responsible AI principles into enterprise programmes.
+My current focus is helping organisations adopt GenAI, RAG and agentic systems securely across the full AI lifecycle, and building NIST AI RMF, ISO/IEC 42001, EU AI Act and Responsible AI principles into enterprise programmes.
 
 LinkedIn: [linkedin.com/in/nachiket-sathaye](https://www.linkedin.com/in/nachiket-sathaye/)

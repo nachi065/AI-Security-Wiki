@@ -13,9 +13,6 @@ version: 1.0
 
 > **Audience:** Procurement, security architecture, vendor evaluation teams, AI governance, audit, management.
 
-> **How to use:** Use this page as a wiki reference. Update the evidence, owners, control status, and links as implementation maturity improves.
-
-
 ## Evaluation Domains
 
 | Domain | What to Evaluate |

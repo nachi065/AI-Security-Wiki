@@ -13,8 +13,6 @@ version: 1.0
 
 > **Audience:** Audit teams, governance teams, control owners, security engineering.
 
-> **How to use:** Use this page as a wiki reference. Update the evidence, owners, control status, and links as implementation maturity improves.
-
 | Control Area | Control IDs | Evidence Required | Evidence Owner |
 |---|---|---|---|
 | AI Discovery | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) | AI inventory, usage dashboard, user/device reports | Security Engineering |

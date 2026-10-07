@@ -13,9 +13,6 @@ version: 1.0
 
 > **Audience:** All AI users, developers, governance, compliance, HR/policy teams, security awareness.
 
-> **How to use:** Use this page as a wiki reference. Update the evidence, owners, control status, and links as implementation maturity improves.
-
-
 ## Acceptable AI Use
 
 AI tools may be used only when approved, governed and aligned with data classification, information protection, confidentiality, security and regulatory requirements.

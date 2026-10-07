@@ -25,7 +25,7 @@ Common uses: SOC alert triage and summarisation, threat-intelligence synthesis, 
 | Threat-intel summarisation | Reduced reading load | Fabricated attribution or indicators | Require source links; verify indicators |
 | Code and vulnerability analysis | Coverage | False confidence | Human review; independent scanners |
 
-**Operating rules.** Human oversight proportional to impact; bounded autonomy; validation against ground truth; full audit logs; and the AI-for-security system itself in scope for the controls in Pages 2–9.
+**Operating rules.** Human oversight proportional to impact; bounded autonomy; validation against ground truth; full audit logs; and the AI-for-security system itself in scope for the controls in Pages 2 to 9.
 
 ## 10.2 AI-enabled threats against conventional security
 

@@ -1,5 +1,5 @@
 ---
-title: "Vendor Profile — Cyberhaven"
+title: "Vendor Profile: Cyberhaven"
 author: Nachiket Sathaye
 parent: "Vendor Evaluation"
 nav_order: 6
@@ -7,14 +7,11 @@ document_type: AI Security Wiki Reference
 version: 1.0
 ---
 
-# Vendor Profile — Cyberhaven
+# Vendor Profile: Cyberhaven
 
 > **Purpose:** Document the evaluation profile, strengths, limitations and validation requirements for Cyberhaven.
 
 > **Audience:** Vendor evaluation team, procurement, security architecture, GRC, audit.
-
-> **How to use:** Use this page as a wiki reference. Update the evidence, owners, control status, and links as implementation maturity improves.
-
 
 ## Best-Fit Use Case
 

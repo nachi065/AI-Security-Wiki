@@ -13,9 +13,6 @@ version: 1.0
 
 > **Audience:** AI product developers, AppSec, DevSecOps, cloud architects, AI platform engineers, red teamers.
 
-> **How to use:** Use this page as a wiki reference. Update the evidence, owners, control status, and links as implementation maturity improves.
-
-
 ## Scope
 
 This standard applies to internal AI assistants, enterprise knowledge chatbots, RAG implementations, Azure OpenAI or similar AI APIs, customer-facing AI services, AI-enabled portals and AI applications connected to enterprise repositories or business systems.

@@ -13,9 +13,6 @@ version: 1.0
 
 > **Audience:** Developers, DevSecOps, application security, security engineering, AI product developers, audit.
 
-> **How to use:** Use this page as a wiki reference. Update the evidence, owners, control status, and links as implementation maturity improves.
-
-
 ## Primary Risks
 
 - Source code exposure.

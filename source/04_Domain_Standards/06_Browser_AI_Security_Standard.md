@@ -13,8 +13,6 @@ version: 1.0
 
 > **Audience:** Security engineering, DLP teams, endpoint teams, SOC, AI users, compliance.
 
-> **How to use:** Use this page as a wiki reference. Update the evidence, owners, control status, and links as implementation maturity improves.
-
 | Control Area | Control ID | Weight | Required Evidence |
 |---|---|---|---|
 | Discovery and Visibility | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) | 15% | AI service inventory, user activity reports, device attribution |
@@ -22,8 +20,8 @@ version: 1.0
 | File Upload Inspection | [AI-CTRL-003](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-003) | 15% | Upload inspection test results and block/warn evidence |
 | Policy Enforcement | [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) | 15% | Allow, alert, warn, mask, redact or block policy evidence |
 | Auditability | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) | 15% | User, device, AI platform, prompt and file upload logs |
-| Platform Coverage | — | 10% | Browser and OS support matrix |
-| Operational Impact | — | 10% | Deployment notes, performance observations, administrative effort |
+| Platform Coverage | N/A | 10% | Browser and OS support matrix |
+| Operational Impact | N/A | 10% | Deployment notes, performance observations, administrative effort |
 
 ## Minimum Requirements
 

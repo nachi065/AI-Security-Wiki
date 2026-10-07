@@ -13,9 +13,6 @@ version: 1.0
 
 > **Audience:** AI product owners, solution architects, security reviewers, GRC.
 
-> **How to use:** Use this page as a wiki reference. Update the evidence, owners, control status, and links as implementation maturity improves.
-
-
 ## AI Risk Review Intake
 
 ```markdown

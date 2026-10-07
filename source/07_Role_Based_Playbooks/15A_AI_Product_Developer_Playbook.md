@@ -13,13 +13,6 @@ version: 1.0
 
 > **Audience:** AI product developers, solution architects, AI application owners
 
-> **How to use:** Use this page as a wiki reference. Update the evidence, owners, control status, and links as implementation maturity improves.
-
-
-## Role Focus
-
-This playbook is focused on secure AI design, RAG security, prompt injection prevention, output filtering, data access boundaries and production readiness.
-
 ## Key Responsibilities
 
 - Understand applicable AI risks.
@@ -49,7 +42,7 @@ This playbook is focused on secure AI design, RAG security, prompt injection pre
 
 ## Quick Links
 
-- Risk Register: [Enterprise AI Risk Register](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md)
-- Control Library: [AI Security Control Objectives Library](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md)
-- PoC Library: [AI Security PoC Test Case Library](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md)
-- Audit Checklist: [AI Security Audit and Evidence Checklist](../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md)
+- [Enterprise AI Risk Register](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md)
+- [AI Security Control Objectives Library](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md)
+- [AI Security PoC Test Case Library](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md)
+- [AI Security Audit and Evidence Checklist](../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md)

@@ -23,15 +23,15 @@ last_updated: 2026-10-07
 
 ## 1. Purpose
 
-The AI Security Wiki is the authoritative enterprise reference hub for securing artificial intelligence adoption across the enterprise. It provides a structured, reusable, audit-ready knowledge base for AI governance, AI risk management, secure engineering, operational monitoring, vendor evaluation, and assurance activities.
+The AI Security Wiki is a reference for securing AI adoption across an enterprise. It covers AI governance, AI risk management, secure engineering, operational monitoring, vendor evaluation, and assurance, in pages that can be reused as templates and that say what audit evidence each activity should produce.
 
-The wiki is designed to help teams answer five practical questions:
+The wiki helps teams answer five practical questions:
 
-1. **Can this AI use case be safely adopted?**
-2. **What risks, controls, and approvals are required?**
-3. **Which engineering standards apply to the implementation?**
-4. **How will security, privacy, sovereignty, and compliance requirements be evidenced?**
-5. **How will the AI capability be monitored, tested, audited, and improved over time?**
+1. Can this AI use case be safely adopted?
+2. What risks, controls, and approvals are required?
+3. Which engineering standards apply to the implementation?
+4. How will security, privacy, sovereignty, and compliance requirements be evidenced?
+5. How will the AI capability be monitored, tested, audited, and improved over time?
 
 New to the subject? Start with [Foundations: AI Security vs. Security of AI](00_Foundations/index.md), the research paper that explains the concepts and sources behind the standards, templates, and test cases in the rest of the wiki.
 
@@ -39,7 +39,7 @@ New to the subject? Start with [Foundations: AI Security vs. Security of AI](00_
 
 Establish a secure, governed, sovereign, and auditable approach to AI adoption by giving business, technology, cybersecurity, governance, compliance, audit, and vendor evaluation teams a common operating reference.
 
-The wiki supports responsible innovation by enabling AI adoption while reducing the risk of data leakage, prompt injection, model misuse, insecure agent actions, third-party exposure, regulatory non-compliance, and operational blind spots.
+The aim is to let teams adopt AI while reducing the risk of data leakage, prompt injection, model misuse, insecure agent actions, third-party exposure, regulatory non-compliance, and operational blind spots.
 
 ## 3. Strategic Objectives
 
@@ -63,7 +63,7 @@ This wiki is intended for the following personas:
 | Executive management | Understand decision points, governance obligations, risk posture, and assurance outcomes. |
 | AI product owners | Understand required approvals, control gates, risk treatment, and release readiness. |
 | AI product developers | Implement secure AI applications, integrations, prompts, RAG patterns, agents, APIs, and data flows. |
-| AI security researchers | Monitor the AI threat landscape, evaluate emerging risks, and improve controls. |
+| AI security researchers | Monitor AI threats, evaluate emerging risks, and improve controls. |
 | AI red teamers | Test AI systems for prompt injection, data leakage, misuse, unsafe tool use, and model abuse. |
 | Security architecture | Define control requirements, review designs, approve exceptions, and maintain standards. |
 | Security engineering | Implement preventive, detective, and responsive controls across the AI lifecycle. |
@@ -74,16 +74,16 @@ This wiki is intended for the following personas:
 
 ## 5. Wiki Design Principles
 
-This wiki is intentionally:
+The wiki follows eight principles:
 
-- **Risk-first:** every AI activity starts with a risk, impact, and data sensitivity assessment.
-- **Control-first:** requirements are expressed as reusable control objectives before being mapped to tools or vendors.
-- **Lifecycle-first:** controls apply from discovery through retirement, not only at deployment.
-- **Persona-friendly:** each user group has a clear starting point and operational playbook.
-- **Vendor-neutral:** vendor profiles do not replace enterprise control requirements.
-- **Sovereignty-aware:** architecture and vendor decisions consider UAE residency, jurisdiction, and regulatory expectations.
-- **Evidence-driven:** each control should produce auditable evidence.
-- **Operationally measurable:** ownership, status, exceptions, test results, and improvement actions should be tracked.
+- Risk-first: every AI activity starts with a risk, impact, and data sensitivity assessment.
+- Control-first: requirements are expressed as reusable control objectives before being mapped to tools or vendors.
+- Lifecycle-first: controls apply from discovery through retirement, not only at deployment.
+- Persona-friendly: each user group has a clear starting point and operational playbook.
+- Vendor-neutral: vendor profiles do not replace enterprise control requirements.
+- Sovereignty-aware: architecture and vendor decisions consider UAE residency, jurisdiction, and regulatory expectations.
+- Evidence-driven: each control should produce auditable evidence.
+- Operationally measurable: ownership, status, exceptions, test results, and improvement actions should be tracked.
 
 ## 6. AI Security Operating Model
 
@@ -138,7 +138,7 @@ Review, Improve, Renew, or Retire
 | Executive Management | [AI Governance Operating Model](08_Governance/16_AI_Governance_Operating_Model.md) | [Enterprise AI Risk Register](02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI Security Audit and Evidence Checklist](06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md) | Clear AI risk posture, governance decisions, accountability, and audit readiness. |
 | AI Product Owner | [AI Risk Methodology](02_Risk_Management/02A_AI_Risk_Methodology.md) | [Custom AI Application Runtime Security Standard](04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.md), [AI Security PoC Test Case Library](06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md) | Approved risk treatment, implementation plan, release evidence. |
 | AI Product Developer | [Custom AI Application Runtime Security Standard](04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.md) | [AI Product Developer Playbook](07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.md), [AI Security PoC Test Case Library](06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md) | Secure implementation aligned with required controls and test cases. |
-| AI Security Researcher | [AI Security Market and Technology Landscape — Summary](01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.md) | [AI Security Researcher Playbook](07_Role_Based_Playbooks/15B_AI_Security_Researcher_Playbook.md), [AI Security Glossary and Taxonomy](09_Reference/18_AI_Security_Glossary_and_Taxonomy.md) | Updated threat insights, control improvements, and emerging risk intelligence. |
+| AI Security Researcher | [AI Security Market and Technology Landscape: Summary](01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.md) | [AI Security Researcher Playbook](07_Role_Based_Playbooks/15B_AI_Security_Researcher_Playbook.md), [AI Security Glossary and Taxonomy](09_Reference/18_AI_Security_Glossary_and_Taxonomy.md) | Updated threat insights, control improvements, and emerging risk intelligence. |
 | AI Red Teamer | [AI Red Team Playbook](06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.md) | [Custom AI Application Runtime Security Standard](04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.md), [Agentic AI Security and Tool Governance](04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.md) | Test plans, findings, exploit paths, recommended mitigations. |
 | Security Engineering | [AI Security Control Objectives Library](03_Control_Library/03_AI_Security_Control_Objectives_Library.md) | [Existing Security Control Baseline](03_Control_Library/04_Existing_Security_Control_Baseline.md), [Microsoft Security Overlap and AI Gaps](03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.md) | Implementable controls, baseline mapping, monitoring requirements. |
 | Security Architecture | [AI Security Control Objectives Library](03_Control_Library/03_AI_Security_Control_Objectives_Library.md) | [Custom AI Application Runtime Security Standard](04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.md), [Sovereign AI, UAE Compliance and Data Residency Requirements](04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.md) | Approved AI designs, control exceptions, reference architectures. |
@@ -290,16 +290,16 @@ Vendor profiles should be used to record:
 
 ## 16. How to Use This Wiki
 
-1. **Start with the lifecycle stage** that matches the AI initiative.
-2. **Use the role navigation table** to identify the correct starting document.
-3. **Register the AI use case or tool** before implementation or procurement.
-4. **Complete the AI risk assessment** and apply required control objectives.
-5. **Use the domain standard** that matches the AI implementation pattern.
-6. **Perform vendor assessment** for third-party AI services, platforms, plugins, models, or integrations.
-7. **Run the required PoC and security tests** before production use.
-8. **Collect evidence continuously** for audit, compliance, and management reporting.
-9. **Update the risk register** when controls, scope, vendors, models, or data flows change.
-10. **Review and improve** controls based on incidents, findings, threat intelligence, and regulatory change.
+1. Start with the lifecycle stage that matches the AI initiative.
+2. Use the role navigation table to identify the correct starting document.
+3. Register the AI use case or tool before implementation or procurement.
+4. Complete the AI risk assessment and apply required control objectives.
+5. Use the domain standard that matches the AI implementation pattern.
+6. Perform vendor assessment for third-party AI services, platforms, plugins, models, or integrations.
+7. Run the required PoC and security tests before production use.
+8. Collect evidence continuously for audit, compliance, and management reporting.
+9. Update the risk register when controls, scope, vendors, models, or data flows change.
+10. Review and improve controls based on incidents, findings, threat intelligence, and regulatory change.
 
 ## 17. Priority Implementation Roadmap
 
@@ -345,13 +345,13 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
 | 1.0 | Initial release | Nachiket Sathaye | Initial wiki home page with purpose, audience, design principle, role navigation, lifecycle navigation, folder structure, and vendor-neutral operating rule. |
-| 2.0 | 2026-07-27 | Nachiket Sathaye | Expanded into comprehensive enterprise AI security wiki home page with mission, strategic objectives, operating model, governance, standards hierarchy, framework mapping, maintenance rules, roadmap, metrics, and enhanced navigation. |
+| 2.0 | 2026-07-27 | Nachiket Sathaye | Expanded the home page with mission, strategic objectives, operating model, governance, standards hierarchy, framework mapping, maintenance rules, roadmap, metrics, and fuller navigation. |
 | 2.1 | 2026-10-07 | Nachiket Sathaye | Added the Foundations section (research paper: AI Security vs. Security of AI) and linked it from the purpose, navigation, framework mapping, roadmap, and metrics sections. |
 
 ## 21. Quick Links
 
 - [Foundations: AI Security vs. Security of AI](00_Foundations/index.md)
-- [AI Security Market and Technology Landscape — Summary](01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.md)
+- [AI Security Market and Technology Landscape: Summary](01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.md)
 - [AI Risk Methodology](02_Risk_Management/02A_AI_Risk_Methodology.md)
 - [Enterprise AI Risk Register](02_Risk_Management/02B_Enterprise_AI_Risk_Register.md)
 - [AI Security Control Objectives Library](03_Control_Library/03_AI_Security_Control_Objectives_Library.md)
@@ -376,8 +376,8 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 **Nachiket Sathaye**  
 **Cybersecurity Leader, AI Security and Governance**
 
-Cybersecurity professional with 20+ years of experience across Critical Infrastructure, BFSI and Manufacturing. I help enterprises turn security from a cost centre into a strategic accelerator, combining technical depth with executive strategy to align GRC, Zero Trust, security architecture and AI governance with business outcomes.
+Cybersecurity professional with 20+ years of experience across Critical Infrastructure, BFSI and Manufacturing. I work at both the technical and the executive level, aligning GRC, Zero Trust, security architecture and AI governance with business outcomes.
 
-My current focus is enabling organisations to adopt GenAI, RAG and agentic systems securely, securing the full AI lifecycle and building NIST AI RMF, ISO/IEC 42001, EU AI Act and Responsible AI principles into enterprise programmes.
+My current focus is helping organisations adopt GenAI, RAG and agentic systems securely across the full AI lifecycle, and building NIST AI RMF, ISO/IEC 42001, EU AI Act and Responsible AI principles into enterprise programmes.
 
 LinkedIn: [linkedin.com/in/nachiket-sathaye](https://www.linkedin.com/in/nachiket-sathaye/)

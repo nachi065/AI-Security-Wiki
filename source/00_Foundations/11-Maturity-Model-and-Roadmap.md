@@ -49,7 +49,7 @@ The levels are those of the wiki's [AI Security Maturity Model](../01_Strategy_a
 - Align governance to a chosen framework (for example ISO/IEC 42001 or NIST AI RMF) and begin collecting audit evidence [3][4].
 - Map regulatory obligations (including the EU AI Act where relevant) to controls [7][8].
 
-### 12–24 months: measured and optimized
+### 12 to 24 months: measured and optimized
 
 - Report the metrics on [Page 8](08-Assurance-Testing-Monitoring-and-Response.md) to executive and board level.
 - Continuously evaluate high-tier systems; automate re-testing on upstream change.

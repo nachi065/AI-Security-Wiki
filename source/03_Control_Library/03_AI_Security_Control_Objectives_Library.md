@@ -13,7 +13,7 @@ version: 2.1
 
 > **Audience:** Security engineering, GRC, audit, AI product teams, SOC.
 
-> **How to use:** Use this page as a wiki reference. Select controls by risk tier, then update the evidence, owners, control status, and links as implementation maturity improves.
+> **How to use:** Select controls by risk tier, then update the evidence, owners, control status, and links as implementation maturity improves.
 
 The library holds **40 control objectives in 11 families**. Each control has a stable ID that the rest of the wiki uses: the [AI Risk to Control Mapping](../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.md) links risks to controls, the [domain standards](../04_Domain_Standards/index.md) cite the controls they apply, the [AI Security Audit and Evidence Checklist](../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md) lists the evidence, and every one of the 620 cases in the [Test Case Library](../10_Test_Case_Library/index.md) names the control it tests.
 
