@@ -346,6 +346,9 @@ for i, page in enumerate(order):
     if i < len(order) - 1:
         links.append(f'<a class="next" href="{rel(page["out"], order[i+1]["out"])}">{html.escape(order[i+1]["meta"]["title"])} &rarr;</a>')
     content = render(page)
+    if page["src"].split(os.sep)[0] in EMBLEMS or page["src"].split(os.sep)[0] in FLAGS:
+        # Pages in a regional section show the section's flag or emblem before the main heading.
+        content = re.sub(r"(<h1[^>]*>)", lambda m: m.group(1) + icon(page), content, count=1)
     banner = ""
     if page is home:
         content = re.sub(r"<h1[^>]*>.*?</h1>", "", content, count=1, flags=re.S)

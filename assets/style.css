@@ -83,6 +83,7 @@ main { flex: 1; min-width: 0; max-width: 1020px; padding: 28px 40px 64px; }
 .crumbs { margin: 0 0 14px; font-size: 13px; color: var(--muted); }
 .crumbs span { color: var(--accent); font-weight: 600; }
 article h1 { font-size: 2rem; line-height: 1.25; margin: 0 0 24px; }
+article h1 .icon { width: 1.05em; height: 1.05em; margin-right: .35em; vertical-align: -0.16em; }
 article h1::after {
   content: ""; display: block; width: 72px; height: 5px; margin-top: 12px; border-radius: 3px;
   background: linear-gradient(90deg, var(--accent-bright), hsl(calc(var(--h, 215) + 40) 72% 55%));
