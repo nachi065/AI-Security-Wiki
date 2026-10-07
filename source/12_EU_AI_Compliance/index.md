@@ -3,6 +3,7 @@ title: "EU AI Compliance"
 author: Nachiket Sathaye
 description: "EU AI compliance resources: AI Act timeline and regulatory hub, role guides, 12 fill-in templates, a proposed impact assessment control and a crosswalk."
 nav_order: 11
+group: "Regional AI Regulatory Hub"
 has_children: true
 ---
 

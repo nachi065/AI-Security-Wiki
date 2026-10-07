@@ -3,6 +3,7 @@ title: "Singapore AI Compliance"
 author: Nachiket Sathaye
 description: "Singapore AI compliance resources: regulatory hub covering IMDA frameworks, AI Verify, the PDPA, MAS and CSA guidance, a role guide and three templates."
 nav_order: 11
+group: "Regional AI Regulatory Hub"
 has_children: true
 ---
 

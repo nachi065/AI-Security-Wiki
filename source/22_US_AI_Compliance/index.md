@@ -3,6 +3,7 @@ title: "US AI Compliance"
 author: Nachiket Sathaye
 description: "US AI compliance resources: regulatory hub covering federal orders, NIST AI RMF and state AI laws in California, Colorado, Texas and Illinois, a role guide and three templates."
 nav_order: 11
+group: "Regional AI Regulatory Hub"
 has_children: true
 ---
 

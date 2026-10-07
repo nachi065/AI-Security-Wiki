@@ -3,6 +3,7 @@ title: "UK AI Compliance"
 author: Nachiket Sathaye
 description: "UK AI compliance resources: regulatory hub covering UK GDPR, the Data (Use and Access) Act 2025, ICO, FCA and PRA expectations, a role guide and three templates."
 nav_order: 11
+group: "Regional AI Regulatory Hub"
 has_children: true
 ---
 

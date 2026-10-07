@@ -92,9 +92,18 @@ def nav(page):
     out = ['<ul class="nav">']
     cur = ' class="current"' if page is home else ""
     out.append(f'<li><a{cur} href="{rel(page["out"], home["out"])}">Home</a></li>')
+    group = None  # sections that share a 'group:' in their header are nested under one sidebar entry
     for s in sections:
         active = page is s or page in s["children"]
         cur = ' class="current"' if page is s else ""
+        name = s["meta"].get("group")
+        if name != group:
+            if group:
+                out.append("</ul></details></li>")
+            if name:
+                inside = any(page is m or page in m["children"] for m in sections if m["meta"].get("group") == name)
+                out.append(f'<li><details{" open" if inside else ""}><summary><span class="nav-group">{icon(s)}{html.escape(name)}</span></summary><ul>')
+            group = name
         if not s["children"]:
             out.append(f'<li><a{cur} href="{rel(page["out"], s["out"])}">{html.escape(s["meta"]["title"])}</a></li>')
             continue
@@ -103,6 +112,8 @@ def nav(page):
         for c in s["children"]:
             cur = ' class="current"' if page is c else ""
             out.append(f'<li><a{cur} href="{rel(page["out"], c["out"])}">{html.escape(c["meta"]["title"])}</a></li>')
+        out.append("</ul></details></li>")
+    if group:
         out.append("</ul></details></li>")
     out.append("</ul>")
     return "\n".join(out)

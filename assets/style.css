@@ -8,7 +8,7 @@
   color-scheme: light;
 }
 /* Every element that sets --h (the page body, a sidebar section, a card) gets its own accent colours. */
-body, .nav > li, .card {
+body, .nav li, .card {
   --accent: hsl(var(--h, 215) 70% 32%);
   --accent-bright: hsl(var(--h, 215) 72% 46%);
   --accent-soft: hsl(var(--h, 215) 85% 95%);
@@ -74,7 +74,8 @@ a:hover { text-decoration: underline; }
 .nav summary::-webkit-details-marker { display: none; }
 .nav summary::before { content: "\25B8"; width: 14px; color: var(--muted); flex: none; }
 .nav details[open] > summary::before { content: "\25BE"; }
-.nav summary a { flex: 1; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+.nav summary a, .nav-group { flex: 1; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+.nav-group { padding: 5px 10px; }
 .nav summary .icon { color: var(--accent-bright); }
 
 main { flex: 1; min-width: 0; max-width: 1020px; padding: 28px 40px 64px; }
