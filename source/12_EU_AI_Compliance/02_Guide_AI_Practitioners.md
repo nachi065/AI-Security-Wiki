@@ -26,7 +26,7 @@ These requirements are duties for high-risk systems and good practice for the re
 | Topic | Engineering requirement | AI Act article [Recalled] | Wiki control |
 |---|---|---|---|
 | Risk management | A continuous process across the lifecycle, with testing against defined metrics | 9 | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037) |
-| Data governance | Document provenance, representativeness, bias examination and gaps | 10 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-041](../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.md) (proposed) |
+| Data governance | Document provenance, representativeness, bias examination and gaps | 10 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) |
 | Technical documentation | Maintain the Annex IV content as you build, and do not leave it until after release | 11 | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) |
 | Logging | Automatic event logs sufficient for traceability and post-market monitoring | 12 | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008), [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) |
 | Transparency to deployers | Instructions for use: purpose, accuracy, limits, oversight measures | 13 | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) |

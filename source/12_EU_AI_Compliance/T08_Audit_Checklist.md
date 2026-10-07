@@ -42,7 +42,7 @@ Audit: ______ System(s): ______ Period: ______ Auditor: ______ Criteria (and the
 | # | Test | Control | Result | Evidence ref | Note |
 |---|---|---|---|---|---|
 | 3.1 | Risk management process across lifecycle | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037) | | | |
-| 3.2 | Data governance and bias examination | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-041](../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.md) | | | |
+| 3.2 | Data governance and bias examination | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) | | | |
 | 3.3 | Technical documentation complete ([T10](T10_Technical_Documentation_and_Conformity_Checklist.md)) | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) | | | |
 | 3.4 | Logging reconstructs a decision | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008), [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) | | | |
 | 3.5 | Instructions for use adequate | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) | | | |
@@ -61,7 +61,7 @@ Audit: ______ System(s): ______ Period: ______ Auditor: ______ Criteria (and the
 | 4.3 | Input data relevance checked | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) | | | |
 | 4.4 | Logs retained for required period | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008), [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) | | | |
 | 4.5 | Workers informed | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) | | | |
-| 4.6 | FRIA done where required | [AI-CTRL-042](06_Proposed_Control_Fundamental_Rights_Impact_Assessment.md) | | | |
+| 4.6 | FRIA done where required | [AI-CTRL-042](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-042) | | | |
 | 4.7 | Serious incidents reported to provider and authority | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) | | | |
 
 ## 5. Privacy
@@ -69,7 +69,7 @@ Audit: ______ System(s): ______ Period: ______ Auditor: ______ Criteria (and the
 | # | Test | Control | Result | Evidence ref | Note |
 |---|---|---|---|---|---|
 | 5.1 | Lawful basis recorded | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) | | | |
-| 5.2 | DPIA before go-live ([T02](T02_Impact_Assessment_FRIA_DPIA.md)) | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-042](06_Proposed_Control_Fundamental_Rights_Impact_Assessment.md) | | | |
+| 5.2 | DPIA before go-live ([T02](T02_Impact_Assessment_FRIA_DPIA.md)) | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-042](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-042) | | | |
 | 5.3 | Rights handling tested | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) | | | |
 | 5.4 | Art. 22 safeguards for automated decisions | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) | | | |
 | 5.5 | Transfers assessed ([T04](T04_Data_Location_and_Transfer_Record.md)) | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) | | | |
@@ -87,11 +87,11 @@ Audit: ______ System(s): ______ Period: ______ Auditor: ______ Criteria (and the
 
 | # | Test | Control | Result | Evidence ref | Note |
 |---|---|---|---|---|---|
-| 7.1 | High-impact decisions defined | [AI-CTRL-041](../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.md) | | | |
-| 7.2 | Bias test current | [AI-CTRL-041](../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.md) | | | |
-| 7.3 | Special category necessity record | [AI-CTRL-041](../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.md) | | | |
-| 7.4 | Re-performance of one test | [AI-CTRL-041](../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.md) | | | |
-| 7.5 | Explanation traced for sample | [AI-CTRL-041](../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.md) | | | |
+| 7.1 | High-impact decisions defined | [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) | | | |
+| 7.2 | Bias test current | [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) | | | |
+| 7.3 | Special category necessity record | [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) | | | |
+| 7.4 | Re-performance of one test | [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) | | | |
+| 7.5 | Explanation traced for sample | [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) | | | |
 
 ## 8. Suppliers
 
@@ -121,5 +121,3 @@ Audit: ______ System(s): ______ Period: ______ Auditor: ______ Criteria (and the
 ## Summary
 
 Record the totals, the top findings and the limitations. State that the criteria were summarised from secondary sources and that the audit is not a conformity assessment or a legal opinion.
-
-AI-CTRL-041 and AI-CTRL-042 are proposed controls and are not yet part of the control library.

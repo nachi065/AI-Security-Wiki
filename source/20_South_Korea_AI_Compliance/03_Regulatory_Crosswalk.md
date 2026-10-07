@@ -12,7 +12,7 @@ version: 1.0
 
 > **Verification required.** Claims on this page about South Korean law were compiled on 7 October 2026 from secondary web sources and from memory of the law. No primary legal text was read, and each claim is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any of them. This is not legal advice.
 
-One row per instrument in the [South Korea AI Regulatory Hub](01_South_Korea_AI_Regulatory_Hub.md), with the wiki controls that relate to it and its verification status. The last column is empty until a row has been confirmed against the primary text; record the primary URL and the date you retrieved it there. AI-CTRL-041 is a proposed control and is not yet part of the control library.
+One row per instrument in the [South Korea AI Regulatory Hub](01_South_Korea_AI_Regulatory_Hub.md), with the wiki controls that relate to it and its verification status. The last column is empty until a row has been confirmed against the primary text; record the primary URL and the date you retrieved it there.
 
 The same data is available as a CSV file for GRC tooling: [crosswalk.csv](data/crosswalk.csv).
 
@@ -20,7 +20,7 @@ The same data is available as a CSV file for GRC tooling: [crosswalk.csv](data/c
 |---|---|---|---|---|---|---|
 | KR1 | AI Basic Act | Binding; effective 22 Jan 2026 | All | Reported | Article numbers; enforcement decree |  |
 | KR2 | Generative AI duties | Binding | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) | Reported | Format rules |  |
-| KR3 | High-impact AI duties | Binding | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037); [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023); [AI-CTRL-041](../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.md) | Conflict | One source says only Level-4 autonomous vehicles currently trigger it |  |
+| KR3 | High-impact AI duties | Binding | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037); [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023); [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) | Conflict | One source says only Level-4 autonomous vehicles currently trigger it |  |
 | KR4 | High-performance AI (training at 10^26 FLOP or more) | Binding | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037); [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) | Reported | Notification routes |  |
 | KR5 | Domestic representative | Binding | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) | Reported | Thresholds and form |  |
 | KR6 | Fines and grace period | Fines up to about KRW 30 million (about USD 21,000) | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) | Reported | Enforcement decree |  |

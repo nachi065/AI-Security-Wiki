@@ -28,7 +28,7 @@ Use the bill for planning, and do not build your compliance to its text [Reporte
 
 | # | Instrument | Type / status | Key points | Wiki controls | Tag | To verify |
 |---|---|---|---|---|---|---|
-| BR1 | PL 2338/2023 (AI bill) | Pending; Senate approved 10 Dec 2024; awaiting committee opinion in the Chamber as at 2 Sep 2026 | Topics reported: risk classification, fundamental rights, governance, civil liability, supervision, penalties. The specific tiers and fines were not verified | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011), [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037), [AI-CTRL-041](../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.md) (proposed) | [Reported] | Chamber text; amendments |
+| BR1 | PL 2338/2023 (AI bill) | Pending; Senate approved 10 Dec 2024; awaiting committee opinion in the Chamber as at 2 Sep 2026 | Topics reported: risk classification, fundamental rights, governance, civil liability, supervision, penalties. The specific tiers and fines were not verified | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011), [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037), [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) | [Reported] | Chamber text; amendments |
 | BR2 | LGPD (Law 13.709/2018) | Binding | Lawful bases; rights, including review of automated decisions (Art. 20); breach notice | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017), [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) | [Recalled] | Article numbers; ANPD rules |
 | BR3 | ANPD and sector regulators advancing AI regulation | Regulator activity | Guidance and sector rules in the absence of a statute | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) | [Reported] | Specific instruments |
 | BR4 | Consumer Defence Code and sector rules (finance, health) | Binding | Existing duties apply to AI products | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014), [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) | [Recalled] | Applicability |
@@ -54,7 +54,7 @@ Use the bill for planning, and do not build your compliance to its text [Reporte
 |---|---|
 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy | LGPD automated decision review ([BR-T1](BR-T1_LGPD_Automated_Decision_Review_Record.md)) |
 | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) Inventory | Prepare a tier mapping for the bill ([BR-T2](BR-T2_PL2338_Readiness_Watchlist.md)) |
-| [AI-CTRL-041](../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.md) Fairness (proposed) | LGPD non-discrimination principle [Recalled] |
+| [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) Fairness | LGPD non-discrimination principle [Recalled] |
 | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) Incident response | LGPD breach notification [Recalled] |
 
 ## 6. Where the wiki covers this
@@ -65,7 +65,7 @@ The topics raised on this page are covered by the following controls, test cases
 |---|---|
 | LGPD review of automated decisions (Art. 20) | [BR-T1](BR-T1_LGPD_Automated_Decision_Review_Record.md); [TC-L03-008](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-008), [TC-L03-029](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-029) |
 | LGPD lawful basis, rights and breach notice | [TC-L03-002](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-002), [TC-L03-005](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-005), [TC-L03-019](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-019) |
-| Tier mapping for the pending AI bill | [BR-T2](BR-T2_PL2338_Readiness_Watchlist.md); [TC-L01-005](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-005); [TC-L02-020](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-020) tracks regulatory change |
+| Tier mapping for the pending AI bill | [BR-T2](BR-T2_PL2338_Readiness_Watchlist.md); [TC-L01-005](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-005); [TC-L02-020](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-020) tracks regulatory change; [TC-L03-037](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-037) |
 
 ## 7. Conflicts and cautions
 

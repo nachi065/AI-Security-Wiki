@@ -4,7 +4,7 @@ author: Nachiket Sathaye
 parent: "Control Library"
 nav_order: 1
 document_type: AI Security Wiki Reference
-version: 2.1
+version: 2.2
 ---
 
 # AI Security Control Objectives Library
@@ -15,7 +15,7 @@ version: 2.1
 
 > **How to use:** Select controls by risk tier, then update the evidence, owners, control status, and links as implementation maturity improves.
 
-The library holds **40 control objectives in 11 families**. Each control has a stable ID that the rest of the wiki uses: the [AI Risk to Control Mapping](../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.md) links risks to controls, the [domain standards](../04_Domain_Standards/index.md) cite the controls they apply, the [AI Security Audit and Evidence Checklist](../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md) lists the evidence, and every one of the 620 cases in the [Test Case Library](../10_Test_Case_Library/index.md) names the control it tests.
+The library holds **44 control objectives in 11 families**. Each control has a stable ID that the rest of the wiki uses: the [AI Risk to Control Mapping](../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.md) links risks to controls, the [domain standards](../04_Domain_Standards/index.md) cite the controls they apply, the [AI Security Audit and Evidence Checklist](../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md) lists the evidence, and every one of the 629 cases in the [Test Case Library](../10_Test_Case_Library/index.md) names the control it tests.
 
 The controls follow the design principle set out in the [Foundations paper](../00_Foundations/07-Reference-Architecture.md): the model is an untrusted component, and authority to act, access data or spend money is enforced outside it.
 
@@ -30,7 +30,7 @@ Each control cites the identifiers published by the framework owner. Where a fra
 | MITRE ATLAS | 2026.09 | Techniques `AML.T####`; mitigations `AML.M####` |
 | NIST AI Risk Management Framework | 1.0 | Subcategories, for example `MEASURE 2.7` |
 | ISO/IEC 42001 | 2023 | Annex A controls, for example `A.6.2.4`; management system clauses, for example `Clause 9.2` |
-| AI Security Wiki (own) | This page | `AI-CTRL-001` to `AI-CTRL-040` |
+| AI Security Wiki (own) | This page | `AI-CTRL-001` to `AI-CTRL-044` |
 
 > **Verify before use.** Frameworks are revised. MITRE ATLAS in particular is updated monthly and renames techniques. Check identifiers against the current published versions before quoting them in an RFP or audit. Owners and review frequencies are starting values; set your own.
 
@@ -38,7 +38,7 @@ Each control cites the identifiers published by the framework owner. Where a fra
 
 | Family | Controls |
 |---|---|
-| Governance and Compliance | [AI-CTRL-007](#ai-ctrl-007), [AI-CTRL-011](#ai-ctrl-011), [AI-CTRL-012](#ai-ctrl-012), [AI-CTRL-013](#ai-ctrl-013), [AI-CTRL-014](#ai-ctrl-014), [AI-CTRL-037](#ai-ctrl-037) |
+| Governance and Compliance | [AI-CTRL-007](#ai-ctrl-007), [AI-CTRL-011](#ai-ctrl-011), [AI-CTRL-012](#ai-ctrl-012), [AI-CTRL-013](#ai-ctrl-013), [AI-CTRL-014](#ai-ctrl-014), [AI-CTRL-037](#ai-ctrl-037), [AI-CTRL-042](#ai-ctrl-042), [AI-CTRL-043](#ai-ctrl-043), [AI-CTRL-044](#ai-ctrl-044) |
 | Discovery and Workforce AI Use | [AI-CTRL-001](#ai-ctrl-001), [AI-CTRL-002](#ai-ctrl-002), [AI-CTRL-003](#ai-ctrl-003), [AI-CTRL-004](#ai-ctrl-004), [AI-CTRL-010](#ai-ctrl-010) |
 | Identity and Access | [AI-CTRL-015](#ai-ctrl-015), [AI-CTRL-016](#ai-ctrl-016) |
 | Data and Retrieval | [AI-CTRL-017](#ai-ctrl-017), [AI-CTRL-018](#ai-ctrl-018), [AI-CTRL-019](#ai-ctrl-019) |
@@ -46,7 +46,7 @@ Each control cites the identifiers published by the framework owner. Where a fra
 | Agents and Tools | [AI-CTRL-006](#ai-ctrl-006), [AI-CTRL-022](#ai-ctrl-022), [AI-CTRL-023](#ai-ctrl-023), [AI-CTRL-024](#ai-ctrl-024), [AI-CTRL-025](#ai-ctrl-025), [AI-CTRL-026](#ai-ctrl-026), [AI-CTRL-027](#ai-ctrl-027) |
 | Model, Training and Pipeline | [AI-CTRL-028](#ai-ctrl-028), [AI-CTRL-029](#ai-ctrl-029), [AI-CTRL-030](#ai-ctrl-030) |
 | Supply Chain, Infrastructure and Resilience | [AI-CTRL-031](#ai-ctrl-031), [AI-CTRL-032](#ai-ctrl-032), [AI-CTRL-040](#ai-ctrl-040) |
-| Assurance and Testing | [AI-CTRL-033](#ai-ctrl-033), [AI-CTRL-034](#ai-ctrl-034), [AI-CTRL-038](#ai-ctrl-038) |
+| Assurance and Testing | [AI-CTRL-033](#ai-ctrl-033), [AI-CTRL-034](#ai-ctrl-034), [AI-CTRL-038](#ai-ctrl-038), [AI-CTRL-041](#ai-ctrl-041) |
 | Detection and Response | [AI-CTRL-008](#ai-ctrl-008), [AI-CTRL-009](#ai-ctrl-009), [AI-CTRL-035](#ai-ctrl-035) |
 | Cost and Abuse | [AI-CTRL-036](#ai-ctrl-036) |
 
@@ -64,9 +64,9 @@ Each control cites the identifiers published by the framework owner. Where a fra
 | [AI-CTRL-008](#ai-ctrl-008) | Auditability | Detection and Response | Maintain logs for prompts, responses, files, users, devices, applications and actions. | 19 |
 | [AI-CTRL-009](#ai-ctrl-009) | SOC Integration | Detection and Response | Forward AI security events and logs to monitoring and response platforms. | 22 |
 | [AI-CTRL-010](#ai-ctrl-010) | Policy Enforcement | Discovery and Workforce AI Use | Support monitor, warn, redact, block and allow policies based on risk and classification. | 27 |
-| [AI-CTRL-011](#ai-ctrl-011) | AI Use-Case Registry and Risk Tiering | Governance and Compliance | Record every AI use case with a business owner and a risk tier that decides which controls apply. | 17 |
+| [AI-CTRL-011](#ai-ctrl-011) | AI Use-Case Registry and Risk Tiering | Governance and Compliance | Record every AI use case with a business owner and a risk tier that decides which controls apply. | 18 |
 | [AI-CTRL-012](#ai-ctrl-012) | AI Policy, Roles and Acceptable Use | Governance and Compliance | Set and communicate the rules and responsibilities for using and building AI, and map each rule to a control. | 7 |
-| [AI-CTRL-013](#ai-ctrl-013) | Privacy and Regulatory Compliance | Governance and Compliance | Meet privacy and regulatory obligations for personal data handled by AI systems. | 38 |
+| [AI-CTRL-013](#ai-ctrl-013) | Privacy and Regulatory Compliance | Governance and Compliance | Meet privacy and regulatory obligations for personal data handled by AI systems. | 39 |
 | [AI-CTRL-014](#ai-ctrl-014) | Third-Party and Vendor AI Assurance | Governance and Compliance | Assess AI vendors and embedded AI features before use, and reassess when they change. | 23 |
 | [AI-CTRL-015](#ai-ctrl-015) | Human and Agent Identity | Identity and Access | Give every user, application and agent that uses AI a unique, attributable identity. | 31 |
 | [AI-CTRL-016](#ai-ctrl-016) | Least Privilege and Scoped Credentials | Identity and Access | Limit what each AI workload and agent can reach to the minimum its task needs. | 39 |
@@ -92,10 +92,14 @@ Each control cites the identifiers published by the framework owner. Where a fra
 | [AI-CTRL-036](#ai-ctrl-036) | AI Cost and Abuse Controls | Cost and Abuse | Attribute AI spend and stop abuse that exhausts budget or capacity. | 30 |
 | [AI-CTRL-037](#ai-ctrl-037) | AI Risk Assessment and Exception Management | Governance and Compliance | Assess, treat and accept AI risks consistently, and keep every exception owned and time-bound. | 10 |
 | [AI-CTRL-038](#ai-ctrl-038) | Control Assurance and Audit Evidence | Assurance and Testing | Show, with current evidence, that each AI control is operating and that findings are closed. | 17 |
-| [AI-CTRL-039](#ai-ctrl-039) | Output Reliability and Content Safety | Application Runtime | Keep AI output grounded, within its approved scope and free of harmful content. | 6 |
+| [AI-CTRL-039](#ai-ctrl-039) | Output Reliability and Content Safety | Application Runtime | Keep AI output grounded, within its approved scope and free of harmful content. | 8 |
 | [AI-CTRL-040](#ai-ctrl-040) | AI Service Resilience and Fail-Safe Operation | Supply Chain, Infrastructure and Resilience | Keep AI services and their security controls available, and make them fail safely. | 13 |
+| [AI-CTRL-041](#ai-ctrl-041) | Fairness, Bias Testing and Explainability | Assurance and Testing | Test AI systems that make or support high-impact decisions for unfair bias, and keep explanations that a person can understand and a reviewer can challenge. | 3 |
+| [AI-CTRL-042](#ai-ctrl-042) | Fundamental Rights and Data Protection Impact Assessment | Governance and Compliance | Assess the impact on people's rights before deploying AI that is high-risk or that puts personal data at risk, and keep the assessment current. | 1 |
+| [AI-CTRL-043](#ai-ctrl-043) | Regulator and Authority Engagement | Governance and Compliance | Know which authorities oversee each AI system, meet the registration, filing and notification duties they set, and keep a record of every contact. | 1 |
+| [AI-CTRL-044](#ai-ctrl-044) | AI Literacy and Role-Based Competence | Governance and Compliance | Give everyone who builds, operates, oversees or uses AI the knowledge their role needs, and keep the records that show it. | 1 |
 
-A test case is counted under every control it tests, so the counts add up to more than 620.
+A test case is counted under every control it tests, so the counts add up to more than 629.
 
 ## Control entries
 
@@ -141,7 +145,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **MITRE ATLAS Mitigations** | None published in MITRE ATLAS mitigations. The wiki's own identifier applies: AI-CTRL-011. |
 | **NIST AI RMF** | GOVERN 1.6; GOVERN 1.3; GOVERN 1.7; MAP 1.1 |
 | **ISO/IEC 42001** | A.4.2 Resource documentation; A.5.2 AI system impact assessment process; A.9.4 Intended use of the AI system |
-| **Tested By (17 cases)** | **L01:** [001](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-001), [002](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-002), [003](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-003), [004](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-004), [005](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-005), [006](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-006), [007](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-007), [008](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-008), [009](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-009), [013](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-013), [016](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-016), [019](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-019), [020](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-020)<br>**L05:** [007](../10_Test_Case_Library/L05-ai-applications.md#tc-l05-007), [029](../10_Test_Case_Library/L05-ai-applications.md#tc-l05-029)<br>**L12:** [024](../10_Test_Case_Library/L12-model-layer.md#tc-l12-024), [025](../10_Test_Case_Library/L12-model-layer.md#tc-l12-025) |
+| **Tested By (18 cases)** | **L01:** [001](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-001), [002](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-002), [003](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-003), [004](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-004), [005](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-005), [006](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-006), [007](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-007), [008](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-008), [009](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-009), [013](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-013), [016](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-016), [019](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-019), [020](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-020)<br>**L03:** [037](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-037)<br>**L05:** [007](../10_Test_Case_Library/L05-ai-applications.md#tc-l05-007), [029](../10_Test_Case_Library/L05-ai-applications.md#tc-l05-029)<br>**L12:** [024](../10_Test_Case_Library/L12-model-layer.md#tc-l12-024), [025](../10_Test_Case_Library/L12-model-layer.md#tc-l12-025) |
 
 <a id="ai-ctrl-012"></a>
 
@@ -183,7 +187,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **MITRE ATLAS Mitigations** | None published in MITRE ATLAS mitigations. The wiki's own identifier applies: AI-CTRL-013. |
 | **NIST AI RMF** | GOVERN 1.1; MAP 5.1; MEASURE 2.10 |
 | **ISO/IEC 42001** | A.5.2 AI system impact assessment process; A.5.3 Documentation of AI system impact assessments; A.5.4 Assessing AI system impact on individuals or groups of individuals |
-| **Tested By (38 cases)** | **D11:** [007](../10_Test_Case_Library/D11-multimodal-and-voice-input-security.md#tc-d11-007), [018](../10_Test_Case_Library/D11-multimodal-and-voice-input-security.md#tc-d11-018), [019](../10_Test_Case_Library/D11-multimodal-and-voice-input-security.md#tc-d11-019), [020](../10_Test_Case_Library/D11-multimodal-and-voice-input-security.md#tc-d11-020)<br>**D12:** [015](../10_Test_Case_Library/D12-ai-incident-response-and-forensics.md#tc-d12-015), [016](../10_Test_Case_Library/D12-ai-incident-response-and-forensics.md#tc-d12-016)<br>**L01:** [010](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-010), [011](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-011)<br>**L02:** [020](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-020)<br>**L03:** [001](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-001), [002](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-002), [003](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-003), [004](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-004), [005](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-005), [006](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-006), [007](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-007), [008](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-008), [009](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-009), [010](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-010), [011](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-011), [015](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-015), [016](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-016), [017](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-017), [018](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-018), [019](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-019), [020](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-020), [028](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-028), [029](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-029), [030](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-030)<br>**L04:** [027](../10_Test_Case_Library/L04-human-interaction-layer.md#tc-l04-027)<br>**L07:** [030](../10_Test_Case_Library/L07-prompt-and-context-layer.md#tc-l07-030)<br>**L10:** [020](../10_Test_Case_Library/L10-data-layer.md#tc-l10-020), [021](../10_Test_Case_Library/L10-data-layer.md#tc-l10-021), [022](../10_Test_Case_Library/L10-data-layer.md#tc-l10-022)<br>**L13:** [002](../10_Test_Case_Library/L13-training-and-fine-tuning-layer.md#tc-l13-002), [007](../10_Test_Case_Library/L13-training-and-fine-tuning-layer.md#tc-l13-007), [019](../10_Test_Case_Library/L13-training-and-fine-tuning-layer.md#tc-l13-019)<br>**L17:** [026](../10_Test_Case_Library/L17-monitoring-detection-and-response.md#tc-l17-026) |
+| **Tested By (39 cases)** | **D11:** [007](../10_Test_Case_Library/D11-multimodal-and-voice-input-security.md#tc-d11-007), [018](../10_Test_Case_Library/D11-multimodal-and-voice-input-security.md#tc-d11-018), [019](../10_Test_Case_Library/D11-multimodal-and-voice-input-security.md#tc-d11-019), [020](../10_Test_Case_Library/D11-multimodal-and-voice-input-security.md#tc-d11-020)<br>**D12:** [015](../10_Test_Case_Library/D12-ai-incident-response-and-forensics.md#tc-d12-015), [016](../10_Test_Case_Library/D12-ai-incident-response-and-forensics.md#tc-d12-016)<br>**L01:** [010](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-010), [011](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-011)<br>**L02:** [020](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-020)<br>**L03:** [001](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-001), [002](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-002), [003](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-003), [004](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-004), [005](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-005), [006](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-006), [007](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-007), [008](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-008), [009](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-009), [010](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-010), [011](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-011), [015](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-015), [016](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-016), [017](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-017), [018](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-018), [019](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-019), [020](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-020), [028](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-028), [029](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-029), [030](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-030), [036](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-036)<br>**L04:** [027](../10_Test_Case_Library/L04-human-interaction-layer.md#tc-l04-027)<br>**L07:** [030](../10_Test_Case_Library/L07-prompt-and-context-layer.md#tc-l07-030)<br>**L10:** [020](../10_Test_Case_Library/L10-data-layer.md#tc-l10-020), [021](../10_Test_Case_Library/L10-data-layer.md#tc-l10-021), [022](../10_Test_Case_Library/L10-data-layer.md#tc-l10-022)<br>**L13:** [002](../10_Test_Case_Library/L13-training-and-fine-tuning-layer.md#tc-l13-002), [007](../10_Test_Case_Library/L13-training-and-fine-tuning-layer.md#tc-l13-007), [019](../10_Test_Case_Library/L13-training-and-fine-tuning-layer.md#tc-l13-019)<br>**L17:** [026](../10_Test_Case_Library/L17-monitoring-detection-and-response.md#tc-l17-026) |
 
 <a id="ai-ctrl-014"></a>
 
@@ -226,6 +230,69 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **NIST AI RMF** | GOVERN 1.3; MAP 1.5; MANAGE 1.2; MANAGE 1.4 |
 | **ISO/IEC 42001** | Clause 6.1.2 AI risk assessment; Clause 6.1.3 AI risk treatment |
 | **Tested By (10 cases)** | **L02:** [006](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-006), [007](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-007), [008](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-008), [009](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-009), [010](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-010), [011](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-011), [012](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-012)<br>**L04:** [013](../10_Test_Case_Library/L04-human-interaction-layer.md#tc-l04-013), [014](../10_Test_Case_Library/L04-human-interaction-layer.md#tc-l04-014), [015](../10_Test_Case_Library/L04-human-interaction-layer.md#tc-l04-015) |
+
+<a id="ai-ctrl-042"></a>
+
+#### AI-CTRL-042: Fundamental Rights and Data Protection Impact Assessment
+
+| Field | Detail |
+|---|---|
+| **Control Objective** | Assess the impact on people's rights before deploying AI that is high-risk or that puts personal data at risk, and keep the assessment current. |
+| **Applies To** | AI APIs / Custom AI Applications / Agents / Vendors |
+| **Risk Mapping** | [AI-R10](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R12](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
+| **Implementation Expectation** | Run a combined data protection and fundamental rights impact assessment before go-live for in-scope systems. Record purpose, data, groups affected, risks, oversight, mitigation, consultation and decision. Record the data protection officer's advice and how it was handled. Reassess on material change and at least annually. |
+| **Evidence Required** | Completed assessments; data protection officer advice; approvals dated before go-live; review dates; reassessment records. |
+| **Audit Test Procedure** | Sample in-scope systems and confirm the assessment predates go-live. Check that each risk maps to a mitigation. Confirm that the last material change triggered a reassessment. |
+| **Control Owner** | Data Protection Officer / AI Governance Lead |
+| **Review Frequency** | Before deployment, annually and on material change |
+| **OWASP** | None published in the OWASP Top 10 lists. The wiki's own identifier applies: AI-CTRL-042. |
+| **MITRE ATLAS Techniques** | None published in MITRE ATLAS techniques. The wiki's own identifier applies: AI-CTRL-042. |
+| **MITRE ATLAS Mitigations** | None published in MITRE ATLAS mitigations. The wiki's own identifier applies: AI-CTRL-042. |
+| **NIST AI RMF** | MAP 5.1; MAP 1.1; GOVERN 1.1 |
+| **ISO/IEC 42001** | A.5.2 AI system impact assessment process; A.5.3 Documentation of AI system impact assessments; A.5.4 Assessing AI system impact on individuals or groups of individuals; A.5.5 Assessing societal impacts of AI systems |
+| **Tested By (1 case)** | **L03:** [034](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-034) |
+
+<a id="ai-ctrl-043"></a>
+
+#### AI-CTRL-043: Regulator and Authority Engagement
+
+| Field | Detail |
+|---|---|
+| **Control Objective** | Know which authorities oversee each AI system, meet the registration, filing and notification duties they set, and keep a record of every contact. |
+| **Applies To** | Browser AI / IDE AI / AI APIs / Custom AI Applications / Agents / Vendors |
+| **Risk Mapping** | [AI-R09](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R10](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
+| **Implementation Expectation** | Keep a register of the authorities and ethics bodies relevant to each AI system and jurisdiction, with the duties each one sets and an owner for each duty. Track filings, registrations and local representative appointments to their due dates. Log every contact and its outcome. Watch for new guidance and pending rules, and review the register on a schedule. |
+| **Evidence Required** | Authority register; filing and registration records; representative appointments; contact log; watchlist of pending rules. |
+| **Audit Test Procedure** | Sample AI systems and confirm each lists its authorities and duties. Trace one filing or notification to its due date and evidence. Confirm the register was reviewed in the period. |
+| **Control Owner** | Legal / Compliance |
+| **Review Frequency** | Quarterly |
+| **OWASP** | None published in the OWASP Top 10 lists. The wiki's own identifier applies: AI-CTRL-043. |
+| **MITRE ATLAS Techniques** | None published in MITRE ATLAS techniques. The wiki's own identifier applies: AI-CTRL-043. |
+| **MITRE ATLAS Mitigations** | None published in MITRE ATLAS mitigations. The wiki's own identifier applies: AI-CTRL-043. |
+| **NIST AI RMF** | GOVERN 1.1; GOVERN 5.1 |
+| **ISO/IEC 42001** | Clause 4.2 Understanding the needs and expectations of interested parties; A.8.3 External reporting; A.8.5 Information for interested parties |
+| **Tested By (1 case)** | **L03:** [039](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-039) |
+
+<a id="ai-ctrl-044"></a>
+
+#### AI-CTRL-044: AI Literacy and Role-Based Competence
+
+| Field | Detail |
+|---|---|
+| **Control Objective** | Give everyone who builds, operates, oversees or uses AI the knowledge their role needs, and keep the records that show it. |
+| **Applies To** | Browser AI / IDE AI / AI APIs / Custom AI Applications / Agents |
+| **Risk Mapping** | [AI-R02](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
+| **Implementation Expectation** | Define the knowledge each role group needs, from board members to human reviewers and contractors. Deliver role-based training on a schedule and when a role or a system changes. Record completion and results. Check that the training works, for example through scenario tests and reviewer override rates. |
+| **Evidence Required** | Role and needs matrix; programme and modules; completion records; effectiveness checks. |
+| **Audit Test Procedure** | Sample staff in three role groups and confirm each completed training that matches the role. Confirm human reviewers were trained before they were assigned. Review one effectiveness check. |
+| **Control Owner** | AI Governance Lead / HR |
+| **Review Frequency** | Annually and on role change |
+| **OWASP** | None published in the OWASP Top 10 lists. The wiki's own identifier applies: AI-CTRL-044. |
+| **MITRE ATLAS Techniques** | None published in MITRE ATLAS techniques. The wiki's own identifier applies: AI-CTRL-044. |
+| **MITRE ATLAS Mitigations** | None published in MITRE ATLAS mitigations. The wiki's own identifier applies: AI-CTRL-044. |
+| **NIST AI RMF** | GOVERN 2.2; MAP 3.4 |
+| **ISO/IEC 42001** | Clause 7.2 Competence; Clause 7.3 Awareness; A.4.6 Human resources |
+| **Tested By (1 case)** | **L03:** [038](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-038) |
 
 ### Discovery and Workforce AI Use
 
@@ -527,7 +594,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **MITRE ATLAS Mitigations** | AML.M0020 Generative AI Guardrails; AML.M0022 Generative AI Model Alignment |
 | **NIST AI RMF** | MEASURE 2.5; MEASURE 2.6; MAP 2.2 |
 | **ISO/IEC 42001** | A.6.2.4 AI system verification and validation; A.8.2 System documentation and information for users |
-| **Tested By (6 cases)** | **L05:** [018](../10_Test_Case_Library/L05-ai-applications.md#tc-l05-018), [019](../10_Test_Case_Library/L05-ai-applications.md#tc-l05-019), [021](../10_Test_Case_Library/L05-ai-applications.md#tc-l05-021)<br>**L08:** [017](../10_Test_Case_Library/L08-ai-gateway-and-security-controls.md#tc-l08-017), [018](../10_Test_Case_Library/L08-ai-gateway-and-security-controls.md#tc-l08-018)<br>**L12:** [017](../10_Test_Case_Library/L12-model-layer.md#tc-l12-017) |
+| **Tested By (8 cases)** | **L03:** [033](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-033), [035](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-035)<br>**L05:** [018](../10_Test_Case_Library/L05-ai-applications.md#tc-l05-018), [019](../10_Test_Case_Library/L05-ai-applications.md#tc-l05-019), [021](../10_Test_Case_Library/L05-ai-applications.md#tc-l05-021)<br>**L08:** [017](../10_Test_Case_Library/L08-ai-gateway-and-security-controls.md#tc-l08-017), [018](../10_Test_Case_Library/L08-ai-gateway-and-security-controls.md#tc-l08-018)<br>**L12:** [017](../10_Test_Case_Library/L12-model-layer.md#tc-l12-017) |
 
 ### Agents and Tools
 
@@ -872,6 +939,27 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **NIST AI RMF** | GOVERN 1.5; MEASURE 1.2; MEASURE 1.3; MANAGE 4.2 |
 | **ISO/IEC 42001** | Clause 9.1 Monitoring, measurement, analysis and evaluation; Clause 9.2 Internal audit; Clause 9.3 Management review; Clause 10.2 Nonconformity and corrective action |
 | **Tested By (17 cases)** | **D09:** [019](../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.md#tc-d09-019)<br>**L02:** [003](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-003), [013](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-013), [014](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-014), [015](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-015), [016](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-016), [017](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-017), [018](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-018), [019](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-019), [024](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-024), [025](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-025)<br>**L03:** [022](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-022), [023](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-023), [024](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-024), [025](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-025), [026](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-026)<br>**L10:** [030](../10_Test_Case_Library/L10-data-layer.md#tc-l10-030) |
+
+<a id="ai-ctrl-041"></a>
+
+#### AI-CTRL-041: Fairness, Bias Testing and Explainability
+
+| Field | Detail |
+|---|---|
+| **Control Objective** | Test AI systems that make or support high-impact decisions for unfair bias, and keep explanations that a person can understand and a reviewer can challenge. |
+| **Applies To** | Custom AI Applications / Agents / Vendors |
+| **Risk Mapping** | [AI-R12](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
+| **Implementation Expectation** | Define which decisions are high-impact. Identify the relevant groups with legal input. Test for bias before release, at least annually and on material model change, and record the method, data, thresholds, results and approvals. Where sensitive data is needed for testing, record why it is necessary and the safeguards. Give an explanation for each high-impact decision and a route to human review. Block or condition release when a threshold fails. |
+| **Evidence Required** | Bias test plan and results; threshold approvals; necessity record for sensitive data; explanation records; human-review log; retest evidence. |
+| **Audit Test Procedure** | Sample high-impact use cases and confirm a current bias test exists. Re-perform one test. Trace one decision to its explanation and review outcome. Confirm a failed result led to action. |
+| **Control Owner** | AI Governance Lead / Model Risk |
+| **Review Frequency** | Annually and on material model change |
+| **OWASP** | None published in the OWASP Top 10 lists. The wiki's own identifier applies: AI-CTRL-041. |
+| **MITRE ATLAS Techniques** | None published in MITRE ATLAS techniques. The wiki's own identifier applies: AI-CTRL-041. |
+| **MITRE ATLAS Mitigations** | None published in MITRE ATLAS mitigations. The wiki's own identifier applies: AI-CTRL-041. |
+| **NIST AI RMF** | MEASURE 2.11; MEASURE 2.9; MAP 5.1 |
+| **ISO/IEC 42001** | A.5.4 Assessing AI system impact on individuals or groups of individuals; A.6.2.4 AI system verification and validation; A.8.2 System documentation and information for users |
+| **Tested By (3 cases)** | **L03:** [031](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-031), [032](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-032), [033](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-033) |
 
 ### Detection and Response
 

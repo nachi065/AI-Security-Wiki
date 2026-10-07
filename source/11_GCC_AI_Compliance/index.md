@@ -20,7 +20,7 @@ Resources for people who build, sell, audit or run AI systems in the Gulf Cooper
 | [GCC AI Regulatory Hub](01_GCC_AI_Regulatory_Hub.md) | 1 | 32 laws, policies, regulator notes and security baselines across five states, each mapped to wiki controls and tagged with its verification status. |
 | Role guides | 4 | What to do and what to keep as evidence, for [practitioners](02_Guide_AI_Practitioners.md), [product companies](03_Guide_Product_Companies.md), [auditors](04_Guide_Auditors.md) and [implementors](05_Guide_Implementors.md). |
 | Templates T01 to T12 | 12 | Fill-in documents: use-case intake, impact assessment, vendor addendum, residency attestation, incident workflow, bilingual notice, ethics worksheet, audit checklist, inventory, bias test record, regulator log and risk register. |
-| [Proposed control](06_Proposed_Control_Fairness_Bias_Explainability.md) | 1 | AI-CTRL-041 on fairness, bias testing and explainability, which is not yet part of the control library. |
+| [GCC drivers for AI-CTRL-041](06_Proposed_Control_Fairness_Bias_Explainability.md) | 1 | The GCC instruments behind the control on fairness, bias testing and explainability, with its template and test cases. |
 | [Regulatory Crosswalk](07_Regulatory_Crosswalk.md) and [Evidence Register](08_Evidence_Register.md) | 2 | The instrument-to-control map and a starter evidence list, each also downloadable as a CSV file. |
 
 ## How regional claims are tagged

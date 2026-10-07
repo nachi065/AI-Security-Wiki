@@ -34,8 +34,8 @@ The same data is available as a CSV file: [evidence_register.csv](data/evidence_
 | E16 | Oversight | Kill-switch test record | [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) | Test report |  |  |
 | E17 | Safety | Accuracy, robustness, safety test reports (incl. Arabic) | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) | Reports |  |  |
 | E18 | Security | Prompt-injection / exfiltration test | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005); [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) | Pen-test report |  |  |
-| E19 | Fairness | Bias test records ([T10](T10_Bias_Testing_Record.md)) | [AI-CTRL-041](06_Proposed_Control_Fairness_Bias_Explainability.md) | Records, code hash |  |  |
-| E20 | Fairness | Explanation records sample | [AI-CTRL-041](06_Proposed_Control_Fairness_Bias_Explainability.md) | Sample |  |  |
+| E19 | Fairness | Bias test records ([T10](T10_Bias_Testing_Record.md)) | [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) | Records, code hash |  |  |
+| E20 | Fairness | Explanation records sample | [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) | Sample |  |  |
 | E21 | Incident | Playbook and notification matrix ([T05](T05_AI_Incident_and_Breach_Notification_Workflow.md)) | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) | Documents |  |  |
 | E22 | Incident | Tabletop exercise report | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) | Report |  |  |
 | E23 | Incident | Incident register | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) | Register |  |  |

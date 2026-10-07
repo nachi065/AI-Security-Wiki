@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Proposed Control: Fundamental Rights and Data Protection Impact Assessment | AI Security Wiki</title>
+<title>EU Drivers for AI-CTRL-041 and AI-CTRL-042 | AI Security Wiki</title>
 <meta name="author" content="Nachiket Sathaye">
-<meta name="description" content="Proposed AI-CTRL-042: assess the impact on people&#x27;s rights before deploying high-risk AI, plus the EU drivers for the proposed fairness control AI-CTRL-041.">
+<meta name="description" content="The EU instruments behind AI-CTRL-042 on fundamental rights and data protection impact assessment and AI-CTRL-041 on fairness, with templates and test cases.">
 <link rel="canonical" href="https://nachi065.github.io/AI-Security-Wiki/12_EU_AI_Compliance/06_Proposed_Control_Fundamental_Rights_Impact_Assessment.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="AI Security Wiki">
-<meta property="og:title" content="Proposed Control: Fundamental Rights and Data Protection Impact Assessment | AI Security Wiki">
-<meta property="og:description" content="Proposed AI-CTRL-042: assess the impact on people&#x27;s rights before deploying high-risk AI, plus the EU drivers for the proposed fairness control AI-CTRL-041.">
+<meta property="og:title" content="EU Drivers for AI-CTRL-041 and AI-CTRL-042 | AI Security Wiki">
+<meta property="og:description" content="The EU instruments behind AI-CTRL-042 on fundamental rights and data protection impact assessment and AI-CTRL-041 on fairness, with templates and test cases.">
 <meta property="og:url" content="https://nachi065.github.io/AI-Security-Wiki/12_EU_AI_Compliance/06_Proposed_Control_Fundamental_Rights_Impact_Assessment.html">
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="../assets/style.css?v=acde22f2">
@@ -68,6 +68,7 @@
 <li><a href="../04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a></li>
 <li><a href="../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
 <li><a href="../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
+<li><a href="../04_Domain_Standards/10B_Sector_Overlays.html">Sector Overlays: Financial Services, Insurance, Health and Government</a></li>
 </ul></details></li>
 <li style="--h:32"><details><summary><a href="../05_Vendor_Evaluation/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Vendor Evaluation</a></summary><ul>
 <li><a href="../05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
@@ -130,7 +131,7 @@
 <li><a href="../11_GCC_AI_Compliance/03_Guide_Product_Companies.html">Guide for AI Product Companies Selling into the GCC</a></li>
 <li><a href="../11_GCC_AI_Compliance/04_Guide_Auditors.html">Guide for Auditors of AI Systems in the GCC</a></li>
 <li><a href="../11_GCC_AI_Compliance/05_Guide_Implementors.html">Guide for Implementors: Building an AI Governance Programme in the GCC</a></li>
-<li><a href="../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.html">Proposed Control: Fairness, Bias Testing and Explainability</a></li>
+<li><a href="../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.html">GCC Drivers for AI-CTRL-041: Fairness, Bias Testing and Explainability</a></li>
 <li><a href="../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.html">Regulatory Crosswalk</a></li>
 <li><a href="../11_GCC_AI_Compliance/08_Evidence_Register.html">Evidence Register</a></li>
 <li><a href="../11_GCC_AI_Compliance/T01_AI_Use_Case_Intake_and_Risk_Tiering.html">T01 AI Use-Case Intake and Risk Tiering</a></li>
@@ -152,7 +153,7 @@
 <li><a href="03_Guide_Product_Companies.html">Guide for AI Product Companies Selling into the EU</a></li>
 <li><a href="04_Guide_Auditors.html">Guide for Auditors of AI Systems Under EU Rules</a></li>
 <li><a href="05_Guide_Implementors.html">Guide for Implementors: Building an EU AI Governance Programme</a></li>
-<li><a class="current" href="06_Proposed_Control_Fundamental_Rights_Impact_Assessment.html">Proposed Control: Fundamental Rights and Data Protection Impact Assessment</a></li>
+<li><a class="current" href="06_Proposed_Control_Fundamental_Rights_Impact_Assessment.html">EU Drivers for AI-CTRL-041 and AI-CTRL-042</a></li>
 <li><a href="07_Regulatory_Crosswalk.html">EU Regulatory Crosswalk</a></li>
 <li><a href="08_Evidence_Register.html">EU Evidence Register</a></li>
 <li><a href="T01_AI_System_Classification.html">T01 AI System Classification (Role and Risk Tier)</a></li>
@@ -253,12 +254,13 @@
 </ul>
 </nav>
 <main>
-<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">EU AI Compliance</a> / <span>Proposed Control: Fundamental Rights and Data Protection Impact Assessment</span></p>
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">EU AI Compliance</a> / <span>EU Drivers for AI-CTRL-041 and AI-CTRL-042</span></p>
 <article>
-<h1 id="proposed-control-fundamental-rights-and-data-protection-impact-assessment">Proposed Control: Fundamental Rights and Data Protection Impact Assessment</h1>
-<blockquote class="callout caution">
-<p><strong>Status: proposed.</strong> This control is not yet part of the <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a>. <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a> asks for a privacy impact assessment where an AI system processes personal data, and no existing control asks for a fundamental rights impact assessment. The EU drivers listed below are tagged [Recalled] or [Reported]; check the primary text before relying on them. This is not legal advice.</p>
+<h1 id="eu-drivers-for-ai-ctrl-041-and-ai-ctrl-042">EU Drivers for AI-CTRL-041 and AI-CTRL-042</h1>
+<blockquote class="callout note">
+<p><strong>How this relates.</strong> <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-041">AI-CTRL-041</a> and <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-042">AI-CTRL-042</a> are part of the <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a>. This page lists the EU instruments that call for them. The drivers are tagged [Recalled] or [Reported]; check the primary text before relying on them. This is not legal advice.</p>
 </blockquote>
+<h2 id="eu-drivers-for-ai-ctrl-042">EU drivers for AI-CTRL-042</h2>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -268,44 +270,20 @@
 </thead>
 <tbody>
 <tr>
-<td>Control ID</td>
-<td>AI-CTRL-042 (proposed)</td>
-</tr>
-<tr>
-<td>Name</td>
-<td>Fundamental Rights and Data Protection Impact Assessment</td>
-</tr>
-<tr>
-<td>Family</td>
-<td>Governance and Compliance</td>
-</tr>
-<tr>
-<td>Control Objective</td>
-<td>Assess the impact on individuals' rights before deploying AI that is high-risk or that processes personal data in a way that puts people at risk, and keep the assessment current.</td>
-</tr>
-<tr>
-<td>Implementation Expectation</td>
-<td>1. Run a combined DPIA and FRIA (<a href="T02_Impact_Assessment_FRIA_DPIA.html">T02</a>) before go-live for in-scope systems. 2. Record purpose, data, groups affected, risks, oversight, mitigation, consultation and decision. 3. Reassess on material change.</td>
-</tr>
-<tr>
-<td>Evidence Required</td>
-<td>Completed <a href="T02_Impact_Assessment_FRIA_DPIA.html">T02</a>; DPO advice; approval; review dates.</td>
-</tr>
-<tr>
-<td>Audit Test Procedure</td>
-<td>Sample systems. Confirm the assessment predates go-live. Check that each risk maps to a mitigation. Confirm that a change triggers reassessment.</td>
-</tr>
-<tr>
-<td>Control Owner</td>
-<td>DPO with AI Governance Lead</td>
-</tr>
-<tr>
-<td>Review Frequency</td>
-<td>Before deployment, at least annually, and on change</td>
+<td>Control</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-042">AI-CTRL-042</a> Fundamental Rights and Data Protection Impact Assessment</td>
 </tr>
 <tr>
 <td>EU drivers</td>
 <td>GDPR Art. 35 [Recalled]; AI Act Art. 27 FRIA for certain deployers [Recalled; scope to verify]</td>
+</tr>
+<tr>
+<td>Template</td>
+<td><a href="T02_Impact_Assessment_FRIA_DPIA.html">T02 Impact Assessment (FRIA and DPIA Combined)</a></td>
+</tr>
+<tr>
+<td>Test cases</td>
+<td><a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-034">TC-L03-034</a>, <a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-010">TC-L03-010</a>, <a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-011">TC-L03-011</a></td>
 </tr>
 <tr>
 <td>Related controls</td>
@@ -314,71 +292,33 @@
 </tbody>
 </table></div>
 <h2 id="eu-drivers-for-ai-ctrl-041">EU drivers for AI-CTRL-041</h2>
-<p><a class="chip" href="../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.html">AI-CTRL-041</a> (Fairness, Bias Testing and Explainability) is proposed in the GCC section, and the same control serves EU use. The EU rules add the following to that card.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
 <th>Field</th>
-<th>EU addition</th>
+<th>Detail</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Implementation Expectation</td>
-<td>Where special category data is needed for bias testing, record the strict-necessity test and the safeguards.</td>
-</tr>
-<tr>
-<td>Evidence Required</td>
-<td>The necessity record.</td>
+<td>Control</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-041">AI-CTRL-041</a> Fairness, Bias Testing and Explainability</td>
 </tr>
 <tr>
 <td>EU drivers</td>
-<td>AI Act data governance and bias examination (Art. 10) and the right to explanation (Art. 86) [Recalled]; GDPR Art. 22 [Recalled]; the strict-necessity standard for special category data, reported as retained by the omnibus [Reported].</td>
+<td>AI Act data governance and bias examination (Art. 10) and the right to explanation (Art. 86) [Recalled]; GDPR Art. 22 [Recalled]; the strict-necessity standard for special category data, reported as retained by the omnibus [Reported]</td>
 </tr>
 <tr>
-<td>Related cases</td>
-<td><a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-008">TC-L03-008</a>, <a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-029">TC-L03-029</a></td>
+<td>EU addition to the evidence</td>
+<td>Where special category data is needed for bias testing, keep the strict-necessity test and the safeguards on record. <a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-032">TC-L03-032</a> tests for that record</td>
+</tr>
+<tr>
+<td>Test cases</td>
+<td><a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-031">TC-L03-031</a>, <a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-032">TC-L03-032</a>, <a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-008">TC-L03-008</a>, <a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-029">TC-L03-029</a></td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="proposed-test-cases">Proposed test cases</h2>
-<p>These tests have no case IDs yet. They would be numbered in the L03 series if the controls are adopted. For AI-CTRL-041, tests 1, 2, 4 and 5 on <a href="../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.html#proposed-test-cases">its page</a> apply unchanged, and the EU drivers add the first test below.</p>
-<div class="table-wrap"><table>
-<thead>
-<tr>
-<th>#</th>
-<th>Control</th>
-<th>Test</th>
-<th>Pass condition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>AI-CTRL-041</td>
-<td>Special category data used for bias testing</td>
-<td>Necessity record and safeguards on file</td>
-</tr>
-<tr>
-<td>2</td>
-<td>AI-CTRL-042</td>
-<td>Assessment predates go-live</td>
-<td>Dates verified</td>
-</tr>
-<tr>
-<td>3</td>
-<td>AI-CTRL-042</td>
-<td>DPO advice recorded</td>
-<td>Advice on file</td>
-</tr>
-<tr>
-<td>4</td>
-<td>AI-CTRL-042</td>
-<td>Reassessment triggered by change</td>
-<td>Change log links to the reassessment</td>
-</tr>
-</tbody>
-</table></div>
+<p>The GCC instruments behind AI-CTRL-041 are on the <a href="../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.html">GCC drivers page</a>.</p>
 </article>
 <nav class="pager" aria-label="Previous and next page"><a class="prev" href="05_Guide_Implementors.html">&larr; Guide for Implementors: Building an EU AI Governance Programme</a><a class="next" href="07_Regulatory_Crosswalk.html">EU Regulatory Crosswalk &rarr;</a></nav>
 <footer class="site-footer">Author: Nachiket Sathaye &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/12_EU_AI_Compliance/06_Proposed_Control_Fundamental_Rights_Impact_Assessment.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>

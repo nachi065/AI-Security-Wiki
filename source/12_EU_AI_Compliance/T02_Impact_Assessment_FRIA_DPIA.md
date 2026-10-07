@@ -12,7 +12,7 @@ version: 1.0
 
 > **Verification required.** This is a working template, not a regulator-approved form. Where it cites an article or a date, the citation comes from secondary sources or from memory of the legal text and is a pointer to check. This is not legal advice.
 
-Wiki controls: [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037), [AI-CTRL-041](../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.md) (proposed), [AI-CTRL-042](06_Proposed_Control_Fundamental_Rights_Impact_Assessment.md) (proposed). The GDPR Art. 35 DPIA and the AI Act Art. 27 FRIA are [Recalled]. Confirm which legal duties are triggered. The combined form is a convenience and does not replace either legal assessment. Consult your DPO.
+Wiki controls: [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037), [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041), [AI-CTRL-042](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-042). The GDPR Art. 35 DPIA and the AI Act Art. 27 FRIA are [Recalled]. Confirm which legal duties are triggered. The combined form is a convenience and does not replace either legal assessment. Consult your DPO.
 
 ## 1. Summary
 
@@ -74,7 +74,7 @@ Wiki controls: [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Object
 
 | Measure | Entry |
 |---|---|
-| Bias test ([AI-CTRL-041](../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.md), proposed) | |
+| Bias test ([AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041)) | |
 | Oversight and stop | |
 | Security | |
 | Logging | |

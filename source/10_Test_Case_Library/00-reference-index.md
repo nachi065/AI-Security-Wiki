@@ -8,7 +8,7 @@ nav_order: 1
 
 # Reference Index
 
-17-layer AI lifecycle model | 7 use-case domains | 6 emerging domains | 620 test cases
+17-layer AI lifecycle model | 7 use-case domains | 6 emerging domains | 629 test cases
 
 *Status: draft for review. Case counts, domain assignments and mappings are proposals until approved.*
 
@@ -32,7 +32,7 @@ Where a case is the detailed version of a scenario in the wiki's [AI Security Po
 |---|---|---|---|
 | L01 | [Business & Use Cases](L01-business-and-use-cases.md) | use-case registry, risk-tiering, business-owner attribution | 20 |
 | L02 | [Governance & Risk Mgmt](L02-governance-and-risk-mgmt.md) | policy-to-control mapping, risk register, exceptions workflow | 25 |
-| L03 | [Legal, Privacy & Compliance](L03-legal-privacy-and-compliance.md) | UAE/GCC residency, PDPL-type obligations, evidence export, DPIA support | 30 |
+| L03 | [Legal, Privacy & Compliance](L03-legal-privacy-and-compliance.md) | UAE/GCC residency, PDPL-type obligations, evidence export, DPIA support, fairness, transparency and authority engagement | 39 |
 | L04 | [Human Interaction Layer](L04-human-interaction-layer.md) | browser/workforce AI, user coaching, approval prompts, multimodal input | 32 |
 | L05 | [AI Applications](L05-ai-applications.md) | discovery, app-level runtime protection, output handling | 35 |
 | L06 | [Agent Orchestration Layer](L06-agent-orchestration-layer.md) | agent and MCP discovery, tool governance, delegation chains, kill switch | 37 |
@@ -47,7 +47,7 @@ Where a case is the detailed version of a scenario in the wiki's [AI Security Po
 | L15 | [Infrastructure Layer](L15-infrastructure-layer.md) | GPU/cluster hardening, secrets, network segmentation, sovereignty of control plane | 20 |
 | L16 | [Supply Chain & Third Party](L16-supply-chain-and-third-party.md) | AI-BOM, model and package provenance, third-party SaaS AI risk | 26 |
 | L17 | [Monitoring, Detection & Response](L17-monitoring-detection-and-response.md) | telemetry, SIEM/SOAR integration, AI incident response, forensics | 31 |
-| | **Total** | | **487** |
+| | **Total** | | **496** |
 
 ## 4. Use-case domain tags
 

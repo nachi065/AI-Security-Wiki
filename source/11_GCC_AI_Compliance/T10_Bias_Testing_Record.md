@@ -12,7 +12,7 @@ version: 1.0
 
 > **Verification required.** This is a working template, not a regulator-approved form. Where it names a regional instrument, the claim comes from secondary sources and is a pointer to check, not a confirmed legal requirement. This is not legal advice.
 
-Supports proposed [AI-CTRL-041](06_Proposed_Control_Fairness_Bias_Explainability.md). CBUAE is reported to expect annual bias testing or testing on material model change [Reported]. Methods and thresholds below are options for you to decide with legal and risk input; none is a regulatory requirement.
+Supports proposed [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041). CBUAE is reported to expect annual bias testing or testing on material model change [Reported]. Methods and thresholds below are options for you to decide with legal and risk input; none is a regulatory requirement.
 
 | Field | Entry |
 |---|---|

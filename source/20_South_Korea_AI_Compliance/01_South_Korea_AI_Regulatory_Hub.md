@@ -24,7 +24,7 @@ There is one horizontal statute, the AI Basic Act, administered by the Ministry 
 |---|---|---|---|---|---|---|
 | KR1 | AI Basic Act | Binding; effective 22 Jan 2026 | Applies to AI developers and to businesses that use AI in products and services; extraterritorial | Whole library | [Reported] | Article numbers; enforcement decree |
 | KR2 | Generative AI duties | Binding | Notice that outputs are AI-generated; labelling of generative output; a visible or audible watermark unless the content is clearly fictional (for example animation) | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) | [Reported] | Format rules |
-| KR3 | High-impact AI duties | Binding | Sectors reported: healthcare, energy, transportation, hiring, biometric analysis. Duties: impact assessment on fundamental rights, explainability where feasible, human oversight, user protection plan, documentation | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037), [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023), [AI-CTRL-041](../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.md) (proposed) | [Conflict] | One source says only Level-4 autonomous vehicles currently trigger it |
+| KR3 | High-impact AI duties | Binding | Sectors reported: healthcare, energy, transportation, hiring, biometric analysis. Duties: impact assessment on fundamental rights, explainability where feasible, human oversight, user protection plan, documentation | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037), [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023), [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) | [Conflict] | One source says only Level-4 autonomous vehicles currently trigger it |
 | KR4 | High-performance AI (training at 10^26 FLOP or more) | Binding | Lifecycle risk management and user protection | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037), [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) | [Reported] | Notification routes |
 | KR5 | Domestic representative | Binding | Required above KRW 1 trillion in revenue, KRW 10 billion in AI service revenue, or 1 million daily users in Korea | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) | [Reported] | Thresholds and form |
 | KR6 | Fines and grace period | Fines up to about KRW 30 million (about USD 21,000) | One-year grace period; investigations suspended for at least a year, barring severe rights violations | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) | [Reported] | Enforcement decree |
@@ -55,7 +55,7 @@ There is one horizontal statute, the AI Basic Act, administered by the Ministry 
 | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) Content safety | Generative AI notice and watermark ([KR-T2](KR-T2_Generative_AI_Labelling_and_Notice.md)) |
 | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037) Risk assessment | Impact assessment for high-impact AI ([KR-T1](KR-T1_High_Impact_AI_Determination.md)) |
 | [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) Human approval | Human oversight for high-impact AI |
-| [AI-CTRL-041](../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.md) Fairness (proposed) | Explainability and rights impact |
+| [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) Fairness | Explainability and rights impact |
 | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) Policy | Domestic representative ([KR-T3](KR-T3_Domestic_Representative_Check.md)) |
 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy | PIPA |
 
@@ -65,9 +65,9 @@ The topics raised on this page are covered by the following controls, test cases
 
 | Topic | Covered by |
 |---|---|
-| Generative AI notice and labelling | [KR-T2](KR-T2_Generative_AI_Labelling_and_Notice.md); [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039); [TC-L03-003](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-003) |
-| High-impact AI determination | [KR-T1](KR-T1_High_Impact_AI_Determination.md); [TC-L01-005](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-005), [TC-L03-010](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-010) |
-| Domestic representative | [KR-T3](KR-T3_Domestic_Representative_Check.md); [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) |
+| Generative AI notice and labelling | [KR-T2](KR-T2_Generative_AI_Labelling_and_Notice.md); [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039); [TC-L03-003](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-003); [TC-L03-035](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-035) |
+| High-impact AI determination | [KR-T1](KR-T1_High_Impact_AI_Determination.md); [TC-L01-005](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-005), [TC-L03-010](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-010); [AI-CTRL-042](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-042); [TC-L03-037](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-037) |
+| Domestic representative | [KR-T3](KR-T3_Domestic_Representative_Check.md); [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012); [AI-CTRL-043](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-043); [TC-L03-039](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-039) |
 
 ## 7. Conflicts and cautions
 

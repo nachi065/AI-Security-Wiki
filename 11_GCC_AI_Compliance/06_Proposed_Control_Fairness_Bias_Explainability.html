@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Proposed Control: Fairness, Bias Testing and Explainability | AI Security Wiki</title>
+<title>GCC Drivers for AI-CTRL-041: Fairness, Bias Testing and Explainability | AI Security Wiki</title>
 <meta name="author" content="Nachiket Sathaye">
-<meta name="description" content="Proposed AI-CTRL-041: test AI systems that make high-impact decisions for unfair bias, and keep explanations people can understand and challenge.">
+<meta name="description" content="The GCC instruments behind AI-CTRL-041 on fairness, bias testing and explainability, with the template and test cases that support the control.">
 <link rel="canonical" href="https://nachi065.github.io/AI-Security-Wiki/11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="AI Security Wiki">
-<meta property="og:title" content="Proposed Control: Fairness, Bias Testing and Explainability | AI Security Wiki">
-<meta property="og:description" content="Proposed AI-CTRL-041: test AI systems that make high-impact decisions for unfair bias, and keep explanations people can understand and challenge.">
+<meta property="og:title" content="GCC Drivers for AI-CTRL-041: Fairness, Bias Testing and Explainability | AI Security Wiki">
+<meta property="og:description" content="The GCC instruments behind AI-CTRL-041 on fairness, bias testing and explainability, with the template and test cases that support the control.">
 <meta property="og:url" content="https://nachi065.github.io/AI-Security-Wiki/11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.html">
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="../assets/style.css?v=acde22f2">
@@ -68,6 +68,7 @@
 <li><a href="../04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a></li>
 <li><a href="../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
 <li><a href="../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
+<li><a href="../04_Domain_Standards/10B_Sector_Overlays.html">Sector Overlays: Financial Services, Insurance, Health and Government</a></li>
 </ul></details></li>
 <li style="--h:32"><details><summary><a href="../05_Vendor_Evaluation/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Vendor Evaluation</a></summary><ul>
 <li><a href="../05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
@@ -130,7 +131,7 @@
 <li><a href="03_Guide_Product_Companies.html">Guide for AI Product Companies Selling into the GCC</a></li>
 <li><a href="04_Guide_Auditors.html">Guide for Auditors of AI Systems in the GCC</a></li>
 <li><a href="05_Guide_Implementors.html">Guide for Implementors: Building an AI Governance Programme in the GCC</a></li>
-<li><a class="current" href="06_Proposed_Control_Fairness_Bias_Explainability.html">Proposed Control: Fairness, Bias Testing and Explainability</a></li>
+<li><a class="current" href="06_Proposed_Control_Fairness_Bias_Explainability.html">GCC Drivers for AI-CTRL-041: Fairness, Bias Testing and Explainability</a></li>
 <li><a href="07_Regulatory_Crosswalk.html">Regulatory Crosswalk</a></li>
 <li><a href="08_Evidence_Register.html">Evidence Register</a></li>
 <li><a href="T01_AI_Use_Case_Intake_and_Risk_Tiering.html">T01 AI Use-Case Intake and Risk Tiering</a></li>
@@ -152,7 +153,7 @@
 <li><a href="../12_EU_AI_Compliance/03_Guide_Product_Companies.html">Guide for AI Product Companies Selling into the EU</a></li>
 <li><a href="../12_EU_AI_Compliance/04_Guide_Auditors.html">Guide for Auditors of AI Systems Under EU Rules</a></li>
 <li><a href="../12_EU_AI_Compliance/05_Guide_Implementors.html">Guide for Implementors: Building an EU AI Governance Programme</a></li>
-<li><a href="../12_EU_AI_Compliance/06_Proposed_Control_Fundamental_Rights_Impact_Assessment.html">Proposed Control: Fundamental Rights and Data Protection Impact Assessment</a></li>
+<li><a href="../12_EU_AI_Compliance/06_Proposed_Control_Fundamental_Rights_Impact_Assessment.html">EU Drivers for AI-CTRL-041 and AI-CTRL-042</a></li>
 <li><a href="../12_EU_AI_Compliance/07_Regulatory_Crosswalk.html">EU Regulatory Crosswalk</a></li>
 <li><a href="../12_EU_AI_Compliance/08_Evidence_Register.html">EU Evidence Register</a></li>
 <li><a href="../12_EU_AI_Compliance/T01_AI_System_Classification.html">T01 AI System Classification (Role and Risk Tier)</a></li>
@@ -253,11 +254,11 @@
 </ul>
 </nav>
 <main>
-<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">GCC AI Compliance</a> / <span>Proposed Control: Fairness, Bias Testing and Explainability</span></p>
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">GCC AI Compliance</a> / <span>GCC Drivers for AI-CTRL-041: Fairness, Bias Testing and Explainability</span></p>
 <article>
-<h1 id="proposed-control-fairness-bias-testing-and-explainability">Proposed Control: Fairness, Bias Testing and Explainability</h1>
-<blockquote class="callout caution">
-<p><strong>Status: proposed.</strong> This control is not yet part of the <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a>. None of the 40 existing controls covers fairness or bias testing. The nearest are <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-039">AI-CTRL-039</a> (Output Reliability and Content Safety) and the test cases <a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-008">TC-L03-008</a> and <a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-029">TC-L03-029</a>. The regional drivers listed below come from secondary sources and are tagged [Reported]; check the primary text before relying on them. This is not legal advice.</p>
+<h1 id="gcc-drivers-for-ai-ctrl-041-fairness-bias-testing-and-explainability">GCC Drivers for AI-CTRL-041: Fairness, Bias Testing and Explainability</h1>
+<blockquote class="callout note">
+<p><strong>How this relates.</strong> <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-041">AI-CTRL-041</a> is part of the <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a>. This page lists the GCC instruments that call for it. They come from secondary sources and are tagged [Reported]; check the primary text before relying on them. This is not legal advice.</p>
 </blockquote>
 <div class="table-wrap"><table>
 <thead>
@@ -268,113 +269,59 @@
 </thead>
 <tbody>
 <tr>
-<td>Control ID</td>
-<td>AI-CTRL-041 (proposed)</td>
+<td>Control</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-041">AI-CTRL-041</a> Fairness, Bias Testing and Explainability</td>
 </tr>
 <tr>
-<td>Name</td>
-<td>Fairness, Bias Testing and Explainability</td>
+<td>GCC drivers</td>
+<td>CBUAE Guidance Note (annual bias testing) [Reported]; UAE and SDAIA ethics principles (fairness) [Reported]; DIFC Reg 10 [Reported]; QCB guideline [Reported]</td>
 </tr>
 <tr>
-<td>Family</td>
-<td>Assurance and Testing</td>
+<td>Template</td>
+<td><a href="T10_Bias_Testing_Record.html">T10 Bias Testing Record</a></td>
 </tr>
 <tr>
-<td>Control Objective</td>
-<td>Test AI systems that make or support high-impact decisions for unfair bias, and keep explanations that a person can understand and a reviewer can challenge.</td>
-</tr>
-<tr>
-<td>Implementation Expectation</td>
-<td>1. Define high-impact decisions. 2. Identify relevant groups with legal input. 3. Test before release, annually and on material model change. 4. Record method, data, thresholds, results and approvals. 5. Provide an explanation per high-impact decision and a route to human review. 6. Block or condition release on failed thresholds.</td>
-</tr>
-<tr>
-<td>Evidence Required</td>
-<td>Bias test plan and results (<a href="T10_Bias_Testing_Record.html">T10</a>); threshold approvals; explanation records; human-review log; retest evidence.</td>
-</tr>
-<tr>
-<td>Audit Test Procedure</td>
-<td>Sample high-impact use cases. Confirm a current bias test exists. Re-perform one test. Trace one decision to explanation and review outcome. Confirm failed results led to action.</td>
-</tr>
-<tr>
-<td>Control Owner</td>
-<td>AI Governance Lead / Model Risk</td>
-</tr>
-<tr>
-<td>Review Frequency</td>
-<td>Annually and on material model change</td>
-</tr>
-<tr>
-<td>Regional drivers</td>
-<td>CBUAE Guidance Note (annual bias testing) [Reported]; UAE and SDAIA ethics principles (fairness) [Reported]; DIFC Reg 10 [Reported]; QCB guideline [Reported].</td>
-</tr>
-<tr>
-<td>NIST AI RMF</td>
-<td>To be assigned by assessor (MEASURE function)</td>
-</tr>
-<tr>
-<td>ISO/IEC 42001</td>
-<td>To be assigned by assessor</td>
-</tr>
-<tr>
-<td>Related cases</td>
-<td><a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-008">TC-L03-008</a>, <a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-029">TC-L03-029</a></td>
+<td>Test cases</td>
+<td><a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-031">TC-L03-031</a>, <a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-032">TC-L03-032</a>, <a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-033">TC-L03-033</a>, <a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-008">TC-L03-008</a>, <a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-029">TC-L03-029</a></td>
 </tr>
 </tbody>
 </table></div>
-<p>The EU drivers for this control, and one further test for special category data, are on the <a href="../12_EU_AI_Compliance/06_Proposed_Control_Fundamental_Rights_Impact_Assessment.html#eu-drivers-for-ai-ctrl-041">EU proposed control page</a>.</p>
-<h2 id="proposed-test-cases">Proposed test cases</h2>
-<p>These tests have no case IDs yet. They would be numbered in the L03 series if the control is adopted.</p>
+<h2 id="test-cases-by-topic">Test cases by topic</h2>
 <div class="table-wrap"><table>
 <thead>
 <tr>
-<th>#</th>
-<th>Test</th>
-<th>Pass condition</th>
+<th>Topic</th>
+<th>Test case</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1</td>
-<td>Bias test exists for each high-impact system</td>
-<td>Current test with named method and thresholds</td>
+<td>A current bias test exists for each high-impact system, and a failed threshold blocks release</td>
+<td><a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-031">TC-L03-031</a></td>
 </tr>
 <tr>
-<td>2</td>
-<td>Bias test re-run on material model change</td>
-<td>Dated after change record</td>
+<td>The bias test is re-run on material model change</td>
+<td><a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-031">TC-L03-031</a></td>
 </tr>
 <tr>
-<td>3</td>
-<td>Arabic vs English quality parity</td>
-<td>Documented gap within approved threshold</td>
+<td>Arabic and English quality parity</td>
+<td><a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-033">TC-L03-033</a></td>
 </tr>
 <tr>
-<td>4</td>
-<td>Explanation produced for adverse decision</td>
-<td>Understandable explanation delivered</td>
+<td>An explanation is produced for an adverse decision</td>
+<td><a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-029">TC-L03-029</a></td>
 </tr>
 <tr>
-<td>5</td>
-<td>Human review can reverse outcome</td>
-<td>Reversal path evidenced</td>
+<td>Human review can reverse the outcome</td>
+<td><a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-008">TC-L03-008</a></td>
 </tr>
 <tr>
-<td>6</td>
-<td>Failed threshold blocks release</td>
-<td>Release record shows block or condition</td>
-</tr>
-<tr>
-<td>7</td>
-<td>Group definition reviewed by legal</td>
-<td>Legal sign-off on attributes and proxies</td>
-</tr>
-<tr>
-<td>8</td>
-<td>Test data handling lawful</td>
-<td>DPO approval for use of sensitive attributes</td>
+<td>Legal reviews the group definition, and the use of sensitive attributes in testing is lawful</td>
+<td><a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-032">TC-L03-032</a></td>
 </tr>
 </tbody>
 </table></div>
+<p>The EU instruments behind this control are on the <a href="../12_EU_AI_Compliance/06_Proposed_Control_Fundamental_Rights_Impact_Assessment.html#eu-drivers-for-ai-ctrl-041">EU drivers page</a>.</p>
 </article>
 <nav class="pager" aria-label="Previous and next page"><a class="prev" href="05_Guide_Implementors.html">&larr; Guide for Implementors: Building an AI Governance Programme in the GCC</a><a class="next" href="07_Regulatory_Crosswalk.html">Regulatory Crosswalk &rarr;</a></nav>
 <footer class="site-footer">Author: Nachiket Sathaye &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>

@@ -70,14 +70,14 @@ Audit: ______ System(s): ______ Period: ______ Auditor: ______ Criteria in scope
 | 6.4 | Accuracy, safety and robustness tests current, incl. Arabic | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) | | | |
 | 6.5 | Prompt-injection and exfiltration testing for generative or agentic systems | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005), [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) | | | |
 
-## 7. Fairness (proposed AI-CTRL-041)
+## 7. Fairness (AI-CTRL-041)
 
 | # | Test | Control | Result | Evidence ref | Note |
 |---|---|---|---|---|---|
-| 7.1 | High-impact decisions defined | [AI-CTRL-041](06_Proposed_Control_Fairness_Bias_Explainability.md) | | | |
-| 7.2 | Bias test current (pre-release, annual, on change) | [AI-CTRL-041](06_Proposed_Control_Fairness_Bias_Explainability.md) | | | |
-| 7.3 | Re-performance of one test | [AI-CTRL-041](06_Proposed_Control_Fairness_Bias_Explainability.md) | | | |
-| 7.4 | Explanation record traced for sample | [AI-CTRL-041](06_Proposed_Control_Fairness_Bias_Explainability.md) | | | |
+| 7.1 | High-impact decisions defined | [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) | | | |
+| 7.2 | Bias test current (pre-release, annual, on change) | [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) | | | |
+| 7.3 | Re-performance of one test | [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) | | | |
+| 7.4 | Explanation record traced for sample | [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) | | | |
 
 ## 8. Incident
 

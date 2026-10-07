@@ -42,4 +42,4 @@ The same data is available as a CSV file for GRC tooling: [crosswalk.csv](data/c
 | E17 | CEN-CENELEC JTC 21 standards (EN 18286:2026; prEN 18228, 18229, 18282, 18284) | EN 18286 approved 12 Jul 2026, OJ citation pending; others draft | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012); [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037); [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005); [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) | GOV; RSK; AUD | Reported | Numbers; status |  |
 | E18 | ISO/IEC 42001 | Voluntary standard | All | GOV; AUD | Recalled | Not harmonised |  |
 
-The proposed controls AI-CTRL-041 and AI-CTRL-042 are left out of this table. Their EU drivers are listed on the [proposed control page](06_Proposed_Control_Fundamental_Rights_Impact_Assessment.md).
+The EU instruments behind AI-CTRL-041 and AI-CTRL-042 are listed on the [EU drivers page](06_Proposed_Control_Fundamental_Rights_Impact_Assessment.md).

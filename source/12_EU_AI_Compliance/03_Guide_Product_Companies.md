@@ -42,7 +42,7 @@ Use [T01](T01_AI_System_Classification.md) and record the reasoning. If you rely
 | Do you train on our data? | Contract, [T03](T03_Supplier_Due_Diligence_EU_Addendum.md) |
 | Sub-processors and model suppliers | [T03](T03_Supplier_Due_Diligence_EU_Addendum.md) |
 | Human oversight features | [T10](T10_Technical_Documentation_and_Conformity_Checklist.md), [Guide for AI Practitioners](02_Guide_AI_Practitioners.md) |
-| Bias testing and explainability | [AI-CTRL-041](../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.md) (proposed), [T10](T10_Technical_Documentation_and_Conformity_Checklist.md) |
+| Bias testing and explainability | [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041), [T10](T10_Technical_Documentation_and_Conformity_Checklist.md) |
 | Incident notice commitments | [T05](T05_AI_Incident_and_Breach_Reporting_Workflow.md) |
 | Security certifications | ISO/IEC 27001 and any others you hold |
 | Transparency features (AI disclosure, content marking) | [T06](T06_Transparency_Notice.md) |

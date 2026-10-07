@@ -1,7 +1,7 @@
 ---
 title: "EU AI Compliance"
 author: Nachiket Sathaye
-description: "EU AI compliance resources: AI Act timeline and regulatory hub, role guides, 12 fill-in templates, a proposed impact assessment control and a crosswalk."
+description: "EU AI compliance resources: AI Act timeline and regulatory hub, role guides, 12 fill-in templates, control drivers and a crosswalk."
 nav_order: 11
 group: "Regional AI Regulatory Hub"
 has_children: true
@@ -20,7 +20,7 @@ Resources for people who build, sell, deploy, audit or govern AI systems that to
 | [EU AI Regulatory Hub](01_EU_AI_Regulatory_Hub.md) | 1 | The AI Act timeline, risk tiers, roles and high-risk obligations, plus 18 related instruments, each mapped to wiki controls and tagged with its verification status. |
 | Role guides | 4 | What to do and what to keep as evidence, for [practitioners](02_Guide_AI_Practitioners.md), [product companies](03_Guide_Product_Companies.md), [auditors](04_Guide_Auditors.md) and [implementors](05_Guide_Implementors.md). |
 | Templates T01 to T12 | 12 | Fill-in documents: system classification, impact assessment, supplier addendum, transfer record, incident workflow, transparency notice, literacy record, audit checklist, inventory, technical documentation index, authority log and general-purpose AI model checklist. |
-| [Proposed control](06_Proposed_Control_Fundamental_Rights_Impact_Assessment.md) | 1 | AI-CTRL-042 on fundamental rights and data protection impact assessment, which is not yet part of the control library, and the EU drivers for the proposed AI-CTRL-041. |
+| [EU drivers for AI-CTRL-041 and AI-CTRL-042](06_Proposed_Control_Fundamental_Rights_Impact_Assessment.md) | 1 | The EU instruments behind the controls on impact assessment and on fairness, with their templates and test cases. |
 | [EU Regulatory Crosswalk](07_Regulatory_Crosswalk.md) and [EU Evidence Register](08_Evidence_Register.md) | 2 | The instrument-to-control map and a starter evidence list, each also downloadable as a CSV file. |
 
 ## How claims are tagged

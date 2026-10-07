@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Test Case Library | AI Security Wiki</title>
 <meta name="author" content="Nachiket Sathaye">
-<meta name="description" content="620 AI security test cases for vendor evaluation and PoC across 17 AI lifecycle layers and 6 emerging domains: prompt injection, DLP, agents, MCP, RAG.">
+<meta name="description" content="629 AI security test cases for vendor evaluation and PoC across 17 AI lifecycle layers and 6 emerging domains: prompt injection, DLP, agents, MCP, RAG.">
 <link rel="canonical" href="https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="AI Security Wiki">
 <meta property="og:title" content="Test Case Library | AI Security Wiki">
-<meta property="og:description" content="620 AI security test cases for vendor evaluation and PoC across 17 AI lifecycle layers and 6 emerging domains: prompt injection, DLP, agents, MCP, RAG.">
+<meta property="og:description" content="629 AI security test cases for vendor evaluation and PoC across 17 AI lifecycle layers and 6 emerging domains: prompt injection, DLP, agents, MCP, RAG.">
 <meta property="og:url" content="https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/">
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="../assets/style.css?v=acde22f2">
@@ -68,6 +68,7 @@
 <li><a href="../04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a></li>
 <li><a href="../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
 <li><a href="../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
+<li><a href="../04_Domain_Standards/10B_Sector_Overlays.html">Sector Overlays: Financial Services, Insurance, Health and Government</a></li>
 </ul></details></li>
 <li style="--h:32"><details><summary><a href="../05_Vendor_Evaluation/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Vendor Evaluation</a></summary><ul>
 <li><a href="../05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
@@ -130,7 +131,7 @@
 <li><a href="../11_GCC_AI_Compliance/03_Guide_Product_Companies.html">Guide for AI Product Companies Selling into the GCC</a></li>
 <li><a href="../11_GCC_AI_Compliance/04_Guide_Auditors.html">Guide for Auditors of AI Systems in the GCC</a></li>
 <li><a href="../11_GCC_AI_Compliance/05_Guide_Implementors.html">Guide for Implementors: Building an AI Governance Programme in the GCC</a></li>
-<li><a href="../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.html">Proposed Control: Fairness, Bias Testing and Explainability</a></li>
+<li><a href="../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.html">GCC Drivers for AI-CTRL-041: Fairness, Bias Testing and Explainability</a></li>
 <li><a href="../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.html">Regulatory Crosswalk</a></li>
 <li><a href="../11_GCC_AI_Compliance/08_Evidence_Register.html">Evidence Register</a></li>
 <li><a href="../11_GCC_AI_Compliance/T01_AI_Use_Case_Intake_and_Risk_Tiering.html">T01 AI Use-Case Intake and Risk Tiering</a></li>
@@ -152,7 +153,7 @@
 <li><a href="../12_EU_AI_Compliance/03_Guide_Product_Companies.html">Guide for AI Product Companies Selling into the EU</a></li>
 <li><a href="../12_EU_AI_Compliance/04_Guide_Auditors.html">Guide for Auditors of AI Systems Under EU Rules</a></li>
 <li><a href="../12_EU_AI_Compliance/05_Guide_Implementors.html">Guide for Implementors: Building an EU AI Governance Programme</a></li>
-<li><a href="../12_EU_AI_Compliance/06_Proposed_Control_Fundamental_Rights_Impact_Assessment.html">Proposed Control: Fundamental Rights and Data Protection Impact Assessment</a></li>
+<li><a href="../12_EU_AI_Compliance/06_Proposed_Control_Fundamental_Rights_Impact_Assessment.html">EU Drivers for AI-CTRL-041 and AI-CTRL-042</a></li>
 <li><a href="../12_EU_AI_Compliance/07_Regulatory_Crosswalk.html">EU Regulatory Crosswalk</a></li>
 <li><a href="../12_EU_AI_Compliance/08_Evidence_Register.html">EU Evidence Register</a></li>
 <li><a href="../12_EU_AI_Compliance/T01_AI_System_Classification.html">T01 AI System Classification (Role and Risk Tier)</a></li>
@@ -256,7 +257,7 @@
 <p class="crumbs"><a href="../index.html">Home</a> / <span>Test Case Library</span></p>
 <article>
 <h1 id="ai-security-vendor-evaluation-test-case-library">AI Security Vendor Evaluation: Test Case Library</h1>
-<p>A library of <strong>620 test cases</strong> for evaluating AI security products in a controlled proof of concept: <strong>487 cases organised by the 17 layers of the AI lifecycle</strong>, tagged with seven buyer-facing use-case domains, and <strong>133 cases in six emerging domains</strong> that cut across the layers.</p>
+<p>A library of <strong>629 test cases</strong> for evaluating AI security products in a controlled proof of concept: <strong>496 cases organised by the 17 layers of the AI lifecycle</strong>, tagged with seven buyer-facing use-case domains, and <strong>133 cases in six emerging domains</strong> that cut across the layers.</p>
 <blockquote class="callout caution">
 <p><strong>Status: draft for review.</strong> Reference identifiers (MITRE ATLAS, OWASP LLM, NIST AI RMF) must be verified against current published versions, and numeric thresholds are starting values to tune to your risk appetite and vendor SLAs.</p>
 </blockquote>
@@ -270,7 +271,7 @@
 <li><a href="../12_EU_AI_Compliance/07_Regulatory_Crosswalk.html">EU Regulatory Crosswalk</a>: the AI Act, GDPR and related EU instruments mapped to controls and to the same control themes</li>
 </ul>
 <p>Every case names the control it tests, by ID, from the <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a>.</p>
-<p>To find a specific case, type its ID (for example <code>TC-L08-014</code>) or a keyword into the search box at the top of any page. Each of the 620 cases is indexed individually.</p>
+<p>To find a specific case, type its ID (for example <code>TC-L08-014</code>) or a keyword into the search box at the top of any page. Each of the 629 cases is indexed individually.</p>
 <h2 id="layers">Layers</h2>
 <div class="table-wrap"><table>
 <thead>
@@ -309,11 +310,11 @@
 <tr>
 <td>L03</td>
 <td><a href="L03-legal-privacy-and-compliance.html">Legal, Privacy &amp; Compliance</a></td>
-<td>UAE/GCC residency, PDPL-type obligations, evidence export, DPIA support</td>
-<td>30</td>
-<td>11</td>
-<td>16</td>
-<td>3</td>
+<td>UAE/GCC residency, PDPL-type obligations, evidence export, DPIA support, fairness, transparency and authority engagement</td>
+<td>39</td>
+<td>12</td>
+<td>21</td>
+<td>6</td>
 <td>0</td>
 </tr>
 <tr>
@@ -460,10 +461,10 @@
 <td></td>
 <td><strong>Total</strong></td>
 <td></td>
-<td><strong>487</strong></td>
-<td><strong>125</strong></td>
-<td><strong>248</strong></td>
-<td><strong>111</strong></td>
+<td><strong>496</strong></td>
+<td><strong>126</strong></td>
+<td><strong>253</strong></td>
+<td><strong>114</strong></td>
 <td><strong>3</strong></td>
 </tr>
 </tbody>
@@ -557,7 +558,7 @@
 </tbody>
 </table></div>
 <h2 id="coverage-at-a-glance">Coverage at a glance</h2>
-<p>Counts are taken from the case index of each layer and domain file. Test method covers all 620 cases; the domain tags below apply to the 487 layer cases.</p>
+<p>Counts are taken from the case index of each layer and domain file. Test method covers all 629 cases; the domain tags below apply to the 496 layer cases.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -569,12 +570,12 @@
 <tbody>
 <tr>
 <td><span class="badge method">Technical</span></td>
-<td>520</td>
+<td>526</td>
 <td>Executed live in the PoC lab</td>
 </tr>
 <tr>
 <td><span class="badge method">Evidence</span></td>
-<td>86</td>
+<td>89</td>
 <td>Verified by configuration, export, workflow or document inspection</td>
 </tr>
 <tr>
@@ -596,7 +597,7 @@
 <tr>
 <td>D1</td>
 <td>Workforce / Browser AI Governance</td>
-<td>54</td>
+<td>55</td>
 </tr>
 <tr>
 <td>D2</td>
@@ -606,7 +607,7 @@
 <tr>
 <td>D3</td>
 <td>Custom AI Application Runtime Security</td>
-<td>179</td>
+<td>183</td>
 </tr>
 <tr>
 <td>D4</td>
@@ -626,11 +627,11 @@
 <tr>
 <td>D7</td>
 <td>Sovereignty / Compliance / UAE Requirements</td>
-<td>143</td>
+<td>152</td>
 </tr>
 </tbody>
 </table></div>
-<p>A case can carry more than one domain tag, so the domain counts add up to more than 487. D2 covers the developer workflow end to end: IDE prompts, assistant extensions, coding agents, MCP configuration, repository policy, pipeline bots and SOC telemetry, with L05 as its primary layer.</p>
+<p>A case can carry more than one domain tag, so the domain counts add up to more than 496. D2 covers the developer workflow end to end: IDE prompts, assistant extensions, coding agents, MCP configuration, repository policy, pipeline bots and SOC telemetry, with L05 as its primary layer.</p>
 <h2 id="numbering-and-structure">Numbering and structure</h2>
 <p>Layer case IDs take the form <code>TC-L##-###</code>: the lifecycle layer and a sequence within it, for example <code>TC-L08-014</code>. Emerging-domain case IDs take the form <code>TC-D##-###</code>, for example <code>TC-D10-007</code>. IDs are unique across the library and stable once issued. Where a case is the detailed version of a quick-start scenario, the <strong>Quick-Start Scenario</strong> field links to it by ID, for example <code>AI-POC-ID-004</code>.</p>
 <p>Each case records: lifecycle layer, use-case domains, test method (Technical, Evidence or Attestation), vendor applicability (E endpoint or browser agent, G inline gateway or proxy, A application or API-level control, P posture or AI-SPM, R red-team tool, W governance workflow), risk, scenarios, test data, numbered procedure, expected results, pass and fail criteria, scoring, evidence to capture, and reference mappings.</p>
@@ -651,7 +652,7 @@
 <a class="card" style="--h:145" href="appendix-lab-prerequisites.html"><span class="card-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l1.5 1.5L8 5M4 12l1.5 1.5L8 11M4 18l1.5 1.5L8 17M11 6h9M11 12h9M11 18h9"/></svg></span><span class="card-title">Appendix: Lab Prerequisites</span><span class="card-text">Lab prerequisites for AI security PoC testing: the environment, mock services, tooling and synthetic data needed for each AI lifecycle layer.</span></a>
 <a class="card" style="--h:145" href="L01-business-and-use-cases.html"><span class="card-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l1.5 1.5L8 5M4 12l1.5 1.5L8 11M4 18l1.5 1.5L8 17M11 6h9M11 12h9M11 18h9"/></svg></span><span class="card-title">L01 Business &amp; Use Cases</span><span class="card-text">20 AI security test cases for the Business &amp; Use Cases: use-case registry, risk-tiering, business-owner attribution.</span></a>
 <a class="card" style="--h:145" href="L02-governance-and-risk-mgmt.html"><span class="card-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l1.5 1.5L8 5M4 12l1.5 1.5L8 11M4 18l1.5 1.5L8 17M11 6h9M11 12h9M11 18h9"/></svg></span><span class="card-title">L02 Governance &amp; Risk Mgmt</span><span class="card-text">25 AI security test cases for the Governance &amp; Risk Mgmt: policy-to-control mapping, risk register, exceptions workflow.</span></a>
-<a class="card" style="--h:145" href="L03-legal-privacy-and-compliance.html"><span class="card-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l1.5 1.5L8 5M4 12l1.5 1.5L8 11M4 18l1.5 1.5L8 17M11 6h9M11 12h9M11 18h9"/></svg></span><span class="card-title">L03 Legal, Privacy &amp; Compliance</span><span class="card-text">30 AI security test cases for the Legal, Privacy &amp; Compliance: UAE/GCC residency, PDPL-type obligations, evidence export, DPIA support.</span></a>
+<a class="card" style="--h:145" href="L03-legal-privacy-and-compliance.html"><span class="card-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l1.5 1.5L8 5M4 12l1.5 1.5L8 11M4 18l1.5 1.5L8 17M11 6h9M11 12h9M11 18h9"/></svg></span><span class="card-title">L03 Legal, Privacy &amp; Compliance</span><span class="card-text">39 AI security test cases for the Legal, Privacy &amp; Compliance: UAE/GCC residency, PDPL-type obligations, evidence export, DPIA support, fairness…</span></a>
 <a class="card" style="--h:145" href="L04-human-interaction-layer.html"><span class="card-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l1.5 1.5L8 5M4 12l1.5 1.5L8 11M4 18l1.5 1.5L8 17M11 6h9M11 12h9M11 18h9"/></svg></span><span class="card-title">L04 Human Interaction Layer</span><span class="card-text">32 AI security test cases for the Human Interaction Layer: browser/workforce AI, user coaching, approval prompts, multimodal input.</span></a>
 <a class="card" style="--h:145" href="L05-ai-applications.html"><span class="card-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l1.5 1.5L8 5M4 12l1.5 1.5L8 11M4 18l1.5 1.5L8 17M11 6h9M11 12h9M11 18h9"/></svg></span><span class="card-title">L05 AI Applications</span><span class="card-text">35 AI security test cases for the AI Applications: discovery, app-level runtime protection, output handling.</span></a>
 <a class="card" style="--h:145" href="L06-agent-orchestration-layer.html"><span class="card-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l1.5 1.5L8 5M4 12l1.5 1.5L8 11M4 18l1.5 1.5L8 17M11 6h9M11 12h9M11 18h9"/></svg></span><span class="card-title">L06 Agent Orchestration Layer</span><span class="card-text">37 AI security test cases for the Agent Orchestration Layer: agent and MCP discovery, tool governance, delegation chains, kill switch.</span></a>

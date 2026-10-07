@@ -1,9 +1,9 @@
 ---
 title: "Home"
-description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and 620 test cases."
+description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and 629 test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.13
+version: 2.14
 status: Published
 author: Nachiket Sathaye
 owner: AI Security Program
@@ -185,16 +185,16 @@ Review, Improve, Renew, or Retire
   Operating model, acceptable AI use, approvals, committees, responsibilities, and reporting cadence.
 
 10_Test_Case_Library/
-  620 detailed product evaluation test cases across 17 AI lifecycle layers and 6 emerging domains, with reference index,
+  629 detailed product evaluation test cases across 17 AI lifecycle layers and 6 emerging domains, with reference index,
   lab prerequisites, and framework adoption guide.
 
 11_GCC_AI_Compliance/
   Regulatory hub for the UAE, Saudi Arabia, Qatar, Bahrain and Oman, role guides, fill-in templates,
-  proposed fairness control, regulatory crosswalk, and evidence register.
+  fairness control drivers, regulatory crosswalk, and evidence register.
 
 12_EU_AI_Compliance/
   Regulatory hub for the EU AI Act, GDPR and related EU instruments, role guides, fill-in templates,
-  proposed impact assessment control, regulatory crosswalk, and evidence register.
+  impact assessment and fairness control drivers, regulatory crosswalk, and evidence register.
 
 13_Australia_AI_Compliance/
   Regulatory hub for Australia (Privacy Act automated-decision transparency, consumer law, APRA standards),
@@ -402,6 +402,7 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 | 2.11 | 2026-10-07 | Nachiket Sathaye | Added the South Korea AI Compliance section: regulatory hub, role guide, templates and crosswalk. Its content comes from secondary sources and from memory of the law, and has not been verified against primary legal text. |
 | 2.12 | 2026-10-07 | Nachiket Sathaye | Added the UK AI Compliance section: regulatory hub, role guide, templates and crosswalk. Its content comes from secondary sources and from memory of the law, and has not been verified against primary legal text. |
 | 2.13 | 2026-10-07 | Nachiket Sathaye | Added the US AI Compliance section: regulatory hub, role guide, templates and crosswalk. Its content comes from secondary sources and from memory of the law, and has not been verified against primary legal text. |
+| 2.14 | 2026-10-07 | Nachiket Sathaye | Added four controls (AI-CTRL-041 to AI-CTRL-044: fairness, impact assessment, authority engagement, AI literacy), nine test cases (TC-L03-031 to TC-L03-039), a sector overlays page and a regional crosswalk by control theme. The regional sections now point to these controls and cases. |
 
 ## 21. Quick Links
 
@@ -417,7 +418,7 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 - [Sovereign AI, UAE Compliance and Data Residency Requirements](04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.md)
 - [AI Security Vendor Evaluation Master Framework](05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.md)
 - [AI Security PoC Test Case Library](06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md)
-- [Test Case Library (620 cases, 17 layers and 6 emerging domains)](10_Test_Case_Library/index.md)
+- [Test Case Library (629 cases, 17 layers and 6 emerging domains)](10_Test_Case_Library/index.md)
 - [GCC AI Compliance (regulatory hub, role guides and templates)](11_GCC_AI_Compliance/index.md)
 - [EU AI Compliance (AI Act hub, role guides and templates)](12_EU_AI_Compliance/index.md)
 - [Australia AI Compliance (regulatory hub, role guide and templates)](13_Australia_AI_Compliance/index.md)

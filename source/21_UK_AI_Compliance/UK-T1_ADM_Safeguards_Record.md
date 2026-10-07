@@ -12,7 +12,7 @@ version: 1.0
 
 > **Verification required.** This is a working template, not a regulator-approved form. Where it names an instrument or a date, the claim comes from secondary sources or from memory of the law and is a pointer to check. This is not legal advice.
 
-Wiki controls: [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023), [AI-CTRL-041](../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.md) (proposed). The article numbers 22A to 22D are as [Reported]; confirm them in the commenced text.
+Wiki controls: [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023), [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041). The article numbers 22A to 22D are as [Reported]; confirm them in the commenced text.
 
 | Field | Entry |
 |---|---|

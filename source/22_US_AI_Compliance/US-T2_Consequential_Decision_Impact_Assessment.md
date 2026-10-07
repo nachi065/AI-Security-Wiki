@@ -12,7 +12,7 @@ version: 1.0
 
 > **Verification required.** This is a working template, not a regulator-approved form. Where it names an instrument or a date, the claim comes from secondary sources or from memory of the law and is a pointer to check. This is not legal advice.
 
-Wiki controls: [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037), [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023), [AI-CTRL-041](../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.md) (proposed). For employment, credit, housing, healthcare, education, insurance and legal-service decisions. The legal standards (disparate impact, adverse action notices) are [Recalled]; get counsel's input.
+Wiki controls: [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037), [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023), [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041). For employment, credit, housing, healthcare, education, insurance and legal-service decisions. The legal standards (disparate impact, adverse action notices) are [Recalled]; get counsel's input.
 
 | Field | Entry |
 |---|---|

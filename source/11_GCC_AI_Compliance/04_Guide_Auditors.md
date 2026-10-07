@@ -47,7 +47,7 @@ State in the engagement letter which criteria are in scope and which are referen
 | Vendor | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) | Due diligence done before contract; sub-processors listed | [T03](T03_Vendor_Due_Diligence_GCC_Addendum.md), contract |
 | Oversight | [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023), [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) | Human approval exists and is evidenced; kill switch test within period | Review logs, test record |
 | Content safety and reliability | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) | Test results current; Arabic included | Test reports |
-| Fairness (proposed) | [AI-CTRL-041](06_Proposed_Control_Fairness_Bias_Explainability.md) | Bias test current; thresholds approved | [T10](T10_Bias_Testing_Record.md) |
+| Fairness | [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) | Bias test current; thresholds approved | [T10](T10_Bias_Testing_Record.md) |
 | Incident | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) | Playbook; exercise; notice workflow includes regulators | [T05](T05_AI_Incident_and_Breach_Notification_Workflow.md), exercise log |
 | Audit evidence | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) | Evidence retained and retrievable | Evidence register |
 

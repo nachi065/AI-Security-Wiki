@@ -38,7 +38,7 @@ System ID: ______ Version: ______ Owner: ______ Last updated: ______
 | Collection and preparation steps | |
 | Assumptions made | |
 | Suitability assessment, availability, quantity | |
-| Bias examination and mitigation ([AI-CTRL-041](../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.md), proposed) | |
+| Bias examination and mitigation ([AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041)) | |
 | Gaps and how they were addressed | |
 | Special category data use and necessity record | |
 | Copyright and licence position | |
