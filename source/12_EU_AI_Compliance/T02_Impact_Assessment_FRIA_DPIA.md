@@ -12,6 +12,10 @@ version: 1.0
 
 > **Verification required.** This is a working template, not a regulator-approved form. Where it cites an article or a date, the citation comes from secondary sources or from memory of the legal text and is a pointer to check. This is not legal advice.
 
+<!-- -->
+
+> **How to use:** This is a blank form. Copy it and fill in the empty cells and blanks for your system. To copy it, follow the "Suggest an edit to this page" link in the footer to reach its Markdown source.
+
 Wiki controls: [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037), [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041), [AI-CTRL-042](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-042). The GDPR Art. 35 DPIA and the AI Act Art. 27 FRIA are [Recalled]. Confirm which legal duties are triggered. The combined form is a convenience and does not replace either legal assessment. Consult your DPO.
 
 ## 1. Summary

@@ -12,6 +12,10 @@ version: 1.0
 
 > **Verification required.** This is a working template, not a regulator-approved form. Where it names an instrument or a date, the claim comes from secondary sources or from memory of the law and is a pointer to check. This is not legal advice.
 
+<!-- -->
+
+> **How to use:** This is a blank form. Copy it and fill in the empty cells and blanks for your system. To copy it, follow the "Suggest an edit to this page" link in the footer to reach its Markdown source.
+
 Wiki controls: [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012), [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037), [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023). The headings follow the themes reported for the guidance (accountability, risk management, transparency, human control) [Reported]. Replace them with the official practices.
 
 | Theme | Practice | Status | Evidence |

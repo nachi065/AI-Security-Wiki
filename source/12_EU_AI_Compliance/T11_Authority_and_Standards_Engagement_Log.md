@@ -12,6 +12,10 @@ version: 1.0
 
 > **Verification required.** This is a working template, not a regulator-approved form. Where it cites an article or a date, the citation comes from secondary sources or from memory of the legal text and is a pointer to check. This is not legal advice.
 
+<!-- -->
+
+> **How to use:** This is a blank form. Copy it and fill in the empty cells and blanks for your system. To copy it, follow the "Suggest an edit to this page" link in the footer to reach its Markdown source.
+
 Fill the duties and sources only from primary texts that you have checked. Authority names and designations differ by Member State; look them up.
 
 ## Part A. Authority register

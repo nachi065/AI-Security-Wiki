@@ -12,6 +12,10 @@ version: 1.0
 
 > **Verification required.** This is a working template, not a regulator-approved form. Where it names a regional instrument, the claim comes from secondary sources and is a pointer to check, not a confirmed legal requirement. This is not legal advice.
 
+<!-- -->
+
+> **How to use:** This is a blank form. Copy it and fill in the empty cells and blanks for your system. To copy it, follow the "Suggest an edit to this page" link in the footer to reach its Markdown source.
+
 A working worksheet aligned to the themes common to UAE and SDAIA ethics instruments (UAE AI Ethics, reported 8 principles; UAE Charter, reported 12 principles; SDAIA, reported seven principles) [Reported]. **It is not the official government self-assessment tool.** If a tender requires the official tool, use that and use this sheet to prepare evidence. The exact principle names were not verified; the themes below are the author's grouping.
 
 System: ______  Owner: ______  Date: ______  Tier ([T01](T01_AI_Use_Case_Intake_and_Risk_Tiering.md)): ______

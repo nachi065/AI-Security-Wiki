@@ -12,6 +12,10 @@ version: 1.0
 
 > **Verification required.** This is a working template, not a regulator-approved form. Where it names an instrument or a date, the claim comes from secondary sources or from memory of the law and is a pointer to check. This is not legal advice.
 
+<!-- -->
+
+> **How to use:** This is a blank form. Copy it and fill in the empty cells and blanks for your system. To copy it, follow the "Suggest an edit to this page" link in the footer to reach its Markdown source.
+
 Wiki controls: [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017). Section references are left blank on purpose; fill them in from the Act and the Rules. Whether a notice must be offered in English or in any scheduled language is stated from memory of the Rules [Recalled]; verify it.
 
 ## 1. Processing record

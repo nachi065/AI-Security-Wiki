@@ -12,6 +12,10 @@ version: 1.0
 
 > **Verification required.** This is a working template, not a regulator-approved form. Where it cites an article or a date, the citation comes from secondary sources or from memory of the legal text and is a pointer to check. This is not legal advice.
 
+<!-- -->
+
+> **How to use:** This is a blank form. Copy it and fill in the empty cells and blanks for your system. To copy it, follow the "Suggest an edit to this page" link in the footer to reach its Markdown source.
+
 Wiki control: [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012), which covers user training in general. The AI literacy duty (Art. 4) is reported as applying since 2 Feb 2025, with its date unchanged by the omnibus [Reported]. Whether the omnibus changed its wording is [Unverified]; read the current Art. 4. The duty is framed as taking measures to ensure a sufficient level of AI literacy among staff and others who operate or use AI systems on your behalf [Recalled].
 
 ## 1. Roles and needs

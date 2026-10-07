@@ -12,6 +12,10 @@ version: 1.0
 
 > **Verification required.** This is a working template, not a regulator-approved form. Where it cites an article or a date, the citation comes from secondary sources or from memory of the legal text and is a pointer to check. This is not legal advice.
 
+<!-- -->
+
+> **How to use:** This is a blank form. Copy it and fill in the empty cells and blanks for your system. To copy it, follow the "Suggest an edit to this page" link in the footer to reach its Markdown source.
+
 Wiki controls: [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014), [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028), [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029). Use part A if you provide a general-purpose AI (GPAI) model and part B if you build on one. The obligation list is [Recalled] from Arts. 51 to 55. Read the text and the Commission's GPAI guidelines of 10 July 2025 [Reported]. GPAI duties have applied since 2 Aug 2025, and the AI Office gained enforcement powers on 2 Aug 2026 [Reported]. Models that were on the market before 2 Aug 2025 reportedly have until 2 Aug 2027 [Reported].
 
 ## A. Provider checklist
