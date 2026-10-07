@@ -1,0 +1,13 @@
+ID,Instrument,Type / status,Wiki controls,Verification tag,To verify,Primary URL and retrieval date
+UK1,UK approach: five principles (safety and robustness; transparency; fairness; accountability; contestability and redress),Non-statutory; from the March 2023 White Paper,AI-CTRL-012;AI-CTRL-039;AI-CTRL-041,Reported,Current government position; source says 'as of 2025',
+UK2,UK GDPR and Data Protection Act 2018,Binding,AI-CTRL-013;AI-CTRL-007;AI-CTRL-017;AI-CTRL-035,Recalled,Articles,
+UK3,Data (Use and Access) Act 2025: new Arts 22A to 22D,Binding; commencement dates unverified,AI-CTRL-013;AI-CTRL-023;AI-CTRL-041,Reported,Commencement; ICO guidance,
+UK4,ICO guidance on AI and data protection,Regulator guidance,AI-CTRL-013;AI-CTRL-041,Recalled,Current versions; any AI and biometrics strategy,
+UK5,"FCA approach (principles, Consumer Duty, SM&CR)",Regulatory framework,AI-CTRL-012;AI-CTRL-023;AI-CTRL-037,Recalled,Current FCA statements,
+UK6,PRA SS1/23 model risk management,Supervisory statement for banks,AI-CTRL-011;AI-CTRL-037;AI-CTRL-038,Recalled,Applicability and date,
+UK7,CMA and Ofcom roles (competition; online safety),Regulators,AI-CTRL-039,Reported,Scope for AI services,
+UK8,Copyright and AI training,No statutory TDM exception; proposal reportedly abandoned,AI-CTRL-029,Reported,Status; litigation,
+UK9,AI (Regulation) private member's bill,Not law,,Reported,Parliamentary status,
+UK10,NCSC and DSIT guidance on secure AI (guidelines for secure AI system development; AI cyber security code of practice),Voluntary guidance,AI-CTRL-005;AI-CTRL-008,Unverified,"Existence, titles, standard status",
+UK11,Algorithmic Transparency Recording Standard,Public-sector standard,AI-CTRL-039;AI-CTRL-011,Recalled,Whether mandatory for your body,
+UK12,Equality Act 2010,Binding,AI-CTRL-041,Recalled,Application to your use case,
