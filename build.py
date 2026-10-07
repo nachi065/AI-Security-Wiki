@@ -229,7 +229,8 @@ TEMPLATE = """<!doctype html>
 {content}
 </article>
 {pager}
-<footer class="site-footer">{byline} &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a> &middot; <a href="{repo}/edit/main/source/{src}" rel="noopener">Suggest an edit to this page</a> &middot; <a href="{base}community-rules.html">Community rules</a> &middot; <a href="{repo}/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a></footer>
+<footer class="site-footer">{byline} &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a> &middot; <a href="{repo}/edit/main/source/{src}" rel="noopener">Suggest an edit to this page</a> &middot; <a href="{base}community-rules.html">Community rules</a> &middot; <a href="{repo}/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
+{notice}</footer>
 </main>
 </div>
 <script>window.SITE_BASE = "{base}";</script>
@@ -238,6 +239,14 @@ TEMPLATE = """<!doctype html>
 </body>
 </html>
 """
+
+# Shown in the footer of every page.
+NOTICE = """<div class="site-notice">
+<p><strong>Disclaimer.</strong> This wiki is an open, community driven educational reference, not legal, regulatory or professional advice. Regional regulatory content is compiled from secondary sources and its verification status is shown per row; verify against primary sources before relying on it. Content is provided "as is" without warranty. Named products and companies belong to their owners; statements about them reflect public information at the date shown. Views are the author's own.</p>
+<p><strong>Privacy.</strong> This site does not use cookies or analytics and collects no personal data itself. It is hosted on GitHub Pages; GitHub may process technical data such as IP addresses under its own <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">privacy statement</a>. If you contribute through GitHub, your contribution and username are public under GitHub's terms.</p>
+</div>
+"""
+
 
 def authors(page):
     """The page's author followed by any co-authors, from its front matter."""
@@ -292,7 +301,7 @@ for i, page in enumerate(order):
         title=html.escape(HOME_TITLE if page is home else f"{title} | {SITE_TITLE}"),
         description=html.escape(describe(page), quote=True), canonical=canonical(page),
         og_type="website" if page is home else "article",
-        site=SITE_TITLE, repo=REPO_URL, author=html.escape(", ".join(authors(page)), quote=True), byline=byline(page), src=page["src"].replace(os.sep, "/"), base=base, nav=nav(page), crumbs=crumbs,
+        site=SITE_TITLE, repo=REPO_URL, author=html.escape(", ".join(authors(page)), quote=True), byline=byline(page), src=page["src"].replace(os.sep, "/"), base=base, nav=nav(page), crumbs=crumbs, notice=NOTICE,
         content=content, pager='<nav class="pager" aria-label="Previous and next page">' + "".join(links) + "</nav>",
     )
     dest = os.path.join(ROOT, page["out"])

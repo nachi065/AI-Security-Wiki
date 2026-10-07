@@ -175,6 +175,8 @@ a.chip:hover { text-decoration: none; filter: brightness(.95); }
 .pager a:hover { text-decoration: none; background: var(--accent-soft); border-color: var(--accent-bright); }
 .pager .next { margin-left: auto; text-align: right; }
 .site-footer { margin-top: 32px; font-size: 13px; color: var(--muted); }
+.site-notice { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); font-size: 12px; line-height: 1.55; }
+.site-notice p { margin: 0 0 6px; }
 .notfound { max-width: 560px; margin: 15vh auto; padding: 0 20px; }
 
 @media (max-width: 860px) {
@@ -195,7 +197,7 @@ a.chip:hover { text-decoration: none; filter: brightness(.95); }
 }
 @media print {
   .topbar, .sidebar, .pager { display: none; }
-  .site-footer a { display: none; }
+  .site-footer > a { display: none; }
   main { max-width: none; padding: 0; }
   .hero { color: #000; background: none; border: 1px solid #999; }
 }
