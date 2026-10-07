@@ -95,13 +95,24 @@ def look(page):
     return LOOKS.get(page["src"].split(os.sep)[0], DEFAULT_LOOK)
 
 
+# Sections whose icon is an image in assets/, drawn by the stylesheet class named here.
+EMBLEMS = {"11_GCC_AI_Compliance": "emblem-gcc"}
+
+
+def line_icon(shape):
+    return ('<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" '
+            f'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{shape}</svg>')
+
+
 def icon(page):
-    flag = FLAGS.get(page["src"].split(os.sep)[0])
+    folder = page["src"].split(os.sep)[0]
+    if folder in EMBLEMS:
+        return f'<span class="icon {EMBLEMS[folder]}" aria-hidden="true"></span>'
+    flag = FLAGS.get(folder)
     if flag:
         return ('<svg class="icon flag" viewBox="0 0 24 24" aria-hidden="true"><svg x="2" y="5" width="20" height="14" viewBox="0 0 20 14">'
                 f'{flag}</svg><rect x="2" y="5" width="20" height="14" fill="none" stroke="#000" stroke-opacity=".3" stroke-width=".6"/></svg>')
-    return ('<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" '
-            f'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{look(page)[1]}</svg>')
+    return line_icon(look(page)[1])
 
 
 def version(asset):
@@ -127,7 +138,7 @@ def nav(page):
                 out.append("</ul></details></li>")
             if name:
                 inside = any(page is m or page in m["children"] for m in sections if m["meta"].get("group") == name)
-                out.append(f'<li><details{" open" if inside else ""}><summary><span class="nav-group">{icon(s)}{html.escape(name)}</span></summary><ul>')
+                out.append(f'<li><details{" open" if inside else ""}><summary><span class="nav-group">{line_icon(look(s)[1])}{html.escape(name)}</span></summary><ul>')
             group = name
         if not s["children"]:
             out.append(f'<li><a{cur} href="{rel(page["out"], s["out"])}">{html.escape(s["meta"]["title"])}</a></li>')

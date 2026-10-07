@@ -23,6 +23,7 @@ body {
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 .icon { width: 1.15em; height: 1.15em; flex: none; vertical-align: -0.2em; }
+.emblem-gcc { display: inline-block; background: url("gcc-emblem.png") center / contain no-repeat; }
 
 .topbar {
   position: sticky; top: 0; z-index: 20; height: var(--topbar-h);
