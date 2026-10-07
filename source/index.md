@@ -6,6 +6,7 @@ document_type: Enterprise AI Security Reference Architecture and Governance Wiki
 version: 2.14
 status: Published
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 owner: AI Security Program
 custodian: Security Architecture Team
 review_cycle: Quarterly
@@ -16,9 +17,10 @@ last_updated: 2026-10-07
 # AI Security Wiki Home
 
 > **Document type:** Enterprise AI Security Reference Architecture and Governance Wiki  
-> **Version:** 2.2  
+> **Version:** 2.14  
 > **Status:** Published  
 > **Original author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
+> **Co-author:** Ankush Jain  
 > **Intended use:** Public, vendor-neutral reference and template set for AI security governance, engineering, risk management, assurance, audit, compliance, and vendor evaluation.
 
 ## 1. Purpose
