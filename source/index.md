@@ -20,7 +20,7 @@ last_updated: 2026-10-07
 > **Version:** 2.14  
 > **Status:** Published  
 > **Original author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
-> **Co-author:** Ankush Jain  
+> **Co-author:** Ankush Jain ([about the co-author](#23-about-the-co-author))  
 > **Intended use:** Public, vendor-neutral reference and template set for AI security governance, engineering, risk management, assurance, audit, compliance, and vendor evaluation.
 
 ## 1. Purpose
@@ -451,3 +451,11 @@ Cybersecurity professional with 20+ years of experience across Critical Infrastr
 My current focus is helping organisations adopt GenAI, RAG and agentic systems securely across the full AI lifecycle, and building NIST AI RMF, ISO/IEC 42001, EU AI Act and Responsible AI principles into enterprise programmes.
 
 LinkedIn: [linkedin.com/in/nachiket-sathaye](https://www.linkedin.com/in/nachiket-sathaye/)
+
+## 23. About the Co-author
+
+**Ankush Jain**
+
+Governance-focused cybersecurity leader with 19+ years of experience protecting critical infrastructure and global enterprises across MENA and APAC. I specialize in cybersecurity governance, enterprise risk management, AI risk reviews, and digital trust frameworks that enable organizations to embrace transformation securely.
+
+LinkedIn: [linkedin.com/in/ankushjai](https://www.linkedin.com/in/ankushjai/)

@@ -66,7 +66,9 @@ for source_path in pages:
         errors.append(f"{html_path}: page has not been built (run build.py)")
         continue
     page = read(ROOT, html_path)
-    label = ("Authors: " if len(names) > 1 else "Author: ") + ", ".join(names)
+    label = "Author: " + author
+    if coauthors:
+        label += " &middot; " + ("Co-authors: " if len(coauthors) > 1 else "Co-author: ") + ", ".join(coauthors)
     if f'<meta name="author" content="{", ".join(names)}">' not in page or label not in page:
         errors.append(f"{html_path}: author shown does not match {source_path} (run build.py)")
 

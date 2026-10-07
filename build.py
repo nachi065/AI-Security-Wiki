@@ -317,7 +317,10 @@ def authors(page):
 
 def byline(page):
     names = authors(page)
-    return ("Authors: " if len(names) > 1 else "Author: ") + html.escape(", ".join(names))
+    line = "Author: " + html.escape(names[0])
+    if len(names) > 1:
+        line += " &middot; " + ("Co-authors: " if len(names) > 2 else "Co-author: ") + html.escape(", ".join(names[1:]))
+    return line
 
 
 def canonical(page):
