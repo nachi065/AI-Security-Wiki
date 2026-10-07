@@ -21,7 +21,7 @@ China regulates AI through specific administrative measures (algorithm recommend
 
 | Page | For | What it holds |
 |---|---|---|
-| [China AI Regulatory Hub](01_China_AI_Regulatory_Hub.md) | Everyone | Instrument register, timeline, categories and roles, mapping to wiki controls, gaps, verification checklist and sources |
+| [China AI Regulatory Hub](01_China_AI_Regulatory_Hub.md) | Everyone | Instrument register, timeline, categories and roles, mapping to wiki controls, wiki coverage, verification checklist and sources |
 | [China: Role Guide](02_Role_Guide.md) | Practitioners, product companies, auditors, implementors | One guide with a part for each role |
 | [CN-T1](CN-T1_Filing_and_Registration_Readiness.md) | All | Filing and registration readiness checklist |
 | [CN-T2](CN-T2_Content_Labelling_Implementation_Record.md) | All | AI-generated content labelling implementation record |

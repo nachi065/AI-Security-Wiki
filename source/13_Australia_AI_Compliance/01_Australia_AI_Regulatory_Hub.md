@@ -66,12 +66,17 @@ APRA prudential standards also apply to regulated financial entities [Recalled].
 | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Vendor | APRA CPS 230 |
 | [AI-CTRL-041](../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.md) Fairness (proposed) | Discrimination law and OAIC expectations |
 
-## 6. Gaps to close in the wiki
+## 6. Where the wiki covers this
 
-- The rest of the wiki names no Australian instrument.
-- No control or test case covers an ADM transparency register. [AU-T1](AU-T1_ADM_Transparency_Register.md) is a template for one.
-- Deepfake offences are not covered.
-- There is no APRA overlay.
+The topics raised on this page are covered by the following controls, test cases and templates.
+
+| Topic | Covered by |
+|---|---|
+| Automated decision transparency (APP 1.7 to 1.9) | [AU-T1](AU-T1_ADM_Transparency_Register.md); [TC-L01-011](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-011) identifies automated decisions; [TC-L03-003](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-003) tests notice and transparency |
+| Explanation and human review of decisions | [TC-L03-008](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-008), [TC-L03-029](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-029) |
+| Deepfakes and synthetic content | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039); the labelling record [CN-T2](../16_China_AI_Compliance/CN-T2_Content_Labelling_Implementation_Record.md) and the provenance checklist [US-T3](../22_US_AI_Compliance/US-T3_GenAI_Provenance_and_Transparency_Checklist.md) can be reused |
+| APRA CPS 230 and CPS 234 | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014), [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005), [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035); [TC-L03-021](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-021); supplier addendum [GCC T03](../11_GCC_AI_Compliance/T03_Vendor_Due_Diligence_GCC_Addendum.md) or [EU T03](../12_EU_AI_Compliance/T03_Supplier_Due_Diligence_EU_Addendum.md) |
+| Guidance for AI Adoption | [AU-T2](AU-T2_AI_Adoption_Self_Assessment.md); [TC-L02-001](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-001) |
 
 ## 7. Conflicts and cautions
 

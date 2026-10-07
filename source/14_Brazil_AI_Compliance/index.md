@@ -21,7 +21,7 @@ Brazil has no AI law in force. The Senate approved PL 2338/2023 on 10 December 2
 
 | Page | For | What it holds |
 |---|---|---|
-| [Brazil AI Regulatory Hub](01_Brazil_AI_Regulatory_Hub.md) | Everyone | Instrument register, timeline, categories and roles, mapping to wiki controls, gaps, verification checklist and sources |
+| [Brazil AI Regulatory Hub](01_Brazil_AI_Regulatory_Hub.md) | Everyone | Instrument register, timeline, categories and roles, mapping to wiki controls, wiki coverage, verification checklist and sources |
 | [Brazil: Role Guide](02_Role_Guide.md) | Practitioners, product companies, auditors, implementors | One guide with a part for each role |
 | [BR-T1](BR-T1_LGPD_Automated_Decision_Review_Record.md) | All | LGPD automated decision review record |
 | [BR-T2](BR-T2_PL2338_Readiness_Watchlist.md) | All | PL 2338 readiness watchlist and tier mapping |

@@ -21,7 +21,7 @@ India has no standalone AI law. Binding duties come from the DPDP Act and Rules 
 
 | Page | For | What it holds |
 |---|---|---|
-| [India AI Regulatory Hub](01_India_AI_Regulatory_Hub.md) | Everyone | Instrument register, timeline, categories and roles, mapping to wiki controls, gaps, verification checklist and sources |
+| [India AI Regulatory Hub](01_India_AI_Regulatory_Hub.md) | Everyone | Instrument register, timeline, categories and roles, mapping to wiki controls, wiki coverage, verification checklist and sources |
 | [India: Role Guide](02_Role_Guide.md) | Practitioners, product companies, auditors, implementors | One guide with a part for each role |
 | [IN-T1](IN-T1_DPDP_AI_Processing_Record_and_Notice.md) | All | DPDP AI processing record, notice and consent |
 | [IN-T2](IN-T2_Breach_and_Incident_Workflow.md) | All | Breach and incident workflow |

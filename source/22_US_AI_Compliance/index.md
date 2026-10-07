@@ -21,7 +21,7 @@ The US has no comprehensive federal AI law. Duties come from federal enforcement
 
 | Page | For | What it holds |
 |---|---|---|
-| [US AI Regulatory Hub](01_US_AI_Regulatory_Hub.md) | Everyone | Instrument register, timeline, categories and roles, mapping to wiki controls, gaps, verification checklist and sources |
+| [US AI Regulatory Hub](01_US_AI_Regulatory_Hub.md) | Everyone | Instrument register, timeline, categories and roles, mapping to wiki controls, wiki coverage, verification checklist and sources |
 | [US: Role Guide](02_Role_Guide.md) | Practitioners, product companies, auditors, implementors | One guide with a part for each role |
 | [US-T1](US-T1_State_Applicability_Matrix.md) | All | State AI law applicability matrix |
 | [US-T2](US-T2_Consequential_Decision_Impact_Assessment.md) | All | Consequential-decision and discrimination impact assessment |

@@ -21,7 +21,7 @@ Japan uses a promotion-and-coordination model: the AI Promotion Act (2025), a ca
 
 | Page | For | What it holds |
 |---|---|---|
-| [Japan AI Regulatory Hub](01_Japan_AI_Regulatory_Hub.md) | Everyone | Instrument register, timeline, categories and roles, mapping to wiki controls, gaps, verification checklist and sources |
+| [Japan AI Regulatory Hub](01_Japan_AI_Regulatory_Hub.md) | Everyone | Instrument register, timeline, categories and roles, mapping to wiki controls, wiki coverage, verification checklist and sources |
 | [Japan: Role Guide](02_Role_Guide.md) | Practitioners, product companies, auditors, implementors | One guide with a part for each role |
 | [JP-T1](JP-T1_AI_Guidelines_for_Business_Self_Assessment.md) | All | Guidelines for AI Business self-assessment |
 | [JP-T2](JP-T2_Training_Data_Copyright_Record.md) | All | Training data and copyright record |

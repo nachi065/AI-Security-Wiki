@@ -21,7 +21,7 @@ Australia has chosen not to pass a standalone AI Act. It applies existing laws, 
 
 | Page | For | What it holds |
 |---|---|---|
-| [Australia AI Regulatory Hub](01_Australia_AI_Regulatory_Hub.md) | Everyone | Instrument register, timeline, categories and roles, mapping to wiki controls, gaps, verification checklist and sources |
+| [Australia AI Regulatory Hub](01_Australia_AI_Regulatory_Hub.md) | Everyone | Instrument register, timeline, categories and roles, mapping to wiki controls, wiki coverage, verification checklist and sources |
 | [Australia: Role Guide](02_Role_Guide.md) | Practitioners, product companies, auditors, implementors | One guide with a part for each role |
 | [AU-T1](AU-T1_ADM_Transparency_Register.md) | All | Automated decision transparency register (APP 1.7 to 1.9) |
 | [AU-T2](AU-T2_AI_Adoption_Self_Assessment.md) | All | Guidance for AI Adoption self-assessment |

@@ -73,13 +73,16 @@ The EU AI Act reaches UK firms that have EU customers or whose outputs affect pe
 | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) Content safety | Online Safety Act, where applicable |
 | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training data | Copyright licensing position |
 
-## 6. Gaps to close in the wiki
+## 6. Where the wiki covers this
 
-- The rest of the wiki names no UK instrument.
-- The 2025 change to the rules on automated decisions is not treated.
-- There is no overlay for the UK financial sector.
-- The wiki has no public-sector transparency record other than [UK-T3](UK-T3_Public_Sector_Transparency_Record.md).
-- The UK incident path (ICO within 72 hours, sector notices) is absent.
+The topics raised on this page are covered by the following controls, test cases and templates.
+
+| Topic | Covered by |
+|---|---|
+| Automated decision safeguards after the 2025 change | [UK-T1](UK-T1_ADM_Safeguards_Record.md); [TC-L01-012](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-012), [TC-L03-008](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-008), [TC-L03-029](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-029) |
+| Financial-sector expectations (FCA, PRA) | [UK-T2](UK-T2_Regulated_Firm_AI_Checklist.md) |
+| Public-sector transparency record | [UK-T3](UK-T3_Public_Sector_Transparency_Record.md); [TC-L03-003](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-003) |
+| Incident path (ICO within 72 hours, sector notices) | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035); [TC-L03-019](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-019); incident workflow [EU T05](../12_EU_AI_Compliance/T05_AI_Incident_and_Breach_Reporting_Workflow.md) |
 
 ## 7. Conflicts and cautions
 

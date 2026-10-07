@@ -81,13 +81,16 @@ Apply the law of the strictest state you operate in.
 | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Audit evidence | Documentation to answer FTC or state attorney general inquiries |
 | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) Incident response | State breach laws [Recalled]; SB 53 incident reporting [Unverified] |
 
-## 6. Gaps to close in the wiki
+## 6. Where the wiki covers this
 
-- The control library maps its controls to the NIST AI RMF. The rest of the wiki names no US federal or state law.
-- The wiki has no state applicability matrix other than [US-T1](US-T1_State_Applicability_Matrix.md).
-- No test case covers employment or credit discrimination.
-- No test case covers provenance or watermarking under California law.
-- NIST AI RMF evidence is not mapped to the state-law presumptions that rely on it.
+The topics raised on this page are covered by the following controls, test cases and templates.
+
+| Topic | Covered by |
+|---|---|
+| State-by-state applicability | [US-T1](US-T1_State_Applicability_Matrix.md); [TC-L02-020](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-020), [TC-L03-030](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-030) |
+| Employment and credit discrimination | [US-T2](US-T2_Consequential_Decision_Impact_Assessment.md); [AI-CTRL-041](../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.md) (proposed); [TC-L03-008](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-008), [TC-L03-029](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-029) |
+| Provenance and disclosure under California law | [US-T3](US-T3_GenAI_Provenance_and_Transparency_Checklist.md); [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039); [TC-L03-003](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-003) |
+| NIST AI RMF as evidence of reasonable care | The [control library](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md) cites NIST AI RMF subcategories for every control; [TC-L02-003](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-003) tests the multi-framework crosswalk |
 
 ## 7. Conflicts and cautions
 

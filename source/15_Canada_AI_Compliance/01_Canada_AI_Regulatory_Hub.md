@@ -65,12 +65,16 @@ One source says to remove any "January 1, 2027 Canadian AI Act" entry from calen
 | [AI-CTRL-041](../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.md) Fairness (proposed) | Human rights law and the AIA |
 | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) Content safety | Voluntary code |
 
-## 6. Gaps to close in the wiki
+## 6. Where the wiki covers this
 
-- The rest of the wiki names no Canadian instrument.
-- No test case covers Quebec automated decisions.
-- The wiki has no algorithmic impact assessment other than [CA-T1](CA-T1_Algorithmic_Impact_Assessment_Worksheet.md).
-- There is no OSFI overlay.
+The topics raised on this page are covered by the following controls, test cases and templates.
+
+| Topic | Covered by |
+|---|---|
+| Quebec Law 25 automated decisions | [CA-T2](CA-T2_Quebec_Law_25_ADM_Record.md); [TC-L01-011](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-011), [TC-L03-008](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-008), [TC-L03-029](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-029) |
+| Algorithmic impact assessment | [CA-T1](CA-T1_Algorithmic_Impact_Assessment_Worksheet.md); [TC-L03-010](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-010), [TC-L03-011](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-011) |
+| OSFI model risk and inventory | [CA-T3](CA-T3_OSFI_E23_Inventory_Addendum.md); [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011); [TC-L01-001](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-001), [TC-L02-013](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-013) |
+| PIPEDA purpose limits on training data | [TC-L03-015](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-015) |
 
 ## 7. Conflicts and cautions
 

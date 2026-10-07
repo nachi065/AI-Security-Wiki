@@ -59,12 +59,15 @@ There is one horizontal statute, the AI Basic Act, administered by the Ministry 
 | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) Policy | Domestic representative ([KR-T3](KR-T3_Domestic_Representative_Check.md)) |
 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy | PIPA |
 
-## 6. Gaps to close in the wiki
+## 6. Where the wiki covers this
 
-- The rest of the wiki names no Korean instrument.
-- No test case covers generative AI labelling.
-- The wiki has no step for determining high-impact AI other than [KR-T1](KR-T1_High_Impact_AI_Determination.md).
-- The wiki has no domestic representative check other than [KR-T3](KR-T3_Domestic_Representative_Check.md).
+The topics raised on this page are covered by the following controls, test cases and templates.
+
+| Topic | Covered by |
+|---|---|
+| Generative AI notice and labelling | [KR-T2](KR-T2_Generative_AI_Labelling_and_Notice.md); [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039); [TC-L03-003](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-003) |
+| High-impact AI determination | [KR-T1](KR-T1_High_Impact_AI_Determination.md); [TC-L01-005](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-005), [TC-L03-010](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-010) |
+| Domestic representative | [KR-T3](KR-T3_Domestic_Representative_Check.md); [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) |
 
 ## 7. Conflicts and cautions
 

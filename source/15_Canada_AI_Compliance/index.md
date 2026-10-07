@@ -21,7 +21,7 @@ Canada has no federal AI Act. The Artificial Intelligence and Data Act (AIDA) la
 
 | Page | For | What it holds |
 |---|---|---|
-| [Canada AI Regulatory Hub](01_Canada_AI_Regulatory_Hub.md) | Everyone | Instrument register, timeline, categories and roles, mapping to wiki controls, gaps, verification checklist and sources |
+| [Canada AI Regulatory Hub](01_Canada_AI_Regulatory_Hub.md) | Everyone | Instrument register, timeline, categories and roles, mapping to wiki controls, wiki coverage, verification checklist and sources |
 | [Canada: Role Guide](02_Role_Guide.md) | Practitioners, product companies, auditors, implementors | One guide with a part for each role |
 | [CA-T1](CA-T1_Algorithmic_Impact_Assessment_Worksheet.md) | All | Algorithmic impact assessment worksheet |
 | [CA-T2](CA-T2_Quebec_Law_25_ADM_Record.md) | All | Quebec Law 25 automated decision record |

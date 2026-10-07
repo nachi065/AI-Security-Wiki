@@ -124,13 +124,17 @@ Kuwait has not been researched for this page.
 | Ethics self-assessment | UAE and SDAIA ethics | [T07](T07_Ethics_Self_Assessment_Worksheet.md) |
 | Regulator contact record | All | [T11](T11_Regulator_Engagement_Log.md) |
 
-## 10. Known gaps in the wiki
+## 10. Where the wiki covers this
 
-- The legal and governance test cases and the [Framework Adoption Guide](../10_Test_Case_Library/framework-adoption-guide.md) have no clause-level crosswalk for these instruments.
-- The control library has no fairness, bias testing or explainability control. [AI-CTRL-041](06_Proposed_Control_Fairness_Bias_Explainability.md) is proposed.
-- No control covers engagement with regulators or ethics bodies. [T11](T11_Regulator_Engagement_Log.md) is a template for it.
-- There are no sector overlays for banking, insurance, health or government.
-- Arabic and English coverage in the test cases is thin.
+The topics raised on this page are covered by the following controls, test cases and templates.
+
+| Topic | Covered by |
+|---|---|
+| Instruments mapped to controls and test cases | [Regulatory Crosswalk](07_Regulatory_Crosswalk.md), which gives the control themes for each instrument; the case index by control theme in the [Framework Adoption Guide](../10_Test_Case_Library/framework-adoption-guide.md) |
+| Fairness, bias testing and explainability | [AI-CTRL-041](06_Proposed_Control_Fairness_Bias_Explainability.md) (proposed); [T10](T10_Bias_Testing_Record.md); [TC-L03-008](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-008), [TC-L03-029](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-029) |
+| Engagement with regulators and ethics bodies | [T11](T11_Regulator_Engagement_Log.md); [TC-L02-020](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-020), [TC-L03-026](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-026) |
+| Banking, insurance and government expectations | Section 2.1 for the CBUAE note; [T03](T03_Vendor_Due_Diligence_GCC_Addendum.md), [T08](T08_Audit_Checklist.md); [TC-L03-021](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-021) |
+| Arabic and English | [T06](T06_Bilingual_AI_Use_Notice.md); section 4 of the [Guide for AI Practitioners](02_Guide_AI_Practitioners.md); [TC-L03-030](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-030) |
 
 ## 11. Verification checklist
 

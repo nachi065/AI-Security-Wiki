@@ -59,11 +59,15 @@ Japan puts soft law first. Obligations on private firms come mainly from existin
 | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) Content safety | Guideline safety and transparency points |
 | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Vendor | Split of responsibility between developer, provider and user |
 
-## 6. Gaps to close in the wiki
+## 6. Where the wiki covers this
 
-- The rest of the wiki names no Japanese instrument.
-- There is no mapping of responsibility by role (developer, provider, user).
-- The wiki has no record for copyright analysis of training data other than [JP-T2](JP-T2_Training_Data_Copyright_Record.md).
+The topics raised on this page are covered by the following controls, test cases and templates.
+
+| Topic | Covered by |
+|---|---|
+| Responsibility by role (developer, provider, user) | [JP-T1](JP-T1_AI_Guidelines_for_Business_Self_Assessment.md); [TC-L03-020](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-020), [TC-L02-004](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-004) |
+| Copyright analysis of training data | [JP-T2](JP-T2_Training_Data_Copyright_Record.md); [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029); [TC-L03-028](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-028) |
+| APPI duties | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013); [TC-L03-001](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-001), [TC-L03-012](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-012) |
 
 ## 7. Conflicts and cautions
 

@@ -139,18 +139,20 @@ For SMEs the lower of the two figures applies [Recalled]. Verify.
 | E17 | Harmonised standards, CEN-CENELEC JTC 21 | Presumption of conformity once cited in the OJ | EN 18286:2026 (QMS) reported approved 12 July 2026, OJ citation pending. Drafts: prEN 18228 (risk management), 18282 (cybersecurity), 18284 (dataset quality), 18229 parts 1 and 2 (trustworthiness: logging, transparency, human oversight) | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012), [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037), [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) | Not covered | [Reported], single source; verify numbers |
 | E18 | ISO/IEC 42001 | AI management system; likely to map to the AI Act QMS, but it is not a harmonised standard | Certification can support evidence | Whole library | Mapped control by control in the control library | [Recalled] |
 
-## 5. Known gaps in the wiki
+## 5. Where the wiki covers this
 
-| Gap | Proposed fix |
+The topics raised on this page are covered by the following controls, test cases and templates.
+
+| Topic | Covered by |
 |---|---|
-| No role-based (provider or deployer) view of obligations | Add the [T01](T01_AI_System_Classification.md) classification step to intake, and a role column to the control library |
-| High-risk obligations are not mapped article by article | Use the table in section 3.3 once it is verified |
-| No control for a fundamental rights impact assessment | [AI-CTRL-042](06_Proposed_Control_Fundamental_Rights_Impact_Assessment.md) (proposed) |
-| No fairness, bias or explainability control | [AI-CTRL-041](../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.md) (proposed in the GCC section) |
-| General-purpose AI model obligations are absent | [T12](T12_GPAI_Model_Checklist.md) and a GPAI sub-section |
-| Few test cases for Art. 50 transparency | Add test cases based on [T06](T06_Transparency_Notice.md) |
-| No control specific to AI literacy; [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) covers user training in general | Add to the training family; [T07](T07_AI_Literacy_Programme_Record.md) |
-| No named authority engagement (AI Office, national authorities, data protection authorities) | [T11](T11_Authority_and_Standards_Engagement_Log.md) |
+| Obligations by role (provider or deployer) | [T01](T01_AI_System_Classification.md) sets the role; the Applies to column in section 3.3 lists who each obligation falls on |
+| High-risk obligations by article | Section 3.3, with a wiki control and a template for each article |
+| Fundamental rights impact assessment | [T02](T02_Impact_Assessment_FRIA_DPIA.md); [AI-CTRL-042](06_Proposed_Control_Fundamental_Rights_Impact_Assessment.md) (proposed); [TC-L03-010](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-010), [TC-L03-011](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-011) |
+| Fairness, bias and explainability | [AI-CTRL-041](../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.md) (proposed); [TC-L03-008](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-008), [TC-L03-029](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-029); bias testing record [GCC T10](../11_GCC_AI_Compliance/T10_Bias_Testing_Record.md) |
+| General-purpose AI model obligations | [T12](T12_GPAI_Model_Checklist.md); [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014); [TC-L03-021](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-021) |
+| Art. 50 transparency | [T06](T06_Transparency_Notice.md); [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039); [TC-L03-003](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-003) |
+| AI literacy | [T07](T07_AI_Literacy_Programme_Record.md); [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012); [TC-L02-022](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-022) |
+| Engagement with the AI Office and national authorities | [T11](T11_Authority_and_Standards_Engagement_Log.md); [TC-L02-020](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-020), [TC-L03-026](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-026) |
 
 ## 6. Verification checklist
 

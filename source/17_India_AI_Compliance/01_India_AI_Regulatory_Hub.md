@@ -77,13 +77,17 @@ Apply the strictest layer that fits. If personal data is involved, the DPDP Act 
 | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) Content safety | Synthetic labelling rules, if notified |
 | [AI-CTRL-041](../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.md) Fairness (proposed) | MeitY fairness principle; RBI FREE-AI |
 
-## 6. Gaps to close in the wiki
+## 6. Where the wiki covers this
 
-- The Framework Adoption Guide names the DPDP regime as an example, and no wiki page maps an Indian instrument to controls.
-- Consent artefacts, consent managers and Board reporting are not treated.
-- There is no sector overlay for the RBI, SEBI or IRDAI.
-- No test case covers synthetic-content labelling.
-- The Indian incident-reporting path (CERT-In, Data Protection Board) is absent.
+The topics raised on this page are covered by the following controls, test cases and templates.
+
+| Topic | Covered by |
+|---|---|
+| DPDP Act and Rules mapped to controls | Section 5 above and the [India Regulatory Crosswalk](03_Regulatory_Crosswalk.md); the [Framework Adoption Guide](../10_Test_Case_Library/framework-adoption-guide.md) has an India DPDP column |
+| Consent artefacts and withdrawal | [IN-T1](IN-T1_DPDP_AI_Processing_Record_and_Notice.md); [TC-L03-004](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-004) |
+| Reporting to CERT-In and the Data Protection Board | [IN-T2](IN-T2_Breach_and_Incident_Workflow.md); [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035); [TC-L03-019](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-019) |
+| RBI, SEBI and IRDAI expectations | [IN-T3](IN-T3_Regulated_Entity_AI_Readiness.md) |
+| Synthetic-content labelling | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039); [TC-L03-003](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-003); labelling record [CN-T2](../16_China_AI_Compliance/CN-T2_Content_Labelling_Implementation_Record.md) |
 
 ## 7. Conflicts and cautions
 

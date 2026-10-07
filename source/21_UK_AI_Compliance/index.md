@@ -21,7 +21,7 @@ The UK has no AI Act. AI is governed through existing law and sector regulators 
 
 | Page | For | What it holds |
 |---|---|---|
-| [UK AI Regulatory Hub](01_UK_AI_Regulatory_Hub.md) | Everyone | Instrument register, timeline, categories and roles, mapping to wiki controls, gaps, verification checklist and sources |
+| [UK AI Regulatory Hub](01_UK_AI_Regulatory_Hub.md) | Everyone | Instrument register, timeline, categories and roles, mapping to wiki controls, wiki coverage, verification checklist and sources |
 | [UK: Role Guide](02_Role_Guide.md) | Practitioners, product companies, auditors, implementors | One guide with a part for each role |
 | [UK-T1](UK-T1_ADM_Safeguards_Record.md) | All | Automated decision-making safeguards record |
 | [UK-T2](UK-T2_Regulated_Firm_AI_Checklist.md) | FCA and PRA regulated firms | Regulated-firm AI checklist |

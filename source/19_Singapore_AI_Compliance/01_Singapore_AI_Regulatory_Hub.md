@@ -70,13 +70,16 @@ The voluntary frameworks still shape what buyers expect. Organisations remain le
 | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Audit evidence | AI Verify test records |
 | [AI-CTRL-041](../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.md) Fairness (proposed) | MAS FEAT and AI risk guidelines |
 
-## 6. Gaps to close in the wiki
+## 6. Where the wiki covers this
 
-- The rest of the wiki names no Singapore instrument.
-- The wiki's [Agentic AI Security and Tool Governance](../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.md) standard is not mapped to the IMDA agentic framework.
-- The wiki has no MAS-style materiality assessment other than [SG-T2](SG-T2_MAS_Style_Inventory_and_Materiality.md).
-- AI Verify evidence is not mapped to controls.
-- The wiki has no note on AI use under the PDPA other than [SG-T3](SG-T3_PDPA_AI_Use_Note.md).
+The topics raised on this page are covered by the following controls, test cases and templates.
+
+| Topic | Covered by |
+|---|---|
+| Agentic AI governance (IMDA framework) | [SG-T1](SG-T1_Agentic_AI_Risk_Bounding_Worksheet.md); [Agentic AI Security and Tool Governance](../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.md); [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006), [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022), [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023), [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) |
+| MAS-style inventory and materiality | [SG-T2](SG-T2_MAS_Style_Inventory_and_Materiality.md); [TC-L01-005](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-005), [TC-L01-009](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-009) |
+| AI Verify test evidence | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034), [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038); [TC-L02-016](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-016) |
+| AI use under the PDPA | [SG-T3](SG-T3_PDPA_AI_Use_Note.md); [TC-L03-002](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-002) |
 
 ## 7. Conflicts and cautions
 

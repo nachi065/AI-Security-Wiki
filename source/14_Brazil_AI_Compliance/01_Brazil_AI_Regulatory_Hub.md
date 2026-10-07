@@ -57,11 +57,15 @@ Use the bill for planning, and do not build your compliance to its text [Reporte
 | [AI-CTRL-041](../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.md) Fairness (proposed) | LGPD non-discrimination principle [Recalled] |
 | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) Incident response | LGPD breach notification [Recalled] |
 
-## 6. Gaps to close in the wiki
+## 6. Where the wiki covers this
 
-- The rest of the wiki names no Brazilian instrument.
-- No test case names LGPD automated decision review.
-- The wiki has no tier mapping to prepare for the bill, other than [BR-T2](BR-T2_PL2338_Readiness_Watchlist.md).
+The topics raised on this page are covered by the following controls, test cases and templates.
+
+| Topic | Covered by |
+|---|---|
+| LGPD review of automated decisions (Art. 20) | [BR-T1](BR-T1_LGPD_Automated_Decision_Review_Record.md); [TC-L03-008](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-008), [TC-L03-029](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-029) |
+| LGPD lawful basis, rights and breach notice | [TC-L03-002](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-002), [TC-L03-005](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-005), [TC-L03-019](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-019) |
+| Tier mapping for the pending AI bill | [BR-T2](BR-T2_PL2338_Readiness_Watchlist.md); [TC-L01-005](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-005); [TC-L02-020](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-020) tracks regulatory change |
 
 ## 7. Conflicts and cautions
 

@@ -21,7 +21,7 @@ Singapore has no horizontal AI law. It relies on voluntary but well-regarded fra
 
 | Page | For | What it holds |
 |---|---|---|
-| [Singapore AI Regulatory Hub](01_Singapore_AI_Regulatory_Hub.md) | Everyone | Instrument register, timeline, categories and roles, mapping to wiki controls, gaps, verification checklist and sources |
+| [Singapore AI Regulatory Hub](01_Singapore_AI_Regulatory_Hub.md) | Everyone | Instrument register, timeline, categories and roles, mapping to wiki controls, wiki coverage, verification checklist and sources |
 | [Singapore: Role Guide](02_Role_Guide.md) | Practitioners, product companies, auditors, implementors | One guide with a part for each role |
 | [SG-T1](SG-T1_Agentic_AI_Risk_Bounding_Worksheet.md) | All | Agentic AI risk bounding and accountability worksheet |
 | [SG-T2](SG-T2_MAS_Style_Inventory_and_Materiality.md) | Financial institutions | AI inventory and risk materiality assessment in the MAS style |

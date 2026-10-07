@@ -72,13 +72,16 @@ Public-facing services face filing and assessment steps. Internal enterprise use
 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Security | Cybersecurity Law and standards |
 | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) Incident response | Reporting duties under the Cybersecurity Law [Recalled] |
 
-## 6. Gaps to close in the wiki
+## 6. Where the wiki covers this
 
-- The rest of the wiki names no Chinese instrument.
-- The wiki has no view of filing or registration readiness other than [CN-T1](CN-T1_Filing_and_Registration_Readiness.md).
-- No test case covers the implementation of content labelling.
-- No control covers an ethics review committee.
-- Data localisation and transfer under Chinese law are not treated.
+The topics raised on this page are covered by the following controls, test cases and templates.
+
+| Topic | Covered by |
+|---|---|
+| Filing and registration readiness | [CN-T1](CN-T1_Filing_and_Registration_Readiness.md); [TC-L02-020](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-020), [TC-L03-026](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-026) |
+| Labelling of AI-generated content | [CN-T2](CN-T2_Content_Labelling_Implementation_Record.md); [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039); [TC-L03-003](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-003) |
+| Ethics review committee | [CN-T3](CN-T3_Ethics_Review_Committee_Record.md); [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012); [TC-L02-005](../10_Test_Case_Library/L02-governance-and-risk-mgmt.md#tc-l02-005) tests the governance committee workflow and decision record |
+| Data localisation and cross-border transfer | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007); [TC-L03-012](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-012), [TC-L03-013](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-013), [TC-L03-014](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-014); transfer record [EU T04](../12_EU_AI_Compliance/T04_Data_Location_and_Transfer_Record.md) |
 
 ## 7. Conflicts and cautions
 

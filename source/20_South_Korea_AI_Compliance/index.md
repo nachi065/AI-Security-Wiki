@@ -21,7 +21,7 @@ South Korea's AI Basic Act took effect on 22 January 2026. It is reported as the
 
 | Page | For | What it holds |
 |---|---|---|
-| [South Korea AI Regulatory Hub](01_South_Korea_AI_Regulatory_Hub.md) | Everyone | Instrument register, timeline, categories and roles, mapping to wiki controls, gaps, verification checklist and sources |
+| [South Korea AI Regulatory Hub](01_South_Korea_AI_Regulatory_Hub.md) | Everyone | Instrument register, timeline, categories and roles, mapping to wiki controls, wiki coverage, verification checklist and sources |
 | [South Korea: Role Guide](02_Role_Guide.md) | Practitioners, product companies, auditors, implementors | One guide with a part for each role |
 | [KR-T1](KR-T1_High_Impact_AI_Determination.md) | All | High-impact AI determination and impact assessment |
 | [KR-T2](KR-T2_Generative_AI_Labelling_and_Notice.md) | All | Generative AI labelling and notice record |
