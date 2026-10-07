@@ -29,6 +29,23 @@
 <nav class="sidebar" id="sidebar" aria-label="Wiki sections">
 <ul class="nav">
 <li><a href="../index.html">Home</a></li>
+<li><details><summary><a href="../00_Foundations/index.html">Foundations</a></summary><ul>
+<li><a href="../00_Foundations/01-Terminology-and-Two-Axis-Model.html">1. Terminology and the Two-Axis Model</a></li>
+<li><a href="../00_Foundations/02-AI-System-Boundary-and-Assets.html">2. The AI System Boundary and Assets</a></li>
+<li><a href="../00_Foundations/03-Threat-Taxonomy.html">3. Threat Taxonomy</a></li>
+<li><a href="../00_Foundations/04-LLMs-Prompt-Injection-and-RAG.html">4. LLMs, Prompt Injection and RAG</a></li>
+<li><a href="../00_Foundations/05-Agents-Identity-and-Excessive-Agency.html">5. Agents, Identity and Excessive Agency</a></li>
+<li><a href="../00_Foundations/06-Supply-Chain-and-Infrastructure.html">6. Supply Chain and Infrastructure</a></li>
+<li><a href="../00_Foundations/07-Reference-Architecture.html">7. Reference Architecture</a></li>
+<li><a href="../00_Foundations/08-Assurance-Testing-Monitoring-and-Response.html">8. Assurance: Testing, Monitoring and Response</a></li>
+<li><a href="../00_Foundations/09-Governance-Standards-and-Regulation.html">9. Governance, Standards and Regulation</a></li>
+<li><a href="../00_Foundations/10-AI-for-Security-and-AI-Enabled-Threats.html">10. AI for Security and AI-Enabled Threats</a></li>
+<li><a href="../00_Foundations/11-Maturity-Model-and-Roadmap.html">11. Maturity Model and Roadmap</a></li>
+<li><a href="../00_Foundations/12-Illustrative-Scenarios.html">12. Illustrative Scenarios</a></li>
+<li><a href="../00_Foundations/13-Limitations-and-Research-Gaps.html">13. Limitations and Research Gaps</a></li>
+<li><a href="../00_Foundations/Appendices.html">Appendices</a></li>
+<li><a href="../00_Foundations/References.html">References</a></li>
+</ul></details></li>
 <li><details open><summary><a href="index.html">Strategy and Market</a></summary><ul>
 <li><a href="01_AI_Security_Market_and_Technology_Landscape.html">AI Security Market and Technology Landscape — Summary</a></li>
 <li><a class="current" href="01_AI_Security_Market_and_Technology_Landscape_Expanded.html">AI Security Market and Technology Landscape</a></li>
@@ -293,6 +310,7 @@
 </tr>
 </tbody>
 </table></div>
+<p>For a taxonomy organised by lifecycle stage with sources, which adds evasion, membership inference, system-prompt leakage, improper output handling and unbounded consumption, see <a href="../00_Foundations/03-Threat-Taxonomy.html">Threat Taxonomy</a>.</p>
 <h2 id="5-ai-security-control-taxonomy">5. AI Security Control Taxonomy</h2>
 <p>AI security controls must be grouped into families so that governance, engineering and audit teams understand ownership and testability.</p>
 <div class="table-wrap"><table>
@@ -446,6 +464,7 @@
 </tr>
 </tbody>
 </table></div>
+<p>Typical evidence for each level and a time-boxed roadmap are in <a href="../00_Foundations/11-Maturity-Model-and-Roadmap.html">Maturity Model and Roadmap</a>.</p>
 <h2 id="9-ai-security-operating-model">9. AI Security Operating Model</h2>
 <p>The operating model should connect AI intake, architecture review, risk assessment, control implementation, testing, monitoring, exception handling and recurring governance reporting.</p>
 <div class="table-wrap"><table>
@@ -526,6 +545,26 @@
 <td>Threat modeling, SOC, red team</td>
 </tr>
 <tr>
+<td>NIST AI 100-2e2025</td>
+<td>Taxonomy and terminology of adversarial machine learning attacks and mitigations.</td>
+<td>Red team, threat modeling, AI engineering</td>
+</tr>
+<tr>
+<td>OWASP Top 10 for Agentic Applications</td>
+<td>Risks for agents that plan, hold memory, call tools and act with delegated authority (ASI01 to ASI10).</td>
+<td>AI platform, IAM, red team</td>
+</tr>
+<tr>
+<td>Google SAIF</td>
+<td>Practitioner framework with a risk map and controls for AI development and deployment.</td>
+<td>Security architecture, AI engineering</td>
+</tr>
+<tr>
+<td>ENISA AI cybersecurity reports</td>
+<td>EU agency analysis of AI cybersecurity threats and research needs.</td>
+<td>Threat intelligence, policy teams</td>
+</tr>
+<tr>
 <td>ISO/IEC 42001</td>
 <td>AI Management System requirements for organizations developing, providing or using AI systems.</td>
 <td>Governance, compliance, audit readiness</td>
@@ -537,7 +576,7 @@
 </tr>
 <tr>
 <td>EU AI Act</td>
-<td>Risk-based regulatory model relevant for governance awareness.</td>
+<td>Binding EU regulation with a risk-based model; obligations phase in by role and system type.</td>
 <td>Legal, compliance, vendor risk</td>
 </tr>
 <tr>
@@ -547,6 +586,7 @@
 </tr>
 </tbody>
 </table></div>
+<p>How these instruments relate to each other, and the current EU AI Act timetable, are covered in <a href="../00_Foundations/09-Governance-Standards-and-Regulation.html">Governance, Standards and Regulation</a>.</p>
 <h2 id="11-ai-security-vendor-category-model">11. AI Security Vendor Category Model</h2>
 <div class="table-wrap"><table>
 <thead>
@@ -638,76 +678,7 @@
 </tbody>
 </table></div>
 <h2 id="13-expanded-ai-security-glossary">13. Expanded AI Security Glossary</h2>
-<div class="table-wrap"><table>
-<thead>
-<tr>
-<th>Term</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>LLM</td>
-<td>Large Language Model; a model designed to process and generate language.</td>
-</tr>
-<tr>
-<td>SLM</td>
-<td>Small Language Model; a smaller model optimized for constrained or specialized use cases.</td>
-</tr>
-<tr>
-<td>RAG</td>
-<td>Retrieval-Augmented Generation; a pattern where the AI system retrieves external content to support responses.</td>
-</tr>
-<tr>
-<td>Vector Database</td>
-<td>A system used to store and retrieve embeddings or semantic representations.</td>
-</tr>
-<tr>
-<td>Prompt Injection</td>
-<td>A malicious instruction intended to manipulate the model or application behavior.</td>
-</tr>
-<tr>
-<td>Indirect Prompt Injection</td>
-<td>Prompt injection delivered through retrieved or external content.</td>
-</tr>
-<tr>
-<td>Guardrails</td>
-<td>Controls that constrain or monitor AI inputs, outputs and behavior.</td>
-</tr>
-<tr>
-<td>AI BOM</td>
-<td>AI Bill of Materials; inventory of models, datasets, libraries, plugins and dependencies.</td>
-</tr>
-<tr>
-<td>Model Registry</td>
-<td>Repository for tracking models, versions, metadata and governance status.</td>
-</tr>
-<tr>
-<td>Agent</td>
-<td>AI system capable of planning or acting through tools, APIs or workflows.</td>
-</tr>
-<tr>
-<td>MCP</td>
-<td>Model Context Protocol; protocol-like approach for connecting AI systems to tools and context sources.</td>
-</tr>
-<tr>
-<td>Tool Calling</td>
-<td>AI system invocation of tools, plugins, commands, APIs or workflows.</td>
-</tr>
-<tr>
-<td>AI-SPM</td>
-<td>AI Security Posture Management; discovery and governance of AI assets, configurations and risks.</td>
-</tr>
-<tr>
-<td>AI Red Teaming</td>
-<td>Adversarial testing to discover weaknesses in AI systems, prompts, guardrails and agents.</td>
-</tr>
-<tr>
-<td>AI Assurance</td>
-<td>Evidence-based validation that AI systems operate securely, reliably and according to policy.</td>
-</tr>
-</tbody>
-</table></div>
+<p>The terms formerly listed here are now kept in one place: the <a href="../09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a>.</p>
 <h2 id="14-strategic-guidance-for-the-ai-security-wiki">14. Strategic Guidance for the AI Security Wiki</h2>
 <ul>
 <li>
@@ -748,7 +719,7 @@
 </tr>
 <tr>
 <td>OWASP GenAI / LLM Top 10</td>
-<td>https://owasp.org/www-project-top-10-for-large-language-model-applications/</td>
+<td>https://genai.owasp.org/llm-top-10/</td>
 <td>OWASP describes its GenAI Security Project and LLM Top 10 as guidance for securing generative AI systems.</td>
 </tr>
 <tr>
@@ -763,6 +734,7 @@
 </tr>
 </tbody>
 </table></div>
+<p>The full source list with verification status is in <a href="../00_Foundations/References.html">References</a>.</p>
 </article>
 <nav class="pager" aria-label="Previous and next page"><a class="prev" href="01_AI_Security_Market_and_Technology_Landscape.html">&larr; AI Security Market and Technology Landscape — Summary</a><a class="next" href="../02_Risk_Management/index.html">Risk Management &rarr;</a></nav>
 <footer class="site-footer">Author: Nachiket Sathaye &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape_Expanded.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a></footer>

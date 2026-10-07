@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>9. Governance, Standards and Regulation | AI Security Wiki</title>
+<meta name="author" content="Nachiket Sathaye">
+<meta name="description" content="AI governance and standards compared: NIST AI RMF, NIST AI 100-2, ISO/IEC 42001, OWASP, MITRE ATLAS, Google SAIF, ENISA and the EU AI Act timetable.">
+<link rel="canonical" href="https://nachi065.github.io/AI-Security-Wiki/00_Foundations/09-Governance-Standards-and-Regulation.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="AI Security Wiki">
+<meta property="og:title" content="9. Governance, Standards and Regulation | AI Security Wiki">
+<meta property="og:description" content="AI governance and standards compared: NIST AI RMF, NIST AI 100-2, ISO/IEC 42001, OWASP, MITRE ATLAS, Google SAIF, ENISA and the EU AI Act timetable.">
+<meta property="og:url" content="https://nachi065.github.io/AI-Security-Wiki/00_Foundations/09-Governance-Standards-and-Regulation.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+  <a class="brand" href="../index.html">AI Security Wiki</a>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Search the wiki" aria-label="Search the wiki" autocomplete="off">
+    <ul id="search-results" hidden></ul>
+  </div>
+  <a class="repo-link" href="https://github.com/nachi065/AI-Security-Wiki" rel="noopener">GitHub</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="sidebar" aria-label="Wiki sections">
+<ul class="nav">
+<li><a href="../index.html">Home</a></li>
+<li><details open><summary><a href="index.html">Foundations</a></summary><ul>
+<li><a href="01-Terminology-and-Two-Axis-Model.html">1. Terminology and the Two-Axis Model</a></li>
+<li><a href="02-AI-System-Boundary-and-Assets.html">2. The AI System Boundary and Assets</a></li>
+<li><a href="03-Threat-Taxonomy.html">3. Threat Taxonomy</a></li>
+<li><a href="04-LLMs-Prompt-Injection-and-RAG.html">4. LLMs, Prompt Injection and RAG</a></li>
+<li><a href="05-Agents-Identity-and-Excessive-Agency.html">5. Agents, Identity and Excessive Agency</a></li>
+<li><a href="06-Supply-Chain-and-Infrastructure.html">6. Supply Chain and Infrastructure</a></li>
+<li><a href="07-Reference-Architecture.html">7. Reference Architecture</a></li>
+<li><a href="08-Assurance-Testing-Monitoring-and-Response.html">8. Assurance: Testing, Monitoring and Response</a></li>
+<li><a class="current" href="09-Governance-Standards-and-Regulation.html">9. Governance, Standards and Regulation</a></li>
+<li><a href="10-AI-for-Security-and-AI-Enabled-Threats.html">10. AI for Security and AI-Enabled Threats</a></li>
+<li><a href="11-Maturity-Model-and-Roadmap.html">11. Maturity Model and Roadmap</a></li>
+<li><a href="12-Illustrative-Scenarios.html">12. Illustrative Scenarios</a></li>
+<li><a href="13-Limitations-and-Research-Gaps.html">13. Limitations and Research Gaps</a></li>
+<li><a href="Appendices.html">Appendices</a></li>
+<li><a href="References.html">References</a></li>
+</ul></details></li>
+<li><details><summary><a href="../01_Strategy_and_Market/index.html">Strategy and Market</a></summary><ul>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.html">AI Security Market and Technology Landscape — Summary</a></li>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape_Expanded.html">AI Security Market and Technology Landscape</a></li>
+</ul></details></li>
+<li><details><summary><a href="../02_Risk_Management/index.html">Risk Management</a></summary><ul>
+<li><a href="../02_Risk_Management/02A_AI_Risk_Methodology.html">AI Risk Methodology</a></li>
+<li><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a></li>
+<li><a href="../02_Risk_Management/02C_AI_Risk_Treatment_Plan.html">AI Risk Treatment Plan</a></li>
+<li><a href="../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a></li>
+<li><a href="../02_Risk_Management/02E_AI_Risk_Review_Template.html">AI Risk Review Template</a></li>
+</ul></details></li>
+<li><details><summary><a href="../03_Control_Library/index.html">Control Library</a></summary><ul>
+<li><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></li>
+<li><a href="../03_Control_Library/04_Existing_Security_Control_Baseline.html">Existing Security Control Baseline</a></li>
+<li><a href="../03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.html">Microsoft Security Overlap and AI Gaps</a></li>
+</ul></details></li>
+<li><details><summary><a href="../04_Domain_Standards/index.html">Domain Standards</a></summary><ul>
+<li><a href="../04_Domain_Standards/06_Browser_AI_Security_Standard.html">Browser AI Security Standard</a></li>
+<li><a href="../04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.html">IDE AI Coding Assistant Security Standard</a></li>
+<li><a href="../04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a></li>
+<li><a href="../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
+<li><a href="../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
+</ul></details></li>
+<li><details><summary><a href="../05_Vendor_Evaluation/index.html">Vendor Evaluation</a></summary><ul>
+<li><a href="../05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
+<li><a href="../05_Vendor_Evaluation/12A_Vendor_Profile_Prompt_Security_SentinelOne.html">Vendor Profile — Prompt Security / SentinelOne</a></li>
+<li><a href="../05_Vendor_Evaluation/12B_Vendor_Profile_Palo_Alto_Prisma_AIRS.html">Vendor Profile — Palo Alto Prisma AIRS</a></li>
+<li><a href="../05_Vendor_Evaluation/12C_Vendor_Profile_HiddenLayer.html">Vendor Profile — HiddenLayer</a></li>
+<li><a href="../05_Vendor_Evaluation/12D_Vendor_Profile_Lasso_Security.html">Vendor Profile — Lasso Security</a></li>
+<li><a href="../05_Vendor_Evaluation/12E_Vendor_Profile_Cyberhaven.html">Vendor Profile — Cyberhaven</a></li>
+<li><a href="../05_Vendor_Evaluation/12F_Vendor_Profile_Nightfall_AI.html">Vendor Profile — Nightfall AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12G_Vendor_Profile_Enkrypt_AI.html">Vendor Profile — Enkrypt AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12H_Vendor_Profile_Sovereign_AI_Security_Labs.html">Vendor Profile — Sovereign AI Security Labs</a></li>
+</ul></details></li>
+<li><details><summary><a href="../06_Testing_and_Assurance/index.html">Testing and Assurance</a></summary><ul>
+<li><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html">AI Security PoC Test Case Library</a></li>
+<li><a href="../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a></li>
+<li><a href="../06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.html">AI Red Team Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../07_Role_Based_Playbooks/index.html">Role-Based Playbooks</a></summary><ul>
+<li><a href="../07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.html">AI Product Developer Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15B_AI_Security_Researcher_Playbook.html">AI Security Researcher Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15D_Security_Engineering_Playbook.html">Security Engineering Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15E_Vendor_Evaluation_and_Audit_Playbook.html">Vendor Evaluation and Audit Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../08_Governance/index.html">Governance</a></summary><ul>
+<li><a href="../08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></li>
+<li><a href="../08_Governance/17_AI_Policy_Standards_and_Acceptable_Use.html">AI Policy, Standards and Acceptable Use</a></li>
+</ul></details></li>
+<li><details><summary><a href="../09_Reference/index.html">Reference</a></summary><ul>
+<li><a href="../09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
+</ul></details></li>
+<li><details><summary><a href="../10_Test_Case_Library/index.html">Test Case Library</a></summary><ul>
+<li><a href="../10_Test_Case_Library/00-reference-index.html">Reference Index</a></li>
+<li><a href="../10_Test_Case_Library/framework-adoption-guide.html">Framework Adoption Guide</a></li>
+<li><a href="../10_Test_Case_Library/appendix-lab-prerequisites.html">Appendix: Lab Prerequisites</a></li>
+<li><a href="../10_Test_Case_Library/L01-business-and-use-cases.html">L01 Business &amp; Use Cases</a></li>
+<li><a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
+<li><a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>
+<li><a href="../10_Test_Case_Library/L04-human-interaction-layer.html">L04 Human Interaction Layer</a></li>
+<li><a href="../10_Test_Case_Library/L05-ai-applications.html">L05 AI Applications</a></li>
+<li><a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html">L06 Agent Orchestration Layer</a></li>
+<li><a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html">L07 Prompt &amp; Context Layer</a></li>
+<li><a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html">L08 AI Gateway &amp; Security Controls</a></li>
+<li><a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html">L09 Identity &amp; Access Mgmt</a></li>
+<li><a href="../10_Test_Case_Library/L10-data-layer.html">L10 Data Layer</a></li>
+<li><a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html">L11 Knowledge &amp; Retrieval Layer</a></li>
+<li><a href="../10_Test_Case_Library/L12-model-layer.html">L12 Model Layer</a></li>
+<li><a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html">L13 Training &amp; Fine-Tuning Layer</a></li>
+<li><a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html">L14 MLOps / LLMOps Layer</a></li>
+<li><a href="../10_Test_Case_Library/L15-infrastructure-layer.html">L15 Infrastructure Layer</a></li>
+<li><a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html">L16 Supply Chain &amp; Third Party</a></li>
+<li><a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html">L17 Monitoring, Detection &amp; Response</a></li>
+<li><a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html">D08 AI Red Teaming and Continuous Testing</a></li>
+<li><a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html">D09 Agent and Non-Human Identity Governance</a></li>
+<li><a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html">D10 Browser and Computer-Use Agents</a></li>
+<li><a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html">D11 Multimodal and Voice Input Security</a></li>
+<li><a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html">D12 AI Incident Response and Forensics</a></li>
+<li><a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html">D13 AI Cost and Abuse Controls</a></li>
+</ul></details></li>
+<li><a href="../community-rules.html">Community Rules</a></li>
+</ul>
+</nav>
+<main>
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Foundations</a> / <span>9. Governance, Standards and Regulation</span></p>
+<article>
+<h1 id="9-governance-standards-and-regulation">9. Governance, Standards and Regulation</h1>
+<h2 id="91-governance-fundamentals">9.1 Governance fundamentals</h2>
+<p>AI risk cannot be delegated to the security team alone. Product owners, data owners, model developers, application engineers, security architects, legal and compliance, procurement, internal audit and executive risk owners all hold part of the accountability. A workable minimum: [Analysis]</p>
+<ul>
+<li><strong>An AI inventory</strong> (systems, models, datasets, providers, owners, data classes, tools, autonomy level). You cannot govern what you cannot list; include shadow and embedded AI features in SaaS.</li>
+<li><strong>Named risk ownership</strong> per system, with documented risk acceptance and time-bound exceptions.</li>
+<li><strong>Policies</strong> covering acceptable use, data handling, model and provider approval, autonomy limits and incident reporting.</li>
+<li><strong>Assurance</strong> by an independent function: internal audit or a second line that can test the evidence.</li>
+</ul>
+<h2 id="92-the-main-instruments">9.2 The main instruments</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Instrument</th>
+<th>What it is</th>
+<th>Use it for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NIST AI RMF 1.0</strong> (Jan 2023) [3]</td>
+<td>Voluntary risk-management framework organised around Govern, Map, Measure and Manage</td>
+<td>Programme structure and risk language</td>
+</tr>
+<tr>
+<td><strong>NIST AI 600-1</strong> (Jul 2024) [2]</td>
+<td>Generative AI profile of the AI RMF</td>
+<td>Identifying risks specific to or amplified by generative AI</td>
+</tr>
+<tr>
+<td><strong>NIST AI 100-2e2025</strong> (Mar 2025) [1]</td>
+<td>Taxonomy and terminology of adversarial machine learning attacks and mitigations</td>
+<td>Shared vocabulary for attack classes; testing scope</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001:2023</strong> [4]</td>
+<td>AI management system requirements</td>
+<td>Certifiable management-system approach; governance evidence</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 23894:2023</strong> [5]</td>
+<td>Guidance on AI risk management</td>
+<td>Integrating AI into enterprise risk processes</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 27001:2022</strong> [6]</td>
+<td>Information security management systems</td>
+<td>Existing ISMS into which AI controls are added</td>
+</tr>
+<tr>
+<td><strong>OWASP Top 10 for LLM Applications 2025</strong> [11]</td>
+<td>Community catalogue of LLM application risks</td>
+<td>Developer awareness; test-case design</td>
+</tr>
+<tr>
+<td><strong>OWASP Top 10 for Agentic Applications</strong> (Dec 2025) [12]</td>
+<td>Community catalogue of agentic risks</td>
+<td>Agent threat modelling</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong> [14]</td>
+<td>Knowledge base of adversary tactics and techniques against AI-enabled systems</td>
+<td>Threat-informed testing; incident description</td>
+</tr>
+<tr>
+<td><strong>Google SAIF</strong> [15]</td>
+<td>Practitioner framework with a risk map and controls, including an agent-security section</td>
+<td>Control-selection ideas for AI development and deployment</td>
+</tr>
+<tr>
+<td><strong>ENISA reports</strong> [9][10]</td>
+<td>EU agency analysis of AI cybersecurity threats (2020) and research needs (2023)</td>
+<td>Threat-landscape and policy context for EU readers</td>
+</tr>
+<tr>
+<td><strong>EU AI Act</strong> [7][8]</td>
+<td>Binding EU regulation</td>
+<td>Legal obligations for in-scope providers and deployers</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Descriptions summarise the sources cited; consult each document for authoritative scope and wording.</em></p>
+<h2 id="93-eu-ai-act-status-verify-before-relying">9.3 EU AI Act status (verify before relying)</h2>
+<p>The AI Act is Regulation (EU) 2024/1689 [7]. General-purpose AI obligations have applied since 2 August 2025. In 2026 EU institutions agreed an "AI Omnibus" amending the timetable. Secondary sources report <strong>[Reported]</strong> that:</p>
+<ul>
+<li>the omnibus was published as Regulation (EU) 2026/1744 on 24 July 2026 and entered into force on 27 July 2026;</li>
+<li>obligations for stand-alone high-risk systems (Annex III) now apply from <strong>2 December 2027</strong>, and for high-risk AI as safety components in regulated products (Annex I) from <strong>2 August 2028</strong>;</li>
+<li>Article 50 transparency obligations apply from 2 August 2026, with a grace period for watermarking of systems already on the market until 2 December 2026;</li>
+<li>new prohibited practices relating to AI-generated child sexual abuse material and non-consensual intimate deepfakes were added [8].</li>
+</ul>
+<blockquote>
+<p><strong>Verification required.</strong> These dates come from law-firm commentary, not from the Official Journal. Check the text on EUR-Lex and confirm which obligations apply to your organisation's role (provider, deployer, importer, distributor) before making any compliance decision. This paper is not legal advice.</p>
+</blockquote>
+<p>The Act's Article 15 addresses accuracy, robustness and cybersecurity for high-risk systems, and, to the author's understanding, refers specifically to risks such as data poisoning, model poisoning, adversarial examples and confidentiality attacks. <strong>Check the current text of Article 15</strong> before quoting it. [7]</p>
+<h2 id="94-how-the-instruments-relate">9.4 How the instruments relate</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Need</th>
+<th>Primary instruments</th>
+<th>Gap to fill yourself</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Programme structure and risk language</td>
+<td>NIST AI RMF, ISO/IEC 23894</td>
+<td>Translating into engineering controls</td>
+</tr>
+<tr>
+<td>Certifiable management system</td>
+<td>ISO/IEC 42001 with ISO/IEC 27001</td>
+<td>Technical test criteria; threat-specific controls</td>
+</tr>
+<tr>
+<td>Attack vocabulary and testing</td>
+<td>NIST AI 100-2e2025, OWASP lists, MITRE ATLAS</td>
+<td>Pass/fail thresholds, which none of these set</td>
+</tr>
+<tr>
+<td>Architecture and control ideas</td>
+<td>SAIF, ENISA, this paper's reference architecture</td>
+<td>Environment-specific implementation</td>
+</tr>
+<tr>
+<td>Legal compliance</td>
+<td>EU AI Act and national law</td>
+<td>Interpreting scope and role</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Analysis.</strong> Management-system standards tell you <em>that</em> you need risk assessment, controls and evidence. Attack catalogues tell you <em>what</em> can go wrong. Neither tells you the acceptable attack-success rate for a given system. That judgement belongs to the organisation's risk owner and must be written down. [Analysis]</p>
+<p><strong>Selection guidance.</strong> Start from obligations (law, contract), choose one management framework as the spine, adopt one attack taxonomy for testing, and avoid trying to map every framework to every other. A single control set with tagged mappings is easier to maintain than parallel compliance programmes.</p>
+<p><strong>Regional scope.</strong> This page covers the EU AI Act only. For UAE data residency and sovereignty requirements, see <a href="../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a>.</p>
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="08-Assurance-Testing-Monitoring-and-Response.html">&larr; 8. Assurance: Testing, Monitoring and Response</a><a class="next" href="10-AI-for-Security-and-AI-Enabled-Threats.html">10. AI for Security and AI-Enabled Threats &rarr;</a></nav>
+<footer class="site-footer">Author: Nachiket Sathaye &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/00_Foundations/09-Governance-Standards-and-Regulation.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a></footer>
+</main>
+</div>
+<script>window.SITE_BASE = "../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

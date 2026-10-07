@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3. Threat Taxonomy | AI Security Wiki</title>
+<meta name="author" content="Nachiket Sathaye">
+<meta name="description" content="AI threat taxonomy by lifecycle stage: poisoning, evasion, prompt injection, extraction and supply chain, mapped to NIST AI 100-2, OWASP and MITRE ATLAS.">
+<link rel="canonical" href="https://nachi065.github.io/AI-Security-Wiki/00_Foundations/03-Threat-Taxonomy.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="AI Security Wiki">
+<meta property="og:title" content="3. Threat Taxonomy | AI Security Wiki">
+<meta property="og:description" content="AI threat taxonomy by lifecycle stage: poisoning, evasion, prompt injection, extraction and supply chain, mapped to NIST AI 100-2, OWASP and MITRE ATLAS.">
+<meta property="og:url" content="https://nachi065.github.io/AI-Security-Wiki/00_Foundations/03-Threat-Taxonomy.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+  <a class="brand" href="../index.html">AI Security Wiki</a>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Search the wiki" aria-label="Search the wiki" autocomplete="off">
+    <ul id="search-results" hidden></ul>
+  </div>
+  <a class="repo-link" href="https://github.com/nachi065/AI-Security-Wiki" rel="noopener">GitHub</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="sidebar" aria-label="Wiki sections">
+<ul class="nav">
+<li><a href="../index.html">Home</a></li>
+<li><details open><summary><a href="index.html">Foundations</a></summary><ul>
+<li><a href="01-Terminology-and-Two-Axis-Model.html">1. Terminology and the Two-Axis Model</a></li>
+<li><a href="02-AI-System-Boundary-and-Assets.html">2. The AI System Boundary and Assets</a></li>
+<li><a class="current" href="03-Threat-Taxonomy.html">3. Threat Taxonomy</a></li>
+<li><a href="04-LLMs-Prompt-Injection-and-RAG.html">4. LLMs, Prompt Injection and RAG</a></li>
+<li><a href="05-Agents-Identity-and-Excessive-Agency.html">5. Agents, Identity and Excessive Agency</a></li>
+<li><a href="06-Supply-Chain-and-Infrastructure.html">6. Supply Chain and Infrastructure</a></li>
+<li><a href="07-Reference-Architecture.html">7. Reference Architecture</a></li>
+<li><a href="08-Assurance-Testing-Monitoring-and-Response.html">8. Assurance: Testing, Monitoring and Response</a></li>
+<li><a href="09-Governance-Standards-and-Regulation.html">9. Governance, Standards and Regulation</a></li>
+<li><a href="10-AI-for-Security-and-AI-Enabled-Threats.html">10. AI for Security and AI-Enabled Threats</a></li>
+<li><a href="11-Maturity-Model-and-Roadmap.html">11. Maturity Model and Roadmap</a></li>
+<li><a href="12-Illustrative-Scenarios.html">12. Illustrative Scenarios</a></li>
+<li><a href="13-Limitations-and-Research-Gaps.html">13. Limitations and Research Gaps</a></li>
+<li><a href="Appendices.html">Appendices</a></li>
+<li><a href="References.html">References</a></li>
+</ul></details></li>
+<li><details><summary><a href="../01_Strategy_and_Market/index.html">Strategy and Market</a></summary><ul>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.html">AI Security Market and Technology Landscape — Summary</a></li>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape_Expanded.html">AI Security Market and Technology Landscape</a></li>
+</ul></details></li>
+<li><details><summary><a href="../02_Risk_Management/index.html">Risk Management</a></summary><ul>
+<li><a href="../02_Risk_Management/02A_AI_Risk_Methodology.html">AI Risk Methodology</a></li>
+<li><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a></li>
+<li><a href="../02_Risk_Management/02C_AI_Risk_Treatment_Plan.html">AI Risk Treatment Plan</a></li>
+<li><a href="../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a></li>
+<li><a href="../02_Risk_Management/02E_AI_Risk_Review_Template.html">AI Risk Review Template</a></li>
+</ul></details></li>
+<li><details><summary><a href="../03_Control_Library/index.html">Control Library</a></summary><ul>
+<li><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></li>
+<li><a href="../03_Control_Library/04_Existing_Security_Control_Baseline.html">Existing Security Control Baseline</a></li>
+<li><a href="../03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.html">Microsoft Security Overlap and AI Gaps</a></li>
+</ul></details></li>
+<li><details><summary><a href="../04_Domain_Standards/index.html">Domain Standards</a></summary><ul>
+<li><a href="../04_Domain_Standards/06_Browser_AI_Security_Standard.html">Browser AI Security Standard</a></li>
+<li><a href="../04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.html">IDE AI Coding Assistant Security Standard</a></li>
+<li><a href="../04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a></li>
+<li><a href="../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
+<li><a href="../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
+</ul></details></li>
+<li><details><summary><a href="../05_Vendor_Evaluation/index.html">Vendor Evaluation</a></summary><ul>
+<li><a href="../05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
+<li><a href="../05_Vendor_Evaluation/12A_Vendor_Profile_Prompt_Security_SentinelOne.html">Vendor Profile — Prompt Security / SentinelOne</a></li>
+<li><a href="../05_Vendor_Evaluation/12B_Vendor_Profile_Palo_Alto_Prisma_AIRS.html">Vendor Profile — Palo Alto Prisma AIRS</a></li>
+<li><a href="../05_Vendor_Evaluation/12C_Vendor_Profile_HiddenLayer.html">Vendor Profile — HiddenLayer</a></li>
+<li><a href="../05_Vendor_Evaluation/12D_Vendor_Profile_Lasso_Security.html">Vendor Profile — Lasso Security</a></li>
+<li><a href="../05_Vendor_Evaluation/12E_Vendor_Profile_Cyberhaven.html">Vendor Profile — Cyberhaven</a></li>
+<li><a href="../05_Vendor_Evaluation/12F_Vendor_Profile_Nightfall_AI.html">Vendor Profile — Nightfall AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12G_Vendor_Profile_Enkrypt_AI.html">Vendor Profile — Enkrypt AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12H_Vendor_Profile_Sovereign_AI_Security_Labs.html">Vendor Profile — Sovereign AI Security Labs</a></li>
+</ul></details></li>
+<li><details><summary><a href="../06_Testing_and_Assurance/index.html">Testing and Assurance</a></summary><ul>
+<li><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html">AI Security PoC Test Case Library</a></li>
+<li><a href="../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a></li>
+<li><a href="../06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.html">AI Red Team Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../07_Role_Based_Playbooks/index.html">Role-Based Playbooks</a></summary><ul>
+<li><a href="../07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.html">AI Product Developer Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15B_AI_Security_Researcher_Playbook.html">AI Security Researcher Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15D_Security_Engineering_Playbook.html">Security Engineering Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15E_Vendor_Evaluation_and_Audit_Playbook.html">Vendor Evaluation and Audit Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../08_Governance/index.html">Governance</a></summary><ul>
+<li><a href="../08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></li>
+<li><a href="../08_Governance/17_AI_Policy_Standards_and_Acceptable_Use.html">AI Policy, Standards and Acceptable Use</a></li>
+</ul></details></li>
+<li><details><summary><a href="../09_Reference/index.html">Reference</a></summary><ul>
+<li><a href="../09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
+</ul></details></li>
+<li><details><summary><a href="../10_Test_Case_Library/index.html">Test Case Library</a></summary><ul>
+<li><a href="../10_Test_Case_Library/00-reference-index.html">Reference Index</a></li>
+<li><a href="../10_Test_Case_Library/framework-adoption-guide.html">Framework Adoption Guide</a></li>
+<li><a href="../10_Test_Case_Library/appendix-lab-prerequisites.html">Appendix: Lab Prerequisites</a></li>
+<li><a href="../10_Test_Case_Library/L01-business-and-use-cases.html">L01 Business &amp; Use Cases</a></li>
+<li><a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
+<li><a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>
+<li><a href="../10_Test_Case_Library/L04-human-interaction-layer.html">L04 Human Interaction Layer</a></li>
+<li><a href="../10_Test_Case_Library/L05-ai-applications.html">L05 AI Applications</a></li>
+<li><a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html">L06 Agent Orchestration Layer</a></li>
+<li><a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html">L07 Prompt &amp; Context Layer</a></li>
+<li><a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html">L08 AI Gateway &amp; Security Controls</a></li>
+<li><a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html">L09 Identity &amp; Access Mgmt</a></li>
+<li><a href="../10_Test_Case_Library/L10-data-layer.html">L10 Data Layer</a></li>
+<li><a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html">L11 Knowledge &amp; Retrieval Layer</a></li>
+<li><a href="../10_Test_Case_Library/L12-model-layer.html">L12 Model Layer</a></li>
+<li><a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html">L13 Training &amp; Fine-Tuning Layer</a></li>
+<li><a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html">L14 MLOps / LLMOps Layer</a></li>
+<li><a href="../10_Test_Case_Library/L15-infrastructure-layer.html">L15 Infrastructure Layer</a></li>
+<li><a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html">L16 Supply Chain &amp; Third Party</a></li>
+<li><a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html">L17 Monitoring, Detection &amp; Response</a></li>
+<li><a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html">D08 AI Red Teaming and Continuous Testing</a></li>
+<li><a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html">D09 Agent and Non-Human Identity Governance</a></li>
+<li><a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html">D10 Browser and Computer-Use Agents</a></li>
+<li><a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html">D11 Multimodal and Voice Input Security</a></li>
+<li><a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html">D12 AI Incident Response and Forensics</a></li>
+<li><a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html">D13 AI Cost and Abuse Controls</a></li>
+</ul></details></li>
+<li><a href="../community-rules.html">Community Rules</a></li>
+</ul>
+</nav>
+<main>
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Foundations</a> / <span>3. Threat Taxonomy</span></p>
+<article>
+<h1 id="3-threat-taxonomy">3. Threat Taxonomy</h1>
+<p>This page organises threats to AI systems by lifecycle stage and cross-references them to NIST's attack classes [1], OWASP's LLM categories [11], and MITRE ATLAS techniques [14]. It is a navigation aid, not a replacement for those sources.</p>
+<h2 id="31-how-nist-classifies-attacks">3.1 How NIST classifies attacks</h2>
+<p>NIST AI 100-2e2025, published 20 March 2025, is a taxonomy and terminology document for adversarial machine learning. The 2025 edition covers both predictive AI and generative AI systems. For generative AI it organises attacks into <strong>evasion, poisoning, privacy and misuse</strong> classes, across learning paradigms including supervised, unsupervised, semi-supervised, federated and reinforcement learning [1]. NIST states that it intends to update the report as the field evolves. <strong>[Documented]</strong></p>
+<h2 id="32-threats-by-lifecycle-stage">3.2 Threats by lifecycle stage</h2>
+<h3 id="training-time">Training-time</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Threat</th>
+<th>Description</th>
+<th>Key sources</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data poisoning</strong></td>
+<td>Attacker alters training data to degrade a model or install targeted behaviour</td>
+<td>Biggio et al. showed poisoning against SVMs in 2012 [19]; Carlini et al. showed web-scale dataset poisoning is practical [25]</td>
+</tr>
+<tr>
+<td><strong>Backdoors / trojans</strong></td>
+<td>A hidden trigger causes attacker-chosen behaviour while normal accuracy is preserved</td>
+<td>NIST AI 100-2e2025 [1]; OWASP LLM04 [11]</td>
+</tr>
+<tr>
+<td><strong>Compromised pre-trained models</strong></td>
+<td>A downloaded model or adapter is already tampered with</td>
+<td>See <a href="06-Supply-Chain-and-Infrastructure.html">Page 6</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Documented example.</strong> Carlini et al. describe <em>split-view poisoning</em> (buying expired domains that host content indexed in datasets such as LAION-400M, so later downloaders receive attacker-controlled content) and <em>frontrunning poisoning</em> (editing content just before a predictable snapshot, as with Wikipedia dumps). They report that they could have controlled roughly 0.01% of some datasets for about US$60, and proposed integrity checks and snapshot-timing defences [25]. <strong>[Documented]</strong> <em>Verify the figures against the paper before quoting them.</em></p>
+<h3 id="inference-time">Inference-time</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Threat</th>
+<th>Description</th>
+<th>Key sources</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Evasion / adversarial examples</strong></td>
+<td>Small, crafted perturbations cause misclassification</td>
+<td>Goodfellow et al. [16]; Papernot et al. [17]; physical-world examples by Kurakin et al. [18]</td>
+</tr>
+<tr>
+<td><strong>Prompt injection (direct)</strong></td>
+<td>User-supplied text overrides intended behaviour</td>
+<td>Perez &amp; Ribeiro [22]; OWASP LLM01 [11]</td>
+</tr>
+<tr>
+<td><strong>Prompt injection (indirect)</strong></td>
+<td>Instructions hidden in retrieved or third-party content</td>
+<td>Greshake et al. [23]</td>
+</tr>
+<tr>
+<td><strong>Adversarial suffixes / jailbreaks</strong></td>
+<td>Automatically generated strings that transfer across aligned models</td>
+<td>Zou et al. [24]</td>
+</tr>
+<tr>
+<td><strong>Resource abuse</strong></td>
+<td>Cost or capacity exhaustion through crafted use</td>
+<td>OWASP LLM10 [11]</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="model-level">Model-level</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Threat</th>
+<th>Description</th>
+<th>Key sources</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Membership inference</strong></td>
+<td>Determining whether a record was in the training set</td>
+<td>Shokri et al. [20]</td>
+</tr>
+<tr>
+<td><strong>Model extraction</strong></td>
+<td>Reconstructing a model's function through repeated queries to its API</td>
+<td>Tramèr et al. [21]</td>
+</tr>
+<tr>
+<td><strong>Training-data extraction / leakage</strong></td>
+<td>Eliciting memorised content</td>
+<td>NIST AI 100-2e2025 privacy attacks [1]; OWASP LLM02 [11]</td>
+</tr>
+<tr>
+<td><strong>System-prompt leakage</strong></td>
+<td>Disclosure of hidden instructions</td>
+<td>OWASP LLM07 [11]</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="application-and-ecosystem">Application and ecosystem</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Threat</th>
+<th>Description</th>
+<th>Key sources</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Insecure output handling</strong></td>
+<td>Model output reaches an interpreter (browser, shell, SQL) unescaped</td>
+<td>OWASP LLM05 [11]</td>
+</tr>
+<tr>
+<td><strong>Excessive agency</strong></td>
+<td>Over-broad tools, permissions or autonomy</td>
+<td>OWASP LLM06 [11]; OWASP Agentic Top 10 [12]</td>
+</tr>
+<tr>
+<td><strong>Vector/embedding weaknesses</strong></td>
+<td>Cross-tenant leakage, poisoned retrieval</td>
+<td>OWASP LLM08 [11]</td>
+</tr>
+<tr>
+<td><strong>Supply-chain compromise</strong></td>
+<td>Malicious packages, models, plugins, datasets</td>
+<td>OWASP LLM03 [11]; OWASP Round-up Q1 2026 [13]</td>
+</tr>
+<tr>
+<td><strong>Misinformation / over-reliance</strong></td>
+<td>False output acted on without verification</td>
+<td>OWASP LLM09 [11]</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="33-what-is-new-and-what-is-not">3.3 What is "new" and what is not</h2>
+<p>Many of the above are old problems in new forms: supply-chain compromise, injection through an untrusted channel, over-privileged service accounts, side channels. What is genuinely different: [Analysis]</p>
+<ol>
+<li><strong>Probabilistic behaviour.</strong> A control can pass a test and fail on a slightly different input. Testing gives evidence, not proof.</li>
+<li><strong>Learned, opaque artifacts.</strong> The behaviour of a model cannot be fully audited by reading its source.</li>
+<li><strong>Natural-language attack surface.</strong> The input language is also the instruction language.</li>
+<li><strong>Behaviour that moves with upstream change.</strong> A provider-side model update can change security-relevant behaviour with no change to your code.</li>
+</ol>
+<h2 id="34-who-attacks-ai-systems">3.4 Who attacks AI systems</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Actor</th>
+<th>Typical objective</th>
+<th>Relevant capability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Criminal groups</td>
+<td>Fraud, extortion, resale of access, abuse of compute</td>
+<td>Commodity tooling; abuse of exposed AI endpoints and keys</td>
+</tr>
+<tr>
+<td>Insiders</td>
+<td>Data theft, sabotage, unauthorised model access</td>
+<td>Legitimate access to weights, data or prompts</td>
+</tr>
+<tr>
+<td>Malicious users</td>
+<td>Jailbreaking, data extraction, free compute</td>
+<td>Direct interaction with the model</td>
+</tr>
+<tr>
+<td>Supply-chain actors</td>
+<td>Persistence at scale via popular packages or models</td>
+<td>Control over upstream artifacts</td>
+</tr>
+<tr>
+<td>Strategic or state-aligned actors</td>
+<td>Espionage, model theft, disruption</td>
+<td>Resources for sustained, targeted operations</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>[Analysis]. This paper does not attribute specific AI-security incidents to specific actors.</em></p>
+<h2 id="35-mapping-to-atlas">3.5 Mapping to ATLAS</h2>
+<p>MITRE ATLAS is a knowledge base of adversary tactics and techniques against AI-enabled systems, modelled on the structure of ATT&amp;CK, and maintained with regular content releases [14]. Use it to describe an incident or test case in shared vocabulary. At the time of writing the public data repository shows a content version of 2026.05 and states that ATLAS releases monthly updates [14]. Check atlas.mitre.org for current technique counts and identifiers rather than relying on a figure in this paper.</p>
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="02-AI-System-Boundary-and-Assets.html">&larr; 2. The AI System Boundary and Assets</a><a class="next" href="04-LLMs-Prompt-Injection-and-RAG.html">4. LLMs, Prompt Injection and RAG &rarr;</a></nav>
+<footer class="site-footer">Author: Nachiket Sathaye &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/00_Foundations/03-Threat-Taxonomy.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a></footer>
+</main>
+</div>
+<script>window.SITE_BASE = "../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

@@ -3,20 +3,20 @@ title: "Home"
 description: "Open, vendor-neutral AI security wiki: AI governance, risk management, security controls, agentic AI standards, vendor evaluation and 620 test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.0
+version: 2.1
 status: Published
 author: Nachiket Sathaye
 owner: AI Security Program
 custodian: Security Architecture Team
 review_cycle: Quarterly
 approval_authority: AI Governance Committee
-last_updated: 2026-07-27
+last_updated: 2026-10-07
 ---
 
 # AI Security Wiki Home
 
 > **Document type:** Enterprise AI Security Reference Architecture and Governance Wiki  
-> **Version:** 2.0  
+> **Version:** 2.1  
 > **Status:** Published  
 > **Original author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
 > **Intended use:** Public, vendor-neutral reference and template set for AI security governance, engineering, risk management, assurance, audit, compliance, and vendor evaluation.
@@ -32,6 +32,8 @@ The wiki is designed to help teams answer five practical questions:
 3. **Which engineering standards apply to the implementation?**
 4. **How will security, privacy, sovereignty, and compliance requirements be evidenced?**
 5. **How will the AI capability be monitored, tested, audited, and improved over time?**
+
+New to the subject? Start with [Foundations: AI Security vs. Security of AI](00_Foundations/index.md), the research paper that explains the concepts and sources behind the standards, templates, and test cases in the rest of the wiki.
 
 ## 2. Mission Statement
 
@@ -126,7 +128,7 @@ Review, Improve, Renew, or Retire
 | Agentic AI deployment | Govern agents that invoke tools, access systems, perform actions, or chain tasks. | [Agentic AI Security and Tool Governance](04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.md) | Tool permission matrix, approval rules, action logs, rollback controls. |
 | Vendor evaluation | Evaluate AI suppliers, cloud services, models, integrations, and data handling. | [AI Security Vendor Evaluation Master Framework](05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.md), vendor profiles `12A` to `12H` | Vendor questionnaire, evidence pack, PoC results, risk decision. |
 | Testing and assurance | Validate controls through PoC tests, adversarial testing, red teaming, and evidence review. | [AI Security PoC Test Case Library](06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md), [AI Security Audit and Evidence Checklist](06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md) | Test results, findings, remediation plan, audit checklist. |
-| Monitoring and operations | Monitor AI usage, suspicious prompts, data leakage, tool invocation, and incidents. | SOC playbooks, runtime standard, governance operating model | Logs, alerts, incident records, response actions. |
+| Monitoring and operations | Monitor AI usage, suspicious prompts, data leakage, tool invocation, and incidents. | [Assurance: Testing, Monitoring and Response](00_Foundations/08-Assurance-Testing-Monitoring-and-Response.md), [Monitoring, Detection and Response test cases](10_Test_Case_Library/L17-monitoring-detection-and-response.md), runtime standard, governance operating model | Logs, alerts, incident records, response actions. |
 | Audit and continuous improvement | Review governance effectiveness, control operation, exceptions, and maturity. | [AI Security Audit and Evidence Checklist](06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md), [AI Governance Operating Model](08_Governance/16_AI_Governance_Operating_Model.md) | Audit evidence, management actions, maturity roadmap. |
 
 ## 8. Navigation by Role
@@ -140,7 +142,7 @@ Review, Improve, Renew, or Retire
 | AI Red Teamer | [AI Red Team Playbook](06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.md) | [Custom AI Application Runtime Security Standard](04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.md), [Agentic AI Security and Tool Governance](04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.md) | Test plans, findings, exploit paths, recommended mitigations. |
 | Security Engineering | [AI Security Control Objectives Library](03_Control_Library/03_AI_Security_Control_Objectives_Library.md) | [Existing Security Control Baseline](03_Control_Library/04_Existing_Security_Control_Baseline.md), [Microsoft Security Overlap and AI Gaps](03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.md) | Implementable controls, baseline mapping, monitoring requirements. |
 | Security Architecture | [AI Security Control Objectives Library](03_Control_Library/03_AI_Security_Control_Objectives_Library.md) | [Custom AI Application Runtime Security Standard](04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.md), [Sovereign AI, UAE Compliance and Data Residency Requirements](04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.md) | Approved AI designs, control exceptions, reference architectures. |
-| SOC and Incident Response | Runtime security standard | SOC playbooks, audit evidence checklist | Monitoring coverage, detection logic, investigation and response records. |
+| SOC and Incident Response | Runtime security standard | [Assurance: Testing, Monitoring and Response](00_Foundations/08-Assurance-Testing-Monitoring-and-Response.md), [AI for Security and AI-Enabled Threats](00_Foundations/10-AI-for-Security-and-AI-Enabled-Threats.md), [AI Incident Response and Forensics test cases](10_Test_Case_Library/D12-ai-incident-response-and-forensics.md), audit evidence checklist | Monitoring coverage, detection logic, investigation and response records. |
 | Vendor Evaluation Team | [AI Security Vendor Evaluation Master Framework](05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.md) | Vendor profiles `12A` to `12H`, [AI Security PoC Test Case Library](06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md) | Consistent supplier scoring, risk decision, and evidence retained. |
 | Governance and Compliance | [Enterprise AI Risk Register](02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) | [Sovereign AI, UAE Compliance and Data Residency Requirements](04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.md), [AI Governance Operating Model](08_Governance/16_AI_Governance_Operating_Model.md) | Compliance mapping, risk treatment, approval records, and reporting. |
 | Internal Audit | [AI Security Audit and Evidence Checklist](06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md) | Control library, PoC evidence library, sovereignty requirements | Independent evidence validation and control effectiveness assessment. |
@@ -150,6 +152,10 @@ Review, Improve, Renew, or Retire
 ```text
 00_Home/
   Navigation, landing page, wiki usage model, and document governance.
+
+00_Foundations/
+  Research paper "AI Security vs. Security of AI": terminology, two-axis model, threat taxonomy, reference architecture,
+  assurance, standards, maturity roadmap, and references.
 
 01_Strategy_and_Market/
   AI security market landscape, technology trends, threat intelligence, glossary, and taxonomy.
@@ -218,13 +224,17 @@ Enterprise AI Security Policy
 
 ## 12. Control Framework Mapping
 
-The wiki supports mapping AI security requirements to recognized control and governance frameworks. The detailed mapping should be maintained in the control library and audit checklist.
+The wiki supports mapping AI security requirements to recognized control and governance frameworks. The detailed mapping should be maintained in the control library and audit checklist. How the instruments relate to each other is explained in [Governance, Standards and Regulation](00_Foundations/09-Governance-Standards-and-Regulation.md).
 
 | Framework / Requirement Area | Wiki Mapping Purpose |
 |---|---|
 | ISO/IEC 27001 | Information security governance, risk management, access control, operations, supplier security, and audit evidence. |
 | ISO/IEC 42001 | AI management system governance, accountability, lifecycle controls, risk treatment, and continuous improvement. |
 | NIST AI RMF | AI risk identification, measurement, management, governance, and trustworthiness characteristics. |
+| NIST AI 100-2 (adversarial machine learning) | Shared vocabulary for attack classes and the scope of adversarial testing. |
+| OWASP Top 10 for LLM Applications and for Agentic Applications | Application and agent risk categories for developer guidance, threat modeling, and test-case design. |
+| MITRE ATLAS | Adversary tactics and techniques against AI-enabled systems for threat-informed testing and incident description. |
+| EU AI Act | Legal obligations for in-scope providers and deployers of AI systems. |
 | NIST Cybersecurity Framework | Identify, Protect, Detect, Respond, and Recover coverage for AI-enabled systems. |
 | CIS Controls | Practical safeguards for inventory, identity, access, endpoint, network, data protection, monitoring, and response. |
 | UAE information assurance and cybersecurity expectations | Alignment to local cybersecurity governance, data handling, hosting, resilience, and assurance obligations. |
@@ -300,6 +310,8 @@ Vendor profiles should be used to record:
 | Phase 3 | Implement testing, red teaming, monitoring, and evidence collection. | Security effectiveness becomes measurable and auditable. |
 | Phase 4 | Mature reporting, metrics, automation, and continuous improvement. | AI security becomes operationalized and management-visible. |
 
+A time-boxed version of this roadmap (30 days, 90 days, 6 months, 12 to 24 months) is in [Maturity Model and Roadmap](00_Foundations/11-Maturity-Model-and-Roadmap.md).
+
 ## 18. Success Metrics
 
 | Metric | Why It Matters |
@@ -313,6 +325,8 @@ Vendor profiles should be used to record:
 | Open AI control exceptions past expiry | Measures governance discipline. |
 | Audit evidence completeness score | Measures assurance readiness. |
 | Number of AI security findings remediated | Measures improvement execution. |
+
+These metrics measure coverage. For control-effectiveness metrics such as injection test success rate, privileged-action gating, and time to disable, see [Assurance: Testing, Monitoring and Response](00_Foundations/08-Assurance-Testing-Monitoring-and-Response.md#85-metrics).
 
 ## 19. Document Governance
 
@@ -332,9 +346,11 @@ Vendor profiles should be used to record:
 |---|---|---|---|
 | 1.0 | Initial release | Nachiket Sathaye | Initial wiki home page with purpose, audience, design principle, role navigation, lifecycle navigation, folder structure, and vendor-neutral operating rule. |
 | 2.0 | 2026-07-27 | Nachiket Sathaye | Expanded into comprehensive enterprise AI security wiki home page with mission, strategic objectives, operating model, governance, standards hierarchy, framework mapping, maintenance rules, roadmap, metrics, and enhanced navigation. |
+| 2.1 | 2026-10-07 | Nachiket Sathaye | Added the Foundations section (research paper: AI Security vs. Security of AI) and linked it from the purpose, navigation, framework mapping, roadmap, and metrics sections. |
 
 ## 21. Quick Links
 
+- [Foundations: AI Security vs. Security of AI](00_Foundations/index.md)
 - [AI Security Market and Technology Landscape — Summary](01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.md)
 - [AI Risk Methodology](02_Risk_Management/02A_AI_Risk_Methodology.md)
 - [Enterprise AI Risk Register](02_Risk_Management/02B_Enterprise_AI_Risk_Register.md)

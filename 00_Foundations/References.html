@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References | AI Security Wiki</title>
+<meta name="author" content="Nachiket Sathaye">
+<meta name="description" content="References for the AI Security vs. Security of AI paper: standards, regulation, community frameworks and research literature, with verification status.">
+<link rel="canonical" href="https://nachi065.github.io/AI-Security-Wiki/00_Foundations/References.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="AI Security Wiki">
+<meta property="og:title" content="References | AI Security Wiki">
+<meta property="og:description" content="References for the AI Security vs. Security of AI paper: standards, regulation, community frameworks and research literature, with verification status.">
+<meta property="og:url" content="https://nachi065.github.io/AI-Security-Wiki/00_Foundations/References.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+  <a class="brand" href="../index.html">AI Security Wiki</a>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Search the wiki" aria-label="Search the wiki" autocomplete="off">
+    <ul id="search-results" hidden></ul>
+  </div>
+  <a class="repo-link" href="https://github.com/nachi065/AI-Security-Wiki" rel="noopener">GitHub</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="sidebar" aria-label="Wiki sections">
+<ul class="nav">
+<li><a href="../index.html">Home</a></li>
+<li><details open><summary><a href="index.html">Foundations</a></summary><ul>
+<li><a href="01-Terminology-and-Two-Axis-Model.html">1. Terminology and the Two-Axis Model</a></li>
+<li><a href="02-AI-System-Boundary-and-Assets.html">2. The AI System Boundary and Assets</a></li>
+<li><a href="03-Threat-Taxonomy.html">3. Threat Taxonomy</a></li>
+<li><a href="04-LLMs-Prompt-Injection-and-RAG.html">4. LLMs, Prompt Injection and RAG</a></li>
+<li><a href="05-Agents-Identity-and-Excessive-Agency.html">5. Agents, Identity and Excessive Agency</a></li>
+<li><a href="06-Supply-Chain-and-Infrastructure.html">6. Supply Chain and Infrastructure</a></li>
+<li><a href="07-Reference-Architecture.html">7. Reference Architecture</a></li>
+<li><a href="08-Assurance-Testing-Monitoring-and-Response.html">8. Assurance: Testing, Monitoring and Response</a></li>
+<li><a href="09-Governance-Standards-and-Regulation.html">9. Governance, Standards and Regulation</a></li>
+<li><a href="10-AI-for-Security-and-AI-Enabled-Threats.html">10. AI for Security and AI-Enabled Threats</a></li>
+<li><a href="11-Maturity-Model-and-Roadmap.html">11. Maturity Model and Roadmap</a></li>
+<li><a href="12-Illustrative-Scenarios.html">12. Illustrative Scenarios</a></li>
+<li><a href="13-Limitations-and-Research-Gaps.html">13. Limitations and Research Gaps</a></li>
+<li><a href="Appendices.html">Appendices</a></li>
+<li><a class="current" href="References.html">References</a></li>
+</ul></details></li>
+<li><details><summary><a href="../01_Strategy_and_Market/index.html">Strategy and Market</a></summary><ul>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.html">AI Security Market and Technology Landscape — Summary</a></li>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape_Expanded.html">AI Security Market and Technology Landscape</a></li>
+</ul></details></li>
+<li><details><summary><a href="../02_Risk_Management/index.html">Risk Management</a></summary><ul>
+<li><a href="../02_Risk_Management/02A_AI_Risk_Methodology.html">AI Risk Methodology</a></li>
+<li><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a></li>
+<li><a href="../02_Risk_Management/02C_AI_Risk_Treatment_Plan.html">AI Risk Treatment Plan</a></li>
+<li><a href="../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a></li>
+<li><a href="../02_Risk_Management/02E_AI_Risk_Review_Template.html">AI Risk Review Template</a></li>
+</ul></details></li>
+<li><details><summary><a href="../03_Control_Library/index.html">Control Library</a></summary><ul>
+<li><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></li>
+<li><a href="../03_Control_Library/04_Existing_Security_Control_Baseline.html">Existing Security Control Baseline</a></li>
+<li><a href="../03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.html">Microsoft Security Overlap and AI Gaps</a></li>
+</ul></details></li>
+<li><details><summary><a href="../04_Domain_Standards/index.html">Domain Standards</a></summary><ul>
+<li><a href="../04_Domain_Standards/06_Browser_AI_Security_Standard.html">Browser AI Security Standard</a></li>
+<li><a href="../04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.html">IDE AI Coding Assistant Security Standard</a></li>
+<li><a href="../04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a></li>
+<li><a href="../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
+<li><a href="../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
+</ul></details></li>
+<li><details><summary><a href="../05_Vendor_Evaluation/index.html">Vendor Evaluation</a></summary><ul>
+<li><a href="../05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
+<li><a href="../05_Vendor_Evaluation/12A_Vendor_Profile_Prompt_Security_SentinelOne.html">Vendor Profile — Prompt Security / SentinelOne</a></li>
+<li><a href="../05_Vendor_Evaluation/12B_Vendor_Profile_Palo_Alto_Prisma_AIRS.html">Vendor Profile — Palo Alto Prisma AIRS</a></li>
+<li><a href="../05_Vendor_Evaluation/12C_Vendor_Profile_HiddenLayer.html">Vendor Profile — HiddenLayer</a></li>
+<li><a href="../05_Vendor_Evaluation/12D_Vendor_Profile_Lasso_Security.html">Vendor Profile — Lasso Security</a></li>
+<li><a href="../05_Vendor_Evaluation/12E_Vendor_Profile_Cyberhaven.html">Vendor Profile — Cyberhaven</a></li>
+<li><a href="../05_Vendor_Evaluation/12F_Vendor_Profile_Nightfall_AI.html">Vendor Profile — Nightfall AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12G_Vendor_Profile_Enkrypt_AI.html">Vendor Profile — Enkrypt AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12H_Vendor_Profile_Sovereign_AI_Security_Labs.html">Vendor Profile — Sovereign AI Security Labs</a></li>
+</ul></details></li>
+<li><details><summary><a href="../06_Testing_and_Assurance/index.html">Testing and Assurance</a></summary><ul>
+<li><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html">AI Security PoC Test Case Library</a></li>
+<li><a href="../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a></li>
+<li><a href="../06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.html">AI Red Team Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../07_Role_Based_Playbooks/index.html">Role-Based Playbooks</a></summary><ul>
+<li><a href="../07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.html">AI Product Developer Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15B_AI_Security_Researcher_Playbook.html">AI Security Researcher Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15D_Security_Engineering_Playbook.html">Security Engineering Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15E_Vendor_Evaluation_and_Audit_Playbook.html">Vendor Evaluation and Audit Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../08_Governance/index.html">Governance</a></summary><ul>
+<li><a href="../08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></li>
+<li><a href="../08_Governance/17_AI_Policy_Standards_and_Acceptable_Use.html">AI Policy, Standards and Acceptable Use</a></li>
+</ul></details></li>
+<li><details><summary><a href="../09_Reference/index.html">Reference</a></summary><ul>
+<li><a href="../09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
+</ul></details></li>
+<li><details><summary><a href="../10_Test_Case_Library/index.html">Test Case Library</a></summary><ul>
+<li><a href="../10_Test_Case_Library/00-reference-index.html">Reference Index</a></li>
+<li><a href="../10_Test_Case_Library/framework-adoption-guide.html">Framework Adoption Guide</a></li>
+<li><a href="../10_Test_Case_Library/appendix-lab-prerequisites.html">Appendix: Lab Prerequisites</a></li>
+<li><a href="../10_Test_Case_Library/L01-business-and-use-cases.html">L01 Business &amp; Use Cases</a></li>
+<li><a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
+<li><a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>
+<li><a href="../10_Test_Case_Library/L04-human-interaction-layer.html">L04 Human Interaction Layer</a></li>
+<li><a href="../10_Test_Case_Library/L05-ai-applications.html">L05 AI Applications</a></li>
+<li><a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html">L06 Agent Orchestration Layer</a></li>
+<li><a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html">L07 Prompt &amp; Context Layer</a></li>
+<li><a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html">L08 AI Gateway &amp; Security Controls</a></li>
+<li><a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html">L09 Identity &amp; Access Mgmt</a></li>
+<li><a href="../10_Test_Case_Library/L10-data-layer.html">L10 Data Layer</a></li>
+<li><a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html">L11 Knowledge &amp; Retrieval Layer</a></li>
+<li><a href="../10_Test_Case_Library/L12-model-layer.html">L12 Model Layer</a></li>
+<li><a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html">L13 Training &amp; Fine-Tuning Layer</a></li>
+<li><a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html">L14 MLOps / LLMOps Layer</a></li>
+<li><a href="../10_Test_Case_Library/L15-infrastructure-layer.html">L15 Infrastructure Layer</a></li>
+<li><a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html">L16 Supply Chain &amp; Third Party</a></li>
+<li><a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html">L17 Monitoring, Detection &amp; Response</a></li>
+<li><a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html">D08 AI Red Teaming and Continuous Testing</a></li>
+<li><a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html">D09 Agent and Non-Human Identity Governance</a></li>
+<li><a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html">D10 Browser and Computer-Use Agents</a></li>
+<li><a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html">D11 Multimodal and Voice Input Security</a></li>
+<li><a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html">D12 AI Incident Response and Forensics</a></li>
+<li><a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html">D13 AI Cost and Abuse Controls</a></li>
+</ul></details></li>
+<li><a href="../community-rules.html">Community Rules</a></li>
+</ul>
+</nav>
+<main>
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Foundations</a> / <span>References</span></p>
+<article>
+<h1 id="references">References</h1>
+<p>Numbers match in-text citations. "Status" notes how each entry was checked on 7 October 2026. Re-verify before publication.</p>
+<h2 id="standards-regulation-and-official-guidance">Standards, regulation and official guidance</h2>
+<p>[1] NIST. (2025, March). <em>Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations</em> (NIST AI 100-2e2025). https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-2e2025.pdf
+<em>Status: confirmed on NIST CSRC (published 20 March 2025).</em></p>
+<p>[2] NIST. (2024). <em>Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile</em> (NIST AI 600-1). https://www.nist.gov/itl/ai-risk-management-framework
+<em>Status: not re-checked online in this revision; widely known; confirm the exact publication date and URL.</em></p>
+<p>[3] NIST. (2023). <em>Artificial Intelligence Risk Management Framework (AI RMF 1.0)</em> (NIST AI 100-1). https://www.nist.gov/itl/ai-risk-management-framework
+<em>Status: not re-checked online in this revision; confirm URL.</em></p>
+<p>[4] ISO/IEC. (2023). <em>ISO/IEC 42001:2023, Information technology: Artificial intelligence: Management system.</em> https://www.iso.org/standard/81230.html
+<em>Status: not re-checked online in this revision; confirm URL.</em></p>
+<p>[5] ISO/IEC. (2023). <em>ISO/IEC 23894:2023, Information technology: Artificial intelligence: Guidance on risk management.</em> https://www.iso.org/
+<em>Status: not re-checked online in this revision; confirm catalogue URL.</em></p>
+<p>[6] ISO/IEC. (2022). <em>ISO/IEC 27001:2022, Information security, cybersecurity and privacy protection: Information security management systems: Requirements.</em> https://www.iso.org/
+<em>Status: not re-checked online in this revision.</em></p>
+<p>[7] European Union. (2024). Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence (Artificial Intelligence Act). Official Journal of the EU. https://eur-lex.europa.eu/
+<em>Status: instrument number is as in the original draft; confirm the OJ reference and consolidated text on EUR-Lex.</em></p>
+<p>[8] European Union. (2026). Regulation (EU) 2026/1744 (the "AI Omnibus"), amending Regulation (EU) 2024/1689. As reported in: White &amp; Case, <em>EU AI Omnibus enters into force, amending the AI Act.</em> https://www.whitecase.com/insight-alert/eu-ai-omnibus-enters-force-amending-ai-act
+<em>Status: reported by one law-firm source (OJ publication 24 July 2026; entry into force 27 July 2026). Not checked against EUR-Lex. Corroborating coverage exists (e.g., Gibson Dunn, 27 May 2026, on the provisional agreement). VERIFY ON EUR-LEX.</em></p>
+<p>[9] ENISA. (2020, 15 December). <em>Artificial Intelligence Cybersecurity Challenges.</em> https://www.enisa.europa.eu/publications/artificial-intelligence-cybersecurity-challenges
+<em>Status: confirmed on ENISA site.</em></p>
+<p>[10] ENISA. (2023, 7 June). <em>Artificial Intelligence and Cybersecurity Research.</em> https://enisa.europa.eu/publications/artificial-intelligence-and-cybersecurity-research
+<em>Status: confirmed on ENISA site.</em></p>
+<h2 id="community-frameworks-and-knowledge-bases">Community frameworks and knowledge bases</h2>
+<p>[11] OWASP GenAI Security Project. (2025). <em>OWASP Top 10 for LLM Applications 2025.</em> https://genai.owasp.org/llm-top-10/
+<em>Status: confirmed; ten categories LLM01–LLM10 as listed in Page 4.</em></p>
+<p>[12] OWASP GenAI Security Project. (2025, 9 December). <em>OWASP Top 10 for Agentic Applications (2026).</em> https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/
+<em>Status: publication date confirmed on the OWASP page; category names taken from a secondary summary (cycode.com). Check names against the primary document.</em></p>
+<p>[13] OWASP GenAI Security Project. (2026, 14 April). <em>OWASP GenAI Exploit Round-up Report Q1 2026.</em> https://genai.owasp.org/2026/04/14/owasp-genai-exploit-round-up-report-q1-2026/
+<em>Status: confirmed to exist; coverage period 1 Jan–11 Apr 2026. Findings cited in this paper come from a page summary; read the full report before quoting specifics.</em></p>
+<p>[14] MITRE. <em>ATLAS: Adversarial Threat Landscape for Artificial-Intelligence Systems.</em> https://atlas.mitre.org/ and https://github.com/mitre-atlas/atlas-data
+<em>Status: confirmed to exist; data repository shows content version 2026.05 and monthly updates. Technique counts not verified.</em></p>
+<p>[15] Google. <em>Secure AI Framework (SAIF).</em> https://saif.google/
+<em>Status: confirmed to exist; the site describes a SAIF Map with 15 risks and an agent-security section. No version/date shown.</em></p>
+<h2 id="research-literature">Research literature</h2>
+<p>[16] Goodfellow, I. J., Shlens, J., &amp; Szegedy, C. (2015). Explaining and harnessing adversarial examples. <em>ICLR 2015.</em></p>
+<p>[17] Papernot, N., McDaniel, P., Jha, S., Fredrikson, M., Celik, Z. B., &amp; Swami, A. (2016). The limitations of deep learning in adversarial settings. <em>IEEE European Symposium on Security and Privacy.</em></p>
+<p>[18] Kurakin, A., Goodfellow, I., &amp; Bengio, S. (2017). Adversarial examples in the physical world. <em>ICLR 2017 Workshop.</em></p>
+<p>[19] Biggio, B., Nelson, B., &amp; Laskov, P. (2012). Poisoning attacks against support vector machines. <em>ICML 2012.</em></p>
+<p>[20] Shokri, R., Stronati, M., Song, C., &amp; Shmatikov, V. (2017). Membership inference attacks against machine learning models. <em>IEEE Symposium on Security and Privacy.</em></p>
+<p>[21] Tramèr, F., Zhang, F., Juels, A., Reiter, M. K., &amp; Ristenpart, T. (2016). Stealing machine learning models via prediction APIs. <em>USENIX Security Symposium.</em></p>
+<p>[22] Perez, F., &amp; Ribeiro, I. (2022). Ignore previous prompt: Attack techniques for language models. <em>arXiv preprint.</em></p>
+<p>[23] Greshake, K., Abdelnabi, S., Mishra, S., Endres, C., Holz, T., &amp; Fritz, M. (2023). Not what you've signed up for: Compromising real-world LLM-integrated applications with indirect prompt injection. <em>arXiv:2302.12173.</em> https://arxiv.org/abs/2302.12173
+<em>Status: title, authors and arXiv ID confirmed.</em></p>
+<p>[24] Zou, A., Wang, Z., Kolter, J. Z., &amp; Fredrikson, M. (2023). Universal and transferable adversarial attacks on aligned language models. <em>arXiv preprint.</em></p>
+<p>[25] Carlini, N., Jagielski, M., Choquette-Choo, C. A., Paleka, D., Pearce, W., Anderson, H., Terzis, A., Thomas, K., &amp; Tramèr, F. (2023). Poisoning web-scale training datasets is practical. <em>arXiv:2302.10149.</em> https://arxiv.org/abs/2302.10149
+<em>Status: title, authors and arXiv ID confirmed. Check whether a peer-reviewed version should be cited instead.</em></p>
+<p>[26] Bommasani, R., Hudson, D. A., Adeli, E., et al. (2021). On the opportunities and risks of foundation models. <em>arXiv preprint.</em></p>
+<p>[27] Amodei, D., Olah, C., Steinhardt, J., Christiano, P., Schulman, J., &amp; Mané, D. (2016). Concrete problems in AI safety. <em>arXiv preprint.</em></p>
+<p><em>Entries [16]–[22], [24], [26] and [27] are well-known papers whose bibliographic details are given from the original draft and standard citation; add DOIs/arXiv IDs when finalising.</em></p>
+<hr />
+<h2 id="entries-removed-from-the-original-draft">Entries removed from the original draft</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Original entry</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Microsoft (2024–2026), "AI security and governance guidance…"</td>
+<td>No identifiable document; cannot be cited</td>
+</tr>
+<tr>
+<td>Cloud Security Alliance (2024), "AI security and governance research and guidance"</td>
+<td>No identifiable document</td>
+</tr>
+<tr>
+<td>World Economic Forum (2024), "Global Cybersecurity Outlook and AI-related cyber risk analysis"</td>
+<td>Not tied to a specific publication or claim</td>
+</tr>
+<tr>
+<td>ENISA, "AI threat landscape and AI cybersecurity research publications"</td>
+<td>Duplicate of [9]/[10]; no specific document</td>
+</tr>
+<tr>
+<td>Ribeiro, Singh &amp; Guestrin (2016), LIME</td>
+<td>Explainability method; no claim in the paper depended on it</td>
+</tr>
+</tbody>
+</table></div>
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="Appendices.html">&larr; Appendices</a><a class="next" href="../01_Strategy_and_Market/index.html">Strategy and Market &rarr;</a></nav>
+<footer class="site-footer">Author: Nachiket Sathaye &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/00_Foundations/References.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a></footer>
+</main>
+</div>
+<script>window.SITE_BASE = "../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

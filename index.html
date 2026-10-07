@@ -29,6 +29,23 @@
 <nav class="sidebar" id="sidebar" aria-label="Wiki sections">
 <ul class="nav">
 <li><a class="current" href="index.html">Home</a></li>
+<li><details><summary><a href="00_Foundations/index.html">Foundations</a></summary><ul>
+<li><a href="00_Foundations/01-Terminology-and-Two-Axis-Model.html">1. Terminology and the Two-Axis Model</a></li>
+<li><a href="00_Foundations/02-AI-System-Boundary-and-Assets.html">2. The AI System Boundary and Assets</a></li>
+<li><a href="00_Foundations/03-Threat-Taxonomy.html">3. Threat Taxonomy</a></li>
+<li><a href="00_Foundations/04-LLMs-Prompt-Injection-and-RAG.html">4. LLMs, Prompt Injection and RAG</a></li>
+<li><a href="00_Foundations/05-Agents-Identity-and-Excessive-Agency.html">5. Agents, Identity and Excessive Agency</a></li>
+<li><a href="00_Foundations/06-Supply-Chain-and-Infrastructure.html">6. Supply Chain and Infrastructure</a></li>
+<li><a href="00_Foundations/07-Reference-Architecture.html">7. Reference Architecture</a></li>
+<li><a href="00_Foundations/08-Assurance-Testing-Monitoring-and-Response.html">8. Assurance: Testing, Monitoring and Response</a></li>
+<li><a href="00_Foundations/09-Governance-Standards-and-Regulation.html">9. Governance, Standards and Regulation</a></li>
+<li><a href="00_Foundations/10-AI-for-Security-and-AI-Enabled-Threats.html">10. AI for Security and AI-Enabled Threats</a></li>
+<li><a href="00_Foundations/11-Maturity-Model-and-Roadmap.html">11. Maturity Model and Roadmap</a></li>
+<li><a href="00_Foundations/12-Illustrative-Scenarios.html">12. Illustrative Scenarios</a></li>
+<li><a href="00_Foundations/13-Limitations-and-Research-Gaps.html">13. Limitations and Research Gaps</a></li>
+<li><a href="00_Foundations/Appendices.html">Appendices</a></li>
+<li><a href="00_Foundations/References.html">References</a></li>
+</ul></details></li>
 <li><details><summary><a href="01_Strategy_and_Market/index.html">Strategy and Market</a></summary><ul>
 <li><a href="01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.html">AI Security Market and Technology Landscape — Summary</a></li>
 <li><a href="01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape_Expanded.html">AI Security Market and Technology Landscape</a></li>
@@ -118,7 +135,7 @@
 <h1 id="ai-security-wiki-home">AI Security Wiki Home</h1>
 <blockquote>
 <p><strong>Document type:</strong> Enterprise AI Security Reference Architecture and Governance Wiki<br />
-<strong>Version:</strong> 2.0<br />
+<strong>Version:</strong> 2.1<br />
 <strong>Status:</strong> Published<br />
 <strong>Original author:</strong> Nachiket Sathaye (<a href="#22-about-the-author">about the author</a>)<br />
 <strong>Intended use:</strong> Public, vendor-neutral reference and template set for AI security governance, engineering, risk management, assurance, audit, compliance, and vendor evaluation.</p>
@@ -133,6 +150,7 @@
 <li><strong>How will security, privacy, sovereignty, and compliance requirements be evidenced?</strong></li>
 <li><strong>How will the AI capability be monitored, tested, audited, and improved over time?</strong></li>
 </ol>
+<p>New to the subject? Start with <a href="00_Foundations/index.html">Foundations: AI Security vs. Security of AI</a>, the research paper that explains the concepts and sources behind the standards, templates, and test cases in the rest of the wiki.</p>
 <h2 id="2-mission-statement">2. Mission Statement</h2>
 <p>Establish a secure, governed, sovereign, and auditable approach to AI adoption by giving business, technology, cybersecurity, governance, compliance, audit, and vendor evaluation teams a common operating reference.</p>
 <p>The wiki supports responsible innovation by enabling AI adoption while reducing the risk of data leakage, prompt injection, model misuse, insecure agent actions, third-party exposure, regulatory non-compliance, and operational blind spots.</p>
@@ -341,7 +359,7 @@ Review, Improve, Renew, or Retire
 <tr>
 <td>Monitoring and operations</td>
 <td>Monitor AI usage, suspicious prompts, data leakage, tool invocation, and incidents.</td>
-<td>SOC playbooks, runtime standard, governance operating model</td>
+<td><a href="00_Foundations/08-Assurance-Testing-Monitoring-and-Response.html">Assurance: Testing, Monitoring and Response</a>, <a href="10_Test_Case_Library/L17-monitoring-detection-and-response.html">Monitoring, Detection and Response test cases</a>, runtime standard, governance operating model</td>
 <td>Logs, alerts, incident records, response actions.</td>
 </tr>
 <tr>
@@ -408,7 +426,7 @@ Review, Improve, Renew, or Retire
 <tr>
 <td>SOC and Incident Response</td>
 <td>Runtime security standard</td>
-<td>SOC playbooks, audit evidence checklist</td>
+<td><a href="00_Foundations/08-Assurance-Testing-Monitoring-and-Response.html">Assurance: Testing, Monitoring and Response</a>, <a href="00_Foundations/10-AI-for-Security-and-AI-Enabled-Threats.html">AI for Security and AI-Enabled Threats</a>, <a href="10_Test_Case_Library/D12-ai-incident-response-and-forensics.html">AI Incident Response and Forensics test cases</a>, audit evidence checklist</td>
 <td>Monitoring coverage, detection logic, investigation and response records.</td>
 </tr>
 <tr>
@@ -434,6 +452,10 @@ Review, Improve, Renew, or Retire
 <h2 id="9-core-repository-structure">9. Core Repository Structure</h2>
 <pre><code class="language-text">00_Home/
   Navigation, landing page, wiki usage model, and document governance.
+
+00_Foundations/
+  Research paper &quot;AI Security vs. Security of AI&quot;: terminology, two-axis model, threat taxonomy, reference architecture,
+  assurance, standards, maturity roadmap, and references.
 
 01_Strategy_and_Market/
   AI security market landscape, technology trends, threat intelligence, glossary, and taxonomy.
@@ -544,7 +566,7 @@ Review, Improve, Renew, or Retire
 </tbody>
 </table></div>
 <h2 id="12-control-framework-mapping">12. Control Framework Mapping</h2>
-<p>The wiki supports mapping AI security requirements to recognized control and governance frameworks. The detailed mapping should be maintained in the control library and audit checklist.</p>
+<p>The wiki supports mapping AI security requirements to recognized control and governance frameworks. The detailed mapping should be maintained in the control library and audit checklist. How the instruments relate to each other is explained in <a href="00_Foundations/09-Governance-Standards-and-Regulation.html">Governance, Standards and Regulation</a>.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -564,6 +586,22 @@ Review, Improve, Renew, or Retire
 <tr>
 <td>NIST AI RMF</td>
 <td>AI risk identification, measurement, management, governance, and trustworthiness characteristics.</td>
+</tr>
+<tr>
+<td>NIST AI 100-2 (adversarial machine learning)</td>
+<td>Shared vocabulary for attack classes and the scope of adversarial testing.</td>
+</tr>
+<tr>
+<td>OWASP Top 10 for LLM Applications and for Agentic Applications</td>
+<td>Application and agent risk categories for developer guidance, threat modeling, and test-case design.</td>
+</tr>
+<tr>
+<td>MITRE ATLAS</td>
+<td>Adversary tactics and techniques against AI-enabled systems for threat-informed testing and incident description.</td>
+</tr>
+<tr>
+<td>EU AI Act</td>
+<td>Legal obligations for in-scope providers and deployers of AI systems.</td>
 </tr>
 <tr>
 <td>NIST Cybersecurity Framework</td>
@@ -747,6 +785,7 @@ Review, Improve, Renew, or Retire
 </tr>
 </tbody>
 </table></div>
+<p>A time-boxed version of this roadmap (30 days, 90 days, 6 months, 12 to 24 months) is in <a href="00_Foundations/11-Maturity-Model-and-Roadmap.html">Maturity Model and Roadmap</a>.</p>
 <h2 id="18-success-metrics">18. Success Metrics</h2>
 <div class="table-wrap"><table>
 <thead>
@@ -794,6 +833,7 @@ Review, Improve, Renew, or Retire
 </tr>
 </tbody>
 </table></div>
+<p>These metrics measure coverage. For control-effectiveness metrics such as injection test success rate, privileged-action gating, and time to disable, see <a href="00_Foundations/08-Assurance-Testing-Monitoring-and-Response.html#85-metrics">Assurance: Testing, Monitoring and Response</a>.</p>
 <h2 id="19-document-governance">19. Document Governance</h2>
 <div class="table-wrap"><table>
 <thead>
@@ -856,10 +896,17 @@ Review, Improve, Renew, or Retire
 <td>Nachiket Sathaye</td>
 <td>Expanded into comprehensive enterprise AI security wiki home page with mission, strategic objectives, operating model, governance, standards hierarchy, framework mapping, maintenance rules, roadmap, metrics, and enhanced navigation.</td>
 </tr>
+<tr>
+<td>2.1</td>
+<td>2026-10-07</td>
+<td>Nachiket Sathaye</td>
+<td>Added the Foundations section (research paper: AI Security vs. Security of AI) and linked it from the purpose, navigation, framework mapping, roadmap, and metrics sections.</td>
+</tr>
 </tbody>
 </table></div>
 <h2 id="21-quick-links">21. Quick Links</h2>
 <ul>
+<li><a href="00_Foundations/index.html">Foundations: AI Security vs. Security of AI</a></li>
 <li><a href="01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.html">AI Security Market and Technology Landscape — Summary</a></li>
 <li><a href="02_Risk_Management/02A_AI_Risk_Methodology.html">AI Risk Methodology</a></li>
 <li><a href="02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a></li>
@@ -887,7 +934,7 @@ Review, Improve, Renew, or Retire
 <p>My current focus is enabling organisations to adopt GenAI, RAG and agentic systems securely, securing the full AI lifecycle and building NIST AI RMF, ISO/IEC 42001, EU AI Act and Responsible AI principles into enterprise programmes.</p>
 <p>LinkedIn: <a href="https://www.linkedin.com/in/nachiket-sathaye/" rel="noopener">linkedin.com/in/nachiket-sathaye</a></p>
 </article>
-<nav class="pager" aria-label="Previous and next page"><a class="next" href="01_Strategy_and_Market/index.html">Strategy and Market &rarr;</a></nav>
+<nav class="pager" aria-label="Previous and next page"><a class="next" href="00_Foundations/index.html">Foundations &rarr;</a></nav>
 <footer class="site-footer">Author: Nachiket Sathaye &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/index.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a></footer>
 </main>
 </div>

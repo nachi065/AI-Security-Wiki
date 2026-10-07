@@ -2,7 +2,7 @@
 title: "Control Library"
 author: Nachiket Sathaye
 description: "AI security control library: control objectives, a baseline of existing enterprise controls, and gap analysis against Microsoft security tooling."
-nav_order: 4
+nav_order: 5
 has_children: true
 ---
 

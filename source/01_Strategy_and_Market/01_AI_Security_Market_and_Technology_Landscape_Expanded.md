@@ -64,6 +64,8 @@ The AI threat taxonomy below should be used by security architects, red teamers 
 | Agent Tool Abuse | Agent invokes tools beyond intent or authorization. | Agentic AI workflows | Tool allowlist, least privilege, approvals, action logs |
 | Autonomous Action Risk | AI system performs business action without adequate oversight. | Agentic workflows, enterprise automation | Human approval, kill switch, policy enforcement, auditability |
 
+For a taxonomy organised by lifecycle stage with sources, which adds evasion, membership inference, system-prompt leakage, improper output handling and unbounded consumption, see [Threat Taxonomy](../00_Foundations/03-Threat-Taxonomy.md).
+
 ## 5. AI Security Control Taxonomy
 
 AI security controls must be grouped into families so that governance, engineering and audit teams understand ownership and testability.
@@ -144,6 +146,8 @@ Control focus: model provenance, dependency review, AI BOM, scanning and release
 | Level 4 — Protected | Runtime controls, IDE controls, RAG controls and agent governance are implemented. | Technical risk reduction and production readiness. |
 | Level 5 — Optimized | Continuous monitoring, AI assurance, red teaming, metrics, audit automation and improvement. | Evidence-driven AI security program. |
 
+Typical evidence for each level and a time-boxed roadmap are in [Maturity Model and Roadmap](../00_Foundations/11-Maturity-Model-and-Roadmap.md).
+
 ## 9. AI Security Operating Model
 
 The operating model should connect AI intake, architecture review, risk assessment, control implementation, testing, monitoring, exception handling and recurring governance reporting.
@@ -168,10 +172,16 @@ The following frameworks should be used as references when designing the AI secu
 | NIST Generative AI Profile | Generative AI risk management guidance aligned to AI RMF. | GenAI governance and AI risk teams |
 | OWASP GenAI / LLM Top 10 | Application-focused risks for LLM and generative AI applications. | Developers, AppSec, red teams |
 | MITRE ATLAS | Adversary tactics and techniques against AI-enabled systems. | Threat modeling, SOC, red team |
+| NIST AI 100-2e2025 | Taxonomy and terminology of adversarial machine learning attacks and mitigations. | Red team, threat modeling, AI engineering |
+| OWASP Top 10 for Agentic Applications | Risks for agents that plan, hold memory, call tools and act with delegated authority (ASI01 to ASI10). | AI platform, IAM, red team |
+| Google SAIF | Practitioner framework with a risk map and controls for AI development and deployment. | Security architecture, AI engineering |
+| ENISA AI cybersecurity reports | EU agency analysis of AI cybersecurity threats and research needs. | Threat intelligence, policy teams |
 | ISO/IEC 42001 | AI Management System requirements for organizations developing, providing or using AI systems. | Governance, compliance, audit readiness |
 | ISO/IEC 23894 | AI risk management guidance. | GRC and risk teams |
-| EU AI Act | Risk-based regulatory model relevant for governance awareness. | Legal, compliance, vendor risk |
+| EU AI Act | Binding EU regulation with a risk-based model; obligations phase in by role and system type. | Legal, compliance, vendor risk |
 | UAE / Local Governance Requirements | Local privacy, data residency, critical infrastructure and sector requirements should be mapped separately. | GRC, legal, enterprise architecture |
+
+How these instruments relate to each other, and the current EU AI Act timetable, are covered in [Governance, Standards and Regulation](../00_Foundations/09-Governance-Standards-and-Regulation.md).
 
 ## 11. AI Security Vendor Category Model
 
@@ -200,23 +210,7 @@ The following frameworks should be used as references when designing the AI secu
 
 ## 13. Expanded AI Security Glossary
 
-| Term | Meaning |
-|---|---|
-| LLM | Large Language Model; a model designed to process and generate language. |
-| SLM | Small Language Model; a smaller model optimized for constrained or specialized use cases. |
-| RAG | Retrieval-Augmented Generation; a pattern where the AI system retrieves external content to support responses. |
-| Vector Database | A system used to store and retrieve embeddings or semantic representations. |
-| Prompt Injection | A malicious instruction intended to manipulate the model or application behavior. |
-| Indirect Prompt Injection | Prompt injection delivered through retrieved or external content. |
-| Guardrails | Controls that constrain or monitor AI inputs, outputs and behavior. |
-| AI BOM | AI Bill of Materials; inventory of models, datasets, libraries, plugins and dependencies. |
-| Model Registry | Repository for tracking models, versions, metadata and governance status. |
-| Agent | AI system capable of planning or acting through tools, APIs or workflows. |
-| MCP | Model Context Protocol; protocol-like approach for connecting AI systems to tools and context sources. |
-| Tool Calling | AI system invocation of tools, plugins, commands, APIs or workflows. |
-| AI-SPM | AI Security Posture Management; discovery and governance of AI assets, configurations and risks. |
-| AI Red Teaming | Adversarial testing to discover weaknesses in AI systems, prompts, guardrails and agents. |
-| AI Assurance | Evidence-based validation that AI systems operate securely, reliably and according to policy. |
+The terms formerly listed here are now kept in one place: the [AI Security Glossary and Taxonomy](../09_Reference/18_AI_Security_Glossary_and_Taxonomy.md).
 
 ## 14. Strategic Guidance for the AI Security Wiki
 
@@ -236,6 +230,8 @@ The following frameworks should be used as references when designing the AI secu
 |---|---|---|
 | Original Wiki File | 01_AI_Security_Market_and_Technology_Landscape.md | Internal generated wiki document provided by user. |
 | NIST AI RMF | https://www.nist.gov/itl/ai-risk-management-framework | NIST describes AI RMF as voluntary guidance to manage AI risks and notes the Generative AI Profile and Critical Infrastructure profile concept note. |
-| OWASP GenAI / LLM Top 10 | https://owasp.org/www-project-top-10-for-large-language-model-applications/ | OWASP describes its GenAI Security Project and LLM Top 10 as guidance for securing generative AI systems. |
+| OWASP GenAI / LLM Top 10 | https://genai.owasp.org/llm-top-10/ | OWASP describes its GenAI Security Project and LLM Top 10 as guidance for securing generative AI systems. |
 | MITRE ATLAS | https://atlas.mitre.org/ | MITRE describes ATLAS as a living knowledge base of adversary tactics and techniques against AI-enabled systems. |
 | ISO/IEC 42001 | https://www.iso.org/standard/42001 | ISO describes ISO/IEC 42001 as an AI management system standard for establishing, implementing, maintaining and improving an AIMS. |
+
+The full source list with verification status is in [References](../00_Foundations/References.md).

@@ -40,6 +40,10 @@ version: 1.0
 | Agent Abuse | Validate agent cannot execute unauthorized tools/actions. | Tool call log, approval denial |
 | Guardrail Evasion | Validate safety and policy bypass attempts are detected. | Test report, issue tracker |
 
+## What to Measure
+
+Measure whether the system leaks information or performs an unauthorized action, not only whether it refuses a request. Report results as rates over defined test sets, with the model version, configuration and date. Threat modeling steps and the limits of testing are covered in [Assurance: Testing, Monitoring and Response](../00_Foundations/08-Assurance-Testing-Monitoring-and-Response.md).
+
 ## Reporting Template
 
 ```markdown

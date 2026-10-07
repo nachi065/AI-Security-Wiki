@@ -29,6 +29,23 @@
 <nav class="sidebar" id="sidebar" aria-label="Wiki sections">
 <ul class="nav">
 <li><a href="../index.html">Home</a></li>
+<li><details><summary><a href="../00_Foundations/index.html">Foundations</a></summary><ul>
+<li><a href="../00_Foundations/01-Terminology-and-Two-Axis-Model.html">1. Terminology and the Two-Axis Model</a></li>
+<li><a href="../00_Foundations/02-AI-System-Boundary-and-Assets.html">2. The AI System Boundary and Assets</a></li>
+<li><a href="../00_Foundations/03-Threat-Taxonomy.html">3. Threat Taxonomy</a></li>
+<li><a href="../00_Foundations/04-LLMs-Prompt-Injection-and-RAG.html">4. LLMs, Prompt Injection and RAG</a></li>
+<li><a href="../00_Foundations/05-Agents-Identity-and-Excessive-Agency.html">5. Agents, Identity and Excessive Agency</a></li>
+<li><a href="../00_Foundations/06-Supply-Chain-and-Infrastructure.html">6. Supply Chain and Infrastructure</a></li>
+<li><a href="../00_Foundations/07-Reference-Architecture.html">7. Reference Architecture</a></li>
+<li><a href="../00_Foundations/08-Assurance-Testing-Monitoring-and-Response.html">8. Assurance: Testing, Monitoring and Response</a></li>
+<li><a href="../00_Foundations/09-Governance-Standards-and-Regulation.html">9. Governance, Standards and Regulation</a></li>
+<li><a href="../00_Foundations/10-AI-for-Security-and-AI-Enabled-Threats.html">10. AI for Security and AI-Enabled Threats</a></li>
+<li><a href="../00_Foundations/11-Maturity-Model-and-Roadmap.html">11. Maturity Model and Roadmap</a></li>
+<li><a href="../00_Foundations/12-Illustrative-Scenarios.html">12. Illustrative Scenarios</a></li>
+<li><a href="../00_Foundations/13-Limitations-and-Research-Gaps.html">13. Limitations and Research Gaps</a></li>
+<li><a href="../00_Foundations/Appendices.html">Appendices</a></li>
+<li><a href="../00_Foundations/References.html">References</a></li>
+</ul></details></li>
 <li><details><summary><a href="../01_Strategy_and_Market/index.html">Strategy and Market</a></summary><ul>
 <li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.html">AI Security Market and Technology Landscape — Summary</a></li>
 <li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape_Expanded.html">AI Security Market and Technology Landscape</a></li>
@@ -141,6 +158,7 @@
 <th>Risk</th>
 <th>Description</th>
 <th>Required Control</th>
+<th>OWASP Reference</th>
 </tr>
 </thead>
 <tbody>
@@ -148,29 +166,53 @@
 <td>Excessive Privileges</td>
 <td>Agent has broader permissions than required.</td>
 <td>Least privilege, access review</td>
+<td>ASI03 Identity &amp; Privilege Abuse</td>
 </tr>
 <tr>
 <td>Unauthorized Tool Execution</td>
 <td>Agent invokes scripts, APIs or workflows outside scope.</td>
 <td>Tool allowlist, runtime enforcement</td>
+<td>ASI02 Tool Misuse &amp; Exploitation</td>
 </tr>
 <tr>
 <td>Prompt Manipulation</td>
 <td>Agent behavior altered by malicious instructions.</td>
 <td>Prompt injection controls, input validation</td>
+<td>ASI01 Agent Goal Hijack</td>
 </tr>
 <tr>
 <td>Lack of Human Oversight</td>
 <td>Sensitive actions occur without approval.</td>
 <td>Approval workflow, escalation controls</td>
+<td>LLM06 Excessive Agency; ASI09 Human-Agent Trust Exploitation</td>
 </tr>
 <tr>
 <td>Agent-to-Agent Trust Abuse</td>
 <td>Agents cascade actions or propagate privilege.</td>
 <td>Trust boundaries, agent relationship mapping</td>
+<td>ASI07 Insecure Inter-Agent Communication; ASI08 Cascading Failures</td>
+</tr>
+<tr>
+<td>Memory and Context Poisoning</td>
+<td>Poisoned persistent memory influences later sessions.</td>
+<td>Memory integrity controls, expiry, ability to inspect and purge</td>
+<td>ASI06 Memory &amp; Context Poisoning</td>
+</tr>
+<tr>
+<td>Unexpected Code Execution</td>
+<td>Agent runs generated or injected code with access to network, files or secrets.</td>
+<td>Sandboxed execution, no network or filesystem access by default</td>
+<td>ASI05 Unexpected Code Execution (RCE)</td>
+</tr>
+<tr>
+<td>Agentic Supply Chain Compromise</td>
+<td>A third-party tool server, MCP server, plugin or agent framework is malicious or compromised.</td>
+<td>Allowlist and vet tool servers, isolate them, monitor calls</td>
+<td>ASI04 Agentic Supply Chain Vulnerabilities</td>
 </tr>
 </tbody>
 </table></div>
+<p>OWASP references are to the Top 10 for Agentic Applications (ASI) and the Top 10 for LLM Applications 2025 (LLM). Confirm the exact category wording against the OWASP documents before quoting it. The reasoning behind these controls, including approval-gate design and autonomy limits, is in <a href="../00_Foundations/05-Agents-Identity-and-Excessive-Agency.html">Agents, Identity and Excessive Agency</a>.</p>
 <h2 id="agent-control-objectives">Agent Control Objectives</h2>
 <div class="table-wrap"><table>
 <thead>

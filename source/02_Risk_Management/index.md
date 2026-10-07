@@ -2,7 +2,7 @@
 title: "Risk Management"
 author: Nachiket Sathaye
 description: "AI risk management resources: risk methodology, sample enterprise AI risk register, treatment plan, risk-to-control mapping and review template."
-nav_order: 3
+nav_order: 4
 has_children: true
 ---
 

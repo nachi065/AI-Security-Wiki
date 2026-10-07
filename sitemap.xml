@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/</loc></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/00_Foundations/</loc></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/00_Foundations/01-Terminology-and-Two-Axis-Model.html</loc></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/00_Foundations/02-AI-System-Boundary-and-Assets.html</loc></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/00_Foundations/03-Threat-Taxonomy.html</loc></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/00_Foundations/04-LLMs-Prompt-Injection-and-RAG.html</loc></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/00_Foundations/05-Agents-Identity-and-Excessive-Agency.html</loc></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/00_Foundations/06-Supply-Chain-and-Infrastructure.html</loc></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/00_Foundations/07-Reference-Architecture.html</loc></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/00_Foundations/08-Assurance-Testing-Monitoring-and-Response.html</loc></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/00_Foundations/09-Governance-Standards-and-Regulation.html</loc></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/00_Foundations/10-AI-for-Security-and-AI-Enabled-Threats.html</loc></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/00_Foundations/11-Maturity-Model-and-Roadmap.html</loc></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/00_Foundations/12-Illustrative-Scenarios.html</loc></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/00_Foundations/13-Limitations-and-Research-Gaps.html</loc></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/00_Foundations/Appendices.html</loc></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/00_Foundations/References.html</loc></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/01_Strategy_and_Market/</loc></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.html</loc></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape_Expanded.html</loc></url>

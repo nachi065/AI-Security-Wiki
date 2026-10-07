@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6. Supply Chain and Infrastructure | AI Security Wiki</title>
+<meta name="author" content="Nachiket Sathaye">
+<meta name="description" content="AI supply chain and infrastructure security: models, datasets, packages, tool servers, provenance, AI bill of materials, GPUs, cloud and secrets.">
+<link rel="canonical" href="https://nachi065.github.io/AI-Security-Wiki/00_Foundations/06-Supply-Chain-and-Infrastructure.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="AI Security Wiki">
+<meta property="og:title" content="6. Supply Chain and Infrastructure | AI Security Wiki">
+<meta property="og:description" content="AI supply chain and infrastructure security: models, datasets, packages, tool servers, provenance, AI bill of materials, GPUs, cloud and secrets.">
+<meta property="og:url" content="https://nachi065.github.io/AI-Security-Wiki/00_Foundations/06-Supply-Chain-and-Infrastructure.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+  <a class="brand" href="../index.html">AI Security Wiki</a>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Search the wiki" aria-label="Search the wiki" autocomplete="off">
+    <ul id="search-results" hidden></ul>
+  </div>
+  <a class="repo-link" href="https://github.com/nachi065/AI-Security-Wiki" rel="noopener">GitHub</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="sidebar" aria-label="Wiki sections">
+<ul class="nav">
+<li><a href="../index.html">Home</a></li>
+<li><details open><summary><a href="index.html">Foundations</a></summary><ul>
+<li><a href="01-Terminology-and-Two-Axis-Model.html">1. Terminology and the Two-Axis Model</a></li>
+<li><a href="02-AI-System-Boundary-and-Assets.html">2. The AI System Boundary and Assets</a></li>
+<li><a href="03-Threat-Taxonomy.html">3. Threat Taxonomy</a></li>
+<li><a href="04-LLMs-Prompt-Injection-and-RAG.html">4. LLMs, Prompt Injection and RAG</a></li>
+<li><a href="05-Agents-Identity-and-Excessive-Agency.html">5. Agents, Identity and Excessive Agency</a></li>
+<li><a class="current" href="06-Supply-Chain-and-Infrastructure.html">6. Supply Chain and Infrastructure</a></li>
+<li><a href="07-Reference-Architecture.html">7. Reference Architecture</a></li>
+<li><a href="08-Assurance-Testing-Monitoring-and-Response.html">8. Assurance: Testing, Monitoring and Response</a></li>
+<li><a href="09-Governance-Standards-and-Regulation.html">9. Governance, Standards and Regulation</a></li>
+<li><a href="10-AI-for-Security-and-AI-Enabled-Threats.html">10. AI for Security and AI-Enabled Threats</a></li>
+<li><a href="11-Maturity-Model-and-Roadmap.html">11. Maturity Model and Roadmap</a></li>
+<li><a href="12-Illustrative-Scenarios.html">12. Illustrative Scenarios</a></li>
+<li><a href="13-Limitations-and-Research-Gaps.html">13. Limitations and Research Gaps</a></li>
+<li><a href="Appendices.html">Appendices</a></li>
+<li><a href="References.html">References</a></li>
+</ul></details></li>
+<li><details><summary><a href="../01_Strategy_and_Market/index.html">Strategy and Market</a></summary><ul>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.html">AI Security Market and Technology Landscape — Summary</a></li>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape_Expanded.html">AI Security Market and Technology Landscape</a></li>
+</ul></details></li>
+<li><details><summary><a href="../02_Risk_Management/index.html">Risk Management</a></summary><ul>
+<li><a href="../02_Risk_Management/02A_AI_Risk_Methodology.html">AI Risk Methodology</a></li>
+<li><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a></li>
+<li><a href="../02_Risk_Management/02C_AI_Risk_Treatment_Plan.html">AI Risk Treatment Plan</a></li>
+<li><a href="../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a></li>
+<li><a href="../02_Risk_Management/02E_AI_Risk_Review_Template.html">AI Risk Review Template</a></li>
+</ul></details></li>
+<li><details><summary><a href="../03_Control_Library/index.html">Control Library</a></summary><ul>
+<li><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></li>
+<li><a href="../03_Control_Library/04_Existing_Security_Control_Baseline.html">Existing Security Control Baseline</a></li>
+<li><a href="../03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.html">Microsoft Security Overlap and AI Gaps</a></li>
+</ul></details></li>
+<li><details><summary><a href="../04_Domain_Standards/index.html">Domain Standards</a></summary><ul>
+<li><a href="../04_Domain_Standards/06_Browser_AI_Security_Standard.html">Browser AI Security Standard</a></li>
+<li><a href="../04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.html">IDE AI Coding Assistant Security Standard</a></li>
+<li><a href="../04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a></li>
+<li><a href="../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
+<li><a href="../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
+</ul></details></li>
+<li><details><summary><a href="../05_Vendor_Evaluation/index.html">Vendor Evaluation</a></summary><ul>
+<li><a href="../05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
+<li><a href="../05_Vendor_Evaluation/12A_Vendor_Profile_Prompt_Security_SentinelOne.html">Vendor Profile — Prompt Security / SentinelOne</a></li>
+<li><a href="../05_Vendor_Evaluation/12B_Vendor_Profile_Palo_Alto_Prisma_AIRS.html">Vendor Profile — Palo Alto Prisma AIRS</a></li>
+<li><a href="../05_Vendor_Evaluation/12C_Vendor_Profile_HiddenLayer.html">Vendor Profile — HiddenLayer</a></li>
+<li><a href="../05_Vendor_Evaluation/12D_Vendor_Profile_Lasso_Security.html">Vendor Profile — Lasso Security</a></li>
+<li><a href="../05_Vendor_Evaluation/12E_Vendor_Profile_Cyberhaven.html">Vendor Profile — Cyberhaven</a></li>
+<li><a href="../05_Vendor_Evaluation/12F_Vendor_Profile_Nightfall_AI.html">Vendor Profile — Nightfall AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12G_Vendor_Profile_Enkrypt_AI.html">Vendor Profile — Enkrypt AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12H_Vendor_Profile_Sovereign_AI_Security_Labs.html">Vendor Profile — Sovereign AI Security Labs</a></li>
+</ul></details></li>
+<li><details><summary><a href="../06_Testing_and_Assurance/index.html">Testing and Assurance</a></summary><ul>
+<li><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html">AI Security PoC Test Case Library</a></li>
+<li><a href="../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a></li>
+<li><a href="../06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.html">AI Red Team Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../07_Role_Based_Playbooks/index.html">Role-Based Playbooks</a></summary><ul>
+<li><a href="../07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.html">AI Product Developer Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15B_AI_Security_Researcher_Playbook.html">AI Security Researcher Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15D_Security_Engineering_Playbook.html">Security Engineering Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15E_Vendor_Evaluation_and_Audit_Playbook.html">Vendor Evaluation and Audit Playbook</a></li>
+</ul></details></li>
+<li><details><summary><a href="../08_Governance/index.html">Governance</a></summary><ul>
+<li><a href="../08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></li>
+<li><a href="../08_Governance/17_AI_Policy_Standards_and_Acceptable_Use.html">AI Policy, Standards and Acceptable Use</a></li>
+</ul></details></li>
+<li><details><summary><a href="../09_Reference/index.html">Reference</a></summary><ul>
+<li><a href="../09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
+</ul></details></li>
+<li><details><summary><a href="../10_Test_Case_Library/index.html">Test Case Library</a></summary><ul>
+<li><a href="../10_Test_Case_Library/00-reference-index.html">Reference Index</a></li>
+<li><a href="../10_Test_Case_Library/framework-adoption-guide.html">Framework Adoption Guide</a></li>
+<li><a href="../10_Test_Case_Library/appendix-lab-prerequisites.html">Appendix: Lab Prerequisites</a></li>
+<li><a href="../10_Test_Case_Library/L01-business-and-use-cases.html">L01 Business &amp; Use Cases</a></li>
+<li><a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
+<li><a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>
+<li><a href="../10_Test_Case_Library/L04-human-interaction-layer.html">L04 Human Interaction Layer</a></li>
+<li><a href="../10_Test_Case_Library/L05-ai-applications.html">L05 AI Applications</a></li>
+<li><a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html">L06 Agent Orchestration Layer</a></li>
+<li><a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html">L07 Prompt &amp; Context Layer</a></li>
+<li><a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html">L08 AI Gateway &amp; Security Controls</a></li>
+<li><a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html">L09 Identity &amp; Access Mgmt</a></li>
+<li><a href="../10_Test_Case_Library/L10-data-layer.html">L10 Data Layer</a></li>
+<li><a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html">L11 Knowledge &amp; Retrieval Layer</a></li>
+<li><a href="../10_Test_Case_Library/L12-model-layer.html">L12 Model Layer</a></li>
+<li><a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html">L13 Training &amp; Fine-Tuning Layer</a></li>
+<li><a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html">L14 MLOps / LLMOps Layer</a></li>
+<li><a href="../10_Test_Case_Library/L15-infrastructure-layer.html">L15 Infrastructure Layer</a></li>
+<li><a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html">L16 Supply Chain &amp; Third Party</a></li>
+<li><a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html">L17 Monitoring, Detection &amp; Response</a></li>
+<li><a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html">D08 AI Red Teaming and Continuous Testing</a></li>
+<li><a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html">D09 Agent and Non-Human Identity Governance</a></li>
+<li><a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html">D10 Browser and Computer-Use Agents</a></li>
+<li><a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html">D11 Multimodal and Voice Input Security</a></li>
+<li><a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html">D12 AI Incident Response and Forensics</a></li>
+<li><a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html">D13 AI Cost and Abuse Controls</a></li>
+</ul></details></li>
+<li><a href="../community-rules.html">Community Rules</a></li>
+</ul>
+</nav>
+<main>
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Foundations</a> / <span>6. Supply Chain and Infrastructure</span></p>
+<article>
+<h1 id="6-supply-chain-and-infrastructure">6. Supply Chain and Infrastructure</h1>
+<h2 id="61-the-ai-supply-chain-is-wider-than-the-software-supply-chain">6.1 The AI supply chain is wider than the software supply chain</h2>
+<p>Organisations consume foundation models and hosted APIs, fine-tuned adapters, open-source frameworks, datasets, embedding models, vector stores, evaluation tools, agent frameworks, plugins and tool servers, and GPU and cloud infrastructure. Foundation models in particular concentrate capability into reusable artifacts; a single model may sit beneath thousands of downstream applications, creating concentration risk [26]. The security boundary is distributed across suppliers and cannot be reduced to the organisation's own code. OWASP lists supply chain as LLM03 [11] and, for agents, ASI04 [12]; ENISA's 2020 threat-landscape report already emphasised the supply chain as a significant dimension of AI cybersecurity [9]. <strong>[Documented]</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Typical risks</th>
+<th>Controls</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Third-party models and adapters</strong></td>
+<td>Tampered weights; backdoors; unclear training data; unannounced version change</td>
+<td>Source from trusted registries; verify hashes/signatures where offered; pin versions; re-evaluate on every change</td>
+</tr>
+<tr>
+<td><strong>Model file formats</strong></td>
+<td>Some serialisation formats can execute code on load</td>
+<td>Prefer formats that do not execute code on load; scan artifacts; load in isolated environments <em>(verify current guidance for each format in use)</em></td>
+</tr>
+<tr>
+<td><strong>Datasets</strong></td>
+<td>Poisoning; unlicensed or sensitive content; link-rot hijack</td>
+<td>Record provenance and hashes; integrity-check downloads; review licences [25]</td>
+</tr>
+<tr>
+<td><strong>Open-source packages and frameworks</strong></td>
+<td>Malicious or compromised releases; typosquatting; vulnerable dependencies</td>
+<td>Pin and lock dependencies; internal mirror; SCA scanning; review new dependencies</td>
+</tr>
+<tr>
+<td><strong>Plugins / tool servers</strong></td>
+<td>Over-privileged or malicious tools; description-based injection</td>
+<td>Allow-list; review permissions; run isolated; monitor calls</td>
+</tr>
+<tr>
+<td><strong>Hosted model providers</strong></td>
+<td>Data retention; behaviour change; outage; provider incident</td>
+<td>Contractual terms; data-handling review; fallback plan; monitoring for behavioural drift</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>[Analysis], with sources as cited.</em></p>
+<p><strong>Reported incidents.</strong> The OWASP Round-up for Q1 2026 describes malicious package updates in AI-related tooling and the rapid weaponisation of leaked artifacts among its incidents [13]. <strong>[Reported]</strong> <em>Read the primary report for incident specifics; this paper does not restate them.</em></p>
+<h2 id="62-provenance-signing-and-an-ai-bill-of-materials">6.2 Provenance, signing and an AI bill of materials</h2>
+<p>Practical goals: know exactly which model, dataset, prompt, adapter and package versions are running in each environment; be able to prove they match what was approved; and be able to answer "are we affected?" within hours when an upstream component is disclosed as compromised.</p>
+<p>Recommended minimum record per AI system: model name, provider, version/hash; dataset sources and snapshots; fine-tuning lineage; framework and package versions; prompt and policy versions; tool definitions; evaluation results tied to those versions. Machine-readable inventories exist in SBOM tooling and may be extended to ML artifacts; <em>check the current capabilities of your chosen format before committing to it.</em> [Analysis]</p>
+<p><strong>Change control.</strong> Treat a model, prompt, retrieval-corpus or policy change as a release. A control that passed at deployment may not hold after a provider-side model update. Re-run security evaluations whenever any upstream component changes.</p>
+<h2 id="63-infrastructure-and-cloud">6.3 Infrastructure and cloud</h2>
+<p>Most infrastructure risk in AI systems is conventional risk at a higher stakes level: GPUs and accelerators are expensive and attractive for abuse; model weights and datasets are large, valuable files; clusters often have broad internal permissions to move data; and notebooks and experiment tooling are frequently less hardened than production. [Analysis]</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Concerns</th>
+<th>Controls</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GPU / accelerator hosts</strong></td>
+<td>Resource hijacking; driver and firmware vulnerabilities; shared-tenant isolation</td>
+<td>Patch management; tenant isolation; usage quotas and anomaly alerts</td>
+</tr>
+<tr>
+<td><strong>Containers and orchestration</strong></td>
+<td>Over-privileged pods; exposed dashboards and APIs; image provenance</td>
+<td>Hardened base images; least-privilege runtime; admission control; network policies</td>
+</tr>
+<tr>
+<td><strong>Storage</strong></td>
+<td>Open buckets; unencrypted weights and datasets; over-broad access</td>
+<td>Encryption; strict IAM; access logging; separate environments</td>
+</tr>
+<tr>
+<td><strong>Cloud AI platforms</strong></td>
+<td>Privilege abuse via default service roles</td>
+<td>Review default roles on managed AI services; the Q1 2026 Round-up reports cloud privilege-abuse issues affecting managed AI platforms [13] <strong>[Reported]</strong></td>
+</tr>
+<tr>
+<td><strong>Secrets</strong></td>
+<td>Keys in notebooks, repos, prompts, CI logs</td>
+<td>Central secrets management; scanning; short-lived credentials</td>
+</tr>
+</tbody>
+</table></div>
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="05-Agents-Identity-and-Excessive-Agency.html">&larr; 5. Agents, Identity and Excessive Agency</a><a class="next" href="07-Reference-Architecture.html">7. Reference Architecture &rarr;</a></nav>
+<footer class="site-footer">Author: Nachiket Sathaye &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/00_Foundations/06-Supply-Chain-and-Infrastructure.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a></footer>
+</main>
+</div>
+<script>window.SITE_BASE = "../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

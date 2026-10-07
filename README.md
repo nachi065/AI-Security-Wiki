@@ -14,6 +14,7 @@ Over the past year, I’ve built an AI Security Library—now live on GitHub! It
 | Start here | Link |
 |---|---|
 | Wiki home, lifecycle and role navigation | https://nachi065.github.io/AI-Security-Wiki/ |
+| Foundations: AI Security vs. Security of AI (research paper) | https://nachi065.github.io/AI-Security-Wiki/00_Foundations/ |
 | Risk management | https://nachi065.github.io/AI-Security-Wiki/02_Risk_Management/ |
 | Control library | https://nachi065.github.io/AI-Security-Wiki/03_Control_Library/ |
 | Domain standards | https://nachi065.github.io/AI-Security-Wiki/04_Domain_Standards/ |
