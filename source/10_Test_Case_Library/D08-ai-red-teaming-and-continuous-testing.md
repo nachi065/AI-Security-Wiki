@@ -11,6 +11,8 @@ nav_order: 21
 
 **Focus:** automated adversarial testing tools: ground-truth accuracy, coverage, judging, reproducibility, CI/CD, safe execution
 
+**Controls tested:** [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034)
+
 **Cases:** 25 (TC-D08-001 to TC-D08-025)  |  **Series:** Emerging domains
 
 > **Safety boundary.** All cases use synthetic data and lab targets only. Red-team tooling must never be pointed at production systems, live third-party services or real customer data.

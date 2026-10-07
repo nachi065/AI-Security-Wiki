@@ -11,6 +11,8 @@ nav_order: 17
 
 **Primary test focus:** pipeline and registry security, CI/CD gates, artifact signing
 
+**Controls tested:** [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004), [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030)
+
 **Cases:** 22 (TC-L14-001 to TC-L14-022)
 > **Safety boundary.** Retrieval, model, training, pipeline and supply chain cases use fabricated corpora and datasets, small lab models, mock hubs and indexes and harmless marker artefacts only (an EICAR-style file that writes a marker, never real malware). Never load untrusted model files outside an isolated sandbox, and never connect the lab to production knowledge sources, models, pipelines, registries or credentials. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.
 

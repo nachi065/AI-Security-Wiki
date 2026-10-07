@@ -26,15 +26,15 @@ version: 1.0
 
 ## Control Requirements
 
-| Requirement | Description | Evidence |
-|---|---|---|
-| IDE Discovery | Identify approved and unapproved AI coding tools and extensions. | IDE inventory, endpoint reports |
-| Source Code Protection | Detect submission of proprietary source code to AI assistants. | Detection logs, test evidence |
-| Secret Detection | Detect API keys, tokens, credentials, certificates and connection strings. | Secret detection alerts |
-| Prompt Inspection | Inspect developer prompts where technically feasible. | Prompt logs or policy events |
-| Policy Enforcement | Monitor, warn, redact, block or investigate risky submissions. | Policy screenshots, alert logs |
-| Auditability | Attribute activity to user, device, IDE and AI assistant. | Exportable audit records |
-| SIEM Integration | Forward events to SOC monitoring. | SIEM event ID, parser mapping |
+| Requirement | Control ID | Description | Evidence |
+|---|---|---|---|
+| IDE Discovery | [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004), [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) | Identify approved and unapproved AI coding tools and extensions. | IDE inventory, endpoint reports |
+| Source Code Protection | [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) | Detect submission of proprietary source code to AI assistants. | Detection logs, test evidence |
+| Secret Detection | [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) | Detect API keys, tokens, credentials, certificates and connection strings. | Secret detection alerts |
+| Prompt Inspection | [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002) | Inspect developer prompts where technically feasible. | Prompt logs or policy events |
+| Policy Enforcement | [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) | Monitor, warn, redact, block or investigate risky submissions. | Policy screenshots, alert logs |
+| Auditability | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) | Attribute activity to user, device, IDE and AI assistant. | Exportable audit records |
+| SIEM Integration | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) | Forward events to SOC monitoring. | SIEM event ID, parser mapping |
 
 ## Developer AI Coding Rules
 

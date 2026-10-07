@@ -11,6 +11,8 @@ nav_order: 8
 
 **Primary test focus:** discovery, app-level runtime protection, output handling
 
+**Controls tested:** [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001), [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004), [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005), [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020)
+
 **Cases:** 35 (TC-L05-001 to TC-L05-035)
 > **Safety boundary.** All test cases in this layer use synthetic, non-functional or clearly marked test data only. Card numbers must come from published test ranges; keys, identifiers and records must be fabricated.
 

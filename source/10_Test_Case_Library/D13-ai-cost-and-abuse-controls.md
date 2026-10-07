@@ -11,6 +11,8 @@ nav_order: 26
 
 **Focus:** AI cost and abuse controls: attribution, budgets, denial of wallet, key abuse, runaway agents, shadow spend, enforcement
 
+**Controls tested:** [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036)
+
 **Cases:** 21 (TC-D13-001 to TC-D13-021)  |  **Series:** Emerging domains
 
 > **Safety boundary.** All cases use synthetic data and lab targets only. Use a mock provider, fabricated keys and lab endpoints only. Abuse scripts must never be pointed at real provider accounts or real customer traffic, and tests must never try to defeat a challenge mechanism.

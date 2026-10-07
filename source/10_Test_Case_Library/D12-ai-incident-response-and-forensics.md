@@ -11,6 +11,8 @@ nav_order: 25
 
 **Focus:** AI incident response and forensics: taxonomy, state preservation, replay, scoping, containment, provider coordination, evidence handling
 
+**Controls tested:** [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008), [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025), [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035)
+
 **Cases:** 22 (TC-D12-001 to TC-D12-022)  |  **Series:** Emerging domains
 
 > **Safety boundary.** All cases use synthetic data and lab targets only. Use scripted lab incidents with known ground truth and fabricated data only. Never run lab exercises against production systems or real incidents.

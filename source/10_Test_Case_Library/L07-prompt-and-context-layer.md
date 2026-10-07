@@ -11,6 +11,8 @@ nav_order: 10
 
 **Primary test focus:** prompt injection (direct/indirect), jailbreak, context and memory poisoning
 
+**Controls tested:** [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005), [AI-CTRL-026](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-026)
+
 **Cases:** 41 (TC-L07-001 to TC-L07-041)
 > **Safety boundary.** Injection and jailbreak cases use benign canary strings and mock tools only. Each case first measures whether the attack succeeds against the unprotected application, so that only effective payloads are scored.
 

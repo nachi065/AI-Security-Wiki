@@ -11,6 +11,8 @@ nav_order: 6
 
 **Primary test focus:** UAE/GCC residency, PDPL-type obligations, evidence export, DPIA support
 
+**Controls tested:** [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013)
+
 **Cases:** 30 (TC-L03-001 to TC-L03-030)
 > **Safety boundary.** All cases use fabricated use cases, policies, records and individuals only. This layer is framework-neutral: see the [Framework Adoption Guide](framework-adoption-guide.md) before testing, and complete the Applicable Requirement and Framework Crosswalk fields for each case.
 

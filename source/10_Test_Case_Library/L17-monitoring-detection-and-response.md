@@ -11,6 +11,8 @@ nav_order: 20
 
 **Primary test focus:** telemetry, SIEM/SOAR integration, AI incident response, forensics
 
+**Controls tested:** [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008), [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009), [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035)
+
 **Cases:** 31 (TC-L17-001 to TC-L17-031)
 > **Safety boundary.** Infrastructure and SOC cases use a lab cluster, mock inference servers, a test cloud account and a lab SIEM and SOAR only. Probe and compromise-simulation scripts are harmless lab tools that only attempt connections and reads of canary resources. Never run them against production systems, and never connect lab alerting to production on-call routing. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.
 

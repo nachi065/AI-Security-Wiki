@@ -22,16 +22,16 @@ This standard applies to internal AI assistants, enterprise knowledge chatbots, 
 
 ## Required Security Gates
 
-| Gate | Requirement | Evidence |
-|---|---|---|
-| Input Security | Prompt injection and malicious input testing completed. | Red team results, test cases |
-| Retrieval Security | Source permissions and retrieval boundaries validated. | Permission test evidence, retrieval logs |
-| Output Security | Sensitive output filtering and response governance enabled. | Output inspection logs |
-| API Security | Authentication, authorization, rate limits and API logging enforced. | API gateway policy evidence |
-| Data Protection | Data minimization and classification-aware controls implemented. | Data flow and classification evidence |
-| Logging | Prompts, responses, retrieved sources, user context and model/API calls logged based on policy. | Audit export, log samples |
-| SOC Integration | Alerts integrated with monitoring and response workflows. | SIEM event IDs |
-| Production Approval | Security review completed before production. | Approval record |
+| Gate | Control ID | Requirement | Evidence |
+|---|---|---|---|
+| Input Security | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005), [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021), [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) | Prompt injection and malicious input testing completed. | Red team results, test cases |
+| Retrieval Security | [AI-CTRL-018](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-018), [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) | Source permissions and retrieval boundaries validated. | Permission test evidence, retrieval logs |
+| Output Security | [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) | Sensitive output filtering and response governance enabled. | Output inspection logs |
+| API Security | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016), [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) | Authentication, authorization, rate limits and API logging enforced. | API gateway policy evidence |
+| Data Protection | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) | Data minimization and classification-aware controls implemented. | Data flow and classification evidence |
+| Logging | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) | Prompts, responses, retrieved sources, user context and model/API calls logged based on policy. | Audit export, log samples |
+| SOC Integration | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009), [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) | Alerts integrated with monitoring and response workflows. | SIEM event IDs |
+| Production Approval | [AI-CTRL-033](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-033), [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) | Security review completed before production. | Approval record |
 
 ## Runtime Threat Scenarios
 

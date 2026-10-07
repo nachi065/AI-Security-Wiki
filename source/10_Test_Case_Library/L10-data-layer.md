@@ -11,6 +11,8 @@ nav_order: 13
 
 **Primary test focus:** sensitive-data classification, DLP, lineage, tenant isolation
 
+**Controls tested:** [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017)
+
 **Cases:** 30 (TC-L10-001 to TC-L10-030)
 > **Safety boundary.** Injection and jailbreak cases use benign canary strings and mock tools only. Each case first measures whether the attack succeeds against the unprotected application, so that only effective payloads are scored.
 

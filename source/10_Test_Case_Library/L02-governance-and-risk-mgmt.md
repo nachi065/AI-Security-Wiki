@@ -11,6 +11,8 @@ nav_order: 5
 
 **Primary test focus:** policy-to-control mapping, risk register, exceptions workflow
 
+**Controls tested:** [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011), [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012), [AI-CTRL-033](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-033)
+
 **Cases:** 25 (TC-L02-001 to TC-L02-025)
 > **Safety boundary.** All cases use fabricated use cases, policies, records and individuals only. This layer is framework-neutral: see the [Framework Adoption Guide](framework-adoption-guide.md) before testing, and complete the Applicable Requirement and Framework Crosswalk fields for each case.
 

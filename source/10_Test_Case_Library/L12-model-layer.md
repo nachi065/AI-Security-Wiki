@@ -11,6 +11,8 @@ nav_order: 15
 
 **Primary test focus:** model theft, extraction, adversarial inputs, model scanning
 
+**Controls tested:** [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028)
+
 **Cases:** 25 (TC-L12-001 to TC-L12-025)
 > **Safety boundary.** Retrieval, model, training, pipeline and supply chain cases use fabricated corpora and datasets, small lab models, mock hubs and indexes and harmless marker artefacts only (an EICAR-style file that writes a marker, never real malware). Never load untrusted model files outside an isolated sandbox, and never connect the lab to production knowledge sources, models, pipelines, registries or credentials. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.
 

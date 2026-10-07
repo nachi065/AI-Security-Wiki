@@ -136,70 +136,2615 @@
 <blockquote>
 <p><strong>Purpose:</strong> Define reusable AI security control objectives for governance, engineering, vendor evaluation and audit testing.</p>
 <p><strong>Audience:</strong> Security engineering, GRC, audit, AI product teams, SOC.</p>
-<p><strong>How to use:</strong> Use this page as a wiki reference. Update the evidence, owners, control status, and links as implementation maturity improves.</p>
+<p><strong>How to use:</strong> Use this page as a wiki reference. Select controls by risk tier, then update the evidence, owners, control status, and links as implementation maturity improves.</p>
 </blockquote>
+<p>The library holds <strong>36 control objectives in 11 families</strong>. Each control has a stable ID that the rest of the wiki uses: the <a href="../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a> links risks to controls, the <a href="../04_Domain_Standards/index.html">domain standards</a> cite the controls they apply, the <a href="../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a> lists the evidence, and each page of the <a href="../10_Test_Case_Library/index.html">Test Case Library</a> names the controls it tests.</p>
+<p>The controls follow the design principle set out in the <a href="../00_Foundations/07-Reference-Architecture.html">Foundations paper</a>: the model is an untrusted component, and authority to act, access data or spend money is enforced outside it.</p>
+<blockquote>
+<p><strong>Verify before use.</strong> OWASP, MITRE ATLAS, NIST AI RMF and ISO/IEC 42001 references must be checked against the current published versions. Owners and review frequencies are starting values; set your own.</p>
+</blockquote>
+<h2 id="control-families">Control families</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Family</th>
+<th>Controls</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Governance and Compliance</td>
+<td><a href="#ai-ctrl-007">AI-CTRL-007</a>, <a href="#ai-ctrl-011">AI-CTRL-011</a>, <a href="#ai-ctrl-012">AI-CTRL-012</a>, <a href="#ai-ctrl-013">AI-CTRL-013</a>, <a href="#ai-ctrl-014">AI-CTRL-014</a></td>
+</tr>
+<tr>
+<td>Discovery and Workforce AI Use</td>
+<td><a href="#ai-ctrl-001">AI-CTRL-001</a>, <a href="#ai-ctrl-002">AI-CTRL-002</a>, <a href="#ai-ctrl-003">AI-CTRL-003</a>, <a href="#ai-ctrl-004">AI-CTRL-004</a>, <a href="#ai-ctrl-010">AI-CTRL-010</a></td>
+</tr>
+<tr>
+<td>Identity and Access</td>
+<td><a href="#ai-ctrl-015">AI-CTRL-015</a>, <a href="#ai-ctrl-016">AI-CTRL-016</a></td>
+</tr>
+<tr>
+<td>Data and Retrieval</td>
+<td><a href="#ai-ctrl-017">AI-CTRL-017</a>, <a href="#ai-ctrl-018">AI-CTRL-018</a>, <a href="#ai-ctrl-019">AI-CTRL-019</a></td>
+</tr>
+<tr>
+<td>Application Runtime</td>
+<td><a href="#ai-ctrl-005">AI-CTRL-005</a>, <a href="#ai-ctrl-020">AI-CTRL-020</a>, <a href="#ai-ctrl-021">AI-CTRL-021</a></td>
+</tr>
+<tr>
+<td>Agents and Tools</td>
+<td><a href="#ai-ctrl-006">AI-CTRL-006</a>, <a href="#ai-ctrl-022">AI-CTRL-022</a>, <a href="#ai-ctrl-023">AI-CTRL-023</a>, <a href="#ai-ctrl-024">AI-CTRL-024</a>, <a href="#ai-ctrl-025">AI-CTRL-025</a>, <a href="#ai-ctrl-026">AI-CTRL-026</a>, <a href="#ai-ctrl-027">AI-CTRL-027</a></td>
+</tr>
+<tr>
+<td>Model, Training and Pipeline</td>
+<td><a href="#ai-ctrl-028">AI-CTRL-028</a>, <a href="#ai-ctrl-029">AI-CTRL-029</a>, <a href="#ai-ctrl-030">AI-CTRL-030</a></td>
+</tr>
+<tr>
+<td>Supply Chain and Infrastructure</td>
+<td><a href="#ai-ctrl-031">AI-CTRL-031</a>, <a href="#ai-ctrl-032">AI-CTRL-032</a></td>
+</tr>
+<tr>
+<td>Assurance and Testing</td>
+<td><a href="#ai-ctrl-033">AI-CTRL-033</a>, <a href="#ai-ctrl-034">AI-CTRL-034</a></td>
+</tr>
+<tr>
+<td>Detection and Response</td>
+<td><a href="#ai-ctrl-008">AI-CTRL-008</a>, <a href="#ai-ctrl-009">AI-CTRL-009</a>, <a href="#ai-ctrl-035">AI-CTRL-035</a></td>
+</tr>
+<tr>
+<td>Cost and Abuse</td>
+<td><a href="#ai-ctrl-036">AI-CTRL-036</a></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="control-index">Control index</h2>
 <div class="table-wrap"><table>
 <thead>
 <tr>
 <th>Control ID</th>
 <th>Control Name</th>
+<th>Family</th>
 <th>Objective</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>AI-CTRL-001</td>
+<td><a href="#ai-ctrl-001">AI-CTRL-001</a></td>
 <td>AI Discovery</td>
+<td>Discovery and Workforce AI Use</td>
 <td>Identify approved/unapproved AI platforms across browsers, endpoints, IDEs, SaaS, APIs and custom apps.</td>
 </tr>
 <tr>
-<td>AI-CTRL-002</td>
+<td><a href="#ai-ctrl-002">AI-CTRL-002</a></td>
 <td>Prompt Inspection</td>
+<td>Discovery and Workforce AI Use</td>
 <td>Detect sensitive, restricted or risky content submitted to AI platforms.</td>
 </tr>
 <tr>
-<td>AI-CTRL-003</td>
+<td><a href="#ai-ctrl-003">AI-CTRL-003</a></td>
 <td>File Upload Protection</td>
+<td>Discovery and Workforce AI Use</td>
 <td>Prevent uploads of confidential or restricted files to unauthorized AI services.</td>
 </tr>
 <tr>
-<td>AI-CTRL-004</td>
+<td><a href="#ai-ctrl-004">AI-CTRL-004</a></td>
 <td>IDE AI Governance</td>
+<td>Discovery and Workforce AI Use</td>
 <td>Monitor and control AI coding assistants, source code sharing and secret leakage.</td>
 </tr>
 <tr>
-<td>AI-CTRL-005</td>
+<td><a href="#ai-ctrl-005">AI-CTRL-005</a></td>
 <td>Runtime AI Security</td>
+<td>Application Runtime</td>
 <td>Protect custom AI applications from prompt injection, misuse and output leakage.</td>
 </tr>
 <tr>
-<td>AI-CTRL-006</td>
+<td><a href="#ai-ctrl-006">AI-CTRL-006</a></td>
 <td>Agent Governance</td>
+<td>Agents and Tools</td>
 <td>Monitor AI agents, tool calls, API access and autonomous actions.</td>
 </tr>
 <tr>
-<td>AI-CTRL-007</td>
+<td><a href="#ai-ctrl-007">AI-CTRL-007</a></td>
 <td>Data Sovereignty</td>
+<td>Governance and Compliance</td>
 <td>Ensure prompts, logs and uploads are processed and retained in approved locations.</td>
 </tr>
 <tr>
-<td>AI-CTRL-008</td>
+<td><a href="#ai-ctrl-008">AI-CTRL-008</a></td>
 <td>Auditability</td>
+<td>Detection and Response</td>
 <td>Maintain logs for prompts, responses, files, users, devices, applications and actions.</td>
 </tr>
 <tr>
-<td>AI-CTRL-009</td>
+<td><a href="#ai-ctrl-009">AI-CTRL-009</a></td>
 <td>SOC Integration</td>
+<td>Detection and Response</td>
 <td>Forward AI security events and logs to monitoring and response platforms.</td>
 </tr>
 <tr>
-<td>AI-CTRL-010</td>
+<td><a href="#ai-ctrl-010">AI-CTRL-010</a></td>
 <td>Policy Enforcement</td>
+<td>Discovery and Workforce AI Use</td>
 <td>Support monitor, warn, redact, block and allow policies based on risk and classification.</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-011">AI-CTRL-011</a></td>
+<td>AI Use-Case Registry and Risk Tiering</td>
+<td>Governance and Compliance</td>
+<td>Record every AI use case with a business owner and a risk tier that decides which controls apply.</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-012">AI-CTRL-012</a></td>
+<td>AI Policy and Acceptable Use</td>
+<td>Governance and Compliance</td>
+<td>Set and communicate the rules for using and building AI, and map each rule to a control.</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-013">AI-CTRL-013</a></td>
+<td>Privacy and Regulatory Compliance</td>
+<td>Governance and Compliance</td>
+<td>Meet privacy and regulatory obligations for personal data handled by AI systems.</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-014">AI-CTRL-014</a></td>
+<td>Third-Party and Vendor AI Assurance</td>
+<td>Governance and Compliance</td>
+<td>Assess AI vendors and embedded AI features before use, and reassess when they change.</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-015">AI-CTRL-015</a></td>
+<td>Human and Agent Identity</td>
+<td>Identity and Access</td>
+<td>Give every user, application and agent that uses AI a unique, attributable identity.</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-016">AI-CTRL-016</a></td>
+<td>Least Privilege and Scoped Credentials</td>
+<td>Identity and Access</td>
+<td>Limit what each AI workload and agent can reach to the minimum its task needs.</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-017">AI-CTRL-017</a></td>
+<td>Data Protection in AI Pipelines</td>
+<td>Data and Retrieval</td>
+<td>Apply classification, minimization and isolation to data that AI systems ingest, process and produce.</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-018">AI-CTRL-018</a></td>
+<td>Retrieval Access Control</td>
+<td>Data and Retrieval</td>
+<td>Return only content the requesting user is entitled to see.</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-019">AI-CTRL-019</a></td>
+<td>Knowledge Base Integrity</td>
+<td>Data and Retrieval</td>
+<td>Stop untrusted or poisoned content from entering the corpus that AI systems retrieve from.</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-020">AI-CTRL-020</a></td>
+<td>Output Handling</td>
+<td>Application Runtime</td>
+<td>Treat model output as untrusted input to whatever consumes it.</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-021">AI-CTRL-021</a></td>
+<td>Multimodal and Voice Input Security</td>
+<td>Application Runtime</td>
+<td>Apply the same inspection and policy to images, documents, audio and video as to text.</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-022">AI-CTRL-022</a></td>
+<td>Deterministic Action Authorization</td>
+<td>Agents and Tools</td>
+<td>Enforce authority to act, access data or spend money outside the model.</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-023">AI-CTRL-023</a></td>
+<td>Human Approval for Sensitive Actions</td>
+<td>Agents and Tools</td>
+<td>Require a person to approve irreversible or high-impact actions before they run.</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-024">AI-CTRL-024</a></td>
+<td>Tool and MCP Server Governance</td>
+<td>Agents and Tools</td>
+<td>Allow agents to use only vetted tools and tool servers, and detect when they change.</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-025">AI-CTRL-025</a></td>
+<td>Agent Containment and Kill Switch</td>
+<td>Agents and Tools</td>
+<td>Stop an agent, revoke its access and limit the damage within minutes.</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-026">AI-CTRL-026</a></td>
+<td>Agent Memory and Context Integrity</td>
+<td>Agents and Tools</td>
+<td>Prevent poisoned or cross-user content from persisting in agent memory and context.</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-027">AI-CTRL-027</a></td>
+<td>Agent Execution Isolation</td>
+<td>Agents and Tools</td>
+<td>Run agent-generated code and browser or computer-use sessions in isolation.</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-028">AI-CTRL-028</a></td>
+<td>Model Protection</td>
+<td>Model, Training and Pipeline</td>
+<td>Protect models from theft, extraction and adversarial inputs.</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-029">AI-CTRL-029</a></td>
+<td>Training and Fine-Tuning Data Integrity</td>
+<td>Model, Training and Pipeline</td>
+<td>Know where training data came from and detect tampering before it shapes a model.</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-030">AI-CTRL-030</a></td>
+<td>ML Pipeline and Model Registry Security</td>
+<td>Model, Training and Pipeline</td>
+<td>Protect the pipeline that builds, stores and releases models and prompts.</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-031">AI-CTRL-031</a></td>
+<td>AI Supply Chain and AI-BOM</td>
+<td>Supply Chain and Infrastructure</td>
+<td>Know exactly which models, datasets, packages and prompts run in each environment.</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-032">AI-CTRL-032</a></td>
+<td>AI Infrastructure Hardening</td>
+<td>Supply Chain and Infrastructure</td>
+<td>Harden and segment the infrastructure that trains and serves models.</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-033">AI-CTRL-033</a></td>
+<td>AI Security Review and Release Gate</td>
+<td>Assurance and Testing</td>
+<td>Review every AI system against its threats before production and after material change.</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-034">AI-CTRL-034</a></td>
+<td>Adversarial Testing and Continuous Evaluation</td>
+<td>Assurance and Testing</td>
+<td>Test AI systems against attacks before release and continuously afterwards.</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-035">AI-CTRL-035</a></td>
+<td>AI Incident Response and Forensics</td>
+<td>Detection and Response</td>
+<td>Detect, contain, investigate and recover from AI security incidents.</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-036">AI-CTRL-036</a></td>
+<td>AI Cost and Abuse Controls</td>
+<td>Cost and Abuse</td>
+<td>Attribute AI spend and stop abuse that exhausts budget or capacity.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="control-entries">Control entries</h2>
+<h3 id="governance-and-compliance">Governance and Compliance</h3>
+<p><a id="ai-ctrl-007"></a></p>
+<h4 id="ai-ctrl-007-data-sovereignty">AI-CTRL-007: Data Sovereignty</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Ensure prompts, logs and uploads are processed and retained in approved locations.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Browser AI / IDE AI / AI APIs / Custom AI Applications / Agents / Vendors</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R10</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Confirm where prompts, uploads, outputs, metadata and logs are processed and stored, including the control plane and support access. Configure retention and training exclusion, and record any cross-border transfer.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Residency attestation; retention configuration; training exclusion terms; administrative access logs.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Trace a test prompt and upload end to end and verify processing and storage locations against the approved list. Verify retention settings by checking that expired records are gone.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>GRC / Legal</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Annually and on vendor change</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM02 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>GOVERN, MAP</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.7 Data for AI systems; A.10 Third-party and customer relationships</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html">L03</a>, <a href="../10_Test_Case_Library/L15-infrastructure-layer.html">L15</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-011"></a></p>
+<h4 id="ai-ctrl-011-ai-use-case-registry-and-risk-tiering">AI-CTRL-011: AI Use-Case Registry and Risk Tiering</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Record every AI use case with a business owner and a risk tier that decides which controls apply.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Browser AI / IDE AI / AI APIs / Custom AI Applications / Agents / Vendors</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R02</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Require intake and approval before deployment. Record owner, purpose, data, model, users and autonomy for each use case. Assign a risk tier using published criteria, and re-tier when the use case changes.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Use-case registry; intake and approval records; tiering criteria; re-tiering history.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Sample use cases in production and confirm each has a registry entry, an owner and a tier consistent with the criteria. Sample registry entries and confirm they match what is deployed.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>AI Governance Lead</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>GOVERN, MAP</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.3 Internal organization; A.5 Assessing impacts of AI systems</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L01-business-and-use-cases.html">L01</a>, <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html">L02</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-012"></a></p>
+<h4 id="ai-ctrl-012-ai-policy-and-acceptable-use">AI-CTRL-012: AI Policy and Acceptable Use</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Set and communicate the rules for using and building AI, and map each rule to a control.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Browser AI / IDE AI / AI APIs / Custom AI Applications / Agents</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R02</a>, <a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R03</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Publish an AI policy and acceptable-use standard with scope, owner and review date. Map each policy statement to a control in this library. Train users and reinforce the rules at the point of use.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Approved policy; policy-to-control mapping; training records; coaching events.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Select policy statements and trace each to a control and to evidence that it operates. Confirm the policy was reviewed within its cycle.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>GRC</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Annually</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>GOVERN</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.2 Policies related to AI; A.9 Use of AI systems</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html">L02</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html">L04</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-013"></a></p>
+<h4 id="ai-ctrl-013-privacy-and-regulatory-compliance">AI-CTRL-013: Privacy and Regulatory Compliance</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Meet privacy and regulatory obligations for personal data handled by AI systems.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Browser AI / AI APIs / Custom AI Applications / Agents / Vendors</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R03</a>, <a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R10</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Complete a privacy impact assessment for AI systems that process personal data. Define lawful basis, minimization, retention and data subject request handling, including data held in prompts, logs, indexes and memory.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Impact assessments; records of processing; data subject request tests; evidence exports.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Run a data subject access and deletion request against a test identity and confirm the data is found and removed across prompts, logs, indexes and memory.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>Privacy Office / Legal</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Annually and on material change</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM02 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>AML.T0057 LLM Data Leakage</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>GOVERN, MAP</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.5 Assessing impacts of AI systems; A.7 Data for AI systems</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html">L03</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-014"></a></p>
+<h4 id="ai-ctrl-014-third-party-and-vendor-ai-assurance">AI-CTRL-014: Third-Party and Vendor AI Assurance</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Assess AI vendors and embedded AI features before use, and reassess when they change.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Vendors / AI APIs / Browser AI</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R08</a>, <a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R10</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Evaluate vendors against the vendor evaluation framework. Cover training use of customer data, retention, sub-processors, model changes and incident notification in contracts. Re-evaluate when a vendor changes model or terms.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Vendor assessments; contract clauses; sub-processor list; model change notices.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Sample AI vendors in use and confirm each has a current assessment and the required contract terms. Confirm the last model or terms change triggered a review.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>Procurement / GRC</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Annually and on vendor change</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM03 Supply Chain</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>AML.T0010 AI Supply Chain Compromise</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>GOVERN, MAP</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.10 Third-party and customer relationships</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html">L16</a></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="discovery-and-workforce-ai-use">Discovery and Workforce AI Use</h3>
+<p><a id="ai-ctrl-001"></a></p>
+<h4 id="ai-ctrl-001-ai-discovery">AI-CTRL-001: AI Discovery</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Identify approved/unapproved AI platforms across browsers, endpoints, IDEs, SaaS, APIs and custom apps.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Browser AI / IDE AI / AI APIs / Custom AI Applications / Agents</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R02</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Discover AI services, extensions, plugins, embedded SaaS AI features and API usage continuously. Classify each as approved, tolerated or unapproved, and attribute use to a user, device and application.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>AI service inventory; usage dashboard; user and device reports; classification of each service.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Seed a known set of approved and unapproved AI tools in a test group and compare the discovered inventory with ground truth. Confirm new tools appear within the stated interval.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>Security Engineering</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM03 Supply Chain</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>GOVERN, MAP</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.4 Resources for AI systems; A.9 Use of AI systems</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L04-human-interaction-layer.html">L04</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html">L05</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-002"></a></p>
+<h4 id="ai-ctrl-002-prompt-inspection">AI-CTRL-002: Prompt Inspection</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Detect sensitive, restricted or risky content submitted to AI platforms.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Browser AI / IDE AI / AI APIs / Custom AI Applications</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R01</a>, <a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R03</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Inspect prompts in line or at the endpoint for classified data, personal data, credentials and source code. Apply the data classification scheme already in use, and record the policy outcome for every detection.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Prompt detection logs; policy outcomes; sampled test results by data type.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Submit a labelled set of sensitive and benign prompts through each channel. Measure detection rate and false positives, and confirm each detection is logged with user, device and destination.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>AI Security Team</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM02 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>AML.T0057 LLM Data Leakage</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MEASURE, MANAGE</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.7 Data for AI systems; A.9 Use of AI systems</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L04-human-interaction-layer.html">L04</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html">L08</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-003"></a></p>
+<h4 id="ai-ctrl-003-file-upload-protection">AI-CTRL-003: File Upload Protection</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Prevent uploads of confidential or restricted files to unauthorized AI services.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Browser AI / AI APIs / Custom AI Applications</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R01</a>, <a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R03</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Inspect files sent to AI services, including nested archives, images and documents with embedded content. Block or warn according to classification and the approval status of the destination.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Upload block and warn logs; classification policy; file type coverage matrix.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Upload labelled test files of each supported type to approved and unapproved services. Confirm the expected action and log entry for each.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>DLP Team</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM02 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>AML.T0057 LLM Data Leakage</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MEASURE, MANAGE</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.7 Data for AI systems; A.9 Use of AI systems</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L04-human-interaction-layer.html">L04</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html">L08</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-004"></a></p>
+<h4 id="ai-ctrl-004-ide-ai-governance">AI-CTRL-004: IDE AI Governance</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Monitor and control AI coding assistants, source code sharing and secret leakage.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>IDE AI</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R04</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Inventory AI coding assistants and extensions. Detect proprietary source code and secrets in assistant traffic, restrict assistants on restricted repositories, and attribute activity to developer, device and IDE.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>IDE assistant inventory; secret and source code detection events; repository policy; developer rules.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Send seeded secrets and marked source code through each approved assistant. Confirm detection, policy action and attribution. Confirm an unapproved extension is discovered.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>DevSecOps</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM02 Sensitive Information Disclosure; LLM03 Supply Chain</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>AML.T0057 LLM Data Leakage; AML.T0055 Unsecured Credentials</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MEASURE, MANAGE</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.9 Use of AI systems</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L04-human-interaction-layer.html">L04</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html">L05</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html">L08</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html">L14</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-010"></a></p>
+<h4 id="ai-ctrl-010-policy-enforcement">AI-CTRL-010: Policy Enforcement</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Support monitor, warn, redact, block and allow policies based on risk and classification.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Browser AI / IDE AI / AI APIs / Custom AI Applications</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R01</a>, <a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R02</a>, <a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R03</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Apply graduated actions by user group, destination, data classification and risk. Coach users at the point of use, resist simple bypass, and manage exceptions with an owner and expiry date.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Policy configuration; action logs by type; exception register; bypass test results.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>For each policy action, run a matching test and confirm the action and log entry. Attempt documented bypass methods and record the result.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>AI Security Team</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM02 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>AML.T0057 LLM Data Leakage</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MANAGE</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.2 Policies related to AI; A.9 Use of AI systems</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L04-human-interaction-layer.html">L04</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html">L08</a></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="identity-and-access">Identity and Access</h3>
+<p><a id="ai-ctrl-015"></a></p>
+<h4 id="ai-ctrl-015-human-and-agent-identity">AI-CTRL-015: Human and Agent Identity</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Give every user, application and agent that uses AI a unique, attributable identity.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>AI APIs / Custom AI Applications / Agents</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Issue a unique identity to each agent and AI workload, with a named human sponsor. Do not share keys between workloads. Recertify identities on a schedule and remove them when the sponsor leaves or the use case ends.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Identity registry; sponsor records; recertification results; orphaned identity report.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Sample agent identities and confirm each has a sponsor and a current recertification. Remove a test sponsor and confirm the agent identity is flagged.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>IAM Team</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Semi-annually</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM06 Excessive Agency; ASI03 Identity &amp; Privilege Abuse</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>AML.T0012 Valid Accounts</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MANAGE</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.3 Internal organization; A.4 Resources for AI systems</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html">L09</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html">D09</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-016"></a></p>
+<h4 id="ai-ctrl-016-least-privilege-and-scoped-credentials">AI-CTRL-016: Least Privilege and Scoped Credentials</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Limit what each AI workload and agent can reach to the minimum its task needs.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>AI APIs / Custom AI Applications / Agents</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R06</a>, <a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Use short-lived credentials scoped per tool and resource. Act with the end user's rights where a user is present, not with a broad service account. Detect and correct permission drift.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Permission maps; token scope configuration; access review records; drift reports.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Have a test agent attempt a tool or resource outside its scope and confirm it is denied and logged. Confirm credentials expire as configured.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>IAM Team</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM06 Excessive Agency; ASI03 Identity &amp; Privilege Abuse</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>AML.T0012 Valid Accounts; AML.T0055 Unsecured Credentials</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MANAGE</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.4 Resources for AI systems</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html">L09</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html">D09</a></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="data-and-retrieval">Data and Retrieval</h3>
+<p><a id="ai-ctrl-017"></a></p>
+<h4 id="ai-ctrl-017-data-protection-in-ai-pipelines">AI-CTRL-017: Data Protection in AI Pipelines</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Apply classification, minimization and isolation to data that AI systems ingest, process and produce.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>AI APIs / Custom AI Applications / Agents</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R01</a>, <a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R03</a>, <a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R06</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Carry data classification into AI pipelines. Minimize or mask sensitive fields before they reach a model. Keep tenants separate in indexes, caches, memory and logs, and record data lineage.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Data flow diagrams; classification and masking rules; tenant isolation tests; lineage records.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Send labelled sensitive records through the pipeline and confirm masking at each stage. Attempt to read another tenant's data through the AI interface.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>Data Owner / Security Engineering</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Semi-annually</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM02 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>AML.T0057 LLM Data Leakage</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MEASURE, MANAGE</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.7 Data for AI systems</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L10-data-layer.html">L10</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-018"></a></p>
+<h4 id="ai-ctrl-018-retrieval-access-control">AI-CTRL-018: Retrieval Access Control</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Return only content the requesting user is entitled to see.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Custom AI Applications / Agents</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R06</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Enforce document-level permissions at query time using the end user's identity. Propagate permission changes to the index promptly. Do not rely on the model to withhold content. Return citations that users can check.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Permission test results; retrieval logs with source documents; propagation timing.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Query as users with different entitlements and confirm restricted documents are never retrieved. Revoke access to a document and measure how long it remains retrievable.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>Application Owner</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM08 Vector and Embedding Weaknesses; LLM02 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>AML.T0057 LLM Data Leakage</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MEASURE, MANAGE</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.7 Data for AI systems</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html">L11</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-019"></a></p>
+<h4 id="ai-ctrl-019-knowledge-base-integrity">AI-CTRL-019: Knowledge Base Integrity</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Stop untrusted or poisoned content from entering the corpus that AI systems retrieve from.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Custom AI Applications / Agents</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R05</a>, <a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R08</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Control who and what can write to the corpus. Record the source of every indexed item. Scan ingested content for embedded instructions, and keep the ability to find and remove items by source.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Ingestion access list; provenance records; ingestion scan results; removal test.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Add a document with a planted instruction and a false fact through each ingestion path. Confirm it is detected or neutralized, and that it can be traced and removed.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>Application Owner</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM04 Data and Model Poisoning; LLM08 Vector and Embedding Weaknesses</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>AML.T0020 Poison Training Data; AML.T0051 LLM Prompt Injection</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MEASURE, MANAGE</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.7 Data for AI systems</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html">L11</a></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="application-runtime">Application Runtime</h3>
+<p><a id="ai-ctrl-005"></a></p>
+<h4 id="ai-ctrl-005-runtime-ai-security">AI-CTRL-005: Runtime AI Security</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Protect custom AI applications from prompt injection, misuse and output leakage.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Custom AI Applications / AI APIs</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R05</a>, <a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R06</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Inspect inputs and retrieved content for direct and indirect prompt injection and jailbreaks. Treat retrieved text as untrusted data. Protect the system prompt, and keep high-privilege tools out of sessions that read untrusted content.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Prompt injection test reports; runtime logs; guardrail configuration; bypass test results.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Run the prompt injection and jailbreak cases with the control disabled and then enabled. Record attack success rate in both states against the agreed threshold.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>AppSec</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Before each release and quarterly</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM01 Prompt Injection; LLM07 System Prompt Leakage</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>AML.T0051 LLM Prompt Injection; AML.T0054 LLM Jailbreak; AML.T0056 LLM Meta Prompt Extraction</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MEASURE, MANAGE</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.6 AI system life cycle</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L05-ai-applications.html">L05</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html">L07</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html">L08</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-020"></a></p>
+<h4 id="ai-ctrl-020-output-handling">AI-CTRL-020: Output Handling</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Treat model output as untrusted input to whatever consumes it.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Custom AI Applications / AI APIs / Agents</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R05</a>, <a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R06</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Validate and encode output before it is rendered, executed or passed to another system. Restrict what output can trigger, such as links, images and calls. Inspect responses for sensitive data.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Output validation rules; response inspection logs; injection test results.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Induce the model to emit script, markup and command payloads and confirm none executes downstream. Confirm sensitive data in a response is detected.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>AppSec</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Before each release and quarterly</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM05 Improper Output Handling; LLM02 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>AML.T0057 LLM Data Leakage</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MEASURE, MANAGE</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.6 AI system life cycle</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L05-ai-applications.html">L05</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html">L08</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-021"></a></p>
+<h4 id="ai-ctrl-021-multimodal-and-voice-input-security">AI-CTRL-021: Multimodal and Voice Input Security</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Apply the same inspection and policy to images, documents, audio and video as to text.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Browser AI / Custom AI Applications / Agents</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R03</a>, <a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R05</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Inspect non-text inputs for sensitive content and hidden instructions. Do not treat voice as proof of identity for sensitive actions. Govern recordings and transcripts under the retention policy.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Modality coverage matrix; detection results by modality; recording retention configuration.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Submit images, documents and audio carrying sensitive data and hidden instructions. Compare detection with the text-channel result for the same content.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>AI Security Team</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Semi-annually</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM01 Prompt Injection; LLM02 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>AML.T0051 LLM Prompt Injection; AML.T0057 LLM Data Leakage</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MEASURE, MANAGE</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.6 AI system life cycle; A.7 Data for AI systems</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html">D11</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html">L04</a></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="agents-and-tools">Agents and Tools</h3>
+<p><a id="ai-ctrl-006"></a></p>
+<h4 id="ai-ctrl-006-agent-governance">AI-CTRL-006: Agent Governance</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Monitor AI agents, tool calls, API access and autonomous actions.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Agents</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Keep a registry of every agent with its owner, purpose, model, tools, data scope and approval status. Monitor decisions, tool calls and delegation chains, and detect unregistered agents.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Agent registry; tool access logs; delegation maps; shadow agent reports.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Deploy registered and unregistered test agents. Confirm the unregistered agents are detected, and that owner, tools and data scope are correct for the registered ones.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>AI Platform Team</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM06 Excessive Agency; ASI10 Rogue Agents</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>AML.T0053 LLM Plugin Compromise</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>GOVERN, MANAGE</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.4 Resources for AI systems; A.9 Use of AI systems</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html">L06</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html">D09</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-022"></a></p>
+<h4 id="ai-ctrl-022-deterministic-action-authorization">AI-CTRL-022: Deterministic Action Authorization</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Enforce authority to act, access data or spend money outside the model.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Agents / Custom AI Applications</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Place a policy enforcement point between the model and every tool. It authorizes each call with deterministic rules using the real parameters, the acting identity and the end user's rights. Model output is advice, never authority.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Policy rules; allow and deny logs; architecture review record.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Instruct a test agent, through injected content, to make a call the policy forbids. Confirm the enforcement point denies it regardless of what the model outputs.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>Security Architecture</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Semi-annually</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM06 Excessive Agency; ASI02 Tool Misuse &amp; Exploitation</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>AML.T0053 LLM Plugin Compromise</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MANAGE</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.6 AI system life cycle; A.9 Use of AI systems</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html">L06</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html">L09</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-023"></a></p>
+<h4 id="ai-ctrl-023-human-approval-for-sensitive-actions">AI-CTRL-023: Human Approval for Sensitive Actions</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Require a person to approve irreversible or high-impact actions before they run.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Agents</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Define which actions need approval. Show the approver the real parameters and the consequence, not a model-written summary. Record the decision, and guard against approval fatigue by keeping the set of gated actions small.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>List of gated actions; approval logs with parameters shown; rejection samples.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Trigger a gated action and confirm it does not run without approval. Confirm the approver sees the real parameters and that the decision is logged.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>Application Owner</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Semi-annually</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM06 Excessive Agency; ASI09 Human-Agent Trust Exploitation</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MANAGE</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.9 Use of AI systems</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html">L06</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html">D10</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-024"></a></p>
+<h4 id="ai-ctrl-024-tool-and-mcp-server-governance">AI-CTRL-024: Tool and MCP Server Governance</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Allow agents to use only vetted tools and tool servers, and detect when they change.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Agents / IDE AI</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a>, <a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R08</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Keep an allow-list of tools, plugins and MCP servers with an owner for each. Validate tool schemas, pin versions, and re-approve when a tool definition changes after approval.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Tool and MCP server registry; allow-list configuration; change detection alerts.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Connect an unlisted tool server and confirm it is blocked. Change the description of an approved tool and confirm the change is detected before use.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>AI Platform Team</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM03 Supply Chain; ASI04 Agentic Supply Chain Vulnerabilities; ASI02 Tool Misuse &amp; Exploitation</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>AML.T0053 LLM Plugin Compromise; AML.T0010 AI Supply Chain Compromise</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>GOVERN, MANAGE</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.10 Third-party and customer relationships</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html">L06</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html">L16</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-025"></a></p>
+<h4 id="ai-ctrl-025-agent-containment-and-kill-switch">AI-CTRL-025: Agent Containment and Kill Switch</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Stop an agent, revoke its access and limit the damage within minutes.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Agents</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Provide a tested way to stop a single agent and to revoke credentials for all agents. Set limits on steps, time and spend per task. Know which actions can be rolled back and how.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Kill switch procedure; test records with timings; task limits configuration.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Start a long-running test agent and stop it. Measure the time until no further actions occur and credentials are invalid.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>AI Platform Team / SOC</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Semi-annually</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM06 Excessive Agency; ASI08 Cascading Failures; ASI10 Rogue Agents</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MANAGE</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.6 AI system life cycle</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html">L06</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html">D10</a>, <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html">D12</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-026"></a></p>
+<h4 id="ai-ctrl-026-agent-memory-and-context-integrity">AI-CTRL-026: Agent Memory and Context Integrity</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Prevent poisoned or cross-user content from persisting in agent memory and context.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Agents / Custom AI Applications</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R05</a>, <a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Separate memory by user and tenant. Record the source of each memory item, apply expiry, and provide a way to inspect and purge memory. Do not let untrusted content write to long-term memory unchecked.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Memory isolation tests; memory provenance records; purge procedure and test.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Plant an instruction in memory through untrusted content and confirm it does not affect a later session. Confirm one user cannot read another's memory.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>Application Owner</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Semi-annually</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM01 Prompt Injection; ASI06 Memory &amp; Context Poisoning</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>AML.T0051 LLM Prompt Injection</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MEASURE, MANAGE</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.6 AI system life cycle</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html">L07</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-027"></a></p>
+<h4 id="ai-ctrl-027-agent-execution-isolation">AI-CTRL-027: Agent Execution Isolation</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Run agent-generated code and browser or computer-use sessions in isolation.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Agents</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Execute generated code in a sandbox with no network, filesystem or secrets access by default. Run browser and computer-use agents in a separate profile or container with their own credentials and sessions.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Sandbox configuration; egress rules; isolation test results.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Have a test agent run code that tries to reach the network, read secrets and write outside its workspace. Confirm each attempt fails and is logged.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>Platform Engineering</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Semi-annually</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM06 Excessive Agency; ASI05 Unexpected Code Execution (RCE)</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>AML.T0050 Command and Scripting Interpreter</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MANAGE</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.6 AI system life cycle</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html">L06</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html">D10</a></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="model-training-and-pipeline">Model, Training and Pipeline</h3>
+<p><a id="ai-ctrl-028"></a></p>
+<h4 id="ai-ctrl-028-model-protection">AI-CTRL-028: Model Protection</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Protect models from theft, extraction and adversarial inputs.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Custom AI Applications / AI APIs</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R08</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Restrict access to model weights and encrypt them at rest. Limit and monitor inference queries for extraction patterns. Scan models before use, and test robustness for models that make security or safety decisions.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Model access list; query monitoring rules; model scan reports; robustness test results.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Run a scripted extraction pattern against a test endpoint and confirm it is detected and throttled. Attempt to read model weights with a non-privileged identity.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>ML Engineering</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Semi-annually</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM10 Unbounded Consumption; LLM03 Supply Chain</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>AML.T0024 Exfiltration via AI Inference API; AML.T0043 Craft Adversarial Data</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MEASURE, MANAGE</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.6 AI system life cycle</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L12-model-layer.html">L12</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-029"></a></p>
+<h4 id="ai-ctrl-029-training-and-fine-tuning-data-integrity">AI-CTRL-029: Training and Fine-Tuning Data Integrity</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Know where training data came from and detect tampering before it shapes a model.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Custom AI Applications</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R08</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Record provenance for every dataset. Verify integrity before each training or fine-tuning run. Screen data for sensitive content and poisoning, and keep the ability to trace a model back to its data.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Dataset provenance records; integrity checks; screening results; model-to-data lineage.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Alter a sample of a test dataset and confirm the integrity check fails the run. Trace a deployed model back to the exact dataset versions used.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>ML Engineering / Data Owner</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Before each training run</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM04 Data and Model Poisoning</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>AML.T0020 Poison Training Data</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MAP, MEASURE</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.7 Data for AI systems</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html">L13</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-030"></a></p>
+<h4 id="ai-ctrl-030-ml-pipeline-and-model-registry-security">AI-CTRL-030: ML Pipeline and Model Registry Security</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Protect the pipeline that builds, stores and releases models and prompts.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Custom AI Applications</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R08</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Sign model artifacts and verify signatures at deployment. Restrict who can write to the registry. Gate releases on security tests, and version models, prompts and configuration together.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Signing configuration; registry access list; release gate results; version history.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Attempt to deploy an unsigned or altered artifact and confirm it is rejected. Confirm a failed security test blocks a release.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>MLOps / DevSecOps</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Semi-annually</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM03 Supply Chain; LLM04 Data and Model Poisoning</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>AML.T0010 AI Supply Chain Compromise; AML.T0012 Valid Accounts</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MEASURE, MANAGE</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.6 AI system life cycle</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html">L14</a></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="supply-chain-and-infrastructure">Supply Chain and Infrastructure</h3>
+<p><a id="ai-ctrl-031"></a></p>
+<h4 id="ai-ctrl-031-ai-supply-chain-and-ai-bom">AI-CTRL-031: AI Supply Chain and AI-BOM</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Know exactly which models, datasets, packages and prompts run in each environment.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Custom AI Applications / Agents / IDE AI / Vendors</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R08</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Maintain an AI bill of materials per system. Take models and packages only from approved sources, verify provenance, and scan them. Re-run security tests when any component changes, including a provider-side model update.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>AI-BOM; approved source list; scan reports; change-triggered test records.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Compare the AI-BOM of a sampled system with what is deployed. Introduce a component from an unapproved source and confirm it is blocked or flagged.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>DevSecOps</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM03 Supply Chain</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>AML.T0010 AI Supply Chain Compromise</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>GOVERN, MAP, MANAGE</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.10 Third-party and customer relationships; A.4 Resources for AI systems</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html">L16</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-032"></a></p>
+<h4 id="ai-ctrl-032-ai-infrastructure-hardening">AI-CTRL-032: AI Infrastructure Hardening</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Harden and segment the infrastructure that trains and serves models.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Custom AI Applications</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R08</a>, <a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R10</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Separate experimentation, training, evaluation and production. Isolate model runtimes at the network level and allow only required egress. Manage secrets centrally, and isolate tenants on shared GPUs.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Network segmentation rules; secrets management configuration; hardening baseline; isolation tests.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Attempt to reach production data from the experimentation environment and to open unapproved egress from a model runtime. Confirm both fail.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>Platform Engineering</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Semi-annually</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM03 Supply Chain; LLM02 Sensitive Information Disclosure</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>AML.T0049 Exploit Public-Facing Application; AML.T0055 Unsecured Credentials</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MANAGE</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.4 Resources for AI systems</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L15-infrastructure-layer.html">L15</a></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="assurance-and-testing">Assurance and Testing</h3>
+<p><a id="ai-ctrl-033"></a></p>
+<h4 id="ai-ctrl-033-ai-security-review-and-release-gate">AI-CTRL-033: AI Security Review and Release Gate</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Review every AI system against its threats before production and after material change.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Custom AI Applications / Agents / Vendors</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R05</a>, <a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a>, <a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R08</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Threat model each system: assets, trust boundaries, worst-case output and maximum damage. Select controls from this library by risk tier. Record open risks and exceptions, and require sign-off before release.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Threat models; architecture review records; control selection; approvals and exceptions.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Sample production systems and confirm each has a current threat model, a control selection that matches its tier and a signed approval.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>Security Architecture</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Before each release and annually</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>GOVERN, MAP</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.5 Assessing impacts of AI systems; A.6 AI system life cycle</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L01-business-and-use-cases.html">L01</a>, <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html">L02</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-034"></a></p>
+<h4 id="ai-ctrl-034-adversarial-testing-and-continuous-evaluation">AI-CTRL-034: Adversarial Testing and Continuous Evaluation</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Test AI systems against attacks before release and continuously afterwards.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Custom AI Applications / Agents</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R05</a>, <a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Red team each system against defined threat cases before release. Run a regression suite in the pipeline and whenever the model, prompt, tools or data change. The risk owner sets the acceptable attack success rate in writing.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Red team reports; regression suite results; agreed thresholds; retest records.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Confirm the last model or prompt change triggered the regression suite. Reproduce a sample of reported findings and confirm fixes hold.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>AI Red Team / AppSec</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Before each release and continuously</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM01 Prompt Injection; LLM10 Unbounded Consumption</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>AML.T0051 LLM Prompt Injection; AML.T0054 LLM Jailbreak</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MEASURE</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.6 AI system life cycle</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html">D08</a></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="detection-and-response">Detection and Response</h3>
+<p><a id="ai-ctrl-008"></a></p>
+<h4 id="ai-ctrl-008-auditability">AI-CTRL-008: Auditability</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Maintain logs for prompts, responses, files, users, devices, applications and actions.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Browser AI / IDE AI / AI APIs / Custom AI Applications / Agents</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R09</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Log prompts, responses, uploads, retrieved sources, model calls, tool calls and policy decisions according to policy. Records must be timestamped, attributable, exportable and retained for the approved period.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Exportable audit records; log schema; retention policy; sample reconstruction.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Pick a completed test interaction and reconstruct it from logs alone: who, what was sent, what was retrieved, what the model returned and what action followed.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>Security Engineering</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Semi-annually</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM02 Sensitive Information Disclosure; LLM06 Excessive Agency</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MEASURE, MANAGE</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.6 AI system life cycle; A.8 Information for interested parties</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html">L17</a>, <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html">D12</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-009"></a></p>
+<h4 id="ai-ctrl-009-soc-integration">AI-CTRL-009: SOC Integration</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Forward AI security events and logs to monitoring and response platforms.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Browser AI / IDE AI / AI APIs / Custom AI Applications / Agents</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R09</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Forward AI security events to the SIEM with a documented schema. Build detections and runbooks for AI-specific events, and correlate them with identity, endpoint and network telemetry.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>SIEM event IDs; parser mapping; detection rules; runbooks; alert samples.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Trigger each AI event type in the lab and confirm it arrives in the SIEM within the stated time, parses correctly and raises the expected alert.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>SOC</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Semi-annually</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM06 Excessive Agency</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MEASURE, MANAGE</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.6 AI system life cycle</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html">L17</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-035"></a></p>
+<h4 id="ai-ctrl-035-ai-incident-response-and-forensics">AI-CTRL-035: AI Incident Response and Forensics</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Detect, contain, investigate and recover from AI security incidents.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Browser AI / IDE AI / AI APIs / Custom AI Applications / Agents / Vendors</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R09</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Maintain AI-specific playbooks and an incident taxonomy. Preserve state needed for investigation: prompts, context, index snapshots, memory and model version. Define containment options and how to work with the model provider.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Playbooks; exercise records; preserved-state checklist; provider contact and escalation path.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Run a tabletop or lab exercise for a prompt injection incident. Confirm the interaction can be replayed, scoped and contained using the playbook.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>SOC / Incident Response</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Annually and after each incident</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM06 Excessive Agency</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MANAGE</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.6 AI system life cycle; A.8 Information for interested parties</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html">D12</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html">L17</a></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="cost-and-abuse">Cost and Abuse</h3>
+<p><a id="ai-ctrl-036"></a></p>
+<h4 id="ai-ctrl-036-ai-cost-and-abuse-controls">AI-CTRL-036: AI Cost and Abuse Controls</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Attribute AI spend and stop abuse that exhausts budget or capacity.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>AI APIs / Custom AI Applications / Agents</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Attribute usage to team, application, user and key. Set budgets, rate limits and quotas with enforcement. Detect spend anomalies and leaked keys, and limit loops and retries in agents.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Cost attribution reports; budget and quota configuration; anomaly alerts; key revocation records.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Drive a test key past its budget and confirm enforcement. Simulate a traffic spike on a public endpoint and confirm detection and throttling.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>FinOps / AI Platform Team</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM10 Unbounded Consumption</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS</strong></td>
+<td>AML.T0034 Cost Harvesting; AML.T0029 Denial of AI Service</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MANAGE</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001 Annex A</strong></td>
+<td>A.4 Resources for AI systems</td>
+</tr>
+<tr>
+<td><strong>Tested By</strong></td>
+<td><a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html">D13</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html">L08</a></td>
 </tr>
 </tbody>
 </table></div>
 <h2 id="standard-control-entry-template">Standard Control Entry Template</h2>
+<p>Use this template when adding a control. Give it the next free ID and do not reuse or renumber existing IDs, because other pages link to them.</p>
 <pre><code class="language-markdown"># Control ID: AI-CTRL-XXX
 ## Control Name
 
@@ -219,6 +2764,11 @@ Browser AI / IDE AI / AI APIs / Custom AI Applications / Agents / Vendors
 ## Control Owner
 
 ## Review Frequency
+
+## Framework Mapping
+OWASP / MITRE ATLAS / NIST AI RMF / ISO/IEC 42001
+
+## Tested By
 </code></pre>
 <h2 id="evidence-expectations">Evidence Expectations</h2>
 <p>Evidence should be exportable, timestamped, attributable to user/device/application where applicable, and suitable for audit or incident investigation.</p>

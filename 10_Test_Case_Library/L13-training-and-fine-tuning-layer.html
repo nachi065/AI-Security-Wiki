@@ -135,6 +135,7 @@
 <p><a id="top"></a></p>
 <h1 id="l13-training-fine-tuning-layer">L13 Training &amp; Fine-Tuning Layer</h1>
 <p><strong>Primary test focus:</strong> data poisoning, dataset provenance, fine-tune integrity</p>
+<p><strong>Controls tested:</strong> <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-029">AI-CTRL-029</a></p>
 <p><strong>Cases:</strong> 20 (TC-L13-001 to TC-L13-020)</p>
 <blockquote>
 <p><strong>Safety boundary.</strong> Retrieval, model, training, pipeline and supply chain cases use fabricated corpora and datasets, small lab models, mock hubs and indexes and harmless marker artefacts only (an EICAR-style file that writes a marker, never real malware). Never load untrusted model files outside an isolated sandbox, and never connect the lab to production knowledge sources, models, pipelines, registries or credentials. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.</p>

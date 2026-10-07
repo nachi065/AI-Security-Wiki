@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AI Security Audit and Evidence Checklist | AI Security Wiki</title>
 <meta name="author" content="Nachiket Sathaye">
-<meta name="description" content="AI Security Audit and Evidence Checklist: Define audit evidence required to verify AI security controls across discovery, DLP, IDE, runtime, agentic AI…">
+<meta name="description" content="AI Security Audit and Evidence Checklist: Define audit evidence required to verify AI security controls across every family of the control library, from…">
 <link rel="canonical" href="https://nachi065.github.io/AI-Security-Wiki/06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="AI Security Wiki">
 <meta property="og:title" content="AI Security Audit and Evidence Checklist | AI Security Wiki">
-<meta property="og:description" content="AI Security Audit and Evidence Checklist: Define audit evidence required to verify AI security controls across discovery, DLP, IDE, runtime, agentic AI…">
+<meta property="og:description" content="AI Security Audit and Evidence Checklist: Define audit evidence required to verify AI security controls across every family of the control library, from…">
 <meta property="og:url" content="https://nachi065.github.io/AI-Security-Wiki/06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="../assets/style.css">
@@ -134,7 +134,7 @@
 <article>
 <h1 id="ai-security-audit-and-evidence-checklist">AI Security Audit and Evidence Checklist</h1>
 <blockquote>
-<p><strong>Purpose:</strong> Define audit evidence required to verify AI security controls across discovery, DLP, IDE, runtime, agentic AI, sovereignty and SOC integration.</p>
+<p><strong>Purpose:</strong> Define audit evidence required to verify AI security controls across every family of the control library, from discovery and DLP to agents, models, supply chain and incident response.</p>
 <p><strong>Audience:</strong> Audit teams, governance teams, control owners, security engineering.</p>
 <p><strong>How to use:</strong> Use this page as a wiki reference. Update the evidence, owners, control status, and links as implementation maturity improves.</p>
 </blockquote>
@@ -142,6 +142,7 @@
 <thead>
 <tr>
 <th>Control Area</th>
+<th>Control IDs</th>
 <th>Evidence Required</th>
 <th>Evidence Owner</th>
 </tr>
@@ -149,43 +150,117 @@
 <tbody>
 <tr>
 <td>AI Discovery</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a></td>
 <td>AI inventory, usage dashboard, user/device reports</td>
 <td>Security Engineering</td>
 </tr>
 <tr>
 <td>Prompt Inspection</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-002">AI-CTRL-002</a></td>
 <td>Prompt detection logs, policy actions, sampled test results</td>
 <td>AI Security Team</td>
 </tr>
 <tr>
 <td>File Upload Protection</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-003">AI-CTRL-003</a></td>
 <td>Upload block/warn logs, classification policy, screenshots</td>
 <td>DLP Team</td>
 </tr>
 <tr>
 <td>IDE Governance</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-004">AI-CTRL-004</a></td>
 <td>IDE assistant inventory, source code/secret detection events</td>
 <td>DevSecOps</td>
 </tr>
 <tr>
 <td>Runtime Protection</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-020">AI-CTRL-020</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a></td>
 <td>Prompt injection test reports, runtime logs, guardrail evidence</td>
 <td>AppSec</td>
 </tr>
 <tr>
 <td>Agent Governance</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a></td>
 <td>Agent inventory, tool access logs, approval logs</td>
 <td>AI Platform Team</td>
 </tr>
 <tr>
 <td>Sovereignty</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-007">AI-CTRL-007</a></td>
 <td>Residency, retention, training exclusion and admin access evidence</td>
 <td>GRC / Legal</td>
 </tr>
 <tr>
 <td>SOC Integration</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a></td>
 <td>SIEM events, parser mapping, alert correlation and runbook</td>
 <td>SOC</td>
+</tr>
+<tr>
+<td>Policy Enforcement</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-010">AI-CTRL-010</a></td>
+<td>Policy configuration, action logs by type, exception register, bypass test results</td>
+<td>AI Security Team</td>
+</tr>
+<tr>
+<td>Auditability</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a></td>
+<td>Exportable audit records, log schema, retention policy, sample reconstruction</td>
+<td>Security Engineering</td>
+</tr>
+<tr>
+<td>Governance and Use-Case Registry</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-011">AI-CTRL-011</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a></td>
+<td>Use-case registry, intake approvals, risk tiering, policy-to-control mapping</td>
+<td>AI Governance Lead</td>
+</tr>
+<tr>
+<td>Privacy and Vendor Assurance</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a></td>
+<td>Impact assessments, data subject request tests, vendor assessments, contract clauses</td>
+<td>Privacy Office / Procurement</td>
+</tr>
+<tr>
+<td>Identity and Access</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a></td>
+<td>Identity registry, sponsor records, permission maps, recertification and drift reports</td>
+<td>IAM Team</td>
+</tr>
+<tr>
+<td>Data and Retrieval</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-018">AI-CTRL-018</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-019">AI-CTRL-019</a></td>
+<td>Masking rules, tenant isolation tests, retrieval permission tests, ingestion provenance</td>
+<td>Data Owner / Application Owner</td>
+</tr>
+<tr>
+<td>Model, Training and Pipeline</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-028">AI-CTRL-028</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-029">AI-CTRL-029</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-030">AI-CTRL-030</a></td>
+<td>Model access list, dataset provenance, artifact signing, release gate results</td>
+<td>ML Engineering / MLOps</td>
+</tr>
+<tr>
+<td>Supply Chain and Infrastructure</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-031">AI-CTRL-031</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-032">AI-CTRL-032</a></td>
+<td>AI-BOM, approved source list, scan reports, segmentation and secrets configuration</td>
+<td>DevSecOps / Platform Engineering</td>
+</tr>
+<tr>
+<td>Security Review and Adversarial Testing</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
+<td>Threat models, approvals, red team reports, regression suite results, agreed thresholds</td>
+<td>Security Architecture / AI Red Team</td>
+</tr>
+<tr>
+<td>Incident Response and Forensics</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></td>
+<td>Playbooks, exercise records, preserved-state checklist, provider escalation path</td>
+<td>SOC / Incident Response</td>
+</tr>
+<tr>
+<td>Cost and Abuse</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a></td>
+<td>Cost attribution reports, budget and quota configuration, anomaly alerts</td>
+<td>FinOps / AI Platform Team</td>
 </tr>
 </tbody>
 </table></div>

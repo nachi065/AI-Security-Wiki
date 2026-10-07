@@ -11,6 +11,8 @@ nav_order: 16
 
 **Primary test focus:** data poisoning, dataset provenance, fine-tune integrity
 
+**Controls tested:** [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029)
+
 **Cases:** 20 (TC-L13-001 to TC-L13-020)
 > **Safety boundary.** Retrieval, model, training, pipeline and supply chain cases use fabricated corpora and datasets, small lab models, mock hubs and indexes and harmless marker artefacts only (an EICAR-style file that writes a marker, never real malware). Never load untrusted model files outside an isolated sandbox, and never connect the lab to production knowledge sources, models, pipelines, registries or credentials. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.
 

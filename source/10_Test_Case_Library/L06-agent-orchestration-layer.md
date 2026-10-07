@@ -11,6 +11,8 @@ nav_order: 9
 
 **Primary test focus:** agent and MCP discovery, tool governance, delegation chains, kill switch
 
+**Controls tested:** [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006), [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022), [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023), [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024), [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025), [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027)
+
 **Cases:** 37 (TC-L06-001 to TC-L06-037)
 > **Safety boundary.** Agent and MCP cases use a lab agent framework, benign mock tools and mock MCP servers that write only to a lab sink. Where an attack is simulated, success is first measured with the platform disabled. Never connect lab agents to production systems or real credentials.
 

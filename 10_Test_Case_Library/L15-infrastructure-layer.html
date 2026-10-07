@@ -135,6 +135,7 @@
 <p><a id="top"></a></p>
 <h1 id="l15-infrastructure-layer">L15 Infrastructure Layer</h1>
 <p><strong>Primary test focus:</strong> GPU/cluster hardening, secrets, network segmentation, sovereignty of control plane</p>
+<p><strong>Controls tested:</strong> <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-007">AI-CTRL-007</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-032">AI-CTRL-032</a></p>
 <p><strong>Cases:</strong> 20 (TC-L15-001 to TC-L15-020)</p>
 <blockquote>
 <p><strong>Safety boundary.</strong> Infrastructure and SOC cases use a lab cluster, mock inference servers, a test cloud account and a lab SIEM and SOAR only. Probe and compromise-simulation scripts are harmless lab tools that only attempt connections and reads of canary resources. Never run them against production systems, and never connect lab alerting to production on-call routing. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.</p>

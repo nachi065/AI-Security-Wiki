@@ -11,6 +11,8 @@ nav_order: 12
 
 **Primary test focus:** user and agent (non-human) identity, scoped tokens, RBAC
 
+**Controls tested:** [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016), [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022)
+
 **Cases:** 26 (TC-L09-001 to TC-L09-026)
 > **Safety boundary.** Agent and MCP cases use a lab agent framework, benign mock tools and mock MCP servers that write only to a lab sink. Where an attack is simulated, success is first measured with the platform disabled. Never connect lab agents to production systems or real credentials.
 

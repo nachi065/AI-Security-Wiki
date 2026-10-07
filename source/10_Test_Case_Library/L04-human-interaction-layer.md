@@ -11,6 +11,8 @@ nav_order: 7
 
 **Primary test focus:** browser/workforce AI, user coaching, approval prompts, multimodal input
 
+**Controls tested:** [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001), [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002), [AI-CTRL-003](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-003), [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004), [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010), [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012), [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021)
+
 **Cases:** 32 (TC-L04-001 to TC-L04-032)
 > **Safety boundary.** All test cases in this layer use synthetic, non-functional or clearly marked test data only. Card numbers must come from published test ranges; keys, identifiers and records must be fabricated.
 

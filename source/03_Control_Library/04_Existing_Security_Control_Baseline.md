@@ -35,10 +35,12 @@ Existing enterprise controls remain the first line of defense. Dedicated AI secu
 
 ## Gap Areas Commonly Prioritized
 
-- AI prompt visibility.
-- Prompt injection protection.
-- AI runtime security.
-- IDE-based AI governance.
-- Agentic AI security.
-- AI-specific auditability.
-- AI Security Posture Management.
+- AI prompt visibility ([AI-CTRL-002](03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002)).
+- Prompt injection protection ([AI-CTRL-005](03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005)).
+- AI runtime security ([AI-CTRL-005](03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005), [AI-CTRL-020](03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020)).
+- IDE-based AI governance ([AI-CTRL-004](03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004)).
+- Agentic AI security ([AI-CTRL-006](03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006), [AI-CTRL-022](03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) to [AI-CTRL-027](03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027)).
+- AI-specific auditability ([AI-CTRL-008](03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008)).
+- AI Security Posture Management ([AI-CTRL-001](03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001), [AI-CTRL-011](03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011), [AI-CTRL-031](03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031)).
+
+The full set of controls is in the [AI Security Control Objectives Library](03_AI_Security_Control_Objectives_Library.md).

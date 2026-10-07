@@ -9,22 +9,33 @@ version: 1.0
 
 # AI Security Audit and Evidence Checklist
 
-> **Purpose:** Define audit evidence required to verify AI security controls across discovery, DLP, IDE, runtime, agentic AI, sovereignty and SOC integration.
+> **Purpose:** Define audit evidence required to verify AI security controls across every family of the control library, from discovery and DLP to agents, models, supply chain and incident response.
 
 > **Audience:** Audit teams, governance teams, control owners, security engineering.
 
 > **How to use:** Use this page as a wiki reference. Update the evidence, owners, control status, and links as implementation maturity improves.
 
-| Control Area | Evidence Required | Evidence Owner |
-|---|---|---|
-| AI Discovery | AI inventory, usage dashboard, user/device reports | Security Engineering |
-| Prompt Inspection | Prompt detection logs, policy actions, sampled test results | AI Security Team |
-| File Upload Protection | Upload block/warn logs, classification policy, screenshots | DLP Team |
-| IDE Governance | IDE assistant inventory, source code/secret detection events | DevSecOps |
-| Runtime Protection | Prompt injection test reports, runtime logs, guardrail evidence | AppSec |
-| Agent Governance | Agent inventory, tool access logs, approval logs | AI Platform Team |
-| Sovereignty | Residency, retention, training exclusion and admin access evidence | GRC / Legal |
-| SOC Integration | SIEM events, parser mapping, alert correlation and runbook | SOC |
+| Control Area | Control IDs | Evidence Required | Evidence Owner |
+|---|---|---|---|
+| AI Discovery | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) | AI inventory, usage dashboard, user/device reports | Security Engineering |
+| Prompt Inspection | [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002) | Prompt detection logs, policy actions, sampled test results | AI Security Team |
+| File Upload Protection | [AI-CTRL-003](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-003) | Upload block/warn logs, classification policy, screenshots | DLP Team |
+| IDE Governance | [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) | IDE assistant inventory, source code/secret detection events | DevSecOps |
+| Runtime Protection | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005), [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020), [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) | Prompt injection test reports, runtime logs, guardrail evidence | AppSec |
+| Agent Governance | [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006), [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022), [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023), [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024), [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025), [AI-CTRL-026](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-026), [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) | Agent inventory, tool access logs, approval logs | AI Platform Team |
+| Sovereignty | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) | Residency, retention, training exclusion and admin access evidence | GRC / Legal |
+| SOC Integration | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) | SIEM events, parser mapping, alert correlation and runbook | SOC |
+| Policy Enforcement | [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) | Policy configuration, action logs by type, exception register, bypass test results | AI Security Team |
+| Auditability | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) | Exportable audit records, log schema, retention policy, sample reconstruction | Security Engineering |
+| Governance and Use-Case Registry | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011), [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) | Use-case registry, intake approvals, risk tiering, policy-to-control mapping | AI Governance Lead |
+| Privacy and Vendor Assurance | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) | Impact assessments, data subject request tests, vendor assessments, contract clauses | Privacy Office / Procurement |
+| Identity and Access | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) | Identity registry, sponsor records, permission maps, recertification and drift reports | IAM Team |
+| Data and Retrieval | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017), [AI-CTRL-018](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-018), [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) | Masking rules, tenant isolation tests, retrieval permission tests, ingestion provenance | Data Owner / Application Owner |
+| Model, Training and Pipeline | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028), [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029), [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) | Model access list, dataset provenance, artifact signing, release gate results | ML Engineering / MLOps |
+| Supply Chain and Infrastructure | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031), [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) | AI-BOM, approved source list, scan reports, segmentation and secrets configuration | DevSecOps / Platform Engineering |
+| Security Review and Adversarial Testing | [AI-CTRL-033](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-033), [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) | Threat models, approvals, red team reports, regression suite results, agreed thresholds | Security Architecture / AI Red Team |
+| Incident Response and Forensics | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) | Playbooks, exercise records, preserved-state checklist, provider escalation path | SOC / Incident Response |
+| Cost and Abuse | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) | Cost attribution reports, budget and quota configuration, anomaly alerts | FinOps / AI Platform Team |
 
 ## Evidence Quality Criteria
 

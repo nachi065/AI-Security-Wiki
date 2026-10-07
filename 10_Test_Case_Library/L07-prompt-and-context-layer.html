@@ -135,6 +135,7 @@
 <p><a id="top"></a></p>
 <h1 id="l07-prompt-context-layer">L07 Prompt &amp; Context Layer</h1>
 <p><strong>Primary test focus:</strong> prompt injection (direct/indirect), jailbreak, context and memory poisoning</p>
+<p><strong>Controls tested:</strong> <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a></p>
 <p><strong>Cases:</strong> 41 (TC-L07-001 to TC-L07-041)</p>
 <blockquote>
 <p><strong>Safety boundary.</strong> Injection and jailbreak cases use benign canary strings and mock tools only. Each case first measures whether the attack succeeds against the unprotected application, so that only effective payloads are scored.</p>

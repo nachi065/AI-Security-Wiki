@@ -11,6 +11,8 @@ nav_order: 11
 
 **Primary test focus:** inline policy, DLP, guardrails, bypass resistance, latency
 
+**Controls tested:** [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002), [AI-CTRL-003](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-003), [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004), [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005), [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010), [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020), [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036)
+
 **Cases:** 42 (TC-L08-001 to TC-L08-042)
 > **Safety boundary.** All test cases in this layer use synthetic, non-functional or clearly marked test data only. Card numbers must come from published test ranges; keys, identifiers and records must be fabricated.
 

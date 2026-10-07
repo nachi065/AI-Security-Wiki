@@ -11,6 +11,8 @@ nav_order: 24
 
 **Focus:** multimodal and voice input: images, documents, audio and video as injection and leakage channels, voice authentication, recording governance
 
+**Controls tested:** [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021)
+
 **Cases:** 22 (TC-D11-001 to TC-D11-022)  |  **Series:** Emerging domains
 
 > **Safety boundary.** All cases use synthetic data and lab targets only. Use fabricated media only. Synthetic voices must be of fabricated personas, never of real people, and no real faces, voices or documents are used. Audio tests stay within the audible range.

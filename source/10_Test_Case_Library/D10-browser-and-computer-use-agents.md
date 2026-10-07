@@ -11,6 +11,8 @@ nav_order: 23
 
 **Focus:** browser and computer-use agents: isolation, credentials, action policy, injection via web content, approvals, kill switch
 
+**Controls tested:** [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023), [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025), [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027)
+
 **Cases:** 23 (TC-D10-001 to TC-D10-023)  |  **Series:** Emerging domains
 
 > **Safety boundary.** All cases use synthetic data and lab targets only. Browser and computer-use agents must use lab web sites, mock payment pages and fabricated credentials only.

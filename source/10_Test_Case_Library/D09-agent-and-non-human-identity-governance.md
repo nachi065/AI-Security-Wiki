@@ -11,6 +11,8 @@ nav_order: 22
 
 **Focus:** agent and non-human identity governance: registry, sponsors, recertification, drift, delegation, revocation
 
+**Controls tested:** [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006), [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016)
+
 **Cases:** 20 (TC-D09-001 to TC-D09-020)  |  **Series:** Emerging domains
 
 > **Safety boundary.** All cases use synthetic data and lab targets only. Use fabricated identities, lab directories and mock cloud and SaaS tenants only.

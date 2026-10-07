@@ -158,6 +158,7 @@
 <th>Risk</th>
 <th>Description</th>
 <th>Required Control</th>
+<th>Control ID</th>
 <th>OWASP Reference</th>
 </tr>
 </thead>
@@ -166,48 +167,56 @@
 <td>Excessive Privileges</td>
 <td>Agent has broader permissions than required.</td>
 <td>Least privilege, access review</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a></td>
 <td>ASI03 Identity &amp; Privilege Abuse</td>
 </tr>
 <tr>
 <td>Unauthorized Tool Execution</td>
 <td>Agent invokes scripts, APIs or workflows outside scope.</td>
 <td>Tool allowlist, runtime enforcement</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a></td>
 <td>ASI02 Tool Misuse &amp; Exploitation</td>
 </tr>
 <tr>
 <td>Prompt Manipulation</td>
 <td>Agent behavior altered by malicious instructions.</td>
 <td>Prompt injection controls, input validation</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 <td>ASI01 Agent Goal Hijack</td>
 </tr>
 <tr>
 <td>Lack of Human Oversight</td>
 <td>Sensitive actions occur without approval.</td>
 <td>Approval workflow, escalation controls</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a></td>
 <td>LLM06 Excessive Agency; ASI09 Human-Agent Trust Exploitation</td>
 </tr>
 <tr>
 <td>Agent-to-Agent Trust Abuse</td>
 <td>Agents cascade actions or propagate privilege.</td>
 <td>Trust boundaries, agent relationship mapping</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a></td>
 <td>ASI07 Insecure Inter-Agent Communication; ASI08 Cascading Failures</td>
 </tr>
 <tr>
 <td>Memory and Context Poisoning</td>
 <td>Poisoned persistent memory influences later sessions.</td>
 <td>Memory integrity controls, expiry, ability to inspect and purge</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a></td>
 <td>ASI06 Memory &amp; Context Poisoning</td>
 </tr>
 <tr>
 <td>Unexpected Code Execution</td>
 <td>Agent runs generated or injected code with access to network, files or secrets.</td>
 <td>Sandboxed execution, no network or filesystem access by default</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a></td>
 <td>ASI05 Unexpected Code Execution (RCE)</td>
 </tr>
 <tr>
 <td>Agentic Supply Chain Compromise</td>
 <td>A third-party tool server, MCP server, plugin or agent framework is malicious or compromised.</td>
 <td>Allowlist and vet tool servers, isolate them, monitor calls</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-031">AI-CTRL-031</a></td>
 <td>ASI04 Agentic Supply Chain Vulnerabilities</td>
 </tr>
 </tbody>
@@ -218,6 +227,7 @@
 <thead>
 <tr>
 <th>Control</th>
+<th>Control ID</th>
 <th>Requirement</th>
 <th>Evidence</th>
 </tr>
@@ -225,51 +235,61 @@
 <tbody>
 <tr>
 <td>Agent Discovery</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a></td>
 <td>Inventory deployed agents and owners.</td>
 <td>Agent registry</td>
 </tr>
 <tr>
 <td>Agent Identity</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a></td>
 <td>Unique identities for agents.</td>
 <td>IAM record</td>
 </tr>
 <tr>
 <td>Tool Governance</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a></td>
 <td>Identify and restrict tool access.</td>
 <td>Tool matrix</td>
 </tr>
 <tr>
 <td>API Governance</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a></td>
 <td>Govern API access and scopes.</td>
 <td>API permission evidence</td>
 </tr>
 <tr>
 <td>Least Privilege</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a></td>
 <td>Restrict permissions to use case.</td>
 <td>Access review records</td>
 </tr>
 <tr>
 <td>Human Approval</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a></td>
 <td>Require approval for sensitive actions.</td>
 <td>Approval logs</td>
 </tr>
 <tr>
 <td>Activity Monitoring</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a></td>
 <td>Monitor decisions, tool calls and workflows.</td>
 <td>Activity logs</td>
 </tr>
 <tr>
 <td>Audit Logging</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a></td>
 <td>Record prompts, decisions and actions.</td>
 <td>Audit export</td>
 </tr>
 <tr>
 <td>Risk Analytics</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a></td>
 <td>Detect abnormal agent behavior.</td>
 <td>Alerts and analytics rules</td>
 </tr>
 <tr>
 <td>SOC Integration</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a></td>
 <td>Export events to monitoring platforms.</td>
 <td>SIEM events</td>
 </tr>

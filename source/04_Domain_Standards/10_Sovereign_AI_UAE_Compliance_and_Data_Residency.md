@@ -15,16 +15,16 @@ version: 1.0
 
 > **How to use:** Use this page as a wiki reference. Update the evidence, owners, control status, and links as implementation maturity improves.
 
-| Area | Mandatory Question |
-|---|---|
-| Data Residency | Where are prompts, logs, uploads, metadata and generated outputs processed and stored? |
-| Retention | Can the organization define, reduce or disable prompt, file and log retention? |
-| Model Training | Is customer data excluded from model training and service improvement by default? |
-| Administrative Access | Are privileged vendor actions logged, controlled and exportable? |
-| Deployment Model | Are SaaS, dedicated, private cloud, on-premises or sovereign deployment models available? |
-| Auditability | Can audit records be exported for security investigation and compliance evidence? |
-| Cross-Border Transfer | Are any cross-border transfers required for processing or support? |
-| Incident Support | What incident notification, investigation support and log access is available? |
+| Area | Control ID | Mandatory Question |
+|---|---|---|
+| Data Residency | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) | Where are prompts, logs, uploads, metadata and generated outputs processed and stored? |
+| Retention | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) | Can the organization define, reduce or disable prompt, file and log retention? |
+| Model Training | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) | Is customer data excluded from model training and service improvement by default? |
+| Administrative Access | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) | Are privileged vendor actions logged, controlled and exportable? |
+| Deployment Model | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007), [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) | Are SaaS, dedicated, private cloud, on-premises or sovereign deployment models available? |
+| Auditability | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) | Can audit records be exported for security investigation and compliance evidence? |
+| Cross-Border Transfer | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) | Are any cross-border transfers required for processing or support? |
+| Incident Support | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014), [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) | What incident notification, investigation support and log access is available? |
 
 ## Mandatory Sovereignty Requirements
 

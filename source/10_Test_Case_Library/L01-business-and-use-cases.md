@@ -11,6 +11,8 @@ nav_order: 4
 
 **Primary test focus:** use-case registry, risk-tiering, business-owner attribution
 
+**Controls tested:** [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011), [AI-CTRL-033](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-033)
+
 **Cases:** 20 (TC-L01-001 to TC-L01-020)
 > **Safety boundary.** All cases use fabricated use cases, policies, records and individuals only. This layer is framework-neutral: see the [Framework Adoption Guide](framework-adoption-guide.md) before testing, and complete the Applicable Requirement and Framework Crosswalk fields for each case.
 

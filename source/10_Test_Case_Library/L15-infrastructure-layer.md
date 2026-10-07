@@ -11,6 +11,8 @@ nav_order: 18
 
 **Primary test focus:** GPU/cluster hardening, secrets, network segmentation, sovereignty of control plane
 
+**Controls tested:** [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007), [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032)
+
 **Cases:** 20 (TC-L15-001 to TC-L15-020)
 > **Safety boundary.** Infrastructure and SOC cases use a lab cluster, mock inference servers, a test cloud account and a lab SIEM and SOAR only. Probe and compromise-simulation scripts are harmless lab tools that only attempt connections and reads of canary resources. Never run them against production systems, and never connect lab alerting to production on-call routing. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.
 
