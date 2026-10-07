@@ -140,8 +140,8 @@ def decorate(content):
     return content
 
 
-def hero(page):
-    """The banner on the home page: headline, live counts and a card for every section."""
+def hero(page, details=""):
+    """The banner on the home page: headline, live counts, the document details and a card for every section."""
     text = "\n".join(p["body"] for p in pages)
     stats = [(len(re.findall(r"^### TC-[LD]\d\d-\d{3}:", text, re.M)), "test cases"),
              (len(re.findall(r"^#### AI-CTRL-\d{3}:", text, re.M)), "control objectives"),
@@ -151,6 +151,7 @@ def hero(page):
     return (f'<section class="hero"><p class="hero-kicker">Open &middot; Vendor-neutral &middot; CC BY 4.0</p>'
             f'<h1>{SITE_TITLE}</h1><p class="hero-lead">{html.escape(page["meta"]["description"])}</p>'
             f'<div class="stats">{tiles}</div></section>\n'
+            + (f'<article class="hero-details">{details}</article>\n' if details else "") +
             f'<h2 class="hero-sections">Explore the wiki</h2>\n{cards(page, sections)}')
 
 
@@ -279,7 +280,12 @@ for i, page in enumerate(order):
     content = render(page)
     banner = ""
     if page is home:
-        banner, content = hero(page), re.sub(r"<h1[^>]*>.*?</h1>", "", content, count=1, flags=re.S)
+        content = re.sub(r"<h1[^>]*>.*?</h1>", "", content, count=1, flags=re.S)
+        # The document details box that opens the page is shown above the section cards.
+        details = re.match(r"\s*(<blockquote.*?</blockquote>)\s*", content, re.S)
+        if details:
+            content = content[details.end():]
+        banner = hero(page, details.group(1) if details else "")
     doc = TEMPLATE.format(
         hue=look(page)[0], hero=banner,
         title=html.escape(HOME_TITLE if page is home else f"{title} | {SITE_TITLE}"),

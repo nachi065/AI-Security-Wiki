@@ -170,6 +170,8 @@ a.chip:hover { text-decoration: none; filter: brightness(.95); }
 .stat { padding: 14px 16px; border-radius: 12px; background: rgba(255, 255, 255, .12); border: 1px solid rgba(255, 255, 255, .22); }
 .stat b { display: block; font-size: 1.9rem; line-height: 1.1; }
 .stat span { font-size: 13px; opacity: .9; }
+.hero-details { margin: 0 0 28px; }
+.hero-details blockquote { margin: 0; }
 .hero-sections { font-size: 1.4rem; margin: 0 0 14px; }
 .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin: 16px 0 8px; }
 .card {
