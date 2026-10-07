@@ -11,7 +11,7 @@ nav_order: 22
 
 **Focus:** agent and non-human identity governance: registry, sponsors, recertification, drift, delegation, revocation
 
-**Controls tested:** [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006), [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016)
+**Controls tested:** [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity (14 cases), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials (6 cases), [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) Agent Governance (1 case), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability (1 case), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance (1 case), [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization (1 case), [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) Agent Containment and Kill Switch (1 case), [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics (1 case), [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Control Assurance and Audit Evidence (1 case)
 
 **Cases:** 20 (TC-D09-001 to TC-D09-020)  |  **Series:** Emerging domains
 
@@ -21,28 +21,28 @@ nav_order: 22
 
 ## Cases in this domain
 
-| ID | Title | Severity | Method |
-|---|---|---|---|
-| [TC-D09-001](#tc-d09-001) | Agent Identity Registry as System of Record | Critical | Technical |
-| [TC-D09-002](#tc-d09-002) | Human Sponsor Accountability for Every Agent Identity | Critical | Technical |
-| [TC-D09-003](#tc-d09-003) | Agent Identity Provisioning Workflow and Approval | High | Technical |
-| [TC-D09-004](#tc-d09-004) | Agent Identity Risk Tiering and Privilege Classes | High | Technical |
-| [TC-D09-005](#tc-d09-005) | Entitlement Governance: Agent Access Requests and Least-Privilege Catalogue | High | Technical |
-| [TC-D09-006](#tc-d09-006) | Periodic Access Recertification for Agent Entitlements | High | Technical |
-| [TC-D09-007](#tc-d09-007) | Privilege Drift Detection Against an Approved Baseline | High | Technical |
-| [TC-D09-008](#tc-d09-008) | Dormant and Orphaned Agent Identity Clean-Up | Medium | Technical |
-| [TC-D09-009](#tc-d09-009) | Time-Bound and Just-in-Time Elevation for Agents | High | Technical |
-| [TC-D09-010](#tc-d09-010) | Separation of Duties for Agents | High | Technical |
-| [TC-D09-011](#tc-d09-011) | Delegation Records and Consent Evidence | High | Evidence |
-| [TC-D09-012](#tc-d09-012) | Acting as the User versus Acting as Itself: Attribution Policy and Evidence | High | Technical |
-| [TC-D09-013](#tc-d09-013) | Cross-Platform Agent Identity Federation and Consistency | High | Technical |
-| [TC-D09-014](#tc-d09-014) | Agent Credential Lifecycle Governance and Compliance Reporting | High | Technical |
-| [TC-D09-015](#tc-d09-015) | Machine Identity Certificate and Key Lifecycle for AI Workloads | Medium | Technical |
-| [TC-D09-016](#tc-d09-016) | Revocation Propagation Time Across Systems | Critical | Technical |
-| [TC-D09-017](#tc-d09-017) | Agent Identity Misuse Case Handling Process | High | Technical |
-| [TC-D09-018](#tc-d09-018) | Third-Party and Vendor-Operated Agent Identities | High | Evidence |
-| [TC-D09-019](#tc-d09-019) | Non-Human Identity Governance Metrics and Audit Evidence | Medium | Evidence |
-| [TC-D09-020](#tc-d09-020) | Agent Identity Offboarding and Decommission Evidence | Medium | Evidence |
+| ID | Title | Severity | Method | Controls |
+|---|---|---|---|---|
+| [TC-D09-001](#tc-d09-001) | Agent Identity Registry as System of Record | Critical | Technical | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
+| [TC-D09-002](#tc-d09-002) | Human Sponsor Accountability for Every Agent Identity | Critical | Technical | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
+| [TC-D09-003](#tc-d09-003) | Agent Identity Provisioning Workflow and Approval | High | Technical | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
+| [TC-D09-004](#tc-d09-004) | Agent Identity Risk Tiering and Privilege Classes | High | Technical | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
+| [TC-D09-005](#tc-d09-005) | Entitlement Governance: Agent Access Requests and Least-Privilege Catalogue | High | Technical | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-D09-006](#tc-d09-006) | Periodic Access Recertification for Agent Entitlements | High | Technical | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-D09-007](#tc-d09-007) | Privilege Drift Detection Against an Approved Baseline | High | Technical | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-D09-008](#tc-d09-008) | Dormant and Orphaned Agent Identity Clean-Up | Medium | Technical | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
+| [TC-D09-009](#tc-d09-009) | Time-Bound and Just-in-Time Elevation for Agents | High | Technical | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-D09-010](#tc-d09-010) | Separation of Duties for Agents | High | Technical | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016), [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) |
+| [TC-D09-011](#tc-d09-011) | Delegation Records and Consent Evidence | High | Evidence | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
+| [TC-D09-012](#tc-d09-012) | Acting as the User versus Acting as Itself: Attribution Policy and Evidence | High | Technical | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) |
+| [TC-D09-013](#tc-d09-013) | Cross-Platform Agent Identity Federation and Consistency | High | Technical | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
+| [TC-D09-014](#tc-d09-014) | Agent Credential Lifecycle Governance and Compliance Reporting | High | Technical | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-D09-015](#tc-d09-015) | Machine Identity Certificate and Key Lifecycle for AI Workloads | Medium | Technical | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
+| [TC-D09-016](#tc-d09-016) | Revocation Propagation Time Across Systems | Critical | Technical | [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025), [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
+| [TC-D09-017](#tc-d09-017) | Agent Identity Misuse Case Handling Process | High | Technical | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035), [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
+| [TC-D09-018](#tc-d09-018) | Third-Party and Vendor-Operated Agent Identities | High | Evidence | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) |
+| [TC-D09-019](#tc-d09-019) | Non-Human Identity Governance Metrics and Audit Evidence | Medium | Evidence | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038), [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
+| [TC-D09-020](#tc-d09-020) | Agent Identity Offboarding and Decommission Evidence | Medium | Evidence | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015), [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) |
 
 ---
 
@@ -63,6 +63,7 @@ nav_order: 22
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
 **Risk Addressed.** Identities for agents live in the identity provider, cloud IAM, SaaS tenants and code repositories, with no single record of why each exists, who is accountable and what risk tier it carries.
 
@@ -129,6 +130,7 @@ nav_order: 22
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
 **Risk Addressed.** An agent with no accountable human is not reviewed, rotated or shut down.
 
@@ -195,6 +197,7 @@ nav_order: 22
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
 **Risk Addressed.** Agents created ad hoc get broad access and no review.
 
@@ -261,6 +264,7 @@ nav_order: 22
 | **MITRE ATLAS Mapping** | N/A (governance control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MAP and MANAGE (risk identification and treatment) |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
 **Risk Addressed.** Treating all agent identities alike either strangles low-risk automation or under-controls dangerous agents.
 
@@ -327,6 +331,7 @@ nav_order: 22
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
 **Risk Addressed.** Agents receive whatever the developer asked for, usually the broadest role available.
 
@@ -393,6 +398,7 @@ nav_order: 22
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
 **Risk Addressed.** Entitlements granted once remain forever unless someone reviews them.
 
@@ -459,6 +465,7 @@ nav_order: 22
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
 **Risk Addressed.** Agents accumulate permissions through small changes that no one approves.
 
@@ -524,6 +531,7 @@ nav_order: 22
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
 **Risk Addressed.** Unused identities remain valid targets for years.
 
@@ -590,6 +598,7 @@ nav_order: 22
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
 **Risk Addressed.** Standing high privilege on agents widens exposure for no benefit.
 
@@ -656,6 +665,7 @@ nav_order: 22
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials; [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization |
 
 **Risk Addressed.** An agent that can request, approve and execute the same action defeats every control, and conflicts often appear only through combinations of roles.
 
@@ -722,6 +732,7 @@ nav_order: 22
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
 **Risk Addressed.** When an agent acts for a person, the organisation must be able to show what that person allowed, for how long, and when it was withdrawn.
 
@@ -788,6 +799,7 @@ nav_order: 22
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity; [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability |
 
 **Risk Addressed.** If it is unclear whether an action was taken by the person or by the agent, accountability and investigations collapse.
 
@@ -854,6 +866,7 @@ nav_order: 22
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
 **Risk Addressed.** An agent working across clouds and SaaS tenants ends up with several unrelated identities that cannot be governed or revoked together.
 
@@ -920,6 +933,7 @@ nav_order: 22
 | **MITRE ATLAS Mapping** | AML.T0055 Unsecured Credentials |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
 **Risk Addressed.** Policy says credentials rotate, but without reporting nobody knows which ones do not.
 
@@ -986,6 +1000,7 @@ nav_order: 22
 | **MITRE ATLAS Mapping** | AML.T0055 Unsecured Credentials |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
 **Risk Addressed.** Expired or unmanaged certificates cause outages and weak keys weaken everything built on them.
 
@@ -1052,6 +1067,7 @@ nav_order: 22
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) Agent Containment and Kill Switch; [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
 **Risk Addressed.** A disabled agent that keeps working through cached tokens and sessions is not disabled.
 
@@ -1118,6 +1134,7 @@ nav_order: 22
 | **MITRE ATLAS Mapping** | N/A (response control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE (incident response and communication) |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics; [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
 **Risk Addressed.** Detections need an agreed process for handling, or they are ignored.
 
@@ -1184,6 +1201,7 @@ nav_order: 22
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity; [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance |
 
 **Risk Addressed.** Vendors operate agents inside your environment with your data, often under shared credentials and weak oversight.
 
@@ -1250,6 +1268,7 @@ nav_order: 22
 | **MITRE ATLAS Mapping** | N/A (assurance control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MEASURE and GOVERN (documentation and accountability) |
+| **Control(s) Tested** | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Control Assurance and Audit Evidence; [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
 **Risk Addressed.** Boards and auditors ask for numbers that few teams can supply.
 
@@ -1315,6 +1334,7 @@ nav_order: 22
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity; [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) Agent Governance |
 
 **Risk Addressed.** Retiring an agent without removing every credential and trust leaves usable access behind.
 

@@ -11,7 +11,7 @@ nav_order: 6
 
 **Primary test focus:** UAE/GCC residency, PDPL-type obligations, evidence export, DPIA support
 
-**Controls tested:** [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013)
+**Controls tested:** [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance (20 cases), [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Control Assurance and Audit Evidence (5 cases), [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) Data Sovereignty (3 cases), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance (2 cases), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines (2 cases), [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics (2 cases)
 
 **Cases:** 30 (TC-L03-001 to TC-L03-030)
 > **Safety boundary.** All cases use fabricated use cases, policies, records and individuals only. This layer is framework-neutral: see the [Framework Adoption Guide](framework-adoption-guide.md) before testing, and complete the Applicable Requirement and Framework Crosswalk fields for each case.
@@ -20,38 +20,38 @@ nav_order: 6
 
 ## Cases in this layer
 
-| ID | Title | Severity | Method | Domain(s) |
-|---|---|---|---|---|
-| [TC-L03-001](#tc-l03-001) | Register of AI Processing Activities | Critical | Technical | D6, D7 |
-| [TC-L03-002](#tc-l03-002) | Lawful Basis or Legal Ground Recording per Processing Activity | High | Evidence | D6, D7 |
-| [TC-L03-003](#tc-l03-003) | Notice and Transparency: Disclosing AI Interaction and Processing | High | Technical | D1, D7 |
-| [TC-L03-004](#tc-l03-004) | Consent Capture, Evidence and Withdrawal | Critical | Technical | D6, D7 |
-| [TC-L03-005](#tc-l03-005) | Data Subject Rights: Access Request Workflow | Critical | Technical | D6, D7 |
-| [TC-L03-006](#tc-l03-006) | Data Subject Rights: Correction Request Handling | Medium | Technical | D6, D7 |
-| [TC-L03-007](#tc-l03-007) | Data Subject Rights: Erasure Across AI Stores | Critical | Technical | D6, D7 |
-| [TC-L03-008](#tc-l03-008) | Rights to Object, Restrict and Request Human Review | High | Technical | D6, D7 |
-| [TC-L03-009](#tc-l03-009) | Rights Request Timeline Tracking and Evidence | High | Technical | D7 |
-| [TC-L03-010](#tc-l03-010) | Impact Assessment Support (Privacy, Data Protection and AI Impact Assessments) | Critical | Technical | D7 |
-| [TC-L03-011](#tc-l03-011) | Impact Assessment Triggers | High | Technical | D7 |
-| [TC-L03-012](#tc-l03-012) | Cross-Border Transfer Register and Assessment | Critical | Technical | D7 |
-| [TC-L03-013](#tc-l03-013) | Cross-Border Transfer Enforcement | Critical | Technical | D7, D6 |
-| [TC-L03-014](#tc-l03-014) | Residency Evidence Export for a Regulator | High | Evidence | D7 |
-| [TC-L03-015](#tc-l03-015) | Data Minimisation and Purpose Limitation Enforcement | High | Technical | D6, D7 |
-| [TC-L03-016](#tc-l03-016) | Retention Schedule Enforcement for AI Data | High | Technical | D6, D7 |
-| [TC-L03-017](#tc-l03-017) | Children's and Vulnerable Persons' Data Handling | High | Technical | D6, D7 |
-| [TC-L03-018](#tc-l03-018) | Special and Sensitive Categories of Data: Identification and Heightened Controls | Critical | Technical | D6, D7 |
-| [TC-L03-019](#tc-l03-019) | Breach and Incident Notification Workflow | Critical | Technical | D7 |
-| [TC-L03-020](#tc-l03-020) | Controller, Processor and Joint Role Mapping with Agreements | High | Technical | D7 |
-| [TC-L03-021](#tc-l03-021) | AI Provider Compliance Due-Diligence Evidence | High | Attestation | D7 |
-| [TC-L03-022](#tc-l03-022) | Compliance Evidence Export: Formats, Signing and Integrity | High | Technical | D7 |
-| [TC-L03-023](#tc-l03-023) | Multi-Framework Compliance Dashboard: Coverage and Gaps | High | Technical | D7 |
-| [TC-L03-024](#tc-l03-024) | Adopting a New Framework: Custom Framework Onboarding | Critical | Technical | D7 |
-| [TC-L03-025](#tc-l03-025) | Evidence Reuse Across Frameworks | High | Technical | D7 |
-| [TC-L03-026](#tc-l03-026) | Regulator Inspection Simulation: Rapid Evidence Request | Critical | Technical | D7 |
-| [TC-L03-027](#tc-l03-027) | Litigation Hold and Regulatory Preservation Notice | High | Technical | D6, D7 |
-| [TC-L03-028](#tc-l03-028) | Intellectual Property and Copyright Controls for AI Inputs and Outputs | Medium | Technical | D3, D7 |
-| [TC-L03-029](#tc-l03-029) | Automated Decision Explanation Records | High | Technical | D3, D7 |
-| [TC-L03-030](#tc-l03-030) | Language and Jurisdiction Configuration (Arabic, English and Regional Rule Sets) | Medium | Technical | D7 |
+| ID | Title | Severity | Method | Domain(s) | Controls |
+|---|---|---|---|---|---|
+| [TC-L03-001](#tc-l03-001) | Register of AI Processing Activities | Critical | Technical | D6, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L03-002](#tc-l03-002) | Lawful Basis or Legal Ground Recording per Processing Activity | High | Evidence | D6, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L03-003](#tc-l03-003) | Notice and Transparency: Disclosing AI Interaction and Processing | High | Technical | D1, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L03-004](#tc-l03-004) | Consent Capture, Evidence and Withdrawal | Critical | Technical | D6, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L03-005](#tc-l03-005) | Data Subject Rights: Access Request Workflow | Critical | Technical | D6, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L03-006](#tc-l03-006) | Data Subject Rights: Correction Request Handling | Medium | Technical | D6, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L03-007](#tc-l03-007) | Data Subject Rights: Erasure Across AI Stores | Critical | Technical | D6, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L03-008](#tc-l03-008) | Rights to Object, Restrict and Request Human Review | High | Technical | D6, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L03-009](#tc-l03-009) | Rights Request Timeline Tracking and Evidence | High | Technical | D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L03-010](#tc-l03-010) | Impact Assessment Support (Privacy, Data Protection and AI Impact Assessments) | Critical | Technical | D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L03-011](#tc-l03-011) | Impact Assessment Triggers | High | Technical | D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L03-012](#tc-l03-012) | Cross-Border Transfer Register and Assessment | Critical | Technical | D7 | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) |
+| [TC-L03-013](#tc-l03-013) | Cross-Border Transfer Enforcement | Critical | Technical | D7, D6 | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) |
+| [TC-L03-014](#tc-l03-014) | Residency Evidence Export for a Regulator | High | Evidence | D7 | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) |
+| [TC-L03-015](#tc-l03-015) | Data Minimisation and Purpose Limitation Enforcement | High | Technical | D6, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) |
+| [TC-L03-016](#tc-l03-016) | Retention Schedule Enforcement for AI Data | High | Technical | D6, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L03-017](#tc-l03-017) | Children's and Vulnerable Persons' Data Handling | High | Technical | D6, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L03-018](#tc-l03-018) | Special and Sensitive Categories of Data: Identification and Heightened Controls | Critical | Technical | D6, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) |
+| [TC-L03-019](#tc-l03-019) | Breach and Incident Notification Workflow | Critical | Technical | D7 | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L03-020](#tc-l03-020) | Controller, Processor and Joint Role Mapping with Agreements | High | Technical | D7 | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L03-021](#tc-l03-021) | AI Provider Compliance Due-Diligence Evidence | High | Attestation | D7 | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) |
+| [TC-L03-022](#tc-l03-022) | Compliance Evidence Export: Formats, Signing and Integrity | High | Technical | D7 | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) |
+| [TC-L03-023](#tc-l03-023) | Multi-Framework Compliance Dashboard: Coverage and Gaps | High | Technical | D7 | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) |
+| [TC-L03-024](#tc-l03-024) | Adopting a New Framework: Custom Framework Onboarding | Critical | Technical | D7 | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) |
+| [TC-L03-025](#tc-l03-025) | Evidence Reuse Across Frameworks | High | Technical | D7 | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) |
+| [TC-L03-026](#tc-l03-026) | Regulator Inspection Simulation: Rapid Evidence Request | Critical | Technical | D7 | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) |
+| [TC-L03-027](#tc-l03-027) | Litigation Hold and Regulatory Preservation Notice | High | Technical | D6, D7 | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) |
+| [TC-L03-028](#tc-l03-028) | Intellectual Property and Copyright Controls for AI Inputs and Outputs | Medium | Technical | D3, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L03-029](#tc-l03-029) | Automated Decision Explanation Records | High | Technical | D3, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L03-030](#tc-l03-030) | Language and Jurisdiction Configuration (Arabic, English and Regional Rule Sets) | Medium | Technical | D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
 
 ---
 
@@ -70,6 +70,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | Critical |
 | **NIST AI RMF Mapping** | MAP and MEASURE (privacy risk examined and managed) |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** Most privacy and data protection frameworks expect a maintained record of what personal data is processed, why, by whom and where; AI projects add new processing that rarely reaches it.
 
@@ -148,6 +149,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | MAP and MEASURE (privacy risk examined and managed) |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** Processing without a recorded legal ground is hard to defend and rights handling depends on it.
 
@@ -226,6 +228,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: A, W |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | GOVERN and MANAGE (human oversight, transparency) |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** People should know when they interact with AI or when AI processes their data, and many frameworks require notices of defined content.
 
@@ -304,6 +307,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: W, A |
 | **Risk Severity** | Critical |
 | **NIST AI RMF Mapping** | MAP and MEASURE (privacy risk examined and managed) |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** Where consent is the ground, it must be demonstrable and as easy to withdraw as to give.
 
@@ -382,6 +386,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | Critical |
 | **NIST AI RMF Mapping** | MAP and MEASURE (privacy risk examined and managed) |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** Individuals can ask what is held about them; AI systems scatter data across prompts, indexes, logs and derived stores.
 
@@ -460,6 +465,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | Medium |
 | **NIST AI RMF Mapping** | MAP and MEASURE (privacy risk examined and managed) |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** Incorrect data about a person that flows into AI outputs can cause harm and may need correcting at source and in derived stores.
 
@@ -537,6 +543,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | Critical |
 | **NIST AI RMF Mapping** | GOVERN and MANAGE (data lifecycle) |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** Deletion from the source system leaves copies in embeddings, caches, logs and training data.
 
@@ -615,6 +622,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: W, A |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | GOVERN and MANAGE (human oversight, transparency) |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** Where decisions are automated, individuals may be entitled to contest them or ask for human involvement.
 
@@ -692,6 +700,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | MEASURE and GOVERN (documentation, evaluation and accountability) |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** Missing deadlines is a common regulatory failing and timelines differ between frameworks.
 
@@ -770,6 +779,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Critical |
 | **NIST AI RMF Mapping** | MAP and MANAGE (risk identification and treatment) |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** Impact assessments are required by many frameworks for higher-risk processing and are often written without the facts to hand.
 
@@ -848,6 +858,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | MAP and MANAGE (risk identification and treatment) |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** Assessments are missed when new uses or changes do not trigger them.
 
@@ -925,6 +936,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | Critical |
 | **NIST AI RMF Mapping** | GOVERN and MAP (legal and regulatory requirements, third-party context) |
+| **Control(s) Tested** | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) Data Sovereignty |
 
 **Risk Addressed.** Transfers to model providers and hosting locations create obligations that differ by framework and are often unknown to privacy teams.
 
@@ -1002,6 +1014,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: G, P, E |
 | **Risk Severity** | Critical |
 | **NIST AI RMF Mapping** | GOVERN and MAP (legal and regulatory requirements, third-party context) |
+| **Control(s) Tested** | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) Data Sovereignty |
 
 **Risk Addressed.** A register means little if data can still flow to disallowed destinations.
 
@@ -1079,6 +1092,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | GOVERN and MAP (legal and regulatory requirements, third-party context) |
+| **Control(s) Tested** | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) Data Sovereignty |
 
 **Risk Addressed.** Regulators and customers ask for proof of where data is held and processed, not statements, and the answer must cover logs, backups and support access as well as primary storage.
 
@@ -1157,6 +1171,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: P, G, A |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | MAP and MEASURE (privacy risk examined and managed) |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance; [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
 **Risk Addressed.** Sending or keeping more data than a purpose needs is the usual way personal data exposure grows, and minimisation is a stated principle in most frameworks.
 
@@ -1235,6 +1250,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: P, W |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | GOVERN and MANAGE (data lifecycle) |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** Prompts, outputs, embeddings and logs accumulate indefinitely unless retention is enforced technically.
 
@@ -1313,6 +1329,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: P, A, W |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | MAP and MEASURE (privacy risk examined and managed) |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** Many frameworks require additional safeguards where minors or vulnerable people are involved.
 
@@ -1390,6 +1407,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: P, G |
 | **Risk Severity** | Critical |
 | **NIST AI RMF Mapping** | MAP and MEASURE (privacy risk examined and managed) |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance; [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
 **Risk Addressed.** Sensitive categories carry stricter conditions and higher penalties, and the list differs between frameworks.
 
@@ -1467,6 +1485,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Critical |
 | **NIST AI RMF Mapping** | MANAGE (incident response and communication) |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics; [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** Notification deadlines to regulators and individuals are short, differ by framework and need a documented decision.
 
@@ -1545,6 +1564,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | GOVERN and MAP (third-party and supply chain risk) |
+| **Control(s) Tested** | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance; [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** Roles determine duties; unrecorded roles and missing agreements are frequent findings.
 
@@ -1622,6 +1642,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | GOVERN and MAP (third-party and supply chain risk) |
+| **Control(s) Tested** | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance |
 
 **Risk Addressed.** Reliance on a provider's claims without evidence is a weak position.
 
@@ -1699,6 +1720,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | MEASURE and GOVERN (documentation, evaluation and accountability) |
+| **Control(s) Tested** | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Control Assurance and Audit Evidence |
 
 **Risk Addressed.** Evidence that cannot leave the platform in a usable and verifiable form is hard to rely on in an audit or dispute.
 
@@ -1777,6 +1799,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | MEASURE and GOVERN (documentation, evaluation and accountability) |
+| **Control(s) Tested** | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Control Assurance and Audit Evidence |
 
 **Risk Addressed.** Leaders need one view of where the organisation stands against several frameworks, and percentages must be explainable.
 
@@ -1855,6 +1878,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Critical |
 | **NIST AI RMF Mapping** | MEASURE and GOVERN (documentation, evaluation and accountability) |
+| **Control(s) Tested** | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Control Assurance and Audit Evidence |
 
 **Risk Addressed.** The value of a generic library depends on how quickly a new or local framework can be added and mapped without vendor engineering.
 
@@ -1933,6 +1957,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | MEASURE and GOVERN (documentation, evaluation and accountability) |
+| **Control(s) Tested** | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Control Assurance and Audit Evidence |
 
 **Risk Addressed.** Collecting the same evidence several times for different frameworks wastes effort and produces inconsistencies.
 
@@ -2010,6 +2035,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | Critical |
 | **NIST AI RMF Mapping** | MEASURE and GOVERN (documentation, evaluation and accountability) |
+| **Control(s) Tested** | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Control Assurance and Audit Evidence |
 
 **Risk Addressed.** Inspections give short notice and ask for specific records.
 
@@ -2088,6 +2114,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | GOVERN and MANAGE (data lifecycle) |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics |
 
 **Risk Addressed.** Deleting data during a dispute or investigation can cause serious consequences, and AI platforms delete on schedule by default.
 
@@ -2166,6 +2193,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: G, A, W |
 | **Risk Severity** | Medium |
 | **NIST AI RMF Mapping** | GOVERN (policies, accountability and oversight) |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** Using restricted content as input, or publishing outputs that copy protected material, creates legal exposure and contract breaches.
 
@@ -2244,6 +2272,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: A, W |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | GOVERN and MANAGE (human oversight, transparency) |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** People affected by automated decisions may be entitled to meaningful information about the logic and factors involved.
 
@@ -2322,6 +2351,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: W, A |
 | **Risk Severity** | Medium |
 | **NIST AI RMF Mapping** | GOVERN and MAP (legal and regulatory requirements, third-party context) |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** Notices, forms and rule sets must work in the languages and jurisdictions in which the organisation operates.
 

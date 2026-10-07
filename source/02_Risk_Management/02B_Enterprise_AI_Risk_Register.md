@@ -9,7 +9,7 @@ version: 1.0
 
 # Enterprise AI Risk Register
 
-> **Purpose:** Provide a sample enterprise AI risk register covering AI usage, development, applications, agents, auditability and sovereignty, as a starting template.
+> **Purpose:** Provide a sample enterprise AI risk register covering AI usage, development, applications, agents, auditability, sovereignty, cost, output reliability and resilience, as a starting template.
 
 > **Audience:** Governance, cyber risk, security architecture, audit, AI product owners.
 
@@ -29,6 +29,9 @@ version: 1.0
 | AI-R08 | AI Supply Chain and Model Integrity Risk | Medium | High | High | 8 |
 | AI-R09 | Lack of AI Auditability and Forensic Visibility | High | High | High | 9 |
 | AI-R10 | Data Sovereignty and Third-Party Processing Risk | Medium | Critical | High | 10 |
+| AI-R11 | AI Cost Abuse and Resource Exhaustion | Medium | High | High | 11 |
+| AI-R12 | Unreliable or Harmful AI Output | Medium | High | High | 12 |
+| AI-R13 | AI Service Disruption and Dependency Failure | Medium | High | Medium | 13 |
 
 ## Risk Narratives
 
@@ -61,3 +64,12 @@ Investigations are weak if prompts, responses, uploads, retrieved documents, mod
 
 ### AI-R10 — Data Sovereignty and Third-Party Processing Risk
 AI platforms may process or retain prompts, uploads, metadata and logs in external locations. Required controls include data residency validation, training exclusion, retention configuration, administrative access logging and deployment model assessment.
+
+### AI-R11 — AI Cost Abuse and Resource Exhaustion
+AI usage is metered, so leaked keys, automated traffic against public endpoints, runaway agents and retry loops can exhaust budget or capacity within hours. Required controls include cost attribution, budgets and quotas with enforcement, rate limits, spend anomaly detection, key revocation and limits on agent loops.
+
+### AI-R12 — Unreliable or Harmful AI Output
+AI systems can give confident wrong answers, invent sources, packages and links, drift outside their approved scope or produce harmful content, and people act on the result. Required controls include grounding in approved sources, citation verification, topic restriction, harmful content filtering and factuality evaluation.
+
+### AI-R13 — AI Service Disruption and Dependency Failure
+Business processes come to depend on AI services, model providers and the security controls in front of them. Outages, provider changes, overload or a control that fails open can stop the process or silently remove protection. Required controls include defined fail modes, failover that keeps policy intact, fallback paths, tested backups, provider exit plans and detection of silent control failure.

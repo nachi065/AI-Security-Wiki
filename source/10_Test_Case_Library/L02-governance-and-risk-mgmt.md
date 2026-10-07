@@ -11,7 +11,7 @@ nav_order: 5
 
 **Primary test focus:** policy-to-control mapping, risk register, exceptions workflow
 
-**Controls tested:** [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011), [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012), [AI-CTRL-033](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-033)
+**Controls tested:** [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Control Assurance and Audit Evidence (10 cases), [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037) AI Risk Assessment and Exception Management (7 cases), [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) AI Policy, Roles and Acceptable Use (6 cases), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability (1 case), [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) Policy Enforcement (1 case), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance (1 case), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance (1 case)
 
 **Cases:** 25 (TC-L02-001 to TC-L02-025)
 > **Safety boundary.** All cases use fabricated use cases, policies, records and individuals only. This layer is framework-neutral: see the [Framework Adoption Guide](framework-adoption-guide.md) before testing, and complete the Applicable Requirement and Framework Crosswalk fields for each case.
@@ -20,33 +20,33 @@ nav_order: 5
 
 ## Cases in this layer
 
-| ID | Title | Severity | Method | Domain(s) |
-|---|---|---|---|---|
-| [TC-L02-001](#tc-l02-001) | AI Policy Framework: Scope, Ownership, Approval and Review Cycle | High | Evidence | D7 |
-| [TC-L02-002](#tc-l02-002) | Policy-to-Control Mapping | Critical | Technical | D3, D7 |
-| [TC-L02-003](#tc-l02-003) | Control Library and Multi-Framework Crosswalk Capability | Critical | Technical | D7 |
-| [TC-L02-004](#tc-l02-004) | Roles and Responsibilities (RACI) Recorded and Enforced | High | Technical | D3 |
-| [TC-L02-005](#tc-l02-005) | AI Governance Committee Workflow and Decision Record | Medium | Evidence | D3, D7 |
-| [TC-L02-006](#tc-l02-006) | AI Risk Register: Creation, Scoring and Ownership | Critical | Technical | D3 |
-| [TC-L02-007](#tc-l02-007) | Risk Assessment Consistency Between Assessors | High | Technical | D3 |
-| [TC-L02-008](#tc-l02-008) | Risk Treatment Tracking | High | Technical | D3 |
-| [TC-L02-009](#tc-l02-009) | Residual Risk Acceptance with Authority Limits | Critical | Technical | D3, D7 |
-| [TC-L02-010](#tc-l02-010) | Exception and Waiver Workflow: Request, Approval, Expiry and Review | Critical | Technical | D3, D7 |
-| [TC-L02-011](#tc-l02-011) | Exception Expiry Enforced in Technical Controls | High | Technical | D1, D3 |
-| [TC-L02-012](#tc-l02-012) | Exception Reporting, Ageing and Concentration | Medium | Evidence | D3 |
-| [TC-L02-013](#tc-l02-013) | Control Effectiveness Measurement and Evidence Freshness | Critical | Technical | D3, D7 |
-| [TC-L02-014](#tc-l02-014) | Control Owner Attestation | Medium | Technical | D3 |
-| [TC-L02-015](#tc-l02-015) | Automated Evidence Collection and Freshness | High | Technical | D3, D7 |
-| [TC-L02-016](#tc-l02-016) | Audit Readiness: Evidence Pack on Demand | Critical | Technical | D7 |
-| [TC-L02-017](#tc-l02-017) | Internal and External Audit Support: Read-Only Access and Sampling | High | Technical | D7 |
-| [TC-L02-018](#tc-l02-018) | Finding, Nonconformity and Corrective Action Management | High | Technical | D3 |
-| [TC-L02-019](#tc-l02-019) | Governance Metrics and KPI Reporting | Medium | Evidence | D7 |
-| [TC-L02-020](#tc-l02-020) | Regulatory and Framework Change Management | High | Technical | D7 |
-| [TC-L02-021](#tc-l02-021) | Third-Party Governance Integration | High | Technical | D7 |
-| [TC-L02-022](#tc-l02-022) | Training and Awareness Tracking for AI Policies | Medium | Technical | D1, D7 |
-| [TC-L02-023](#tc-l02-023) | Acceptable Use Acknowledgement and Re-Acknowledgement | Medium | Technical | D1, D7 |
-| [TC-L02-024](#tc-l02-024) | Management Review Inputs and Outputs | Medium | Evidence | D7 |
-| [TC-L02-025](#tc-l02-025) | Governance Record Integrity: Change History and Tamper Evidence | High | Technical | D7 |
+| ID | Title | Severity | Method | Domain(s) | Controls |
+|---|---|---|---|---|---|
+| [TC-L02-001](#tc-l02-001) | AI Policy Framework: Scope, Ownership, Approval and Review Cycle | High | Evidence | D7 | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) |
+| [TC-L02-002](#tc-l02-002) | Policy-to-Control Mapping | Critical | Technical | D3, D7 | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) |
+| [TC-L02-003](#tc-l02-003) | Control Library and Multi-Framework Crosswalk Capability | Critical | Technical | D7 | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) |
+| [TC-L02-004](#tc-l02-004) | Roles and Responsibilities (RACI) Recorded and Enforced | High | Technical | D3 | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) |
+| [TC-L02-005](#tc-l02-005) | AI Governance Committee Workflow and Decision Record | Medium | Evidence | D3, D7 | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) |
+| [TC-L02-006](#tc-l02-006) | AI Risk Register: Creation, Scoring and Ownership | Critical | Technical | D3 | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037) |
+| [TC-L02-007](#tc-l02-007) | Risk Assessment Consistency Between Assessors | High | Technical | D3 | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037) |
+| [TC-L02-008](#tc-l02-008) | Risk Treatment Tracking | High | Technical | D3 | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037) |
+| [TC-L02-009](#tc-l02-009) | Residual Risk Acceptance with Authority Limits | Critical | Technical | D3, D7 | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037) |
+| [TC-L02-010](#tc-l02-010) | Exception and Waiver Workflow: Request, Approval, Expiry and Review | Critical | Technical | D3, D7 | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037) |
+| [TC-L02-011](#tc-l02-011) | Exception Expiry Enforced in Technical Controls | High | Technical | D1, D3 | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037), [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) |
+| [TC-L02-012](#tc-l02-012) | Exception Reporting, Ageing and Concentration | Medium | Evidence | D3 | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037) |
+| [TC-L02-013](#tc-l02-013) | Control Effectiveness Measurement and Evidence Freshness | Critical | Technical | D3, D7 | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) |
+| [TC-L02-014](#tc-l02-014) | Control Owner Attestation | Medium | Technical | D3 | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) |
+| [TC-L02-015](#tc-l02-015) | Automated Evidence Collection and Freshness | High | Technical | D3, D7 | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) |
+| [TC-L02-016](#tc-l02-016) | Audit Readiness: Evidence Pack on Demand | Critical | Technical | D7 | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) |
+| [TC-L02-017](#tc-l02-017) | Internal and External Audit Support: Read-Only Access and Sampling | High | Technical | D7 | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) |
+| [TC-L02-018](#tc-l02-018) | Finding, Nonconformity and Corrective Action Management | High | Technical | D3 | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) |
+| [TC-L02-019](#tc-l02-019) | Governance Metrics and KPI Reporting | Medium | Evidence | D7 | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) |
+| [TC-L02-020](#tc-l02-020) | Regulatory and Framework Change Management | High | Technical | D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L02-021](#tc-l02-021) | Third-Party Governance Integration | High | Technical | D7 | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) |
+| [TC-L02-022](#tc-l02-022) | Training and Awareness Tracking for AI Policies | Medium | Technical | D1, D7 | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) |
+| [TC-L02-023](#tc-l02-023) | Acceptable Use Acknowledgement and Re-Acknowledgement | Medium | Technical | D1, D7 | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) |
+| [TC-L02-024](#tc-l02-024) | Management Review Inputs and Outputs | Medium | Evidence | D7 | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) |
+| [TC-L02-025](#tc-l02-025) | Governance Record Integrity: Change History and Tamper Evidence | High | Technical | D7 | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) |
 
 ---
 
@@ -65,6 +65,7 @@ nav_order: 5
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | GOVERN (policies and procedures) |
+| **Control(s) Tested** | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) AI Policy, Roles and Acceptable Use |
 
 **Risk Addressed.** Policies without an owner, approval and review date are ignored and cannot be defended in an audit.
 
@@ -143,6 +144,7 @@ nav_order: 5
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | Critical |
 | **NIST AI RMF Mapping** | GOVERN (policies and procedures) |
+| **Control(s) Tested** | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) AI Policy, Roles and Acceptable Use |
 
 **Risk Addressed.** A policy statement with no control behind it is a promise, not a safeguard.
 
@@ -220,6 +222,7 @@ nav_order: 5
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Critical |
 | **NIST AI RMF Mapping** | MEASURE and GOVERN (documentation, evaluation and accountability) |
+| **Control(s) Tested** | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Control Assurance and Audit Evidence |
 
 **Risk Addressed.** Organisations answer to several frameworks; mapping each separately wastes effort and produces inconsistent answers.
 
@@ -298,6 +301,7 @@ nav_order: 5
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | GOVERN (policies, accountability and oversight) |
+| **Control(s) Tested** | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) AI Policy, Roles and Acceptable Use |
 
 **Risk Addressed.** Unclear responsibility means decisions are not taken, and approvals by the wrong person undermine the control.
 
@@ -376,6 +380,7 @@ nav_order: 5
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Medium |
 | **NIST AI RMF Mapping** | GOVERN (policies, accountability and oversight) |
+| **Control(s) Tested** | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) AI Policy, Roles and Acceptable Use |
 
 **Risk Addressed.** Committee decisions recorded in email threads cannot be evidenced or tracked.
 
@@ -454,6 +459,7 @@ nav_order: 5
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Critical |
 | **NIST AI RMF Mapping** | MAP and MANAGE (risk identification and treatment) |
+| **Control(s) Tested** | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037) AI Risk Assessment and Exception Management |
 
 **Risk Addressed.** A register with unowned or unscored risks gives false comfort and cannot support decisions.
 
@@ -532,6 +538,7 @@ nav_order: 5
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | MAP and MANAGE (risk identification and treatment) |
+| **Control(s) Tested** | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037) AI Risk Assessment and Exception Management |
 
 **Risk Addressed.** Assessments that depend on who performs them produce unreliable rankings.
 
@@ -610,6 +617,7 @@ nav_order: 5
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | MAP and MANAGE (risk identification and treatment) |
+| **Control(s) Tested** | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037) AI Risk Assessment and Exception Management |
 
 **Risk Addressed.** Risks that are accepted by default or left untreated accumulate silently.
 
@@ -687,6 +695,7 @@ nav_order: 5
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Critical |
 | **NIST AI RMF Mapping** | MAP and MANAGE (risk identification and treatment) |
+| **Control(s) Tested** | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037) AI Risk Assessment and Exception Management |
 
 **Risk Addressed.** Risk acceptance by someone without authority is invalid and often hidden.
 
@@ -764,6 +773,7 @@ nav_order: 5
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Critical |
 | **NIST AI RMF Mapping** | GOVERN (policies, accountability and oversight) |
+| **Control(s) Tested** | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037) AI Risk Assessment and Exception Management |
 
 **Risk Addressed.** Exceptions without expiry become permanent holes in policy.
 
@@ -842,6 +852,7 @@ nav_order: 5
 | **Vendor Applicability** | Core: W, E, G |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | GOVERN (policies, accountability and oversight) |
+| **Control(s) Tested** | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037) AI Risk Assessment and Exception Management; [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) Policy Enforcement |
 
 **Risk Addressed.** An expired exception on paper is meaningless if the technical control still allows the activity.
 
@@ -919,6 +930,7 @@ nav_order: 5
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Medium |
 | **NIST AI RMF Mapping** | GOVERN (policies, accountability and oversight) |
+| **Control(s) Tested** | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037) AI Risk Assessment and Exception Management |
 
 **Risk Addressed.** A growing pile of old exceptions signals a control that does not fit the business, or a risk being tolerated by default.
 
@@ -997,6 +1009,7 @@ nav_order: 5
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | Critical |
 | **NIST AI RMF Mapping** | MEASURE and GOVERN (documentation, evaluation and accountability) |
+| **Control(s) Tested** | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Control Assurance and Audit Evidence |
 
 **Risk Addressed.** A control that existed at design time but is not working today is the most common audit finding.
 
@@ -1075,6 +1088,7 @@ nav_order: 5
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Medium |
 | **NIST AI RMF Mapping** | MEASURE and GOVERN (documentation, evaluation and accountability) |
+| **Control(s) Tested** | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Control Assurance and Audit Evidence |
 
 **Risk Addressed.** Periodic attestation keeps accountability current and catches silent changes, but only if non-response and negative answers are handled.
 
@@ -1153,6 +1167,7 @@ nav_order: 5
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | MEASURE and GOVERN (documentation, evaluation and accountability) |
+| **Control(s) Tested** | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Control Assurance and Audit Evidence |
 
 **Risk Addressed.** Point-in-time evidence collected manually before an audit is expensive and often stale.
 
@@ -1231,6 +1246,7 @@ nav_order: 5
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Critical |
 | **NIST AI RMF Mapping** | MEASURE and GOVERN (documentation, evaluation and accountability) |
+| **Control(s) Tested** | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Control Assurance and Audit Evidence |
 
 **Risk Addressed.** Last-minute scrambling for evidence is a symptom of weak control.
 
@@ -1309,6 +1325,7 @@ nav_order: 5
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | MEASURE and GOVERN (documentation, evaluation and accountability) |
+| **Control(s) Tested** | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Control Assurance and Audit Evidence |
 
 **Risk Addressed.** Auditors need enough access to reach a conclusion, without any ability to change what they examine.
 
@@ -1387,6 +1404,7 @@ nav_order: 5
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | MEASURE and GOVERN (documentation, evaluation and accountability) |
+| **Control(s) Tested** | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Control Assurance and Audit Evidence |
 
 **Risk Addressed.** Findings not tracked to closure recur, and unverified closure is a repeat finding in waiting.
 
@@ -1465,6 +1483,7 @@ nav_order: 5
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Medium |
 | **NIST AI RMF Mapping** | GOVERN (policies, accountability and oversight) |
+| **Control(s) Tested** | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Control Assurance and Audit Evidence |
 
 **Risk Addressed.** Boards cannot oversee what is not measured, and unexplained metrics get ignored.
 
@@ -1543,6 +1562,7 @@ nav_order: 5
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | GOVERN (policies, accountability and oversight) |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** New or revised requirements are missed or implemented late, and nobody can show how a change was handled.
 
@@ -1621,6 +1641,7 @@ nav_order: 5
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | GOVERN and MAP (third-party and supply chain risk) |
+| **Control(s) Tested** | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance |
 
 **Risk Addressed.** Third-party AI risk managed in a separate tool becomes disconnected from the risk register and use-case approvals.
 
@@ -1699,6 +1720,7 @@ nav_order: 5
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Medium |
 | **NIST AI RMF Mapping** | GOVERN (workforce competence and awareness) |
+| **Control(s) Tested** | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) AI Policy, Roles and Acceptable Use |
 
 **Risk Addressed.** Policies are not followed if people do not know them, and many frameworks expect evidence of awareness and training.
 
@@ -1777,6 +1799,7 @@ nav_order: 5
 | **Vendor Applicability** | Core: W, E |
 | **Risk Severity** | Medium |
 | **NIST AI RMF Mapping** | GOVERN (workforce competence and awareness) |
+| **Control(s) Tested** | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) AI Policy, Roles and Acceptable Use |
 
 **Risk Addressed.** Acknowledgement of AI acceptable use is often the first evidence requested after an incident.
 
@@ -1855,6 +1878,7 @@ nav_order: 5
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Medium |
 | **NIST AI RMF Mapping** | GOVERN (policies, accountability and oversight) |
+| **Control(s) Tested** | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Control Assurance and Audit Evidence |
 
 **Risk Addressed.** Several management system standards require review of defined inputs by top management with recorded outputs.
 
@@ -1933,6 +1957,7 @@ nav_order: 5
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | MEASURE and GOVERN (documentation, evaluation and accountability) |
+| **Control(s) Tested** | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Control Assurance and Audit Evidence; [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability |
 
 **Risk Addressed.** Records that can be edited silently have little evidential value in an audit, dispute or investigation.
 

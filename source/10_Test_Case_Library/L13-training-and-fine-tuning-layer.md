@@ -11,7 +11,7 @@ nav_order: 16
 
 **Primary test focus:** data poisoning, dataset provenance, fine-tune integrity
 
-**Controls tested:** [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029)
+**Controls tested:** [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity (13 cases), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance (3 cases), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines (2 cases), [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) ML Pipeline and Model Registry Security (2 cases), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance (1 case), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials (1 case), [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection (1 case), [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM (1 case), [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening (1 case), [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation (1 case), [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls (1 case)
 
 **Cases:** 20 (TC-L13-001 to TC-L13-020)
 > **Safety boundary.** Retrieval, model, training, pipeline and supply chain cases use fabricated corpora and datasets, small lab models, mock hubs and indexes and harmless marker artefacts only (an EICAR-style file that writes a marker, never real malware). Never load untrusted model files outside an isolated sandbox, and never connect the lab to production knowledge sources, models, pipelines, registries or credentials. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.
@@ -20,28 +20,28 @@ nav_order: 16
 
 ## Cases in this layer
 
-| ID | Title | Severity | Method | Domain(s) |
-|---|---|---|---|---|
-| [TC-L13-001](#tc-l13-001) | Training Dataset Inventory and Ownership | High | Technical | D4 |
-| [TC-L13-002](#tc-l13-002) | Dataset Provenance, Licence and Consent Verification | High | Evidence | D4, D7 |
-| [TC-L13-003](#tc-l13-003) | Data Poisoning: Label Flipping Detection | High | Technical | D4 |
-| [TC-L13-004](#tc-l13-004) | Data Poisoning: Backdoor Trigger Insertion in Fine-Tuning Data | Critical | Technical | D4 |
-| [TC-L13-005](#tc-l13-005) | Outlier and Anomaly Screening at Ingestion | Medium | Technical | D4 |
-| [TC-L13-006](#tc-l13-006) | Personal Data and Secrets in Training Data | Critical | Technical | D6, D4 |
-| [TC-L13-007](#tc-l13-007) | Copyright, Opt-Out and Terms Compliance for Training Data | Medium | Evidence | D7 |
-| [TC-L13-008](#tc-l13-008) | Fine-Tuning Job Access Control and Approval | High | Technical | D4 |
-| [TC-L13-009](#tc-l13-009) | Data Exfiltration via Provider Fine-Tuning Interfaces | Critical | Technical | D6, D4 |
-| [TC-L13-010](#tc-l13-010) | Safety Regression After Fine-Tuning | High | Technical | D4 |
-| [TC-L13-011](#tc-l13-011) | Training Environment Isolation and Egress Control | High | Technical | D4, D7 |
-| [TC-L13-012](#tc-l13-012) | Checkpoint and Artefact Integrity | High | Technical | D4 |
-| [TC-L13-013](#tc-l13-013) | Training Run Reproducibility and Audit Record | Medium | Evidence | D4, D7 |
-| [TC-L13-014](#tc-l13-014) | Third-Party Dataset and Base Model Ingestion Vetting | High | Technical | D4 |
-| [TC-L13-015](#tc-l13-015) | Synthetic Data Generation Controls | Medium | Evidence | D4 |
-| [TC-L13-016](#tc-l13-016) | Distributed and Federated Training Participant Trust | Medium | Technical | D4 |
-| [TC-L13-017](#tc-l13-017) | Memorisation Testing of Fine-Tuned Models | High | Technical | D6, D4 |
-| [TC-L13-018](#tc-l13-018) | Feedback Loop and Preference Data Poisoning | High | Technical | D4, D3 |
-| [TC-L13-019](#tc-l13-019) | Data Deletion and Unlearning Request Handling | Medium | Evidence | D7, D6 |
-| [TC-L13-020](#tc-l13-020) | Unauthorised Training Compute and Resource Abuse | Medium | Technical | D4 |
+| ID | Title | Severity | Method | Domain(s) | Controls |
+|---|---|---|---|---|---|
+| [TC-L13-001](#tc-l13-001) | Training Dataset Inventory and Ownership | High | Technical | D4 | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) |
+| [TC-L13-002](#tc-l13-002) | Dataset Provenance, Licence and Consent Verification | High | Evidence | D4, D7 | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L13-003](#tc-l13-003) | Data Poisoning: Label Flipping Detection | High | Technical | D4 | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) |
+| [TC-L13-004](#tc-l13-004) | Data Poisoning: Backdoor Trigger Insertion in Fine-Tuning Data | Critical | Technical | D4 | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) |
+| [TC-L13-005](#tc-l13-005) | Outlier and Anomaly Screening at Ingestion | Medium | Technical | D4 | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) |
+| [TC-L13-006](#tc-l13-006) | Personal Data and Secrets in Training Data | Critical | Technical | D6, D4 | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) |
+| [TC-L13-007](#tc-l13-007) | Copyright, Opt-Out and Terms Compliance for Training Data | Medium | Evidence | D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) |
+| [TC-L13-008](#tc-l13-008) | Fine-Tuning Job Access Control and Approval | High | Technical | D4 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016), [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) |
+| [TC-L13-009](#tc-l13-009) | Data Exfiltration via Provider Fine-Tuning Interfaces | Critical | Technical | D6, D4 | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) |
+| [TC-L13-010](#tc-l13-010) | Safety Regression After Fine-Tuning | High | Technical | D4 | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-L13-011](#tc-l13-011) | Training Environment Isolation and Egress Control | High | Technical | D4, D7 | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) |
+| [TC-L13-012](#tc-l13-012) | Checkpoint and Artefact Integrity | High | Technical | D4 | [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) |
+| [TC-L13-013](#tc-l13-013) | Training Run Reproducibility and Audit Record | Medium | Evidence | D4, D7 | [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030), [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) |
+| [TC-L13-014](#tc-l13-014) | Third-Party Dataset and Base Model Ingestion Vetting | High | Technical | D4 | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031), [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) |
+| [TC-L13-015](#tc-l13-015) | Synthetic Data Generation Controls | Medium | Evidence | D4 | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) |
+| [TC-L13-016](#tc-l13-016) | Distributed and Federated Training Participant Trust | Medium | Technical | D4 | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) |
+| [TC-L13-017](#tc-l13-017) | Memorisation Testing of Fine-Tuned Models | High | Technical | D6, D4 | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) |
+| [TC-L13-018](#tc-l13-018) | Feedback Loop and Preference Data Poisoning | High | Technical | D4, D3 | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) |
+| [TC-L13-019](#tc-l13-019) | Data Deletion and Unlearning Request Handling | Medium | Evidence | D7, D6 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L13-020](#tc-l13-020) | Unauthorised Training Compute and Resource Abuse | Medium | Technical | D4 | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) |
 
 ---
 
@@ -61,6 +61,7 @@ nav_order: 16
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity |
 
 **Risk Addressed.** Datasets copied for experiments and fine-tuning are rarely registered, so nobody knows what data shaped a model.
 
@@ -125,6 +126,7 @@ nav_order: 16
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
+| **Control(s) Tested** | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity; [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** Data of unknown origin may be unlicensed, scraped against terms, or collected without a lawful basis.
 
@@ -186,9 +188,10 @@ nav_order: 16
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P, R |
 | **Risk Severity** | High |
-| **MITRE ATLAS Mapping** | AML.T0020 Poison Training Data (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
+| **MITRE ATLAS Mapping** | AML.T0020 Training Data Poisoning (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
 | **OWASP LLM / GenAI Mapping** | LLM04:2025 Data and Model Poisoning; LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity |
 
 **Risk Addressed.** Corrupted labels degrade or steer a model without obvious signs.
 
@@ -250,9 +253,10 @@ nav_order: 16
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P, R |
 | **Risk Severity** | Critical |
-| **MITRE ATLAS Mapping** | AML.T0020 Poison Training Data (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
+| **MITRE ATLAS Mapping** | AML.T0020 Training Data Poisoning (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
 | **OWASP LLM / GenAI Mapping** | LLM04:2025 Data and Model Poisoning; LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity |
 
 **Risk Addressed.** A small number of crafted examples can teach a model to misbehave whenever a trigger phrase appears.
 
@@ -314,9 +318,10 @@ nav_order: 16
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
-| **MITRE ATLAS Mapping** | AML.T0020 Poison Training Data (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
+| **MITRE ATLAS Mapping** | AML.T0020 Training Data Poisoning (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
 | **OWASP LLM / GenAI Mapping** | LLM04:2025 Data and Model Poisoning; LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity |
 
 **Risk Addressed.** Bulk additions of odd or duplicated data are signs of tampering or accidental contamination.
 
@@ -380,6 +385,7 @@ nav_order: 16
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity; [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
 **Risk Addressed.** Trained-in personal data and secrets can be reproduced later and cannot easily be removed.
 
@@ -443,6 +449,7 @@ nav_order: 16
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance; [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity |
 
 **Risk Addressed.** Using content against site terms or opt-out signals creates legal exposure and reputational damage.
 
@@ -506,6 +513,7 @@ nav_order: 16
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials; [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity |
 
 **Risk Addressed.** Unrestricted ability to start fine-tuning lets staff push sensitive data into models.
 
@@ -569,6 +577,7 @@ nav_order: 16
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines; [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance |
 
 **Risk Addressed.** Uploading datasets to a provider's tuning service moves data to a third party in bulk.
 
@@ -631,6 +640,7 @@ nav_order: 16
 | **MITRE ATLAS Mapping** | N/A (evaluation control) |
 | **OWASP LLM / GenAI Mapping** | LLM09:2025 Misinformation; LLM01:2025 Prompt Injection (policy robustness) |
 | **NIST AI RMF Mapping** | MEASURE 2.6; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** Fine-tuning can weaken safety behaviour even when the data looks harmless.
 
@@ -695,6 +705,7 @@ nav_order: 16
 | **MITRE ATLAS Mapping** | AML.T0050 Command and Scripting Interpreter |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
 **Risk Addressed.** Training jobs with broad network access can pull untrusted code and send data out.
 
@@ -758,6 +769,7 @@ nav_order: 16
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
+| **Control(s) Tested** | [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) ML Pipeline and Model Registry Security |
 
 **Risk Addressed.** Checkpoints can be swapped or altered between runs.
 
@@ -820,6 +832,7 @@ nav_order: 16
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) ML Pipeline and Model Registry Security; [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity |
 
 **Risk Addressed.** Without a complete run record, nobody can explain or reproduce a model.
 
@@ -883,6 +896,7 @@ nav_order: 16
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
+| **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM; [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity |
 
 **Risk Addressed.** Public datasets and base models can be poisoned, mislabelled, carry hidden prompts or ship unsafe loaders, and they enter the pipeline with the trust of an approved source.
 
@@ -944,9 +958,10 @@ nav_order: 16
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
-| **MITRE ATLAS Mapping** | AML.T0020 Poison Training Data (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
+| **MITRE ATLAS Mapping** | AML.T0020 Training Data Poisoning (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
 | **OWASP LLM / GenAI Mapping** | LLM04:2025 Data and Model Poisoning; LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity |
 
 **Risk Addressed.** Model-generated training data can amplify errors, reproduce memorised records and contaminate evaluation sets, and it is easily mistaken for real data once mixed in.
 
@@ -1008,9 +1023,10 @@ nav_order: 16
 | **Test Method** | Technical |
 | **Vendor Applicability** | Partial: P, R |
 | **Risk Severity** | Medium |
-| **MITRE ATLAS Mapping** | AML.T0020 Poison Training Data (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
+| **MITRE ATLAS Mapping** | AML.T0020 Training Data Poisoning (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
 | **OWASP LLM / GenAI Mapping** | LLM04:2025 Data and Model Poisoning; LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity |
 
 **Risk Addressed.** Where several parties contribute updates, one malicious or compromised participant can degrade or steer the shared model.
 
@@ -1075,6 +1091,7 @@ nav_order: 16
 | **MITRE ATLAS Mapping** | AML.T0024 Exfiltration via AI Inference API (includes model extraction and inversion techniques) |
 | **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption; LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.10 |
+| **Control(s) Tested** | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection |
 
 **Risk Addressed.** Models memorise rare strings, including personal data and secrets, and can reproduce them under the right prompt.
 
@@ -1137,9 +1154,10 @@ nav_order: 16
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P, A |
 | **Risk Severity** | High |
-| **MITRE ATLAS Mapping** | AML.T0020 Poison Training Data (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
+| **MITRE ATLAS Mapping** | AML.T0020 Training Data Poisoning (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
 | **OWASP LLM / GenAI Mapping** | LLM04:2025 Data and Model Poisoning; LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity |
 
 **Risk Addressed.** User ratings and corrections used to tune a model can be gamed by coordinated accounts to steer behaviour.
 
@@ -1205,6 +1223,7 @@ nav_order: 16
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage (secondary) |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; GOVERN 1.1 |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** Deleting data from a dataset does not remove its influence on models already trained on it, which complicates erasure obligations.
 
@@ -1269,6 +1288,7 @@ nav_order: 16
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
 | **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
 **Risk Addressed.** GPU capacity is expensive and attractive for unapproved training, cryptocurrency mining and personal projects.
 

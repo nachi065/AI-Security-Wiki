@@ -11,7 +11,7 @@ nav_order: 4
 
 **Primary test focus:** use-case registry, risk-tiering, business-owner attribution
 
-**Controls tested:** [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011), [AI-CTRL-033](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-033)
+**Controls tested:** [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering (13 cases), [AI-CTRL-033](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-033) AI Security Review and Release Gate (4 cases), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance (2 cases), [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery (1 case), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance (1 case), [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) Human Approval for Sensitive Actions (1 case), [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) AI Service Resilience and Fail-Safe Operation (1 case)
 
 **Cases:** 20 (TC-L01-001 to TC-L01-020)
 > **Safety boundary.** All cases use fabricated use cases, policies, records and individuals only. This layer is framework-neutral: see the [Framework Adoption Guide](framework-adoption-guide.md) before testing, and complete the Applicable Requirement and Framework Crosswalk fields for each case.
@@ -20,28 +20,28 @@ nav_order: 4
 
 ## Cases in this layer
 
-| ID | Title | Severity | Method | Domain(s) |
-|---|---|---|---|---|
-| [TC-L01-001](#tc-l01-001) | AI Use-Case Registry: Creation, Mandatory Fields and Uniqueness | High | Technical | D3, D7 |
-| [TC-L01-002](#tc-l01-002) | Use-Case Intake and Approval Workflow Before Deployment | Critical | Technical | D3, D7 |
-| [TC-L01-003](#tc-l01-003) | Business Owner and Accountable Executive Attribution | High | Technical | D3 |
-| [TC-L01-004](#tc-l01-004) | Use-Case to System, Model and Data Traceability | High | Technical | D3, D4, D6 |
-| [TC-L01-005](#tc-l01-005) | Risk Tiering of Use Cases: Criteria and Consistency | Critical | Technical | D3, D7 |
-| [TC-L01-006](#tc-l01-006) | Screening for Prohibited or Restricted Use Cases | Critical | Technical | D3, D7 |
-| [TC-L01-007](#tc-l01-007) | Intended Purpose Documentation and Purpose-Drift Detection | High | Technical | D3, D6 |
-| [TC-L01-008](#tc-l01-008) | Reconciliation of Discovered AI Use Against the Registry | Critical | Technical | D1, D3 |
-| [TC-L01-009](#tc-l01-009) | Business Impact and Criticality Classification | Medium | Technical | D3, D7 |
-| [TC-L01-010](#tc-l01-010) | Impacted Persons and Stakeholder Identification | High | Technical | D3, D7 |
-| [TC-L01-011](#tc-l01-011) | Identification of Automated Decisions and Profiling | Critical | Technical | D3, D6, D7 |
-| [TC-L01-012](#tc-l01-012) | Human Oversight Design Recorded and Tested | Critical | Evidence | D3, D5 |
-| [TC-L01-013](#tc-l01-013) | Use-Case Lifecycle States and Required Controls per State | Medium | Technical | D3 |
-| [TC-L01-014](#tc-l01-014) | Pilot and Proof-of-Concept Guardrails | High | Technical | D3, D6 |
-| [TC-L01-015](#tc-l01-015) | Material Change Triggers Re-Assessment | High | Technical | D3, D4 |
-| [TC-L01-016](#tc-l01-016) | Benefit, Risk and KPI Tracking per Use Case | Low | Evidence | D3 |
-| [TC-L01-017](#tc-l01-017) | Third-Party AI Dependency Recording per Use Case | High | Technical | D3, D4 |
-| [TC-L01-018](#tc-l01-018) | Fallback and Continuity Plans for AI-Dependent Processes | Medium | Evidence | D3, D7 |
-| [TC-L01-019](#tc-l01-019) | Use-Case Retirement and Decommission Evidence | Medium | Evidence | D3, D7 |
-| [TC-L01-020](#tc-l01-020) | Portfolio View and Executive Reporting on Use Cases | Medium | Evidence | D3, D7 |
+| ID | Title | Severity | Method | Domain(s) | Controls |
+|---|---|---|---|---|---|
+| [TC-L01-001](#tc-l01-001) | AI Use-Case Registry: Creation, Mandatory Fields and Uniqueness | High | Technical | D3, D7 | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) |
+| [TC-L01-002](#tc-l01-002) | Use-Case Intake and Approval Workflow Before Deployment | Critical | Technical | D3, D7 | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011), [AI-CTRL-033](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-033) |
+| [TC-L01-003](#tc-l01-003) | Business Owner and Accountable Executive Attribution | High | Technical | D3 | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) |
+| [TC-L01-004](#tc-l01-004) | Use-Case to System, Model and Data Traceability | High | Technical | D3, D4, D6 | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) |
+| [TC-L01-005](#tc-l01-005) | Risk Tiering of Use Cases: Criteria and Consistency | Critical | Technical | D3, D7 | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) |
+| [TC-L01-006](#tc-l01-006) | Screening for Prohibited or Restricted Use Cases | Critical | Technical | D3, D7 | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) |
+| [TC-L01-007](#tc-l01-007) | Intended Purpose Documentation and Purpose-Drift Detection | High | Technical | D3, D6 | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) |
+| [TC-L01-008](#tc-l01-008) | Reconciliation of Discovered AI Use Against the Registry | Critical | Technical | D1, D3 | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011), [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) |
+| [TC-L01-009](#tc-l01-009) | Business Impact and Criticality Classification | Medium | Technical | D3, D7 | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) |
+| [TC-L01-010](#tc-l01-010) | Impacted Persons and Stakeholder Identification | High | Technical | D3, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L01-011](#tc-l01-011) | Identification of Automated Decisions and Profiling | Critical | Technical | D3, D6, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L01-012](#tc-l01-012) | Human Oversight Design Recorded and Tested | Critical | Evidence | D3, D5 | [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) |
+| [TC-L01-013](#tc-l01-013) | Use-Case Lifecycle States and Required Controls per State | Medium | Technical | D3 | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011), [AI-CTRL-033](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-033) |
+| [TC-L01-014](#tc-l01-014) | Pilot and Proof-of-Concept Guardrails | High | Technical | D3, D6 | [AI-CTRL-033](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-033) |
+| [TC-L01-015](#tc-l01-015) | Material Change Triggers Re-Assessment | High | Technical | D3, D4 | [AI-CTRL-033](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-033) |
+| [TC-L01-016](#tc-l01-016) | Benefit, Risk and KPI Tracking per Use Case | Low | Evidence | D3 | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) |
+| [TC-L01-017](#tc-l01-017) | Third-Party AI Dependency Recording per Use Case | High | Technical | D3, D4 | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) |
+| [TC-L01-018](#tc-l01-018) | Fallback and Continuity Plans for AI-Dependent Processes | Medium | Evidence | D3, D7 | [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) |
+| [TC-L01-019](#tc-l01-019) | Use-Case Retirement and Decommission Evidence | Medium | Evidence | D3, D7 | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) |
+| [TC-L01-020](#tc-l01-020) | Portfolio View and Executive Reporting on Use Cases | Medium | Evidence | D3, D7 | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) |
 
 ---
 
@@ -60,6 +60,7 @@ nav_order: 4
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | MAP (context and inventory of AI systems) |
+| **Control(s) Tested** | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering |
 
 **Risk Addressed.** An organisation cannot govern or report on AI it has not recorded, and registries with optional fields fill with incomplete entries.
 
@@ -138,6 +139,7 @@ nav_order: 4
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Critical |
 | **NIST AI RMF Mapping** | GOVERN (policies, accountability and oversight) |
+| **Control(s) Tested** | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering; [AI-CTRL-033](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-033) AI Security Review and Release Gate |
 
 **Risk Addressed.** Deployment ahead of approval is the most common way unreviewed AI reaches production.
 
@@ -216,6 +218,7 @@ nav_order: 4
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | GOVERN (policies, accountability and oversight) |
+| **Control(s) Tested** | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering |
 
 **Risk Addressed.** Systems without a named owner are not maintained, reviewed or switched off.
 
@@ -294,6 +297,7 @@ nav_order: 4
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | MAP (context and inventory of AI systems) |
+| **Control(s) Tested** | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering |
 
 **Risk Addressed.** Risk assessment is weak when no one can say which models, datasets and services a use case relies on.
 
@@ -371,6 +375,7 @@ nav_order: 4
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Critical |
 | **NIST AI RMF Mapping** | MAP and MANAGE (risk identification and treatment) |
+| **Control(s) Tested** | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering |
 
 **Risk Addressed.** Tiering that depends on who completes it produces uneven control and unreliable reporting.
 
@@ -449,6 +454,7 @@ nav_order: 4
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Critical |
 | **NIST AI RMF Mapping** | GOVERN (policies, accountability and oversight) |
+| **Control(s) Tested** | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering |
 
 **Risk Addressed.** Some uses are barred by law, policy or contract and must not reach the build stage.
 
@@ -526,6 +532,7 @@ nav_order: 4
 | **Vendor Applicability** | Core: W, P, A |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | MAP and MEASURE (privacy risk examined and managed) |
+| **Control(s) Tested** | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering |
 
 **Risk Addressed.** Systems drift from their documented purpose, undermining the privacy, risk and legal assumptions made at approval, and purpose limitation is a principle in most data protection frameworks.
 
@@ -604,6 +611,7 @@ nav_order: 4
 | **Vendor Applicability** | Core: P, W |
 | **Risk Severity** | Critical |
 | **NIST AI RMF Mapping** | MAP (context and inventory of AI systems) |
+| **Control(s) Tested** | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering; [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
 **Risk Addressed.** The registry is only as good as its completeness; unregistered use is the real exposure.
 
@@ -682,6 +690,7 @@ nav_order: 4
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Medium |
 | **NIST AI RMF Mapping** | MANAGE (response and recovery) |
+| **Control(s) Tested** | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering |
 
 **Risk Addressed.** Treating every AI service as equally critical misallocates resilience effort and obscures what must be restored first.
 
@@ -760,6 +769,7 @@ nav_order: 4
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | GOVERN and MANAGE (human oversight, transparency) |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** Harm to affected people is easy to miss when the assessment lists only the users of the system.
 
@@ -837,6 +847,7 @@ nav_order: 4
 | **Vendor Applicability** | Core: W, A |
 | **Risk Severity** | Critical |
 | **NIST AI RMF Mapping** | GOVERN and MANAGE (human oversight, transparency) |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** Many frameworks give individuals rights and require safeguards when decisions about them are automated or based on profiling.
 
@@ -914,6 +925,7 @@ nav_order: 4
 | **Vendor Applicability** | Core: W, A |
 | **Risk Severity** | Critical |
 | **NIST AI RMF Mapping** | GOVERN and MANAGE (human oversight, transparency) |
+| **Control(s) Tested** | [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) Human Approval for Sensitive Actions |
 
 **Risk Addressed.** Oversight that exists only on paper fails when it is needed.
 
@@ -991,6 +1003,7 @@ nav_order: 4
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Medium |
 | **NIST AI RMF Mapping** | MANAGE and GOVERN (change and decommissioning) |
+| **Control(s) Tested** | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering; [AI-CTRL-033](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-033) AI Security Review and Release Gate |
 
 **Risk Addressed.** Controls required in production are skipped in pilot, and pilots become production silently.
 
@@ -1069,6 +1082,7 @@ nav_order: 4
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | GOVERN (policies, accountability and oversight) |
+| **Control(s) Tested** | [AI-CTRL-033](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-033) AI Security Review and Release Gate |
 
 **Risk Addressed.** Pilots use real data and open access because they are treated as informal.
 
@@ -1147,6 +1161,7 @@ nav_order: 4
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | MANAGE and GOVERN (change and decommissioning) |
+| **Control(s) Tested** | [AI-CTRL-033](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-033) AI Security Review and Release Gate |
 
 **Risk Addressed.** Approvals granted once become stale as models, data and users change.
 
@@ -1225,6 +1240,7 @@ nav_order: 4
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Low |
 | **NIST AI RMF Mapping** | MAP and MANAGE (risk identification and treatment) |
+| **Control(s) Tested** | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering |
 
 **Risk Addressed.** Without measured value and incident data, use cases persist because nobody asks whether they are worth the risk.
 
@@ -1302,6 +1318,7 @@ nav_order: 4
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | GOVERN and MAP (third-party and supply chain risk) |
+| **Control(s) Tested** | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance |
 
 **Risk Addressed.** A use case that depends on an external model or service inherits that provider's risk, location and contract terms.
 
@@ -1379,6 +1396,7 @@ nav_order: 4
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Medium |
 | **NIST AI RMF Mapping** | MANAGE (response and recovery) |
+| **Control(s) Tested** | [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) AI Service Resilience and Fail-Safe Operation |
 
 **Risk Addressed.** Processes that depend on AI need a manual or alternative path when it fails, and it must work.
 
@@ -1457,6 +1475,7 @@ nav_order: 4
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | Medium |
 | **NIST AI RMF Mapping** | MANAGE and GOVERN (change and decommissioning) |
+| **Control(s) Tested** | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering |
 
 **Risk Addressed.** Retired systems keep data, access and cost, and lapses are discovered only during incidents.
 
@@ -1534,6 +1553,7 @@ nav_order: 4
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Medium |
 | **NIST AI RMF Mapping** | GOVERN (policies, accountability and oversight) |
+| **Control(s) Tested** | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering |
 
 **Risk Addressed.** Leaders lack a view of how much AI is in use and at what risk.
 

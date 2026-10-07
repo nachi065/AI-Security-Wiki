@@ -11,7 +11,7 @@ nav_order: 19
 
 **Primary test focus:** AI-BOM, model and package provenance, third-party SaaS AI risk
 
-**Controls tested:** [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014), [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024), [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031)
+**Controls tested:** [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM (13 cases), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance (12 cases), [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance (2 cases), [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics (2 cases), [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) AI Service Resilience and Fail-Safe Operation (2 cases), [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance (1 case), [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security (1 case), [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) Data Sovereignty (1 case), [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection (1 case), [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening (1 case)
 
 **Cases:** 26 (TC-L16-001 to TC-L16-026)
 > **Safety boundary.** Retrieval, model, training, pipeline and supply chain cases use fabricated corpora and datasets, small lab models, mock hubs and indexes and harmless marker artefacts only (an EICAR-style file that writes a marker, never real malware). Never load untrusted model files outside an isolated sandbox, and never connect the lab to production knowledge sources, models, pipelines, registries or credentials. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.
@@ -20,34 +20,34 @@ nav_order: 19
 
 ## Cases in this layer
 
-| ID | Title | Severity | Method | Domain(s) |
-|---|---|---|---|---|
-| [TC-L16-001](#tc-l16-001) | AI Bill of Materials Generation | High | Technical | D4, D7 |
-| [TC-L16-002](#tc-l16-002) | AI Bill of Materials Format, Export and Vulnerability Linkage | Medium | Evidence | D4, D7 |
-| [TC-L16-003](#tc-l16-003) | Model Provenance Verification for Hub-Sourced Models | Critical | Technical | D4 |
-| [TC-L16-004](#tc-l16-004) | Malicious or Typosquatted Model and Package Detection | Critical | Technical | D4 |
-| [TC-L16-005](#tc-l16-005) | Third-Party Model Repository Scanning at Download | High | Technical | D4 |
-| [TC-L16-006](#tc-l16-006) | Known Vulnerabilities in AI Frameworks and Serving Components | High | Technical | D4 |
-| [TC-L16-007](#tc-l16-007) | Dependency Confusion and Build-Time Substitution in AI SDKs | High | Technical | D4, D2 |
-| [TC-L16-008](#tc-l16-008) | Third-Party SaaS AI Feature and Vendor Risk Assessment | High | Evidence | D1, D7 |
-| [TC-L16-009](#tc-l16-009) | Third-Party Assurance Evidence (SOC 2, ISO 27001, ISO/IEC 42001) | Medium | Attestation | D7 |
-| [TC-L16-010](#tc-l16-010) | Sub-Processor and Model-Provider Chain Visibility | High | Evidence | D7 |
-| [TC-L16-011](#tc-l16-011) | Contractual Data Use, Training Opt-Out and Breach Notification Terms | High | Attestation | D7 |
-| [TC-L16-012](#tc-l16-012) | Provider Outage, API Change and Exit Resilience | Medium | Technical | D7 |
-| [TC-L16-013](#tc-l16-013) | Provider Model Deprecation and Behaviour Change Monitoring | Medium | Technical | D4 |
-| [TC-L16-014](#tc-l16-014) | Open-Source Licence Compliance for Models, Datasets and Code | Medium | Technical | D7 |
-| [TC-L16-015](#tc-l16-015) | Agent Framework and SDK Supply Chain Integrity | High | Technical | D5, D4 |
-| [TC-L16-016](#tc-l16-016) | Third-Party Prompt and Template Pack Vetting | Medium | Technical | D3 |
-| [TC-L16-017](#tc-l16-017) | Container Base Image and GPU Driver Supply Chain | Medium | Technical | D4 |
-| [TC-L16-018](#tc-l16-018) | Evaluated Vendor's Own Software Supply Chain and Security Programme | Critical | Attestation | D7 |
-| [TC-L16-019](#tc-l16-019) | Vendor Handling of Customer Telemetry and Support Access | Critical | Attestation | D7, D6 |
-| [TC-L16-020](#tc-l16-020) | Vendor Continuity, Escrow and Data Return | Medium | Attestation | D7 |
-| [TC-L16-021](#tc-l16-021) | Vendor Incident Response and Breach Notification | High | Attestation | D7 |
-| [TC-L16-022](#tc-l16-022) | Vendor Patch Cadence and Vulnerability Handling | High | Technical | D7 |
-| [TC-L16-023](#tc-l16-023) | Fourth-Party and Concentration Risk Across AI Controls | Medium | Evidence | D7 |
-| [TC-L16-024](#tc-l16-024) | Supply Chain Incident Response Exercise | High | Technical | D4, D7 |
-| [TC-L16-025](#tc-l16-025) | Right to Audit and Independent Security Testing of the Vendor Platform | High | Attestation | D7 |
-| [TC-L16-026](#tc-l16-026) | IDE Extension and AI Plugin Marketplace Vetting | High | Technical | D2, D4 |
+| ID | Title | Severity | Method | Domain(s) | Controls |
+|---|---|---|---|---|---|
+| [TC-L16-001](#tc-l16-001) | AI Bill of Materials Generation | High | Technical | D4, D7 | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) |
+| [TC-L16-002](#tc-l16-002) | AI Bill of Materials Format, Export and Vulnerability Linkage | Medium | Evidence | D4, D7 | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) |
+| [TC-L16-003](#tc-l16-003) | Model Provenance Verification for Hub-Sourced Models | Critical | Technical | D4 | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) |
+| [TC-L16-004](#tc-l16-004) | Malicious or Typosquatted Model and Package Detection | Critical | Technical | D4 | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) |
+| [TC-L16-005](#tc-l16-005) | Third-Party Model Repository Scanning at Download | High | Technical | D4 | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031), [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) |
+| [TC-L16-006](#tc-l16-006) | Known Vulnerabilities in AI Frameworks and Serving Components | High | Technical | D4 | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) |
+| [TC-L16-007](#tc-l16-007) | Dependency Confusion and Build-Time Substitution in AI SDKs | High | Technical | D4, D2 | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) |
+| [TC-L16-008](#tc-l16-008) | Third-Party SaaS AI Feature and Vendor Risk Assessment | High | Evidence | D1, D7 | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) |
+| [TC-L16-009](#tc-l16-009) | Third-Party Assurance Evidence (SOC 2, ISO 27001, ISO/IEC 42001) | Medium | Attestation | D7 | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) |
+| [TC-L16-010](#tc-l16-010) | Sub-Processor and Model-Provider Chain Visibility | High | Evidence | D7 | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) |
+| [TC-L16-011](#tc-l16-011) | Contractual Data Use, Training Opt-Out and Breach Notification Terms | High | Attestation | D7 | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) |
+| [TC-L16-012](#tc-l16-012) | Provider Outage, API Change and Exit Resilience | Medium | Technical | D7 | [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) |
+| [TC-L16-013](#tc-l16-013) | Provider Model Deprecation and Behaviour Change Monitoring | Medium | Technical | D4 | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) |
+| [TC-L16-014](#tc-l16-014) | Open-Source Licence Compliance for Models, Datasets and Code | Medium | Technical | D7 | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) |
+| [TC-L16-015](#tc-l16-015) | Agent Framework and SDK Supply Chain Integrity | High | Technical | D5, D4 | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031), [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) |
+| [TC-L16-016](#tc-l16-016) | Third-Party Prompt and Template Pack Vetting | Medium | Technical | D3 | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031), [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L16-017](#tc-l16-017) | Container Base Image and GPU Driver Supply Chain | Medium | Technical | D4 | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031), [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) |
+| [TC-L16-018](#tc-l16-018) | Evaluated Vendor's Own Software Supply Chain and Security Programme | Critical | Attestation | D7 | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) |
+| [TC-L16-019](#tc-l16-019) | Vendor Handling of Customer Telemetry and Support Access | Critical | Attestation | D7, D6 | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014), [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) |
+| [TC-L16-020](#tc-l16-020) | Vendor Continuity, Escrow and Data Return | Medium | Attestation | D7 | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014), [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) |
+| [TC-L16-021](#tc-l16-021) | Vendor Incident Response and Breach Notification | High | Attestation | D7 | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014), [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) |
+| [TC-L16-022](#tc-l16-022) | Vendor Patch Cadence and Vulnerability Handling | High | Technical | D7 | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) |
+| [TC-L16-023](#tc-l16-023) | Fourth-Party and Concentration Risk Across AI Controls | Medium | Evidence | D7 | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) |
+| [TC-L16-024](#tc-l16-024) | Supply Chain Incident Response Exercise | High | Technical | D4, D7 | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035), [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) |
+| [TC-L16-025](#tc-l16-025) | Right to Audit and Independent Security Testing of the Vendor Platform | High | Attestation | D7 | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) |
+| [TC-L16-026](#tc-l16-026) | IDE Extension and AI Plugin Marketplace Vetting | High | Technical | D2, D4 | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024), [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) |
 
 ---
 
@@ -67,6 +67,7 @@ nav_order: 19
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
+| **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM |
 
 **Risk Addressed.** Without a bill of materials for models, datasets, prompts, libraries and services, an organisation cannot tell which AI components a vulnerability or recall affects.
 
@@ -131,6 +132,7 @@ nav_order: 19
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
+| **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM |
 
 **Risk Addressed.** A bill of materials that cannot be exchanged or linked to vulnerability data has little operational value.
 
@@ -194,6 +196,7 @@ nav_order: 19
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
+| **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM |
 
 **Risk Addressed.** Models downloaded from public hubs may be unofficial copies, altered, or published by look-alike accounts.
 
@@ -258,6 +261,7 @@ nav_order: 19
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
+| **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM |
 
 **Risk Addressed.** Attackers publish models and packages with names close to popular ones, relying on mistakes and automated tools.
 
@@ -321,6 +325,7 @@ nav_order: 19
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
+| **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM; [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection |
 
 **Risk Addressed.** Scanning only inside the pipeline misses models pulled directly onto workstations and notebooks.
 
@@ -384,6 +389,7 @@ nav_order: 19
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
+| **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM |
 
 **Risk Addressed.** AI frameworks and inference servers regularly disclose serious vulnerabilities.
 
@@ -447,6 +453,7 @@ nav_order: 19
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
+| **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM |
 
 **Risk Addressed.** Build systems that prefer public indexes can pull attacker packages with the same name as internal ones.
 
@@ -511,6 +518,7 @@ nav_order: 19
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance |
 
 **Risk Addressed.** Approved SaaS tools add AI features and sub-processors without a new review.
 
@@ -574,6 +582,7 @@ nav_order: 19
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance |
 
 **Risk Addressed.** Certificates and reports are only useful if scope, dates and exceptions are read, and some claims cover only part of the service.
 
@@ -638,6 +647,7 @@ nav_order: 19
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance |
 
 **Risk Addressed.** Customer data may pass through several parties, including model providers, that the customer never contracted.
 
@@ -701,6 +711,7 @@ nav_order: 19
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance |
 
 **Risk Addressed.** Weak terms leave customer data open to retention, training use, slow breach notice and unclear liability, and these are very hard to fix after signature.
 
@@ -766,6 +777,7 @@ nav_order: 19
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) AI Service Resilience and Fail-Safe Operation; [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance |
 
 **Risk Addressed.** Dependence on one provider creates availability, price and lock-in risk, and failover paths often break policy.
 
@@ -831,6 +843,7 @@ nav_order: 19
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM |
 
 **Risk Addressed.** Providers retire or alter models on their own schedule, breaking applications and invalidating security and safety assumptions.
 
@@ -896,6 +909,7 @@ nav_order: 19
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM |
 
 **Risk Addressed.** Licence obligations differ widely and can bar commercial use, require disclosure or impose behavioural restrictions.
 
@@ -961,6 +975,7 @@ nav_order: 19
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
+| **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM; [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance |
 
 **Risk Addressed.** Agent frameworks and SDKs update often and run with significant privileges, so a poisoned release has wide reach.
 
@@ -1026,6 +1041,7 @@ nav_order: 19
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
+| **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM; [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Downloaded prompt packs and templates can contain hidden instructions, data-collection links or excessive tool permissions.
 
@@ -1091,6 +1107,7 @@ nav_order: 19
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
+| **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM; [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
 **Risk Addressed.** GPU drivers and base images are large, privileged and rarely tracked, yet they sit below every model workload.
 
@@ -1155,6 +1172,7 @@ nav_order: 19
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance |
 
 **Risk Addressed.** A security product with weak internal security is a high-value target with deep access to prompts, data and endpoints.
 
@@ -1220,6 +1238,7 @@ nav_order: 19
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage (secondary) |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; GOVERN 1.1 |
+| **Control(s) Tested** | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance; [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) Data Sovereignty |
 
 **Risk Addressed.** Vendor systems and staff may see prompts, files and metadata through telemetry and support tooling, contrary to residency and confidentiality commitments.
 
@@ -1285,6 +1304,7 @@ nav_order: 19
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance; [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) AI Service Resilience and Fail-Safe Operation |
 
 **Risk Addressed.** Acquisition, failure or exit can leave customers without service, configuration or data.
 
@@ -1349,6 +1369,7 @@ nav_order: 19
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance; [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics |
 
 **Risk Addressed.** Slow or unclear vendor notification extends damage and delays the customer's own regulatory duties.
 
@@ -1413,6 +1434,7 @@ nav_order: 19
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance |
 
 **Risk Addressed.** Slow patching of the security product itself leaves defenders exposed.
 
@@ -1477,6 +1499,7 @@ nav_order: 19
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance |
 
 **Risk Addressed.** Several shortlisted tools may depend on the same model provider or cloud, so one failure disables many controls at once.
 
@@ -1540,6 +1563,7 @@ nav_order: 19
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics; [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM |
 
 **Risk Addressed.** Teams that have never practised a compromised model or package scenario respond slowly and inconsistently.
 
@@ -1605,6 +1629,7 @@ nav_order: 19
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance |
 
 **Risk Addressed.** Without the right to test or audit, customers rely entirely on the vendor's word about its controls.
 
@@ -1670,6 +1695,7 @@ nav_order: 19
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
+| **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance; [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance |
 
 **Risk Addressed.** Look-alike or compromised AI extensions in public marketplaces run inside the IDE with access to source code, terminals and credentials.
 

@@ -11,7 +11,7 @@ nav_order: 7
 
 **Primary test focus:** browser/workforce AI, user coaching, approval prompts, multimodal input
 
-**Controls tested:** [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001), [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002), [AI-CTRL-003](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-003), [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004), [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010), [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012), [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021)
+**Controls tested:** [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery (12 cases), [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) Policy Enforcement (8 cases), [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002) Prompt Inspection (4 cases), [AI-CTRL-003](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-003) File Upload Protection (3 cases), [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance (3 cases), [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security (3 cases), [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037) AI Risk Assessment and Exception Management (3 cases), [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) Agent Governance (1 case), [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) AI Policy, Roles and Acceptable Use (1 case), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance (1 case), [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity (1 case)
 
 **Cases:** 32 (TC-L04-001 to TC-L04-032)
 > **Safety boundary.** All test cases in this layer use synthetic, non-functional or clearly marked test data only. Card numbers must come from published test ranges; keys, identifiers and records must be fabricated.
@@ -20,40 +20,40 @@ nav_order: 7
 
 ## Cases in this layer
 
-| ID | Title | Severity | Method | Domain(s) |
-|---|---|---|---|---|
-| [TC-L04-001](#tc-l04-001) | Unsanctioned Public AI Web Tool Discovery | Medium | Technical | D1 |
-| [TC-L04-002](#tc-l04-002) | AI Browser Extension Discovery | High | Technical | D1 |
-| [TC-L04-003](#tc-l04-003) | AI Usage Attribution by Department | High | Technical | D1 |
-| [TC-L04-004](#tc-l04-004) | AI Usage Attribution by User Group | Critical | Technical | D1 |
-| [TC-L04-005](#tc-l04-005) | AI Usage by Device Type and Management Status | High | Technical | D1 |
-| [TC-L04-006](#tc-l04-006) | AI Usage by Network Path | High | Technical | D1 |
-| [TC-L04-007](#tc-l04-007) | Discovery from Existing Proxy/SWG Logs | Medium | Technical | D1 |
-| [TC-L04-008](#tc-l04-008) | Off-Network Endpoint Usage Reporting | High | Technical | D1 |
-| [TC-L04-009](#tc-l04-009) | Personal vs Corporate Account Detection on the Same AI Service | Critical | Technical | D1, D6 |
-| [TC-L04-010](#tc-l04-010) | Native Browser-Embedded AI Assistant Detection | High | Technical | D1 |
-| [TC-L04-011](#tc-l04-011) | Real-Time Coaching Banner on Unsanctioned Tool | Medium | Technical | D1 |
-| [TC-L04-012](#tc-l04-012) | Content-Aware Warning on Sensitive Paste | High | Technical | D1, D6 |
-| [TC-L04-013](#tc-l04-013) | Business Justification Workflow (Justify and Proceed) | Medium | Evidence | D1 |
-| [TC-L04-014](#tc-l04-014) | Approval Workflow for AI Access Exceptions | High | Evidence | D1 |
-| [TC-L04-015](#tc-l04-015) | Time-Bound Exception Expiry Enforcement | Medium | Technical | D1 |
-| [TC-L04-016](#tc-l04-016) | Block with Redirect to Sanctioned Alternative | Medium | Technical | D1 |
-| [TC-L04-017](#tc-l04-017) | Sensitive Text Paste into Web AI Prompt: Monitor vs Block | Critical | Technical | D1, D6 |
-| [TC-L04-018](#tc-l04-018) | File Upload to AI Web Tool: Classified File Detection | Critical | Technical | D1, D6 |
-| [TC-L04-019](#tc-l04-019) | Source Code Snippet Paste or Drag-and-Drop | High | Technical | D1, D2 |
-| [TC-L04-020](#tc-l04-020) | Screenshot and Image Upload with Sensitive Content | High | Technical | D1, D6 |
-| [TC-L04-021](#tc-l04-021) | Voice and Audio Input to AI Tools | Medium | Technical | D1 |
-| [TC-L04-022](#tc-l04-022) | Hidden Text and Metadata in Uploaded Documents | High | Technical | D1, D6 |
-| [TC-L04-023](#tc-l04-023) | Browser-Based AI Agent (Computer-Use) Activity Detection | Critical | Technical | D1, D5 |
-| [TC-L04-024](#tc-l04-024) | Mobile and BYOD AI App Visibility | High | Technical | D1 |
-| [TC-L04-025](#tc-l04-025) | Unmanaged Device Access to Sanctioned AI Tools | High | Technical | D1, D6 |
-| [TC-L04-026](#tc-l04-026) | User Risk Scoring from Repeated AI Policy Violations | Medium | Evidence | D1, D6 |
-| [TC-L04-027](#tc-l04-027) | Privacy Controls on User-Level AI Activity Data | High | Evidence | D1, D7 |
-| [TC-L04-028](#tc-l04-028) | Arabic and Mixed-Language Prompt Handling | High | Technical | D1, D7 |
-| [TC-L04-029](#tc-l04-029) | Differential Policy Enforcement by Group | High | Technical | D1 |
-| [TC-L04-030](#tc-l04-030) | Shared or Generic Account Use of AI Tools | Medium | Technical | D1 |
-| [TC-L04-031](#tc-l04-031) | IDE Chat Prompt Containing Proprietary Source Code: Monitor vs Block | Critical | Technical | D2, D6 |
-| [TC-L04-032](#tc-l04-032) | Developer Coaching and Justification Inside the IDE | Medium | Technical | D2 |
+| ID | Title | Severity | Method | Domain(s) | Controls |
+|---|---|---|---|---|---|
+| [TC-L04-001](#tc-l04-001) | Unsanctioned Public AI Web Tool Discovery | Medium | Technical | D1 | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) |
+| [TC-L04-002](#tc-l04-002) | AI Browser Extension Discovery | High | Technical | D1 | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) |
+| [TC-L04-003](#tc-l04-003) | AI Usage Attribution by Department | High | Technical | D1 | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) |
+| [TC-L04-004](#tc-l04-004) | AI Usage Attribution by User Group | Critical | Technical | D1 | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) |
+| [TC-L04-005](#tc-l04-005) | AI Usage by Device Type and Management Status | High | Technical | D1 | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) |
+| [TC-L04-006](#tc-l04-006) | AI Usage by Network Path | High | Technical | D1 | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) |
+| [TC-L04-007](#tc-l04-007) | Discovery from Existing Proxy/SWG Logs | Medium | Technical | D1 | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) |
+| [TC-L04-008](#tc-l04-008) | Off-Network Endpoint Usage Reporting | High | Technical | D1 | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) |
+| [TC-L04-009](#tc-l04-009) | Personal vs Corporate Account Detection on the Same AI Service | Critical | Technical | D1, D6 | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001), [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) |
+| [TC-L04-010](#tc-l04-010) | Native Browser-Embedded AI Assistant Detection | High | Technical | D1 | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) |
+| [TC-L04-011](#tc-l04-011) | Real-Time Coaching Banner on Unsanctioned Tool | Medium | Technical | D1 | [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010), [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) |
+| [TC-L04-012](#tc-l04-012) | Content-Aware Warning on Sensitive Paste | High | Technical | D1, D6 | [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010), [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002) |
+| [TC-L04-013](#tc-l04-013) | Business Justification Workflow (Justify and Proceed) | Medium | Evidence | D1 | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037), [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) |
+| [TC-L04-014](#tc-l04-014) | Approval Workflow for AI Access Exceptions | High | Evidence | D1 | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037) |
+| [TC-L04-015](#tc-l04-015) | Time-Bound Exception Expiry Enforcement | Medium | Technical | D1 | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037) |
+| [TC-L04-016](#tc-l04-016) | Block with Redirect to Sanctioned Alternative | Medium | Technical | D1 | [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) |
+| [TC-L04-017](#tc-l04-017) | Sensitive Text Paste into Web AI Prompt: Monitor vs Block | Critical | Technical | D1, D6 | [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002) |
+| [TC-L04-018](#tc-l04-018) | File Upload to AI Web Tool: Classified File Detection | Critical | Technical | D1, D6 | [AI-CTRL-003](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-003) |
+| [TC-L04-019](#tc-l04-019) | Source Code Snippet Paste or Drag-and-Drop | High | Technical | D1, D2 | [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002), [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) |
+| [TC-L04-020](#tc-l04-020) | Screenshot and Image Upload with Sensitive Content | High | Technical | D1, D6 | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021), [AI-CTRL-003](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-003) |
+| [TC-L04-021](#tc-l04-021) | Voice and Audio Input to AI Tools | Medium | Technical | D1 | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) |
+| [TC-L04-022](#tc-l04-022) | Hidden Text and Metadata in Uploaded Documents | High | Technical | D1, D6 | [AI-CTRL-003](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-003), [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) |
+| [TC-L04-023](#tc-l04-023) | Browser-Based AI Agent (Computer-Use) Activity Detection | Critical | Technical | D1, D5 | [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) |
+| [TC-L04-024](#tc-l04-024) | Mobile and BYOD AI App Visibility | High | Technical | D1 | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) |
+| [TC-L04-025](#tc-l04-025) | Unmanaged Device Access to Sanctioned AI Tools | High | Technical | D1, D6 | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001), [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) |
+| [TC-L04-026](#tc-l04-026) | User Risk Scoring from Repeated AI Policy Violations | Medium | Evidence | D1, D6 | [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) |
+| [TC-L04-027](#tc-l04-027) | Privacy Controls on User-Level AI Activity Data | High | Evidence | D1, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L04-028](#tc-l04-028) | Arabic and Mixed-Language Prompt Handling | High | Technical | D1, D7 | [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002) |
+| [TC-L04-029](#tc-l04-029) | Differential Policy Enforcement by Group | High | Technical | D1 | [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) |
+| [TC-L04-030](#tc-l04-030) | Shared or Generic Account Use of AI Tools | Medium | Technical | D1 | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
+| [TC-L04-031](#tc-l04-031) | IDE Chat Prompt Containing Proprietary Source Code: Monitor vs Block | Critical | Technical | D2, D6 | [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) |
+| [TC-L04-032](#tc-l04-032) | Developer Coaching and Justification Inside the IDE | Medium | Technical | D2 | [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) |
 
 ---
 
@@ -74,6 +74,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
 **Risk Addressed.** Public AI web tools that bypassed procurement and security review are an unmanaged data-exposure surface.
 
@@ -133,6 +134,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
 **Risk Addressed.** AI browser extensions can read page content, including sensitive data, outside normal DLP visibility.
 
@@ -193,6 +195,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
 **Risk Addressed.** Without a departmental breakdown, AI risk cannot be prioritised or routed to the right business owner.
 
@@ -252,6 +255,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
 **Risk Addressed.** Risk differs sharply between groups (finance, engineering, contractors); group-level visibility enables targeted policy.
 
@@ -312,6 +316,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
 **Risk Addressed.** Managed laptops, unmanaged personal devices and mobiles carry materially different risk.
 
@@ -370,6 +375,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
 **Risk Addressed.** Usage from outside the corporate perimeter may bypass inline controls.
 
@@ -428,6 +434,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
 **Risk Addressed.** Proxy telemetry already exists; the platform should use it rather than demand a parallel data path.
 
@@ -487,6 +494,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
 **Risk Addressed.** Endpoint-level visibility catches AI use that never crosses a monitored network.
 
@@ -547,6 +555,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage (secondary) |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; GOVERN 1.1 |
+| **Control(s) Tested** | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery; [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) Policy Enforcement |
 
 **Risk Addressed.** Data pasted into a personal tenant of an approved service leaves corporate control even though the service itself is sanctioned.
 
@@ -606,6 +615,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
 **Risk Addressed.** AI assistants built into browsers or operating systems may send page content to a provider without any separate install.
 
@@ -665,6 +675,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) Policy Enforcement; [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) AI Policy, Roles and Acceptable Use |
 
 **Risk Addressed.** Users who are told why a tool is risky and where to go instead change behaviour; silent blocking creates workarounds.
 
@@ -725,6 +736,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) Policy Enforcement; [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002) Prompt Inspection |
 
 **Risk Addressed.** Generic warnings are ignored; warnings that name the detected data type are acted on.
 
@@ -784,6 +796,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037) AI Risk Assessment and Exception Management; [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) Policy Enforcement |
 
 **Risk Addressed.** Without recorded justification, risk acceptance by individual users is unauditable.
 
@@ -843,6 +856,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037) AI Risk Assessment and Exception Management |
 
 **Risk Addressed.** Ad-hoc exceptions granted over chat leave no audit trail and are rarely revoked.
 
@@ -903,6 +917,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037) AI Risk Assessment and Exception Management |
 
 **Risk Addressed.** Permanent exceptions accumulate and silently widen the exposure surface.
 
@@ -963,6 +978,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) Policy Enforcement |
 
 **Risk Addressed.** Hard blocks without an alternative push users to personal devices.
 
@@ -1023,6 +1039,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002) Prompt Inspection |
 
 **Risk Addressed.** Pasted confidential text is the most common route of leakage to public AI tools.
 
@@ -1083,6 +1100,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-003](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-003) File Upload Protection |
 
 **Risk Addressed.** Uploads move whole documents in one action.
 
@@ -1143,6 +1161,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002) Prompt Inspection; [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance |
 
 **Risk Addressed.** Source code pasted into public AI tools can expose proprietary logic and embedded secrets.
 
@@ -1202,6 +1221,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security; [AI-CTRL-003](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-003) File Upload Protection |
 
 **Risk Addressed.** Images bypass text-only DLP; screenshots of dashboards or documents leak data directly.
 
@@ -1261,6 +1281,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security |
 
 **Risk Addressed.** Voice input to AI assistants is rarely covered by prompt-inspection controls.
 
@@ -1320,6 +1341,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | AML.T0051 LLM Prompt Injection |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-003](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-003) File Upload Protection; [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security |
 
 **Risk Addressed.** Hidden text, comments and metadata can carry sensitive data or injected instructions that users never see.
 
@@ -1378,6 +1400,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) Agent Governance |
 
 **Risk Addressed.** Browser agents act with the user's session and can read or submit data without per-step user awareness.
 
@@ -1437,6 +1460,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
 **Risk Addressed.** Personal and mobile devices are a major route for AI use outside inline controls.
 
@@ -1496,6 +1520,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery; [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) Policy Enforcement |
 
 **Risk Addressed.** Sanctioned AI tools reached from unmanaged devices can let data be copied out of reach of endpoint controls.
 
@@ -1555,6 +1580,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) Policy Enforcement |
 
 **Risk Addressed.** Repeated risky behaviour by one user is a better signal than any single event.
 
@@ -1614,6 +1640,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage (secondary) |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; GOVERN 1.1 |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** Detailed per-user prompt monitoring may breach employment, works-council or UAE privacy expectations if left unrestricted.
 
@@ -1673,6 +1700,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002) Prompt Inspection |
 
 **Risk Addressed.** Classifiers trained mainly on English can miss sensitive content in Arabic or mixed-script prompts.
 
@@ -1732,6 +1760,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) Policy Enforcement |
 
 **Risk Addressed.** One policy for all staff is either too loose for finance or too tight for marketing.
 
@@ -1791,6 +1820,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
 **Risk Addressed.** Shared logins make individual accountability for AI use impossible.
 
@@ -1851,6 +1881,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance |
 
 **Risk Addressed.** Developers paste or attach proprietary code into an IDE assistant chat panel, a channel that browser-focused controls do not see.
 
@@ -1914,6 +1945,7 @@ nav_order: 7
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance |
 
 **Risk Addressed.** A silent block inside an IDE looks like a tool failure, so developers move to unmanaged tools.
 

@@ -11,7 +11,7 @@ nav_order: 8
 
 **Primary test focus:** discovery, app-level runtime protection, output handling
 
-**Controls tested:** [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001), [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004), [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005), [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020)
+**Controls tested:** [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery (11 cases), [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) Output Handling (7 cases), [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance (6 cases), [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) Output Reliability and Content Safety (3 cases), [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security (2 cases), [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering (2 cases), [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) AI Service Resilience and Fail-Safe Operation (2 cases), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability (1 case), [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) Policy Enforcement (1 case), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials (1 case), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines (1 case), [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization (1 case), [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM (1 case), [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation (1 case)
 
 **Cases:** 35 (TC-L05-001 to TC-L05-035)
 > **Safety boundary.** All test cases in this layer use synthetic, non-functional or clearly marked test data only. Card numbers must come from published test ranges; keys, identifiers and records must be fabricated.
@@ -20,43 +20,43 @@ nav_order: 8
 
 ## Cases in this layer
 
-| ID | Title | Severity | Method | Domain(s) |
-|---|---|---|---|---|
-| [TC-L05-001](#tc-l05-001) | Sanctioned AI Application Discovery | High | Technical | D3 |
-| [TC-L05-002](#tc-l05-002) | AI Plugin and Connector Discovery in Sanctioned SaaS | Critical | Technical | D3, D5 |
-| [TC-L05-003](#tc-l05-003) | AI API Usage Discovery | Critical | Technical | D3, D4 |
-| [TC-L05-004](#tc-l05-004) | IDE-Based AI Coding Assistant Discovery | High | Technical | D2 |
-| [TC-L05-005](#tc-l05-005) | Embedded AI Features in Sanctioned SaaS | High | Evidence | D3 |
-| [TC-L05-006](#tc-l05-006) | Internally Built AI Application Discovery | High | Technical | D3 |
-| [TC-L05-007](#tc-l05-007) | AI Application Risk Classification | High | Evidence | D3, D7 |
-| [TC-L05-008](#tc-l05-008) | Application Inventory Enrichment (Owner, Data, Model) | Medium | Evidence | D3 |
-| [TC-L05-009](#tc-l05-009) | New AI Application Detection Latency | Medium | Technical | D3 |
-| [TC-L05-010](#tc-l05-010) | Model API Key Exposure in Application Configuration | High | Technical | D3, D4 |
-| [TC-L05-011](#tc-l05-011) | Inventory Export to CMDB or Asset Management | Medium | Evidence | D3 |
-| [TC-L05-012](#tc-l05-012) | Runtime Protection Coverage Verification | Critical | Evidence | D3 |
-| [TC-L05-013](#tc-l05-013) | Runtime Protection Fail-Open vs Fail-Closed Behaviour | Critical | Technical | D3 |
-| [TC-L05-014](#tc-l05-014) | Output Handling: Script Injection in Rendered Responses | High | Technical | D3 |
-| [TC-L05-015](#tc-l05-015) | Output Handling: Injection into Downstream Systems | Critical | Technical | D3 |
-| [TC-L05-016](#tc-l05-016) | Output Handling: PII in Model Responses | Critical | Technical | D3, D6 |
-| [TC-L05-017](#tc-l05-017) | Output Handling: Secrets and Credentials in Responses | High | Technical | D3 |
-| [TC-L05-018](#tc-l05-018) | Output Handling: Harmful or Policy-Violating Content | High | Technical | D3 |
-| [TC-L05-019](#tc-l05-019) | Output Handling: Fabricated Package and URL Detection | High | Technical | D2, D4 |
-| [TC-L05-020](#tc-l05-020) | Output Handling: Markdown Image and Link Exfiltration | High | Technical | D3 |
-| [TC-L05-021](#tc-l05-021) | Response Grounding and Citation Verification | Medium | Technical | D3 |
-| [TC-L05-022](#tc-l05-022) | Structured Output and Function-Call Argument Validation | High | Technical | D3, D5 |
-| [TC-L05-023](#tc-l05-023) | Tenant Data Isolation in Multi-Tenant AI Applications | Critical | Technical | D3, D6 |
-| [TC-L05-024](#tc-l05-024) | Streaming Response Inspection | High | Technical | D3 |
-| [TC-L05-025](#tc-l05-025) | Application Logging Completeness | High | Evidence | D3 |
-| [TC-L05-026](#tc-l05-026) | Multi-Turn Conversation Protection | High | Technical | D3 |
-| [TC-L05-027](#tc-l05-027) | Pre-Production Automated Red-Team Scan | High | Technical | D3, D4 |
-| [TC-L05-028](#tc-l05-028) | Per-Application Policy as Code | Medium | Evidence | D3 |
-| [TC-L05-029](#tc-l05-029) | Orphaned and Decommissioned AI Application Detection | Medium | Evidence | D3 |
-| [TC-L05-030](#tc-l05-030) | Protection Overhead Under Load | Medium | Technical | D3 |
-| [TC-L05-031](#tc-l05-031) | AI Coding Assistant Extension Inventory and Version Risk | High | Technical | D2 |
-| [TC-L05-032](#tc-l05-032) | Personal vs Corporate Account in AI Coding Assistants | Critical | Technical | D2 |
-| [TC-L05-033](#tc-l05-033) | Coding Assistant Workspace Context Scope and File Exclusion | High | Technical | D2, D6 |
-| [TC-L05-034](#tc-l05-034) | Insecure Code Suggestion Detection | High | Technical | D2, D3 |
-| [TC-L05-035](#tc-l05-035) | AI-Generated Code: Licence and Public-Code Match Detection | Medium | Technical | D2, D7 |
+| ID | Title | Severity | Method | Domain(s) | Controls |
+|---|---|---|---|---|---|
+| [TC-L05-001](#tc-l05-001) | Sanctioned AI Application Discovery | High | Technical | D3 | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) |
+| [TC-L05-002](#tc-l05-002) | AI Plugin and Connector Discovery in Sanctioned SaaS | Critical | Technical | D3, D5 | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) |
+| [TC-L05-003](#tc-l05-003) | AI API Usage Discovery | Critical | Technical | D3, D4 | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) |
+| [TC-L05-004](#tc-l05-004) | IDE-Based AI Coding Assistant Discovery | High | Technical | D2 | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001), [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) |
+| [TC-L05-005](#tc-l05-005) | Embedded AI Features in Sanctioned SaaS | High | Evidence | D3 | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) |
+| [TC-L05-006](#tc-l05-006) | Internally Built AI Application Discovery | High | Technical | D3 | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) |
+| [TC-L05-007](#tc-l05-007) | AI Application Risk Classification | High | Evidence | D3, D7 | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001), [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) |
+| [TC-L05-008](#tc-l05-008) | Application Inventory Enrichment (Owner, Data, Model) | Medium | Evidence | D3 | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) |
+| [TC-L05-009](#tc-l05-009) | New AI Application Detection Latency | Medium | Technical | D3 | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) |
+| [TC-L05-010](#tc-l05-010) | Model API Key Exposure in Application Configuration | High | Technical | D3, D4 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-L05-011](#tc-l05-011) | Inventory Export to CMDB or Asset Management | Medium | Evidence | D3 | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) |
+| [TC-L05-012](#tc-l05-012) | Runtime Protection Coverage Verification | Critical | Evidence | D3 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L05-013](#tc-l05-013) | Runtime Protection Fail-Open vs Fail-Closed Behaviour | Critical | Technical | D3 | [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) |
+| [TC-L05-014](#tc-l05-014) | Output Handling: Script Injection in Rendered Responses | High | Technical | D3 | [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) |
+| [TC-L05-015](#tc-l05-015) | Output Handling: Injection into Downstream Systems | Critical | Technical | D3 | [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) |
+| [TC-L05-016](#tc-l05-016) | Output Handling: PII in Model Responses | Critical | Technical | D3, D6 | [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) |
+| [TC-L05-017](#tc-l05-017) | Output Handling: Secrets and Credentials in Responses | High | Technical | D3 | [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) |
+| [TC-L05-018](#tc-l05-018) | Output Handling: Harmful or Policy-Violating Content | High | Technical | D3 | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) |
+| [TC-L05-019](#tc-l05-019) | Output Handling: Fabricated Package and URL Detection | High | Technical | D2, D4 | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039), [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) |
+| [TC-L05-020](#tc-l05-020) | Output Handling: Markdown Image and Link Exfiltration | High | Technical | D3 | [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) |
+| [TC-L05-021](#tc-l05-021) | Response Grounding and Citation Verification | Medium | Technical | D3 | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) |
+| [TC-L05-022](#tc-l05-022) | Structured Output and Function-Call Argument Validation | High | Technical | D3, D5 | [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020), [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) |
+| [TC-L05-023](#tc-l05-023) | Tenant Data Isolation in Multi-Tenant AI Applications | Critical | Technical | D3, D6 | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) |
+| [TC-L05-024](#tc-l05-024) | Streaming Response Inspection | High | Technical | D3 | [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) |
+| [TC-L05-025](#tc-l05-025) | Application Logging Completeness | High | Evidence | D3 | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) |
+| [TC-L05-026](#tc-l05-026) | Multi-Turn Conversation Protection | High | Technical | D3 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L05-027](#tc-l05-027) | Pre-Production Automated Red-Team Scan | High | Technical | D3, D4 | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-L05-028](#tc-l05-028) | Per-Application Policy as Code | Medium | Evidence | D3 | [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) |
+| [TC-L05-029](#tc-l05-029) | Orphaned and Decommissioned AI Application Detection | Medium | Evidence | D3 | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001), [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) |
+| [TC-L05-030](#tc-l05-030) | Protection Overhead Under Load | Medium | Technical | D3 | [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) |
+| [TC-L05-031](#tc-l05-031) | AI Coding Assistant Extension Inventory and Version Risk | High | Technical | D2 | [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) |
+| [TC-L05-032](#tc-l05-032) | Personal vs Corporate Account in AI Coding Assistants | Critical | Technical | D2 | [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) |
+| [TC-L05-033](#tc-l05-033) | Coding Assistant Workspace Context Scope and File Exclusion | High | Technical | D2, D6 | [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) |
+| [TC-L05-034](#tc-l05-034) | Insecure Code Suggestion Detection | High | Technical | D2, D3 | [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) |
+| [TC-L05-035](#tc-l05-035) | AI-Generated Code: Licence and Public-Code Match Detection | Medium | Technical | D2, D7 | [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) |
 
 ---
 
@@ -76,6 +76,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
 **Risk Addressed.** An incomplete inventory of approved AI tools undermines all downstream governance.
 
@@ -135,6 +136,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
 **Risk Addressed.** Plugins added to approved SaaS can silently widen what an AI system can read or change.
 
@@ -194,6 +196,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
 **Risk Addressed.** Direct API calls to model providers bypass UI controls and often evade standard monitoring.
 
@@ -253,6 +256,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery; [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance |
 
 **Risk Addressed.** Developer AI assistants create a direct path for source code and secrets to leave the organisation.
 
@@ -312,6 +316,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
 **Risk Addressed.** Vendors enable AI features inside approved products by default, turning an approved tool into an AI data processor overnight.
 
@@ -371,6 +376,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
 **Risk Addressed.** Internal RAG chatbots and prototypes are often built outside IT visibility.
 
@@ -430,6 +436,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery; [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering |
 
 **Risk Addressed.** An inventory without risk context cannot drive prioritisation.
 
@@ -489,6 +496,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
 **Risk Addressed.** Unowned applications cannot be remediated.
 
@@ -549,6 +557,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
 **Risk Addressed.** Late detection leaves new apps unmanaged for days.
 
@@ -608,6 +617,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
 **Risk Addressed.** Hardcoded model API keys in apps and repos are a leading cause of credential loss and cost abuse.
 
@@ -667,6 +677,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
 **Risk Addressed.** An AI inventory that cannot leave the tool will not be maintained.
 
@@ -726,6 +737,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Protection that is deployed on only some apps gives false assurance.
 
@@ -785,6 +797,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) AI Service Resilience and Fail-Safe Operation |
 
 **Risk Addressed.** Unexpected failure of the protection layer should not silently disable it or take the app down uncontrolled.
 
@@ -845,6 +858,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | AML.T0049 Exploit Public-Facing Application (downstream impact) |
 | **OWASP LLM / GenAI Mapping** | LLM05:2025 Improper Output Handling |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) Output Handling |
 
 **Risk Addressed.** Model output rendered as HTML can run attacker-supplied script in the user's browser.
 
@@ -904,6 +918,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | AML.T0049 Exploit Public-Facing Application (downstream impact) |
 | **OWASP LLM / GenAI Mapping** | LLM05:2025 Improper Output Handling |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) Output Handling |
 
 **Risk Addressed.** Model output passed to databases or shells without validation can lead to command or query injection.
 
@@ -964,6 +979,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) Output Handling |
 
 **Risk Addressed.** Models can echo personal data from context or training into responses.
 
@@ -1023,6 +1039,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) Output Handling |
 
 **Risk Addressed.** Keys and tokens in responses can be copied into tickets or code unnoticed.
 
@@ -1082,6 +1099,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | AML.T0054 LLM Jailbreak |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (jailbreak) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) Output Reliability and Content Safety |
 
 **Risk Addressed.** Unfiltered harmful output creates legal and reputational exposure.
 
@@ -1141,6 +1159,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | N/A (no direct technique) |
 | **OWASP LLM / GenAI Mapping** | LLM09:2025 Misinformation |
 | **NIST AI RMF Mapping** | MEASURE 2.5; MAP 2.3 |
+| **Control(s) Tested** | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) Output Reliability and Content Safety; [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM |
 
 **Risk Addressed.** Models invent package names that attackers later register, turning hallucinations into supply-chain compromise.
 
@@ -1200,6 +1219,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) Output Handling |
 
 **Risk Addressed.** Rendered markdown images can send data to an external server through URL parameters.
 
@@ -1259,6 +1279,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | N/A (no direct technique) |
 | **OWASP LLM / GenAI Mapping** | LLM09:2025 Misinformation |
 | **NIST AI RMF Mapping** | MEASURE 2.5; MAP 2.3 |
+| **Control(s) Tested** | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) Output Reliability and Content Safety |
 
 **Risk Addressed.** Ungrounded answers presented as sourced destroy user trust and can mislead decisions.
 
@@ -1318,6 +1339,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | AML.T0049 Exploit Public-Facing Application (downstream impact) |
 | **OWASP LLM / GenAI Mapping** | LLM05:2025 Improper Output Handling |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) Output Handling; [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization |
 
 **Risk Addressed.** Malformed or manipulated arguments can trigger unintended tool behaviour.
 
@@ -1377,6 +1399,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
 **Risk Addressed.** Cross-tenant leakage in shared AI apps is a severe breach.
 
@@ -1436,6 +1459,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | AML.T0049 Exploit Public-Facing Application (downstream impact) |
 | **OWASP LLM / GenAI Mapping** | LLM05:2025 Improper Output Handling |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) Output Handling |
 
 **Risk Addressed.** Streamed output can leak data before inspection completes.
 
@@ -1495,6 +1519,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability |
 
 **Risk Addressed.** Missing logs make incident reconstruction impossible.
 
@@ -1554,6 +1579,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | AML.T0051 LLM Prompt Injection |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Attacks split across turns evade single-prompt checks.
 
@@ -1613,6 +1639,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | AML.T0054 LLM Jailbreak |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (jailbreak) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** Issues found in production cost far more than those found before launch.
 
@@ -1672,6 +1699,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) Policy Enforcement |
 
 **Risk Addressed.** Policies configured by hand per app drift and cannot be reviewed.
 
@@ -1732,6 +1760,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery; [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering |
 
 **Risk Addressed.** Abandoned AI apps keep keys, data and access alive.
 
@@ -1791,6 +1820,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) AI Service Resilience and Fail-Safe Operation |
 
 **Risk Addressed.** High latency drives teams to remove controls.
 
@@ -1851,6 +1881,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance |
 
 **Risk Addressed.** Unapproved or outdated assistant extensions run with full workspace access and are invisible to web-based discovery.
 
@@ -1914,6 +1945,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage (secondary) |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; GOVERN 1.1 |
+| **Control(s) Tested** | [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance |
 
 **Risk Addressed.** A developer signed in to a coding assistant with a personal account sends corporate code to a tenant with consumer terms and no enterprise controls.
 
@@ -1977,6 +2009,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance |
 
 **Risk Addressed.** Assistants gather context automatically from open files, neighbouring files and indexes, so secrets and restricted files are sent without the developer choosing to share them.
 
@@ -2041,6 +2074,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | N/A (no direct technique) |
 | **OWASP LLM / GenAI Mapping** | LLM09:2025 Misinformation |
 | **NIST AI RMF Mapping** | MEASURE 2.5; MAP 2.3 |
+| **Control(s) Tested** | [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance |
 
 **Risk Addressed.** Assistants can suggest code with injection flaws, weak cryptography or hard-coded credentials that developers accept without review.
 
@@ -2103,6 +2137,7 @@ nav_order: 8
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance |
 
 **Risk Addressed.** Suggestions that reproduce public code can carry licence obligations the organisation has not accepted.
 

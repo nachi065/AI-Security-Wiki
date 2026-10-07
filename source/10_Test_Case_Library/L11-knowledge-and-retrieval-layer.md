@@ -11,7 +11,7 @@ nav_order: 14
 
 **Primary test focus:** RAG poisoning, vector-store access control, retrieval leakage
 
-**Controls tested:** [AI-CTRL-018](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-018), [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019)
+**Controls tested:** [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) Knowledge Base Integrity (10 cases), [AI-CTRL-018](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-018) Retrieval Access Control (6 cases), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines (4 cases), [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security (2 cases), [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening (2 cases), [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery (1 case), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability (1 case), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials (1 case), [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) AI Service Resilience and Fail-Safe Operation (1 case)
 
 **Cases:** 25 (TC-L11-001 to TC-L11-025)
 > **Safety boundary.** Retrieval, model, training, pipeline and supply chain cases use fabricated corpora and datasets, small lab models, mock hubs and indexes and harmless marker artefacts only (an EICAR-style file that writes a marker, never real malware). Never load untrusted model files outside an isolated sandbox, and never connect the lab to production knowledge sources, models, pipelines, registries or credentials. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.
@@ -20,33 +20,33 @@ nav_order: 14
 
 ## Cases in this layer
 
-| ID | Title | Severity | Method | Domain(s) |
-|---|---|---|---|---|
-| [TC-L11-001](#tc-l11-001) | Knowledge Source and Connector Inventory | High | Technical | D3, D6 |
-| [TC-L11-002](#tc-l11-002) | Vector Store Discovery and Exposure | Critical | Technical | D3 |
-| [TC-L11-003](#tc-l11-003) | Vector Store Authentication and Hardening Checks | High | Evidence | D3 |
-| [TC-L11-004](#tc-l11-004) | Document-Level Access Control at Retrieval | Critical | Technical | D6, D3 |
-| [TC-L11-005](#tc-l11-005) | Permission Change Propagation to the Index | High | Technical | D6 |
-| [TC-L11-006](#tc-l11-006) | Retrieval Leakage via Semantic Neighbours | High | Technical | D6, D3 |
-| [TC-L11-007](#tc-l11-007) | Namespace and Tenant Isolation in the Vector Store | Critical | Technical | D6, D3 |
-| [TC-L11-008](#tc-l11-008) | RAG Poisoning: False Facts in Indexed Documents | Critical | Technical | D3, D4 |
-| [TC-L11-009](#tc-l11-009) | RAG Poisoning: Trigger-Phrase Retrieval Hijack | High | Technical | D3 |
-| [TC-L11-010](#tc-l11-010) | Ingestion Provenance and Approval Workflow | High | Evidence | D3, D6 |
-| [TC-L11-011](#tc-l11-011) | Indexed Content Integrity and Tamper Detection | Medium | Technical | D3 |
-| [TC-L11-012](#tc-l11-012) | Embedding Inversion and Text Recovery Risk | Medium | Evidence | D6 |
-| [TC-L11-013](#tc-l11-013) | Embedding Model Version Change and Re-Indexing Integrity | Medium | Technical | D3, D4 |
-| [TC-L11-014](#tc-l11-014) | Chunk Metadata Injection | High | Technical | D3 |
-| [TC-L11-015](#tc-l11-015) | Sensitive Data Scan Before Indexing | Critical | Technical | D6 |
-| [TC-L11-016](#tc-l11-016) | Retrieval-Time Filtering by User Clearance | High | Technical | D6 |
-| [TC-L11-017](#tc-l11-017) | Citation and Source Attribution Integrity | Medium | Technical | D3 |
-| [TC-L11-018](#tc-l11-018) | Stale, Withdrawn and Expired Content Handling | Medium | Technical | D3 |
-| [TC-L11-019](#tc-l11-019) | Knowledge Base Extraction and Crawling Detection | High | Technical | D6, D3 |
-| [TC-L11-020](#tc-l11-020) | Query Rewriting and Expansion Safety | Medium | Technical | D3 |
-| [TC-L11-021](#tc-l11-021) | Reranker and Hybrid Search Manipulation | Medium | Technical | D3 |
-| [TC-L11-022](#tc-l11-022) | Connector Credentials and Scope Security | Critical | Technical | D6 |
-| [TC-L11-023](#tc-l11-023) | Knowledge Base Backup and Export Controls | Medium | Evidence | D6 |
-| [TC-L11-024](#tc-l11-024) | Retrieval Logging and Audit Completeness | High | Technical | D6 |
-| [TC-L11-025](#tc-l11-025) | Security Control Impact on Answer Quality | Medium | Technical | D3 |
+| ID | Title | Severity | Method | Domain(s) | Controls |
+|---|---|---|---|---|---|
+| [TC-L11-001](#tc-l11-001) | Knowledge Source and Connector Inventory | High | Technical | D3, D6 | [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019), [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) |
+| [TC-L11-002](#tc-l11-002) | Vector Store Discovery and Exposure | Critical | Technical | D3 | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) |
+| [TC-L11-003](#tc-l11-003) | Vector Store Authentication and Hardening Checks | High | Evidence | D3 | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) |
+| [TC-L11-004](#tc-l11-004) | Document-Level Access Control at Retrieval | Critical | Technical | D6, D3 | [AI-CTRL-018](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-018) |
+| [TC-L11-005](#tc-l11-005) | Permission Change Propagation to the Index | High | Technical | D6 | [AI-CTRL-018](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-018) |
+| [TC-L11-006](#tc-l11-006) | Retrieval Leakage via Semantic Neighbours | High | Technical | D6, D3 | [AI-CTRL-018](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-018) |
+| [TC-L11-007](#tc-l11-007) | Namespace and Tenant Isolation in the Vector Store | Critical | Technical | D6, D3 | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017), [AI-CTRL-018](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-018) |
+| [TC-L11-008](#tc-l11-008) | RAG Poisoning: False Facts in Indexed Documents | Critical | Technical | D3, D4 | [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) |
+| [TC-L11-009](#tc-l11-009) | RAG Poisoning: Trigger-Phrase Retrieval Hijack | High | Technical | D3 | [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) |
+| [TC-L11-010](#tc-l11-010) | Ingestion Provenance and Approval Workflow | High | Evidence | D3, D6 | [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) |
+| [TC-L11-011](#tc-l11-011) | Indexed Content Integrity and Tamper Detection | Medium | Technical | D3 | [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) |
+| [TC-L11-012](#tc-l11-012) | Embedding Inversion and Text Recovery Risk | Medium | Evidence | D6 | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) |
+| [TC-L11-013](#tc-l11-013) | Embedding Model Version Change and Re-Indexing Integrity | Medium | Technical | D3, D4 | [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) |
+| [TC-L11-014](#tc-l11-014) | Chunk Metadata Injection | High | Technical | D3 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005), [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) |
+| [TC-L11-015](#tc-l11-015) | Sensitive Data Scan Before Indexing | Critical | Technical | D6 | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) |
+| [TC-L11-016](#tc-l11-016) | Retrieval-Time Filtering by User Clearance | High | Technical | D6 | [AI-CTRL-018](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-018) |
+| [TC-L11-017](#tc-l11-017) | Citation and Source Attribution Integrity | Medium | Technical | D3 | [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) |
+| [TC-L11-018](#tc-l11-018) | Stale, Withdrawn and Expired Content Handling | Medium | Technical | D3 | [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) |
+| [TC-L11-019](#tc-l11-019) | Knowledge Base Extraction and Crawling Detection | High | Technical | D6, D3 | [AI-CTRL-018](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-018) |
+| [TC-L11-020](#tc-l11-020) | Query Rewriting and Expansion Safety | Medium | Technical | D3 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L11-021](#tc-l11-021) | Reranker and Hybrid Search Manipulation | Medium | Technical | D3 | [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) |
+| [TC-L11-022](#tc-l11-022) | Connector Credentials and Scope Security | Critical | Technical | D6 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-L11-023](#tc-l11-023) | Knowledge Base Backup and Export Controls | Medium | Evidence | D6 | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) |
+| [TC-L11-024](#tc-l11-024) | Retrieval Logging and Audit Completeness | High | Technical | D6 | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) |
+| [TC-L11-025](#tc-l11-025) | Security Control Impact on Answer Quality | Medium | Technical | D3 | [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) |
 
 ---
 
@@ -66,6 +66,7 @@ nav_order: 14
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) Knowledge Base Integrity; [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
 **Risk Addressed.** RAG systems quietly connect to wikis, drives and ticket systems; unknown sources mean unknown data exposure.
 
@@ -130,6 +131,7 @@ nav_order: 14
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
 **Risk Addressed.** Vector databases are often deployed quickly with default settings and no authentication.
 
@@ -194,6 +196,7 @@ nav_order: 14
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
 **Risk Addressed.** Missing authentication, weak roles and open admin interfaces on vector stores allow bulk reading or tampering.
 
@@ -258,6 +261,7 @@ nav_order: 14
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-018](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-018) Retrieval Access Control |
 
 **Risk Addressed.** If the index ignores document permissions, the assistant answers from files the user cannot open.
 
@@ -322,6 +326,7 @@ nav_order: 14
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-018](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-018) Retrieval Access Control |
 
 **Risk Addressed.** Access removed in the source system but not in the index keeps exposing content until the next sync.
 
@@ -386,6 +391,7 @@ nav_order: 14
 | **MITRE ATLAS Mapping** | No ATLAS identifier asserted; verify current entries for vector-store and embedding attacks |
 | **OWASP LLM / GenAI Mapping** | LLM08:2025 Vector and Embedding Weaknesses |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.10 |
+| **Control(s) Tested** | [AI-CTRL-018](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-018) Retrieval Access Control |
 
 **Risk Addressed.** Similarity search can surface chunks from sensitive documents when queries are phrased to match them.
 
@@ -449,6 +455,7 @@ nav_order: 14
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines; [AI-CTRL-018](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-018) Retrieval Access Control |
 
 **Risk Addressed.** Shared indexes with weak separation allow one tenant's queries to reach another's embeddings.
 
@@ -509,9 +516,10 @@ nav_order: 14
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: A, P, G |
 | **Risk Severity** | Critical |
-| **MITRE ATLAS Mapping** | AML.T0020 Poison Training Data (applied by analogy to indexed content; verify current RAG-specific entry) |
+| **MITRE ATLAS Mapping** | AML.T0020 Training Data Poisoning (applied by analogy to indexed content; verify current RAG-specific entry) |
 | **OWASP LLM / GenAI Mapping** | LLM04:2025 Data and Model Poisoning; LLM08:2025 Vector and Embedding Weaknesses |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) Knowledge Base Integrity |
 
 **Risk Addressed.** One altered document can change the answers all users receive on a topic.
 
@@ -573,9 +581,10 @@ nav_order: 14
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: A, P |
 | **Risk Severity** | High |
-| **MITRE ATLAS Mapping** | AML.T0020 Poison Training Data (applied by analogy to indexed content; verify current RAG-specific entry) |
+| **MITRE ATLAS Mapping** | AML.T0020 Training Data Poisoning (applied by analogy to indexed content; verify current RAG-specific entry) |
 | **OWASP LLM / GenAI Mapping** | LLM04:2025 Data and Model Poisoning; LLM08:2025 Vector and Embedding Weaknesses |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) Knowledge Base Integrity |
 
 **Risk Addressed.** Documents written to rank first for chosen phrases let an attacker control answers for those questions.
 
@@ -639,6 +648,7 @@ nav_order: 14
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) Knowledge Base Integrity |
 
 **Risk Addressed.** Anyone who can add content to a source can change what the assistant says.
 
@@ -702,6 +712,7 @@ nav_order: 14
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) Knowledge Base Integrity |
 
 **Risk Addressed.** Silent changes to indexed documents or chunks can alter answers without any ingestion event.
 
@@ -765,6 +776,7 @@ nav_order: 14
 | **MITRE ATLAS Mapping** | No ATLAS identifier asserted; verify current entries for vector-store and embedding attacks |
 | **OWASP LLM / GenAI Mapping** | LLM08:2025 Vector and Embedding Weaknesses |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.10 |
+| **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
 **Risk Addressed.** Embeddings can leak information about the original text, especially for short sensitive items.
 
@@ -828,6 +840,7 @@ nav_order: 14
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) Knowledge Base Integrity |
 
 **Risk Addressed.** Changing the embedding model silently changes retrieval and can drop access filters or leave mixed vectors.
 
@@ -892,6 +905,7 @@ nav_order: 14
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security; [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) Knowledge Base Integrity |
 
 **Risk Addressed.** Metadata such as titles, authors and tags is often inserted into the prompt without checks.
 
@@ -955,6 +969,7 @@ nav_order: 14
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
 **Risk Addressed.** Once secrets and personal data are embedded in an index, removal is hard and exposure is broad.
 
@@ -1019,6 +1034,7 @@ nav_order: 14
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-018](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-018) Retrieval Access Control |
 
 **Risk Addressed.** Content that is acceptable in the index can still be wrong for some users or purposes at query time.
 
@@ -1082,6 +1098,7 @@ nav_order: 14
 | **MITRE ATLAS Mapping** | N/A (no direct technique) |
 | **OWASP LLM / GenAI Mapping** | LLM09:2025 Misinformation |
 | **NIST AI RMF Mapping** | MEASURE 2.5; MAP 2.3 |
+| **Control(s) Tested** | [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) Knowledge Base Integrity |
 
 **Risk Addressed.** Attacker-controlled titles or source labels can make false content look authoritative.
 
@@ -1145,6 +1162,7 @@ nav_order: 14
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) Knowledge Base Integrity |
 
 **Risk Addressed.** Outdated policies and withdrawn documents keep being quoted.
 
@@ -1208,6 +1226,7 @@ nav_order: 14
 | **MITRE ATLAS Mapping** | AML.T0025 Exfiltration via Cyber Means |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-018](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-018) Retrieval Access Control |
 
 **Risk Addressed.** A user with legitimate access can use the assistant to copy an entire knowledge base.
 
@@ -1272,6 +1291,7 @@ nav_order: 14
 | **MITRE ATLAS Mapping** | AML.T0051 LLM Prompt Injection |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Rewritten queries can bypass filters or amplify injected terms.
 
@@ -1331,9 +1351,10 @@ nav_order: 14
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: A, P |
 | **Risk Severity** | Medium |
-| **MITRE ATLAS Mapping** | AML.T0020 Poison Training Data (applied by analogy to indexed content; verify current RAG-specific entry) |
+| **MITRE ATLAS Mapping** | AML.T0020 Training Data Poisoning (applied by analogy to indexed content; verify current RAG-specific entry) |
 | **OWASP LLM / GenAI Mapping** | LLM04:2025 Data and Model Poisoning; LLM08:2025 Vector and Embedding Weaknesses |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) Knowledge Base Integrity |
 
 **Risk Addressed.** Rerankers, keyword boosts and recency weights can be gamed so that a malicious chunk always ranks first.
 
@@ -1398,6 +1419,7 @@ nav_order: 14
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
 **Risk Addressed.** Connectors often use one powerful account to read everything the index could ever need.
 
@@ -1463,6 +1485,7 @@ nav_order: 14
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
 **Risk Addressed.** Exports and backups hold a full copy of indexed content outside the normal access controls.
 
@@ -1527,6 +1550,7 @@ nav_order: 14
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability |
 
 **Risk Addressed.** Investigators need to know exactly which chunks informed which answer for which user, and with which filters.
 
@@ -1591,6 +1615,7 @@ nav_order: 14
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) AI Service Resilience and Fail-Safe Operation |
 
 **Risk Addressed.** Controls that destroy answer quality are quietly removed by the business, so their real cost must be known.
 

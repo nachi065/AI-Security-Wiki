@@ -135,7 +135,7 @@
 <p><a id="top"></a></p>
 <h1 id="l07-prompt-context-layer">L07 Prompt &amp; Context Layer</h1>
 <p><strong>Primary test focus:</strong> prompt injection (direct/indirect), jailbreak, context and memory poisoning</p>
-<p><strong>Controls tested:</strong> <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a></p>
+<p><strong>Controls tested:</strong> <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security (34 cases), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a> Agent Memory and Context Integrity (5 cases), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security (2 cases), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation (2 cases), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-004">AI-CTRL-004</a> IDE AI Governance (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a> SOC Integration (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a> Privacy and Regulatory Compliance (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a> Least Privilege and Scoped Credentials (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-019">AI-CTRL-019</a> Knowledge Base Integrity (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-020">AI-CTRL-020</a> Output Handling (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a> Deterministic Action Authorization (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a> Human Approval for Sensitive Actions (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-030">AI-CTRL-030</a> ML Pipeline and Model Registry Security (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls (1 case)</p>
 <p><strong>Cases:</strong> 41 (TC-L07-001 to TC-L07-041)</p>
 <blockquote>
 <p><strong>Safety boundary.</strong> Injection and jailbreak cases use benign canary strings and mock tools only. Each case first measures whether the attack succeeds against the unprotected application, so that only effective payloads are scored.</p>
@@ -150,6 +150,7 @@
 <th>Severity</th>
 <th>Method</th>
 <th>Domain(s)</th>
+<th>Controls</th>
 </tr>
 </thead>
 <tbody>
@@ -159,6 +160,7 @@
 <td>Critical</td>
 <td>Technical</td>
 <td>D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-002">TC-L07-002</a></td>
@@ -166,6 +168,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-003">TC-L07-003</a></td>
@@ -173,6 +176,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-004">TC-L07-004</a></td>
@@ -180,6 +184,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-005">TC-L07-005</a></td>
@@ -187,6 +192,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-006">TC-L07-006</a></td>
@@ -194,6 +200,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3, D7</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-007">TC-L07-007</a></td>
@@ -201,6 +208,7 @@
 <td>Medium</td>
 <td>Technical</td>
 <td>D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-008">TC-L07-008</a></td>
@@ -208,6 +216,7 @@
 <td>Critical</td>
 <td>Technical</td>
 <td>D3, D5</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-009">TC-L07-009</a></td>
@@ -215,6 +224,7 @@
 <td>Critical</td>
 <td>Technical</td>
 <td>D3, D5</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-010">TC-L07-010</a></td>
@@ -222,6 +232,7 @@
 <td>Critical</td>
 <td>Technical</td>
 <td>D3, D5</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-011">TC-L07-011</a></td>
@@ -229,6 +240,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3, D6</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-012">TC-L07-012</a></td>
@@ -236,6 +248,7 @@
 <td>Critical</td>
 <td>Technical</td>
 <td>D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-019">AI-CTRL-019</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-013">TC-L07-013</a></td>
@@ -243,6 +256,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3, D5</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-014">TC-L07-014</a></td>
@@ -250,6 +264,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3, D5</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-015">TC-L07-015</a></td>
@@ -257,6 +272,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3, D5</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-016">TC-L07-016</a></td>
@@ -264,6 +280,7 @@
 <td>Critical</td>
 <td>Technical</td>
 <td>D3, D6</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-020">AI-CTRL-020</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-017">TC-L07-017</a></td>
@@ -271,6 +288,7 @@
 <td>Critical</td>
 <td>Technical</td>
 <td>D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-018">TC-L07-018</a></td>
@@ -278,6 +296,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-019">TC-L07-019</a></td>
@@ -285,6 +304,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-020">TC-L07-020</a></td>
@@ -292,6 +312,7 @@
 <td>Medium</td>
 <td>Technical</td>
 <td>D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-021">TC-L07-021</a></td>
@@ -299,6 +320,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3, D4</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-022">TC-L07-022</a></td>
@@ -306,6 +328,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3, D7</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-023">TC-L07-023</a></td>
@@ -313,6 +336,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-024">TC-L07-024</a></td>
@@ -320,6 +344,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3, D4</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-025">TC-L07-025</a></td>
@@ -327,6 +352,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-026">TC-L07-026</a></td>
@@ -334,6 +360,7 @@
 <td>Critical</td>
 <td>Technical</td>
 <td>D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-027">TC-L07-027</a></td>
@@ -341,6 +368,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-028">TC-L07-028</a></td>
@@ -348,6 +376,7 @@
 <td>Critical</td>
 <td>Technical</td>
 <td>D3, D5</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-029">TC-L07-029</a></td>
@@ -355,6 +384,7 @@
 <td>Critical</td>
 <td>Technical</td>
 <td>D3, D6</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-030">TC-L07-030</a></td>
@@ -362,6 +392,7 @@
 <td>High</td>
 <td>Evidence</td>
 <td>D3, D7</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-031">TC-L07-031</a></td>
@@ -369,6 +400,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-032">TC-L07-032</a></td>
@@ -376,6 +408,7 @@
 <td>Medium</td>
 <td>Technical</td>
 <td>D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-033">TC-L07-033</a></td>
@@ -383,6 +416,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-034">TC-L07-034</a></td>
@@ -390,6 +424,7 @@
 <td>High</td>
 <td>Evidence</td>
 <td>D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-030">AI-CTRL-030</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-035">TC-L07-035</a></td>
@@ -397,6 +432,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3, D5</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-036">TC-L07-036</a></td>
@@ -404,6 +440,7 @@
 <td>Medium</td>
 <td>Technical</td>
 <td>D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-037">TC-L07-037</a></td>
@@ -411,6 +448,7 @@
 <td>Medium</td>
 <td>Evidence</td>
 <td>D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-038">TC-L07-038</a></td>
@@ -418,6 +456,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3, D5</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-039">TC-L07-039</a></td>
@@ -425,6 +464,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3, D6</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-040">TC-L07-040</a></td>
@@ -432,6 +472,7 @@
 <td>Medium</td>
 <td>Attestation</td>
 <td>D4</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l07-041">TC-L07-041</a></td>
@@ -439,6 +480,7 @@
 <td>Critical</td>
 <td>Technical</td>
 <td>D2, D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-004">AI-CTRL-004</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -489,6 +531,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
 </tr>
 </tbody>
 </table></div>
@@ -564,6 +610,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Attackers close the application's own delimiters or imitate its template to make user text look like system text.</p>
@@ -636,6 +686,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
 </tr>
 </tbody>
 </table></div>
@@ -710,6 +764,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Single-message checks miss attacks assembled from harmless-looking fragments across several turns.</p>
@@ -783,6 +841,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Encoding hides intent from inspection that looks only at plain text.</p>
@@ -854,6 +916,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
 </tr>
 </tbody>
 </table></div>
@@ -928,6 +994,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Hiding a short instruction inside a very long input, or priming the model with many examples, can defeat truncated or sampled inspection.</p>
@@ -995,7 +1065,7 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
-<td>AML.T0053 LLM Plugin Compromise</td>
+<td>AML.T0053 AI Agent Tool Invocation</td>
 </tr>
 <tr>
 <td><strong>OWASP LLM / GenAI Mapping</strong></td>
@@ -1004,6 +1074,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a> Deterministic Action Authorization</td>
 </tr>
 </tbody>
 </table></div>
@@ -1078,6 +1152,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Pages fetched by browsing or summarisation features can contain instructions the user never typed.</p>
@@ -1149,6 +1227,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
 </tr>
 </tbody>
 </table></div>
@@ -1222,6 +1304,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
 </tr>
 </tbody>
 </table></div>
@@ -1299,6 +1385,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-019">AI-CTRL-019</a> Knowledge Base Integrity</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> A single poisoned document in a knowledge base can attack every user who asks a related question.</p>
@@ -1371,6 +1461,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
 </tr>
 </tbody>
 </table></div>
@@ -1445,6 +1539,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Instructions rendered as text inside images can be read by multimodal models while escaping text inspection.</p>
@@ -1517,6 +1615,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
 </tr>
 </tbody>
 </table></div>
@@ -1591,6 +1693,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-020">AI-CTRL-020</a> Output Handling</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> An injected instruction can ask the model to place sensitive context in a URL that is rendered or fetched, sending data out silently.</p>
@@ -1663,6 +1769,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
 </tr>
 </tbody>
 </table></div>
@@ -1737,6 +1847,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Fiction and hypothetical framing is used to extract content the model would otherwise refuse.</p>
@@ -1808,6 +1922,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
 </tr>
 </tbody>
 </table></div>
@@ -1881,6 +1999,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Prompts that forbid refusals or force a compliant opening phrase can bypass model safety behaviour.</p>
@@ -1952,6 +2074,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
 </tr>
 </tbody>
 </table></div>
@@ -2027,6 +2153,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Safety training and filters are weaker in less common languages.</p>
@@ -2098,6 +2228,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security</td>
 </tr>
 </tbody>
 </table></div>
@@ -2172,6 +2306,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Detection quality changes when the underlying model, vendor classifier or policy is updated; unnoticed regressions reopen old gaps.</p>
@@ -2235,7 +2373,7 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
-<td>AML.T0056 LLM Meta Prompt Extraction</td>
+<td>AML.T0056 Extract LLM System Prompt</td>
 </tr>
 <tr>
 <td><strong>OWASP LLM / GenAI Mapping</strong></td>
@@ -2244,6 +2382,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
 </tr>
 </tbody>
 </table></div>
@@ -2318,6 +2460,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Applications depend on system instructions outranking user text; if they do not, every control can be talked away.</p>
@@ -2381,7 +2527,7 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
-<td>AML.T0020 Poison Training Data (applied by analogy to stored context, memory and ingested data); verify against current ATLAS</td>
+<td>AML.T0020 Training Data Poisoning (applied by analogy to stored context, memory and ingested data); verify against current ATLAS</td>
 </tr>
 <tr>
 <td><strong>OWASP LLM / GenAI Mapping</strong></td>
@@ -2390,6 +2536,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MAP 2.3; MEASURE 2.7</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a> Agent Memory and Context Integrity</td>
 </tr>
 </tbody>
 </table></div>
@@ -2453,7 +2603,7 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
-<td>AML.T0020 Poison Training Data (applied by analogy to stored context, memory and ingested data); verify against current ATLAS</td>
+<td>AML.T0020 Training Data Poisoning (applied by analogy to stored context, memory and ingested data); verify against current ATLAS</td>
 </tr>
 <tr>
 <td><strong>OWASP LLM / GenAI Mapping</strong></td>
@@ -2462,6 +2612,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MAP 2.3; MEASURE 2.7</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a> Agent Memory and Context Integrity</td>
 </tr>
 </tbody>
 </table></div>
@@ -2536,6 +2690,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.10; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a> Agent Memory and Context Integrity</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Cross-user memory leakage exposes personal and corporate information.</p>
@@ -2609,6 +2767,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.10; GOVERN 1.1</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a> Agent Memory and Context Integrity; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a> Privacy and Regulatory Compliance</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Deleted memory that remains in backups, caches or embeddings creates compliance and privacy exposure.</p>
@@ -2681,6 +2843,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
 </tr>
 </tbody>
 </table></div>
@@ -2759,6 +2925,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 4.1</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Flooding the context can push system instructions out of the window, dilute them, or run up cost.</p>
@@ -2830,6 +3000,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
 </tr>
 </tbody>
 </table></div>
@@ -2904,6 +3078,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 1.1; MANAGE 4.1</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-030">AI-CTRL-030</a> ML Pipeline and Model Registry Security</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Tampering with shared prompt templates changes behaviour for every user of the template.</p>
@@ -2977,6 +3155,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a> Agent Memory and Context Integrity</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Models cannot reliably tell trusted instructions from untrusted data unless the application and controls label them.</p>
@@ -3039,7 +3221,7 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
-<td>AML.T0056 LLM Meta Prompt Extraction</td>
+<td>AML.T0056 Extract LLM System Prompt</td>
 </tr>
 <tr>
 <td><strong>OWASP LLM / GenAI Mapping</strong></td>
@@ -3048,6 +3230,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
 </tr>
 </tbody>
 </table></div>
@@ -3121,6 +3307,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE 4.1; MEASURE 2.4</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a> SOC Integration; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Analysts cannot triage alerts they cannot understand, and unexplained blocks erode user trust.</p>
@@ -3183,7 +3373,7 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
-<td>AML.T0053 LLM Plugin Compromise</td>
+<td>AML.T0053 AI Agent Tool Invocation</td>
 </tr>
 <tr>
 <td><strong>OWASP LLM / GenAI Mapping</strong></td>
@@ -3192,6 +3382,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a> Human Approval for Sensitive Actions</td>
 </tr>
 </tbody>
 </table></div>
@@ -3266,6 +3460,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.10; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a> Least Privilege and Scoped Credentials</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Developers embed keys, internal names and real examples in prompts, exposing them to any prompt-extraction success.</p>
@@ -3337,6 +3535,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation</td>
 </tr>
 </tbody>
 </table></div>
@@ -3410,6 +3612,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-004">AI-CTRL-004</a> IDE AI Governance</td>
 </tr>
 </tbody>
 </table></div>

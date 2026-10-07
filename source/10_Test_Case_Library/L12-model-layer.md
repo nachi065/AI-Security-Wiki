@@ -11,7 +11,7 @@ nav_order: 15
 
 **Primary test focus:** model theft, extraction, adversarial inputs, model scanning
 
-**Controls tested:** [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028)
+**Controls tested:** [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection (12 cases), [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM (6 cases), [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering (2 cases), [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) ML Pipeline and Model Registry Security (2 cases), [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation (2 cases), [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls (2 cases), [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery (1 case), [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) Policy Enforcement (1 case), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials (1 case), [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening (1 case), [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) Output Reliability and Content Safety (1 case), [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) AI Service Resilience and Fail-Safe Operation (1 case)
 
 **Cases:** 25 (TC-L12-001 to TC-L12-025)
 > **Safety boundary.** Retrieval, model, training, pipeline and supply chain cases use fabricated corpora and datasets, small lab models, mock hubs and indexes and harmless marker artefacts only (an EICAR-style file that writes a marker, never real malware). Never load untrusted model files outside an isolated sandbox, and never connect the lab to production knowledge sources, models, pipelines, registries or credentials. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.
@@ -20,33 +20,33 @@ nav_order: 15
 
 ## Cases in this layer
 
-| ID | Title | Severity | Method | Domain(s) |
-|---|---|---|---|---|
-| [TC-L12-001](#tc-l12-001) | Model Inventory and Registry Discovery | High | Technical | D4 |
-| [TC-L12-002](#tc-l12-002) | Model Artefact Scanning: Unsafe Serialisation | Critical | Technical | D4 |
-| [TC-L12-003](#tc-l12-003) | Model Scanning: Backdoor and Trojan Indicators | High | Technical | D4 |
-| [TC-L12-004](#tc-l12-004) | Model File Format Policy Enforcement | Medium | Technical | D4 |
-| [TC-L12-005](#tc-l12-005) | Model Provenance and Signature Verification | Critical | Technical | D4 |
-| [TC-L12-006](#tc-l12-006) | Model Licence and Usage Terms Check | Medium | Evidence | D4 |
-| [TC-L12-007](#tc-l12-007) | Model Extraction Attack Detection | High | Technical | D4 |
-| [TC-L12-008](#tc-l12-008) | Training Data Extraction and Memorisation Probes | High | Technical | D4, D6 |
-| [TC-L12-009](#tc-l12-009) | Model Weights Exfiltration Protection | Critical | Technical | D4, D7 |
-| [TC-L12-010](#tc-l12-010) | Adversarial Image Robustness for Vision Models | Medium | Technical | D4 |
-| [TC-L12-011](#tc-l12-011) | Adversarial Text Perturbation Robustness for Classifiers | Medium | Technical | D4 |
-| [TC-L12-012](#tc-l12-012) | Inference-Time Input Anomaly Detection | Medium | Technical | D4 |
-| [TC-L12-013](#tc-l12-013) | Inference Endpoint Authentication, Authorisation and Rate Limiting | Critical | Technical | D4 |
-| [TC-L12-014](#tc-l12-014) | Model-Level Access Control by User, Role and Version | High | Technical | D4 |
-| [TC-L12-015](#tc-l12-015) | Model Fingerprinting and Unauthorised Copy Identification | Medium | Technical | D4 |
-| [TC-L12-016](#tc-l12-016) | Safety Evaluation Baseline for Deployed Models | High | Technical | D4, D3 |
-| [TC-L12-017](#tc-l12-017) | Hallucination and Factuality Evaluation Baseline | Medium | Technical | D4 |
-| [TC-L12-018](#tc-l12-018) | Model Version Pinning and Behaviour Drift Detection | High | Technical | D4 |
-| [TC-L12-019](#tc-l12-019) | Model Cards and AI-BOM Completeness | Medium | Evidence | D4, D7 |
-| [TC-L12-020](#tc-l12-020) | Model Deployment Configuration Hardening | Medium | Evidence | D4 |
-| [TC-L12-021](#tc-l12-021) | Multi-Model Routing and Fallback Security | High | Technical | D4, D7 |
-| [TC-L12-022](#tc-l12-022) | Model Resource Exhaustion and Long-Sequence Abuse | Medium | Technical | D4 |
-| [TC-L12-023](#tc-l12-023) | Quantised and Converted Model Integrity | Medium | Technical | D4 |
-| [TC-L12-024](#tc-l12-024) | Model Retirement and Weight Disposal | Low | Evidence | D4, D7 |
-| [TC-L12-025](#tc-l12-025) | Model Risk Tiering and Assessment Workflow | Medium | Evidence | D4, D7 |
+| ID | Title | Severity | Method | Domain(s) | Controls |
+|---|---|---|---|---|---|
+| [TC-L12-001](#tc-l12-001) | Model Inventory and Registry Discovery | High | Technical | D4 | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031), [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) |
+| [TC-L12-002](#tc-l12-002) | Model Artefact Scanning: Unsafe Serialisation | Critical | Technical | D4 | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028), [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) |
+| [TC-L12-003](#tc-l12-003) | Model Scanning: Backdoor and Trojan Indicators | High | Technical | D4 | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) |
+| [TC-L12-004](#tc-l12-004) | Model File Format Policy Enforcement | Medium | Technical | D4 | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028), [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) |
+| [TC-L12-005](#tc-l12-005) | Model Provenance and Signature Verification | Critical | Technical | D4 | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) |
+| [TC-L12-006](#tc-l12-006) | Model Licence and Usage Terms Check | Medium | Evidence | D4 | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) |
+| [TC-L12-007](#tc-l12-007) | Model Extraction Attack Detection | High | Technical | D4 | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) |
+| [TC-L12-008](#tc-l12-008) | Training Data Extraction and Memorisation Probes | High | Technical | D4, D6 | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) |
+| [TC-L12-009](#tc-l12-009) | Model Weights Exfiltration Protection | Critical | Technical | D4, D7 | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) |
+| [TC-L12-010](#tc-l12-010) | Adversarial Image Robustness for Vision Models | Medium | Technical | D4 | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) |
+| [TC-L12-011](#tc-l12-011) | Adversarial Text Perturbation Robustness for Classifiers | Medium | Technical | D4 | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) |
+| [TC-L12-012](#tc-l12-012) | Inference-Time Input Anomaly Detection | Medium | Technical | D4 | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) |
+| [TC-L12-013](#tc-l12-013) | Inference Endpoint Authentication, Authorisation and Rate Limiting | Critical | Technical | D4 | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028), [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) |
+| [TC-L12-014](#tc-l12-014) | Model-Level Access Control by User, Role and Version | High | Technical | D4 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-L12-015](#tc-l12-015) | Model Fingerprinting and Unauthorised Copy Identification | Medium | Technical | D4 | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) |
+| [TC-L12-016](#tc-l12-016) | Safety Evaluation Baseline for Deployed Models | High | Technical | D4, D3 | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-L12-017](#tc-l12-017) | Hallucination and Factuality Evaluation Baseline | Medium | Technical | D4 | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) |
+| [TC-L12-018](#tc-l12-018) | Model Version Pinning and Behaviour Drift Detection | High | Technical | D4 | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031), [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-L12-019](#tc-l12-019) | Model Cards and AI-BOM Completeness | Medium | Evidence | D4, D7 | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) |
+| [TC-L12-020](#tc-l12-020) | Model Deployment Configuration Hardening | Medium | Evidence | D4 | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) |
+| [TC-L12-021](#tc-l12-021) | Multi-Model Routing and Fallback Security | High | Technical | D4, D7 | [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010), [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) |
+| [TC-L12-022](#tc-l12-022) | Model Resource Exhaustion and Long-Sequence Abuse | Medium | Technical | D4 | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) |
+| [TC-L12-023](#tc-l12-023) | Quantised and Converted Model Integrity | Medium | Technical | D4 | [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) |
+| [TC-L12-024](#tc-l12-024) | Model Retirement and Weight Disposal | Low | Evidence | D4, D7 | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028), [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) |
+| [TC-L12-025](#tc-l12-025) | Model Risk Tiering and Assessment Workflow | Medium | Evidence | D4, D7 | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) |
 
 ---
 
@@ -66,6 +66,7 @@ nav_order: 15
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM; [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
 **Risk Addressed.** Models run in notebooks, containers, cloud services and SaaS; unknown models are unmanaged risk.
 
@@ -129,6 +130,7 @@ nav_order: 15
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
+| **Control(s) Tested** | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection; [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM |
 
 **Risk Addressed.** Model files in some formats can execute code when loaded.
 
@@ -192,6 +194,7 @@ nav_order: 15
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
+| **Control(s) Tested** | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection |
 
 **Risk Addressed.** Backdoored models behave normally until a trigger appears.
 
@@ -255,6 +258,7 @@ nav_order: 15
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection; [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) ML Pipeline and Model Registry Security |
 
 **Risk Addressed.** Policies banning unsafe formats are useless if not enforced at load and download.
 
@@ -317,6 +321,7 @@ nav_order: 15
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
+| **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM |
 
 **Risk Addressed.** A model from an unknown source or modified in transit may not be what it claims to be.
 
@@ -380,6 +385,7 @@ nav_order: 15
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM |
 
 **Risk Addressed.** Using models against their licence terms creates legal exposure.
 
@@ -443,6 +449,7 @@ nav_order: 15
 | **MITRE ATLAS Mapping** | AML.T0024 Exfiltration via AI Inference API (includes model extraction and inversion techniques) |
 | **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption; LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.10 |
+| **Control(s) Tested** | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection |
 
 **Risk Addressed.** Systematic querying can reproduce a model's behaviour and steal its value.
 
@@ -506,6 +513,7 @@ nav_order: 15
 | **MITRE ATLAS Mapping** | AML.T0024 Exfiltration via AI Inference API (includes model extraction and inversion techniques) |
 | **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption; LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.10 |
+| **Control(s) Tested** | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection |
 
 **Risk Addressed.** Models may reproduce training data, including personal data.
 
@@ -570,6 +578,7 @@ nav_order: 15
 | **MITRE ATLAS Mapping** | AML.T0024 Exfiltration via AI Inference API (includes model extraction and inversion techniques) |
 | **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption; LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.10 |
+| **Control(s) Tested** | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection |
 
 **Risk Addressed.** Weights represent the model's whole value and may encode sensitive training data.
 
@@ -632,6 +641,7 @@ nav_order: 15
 | **MITRE ATLAS Mapping** | AML.T0043 Craft Adversarial Data |
 | **OWASP LLM / GenAI Mapping** | N/A (classic model robustness; no direct LLM Top 10 entry) |
 | **NIST AI RMF Mapping** | MEASURE 2.5; MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection |
 
 **Risk Addressed.** Small imperceptible changes can flip a vision model's decision.
 
@@ -695,6 +705,7 @@ nav_order: 15
 | **MITRE ATLAS Mapping** | AML.T0043 Craft Adversarial Data |
 | **OWASP LLM / GenAI Mapping** | N/A (classic model robustness; no direct LLM Top 10 entry) |
 | **NIST AI RMF Mapping** | MEASURE 2.5; MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection |
 
 **Risk Addressed.** Small wording changes can flip the decisions of fraud, spam, toxicity or routing classifiers, letting an attacker evade controls the business relies on.
 
@@ -760,6 +771,7 @@ nav_order: 15
 | **MITRE ATLAS Mapping** | AML.T0043 Craft Adversarial Data |
 | **OWASP LLM / GenAI Mapping** | N/A (classic model robustness; no direct LLM Top 10 entry) |
 | **NIST AI RMF Mapping** | MEASURE 2.5; MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection |
 
 **Risk Addressed.** Crafted or out-of-distribution inputs are often the first signs of probing, extraction or evasion.
 
@@ -824,6 +836,7 @@ nav_order: 15
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection; [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
 **Risk Addressed.** Unprotected inference endpoints are easy to abuse, copy, overload or use as a pivot into the network.
 
@@ -889,6 +902,7 @@ nav_order: 15
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
 **Risk Addressed.** Different models and versions carry different data exposure, cost and risk; open access to all of them defeats risk tiering.
 
@@ -954,6 +968,7 @@ nav_order: 15
 | **MITRE ATLAS Mapping** | AML.T0024 Exfiltration via AI Inference API (includes model extraction and inversion techniques) |
 | **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption; LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.10 |
+| **Control(s) Tested** | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection |
 
 **Risk Addressed.** Without a fingerprint, an owner cannot show that a suspect model derives from its own.
 
@@ -1018,6 +1033,7 @@ nav_order: 15
 | **MITRE ATLAS Mapping** | N/A (evaluation control) |
 | **OWASP LLM / GenAI Mapping** | LLM09:2025 Misinformation; LLM01:2025 Prompt Injection (policy robustness) |
 | **NIST AI RMF Mapping** | MEASURE 2.6; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** Models differ in how they handle policy-boundary requests, and tuning or version change can shift behaviour without notice.
 
@@ -1082,6 +1098,7 @@ nav_order: 15
 | **MITRE ATLAS Mapping** | N/A (no direct technique) |
 | **OWASP LLM / GenAI Mapping** | LLM09:2025 Misinformation |
 | **NIST AI RMF Mapping** | MEASURE 2.5; MAP 2.3 |
+| **Control(s) Tested** | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) Output Reliability and Content Safety |
 
 **Risk Addressed.** Confident wrong answers cause business, legal and safety harm.
 
@@ -1146,6 +1163,7 @@ nav_order: 15
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM; [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** Hosted providers update models silently; behaviour, safety and cost change without a code change on the customer side.
 
@@ -1211,6 +1229,7 @@ nav_order: 15
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM |
 
 **Risk Addressed.** Missing model documentation blocks risk review, audit and regulatory response.
 
@@ -1275,6 +1294,7 @@ nav_order: 15
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
 **Risk Addressed.** Default settings for guardrails, tool access, logging and network exposure are often unsafe in production.
 
@@ -1339,6 +1359,7 @@ nav_order: 15
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) Policy Enforcement; [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) AI Service Resilience and Fail-Safe Operation |
 
 **Risk Addressed.** Failover to a cheaper, weaker or less compliant model can bypass guardrails, residency and licence limits.
 
@@ -1404,6 +1425,7 @@ nav_order: 15
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
 | **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
 **Risk Addressed.** Crafted requests such as very long inputs, repetition and expansion prompts can consume disproportionate compute.
 
@@ -1468,6 +1490,7 @@ nav_order: 15
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
+| **Control(s) Tested** | [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) ML Pipeline and Model Registry Security |
 
 **Risk Addressed.** Conversion and quantisation steps are places where a model can be swapped or altered while keeping a trusted name.
 
@@ -1532,6 +1555,7 @@ nav_order: 15
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection; [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering |
 
 **Risk Addressed.** Retired models keep weights, endpoints, keys and access, extending exposure and cost.
 
@@ -1596,6 +1620,7 @@ nav_order: 15
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering |
 
 **Risk Addressed.** Applying the same scrutiny to every model wastes effort on low risk and under-reviews high risk.
 

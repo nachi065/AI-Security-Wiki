@@ -135,7 +135,7 @@
 <p><a id="top"></a></p>
 <h1 id="l17-monitoring-detection-response">L17 Monitoring, Detection &amp; Response</h1>
 <p><strong>Primary test focus:</strong> telemetry, SIEM/SOAR integration, AI incident response, forensics</p>
-<p><strong>Controls tested:</strong> <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></p>
+<p><strong>Controls tested:</strong> <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a> SOC Integration (18 cases), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics (10 cases), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a> Auditability (7 cases), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-004">AI-CTRL-004</a> IDE AI Governance (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a> Agent Governance (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a> Privacy and Regulatory Compliance (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a> Agent Containment and Kill Switch (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-040">AI-CTRL-040</a> AI Service Resilience and Fail-Safe Operation (1 case)</p>
 <p><strong>Cases:</strong> 31 (TC-L17-001 to TC-L17-031)</p>
 <blockquote>
 <p><strong>Safety boundary.</strong> Infrastructure and SOC cases use a lab cluster, mock inference servers, a test cloud account and a lab SIEM and SOAR only. Probe and compromise-simulation scripts are harmless lab tools that only attempt connections and reads of canary resources. Never run them against production systems, and never connect lab alerting to production on-call routing. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.</p>
@@ -150,6 +150,7 @@
 <th>Severity</th>
 <th>Method</th>
 <th>Domain(s)</th>
+<th>Controls</th>
 </tr>
 </thead>
 <tbody>
@@ -159,6 +160,7 @@
 <td>High</td>
 <td>Evidence</td>
 <td>D3, D5, D7</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-002">TC-L17-002</a></td>
@@ -166,6 +168,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-003">TC-L17-003</a></td>
@@ -173,6 +176,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-004">TC-L17-004</a></td>
@@ -180,6 +184,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D7</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-005">TC-L17-005</a></td>
@@ -187,6 +192,7 @@
 <td>Medium</td>
 <td>Evidence</td>
 <td>D7</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-006">TC-L17-006</a></td>
@@ -194,6 +200,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3, D5</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-007">TC-L17-007</a></td>
@@ -201,6 +208,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-008">TC-L17-008</a></td>
@@ -208,6 +216,7 @@
 <td>Medium</td>
 <td>Technical</td>
 <td>D1, D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-009">TC-L17-009</a></td>
@@ -215,6 +224,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3, D6</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-010">TC-L17-010</a></td>
@@ -222,6 +232,7 @@
 <td>Critical</td>
 <td>Technical</td>
 <td>D6, D1</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-011">TC-L17-011</a></td>
@@ -229,6 +240,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D1, D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-012">TC-L17-012</a></td>
@@ -236,6 +248,7 @@
 <td>Critical</td>
 <td>Technical</td>
 <td>D5</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-013">TC-L17-013</a></td>
@@ -243,6 +256,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D1, D6</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-014">TC-L17-014</a></td>
@@ -250,6 +264,7 @@
 <td>Medium</td>
 <td>Evidence</td>
 <td>D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-015">TC-L17-015</a></td>
@@ -257,6 +272,7 @@
 <td>Critical</td>
 <td>Technical</td>
 <td>D5, D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-016">TC-L17-016</a></td>
@@ -264,6 +280,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-017">TC-L17-017</a></td>
@@ -271,6 +288,7 @@
 <td>Medium</td>
 <td>Technical</td>
 <td>D6</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-018">TC-L17-018</a></td>
@@ -278,6 +296,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3, D5, D7</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-019">TC-L17-019</a></td>
@@ -285,6 +304,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D5</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-020">TC-L17-020</a></td>
@@ -292,6 +312,7 @@
 <td>Critical</td>
 <td>Technical</td>
 <td>D6, D5</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-021">TC-L17-021</a></td>
@@ -299,6 +320,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D7</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-022">TC-L17-022</a></td>
@@ -306,6 +328,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D5, D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-023">TC-L17-023</a></td>
@@ -313,6 +336,7 @@
 <td>Medium</td>
 <td>Evidence</td>
 <td>D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-024">TC-L17-024</a></td>
@@ -320,6 +344,7 @@
 <td>Medium</td>
 <td>Technical</td>
 <td>D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-025">TC-L17-025</a></td>
@@ -327,6 +352,7 @@
 <td>Medium</td>
 <td>Evidence</td>
 <td>D7</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-026">TC-L17-026</a></td>
@@ -334,6 +360,7 @@
 <td>High</td>
 <td>Evidence</td>
 <td>D7</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-027">TC-L17-027</a></td>
@@ -341,6 +368,7 @@
 <td>High</td>
 <td>Attestation</td>
 <td>D7</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-028">TC-L17-028</a></td>
@@ -348,6 +376,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-040">AI-CTRL-040</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-029">TC-L17-029</a></td>
@@ -355,6 +384,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D3, D5, D6</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-030">TC-L17-030</a></td>
@@ -362,6 +392,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D1, D7</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a></td>
 </tr>
 <tr>
 <td><a href="#tc-l17-031">TC-L17-031</a></td>
@@ -369,6 +400,7 @@
 <td>High</td>
 <td>Technical</td>
 <td>D2, D6</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-004">AI-CTRL-004</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -415,6 +447,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a> SOC Integration; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a> Auditability</td>
 </tr>
 </tbody>
 </table></div>
@@ -489,6 +525,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a> Auditability</td>
 </tr>
 </tbody>
 </table></div>
@@ -565,6 +605,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE 4.1; MEASURE 2.4</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a> SOC Integration</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Lost or late events create silent detection gaps, and some integrations drop events during outages.</p>
@@ -640,6 +684,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE 4.1; MEASURE 2.4</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a> Auditability</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Altered or deleted logs undermine investigations and regulatory defence.</p>
@@ -712,6 +760,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a> Auditability</td>
 </tr>
 </tbody>
 </table></div>
@@ -787,6 +839,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE 4.1; MEASURE 2.4</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a> SOC Integration</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Teams without ready detection content spend months building it and miss early attacks.</p>
@@ -860,6 +916,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a> SOC Integration</td>
 </tr>
 </tbody>
 </table></div>
@@ -935,6 +995,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE 4.1; MEASURE 2.4</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a> SOC Integration</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Analysts waste time looking up who a user is and what an asset does.</p>
@@ -1007,6 +1071,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a> SOC Integration</td>
 </tr>
 </tbody>
 </table></div>
@@ -1081,6 +1149,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.10; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a> SOC Integration</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Data leaves a little at a time through legitimate AI services and may not trigger any single-event rule.</p>
@@ -1154,6 +1226,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a> SOC Integration</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Stolen sessions on AI tools give attackers access to chat history and connected data.</p>
@@ -1217,7 +1293,7 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
-<td>AML.T0053 LLM Plugin Compromise</td>
+<td>AML.T0053 AI Agent Tool Invocation</td>
 </tr>
 <tr>
 <td><strong>OWASP LLM / GenAI Mapping</strong></td>
@@ -1226,6 +1302,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a> SOC Integration; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a> Agent Governance</td>
 </tr>
 </tbody>
 </table></div>
@@ -1300,6 +1380,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE 4.1; MEASURE 2.4</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a> SOC Integration</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Insiders probe controls, try workarounds and move data in ways that look like normal work.</p>
@@ -1373,6 +1457,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 1.1; MANAGE 4.1</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a> SOC Integration</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Detections without a framework mapping are hard to compare, prioritise and report.</p>
@@ -1436,7 +1524,7 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
-<td>AML.T0053 LLM Plugin Compromise</td>
+<td>AML.T0053 AI Agent Tool Invocation</td>
 </tr>
 <tr>
 <td><strong>OWASP LLM / GenAI Mapping</strong></td>
@@ -1445,6 +1533,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a> SOC Integration</td>
 </tr>
 </tbody>
 </table></div>
@@ -1520,6 +1612,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE 4.1; MEASURE 2.4</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a> SOC Integration</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> One-way alert feeds leave tickets and platform state out of step.</p>
@@ -1593,6 +1689,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics</td>
 </tr>
 </tbody>
 </table></div>
@@ -1668,6 +1768,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 1.1; MANAGE 4.1</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Teams practised only on malware and phishing struggle with prompt injection, model misbehaviour and agent incidents.</p>
@@ -1732,7 +1836,7 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
-<td>AML.T0053 LLM Plugin Compromise</td>
+<td>AML.T0053 AI Agent Tool Invocation</td>
 </tr>
 <tr>
 <td><strong>OWASP LLM / GenAI Mapping</strong></td>
@@ -1741,6 +1845,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a> Agent Containment and Kill Switch</td>
 </tr>
 </tbody>
 </table></div>
@@ -1816,6 +1924,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE 4.1; MEASURE 2.4</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a> Auditability</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Without full conversation and tool records, investigators cannot show what the user asked, what the model said or what an agent did.</p>
@@ -1888,6 +2000,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics</td>
 </tr>
 </tbody>
 </table></div>
@@ -1962,6 +2078,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE 4.1; MEASURE 2.4</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Incidents rarely involve one actor; investigators need an ordered story across people, agents and tools.</p>
@@ -2034,6 +2154,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics</td>
 </tr>
 </tbody>
 </table></div>
@@ -2109,6 +2233,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE 4.1; MEASURE 2.4</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a> SOC Integration</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> New prompt attacks, malicious tool servers and compromised model hashes appear constantly and are only useful if detection can use them quickly.</p>
@@ -2182,6 +2310,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a> SOC Integration</td>
 </tr>
 </tbody>
 </table></div>
@@ -2257,6 +2389,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 1.1; MANAGE 4.1</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a> Privacy and Regulatory Compliance</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Regulators expect timely, specific incident reports and evidence of data affected.</p>
@@ -2329,6 +2465,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a> SOC Integration; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics</td>
 </tr>
 </tbody>
 </table></div>
@@ -2404,6 +2544,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE 4.1; MEASURE 2.4</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-040">AI-CTRL-040</a> AI Service Resilience and Fail-Safe Operation; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a> SOC Integration</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> The worst failure is the one nobody notices: an agent that stopped reporting, ingestion that stalled, or a certificate that expired.</p>
@@ -2477,6 +2621,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a> SOC Integration</td>
 </tr>
 </tbody>
 </table></div>
@@ -2552,6 +2700,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.10; GOVERN 1.1</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a> Auditability</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Analysts reading raw prompts may see personal or confidential content, and unrestricted access breaches employee privacy expectations and some employment or data protection rules.</p>
@@ -2625,6 +2777,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-004">AI-CTRL-004</a> IDE AI Governance; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a> Auditability</td>
 </tr>
 </tbody>
 </table></div>

@@ -135,7 +135,7 @@
 <p><a id="top"></a></p>
 <h1 id="d09-agent-and-non-human-identity-governance">D09 Agent and Non-Human Identity Governance</h1>
 <p><strong>Focus:</strong> agent and non-human identity governance: registry, sponsors, recertification, drift, delegation, revocation</p>
-<p><strong>Controls tested:</strong> <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a></p>
+<p><strong>Controls tested:</strong> <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a> Human and Agent Identity (14 cases), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a> Least Privilege and Scoped Credentials (6 cases), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a> Agent Governance (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a> Auditability (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a> Third-Party and Vendor AI Assurance (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a> Deterministic Action Authorization (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a> Agent Containment and Kill Switch (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a> Control Assurance and Audit Evidence (1 case)</p>
 <p><strong>Cases:</strong> 20 (TC-D09-001 to TC-D09-020)  |  <strong>Series:</strong> Emerging domains</p>
 <blockquote>
 <p><strong>Safety boundary.</strong> All cases use synthetic data and lab targets only. Use fabricated identities, lab directories and mock cloud and SaaS tenants only.</p>
@@ -149,6 +149,7 @@
 <th>Title</th>
 <th>Severity</th>
 <th>Method</th>
+<th>Controls</th>
 </tr>
 </thead>
 <tbody>
@@ -157,120 +158,140 @@
 <td>Agent Identity Registry as System of Record</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d09-002">TC-D09-002</a></td>
 <td>Human Sponsor Accountability for Every Agent Identity</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d09-003">TC-D09-003</a></td>
 <td>Agent Identity Provisioning Workflow and Approval</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d09-004">TC-D09-004</a></td>
 <td>Agent Identity Risk Tiering and Privilege Classes</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d09-005">TC-D09-005</a></td>
 <td>Entitlement Governance: Agent Access Requests and Least-Privilege Catalogue</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d09-006">TC-D09-006</a></td>
 <td>Periodic Access Recertification for Agent Entitlements</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d09-007">TC-D09-007</a></td>
 <td>Privilege Drift Detection Against an Approved Baseline</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d09-008">TC-D09-008</a></td>
 <td>Dormant and Orphaned Agent Identity Clean-Up</td>
 <td>Medium</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d09-009">TC-D09-009</a></td>
 <td>Time-Bound and Just-in-Time Elevation for Agents</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d09-010">TC-D09-010</a></td>
 <td>Separation of Duties for Agents</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d09-011">TC-D09-011</a></td>
 <td>Delegation Records and Consent Evidence</td>
 <td>High</td>
 <td>Evidence</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d09-012">TC-D09-012</a></td>
 <td>Acting as the User versus Acting as Itself: Attribution Policy and Evidence</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d09-013">TC-D09-013</a></td>
 <td>Cross-Platform Agent Identity Federation and Consistency</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d09-014">TC-D09-014</a></td>
 <td>Agent Credential Lifecycle Governance and Compliance Reporting</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d09-015">TC-D09-015</a></td>
 <td>Machine Identity Certificate and Key Lifecycle for AI Workloads</td>
 <td>Medium</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d09-016">TC-D09-016</a></td>
 <td>Revocation Propagation Time Across Systems</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d09-017">TC-D09-017</a></td>
 <td>Agent Identity Misuse Case Handling Process</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d09-018">TC-D09-018</a></td>
 <td>Third-Party and Vendor-Operated Agent Identities</td>
 <td>High</td>
 <td>Evidence</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d09-019">TC-D09-019</a></td>
 <td>Non-Human Identity Governance Metrics and Audit Evidence</td>
 <td>Medium</td>
 <td>Evidence</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d09-020">TC-D09-020</a></td>
 <td>Agent Identity Offboarding and Decommission Evidence</td>
 <td>Medium</td>
 <td>Evidence</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -321,6 +342,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a> Human and Agent Identity</td>
 </tr>
 </tbody>
 </table></div>
@@ -400,6 +425,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 1.1; MANAGE 4.1</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a> Human and Agent Identity</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> An agent with no accountable human is not reviewed, rotated or shut down.</p>
@@ -477,6 +506,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a> Human and Agent Identity</td>
 </tr>
 </tbody>
 </table></div>
@@ -556,6 +589,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MAP and MANAGE (risk identification and treatment)</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a> Human and Agent Identity</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Treating all agent identities alike either strangles low-risk automation or under-controls dangerous agents.</p>
@@ -633,6 +670,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a> Least Privilege and Scoped Credentials</td>
 </tr>
 </tbody>
 </table></div>
@@ -712,6 +753,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a> Least Privilege and Scoped Credentials</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Entitlements granted once remain forever unless someone reviews them.</p>
@@ -790,6 +835,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE 4.1; MEASURE 2.4</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a> Least Privilege and Scoped Credentials</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Agents accumulate permissions through small changes that no one approves.</p>
@@ -866,6 +915,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a> Human and Agent Identity</td>
 </tr>
 </tbody>
 </table></div>
@@ -945,6 +998,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a> Least Privilege and Scoped Credentials</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Standing high privilege on agents widens exposure for no benefit.</p>
@@ -1022,6 +1079,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a> Least Privilege and Scoped Credentials; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a> Deterministic Action Authorization</td>
 </tr>
 </tbody>
 </table></div>
@@ -1101,6 +1162,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 1.1; MANAGE 4.1</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a> Human and Agent Identity</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> When an agent acts for a person, the organisation must be able to show what that person allowed, for how long, and when it was withdrawn.</p>
@@ -1178,6 +1243,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a> Human and Agent Identity; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a> Auditability</td>
 </tr>
 </tbody>
 </table></div>
@@ -1257,6 +1326,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a> Human and Agent Identity</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> An agent working across clouds and SaaS tenants ends up with several unrelated identities that cannot be governed or revoked together.</p>
@@ -1334,6 +1407,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.10; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a> Least Privilege and Scoped Credentials</td>
 </tr>
 </tbody>
 </table></div>
@@ -1413,6 +1490,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.10; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a> Human and Agent Identity</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Expired or unmanaged certificates cause outages and weak keys weaken everything built on them.</p>
@@ -1490,6 +1571,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a> Agent Containment and Kill Switch; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a> Human and Agent Identity</td>
 </tr>
 </tbody>
 </table></div>
@@ -1569,6 +1654,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE (incident response and communication)</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a> Human and Agent Identity</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Detections need an agreed process for handling, or they are ignored.</p>
@@ -1646,6 +1735,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 6.1; MAP 4.1</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a> Human and Agent Identity; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a> Third-Party and Vendor AI Assurance</td>
 </tr>
 </tbody>
 </table></div>
@@ -1725,6 +1818,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE and GOVERN (documentation and accountability)</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a> Control Assurance and Audit Evidence; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a> Human and Agent Identity</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Boards and auditors ask for numbers that few teams can supply.</p>
@@ -1801,6 +1898,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a> Human and Agent Identity; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a> Agent Governance</td>
 </tr>
 </tbody>
 </table></div>

@@ -11,7 +11,7 @@ nav_order: 10
 
 **Primary test focus:** prompt injection (direct/indirect), jailbreak, context and memory poisoning
 
-**Controls tested:** [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005), [AI-CTRL-026](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-026)
+**Controls tested:** [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security (34 cases), [AI-CTRL-026](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-026) Agent Memory and Context Integrity (5 cases), [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security (2 cases), [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation (2 cases), [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance (1 case), [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration (1 case), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance (1 case), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials (1 case), [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) Knowledge Base Integrity (1 case), [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) Output Handling (1 case), [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization (1 case), [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) Human Approval for Sensitive Actions (1 case), [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) ML Pipeline and Model Registry Security (1 case), [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls (1 case)
 
 **Cases:** 41 (TC-L07-001 to TC-L07-041)
 > **Safety boundary.** Injection and jailbreak cases use benign canary strings and mock tools only. Each case first measures whether the attack succeeds against the unprotected application, so that only effective payloads are scored.
@@ -20,49 +20,49 @@ nav_order: 10
 
 ## Cases in this layer
 
-| ID | Title | Severity | Method | Domain(s) |
-|---|---|---|---|---|
-| [TC-L07-001](#tc-l07-001) | Direct Injection: Instruction Override Baseline | Critical | Technical | D3 |
-| [TC-L07-002](#tc-l07-002) | Direct Injection: Delimiter and Format Confusion | High | Technical | D3 |
-| [TC-L07-003](#tc-l07-003) | Direct Injection: Authority and Role Impersonation | High | Technical | D3 |
-| [TC-L07-004](#tc-l07-004) | Direct Injection: Payload Splitting Across Turns | High | Technical | D3 |
-| [TC-L07-005](#tc-l07-005) | Direct Injection: Encoded and Obfuscated Payloads | High | Technical | D3 |
-| [TC-L07-006](#tc-l07-006) | Direct Injection: Multilingual Payloads (Arabic, Hindi, Urdu, French) | High | Technical | D3, D7 |
-| [TC-L07-007](#tc-l07-007) | Direct Injection: Long-Context Burying and Many-Shot Patterns | Medium | Technical | D3 |
-| [TC-L07-008](#tc-l07-008) | Direct Injection Leading to Unauthorised Tool Action | Critical | Technical | D3, D5 |
-| [TC-L07-009](#tc-l07-009) | Indirect Injection: Web Page Content | Critical | Technical | D3, D5 |
-| [TC-L07-010](#tc-l07-010) | Indirect Injection: Email and Document Content | Critical | Technical | D3, D5 |
-| [TC-L07-011](#tc-l07-011) | Indirect Injection: Hidden Text and File Metadata | High | Technical | D3, D6 |
-| [TC-L07-012](#tc-l07-012) | Indirect Injection: Retrieved Knowledge Base Documents | Critical | Technical | D3 |
-| [TC-L07-013](#tc-l07-013) | Indirect Injection: Tool and API Responses | High | Technical | D3, D5 |
-| [TC-L07-014](#tc-l07-014) | Indirect Injection: Images with Embedded Text | High | Technical | D3, D5 |
-| [TC-L07-015](#tc-l07-015) | Indirect Injection: Collaboration Data (Chat, Tickets, Calendar) | High | Technical | D3, D5 |
-| [TC-L07-016](#tc-l07-016) | Indirect Injection Driving Data Exfiltration via URL | Critical | Technical | D3, D6 |
-| [TC-L07-017](#tc-l07-017) | Jailbreak: Persona and Role-Play | Critical | Technical | D3 |
-| [TC-L07-018](#tc-l07-018) | Jailbreak: Hypothetical and Fictional Framing | High | Technical | D3 |
-| [TC-L07-019](#tc-l07-019) | Jailbreak: Gradual Multi-Turn Escalation | High | Technical | D3 |
-| [TC-L07-020](#tc-l07-020) | Jailbreak: Refusal Suppression and Prefix Injection | Medium | Technical | D3 |
-| [TC-L07-021](#tc-l07-021) | Jailbreak: Automated Adversarial Suffixes and Fuzzing | High | Technical | D3, D4 |
-| [TC-L07-022](#tc-l07-022) | Jailbreak: Cross-Lingual and Low-Resource Languages | High | Technical | D3, D7 |
-| [TC-L07-023](#tc-l07-023) | Jailbreak: Instructions Embedded in Images (Multimodal) | High | Technical | D3 |
-| [TC-L07-024](#tc-l07-024) | Jailbreak Regression After Model or Policy Update | High | Technical | D3, D4 |
-| [TC-L07-025](#tc-l07-025) | System Prompt Extraction Under Probing | High | Technical | D3 |
-| [TC-L07-026](#tc-l07-026) | Instruction Hierarchy Enforcement | Critical | Technical | D3 |
-| [TC-L07-027](#tc-l07-027) | Context Window Poisoning Within a Session | High | Technical | D3 |
-| [TC-L07-028](#tc-l07-028) | Long-Term Memory Poisoning | Critical | Technical | D3, D5 |
-| [TC-L07-029](#tc-l07-029) | Memory Isolation Between Users | Critical | Technical | D3, D6 |
-| [TC-L07-030](#tc-l07-030) | Memory Deletion and Retention Verification | High | Evidence | D3, D7 |
-| [TC-L07-031](#tc-l07-031) | Conversation History Tampering via API | High | Technical | D3 |
-| [TC-L07-032](#tc-l07-032) | Context Stuffing and Token Flooding | Medium | Technical | D3 |
-| [TC-L07-033](#tc-l07-033) | Prompt Template Injection (Variable Interpolation) | High | Technical | D3 |
-| [TC-L07-034](#tc-l07-034) | Prompt Library and Shared Prompt Store Integrity | High | Evidence | D3 |
-| [TC-L07-035](#tc-l07-035) | Context Provenance and Trust Labelling | High | Technical | D3, D5 |
-| [TC-L07-036](#tc-l07-036) | Canary Token and Leak Detection | Medium | Technical | D3 |
-| [TC-L07-037](#tc-l07-037) | Injection Detection Explainability and Alert Triage | Medium | Evidence | D3 |
-| [TC-L07-038](#tc-l07-038) | Human Approval for Suspected Injection in Tool Flows | High | Technical | D3, D5 |
-| [TC-L07-039](#tc-l07-039) | Secrets and Personal Data in System Prompts and Few-Shot Examples | High | Technical | D3, D6 |
-| [TC-L07-040](#tc-l07-040) | Detection Update Cadence and Benchmark Coverage | Medium | Attestation | D4 |
-| [TC-L07-041](#tc-l07-041) | Indirect Injection: Repository Files, Comments and Assistant Rule Files | Critical | Technical | D2, D3 |
+| ID | Title | Severity | Method | Domain(s) | Controls |
+|---|---|---|---|---|---|
+| [TC-L07-001](#tc-l07-001) | Direct Injection: Instruction Override Baseline | Critical | Technical | D3 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L07-002](#tc-l07-002) | Direct Injection: Delimiter and Format Confusion | High | Technical | D3 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L07-003](#tc-l07-003) | Direct Injection: Authority and Role Impersonation | High | Technical | D3 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L07-004](#tc-l07-004) | Direct Injection: Payload Splitting Across Turns | High | Technical | D3 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L07-005](#tc-l07-005) | Direct Injection: Encoded and Obfuscated Payloads | High | Technical | D3 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L07-006](#tc-l07-006) | Direct Injection: Multilingual Payloads (Arabic, Hindi, Urdu, French) | High | Technical | D3, D7 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L07-007](#tc-l07-007) | Direct Injection: Long-Context Burying and Many-Shot Patterns | Medium | Technical | D3 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L07-008](#tc-l07-008) | Direct Injection Leading to Unauthorised Tool Action | Critical | Technical | D3, D5 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005), [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) |
+| [TC-L07-009](#tc-l07-009) | Indirect Injection: Web Page Content | Critical | Technical | D3, D5 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L07-010](#tc-l07-010) | Indirect Injection: Email and Document Content | Critical | Technical | D3, D5 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L07-011](#tc-l07-011) | Indirect Injection: Hidden Text and File Metadata | High | Technical | D3, D6 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L07-012](#tc-l07-012) | Indirect Injection: Retrieved Knowledge Base Documents | Critical | Technical | D3 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005), [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) |
+| [TC-L07-013](#tc-l07-013) | Indirect Injection: Tool and API Responses | High | Technical | D3, D5 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L07-014](#tc-l07-014) | Indirect Injection: Images with Embedded Text | High | Technical | D3, D5 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005), [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) |
+| [TC-L07-015](#tc-l07-015) | Indirect Injection: Collaboration Data (Chat, Tickets, Calendar) | High | Technical | D3, D5 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L07-016](#tc-l07-016) | Indirect Injection Driving Data Exfiltration via URL | Critical | Technical | D3, D6 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005), [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) |
+| [TC-L07-017](#tc-l07-017) | Jailbreak: Persona and Role-Play | Critical | Technical | D3 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L07-018](#tc-l07-018) | Jailbreak: Hypothetical and Fictional Framing | High | Technical | D3 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L07-019](#tc-l07-019) | Jailbreak: Gradual Multi-Turn Escalation | High | Technical | D3 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L07-020](#tc-l07-020) | Jailbreak: Refusal Suppression and Prefix Injection | Medium | Technical | D3 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L07-021](#tc-l07-021) | Jailbreak: Automated Adversarial Suffixes and Fuzzing | High | Technical | D3, D4 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L07-022](#tc-l07-022) | Jailbreak: Cross-Lingual and Low-Resource Languages | High | Technical | D3, D7 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L07-023](#tc-l07-023) | Jailbreak: Instructions Embedded in Images (Multimodal) | High | Technical | D3 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005), [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) |
+| [TC-L07-024](#tc-l07-024) | Jailbreak Regression After Model or Policy Update | High | Technical | D3, D4 | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034), [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L07-025](#tc-l07-025) | System Prompt Extraction Under Probing | High | Technical | D3 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L07-026](#tc-l07-026) | Instruction Hierarchy Enforcement | Critical | Technical | D3 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L07-027](#tc-l07-027) | Context Window Poisoning Within a Session | High | Technical | D3 | [AI-CTRL-026](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-026) |
+| [TC-L07-028](#tc-l07-028) | Long-Term Memory Poisoning | Critical | Technical | D3, D5 | [AI-CTRL-026](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-026) |
+| [TC-L07-029](#tc-l07-029) | Memory Isolation Between Users | Critical | Technical | D3, D6 | [AI-CTRL-026](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-026) |
+| [TC-L07-030](#tc-l07-030) | Memory Deletion and Retention Verification | High | Evidence | D3, D7 | [AI-CTRL-026](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-026), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L07-031](#tc-l07-031) | Conversation History Tampering via API | High | Technical | D3 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L07-032](#tc-l07-032) | Context Stuffing and Token Flooding | Medium | Technical | D3 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005), [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) |
+| [TC-L07-033](#tc-l07-033) | Prompt Template Injection (Variable Interpolation) | High | Technical | D3 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L07-034](#tc-l07-034) | Prompt Library and Shared Prompt Store Integrity | High | Evidence | D3 | [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) |
+| [TC-L07-035](#tc-l07-035) | Context Provenance and Trust Labelling | High | Technical | D3, D5 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005), [AI-CTRL-026](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-026) |
+| [TC-L07-036](#tc-l07-036) | Canary Token and Leak Detection | Medium | Technical | D3 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L07-037](#tc-l07-037) | Injection Detection Explainability and Alert Triage | Medium | Evidence | D3 | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009), [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L07-038](#tc-l07-038) | Human Approval for Suspected Injection in Tool Flows | High | Technical | D3, D5 | [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) |
+| [TC-L07-039](#tc-l07-039) | Secrets and Personal Data in System Prompts and Few-Shot Examples | High | Technical | D3, D6 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-L07-040](#tc-l07-040) | Detection Update Cadence and Benchmark Coverage | Medium | Attestation | D4 | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-L07-041](#tc-l07-041) | Indirect Injection: Repository Files, Comments and Assistant Rule Files | Critical | Technical | D2, D3 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005), [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) |
 
 ---
 
@@ -83,6 +83,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0051 LLM Prompt Injection |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Direct instruction override is the entry-level prompt injection; a control that fails here will fail everything harder.
 
@@ -148,6 +149,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0051 LLM Prompt Injection |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Attackers close the application's own delimiters or imitate its template to make user text look like system text.
 
@@ -212,6 +214,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0051 LLM Prompt Injection |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Messages that claim to come from the system, developer or administrator can fool applications that do not separate trust levels.
 
@@ -276,6 +279,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0051 LLM Prompt Injection |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Single-message checks miss attacks assembled from harmless-looking fragments across several turns.
 
@@ -340,6 +344,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0051 LLM Prompt Injection |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Encoding hides intent from inspection that looks only at plain text.
 
@@ -403,6 +408,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0051 LLM Prompt Injection |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Detection tuned on English misses the same attack in other languages, a particular issue for GCC and India deployments.
 
@@ -467,6 +473,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0051 LLM Prompt Injection |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Hiding a short instruction inside a very long input, or priming the model with many examples, can defeat truncated or sampled inspection.
 
@@ -529,9 +536,10 @@ nav_order: 10
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | Critical |
 | **Quick-Start Scenario** | [AI-POC-AG-003](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md#agentic-ai-test-cases) |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security; [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization |
 
 **Risk Addressed.** The impact of injection grows sharply when the model can call tools; a text override becomes a data change or message sent.
 
@@ -596,6 +604,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Pages fetched by browsing or summarisation features can contain instructions the user never typed.
 
@@ -659,6 +668,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Assistants that summarise mail and documents can be hijacked by whoever wrote the content.
 
@@ -723,6 +733,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Hidden text and metadata let an attacker place instructions the human reviewer cannot see.
 
@@ -787,6 +798,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security; [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) Knowledge Base Integrity |
 
 **Risk Addressed.** A single poisoned document in a knowledge base can attack every user who asks a related question.
 
@@ -851,6 +863,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Output from tools and APIs is treated as trusted by many agents, yet it can contain attacker-controlled text.
 
@@ -915,6 +928,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security; [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security |
 
 **Risk Addressed.** Instructions rendered as text inside images can be read by multimodal models while escaping text inspection.
 
@@ -979,6 +993,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Anyone able to write to shared chat, tickets or invites can insert content that an assistant later reads.
 
@@ -1043,6 +1058,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security; [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) Output Handling |
 
 **Risk Addressed.** An injected instruction can ask the model to place sensitive context in a URL that is rendered or fetched, sending data out silently.
 
@@ -1107,6 +1123,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0054 LLM Jailbreak |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (jailbreak) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Persona prompts remain one of the most effective ways of getting a model to ignore its rules.
 
@@ -1171,6 +1188,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0054 LLM Jailbreak |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (jailbreak) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Fiction and hypothetical framing is used to extract content the model would otherwise refuse.
 
@@ -1234,6 +1252,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0054 LLM Jailbreak |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (jailbreak) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Attackers move a conversation a little at a time until the model crosses a line it would refuse in a single request.
 
@@ -1297,6 +1316,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0054 LLM Jailbreak |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (jailbreak) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Prompts that forbid refusals or force a compliant opening phrase can bypass model safety behaviour.
 
@@ -1360,6 +1380,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0054 LLM Jailbreak |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (jailbreak) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Automatically generated prompt suffixes and fuzzed variants find gaps that hand-written prompts miss.
 
@@ -1425,6 +1446,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0054 LLM Jailbreak |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (jailbreak) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Safety training and filters are weaker in less common languages.
 
@@ -1488,6 +1510,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0054 LLM Jailbreak |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (jailbreak) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security; [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security |
 
 **Risk Addressed.** Multimodal models can be steered by instructions placed in pictures, bypassing text-only filters.
 
@@ -1552,6 +1575,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0054 LLM Jailbreak |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (jailbreak) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation; [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Detection quality changes when the underlying model, vendor classifier or policy is updated; unnoticed regressions reopen old gaps.
 
@@ -1613,9 +1637,10 @@ nav_order: 10
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | High |
-| **MITRE ATLAS Mapping** | AML.T0056 LLM Meta Prompt Extraction |
+| **MITRE ATLAS Mapping** | AML.T0056 Extract LLM System Prompt |
 | **OWASP LLM / GenAI Mapping** | LLM07:2025 System Prompt Leakage |
 | **NIST AI RMF Mapping** | MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** System prompts reveal business logic, restrictions and sometimes secrets, helping attackers refine later attacks.
 
@@ -1680,6 +1705,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0051 LLM Prompt Injection |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Applications depend on system instructions outranking user text; if they do not, every control can be talked away.
 
@@ -1741,9 +1767,10 @@ nav_order: 10
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | High |
-| **MITRE ATLAS Mapping** | AML.T0020 Poison Training Data (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
+| **MITRE ATLAS Mapping** | AML.T0020 Training Data Poisoning (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
 | **OWASP LLM / GenAI Mapping** | LLM04:2025 Data and Model Poisoning; LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-026](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-026) Agent Memory and Context Integrity |
 
 **Risk Addressed.** Content planted early in a session can influence later answers and actions, long after the original message.
 
@@ -1804,9 +1831,10 @@ nav_order: 10
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: A \| Partial: G |
 | **Risk Severity** | Critical |
-| **MITRE ATLAS Mapping** | AML.T0020 Poison Training Data (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
+| **MITRE ATLAS Mapping** | AML.T0020 Training Data Poisoning (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
 | **OWASP LLM / GenAI Mapping** | LLM04:2025 Data and Model Poisoning; LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-026](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-026) Agent Memory and Context Integrity |
 
 **Risk Addressed.** Persistent memory features carry poisoned content into every future conversation.
 
@@ -1871,6 +1899,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-026](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-026) Agent Memory and Context Integrity |
 
 **Risk Addressed.** Cross-user memory leakage exposes personal and corporate information.
 
@@ -1935,6 +1964,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage (secondary) |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; GOVERN 1.1 |
+| **Control(s) Tested** | [AI-CTRL-026](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-026) Agent Memory and Context Integrity; [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** Deleted memory that remains in backups, caches or embeddings creates compliance and privacy exposure.
 
@@ -1999,6 +2029,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0051 LLM Prompt Injection |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Applications that accept conversation history from the client allow users to forge earlier turns, including fake system or assistant messages.
 
@@ -2064,6 +2095,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
 | **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security; [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
 **Risk Addressed.** Flooding the context can push system instructions out of the window, dilute them, or run up cost.
 
@@ -2127,6 +2159,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0051 LLM Prompt Injection |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Applications that insert user fields into prompt templates can let those fields rewrite the template.
 
@@ -2191,6 +2224,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) ML Pipeline and Model Registry Security |
 
 **Risk Addressed.** Tampering with shared prompt templates changes behaviour for every user of the template.
 
@@ -2255,6 +2289,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0051 LLM Prompt Injection |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security; [AI-CTRL-026](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-026) Agent Memory and Context Integrity |
 
 **Risk Addressed.** Models cannot reliably tell trusted instructions from untrusted data unless the application and controls label them.
 
@@ -2315,9 +2350,10 @@ nav_order: 10
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: A, G |
 | **Risk Severity** | Medium |
-| **MITRE ATLAS Mapping** | AML.T0056 LLM Meta Prompt Extraction |
+| **MITRE ATLAS Mapping** | AML.T0056 Extract LLM System Prompt |
 | **OWASP LLM / GenAI Mapping** | LLM07:2025 System Prompt Leakage |
 | **NIST AI RMF Mapping** | MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Canaries give early evidence of prompt and context leakage in production.
 
@@ -2381,6 +2417,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration; [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Analysts cannot triage alerts they cannot understand, and unexplained blocks erode user trust.
 
@@ -2441,9 +2478,10 @@ nav_order: 10
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: A, G |
 | **Risk Severity** | High |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) Human Approval for Sensitive Actions |
 
 **Risk Addressed.** When injection is suspected but not certain, a human decision is safer than automatic block or allow.
 
@@ -2508,6 +2546,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security; [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
 **Risk Addressed.** Developers embed keys, internal names and real examples in prompts, exposing them to any prompt-extraction success.
 
@@ -2571,6 +2610,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** New injection techniques appear weekly; a control updated rarely will fall behind.
 
@@ -2635,6 +2675,7 @@ nav_order: 10
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security; [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance |
 
 **Risk Addressed.** Instructions hidden in a README, code comment, dependency file or assistant rules file are read as context and can steer a coding assistant into inserting malicious code or leaking data.
 

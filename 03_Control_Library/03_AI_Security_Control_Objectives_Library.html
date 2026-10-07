@@ -138,10 +138,53 @@
 <p><strong>Audience:</strong> Security engineering, GRC, audit, AI product teams, SOC.</p>
 <p><strong>How to use:</strong> Use this page as a wiki reference. Select controls by risk tier, then update the evidence, owners, control status, and links as implementation maturity improves.</p>
 </blockquote>
-<p>The library holds <strong>36 control objectives in 11 families</strong>. Each control has a stable ID that the rest of the wiki uses: the <a href="../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a> links risks to controls, the <a href="../04_Domain_Standards/index.html">domain standards</a> cite the controls they apply, the <a href="../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a> lists the evidence, and each page of the <a href="../10_Test_Case_Library/index.html">Test Case Library</a> names the controls it tests.</p>
+<p>The library holds <strong>40 control objectives in 11 families</strong>. Each control has a stable ID that the rest of the wiki uses: the <a href="../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a> links risks to controls, the <a href="../04_Domain_Standards/index.html">domain standards</a> cite the controls they apply, the <a href="../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a> lists the evidence, and every one of the 620 cases in the <a href="../10_Test_Case_Library/index.html">Test Case Library</a> names the control it tests.</p>
 <p>The controls follow the design principle set out in the <a href="../00_Foundations/07-Reference-Architecture.html">Foundations paper</a>: the model is an untrusted component, and authority to act, access data or spend money is enforced outside it.</p>
+<h2 id="framework-identifiers">Framework identifiers</h2>
+<p>Each control cites the identifiers published by the framework owner. Where a framework has no matching entry, the cell says so and the wiki's own control ID stands in.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Version used</th>
+<th>Identifier format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OWASP Top 10 for LLM Applications</td>
+<td>2025</td>
+<td><code>LLM01:2025</code> to <code>LLM10:2025</code></td>
+</tr>
+<tr>
+<td>OWASP Top 10 for Agentic Applications</td>
+<td>2026</td>
+<td><code>ASI01</code> to <code>ASI10</code></td>
+</tr>
+<tr>
+<td>MITRE ATLAS</td>
+<td>2026.09</td>
+<td>Techniques <code>AML.T####</code>; mitigations <code>AML.M####</code></td>
+</tr>
+<tr>
+<td>NIST AI Risk Management Framework</td>
+<td>1.0</td>
+<td>Subcategories, for example <code>MEASURE 2.7</code></td>
+</tr>
+<tr>
+<td>ISO/IEC 42001</td>
+<td>2023</td>
+<td>Annex A controls, for example <code>A.6.2.4</code>; management system clauses, for example <code>Clause 9.2</code></td>
+</tr>
+<tr>
+<td>AI Security Wiki (own)</td>
+<td>This page</td>
+<td><code>AI-CTRL-001</code> to <code>AI-CTRL-040</code></td>
+</tr>
+</tbody>
+</table></div>
 <blockquote>
-<p><strong>Verify before use.</strong> OWASP, MITRE ATLAS, NIST AI RMF and ISO/IEC 42001 references must be checked against the current published versions. Owners and review frequencies are starting values; set your own.</p>
+<p><strong>Verify before use.</strong> Frameworks are revised. MITRE ATLAS in particular is updated monthly and renames techniques. Check identifiers against the current published versions before quoting them in an RFP or audit. Owners and review frequencies are starting values; set your own.</p>
 </blockquote>
 <h2 id="control-families">Control families</h2>
 <div class="table-wrap"><table>
@@ -154,7 +197,7 @@
 <tbody>
 <tr>
 <td>Governance and Compliance</td>
-<td><a href="#ai-ctrl-007">AI-CTRL-007</a>, <a href="#ai-ctrl-011">AI-CTRL-011</a>, <a href="#ai-ctrl-012">AI-CTRL-012</a>, <a href="#ai-ctrl-013">AI-CTRL-013</a>, <a href="#ai-ctrl-014">AI-CTRL-014</a></td>
+<td><a href="#ai-ctrl-007">AI-CTRL-007</a>, <a href="#ai-ctrl-011">AI-CTRL-011</a>, <a href="#ai-ctrl-012">AI-CTRL-012</a>, <a href="#ai-ctrl-013">AI-CTRL-013</a>, <a href="#ai-ctrl-014">AI-CTRL-014</a>, <a href="#ai-ctrl-037">AI-CTRL-037</a></td>
 </tr>
 <tr>
 <td>Discovery and Workforce AI Use</td>
@@ -170,7 +213,7 @@
 </tr>
 <tr>
 <td>Application Runtime</td>
-<td><a href="#ai-ctrl-005">AI-CTRL-005</a>, <a href="#ai-ctrl-020">AI-CTRL-020</a>, <a href="#ai-ctrl-021">AI-CTRL-021</a></td>
+<td><a href="#ai-ctrl-005">AI-CTRL-005</a>, <a href="#ai-ctrl-020">AI-CTRL-020</a>, <a href="#ai-ctrl-021">AI-CTRL-021</a>, <a href="#ai-ctrl-039">AI-CTRL-039</a></td>
 </tr>
 <tr>
 <td>Agents and Tools</td>
@@ -181,12 +224,12 @@
 <td><a href="#ai-ctrl-028">AI-CTRL-028</a>, <a href="#ai-ctrl-029">AI-CTRL-029</a>, <a href="#ai-ctrl-030">AI-CTRL-030</a></td>
 </tr>
 <tr>
-<td>Supply Chain and Infrastructure</td>
-<td><a href="#ai-ctrl-031">AI-CTRL-031</a>, <a href="#ai-ctrl-032">AI-CTRL-032</a></td>
+<td>Supply Chain, Infrastructure and Resilience</td>
+<td><a href="#ai-ctrl-031">AI-CTRL-031</a>, <a href="#ai-ctrl-032">AI-CTRL-032</a>, <a href="#ai-ctrl-040">AI-CTRL-040</a></td>
 </tr>
 <tr>
 <td>Assurance and Testing</td>
-<td><a href="#ai-ctrl-033">AI-CTRL-033</a>, <a href="#ai-ctrl-034">AI-CTRL-034</a></td>
+<td><a href="#ai-ctrl-033">AI-CTRL-033</a>, <a href="#ai-ctrl-034">AI-CTRL-034</a>, <a href="#ai-ctrl-038">AI-CTRL-038</a></td>
 </tr>
 <tr>
 <td>Detection and Response</td>
@@ -206,6 +249,7 @@
 <th>Control Name</th>
 <th>Family</th>
 <th>Objective</th>
+<th>Test Cases</th>
 </tr>
 </thead>
 <tbody>
@@ -214,219 +258,284 @@
 <td>AI Discovery</td>
 <td>Discovery and Workforce AI Use</td>
 <td>Identify approved/unapproved AI platforms across browsers, endpoints, IDEs, SaaS, APIs and custom apps.</td>
+<td>33</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-002">AI-CTRL-002</a></td>
 <td>Prompt Inspection</td>
 <td>Discovery and Workforce AI Use</td>
 <td>Detect sensitive, restricted or risky content submitted to AI platforms.</td>
+<td>16</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-003">AI-CTRL-003</a></td>
 <td>File Upload Protection</td>
 <td>Discovery and Workforce AI Use</td>
 <td>Prevent uploads of confidential or restricted files to unauthorized AI services.</td>
+<td>6</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-004">AI-CTRL-004</a></td>
 <td>IDE AI Governance</td>
 <td>Discovery and Workforce AI Use</td>
 <td>Monitor and control AI coding assistants, source code sharing and secret leakage.</td>
+<td>18</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-005">AI-CTRL-005</a></td>
 <td>Runtime AI Security</td>
 <td>Application Runtime</td>
 <td>Protect custom AI applications from prompt injection, misuse and output leakage.</td>
+<td>52</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-006">AI-CTRL-006</a></td>
 <td>Agent Governance</td>
 <td>Agents and Tools</td>
 <td>Monitor AI agents, tool calls, API access and autonomous actions.</td>
+<td>13</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-007">AI-CTRL-007</a></td>
 <td>Data Sovereignty</td>
 <td>Governance and Compliance</td>
 <td>Ensure prompts, logs and uploads are processed and retained in approved locations.</td>
+<td>14</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-008">AI-CTRL-008</a></td>
 <td>Auditability</td>
 <td>Detection and Response</td>
 <td>Maintain logs for prompts, responses, files, users, devices, applications and actions.</td>
+<td>19</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-009">AI-CTRL-009</a></td>
 <td>SOC Integration</td>
 <td>Detection and Response</td>
 <td>Forward AI security events and logs to monitoring and response platforms.</td>
+<td>22</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-010">AI-CTRL-010</a></td>
 <td>Policy Enforcement</td>
 <td>Discovery and Workforce AI Use</td>
 <td>Support monitor, warn, redact, block and allow policies based on risk and classification.</td>
+<td>27</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-011">AI-CTRL-011</a></td>
 <td>AI Use-Case Registry and Risk Tiering</td>
 <td>Governance and Compliance</td>
 <td>Record every AI use case with a business owner and a risk tier that decides which controls apply.</td>
+<td>17</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-012">AI-CTRL-012</a></td>
-<td>AI Policy and Acceptable Use</td>
+<td>AI Policy, Roles and Acceptable Use</td>
 <td>Governance and Compliance</td>
-<td>Set and communicate the rules for using and building AI, and map each rule to a control.</td>
+<td>Set and communicate the rules and responsibilities for using and building AI, and map each rule to a control.</td>
+<td>7</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-013">AI-CTRL-013</a></td>
 <td>Privacy and Regulatory Compliance</td>
 <td>Governance and Compliance</td>
 <td>Meet privacy and regulatory obligations for personal data handled by AI systems.</td>
+<td>38</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-014">AI-CTRL-014</a></td>
 <td>Third-Party and Vendor AI Assurance</td>
 <td>Governance and Compliance</td>
 <td>Assess AI vendors and embedded AI features before use, and reassess when they change.</td>
+<td>23</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-015">AI-CTRL-015</a></td>
 <td>Human and Agent Identity</td>
 <td>Identity and Access</td>
 <td>Give every user, application and agent that uses AI a unique, attributable identity.</td>
+<td>31</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-016">AI-CTRL-016</a></td>
 <td>Least Privilege and Scoped Credentials</td>
 <td>Identity and Access</td>
 <td>Limit what each AI workload and agent can reach to the minimum its task needs.</td>
+<td>39</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-017">AI-CTRL-017</a></td>
 <td>Data Protection in AI Pipelines</td>
 <td>Data and Retrieval</td>
 <td>Apply classification, minimization and isolation to data that AI systems ingest, process and produce.</td>
+<td>30</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-018">AI-CTRL-018</a></td>
 <td>Retrieval Access Control</td>
 <td>Data and Retrieval</td>
 <td>Return only content the requesting user is entitled to see.</td>
+<td>9</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-019">AI-CTRL-019</a></td>
 <td>Knowledge Base Integrity</td>
 <td>Data and Retrieval</td>
 <td>Stop untrusted or poisoned content from entering the corpus that AI systems retrieve from.</td>
+<td>12</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-020">AI-CTRL-020</a></td>
 <td>Output Handling</td>
 <td>Application Runtime</td>
 <td>Treat model output as untrusted input to whatever consumes it.</td>
+<td>12</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-021">AI-CTRL-021</a></td>
 <td>Multimodal and Voice Input Security</td>
 <td>Application Runtime</td>
 <td>Apply the same inspection and policy to images, documents, audio and video as to text.</td>
+<td>28</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-022">AI-CTRL-022</a></td>
 <td>Deterministic Action Authorization</td>
 <td>Agents and Tools</td>
 <td>Enforce authority to act, access data or spend money outside the model.</td>
+<td>16</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-023">AI-CTRL-023</a></td>
 <td>Human Approval for Sensitive Actions</td>
 <td>Agents and Tools</td>
 <td>Require a person to approve irreversible or high-impact actions before they run.</td>
+<td>7</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-024">AI-CTRL-024</a></td>
 <td>Tool and MCP Server Governance</td>
 <td>Agents and Tools</td>
 <td>Allow agents to use only vetted tools and tool servers, and detect when they change.</td>
+<td>14</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-025">AI-CTRL-025</a></td>
 <td>Agent Containment and Kill Switch</td>
 <td>Agents and Tools</td>
 <td>Stop an agent, revoke its access and limit the damage within minutes.</td>
+<td>10</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-026">AI-CTRL-026</a></td>
 <td>Agent Memory and Context Integrity</td>
 <td>Agents and Tools</td>
 <td>Prevent poisoned or cross-user content from persisting in agent memory and context.</td>
+<td>5</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-027">AI-CTRL-027</a></td>
 <td>Agent Execution Isolation</td>
 <td>Agents and Tools</td>
 <td>Run agent-generated code and browser or computer-use sessions in isolation.</td>
+<td>10</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-028">AI-CTRL-028</a></td>
 <td>Model Protection</td>
 <td>Model, Training and Pipeline</td>
 <td>Protect models from theft, extraction and adversarial inputs.</td>
+<td>16</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-029">AI-CTRL-029</a></td>
 <td>Training and Fine-Tuning Data Integrity</td>
 <td>Model, Training and Pipeline</td>
 <td>Know where training data came from and detect tampering before it shapes a model.</td>
+<td>15</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-030">AI-CTRL-030</a></td>
 <td>ML Pipeline and Model Registry Security</td>
 <td>Model, Training and Pipeline</td>
 <td>Protect the pipeline that builds, stores and releases models and prompts.</td>
+<td>16</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-031">AI-CTRL-031</a></td>
 <td>AI Supply Chain and AI-BOM</td>
-<td>Supply Chain and Infrastructure</td>
+<td>Supply Chain, Infrastructure and Resilience</td>
 <td>Know exactly which models, datasets, packages and prompts run in each environment.</td>
+<td>24</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-032">AI-CTRL-032</a></td>
 <td>AI Infrastructure Hardening</td>
-<td>Supply Chain and Infrastructure</td>
+<td>Supply Chain, Infrastructure and Resilience</td>
 <td>Harden and segment the infrastructure that trains and serves models.</td>
+<td>26</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-033">AI-CTRL-033</a></td>
 <td>AI Security Review and Release Gate</td>
 <td>Assurance and Testing</td>
 <td>Review every AI system against its threats before production and after material change.</td>
+<td>6</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-034">AI-CTRL-034</a></td>
 <td>Adversarial Testing and Continuous Evaluation</td>
 <td>Assurance and Testing</td>
 <td>Test AI systems against attacks before release and continuously afterwards.</td>
+<td>36</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-035">AI-CTRL-035</a></td>
 <td>AI Incident Response and Forensics</td>
 <td>Detection and Response</td>
 <td>Detect, contain, investigate and recover from AI security incidents.</td>
+<td>39</td>
 </tr>
 <tr>
 <td><a href="#ai-ctrl-036">AI-CTRL-036</a></td>
 <td>AI Cost and Abuse Controls</td>
 <td>Cost and Abuse</td>
 <td>Attribute AI spend and stop abuse that exhausts budget or capacity.</td>
+<td>30</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-037">AI-CTRL-037</a></td>
+<td>AI Risk Assessment and Exception Management</td>
+<td>Governance and Compliance</td>
+<td>Assess, treat and accept AI risks consistently, and keep every exception owned and time-bound.</td>
+<td>10</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-038">AI-CTRL-038</a></td>
+<td>Control Assurance and Audit Evidence</td>
+<td>Assurance and Testing</td>
+<td>Show, with current evidence, that each AI control is operating and that findings are closed.</td>
+<td>17</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-039">AI-CTRL-039</a></td>
+<td>Output Reliability and Content Safety</td>
+<td>Application Runtime</td>
+<td>Keep AI output grounded, within its approved scope and free of harmful content.</td>
+<td>6</td>
+</tr>
+<tr>
+<td><a href="#ai-ctrl-040">AI-CTRL-040</a></td>
+<td>AI Service Resilience and Fail-Safe Operation</td>
+<td>Supply Chain, Infrastructure and Resilience</td>
+<td>Keep AI services and their security controls available, and make them fail safely.</td>
+<td>13</td>
 </tr>
 </tbody>
 </table></div>
+<p>A test case is counted under every control it tests, so the counts add up to more than 620.</p>
 <h2 id="control-entries">Control entries</h2>
 <h3 id="governance-and-compliance">Governance and Compliance</h3>
 <p><a id="ai-ctrl-007"></a></p>
@@ -473,23 +582,27 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM02 Sensitive Information Disclosure</td>
+<td>None published in the OWASP Top 10 lists. The wiki's own identifier applies: AI-CTRL-007.</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>—</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>None published in MITRE ATLAS techniques. The wiki's own identifier applies: AI-CTRL-007.</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>None published in MITRE ATLAS mitigations. The wiki's own identifier applies: AI-CTRL-007.</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>GOVERN, MAP</td>
+<td>GOVERN 1.1; GOVERN 6.1; MAP 4.1</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.7 Data for AI systems; A.10 Third-party and customer relationships</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.10.3 Suppliers; A.4.5 System and computing resources</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html">L03</a>, <a href="../10_Test_Case_Library/L15-infrastructure-layer.html">L15</a></td>
+<td><strong>Tested By (14 cases)</strong></td>
+<td><strong>L03:</strong> <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-012">012</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-013">013</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-014">014</a><br><strong>L08:</strong> <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-001">001</a><br><strong>L10:</strong> <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-012">012</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-013">013</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-014">014</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-015">015</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-025">025</a><br><strong>L15:</strong> <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-013">013</a>, <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-014">014</a>, <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-015">015</a>, <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-020">020</a><br><strong>L16:</strong> <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-019">019</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -537,28 +650,32 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>—</td>
+<td>None published in the OWASP Top 10 lists. The wiki's own identifier applies: AI-CTRL-011.</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>—</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>None published in MITRE ATLAS techniques. The wiki's own identifier applies: AI-CTRL-011.</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>None published in MITRE ATLAS mitigations. The wiki's own identifier applies: AI-CTRL-011.</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>GOVERN, MAP</td>
+<td>GOVERN 1.6; GOVERN 1.3; GOVERN 1.7; MAP 1.1</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.3 Internal organization; A.5 Assessing impacts of AI systems</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.4.2 Resource documentation; A.5.2 AI system impact assessment process; A.9.4 Intended use of the AI system</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L01-business-and-use-cases.html">L01</a>, <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html">L02</a></td>
+<td><strong>Tested By (17 cases)</strong></td>
+<td><strong>L01:</strong> <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-001">001</a>, <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-002">002</a>, <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-003">003</a>, <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-004">004</a>, <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-005">005</a>, <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-006">006</a>, <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-007">007</a>, <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-008">008</a>, <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-009">009</a>, <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-013">013</a>, <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-016">016</a>, <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-019">019</a>, <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-020">020</a><br><strong>L05:</strong> <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-007">007</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-029">029</a><br><strong>L12:</strong> <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-024">024</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-025">025</a></td>
 </tr>
 </tbody>
 </table></div>
 <p><a id="ai-ctrl-012"></a></p>
-<h4 id="ai-ctrl-012-ai-policy-and-acceptable-use">AI-CTRL-012: AI Policy and Acceptable Use</h4>
+<h4 id="ai-ctrl-012-ai-policy-roles-and-acceptable-use">AI-CTRL-012: AI Policy, Roles and Acceptable Use</h4>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -569,7 +686,7 @@
 <tbody>
 <tr>
 <td><strong>Control Objective</strong></td>
-<td>Set and communicate the rules for using and building AI, and map each rule to a control.</td>
+<td>Set and communicate the rules and responsibilities for using and building AI, and map each rule to a control.</td>
 </tr>
 <tr>
 <td><strong>Applies To</strong></td>
@@ -581,11 +698,11 @@
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
-<td>Publish an AI policy and acceptable-use standard with scope, owner and review date. Map each policy statement to a control in this library. Train users and reinforce the rules at the point of use.</td>
+<td>Publish an AI policy and acceptable-use standard with scope, owner and review date. Define roles and decision rights, and record governance decisions. Map each policy statement to a control in this library. Train users and reinforce the rules at the point of use.</td>
 </tr>
 <tr>
 <td><strong>Evidence Required</strong></td>
-<td>Approved policy; policy-to-control mapping; training records; coaching events.</td>
+<td>Approved policy; roles and responsibilities record; governance decision log; policy-to-control mapping; training and acknowledgement records.</td>
 </tr>
 <tr>
 <td><strong>Audit Test Procedure</strong></td>
@@ -601,23 +718,27 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>—</td>
+<td>None published in the OWASP Top 10 lists. The wiki's own identifier applies: AI-CTRL-012.</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>—</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>None published in MITRE ATLAS techniques. The wiki's own identifier applies: AI-CTRL-012.</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0018 User Training</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>GOVERN</td>
+<td>GOVERN 1.2; GOVERN 1.4; GOVERN 2.1; GOVERN 2.2</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.2 Policies related to AI; A.9 Use of AI systems</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.2.2 AI policy; A.2.4 Review of the AI policy; A.3.2 AI roles and responsibilities</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html">L02</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html">L04</a></td>
+<td><strong>Tested By (7 cases)</strong></td>
+<td><strong>L02:</strong> <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-001">001</a>, <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-002">002</a>, <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-004">004</a>, <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-005">005</a>, <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-022">022</a>, <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-023">023</a><br><strong>L04:</strong> <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-011">011</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -665,23 +786,27 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM02 Sensitive Information Disclosure</td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
 <tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>None published in MITRE ATLAS mitigations. The wiki's own identifier applies: AI-CTRL-013.</td>
+</tr>
+<tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>GOVERN, MAP</td>
+<td>GOVERN 1.1; MAP 5.1; MEASURE 2.10</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.5 Assessing impacts of AI systems; A.7 Data for AI systems</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.5.2 AI system impact assessment process; A.5.3 Documentation of AI system impact assessments; A.5.4 Assessing AI system impact on individuals or groups of individuals</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html">L03</a></td>
+<td><strong>Tested By (38 cases)</strong></td>
+<td><strong>D11:</strong> <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-007">007</a>, <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-018">018</a>, <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-019">019</a>, <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-020">020</a><br><strong>D12:</strong> <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-015">015</a>, <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-016">016</a><br><strong>L01:</strong> <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-010">010</a>, <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-011">011</a><br><strong>L02:</strong> <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-020">020</a><br><strong>L03:</strong> <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-001">001</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-002">002</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-003">003</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-004">004</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-005">005</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-006">006</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-007">007</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-008">008</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-009">009</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-010">010</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-011">011</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-015">015</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-016">016</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-017">017</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-018">018</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-019">019</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-020">020</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-028">028</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-029">029</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-030">030</a><br><strong>L04:</strong> <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-027">027</a><br><strong>L07:</strong> <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-030">030</a><br><strong>L10:</strong> <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-020">020</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-021">021</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-022">022</a><br><strong>L13:</strong> <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-002">002</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-007">007</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-019">019</a><br><strong>L17:</strong> <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-026">026</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -729,23 +854,95 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM03 Supply Chain</td>
+<td>LLM03:2025 Supply Chain</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>AML.T0010 AI Supply Chain Compromise</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>AML.T0010 AI Supply Chain Compromise; AML.T0109 AI Supply Chain Rug Pull</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>None published in MITRE ATLAS mitigations. The wiki's own identifier applies: AI-CTRL-014.</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>GOVERN, MAP</td>
+<td>GOVERN 6.1; GOVERN 6.2; MANAGE 3.1</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.10 Third-party and customer relationships</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.10.2 Allocating responsibilities; A.10.3 Suppliers</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html">L16</a></td>
+<td><strong>Tested By (23 cases)</strong></td>
+<td><strong>D09:</strong> <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-018">018</a><br><strong>D12:</strong> <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-017">017</a><br><strong>D13:</strong> <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-019">019</a><br><strong>L01:</strong> <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-017">017</a><br><strong>L02:</strong> <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-021">021</a><br><strong>L03:</strong> <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-020">020</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-021">021</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-032">032</a><br><strong>L10:</strong> <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-025">025</a><br><strong>L13:</strong> <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-009">009</a><br><strong>L15:</strong> <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-016">016</a><br><strong>L16:</strong> <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-008">008</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-009">009</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-010">010</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-011">011</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-012">012</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-018">018</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-019">019</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-020">020</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-021">021</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-022">022</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-023">023</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-025">025</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-037"></a></p>
+<h4 id="ai-ctrl-037-ai-risk-assessment-and-exception-management">AI-CTRL-037: AI Risk Assessment and Exception Management</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Assess, treat and accept AI risks consistently, and keep every exception owned and time-bound.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Browser AI / IDE AI / AI APIs / Custom AI Applications / Agents / Vendors</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R02</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Keep an AI risk register with an owner and a score for every risk. Use one scoring method so that different assessors reach the same result. Accept residual risk only at the right authority level. Give every exception an owner, a compensating control and an expiry date that the technical control enforces.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>AI risk register; treatment plans; risk acceptance records; exception register with expiry dates.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Sample accepted risks and confirm the approver had the authority. Let a test exception expire and confirm the technical control blocks the activity again.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>Cyber Risk / GRC</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>None published in the OWASP Top 10 lists. The wiki's own identifier applies: AI-CTRL-037.</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>None published in MITRE ATLAS techniques. The wiki's own identifier applies: AI-CTRL-037.</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>None published in MITRE ATLAS mitigations. The wiki's own identifier applies: AI-CTRL-037.</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>GOVERN 1.3; MAP 1.5; MANAGE 1.2; MANAGE 1.4</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>Clause 6.1.2 AI risk assessment; Clause 6.1.3 AI risk treatment</td>
+</tr>
+<tr>
+<td><strong>Tested By (10 cases)</strong></td>
+<td><strong>L02:</strong> <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-006">006</a>, <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-007">007</a>, <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-008">008</a>, <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-009">009</a>, <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-010">010</a>, <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-011">011</a>, <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-012">012</a><br><strong>L04:</strong> <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-013">013</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-014">014</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-015">015</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -794,23 +991,27 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM03 Supply Chain</td>
+<td>LLM03:2025 Supply Chain</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>—</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>None published in MITRE ATLAS techniques. The wiki's own identifier applies: AI-CTRL-001.</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>None published in MITRE ATLAS mitigations. The wiki's own identifier applies: AI-CTRL-001.</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>GOVERN, MAP</td>
+<td>GOVERN 1.6; GOVERN 6.1</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.4 Resources for AI systems; A.9 Use of AI systems</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.4.2 Resource documentation</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L04-human-interaction-layer.html">L04</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html">L05</a></td>
+<td><strong>Tested By (33 cases)</strong></td>
+<td><strong>D10:</strong> <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-001">001</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-022">022</a><br><strong>D11:</strong> <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-001">001</a><br><strong>D13:</strong> <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-017">017</a><br><strong>L01:</strong> <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-008">008</a><br><strong>L04:</strong> <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-001">001</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-002">002</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-003">003</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-004">004</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-005">005</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-006">006</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-007">007</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-008">008</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-009">009</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-010">010</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-024">024</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-025">025</a><br><strong>L05:</strong> <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-001">001</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-002">002</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-003">003</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-004">004</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-005">005</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-006">006</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-007">007</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-008">008</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-009">009</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-011">011</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-029">029</a><br><strong>L11:</strong> <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-001">001</a><br><strong>L12:</strong> <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-001">001</a><br><strong>L14:</strong> <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-001">001</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-018">018</a><br><strong>L15:</strong> <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-001">001</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -858,23 +1059,27 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM02 Sensitive Information Disclosure</td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
 <tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0020 Generative AI Guardrails</td>
+</tr>
+<tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>MEASURE, MANAGE</td>
+<td>MEASURE 2.10; MANAGE 4.1</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.7 Data for AI systems; A.9 Use of AI systems</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.9.2 Processes for responsible use of AI systems</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L04-human-interaction-layer.html">L04</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html">L08</a></td>
+<td><strong>Tested By (16 cases)</strong></td>
+<td><strong>D11:</strong> <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-006">006</a>, <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-015">015</a>, <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-016">016</a><br><strong>L04:</strong> <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-012">012</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-017">017</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-019">019</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-028">028</a><br><strong>L08:</strong> <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-004">004</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-005">005</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-006">006</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-007">007</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-008">008</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-010">010</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-011">011</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-014">014</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-027">027</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -922,23 +1127,27 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM02 Sensitive Information Disclosure</td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
 <tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0020 Generative AI Guardrails</td>
+</tr>
+<tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>MEASURE, MANAGE</td>
+<td>MEASURE 2.10; MANAGE 4.1</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.7 Data for AI systems; A.9 Use of AI systems</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.9.2 Processes for responsible use of AI systems</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L04-human-interaction-layer.html">L04</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html">L08</a></td>
+<td><strong>Tested By (6 cases)</strong></td>
+<td><strong>D10:</strong> <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-009">009</a><br><strong>L04:</strong> <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-018">018</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-020">020</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-022">022</a><br><strong>L08:</strong> <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-012">012</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-013">013</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -986,23 +1195,27 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM02 Sensitive Information Disclosure; LLM03 Supply Chain</td>
+<td>LLM02:2025 Sensitive Information Disclosure; LLM03:2025 Supply Chain</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
 <td>AML.T0057 LLM Data Leakage; AML.T0055 Unsecured Credentials</td>
 </tr>
 <tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>None published in MITRE ATLAS mitigations. The wiki's own identifier applies: AI-CTRL-004.</td>
+</tr>
+<tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>MEASURE, MANAGE</td>
+<td>GOVERN 6.1; MEASURE 2.10; MANAGE 4.1</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.9 Use of AI systems</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.9.2 Processes for responsible use of AI systems; A.4.4 Tooling resources</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L04-human-interaction-layer.html">L04</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html">L05</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html">L08</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html">L14</a></td>
+<td><strong>Tested By (18 cases)</strong></td>
+<td><strong>L04:</strong> <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-019">019</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-031">031</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-032">032</a><br><strong>L05:</strong> <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-004">004</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-031">031</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-032">032</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-033">033</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-034">034</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-035">035</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-037">037</a><br><strong>L07:</strong> <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-041">041</a><br><strong>L08:</strong> <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-007">007</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-041">041</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-042">042</a><br><strong>L09:</strong> <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-026">026</a><br><strong>L14:</strong> <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-021">021</a><br><strong>L16:</strong> <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-026">026</a><br><strong>L17:</strong> <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-031">031</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -1050,23 +1263,27 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM02 Sensitive Information Disclosure</td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
 <td>AML.T0057 LLM Data Leakage</td>
 </tr>
 <tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0020 Generative AI Guardrails</td>
+</tr>
+<tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>MANAGE</td>
+<td>GOVERN 1.4; MANAGE 1.3</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.2 Policies related to AI; A.9 Use of AI systems</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.9.2 Processes for responsible use of AI systems; A.2.2 AI policy</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L04-human-interaction-layer.html">L04</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html">L08</a></td>
+<td><strong>Tested By (27 cases)</strong></td>
+<td><strong>L02:</strong> <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-011">011</a><br><strong>L04:</strong> <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-009">009</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-011">011</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-012">012</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-013">013</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-016">016</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-025">025</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-026">026</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-029">029</a><br><strong>L05:</strong> <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-028">028</a><br><strong>L08:</strong> <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-001">001</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-002">002</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-003">003</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-009">009</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-010">010</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-021">021</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-022">022</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-023">023</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-024">024</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-025">025</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-026">026</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-028">028</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-036">036</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-037">037</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-038">038</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-041">041</a><br><strong>L12:</strong> <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-021">021</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -1115,23 +1332,27 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM06 Excessive Agency; ASI03 Identity &amp; Privilege Abuse</td>
+<td>LLM06:2025 Excessive Agency; ASI03 Identity &amp; Privilege Abuse</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>AML.T0012 Valid Accounts</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>AML.T0012 Valid Accounts; AML.T0073 Impersonation; AML.T0091 Use Alternate Authentication Material</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0019 Control Access to AI Models and Data in Production</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>MANAGE</td>
+<td>MEASURE 2.7; MEASURE 2.8</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.3 Internal organization; A.4 Resources for AI systems</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>None published in ISO/IEC 42001. The wiki's own identifier applies: AI-CTRL-015.</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html">L09</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html">D09</a></td>
+<td><strong>Tested By (31 cases)</strong></td>
+<td><strong>D09:</strong> <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-001">001</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-002">002</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-003">003</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-004">004</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-008">008</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-011">011</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-012">012</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-013">013</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-015">015</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-016">016</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-017">017</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-018">018</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-019">019</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-020">020</a><br><strong>D10:</strong> <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-015">015</a><br><strong>D11:</strong> <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-017">017</a><br><strong>L04:</strong> <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-030">030</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-010">010</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-018">018</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-035">035</a><br><strong>L09:</strong> <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-001">001</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-002">002</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-010">010</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-011">011</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-012">012</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-017">017</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-018">018</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-020">020</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-021">021</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-024">024</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-025">025</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -1179,23 +1400,27 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM06 Excessive Agency; ASI03 Identity &amp; Privilege Abuse</td>
+<td>LLM06:2025 Excessive Agency; ASI03 Identity &amp; Privilege Abuse</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>AML.T0012 Valid Accounts; AML.T0055 Unsecured Credentials</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>AML.T0012 Valid Accounts; AML.T0055 Unsecured Credentials; AML.T0083 Credentials from AI Agent Configuration; AML.T0098 AI Agent Tool Credential Harvesting</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0026 Privileged AI Agent Permissions Configuration; AML.M0027 Single-User AI Agent Permissions Configuration; AML.M0028 AI Agent Tools Permissions Configuration</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>MANAGE</td>
+<td>MEASURE 2.7; MANAGE 1.3</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.4 Resources for AI systems</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>None published in ISO/IEC 42001. The wiki's own identifier applies: AI-CTRL-016.</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html">L09</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html">D09</a></td>
+<td><strong>Tested By (39 cases)</strong></td>
+<td><strong>D09:</strong> <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-005">005</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-006">006</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-007">007</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-009">009</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-010">010</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-014">014</a><br><strong>D10:</strong> <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-003">003</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-021">021</a><br><strong>D13:</strong> <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-005">005</a><br><strong>L05:</strong> <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-010">010</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-012">012</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-013">013</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-017">017</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-019">019</a><br><strong>L07:</strong> <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-039">039</a><br><strong>L08:</strong> <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-029">029</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-039">039</a><br><strong>L09:</strong> <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-003">003</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-004">004</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-005">005</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-006">006</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-007">007</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-008">008</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-009">009</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-013">013</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-014">014</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-015">015</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-016">016</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-019">019</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-022">022</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-023">023</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-026">026</a><br><strong>L10:</strong> <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-017">017</a><br><strong>L11:</strong> <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-022">022</a><br><strong>L12:</strong> <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-014">014</a><br><strong>L13:</strong> <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-008">008</a><br><strong>L14:</strong> <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-008">008</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-022">022</a><br><strong>L15:</strong> <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-010">010</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -1244,23 +1469,27 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM02 Sensitive Information Disclosure</td>
+<td>LLM02:2025 Sensitive Information Disclosure</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>AML.T0057 LLM Data Leakage</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>AML.T0057 LLM Data Leakage; AML.T0085 Data from AI Services; AML.T0025 Exfiltration via Cyber Means</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0012 Encrypt Sensitive Information; AML.M0005 Control Access to AI Models and Data at Rest</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>MEASURE, MANAGE</td>
+<td>MEASURE 2.10; MEASURE 2.7</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.7 Data for AI systems</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.4.3 Data resources; A.7.6 Data preparation</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L10-data-layer.html">L10</a></td>
+<td><strong>Tested By (30 cases)</strong></td>
+<td><strong>D08:</strong> <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-023">023</a><br><strong>D10:</strong> <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-017">017</a><br><strong>D11:</strong> <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-022">022</a><br><strong>L03:</strong> <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-015">015</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-018">018</a><br><strong>L05:</strong> <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-023">023</a><br><strong>L08:</strong> <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-040">040</a><br><strong>L10:</strong> <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-001">001</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-002">002</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-003">003</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-004">004</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-005">005</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-007">007</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-008">008</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-009">009</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-010">010</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-011">011</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-015">015</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-016">016</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-020">020</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-023">023</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-029">029</a><br><strong>L11:</strong> <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-007">007</a>, <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-012">012</a>, <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-015">015</a>, <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-023">023</a><br><strong>L13:</strong> <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-006">006</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-009">009</a><br><strong>L14:</strong> <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-015">015</a><br><strong>L15:</strong> <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-012">012</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -1308,23 +1537,27 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM08 Vector and Embedding Weaknesses; LLM02 Sensitive Information Disclosure</td>
+<td>LLM08:2025 Vector and Embedding Weaknesses; LLM02:2025 Sensitive Information Disclosure</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>AML.T0057 LLM Data Leakage</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>AML.T0057 LLM Data Leakage; AML.T0085 Data from AI Services; AML.T0064 Gather RAG-Indexed Targets; AML.T0082 RAG Credential Harvesting</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0027 Single-User AI Agent Permissions Configuration; AML.M0019 Control Access to AI Models and Data in Production</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>MEASURE, MANAGE</td>
+<td>MEASURE 2.10; MEASURE 2.7</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.7 Data for AI systems</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>None published in ISO/IEC 42001. The wiki's own identifier applies: AI-CTRL-018.</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html">L11</a></td>
+<td><strong>Tested By (9 cases)</strong></td>
+<td><strong>L10:</strong> <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-006">006</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-018">018</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-019">019</a><br><strong>L11:</strong> <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-004">004</a>, <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-005">005</a>, <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-006">006</a>, <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-007">007</a>, <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-016">016</a>, <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-019">019</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -1372,23 +1605,27 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM04 Data and Model Poisoning; LLM08 Vector and Embedding Weaknesses</td>
+<td>LLM04:2025 Data and Model Poisoning; LLM08:2025 Vector and Embedding Weaknesses</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>AML.T0020 Poison Training Data; AML.T0051 LLM Prompt Injection</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>AML.T0070 RAG Poisoning; AML.T0071 False RAG Entry Injection; AML.T0066 Retrieval Content Crafting</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0025 Maintain AI Dataset Provenance</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>MEASURE, MANAGE</td>
+<td>MEASURE 2.7; MAP 2.3</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.7 Data for AI systems</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.7.3 Acquisition of data; A.7.4 Quality of data for AI systems; A.7.5 Data provenance</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html">L11</a></td>
+<td><strong>Tested By (12 cases)</strong></td>
+<td><strong>L07:</strong> <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-012">012</a><br><strong>L10:</strong> <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-024">024</a><br><strong>L11:</strong> <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-001">001</a>, <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-008">008</a>, <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-009">009</a>, <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-010">010</a>, <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-011">011</a>, <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-013">013</a>, <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-014">014</a>, <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-017">017</a>, <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-018">018</a>, <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-021">021</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -1437,23 +1674,27 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM01 Prompt Injection; LLM07 System Prompt Leakage</td>
+<td>LLM01:2025 Prompt Injection; LLM07:2025 System Prompt Leakage; ASI01 Agent Goal Hijack</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>AML.T0051 LLM Prompt Injection; AML.T0054 LLM Jailbreak; AML.T0056 LLM Meta Prompt Extraction</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>AML.T0051 LLM Prompt Injection; AML.T0054 LLM Jailbreak; AML.T0056 Extract LLM System Prompt; AML.T0068 LLM Prompt Obfuscation; AML.T0093 Prompt Infiltration via Public-Facing Application</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0020 Generative AI Guardrails; AML.M0021 Generative AI Guidelines; AML.M0033 Input and Output Validation for AI Agent Components</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>MEASURE, MANAGE</td>
+<td>MEASURE 2.7; MANAGE 1.3</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.6 AI system life cycle</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.6.2.4 AI system verification and validation; A.6.2.6 AI system operation and monitoring</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L05-ai-applications.html">L05</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html">L07</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html">L08</a></td>
+<td><strong>Tested By (52 cases)</strong></td>
+<td><strong>D10:</strong> <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-010">010</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-011">011</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-012">012</a><br><strong>D11:</strong> <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-002">002</a>, <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-003">003</a>, <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-012">012</a>, <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-013">013</a><br><strong>L05:</strong> <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-012">012</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-026">026</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-020">020</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-027">027</a><br><strong>L07:</strong> <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-001">001</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-002">002</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-003">003</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-004">004</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-005">005</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-006">006</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-007">007</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-008">008</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-009">009</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-010">010</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-011">011</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-012">012</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-013">013</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-014">014</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-015">015</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-016">016</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-017">017</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-018">018</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-019">019</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-020">020</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-021">021</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-022">022</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-023">023</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-024">024</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-025">025</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-026">026</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-031">031</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-032">032</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-033">033</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-035">035</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-036">036</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-037">037</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-039">039</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-041">041</a><br><strong>L08:</strong> <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-015">015</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-016">016</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-019">019</a><br><strong>L11:</strong> <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-014">014</a>, <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-020">020</a><br><strong>L14:</strong> <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-022">022</a><br><strong>L16:</strong> <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-016">016</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -1501,23 +1742,27 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM05 Improper Output Handling; LLM02 Sensitive Information Disclosure</td>
+<td>LLM05:2025 Improper Output Handling; LLM02:2025 Sensitive Information Disclosure</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>AML.T0057 LLM Data Leakage</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>AML.T0077 LLM Response Rendering; AML.T0067 LLM Trusted Output Components Manipulation; AML.T0057 LLM Data Leakage</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0033 Input and Output Validation for AI Agent Components; AML.M0020 Generative AI Guardrails</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>MEASURE, MANAGE</td>
+<td>MEASURE 2.7; MEASURE 2.10</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.6 AI system life cycle</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.6.2.4 AI system verification and validation; A.6.2.6 AI system operation and monitoring</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L05-ai-applications.html">L05</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html">L08</a></td>
+<td><strong>Tested By (12 cases)</strong></td>
+<td><strong>D11:</strong> <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-021">021</a><br><strong>L05:</strong> <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-014">014</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-015">015</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-016">016</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-017">017</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-020">020</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-022">022</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-024">024</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-030">030</a><br><strong>L07:</strong> <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-016">016</a><br><strong>L08:</strong> <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-020">020</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-035">035</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -1565,23 +1810,95 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM01 Prompt Injection; LLM02 Sensitive Information Disclosure</td>
+<td>LLM01:2025 Prompt Injection; LLM02:2025 Sensitive Information Disclosure</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>AML.T0051 LLM Prompt Injection; AML.T0057 LLM Data Leakage</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>AML.T0129 Triggers in Multimodal Inputs; AML.T0051 LLM Prompt Injection; AML.T0088 Generate Deepfakes</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0034 Deepfake Detection; AML.M0020 Generative AI Guardrails</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>MEASURE, MANAGE</td>
+<td>MEASURE 2.7; MEASURE 2.10</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.6 AI system life cycle; A.7 Data for AI systems</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.6.2.4 AI system verification and validation</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html">D11</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html">L04</a></td>
+<td><strong>Tested By (28 cases)</strong></td>
+<td><strong>D11:</strong> <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-001">001</a>, <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-002">002</a>, <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-003">003</a>, <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-004">004</a>, <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-005">005</a>, <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-006">006</a>, <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-007">007</a>, <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-008">008</a>, <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-009">009</a>, <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-010">010</a>, <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-011">011</a>, <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-012">012</a>, <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-013">013</a>, <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-014">014</a>, <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-015">015</a>, <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-016">016</a>, <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-017">017</a>, <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-018">018</a>, <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-019">019</a>, <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-020">020</a>, <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-021">021</a>, <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-022">022</a><br><strong>L04:</strong> <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-020">020</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-021">021</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-022">022</a><br><strong>L07:</strong> <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-014">014</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-023">023</a><br><strong>L08:</strong> <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-013">013</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-039"></a></p>
+<h4 id="ai-ctrl-039-output-reliability-and-content-safety">AI-CTRL-039: Output Reliability and Content Safety</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Keep AI output grounded, within its approved scope and free of harmful content.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Custom AI Applications / AI APIs / IDE AI</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R12</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Ground answers in approved sources and verify citations. Restrict assistants to their approved topics. Filter harmful and policy-violating output. Detect fabricated packages, links and references before users act on them, and measure factual accuracy against a baseline.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Grounding and citation test results; topic policy; harmful content filter results; factuality baseline.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Ask questions the sources cannot answer and confirm the assistant says so. Confirm fabricated package names and links are flagged, and off-topic requests are refused.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>Application Owner / AppSec</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Before each release and quarterly</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM09:2025 Misinformation</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>AML.T0062 Discover LLM Hallucinations; AML.T0060 Publish Hallucinated Entities; AML.T0048 External Harms</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0020 Generative AI Guardrails; AML.M0022 Generative AI Model Alignment</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MEASURE 2.5; MEASURE 2.6; MAP 2.2</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.6.2.4 AI system verification and validation; A.8.2 System documentation and information for users</td>
+</tr>
+<tr>
+<td><strong>Tested By (6 cases)</strong></td>
+<td><strong>L05:</strong> <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-018">018</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-019">019</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-021">021</a><br><strong>L08:</strong> <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-017">017</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-018">018</a><br><strong>L12:</strong> <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-017">017</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -1630,23 +1947,27 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM06 Excessive Agency; ASI10 Rogue Agents</td>
+<td>LLM06:2025 Excessive Agency; ASI10 Rogue Agents</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>AML.T0053 LLM Plugin Compromise</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>AML.T0081 Modify AI Agent Configuration</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0038 AI Agent Scope Drift Detection; AML.M0024 AI Telemetry Logging</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>GOVERN, MANAGE</td>
+<td>GOVERN 1.6; MEASURE 2.4</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.4 Resources for AI systems; A.9 Use of AI systems</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.4.2 Resource documentation; A.6.2.6 AI system operation and monitoring</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html">L06</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html">D09</a></td>
+<td><strong>Tested By (13 cases)</strong></td>
+<td><strong>D09:</strong> <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-020">020</a><br><strong>D10:</strong> <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-001">001</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-023">023</a><br><strong>L04:</strong> <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-023">023</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-001">001</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-002">002</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-003">003</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-004">004</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-017">017</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-029">029</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-034">034</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-035">035</a><br><strong>L17:</strong> <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-012">012</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -1694,23 +2015,27 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM06 Excessive Agency; ASI02 Tool Misuse &amp; Exploitation</td>
+<td>LLM06:2025 Excessive Agency; ASI02 Tool Misuse &amp; Exploitation</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>AML.T0053 LLM Plugin Compromise</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>AML.T0053 AI Agent Tool Invocation; AML.T0086 Exfiltration via AI Agent Tool Invocation; AML.T0101 Data Destruction via AI Agent Tool Invocation</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0028 AI Agent Tools Permissions Configuration; AML.M0030 Restrict AI Agent Tool Invocation on Untrusted Data; AML.M0033 Input and Output Validation for AI Agent Components</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>MANAGE</td>
+<td>MEASURE 2.7; MANAGE 1.3</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.6 AI system life cycle; A.9 Use of AI systems</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.6.2.2 AI system requirements and specification</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html">L06</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html">L09</a></td>
+<td><strong>Tested By (16 cases)</strong></td>
+<td><strong>D09:</strong> <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-010">010</a><br><strong>D10:</strong> <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-004">004</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-005">005</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-006">006</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-007">007</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-012">012</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-014">014</a><br><strong>L05:</strong> <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-022">022</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-011">011</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-014">014</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-019">019</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-024">024</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-033">033</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-036">036</a><br><strong>L07:</strong> <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-008">008</a><br><strong>L09:</strong> <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-006">006</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -1758,23 +2083,27 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM06 Excessive Agency; ASI09 Human-Agent Trust Exploitation</td>
+<td>LLM06:2025 Excessive Agency; ASI09 Human-Agent Trust Exploitation</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>—</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>AML.T0053 AI Agent Tool Invocation; AML.T0101 Data Destruction via AI Agent Tool Invocation</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0029 Human In-the-Loop for AI Agent Actions</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>MANAGE</td>
+<td>MAP 3.5; GOVERN 3.2</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.9 Use of AI systems</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.9.2 Processes for responsible use of AI systems; A.9.3 Objectives for responsible use of AI system</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html">L06</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html">D10</a></td>
+<td><strong>Tested By (7 cases)</strong></td>
+<td><strong>D10:</strong> <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-006">006</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-013">013</a><br><strong>L01:</strong> <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-012">012</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-015">015</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-016">016</a><br><strong>L07:</strong> <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-038">038</a><br><strong>L09:</strong> <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-012">012</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -1822,23 +2151,27 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM03 Supply Chain; ASI04 Agentic Supply Chain Vulnerabilities; ASI02 Tool Misuse &amp; Exploitation</td>
+<td>LLM03:2025 Supply Chain; ASI04 Agentic Supply Chain Vulnerabilities; ASI02 Tool Misuse &amp; Exploitation</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>AML.T0053 LLM Plugin Compromise; AML.T0010 AI Supply Chain Compromise</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>AML.T0110 AI Agent Tool Poisoning; AML.T0109 AI Supply Chain Rug Pull; AML.T0099 AI Agent Tool Data Poisoning; AML.T0010 AI Supply Chain Compromise</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0028 AI Agent Tools Permissions Configuration; AML.M0014 Verify AI Artifacts</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>GOVERN, MANAGE</td>
+<td>GOVERN 6.1; MAP 4.1; MAP 4.2; MANAGE 3.1</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.10 Third-party and customer relationships</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.10.3 Suppliers; A.4.4 Tooling resources</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html">L06</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html">L16</a></td>
+<td><strong>Tested By (14 cases)</strong></td>
+<td><strong>D10:</strong> <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-022">022</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-005">005</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-006">006</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-007">007</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-008">008</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-009">009</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-010">010</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-011">011</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-012">012</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-013">013</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-032">032</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-037">037</a><br><strong>L16:</strong> <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-015">015</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-026">026</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -1862,7 +2195,7 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a>, <a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R11</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
@@ -1886,23 +2219,27 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM06 Excessive Agency; ASI08 Cascading Failures; ASI10 Rogue Agents</td>
+<td>LLM06:2025 Excessive Agency; ASI08 Cascading Failures; ASI10 Rogue Agents</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>—</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>AML.T0053 AI Agent Tool Invocation; AML.T0034 Cost Harvesting</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0037 AI Agent Authority Expansion Controls; AML.M0036 Limit AI Workload Resource Consumption</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>MANAGE</td>
+<td>MANAGE 2.4; MANAGE 2.3</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.6 AI system life cycle</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.6.2.6 AI system operation and monitoring</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html">L06</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html">D10</a>, <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html">D12</a></td>
+<td><strong>Tested By (10 cases)</strong></td>
+<td><strong>D09:</strong> <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-016">016</a><br><strong>D10:</strong> <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-019">019</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-020">020</a><br><strong>D12:</strong> <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-011">011</a><br><strong>D13:</strong> <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-009">009</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-021">021</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-022">022</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-023">023</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-024">024</a><br><strong>L17:</strong> <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-019">019</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -1950,23 +2287,27 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM01 Prompt Injection; ASI06 Memory &amp; Context Poisoning</td>
+<td>LLM04:2025 Data and Model Poisoning; LLM01:2025 Prompt Injection; ASI06 Memory &amp; Context Poisoning</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>AML.T0051 LLM Prompt Injection</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>AML.T0080 AI Agent Context Poisoning; AML.T0092 Manipulate User LLM Chat History; AML.T0094 Delay Execution of LLM Instructions</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0031 Memory Hardening</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>MEASURE, MANAGE</td>
+<td>MEASURE 2.7; MEASURE 2.10</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.6 AI system life cycle</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.6.2.6 AI system operation and monitoring</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html">L07</a></td>
+<td><strong>Tested By (5 cases)</strong></td>
+<td><strong>L07:</strong> <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-027">027</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-028">028</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-029">029</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-030">030</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-035">035</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -2014,23 +2355,27 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM06 Excessive Agency; ASI05 Unexpected Code Execution (RCE)</td>
+<td>LLM06:2025 Excessive Agency; ASI05 Unexpected Code Execution (RCE)</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>AML.T0050 Command and Scripting Interpreter</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>AML.T0050 Command and Scripting Interpreter; AML.T0105 Escape to Host; AML.T0102 Generate Malicious Commands</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0032 Segmentation of AI Agent Components; AML.M0011 Restrict Library Loading</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>MANAGE</td>
+<td>MEASURE 2.7; MANAGE 1.3</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.6 AI system life cycle</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.4.5 System and computing resources; A.6.2.5 AI system deployment</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html">L06</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html">D10</a></td>
+<td><strong>Tested By (10 cases)</strong></td>
+<td><strong>D10:</strong> <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-002">002</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-003">003</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-008">008</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-009">009</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-016">016</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-021">021</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-025">025</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-026">026</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-031">031</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-036">036</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -2079,23 +2424,27 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM10 Unbounded Consumption; LLM03 Supply Chain</td>
+<td>LLM10:2025 Unbounded Consumption; LLM02:2025 Sensitive Information Disclosure</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>AML.T0024 Exfiltration via AI Inference API; AML.T0043 Craft Adversarial Data</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>AML.T0024 Exfiltration via AI Inference API; AML.T0043 Craft Adversarial Data; AML.T0015 Evade AI Model; AML.T0044 Full AI Model Access; AML.T0018 Manipulate AI Model</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0004 Limit AI Service Query Volume and Rate; AML.M0005 Control Access to AI Models and Data at Rest; AML.M0003 Predictive AI Model Hardening; AML.M0015 Predictive AI Adversarial Input Detection; AML.M0008 Validate AI Model</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>MEASURE, MANAGE</td>
+<td>MEASURE 2.7; MEASURE 2.5</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.6 AI system life cycle</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.6.2.4 AI system verification and validation; A.6.2.6 AI system operation and monitoring</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L12-model-layer.html">L12</a></td>
+<td><strong>Tested By (16 cases)</strong></td>
+<td><strong>D11:</strong> <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-004">004</a><br><strong>L12:</strong> <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-002">002</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-003">003</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-004">004</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-007">007</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-008">008</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-009">009</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-010">010</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-011">011</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-012">012</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-013">013</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-015">015</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-024">024</a><br><strong>L13:</strong> <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-017">017</a><br><strong>L15:</strong> <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-011">011</a><br><strong>L16:</strong> <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-005">005</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -2143,23 +2492,27 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM04 Data and Model Poisoning</td>
+<td>LLM04:2025 Data and Model Poisoning</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>AML.T0020 Poison Training Data</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>AML.T0020 Training Data Poisoning; AML.T0059 Erode Dataset Integrity</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0007 Sanitize Training Data; AML.M0025 Maintain AI Dataset Provenance</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>MAP, MEASURE</td>
+<td>MAP 2.3; MAP 4.1; MEASURE 2.7; MEASURE 2.10</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.7 Data for AI systems</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.7.2 Data for development and enhancement of AI system; A.7.3 Acquisition of data; A.7.4 Quality of data for AI systems; A.7.5 Data provenance</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html">L13</a></td>
+<td><strong>Tested By (15 cases)</strong></td>
+<td><strong>D12:</strong> <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-013">013</a><br><strong>L13:</strong> <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-001">001</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-002">002</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-003">003</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-004">004</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-005">005</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-006">006</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-007">007</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-008">008</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-013">013</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-014">014</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-015">015</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-016">016</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-018">018</a><br><strong>L14:</strong> <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-014">014</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -2207,27 +2560,31 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM03 Supply Chain; LLM04 Data and Model Poisoning</td>
+<td>LLM03:2025 Supply Chain; LLM04:2025 Data and Model Poisoning</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>AML.T0010 AI Supply Chain Compromise; AML.T0012 Valid Accounts</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>AML.T0010 AI Supply Chain Compromise; AML.T0018 Manipulate AI Model; AML.T0119 Exploit Automated Artifact Processing Pipeline</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0013 Code Signing; AML.M0014 Verify AI Artifacts</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>MEASURE, MANAGE</td>
+<td>MEASURE 2.7; MAP 4.2</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.6 AI system life cycle</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.6.2.5 AI system deployment; A.6.2.3 Documentation of AI system design and development</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html">L14</a></td>
+<td><strong>Tested By (16 cases)</strong></td>
+<td><strong>D08:</strong> <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-020">020</a><br><strong>L07:</strong> <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-034">034</a><br><strong>L12:</strong> <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-004">004</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-023">023</a><br><strong>L13:</strong> <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-012">012</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-013">013</a><br><strong>L14:</strong> <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-001">001</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-002">002</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-003">003</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-004">004</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-005">005</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-012">012</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-013">013</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-014">014</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-018">018</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-019">019</a></td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="supply-chain-and-infrastructure">Supply Chain and Infrastructure</h3>
+<h3 id="supply-chain-infrastructure-and-resilience">Supply Chain, Infrastructure and Resilience</h3>
 <p><a id="ai-ctrl-031"></a></p>
 <h4 id="ai-ctrl-031-ai-supply-chain-and-ai-bom">AI-CTRL-031: AI Supply Chain and AI-BOM</h4>
 <div class="table-wrap"><table>
@@ -2272,23 +2629,27 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM03 Supply Chain</td>
+<td>LLM03:2025 Supply Chain</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>AML.T0010 AI Supply Chain Compromise</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>AML.T0010 AI Supply Chain Compromise; AML.T0109 AI Supply Chain Rug Pull; AML.T0115 Publish Poisoned AI Artifacts; AML.T0111 AI Supply Chain Reputation Inflation</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0023 AI Bill of Materials; AML.M0014 Verify AI Artifacts; AML.M0016 Vulnerability Scanning</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>GOVERN, MAP, MANAGE</td>
+<td>GOVERN 6.1; MAP 4.1; MANAGE 3.1; MANAGE 3.2</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.10 Third-party and customer relationships; A.4 Resources for AI systems</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.10.3 Suppliers; A.4.2 Resource documentation; A.7.5 Data provenance</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html">L16</a></td>
+<td><strong>Tested By (24 cases)</strong></td>
+<td><strong>L05:</strong> <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-019">019</a><br><strong>L08:</strong> <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-028">028</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-042">042</a><br><strong>L12:</strong> <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-001">001</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-002">002</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-005">005</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-006">006</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-018">018</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-019">019</a><br><strong>L13:</strong> <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-014">014</a><br><strong>L14:</strong> <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-009">009</a><br><strong>L16:</strong> <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-001">001</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-002">002</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-003">003</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-004">004</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-005">005</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-006">006</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-007">007</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-013">013</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-014">014</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-015">015</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-016">016</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-017">017</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-024">024</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -2336,23 +2697,95 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM03 Supply Chain; LLM02 Sensitive Information Disclosure</td>
+<td>LLM03:2025 Supply Chain</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>AML.T0049 Exploit Public-Facing Application; AML.T0055 Unsecured Credentials</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>AML.T0049 Exploit Public-Facing Application; AML.T0132 Misconfigured or Publicly Exposed AI Services; AML.T0055 Unsecured Credentials; AML.T0025 Exfiltration via Cyber Means</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0005 Control Access to AI Models and Data at Rest; AML.M0012 Encrypt Sensitive Information; AML.M0016 Vulnerability Scanning; AML.M0019 Control Access to AI Models and Data in Production</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>MANAGE</td>
+<td>MEASURE 2.7; MAP 4.2</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.4 Resources for AI systems</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.4.5 System and computing resources</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L15-infrastructure-layer.html">L15</a></td>
+<td><strong>Tested By (26 cases)</strong></td>
+<td><strong>L09:</strong> <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-019">019</a><br><strong>L10:</strong> <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-023">023</a><br><strong>L11:</strong> <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-002">002</a>, <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-003">003</a><br><strong>L12:</strong> <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-020">020</a><br><strong>L13:</strong> <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-011">011</a><br><strong>L14:</strong> <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-006">006</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-007">007</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-010">010</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-011">011</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-020">020</a><br><strong>L15:</strong> <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-001">001</a>, <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-002">002</a>, <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-003">003</a>, <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-004">004</a>, <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-005">005</a>, <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-006">006</a>, <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-007">007</a>, <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-008">008</a>, <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-009">009</a>, <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-010">010</a>, <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-011">011</a>, <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-012">012</a>, <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-015">015</a>, <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-016">016</a><br><strong>L16:</strong> <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-017">017</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-040"></a></p>
+<h4 id="ai-ctrl-040-ai-service-resilience-and-fail-safe-operation">AI-CTRL-040: AI Service Resilience and Fail-Safe Operation</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Keep AI services and their security controls available, and make them fail safely.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>AI APIs / Custom AI Applications / Agents / Vendors</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R13</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Decide for each control whether it fails open or closed, and test it. Measure the latency and quality cost of controls so that teams do not remove them. Provide failover that keeps guardrails, residency and logging intact. Keep tested fallback paths for AI-dependent processes, tested backups and an exit plan for each provider. Detect silent failure of controls.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Fail-mode test results; latency and load measurements; failover and restore tests; continuity and exit plans; health monitoring alerts.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Disable the protection layer in the lab and confirm the documented fail mode. Fail over to the secondary model or region and confirm policy, logging and residency still hold.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>Platform Engineering / Application Owner</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Semi-annually</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>None published in the OWASP Top 10 lists. The wiki's own identifier applies: AI-CTRL-040.</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>AML.T0029 Denial of AI Service</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0036 Limit AI Workload Resource Consumption</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MEASURE 2.7; GOVERN 6.2; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.6.2.6 AI system operation and monitoring; A.4.5 System and computing resources</td>
+</tr>
+<tr>
+<td><strong>Tested By (13 cases)</strong></td>
+<td><strong>L01:</strong> <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-018">018</a><br><strong>L05:</strong> <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-013">013</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-030">030</a><br><strong>L08:</strong> <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-032">032</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-033">033</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-034">034</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-035">035</a><br><strong>L11:</strong> <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-025">025</a><br><strong>L12:</strong> <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-021">021</a><br><strong>L15:</strong> <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-019">019</a><br><strong>L16:</strong> <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-012">012</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-020">020</a><br><strong>L17:</strong> <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-028">028</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -2401,23 +2834,27 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>—</td>
+<td>None published in the OWASP Top 10 lists. The wiki's own identifier applies: AI-CTRL-033.</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>—</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>None published in MITRE ATLAS techniques. The wiki's own identifier applies: AI-CTRL-033.</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>None published in MITRE ATLAS mitigations. The wiki's own identifier applies: AI-CTRL-033.</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>GOVERN, MAP</td>
+<td>MANAGE 1.1; GOVERN 4.2; MEASURE 2.7</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.5 Assessing impacts of AI systems; A.6 AI system life cycle</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.5.2 AI system impact assessment process; A.6.2.2 AI system requirements and specification; A.6.2.4 AI system verification and validation; A.6.2.5 AI system deployment</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L01-business-and-use-cases.html">L01</a>, <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html">L02</a></td>
+<td><strong>Tested By (6 cases)</strong></td>
+<td><strong>L01:</strong> <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-002">002</a>, <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-013">013</a>, <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-014">014</a>, <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-015">015</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-034">034</a><br><strong>L14:</strong> <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-012">012</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -2465,23 +2902,95 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM01 Prompt Injection; LLM10 Unbounded Consumption</td>
+<td>LLM01:2025 Prompt Injection; LLM02:2025 Sensitive Information Disclosure; LLM03:2025 Supply Chain; LLM04:2025 Data and Model Poisoning; LLM05:2025 Improper Output Handling; LLM06:2025 Excessive Agency; LLM07:2025 System Prompt Leakage; LLM08:2025 Vector and Embedding Weaknesses; LLM09:2025 Misinformation; LLM10:2025 Unbounded Consumption</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>AML.T0051 LLM Prompt Injection; AML.T0054 LLM Jailbreak</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>None published in MITRE ATLAS techniques. The wiki's own identifier applies: AI-CTRL-034.</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0035 AI Red Team</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>MEASURE</td>
+<td>MEASURE 2.7; MEASURE 2.6; MEASURE 2.1; GOVERN 4.3</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.6 AI system life cycle</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.6.2.4 AI system verification and validation</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html">D08</a></td>
+<td><strong>Tested By (36 cases)</strong></td>
+<td><strong>D08:</strong> <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-001">001</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-002">002</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-003">003</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-004">004</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-005">005</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-006">006</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-007">007</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-008">008</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-009">009</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-010">010</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-011">011</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-012">012</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-013">013</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-014">014</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-015">015</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-016">016</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-017">017</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-018">018</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-019">019</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-020">020</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-021">021</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-022">022</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-023">023</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-024">024</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-025">025</a><br><strong>D12:</strong> <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-014">014</a><br><strong>L05:</strong> <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-027">027</a><br><strong>L07:</strong> <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-024">024</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-040">040</a><br><strong>L12:</strong> <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-016">016</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-018">018</a><br><strong>L13:</strong> <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-010">010</a><br><strong>L14:</strong> <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-002">002</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-016">016</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-017">017</a><br><strong>L17:</strong> <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-029">029</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-038"></a></p>
+<h4 id="ai-ctrl-038-control-assurance-and-audit-evidence">AI-CTRL-038: Control Assurance and Audit Evidence</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Show, with current evidence, that each AI control is operating and that findings are closed.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Browser AI / IDE AI / AI APIs / Custom AI Applications / Agents / Vendors</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R09</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Measure control effectiveness on a schedule. Collect evidence automatically where possible and record its age. Have control owners attest periodically. Track findings to verified closure, and protect governance records from silent change.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Control effectiveness results; evidence packs with collection dates; owner attestations; findings log; record change history.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Request an evidence pack for a sampled control at short notice and check that the evidence is current. Confirm a closed finding was verified before closure.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>GRC / Internal Audit</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>None published in the OWASP Top 10 lists. The wiki's own identifier applies: AI-CTRL-038.</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>None published in MITRE ATLAS techniques. The wiki's own identifier applies: AI-CTRL-038.</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>None published in MITRE ATLAS mitigations. The wiki's own identifier applies: AI-CTRL-038.</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>GOVERN 1.5; MEASURE 1.2; MEASURE 1.3; MANAGE 4.2</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>Clause 9.1 Monitoring, measurement, analysis and evaluation; Clause 9.2 Internal audit; Clause 9.3 Management review; Clause 10.2 Nonconformity and corrective action</td>
+</tr>
+<tr>
+<td><strong>Tested By (17 cases)</strong></td>
+<td><strong>D09:</strong> <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-019">019</a><br><strong>L02:</strong> <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-003">003</a>, <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-013">013</a>, <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-014">014</a>, <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-015">015</a>, <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-016">016</a>, <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-017">017</a>, <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-018">018</a>, <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-019">019</a>, <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-024">024</a>, <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-025">025</a><br><strong>L03:</strong> <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-022">022</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-023">023</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-024">024</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-025">025</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-026">026</a><br><strong>L10:</strong> <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-030">030</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -2530,23 +3039,27 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM02 Sensitive Information Disclosure; LLM06 Excessive Agency</td>
+<td>None published in the OWASP Top 10 lists. The wiki's own identifier applies: AI-CTRL-008.</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>—</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>None published in MITRE ATLAS techniques. The wiki's own identifier applies: AI-CTRL-008.</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0024 AI Telemetry Logging</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>MEASURE, MANAGE</td>
+<td>MEASURE 2.4; MEASURE 2.8; MANAGE 4.1</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.6 AI system life cycle; A.8 Information for interested parties</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.6.2.8 AI system recording of event logs</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html">L17</a>, <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html">D12</a></td>
+<td><strong>Tested By (19 cases)</strong></td>
+<td><strong>D09:</strong> <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-012">012</a><br><strong>D10:</strong> <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-018">018</a><br><strong>D12:</strong> <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-006">006</a><br><strong>L02:</strong> <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-025">025</a><br><strong>L05:</strong> <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-025">025</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-028">028</a><br><strong>L08:</strong> <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-040">040</a><br><strong>L09:</strong> <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-025">025</a><br><strong>L10:</strong> <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-026">026</a><br><strong>L11:</strong> <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-024">024</a><br><strong>L14:</strong> <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-019">019</a><br><strong>L15:</strong> <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-018">018</a><br><strong>L17:</strong> <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-001">001</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-002">002</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-004">004</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-005">005</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-020">020</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-030">030</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-031">031</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -2594,23 +3107,27 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM06 Excessive Agency</td>
+<td>None published in the OWASP Top 10 lists. The wiki's own identifier applies: AI-CTRL-009.</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>—</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>None published in MITRE ATLAS techniques. The wiki's own identifier applies: AI-CTRL-009.</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0024 AI Telemetry Logging</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>MEASURE, MANAGE</td>
+<td>MEASURE 2.4; MEASURE 3.1; MANAGE 4.1</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.6 AI system life cycle</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.6.2.6 AI system operation and monitoring; A.6.2.8 AI system recording of event logs</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html">L17</a></td>
+<td><strong>Tested By (22 cases)</strong></td>
+<td><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-029">029</a><br><strong>L07:</strong> <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-037">037</a><br><strong>L09:</strong> <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-017">017</a><br><strong>L14:</strong> <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-016">016</a><br><strong>L17:</strong> <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-001">001</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-003">003</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-006">006</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-007">007</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-008">008</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-009">009</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-010">010</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-011">011</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-012">012</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-013">013</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-014">014</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-015">015</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-016">016</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-024">024</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-025">025</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-027">027</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-028">028</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-029">029</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -2658,23 +3175,27 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM06 Excessive Agency</td>
+<td>None published in the OWASP Top 10 lists. The wiki's own identifier applies: AI-CTRL-035.</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>—</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>None published in MITRE ATLAS techniques. The wiki's own identifier applies: AI-CTRL-035.</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0024 AI Telemetry Logging</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>MANAGE</td>
+<td>MANAGE 4.3; MANAGE 2.3; GOVERN 4.3; GOVERN 6.2</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.6 AI system life cycle; A.8 Information for interested parties</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.8.4 Communication of incidents; A.8.3 External reporting; A.3.3 Reporting of concerns; A.6.2.6 AI system operation and monitoring</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html">D12</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html">L17</a></td>
+<td><strong>Tested By (39 cases)</strong></td>
+<td><strong>D09:</strong> <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-017">017</a><br><strong>D12:</strong> <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-001">001</a>, <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-002">002</a>, <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-003">003</a>, <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-004">004</a>, <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-005">005</a>, <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-006">006</a>, <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-007">007</a>, <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-008">008</a>, <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-009">009</a>, <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-010">010</a>, <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-011">011</a>, <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-012">012</a>, <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-013">013</a>, <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-014">014</a>, <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-015">015</a>, <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-016">016</a>, <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-017">017</a>, <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-018">018</a>, <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-019">019</a>, <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-020">020</a>, <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-021">021</a>, <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-022">022</a><br><strong>L03:</strong> <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-019">019</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-027">027</a><br><strong>L10:</strong> <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-027">027</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-028">028</a><br><strong>L16:</strong> <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-021">021</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-024">024</a><br><strong>L17:</strong> <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-015">015</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-017">017</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-018">018</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-019">019</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-020">020</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-021">021</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-022">022</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-023">023</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-026">026</a>, <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-027">027</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -2699,7 +3220,7 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a></td>
+<td><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R11</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
@@ -2723,26 +3244,31 @@
 </tr>
 <tr>
 <td><strong>OWASP</strong></td>
-<td>LLM10 Unbounded Consumption</td>
+<td>LLM10:2025 Unbounded Consumption</td>
 </tr>
 <tr>
-<td><strong>MITRE ATLAS</strong></td>
-<td>AML.T0034 Cost Harvesting; AML.T0029 Denial of AI Service</td>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>AML.T0034 Cost Harvesting; AML.T0029 Denial of AI Service; AML.T0046 Spamming AI System with Chaff Data</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0004 Limit AI Service Query Volume and Rate; AML.M0036 Limit AI Workload Resource Consumption</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
-<td>MANAGE</td>
+<td>MEASURE 2.7; MANAGE 4.1</td>
 </tr>
 <tr>
-<td><strong>ISO/IEC 42001 Annex A</strong></td>
-<td>A.4 Resources for AI systems</td>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.4.5 System and computing resources</td>
 </tr>
 <tr>
-<td><strong>Tested By</strong></td>
-<td><a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html">D13</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html">L08</a></td>
+<td><strong>Tested By (30 cases)</strong></td>
+<td><strong>D11:</strong> <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-011">011</a><br><strong>D13:</strong> <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-001">001</a>, <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-002">002</a>, <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-003">003</a>, <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-004">004</a>, <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-005">005</a>, <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-006">006</a>, <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-007">007</a>, <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-008">008</a>, <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-009">009</a>, <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-010">010</a>, <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-011">011</a>, <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-012">012</a>, <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-013">013</a>, <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-014">014</a>, <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-015">015</a>, <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-016">016</a>, <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-017">017</a>, <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-018">018</a>, <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-019">019</a>, <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-020">020</a>, <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-021">021</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-021">021</a><br><strong>L07:</strong> <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-032">032</a><br><strong>L08:</strong> <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-030">030</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-031">031</a><br><strong>L12:</strong> <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-013">013</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-022">022</a><br><strong>L13:</strong> <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-020">020</a><br><strong>L15:</strong> <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-017">017</a></td>
 </tr>
 </tbody>
 </table></div>
+<p>Case numbers in <strong>Tested By</strong> are short for the full ID: under L06, <code>001</code> is <code>TC-L06-001</code>.</p>
 <h2 id="standard-control-entry-template">Standard Control Entry Template</h2>
 <p>Use this template when adding a control. Give it the next free ID and do not reuse or renumber existing IDs, because other pages link to them.</p>
 <pre><code class="language-markdown"># Control ID: AI-CTRL-XXX
@@ -2766,7 +3292,7 @@ Browser AI / IDE AI / AI APIs / Custom AI Applications / Agents / Vendors
 ## Review Frequency
 
 ## Framework Mapping
-OWASP / MITRE ATLAS / NIST AI RMF / ISO/IEC 42001
+OWASP / MITRE ATLAS techniques and mitigations / NIST AI RMF / ISO/IEC 42001
 
 ## Tested By
 </code></pre>

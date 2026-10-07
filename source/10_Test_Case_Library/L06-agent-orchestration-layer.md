@@ -11,7 +11,7 @@ nav_order: 9
 
 **Primary test focus:** agent and MCP discovery, tool governance, delegation chains, kill switch
 
-**Controls tested:** [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006), [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022), [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023), [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024), [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025), [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027)
+**Controls tested:** [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance (11 cases), [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) Agent Governance (8 cases), [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization (6 cases), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials (4 cases), [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) Agent Containment and Kill Switch (4 cases), [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) Agent Execution Isolation (4 cases), [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity (3 cases), [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security (2 cases), [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) Human Approval for Sensitive Actions (2 cases), [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance (1 case), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability (1 case), [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration (1 case), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance (1 case), [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) Output Handling (1 case), [AI-CTRL-033](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-033) AI Security Review and Release Gate (1 case), [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls (1 case)
 
 **Cases:** 37 (TC-L06-001 to TC-L06-037)
 > **Safety boundary.** Agent and MCP cases use a lab agent framework, benign mock tools and mock MCP servers that write only to a lab sink. Where an attack is simulated, success is first measured with the platform disabled. Never connect lab agents to production systems or real credentials.
@@ -20,45 +20,45 @@ nav_order: 9
 
 ## Cases in this layer
 
-| ID | Title | Severity | Method | Domain(s) |
-|---|---|---|---|---|
-| [TC-L06-001](#tc-l06-001) | Agent Discovery Across Platforms and Custom Builds | Critical | Technical | D5 |
-| [TC-L06-002](#tc-l06-002) | Agent Inventory Enrichment: Owner, Tools, Data and Model | High | Evidence | D5 |
-| [TC-L06-003](#tc-l06-003) | Shadow Agent Detection (Unregistered and Local Agents) | Critical | Technical | D5, D2 |
-| [TC-L06-004](#tc-l06-004) | Low-Code and No-Code Agent Builder Discovery | High | Technical | D5, D1 |
-| [TC-L06-005](#tc-l06-005) | MCP Server Discovery (Local and Remote) | Critical | Technical | D5 |
-| [TC-L06-006](#tc-l06-006) | MCP Server Trust: Registry and Allow-List Enforcement | Critical | Technical | D5 |
-| [TC-L06-007](#tc-l06-007) | MCP Tool Description Poisoning | Critical | Technical | D5, D3 |
-| [TC-L06-008](#tc-l06-008) | MCP Rug-Pull: Tool Definition Change After Approval | Critical | Technical | D5 |
-| [TC-L06-009](#tc-l06-009) | MCP Tool Shadowing and Name Collision | High | Technical | D5 |
-| [TC-L06-010](#tc-l06-010) | MCP Authentication and Transport Security | High | Technical | D5, D7 |
-| [TC-L06-011](#tc-l06-011) | MCP Gateway Policy: Per-Tool Allow and Deny | Critical | Technical | D5 |
-| [TC-L06-012](#tc-l06-012) | Tool Inventory and Permission Scope Mapping | High | Evidence | D5 |
-| [TC-L06-013](#tc-l06-013) | Least-Privilege Tool Allow-Listing Per Agent | Critical | Technical | D5 |
-| [TC-L06-014](#tc-l06-014) | Tool Call Argument Validation and Parameter-Level Policy | Critical | Technical | D5, D3 |
-| [TC-L06-015](#tc-l06-015) | High-Risk Action Approval (Human in the Loop) | Critical | Technical | D5 |
-| [TC-L06-016](#tc-l06-016) | Approval Fatigue and Approval Bypass Resistance | High | Technical | D5 |
-| [TC-L06-017](#tc-l06-017) | Delegation Chains: Sub-Agent Authority Attenuation | Critical | Technical | D5 |
-| [TC-L06-018](#tc-l06-018) | Agent-to-Agent Message Authenticity | High | Technical | D5 |
-| [TC-L06-019](#tc-l06-019) | Confused Deputy: Agent Acting Beyond the User's Intent | Critical | Technical | D5 |
-| [TC-L06-020](#tc-l06-020) | Cross-Agent Prompt Injection Propagation | Critical | Technical | D5, D3 |
-| [TC-L06-021](#tc-l06-021) | Runaway Loop and Recursion Detection | High | Technical | D5 |
-| [TC-L06-022](#tc-l06-022) | Kill Switch: Stopping a Single Agent | Critical | Technical | D5 |
-| [TC-L06-023](#tc-l06-023) | Kill Switch: Global Credential Revocation and Action Rollback | Critical | Technical | D5, D7 |
-| [TC-L06-024](#tc-l06-024) | Action Rate Limits and Blast-Radius Caps | High | Technical | D5 |
-| [TC-L06-025](#tc-l06-025) | Agent Sandboxing for Code Execution | Critical | Technical | D5, D3 |
-| [TC-L06-026](#tc-l06-026) | Agent Runtime File and Network Egress Restrictions | High | Technical | D5, D7 |
-| [TC-L06-027](#tc-l06-027) | Goal Hijacking Mid-Task | High | Technical | D5 |
-| [TC-L06-028](#tc-l06-028) | Agent Action Logging and Replayable Traces | High | Technical | D5 |
-| [TC-L06-029](#tc-l06-029) | Agent Behaviour Baselining and Anomaly Detection | High | Technical | D5 |
-| [TC-L06-030](#tc-l06-030) | Tool Output DLP and Sanitisation | High | Technical | D6, D5 |
-| [TC-L06-031](#tc-l06-031) | Browser and Computer-Use Agent Controls | High | Technical | D5, D1 |
-| [TC-L06-032](#tc-l06-032) | Third-Party Agent and Plugin Vetting | High | Evidence | D5, D4 |
-| [TC-L06-033](#tc-l06-033) | Orchestration Graph Policy as Code | Medium | Technical | D5 |
-| [TC-L06-034](#tc-l06-034) | Agent Change Control and Re-Approval | Medium | Technical | D5 |
-| [TC-L06-035](#tc-l06-035) | Agent Decommissioning and Orphan Agent Handling | Medium | Evidence | D5 |
-| [TC-L06-036](#tc-l06-036) | Coding Agent Terminal Command and File-System Guardrails | Critical | Technical | D2, D5 |
-| [TC-L06-037](#tc-l06-037) | IDE and Coding Agent MCP Server Configuration Discovery | High | Technical | D2, D5 |
+| ID | Title | Severity | Method | Domain(s) | Controls |
+|---|---|---|---|---|---|
+| [TC-L06-001](#tc-l06-001) | Agent Discovery Across Platforms and Custom Builds | Critical | Technical | D5 | [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) |
+| [TC-L06-002](#tc-l06-002) | Agent Inventory Enrichment: Owner, Tools, Data and Model | High | Evidence | D5 | [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) |
+| [TC-L06-003](#tc-l06-003) | Shadow Agent Detection (Unregistered and Local Agents) | Critical | Technical | D5, D2 | [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) |
+| [TC-L06-004](#tc-l06-004) | Low-Code and No-Code Agent Builder Discovery | High | Technical | D5, D1 | [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) |
+| [TC-L06-005](#tc-l06-005) | MCP Server Discovery (Local and Remote) | Critical | Technical | D5 | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) |
+| [TC-L06-006](#tc-l06-006) | MCP Server Trust: Registry and Allow-List Enforcement | Critical | Technical | D5 | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) |
+| [TC-L06-007](#tc-l06-007) | MCP Tool Description Poisoning | Critical | Technical | D5, D3 | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) |
+| [TC-L06-008](#tc-l06-008) | MCP Rug-Pull: Tool Definition Change After Approval | Critical | Technical | D5 | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) |
+| [TC-L06-009](#tc-l06-009) | MCP Tool Shadowing and Name Collision | High | Technical | D5 | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) |
+| [TC-L06-010](#tc-l06-010) | MCP Authentication and Transport Security | High | Technical | D5, D7 | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024), [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
+| [TC-L06-011](#tc-l06-011) | MCP Gateway Policy: Per-Tool Allow and Deny | Critical | Technical | D5 | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024), [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) |
+| [TC-L06-012](#tc-l06-012) | Tool Inventory and Permission Scope Mapping | High | Evidence | D5 | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-L06-013](#tc-l06-013) | Least-Privilege Tool Allow-Listing Per Agent | Critical | Technical | D5 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016), [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) |
+| [TC-L06-014](#tc-l06-014) | Tool Call Argument Validation and Parameter-Level Policy | Critical | Technical | D5, D3 | [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) |
+| [TC-L06-015](#tc-l06-015) | High-Risk Action Approval (Human in the Loop) | Critical | Technical | D5 | [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) |
+| [TC-L06-016](#tc-l06-016) | Approval Fatigue and Approval Bypass Resistance | High | Technical | D5 | [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) |
+| [TC-L06-017](#tc-l06-017) | Delegation Chains: Sub-Agent Authority Attenuation | Critical | Technical | D5 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016), [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) |
+| [TC-L06-018](#tc-l06-018) | Agent-to-Agent Message Authenticity | High | Technical | D5 | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
+| [TC-L06-019](#tc-l06-019) | Confused Deputy: Agent Acting Beyond the User's Intent | Critical | Technical | D5 | [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-L06-020](#tc-l06-020) | Cross-Agent Prompt Injection Propagation | Critical | Technical | D5, D3 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L06-021](#tc-l06-021) | Runaway Loop and Recursion Detection | High | Technical | D5 | [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025), [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) |
+| [TC-L06-022](#tc-l06-022) | Kill Switch: Stopping a Single Agent | Critical | Technical | D5 | [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) |
+| [TC-L06-023](#tc-l06-023) | Kill Switch: Global Credential Revocation and Action Rollback | Critical | Technical | D5, D7 | [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) |
+| [TC-L06-024](#tc-l06-024) | Action Rate Limits and Blast-Radius Caps | High | Technical | D5 | [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025), [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) |
+| [TC-L06-025](#tc-l06-025) | Agent Sandboxing for Code Execution | Critical | Technical | D5, D3 | [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) |
+| [TC-L06-026](#tc-l06-026) | Agent Runtime File and Network Egress Restrictions | High | Technical | D5, D7 | [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) |
+| [TC-L06-027](#tc-l06-027) | Goal Hijacking Mid-Task | High | Technical | D5 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-L06-028](#tc-l06-028) | Agent Action Logging and Replayable Traces | High | Technical | D5 | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) |
+| [TC-L06-029](#tc-l06-029) | Agent Behaviour Baselining and Anomaly Detection | High | Technical | D5 | [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006), [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) |
+| [TC-L06-030](#tc-l06-030) | Tool Output DLP and Sanitisation | High | Technical | D6, D5 | [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) |
+| [TC-L06-031](#tc-l06-031) | Browser and Computer-Use Agent Controls | High | Technical | D5, D1 | [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) |
+| [TC-L06-032](#tc-l06-032) | Third-Party Agent and Plugin Vetting | High | Evidence | D5, D4 | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) |
+| [TC-L06-033](#tc-l06-033) | Orchestration Graph Policy as Code | Medium | Technical | D5 | [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) |
+| [TC-L06-034](#tc-l06-034) | Agent Change Control and Re-Approval | Medium | Technical | D5 | [AI-CTRL-033](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-033), [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) |
+| [TC-L06-035](#tc-l06-035) | Agent Decommissioning and Orphan Agent Handling | Medium | Evidence | D5 | [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006), [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
+| [TC-L06-036](#tc-l06-036) | Coding Agent Terminal Command and File-System Guardrails | Critical | Technical | D2, D5 | [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027), [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) |
+| [TC-L06-037](#tc-l06-037) | IDE and Coding Agent MCP Server Configuration Discovery | High | Technical | D2, D5 | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024), [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) |
 
 ---
 
@@ -78,6 +78,7 @@ nav_order: 9
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) Agent Governance |
 
 **Risk Addressed.** Autonomous agents are a new identity and permission class that asset inventories routinely miss.
 
@@ -142,6 +143,7 @@ nav_order: 9
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) Agent Governance |
 
 **Risk Addressed.** An agent with no owner or no recorded permission scope cannot be risk assessed or shut down responsibly.
 
@@ -205,6 +207,7 @@ nav_order: 9
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) Agent Governance |
 
 **Risk Addressed.** Developers and staff run agents locally or in personal accounts that never appear in any registry.
 
@@ -268,6 +271,7 @@ nav_order: 9
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) Agent Governance |
 
 **Risk Addressed.** Business users can build agents with connectors to company data in minutes, without engineering review.
 
@@ -328,9 +332,10 @@ nav_order: 9
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: E, G, P |
 | **Risk Severity** | Critical |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise; AML.T0010 AI Supply Chain Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance |
 
 **Risk Addressed.** MCP servers give agents new capabilities; unknown servers are unknown attack surface.
 
@@ -392,9 +397,10 @@ nav_order: 9
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, E |
 | **Risk Severity** | Critical |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise; AML.T0010 AI Supply Chain Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance |
 
 **Risk Addressed.** Unvetted MCP servers can read data, run commands and feed instructions to the model.
 
@@ -456,9 +462,10 @@ nav_order: 9
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A \| Partial: E |
 | **Risk Severity** | Critical |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise; AML.T0010 AI Supply Chain Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance |
 
 **Risk Addressed.** A tool's description is read by the model as trusted context, so hidden instructions there can steer the agent.
 
@@ -520,9 +527,10 @@ nav_order: 9
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, E |
 | **Risk Severity** | Critical |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise; AML.T0010 AI Supply Chain Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance |
 
 **Risk Addressed.** A server can behave well until approved and then change tool definitions or behaviour.
 
@@ -584,9 +592,10 @@ nav_order: 9
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | High |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise; AML.T0010 AI Supply Chain Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance |
 
 **Risk Addressed.** A malicious server can define a tool with the same or a confusingly similar name as a trusted tool and be called instead.
 
@@ -647,9 +656,10 @@ nav_order: 9
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, P |
 | **Risk Severity** | High |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise; AML.T0010 AI Supply Chain Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance; [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
 **Risk Addressed.** MCP servers without authentication or with weak transport expose tools to anyone on the network.
 
@@ -711,9 +721,10 @@ nav_order: 9
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G |
 | **Risk Severity** | Critical |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise; AML.T0010 AI Supply Chain Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance; [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization |
 
 **Risk Addressed.** Server-level approval is too coarse; individual tools such as delete or execute need separate control.
 
@@ -777,6 +788,7 @@ nav_order: 9
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance; [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
 **Risk Addressed.** Teams cannot govern tools whose read, write and delete powers are not documented.
 
@@ -838,9 +850,10 @@ nav_order: 9
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | Critical |
 | **Quick-Start Scenario** | [AI-POC-AG-001](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md#agentic-ai-test-cases), [AI-POC-AG-004](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md#agentic-ai-test-cases) |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials; [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance |
 
 **Risk Addressed.** An agent with every available tool turns any injection into a full-capability attack.
 
@@ -902,9 +915,10 @@ nav_order: 9
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | Critical |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization |
 
 **Risk Addressed.** Allowing a tool is not enough; the arguments decide whether the action is harmless or destructive.
 
@@ -966,9 +980,10 @@ nav_order: 9
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | Critical |
 | **Quick-Start Scenario** | [AI-POC-AG-005](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md#agentic-ai-test-cases) |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) Human Approval for Sensitive Actions |
 
 **Risk Addressed.** Autonomous irreversible actions need human decision, and the decision must be informed.
 
@@ -1031,9 +1046,10 @@ nav_order: 9
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | High |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) Human Approval for Sensitive Actions |
 
 **Risk Addressed.** Attackers and noisy agents can overwhelm or mislead approvers, turning approval into a rubber stamp.
 
@@ -1095,9 +1111,10 @@ nav_order: 9
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | Critical |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials; [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) Agent Governance |
 
 **Risk Addressed.** A parent agent that spawns sub-agents can pass on authority it should not, creating privilege escalation.
 
@@ -1162,6 +1179,7 @@ nav_order: 9
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
 **Risk Addressed.** Agents that trust any message from another agent can be commanded by an impostor.
 
@@ -1223,9 +1241,10 @@ nav_order: 9
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | Critical |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization; [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
 **Risk Addressed.** An agent running with broad rights can be tricked into performing actions the requesting user is not allowed to perform.
 
@@ -1289,6 +1308,7 @@ nav_order: 9
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** One compromised agent output becomes another agent's trusted input, spreading the attack.
 
@@ -1353,6 +1373,7 @@ nav_order: 9
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
 | **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) Agent Containment and Kill Switch; [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
 **Risk Addressed.** Agents stuck in loops or recursive delegation consume cost, call external systems repeatedly and can damage data.
 
@@ -1413,9 +1434,10 @@ nav_order: 9
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A, P |
 | **Risk Severity** | Critical |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) Agent Containment and Kill Switch |
 
 **Risk Addressed.** When an agent misbehaves, security must be able to stop it immediately.
 
@@ -1478,9 +1500,10 @@ nav_order: 9
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A, P |
 | **Risk Severity** | Critical |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) Agent Containment and Kill Switch |
 
 **Risk Addressed.** Stopping the agent is not enough if its credentials remain valid and its changes stay in place.
 
@@ -1542,9 +1565,10 @@ nav_order: 9
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | High |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) Agent Containment and Kill Switch; [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization |
 
 **Risk Addressed.** Even authorised actions become destructive at scale.
 
@@ -1609,6 +1633,7 @@ nav_order: 9
 | **MITRE ATLAS Mapping** | AML.T0050 Command and Scripting Interpreter |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) Agent Execution Isolation |
 
 **Risk Addressed.** Agents that run code can read files, reach the network and persist unless isolated.
 
@@ -1672,6 +1697,7 @@ nav_order: 9
 | **MITRE ATLAS Mapping** | AML.T0050 Command and Scripting Interpreter |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) Agent Execution Isolation |
 
 **Risk Addressed.** Agents with unrestricted file and network access can read secrets and send data anywhere.
 
@@ -1736,6 +1762,7 @@ nav_order: 9
 | **MITRE ATLAS Mapping** | AML.T0051 LLM Prompt Injection |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Content encountered during a task can redirect the agent's goal without any obvious sign.
 
@@ -1799,6 +1826,7 @@ nav_order: 9
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability |
 
 **Risk Addressed.** Without a complete trace, no one can explain what an agent did or why.
 
@@ -1864,6 +1892,7 @@ nav_order: 9
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) Agent Governance; [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration |
 
 **Risk Addressed.** Compromised agents often act differently from their history before any rule fires.
 
@@ -1927,6 +1956,7 @@ nav_order: 9
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) Output Handling |
 
 **Risk Addressed.** Tools can return sensitive data the agent should not pass to users, other tools or external services.
 
@@ -1987,9 +2017,10 @@ nav_order: 9
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: E, G |
 | **Risk Severity** | High |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) Agent Execution Isolation |
 
 **Risk Addressed.** Agents that operate browsers and desktops can click, type and submit with the user's access.
 
@@ -2050,9 +2081,10 @@ nav_order: 9
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: P, G |
 | **Risk Severity** | High |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise; AML.T0010 AI Supply Chain Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance; [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance |
 
 **Risk Addressed.** Agents and plugins from marketplaces carry the publisher's risk into the enterprise.
 
@@ -2116,6 +2148,7 @@ nav_order: 9
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization |
 
 **Risk Addressed.** Complex agent workflows need constraints on who may call whom and in what order.
 
@@ -2179,6 +2212,7 @@ nav_order: 9
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-033](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-033) AI Security Review and Release Gate; [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) Agent Governance |
 
 **Risk Addressed.** Changes to prompts, tools, models or permissions alter an agent's risk but often bypass review.
 
@@ -2242,6 +2276,7 @@ nav_order: 9
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) Agent Governance; [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
 **Risk Addressed.** Abandoned agents keep credentials, schedules and data access.
 
@@ -2304,6 +2339,7 @@ nav_order: 9
 | **MITRE ATLAS Mapping** | AML.T0050 Command and Scripting Interpreter |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) Agent Execution Isolation; [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization |
 
 **Risk Addressed.** Agentic coding tools run shell commands and edit files with the developer's privileges, so one bad instruction can delete data, exfiltrate files or change system configuration.
 
@@ -2364,9 +2400,10 @@ nav_order: 9
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: E, P |
 | **Risk Severity** | High |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise; AML.T0010 AI Supply Chain Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance; [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance |
 
 **Risk Addressed.** Developers add MCP servers through local configuration files, giving assistants new tools and data paths that no one has reviewed.
 

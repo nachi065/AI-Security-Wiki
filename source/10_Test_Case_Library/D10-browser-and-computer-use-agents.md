@@ -11,7 +11,7 @@ nav_order: 23
 
 **Focus:** browser and computer-use agents: isolation, credentials, action policy, injection via web content, approvals, kill switch
 
-**Controls tested:** [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023), [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025), [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027)
+**Controls tested:** [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization (6 cases), [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) Agent Execution Isolation (6 cases), [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security (3 cases), [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery (2 cases), [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) Agent Governance (2 cases), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials (2 cases), [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) Human Approval for Sensitive Actions (2 cases), [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) Agent Containment and Kill Switch (2 cases), [AI-CTRL-003](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-003) File Upload Protection (1 case), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability (1 case), [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity (1 case), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines (1 case), [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance (1 case)
 
 **Cases:** 23 (TC-D10-001 to TC-D10-023)  |  **Series:** Emerging domains
 
@@ -21,31 +21,31 @@ nav_order: 23
 
 ## Cases in this domain
 
-| ID | Title | Severity | Method |
-|---|---|---|---|
-| [TC-D10-001](#tc-d10-001) | Browser and Computer-Use Agent Inventory and Classification | Critical | Technical |
-| [TC-D10-002](#tc-d10-002) | Execution Environment Isolation (Profile, Container or Virtual Machine) | Critical | Technical |
-| [TC-D10-003](#tc-d10-003) | Credential and Session Isolation for Agents | Critical | Technical |
-| [TC-D10-004](#tc-d10-004) | Domain and URL Policy with Redirect and Subdomain Handling | High | Technical |
-| [TC-D10-005](#tc-d10-005) | Action-Level Policy: Click, Type, Submit, Download, Upload, Purchase, Delete | Critical | Technical |
-| [TC-D10-006](#tc-d10-006) | Purchase and Payment Guard | Critical | Technical |
-| [TC-D10-007](#tc-d10-007) | Form Submission and Sensitive Data Entry Guard | High | Technical |
-| [TC-D10-008](#tc-d10-008) | File Download Controls and Malicious File Handling | High | Technical |
-| [TC-D10-009](#tc-d10-009) | File Upload and Clipboard Access Controls | High | Technical |
-| [TC-D10-010](#tc-d10-010) | Indirect Injection via Web Content: Visible, Hidden and Layout-Based | Critical | Technical |
-| [TC-D10-011](#tc-d10-011) | Fake Authority Cues: Banners, System Messages, Security Checks and Support Chats | High | Technical |
-| [TC-D10-012](#tc-d10-012) | Intent Verification: Agent Actions Compared with the User's Task | Critical | Technical |
-| [TC-D10-013](#tc-d10-013) | Step-Level Approval and Human Handoff | High | Technical |
-| [TC-D10-014](#tc-d10-014) | CAPTCHA and Bot-Detection Compliance | Medium | Technical |
-| [TC-D10-015](#tc-d10-015) | Authentication Flows: SSO, MFA and Session Handling | High | Technical |
-| [TC-D10-016](#tc-d10-016) | Cross-Tab and Cross-Site Data Leakage | High | Technical |
-| [TC-D10-017](#tc-d10-017) | Screenshot and Screen-Content Handling | High | Technical |
-| [TC-D10-018](#tc-d10-018) | Session Recording, Action Audit Trail and Replay | High | Technical |
-| [TC-D10-019](#tc-d10-019) | Rate and Scope Limits on Agent Actions | Medium | Technical |
-| [TC-D10-020](#tc-d10-020) | Kill Switch and Session Termination for Browser Agents | Critical | Technical |
-| [TC-D10-021](#tc-d10-021) | Desktop Computer-Use Agents: File System and Application Access Controls | Critical | Technical |
-| [TC-D10-022](#tc-d10-022) | Managed Browser Policy and Agent Extension Permission Governance | High | Evidence |
-| [TC-D10-023](#tc-d10-023) | Detecting Agent-Driven Traffic on Internal Applications (Application-Side Signals) | Medium | Technical |
+| ID | Title | Severity | Method | Controls |
+|---|---|---|---|---|
+| [TC-D10-001](#tc-d10-001) | Browser and Computer-Use Agent Inventory and Classification | Critical | Technical | [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006), [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) |
+| [TC-D10-002](#tc-d10-002) | Execution Environment Isolation (Profile, Container or Virtual Machine) | Critical | Technical | [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) |
+| [TC-D10-003](#tc-d10-003) | Credential and Session Isolation for Agents | Critical | Technical | [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-D10-004](#tc-d10-004) | Domain and URL Policy with Redirect and Subdomain Handling | High | Technical | [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) |
+| [TC-D10-005](#tc-d10-005) | Action-Level Policy: Click, Type, Submit, Download, Upload, Purchase, Delete | Critical | Technical | [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) |
+| [TC-D10-006](#tc-d10-006) | Purchase and Payment Guard | Critical | Technical | [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022), [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) |
+| [TC-D10-007](#tc-d10-007) | Form Submission and Sensitive Data Entry Guard | High | Technical | [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) |
+| [TC-D10-008](#tc-d10-008) | File Download Controls and Malicious File Handling | High | Technical | [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) |
+| [TC-D10-009](#tc-d10-009) | File Upload and Clipboard Access Controls | High | Technical | [AI-CTRL-003](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-003), [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) |
+| [TC-D10-010](#tc-d10-010) | Indirect Injection via Web Content: Visible, Hidden and Layout-Based | Critical | Technical | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-D10-011](#tc-d10-011) | Fake Authority Cues: Banners, System Messages, Security Checks and Support Chats | High | Technical | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-D10-012](#tc-d10-012) | Intent Verification: Agent Actions Compared with the User's Task | Critical | Technical | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005), [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) |
+| [TC-D10-013](#tc-d10-013) | Step-Level Approval and Human Handoff | High | Technical | [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) |
+| [TC-D10-014](#tc-d10-014) | CAPTCHA and Bot-Detection Compliance | Medium | Technical | [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) |
+| [TC-D10-015](#tc-d10-015) | Authentication Flows: SSO, MFA and Session Handling | High | Technical | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
+| [TC-D10-016](#tc-d10-016) | Cross-Tab and Cross-Site Data Leakage | High | Technical | [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) |
+| [TC-D10-017](#tc-d10-017) | Screenshot and Screen-Content Handling | High | Technical | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) |
+| [TC-D10-018](#tc-d10-018) | Session Recording, Action Audit Trail and Replay | High | Technical | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) |
+| [TC-D10-019](#tc-d10-019) | Rate and Scope Limits on Agent Actions | Medium | Technical | [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) |
+| [TC-D10-020](#tc-d10-020) | Kill Switch and Session Termination for Browser Agents | Critical | Technical | [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) |
+| [TC-D10-021](#tc-d10-021) | Desktop Computer-Use Agents: File System and Application Access Controls | Critical | Technical | [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-D10-022](#tc-d10-022) | Managed Browser Policy and Agent Extension Permission Governance | High | Evidence | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024), [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) |
+| [TC-D10-023](#tc-d10-023) | Detecting Agent-Driven Traffic on Internal Applications (Application-Side Signals) | Medium | Technical | [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) |
 
 ---
 
@@ -66,6 +66,7 @@ nav_order: 23
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) Agent Governance; [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
 **Risk Addressed.** Browser agents arrive as extensions, built-in browser features, cloud-hosted remote browsers and desktop computer-use tools, each with different reach, and most inventories see none of them.
 
@@ -132,6 +133,7 @@ nav_order: 23
 | **MITRE ATLAS Mapping** | AML.T0050 Command and Scripting Interpreter |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) Agent Execution Isolation |
 
 **Risk Addressed.** An agent running inside the user's normal browser inherits their sessions, saved passwords and open tabs.
 
@@ -198,6 +200,7 @@ nav_order: 23
 | **MITRE ATLAS Mapping** | AML.T0055 Unsecured Credentials |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) Agent Execution Isolation; [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
 **Risk Addressed.** If an agent can use the user's logged-in sessions, anything the user can do the agent can do, including what the user would never choose to do.
 
@@ -264,6 +267,7 @@ nav_order: 23
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization |
 
 **Risk Addressed.** Allow-lists fail on redirects, subdomains and look-alike domains.
 
@@ -327,9 +331,10 @@ nav_order: 23
 | **Vendor Applicability** | Core: E, A |
 | **Risk Severity** | Critical |
 | **Related Layer Cases** | [TC-L06-014](L06-agent-orchestration-layer.md#tc-l06-014) |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization |
 
 **Risk Addressed.** Site-level control is too coarse; what the agent does on an allowed page is the risk.
 
@@ -393,9 +398,10 @@ nav_order: 23
 | **Vendor Applicability** | Core: E, A |
 | **Risk Severity** | Critical |
 | **Related Layer Cases** | [TC-L06-015](L06-agent-orchestration-layer.md#tc-l06-015) |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization; [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) Human Approval for Sensitive Actions |
 
 **Risk Addressed.** An agent that can buy can spend, and fraudulent pages can ask it to.
 
@@ -462,6 +468,7 @@ nav_order: 23
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization |
 
 **Risk Addressed.** Agents fill forms using whatever data they can reach, including data that should never go to that site.
 
@@ -527,6 +534,7 @@ nav_order: 23
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
+| **Control(s) Tested** | [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) Agent Execution Isolation |
 
 **Risk Addressed.** Agents download and open files without the caution a user might apply.
 
@@ -592,6 +600,7 @@ nav_order: 23
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-003](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-003) File Upload Protection; [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) Agent Execution Isolation |
 
 **Risk Addressed.** Agents can read the clipboard and upload local files to sites, moving data in bulk without the user noticing.
 
@@ -658,6 +667,7 @@ nav_order: 23
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Web pages are written by third parties and are the main route by which attackers reach browsing agents.
 
@@ -724,6 +734,7 @@ nav_order: 23
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Pages can imitate system warnings or helpdesk instructions that agents are inclined to obey.
 
@@ -786,9 +797,10 @@ nav_order: 23
 | **Vendor Applicability** | Core: A, G |
 | **Risk Severity** | Critical |
 | **Related Layer Cases** | [TC-L06-027](L06-agent-orchestration-layer.md#tc-l06-027) |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security; [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization |
 
 **Risk Addressed.** The most serious failures happen when an agent quietly pursues a different goal from the one the user gave.
 
@@ -851,9 +863,10 @@ nav_order: 23
 | **Vendor Applicability** | Core: A, E |
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L06-015](L06-agent-orchestration-layer.md#tc-l06-015) |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) Human Approval for Sensitive Actions |
 
 **Risk Addressed.** Approval prompts that show too little or too often are worthless.
 
@@ -920,6 +933,7 @@ nav_order: 23
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization |
 
 **Risk Addressed.** Agents that try to defeat bot checks breach site terms and create legal exposure.
 
@@ -985,6 +999,7 @@ nav_order: 23
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
 **Risk Addressed.** Agents that handle MFA codes or approve prompts defeat the purpose of MFA.
 
@@ -1050,6 +1065,7 @@ nav_order: 23
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) Agent Execution Isolation |
 
 **Risk Addressed.** Content read in one tab can be written into another site, moving data from a sensitive system to an untrusted one.
 
@@ -1116,6 +1132,7 @@ nav_order: 23
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage (secondary) |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; GOVERN 1.1 |
+| **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
 **Risk Addressed.** Agents rely on screenshots, which capture whatever is on screen, including unrelated sensitive items.
 
@@ -1181,6 +1198,7 @@ nav_order: 23
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability |
 
 **Risk Addressed.** Investigators cannot judge an agent incident without seeing what the agent saw and did, step by step.
 
@@ -1248,6 +1266,7 @@ nav_order: 23
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
 | **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) Agent Containment and Kill Switch |
 
 **Risk Addressed.** Fast, wide automation can do damage in minutes: mass form submission, repeated login attempts, bulk deletion.
 
@@ -1311,9 +1330,10 @@ nav_order: 23
 | **Vendor Applicability** | Core: E, A, P |
 | **Risk Severity** | Critical |
 | **Related Layer Cases** | [TC-L06-022](L06-agent-orchestration-layer.md#tc-l06-022), [TC-L06-023](L06-agent-orchestration-layer.md#tc-l06-023) |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) Agent Containment and Kill Switch |
 
 **Risk Addressed.** A browser agent that keeps clicking after someone presses stop can complete a purchase, send a message or delete a record.
 
@@ -1381,6 +1401,7 @@ nav_order: 23
 | **MITRE ATLAS Mapping** | AML.T0050 Command and Scripting Interpreter |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) Agent Execution Isolation; [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
 **Risk Addressed.** A desktop agent can reach every file and application the user can, including password managers, chat clients and terminal windows.
 
@@ -1447,6 +1468,7 @@ nav_order: 23
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance; [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
 **Risk Addressed.** Extensions request broad permissions, update silently, and a harmless extension can be replaced by a harmful release.
 
@@ -1513,6 +1535,7 @@ nav_order: 23
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) Agent Governance |
 
 **Risk Addressed.** Application owners cannot tell whether a person or an agent is operating a session, so they cannot apply different rules for sensitive actions.
 

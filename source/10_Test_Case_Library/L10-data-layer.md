@@ -11,7 +11,7 @@ nav_order: 13
 
 **Primary test focus:** sensitive-data classification, DLP, lineage, tenant isolation
 
-**Controls tested:** [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017)
+**Controls tested:** [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines (15 cases), [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) Data Sovereignty (5 cases), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance (3 cases), [AI-CTRL-018](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-018) Retrieval Access Control (3 cases), [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics (2 cases), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability (1 case), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance (1 case), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials (1 case), [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) Knowledge Base Integrity (1 case), [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening (1 case), [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Control Assurance and Audit Evidence (1 case)
 
 **Cases:** 30 (TC-L10-001 to TC-L10-030)
 > **Safety boundary.** Injection and jailbreak cases use benign canary strings and mock tools only. Each case first measures whether the attack succeeds against the unprotected application, so that only effective payloads are scored.
@@ -20,38 +20,38 @@ nav_order: 13
 
 ## Cases in this layer
 
-| ID | Title | Severity | Method | Domain(s) |
-|---|---|---|---|---|
-| [TC-L10-001](#tc-l10-001) | Sensitive Data Discovery in AI Data Stores | Critical | Technical | D6 |
-| [TC-L10-002](#tc-l10-002) | Classification Accuracy on Structured Data | High | Technical | D6 |
-| [TC-L10-003](#tc-l10-003) | Classification Accuracy on Unstructured Documents | High | Technical | D6 |
-| [TC-L10-004](#tc-l10-004) | Classification of Arabic and Regional-Language Documents | High | Technical | D6, D7 |
-| [TC-L10-005](#tc-l10-005) | Label Inheritance to AI Outputs and Derived Data | High | Technical | D6 |
-| [TC-L10-006](#tc-l10-006) | Label-Aware Access: AI Cannot Read Beyond User Entitlement | Critical | Technical | D6 |
-| [TC-L10-007](#tc-l10-007) | Field-Level Masking and Data Minimisation Before the Model | High | Technical | D6 |
-| [TC-L10-008](#tc-l10-008) | Data Lineage: Source to Prompt to Output | High | Evidence | D6 |
-| [TC-L10-009](#tc-l10-009) | Lineage for Knowledge Base and Dataset Versions | Medium | Evidence | D6 |
-| [TC-L10-010](#tc-l10-010) | Tenant Isolation in Shared AI Data Stores | Critical | Technical | D6, D3 |
-| [TC-L10-011](#tc-l10-011) | Tenant Isolation Under Adversarial Probing | Critical | Technical | D6, D3 |
-| [TC-L10-012](#tc-l10-012) | Data Residency: Processing Region Enforcement | Critical | Technical | D7 |
-| [TC-L10-013](#tc-l10-013) | Data Residency: Logs, Telemetry, Backups and Support Access | Critical | Evidence | D7 |
-| [TC-L10-014](#tc-l10-014) | Cross-Border Transfer Detection to Non-Approved Providers | High | Technical | D7, D6 |
-| [TC-L10-015](#tc-l10-015) | Encryption and Key Ownership (BYOK and HYOK) | High | Evidence | D7 |
-| [TC-L10-016](#tc-l10-016) | Key Rotation and Crypto-Shredding | Medium | Technical | D7 |
-| [TC-L10-017](#tc-l10-017) | Dataset Access Control for AI Service Identities | Critical | Technical | D6 |
-| [TC-L10-018](#tc-l10-018) | Oversharing Discovery: Data Reachable by AI Assistants Beyond Need | Critical | Technical | D6 |
-| [TC-L10-019](#tc-l10-019) | Bulk Data Extraction Through AI Queries | High | Technical | D6 |
-| [TC-L10-020](#tc-l10-020) | Retention and Deletion Across the AI Pipeline | High | Evidence | D7, D6 |
-| [TC-L10-021](#tc-l10-021) | Erasure Propagation to Vector Stores and Derived Data | High | Technical | D7, D6 |
-| [TC-L10-022](#tc-l10-022) | Data Subject Access Request Support | Medium | Evidence | D7, D6 |
-| [TC-L10-023](#tc-l10-023) | Production Data in Development and Test AI Environments | High | Technical | D6, D2 |
-| [TC-L10-024](#tc-l10-024) | Ingestion Validation for Untrusted Data Sources | High | Technical | D6, D3 |
-| [TC-L10-025](#tc-l10-025) | Provider Data-Use Terms: Zero Retention and No Training Verification | Critical | Attestation | D7 |
-| [TC-L10-026](#tc-l10-026) | Data Access Forensics: Who Accessed What via AI | High | Technical | D6 |
-| [TC-L10-027](#tc-l10-027) | Insider Investigation Workflow and Case Management | Medium | Technical | D6 |
-| [TC-L10-028](#tc-l10-028) | Legal Hold and eDiscovery for AI Conversations | Medium | Evidence | D7 |
-| [TC-L10-029](#tc-l10-029) | Classification and Label Synchronisation with Enterprise Tools | Medium | Technical | D6 |
-| [TC-L10-030](#tc-l10-030) | Leakage Metrics and Regulatory Reporting Evidence | Medium | Evidence | D7 |
+| ID | Title | Severity | Method | Domain(s) | Controls |
+|---|---|---|---|---|---|
+| [TC-L10-001](#tc-l10-001) | Sensitive Data Discovery in AI Data Stores | Critical | Technical | D6 | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) |
+| [TC-L10-002](#tc-l10-002) | Classification Accuracy on Structured Data | High | Technical | D6 | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) |
+| [TC-L10-003](#tc-l10-003) | Classification Accuracy on Unstructured Documents | High | Technical | D6 | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) |
+| [TC-L10-004](#tc-l10-004) | Classification of Arabic and Regional-Language Documents | High | Technical | D6, D7 | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) |
+| [TC-L10-005](#tc-l10-005) | Label Inheritance to AI Outputs and Derived Data | High | Technical | D6 | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) |
+| [TC-L10-006](#tc-l10-006) | Label-Aware Access: AI Cannot Read Beyond User Entitlement | Critical | Technical | D6 | [AI-CTRL-018](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-018) |
+| [TC-L10-007](#tc-l10-007) | Field-Level Masking and Data Minimisation Before the Model | High | Technical | D6 | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) |
+| [TC-L10-008](#tc-l10-008) | Data Lineage: Source to Prompt to Output | High | Evidence | D6 | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) |
+| [TC-L10-009](#tc-l10-009) | Lineage for Knowledge Base and Dataset Versions | Medium | Evidence | D6 | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) |
+| [TC-L10-010](#tc-l10-010) | Tenant Isolation in Shared AI Data Stores | Critical | Technical | D6, D3 | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) |
+| [TC-L10-011](#tc-l10-011) | Tenant Isolation Under Adversarial Probing | Critical | Technical | D6, D3 | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) |
+| [TC-L10-012](#tc-l10-012) | Data Residency: Processing Region Enforcement | Critical | Technical | D7 | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) |
+| [TC-L10-013](#tc-l10-013) | Data Residency: Logs, Telemetry, Backups and Support Access | Critical | Evidence | D7 | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) |
+| [TC-L10-014](#tc-l10-014) | Cross-Border Transfer Detection to Non-Approved Providers | High | Technical | D7, D6 | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) |
+| [TC-L10-015](#tc-l10-015) | Encryption and Key Ownership (BYOK and HYOK) | High | Evidence | D7 | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017), [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) |
+| [TC-L10-016](#tc-l10-016) | Key Rotation and Crypto-Shredding | Medium | Technical | D7 | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) |
+| [TC-L10-017](#tc-l10-017) | Dataset Access Control for AI Service Identities | Critical | Technical | D6 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-L10-018](#tc-l10-018) | Oversharing Discovery: Data Reachable by AI Assistants Beyond Need | Critical | Technical | D6 | [AI-CTRL-018](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-018) |
+| [TC-L10-019](#tc-l10-019) | Bulk Data Extraction Through AI Queries | High | Technical | D6 | [AI-CTRL-018](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-018) |
+| [TC-L10-020](#tc-l10-020) | Retention and Deletion Across the AI Pipeline | High | Evidence | D7, D6 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) |
+| [TC-L10-021](#tc-l10-021) | Erasure Propagation to Vector Stores and Derived Data | High | Technical | D7, D6 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L10-022](#tc-l10-022) | Data Subject Access Request Support | Medium | Evidence | D7, D6 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L10-023](#tc-l10-023) | Production Data in Development and Test AI Environments | High | Technical | D6, D2 | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017), [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) |
+| [TC-L10-024](#tc-l10-024) | Ingestion Validation for Untrusted Data Sources | High | Technical | D6, D3 | [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) |
+| [TC-L10-025](#tc-l10-025) | Provider Data-Use Terms: Zero Retention and No Training Verification | Critical | Attestation | D7 | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014), [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) |
+| [TC-L10-026](#tc-l10-026) | Data Access Forensics: Who Accessed What via AI | High | Technical | D6 | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) |
+| [TC-L10-027](#tc-l10-027) | Insider Investigation Workflow and Case Management | Medium | Technical | D6 | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) |
+| [TC-L10-028](#tc-l10-028) | Legal Hold and eDiscovery for AI Conversations | Medium | Evidence | D7 | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) |
+| [TC-L10-029](#tc-l10-029) | Classification and Label Synchronisation with Enterprise Tools | Medium | Technical | D6 | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) |
+| [TC-L10-030](#tc-l10-030) | Leakage Metrics and Regulatory Reporting Evidence | Medium | Evidence | D7 | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) |
 
 ---
 
@@ -71,6 +71,7 @@ nav_order: 13
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
 **Risk Addressed.** AI projects copy data into buckets, notebooks, vector stores and shared drives that security has never scanned.
 
@@ -135,6 +136,7 @@ nav_order: 13
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
 **Risk Addressed.** Misclassified columns lead to over- or under-protection of data feeding AI features.
 
@@ -199,6 +201,7 @@ nav_order: 13
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
 **Risk Addressed.** Documents carry the most valuable sensitive content and are what retrieval systems ingest.
 
@@ -263,6 +266,7 @@ nav_order: 13
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
 **Risk Addressed.** Classification trained on English leaves local-language content unprotected.
 
@@ -327,6 +331,7 @@ nav_order: 13
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
 **Risk Addressed.** If a summary of a Restricted document is stored as unlabelled text, protection is lost the moment AI touches the data.
 
@@ -391,6 +396,7 @@ nav_order: 13
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-018](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-018) Retrieval Access Control |
 
 **Risk Addressed.** Assistants that run with broad permissions expose content to users who would be denied direct access.
 
@@ -454,6 +460,7 @@ nav_order: 13
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
 **Risk Addressed.** Sending whole records to a model when only a few fields are needed multiplies exposure.
 
@@ -518,6 +525,7 @@ nav_order: 13
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
 **Risk Addressed.** Without lineage, an organisation cannot say which data produced an answer or who was exposed to it.
 
@@ -581,6 +589,7 @@ nav_order: 13
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
 **Risk Addressed.** Answers given months ago may need to be explained against the data as it then stood.
 
@@ -644,6 +653,7 @@ nav_order: 13
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
 **Risk Addressed.** Multi-tenant AI services holding data for many customers or business units must keep it strictly separate.
 
@@ -708,6 +718,7 @@ nav_order: 13
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
 **Risk Addressed.** Attackers will use the AI interface itself to ask for other tenants' information.
 
@@ -771,6 +782,7 @@ nav_order: 13
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) Data Sovereignty |
 
 **Risk Addressed.** Data processed outside the permitted jurisdiction can breach contractual and regulatory commitments.
 
@@ -835,6 +847,7 @@ nav_order: 13
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) Data Sovereignty |
 
 **Risk Addressed.** Residency promises often cover primary storage but not logs, telemetry, backups or remote support access.
 
@@ -899,6 +912,7 @@ nav_order: 13
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) Data Sovereignty |
 
 **Risk Addressed.** Staff and applications may send data to AI services hosted in non-approved jurisdictions.
 
@@ -963,6 +977,7 @@ nav_order: 13
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines; [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) Data Sovereignty |
 
 **Risk Addressed.** Control of encryption keys decides who can read stored AI data, including the vendor's staff.
 
@@ -1027,6 +1042,7 @@ nav_order: 13
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
 **Risk Addressed.** Rotation limits exposure from a stolen key, and key destruction is the only reliable way to delete data in some architectures.
 
@@ -1091,6 +1107,7 @@ nav_order: 13
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
 **Risk Addressed.** AI services and agents often run with powerful service accounts that can read far more than any one task needs.
 
@@ -1155,6 +1172,7 @@ nav_order: 13
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-018](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-018) Retrieval Access Control |
 
 **Risk Addressed.** Productivity assistants surface any content the user technically can read, exposing overshared files.
 
@@ -1219,6 +1237,7 @@ nav_order: 13
 | **MITRE ATLAS Mapping** | AML.T0025 Exfiltration via Cyber Means |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-018](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-018) Retrieval Access Control |
 
 **Risk Addressed.** Attackers and insiders can use an assistant to read and export large volumes of data conversationally.
 
@@ -1283,6 +1302,7 @@ nav_order: 13
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage (secondary) |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; GOVERN 1.1 |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance; [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
 **Risk Addressed.** Prompts, responses, caches, embeddings and logs each keep copies; deleting one location leaves the rest.
 
@@ -1348,6 +1368,7 @@ nav_order: 13
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage (secondary) |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; GOVERN 1.1 |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** Embeddings and summaries derived from deleted personal data still leak information if left behind.
 
@@ -1412,6 +1433,7 @@ nav_order: 13
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage (secondary) |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; GOVERN 1.1 |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** Regulators expect organisations to locate all personal data on an individual, including in AI systems.
 
@@ -1475,6 +1497,7 @@ nav_order: 13
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines; [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
 **Risk Addressed.** Developers copy production data into AI experiments, bypassing production controls.
 
@@ -1535,9 +1558,10 @@ nav_order: 13
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P, A |
 | **Risk Severity** | High |
-| **MITRE ATLAS Mapping** | AML.T0020 Poison Training Data (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
+| **MITRE ATLAS Mapping** | AML.T0020 Training Data Poisoning (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
 | **OWASP LLM / GenAI Mapping** | LLM04:2025 Data and Model Poisoning; LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) Knowledge Base Integrity |
 
 **Risk Addressed.** Data from outside sources entering knowledge bases or datasets can be tampered with or booby-trapped.
 
@@ -1601,6 +1625,7 @@ nav_order: 13
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance; [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) Data Sovereignty |
 
 **Risk Addressed.** Data sent to model providers may be retained or used for training unless terms and settings prevent it.
 
@@ -1665,6 +1690,7 @@ nav_order: 13
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability |
 
 **Risk Addressed.** After an incident, investigators must establish which sensitive data an AI system accessed and for whom.
 
@@ -1729,6 +1755,7 @@ nav_order: 13
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics |
 
 **Risk Addressed.** Insider data-loss cases need timelines, context and evidence preserved.
 
@@ -1793,6 +1820,7 @@ nav_order: 13
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics |
 
 **Risk Addressed.** AI conversations may be discoverable, and deletion during legal proceedings creates exposure.
 
@@ -1856,6 +1884,7 @@ nav_order: 13
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
 **Risk Addressed.** Separate classification schemes produce inconsistent protection.
 
@@ -1919,6 +1948,7 @@ nav_order: 13
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Control Assurance and Audit Evidence |
 
 **Risk Addressed.** Boards and regulators ask for measurable evidence that AI data risk is controlled.
 

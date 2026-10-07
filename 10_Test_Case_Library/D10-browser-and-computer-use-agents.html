@@ -135,7 +135,7 @@
 <p><a id="top"></a></p>
 <h1 id="d10-browser-and-computer-use-agents">D10 Browser and Computer-Use Agents</h1>
 <p><strong>Focus:</strong> browser and computer-use agents: isolation, credentials, action policy, injection via web content, approvals, kill switch</p>
-<p><strong>Controls tested:</strong> <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a></p>
+<p><strong>Controls tested:</strong> <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a> Deterministic Action Authorization (6 cases), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a> Agent Execution Isolation (6 cases), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security (3 cases), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a> AI Discovery (2 cases), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a> Agent Governance (2 cases), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a> Least Privilege and Scoped Credentials (2 cases), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a> Human Approval for Sensitive Actions (2 cases), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a> Agent Containment and Kill Switch (2 cases), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-003">AI-CTRL-003</a> File Upload Protection (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a> Auditability (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a> Human and Agent Identity (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a> Data Protection in AI Pipelines (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a> Tool and MCP Server Governance (1 case)</p>
 <p><strong>Cases:</strong> 23 (TC-D10-001 to TC-D10-023)  |  <strong>Series:</strong> Emerging domains</p>
 <blockquote>
 <p><strong>Safety boundary.</strong> All cases use synthetic data and lab targets only. Browser and computer-use agents must use lab web sites, mock payment pages and fabricated credentials only.</p>
@@ -149,6 +149,7 @@
 <th>Title</th>
 <th>Severity</th>
 <th>Method</th>
+<th>Controls</th>
 </tr>
 </thead>
 <tbody>
@@ -157,138 +158,161 @@
 <td>Browser and Computer-Use Agent Inventory and Classification</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d10-002">TC-D10-002</a></td>
 <td>Execution Environment Isolation (Profile, Container or Virtual Machine)</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d10-003">TC-D10-003</a></td>
 <td>Credential and Session Isolation for Agents</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d10-004">TC-D10-004</a></td>
 <td>Domain and URL Policy with Redirect and Subdomain Handling</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d10-005">TC-D10-005</a></td>
 <td>Action-Level Policy: Click, Type, Submit, Download, Upload, Purchase, Delete</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d10-006">TC-D10-006</a></td>
 <td>Purchase and Payment Guard</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d10-007">TC-D10-007</a></td>
 <td>Form Submission and Sensitive Data Entry Guard</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d10-008">TC-D10-008</a></td>
 <td>File Download Controls and Malicious File Handling</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d10-009">TC-D10-009</a></td>
 <td>File Upload and Clipboard Access Controls</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-003">AI-CTRL-003</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d10-010">TC-D10-010</a></td>
 <td>Indirect Injection via Web Content: Visible, Hidden and Layout-Based</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d10-011">TC-D10-011</a></td>
 <td>Fake Authority Cues: Banners, System Messages, Security Checks and Support Chats</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d10-012">TC-D10-012</a></td>
 <td>Intent Verification: Agent Actions Compared with the User's Task</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d10-013">TC-D10-013</a></td>
 <td>Step-Level Approval and Human Handoff</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d10-014">TC-D10-014</a></td>
 <td>CAPTCHA and Bot-Detection Compliance</td>
 <td>Medium</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d10-015">TC-D10-015</a></td>
 <td>Authentication Flows: SSO, MFA and Session Handling</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d10-016">TC-D10-016</a></td>
 <td>Cross-Tab and Cross-Site Data Leakage</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d10-017">TC-D10-017</a></td>
 <td>Screenshot and Screen-Content Handling</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d10-018">TC-D10-018</a></td>
 <td>Session Recording, Action Audit Trail and Replay</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d10-019">TC-D10-019</a></td>
 <td>Rate and Scope Limits on Agent Actions</td>
 <td>Medium</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d10-020">TC-D10-020</a></td>
 <td>Kill Switch and Session Termination for Browser Agents</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d10-021">TC-D10-021</a></td>
 <td>Desktop Computer-Use Agents: File System and Application Access Controls</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d10-022">TC-D10-022</a></td>
 <td>Managed Browser Policy and Agent Extension Permission Governance</td>
 <td>High</td>
 <td>Evidence</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d10-023">TC-D10-023</a></td>
 <td>Detecting Agent-Driven Traffic on Internal Applications (Application-Side Signals)</td>
 <td>Medium</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -339,6 +363,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MAP 1.1; GOVERN 6.1</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a> Agent Governance; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a> AI Discovery</td>
 </tr>
 </tbody>
 </table></div>
@@ -418,6 +446,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a> Agent Execution Isolation</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> An agent running inside the user's normal browser inherits their sessions, saved passwords and open tabs.</p>
@@ -495,6 +527,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.10; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a> Agent Execution Isolation; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a> Least Privilege and Scoped Credentials</td>
 </tr>
 </tbody>
 </table></div>
@@ -574,6 +610,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 1.1; MANAGE 4.1</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a> Deterministic Action Authorization</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Allow-lists fail on redirects, subdomains and look-alike domains.</p>
@@ -642,7 +682,7 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
-<td>AML.T0053 LLM Plugin Compromise</td>
+<td>AML.T0053 AI Agent Tool Invocation</td>
 </tr>
 <tr>
 <td><strong>OWASP LLM / GenAI Mapping</strong></td>
@@ -651,6 +691,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a> Deterministic Action Authorization</td>
 </tr>
 </tbody>
 </table></div>
@@ -720,7 +764,7 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
-<td>AML.T0053 LLM Plugin Compromise</td>
+<td>AML.T0053 AI Agent Tool Invocation</td>
 </tr>
 <tr>
 <td><strong>OWASP LLM / GenAI Mapping</strong></td>
@@ -729,6 +773,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a> Deterministic Action Authorization; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a> Human Approval for Sensitive Actions</td>
 </tr>
 </tbody>
 </table></div>
@@ -808,6 +856,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.10; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a> Deterministic Action Authorization</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Agents fill forms using whatever data they can reach, including data that should never go to that site.</p>
@@ -885,6 +937,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 6.1; MAP 4.1</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a> Agent Execution Isolation</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Agents download and open files without the caution a user might apply.</p>
@@ -961,6 +1017,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.10; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-003">AI-CTRL-003</a> File Upload Protection; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a> Agent Execution Isolation</td>
 </tr>
 </tbody>
 </table></div>
@@ -1040,6 +1100,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Web pages are written by third parties and are the main route by which attackers reach browsing agents.</p>
@@ -1118,6 +1182,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Pages can imitate system warnings or helpdesk instructions that agents are inclined to obey.</p>
@@ -1185,7 +1253,7 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
-<td>AML.T0053 LLM Plugin Compromise</td>
+<td>AML.T0053 AI Agent Tool Invocation</td>
 </tr>
 <tr>
 <td><strong>OWASP LLM / GenAI Mapping</strong></td>
@@ -1194,6 +1262,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a> Deterministic Action Authorization</td>
 </tr>
 </tbody>
 </table></div>
@@ -1262,7 +1334,7 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
-<td>AML.T0053 LLM Plugin Compromise</td>
+<td>AML.T0053 AI Agent Tool Invocation</td>
 </tr>
 <tr>
 <td><strong>OWASP LLM / GenAI Mapping</strong></td>
@@ -1271,6 +1343,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a> Human Approval for Sensitive Actions</td>
 </tr>
 </tbody>
 </table></div>
@@ -1350,6 +1426,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 1.1; MANAGE 4.1</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a> Deterministic Action Authorization</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Agents that try to defeat bot checks breach site terms and create legal exposure.</p>
@@ -1427,6 +1507,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a> Human and Agent Identity</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Agents that handle MFA codes or approve prompts defeat the purpose of MFA.</p>
@@ -1503,6 +1587,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.10; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a> Agent Execution Isolation</td>
 </tr>
 </tbody>
 </table></div>
@@ -1582,6 +1670,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.10; GOVERN 1.1</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a> Data Protection in AI Pipelines</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Agents rely on screenshots, which capture whatever is on screen, including unrelated sensitive items.</p>
@@ -1658,6 +1750,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a> Auditability</td>
 </tr>
 </tbody>
 </table></div>
@@ -1738,6 +1834,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 4.1</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a> Agent Containment and Kill Switch</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Fast, wide automation can do damage in minutes: mass form submission, repeated login attempts, bulk deletion.</p>
@@ -1806,7 +1906,7 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
-<td>AML.T0053 LLM Plugin Compromise</td>
+<td>AML.T0053 AI Agent Tool Invocation</td>
 </tr>
 <tr>
 <td><strong>OWASP LLM / GenAI Mapping</strong></td>
@@ -1815,6 +1915,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a> Agent Containment and Kill Switch</td>
 </tr>
 </tbody>
 </table></div>
@@ -1895,6 +1999,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a> Agent Execution Isolation; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a> Least Privilege and Scoped Credentials</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> A desktop agent can reach every file and application the user can, including password managers, chat clients and terminal windows.</p>
@@ -1973,6 +2081,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 1.1; MANAGE 4.1</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a> Tool and MCP Server Governance; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a> AI Discovery</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Extensions request broad permissions, update silently, and a harmless extension can be replaced by a harmful release.</p>
@@ -2050,6 +2162,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE 4.1; MEASURE 2.4</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a> Agent Governance</td>
 </tr>
 </tbody>
 </table></div>

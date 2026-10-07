@@ -135,7 +135,7 @@
 <p><a id="top"></a></p>
 <h1 id="d11-multimodal-and-voice-input-security">D11 Multimodal and Voice Input Security</h1>
 <p><strong>Focus:</strong> multimodal and voice input: images, documents, audio and video as injection and leakage channels, voice authentication, recording governance</p>
-<p><strong>Controls tested:</strong> <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a></p>
+<p><strong>Controls tested:</strong> <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security (22 cases), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security (4 cases), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a> Privacy and Regulatory Compliance (4 cases), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-002">AI-CTRL-002</a> Prompt Inspection (3 cases), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a> AI Discovery (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a> Human and Agent Identity (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a> Data Protection in AI Pipelines (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-020">AI-CTRL-020</a> Output Handling (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-028">AI-CTRL-028</a> Model Protection (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls (1 case)</p>
 <p><strong>Cases:</strong> 22 (TC-D11-001 to TC-D11-022)  |  <strong>Series:</strong> Emerging domains</p>
 <blockquote>
 <p><strong>Safety boundary.</strong> All cases use synthetic data and lab targets only. Use fabricated media only. Synthetic voices must be of fabricated personas, never of real people, and no real faces, voices or documents are used. Audio tests stay within the audible range.</p>
@@ -149,6 +149,7 @@
 <th>Title</th>
 <th>Severity</th>
 <th>Method</th>
+<th>Controls</th>
 </tr>
 </thead>
 <tbody>
@@ -157,132 +158,154 @@
 <td>Multimodal Input Channel Inventory and Exposure Map</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d11-002">TC-D11-002</a></td>
 <td>Image Text Injection: Visible, Small and Low-Contrast Text</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d11-003">TC-D11-003</a></td>
 <td>Image Injection: Rotated, Distorted, Layout-Based and Screenshot Content</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d11-004">TC-D11-004</a></td>
 <td>Adversarial Image Perturbation Against Vision Components</td>
 <td>Medium</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-028">AI-CTRL-028</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d11-005">TC-D11-005</a></td>
 <td>Image Metadata and Embedded Data: Injection and Leakage</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d11-006">TC-D11-006</a></td>
 <td>Sensitive Data in Images: OCR and Visual DLP Accuracy</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-002">AI-CTRL-002</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d11-007">TC-D11-007</a></td>
 <td>Faces, Biometric Images and Personal Identifiers in Images</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d11-008">TC-D11-008</a></td>
 <td>Document Parser Attack Surface: Malformed and Spoofed Files</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d11-009">TC-D11-009</a></td>
 <td>Active Content in Documents: Macros, Formulas, Links and Embedded Objects</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d11-010">TC-D11-010</a></td>
 <td>Hidden Layers in Documents: White Text, Comments, Tracked Changes, Annotations and Notes</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d11-011">TC-D11-011</a></td>
 <td>Document and Media Bombs: Resource Exhaustion in Ingestion</td>
 <td>Medium</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d11-012">TC-D11-012</a></td>
 <td>Cross-Modal Consistency Attacks</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d11-013">TC-D11-013</a></td>
 <td>Audio Injection: Spoken Instructions in Synthetic Voice</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d11-014">TC-D11-014</a></td>
 <td>Audio Injection in Background and Noisy Conditions (Audible Range)</td>
 <td>Medium</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d11-015">TC-D11-015</a></td>
 <td>Transcription Errors as Policy Bypass (Accents, Dialects, Homophones and Code-Switching)</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-002">AI-CTRL-002</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d11-016">TC-D11-016</a></td>
 <td>Real-Time Voice DLP and Redaction Under Latency Limits</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-002">AI-CTRL-002</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d11-017">TC-D11-017</a></td>
 <td>Voice Authentication and Synthetic Voice Resistance</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d11-018">TC-D11-018</a></td>
 <td>Speaker Identification, Voiceprints and Biometric Data Handling</td>
 <td>High</td>
 <td>Evidence</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d11-019">TC-D11-019</a></td>
 <td>Meeting and Call Recording: Consent, Notice and Transcript Governance</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d11-020">TC-D11-020</a></td>
 <td>Video and Live Camera Input: Frame-Based Injection and Bystander Privacy</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d11-021">TC-D11-021</a></td>
 <td>Multimodal Output Leakage: Generated Images, Spoken Output and Documents</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-020">AI-CTRL-020</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d11-022">TC-D11-022</a></td>
 <td>Storage, Retention and Access Controls for Media Inputs and Outputs</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -333,6 +356,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MAP 1.1; GOVERN 6.1</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a> AI Discovery</td>
 </tr>
 </tbody>
 </table></div>
@@ -412,6 +439,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Models read text inside images that people may not notice, and filters that inspect only typed text never see it.</p>
@@ -489,6 +520,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
 </tr>
 </tbody>
 </table></div>
@@ -568,6 +603,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.5; MEASURE 2.7</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-028">AI-CTRL-028</a> Model Protection; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Small imperceptible changes can alter what a vision component sees, affecting moderation, classification or document understanding.</p>
@@ -645,6 +684,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security</td>
 </tr>
 </tbody>
 </table></div>
@@ -724,6 +767,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.10; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-002">AI-CTRL-002</a> Prompt Inspection</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Screenshots and photographs move whole records, IDs and diagrams past text-only controls.</p>
@@ -801,6 +848,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.10; GOVERN 1.1</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a> Privacy and Regulatory Compliance; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security</td>
 </tr>
 </tbody>
 </table></div>
@@ -880,6 +931,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 6.1; MAP 4.1</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Parsers that handle many file types are complex and a common source of crashes and unsafe behaviour.</p>
@@ -958,6 +1013,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Documents may carry formulas, links and embedded objects that act when opened or exported, including spreadsheet formula injection.</p>
@@ -1034,6 +1093,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security</td>
 </tr>
 </tbody>
 </table></div>
@@ -1113,6 +1176,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 4.1</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Very large, deeply nested or highly compressed files can exhaust memory, time or cost in parsing and transcription.</p>
@@ -1190,6 +1257,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
 </tr>
 </tbody>
 </table></div>
@@ -1269,6 +1340,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Voice assistants and meeting tools turn speech into text and then act on it, so spoken instructions from anyone in the room or on a call can steer them.</p>
@@ -1346,6 +1421,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security</td>
 </tr>
 </tbody>
 </table></div>
@@ -1425,6 +1504,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-002">AI-CTRL-002</a> Prompt Inspection</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> DLP and safety checks on transcripts can be defeated when speech is transcribed wrongly or in a way that alters meaning.</p>
@@ -1502,6 +1585,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.10; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-002">AI-CTRL-002</a> Prompt Inspection</td>
 </tr>
 </tbody>
 </table></div>
@@ -1581,6 +1668,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a> Human and Agent Identity</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Voice-based identity checks can be defeated by cloned or synthetic voices, which are now cheap to produce.</p>
@@ -1659,6 +1750,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.10; GOVERN 1.1</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a> Privacy and Regulatory Compliance; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Voiceprints are biometric identifiers with strict conditions in many frameworks and are often created silently by transcription features.</p>
@@ -1736,6 +1831,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a> Privacy and Regulatory Compliance; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security</td>
 </tr>
 </tbody>
 </table></div>
@@ -1816,6 +1915,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a> Privacy and Regulatory Compliance</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Frames from video and live cameras can carry text instructions and capture people who never agreed to be analysed.</p>
@@ -1894,6 +1997,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.10; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-020">AI-CTRL-020</a> Output Handling; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Output can leak data through channels that text filters do not read: images containing text, speech read aloud, documents with hidden content.</p>
@@ -1971,6 +2078,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.10; GOVERN 1.1</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a> Data Protection in AI Pipelines; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security</td>
 </tr>
 </tbody>
 </table></div>

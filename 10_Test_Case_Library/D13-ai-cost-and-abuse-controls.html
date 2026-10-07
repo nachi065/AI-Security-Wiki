@@ -135,7 +135,7 @@
 <p><a id="top"></a></p>
 <h1 id="d13-ai-cost-and-abuse-controls">D13 AI Cost and Abuse Controls</h1>
 <p><strong>Focus:</strong> AI cost and abuse controls: attribution, budgets, denial of wallet, key abuse, runaway agents, shadow spend, enforcement</p>
-<p><strong>Controls tested:</strong> <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a></p>
+<p><strong>Controls tested:</strong> <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls (21 cases), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a> AI Discovery (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a> Third-Party and Vendor AI Assurance (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a> Least Privilege and Scoped Credentials (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a> Agent Containment and Kill Switch (1 case)</p>
 <p><strong>Cases:</strong> 21 (TC-D13-001 to TC-D13-021)  |  <strong>Series:</strong> Emerging domains</p>
 <blockquote>
 <p><strong>Safety boundary.</strong> All cases use synthetic data and lab targets only. Use a mock provider, fabricated keys and lab endpoints only. Abuse scripts must never be pointed at real provider accounts or real customer traffic, and tests must never try to defeat a challenge mechanism.</p>
@@ -149,6 +149,7 @@
 <th>Title</th>
 <th>Severity</th>
 <th>Method</th>
+<th>Controls</th>
 </tr>
 </thead>
 <tbody>
@@ -157,126 +158,147 @@
 <td>Cost Attribution: Tagging Spend to Team, Application, User and Key</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d13-002">TC-D13-002</a></td>
 <td>Token Accounting Accuracy Against Provider Invoices</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d13-003">TC-D13-003</a></td>
 <td>Budget Hierarchy and Enforcement: Organisation, Team, Application, User and Key</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d13-004">TC-D13-004</a></td>
 <td>Real-Time Spend Anomaly Detection</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d13-005">TC-D13-005</a></td>
 <td>Leaked or Stolen API Key: Cost-Spike Detection and Automatic Containment</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d13-006">TC-D13-006</a></td>
 <td>Denial of Wallet via Public Chatbot Endpoints: Anonymous Traffic Abuse</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d13-007">TC-D13-007</a></td>
 <td>Quota and Credit Abuse: Multi-Account, Free-Tier and Trial Exploitation</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d13-008">TC-D13-008</a></td>
 <td>Prompt and Output Expansion Abuse: Length and Amplification Limits</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d13-009">TC-D13-009</a></td>
 <td>Tool Fan-Out and Recursive Agent Cost Explosion</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d13-010">TC-D13-010</a></td>
 <td>Retry Storms, Timeouts and the Cost of Failure Handling</td>
 <td>Medium</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d13-011">TC-D13-011</a></td>
 <td>Caching and Prefix Reuse: Cost Effects and Cache Abuse</td>
 <td>Medium</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d13-012">TC-D13-012</a></td>
 <td>Model Routing Cost Controls: Premium Model Misuse and Downgrade Policy</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d13-013">TC-D13-013</a></td>
 <td>Rate and Concurrency Limits per Identity, Key and Network</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d13-014">TC-D13-014</a></td>
 <td>Circuit Breakers and Automatic Actions on Budget Breach</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d13-015">TC-D13-015</a></td>
 <td>Batch Jobs, Scheduled Runs and Long-Running Tasks: Timeouts and Spend Ceilings</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d13-016">TC-D13-016</a></td>
 <td>GPU and Self-Hosted Inference Cost Abuse</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d13-017">TC-D13-017</a></td>
 <td>Shadow Spend Discovery: Unapproved AI Subscriptions and Direct Provider Accounts</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d13-018">TC-D13-018</a></td>
 <td>Spend Approval Workflow for Expensive Models, Features and Contracts</td>
 <td>Medium</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d13-019">TC-D13-019</a></td>
 <td>Cost Controls for Third-Party and Embedded AI Features</td>
 <td>Medium</td>
 <td>Evidence</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d13-020">TC-D13-020</a></td>
 <td>Cost Reporting, Chargeback Evidence and Dispute Handling</td>
 <td>Medium</td>
 <td>Evidence</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d13-021">TC-D13-021</a></td>
 <td>Abuse Enforcement Ladder: Warn, Throttle, Suspend and Appeal for Authenticated Users</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -327,6 +349,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
 </tr>
 </tbody>
 </table></div>
@@ -406,6 +432,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE and GOVERN (documentation and accountability)</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Platform meters that disagree with provider invoices cause disputes and hide waste.</p>
@@ -483,6 +513,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
 </tr>
 </tbody>
 </table></div>
@@ -562,6 +596,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE 4.1; MEASURE 2.4</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Monthly invoices find overspend weeks late; spikes need catching in minutes.</p>
@@ -639,6 +677,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.10; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a> Least Privilege and Scoped Credentials</td>
 </tr>
 </tbody>
 </table></div>
@@ -718,6 +760,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 4.1</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Public chat endpoints can be driven by automated traffic to burn budget, with no account to block.</p>
@@ -796,6 +842,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 4.1</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Free tiers, trials and credits attract mass account creation that drains budget and masks other abuse.</p>
@@ -873,6 +923,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 4.1</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Prompts that demand very long outputs or expand repeatedly multiply cost per request.</p>
@@ -941,7 +995,7 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
-<td>AML.T0053 LLM Plugin Compromise</td>
+<td>AML.T0053 AI Agent Tool Invocation</td>
 </tr>
 <tr>
 <td><strong>OWASP LLM / GenAI Mapping</strong></td>
@@ -950,6 +1004,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a> Agent Containment and Kill Switch</td>
 </tr>
 </tbody>
 </table></div>
@@ -1029,6 +1087,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 4.1</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Poorly tuned retries multiply cost during provider trouble and can overload the service further.</p>
@@ -1106,6 +1168,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 4.1</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
 </tr>
 </tbody>
 </table></div>
@@ -1185,6 +1251,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 1.1; MANAGE 4.1</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Routing everything to the most expensive model, or silently to a cheaper and weaker one, changes both cost and risk.</p>
@@ -1263,6 +1333,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 4.1</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Limits set only globally let one user, key or address crowd out everyone else.</p>
@@ -1331,7 +1405,7 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
-<td>AML.T0053 LLM Plugin Compromise</td>
+<td>AML.T0053 AI Agent Tool Invocation</td>
 </tr>
 <tr>
 <td><strong>OWASP LLM / GenAI Mapping</strong></td>
@@ -1340,6 +1414,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
 </tr>
 </tbody>
 </table></div>
@@ -1419,6 +1497,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 4.1</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Overnight jobs run unattended, so a bug or bad input can burn budget for hours.</p>
@@ -1496,6 +1578,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 4.1</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
 </tr>
 </tbody>
 </table></div>
@@ -1575,6 +1661,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MAP 1.1; GOVERN 6.1</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a> AI Discovery</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> AI services bought on cards and expense claims sit outside central budgets and security review.</p>
@@ -1652,6 +1742,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
 </tr>
 </tbody>
 </table></div>
@@ -1731,6 +1825,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 6.1; MAP 4.1</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a> Third-Party and Vendor AI Assurance</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> AI add-ons inside other products are metered by the vendor, with limits and overage prices the buyer rarely sees.</p>
@@ -1809,6 +1907,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE and GOVERN (documentation and accountability)</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Teams contest charges they cannot trace, and auditors want to see how costs were allocated.</p>
@@ -1886,6 +1988,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 1.1; MANAGE 4.1</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
 </tr>
 </tbody>
 </table></div>

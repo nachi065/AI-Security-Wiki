@@ -135,7 +135,7 @@
 <p><a id="top"></a></p>
 <h1 id="d08-ai-red-teaming-and-continuous-testing">D08 AI Red Teaming and Continuous Testing</h1>
 <p><strong>Focus:</strong> automated adversarial testing tools: ground-truth accuracy, coverage, judging, reproducibility, CI/CD, safe execution</p>
-<p><strong>Controls tested:</strong> <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></p>
+<p><strong>Controls tested:</strong> <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation (25 cases), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a> Data Protection in AI Pipelines (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-030">AI-CTRL-030</a> ML Pipeline and Model Registry Security (1 case)</p>
 <p><strong>Cases:</strong> 25 (TC-D08-001 to TC-D08-025)  |  <strong>Series:</strong> Emerging domains</p>
 <blockquote>
 <p><strong>Safety boundary.</strong> All cases use synthetic data and lab targets only. Red-team tooling must never be pointed at production systems, live third-party services or real customer data.</p>
@@ -149,6 +149,7 @@
 <th>Title</th>
 <th>Severity</th>
 <th>Method</th>
+<th>Controls</th>
 </tr>
 </thead>
 <tbody>
@@ -157,150 +158,175 @@
 <td>Seeded Vulnerable Target: Ground-Truth Benchmark for Findings</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d08-002">TC-D08-002</a></td>
 <td>Attack Library Coverage Across Risk Classes</td>
 <td>High</td>
 <td>Evidence</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d08-003">TC-D08-003</a></td>
 <td>Attack Library Freshness and Update Cadence</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d08-004">TC-D08-004</a></td>
 <td>Single-Turn Attack Generation: Diversity and Mutation Quality</td>
 <td>Medium</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d08-005">TC-D08-005</a></td>
 <td>Multi-Turn Adaptive Attack Campaigns</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d08-006">TC-D08-006</a></td>
 <td>Agentic Attack Scenarios Against Tool-Using Agents</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d08-007">TC-D08-007</a></td>
 <td>Retrieval and RAG Attack Coverage</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d08-008">TC-D08-008</a></td>
 <td>Indirect Injection Through Web, Email and File Content (Automated)</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d08-009">TC-D08-009</a></td>
 <td>Multimodal Attack Coverage (Images, Audio, Documents)</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d08-010">TC-D08-010</a></td>
 <td>Multilingual Attack Coverage (Arabic, Hindi, Urdu, French and Mixed)</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d08-011">TC-D08-011</a></td>
 <td>Custom Attack Authoring for Domain-Specific Scenarios</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d08-012">TC-D08-012</a></td>
 <td>Target Connectivity and Authentication Modes</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d08-013">TC-D08-013</a></td>
 <td>Attack Success Judging: Accuracy of Automated Verdicts</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d08-014">TC-D08-014</a></td>
 <td>Judge Robustness: Formatting, Persuasion and Cross-Judge Consistency</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d08-015">TC-D08-015</a></td>
 <td>Severity Scoring and Prioritisation of Findings</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d08-016">TC-D08-016</a></td>
 <td>Reproducibility and Run-to-Run Variance</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d08-017">TC-D08-017</a></td>
 <td>Finding Evidence Quality and Redaction</td>
 <td>High</td>
 <td>Evidence</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d08-018">TC-D08-018</a></td>
 <td>Remediation Guidance Quality and Verified Retest</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d08-019">TC-D08-019</a></td>
 <td>Regression Testing After Model, Prompt or Guardrail Changes</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d08-020">TC-D08-020</a></td>
 <td>CI/CD Integration and Release Gates</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-030">AI-CTRL-030</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d08-021">TC-D08-021</a></td>
 <td>Continuous and Scheduled Testing with Change-Triggered Runs</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d08-022">TC-D08-022</a></td>
 <td>Safe Execution Against Production-Like Targets</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d08-023">TC-D08-023</a></td>
 <td>Handling of Adversarial Payloads, Responses and Test Data</td>
 <td>High</td>
 <td>Attestation</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d08-024">TC-D08-024</a></td>
 <td>Test Cost, Runtime and Scalability</td>
 <td>Medium</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d08-025">TC-D08-025</a></td>
 <td>Transparency of Benchmarks and Published Results</td>
 <td>Medium</td>
 <td>Attestation</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -351,6 +377,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MEASURE 2.6</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation</td>
 </tr>
 </tbody>
 </table></div>
@@ -430,6 +460,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MEASURE 2.6</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> A library strong on prompt injection and silent on agent misuse, retrieval or output handling leaves large areas untested while reporting clean results.</p>
@@ -507,6 +541,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MEASURE 2.6</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation</td>
 </tr>
 </tbody>
 </table></div>
@@ -586,6 +624,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MEASURE 2.6</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Tools that repeat near-identical prompts inflate attack counts without testing robustness.</p>
@@ -663,6 +705,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MEASURE 2.6</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation</td>
 </tr>
 </tbody>
 </table></div>
@@ -742,6 +788,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MEASURE 2.6</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Agents turn text attacks into actions; tools that only test chat miss the most serious risk.</p>
@@ -819,6 +869,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MEASURE 2.6</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation</td>
 </tr>
 </tbody>
 </table></div>
@@ -898,6 +952,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MEASURE 2.6</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Indirect injection is the practical route for most real attacks and needs content-side test infrastructure.</p>
@@ -976,6 +1034,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MEASURE 2.6</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Multimodal inputs are a growing channel and few tools generate them.</p>
@@ -1053,6 +1115,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MEASURE 2.6</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Safeguards weaken in other languages and so do test tools.</p>
@@ -1129,6 +1195,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MEASURE 2.6</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation</td>
 </tr>
 </tbody>
 </table></div>
@@ -1208,6 +1278,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MEASURE 2.6</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> A tool that cannot reach real targets tests only demos.</p>
@@ -1284,6 +1358,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MEASURE 2.6</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation</td>
 </tr>
 </tbody>
 </table></div>
@@ -1363,6 +1441,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MEASURE 2.6</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> A judge model can be fooled by the target's response style, or by instructions hidden in a response, and different judges may disagree.</p>
@@ -1440,6 +1522,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MEASURE 2.6</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation</td>
 </tr>
 </tbody>
 </table></div>
@@ -1519,6 +1605,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MEASURE 2.6</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Findings that do not reproduce cannot be fixed or retested, and model randomness makes this common.</p>
@@ -1596,6 +1686,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MEASURE 2.6</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Findings without full transcripts and steps cannot be acted on, and unredacted evidence can itself leak data.</p>
@@ -1672,6 +1766,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MEASURE 2.6</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation</td>
 </tr>
 </tbody>
 </table></div>
@@ -1751,6 +1849,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MEASURE 2.6</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Every change to a model, prompt or guardrail can reopen old weaknesses.</p>
@@ -1829,6 +1931,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MEASURE 2.6</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-030">AI-CTRL-030</a> ML Pipeline and Model Registry Security</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Testing only before major releases misses most changes.</p>
@@ -1906,6 +2012,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MEASURE 2.6</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation</td>
 </tr>
 </tbody>
 </table></div>
@@ -1986,6 +2096,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MEASURE 2.6</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Aggressive tests can cause outages, corrupt data or run up cost.</p>
@@ -2063,6 +2177,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MEASURE 2.6</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a> Data Protection in AI Pipelines</td>
 </tr>
 </tbody>
 </table></div>
@@ -2142,6 +2260,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MEASURE 2.6</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Tools that burn tokens and hours do not get run often, so the real coverage achieved is lower than the product suggests.</p>
@@ -2219,6 +2341,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MEASURE 2.6</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation</td>
 </tr>
 </tbody>
 </table></div>

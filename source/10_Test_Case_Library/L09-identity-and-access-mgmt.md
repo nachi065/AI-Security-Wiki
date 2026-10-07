@@ -11,7 +11,7 @@ nav_order: 12
 
 **Primary test focus:** user and agent (non-human) identity, scoped tokens, RBAC
 
-**Controls tested:** [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016), [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022)
+**Controls tested:** [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials (15 cases), [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity (11 cases), [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance (1 case), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability (1 case), [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration (1 case), [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization (1 case), [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) Human Approval for Sensitive Actions (1 case), [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening (1 case)
 
 **Cases:** 26 (TC-L09-001 to TC-L09-026)
 > **Safety boundary.** Agent and MCP cases use a lab agent framework, benign mock tools and mock MCP servers that write only to a lab sink. Where an attack is simulated, success is first measured with the platform disabled. Never connect lab agents to production systems or real credentials.
@@ -20,34 +20,34 @@ nav_order: 12
 
 ## Cases in this layer
 
-| ID | Title | Severity | Method | Domain(s) |
-|---|---|---|---|---|
-| [TC-L09-001](#tc-l09-001) | Non-Human Identity Inventory for AI Workloads | Critical | Technical | D5 |
-| [TC-L09-002](#tc-l09-002) | Unique Identity Per Agent (No Shared Credentials) | High | Technical | D5 |
-| [TC-L09-003](#tc-l09-003) | Short-Lived Scoped Credentials for Agents | Critical | Technical | D5 |
-| [TC-L09-004](#tc-l09-004) | Token Scope Enforcement Per Tool and Resource | Critical | Technical | D5 |
-| [TC-L09-005](#tc-l09-005) | OAuth Consent and Grant Control for AI Applications | Critical | Technical | D1, D5 |
-| [TC-L09-006](#tc-l09-006) | Delegated User Identity Propagation (On-Behalf-Of) | Critical | Technical | D5 |
-| [TC-L09-007](#tc-l09-007) | Privilege Escalation via Agent | Critical | Technical | D5 |
-| [TC-L09-008](#tc-l09-008) | Role-Based Access to AI Applications and Models | High | Technical | D1, D3 |
-| [TC-L09-009](#tc-l09-009) | Attribute and Context-Based Access Conditions | High | Technical | D1, D7 |
-| [TC-L09-010](#tc-l09-010) | SSO and SCIM Integration for the AI Platform | High | Technical | D7 |
-| [TC-L09-011](#tc-l09-011) | Leaver and Mover Access Removal for AI Access | High | Technical | D7 |
-| [TC-L09-012](#tc-l09-012) | Step-Up Authentication for Sensitive AI Actions | High | Technical | D5 |
-| [TC-L09-013](#tc-l09-013) | Privileged Access to the AI Platform (Just-in-Time and Separation) | High | Technical | D7 |
-| [TC-L09-014](#tc-l09-014) | Model API Key Lifecycle: Issue, Rotate, Expire, Revoke | High | Technical | D4 |
-| [TC-L09-015](#tc-l09-015) | Credentials Passing Through Prompts and Tool Arguments | Critical | Technical | D5, D6 |
-| [TC-L09-016](#tc-l09-016) | Vault Integration: Agents Retrieve Secrets Without Exposure | High | Technical | D5 |
-| [TC-L09-017](#tc-l09-017) | Anomalous Use of Agent and Service Identities | High | Technical | D5 |
-| [TC-L09-018](#tc-l09-018) | Impersonation Resistance: Agent or User Claims Another Identity | High | Technical | D5 |
-| [TC-L09-019](#tc-l09-019) | Environment and Tenant Identity Boundaries (Prod vs Non-Prod) | High | Technical | D3, D7 |
-| [TC-L09-020](#tc-l09-020) | Session Management for AI Chat Sessions | Medium | Technical | D1 |
-| [TC-L09-021](#tc-l09-021) | Access Reviews and Recertification for AI Access | Medium | Evidence | D7 |
-| [TC-L09-022](#tc-l09-022) | Effective Permissions Visibility for Users and Agents | High | Evidence | D5 |
-| [TC-L09-023](#tc-l09-023) | Emergency (Break-Glass) Access Controls | Medium | Technical | D7 |
-| [TC-L09-024](#tc-l09-024) | Mutual Authentication Between AI Components | High | Technical | D3, D7 |
-| [TC-L09-025](#tc-l09-025) | Identity Audit Trail: Who, What and On Whose Behalf | Critical | Technical | D5, D7 |
-| [TC-L09-026](#tc-l09-026) | Coding Agent Repository and Cloud Credentials: Scope and Lifetime | Critical | Technical | D2, D5 |
+| ID | Title | Severity | Method | Domain(s) | Controls |
+|---|---|---|---|---|---|
+| [TC-L09-001](#tc-l09-001) | Non-Human Identity Inventory for AI Workloads | Critical | Technical | D5 | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
+| [TC-L09-002](#tc-l09-002) | Unique Identity Per Agent (No Shared Credentials) | High | Technical | D5 | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
+| [TC-L09-003](#tc-l09-003) | Short-Lived Scoped Credentials for Agents | Critical | Technical | D5 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-L09-004](#tc-l09-004) | Token Scope Enforcement Per Tool and Resource | Critical | Technical | D5 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-L09-005](#tc-l09-005) | OAuth Consent and Grant Control for AI Applications | Critical | Technical | D1, D5 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-L09-006](#tc-l09-006) | Delegated User Identity Propagation (On-Behalf-Of) | Critical | Technical | D5 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016), [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) |
+| [TC-L09-007](#tc-l09-007) | Privilege Escalation via Agent | Critical | Technical | D5 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-L09-008](#tc-l09-008) | Role-Based Access to AI Applications and Models | High | Technical | D1, D3 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-L09-009](#tc-l09-009) | Attribute and Context-Based Access Conditions | High | Technical | D1, D7 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-L09-010](#tc-l09-010) | SSO and SCIM Integration for the AI Platform | High | Technical | D7 | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
+| [TC-L09-011](#tc-l09-011) | Leaver and Mover Access Removal for AI Access | High | Technical | D7 | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
+| [TC-L09-012](#tc-l09-012) | Step-Up Authentication for Sensitive AI Actions | High | Technical | D5 | [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023), [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
+| [TC-L09-013](#tc-l09-013) | Privileged Access to the AI Platform (Just-in-Time and Separation) | High | Technical | D7 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-L09-014](#tc-l09-014) | Model API Key Lifecycle: Issue, Rotate, Expire, Revoke | High | Technical | D4 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-L09-015](#tc-l09-015) | Credentials Passing Through Prompts and Tool Arguments | Critical | Technical | D5, D6 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-L09-016](#tc-l09-016) | Vault Integration: Agents Retrieve Secrets Without Exposure | High | Technical | D5 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-L09-017](#tc-l09-017) | Anomalous Use of Agent and Service Identities | High | Technical | D5 | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015), [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) |
+| [TC-L09-018](#tc-l09-018) | Impersonation Resistance: Agent or User Claims Another Identity | High | Technical | D5 | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
+| [TC-L09-019](#tc-l09-019) | Environment and Tenant Identity Boundaries (Prod vs Non-Prod) | High | Technical | D3, D7 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016), [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) |
+| [TC-L09-020](#tc-l09-020) | Session Management for AI Chat Sessions | Medium | Technical | D1 | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
+| [TC-L09-021](#tc-l09-021) | Access Reviews and Recertification for AI Access | Medium | Evidence | D7 | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
+| [TC-L09-022](#tc-l09-022) | Effective Permissions Visibility for Users and Agents | High | Evidence | D5 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-L09-023](#tc-l09-023) | Emergency (Break-Glass) Access Controls | Medium | Technical | D7 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-L09-024](#tc-l09-024) | Mutual Authentication Between AI Components | High | Technical | D3, D7 | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
+| [TC-L09-025](#tc-l09-025) | Identity Audit Trail: Who, What and On Whose Behalf | Critical | Technical | D5, D7 | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008), [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
+| [TC-L09-026](#tc-l09-026) | Coding Agent Repository and Cloud Credentials: Scope and Lifetime | Critical | Technical | D2, D5 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016), [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) |
 
 ---
 
@@ -67,6 +67,7 @@ nav_order: 12
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
 **Risk Addressed.** Service accounts, API keys, OAuth apps and workload identities used by AI systems outnumber humans and are rarely inventoried.
 
@@ -131,6 +132,7 @@ nav_order: 12
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
 **Risk Addressed.** Agents sharing one credential cannot be told apart in logs or revoked individually.
 
@@ -194,6 +196,7 @@ nav_order: 12
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
 **Risk Addressed.** Long-lived broad tokens held by agents turn any compromise into long-term access.
 
@@ -259,6 +262,7 @@ nav_order: 12
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
 **Risk Addressed.** Tokens broader than needed allow an agent or attacker to reach unrelated resources.
 
@@ -323,6 +327,7 @@ nav_order: 12
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
 **Risk Addressed.** Users grant AI apps broad access to mail, files and calendars with a single click.
 
@@ -387,6 +392,7 @@ nav_order: 12
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials; [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization |
 
 **Risk Addressed.** If tools see only the agent's identity, per-user permissions and audit trails disappear.
 
@@ -451,6 +457,7 @@ nav_order: 12
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
 **Risk Addressed.** Agents can accumulate permissions through tool chains or role changes beyond what any one user holds.
 
@@ -514,6 +521,7 @@ nav_order: 12
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
 **Risk Addressed.** Not every employee should reach every AI tool or model, especially those with sensitive data connections.
 
@@ -577,6 +585,7 @@ nav_order: 12
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
 **Risk Addressed.** Static roles cannot account for device health, location or risk level at the time of access.
 
@@ -640,6 +649,7 @@ nav_order: 12
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
 **Risk Addressed.** Local accounts on AI platforms bypass corporate identity controls.
 
@@ -704,6 +714,7 @@ nav_order: 12
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
 **Risk Addressed.** Former staff or staff in new roles retain AI access, including to data they should no longer reach.
 
@@ -767,6 +778,7 @@ nav_order: 12
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) Human Approval for Sensitive Actions; [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
 **Risk Addressed.** A stolen session should not be enough to approve a payment or export a dataset via an agent.
 
@@ -830,6 +842,7 @@ nav_order: 12
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
 **Risk Addressed.** Standing administrative access to AI controls is a high-value target.
 
@@ -895,6 +908,7 @@ nav_order: 12
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
 **Risk Addressed.** Unmanaged model API keys are a leading cause of leaked access and unexpected bills.
 
@@ -959,6 +973,7 @@ nav_order: 12
 | **MITRE ATLAS Mapping** | AML.T0055 Unsecured Credentials |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
 **Risk Addressed.** Credentials typed into chats or passed as tool arguments end up in logs, provider systems and model context.
 
@@ -1022,6 +1037,7 @@ nav_order: 12
 | **MITRE ATLAS Mapping** | AML.T0055 Unsecured Credentials |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
 **Risk Addressed.** Agents holding secrets in configuration or context can leak them through output or injection.
 
@@ -1086,6 +1102,7 @@ nav_order: 12
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity; [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration |
 
 **Risk Addressed.** Stolen or misused agent credentials look legitimate unless behaviour is compared with history.
 
@@ -1149,6 +1166,7 @@ nav_order: 12
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
 **Risk Addressed.** Identity claims made in prompts or metadata may be accepted at face value by weak systems.
 
@@ -1212,6 +1230,7 @@ nav_order: 12
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials; [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
 **Risk Addressed.** Tokens and agents from test environments reaching production systems cause data exposure.
 
@@ -1275,6 +1294,7 @@ nav_order: 12
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
 **Risk Addressed.** Long-lived sessions on shared or unmanaged devices expose conversations and data.
 
@@ -1338,6 +1358,7 @@ nav_order: 12
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
 **Risk Addressed.** Entitlements accumulate unless periodically reviewed.
 
@@ -1401,6 +1422,7 @@ nav_order: 12
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
 **Risk Addressed.** Nobody can protect what they cannot see; effective access combines roles, groups, tokens and inheritance.
 
@@ -1464,6 +1486,7 @@ nav_order: 12
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
 **Risk Addressed.** Break-glass accounts are essential and dangerous if unmonitored.
 
@@ -1527,6 +1550,7 @@ nav_order: 12
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
 **Risk Addressed.** Unauthenticated internal calls let an attacker on the network impersonate any component.
 
@@ -1590,6 +1614,7 @@ nav_order: 12
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability; [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
 **Risk Addressed.** Investigations need to know which user, which agent and which tool were behind each action.
 
@@ -1653,6 +1678,7 @@ nav_order: 12
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials; [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance |
 
 **Risk Addressed.** Coding agents are often given a developer's personal access token or cloud profile, granting far more than the task needs for far longer than the task lasts.
 

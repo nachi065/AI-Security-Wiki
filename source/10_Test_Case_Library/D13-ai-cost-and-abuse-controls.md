@@ -11,7 +11,7 @@ nav_order: 26
 
 **Focus:** AI cost and abuse controls: attribution, budgets, denial of wallet, key abuse, runaway agents, shadow spend, enforcement
 
-**Controls tested:** [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036)
+**Controls tested:** [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls (21 cases), [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery (1 case), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance (1 case), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials (1 case), [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) Agent Containment and Kill Switch (1 case)
 
 **Cases:** 21 (TC-D13-001 to TC-D13-021)  |  **Series:** Emerging domains
 
@@ -21,29 +21,29 @@ nav_order: 26
 
 ## Cases in this domain
 
-| ID | Title | Severity | Method |
-|---|---|---|---|
-| [TC-D13-001](#tc-d13-001) | Cost Attribution: Tagging Spend to Team, Application, User and Key | High | Technical |
-| [TC-D13-002](#tc-d13-002) | Token Accounting Accuracy Against Provider Invoices | High | Technical |
-| [TC-D13-003](#tc-d13-003) | Budget Hierarchy and Enforcement: Organisation, Team, Application, User and Key | Critical | Technical |
-| [TC-D13-004](#tc-d13-004) | Real-Time Spend Anomaly Detection | High | Technical |
-| [TC-D13-005](#tc-d13-005) | Leaked or Stolen API Key: Cost-Spike Detection and Automatic Containment | Critical | Technical |
-| [TC-D13-006](#tc-d13-006) | Denial of Wallet via Public Chatbot Endpoints: Anonymous Traffic Abuse | Critical | Technical |
-| [TC-D13-007](#tc-d13-007) | Quota and Credit Abuse: Multi-Account, Free-Tier and Trial Exploitation | High | Technical |
-| [TC-D13-008](#tc-d13-008) | Prompt and Output Expansion Abuse: Length and Amplification Limits | High | Technical |
-| [TC-D13-009](#tc-d13-009) | Tool Fan-Out and Recursive Agent Cost Explosion | Critical | Technical |
-| [TC-D13-010](#tc-d13-010) | Retry Storms, Timeouts and the Cost of Failure Handling | Medium | Technical |
-| [TC-D13-011](#tc-d13-011) | Caching and Prefix Reuse: Cost Effects and Cache Abuse | Medium | Technical |
-| [TC-D13-012](#tc-d13-012) | Model Routing Cost Controls: Premium Model Misuse and Downgrade Policy | High | Technical |
-| [TC-D13-013](#tc-d13-013) | Rate and Concurrency Limits per Identity, Key and Network | High | Technical |
-| [TC-D13-014](#tc-d13-014) | Circuit Breakers and Automatic Actions on Budget Breach | Critical | Technical |
-| [TC-D13-015](#tc-d13-015) | Batch Jobs, Scheduled Runs and Long-Running Tasks: Timeouts and Spend Ceilings | High | Technical |
-| [TC-D13-016](#tc-d13-016) | GPU and Self-Hosted Inference Cost Abuse | High | Technical |
-| [TC-D13-017](#tc-d13-017) | Shadow Spend Discovery: Unapproved AI Subscriptions and Direct Provider Accounts | High | Technical |
-| [TC-D13-018](#tc-d13-018) | Spend Approval Workflow for Expensive Models, Features and Contracts | Medium | Technical |
-| [TC-D13-019](#tc-d13-019) | Cost Controls for Third-Party and Embedded AI Features | Medium | Evidence |
-| [TC-D13-020](#tc-d13-020) | Cost Reporting, Chargeback Evidence and Dispute Handling | Medium | Evidence |
-| [TC-D13-021](#tc-d13-021) | Abuse Enforcement Ladder: Warn, Throttle, Suspend and Appeal for Authenticated Users | High | Technical |
+| ID | Title | Severity | Method | Controls |
+|---|---|---|---|---|
+| [TC-D13-001](#tc-d13-001) | Cost Attribution: Tagging Spend to Team, Application, User and Key | High | Technical | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) |
+| [TC-D13-002](#tc-d13-002) | Token Accounting Accuracy Against Provider Invoices | High | Technical | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) |
+| [TC-D13-003](#tc-d13-003) | Budget Hierarchy and Enforcement: Organisation, Team, Application, User and Key | Critical | Technical | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) |
+| [TC-D13-004](#tc-d13-004) | Real-Time Spend Anomaly Detection | High | Technical | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) |
+| [TC-D13-005](#tc-d13-005) | Leaked or Stolen API Key: Cost-Spike Detection and Automatic Containment | Critical | Technical | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-D13-006](#tc-d13-006) | Denial of Wallet via Public Chatbot Endpoints: Anonymous Traffic Abuse | Critical | Technical | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) |
+| [TC-D13-007](#tc-d13-007) | Quota and Credit Abuse: Multi-Account, Free-Tier and Trial Exploitation | High | Technical | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) |
+| [TC-D13-008](#tc-d13-008) | Prompt and Output Expansion Abuse: Length and Amplification Limits | High | Technical | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) |
+| [TC-D13-009](#tc-d13-009) | Tool Fan-Out and Recursive Agent Cost Explosion | Critical | Technical | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036), [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) |
+| [TC-D13-010](#tc-d13-010) | Retry Storms, Timeouts and the Cost of Failure Handling | Medium | Technical | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) |
+| [TC-D13-011](#tc-d13-011) | Caching and Prefix Reuse: Cost Effects and Cache Abuse | Medium | Technical | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) |
+| [TC-D13-012](#tc-d13-012) | Model Routing Cost Controls: Premium Model Misuse and Downgrade Policy | High | Technical | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) |
+| [TC-D13-013](#tc-d13-013) | Rate and Concurrency Limits per Identity, Key and Network | High | Technical | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) |
+| [TC-D13-014](#tc-d13-014) | Circuit Breakers and Automatic Actions on Budget Breach | Critical | Technical | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) |
+| [TC-D13-015](#tc-d13-015) | Batch Jobs, Scheduled Runs and Long-Running Tasks: Timeouts and Spend Ceilings | High | Technical | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) |
+| [TC-D13-016](#tc-d13-016) | GPU and Self-Hosted Inference Cost Abuse | High | Technical | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) |
+| [TC-D13-017](#tc-d13-017) | Shadow Spend Discovery: Unapproved AI Subscriptions and Direct Provider Accounts | High | Technical | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036), [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) |
+| [TC-D13-018](#tc-d13-018) | Spend Approval Workflow for Expensive Models, Features and Contracts | Medium | Technical | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) |
+| [TC-D13-019](#tc-d13-019) | Cost Controls for Third-Party and Embedded AI Features | Medium | Evidence | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) |
+| [TC-D13-020](#tc-d13-020) | Cost Reporting, Chargeback Evidence and Dispute Handling | Medium | Evidence | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) |
+| [TC-D13-021](#tc-d13-021) | Abuse Enforcement Ladder: Warn, Throttle, Suspend and Appeal for Authenticated Users | High | Technical | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) |
 
 ---
 
@@ -64,6 +64,7 @@ nav_order: 26
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
 **Risk Addressed.** Spend that cannot be attributed cannot be controlled, charged back or investigated.
 
@@ -130,6 +131,7 @@ nav_order: 26
 | **MITRE ATLAS Mapping** | N/A (assurance control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MEASURE and GOVERN (documentation and accountability) |
+| **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
 **Risk Addressed.** Platform meters that disagree with provider invoices cause disputes and hide waste.
 
@@ -196,6 +198,7 @@ nav_order: 26
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
 **Risk Addressed.** A single global cap protects the organisation but lets one runaway key consume everyone's budget.
 
@@ -262,6 +265,7 @@ nav_order: 26
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
 **Risk Addressed.** Monthly invoices find overspend weeks late; spikes need catching in minutes.
 
@@ -328,6 +332,7 @@ nav_order: 26
 | **MITRE ATLAS Mapping** | AML.T0055 Unsecured Credentials |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls; [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
 **Risk Addressed.** A leaked key can run up large bills within minutes, long before anyone reads an invoice.
 
@@ -394,6 +399,7 @@ nav_order: 26
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
 | **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
 **Risk Addressed.** Public chat endpoints can be driven by automated traffic to burn budget, with no account to block.
 
@@ -460,6 +466,7 @@ nav_order: 26
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
 | **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
 **Risk Addressed.** Free tiers, trials and credits attract mass account creation that drains budget and masks other abuse.
 
@@ -525,6 +532,7 @@ nav_order: 26
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
 | **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
 **Risk Addressed.** Prompts that demand very long outputs or expand repeatedly multiply cost per request.
 
@@ -588,9 +596,10 @@ nav_order: 26
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | Critical |
 | **Related Layer Cases** | [TC-L06-021](L06-agent-orchestration-layer.md#tc-l06-021), [TC-L06-024](L06-agent-orchestration-layer.md#tc-l06-024) |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls; [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) Agent Containment and Kill Switch |
 
 **Risk Addressed.** One request that triggers hundreds of tool calls, model calls and sub-agents can cost far more than expected.
 
@@ -657,6 +666,7 @@ nav_order: 26
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
 | **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
 **Risk Addressed.** Poorly tuned retries multiply cost during provider trouble and can overload the service further.
 
@@ -723,6 +733,7 @@ nav_order: 26
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
 | **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
 **Risk Addressed.** Caching cuts cost when it works, and attackers or bad configuration can bypass it to push cost up or poison what is cached.
 
@@ -789,6 +800,7 @@ nav_order: 26
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
 **Risk Addressed.** Routing everything to the most expensive model, or silently to a cheaper and weaker one, changes both cost and risk.
 
@@ -855,6 +867,7 @@ nav_order: 26
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
 | **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
 **Risk Addressed.** Limits set only globally let one user, key or address crowd out everyone else.
 
@@ -918,9 +931,10 @@ nav_order: 26
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | Critical |
 | **Related Layer Cases** | [TC-L08-031](L08-ai-gateway-and-security-controls.md#tc-l08-031) |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
 **Risk Addressed.** Alerts that nobody reads at 3am do not stop spend; automatic actions can also take essential services down.
 
@@ -987,6 +1001,7 @@ nav_order: 26
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
 | **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
 **Risk Addressed.** Overnight jobs run unattended, so a bug or bad input can burn budget for hours.
 
@@ -1053,6 +1068,7 @@ nav_order: 26
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
 | **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
 **Risk Addressed.** Self-hosted capacity costs money whether it is used well or not, and spare capacity attracts misuse.
 
@@ -1119,6 +1135,7 @@ nav_order: 26
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls; [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
 **Risk Addressed.** AI services bought on cards and expense claims sit outside central budgets and security review.
 
@@ -1185,6 +1202,7 @@ nav_order: 26
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
 **Risk Addressed.** Costly choices made by individual teams commit the organisation beyond its plan.
 
@@ -1251,6 +1269,7 @@ nav_order: 26
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
+| **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls; [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance |
 
 **Risk Addressed.** AI add-ons inside other products are metered by the vendor, with limits and overage prices the buyer rarely sees.
 
@@ -1317,6 +1336,7 @@ nav_order: 26
 | **MITRE ATLAS Mapping** | N/A (assurance control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MEASURE and GOVERN (documentation and accountability) |
+| **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
 **Risk Addressed.** Teams contest charges they cannot trace, and auditors want to see how costs were allocated.
 
@@ -1383,6 +1403,7 @@ nav_order: 26
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
 **Risk Addressed.** Authenticated users can abuse allowances by automation, sharing accounts or hammering expensive features, and heavy-handed bans harm genuine users.
 

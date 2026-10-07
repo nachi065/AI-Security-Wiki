@@ -11,7 +11,7 @@ nav_order: 18
 
 **Primary test focus:** GPU/cluster hardening, secrets, network segmentation, sovereignty of control plane
 
-**Controls tested:** [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007), [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032)
+**Controls tested:** [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening (14 cases), [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) Data Sovereignty (4 cases), [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery (1 case), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability (1 case), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance (1 case), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials (1 case), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines (1 case), [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection (1 case), [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls (1 case), [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) AI Service Resilience and Fail-Safe Operation (1 case)
 
 **Cases:** 20 (TC-L15-001 to TC-L15-020)
 > **Safety boundary.** Infrastructure and SOC cases use a lab cluster, mock inference servers, a test cloud account and a lab SIEM and SOAR only. Probe and compromise-simulation scripts are harmless lab tools that only attempt connections and reads of canary resources. Never run them against production systems, and never connect lab alerting to production on-call routing. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.
@@ -20,28 +20,28 @@ nav_order: 18
 
 ## Cases in this layer
 
-| ID | Title | Severity | Method | Domain(s) |
-|---|---|---|---|---|
-| [TC-L15-001](#tc-l15-001) | AI Infrastructure Asset Discovery | High | Technical | D4, D3 |
-| [TC-L15-002](#tc-l15-002) | GPU Cluster Configuration Hardening | High | Technical | D4 |
-| [TC-L15-003](#tc-l15-003) | GPU Multi-Tenancy Isolation and Memory Residue | Critical | Technical | D4, D6 |
-| [TC-L15-004](#tc-l15-004) | Kubernetes Hardening for AI Workloads | High | Technical | D4, D3 |
-| [TC-L15-005](#tc-l15-005) | Inference Server Hardening and Exposure | High | Technical | D3, D4 |
-| [TC-L15-006](#tc-l15-006) | Network Segmentation Between AI Zones | Critical | Technical | D3, D7 |
-| [TC-L15-007](#tc-l15-007) | Egress Control for AI Workloads | High | Technical | D4, D7 |
-| [TC-L15-008](#tc-l15-008) | Lateral Movement Containment from a Compromised Inference Pod | Critical | Technical | D3, D5 |
-| [TC-L15-009](#tc-l15-009) | Secrets Management for AI Infrastructure | Critical | Technical | D4 |
-| [TC-L15-010](#tc-l15-010) | Cloud IAM Roles for AI Services and Metadata Service Protection | Critical | Technical | D4, D7 |
-| [TC-L15-011](#tc-l15-011) | Model and Dataset Storage Security | Critical | Technical | D4, D6 |
-| [TC-L15-012](#tc-l15-012) | Encryption and Confidential Computing Evidence | Medium | Evidence | D7 |
-| [TC-L15-013](#tc-l15-013) | Control Plane and Data Plane Location Proof (Sovereignty) | Critical | Evidence | D7 |
-| [TC-L15-014](#tc-l15-014) | Air-Gapped and On-Premise Operation | High | Technical | D7 |
-| [TC-L15-015](#tc-l15-015) | Single-Tenant and Dedicated Deployment Evidence | High | Evidence | D7, D4 |
-| [TC-L15-016](#tc-l15-016) | Hardening of the Evaluated Platform's Own Components | Critical | Technical | D7 |
-| [TC-L15-017](#tc-l15-017) | Resource Quotas and Noisy-Neighbour Protection on Shared GPU Capacity | Medium | Technical | D4 |
-| [TC-L15-018](#tc-l15-018) | Infrastructure Logging and Telemetry Coverage | High | Technical | D4, D7 |
-| [TC-L15-019](#tc-l15-019) | Backup, Disaster Recovery and Restoration of AI Services | High | Technical | D3, D7 |
-| [TC-L15-020](#tc-l15-020) | Hosting Location and Data Centre Assurance | High | Attestation | D7 |
+| ID | Title | Severity | Method | Domain(s) | Controls |
+|---|---|---|---|---|---|
+| [TC-L15-001](#tc-l15-001) | AI Infrastructure Asset Discovery | High | Technical | D4, D3 | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032), [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) |
+| [TC-L15-002](#tc-l15-002) | GPU Cluster Configuration Hardening | High | Technical | D4 | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) |
+| [TC-L15-003](#tc-l15-003) | GPU Multi-Tenancy Isolation and Memory Residue | Critical | Technical | D4, D6 | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) |
+| [TC-L15-004](#tc-l15-004) | Kubernetes Hardening for AI Workloads | High | Technical | D4, D3 | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) |
+| [TC-L15-005](#tc-l15-005) | Inference Server Hardening and Exposure | High | Technical | D3, D4 | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) |
+| [TC-L15-006](#tc-l15-006) | Network Segmentation Between AI Zones | Critical | Technical | D3, D7 | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) |
+| [TC-L15-007](#tc-l15-007) | Egress Control for AI Workloads | High | Technical | D4, D7 | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) |
+| [TC-L15-008](#tc-l15-008) | Lateral Movement Containment from a Compromised Inference Pod | Critical | Technical | D3, D5 | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) |
+| [TC-L15-009](#tc-l15-009) | Secrets Management for AI Infrastructure | Critical | Technical | D4 | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) |
+| [TC-L15-010](#tc-l15-010) | Cloud IAM Roles for AI Services and Metadata Service Protection | Critical | Technical | D4, D7 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016), [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) |
+| [TC-L15-011](#tc-l15-011) | Model and Dataset Storage Security | Critical | Technical | D4, D6 | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032), [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) |
+| [TC-L15-012](#tc-l15-012) | Encryption and Confidential Computing Evidence | Medium | Evidence | D7 | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) |
+| [TC-L15-013](#tc-l15-013) | Control Plane and Data Plane Location Proof (Sovereignty) | Critical | Evidence | D7 | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) |
+| [TC-L15-014](#tc-l15-014) | Air-Gapped and On-Premise Operation | High | Technical | D7 | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) |
+| [TC-L15-015](#tc-l15-015) | Single-Tenant and Dedicated Deployment Evidence | High | Evidence | D7, D4 | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007), [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) |
+| [TC-L15-016](#tc-l15-016) | Hardening of the Evaluated Platform's Own Components | Critical | Technical | D7 | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) |
+| [TC-L15-017](#tc-l15-017) | Resource Quotas and Noisy-Neighbour Protection on Shared GPU Capacity | Medium | Technical | D4 | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) |
+| [TC-L15-018](#tc-l15-018) | Infrastructure Logging and Telemetry Coverage | High | Technical | D4, D7 | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) |
+| [TC-L15-019](#tc-l15-019) | Backup, Disaster Recovery and Restoration of AI Services | High | Technical | D3, D7 | [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) |
+| [TC-L15-020](#tc-l15-020) | Hosting Location and Data Centre Assurance | High | Attestation | D7 | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) |
 
 ---
 
@@ -61,6 +61,7 @@ nav_order: 18
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening; [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
 **Risk Addressed.** GPU nodes, inference servers, vector stores and model storage are provisioned by data teams outside normal asset processes, so they escape patching and monitoring.
 
@@ -126,6 +127,7 @@ nav_order: 18
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
 **Risk Addressed.** GPU hosts run privileged drivers and large shared workloads; default settings leave management ports, shared memory and debugging interfaces open.
 
@@ -191,6 +193,7 @@ nav_order: 18
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
 **Risk Addressed.** Shared GPUs can leak data between tenants through memory that is not cleared or isolation modes that are weaker than assumed.
 
@@ -256,6 +259,7 @@ nav_order: 18
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
 **Risk Addressed.** AI jobs often run with broad cluster roles, host access and unrestricted networking for convenience.
 
@@ -321,6 +325,7 @@ nav_order: 18
 | **MITRE ATLAS Mapping** | AML.T0049 Exploit Public-Facing Application (where exposed); general cloud and infrastructure controls apply |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (infrastructure components) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
 **Risk Addressed.** Inference servers ship with open admin interfaces, verbose errors and default ports that are easy to find and abuse.
 
@@ -386,6 +391,7 @@ nav_order: 18
 | **MITRE ATLAS Mapping** | AML.T0049 Exploit Public-Facing Application (where exposed); general cloud and infrastructure controls apply |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (infrastructure components) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
 **Risk Addressed.** A flat network lets a compromised notebook reach production data, model storage and management planes.
 
@@ -451,6 +457,7 @@ nav_order: 18
 | **MITRE ATLAS Mapping** | AML.T0049 Exploit Public-Facing Application (where exposed); general cloud and infrastructure controls apply |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (infrastructure components) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
 **Risk Addressed.** Training and inference jobs with unrestricted internet access can pull untrusted code and send data out.
 
@@ -516,6 +523,7 @@ nav_order: 18
 | **MITRE ATLAS Mapping** | AML.T0049 Exploit Public-Facing Application (where exposed); general cloud and infrastructure controls apply |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (infrastructure components) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
 **Risk Addressed.** A foothold in one inference container should not give reach to storage, other models or management APIs.
 
@@ -581,6 +589,7 @@ nav_order: 18
 | **MITRE ATLAS Mapping** | AML.T0055 Unsecured Credentials |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
 **Risk Addressed.** Secrets in images, environment variables and configuration maps are readable by anyone who can read the workload.
 
@@ -646,6 +655,7 @@ nav_order: 18
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials; [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
 **Risk Addressed.** Over-permissive cloud roles on AI services let a small compromise become an account-wide one.
 
@@ -711,6 +721,7 @@ nav_order: 18
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening; [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection |
 
 **Risk Addressed.** Public or weakly protected buckets holding models and datasets are among the most common AI exposures.
 
@@ -775,6 +786,7 @@ nav_order: 18
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening; [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
 **Risk Addressed.** Encryption claims often cover storage but not memory, backups or in-use data.
 
@@ -839,6 +851,7 @@ nav_order: 18
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) Data Sovereignty |
 
 **Risk Addressed.** Sovereignty claims about in-country control are meaningless if management, telemetry or licensing functions depend on services outside the jurisdiction.
 
@@ -904,6 +917,7 @@ nav_order: 18
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) Data Sovereignty |
 
 **Risk Addressed.** Products described as on-premise often need cloud services for licensing, updates, model downloads or classification.
 
@@ -969,6 +983,7 @@ nav_order: 18
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) Data Sovereignty; [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
 **Risk Addressed.** Shared platforms increase the chance of cross-customer exposure and complicate residency commitments.
 
@@ -1033,6 +1048,7 @@ nav_order: 18
 | **MITRE ATLAS Mapping** | AML.T0049 Exploit Public-Facing Application (where exposed); general cloud and infrastructure controls apply |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (infrastructure components) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening; [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance |
 
 **Risk Addressed.** The security platform's agents, gateways and console hold privileged access to traffic and data, and are themselves attack targets.
 
@@ -1099,6 +1115,7 @@ nav_order: 18
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
 | **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
 **Risk Addressed.** One team can monopolise scarce GPU capacity or starve production inference.
 
@@ -1164,6 +1181,7 @@ nav_order: 18
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability |
 
 **Risk Addressed.** Gaps in cluster, GPU, storage and network logging leave incidents unexplained.
 
@@ -1229,6 +1247,7 @@ nav_order: 18
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) AI Service Resilience and Fail-Safe Operation |
 
 **Risk Addressed.** Models, vector stores, prompts and policies may be unrecoverable or restore to an insecure state.
 
@@ -1294,6 +1313,7 @@ nav_order: 18
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) Data Sovereignty |
 
 **Risk Addressed.** Residency and resilience promises depend on where infrastructure physically sits, who operates it and what assurance covers the facility.
 

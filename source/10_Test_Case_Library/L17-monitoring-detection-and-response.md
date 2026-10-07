@@ -11,7 +11,7 @@ nav_order: 20
 
 **Primary test focus:** telemetry, SIEM/SOAR integration, AI incident response, forensics
 
-**Controls tested:** [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008), [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009), [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035)
+**Controls tested:** [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration (18 cases), [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics (10 cases), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability (7 cases), [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance (1 case), [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) Agent Governance (1 case), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance (1 case), [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) Agent Containment and Kill Switch (1 case), [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation (1 case), [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) AI Service Resilience and Fail-Safe Operation (1 case)
 
 **Cases:** 31 (TC-L17-001 to TC-L17-031)
 > **Safety boundary.** Infrastructure and SOC cases use a lab cluster, mock inference servers, a test cloud account and a lab SIEM and SOAR only. Probe and compromise-simulation scripts are harmless lab tools that only attempt connections and reads of canary resources. Never run them against production systems, and never connect lab alerting to production on-call routing. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.
@@ -20,39 +20,39 @@ nav_order: 20
 
 ## Cases in this layer
 
-| ID | Title | Severity | Method | Domain(s) |
-|---|---|---|---|---|
-| [TC-L17-001](#tc-l17-001) | Telemetry Coverage Map Across the 17 Layers | High | Evidence | D3, D5, D7 |
-| [TC-L17-002](#tc-l17-002) | Event Schema and Field Completeness | High | Technical | D3 |
-| [TC-L17-003](#tc-l17-003) | Log Delivery to SIEM: Formats, Reliability and Backfill | High | Technical | D3 |
-| [TC-L17-004](#tc-l17-004) | Log Integrity and Tamper Evidence | High | Technical | D7 |
-| [TC-L17-005](#tc-l17-005) | Log Retention, Immutability and Storage Location | Medium | Evidence | D7 |
-| [TC-L17-006](#tc-l17-006) | Prebuilt AI Detection Content and SIEM Rules | High | Technical | D3, D5 |
-| [TC-L17-007](#tc-l17-007) | Alert Quality: Severity, Deduplication and Noise | High | Technical | D3 |
-| [TC-L17-008](#tc-l17-008) | Alert Enrichment with User, Device, Asset and Risk Context | Medium | Technical | D1, D3 |
-| [TC-L17-009](#tc-l17-009) | Correlation of AI Events with Endpoint, Identity and Network Events | High | Technical | D3, D6 |
-| [TC-L17-010](#tc-l17-010) | Detection of Data Exfiltration Through AI Services | Critical | Technical | D6, D1 |
-| [TC-L17-011](#tc-l17-011) | Detection of Account Takeover on AI Tools | High | Technical | D1, D3 |
-| [TC-L17-012](#tc-l17-012) | Detection of Agent Compromise Indicators | Critical | Technical | D5 |
-| [TC-L17-013](#tc-l17-013) | Detection of Insider Misuse and Policy Evasion | High | Technical | D1, D6 |
-| [TC-L17-014](#tc-l17-014) | Mapping of Detections to MITRE ATLAS and ATT&CK | Medium | Evidence | D3 |
-| [TC-L17-015](#tc-l17-015) | SOAR Playbooks for Automated Containment | Critical | Technical | D5, D3 |
-| [TC-L17-016](#tc-l17-016) | SOAR and Ticketing Integration: Bidirectional Flow | High | Technical | D3 |
-| [TC-L17-017](#tc-l17-017) | Case Management and Evidence Attachment | Medium | Technical | D6 |
-| [TC-L17-018](#tc-l17-018) | AI Incident Response Runbook and Tabletop Exercise | High | Technical | D3, D5, D7 |
-| [TC-L17-019](#tc-l17-019) | Containment Time Measurement | High | Technical | D5 |
-| [TC-L17-020](#tc-l17-020) | Forensics: Conversation and Tool Call Reconstruction | Critical | Technical | D6, D5 |
-| [TC-L17-021](#tc-l17-021) | Forensics: Evidence Preservation, Legal Hold and Integrity | High | Technical | D7 |
-| [TC-L17-022](#tc-l17-022) | Forensics: Cross-User, Agent and Tool Timeline | High | Technical | D5, D3 |
-| [TC-L17-023](#tc-l17-023) | Post-Incident Feedback into Policy and Detection | Medium | Evidence | D3 |
-| [TC-L17-024](#tc-l17-024) | AI Threat Intelligence Ingestion | Medium | Technical | D3 |
-| [TC-L17-025](#tc-l17-025) | Dashboards and Executive Metrics (Detection and Response Times) | Medium | Evidence | D7 |
-| [TC-L17-026](#tc-l17-026) | Regulatory Incident Reporting Evidence (UAE and GCC) | High | Evidence | D7 |
-| [TC-L17-027](#tc-l17-027) | 24x7 Monitoring, MDR Support and Escalation Model | High | Attestation | D7 |
-| [TC-L17-028](#tc-l17-028) | Platform Health and Silent Failure Detection | High | Technical | D3 |
-| [TC-L17-029](#tc-l17-029) | Purple-Team Detection Validation: Replay of Earlier Attacks | High | Technical | D3, D5, D6 |
-| [TC-L17-030](#tc-l17-030) | SOC Analyst Access to Raw Prompts: Masking, Role Separation and Unmask Audit | High | Technical | D1, D7 |
-| [TC-L17-031](#tc-l17-031) | Developer AI Activity Telemetry and Investigation Timeline | High | Technical | D2, D6 |
+| ID | Title | Severity | Method | Domain(s) | Controls |
+|---|---|---|---|---|---|
+| [TC-L17-001](#tc-l17-001) | Telemetry Coverage Map Across the 17 Layers | High | Evidence | D3, D5, D7 | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) |
+| [TC-L17-002](#tc-l17-002) | Event Schema and Field Completeness | High | Technical | D3 | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) |
+| [TC-L17-003](#tc-l17-003) | Log Delivery to SIEM: Formats, Reliability and Backfill | High | Technical | D3 | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) |
+| [TC-L17-004](#tc-l17-004) | Log Integrity and Tamper Evidence | High | Technical | D7 | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) |
+| [TC-L17-005](#tc-l17-005) | Log Retention, Immutability and Storage Location | Medium | Evidence | D7 | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) |
+| [TC-L17-006](#tc-l17-006) | Prebuilt AI Detection Content and SIEM Rules | High | Technical | D3, D5 | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) |
+| [TC-L17-007](#tc-l17-007) | Alert Quality: Severity, Deduplication and Noise | High | Technical | D3 | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) |
+| [TC-L17-008](#tc-l17-008) | Alert Enrichment with User, Device, Asset and Risk Context | Medium | Technical | D1, D3 | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) |
+| [TC-L17-009](#tc-l17-009) | Correlation of AI Events with Endpoint, Identity and Network Events | High | Technical | D3, D6 | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) |
+| [TC-L17-010](#tc-l17-010) | Detection of Data Exfiltration Through AI Services | Critical | Technical | D6, D1 | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) |
+| [TC-L17-011](#tc-l17-011) | Detection of Account Takeover on AI Tools | High | Technical | D1, D3 | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) |
+| [TC-L17-012](#tc-l17-012) | Detection of Agent Compromise Indicators | Critical | Technical | D5 | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009), [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) |
+| [TC-L17-013](#tc-l17-013) | Detection of Insider Misuse and Policy Evasion | High | Technical | D1, D6 | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) |
+| [TC-L17-014](#tc-l17-014) | Mapping of Detections to MITRE ATLAS and ATT&CK | Medium | Evidence | D3 | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) |
+| [TC-L17-015](#tc-l17-015) | SOAR Playbooks for Automated Containment | Critical | Technical | D5, D3 | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035), [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) |
+| [TC-L17-016](#tc-l17-016) | SOAR and Ticketing Integration: Bidirectional Flow | High | Technical | D3 | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) |
+| [TC-L17-017](#tc-l17-017) | Case Management and Evidence Attachment | Medium | Technical | D6 | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) |
+| [TC-L17-018](#tc-l17-018) | AI Incident Response Runbook and Tabletop Exercise | High | Technical | D3, D5, D7 | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) |
+| [TC-L17-019](#tc-l17-019) | Containment Time Measurement | High | Technical | D5 | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035), [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) |
+| [TC-L17-020](#tc-l17-020) | Forensics: Conversation and Tool Call Reconstruction | Critical | Technical | D6, D5 | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) |
+| [TC-L17-021](#tc-l17-021) | Forensics: Evidence Preservation, Legal Hold and Integrity | High | Technical | D7 | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) |
+| [TC-L17-022](#tc-l17-022) | Forensics: Cross-User, Agent and Tool Timeline | High | Technical | D5, D3 | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) |
+| [TC-L17-023](#tc-l17-023) | Post-Incident Feedback into Policy and Detection | Medium | Evidence | D3 | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) |
+| [TC-L17-024](#tc-l17-024) | AI Threat Intelligence Ingestion | Medium | Technical | D3 | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) |
+| [TC-L17-025](#tc-l17-025) | Dashboards and Executive Metrics (Detection and Response Times) | Medium | Evidence | D7 | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) |
+| [TC-L17-026](#tc-l17-026) | Regulatory Incident Reporting Evidence (UAE and GCC) | High | Evidence | D7 | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L17-027](#tc-l17-027) | 24x7 Monitoring, MDR Support and Escalation Model | High | Attestation | D7 | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009), [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) |
+| [TC-L17-028](#tc-l17-028) | Platform Health and Silent Failure Detection | High | Technical | D3 | [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040), [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) |
+| [TC-L17-029](#tc-l17-029) | Purple-Team Detection Validation: Replay of Earlier Attacks | High | Technical | D3, D5, D6 | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034), [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) |
+| [TC-L17-030](#tc-l17-030) | SOC Analyst Access to Raw Prompts: Masking, Role Separation and Unmask Audit | High | Technical | D1, D7 | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) |
+| [TC-L17-031](#tc-l17-031) | Developer AI Activity Telemetry and Investigation Timeline | High | Technical | D2, D6 | [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) |
 
 ---
 
@@ -72,6 +72,7 @@ nav_order: 20
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration; [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability |
 
 **Risk Addressed.** Detection can only be as good as the events the platform produces, and gaps are usually discovered during an incident.
 
@@ -137,6 +138,7 @@ nav_order: 20
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability |
 
 **Risk Addressed.** Events missing user, agent, model, tool or decision fields cannot be correlated or investigated.
 
@@ -203,6 +205,7 @@ nav_order: 20
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration |
 
 **Risk Addressed.** Lost or late events create silent detection gaps, and some integrations drop events during outages.
 
@@ -269,6 +272,7 @@ nav_order: 20
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability |
 
 **Risk Addressed.** Altered or deleted logs undermine investigations and regulatory defence.
 
@@ -333,6 +337,7 @@ nav_order: 20
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability |
 
 **Risk Addressed.** Short retention or the wrong storage location breaks investigations and regulatory obligations.
 
@@ -398,6 +403,7 @@ nav_order: 20
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration |
 
 **Risk Addressed.** Teams without ready detection content spend months building it and miss early attacks.
 
@@ -463,6 +469,7 @@ nav_order: 20
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration |
 
 **Risk Addressed.** A noisy platform trains analysts to ignore it.
 
@@ -528,6 +535,7 @@ nav_order: 20
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration |
 
 **Risk Addressed.** Analysts waste time looking up who a user is and what an asset does.
 
@@ -592,6 +600,7 @@ nav_order: 20
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration |
 
 **Risk Addressed.** Real incidents span tools; AI events alone rarely tell the story.
 
@@ -656,6 +665,7 @@ nav_order: 20
 | **MITRE ATLAS Mapping** | AML.T0025 Exfiltration via Cyber Means |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration |
 
 **Risk Addressed.** Data leaves a little at a time through legitimate AI services and may not trigger any single-event rule.
 
@@ -720,6 +730,7 @@ nav_order: 20
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration |
 
 **Risk Addressed.** Stolen sessions on AI tools give attackers access to chat history and connected data.
 
@@ -781,9 +792,10 @@ nav_order: 20
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | Critical |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration; [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) Agent Governance |
 
 **Risk Addressed.** A compromised agent behaves differently in small ways before it does damage.
 
@@ -848,6 +860,7 @@ nav_order: 20
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration |
 
 **Risk Addressed.** Insiders probe controls, try workarounds and move data in ways that look like normal work.
 
@@ -912,6 +925,7 @@ nav_order: 20
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration |
 
 **Risk Addressed.** Detections without a framework mapping are hard to compare, prioritise and report.
 
@@ -973,9 +987,10 @@ nav_order: 20
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | Critical |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics; [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration |
 
 **Risk Addressed.** Manual containment is too slow when an agent or account is misusing data, but automatic actions can themselves cause outages.
 
@@ -1041,6 +1056,7 @@ nav_order: 20
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration |
 
 **Risk Addressed.** One-way alert feeds leave tickets and platform state out of step.
 
@@ -1106,6 +1122,7 @@ nav_order: 20
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics |
 
 **Risk Addressed.** Evidence scattered across tools slows investigations, loses context and weakens any later disciplinary or legal step.
 
@@ -1171,6 +1188,7 @@ nav_order: 20
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics |
 
 **Risk Addressed.** Teams practised only on malware and phishing struggle with prompt injection, model misbehaviour and agent incidents.
 
@@ -1233,9 +1251,10 @@ nav_order: 20
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics; [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) Agent Containment and Kill Switch |
 
 **Risk Addressed.** Time from first malicious event to verified containment decides how much damage an AI incident does, and it is rarely measured.
 
@@ -1301,6 +1320,7 @@ nav_order: 20
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics; [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability |
 
 **Risk Addressed.** Without full conversation and tool records, investigators cannot show what the user asked, what the model said or what an agent did.
 
@@ -1365,6 +1385,7 @@ nav_order: 20
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics |
 
 **Risk Addressed.** Evidence that was not preserved, or cannot be shown unaltered, may be useless.
 
@@ -1429,6 +1450,7 @@ nav_order: 20
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics |
 
 **Risk Addressed.** Incidents rarely involve one actor; investigators need an ordered story across people, agents and tools.
 
@@ -1493,6 +1515,7 @@ nav_order: 20
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics |
 
 **Risk Addressed.** Lessons that never become rules or detections turn into repeat incidents.
 
@@ -1558,6 +1581,7 @@ nav_order: 20
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration |
 
 **Risk Addressed.** New prompt attacks, malicious tool servers and compromised model hashes appear constantly and are only useful if detection can use them quickly.
 
@@ -1623,6 +1647,7 @@ nav_order: 20
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration |
 
 **Risk Addressed.** Leaders manage what they can see; wrong or undefined metrics send management in the wrong direction.
 
@@ -1688,6 +1713,7 @@ nav_order: 20
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics; [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** Regulators expect timely, specific incident reports and evidence of data affected.
 
@@ -1752,6 +1778,7 @@ nav_order: 20
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration; [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics |
 
 **Risk Addressed.** An alert at 2am is worthless if no one is accountable for it, and managed services often have narrower coverage than the sales material suggests.
 
@@ -1817,6 +1844,7 @@ nav_order: 20
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) AI Service Resilience and Fail-Safe Operation; [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration |
 
 **Risk Addressed.** The worst failure is the one nobody notices: an agent that stopped reporting, ingestion that stalled, or a certificate that expired.
 
@@ -1882,6 +1910,7 @@ nav_order: 20
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation; [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration |
 
 **Risk Addressed.** Detection claimed on paper may fail end to end.
 
@@ -1947,6 +1976,7 @@ nav_order: 20
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage (secondary) |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; GOVERN 1.1 |
+| **Control(s) Tested** | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability |
 
 **Risk Addressed.** Analysts reading raw prompts may see personal or confidential content, and unrestricted access breaches employee privacy expectations and some employment or data protection rules.
 
@@ -2012,6 +2042,7 @@ nav_order: 20
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance; [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability |
 
 **Risk Addressed.** When code or secrets leak through a coding assistant, investigators must reconstruct what was sent, from which repository and by which tool, and most SOC tooling holds no such record.
 

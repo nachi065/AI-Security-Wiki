@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Enterprise AI Risk Register | AI Security Wiki</title>
 <meta name="author" content="Nachiket Sathaye">
-<meta name="description" content="Enterprise AI Risk Register: Provide a sample enterprise AI risk register covering AI usage, development, applications, agents, auditability and sovereignty…">
+<meta name="description" content="Enterprise AI Risk Register: Provide a sample enterprise AI risk register covering AI usage, development, applications, agents, auditability, sovereignty…">
 <link rel="canonical" href="https://nachi065.github.io/AI-Security-Wiki/02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="AI Security Wiki">
 <meta property="og:title" content="Enterprise AI Risk Register | AI Security Wiki">
-<meta property="og:description" content="Enterprise AI Risk Register: Provide a sample enterprise AI risk register covering AI usage, development, applications, agents, auditability and sovereignty…">
+<meta property="og:description" content="Enterprise AI Risk Register: Provide a sample enterprise AI risk register covering AI usage, development, applications, agents, auditability, sovereignty…">
 <meta property="og:url" content="https://nachi065.github.io/AI-Security-Wiki/02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="../assets/style.css">
@@ -134,7 +134,7 @@
 <article>
 <h1 id="enterprise-ai-risk-register">Enterprise AI Risk Register</h1>
 <blockquote>
-<p><strong>Purpose:</strong> Provide a sample enterprise AI risk register covering AI usage, development, applications, agents, auditability and sovereignty, as a starting template.</p>
+<p><strong>Purpose:</strong> Provide a sample enterprise AI risk register covering AI usage, development, applications, agents, auditability, sovereignty, cost, output reliability and resilience, as a starting template.</p>
 <p><strong>Audience:</strong> Governance, cyber risk, security architecture, audit, AI product owners.</p>
 <p><strong>How to use:</strong> Use this page as a template. Re-score each risk using the AI Risk Methodology for your own environment, and add owners, evidence and treatment status.</p>
 <p><strong>Illustrative example:</strong> The ratings and entries on this page are generic examples, not an assessment of any specific organization. Replace them with your own findings before relying on them.</p>
@@ -231,6 +231,30 @@
 <td>High</td>
 <td>10</td>
 </tr>
+<tr>
+<td>AI-R11</td>
+<td>AI Cost Abuse and Resource Exhaustion</td>
+<td>Medium</td>
+<td>High</td>
+<td>High</td>
+<td>11</td>
+</tr>
+<tr>
+<td>AI-R12</td>
+<td>Unreliable or Harmful AI Output</td>
+<td>Medium</td>
+<td>High</td>
+<td>High</td>
+<td>12</td>
+</tr>
+<tr>
+<td>AI-R13</td>
+<td>AI Service Disruption and Dependency Failure</td>
+<td>Medium</td>
+<td>High</td>
+<td>Medium</td>
+<td>13</td>
+</tr>
 </tbody>
 </table></div>
 <h2 id="risk-narratives">Risk Narratives</h2>
@@ -254,6 +278,12 @@
 <p>Investigations are weak if prompts, responses, uploads, retrieved documents, model calls, tool invocations and agent decisions cannot be reconstructed. Required controls include policy-based logging, audit export, SIEM integration and retention controls.</p>
 <h3 id="ai-r10-data-sovereignty-and-third-party-processing-risk">AI-R10 — Data Sovereignty and Third-Party Processing Risk</h3>
 <p>AI platforms may process or retain prompts, uploads, metadata and logs in external locations. Required controls include data residency validation, training exclusion, retention configuration, administrative access logging and deployment model assessment.</p>
+<h3 id="ai-r11-ai-cost-abuse-and-resource-exhaustion">AI-R11 — AI Cost Abuse and Resource Exhaustion</h3>
+<p>AI usage is metered, so leaked keys, automated traffic against public endpoints, runaway agents and retry loops can exhaust budget or capacity within hours. Required controls include cost attribution, budgets and quotas with enforcement, rate limits, spend anomaly detection, key revocation and limits on agent loops.</p>
+<h3 id="ai-r12-unreliable-or-harmful-ai-output">AI-R12 — Unreliable or Harmful AI Output</h3>
+<p>AI systems can give confident wrong answers, invent sources, packages and links, drift outside their approved scope or produce harmful content, and people act on the result. Required controls include grounding in approved sources, citation verification, topic restriction, harmful content filtering and factuality evaluation.</p>
+<h3 id="ai-r13-ai-service-disruption-and-dependency-failure">AI-R13 — AI Service Disruption and Dependency Failure</h3>
+<p>Business processes come to depend on AI services, model providers and the security controls in front of them. Outages, provider changes, overload or a control that fails open can stop the process or silently remove protection. Required controls include defined fail modes, failover that keeps policy intact, fallback paths, tested backups, provider exit plans and detection of silent control failure.</p>
 </article>
 <nav class="pager" aria-label="Previous and next page"><a class="prev" href="02A_AI_Risk_Methodology.html">&larr; AI Risk Methodology</a><a class="next" href="02C_AI_Risk_Treatment_Plan.html">AI Risk Treatment Plan &rarr;</a></nav>
 <footer class="site-footer">Author: Nachiket Sathaye &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/02_Risk_Management/02B_Enterprise_AI_Risk_Register.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a></footer>

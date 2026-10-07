@@ -11,7 +11,7 @@ nav_order: 17
 
 **Primary test focus:** pipeline and registry security, CI/CD gates, artifact signing
 
-**Controls tested:** [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004), [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030)
+**Controls tested:** [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) ML Pipeline and Model Registry Security (10 cases), [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening (5 cases), [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation (3 cases), [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery (2 cases), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials (2 cases), [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance (1 case), [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security (1 case), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability (1 case), [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration (1 case), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines (1 case), [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity (1 case), [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM (1 case), [AI-CTRL-033](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-033) AI Security Review and Release Gate (1 case)
 
 **Cases:** 22 (TC-L14-001 to TC-L14-022)
 > **Safety boundary.** Retrieval, model, training, pipeline and supply chain cases use fabricated corpora and datasets, small lab models, mock hubs and indexes and harmless marker artefacts only (an EICAR-style file that writes a marker, never real malware). Never load untrusted model files outside an isolated sandbox, and never connect the lab to production knowledge sources, models, pipelines, registries or credentials. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.
@@ -20,30 +20,30 @@ nav_order: 17
 
 ## Cases in this layer
 
-| ID | Title | Severity | Method | Domain(s) |
-|---|---|---|---|---|
-| [TC-L14-001](#tc-l14-001) | AI Pipeline and LLMOps Tool Inventory | High | Technical | D4, D2 |
-| [TC-L14-002](#tc-l14-002) | CI/CD Security Gates for AI Releases | Critical | Technical | D4, D2 |
-| [TC-L14-003](#tc-l14-003) | Artefact Signing and Verification (Models, Containers, Prompts) | Critical | Technical | D4 |
-| [TC-L14-004](#tc-l14-004) | Model Registry Access Control and Immutability | High | Technical | D4 |
-| [TC-L14-005](#tc-l14-005) | Prompts and Configuration as Code: Review and Version Control | High | Technical | D4, D2 |
-| [TC-L14-006](#tc-l14-006) | Secrets in Pipelines, Notebooks and Experiment Logs | Critical | Technical | D4, D2 |
-| [TC-L14-007](#tc-l14-007) | Notebook Server Security | High | Technical | D4 |
-| [TC-L14-008](#tc-l14-008) | Pipeline Runner Least Privilege | High | Technical | D4 |
-| [TC-L14-009](#tc-l14-009) | Dependency Scanning for ML Libraries and Serving Images | High | Technical | D4 |
-| [TC-L14-010](#tc-l14-010) | Container Image and Runtime Configuration Scanning for Model Serving | High | Technical | D4 |
-| [TC-L14-011](#tc-l14-011) | Infrastructure-as-Code Scanning for AI Infrastructure | Medium | Technical | D4 |
-| [TC-L14-012](#tc-l14-012) | Promotion Workflow Across Environments | High | Technical | D4 |
-| [TC-L14-013](#tc-l14-013) | Rollback and Emergency Model Disable | Critical | Technical | D4, D5 |
-| [TC-L14-014](#tc-l14-014) | Feature Store and Data Pipeline Integrity | Medium | Technical | D4, D6 |
-| [TC-L14-015](#tc-l14-015) | Experiment Tracking Data Leakage | Medium | Technical | D6, D4 |
-| [TC-L14-016](#tc-l14-016) | Post-Deployment Monitoring Coverage and Drift Signals | Medium | Technical | D4 |
-| [TC-L14-017](#tc-l14-017) | Evaluation Harness and Test Set Integrity | Medium | Technical | D4 |
-| [TC-L14-018](#tc-l14-018) | Shadow Deployments and Unregistered Model Endpoints | High | Technical | D4, D3 |
-| [TC-L14-019](#tc-l14-019) | Pipeline Audit Trail and Change Attribution | High | Technical | D4, D7 |
-| [TC-L14-020](#tc-l14-020) | Policy-as-Code Admission Control for AI Workloads | High | Technical | D4, D7 |
-| [TC-L14-021](#tc-l14-021) | AI-Assisted Commit and Pull Request Identification | Medium | Technical | D2, D4 |
-| [TC-L14-022](#tc-l14-022) | AI Code Review and Fix Bot Permissions in the Pipeline | High | Technical | D2, D5 |
+| ID | Title | Severity | Method | Domain(s) | Controls |
+|---|---|---|---|---|---|
+| [TC-L14-001](#tc-l14-001) | AI Pipeline and LLMOps Tool Inventory | High | Technical | D4, D2 | [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030), [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) |
+| [TC-L14-002](#tc-l14-002) | CI/CD Security Gates for AI Releases | Critical | Technical | D4, D2 | [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030), [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-L14-003](#tc-l14-003) | Artefact Signing and Verification (Models, Containers, Prompts) | Critical | Technical | D4 | [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) |
+| [TC-L14-004](#tc-l14-004) | Model Registry Access Control and Immutability | High | Technical | D4 | [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) |
+| [TC-L14-005](#tc-l14-005) | Prompts and Configuration as Code: Review and Version Control | High | Technical | D4, D2 | [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) |
+| [TC-L14-006](#tc-l14-006) | Secrets in Pipelines, Notebooks and Experiment Logs | Critical | Technical | D4, D2 | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) |
+| [TC-L14-007](#tc-l14-007) | Notebook Server Security | High | Technical | D4 | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) |
+| [TC-L14-008](#tc-l14-008) | Pipeline Runner Least Privilege | High | Technical | D4 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-L14-009](#tc-l14-009) | Dependency Scanning for ML Libraries and Serving Images | High | Technical | D4 | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) |
+| [TC-L14-010](#tc-l14-010) | Container Image and Runtime Configuration Scanning for Model Serving | High | Technical | D4 | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) |
+| [TC-L14-011](#tc-l14-011) | Infrastructure-as-Code Scanning for AI Infrastructure | Medium | Technical | D4 | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) |
+| [TC-L14-012](#tc-l14-012) | Promotion Workflow Across Environments | High | Technical | D4 | [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030), [AI-CTRL-033](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-033) |
+| [TC-L14-013](#tc-l14-013) | Rollback and Emergency Model Disable | Critical | Technical | D4, D5 | [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) |
+| [TC-L14-014](#tc-l14-014) | Feature Store and Data Pipeline Integrity | Medium | Technical | D4, D6 | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029), [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) |
+| [TC-L14-015](#tc-l14-015) | Experiment Tracking Data Leakage | Medium | Technical | D6, D4 | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) |
+| [TC-L14-016](#tc-l14-016) | Post-Deployment Monitoring Coverage and Drift Signals | Medium | Technical | D4 | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009), [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-L14-017](#tc-l14-017) | Evaluation Harness and Test Set Integrity | Medium | Technical | D4 | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-L14-018](#tc-l14-018) | Shadow Deployments and Unregistered Model Endpoints | High | Technical | D4, D3 | [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030), [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) |
+| [TC-L14-019](#tc-l14-019) | Pipeline Audit Trail and Change Attribution | High | Technical | D4, D7 | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008), [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) |
+| [TC-L14-020](#tc-l14-020) | Policy-as-Code Admission Control for AI Workloads | High | Technical | D4, D7 | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) |
+| [TC-L14-021](#tc-l14-021) | AI-Assisted Commit and Pull Request Identification | Medium | Technical | D2, D4 | [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) |
+| [TC-L14-022](#tc-l14-022) | AI Code Review and Fix Bot Permissions in the Pipeline | High | Technical | D2, D5 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016), [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
 
 ---
 
@@ -63,6 +63,7 @@ nav_order: 17
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) ML Pipeline and Model Registry Security; [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
 **Risk Addressed.** ML pipelines, notebooks, orchestrators and prompt-management tools are set up by data teams outside normal engineering inventory.
 
@@ -127,6 +128,7 @@ nav_order: 17
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) ML Pipeline and Model Registry Security; [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** Models and prompts promoted without security testing carry unknown weaknesses straight to production.
 
@@ -192,6 +194,7 @@ nav_order: 17
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
+| **Control(s) Tested** | [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) ML Pipeline and Model Registry Security |
 
 **Risk Addressed.** Unsigned artefacts can be swapped between build and deploy without anyone noticing.
 
@@ -256,6 +259,7 @@ nav_order: 17
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) ML Pipeline and Model Registry Security |
 
 **Risk Addressed.** A writable registry lets anyone replace a production model or change its metadata.
 
@@ -320,6 +324,7 @@ nav_order: 17
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) ML Pipeline and Model Registry Security |
 
 **Risk Addressed.** Prompts and settings edited in production consoles change behaviour with no review or history.
 
@@ -384,6 +389,7 @@ nav_order: 17
 | **MITRE ATLAS Mapping** | AML.T0055 Unsecured Credentials |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
 **Risk Addressed.** Tokens and keys end up in notebooks, pipeline variables and experiment logs that many people can read.
 
@@ -449,6 +455,7 @@ nav_order: 17
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
 **Risk Addressed.** Notebook servers often run with open ports, shared tokens and broad cloud permissions.
 
@@ -512,6 +519,7 @@ nav_order: 17
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
 **Risk Addressed.** A compromised pipeline step with broad credentials can read data, push models and reach production.
 
@@ -575,6 +583,7 @@ nav_order: 17
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
+| **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM |
 
 **Risk Addressed.** ML stacks have deep dependency trees and large images with known vulnerabilities.
 
@@ -639,6 +648,7 @@ nav_order: 17
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
+| **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
 **Risk Addressed.** Serving containers often run as root with excess capabilities and secrets baked into layers.
 
@@ -703,6 +713,7 @@ nav_order: 17
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
 **Risk Addressed.** Misconfigurations in templates for GPU clusters, vector stores and storage are replicated at scale.
 
@@ -767,6 +778,7 @@ nav_order: 17
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) ML Pipeline and Model Registry Security; [AI-CTRL-033](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-033) AI Security Review and Release Gate |
 
 **Risk Addressed.** Skipping staging, or promoting without approval, sends untested models to production.
 
@@ -828,9 +840,10 @@ nav_order: 17
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P, G |
 | **Risk Severity** | Critical |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) ML Pipeline and Model Registry Security |
 
 **Risk Addressed.** When a model misbehaves, teams must be able to disable it or return to a known good version fast.
 
@@ -893,9 +906,10 @@ nav_order: 17
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
-| **MITRE ATLAS Mapping** | AML.T0020 Poison Training Data (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
+| **MITRE ATLAS Mapping** | AML.T0020 Training Data Poisoning (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
 | **OWASP LLM / GenAI Mapping** | LLM04:2025 Data and Model Poisoning; LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity; [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) ML Pipeline and Model Registry Security |
 
 **Risk Addressed.** Tampered, stale or re-sourced features silently change model predictions without any change to the model.
 
@@ -960,6 +974,7 @@ nav_order: 17
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
 **Risk Addressed.** Experiment tools log prompts, outputs, sample rows and artefacts that nobody classifies, and are often visible to many users.
 
@@ -1025,6 +1040,7 @@ nav_order: 17
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration; [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** Deployments without monitoring hooks cannot show drift, misuse or degradation.
 
@@ -1086,9 +1102,10 @@ nav_order: 17
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
-| **MITRE ATLAS Mapping** | AML.T0020 Poison Training Data (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
+| **MITRE ATLAS Mapping** | AML.T0020 Training Data Poisoning (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
 | **OWASP LLM / GenAI Mapping** | LLM04:2025 Data and Model Poisoning; LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** Tampered or leaked evaluation sets make unsafe models look safe.
 
@@ -1153,6 +1170,7 @@ nav_order: 17
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) ML Pipeline and Model Registry Security; [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
 **Risk Addressed.** Models served outside the registry bypass every release control, scanning and monitoring step.
 
@@ -1217,6 +1235,7 @@ nav_order: 17
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability; [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) ML Pipeline and Model Registry Security |
 
 **Risk Addressed.** Investigators need to know who changed what in a pipeline, when, and with what approval.
 
@@ -1281,6 +1300,7 @@ nav_order: 17
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
 **Risk Addressed.** Written standards fail unless the cluster refuses non-compliant workloads at deployment.
 
@@ -1346,6 +1366,7 @@ nav_order: 17
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance |
 
 **Risk Addressed.** Without knowing which changes were AI-assisted, review depth, incident analysis and policy cannot take AI involvement into account.
 
@@ -1409,6 +1430,7 @@ nav_order: 17
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials; [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Review and auto-fix bots hold write access to repositories and can be steered by pull request content into approving or pushing changes.
 

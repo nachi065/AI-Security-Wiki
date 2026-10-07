@@ -11,7 +11,7 @@ nav_order: 25
 
 **Focus:** AI incident response and forensics: taxonomy, state preservation, replay, scoping, containment, provider coordination, evidence handling
 
-**Controls tested:** [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008), [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025), [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035)
+**Controls tested:** [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics (22 cases), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance (2 cases), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability (1 case), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance (1 case), [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) Agent Containment and Kill Switch (1 case), [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity (1 case), [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation (1 case)
 
 **Cases:** 22 (TC-D12-001 to TC-D12-022)  |  **Series:** Emerging domains
 
@@ -21,30 +21,30 @@ nav_order: 25
 
 ## Cases in this domain
 
-| ID | Title | Severity | Method |
-|---|---|---|---|
-| [TC-D12-001](#tc-d12-001) | AI Incident Taxonomy and Severity Classification | High | Evidence |
-| [TC-D12-002](#tc-d12-002) | AI Incident Intake: Detection Alerts, User Reports and Third-Party Notices | High | Technical |
-| [TC-D12-003](#tc-d12-003) | Triage Runbooks by AI Incident Type | Critical | Technical |
-| [TC-D12-004](#tc-d12-004) | Preserving AI System State at Incident Time: Model, Prompt, Configuration, Tools and Policy | Critical | Technical |
-| [TC-D12-005](#tc-d12-005) | Retrieval Index and Knowledge Snapshots for Forensics | High | Technical |
-| [TC-D12-006](#tc-d12-006) | Reconstructing What the Model Saw: Context, Memory and Retrieved Content | Critical | Technical |
-| [TC-D12-007](#tc-d12-007) | Deterministic Replay: Reproducing an Incident with Pinned Versions and Recorded Inputs | High | Technical |
-| [TC-D12-008](#tc-d12-008) | Attribution Analysis: Attacker, Insider, Misconfiguration or Model Fault | High | Technical |
-| [TC-D12-009](#tc-d12-009) | Scoping and Blast Radius: Users, Data, Systems and Outputs Affected | Critical | Technical |
-| [TC-D12-010](#tc-d12-010) | Downstream Propagation of Harmful or False Outputs | High | Technical |
-| [TC-D12-011](#tc-d12-011) | Containment Option Catalogue and Selection Guidance | Critical | Technical |
-| [TC-D12-012](#tc-d12-012) | Eradication and Recovery Validation | High | Technical |
-| [TC-D12-013](#tc-d12-013) | Poisoning and Training-Data Incident Forensics | Critical | Technical |
-| [TC-D12-014](#tc-d12-014) | Model Behaviour Regression Incident | High | Technical |
-| [TC-D12-015](#tc-d12-015) | Harm Assessment and Affected-Person Identification | Critical | Technical |
-| [TC-D12-016](#tc-d12-016) | Notification Decision and Communications (Framework-Neutral) | Critical | Technical |
-| [TC-D12-017](#tc-d12-017) | Third-Party and Model-Provider Incident Coordination | High | Evidence |
-| [TC-D12-018](#tc-d12-018) | Evidence Handling for AI Artefacts and Chain of Custody | Critical | Technical |
-| [TC-D12-019](#tc-d12-019) | Forensic Tooling Access, Separation of Duties and Audit | High | Technical |
-| [TC-D12-020](#tc-d12-020) | AI Root-Cause Analysis Method and Recurrence Tracking | High | Evidence |
-| [TC-D12-021](#tc-d12-021) | Near-Miss and Blocked-Attack Learning | Medium | Technical |
-| [TC-D12-022](#tc-d12-022) | AI Incident Register, Metrics and Trend Analysis | Medium | Evidence |
+| ID | Title | Severity | Method | Controls |
+|---|---|---|---|---|
+| [TC-D12-001](#tc-d12-001) | AI Incident Taxonomy and Severity Classification | High | Evidence | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) |
+| [TC-D12-002](#tc-d12-002) | AI Incident Intake: Detection Alerts, User Reports and Third-Party Notices | High | Technical | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) |
+| [TC-D12-003](#tc-d12-003) | Triage Runbooks by AI Incident Type | Critical | Technical | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) |
+| [TC-D12-004](#tc-d12-004) | Preserving AI System State at Incident Time: Model, Prompt, Configuration, Tools and Policy | Critical | Technical | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) |
+| [TC-D12-005](#tc-d12-005) | Retrieval Index and Knowledge Snapshots for Forensics | High | Technical | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) |
+| [TC-D12-006](#tc-d12-006) | Reconstructing What the Model Saw: Context, Memory and Retrieved Content | Critical | Technical | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) |
+| [TC-D12-007](#tc-d12-007) | Deterministic Replay: Reproducing an Incident with Pinned Versions and Recorded Inputs | High | Technical | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) |
+| [TC-D12-008](#tc-d12-008) | Attribution Analysis: Attacker, Insider, Misconfiguration or Model Fault | High | Technical | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) |
+| [TC-D12-009](#tc-d12-009) | Scoping and Blast Radius: Users, Data, Systems and Outputs Affected | Critical | Technical | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) |
+| [TC-D12-010](#tc-d12-010) | Downstream Propagation of Harmful or False Outputs | High | Technical | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) |
+| [TC-D12-011](#tc-d12-011) | Containment Option Catalogue and Selection Guidance | Critical | Technical | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035), [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) |
+| [TC-D12-012](#tc-d12-012) | Eradication and Recovery Validation | High | Technical | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) |
+| [TC-D12-013](#tc-d12-013) | Poisoning and Training-Data Incident Forensics | Critical | Technical | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035), [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) |
+| [TC-D12-014](#tc-d12-014) | Model Behaviour Regression Incident | High | Technical | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035), [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-D12-015](#tc-d12-015) | Harm Assessment and Affected-Person Identification | Critical | Technical | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-D12-016](#tc-d12-016) | Notification Decision and Communications (Framework-Neutral) | Critical | Technical | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-D12-017](#tc-d12-017) | Third-Party and Model-Provider Incident Coordination | High | Evidence | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) |
+| [TC-D12-018](#tc-d12-018) | Evidence Handling for AI Artefacts and Chain of Custody | Critical | Technical | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) |
+| [TC-D12-019](#tc-d12-019) | Forensic Tooling Access, Separation of Duties and Audit | High | Technical | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) |
+| [TC-D12-020](#tc-d12-020) | AI Root-Cause Analysis Method and Recurrence Tracking | High | Evidence | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) |
+| [TC-D12-021](#tc-d12-021) | Near-Miss and Blocked-Attack Learning | Medium | Technical | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) |
+| [TC-D12-022](#tc-d12-022) | AI Incident Register, Metrics and Trend Analysis | Medium | Evidence | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) |
 
 ---
 
@@ -65,6 +65,7 @@ nav_order: 25
 | **MITRE ATLAS Mapping** | N/A (response control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE (incident response and communication) |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics |
 
 **Risk Addressed.** Without agreed incident types and severity criteria, AI events are handled inconsistently, under-reported or escalated too late.
 
@@ -131,6 +132,7 @@ nav_order: 25
 | **MITRE ATLAS Mapping** | N/A (response control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE (incident response and communication) |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics |
 
 **Risk Addressed.** Many AI incidents are first noticed by users, staff or providers, not by tools, and need a defined way in.
 
@@ -197,6 +199,7 @@ nav_order: 25
 | **MITRE ATLAS Mapping** | N/A (response control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE (incident response and communication) |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics |
 
 **Risk Addressed.** Generic runbooks do not tell responders what to check first when the problem is a model, an index or an agent.
 
@@ -263,6 +266,7 @@ nav_order: 25
 | **MITRE ATLAS Mapping** | N/A (assurance control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MEASURE and GOVERN (documentation and accountability) |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics |
 
 **Risk Addressed.** Logs show what happened but not what exactly was running; prompts, models, tool definitions and policies change often.
 
@@ -329,6 +333,7 @@ nav_order: 25
 | **MITRE ATLAS Mapping** | N/A (assurance control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MEASURE and GOVERN (documentation and accountability) |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics |
 
 **Risk Addressed.** If the index has changed since the incident, investigators cannot tell what the assistant could retrieve at the time.
 
@@ -395,6 +400,7 @@ nav_order: 25
 | **MITRE ATLAS Mapping** | N/A (assurance control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MEASURE and GOVERN (documentation and accountability) |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics; [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability |
 
 **Risk Addressed.** The answer depends on everything in the context window, including memory, retrieved chunks and tool results the user never saw.
 
@@ -461,6 +467,7 @@ nav_order: 25
 | **MITRE ATLAS Mapping** | N/A (assurance control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MEASURE and GOVERN (documentation and accountability) |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics |
 
 **Risk Addressed.** If an incident cannot be reproduced, root cause analysis rests on opinion, and fixes cannot be verified.
 
@@ -527,6 +534,7 @@ nav_order: 25
 | **MITRE ATLAS Mapping** | N/A (response control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE (incident response and communication) |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics |
 
 **Risk Addressed.** Treating a model fault as an attack, or the reverse, leads to wrong containment and wrong notifications.
 
@@ -593,6 +601,7 @@ nav_order: 25
 | **MITRE ATLAS Mapping** | N/A (response control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE (incident response and communication) |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics |
 
 **Risk Addressed.** Missing part of the scope means harm continues or notifications are incomplete.
 
@@ -659,6 +668,7 @@ nav_order: 25
 | **MITRE ATLAS Mapping** | AML.T0049 Exploit Public-Facing Application (downstream impact) |
 | **OWASP LLM / GenAI Mapping** | LLM05:2025 Improper Output Handling |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics |
 
 **Risk Addressed.** A wrong or harmful output may already be in documents, tickets, emails and customer messages by the time it is noticed.
 
@@ -722,9 +732,10 @@ nav_order: 25
 | **Vendor Applicability** | Core: W, P, G |
 | **Risk Severity** | Critical |
 | **Related Layer Cases** | [TC-L17-015](L17-monitoring-detection-and-response.md#tc-l17-015), [TC-L06-022](L06-agent-orchestration-layer.md#tc-l06-022) |
-| **MITRE ATLAS Mapping** | AML.T0053 LLM Plugin Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics; [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) Agent Containment and Kill Switch |
 
 **Risk Addressed.** Responders choose between rolling back a model, disabling a tool, quarantining an index or blocking a user, each with business impact; choosing wrongly costs time or service.
 
@@ -792,6 +803,7 @@ nav_order: 25
 | **MITRE ATLAS Mapping** | N/A (response control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE (incident response and communication) |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics |
 
 **Risk Addressed.** Restoring service before checking that the cause is gone invites a repeat incident within hours.
 
@@ -855,9 +867,10 @@ nav_order: 25
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Critical |
 | **Related Layer Cases** | [TC-L13-004](L13-training-and-fine-tuning-layer.md#tc-l13-004), [TC-L10-008](L10-data-layer.md#tc-l10-008) |
-| **MITRE ATLAS Mapping** | AML.T0020 Poison Training Data (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
+| **MITRE ATLAS Mapping** | AML.T0020 Training Data Poisoning (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
 | **OWASP LLM / GenAI Mapping** | LLM04:2025 Data and Model Poisoning; LLM01:2025 Prompt Injection |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics; [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity |
 
 **Risk Addressed.** Once poisoned data is in a model or index, finding it, its source and every model affected is hard without lineage.
 
@@ -924,6 +937,7 @@ nav_order: 25
 | **MITRE ATLAS Mapping** | N/A (response control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE (incident response and communication) |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics; [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** A provider or internal model update can change safety and accuracy overnight, and the evidence is often lost.
 
@@ -990,6 +1004,7 @@ nav_order: 25
 | **MITRE ATLAS Mapping** | N/A (governance control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MAP and MANAGE (risk identification and treatment) |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics; [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** Where AI outputs influenced decisions about people, responders must identify who was affected and how.
 
@@ -1056,6 +1071,7 @@ nav_order: 25
 | **MITRE ATLAS Mapping** | N/A (response control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE (incident response and communication) |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics; [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** Notification duties and timelines differ by framework, so the decision, its reasoning and its timing must be recorded.
 
@@ -1122,6 +1138,7 @@ nav_order: 25
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics; [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance |
 
 **Risk Addressed.** Many AI incidents involve a provider whose cooperation, logs and fixes are needed and whose terms may limit what is shared.
 
@@ -1188,6 +1205,7 @@ nav_order: 25
 | **MITRE ATLAS Mapping** | N/A (assurance control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MEASURE and GOVERN (documentation and accountability) |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics |
 
 **Risk Addressed.** AI evidence is more than logs: models, indexes, prompts and configurations must be preserved and shown unchanged.
 
@@ -1254,6 +1272,7 @@ nav_order: 25
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics |
 
 **Risk Addressed.** Investigators read sensitive conversations; unrestricted forensic access is itself a privacy and insider risk.
 
@@ -1320,6 +1339,7 @@ nav_order: 25
 | **MITRE ATLAS Mapping** | N/A (assurance control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MEASURE and GOVERN (documentation and accountability) |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics |
 
 **Risk Addressed.** Root-cause reports that name only a rule or a person miss model, data and process factors, and similar incidents recur.
 
@@ -1386,6 +1406,7 @@ nav_order: 25
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MEASURE 2.4 |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics |
 
 **Risk Addressed.** Blocked attacks show how the system is being tested; ignoring them wastes the best free intelligence available.
 
@@ -1452,6 +1473,7 @@ nav_order: 25
 | **MITRE ATLAS Mapping** | N/A (assurance control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | MEASURE and GOVERN (documentation and accountability) |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics |
 
 **Risk Addressed.** Leadership needs to see numbers by type, time to detect and contain, recurrence and cost.
 

@@ -11,7 +11,7 @@ nav_order: 24
 
 **Focus:** multimodal and voice input: images, documents, audio and video as injection and leakage channels, voice authentication, recording governance
 
-**Controls tested:** [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021)
+**Controls tested:** [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security (22 cases), [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security (4 cases), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance (4 cases), [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002) Prompt Inspection (3 cases), [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery (1 case), [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity (1 case), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines (1 case), [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) Output Handling (1 case), [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection (1 case), [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls (1 case)
 
 **Cases:** 22 (TC-D11-001 to TC-D11-022)  |  **Series:** Emerging domains
 
@@ -21,30 +21,30 @@ nav_order: 24
 
 ## Cases in this domain
 
-| ID | Title | Severity | Method |
-|---|---|---|---|
-| [TC-D11-001](#tc-d11-001) | Multimodal Input Channel Inventory and Exposure Map | High | Technical |
-| [TC-D11-002](#tc-d11-002) | Image Text Injection: Visible, Small and Low-Contrast Text | Critical | Technical |
-| [TC-D11-003](#tc-d11-003) | Image Injection: Rotated, Distorted, Layout-Based and Screenshot Content | High | Technical |
-| [TC-D11-004](#tc-d11-004) | Adversarial Image Perturbation Against Vision Components | Medium | Technical |
-| [TC-D11-005](#tc-d11-005) | Image Metadata and Embedded Data: Injection and Leakage | High | Technical |
-| [TC-D11-006](#tc-d11-006) | Sensitive Data in Images: OCR and Visual DLP Accuracy | Critical | Technical |
-| [TC-D11-007](#tc-d11-007) | Faces, Biometric Images and Personal Identifiers in Images | High | Technical |
-| [TC-D11-008](#tc-d11-008) | Document Parser Attack Surface: Malformed and Spoofed Files | High | Technical |
-| [TC-D11-009](#tc-d11-009) | Active Content in Documents: Macros, Formulas, Links and Embedded Objects | High | Technical |
-| [TC-D11-010](#tc-d11-010) | Hidden Layers in Documents: White Text, Comments, Tracked Changes, Annotations and Notes | Critical | Technical |
-| [TC-D11-011](#tc-d11-011) | Document and Media Bombs: Resource Exhaustion in Ingestion | Medium | Technical |
-| [TC-D11-012](#tc-d11-012) | Cross-Modal Consistency Attacks | High | Technical |
-| [TC-D11-013](#tc-d11-013) | Audio Injection: Spoken Instructions in Synthetic Voice | Critical | Technical |
-| [TC-D11-014](#tc-d11-014) | Audio Injection in Background and Noisy Conditions (Audible Range) | Medium | Technical |
-| [TC-D11-015](#tc-d11-015) | Transcription Errors as Policy Bypass (Accents, Dialects, Homophones and Code-Switching) | High | Technical |
-| [TC-D11-016](#tc-d11-016) | Real-Time Voice DLP and Redaction Under Latency Limits | High | Technical |
-| [TC-D11-017](#tc-d11-017) | Voice Authentication and Synthetic Voice Resistance | Critical | Technical |
-| [TC-D11-018](#tc-d11-018) | Speaker Identification, Voiceprints and Biometric Data Handling | High | Evidence |
-| [TC-D11-019](#tc-d11-019) | Meeting and Call Recording: Consent, Notice and Transcript Governance | High | Technical |
-| [TC-D11-020](#tc-d11-020) | Video and Live Camera Input: Frame-Based Injection and Bystander Privacy | High | Technical |
-| [TC-D11-021](#tc-d11-021) | Multimodal Output Leakage: Generated Images, Spoken Output and Documents | High | Technical |
-| [TC-D11-022](#tc-d11-022) | Storage, Retention and Access Controls for Media Inputs and Outputs | High | Technical |
+| ID | Title | Severity | Method | Controls |
+|---|---|---|---|---|
+| [TC-D11-001](#tc-d11-001) | Multimodal Input Channel Inventory and Exposure Map | High | Technical | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021), [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) |
+| [TC-D11-002](#tc-d11-002) | Image Text Injection: Visible, Small and Low-Contrast Text | Critical | Technical | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021), [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-D11-003](#tc-d11-003) | Image Injection: Rotated, Distorted, Layout-Based and Screenshot Content | High | Technical | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021), [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-D11-004](#tc-d11-004) | Adversarial Image Perturbation Against Vision Components | Medium | Technical | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028), [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) |
+| [TC-D11-005](#tc-d11-005) | Image Metadata and Embedded Data: Injection and Leakage | High | Technical | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) |
+| [TC-D11-006](#tc-d11-006) | Sensitive Data in Images: OCR and Visual DLP Accuracy | Critical | Technical | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021), [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002) |
+| [TC-D11-007](#tc-d11-007) | Faces, Biometric Images and Personal Identifiers in Images | High | Technical | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) |
+| [TC-D11-008](#tc-d11-008) | Document Parser Attack Surface: Malformed and Spoofed Files | High | Technical | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) |
+| [TC-D11-009](#tc-d11-009) | Active Content in Documents: Macros, Formulas, Links and Embedded Objects | High | Technical | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) |
+| [TC-D11-010](#tc-d11-010) | Hidden Layers in Documents: White Text, Comments, Tracked Changes, Annotations and Notes | Critical | Technical | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) |
+| [TC-D11-011](#tc-d11-011) | Document and Media Bombs: Resource Exhaustion in Ingestion | Medium | Technical | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036), [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) |
+| [TC-D11-012](#tc-d11-012) | Cross-Modal Consistency Attacks | High | Technical | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021), [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-D11-013](#tc-d11-013) | Audio Injection: Spoken Instructions in Synthetic Voice | Critical | Technical | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021), [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) |
+| [TC-D11-014](#tc-d11-014) | Audio Injection in Background and Noisy Conditions (Audible Range) | Medium | Technical | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) |
+| [TC-D11-015](#tc-d11-015) | Transcription Errors as Policy Bypass (Accents, Dialects, Homophones and Code-Switching) | High | Technical | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021), [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002) |
+| [TC-D11-016](#tc-d11-016) | Real-Time Voice DLP and Redaction Under Latency Limits | High | Technical | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021), [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002) |
+| [TC-D11-017](#tc-d11-017) | Voice Authentication and Synthetic Voice Resistance | Critical | Technical | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021), [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
+| [TC-D11-018](#tc-d11-018) | Speaker Identification, Voiceprints and Biometric Data Handling | High | Evidence | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) |
+| [TC-D11-019](#tc-d11-019) | Meeting and Call Recording: Consent, Notice and Transcript Governance | High | Technical | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) |
+| [TC-D11-020](#tc-d11-020) | Video and Live Camera Input: Frame-Based Injection and Bystander Privacy | High | Technical | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-D11-021](#tc-d11-021) | Multimodal Output Leakage: Generated Images, Spoken Output and Documents | High | Technical | [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020), [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) |
+| [TC-D11-022](#tc-d11-022) | Storage, Retention and Access Controls for Media Inputs and Outputs | High | Technical | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017), [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) |
 
 ---
 
@@ -65,6 +65,7 @@ nav_order: 24
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
+| **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security; [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
 **Risk Addressed.** Organisations know which applications take text but not which also accept images, documents, audio and video, or which of those inputs reach a model.
 
@@ -131,6 +132,7 @@ nav_order: 24
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security; [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Models read text inside images that people may not notice, and filters that inspect only typed text never see it.
 
@@ -197,6 +199,7 @@ nav_order: 24
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security; [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Attackers rotate, warp or embed instructions in interface-like layouts to defeat simple text extraction.
 
@@ -263,6 +266,7 @@ nav_order: 24
 | **MITRE ATLAS Mapping** | AML.T0043 Craft Adversarial Data |
 | **OWASP LLM / GenAI Mapping** | N/A (classic model robustness; no direct LLM Top 10 entry) |
 | **NIST AI RMF Mapping** | MEASURE 2.5; MEASURE 2.7 |
+| **Control(s) Tested** | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection; [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security |
 
 **Risk Addressed.** Small imperceptible changes can alter what a vision component sees, affecting moderation, classification or document understanding.
 
@@ -329,6 +333,7 @@ nav_order: 24
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security |
 
 **Risk Addressed.** Metadata, thumbnails and embedded blocks carry text the user never sees and sometimes data the user never meant to share.
 
@@ -395,6 +400,7 @@ nav_order: 24
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security; [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002) Prompt Inspection |
 
 **Risk Addressed.** Screenshots and photographs move whole records, IDs and diagrams past text-only controls.
 
@@ -461,6 +467,7 @@ nav_order: 24
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage (secondary) |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; GOVERN 1.1 |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance; [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security |
 
 **Risk Addressed.** Photographs of people are biometric or special-category data in many frameworks and are easily shared with AI tools.
 
@@ -527,6 +534,7 @@ nav_order: 24
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
+| **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security |
 
 **Risk Addressed.** Parsers that handle many file types are complex and a common source of crashes and unsafe behaviour.
 
@@ -593,6 +601,7 @@ nav_order: 24
 | **MITRE ATLAS Mapping** | AML.T0049 Exploit Public-Facing Application (downstream impact) |
 | **OWASP LLM / GenAI Mapping** | LLM05:2025 Improper Output Handling |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security |
 
 **Risk Addressed.** Documents may carry formulas, links and embedded objects that act when opened or exported, including spreadsheet formula injection.
 
@@ -658,6 +667,7 @@ nav_order: 24
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security |
 
 **Risk Addressed.** Hidden document layers carry instructions or sensitive text that reviewers do not see and models do read.
 
@@ -724,6 +734,7 @@ nav_order: 24
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
 | **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls; [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security |
 
 **Risk Addressed.** Very large, deeply nested or highly compressed files can exhaust memory, time or cost in parsing and transcription.
 
@@ -790,6 +801,7 @@ nav_order: 24
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security; [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** When an image says one thing and the text says another, models may follow the less trusted source, and attackers rely on that.
 
@@ -856,6 +868,7 @@ nav_order: 24
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security; [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
 **Risk Addressed.** Voice assistants and meeting tools turn speech into text and then act on it, so spoken instructions from anyone in the room or on a call can steer them.
 
@@ -922,6 +935,7 @@ nav_order: 24
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security |
 
 **Risk Addressed.** Instructions mixed into music, ambient noise or low-volume speech may be transcribed by the machine and missed by the people present.
 
@@ -988,6 +1002,7 @@ nav_order: 24
 | **MITRE ATLAS Mapping** | AML.T0054 LLM Jailbreak |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (jailbreak) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security; [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002) Prompt Inspection |
 
 **Risk Addressed.** DLP and safety checks on transcripts can be defeated when speech is transcribed wrongly or in a way that alters meaning.
 
@@ -1054,6 +1069,7 @@ nav_order: 24
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security; [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002) Prompt Inspection |
 
 **Risk Addressed.** In live conversations, sensitive spoken data can leave before a check completes, and long delays make controls unusable.
 
@@ -1120,6 +1136,7 @@ nav_order: 24
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security; [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
 **Risk Addressed.** Voice-based identity checks can be defeated by cloned or synthetic voices, which are now cheap to produce.
 
@@ -1186,6 +1203,7 @@ nav_order: 24
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage (secondary) |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; GOVERN 1.1 |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance; [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security |
 
 **Risk Addressed.** Voiceprints are biometric identifiers with strict conditions in many frameworks and are often created silently by transcription features.
 
@@ -1252,6 +1270,7 @@ nav_order: 24
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance; [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security |
 
 **Risk Addressed.** Recording and transcribing calls without proper notice breaches many frameworks and contracts, and transcripts often live longer than the recordings.
 
@@ -1319,6 +1338,7 @@ nav_order: 24
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
 | **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security; [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
 **Risk Addressed.** Frames from video and live cameras can carry text instructions and capture people who never agreed to be analysed.
 
@@ -1385,6 +1405,7 @@ nav_order: 24
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) Output Handling; [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security |
 
 **Risk Addressed.** Output can leak data through channels that text filters do not read: images containing text, speech read aloud, documents with hidden content.
 
@@ -1451,6 +1472,7 @@ nav_order: 24
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage (secondary) |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; GOVERN 1.1 |
+| **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines; [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security |
 
 **Risk Addressed.** Images, recordings and documents are often kept for convenience in places with weak controls and no expiry.
 

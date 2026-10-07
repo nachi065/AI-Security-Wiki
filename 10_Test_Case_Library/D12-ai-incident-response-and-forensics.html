@@ -135,7 +135,7 @@
 <p><a id="top"></a></p>
 <h1 id="d12-ai-incident-response-and-forensics">D12 AI Incident Response and Forensics</h1>
 <p><strong>Focus:</strong> AI incident response and forensics: taxonomy, state preservation, replay, scoping, containment, provider coordination, evidence handling</p>
-<p><strong>Controls tested:</strong> <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></p>
+<p><strong>Controls tested:</strong> <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics (22 cases), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a> Privacy and Regulatory Compliance (2 cases), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a> Auditability (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a> Third-Party and Vendor AI Assurance (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a> Agent Containment and Kill Switch (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-029">AI-CTRL-029</a> Training and Fine-Tuning Data Integrity (1 case), <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation (1 case)</p>
 <p><strong>Cases:</strong> 22 (TC-D12-001 to TC-D12-022)  |  <strong>Series:</strong> Emerging domains</p>
 <blockquote>
 <p><strong>Safety boundary.</strong> All cases use synthetic data and lab targets only. Use scripted lab incidents with known ground truth and fabricated data only. Never run lab exercises against production systems or real incidents.</p>
@@ -149,6 +149,7 @@
 <th>Title</th>
 <th>Severity</th>
 <th>Method</th>
+<th>Controls</th>
 </tr>
 </thead>
 <tbody>
@@ -157,132 +158,154 @@
 <td>AI Incident Taxonomy and Severity Classification</td>
 <td>High</td>
 <td>Evidence</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d12-002">TC-D12-002</a></td>
 <td>AI Incident Intake: Detection Alerts, User Reports and Third-Party Notices</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d12-003">TC-D12-003</a></td>
 <td>Triage Runbooks by AI Incident Type</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d12-004">TC-D12-004</a></td>
 <td>Preserving AI System State at Incident Time: Model, Prompt, Configuration, Tools and Policy</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d12-005">TC-D12-005</a></td>
 <td>Retrieval Index and Knowledge Snapshots for Forensics</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d12-006">TC-D12-006</a></td>
 <td>Reconstructing What the Model Saw: Context, Memory and Retrieved Content</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d12-007">TC-D12-007</a></td>
 <td>Deterministic Replay: Reproducing an Incident with Pinned Versions and Recorded Inputs</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d12-008">TC-D12-008</a></td>
 <td>Attribution Analysis: Attacker, Insider, Misconfiguration or Model Fault</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d12-009">TC-D12-009</a></td>
 <td>Scoping and Blast Radius: Users, Data, Systems and Outputs Affected</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d12-010">TC-D12-010</a></td>
 <td>Downstream Propagation of Harmful or False Outputs</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d12-011">TC-D12-011</a></td>
 <td>Containment Option Catalogue and Selection Guidance</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d12-012">TC-D12-012</a></td>
 <td>Eradication and Recovery Validation</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d12-013">TC-D12-013</a></td>
 <td>Poisoning and Training-Data Incident Forensics</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-029">AI-CTRL-029</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d12-014">TC-D12-014</a></td>
 <td>Model Behaviour Regression Incident</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d12-015">TC-D12-015</a></td>
 <td>Harm Assessment and Affected-Person Identification</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d12-016">TC-D12-016</a></td>
 <td>Notification Decision and Communications (Framework-Neutral)</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d12-017">TC-D12-017</a></td>
 <td>Third-Party and Model-Provider Incident Coordination</td>
 <td>High</td>
 <td>Evidence</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a>, <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d12-018">TC-D12-018</a></td>
 <td>Evidence Handling for AI Artefacts and Chain of Custody</td>
 <td>Critical</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d12-019">TC-D12-019</a></td>
 <td>Forensic Tooling Access, Separation of Duties and Audit</td>
 <td>High</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d12-020">TC-D12-020</a></td>
 <td>AI Root-Cause Analysis Method and Recurrence Tracking</td>
 <td>High</td>
 <td>Evidence</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d12-021">TC-D12-021</a></td>
 <td>Near-Miss and Blocked-Attack Learning</td>
 <td>Medium</td>
 <td>Technical</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></td>
 </tr>
 <tr>
 <td><a href="#tc-d12-022">TC-D12-022</a></td>
 <td>AI Incident Register, Metrics and Trend Analysis</td>
 <td>Medium</td>
 <td>Evidence</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -333,6 +356,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE (incident response and communication)</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics</td>
 </tr>
 </tbody>
 </table></div>
@@ -412,6 +439,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE (incident response and communication)</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Many AI incidents are first noticed by users, staff or providers, not by tools, and need a defined way in.</p>
@@ -489,6 +520,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE (incident response and communication)</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics</td>
 </tr>
 </tbody>
 </table></div>
@@ -568,6 +603,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE and GOVERN (documentation and accountability)</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Logs show what happened but not what exactly was running; prompts, models, tool definitions and policies change often.</p>
@@ -645,6 +684,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE and GOVERN (documentation and accountability)</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics</td>
 </tr>
 </tbody>
 </table></div>
@@ -724,6 +767,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE and GOVERN (documentation and accountability)</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a> Auditability</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> The answer depends on everything in the context window, including memory, retrieved chunks and tool results the user never saw.</p>
@@ -801,6 +848,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE and GOVERN (documentation and accountability)</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics</td>
 </tr>
 </tbody>
 </table></div>
@@ -880,6 +931,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE (incident response and communication)</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Treating a model fault as an attack, or the reverse, leads to wrong containment and wrong notifications.</p>
@@ -957,6 +1012,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE (incident response and communication)</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics</td>
 </tr>
 </tbody>
 </table></div>
@@ -1036,6 +1095,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> A wrong or harmful output may already be in documents, tickets, emails and customer messages by the time it is noticed.</p>
@@ -1104,7 +1167,7 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
-<td>AML.T0053 LLM Plugin Compromise</td>
+<td>AML.T0053 AI Agent Tool Invocation</td>
 </tr>
 <tr>
 <td><strong>OWASP LLM / GenAI Mapping</strong></td>
@@ -1113,6 +1176,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a> Agent Containment and Kill Switch</td>
 </tr>
 </tbody>
 </table></div>
@@ -1193,6 +1260,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE (incident response and communication)</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Restoring service before checking that the cause is gone invites a repeat incident within hours.</p>
@@ -1261,7 +1332,7 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mapping</strong></td>
-<td>AML.T0020 Poison Training Data (applied by analogy to stored context, memory and ingested data); verify against current ATLAS</td>
+<td>AML.T0020 Training Data Poisoning (applied by analogy to stored context, memory and ingested data); verify against current ATLAS</td>
 </tr>
 <tr>
 <td><strong>OWASP LLM / GenAI Mapping</strong></td>
@@ -1270,6 +1341,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MAP 2.3; MEASURE 2.7</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-029">AI-CTRL-029</a> Training and Fine-Tuning Data Integrity</td>
 </tr>
 </tbody>
 </table></div>
@@ -1349,6 +1424,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE (incident response and communication)</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> A provider or internal model update can change safety and accuracy overnight, and the evidence is often lost.</p>
@@ -1426,6 +1505,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MAP and MANAGE (risk identification and treatment)</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a> Privacy and Regulatory Compliance</td>
 </tr>
 </tbody>
 </table></div>
@@ -1505,6 +1588,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE (incident response and communication)</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a> Privacy and Regulatory Compliance</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Notification duties and timelines differ by framework, so the decision, its reasoning and its timing must be recorded.</p>
@@ -1582,6 +1669,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>GOVERN 6.1; MAP 4.1</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics; <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a> Third-Party and Vendor AI Assurance</td>
 </tr>
 </tbody>
 </table></div>
@@ -1661,6 +1752,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE and GOVERN (documentation and accountability)</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> AI evidence is more than logs: models, indexes, prompts and configurations must be preserved and shown unchanged.</p>
@@ -1738,6 +1833,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE 2.7; MANAGE 2.3</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics</td>
 </tr>
 </tbody>
 </table></div>
@@ -1817,6 +1916,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE and GOVERN (documentation and accountability)</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Root-cause reports that name only a rule or a person miss model, data and process factors, and similar incidents recur.</p>
@@ -1895,6 +1998,10 @@
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MANAGE 4.1; MEASURE 2.4</td>
 </tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Blocked attacks show how the system is being tested; ignoring them wastes the best free intelligence available.</p>
@@ -1972,6 +2079,10 @@
 <tr>
 <td><strong>NIST AI RMF Mapping</strong></td>
 <td>MEASURE and GOVERN (documentation and accountability)</td>
+</tr>
+<tr>
+<td><strong>Control(s) Tested</strong></td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics</td>
 </tr>
 </tbody>
 </table></div>

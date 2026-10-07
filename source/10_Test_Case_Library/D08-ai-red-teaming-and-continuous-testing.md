@@ -11,7 +11,7 @@ nav_order: 21
 
 **Focus:** automated adversarial testing tools: ground-truth accuracy, coverage, judging, reproducibility, CI/CD, safe execution
 
-**Controls tested:** [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034)
+**Controls tested:** [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation (25 cases), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines (1 case), [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) ML Pipeline and Model Registry Security (1 case)
 
 **Cases:** 25 (TC-D08-001 to TC-D08-025)  |  **Series:** Emerging domains
 
@@ -21,33 +21,33 @@ nav_order: 21
 
 ## Cases in this domain
 
-| ID | Title | Severity | Method |
-|---|---|---|---|
-| [TC-D08-001](#tc-d08-001) | Seeded Vulnerable Target: Ground-Truth Benchmark for Findings | Critical | Technical |
-| [TC-D08-002](#tc-d08-002) | Attack Library Coverage Across Risk Classes | High | Evidence |
-| [TC-D08-003](#tc-d08-003) | Attack Library Freshness and Update Cadence | High | Technical |
-| [TC-D08-004](#tc-d08-004) | Single-Turn Attack Generation: Diversity and Mutation Quality | Medium | Technical |
-| [TC-D08-005](#tc-d08-005) | Multi-Turn Adaptive Attack Campaigns | High | Technical |
-| [TC-D08-006](#tc-d08-006) | Agentic Attack Scenarios Against Tool-Using Agents | Critical | Technical |
-| [TC-D08-007](#tc-d08-007) | Retrieval and RAG Attack Coverage | High | Technical |
-| [TC-D08-008](#tc-d08-008) | Indirect Injection Through Web, Email and File Content (Automated) | Critical | Technical |
-| [TC-D08-009](#tc-d08-009) | Multimodal Attack Coverage (Images, Audio, Documents) | High | Technical |
-| [TC-D08-010](#tc-d08-010) | Multilingual Attack Coverage (Arabic, Hindi, Urdu, French and Mixed) | High | Technical |
-| [TC-D08-011](#tc-d08-011) | Custom Attack Authoring for Domain-Specific Scenarios | High | Technical |
-| [TC-D08-012](#tc-d08-012) | Target Connectivity and Authentication Modes | High | Technical |
-| [TC-D08-013](#tc-d08-013) | Attack Success Judging: Accuracy of Automated Verdicts | Critical | Technical |
-| [TC-D08-014](#tc-d08-014) | Judge Robustness: Formatting, Persuasion and Cross-Judge Consistency | High | Technical |
-| [TC-D08-015](#tc-d08-015) | Severity Scoring and Prioritisation of Findings | High | Technical |
-| [TC-D08-016](#tc-d08-016) | Reproducibility and Run-to-Run Variance | High | Technical |
-| [TC-D08-017](#tc-d08-017) | Finding Evidence Quality and Redaction | High | Evidence |
-| [TC-D08-018](#tc-d08-018) | Remediation Guidance Quality and Verified Retest | High | Technical |
-| [TC-D08-019](#tc-d08-019) | Regression Testing After Model, Prompt or Guardrail Changes | High | Technical |
-| [TC-D08-020](#tc-d08-020) | CI/CD Integration and Release Gates | Critical | Technical |
-| [TC-D08-021](#tc-d08-021) | Continuous and Scheduled Testing with Change-Triggered Runs | High | Technical |
-| [TC-D08-022](#tc-d08-022) | Safe Execution Against Production-Like Targets | Critical | Technical |
-| [TC-D08-023](#tc-d08-023) | Handling of Adversarial Payloads, Responses and Test Data | High | Attestation |
-| [TC-D08-024](#tc-d08-024) | Test Cost, Runtime and Scalability | Medium | Technical |
-| [TC-D08-025](#tc-d08-025) | Transparency of Benchmarks and Published Results | Medium | Attestation |
+| ID | Title | Severity | Method | Controls |
+|---|---|---|---|---|
+| [TC-D08-001](#tc-d08-001) | Seeded Vulnerable Target: Ground-Truth Benchmark for Findings | Critical | Technical | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-D08-002](#tc-d08-002) | Attack Library Coverage Across Risk Classes | High | Evidence | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-D08-003](#tc-d08-003) | Attack Library Freshness and Update Cadence | High | Technical | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-D08-004](#tc-d08-004) | Single-Turn Attack Generation: Diversity and Mutation Quality | Medium | Technical | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-D08-005](#tc-d08-005) | Multi-Turn Adaptive Attack Campaigns | High | Technical | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-D08-006](#tc-d08-006) | Agentic Attack Scenarios Against Tool-Using Agents | Critical | Technical | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-D08-007](#tc-d08-007) | Retrieval and RAG Attack Coverage | High | Technical | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-D08-008](#tc-d08-008) | Indirect Injection Through Web, Email and File Content (Automated) | Critical | Technical | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-D08-009](#tc-d08-009) | Multimodal Attack Coverage (Images, Audio, Documents) | High | Technical | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-D08-010](#tc-d08-010) | Multilingual Attack Coverage (Arabic, Hindi, Urdu, French and Mixed) | High | Technical | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-D08-011](#tc-d08-011) | Custom Attack Authoring for Domain-Specific Scenarios | High | Technical | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-D08-012](#tc-d08-012) | Target Connectivity and Authentication Modes | High | Technical | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-D08-013](#tc-d08-013) | Attack Success Judging: Accuracy of Automated Verdicts | Critical | Technical | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-D08-014](#tc-d08-014) | Judge Robustness: Formatting, Persuasion and Cross-Judge Consistency | High | Technical | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-D08-015](#tc-d08-015) | Severity Scoring and Prioritisation of Findings | High | Technical | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-D08-016](#tc-d08-016) | Reproducibility and Run-to-Run Variance | High | Technical | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-D08-017](#tc-d08-017) | Finding Evidence Quality and Redaction | High | Evidence | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-D08-018](#tc-d08-018) | Remediation Guidance Quality and Verified Retest | High | Technical | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-D08-019](#tc-d08-019) | Regression Testing After Model, Prompt or Guardrail Changes | High | Technical | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-D08-020](#tc-d08-020) | CI/CD Integration and Release Gates | Critical | Technical | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034), [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) |
+| [TC-D08-021](#tc-d08-021) | Continuous and Scheduled Testing with Change-Triggered Runs | High | Technical | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-D08-022](#tc-d08-022) | Safe Execution Against Production-Like Targets | Critical | Technical | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-D08-023](#tc-d08-023) | Handling of Adversarial Payloads, Responses and Test Data | High | Attestation | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) |
+| [TC-D08-024](#tc-d08-024) | Test Cost, Runtime and Scalability | Medium | Technical | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
+| [TC-D08-025](#tc-d08-025) | Transparency of Benchmarks and Published Results | Medium | Attestation | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
 
 ---
 
@@ -68,6 +68,7 @@ nav_order: 21
 | **MITRE ATLAS Mapping** | N/A (assurance and testing control); each finding maps to the ATLAS technique for its attack class |
 | **OWASP LLM / GenAI Mapping** | Applies across LLM01 to LLM10 depending on attack class |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.6 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** Vendors report findings, but without a known answer key nobody can say how many real weaknesses were missed or how many reported ones are false.
 
@@ -134,6 +135,7 @@ nav_order: 21
 | **MITRE ATLAS Mapping** | N/A (assurance and testing control); each finding maps to the ATLAS technique for its attack class |
 | **OWASP LLM / GenAI Mapping** | Applies across LLM01 to LLM10 depending on attack class |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.6 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** A library strong on prompt injection and silent on agent misuse, retrieval or output handling leaves large areas untested while reporting clean results.
 
@@ -200,6 +202,7 @@ nav_order: 21
 | **MITRE ATLAS Mapping** | N/A (assurance and testing control); each finding maps to the ATLAS technique for its attack class |
 | **OWASP LLM / GenAI Mapping** | Applies across LLM01 to LLM10 depending on attack class |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.6 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** New attack techniques appear weekly; a stale library measures last year's risk.
 
@@ -266,6 +269,7 @@ nav_order: 21
 | **MITRE ATLAS Mapping** | N/A (assurance and testing control); each finding maps to the ATLAS technique for its attack class |
 | **OWASP LLM / GenAI Mapping** | Applies across LLM01 to LLM10 depending on attack class |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.6 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** Tools that repeat near-identical prompts inflate attack counts without testing robustness.
 
@@ -332,6 +336,7 @@ nav_order: 21
 | **MITRE ATLAS Mapping** | N/A (assurance and testing control); each finding maps to the ATLAS technique for its attack class |
 | **OWASP LLM / GenAI Mapping** | Applies across LLM01 to LLM10 depending on attack class |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.6 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** Real attackers adapt across turns; single-shot tests understate risk.
 
@@ -398,6 +403,7 @@ nav_order: 21
 | **MITRE ATLAS Mapping** | N/A (assurance and testing control); each finding maps to the ATLAS technique for its attack class |
 | **OWASP LLM / GenAI Mapping** | Applies across LLM01 to LLM10 depending on attack class |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.6 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** Agents turn text attacks into actions; tools that only test chat miss the most serious risk.
 
@@ -464,6 +470,7 @@ nav_order: 21
 | **MITRE ATLAS Mapping** | N/A (assurance and testing control); each finding maps to the ATLAS technique for its attack class |
 | **OWASP LLM / GenAI Mapping** | Applies across LLM01 to LLM10 depending on attack class |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.6 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** Retrieval systems fail through poisoned content, weak access control and leakage, which prompt-only testing never touches.
 
@@ -530,6 +537,7 @@ nav_order: 21
 | **MITRE ATLAS Mapping** | N/A (assurance and testing control); each finding maps to the ATLAS technique for its attack class |
 | **OWASP LLM / GenAI Mapping** | Applies across LLM01 to LLM10 depending on attack class |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.6 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** Indirect injection is the practical route for most real attacks and needs content-side test infrastructure.
 
@@ -596,6 +604,7 @@ nav_order: 21
 | **MITRE ATLAS Mapping** | N/A (assurance and testing control); each finding maps to the ATLAS technique for its attack class |
 | **OWASP LLM / GenAI Mapping** | Applies across LLM01 to LLM10 depending on attack class |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.6 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** Multimodal inputs are a growing channel and few tools generate them.
 
@@ -661,6 +670,7 @@ nav_order: 21
 | **MITRE ATLAS Mapping** | N/A (assurance and testing control); each finding maps to the ATLAS technique for its attack class |
 | **OWASP LLM / GenAI Mapping** | Applies across LLM01 to LLM10 depending on attack class |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.6 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** Safeguards weaken in other languages and so do test tools.
 
@@ -726,6 +736,7 @@ nav_order: 21
 | **MITRE ATLAS Mapping** | N/A (assurance and testing control); each finding maps to the ATLAS technique for its attack class |
 | **OWASP LLM / GenAI Mapping** | Applies across LLM01 to LLM10 depending on attack class |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.6 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** Generic attacks miss business-specific harms such as improper discounts or wrongful approvals.
 
@@ -792,6 +803,7 @@ nav_order: 21
 | **MITRE ATLAS Mapping** | N/A (assurance and testing control); each finding maps to the ATLAS technique for its attack class |
 | **OWASP LLM / GenAI Mapping** | Applies across LLM01 to LLM10 depending on attack class |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.6 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** A tool that cannot reach real targets tests only demos.
 
@@ -857,6 +869,7 @@ nav_order: 21
 | **MITRE ATLAS Mapping** | N/A (assurance and testing control); each finding maps to the ATLAS technique for its attack class |
 | **OWASP LLM / GenAI Mapping** | Applies across LLM01 to LLM10 depending on attack class |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.6 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** Most red-team tools decide automatically whether an attack worked; wrong verdicts turn the report into noise or false comfort.
 
@@ -923,6 +936,7 @@ nav_order: 21
 | **MITRE ATLAS Mapping** | N/A (assurance and testing control); each finding maps to the ATLAS technique for its attack class |
 | **OWASP LLM / GenAI Mapping** | Applies across LLM01 to LLM10 depending on attack class |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.6 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** A judge model can be fooled by the target's response style, or by instructions hidden in a response, and different judges may disagree.
 
@@ -989,6 +1003,7 @@ nav_order: 21
 | **MITRE ATLAS Mapping** | N/A (assurance and testing control); each finding maps to the ATLAS technique for its attack class |
 | **OWASP LLM / GenAI Mapping** | Applies across LLM01 to LLM10 depending on attack class |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.6 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** Flat lists of findings overwhelm teams; scores that cannot be explained are ignored or challenged.
 
@@ -1055,6 +1070,7 @@ nav_order: 21
 | **MITRE ATLAS Mapping** | N/A (assurance and testing control); each finding maps to the ATLAS technique for its attack class |
 | **OWASP LLM / GenAI Mapping** | Applies across LLM01 to LLM10 depending on attack class |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.6 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** Findings that do not reproduce cannot be fixed or retested, and model randomness makes this common.
 
@@ -1120,6 +1136,7 @@ nav_order: 21
 | **MITRE ATLAS Mapping** | N/A (assurance and testing control); each finding maps to the ATLAS technique for its attack class |
 | **OWASP LLM / GenAI Mapping** | Applies across LLM01 to LLM10 depending on attack class |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.6 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** Findings without full transcripts and steps cannot be acted on, and unredacted evidence can itself leak data.
 
@@ -1185,6 +1202,7 @@ nav_order: 21
 | **MITRE ATLAS Mapping** | N/A (assurance and testing control); each finding maps to the ATLAS technique for its attack class |
 | **OWASP LLM / GenAI Mapping** | Applies across LLM01 to LLM10 depending on attack class |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.6 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** Findings are useless without usable fixes and proof that the fix worked.
 
@@ -1251,6 +1269,7 @@ nav_order: 21
 | **MITRE ATLAS Mapping** | N/A (assurance and testing control); each finding maps to the ATLAS technique for its attack class |
 | **OWASP LLM / GenAI Mapping** | Applies across LLM01 to LLM10 depending on attack class |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.6 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** Every change to a model, prompt or guardrail can reopen old weaknesses.
 
@@ -1317,6 +1336,7 @@ nav_order: 21
 | **MITRE ATLAS Mapping** | N/A (assurance and testing control); each finding maps to the ATLAS technique for its attack class |
 | **OWASP LLM / GenAI Mapping** | Applies across LLM01 to LLM10 depending on attack class |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.6 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation; [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) ML Pipeline and Model Registry Security |
 
 **Risk Addressed.** Testing only before major releases misses most changes.
 
@@ -1383,6 +1403,7 @@ nav_order: 21
 | **MITRE ATLAS Mapping** | N/A (assurance and testing control); each finding maps to the ATLAS technique for its attack class |
 | **OWASP LLM / GenAI Mapping** | Applies across LLM01 to LLM10 depending on attack class |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.6 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** Risk changes between releases through model updates, new content and configuration edits, so a test run at release time goes stale within days.
 
@@ -1450,6 +1471,7 @@ nav_order: 21
 | **MITRE ATLAS Mapping** | N/A (assurance and testing control); each finding maps to the ATLAS technique for its attack class |
 | **OWASP LLM / GenAI Mapping** | Applies across LLM01 to LLM10 depending on attack class |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.6 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** Aggressive tests can cause outages, corrupt data or run up cost.
 
@@ -1516,6 +1538,7 @@ nav_order: 21
 | **MITRE ATLAS Mapping** | N/A (assurance and testing control); each finding maps to the ATLAS technique for its attack class |
 | **OWASP LLM / GenAI Mapping** | Applies across LLM01 to LLM10 depending on attack class |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.6 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation; [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
 **Risk Addressed.** The tool stores attack content and model responses that may include sensitive data.
 
@@ -1582,6 +1605,7 @@ nav_order: 21
 | **MITRE ATLAS Mapping** | N/A (assurance and testing control); each finding maps to the ATLAS technique for its attack class |
 | **OWASP LLM / GenAI Mapping** | Applies across LLM01 to LLM10 depending on attack class |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.6 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** Tools that burn tokens and hours do not get run often, so the real coverage achieved is lower than the product suggests.
 
@@ -1648,6 +1672,7 @@ nav_order: 21
 | **MITRE ATLAS Mapping** | N/A (assurance and testing control); each finding maps to the ATLAS technique for its attack class |
 | **OWASP LLM / GenAI Mapping** | Applies across LLM01 to LLM10 depending on attack class |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.6 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
 **Risk Addressed.** Marketing claims about detection or coverage often rest on private data sets and cannot be reproduced.
 
