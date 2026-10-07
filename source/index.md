@@ -443,8 +443,7 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 
 ## 22. About the Author
 
-**Nachiket Sathaye**  
-**Cybersecurity Leader, AI Security and Governance**
+<div class="profile-head"><img class="profile-photo" src="assets/nachiket-sathaye.jpg" alt="Nachiket Sathaye" width="88" height="88"><p><strong>Nachiket Sathaye</strong><br><strong>Cybersecurity Leader, AI Security and Governance</strong></p></div>
 
 Cybersecurity professional with 20+ years of experience across Critical Infrastructure, BFSI and Manufacturing. I work at both the technical and the executive level, aligning GRC, Zero Trust, security architecture and AI governance with business outcomes.
 

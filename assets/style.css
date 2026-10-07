@@ -177,6 +177,9 @@ a.chip:hover { text-decoration: none; filter: brightness(.95); }
 .pager a { padding: 8px 14px; border: 1px solid var(--border); border-radius: 10px; background: var(--bg-soft); font-weight: 600; }
 .pager a:hover { text-decoration: none; background: var(--accent-soft); border-color: var(--accent-bright); }
 .pager .next { margin-left: auto; text-align: right; }
+.profile-head { display: flex; align-items: center; gap: 16px; margin: 0 0 14px; }
+.profile-head p { margin: 0; }
+.profile-photo { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; flex: none; border: 2px solid var(--border); }
 .site-footer { margin-top: 32px; font-size: 13px; color: var(--muted); }
 .site-notice { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); font-size: 12px; line-height: 1.55; }
 .site-notice p { margin: 0 0 6px; }
