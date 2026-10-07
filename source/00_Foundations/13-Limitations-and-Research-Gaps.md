@@ -15,7 +15,7 @@ document_type: Practitioner Research Paper
 2. **Sources are partly secondary.** Several current-events claims (EU AI Omnibus dates, OWASP agentic and Round-up content, MITRE ATLAS version) rest on web summaries or law-firm commentary, and are labelled **[Reported]**. They should be checked against primary sources before citation.
 3. **The field moves quickly.** Attack feasibility, defences, standards and regulation change on a scale of months. The content reflects the state of knowledge around October 2026 and some of it will date.
 4. **Terminology is stipulated.** The three-way split in [Page 1](01-Terminology-and-Two-Axis-Model.md) is a convention proposed here. Other authors and standards bodies carve the space differently.
-5. **Scope.** It does not cover model-safety alignment in depth, content-moderation policy, or sector-specific regulation beyond the EU Act. UAE sovereignty and data residency are covered separately in the wiki's [sovereignty standard](../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.md). It does not provide offensive techniques.
+5. **Scope.** It does not cover model-safety alignment in depth, content-moderation policy, or sector-specific regulation beyond the EU Act. UAE sovereignty and data residency are covered separately in the wiki's [sovereignty standard](../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.md). GCC instruments are listed, from secondary sources only, in the [GCC AI Regulatory Hub](../11_GCC_AI_Compliance/01_GCC_AI_Regulatory_Hub.md). It does not provide offensive techniques.
 6. **Not legal advice.**
 
 ## 13.2 Open problems

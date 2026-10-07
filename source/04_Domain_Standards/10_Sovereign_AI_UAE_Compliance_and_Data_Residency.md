@@ -24,6 +24,8 @@ version: 1.0
 | Cross-Border Transfer | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) | Are any cross-border transfers required for processing or support? |
 | Incident Support | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014), [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) | What incident notification, investigation support and log access is available? |
 
+The regional instruments behind these questions are listed in the [GCC AI Regulatory Hub](../11_GCC_AI_Compliance/01_GCC_AI_Regulatory_Hub.md). A fill-in attestation for the residency answers is in [T04 Data Residency and Sovereignty Attestation](../11_GCC_AI_Compliance/T04_Data_Residency_Attestation.md).
+
 ## Mandatory Sovereignty Requirements
 
 - Audit logging.

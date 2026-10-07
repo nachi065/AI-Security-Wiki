@@ -21,6 +21,7 @@ I built this AI security wiki over the past year and have published it here on G
 | Vendor evaluation | https://nachi065.github.io/AI-Security-Wiki/05_Vendor_Evaluation/ |
 | Testing and assurance | https://nachi065.github.io/AI-Security-Wiki/06_Testing_and_Assurance/ |
 | Role-based playbooks | https://nachi065.github.io/AI-Security-Wiki/07_Role_Based_Playbooks/ |
+| GCC AI compliance (regulatory hub, role guides, templates) | https://nachi065.github.io/AI-Security-Wiki/11_GCC_AI_Compliance/ |
 
 The pages are plain HTML, so the site also works offline: download the repository and open `index.html` in a browser.
 

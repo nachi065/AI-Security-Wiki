@@ -9,3 +9,5 @@ has_children: true
 # Reference
 
 Glossary and taxonomy.
+
+The [Regulatory Crosswalk](../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.md) maps UAE and other GCC instruments to the wiki's controls.

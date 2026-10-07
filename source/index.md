@@ -1,9 +1,9 @@
 ---
 title: "Home"
-description: "Open, vendor-neutral AI security wiki: AI governance, risk management, security controls, agentic AI standards, vendor evaluation and 620 test cases."
+description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, GCC compliance and 620 test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.1
+version: 2.2
 status: Published
 author: Nachiket Sathaye
 owner: AI Security Program
@@ -16,7 +16,7 @@ last_updated: 2026-10-07
 # AI Security Wiki Home
 
 > **Document type:** Enterprise AI Security Reference Architecture and Governance Wiki  
-> **Version:** 2.1  
+> **Version:** 2.2  
 > **Status:** Published  
 > **Original author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
 > **Intended use:** Public, vendor-neutral reference and template set for AI security governance, engineering, risk management, assurance, audit, compliance, and vendor evaluation.
@@ -70,6 +70,7 @@ This wiki is intended for the following personas:
 | SOC and incident response | Monitor AI systems, investigate alerts, and respond to AI-related incidents. |
 | Vendor evaluation teams | Assess supplier capabilities, risks, evidence, contractual controls, and proof-of-concept results. |
 | GRC and compliance | Map AI controls to governance, regulatory, privacy, and assurance requirements. |
+| Teams building, selling or auditing AI in the GCC | Find the regional instruments that apply, with role guides and fill-in templates. |
 | Internal audit | Validate control operation, evidence quality, decision traceability, and governance effectiveness. |
 
 ## 5. Wiki Design Principles
@@ -130,6 +131,7 @@ Review, Improve, Renew, or Retire
 | Testing and assurance | Validate controls through PoC tests, adversarial testing, red teaming, and evidence review. | [AI Security PoC Test Case Library](06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md), [AI Security Audit and Evidence Checklist](06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md) | Test results, findings, remediation plan, audit checklist. |
 | Monitoring and operations | Monitor AI usage, suspicious prompts, data leakage, tool invocation, and incidents. | [Assurance: Testing, Monitoring and Response](00_Foundations/08-Assurance-Testing-Monitoring-and-Response.md), [Monitoring, Detection and Response test cases](10_Test_Case_Library/L17-monitoring-detection-and-response.md), runtime standard, governance operating model | Logs, alerts, incident records, response actions. |
 | Audit and continuous improvement | Review governance effectiveness, control operation, exceptions, and maturity. | [AI Security Audit and Evidence Checklist](06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md), [AI Governance Operating Model](08_Governance/16_AI_Governance_Operating_Model.md) | Audit evidence, management actions, maturity roadmap. |
+| Regional compliance (GCC) | Identify the UAE and other GCC instruments that apply, and record what has been verified against the primary text. | [GCC AI Regulatory Hub](11_GCC_AI_Compliance/01_GCC_AI_Regulatory_Hub.md), [Regulatory Crosswalk](11_GCC_AI_Compliance/07_Regulatory_Crosswalk.md), [templates T01 to T12](11_GCC_AI_Compliance/index.md) | Regulator register, impact assessments, residency attestation, bilingual notices. |
 
 ## 8. Navigation by Role
 
@@ -137,22 +139,19 @@ Review, Improve, Renew, or Retire
 |---|---|---|---|
 | Executive Management | [AI Governance Operating Model](08_Governance/16_AI_Governance_Operating_Model.md) | [Enterprise AI Risk Register](02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI Security Audit and Evidence Checklist](06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md) | Clear AI risk posture, governance decisions, accountability, and audit readiness. |
 | AI Product Owner | [AI Risk Methodology](02_Risk_Management/02A_AI_Risk_Methodology.md) | [Custom AI Application Runtime Security Standard](04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.md), [AI Security PoC Test Case Library](06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md) | Approved risk treatment, implementation plan, release evidence. |
-| AI Product Developer | [Custom AI Application Runtime Security Standard](04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.md) | [AI Product Developer Playbook](07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.md), [AI Security PoC Test Case Library](06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md) | Secure implementation aligned with required controls and test cases. |
+| AI Product Developer | [Custom AI Application Runtime Security Standard](04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.md) | [AI Product Developer Playbook](07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.md), [AI Security PoC Test Case Library](06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md), [Guide for AI Practitioners in the GCC](11_GCC_AI_Compliance/02_Guide_AI_Practitioners.md) | Secure implementation aligned with required controls and test cases. |
 | AI Security Researcher | [AI Security Market and Technology Landscape: Summary](01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.md) | [AI Security Researcher Playbook](07_Role_Based_Playbooks/15B_AI_Security_Researcher_Playbook.md), [AI Security Glossary and Taxonomy](09_Reference/18_AI_Security_Glossary_and_Taxonomy.md) | Updated threat insights, control improvements, and emerging risk intelligence. |
 | AI Red Teamer | [AI Red Team Playbook](06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.md) | [Custom AI Application Runtime Security Standard](04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.md), [Agentic AI Security and Tool Governance](04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.md) | Test plans, findings, exploit paths, recommended mitigations. |
 | Security Engineering | [AI Security Control Objectives Library](03_Control_Library/03_AI_Security_Control_Objectives_Library.md) | [Existing Security Control Baseline](03_Control_Library/04_Existing_Security_Control_Baseline.md), [Microsoft Security Overlap and AI Gaps](03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.md) | Implementable controls, baseline mapping, monitoring requirements. |
 | Security Architecture | [AI Security Control Objectives Library](03_Control_Library/03_AI_Security_Control_Objectives_Library.md) | [Custom AI Application Runtime Security Standard](04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.md), [Sovereign AI, UAE Compliance and Data Residency Requirements](04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.md) | Approved AI designs, control exceptions, reference architectures. |
 | SOC and Incident Response | Runtime security standard | [Assurance: Testing, Monitoring and Response](00_Foundations/08-Assurance-Testing-Monitoring-and-Response.md), [AI for Security and AI-Enabled Threats](00_Foundations/10-AI-for-Security-and-AI-Enabled-Threats.md), [AI Incident Response and Forensics test cases](10_Test_Case_Library/D12-ai-incident-response-and-forensics.md), audit evidence checklist | Monitoring coverage, detection logic, investigation and response records. |
-| Vendor Evaluation Team | [AI Security Vendor Evaluation Master Framework](05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.md) | Vendor profiles `12A` to `12H`, [AI Security PoC Test Case Library](06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md) | Consistent supplier scoring, risk decision, and evidence retained. |
-| Governance and Compliance | [Enterprise AI Risk Register](02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) | [Sovereign AI, UAE Compliance and Data Residency Requirements](04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.md), [AI Governance Operating Model](08_Governance/16_AI_Governance_Operating_Model.md) | Compliance mapping, risk treatment, approval records, and reporting. |
-| Internal Audit | [AI Security Audit and Evidence Checklist](06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md) | Control library, PoC evidence library, sovereignty requirements | Independent evidence validation and control effectiveness assessment. |
+| Vendor Evaluation Team | [AI Security Vendor Evaluation Master Framework](05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.md) | Vendor profiles `12A` to `12H`, [AI Security PoC Test Case Library](06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md), [T03 Vendor Due-Diligence GCC Addendum](11_GCC_AI_Compliance/T03_Vendor_Due_Diligence_GCC_Addendum.md) | Consistent supplier scoring, risk decision, and evidence retained. |
+| Governance and Compliance | [Enterprise AI Risk Register](02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) | [Sovereign AI, UAE Compliance and Data Residency Requirements](04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.md), [AI Governance Operating Model](08_Governance/16_AI_Governance_Operating_Model.md), [GCC AI Regulatory Hub](11_GCC_AI_Compliance/01_GCC_AI_Regulatory_Hub.md), [Guide for Implementors](11_GCC_AI_Compliance/05_Guide_Implementors.md) | Compliance mapping, risk treatment, approval records, and reporting. |
+| Internal Audit | [AI Security Audit and Evidence Checklist](06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md) | Control library, PoC evidence library, sovereignty requirements, [Guide for Auditors of AI Systems in the GCC](11_GCC_AI_Compliance/04_Guide_Auditors.md) | Independent evidence validation and control effectiveness assessment. |
 
 ## 9. Core Repository Structure
 
 ```text
-00_Home/
-  Navigation, landing page, wiki usage model, and document governance.
-
 00_Foundations/
   Research paper "AI Security vs. Security of AI": terminology, two-axis model, threat taxonomy, reference architecture,
   assurance, standards, maturity roadmap, and references.
@@ -187,6 +186,10 @@ Review, Improve, Renew, or Retire
 10_Test_Case_Library/
   620 detailed product evaluation test cases across 17 AI lifecycle layers and 6 emerging domains, with reference index,
   lab prerequisites, and framework adoption guide.
+
+11_GCC_AI_Compliance/
+  Regulatory hub for the UAE, Saudi Arabia, Qatar, Bahrain and Oman, role guides, fill-in templates,
+  proposed fairness control, regulatory crosswalk, and evidence register.
 ```
 
 ## 10. Standards and Policy Hierarchy
@@ -224,7 +227,7 @@ Enterprise AI Security Policy
 
 ## 12. Control Framework Mapping
 
-The wiki supports mapping AI security requirements to recognized control and governance frameworks. The detailed mapping should be maintained in the control library and audit checklist. How the instruments relate to each other is explained in [Governance, Standards and Regulation](00_Foundations/09-Governance-Standards-and-Regulation.md).
+The wiki supports mapping AI security requirements to recognized control and governance frameworks. The detailed mapping should be maintained in the control library and audit checklist. How the instruments relate to each other is explained in [Governance, Standards and Regulation](00_Foundations/09-Governance-Standards-and-Regulation.md). UAE and other GCC instruments are listed one by one, with their verification status, in the [GCC AI Regulatory Hub](11_GCC_AI_Compliance/01_GCC_AI_Regulatory_Hub.md).
 
 | Framework / Requirement Area | Wiki Mapping Purpose |
 |---|---|
@@ -347,6 +350,7 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 | 1.0 | Initial release | Nachiket Sathaye | Initial wiki home page with purpose, audience, design principle, role navigation, lifecycle navigation, folder structure, and vendor-neutral operating rule. |
 | 2.0 | 2026-07-27 | Nachiket Sathaye | Expanded the home page with mission, strategic objectives, operating model, governance, standards hierarchy, framework mapping, maintenance rules, roadmap, metrics, and fuller navigation. |
 | 2.1 | 2026-10-07 | Nachiket Sathaye | Added the Foundations section (research paper: AI Security vs. Security of AI) and linked it from the purpose, navigation, framework mapping, roadmap, and metrics sections. |
+| 2.2 | 2026-10-07 | Nachiket Sathaye | Added the GCC AI Compliance section: regulatory hub, four role guides, twelve templates, proposed fairness control, crosswalk and evidence register. Regional content is secondary-sourced and its verification is in progress. |
 
 ## 21. Quick Links
 
@@ -363,6 +367,7 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 - [AI Security Vendor Evaluation Master Framework](05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.md)
 - [AI Security PoC Test Case Library](06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md)
 - [Test Case Library (620 cases, 17 layers and 6 emerging domains)](10_Test_Case_Library/index.md)
+- [GCC AI Compliance (regulatory hub, role guides and templates)](11_GCC_AI_Compliance/index.md)
 - [Community Rules](community-rules.md)
 - [AI Security Audit and Evidence Checklist](06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md)
 - [AI Product Developer Playbook](07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.md)

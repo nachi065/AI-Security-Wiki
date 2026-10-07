@@ -64,4 +64,4 @@ The Act's Article 15 addresses accuracy, robustness and cybersecurity for high-r
 
 **Selection guidance.** Start from obligations (law, contract), choose one management framework as the spine, adopt one attack taxonomy for testing, and avoid trying to map every framework to every other. A single control set with tagged mappings is easier to maintain than parallel compliance programmes.
 
-**Regional scope.** This page covers the EU AI Act only. For UAE data residency and sovereignty requirements, see [Sovereign AI, UAE Compliance and Data Residency Requirements](../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.md).
+**Regional scope.** This page covers the EU AI Act only. For UAE data residency and sovereignty requirements, see [Sovereign AI, UAE Compliance and Data Residency Requirements](../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.md). For the laws, policies and baselines of the UAE and other GCC states, see the [GCC AI Regulatory Hub](../11_GCC_AI_Compliance/01_GCC_AI_Regulatory_Hub.md), which is compiled from secondary sources.

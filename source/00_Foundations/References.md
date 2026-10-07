@@ -32,7 +32,7 @@ Numbers match in-text citations. "Status" notes how each entry was checked on 7 
 *Status: not re-checked online in this revision.*
 
 [7] European Union. (2024). Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence (Artificial Intelligence Act). Official Journal of the EU. https://eur-lex.europa.eu/
-*Status: instrument number is as in the original draft; confirm the OJ reference and consolidated text on EUR-Lex.*
+*Status: instrument number not re-checked online in this revision; confirm the OJ reference and consolidated text on EUR-Lex.*
 
 [8] European Union. (2026). Regulation (EU) 2026/1744 (the "AI Omnibus"), amending Regulation (EU) 2024/1689. As reported in: White & Case, *EU AI Omnibus enters into force, amending the AI Act.* https://www.whitecase.com/insight-alert/eu-ai-omnibus-enters-force-amending-ai-act
 *Status: reported by one law-firm source (OJ publication 24 July 2026; entry into force 27 July 2026). Not checked against EUR-Lex. Corroborating coverage exists (e.g., Gibson Dunn, 27 May 2026, on the provisional agreement). VERIFY ON EUR-LEX.*
@@ -88,13 +88,13 @@ Numbers match in-text citations. "Status" notes how each entry was checked on 7 
 
 [27] Amodei, D., Olah, C., Steinhardt, J., Christiano, P., Schulman, J., & Mané, D. (2016). Concrete problems in AI safety. *arXiv preprint.*
 
-*Entries [16] to [22], [24], [26] and [27] are well-known papers whose bibliographic details are given from the original draft and standard citation; add DOIs/arXiv IDs when finalising.*
+*Entries [16] to [22], [24], [26] and [27] are well-known papers whose bibliographic details follow the standard citation; add DOIs/arXiv IDs when finalising.*
 
 ---
 
-## Entries removed from the original draft
+## Entries considered and not cited
 
-| Original entry | Reason |
+| Entry | Reason |
 |---|---|
 | Microsoft (2024–2026), "AI security and governance guidance…" | No identifiable document; cannot be cited |
 | Cloud Security Alliance (2024), "AI security and governance research and guidance" | No identifiable document |

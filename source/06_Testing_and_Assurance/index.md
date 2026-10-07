@@ -11,3 +11,5 @@ has_children: true
 PoC test cases, red team methodology and the audit and evidence checklist.
 
 For detailed, scored product evaluation cases, see the [Test Case Library](../10_Test_Case_Library/index.md): 620 cases across 17 AI lifecycle layers and six emerging domains.
+
+For audits of AI systems in the GCC, see the [Guide for Auditors](../11_GCC_AI_Compliance/04_Guide_Auditors.md), the [T08 AI Audit Checklist](../11_GCC_AI_Compliance/T08_Audit_Checklist.md) and the [Evidence Register](../11_GCC_AI_Compliance/08_Evidence_Register.md).

@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GCC AI Regulatory Hub | AI Security Wiki</title>
+<meta name="author" content="Nachiket Sathaye">
+<meta name="description" content="UAE, Saudi, Qatar, Bahrain and Oman AI-relevant laws, policies and security baselines mapped to AI security controls, with verification status.">
+<link rel="canonical" href="https://nachi065.github.io/AI-Security-Wiki/11_GCC_AI_Compliance/01_GCC_AI_Regulatory_Hub.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="AI Security Wiki">
+<meta property="og:title" content="GCC AI Regulatory Hub | AI Security Wiki">
+<meta property="og:description" content="UAE, Saudi, Qatar, Bahrain and Oman AI-relevant laws, policies and security baselines mapped to AI security controls, with verification status.">
+<meta property="og:url" content="https://nachi065.github.io/AI-Security-Wiki/11_GCC_AI_Compliance/01_GCC_AI_Regulatory_Hub.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body style="--h:60">
+<header class="topbar">
+  <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+  <a class="brand" href="../index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>AI Security Wiki</a>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Search the wiki" aria-label="Search the wiki" autocomplete="off">
+    <ul id="search-results" hidden></ul>
+  </div>
+  <a class="repo-link" href="https://github.com/nachi065/AI-Security-Wiki" rel="noopener">GitHub</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="sidebar" aria-label="Wiki sections">
+<ul class="nav">
+<li><a href="../index.html">Home</a></li>
+<li style="--h:255"><details><summary><a href="../00_Foundations/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h7a2 2 0 0 1 2 2v12a2 2 0 0 0-2-2H3zM21 5h-7a2 2 0 0 0-2 2v12a2 2 0 0 1 2-2h7z"/></svg>Foundations</a></summary><ul>
+<li><a href="../00_Foundations/01-Terminology-and-Two-Axis-Model.html">1. Terminology and the Two-Axis Model</a></li>
+<li><a href="../00_Foundations/02-AI-System-Boundary-and-Assets.html">2. The AI System Boundary and Assets</a></li>
+<li><a href="../00_Foundations/03-Threat-Taxonomy.html">3. Threat Taxonomy</a></li>
+<li><a href="../00_Foundations/04-LLMs-Prompt-Injection-and-RAG.html">4. LLMs, Prompt Injection and RAG</a></li>
+<li><a href="../00_Foundations/05-Agents-Identity-and-Excessive-Agency.html">5. Agents, Identity and Excessive Agency</a></li>
+<li><a href="../00_Foundations/06-Supply-Chain-and-Infrastructure.html">6. Supply Chain and Infrastructure</a></li>
+<li><a href="../00_Foundations/07-Reference-Architecture.html">7. Reference Architecture</a></li>
+<li><a href="../00_Foundations/08-Assurance-Testing-Monitoring-and-Response.html">8. Assurance: Testing, Monitoring and Response</a></li>
+<li><a href="../00_Foundations/09-Governance-Standards-and-Regulation.html">9. Governance, Standards and Regulation</a></li>
+<li><a href="../00_Foundations/10-AI-for-Security-and-AI-Enabled-Threats.html">10. AI for Security and AI-Enabled Threats</a></li>
+<li><a href="../00_Foundations/11-Maturity-Model-and-Roadmap.html">11. Maturity Model and Roadmap</a></li>
+<li><a href="../00_Foundations/12-Illustrative-Scenarios.html">12. Illustrative Scenarios</a></li>
+<li><a href="../00_Foundations/13-Limitations-and-Research-Gaps.html">13. Limitations and Research Gaps</a></li>
+<li><a href="../00_Foundations/Appendices.html">Appendices</a></li>
+<li><a href="../00_Foundations/References.html">References</a></li>
+</ul></details></li>
+<li style="--h:205"><details><summary><a href="../01_Strategy_and_Market/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg>Strategy and Market</a></summary><ul>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.html">AI Security Market and Technology Landscape: Summary</a></li>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape_Expanded.html">AI Security Market and Technology Landscape</a></li>
+</ul></details></li>
+<li style="--h:8"><details><summary><a href="../02_Risk_Management/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l9 16H3z"/><path d="M12 10v4M12 17v.5"/></svg>Risk Management</a></summary><ul>
+<li><a href="../02_Risk_Management/02A_AI_Risk_Methodology.html">AI Risk Methodology</a></li>
+<li><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a></li>
+<li><a href="../02_Risk_Management/02C_AI_Risk_Treatment_Plan.html">AI Risk Treatment Plan</a></li>
+<li><a href="../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a></li>
+<li><a href="../02_Risk_Management/02E_AI_Risk_Review_Template.html">AI Risk Review Template</a></li>
+</ul></details></li>
+<li style="--h:165"><details><summary><a href="../03_Control_Library/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>Control Library</a></summary><ul>
+<li><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></li>
+<li><a href="../03_Control_Library/04_Existing_Security_Control_Baseline.html">Existing Security Control Baseline</a></li>
+<li><a href="../03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.html">Microsoft Security Overlap and AI Gaps</a></li>
+</ul></details></li>
+<li style="--h:280"><details><summary><a href="../04_Domain_Standards/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 12l9 5 9-5M3 16l9 5 9-5"/></svg>Domain Standards</a></summary><ul>
+<li><a href="../04_Domain_Standards/06_Browser_AI_Security_Standard.html">Browser AI Security Standard</a></li>
+<li><a href="../04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.html">IDE AI Coding Assistant Security Standard</a></li>
+<li><a href="../04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a></li>
+<li><a href="../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
+<li><a href="../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
+</ul></details></li>
+<li style="--h:32"><details><summary><a href="../05_Vendor_Evaluation/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Vendor Evaluation</a></summary><ul>
+<li><a href="../05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
+<li><a href="../05_Vendor_Evaluation/12A_Vendor_Profile_Prompt_Security_SentinelOne.html">Vendor Profile: Prompt Security / SentinelOne</a></li>
+<li><a href="../05_Vendor_Evaluation/12B_Vendor_Profile_Palo_Alto_Prisma_AIRS.html">Vendor Profile: Palo Alto Prisma AIRS</a></li>
+<li><a href="../05_Vendor_Evaluation/12C_Vendor_Profile_HiddenLayer.html">Vendor Profile: HiddenLayer</a></li>
+<li><a href="../05_Vendor_Evaluation/12D_Vendor_Profile_Lasso_Security.html">Vendor Profile: Lasso Security</a></li>
+<li><a href="../05_Vendor_Evaluation/12E_Vendor_Profile_Cyberhaven.html">Vendor Profile: Cyberhaven</a></li>
+<li><a href="../05_Vendor_Evaluation/12F_Vendor_Profile_Nightfall_AI.html">Vendor Profile: Nightfall AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12G_Vendor_Profile_Enkrypt_AI.html">Vendor Profile: Enkrypt AI</a></li>
+<li><a href="../05_Vendor_Evaluation/12H_Vendor_Profile_Sovereign_AI_Security_Labs.html">Vendor Profile: Sovereign AI Security Labs</a></li>
+</ul></details></li>
+<li style="--h:325"><details><summary><a href="../06_Testing_and_Assurance/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/><path d="M7.5 15h9"/></svg>Testing and Assurance</a></summary><ul>
+<li><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html">AI Security PoC Test Case Library</a></li>
+<li><a href="../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a></li>
+<li><a href="../06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.html">AI Red Team Playbook</a></li>
+</ul></details></li>
+<li style="--h:188"><details><summary><a href="../07_Role_Based_Playbooks/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.8.3 5 2.7 5 5.8"/></svg>Role-Based Playbooks</a></summary><ul>
+<li><a href="../07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.html">AI Product Developer Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15B_AI_Security_Researcher_Playbook.html">AI Security Researcher Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15D_Security_Engineering_Playbook.html">Security Engineering Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15E_Vendor_Evaluation_and_Audit_Playbook.html">Vendor Evaluation and Audit Playbook</a></li>
+</ul></details></li>
+<li style="--h:228"><details><summary><a href="../08_Governance/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-5 9 5M5 9v9M9.5 9v9M14.5 9v9M19 9v9M3 20h18"/></svg>Governance</a></summary><ul>
+<li><a href="../08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></li>
+<li><a href="../08_Governance/17_AI_Policy_Standards_and_Acceptable_Use.html">AI Policy, Standards and Acceptable Use</a></li>
+</ul></details></li>
+<li style="--h:215"><details><summary><a href="../09_Reference/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg>Reference</a></summary><ul>
+<li><a href="../09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
+</ul></details></li>
+<li style="--h:145"><details><summary><a href="../10_Test_Case_Library/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l1.5 1.5L8 5M4 12l1.5 1.5L8 11M4 18l1.5 1.5L8 17M11 6h9M11 12h9M11 18h9"/></svg>Test Case Library</a></summary><ul>
+<li><a href="../10_Test_Case_Library/00-reference-index.html">Reference Index</a></li>
+<li><a href="../10_Test_Case_Library/framework-adoption-guide.html">Framework Adoption Guide</a></li>
+<li><a href="../10_Test_Case_Library/appendix-lab-prerequisites.html">Appendix: Lab Prerequisites</a></li>
+<li><a href="../10_Test_Case_Library/L01-business-and-use-cases.html">L01 Business &amp; Use Cases</a></li>
+<li><a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
+<li><a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>
+<li><a href="../10_Test_Case_Library/L04-human-interaction-layer.html">L04 Human Interaction Layer</a></li>
+<li><a href="../10_Test_Case_Library/L05-ai-applications.html">L05 AI Applications</a></li>
+<li><a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html">L06 Agent Orchestration Layer</a></li>
+<li><a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html">L07 Prompt &amp; Context Layer</a></li>
+<li><a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html">L08 AI Gateway &amp; Security Controls</a></li>
+<li><a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html">L09 Identity &amp; Access Mgmt</a></li>
+<li><a href="../10_Test_Case_Library/L10-data-layer.html">L10 Data Layer</a></li>
+<li><a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html">L11 Knowledge &amp; Retrieval Layer</a></li>
+<li><a href="../10_Test_Case_Library/L12-model-layer.html">L12 Model Layer</a></li>
+<li><a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html">L13 Training &amp; Fine-Tuning Layer</a></li>
+<li><a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html">L14 MLOps / LLMOps Layer</a></li>
+<li><a href="../10_Test_Case_Library/L15-infrastructure-layer.html">L15 Infrastructure Layer</a></li>
+<li><a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html">L16 Supply Chain &amp; Third Party</a></li>
+<li><a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html">L17 Monitoring, Detection &amp; Response</a></li>
+<li><a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html">D08 AI Red Teaming and Continuous Testing</a></li>
+<li><a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html">D09 Agent and Non-Human Identity Governance</a></li>
+<li><a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html">D10 Browser and Computer-Use Agents</a></li>
+<li><a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html">D11 Multimodal and Voice Input Security</a></li>
+<li><a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html">D12 AI Incident Response and Forensics</a></li>
+<li><a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html">D13 AI Cost and Abuse Controls</a></li>
+</ul></details></li>
+<li style="--h:60"><details open><summary><a href="index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg>GCC AI Compliance</a></summary><ul>
+<li><a class="current" href="01_GCC_AI_Regulatory_Hub.html">GCC AI Regulatory Hub</a></li>
+<li><a href="02_Guide_AI_Practitioners.html">Guide for AI Practitioners in the GCC</a></li>
+<li><a href="03_Guide_Product_Companies.html">Guide for AI Product Companies Selling into the GCC</a></li>
+<li><a href="04_Guide_Auditors.html">Guide for Auditors of AI Systems in the GCC</a></li>
+<li><a href="05_Guide_Implementors.html">Guide for Implementors: Building an AI Governance Programme in the GCC</a></li>
+<li><a href="06_Proposed_Control_Fairness_Bias_Explainability.html">Proposed Control: Fairness, Bias Testing and Explainability</a></li>
+<li><a href="07_Regulatory_Crosswalk.html">Regulatory Crosswalk</a></li>
+<li><a href="08_Evidence_Register.html">Evidence Register</a></li>
+<li><a href="T01_AI_Use_Case_Intake_and_Risk_Tiering.html">T01 AI Use-Case Intake and Risk Tiering</a></li>
+<li><a href="T02_AI_Impact_Assessment.html">T02 AI Impact Assessment</a></li>
+<li><a href="T03_Vendor_Due_Diligence_GCC_Addendum.html">T03 Vendor Due-Diligence GCC Addendum</a></li>
+<li><a href="T04_Data_Residency_Attestation.html">T04 Data Residency and Sovereignty Attestation</a></li>
+<li><a href="T05_AI_Incident_and_Breach_Notification_Workflow.html">T05 AI Incident and Breach Notification Workflow</a></li>
+<li><a href="T06_Bilingual_AI_Use_Notice.html">T06 Bilingual AI Use Notice (Arabic and English)</a></li>
+<li><a href="T07_Ethics_Self_Assessment_Worksheet.html">T07 AI Ethics Self-Assessment Worksheet</a></li>
+<li><a href="T08_Audit_Checklist.html">T08 AI Audit Checklist</a></li>
+<li><a href="T09_AI_System_Inventory.html">T09 AI Model and System Inventory</a></li>
+<li><a href="T10_Bias_Testing_Record.html">T10 Bias Testing Record</a></li>
+<li><a href="T11_Regulator_Engagement_Log.html">T11 Regulator and Ethics-Body Engagement Log</a></li>
+<li><a href="T12_Risk_Register_4x4.html">T12 AI Risk Register (4x4)</a></li>
+</ul></details></li>
+<li><a href="../community-rules.html">Community Rules</a></li>
+</ul>
+</nav>
+<main>
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">GCC AI Compliance</a> / <span>GCC AI Regulatory Hub</span></p>
+<article>
+<h1 id="gcc-ai-regulatory-hub">GCC AI Regulatory Hub</h1>
+<blockquote class="callout caution">
+<p><strong>Verification required.</strong> Regional claims on this page were compiled from secondary sources on 7 October 2026. No primary legal text was read, and each claim is tagged [Reported], [Conflict] or [Unverified] as explained on the <a href="index.html">section home page</a>. Check the primary text before relying on any of them. This is not legal advice.</p>
+</blockquote>
+<p>This page maps UAE and GCC laws, policies and baselines that bear on AI to the wiki's controls. Clause and article numbers are left blank unless a source showed them. In the instrument tables, the Wiki coverage column says how far the wiki's current controls and test cases address the instrument; "Not covered" means no wiki page maps to it yet.</p>
+<h2 id="1-how-the-region-is-structured">1. How the region is structured</h2>
+<p>No GCC state has an enacted horizontal AI statute comparable to the EU AI Act <strong>[Reported]</strong>. Duties arrive through four layers. Apply the strictest layer that applies to you.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>What it contains</th>
+<th>Binding?</th>
+<th>Typical question it answers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Data protection law</td>
+<td>UAE PDPL, DIFC and ADGM regimes, Saudi PDPL, Qatar PDPPL, Bahrain PDPL, Oman PDPL</td>
+<td>Yes</td>
+<td>May we use this personal data in this model, and what rights do people have?</td>
+</tr>
+<tr>
+<td>2. National AI ethics and policy</td>
+<td>UAE Charter, UAE AI Ethics, SDAIA ethics and adoption frameworks, MCIT ethical AI, Bahrain policy, Oman policy</td>
+<td>Mostly no (some scoped to government; Bahrain and Oman reported as binding in scope)</td>
+<td>What does "responsible" mean here? What will a government buyer ask for?</td>
+</tr>
+<tr>
+<td>3. Sector regulator guidance</td>
+<td>CBUAE, QCB, CBB, SAMA (not researched)</td>
+<td>Varies; QCB reported as binding for licensees</td>
+<td>What must a bank or insurer do before using AI?</td>
+</tr>
+<tr>
+<td>4. Cybersecurity baselines</td>
+<td>Dubai AI Security Policy, NCA ECC/CCC, NCSA AI guidelines, UAE information assurance</td>
+<td>Varies</td>
+<td>What security controls must the AI system and its hosting meet?</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Rule of thumb:</strong> if personal data is involved, layer 1 applies regardless of any AI risk label. If you serve a regulated financial entity or government, layers 3 and 4 will show up in the contract.</p>
+<h2 id="2-united-arab-emirates">2. United Arab Emirates</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Instrument</th>
+<th>Type / status</th>
+<th>Key points reported</th>
+<th>Wiki controls</th>
+<th>Wiki coverage</th>
+<th>Verify</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>U1</td>
+<td>Federal Decree-Law 45/2021 (PDPL)</td>
+<td>Binding</td>
+<td>Lawful basis, purpose limitation, data subject rights, impact assessment, transfer rules, breach notification. Reported as a 31-article law. Executive Regulation reported as pending.</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-007">AI-CTRL-007</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></td>
+<td>Partial</td>
+<td>Article numbers; Executive Regulation status [Reported]</td>
+</tr>
+<tr>
+<td>U2</td>
+<td>Federal Decree-Law 34/2021 (cybercrime)</td>
+<td>Binding</td>
+<td>Misuse, unauthorised access, deepfake-type scenarios</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-028">AI-CTRL-028</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></td>
+<td>Not covered</td>
+<td>[Unverified] AI relevance</td>
+</tr>
+<tr>
+<td>U3</td>
+<td>UAE Charter for the Development and Use of AI</td>
+<td>Non-binding; 12 principles (safety, transparency, human oversight among them)</td>
+<td>Cited in procurement and policy</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-039">AI-CTRL-039</a></td>
+<td>Not named</td>
+<td>[Conflict] publication month</td>
+</tr>
+<tr>
+<td>U4</td>
+<td>UAE AI Ethics: Principles and Guidelines, plus self-assessment</td>
+<td>Voluntary; 8 principles</td>
+<td>Self-assessment evidence used in tenders</td>
+<td>None for fairness</td>
+<td>Gap</td>
+<td>[Reported]</td>
+</tr>
+<tr>
+<td>U5</td>
+<td>Federal Authority for Artificial Intelligence and Data</td>
+<td>Announced 14 June 2026; consolidates AI Office, TDRA digital-government arm, Emirates Data Office</td>
+<td>New central body for AI, data protection, digital government</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a></td>
+<td>Not covered</td>
+<td>[Reported] Confirm mandate officially</td>
+</tr>
+<tr>
+<td>U6</td>
+<td>DIFC Data Protection Law and Regulation 10</td>
+<td>Binding in DIFC</td>
+<td>Autonomous and semi-autonomous systems processing personal data. Reported concepts: human-defined purposes, an Autonomous Systems Officer (ASO) role, certification. Consultation (from 18 June 2026) proposes AI accreditation and certification</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-011">AI-CTRL-011</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a></td>
+<td>Not covered</td>
+<td>[Conflict] enforcement date (Sept 2023 vs Jan 2026)</td>
+</tr>
+<tr>
+<td>U7</td>
+<td>ADGM Data Protection Regulations</td>
+<td>Binding in ADGM</td>
+<td>Free-zone regime</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-007">AI-CTRL-007</a></td>
+<td>Not covered</td>
+<td>[Unverified]</td>
+</tr>
+<tr>
+<td>U8</td>
+<td>Dubai AI Security Policy (Dubai Electronic Security Center)</td>
+<td>Policy, Sept 2024</td>
+<td>Security standards for AI incl. generative AI. Closest in scope to this wiki</td>
+<td>Whole library</td>
+<td>Not covered</td>
+<td>Obtain text; map clause by clause</td>
+</tr>
+<tr>
+<td>U9</td>
+<td>CBUAE Guidance Note on responsible AI/ML adoption</td>
+<td>Supervisory guidance, 23 Feb 2026, for licensed financial institutions</td>
+<td>See 2.1</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-011">AI-CTRL-011</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a></td>
+<td>Partial by overlap</td>
+<td>[Reported]</td>
+</tr>
+<tr>
+<td>U10</td>
+<td>Abu Dhabi AI and Advanced Technology Council (Law 3/2024)</td>
+<td>Governance body</td>
+<td>Jurisdiction context</td>
+<td>None</td>
+<td>Not covered</td>
+<td>[Reported]</td>
+</tr>
+<tr>
+<td>U11</td>
+<td>UAE information assurance (NESA/IA)</td>
+<td>Baseline referenced by the wiki</td>
+<td>No clause mapping in wiki</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-032">AI-CTRL-032</a></td>
+<td>Named only</td>
+<td>[Unverified] custodian and version</td>
+</tr>
+<tr>
+<td>U12</td>
+<td>Dubai AI Seal</td>
+<td>Tiered certification; reported as needed for Dubai government AI contracting</td>
+<td>Procurement gate</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a></td>
+<td>Not covered</td>
+<td>[Unverified] single source</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="21-cbuae-guidance-note-expectations-to-wiki-controls">2.1 CBUAE Guidance Note expectations to wiki controls</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Reported expectation</th>
+<th>Wiki control</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Board accountability for AI</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-037">AI-CTRL-037</a></td>
+<td>Gap: no board statement</td>
+</tr>
+<tr>
+<td>Complete AI model inventory (name, purpose, risk rating)</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-011">AI-CTRL-011</a></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>Annual bias testing or on material change</td>
+<td>None; proposed <a class="chip" href="06_Proposed_Control_Fairness_Bias_Explainability.html">AI-CTRL-041</a></td>
+<td>Gap</td>
+</tr>
+<tr>
+<td>Consumer opt-out consideration for high-impact decisions</td>
+<td><a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-008">TC-L03-008</a></td>
+<td>Partial</td>
+</tr>
+<tr>
+<td>Human review of AI decisions</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a>, <a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-008">TC-L03-008</a></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>Kill-switch capability</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>Third-party AI vendor due diligence</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>Arabic and English disclosure</td>
+<td><a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-003">TC-L03-003</a>, <a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-030">TC-L03-030</a></td>
+<td>Partial</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="3-saudi-arabia">3. Saudi Arabia</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Instrument</th>
+<th>Type / status</th>
+<th>Key points reported</th>
+<th>Wiki controls</th>
+<th>Wiki coverage</th>
+<th>Verify</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S1</td>
+<td>PDPL</td>
+<td>Binding; penalties reported up to SAR 5M</td>
+<td>Active enforcement reported</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-007">AI-CTRL-007</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a></td>
+<td>Not covered</td>
+<td>[Conflict] in force Sept 2023 vs enforced Sept 2024</td>
+</tr>
+<tr>
+<td>S2</td>
+<td>SDAIA AI Ethics Principles</td>
+<td>Non-binding; v2.0 reported Sept 2023; seven principles; references international standards incl. NIST AI RMF</td>
+<td>Cited by SDAIA-aligned buyers</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-039">AI-CTRL-039</a></td>
+<td>Not covered</td>
+<td>[Conflict] version and update dates</td>
+</tr>
+<tr>
+<td>S3</td>
+<td>SDAIA Generative AI Guidelines</td>
+<td>Non-binding; Jan 2024; government focus</td>
+<td>GenAI use rules</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-002">AI-CTRL-002</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-010">AI-CTRL-010</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a></td>
+<td>Not covered</td>
+<td>[Reported]</td>
+</tr>
+<tr>
+<td>S4</td>
+<td>SDAIA AI Adoption Framework</td>
+<td>Non-binding; four maturity levels; Sept 2024</td>
+<td>Maturity model</td>
+<td><a href="../00_Foundations/11-Maturity-Model-and-Roadmap.html">Maturity Model and Roadmap</a></td>
+<td>Not covered</td>
+<td>[Reported]</td>
+</tr>
+<tr>
+<td>S5</td>
+<td>SDAIA National AI Risk Management Framework (SDAIA-P145)</td>
+<td>Reported published April 2026; likelihood-impact matrix, proportional application; Arabic text authoritative</td>
+<td>Basis for <a href="T12_Risk_Register_4x4.html">T12</a></td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-037">AI-CTRL-037</a>, <a href="../02_Risk_Management/02A_AI_Risk_Methodology.html">AI Risk Methodology</a></td>
+<td>Not covered</td>
+<td>[Conflict] date (April vs July 2026)</td>
+</tr>
+<tr>
+<td>S6</td>
+<td>NCA ECC and CCC</td>
+<td>Binding for government and critical infrastructure</td>
+<td>Cyber and cloud baselines</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-032">AI-CTRL-032</a></td>
+<td>Not covered</td>
+<td>[Reported]</td>
+</tr>
+<tr>
+<td>S7</td>
+<td>NCA NCNICC-1:2025</td>
+<td>Reported as applying to non-critical private sector from Jan 2026</td>
+<td>Cyber baseline</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-032">AI-CTRL-032</a></td>
+<td>Not covered</td>
+<td>[Unverified]</td>
+</tr>
+<tr>
+<td>S8</td>
+<td>NCA AI Cybersecurity Guidelines</td>
+<td>Consultation reported closed 5 Aug 2026; four domains: governance, defence, resilience, third-party risk; generative and agentic AI</td>
+<td>Final text expected</td>
+<td>Whole library</td>
+<td>Not covered</td>
+<td>[Unverified] single source</td>
+</tr>
+<tr>
+<td>S9</td>
+<td>Copyright text-and-data-mining exception</td>
+<td>Reported effective 12 Aug 2026</td>
+<td>Training-data IP</td>
+<td><a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-028">TC-L03-028</a></td>
+<td>Partial</td>
+<td>[Reported]</td>
+</tr>
+<tr>
+<td>S10</td>
+<td>NDMO, CST, SAMA localisation/sector rules</td>
+<td>Overlays</td>
+<td>Residency and sector</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-007">AI-CTRL-007</a></td>
+<td>Not covered</td>
+<td>[Unverified]</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="4-qatar">4. Qatar</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Instrument</th>
+<th>Status</th>
+<th>Wiki controls</th>
+<th>Wiki coverage</th>
+<th>Verify</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q1</td>
+<td>Law 13/2016 (PDPPL)</td>
+<td>Binding</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-007">AI-CTRL-007</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a></td>
+<td>Not covered</td>
+<td>[Reported]</td>
+</tr>
+<tr>
+<td>Q2</td>
+<td>NCSA Guidelines for Secure Adoption and Usage of AI (2024)</td>
+<td>Voluntary, reported hardening into audit baselines</td>
+<td>Whole library</td>
+<td>Not covered</td>
+<td>[Reported]</td>
+</tr>
+<tr>
+<td>Q3</td>
+<td>MCIT Principles and Guidelines for Ethical AI</td>
+<td>Non-binding</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-039">AI-CTRL-039</a></td>
+<td>Not covered</td>
+<td>[Conflict] year 2024 vs 2025</td>
+</tr>
+<tr>
+<td>Q4</td>
+<td>QCB AI Guideline (4 Sept 2024)</td>
+<td>Reported binding for QCB licensees; approval gate for high-risk AI; gating of fully autonomous systems</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-011">AI-CTRL-011</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a></td>
+<td>Not covered</td>
+<td>[Reported] strongest claim in region; confirm</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="5-bahrain">5. Bahrain</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Instrument</th>
+<th>Status</th>
+<th>Wiki controls</th>
+<th>Verify</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B1</td>
+<td>Law 30/2018 (PDPL)</td>
+<td>Binding</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a></td>
+<td>[Reported]</td>
+</tr>
+<tr>
+<td>B2</td>
+<td>General Policy for the Use of AI (v1.0, May 2025)</td>
+<td>Reported binding on government entities</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a></td>
+<td>[Reported]</td>
+</tr>
+<tr>
+<td>B3</td>
+<td>Draft AI law (38 articles)</td>
+<td>Not enacted as of July 2026 per sources; criminal penalties proposed</td>
+<td>Watchlist</td>
+<td>[Reported] re-check</td>
+</tr>
+<tr>
+<td>B4</td>
+<td>CBB digital financial advice directives</td>
+<td>Sector</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a></td>
+<td>[Reported]</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="6-oman">6. Oman</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Instrument</th>
+<th>Status</th>
+<th>Wiki controls</th>
+<th>Verify</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>O1</td>
+<td>National AI Policy (in force 9 April 2025, MTCIT)</td>
+<td>Reported mandatory within scope: governance standards, regular assessments, documentation, compliance reports on request</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-011">AI-CTRL-011</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-037">AI-CTRL-037</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a></td>
+<td>[Reported]</td>
+</tr>
+<tr>
+<td>O2</td>
+<td>PDPL amendments (automated processing, retention)</td>
+<td>Reported cleared May 2026; awaiting royal promulgation</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a></td>
+<td>[Reported] re-check</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="7-kuwait">7. Kuwait</h2>
+<p>Kuwait has not been researched for this page.</p>
+<h2 id="8-international-bridges">8. International bridges</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Standard</th>
+<th>Why it helps in the GCC</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ISO/IEC 42001</td>
+<td>AI management system; SDAIA itself is reported as certified; useful evidence for buyers</td>
+<td>[Reported] SDAIA certification</td>
+</tr>
+<tr>
+<td>NIST AI RMF</td>
+<td>SDAIA ethics principles reference it</td>
+<td>Use for GOVERN/MAP/MEASURE/MANAGE mapping</td>
+</tr>
+<tr>
+<td>ISO/IEC 27001</td>
+<td>Common base for NCA, NESA and Dubai security expectations</td>
+<td>Gap analysis still needed</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="9-what-each-regional-layer-asks-for-in-practical-terms">9. What each regional layer asks for, in practical terms</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Practical ask</th>
+<th>Where it most often comes from</th>
+<th>Template or page</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI inventory with risk rating</td>
+<td>CBUAE, Oman policy, SDAIA risk framework</td>
+<td><a href="T09_AI_System_Inventory.html">T09</a>, <a href="T01_AI_Use_Case_Intake_and_Risk_Tiering.html">T01</a></td>
+</tr>
+<tr>
+<td>Impact assessment before deployment</td>
+<td>PDPL regimes, DIFC Reg 10, SDAIA risk framework</td>
+<td><a href="T02_AI_Impact_Assessment.html">T02</a></td>
+</tr>
+<tr>
+<td>Human oversight and ability to stop</td>
+<td>CBUAE, QCB, UAE Charter, DIFC Reg 10</td>
+<td><a href="T01_AI_Use_Case_Intake_and_Risk_Tiering.html">T01</a>, <a href="05_Guide_Implementors.html">Guide for Implementors</a></td>
+</tr>
+<tr>
+<td>Bias testing</td>
+<td>CBUAE, ethics frameworks</td>
+<td><a href="T10_Bias_Testing_Record.html">T10</a>, <a class="chip" href="06_Proposed_Control_Fairness_Bias_Explainability.html">AI-CTRL-041</a></td>
+</tr>
+<tr>
+<td>Vendor due diligence</td>
+<td>CBUAE, NCA, NCSA</td>
+<td><a href="T03_Vendor_Due_Diligence_GCC_Addendum.html">T03</a></td>
+</tr>
+<tr>
+<td>Data location and transfer proof</td>
+<td>PDPLs, NCA, sector rules</td>
+<td><a href="T04_Data_Residency_Attestation.html">T04</a></td>
+</tr>
+<tr>
+<td>Arabic and English notice</td>
+<td>CBUAE, government buyers</td>
+<td><a href="T06_Bilingual_AI_Use_Notice.html">T06</a></td>
+</tr>
+<tr>
+<td>Incident and breach notice</td>
+<td>PDPLs, sector regulators, NCA</td>
+<td><a href="T05_AI_Incident_and_Breach_Notification_Workflow.html">T05</a></td>
+</tr>
+<tr>
+<td>Ethics self-assessment</td>
+<td>UAE and SDAIA ethics</td>
+<td><a href="T07_Ethics_Self_Assessment_Worksheet.html">T07</a></td>
+</tr>
+<tr>
+<td>Regulator contact record</td>
+<td>All</td>
+<td><a href="T11_Regulator_Engagement_Log.html">T11</a></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="10-known-gaps-in-the-wiki">10. Known gaps in the wiki</h2>
+<ul>
+<li>The legal and governance test cases and the <a href="../10_Test_Case_Library/framework-adoption-guide.html">Framework Adoption Guide</a> have no clause-level crosswalk for these instruments.</li>
+<li>The control library has no fairness, bias testing or explainability control. <a class="chip" href="06_Proposed_Control_Fairness_Bias_Explainability.html">AI-CTRL-041</a> is proposed.</li>
+<li>No control covers engagement with regulators or ethics bodies. <a href="T11_Regulator_Engagement_Log.html">T11</a> is a template for it.</li>
+<li>There are no sector overlays for banking, insurance, health or government.</li>
+<li>Arabic and English coverage in the test cases is thin.</li>
+</ul>
+<h2 id="11-verification-checklist">11. Verification checklist</h2>
+<ul>
+<li>[ ] U1 article numbers and Executive Regulation status</li>
+<li>[ ] U3/U4 publication dates and principle counts</li>
+<li>[ ] U5 official announcement</li>
+<li>[ ] U6 enforcement date; ASO and certification provisions; consultation paper</li>
+<li>[ ] U8 policy text</li>
+<li>[ ] U9 CBUAE Rulebook entry</li>
+<li>[ ] U11 custodian and version</li>
+<li>[ ] S1 in-force vs enforcement dates</li>
+<li>[ ] S5 SDAIA publication date</li>
+<li>[ ] S7, S8 status</li>
+<li>[ ] Q2, Q4 binding status</li>
+<li>[ ] B2, O1 binding scope</li>
+<li>[ ] Kuwait research</li>
+<li>[ ] Add primary URL and retrieval date beside every confirmed row</li>
+</ul>
+<h2 id="12-source-note">12. Source note</h2>
+<p>Secondary sources used: Modulos documentation pages on the CBUAE note, UAE PDPL, UAE AI Ethics and SDAIA-P145; law-firm and news trackers on DIFC Reg 10, the UAE Charter, SDAIA ethics, QCB and NCSA. No row above has been verified against a primary source.</p>
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="index.html">&larr; GCC AI Compliance</a><a class="next" href="02_Guide_AI_Practitioners.html">Guide for AI Practitioners in the GCC &rarr;</a></nav>
+<footer class="site-footer">Author: Nachiket Sathaye &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/11_GCC_AI_Compliance/01_GCC_AI_Regulatory_Hub.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a></footer>
+</main>
+</div>
+<script>window.SITE_BASE = "../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 
 Usage:  pip install markdown && python3 build.py
 """
-import html, json, os, re
+import html, json, os, re, shutil
 import markdown
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -57,6 +57,7 @@ LOOKS = {
     "07_Role_Based_Playbooks": (188, '<circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.8.3 5 2.7 5 5.8"/>'),
     "08_Governance": (228, '<path d="M3 9l9-5 9 5M5 9v9M9.5 9v9M14.5 9v9M19 9v9M3 20h18"/>'),
     "09_Reference": (215, '<path d="M6 3h12v18l-6-4-6 4z"/>'),
+    "11_GCC_AI_Compliance": (60, '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>'),
     "10_Test_Case_Library": (145, '<path d="M4 6l1.5 1.5L8 5M4 12l1.5 1.5L8 11M4 18l1.5 1.5L8 17M11 6h9M11 12h9M11 18h9"/>'),
 }
 DEFAULT_LOOK = (215, '<path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/>')
@@ -299,6 +300,14 @@ for i, page in enumerate(order):
         body = plain(chunk.split("</table></div>", 1)[-1])
         index.append({"t": plain(heading.group(1)) if heading else anchor.upper(), "s": title,
                       "u": page["out"] + "#" + anchor, "c": body[:CASE_SNIPPET]})
+
+# Data files that pages link to (for example CSV downloads) are copied next to the generated pages.
+for dirpath, dirs, files in os.walk(SRC):
+    for f in files:
+        if not f.endswith(".md") and not f.startswith("."):
+            dest = os.path.join(ROOT, os.path.relpath(os.path.join(dirpath, f), SRC))
+            os.makedirs(os.path.dirname(dest), exist_ok=True)
+            shutil.copyfile(os.path.join(dirpath, f), dest)
 
 open(os.path.join(ROOT, "assets", "search-index.js"), "w", encoding="utf-8").write(
     "window.SEARCH_INDEX = " + json.dumps(index, ensure_ascii=False) + ";\n")
