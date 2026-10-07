@@ -8,7 +8,7 @@ has_children: true
 
 # Australia AI Compliance
 
-Resources for people who build, sell, audit or run AI systems in Australia. The pages map Australian laws, reforms and guidance to the wiki's [control library](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md). The [GCC](../11_GCC_AI_Compliance/index.md) and [EU](../12_EU_AI_Compliance/index.md) sections are the fuller sibling sections.
+Resources for people who build, sell, audit or run AI systems in Australia. The pages map Australian laws, reforms and guidance to the wiki's [control library](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md). The [GCC](../11_GCC_AI_Compliance/index.md) and [EU](../12_EU_AI_Compliance/index.md) sections cover their regions in more depth and hold the general templates.
 
 > **Verification required.** Everything in this section about Australian law was compiled on 7 October 2026 from secondary web sources and from memory of the law. No primary legal text was read. Article, clause and section numbers are left blank unless a source showed them; fill them in from the primary text. Check the primary text before relying on any claim. This is not legal advice.
 
