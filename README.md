@@ -27,6 +27,7 @@ I built this AI security wiki over the past year and have published it here on G
 | Brazil AI compliance (regulatory hub, role guide, templates) | https://nachi065.github.io/AI-Security-Wiki/14_Brazil_AI_Compliance/ |
 | Canada AI compliance (regulatory hub, role guide, templates) | https://nachi065.github.io/AI-Security-Wiki/15_Canada_AI_Compliance/ |
 | China AI compliance (regulatory hub, role guide, templates) | https://nachi065.github.io/AI-Security-Wiki/16_China_AI_Compliance/ |
+| India AI compliance (regulatory hub, role guide, templates) | https://nachi065.github.io/AI-Security-Wiki/17_India_AI_Compliance/ |
 
 The pages are plain HTML, so the site also works offline: download the repository and open `index.html` in a browser.
 
