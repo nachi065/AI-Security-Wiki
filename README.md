@@ -23,6 +23,7 @@ I built this AI security wiki over the past year and have published it here on G
 | Role-based playbooks | https://nachi065.github.io/AI-Security-Wiki/07_Role_Based_Playbooks/ |
 | GCC AI compliance (regulatory hub, role guides, templates) | https://nachi065.github.io/AI-Security-Wiki/11_GCC_AI_Compliance/ |
 | EU AI compliance (AI Act hub, role guides, templates) | https://nachi065.github.io/AI-Security-Wiki/12_EU_AI_Compliance/ |
+| Australia AI compliance (regulatory hub, role guide, templates) | https://nachi065.github.io/AI-Security-Wiki/13_Australia_AI_Compliance/ |
 
 The pages are plain HTML, so the site also works offline: download the repository and open `index.html` in a browser.
 

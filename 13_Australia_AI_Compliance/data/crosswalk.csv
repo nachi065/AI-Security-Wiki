@@ -1,0 +1,10 @@
+ID,Instrument,Type / status,Wiki controls,Verification tag,To verify,Primary URL and retrieval date
+AU1,National AI Plan (Dec 2025),Policy,AI-CTRL-012,Reported,Text,
+AU2,Privacy Act automated decision transparency (APP 1.7 to 1.9),"Binding; commences 10 Dec 2026 (OAIC statement, Allens)",AI-CTRL-013;AI-CTRL-039;AI-CTRL-041,Reported,Confirmed by OAIC and a law-firm note; read the Act text and APP 1 guidelines for exact wording,
+AU3,OAIC privacy policy compliance sweep,Regulator action; began first week of Jan 2026,AI-CTRL-013;AI-CTRL-035,Reported,OAIC outcomes; any AI-specific sweeps,
+AU3a,Privacy Act civil penalty tiers,Binding,AI-CTRL-013;AI-CTRL-035,Reported,Confirm tiers in the Act; which tier an APP 1.7 to 1.9 breach falls in is not confirmed,
+AU4,Guidance for AI Adoption (National AI Centre),Voluntary,AI-CTRL-012;AI-CTRL-037;AI-CTRL-023,Reported,Practices list,
+AU5,AI Safety Institute (early 2026; AUD 29.9M),Government body,,Reported,Remit,
+AU6,Deepfake criminal offences (forthcoming); NSW workplace AI safety bill; Victoria considering,Proposed,AI-CTRL-039;AI-CTRL-041,Reported,Status,
+AU7,Australian Consumer Law,Binding,AI-CTRL-012,Reported,Guidance,
+AU8,APRA CPS 230 and CPS 234,Binding for regulated entities,AI-CTRL-014;AI-CTRL-005;AI-CTRL-035,Recalled,Applicability to AI,

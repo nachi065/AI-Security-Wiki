@@ -1,9 +1,9 @@
 ---
 title: "Home"
-description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, GCC and EU compliance and 620 test cases."
+description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and 620 test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.3
+version: 2.4
 status: Published
 author: Nachiket Sathaye
 owner: AI Security Program
@@ -72,6 +72,7 @@ This wiki is intended for the following personas:
 | GRC and compliance | Map AI controls to governance, regulatory, privacy, and assurance requirements. |
 | Teams building, selling or auditing AI in the GCC | Find the regional instruments that apply, with role guides and fill-in templates. |
 | Teams building, selling or auditing AI under EU rules | Find the AI Act, GDPR and related instruments that apply, with role guides and fill-in templates. |
+| Teams building, selling or auditing AI in other jurisdictions | Find the national instruments that apply in Australia, with a role guide and region-specific templates. |
 | Internal audit | Validate control operation, evidence quality, decision traceability, and governance effectiveness. |
 
 ## 5. Wiki Design Principles
@@ -134,6 +135,7 @@ Review, Improve, Renew, or Retire
 | Audit and continuous improvement | Review governance effectiveness, control operation, exceptions, and maturity. | [AI Security Audit and Evidence Checklist](06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md), [AI Governance Operating Model](08_Governance/16_AI_Governance_Operating_Model.md) | Audit evidence, management actions, maturity roadmap. |
 | Regional compliance (GCC) | Identify the UAE and other GCC instruments that apply, and record what has been verified against the primary text. | [GCC AI Regulatory Hub](11_GCC_AI_Compliance/01_GCC_AI_Regulatory_Hub.md), [Regulatory Crosswalk](11_GCC_AI_Compliance/07_Regulatory_Crosswalk.md), [templates T01 to T12](11_GCC_AI_Compliance/index.md) | Regulator register, impact assessments, residency attestation, bilingual notices. |
 | Regional compliance (EU) | Classify each system by AI Act role and risk tier, identify the EU instruments that apply, and record what has been verified against the primary text. | [EU AI Regulatory Hub](12_EU_AI_Compliance/01_EU_AI_Regulatory_Hub.md), [EU Regulatory Crosswalk](12_EU_AI_Compliance/07_Regulatory_Crosswalk.md), [templates T01 to T12](12_EU_AI_Compliance/index.md) | Classification records, impact assessments, transfer records, transparency notices, technical file index. |
+| Regional compliance (other jurisdictions) | Identify the national instruments that apply, and record what has been verified against the primary text. | [Australia](13_Australia_AI_Compliance/index.md) | Regulatory register, region-specific records and templates. |
 
 ## 8. Navigation by Role
 
@@ -193,6 +195,10 @@ Review, Improve, Renew, or Retire
 12_EU_AI_Compliance/
   Regulatory hub for the EU AI Act, GDPR and related EU instruments, role guides, fill-in templates,
   proposed impact assessment control, regulatory crosswalk, and evidence register.
+
+13_Australia_AI_Compliance/
+  Regulatory hub for Australia (Privacy Act automated-decision transparency, consumer law, APRA standards),
+  role guide, two templates, and regulatory crosswalk.
 
 09_Reference/
   Glossary, taxonomy, abbreviations, mapping references, patterns, and reusable templates.
@@ -358,6 +364,7 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 | 2.1 | 2026-10-07 | Nachiket Sathaye | Added the Foundations section (research paper: AI Security vs. Security of AI) and linked it from the purpose, navigation, framework mapping, roadmap, and metrics sections. |
 | 2.2 | 2026-10-07 | Nachiket Sathaye | Added the GCC AI Compliance section: regulatory hub, four role guides, twelve templates, proposed fairness control, crosswalk and evidence register. Regional content is secondary-sourced and its verification is in progress. |
 | 2.3 | 2026-10-07 | Nachiket Sathaye | Added the EU AI Compliance section: regulatory hub, four role guides, twelve templates, proposed impact assessment control, crosswalk and evidence register. EU content comes from secondary sources and from memory of the legal text, and has not been verified against the Official Journal. |
+| 2.4 | 2026-10-07 | Nachiket Sathaye | Added the Australia AI Compliance section: regulatory hub, role guide, templates and crosswalk. Its content comes from secondary sources and from memory of the law, and has not been verified against primary legal text. |
 
 ## 21. Quick Links
 
@@ -376,6 +383,7 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 - [Test Case Library (620 cases, 17 layers and 6 emerging domains)](10_Test_Case_Library/index.md)
 - [GCC AI Compliance (regulatory hub, role guides and templates)](11_GCC_AI_Compliance/index.md)
 - [EU AI Compliance (AI Act hub, role guides and templates)](12_EU_AI_Compliance/index.md)
+- [Australia AI Compliance (regulatory hub, role guide and templates)](13_Australia_AI_Compliance/index.md)
 - [Community Rules](community-rules.md)
 - [AI Security Audit and Evidence Checklist](06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md)
 - [AI Product Developer Playbook](07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.md)
