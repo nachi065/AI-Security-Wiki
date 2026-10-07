@@ -453,8 +453,7 @@ LinkedIn: [linkedin.com/in/nachiket-sathaye](https://www.linkedin.com/in/nachike
 
 ## 23. About the Co-author
 
-**Ankush Jain**  
-**Cybersecurity Governance & Risk Leader | AI Security & Digital Trust Strategist | CISSP, CCSP | Aspiring CISO (MENA/UAE)**
+<div class="profile-head"><img class="profile-photo" src="assets/ankush-jain.jpg" alt="Ankush Jain" width="88" height="88"><p><strong>Ankush Jain</strong><br><strong>Cybersecurity Governance &amp; Risk Leader | AI Security &amp; Digital Trust Strategist | CISSP, CCSP | Aspiring CISO (MENA/UAE)</strong></p></div>
 
 Governance-focused cybersecurity leader with 19+ years of experience protecting critical infrastructure and global enterprises across MENA and APAC. I specialize in cybersecurity governance, enterprise risk management, AI risk reviews, and digital trust frameworks that enable organizations to embrace transformation securely.
 
