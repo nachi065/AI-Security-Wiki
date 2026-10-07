@@ -1,0 +1,9 @@
+ID,Instrument,Type / status,Wiki controls,Verification tag,To verify,Primary URL and retrieval date
+SG1,Model AI Governance Framework (2019; later editions),Voluntary,AI-CTRL-012;AI-CTRL-037;AI-CTRL-039,Recalled,Current edition,
+SG2,"Model AI Governance Framework for Agentic AI (IMDA, 22 Jan 2026)",Voluntary,AI-CTRL-023;AI-CTRL-025;AI-CTRL-037;AI-CTRL-005,Reported,Full text,
+SG3,AI Verify testing framework and toolkit; Global AI Assurance Pilot (Feb 2025),Voluntary testing and assurance,AI-CTRL-038;AI-CTRL-039,Reported,"Principle list (11, from memory)",
+SG4,PDPA and PDPC Advisory Guidelines on AI,Binding law; guidance,AI-CTRL-013;AI-CTRL-007;AI-CTRL-017,Reported,"Guideline title, content, exceptions for research or business improvement",
+SG5,MAS Guidelines on AI Risk Management,Proposed Nov 2025; final status not confirmed,AI-CTRL-011;AI-CTRL-014;AI-CTRL-023;AI-CTRL-037;AI-CTRL-041,Conflict,"Final issue date, transition period",
+SG6,MAS FEAT principles and Veritas,Voluntary financial-sector principles,AI-CTRL-041,Recalled,Current status,
+SG7,CSA Guidelines and Companion Guide on Securing AI Systems (2024) and agentic addendum (17 Jun 2026),Voluntary,AI-CTRL-005;AI-CTRL-008;AI-CTRL-025,Reported,Text,
+SG8,Cybersecurity Act (critical information infrastructure),Binding,AI-CTRL-005;AI-CTRL-035,Recalled,Scope,

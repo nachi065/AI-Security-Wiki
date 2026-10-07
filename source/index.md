@@ -3,7 +3,7 @@ title: "Home"
 description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and 620 test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.9
+version: 2.10
 status: Published
 author: Nachiket Sathaye
 owner: AI Security Program
@@ -72,7 +72,7 @@ This wiki is intended for the following personas:
 | GRC and compliance | Map AI controls to governance, regulatory, privacy, and assurance requirements. |
 | Teams building, selling or auditing AI in the GCC | Find the regional instruments that apply, with role guides and fill-in templates. |
 | Teams building, selling or auditing AI under EU rules | Find the AI Act, GDPR and related instruments that apply, with role guides and fill-in templates. |
-| Teams building, selling or auditing AI in other jurisdictions | Find the national instruments that apply in Australia, Brazil, Canada, China, India and Japan, with a role guide and region-specific templates. |
+| Teams building, selling or auditing AI in other jurisdictions | Find the national instruments that apply in Australia, Brazil, Canada, China, India, Japan and Singapore, with a role guide and region-specific templates. |
 | Internal audit | Validate control operation, evidence quality, decision traceability, and governance effectiveness. |
 
 ## 5. Wiki Design Principles
@@ -135,7 +135,7 @@ Review, Improve, Renew, or Retire
 | Audit and continuous improvement | Review governance effectiveness, control operation, exceptions, and maturity. | [AI Security Audit and Evidence Checklist](06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md), [AI Governance Operating Model](08_Governance/16_AI_Governance_Operating_Model.md) | Audit evidence, management actions, maturity roadmap. |
 | Regional compliance (GCC) | Identify the UAE and other GCC instruments that apply, and record what has been verified against the primary text. | [GCC AI Regulatory Hub](11_GCC_AI_Compliance/01_GCC_AI_Regulatory_Hub.md), [Regulatory Crosswalk](11_GCC_AI_Compliance/07_Regulatory_Crosswalk.md), [templates T01 to T12](11_GCC_AI_Compliance/index.md) | Regulator register, impact assessments, residency attestation, bilingual notices. |
 | Regional compliance (EU) | Classify each system by AI Act role and risk tier, identify the EU instruments that apply, and record what has been verified against the primary text. | [EU AI Regulatory Hub](12_EU_AI_Compliance/01_EU_AI_Regulatory_Hub.md), [EU Regulatory Crosswalk](12_EU_AI_Compliance/07_Regulatory_Crosswalk.md), [templates T01 to T12](12_EU_AI_Compliance/index.md) | Classification records, impact assessments, transfer records, transparency notices, technical file index. |
-| Regional compliance (other jurisdictions) | Identify the national instruments that apply, and record what has been verified against the primary text. | [Australia](13_Australia_AI_Compliance/index.md), [Brazil](14_Brazil_AI_Compliance/index.md), [Canada](15_Canada_AI_Compliance/index.md), [China](16_China_AI_Compliance/index.md), [India](17_India_AI_Compliance/index.md), [Japan](18_Japan_AI_Compliance/index.md) | Regulatory register, region-specific records and templates. |
+| Regional compliance (other jurisdictions) | Identify the national instruments that apply, and record what has been verified against the primary text. | [Australia](13_Australia_AI_Compliance/index.md), [Brazil](14_Brazil_AI_Compliance/index.md), [Canada](15_Canada_AI_Compliance/index.md), [China](16_China_AI_Compliance/index.md), [India](17_India_AI_Compliance/index.md), [Japan](18_Japan_AI_Compliance/index.md), [Singapore](19_Singapore_AI_Compliance/index.md) | Regulatory register, region-specific records and templates. |
 
 ## 8. Navigation by Role
 
@@ -215,6 +215,9 @@ Review, Improve, Renew, or Retire
 
 18_Japan_AI_Compliance/
   Regulatory hub for Japan (AI Promotion Act, Guidelines for AI Business, APPI, copyright law), role guide,\n  two templates, and regulatory crosswalk.
+
+19_Singapore_AI_Compliance/
+  Regulatory hub for Singapore (IMDA frameworks including agentic AI, AI Verify, PDPA, MAS and CSA guidance),\n  role guide, three templates, and regulatory crosswalk.
 
 09_Reference/
   Glossary, taxonomy, abbreviations, mapping references, patterns, and reusable templates.
@@ -386,6 +389,7 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 | 2.7 | 2026-10-07 | Nachiket Sathaye | Added the China AI Compliance section: regulatory hub, role guide, templates and crosswalk. Its content comes from secondary sources and from memory of the law, and has not been verified against primary legal text. |
 | 2.8 | 2026-10-07 | Nachiket Sathaye | Added the India AI Compliance section: regulatory hub, role guide, templates and crosswalk. Its content comes from secondary sources and from memory of the law, and has not been verified against primary legal text. |
 | 2.9 | 2026-10-07 | Nachiket Sathaye | Added the Japan AI Compliance section: regulatory hub, role guide, templates and crosswalk. Its content comes from secondary sources and from memory of the law, and has not been verified against primary legal text. |
+| 2.10 | 2026-10-07 | Nachiket Sathaye | Added the Singapore AI Compliance section: regulatory hub, role guide, templates and crosswalk. Its content comes from secondary sources and from memory of the law, and has not been verified against primary legal text. |
 
 ## 21. Quick Links
 
@@ -410,6 +414,7 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 - [China AI Compliance (regulatory hub, role guide and templates)](16_China_AI_Compliance/index.md)
 - [India AI Compliance (regulatory hub, role guide and templates)](17_India_AI_Compliance/index.md)
 - [Japan AI Compliance (regulatory hub, role guide and templates)](18_Japan_AI_Compliance/index.md)
+- [Singapore AI Compliance (regulatory hub, role guide and templates)](19_Singapore_AI_Compliance/index.md)
 - [Community Rules](community-rules.md)
 - [AI Security Audit and Evidence Checklist](06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md)
 - [AI Product Developer Playbook](07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.md)
