@@ -72,7 +72,7 @@ This wiki is intended for the following personas:
 | GRC and compliance | Map AI controls to governance, regulatory, privacy, and assurance requirements. |
 | Teams building, selling or auditing AI in the GCC | Find the regional instruments that apply, with role guides and fill-in templates. |
 | Teams building, selling or auditing AI under EU rules | Find the AI Act, GDPR and related instruments that apply, with role guides and fill-in templates. |
-| Teams building, selling or auditing AI in other jurisdictions | Find the national instruments that apply in Australia, Brazil, Canada, China, India, Japan, Singapore, South Korea, UK and US, with a role guide and region-specific templates. |
+| Teams building, selling or auditing AI in other jurisdictions | Find the national instruments that apply in Australia, Brazil, Canada, China, India, Japan, Singapore, South Korea, the UK and the US, with a role guide and region-specific templates. |
 | Internal audit | Validate control operation, evidence quality, decision traceability, and governance effectiveness. |
 
 ## 5. Wiki Design Principles
