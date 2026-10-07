@@ -10,4 +10,4 @@ has_children: true
 
 Persona-specific guidance for developers, researchers, security engineering and vendor evaluation.
 
-For work in the GCC, the [GCC AI Compliance](../11_GCC_AI_Compliance/index.md) section has four further role guides: for practitioners, product companies, auditors and implementors.
+For work in the GCC, the [GCC AI Compliance](../11_GCC_AI_Compliance/index.md) section has four further role guides: for practitioners, product companies, auditors and implementors. The [EU AI Compliance](../12_EU_AI_Compliance/index.md) section has the same four guides for work under EU rules.

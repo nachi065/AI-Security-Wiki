@@ -19,6 +19,7 @@ A library of **620 test cases** for evaluating AI security products in a control
 - [Framework Adoption Guide](framework-adoption-guide.md): how to use the governance and legal layers with ISO/IEC 27001, DPDP, NESA, PDPL or any other framework, plus a crosswalk template
 - [AI Security PoC Test Case Library](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md): a 20-scenario quick-start set for a first PoC, mapped to the layers below
 - [Regulatory Crosswalk](../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.md): UAE and other GCC instruments mapped to controls and to the control themes used in layers L01 to L03
+- [EU Regulatory Crosswalk](../12_EU_AI_Compliance/07_Regulatory_Crosswalk.md): the AI Act, GDPR and related EU instruments mapped to controls and to the same control themes
 
 Every case names the control it tests, by ID, from the [AI Security Control Objectives Library](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md).
 

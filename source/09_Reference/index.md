@@ -10,4 +10,4 @@ has_children: true
 
 Glossary and taxonomy.
 
-The [Regulatory Crosswalk](../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.md) maps UAE and other GCC instruments to the wiki's controls.
+The [Regulatory Crosswalk](../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.md) maps UAE and other GCC instruments to the wiki's controls. The [EU Regulatory Crosswalk](../12_EU_AI_Compliance/07_Regulatory_Crosswalk.md) does the same for the AI Act, GDPR and related EU instruments.

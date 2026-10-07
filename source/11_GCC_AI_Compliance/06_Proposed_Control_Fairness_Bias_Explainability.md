@@ -28,6 +28,8 @@ version: 1.0
 | ISO/IEC 42001 | To be assigned by assessor |
 | Related cases | [TC-L03-008](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-008), [TC-L03-029](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-029) |
 
+The EU drivers for this control, and one further test for special category data, are on the [EU proposed control page](../12_EU_AI_Compliance/06_Proposed_Control_Fundamental_Rights_Impact_Assessment.md#eu-drivers-for-ai-ctrl-041).
+
 ## Proposed test cases
 
 These tests have no case IDs yet. They would be numbered in the L03 series if the control is adopted.
