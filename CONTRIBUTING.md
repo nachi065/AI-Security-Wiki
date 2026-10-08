@@ -1,6 +1,6 @@
 # Contributing
 
-This wiki is open to everyone, and contributions of any size are welcome: fixing a typo, correcting a fact, improving an example, updating a vendor profile, or adding a whole new page.
+This wiki is open to everyone, and contributions of any size are welcome: fixing a typo, correcting a fact, improving an example, or adding a whole new page.
 
 ## The quick way: edit in your browser
 

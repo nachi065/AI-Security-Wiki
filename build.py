@@ -240,9 +240,6 @@ def describe(page):
         lead = f"{count.group(1)} AI security test cases for {'' if title.startswith('D') else 'the '}{title[4:]}: {scope}."
         full = lead + " Each with procedure, expected results and pass criteria."
         return full if len(full) <= 158 else shorten(lead)
-    if title.startswith("Vendor Profile"):
-        vendor = title.split(":", 1)[1].strip()
-        return shorten(f"{vendor} AI security vendor profile: best-fit use case, summary assessment, evaluation checklist and PoC evidence requirements.")
     purpose = re.search(r"^> \*\*Purpose:\*\* (.+)$", body, re.M)
     if purpose:
         return shorten(f"{title}: {purpose.group(1)}")

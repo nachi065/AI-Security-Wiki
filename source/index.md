@@ -85,7 +85,7 @@ The wiki follows eight principles:
 - Control-first: requirements are expressed as reusable control objectives before being mapped to tools or vendors.
 - Lifecycle-first: controls apply from discovery through retirement, not only at deployment.
 - Persona-friendly: each user group has a clear starting point and operational playbook.
-- Vendor-neutral: vendor profiles do not replace enterprise control requirements.
+- Vendor-neutral: controls and evaluation criteria are written independently of any product or supplier.
 - Sovereignty-aware: architecture and vendor decisions consider UAE residency, jurisdiction, and regulatory expectations.
 - Evidence-driven: each control should produce auditable evidence.
 - Operationally measurable: ownership, status, exceptions, test results, and improvement actions should be tracked.
@@ -131,7 +131,7 @@ Review, Improve, Renew, or Retire
 | AI-Assisted Development | Govern developers using AI coding assistants, IDE plugins, and generated code. | IDE security standard, [AI Product Developer Playbook](07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.md) | Secure coding checklist, repository review, generated code validation. |
 | Custom AI Application Build | Secure LLM apps, RAG pipelines, prompts, APIs, connectors, model gateways, and runtime controls. | [Custom AI Application Runtime Security Standard](04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.md), [AI Red Team Playbook](06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.md) | Threat model, secure design review, runtime control evidence. |
 | Agentic AI Deployment | Govern agents that invoke tools, access systems, perform actions, or chain tasks. | [Agentic AI Security and Tool Governance](04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.md) | Tool permission matrix, approval rules, action logs, rollback controls. |
-| Vendor Evaluation | Evaluate AI suppliers, cloud services, models, integrations, and data handling. | [AI Security Vendor Evaluation Master Framework](05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.md), vendor profiles `12A` to `12H` | Vendor questionnaire, evidence pack, PoC results, risk decision. |
+| Vendor Evaluation | Evaluate AI suppliers, cloud services, models, integrations, and data handling. | [AI Security Vendor Evaluation Master Framework](05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.md) | Vendor questionnaire, evidence pack, PoC results, risk decision. |
 | Testing and Assurance | Validate controls through PoC tests, adversarial testing, red teaming, and evidence review. | [AI Security PoC Test Case Library](06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md), [AI Security Audit and Evidence Checklist](06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md) | Test results, findings, remediation plan, audit checklist. |
 | Monitoring and Operations | Monitor AI usage, suspicious prompts, data leakage, tool invocation, and incidents. | [Assurance: Testing, Monitoring and Response](00_Foundations/08-Assurance-Testing-Monitoring-and-Response.md), [Monitoring, Detection and Response test cases](10_Test_Case_Library/L17-monitoring-detection-and-response.md), runtime standard, governance operating model | Logs, alerts, incident records, response actions. |
 | Audit and Continuous Improvement | Review governance effectiveness, control operation, exceptions, and maturity. | [AI Security Audit and Evidence Checklist](06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md), [AI Governance Operating Model](08_Governance/16_AI_Governance_Operating_Model.md) | Audit evidence, management actions, maturity roadmap. |
@@ -151,7 +151,7 @@ Review, Improve, Renew, or Retire
 | Security Engineering | [AI Security Control Objectives Library](03_Control_Library/03_AI_Security_Control_Objectives_Library.md) | [Existing Security Control Baseline](03_Control_Library/04_Existing_Security_Control_Baseline.md), [Microsoft Security Overlap and AI Gaps](03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.md) | Implementable controls, baseline mapping, monitoring requirements. |
 | Security Architecture | [AI Security Control Objectives Library](03_Control_Library/03_AI_Security_Control_Objectives_Library.md) | [Custom AI Application Runtime Security Standard](04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.md), [Sovereign AI, UAE Compliance and Data Residency Requirements](04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.md) | Approved AI designs, control exceptions, reference architectures. |
 | SOC and Incident Response | Runtime security standard | [Assurance: Testing, Monitoring and Response](00_Foundations/08-Assurance-Testing-Monitoring-and-Response.md), [AI for Security and AI-Enabled Threats](00_Foundations/10-AI-for-Security-and-AI-Enabled-Threats.md), [AI Incident Response and Forensics test cases](10_Test_Case_Library/D12-ai-incident-response-and-forensics.md), audit evidence checklist | Monitoring coverage, detection logic, investigation and response records. |
-| Vendor Evaluation Team | [AI Security Vendor Evaluation Master Framework](05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.md) | Vendor profiles `12A` to `12H`, [AI Security PoC Test Case Library](06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md), [T03 Vendor Due-Diligence GCC Addendum](11_GCC_AI_Compliance/T03_Vendor_Due_Diligence_GCC_Addendum.md), [T03 Supplier Due-Diligence EU Addendum](12_EU_AI_Compliance/T03_Supplier_Due_Diligence_EU_Addendum.md) | Consistent supplier scoring, risk decision, and evidence retained. |
+| Vendor Evaluation Team | [AI Security Vendor Evaluation Master Framework](05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.md) | [AI Security PoC Test Case Library](06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md), [T03 Vendor Due-Diligence GCC Addendum](11_GCC_AI_Compliance/T03_Vendor_Due_Diligence_GCC_Addendum.md), [T03 Supplier Due-Diligence EU Addendum](12_EU_AI_Compliance/T03_Supplier_Due_Diligence_EU_Addendum.md) | Consistent supplier scoring, risk decision, and evidence retained. |
 | Governance and Compliance | [Enterprise AI Risk Register](02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) | [Sovereign AI, UAE Compliance and Data Residency Requirements](04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.md), [AI Governance Operating Model](08_Governance/16_AI_Governance_Operating_Model.md), [GCC AI Regulatory Hub](11_GCC_AI_Compliance/01_GCC_AI_Regulatory_Hub.md), [Guide for Implementors](11_GCC_AI_Compliance/05_Guide_Implementors.md), [EU AI Regulatory Hub](12_EU_AI_Compliance/01_EU_AI_Regulatory_Hub.md) | Compliance mapping, risk treatment, approval records, and reporting. |
 | Internal Audit | [AI Security Audit and Evidence Checklist](06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md) | Control library, PoC evidence library, sovereignty requirements, [Guide for Auditors of AI Systems in the GCC](11_GCC_AI_Compliance/04_Guide_Auditors.md), [Guide for Auditors of AI Systems Under EU Rules](12_EU_AI_Compliance/04_Guide_Auditors.md) | Independent evidence validation and control effectiveness assessment. |
 
@@ -175,7 +175,7 @@ Review, Improve, Renew, or Retire
   Browser AI, IDE AI, runtime AI applications, agentic AI, sovereignty, and data residency standards.
 
 05_Vendor_Evaluation/
-  Vendor master framework, supplier evidence model, proof-of-concept scorecards, and vendor profiles.
+  Vendor master framework, supplier evidence model, and proof-of-concept scorecards.
 
 06_Testing_and_Assurance/
   PoC tests, adversarial testing, red team methodology, audit checklist, and evidence library.
@@ -307,11 +307,11 @@ The control library should maintain detailed objectives, implementation guidance
 
 ## 14. Vendor-Neutral Operating Rule
 
-Do not update vendor profiles as the primary source of truth for controls.
+This wiki does not publish profiles of individual products or suppliers. Do not use vendor evaluation records as the primary source of truth for controls.
 
 Controls and standards must remain vendor-neutral. Vendor documents should reference the relevant control objectives, evidence requirements, and PoC tests rather than replacing enterprise standards.
 
-Vendor profiles should be used to record:
+Your own vendor evaluation records should be used to record:
 
 - Supplier capabilities and limitations.
 - Contractual and compliance evidence.
@@ -330,7 +330,7 @@ Vendor profiles should be used to record:
 | Evidence Linkage | Control pages should link to expected evidence, test cases, and audit checklist items. |
 | Version History | Every controlled page must maintain a version history with date, author, approver, and summary of change. |
 | Cross-Reference Consistency | Document names, control IDs, test IDs, and risk IDs must remain consistent across the wiki. |
-| Vendor Neutrality | Vendor profiles must map to standards and controls; they must not redefine them. |
+| Vendor Neutrality | The wiki names no individual products or suppliers. Vendor evaluation records must map to standards and controls; they must not redefine them. |
 | Exceptions | Exceptions must document business justification, compensating controls, expiry date, and approval authority. |
 
 ## 16. How to Use This Wiki

@@ -185,15 +185,15 @@ How these instruments relate to each other, and the current EU AI Act timetable,
 
 ## 11. AI Security Vendor Category Model
 
-| Vendor Category | Purpose | Example Vendors / Platforms |
-|---|---|---|
-| AI Governance / Shadow AI | Discover and govern user AI usage. | Prompt Security, Lasso, Cyberhaven, Nightfall |
-| AI Data Protection / AI DLP | Prevent sensitive data leakage through prompts, uploads and outputs. | Cyberhaven, Nightfall, Prompt Security |
-| AI Runtime Security | Protect custom AI applications and AI APIs. | Prisma AIRS, HiddenLayer, Enkrypt AI |
-| AI-SPM / AI Asset Governance | Inventory AI assets, agents, models and configurations. | Lasso, Prisma AIRS |
-| Model and Supply Chain Security | Protect models, datasets, plugins and AI dependencies. | HiddenLayer, Prisma AIRS |
-| AI Red Teaming and Assurance | Test AI systems, prompts, guardrails and jailbreak resilience. | Enkrypt AI and AI assurance platforms |
-| Sovereign AI Governance | Support AI governance, sovereign architecture and strategic compliance. | Sovereign AI Security Labs and governance-focused providers |
+| Vendor Category | Purpose |
+|---|---|
+| AI Governance / Shadow AI | Discover and govern user AI usage. |
+| AI Data Protection / AI DLP | Prevent sensitive data leakage through prompts, uploads and outputs. |
+| AI Runtime Security | Protect custom AI applications and AI APIs. |
+| AI-SPM / AI Asset Governance | Inventory AI assets, agents, models and configurations. |
+| Model and Supply Chain Security | Protect models, datasets, plugins and AI dependencies. |
+| AI Red Teaming and Assurance | Test AI systems, prompts, guardrails and jailbreak resilience. |
+| Sovereign AI Governance | Support AI governance, sovereign architecture and strategic compliance. |
 
 ## 12. Future AI Security Trends
 
@@ -218,7 +218,7 @@ Terms are defined in the [AI Security Glossary and Taxonomy](../09_Reference/18_
 
 - Use risk and control documents as the operational source of truth for implementation and audit.
 
-- Keep vendor profiles separate from control requirements to avoid vendor-first governance.
+- Keep vendor evaluation records separate from control requirements to avoid vendor-first governance.
 
 - Treat agentic AI, AI runtime security, AI supply chain security and AI assurance as emerging but high-priority domains.
 
