@@ -3,7 +3,7 @@
 
 Usage:  pip install markdown && python3 build.py
 """
-import hashlib, html, json, os, re, shutil
+import datetime, hashlib, html, json, os, re, shutil, subprocess
 import markdown
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -330,6 +330,25 @@ def canonical(page):
     return f"{SITE_URL}/{out}"
 
 
+def git(*args):
+    return subprocess.run(["git", "-C", ROOT, "-c", "core.quotepath=off", *args],
+                          capture_output=True, text=True).stdout
+
+
+def last_modified():
+    """Date each source page last changed: its last commit, or today if it has uncommitted edits."""
+    dates, day = {}, None
+    for line in git("log", "--format=@%cs", "--name-only", "--", "source").splitlines():
+        if line.startswith("@"):
+            day = line[1:]
+        elif line:
+            dates.setdefault(line, day)
+    today = datetime.date.today().isoformat()
+    for line in git("status", "--porcelain", "--", "source").splitlines():
+        dates[line[3:].split(" -> ")[-1].strip('"')] = today
+    return lambda page: dates.get("source/" + page["src"].replace(os.sep, "/"), today)
+
+
 order = [home] + [p for s in sections for p in [s] + s["children"]]
 index = []
 for i, page in enumerate(order):
@@ -391,7 +410,8 @@ for dirpath, dirs, files in os.walk(SRC):
 
 open(os.path.join(ROOT, "assets", "search-index.js"), "w", encoding="utf-8").write(
     "window.SEARCH_INDEX = " + json.dumps(index, ensure_ascii=False) + ";\n")
+modified = last_modified()
 open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8").write(
     '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-    + "".join(f"  <url><loc>{canonical(p)}</loc></url>\n" for p in order) + "</urlset>\n")
+    + "".join(f"  <url><loc>{canonical(p)}</loc><lastmod>{modified(p)}</lastmod></url>\n" for p in order) + "</urlset>\n")
 print(f"Built {len(order)} pages")
