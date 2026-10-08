@@ -159,7 +159,7 @@ def render(page):
     md = markdown.Markdown(extensions=["tables", "fenced_code", "sane_lists", "toc"])
     content = md.convert(page["body"])
     if page.get("children"):
-        content += '\n<h2 id="pages-in-this-section">Pages in this section</h2>\n' + cards(page, page["children"])
+        content += '\n<h2 id="pages-in-this-section">Pages in This Section</h2>\n' + cards(page, page["children"])
     # Point links at the generated .html pages and make wide tables scrollable.
     content = re.sub(r'href="(?!https?:|#|mailto:)([^"#]+)\.md(#[^"]*)?"', lambda m: f'href="{m.group(1)}.html{m.group(2) or ""}"', content)
     content = content.replace("<table>", '<div class="table-wrap"><table>').replace("</table>", "</table></div>")
@@ -173,7 +173,7 @@ def cards(page, targets):
     for c in targets:
         text = describe(c).removeprefix(c["meta"]["title"] + ": ")  # the card already shows the title
         n = len(c.get("children") or [])
-        count = f'<span class="card-count">{n} page{"" if n == 1 else "s"}</span>' if n else ""
+        count = f'<span class="card-count">{n} Page{"" if n == 1 else "s"}</span>' if n else ""
         out.append(f'<a class="card" style="--h:{look(c)[0]}" href="{rel(page["out"], c["out"])}">'
                    f'<span class="card-icon">{icon(c)}</span><span class="card-title">{html.escape(c["meta"]["title"])}</span>'
                    f'<span class="card-text">{html.escape(text[:1].upper() + text[1:])}</span>{count}</a>')
@@ -181,7 +181,7 @@ def cards(page, targets):
     return "\n".join(out)
 
 
-CALLOUTS = {"note": ("Purpose", "Audience", "How to use", "How this relates", "Document type"),
+CALLOUTS = {"note": ("Purpose", "Audience", "How to use", "How this relates", "Document type", "Document Type"),
             "caution": ("Verify before use", "Verification required", "Illustrative example", "Status"),
             "danger": ("Safety boundary",)}
 
@@ -201,17 +201,17 @@ def decorate(content):
 def hero(page, details=""):
     """The banner on the home page: headline, live counts, the document details and a card for every section."""
     text = "\n".join(p["body"] for p in pages)
-    stats = [(len(re.findall(r"^### TC-[LD]\d\d-\d{3}:", text, re.M)), "test cases"),
-             (len(re.findall(r"^#### AI-CTRL-\d{3}:", text, re.M)), "control objectives"),
-             (len(re.findall(r"^### AI-R\d\d: ", text, re.M)), "register risks"),
-             (sum(1 for s in sections if s["meta"].get("group")), "regional sections"),
-             (len(pages), "pages")]
+    stats = [(len(re.findall(r"^### TC-[LD]\d\d-\d{3}:", text, re.M)), "Test Cases"),
+             (len(re.findall(r"^#### AI-CTRL-\d{3}:", text, re.M)), "Control Objectives"),
+             (len(re.findall(r"^### AI-R\d\d: ", text, re.M)), "Register Risks"),
+             (sum(1 for s in sections if s["meta"].get("group")), "Regional Sections"),
+             (len(pages), "Pages")]
     tiles = "".join(f'<div class="stat"><b>{n}</b><span>{html.escape(label)}</span></div>' for n, label in stats)
     return (f'<section class="hero"><p class="hero-kicker">Open &middot; Vendor-neutral &middot; CC BY 4.0</p>'
             f'<h1>{SITE_TITLE}</h1><p class="hero-lead">{html.escape(page["meta"]["description"])}</p>'
             f'<div class="stats">{tiles}</div></section>\n'
             + (f'<article class="hero-details">{details}</article>\n' if details else "") +
-            f'<h2 class="hero-sections">Explore the wiki</h2>\n{cards(page, sections)}')
+            f'<h2 class="hero-sections">Explore the Wiki</h2>\n{cards(page, sections)}')
 
 
 CASE_SNIPPET = 700  # characters of each test case kept in the search index
