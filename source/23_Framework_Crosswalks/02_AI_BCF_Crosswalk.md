@@ -20,7 +20,7 @@ version: 1.0
 
 | | AI BCF | AI Security Wiki |
 |---|---|---|
-| What it is | A short governance baseline: 20 controls in five domains (Govern, Comply, Register, Access, Track). Each control is typed Baseline, Tier II or Trigger. | An open, vendor-neutral reference for securing AI adoption: 46 control objectives with evidence and audit tests, a 28-risk register, domain standards, vendor evaluation, regional compliance hubs and 629 test cases. |
+| What it is | A short governance baseline: 20 controls in five domains (Govern, Comply, Register, Access, Track). Each control is typed Baseline, Tier II or Trigger. | An open, vendor-neutral reference for securing AI adoption: 46 control objectives with evidence and audit tests, a 28-risk register, domain standards, vendor evaluation, regional compliance hubs and 632 test cases. |
 | Author | Jan van Dijke | Nachiket Sathaye and Ankush Jain |
 | Version | v1.0, 2 October 2026 | See the [home page](../index.md) |
 | Where | [aibcf.org](https://aibcf.org/) | This site |
@@ -81,7 +81,7 @@ AI BCF controls have identifiers (for example GV.1) but no titles. The short lab
 
 **Gaps in the wiki.** Four AI BCF controls have no control objective here: marking AI content as AI (CM.2), weighing proportionality against alternatives (RG.3), decommissioning and offboarding (RG.4), and collecting internal feedback on AI use (TR.2). CM.3, AC.4, TR.1 and TR.3 are covered only in part. These are candidates for new control objectives. Until then, use the AI BCF wording for them.
 
-**What the wiki adds.** The wiki goes well beyond a 20-control baseline in security depth: runtime and prompt-injection controls, agent containment and memory integrity, supply chain, data protection in pipelines, adversarial testing, incident response, cost abuse and 629 test cases. None of these have an AI BCF equivalent, because AI BCF is a governance baseline and not a security control set.
+**What the wiki adds.** The wiki goes well beyond a 20-control baseline in security depth: runtime and prompt-injection controls, agent containment and memory integrity, supply chain, data protection in pipelines, adversarial testing, incident response, cost abuse and 632 test cases. None of these have an AI BCF equivalent, because AI BCF is a governance baseline and not a security control set.
 
 **Where AI BCF is stronger.** Its Trigger and Tier II types tell a small organisation which controls to start with. The wiki's tiering in [T01](../11_GCC_AI_Compliance/T01_AI_Use_Case_Intake_and_Risk_Tiering.md) scores each use case but does not give a starter set of controls.
 

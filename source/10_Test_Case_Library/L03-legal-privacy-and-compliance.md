@@ -9,11 +9,11 @@ nav_order: 6
 
 # L03 Legal, Privacy & Compliance
 
-**Primary test focus:** UAE/GCC residency, PDPL-type obligations, evidence export, DPIA support, fairness, transparency and authority engagement
+**Primary test focus:** UAE/GCC residency, PDPL-type obligations, evidence export, DPIA support, fairness, transparency, human oversight, intellectual property and authority engagement
 
-**Controls tested:** [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance (21 cases), [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Control Assurance and Audit Evidence (5 cases), [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) Data Sovereignty (3 cases), [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) Fairness, Bias Testing and Explainability (3 cases), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance (2 cases), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines (2 cases), [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics (2 cases), [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) Output Reliability and Content Safety (2 cases), [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering (1 case), [AI-CTRL-042](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-042) Fundamental Rights and Data Protection Impact Assessment (1 case), [AI-CTRL-043](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-043) Regulator and Authority Engagement (1 case), [AI-CTRL-044](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-044) AI Literacy and Role-Based Competence (1 case)
+**Controls tested:** [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance (21 cases), [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Control Assurance and Audit Evidence (5 cases), [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) Data Sovereignty (3 cases), [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) Fairness, Bias Testing and Explainability (3 cases), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance (2 cases), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines (2 cases), [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics (2 cases), [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) Output Reliability and Content Safety (2 cases), [AI-CTRL-045](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-045) Human Oversight Design and Effectiveness (2 cases), [AI-CTRL-046](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-046) Intellectual Property and Copyright Governance (2 cases), [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering (1 case), [AI-CTRL-042](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-042) Fundamental Rights and Data Protection Impact Assessment (1 case), [AI-CTRL-043](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-043) Regulator and Authority Engagement (1 case), [AI-CTRL-044](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-044) AI Literacy and Role-Based Competence (1 case)
 
-**Cases:** 39 (TC-L03-001 to TC-L03-039)
+**Cases:** 42 (TC-L03-001 to TC-L03-042)
 > **Safety boundary.** All cases use fabricated use cases, policies, records and individuals only. This layer is framework-neutral: see the [Framework Adoption Guide](framework-adoption-guide.md) before testing, and complete the Applicable Requirement and Framework Crosswalk fields for each case.
 
 > **Verify before use.** MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the [Reference Index](00-reference-index.md) for field definitions and applicability codes.
@@ -49,7 +49,7 @@ nav_order: 6
 | [TC-L03-025](#tc-l03-025) | Evidence Reuse Across Frameworks | High | Technical | D7 | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) |
 | [TC-L03-026](#tc-l03-026) | Regulator Inspection Simulation: Rapid Evidence Request | Critical | Technical | D7 | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) |
 | [TC-L03-027](#tc-l03-027) | Litigation Hold and Regulatory Preservation Notice | High | Technical | D6, D7 | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) |
-| [TC-L03-028](#tc-l03-028) | Intellectual Property and Copyright Controls for AI Inputs and Outputs | Medium | Technical | D3, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L03-028](#tc-l03-028) | Intellectual Property and Copyright Controls for AI Inputs and Outputs | Medium | Technical | D3, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-046](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-046) |
 | [TC-L03-029](#tc-l03-029) | Automated Decision Explanation Records | High | Technical | D3, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
 | [TC-L03-030](#tc-l03-030) | Language and Jurisdiction Configuration (Arabic, English and Regional Rule Sets) | Medium | Technical | D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
 | [TC-L03-031](#tc-l03-031) | Bias Testing Before Release and on Material Change | Critical | Technical | D3, D7 | [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) |
@@ -61,6 +61,9 @@ nav_order: 6
 | [TC-L03-037](#tc-l03-037) | Statutory Role and Risk-Class Determination per AI System | High | Technical | D7 | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) |
 | [TC-L03-038](#tc-l03-038) | AI Literacy Programme and Role-Based Training Records | Medium | Evidence | D1, D7 | [AI-CTRL-044](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-044) |
 | [TC-L03-039](#tc-l03-039) | Authority Register, Filings and Local Representative Records | High | Evidence | D7 | [AI-CTRL-043](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-043) |
+| [TC-L03-040](#tc-l03-040) | Human Oversight Effectiveness: Seeded-Error Detection and Review Metrics | High | Technical | D3, D7 | [AI-CTRL-045](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-045) |
+| [TC-L03-041](#tc-l03-041) | Overseer Evidence, Override Authority and Review Workload | High | Evidence | D3, D7 | [AI-CTRL-045](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-045) |
+| [TC-L03-042](#tc-l03-042) | AI Vendor Terms: Output Ownership, Infringement Indemnity and Training Use | Medium | Evidence | D7 | [AI-CTRL-046](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-046) |
 
 ---
 
@@ -2202,7 +2205,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: G, A, W |
 | **Risk Severity** | Medium |
 | **NIST AI RMF Mapping** | GOVERN (policies, accountability and oversight) |
-| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance; [AI-CTRL-046](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-046) Intellectual Property and Copyright Governance |
 
 **Risk Addressed.** Using restricted content as input, or publishing outputs that copy protected material, creates legal exposure and contract breaches.
 
@@ -3130,6 +3133,243 @@ nav_order: 6
 **Fail Criteria.** Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.
 
 **Evidence to Capture.** Register export; filing and appointment records; contact log; review record.
+
+**Reviewer Notes.** Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.
+
+[Back to layer index](#top)
+
+---
+
+<a id="tc-l03-040"></a>
+
+### TC-L03-040: Human Oversight Effectiveness: Seeded-Error Detection and Review Metrics
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L03 Legal, Privacy & Compliance |
+| **Use-Case Domain(s)** | D3, D7 |
+| **Control Theme** | OVS: Human oversight and transparency |
+| **Test Method** | Technical |
+| **Vendor Applicability** | Core: W, A |
+| **Risk Severity** | High |
+| **NIST AI RMF Mapping** | GOVERN (policies, accountability and oversight) |
+| **Control(s) Tested** | [AI-CTRL-045](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-045) Human Oversight Design and Effectiveness |
+
+**Risk Addressed.** Reviewers who approve AI outputs without checking them give the appearance of oversight while errors pass through.
+
+**Business Scenario.** The AI governance lead wants proof that reviewers catch wrong outputs, and wants override rates and review times reported for each use case.
+
+**Technical Scenario.** Seed known-wrong outputs into a fabricated review queue, have test reviewers work the queue, and compare what they caught with the seeded set.
+
+**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
+
+**Applicable Requirement *(assessor to complete)***
+
+- Framework and clause: `________`
+- Requirement text: `________`
+- Parameters (timelines, periods, thresholds): `________`
+
+**Test Data.** 1 fabricated high-tier use case with a review queue; 100 fabricated outputs, 20 of them seeded with known errors (10 obvious, 10 subtle); 3 test reviewers, one scripted to approve every item in under 5 seconds.
+
+**Procedure**
+
+1. Record the oversight points for the use case and the reviewers assigned to them.
+2. Load the 100 outputs into the review queue with the seeded items unmarked.
+3. Have the three reviewers work the queue.
+4. Export each reviewer's decisions, overrides, escalations and time per item.
+5. Compare the decisions on the 20 seeded items with the answer key.
+6. Check whether the scripted reviewer is flagged for approval rate and review time.
+7. Select a 10% sample for independent re-review and record the result.
+
+**Edge Cases / Variants.** A reviewer who escalates every item; a queue volume above the stated limit for one reviewer.
+
+**Expected Result.** Detection rate on the seeded errors is reported for each reviewer and overall; override rate, escalation rate and time per review are reported for the use case; the scripted reviewer is flagged; the re-review sample and its outcome are recorded.
+
+**Expected Control Action.** Flag the reviewer and raise a reassessment task for the oversight design.
+
+**Expected Record / Log.** Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.
+
+**Expected Report / Dashboard Evidence.** Record or report visible in the governance and compliance workspace within the documented refresh interval.
+
+**Expected Integration Evidence.** Export.
+
+**Audit Evidence.** Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.
+
+**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
+
+**Framework Crosswalk *(assessor to complete)***
+
+- ISO/IEC 27001 ISMS: `________`
+- India DPDP: `________`
+- UAE NESA / information assurance: `________`
+- UAE PDPL: `________`
+- Other: `________`
+
+**Scoring Criteria.** 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.
+
+**Pass Criteria.** Expected Result and Expected Control Action are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.
+
+**Fail Criteria.** Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.
+
+**Evidence to Capture.** Seeded-item answer key; reviewer decision export; metrics report; flag and reassessment record; re-review record.
+
+**Reviewer Notes.** Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.
+
+[Back to layer index](#top)
+
+---
+
+<a id="tc-l03-041"></a>
+
+### TC-L03-041: Overseer Evidence, Override Authority and Review Workload
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L03 Legal, Privacy & Compliance |
+| **Use-Case Domain(s)** | D3, D7 |
+| **Control Theme** | OVS: Human oversight and transparency |
+| **Test Method** | Evidence |
+| **Vendor Applicability** | Core: W |
+| **Risk Severity** | High |
+| **NIST AI RMF Mapping** | GOVERN (policies, accountability and oversight) |
+| **Control(s) Tested** | [AI-CTRL-045](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-045) Human Oversight Design and Effectiveness |
+
+**Risk Addressed.** An overseer who sees only the final answer, has no authority to reject it, or has too many items to review cannot exercise oversight.
+
+**Business Scenario.** Compliance wants a record for each in-scope use case that shows who oversees it, what they are shown, what they may override and how much they are asked to review.
+
+**Technical Scenario.** Build oversight design records for fabricated use cases in three risk tiers and inspect what a reviewer sees and can do.
+
+**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
+
+**Applicable Requirement *(assessor to complete)***
+
+- Framework and clause: `________`
+- Requirement text: `________`
+- Parameters (timelines, periods, thresholds): `________`
+
+**Test Data.** 3 fabricated use cases (high, medium and low tier); 4 overseers with role, authority and training records; 12 fabricated outputs with sources, confidence and alternatives.
+
+**Procedure**
+
+1. Record the oversight points for each use case by tier: before the output is used, while the system runs, and by sampling afterwards.
+2. Assign overseers and link each one to a training record.
+3. Open an output as a reviewer and check that sources, confidence and alternatives are shown with the result.
+4. Reject one output and override another, and check that both take effect and are logged with a reason.
+5. Set a volume limit per reviewer and exceed it.
+6. Remove one overseer's training record and check the status of the design record.
+7. Export the design records and the override log.
+
+**Edge Cases / Variants.** An overseer assigned to more than one use case; a use case with no overseer assigned.
+
+**Expected Result.** Each use case has a design record with its oversight points, overseers, authority and training; the reviewer view shows the evidence behind the output; the rejection and the override take effect and are logged; the volume breach and the missing training record are flagged.
+
+**Expected Control Action.** N/A.
+
+**Expected Record / Log.** Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.
+
+**Expected Report / Dashboard Evidence.** Record or report visible in the governance and compliance workspace within the documented refresh interval.
+
+**Expected Integration Evidence.** Export.
+
+**Audit Evidence.** Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.
+
+**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
+
+**Framework Crosswalk *(assessor to complete)***
+
+- ISO/IEC 27001 ISMS: `________`
+- India DPDP: `________`
+- UAE NESA / information assurance: `________`
+- UAE PDPL: `________`
+- Other: `________`
+
+**Scoring Criteria.** 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.
+
+**Pass Criteria.** Expected Result are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.
+
+**Fail Criteria.** Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.
+
+**Evidence to Capture.** Design record export; reviewer view screenshots; override log; volume and training flags.
+
+**Reviewer Notes.** Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.
+
+[Back to layer index](#top)
+
+---
+
+<a id="tc-l03-042"></a>
+
+### TC-L03-042: AI Vendor Terms: Output Ownership, Infringement Indemnity and Training Use
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L03 Legal, Privacy & Compliance |
+| **Use-Case Domain(s)** | D7 |
+| **Control Theme** | VND: Third-party and supplier management |
+| **Test Method** | Evidence |
+| **Vendor Applicability** | Core: W |
+| **Risk Severity** | Medium |
+| **NIST AI RMF Mapping** | GOVERN (legal and regulatory requirements) |
+| **Control(s) Tested** | [AI-CTRL-046](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-046) Intellectual Property and Copyright Governance |
+
+**Risk Addressed.** Vendor terms may leave ownership of AI output unclear, exclude indemnity for infringement claims, or allow the vendor to train on submitted material.
+
+**Business Scenario.** Legal wants every AI vendor's terms reviewed for output ownership, indemnity and training use, with the result and any exception on record.
+
+**Technical Scenario.** Record terms reviews for fabricated vendors, change one vendor's terms, and raise an exception for a vendor that fails the review.
+
+**Preconditions.** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
+
+**Applicable Requirement *(assessor to complete)***
+
+- Framework and clause: `________`
+- Requirement text: `________`
+- Parameters (timelines, periods, thresholds): `________`
+
+**Test Data.** 5 fabricated AI vendors with terms documents: 2 acceptable, 1 with no indemnity, 1 that permits training on inputs, 1 silent on output ownership; 1 revised terms document.
+
+**Procedure**
+
+1. Record a terms review for each vendor covering output ownership, infringement indemnity and use of inputs for training.
+2. Link each review to the vendor record and to the use cases that rely on the vendor.
+3. Mark the three failing vendors and record the finding for each.
+4. Raise an exception for one failing vendor with an owner and an expiry date.
+5. Load the revised terms for one vendor and check that a new review is triggered.
+6. Let the exception reach its expiry date and check the reminder.
+7. Export the review register and the exception log.
+
+**Edge Cases / Variants.** A vendor whose terms differ by subscription tier; a reseller whose terms point to a third party's terms.
+
+**Expected Result.** Every vendor has a dated terms review covering the three points; failing vendors are shown against the use cases that rely on them; the exception carries an owner and an expiry date and raises a reminder; the changed terms trigger a new review.
+
+**Expected Control Action.** N/A.
+
+**Expected Record / Log.** Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.
+
+**Expected Report / Dashboard Evidence.** Record or report visible in the governance and compliance workspace within the documented refresh interval.
+
+**Expected Integration Evidence.** Export.
+
+**Audit Evidence.** Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit.
+
+**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
+
+**Framework Crosswalk *(assessor to complete)***
+
+- ISO/IEC 27001 ISMS: `________`
+- India DPDP: `________`
+- UAE NESA / information assurance: `________`
+- UAE PDPL: `________`
+- Other: `________`
+
+**Scoring Criteria.** 0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.
+
+**Pass Criteria.** Expected Result are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.
+
+**Fail Criteria.** Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing.
+
+**Evidence to Capture.** Terms review register; vendor and use-case links; exception record; re-review trigger record.
 
 **Reviewer Notes.** Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.
 

@@ -36,10 +36,10 @@ Complete once per adoption. Leave a cell blank where the framework has no corres
 | POL | Policy and standards | 2 |  |  |  |  |  |
 | INV | Inventory and classification | 4 |  |  |  |  |  |
 | PRV | Privacy and data protection principles | 9 |  |  |  |  |  |
-| OVS | Human oversight and transparency | 11 |  |  |  |  |  |
+| OVS | Human oversight and transparency | 11 |  |  |  |  | , [TC-L03-040](L03-legal-privacy-and-compliance.md#tc-l03-040), [TC-L03-041](L03-legal-privacy-and-compliance.md#tc-l03-041) |
 | XBT | Cross-border transfer, residency and jurisdiction | 4 |  |  |  |  |  |
 | RET | Retention, deletion and preservation | 3 |  |  |  |  |  |
-| VND | Third-party and supplier management | 4 |  |  |  |  |  |
+| VND | Third-party and supplier management | 4 |  |  |  |  | , [TC-L03-042](L03-legal-privacy-and-compliance.md#tc-l03-042) |
 | INC | Incident and breach management | 1 |  |  |  |  |  |
 | AUD | Audit, evidence and assurance | 14 |  |  |  |  |  |
 | TRN | Training and awareness | 3 |  |  |  |  |  |

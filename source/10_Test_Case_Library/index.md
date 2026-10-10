@@ -1,14 +1,14 @@
 ---
 title: "Test Case Library"
 author: Nachiket Sathaye
-description: "629 AI security test cases for vendor evaluation and PoC across 17 AI lifecycle layers and 6 emerging domains: prompt injection, DLP, agents, MCP, RAG."
+description: "632 AI security test cases for vendor evaluation and PoC across 17 AI lifecycle layers and 6 emerging domains: prompt injection, DLP, agents, MCP, RAG."
 nav_order: 11
 has_children: true
 ---
 
 # AI Security Vendor Evaluation: Test Case Library
 
-A library of **629 test cases** for evaluating AI security products in a controlled proof of concept: **496 cases organised by the 17 layers of the AI lifecycle**, tagged with seven buyer-facing use-case domains, and **133 cases in six emerging domains** that cut across the layers.
+A library of **632 test cases** for evaluating AI security products in a controlled proof of concept: **499 cases organised by the 17 layers of the AI lifecycle**, tagged with seven buyer-facing use-case domains, and **133 cases in six emerging domains** that cut across the layers.
 
 > **Status: draft for review.** Reference identifiers (MITRE ATLAS, OWASP LLM, NIST AI RMF) must be verified against current published versions, and numeric thresholds are starting values to tune to your risk appetite and vendor SLAs.
 
@@ -23,7 +23,7 @@ A library of **629 test cases** for evaluating AI security products in a control
 
 Every case names the control it tests, by ID, from the [AI Security Control Objectives Library](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md).
 
-To find a specific case, type its ID (for example `TC-L08-014`) or a keyword into the search box at the top of any page. Each of the 629 cases is indexed individually.
+To find a specific case, type its ID (for example `TC-L08-014`) or a keyword into the search box at the top of any page. Each of the 632 cases is indexed individually.
 
 ## Layers
 
@@ -31,7 +31,7 @@ To find a specific case, type its ID (for example `TC-L08-014`) or a keyword int
 |---|---|---|---|---|---|---|---|
 | L01 | [Business & Use Cases](L01-business-and-use-cases.md) | use-case registry, risk-tiering, business-owner attribution | 20 | 6 | 8 | 5 | 1 |
 | L02 | [Governance & Risk Mgmt](L02-governance-and-risk-mgmt.md) | policy-to-control mapping, risk register, exceptions workflow | 25 | 7 | 11 | 7 | 0 |
-| L03 | [Legal, Privacy & Compliance](L03-legal-privacy-and-compliance.md) | UAE/GCC residency, PDPL-type obligations, evidence export, DPIA support, fairness, transparency and authority engagement | 39 | 12 | 21 | 6 | 0 |
+| L03 | [Legal, Privacy & Compliance](L03-legal-privacy-and-compliance.md) | UAE/GCC residency, PDPL-type obligations, evidence export, DPIA support, fairness, transparency, human oversight, intellectual property and authority engagement | 42 | 12 | 23 | 7 | 0 |
 | L04 | [Human Interaction Layer](L04-human-interaction-layer.md) | browser/workforce AI, user coaching, approval prompts, multimodal input | 32 | 6 | 16 | 10 | 0 |
 | L05 | [AI Applications](L05-ai-applications.md) | discovery, app-level runtime protection, output handling | 35 | 8 | 19 | 8 | 0 |
 | L06 | [Agent Orchestration Layer](L06-agent-orchestration-layer.md) | agent and MCP discovery, tool governance, delegation chains, kill switch | 37 | 17 | 17 | 3 | 0 |
@@ -46,7 +46,7 @@ To find a specific case, type its ID (for example `TC-L08-014`) or a keyword int
 | L15 | [Infrastructure Layer](L15-infrastructure-layer.md) | GPU/cluster hardening, secrets, network segmentation, sovereignty of control plane | 20 | 8 | 10 | 2 | 0 |
 | L16 | [Supply Chain & Third Party](L16-supply-chain-and-third-party.md) | AI-BOM, model and package provenance, third-party SaaS AI risk | 26 | 4 | 13 | 9 | 0 |
 | L17 | [Monitoring, Detection & Response](L17-monitoring-detection-and-response.md) | telemetry, SIEM/SOAR integration, AI incident response, forensics | 31 | 4 | 20 | 7 | 0 |
-| | **Total** | | **496** | **126** | **253** | **114** | **3** |
+| | **Total** | | **499** | **126** | **255** | **115** | **3** |
 
 ## Emerging domains
 
@@ -64,25 +64,25 @@ Six further domains cut across the layers and use their own ID series, `TC-D##-#
 
 ## Coverage at a glance
 
-Counts are taken from the case index of each layer and domain file. Test method covers all 629 cases; the domain tags below apply to the 496 layer cases.
+Counts are taken from the case index of each layer and domain file. Test method covers all 632 cases; the domain tags below apply to the 499 layer cases.
 
 | Test method | Cases | Meaning |
 |---|---|---|
-| Technical | 526 | Executed live in the PoC lab |
-| Evidence | 89 | Verified by configuration, export, workflow or document inspection |
+| Technical | 527 | Executed live in the PoC lab |
+| Evidence | 91 | Verified by configuration, export, workflow or document inspection |
 | Attestation | 14 | Vendor written declaration, scored lower than demonstrated evidence |
 
 | Tag | Use-case domain | Cases tagged |
 |---|---|---|
 | D1 | Workforce / Browser AI Governance | 55 |
 | D2 | Developer / IDE AI Security | 29 |
-| D3 | Custom AI Application Runtime Security | 183 |
+| D3 | Custom AI Application Runtime Security | 185 |
 | D4 | Model Security / AI Supply Chain | 104 |
 | D5 | Agentic AI / MCP / Tool Governance | 78 |
 | D6 | Data Protection / DLP / Investigation | 102 |
-| D7 | Sovereignty / Compliance / UAE Requirements | 152 |
+| D7 | Sovereignty / Compliance / UAE Requirements | 155 |
 
-A case can carry more than one domain tag, so the domain counts add up to more than 496. D2 covers the developer workflow end to end: IDE prompts, assistant extensions, coding agents, MCP configuration, repository policy, pipeline bots and SOC telemetry, with L05 as its primary layer.
+A case can carry more than one domain tag, so the domain counts add up to more than 499. D2 covers the developer workflow end to end: IDE prompts, assistant extensions, coding agents, MCP configuration, repository policy, pipeline bots and SOC telemetry, with L05 as its primary layer.
 
 ## Numbering and structure
 

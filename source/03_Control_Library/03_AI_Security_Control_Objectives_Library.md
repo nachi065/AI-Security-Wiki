@@ -15,7 +15,7 @@ version: 2.3
 
 > **How to use:** Select controls by risk tier, then update the evidence, owners, control status, and links as implementation maturity improves.
 
-The library holds **46 control objectives in 11 families**. Each control has a stable ID that the rest of the wiki uses: the [AI Risk to Control Mapping](../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.md) links risks to controls, the [domain standards](../04_Domain_Standards/index.md) cite the controls they apply, the [AI Security Audit and Evidence Checklist](../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md) lists the evidence, and every one of the 629 cases in the [Test Case Library](../10_Test_Case_Library/index.md) names the control it tests.
+The library holds **46 control objectives in 11 families**. Each control has a stable ID that the rest of the wiki uses: the [AI Risk to Control Mapping](../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.md) links risks to controls, the [domain standards](../04_Domain_Standards/index.md) cite the controls they apply, the [AI Security Audit and Evidence Checklist](../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md) lists the evidence, and every one of the 632 cases in the [Test Case Library](../10_Test_Case_Library/index.md) names the control it tests.
 
 The controls follow the design principle set out in the [Foundations paper](../00_Foundations/07-Reference-Architecture.md): the model is an untrusted component, and authority to act, access data or spend money is enforced outside it.
 
@@ -98,10 +98,10 @@ Each control cites the identifiers published by the framework owner. Where a fra
 | [AI-CTRL-042](#ai-ctrl-042) | Fundamental Rights and Data Protection Impact Assessment | Governance and Compliance | Assess the impact on people's rights before deploying AI that is high-risk or that puts personal data at risk, and keep the assessment current. | 1 |
 | [AI-CTRL-043](#ai-ctrl-043) | Regulator and Authority Engagement | Governance and Compliance | Know which authorities oversee each AI system, meet the registration, filing and notification duties they set, and keep a record of every contact. | 1 |
 | [AI-CTRL-044](#ai-ctrl-044) | AI Literacy and Role-Based Competence | Governance and Compliance | Give everyone who builds, operates, oversees or uses AI the knowledge their role needs, and keep the records that show it. | 1 |
-| [AI-CTRL-045](#ai-ctrl-045) | Human Oversight Design and Effectiveness | Governance and Compliance | Design human review so the people named as overseers can understand, challenge, override and stop an AI system, and show with measures that they do. | 0 |
-| [AI-CTRL-046](#ai-ctrl-046) | Intellectual Property and Copyright Governance | Governance and Compliance | Control the intellectual property and copyright exposure of AI inputs, outputs and training data. | 0 |
+| [AI-CTRL-045](#ai-ctrl-045) | Human Oversight Design and Effectiveness | Governance and Compliance | Design human review so the people named as overseers can understand, challenge, override and stop an AI system, and show with measures that they do. |3 |
+| [AI-CTRL-046](#ai-ctrl-046) | Intellectual Property and Copyright Governance | Governance and Compliance | Control the intellectual property and copyright exposure of AI inputs, outputs and training data. |4 |
 
-A test case is counted under every control it tests, so the counts add up to more than 629.
+A test case is counted under every control it tests, so the counts add up to more than 632.
 
 ## Control entries
 
@@ -316,7 +316,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **MITRE ATLAS Mitigations** | AML.M0029 Human In-the-Loop for AI Agent Actions |
 | **NIST AI RMF** | MAP 3.5; GOVERN 3.2 |
 | **ISO/IEC 42001** | A.9.2 Processes for responsible use of AI systems; A.9.3 Objectives for responsible use of AI system |
-| **Tested By (0 cases)** | None yet. No test case targets oversight effectiveness. The cases tested under [AI-CTRL-023](#ai-ctrl-023) are candidates to extend. |
+| **Tested By (3 cases)** | **L01:** [012](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-012)<br>**L03:** [040](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-040), [041](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-041) |
 
 <a id="ai-ctrl-046"></a>
 
@@ -338,7 +338,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **MITRE ATLAS Mitigations** | None published in MITRE ATLAS mitigations. The wiki's own identifier applies: AI-CTRL-046. |
 | **NIST AI RMF** | MAP 4.1 |
 | **ISO/IEC 42001** | A.7.5 Data provenance; A.10.3 Suppliers |
-| **Tested By (0 cases)** | None yet. TC-L03-028 covers training-data intellectual property and is a candidate to point here. |
+| **Tested By (4 cases)** | **L03:** [028](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-028), [042](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-042)<br>**L05:** [035](../10_Test_Case_Library/L05-ai-applications.md#tc-l05-035)<br>**L13:** [007](../10_Test_Case_Library/L13-training-and-fine-tuning-layer.md#tc-l13-007) |
 
 ### Discovery and Workforce AI Use
 

@@ -28,7 +28,7 @@ This appendix compiles the setup each layer assumes, taken directly from the Pre
 
 **Standard setup (all cases):** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per this appendix; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials.
 
-- **Lab environment** (30 cases): Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
+- **Lab environment** (42 cases): Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
 
 ## L04 Human Interaction Layer
 
