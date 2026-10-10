@@ -131,6 +131,6 @@ Until a proposal is agreed, the current rules continue to apply. A pull request 
 
 ## Licence
 
-Everything in the wiki is published under [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/). Anyone may reuse it with credit to the authors. By contributing, you agree to publish your contribution under the same licence.
+Everything in the wiki is published under [Creative Commons Attribution-ShareAlike 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Anyone may reuse it with credit to the authors, and anything built from it must be released under the same licence. By contributing, you agree to license your contribution under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), so that it can be published as part of the wiki.
 
 The step-by-step guide to making a change is in [CONTRIBUTING.md](https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md).

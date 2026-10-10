@@ -11,7 +11,7 @@ document_type: Practitioner Research Paper
 
 **A practitioner research paper on protecting AI systems, securing AI-enabled enterprises, and using AI for defence**
 
-*Revision: October 2026 · Status: living document · Author: Nachiket Sathaye · Licence: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)*
+*Revision: October 2026 · Status: living document · Author: Nachiket Sathaye · Licence: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)*
 
 ---
 

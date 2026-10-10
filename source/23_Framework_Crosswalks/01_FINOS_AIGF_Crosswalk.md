@@ -18,7 +18,7 @@ version: 1.0
 
 ## About FINOS and this page
 
-The AIGF is published by FINOS (the Fintech Open Source Foundation) as an open catalogue of AI risks and mitigations for financial services. Its repository (github.com/finos/ai-governance-framework) states the Creative Commons Attribution 4.0 International licence in its LICENSE, LICENSE.spdx and NOTICE files, the same licence as this wiki.
+The AIGF is published by FINOS (the Fintech Open Source Foundation) as an open catalogue of AI risks and mitigations for financial services. Its repository (github.com/finos/ai-governance-framework) states the Creative Commons Attribution 4.0 International licence in its LICENSE, LICENSE.spdx and NOTICE files.
 
 This page was built from the repository at commit `a149dd1` (7 October 2026), which holds 24 risks and 25 mitigations. FINOS changes its framework over time, so check the identifiers against the current version at https://air-governance-framework.finos.org/ before relying on them. AIR-SEC-030, AIR-PREV-024, AIR-PREV-025 are marked Draft by FINOS.
 

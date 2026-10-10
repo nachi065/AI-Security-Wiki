@@ -48,7 +48,9 @@ Contributors are credited in [AUTHORS](AUTHORS). The [Community Rules](https://n
 
 ## Licence and author
 
-The wiki is licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE). You may copy, adapt and reuse it for any purpose, including commercially, as long as you credit the original author.
+The wiki is licensed under [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](LICENSE). You may copy, adapt and reuse it for any purpose, including commercially, as long as you credit the original author and release anything you build from it under the same licence. To use the content under other terms, contact the author.
+
+Versions published before 10 October 2026 were released under CC BY 4.0 and remain available under that licence.
 
 Every page names its author, and community members are credited for the pages they write. Credit can be added but never taken away: an automated check rejects any change that removes or replaces an existing author or co-author, whoever they are.
 

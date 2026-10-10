@@ -24,7 +24,7 @@ version: 1.0
 | Author | Jan van Dijke | Nachiket Sathaye and Ankush Jain |
 | Version | v1.0, 2 October 2026 | See the [home page](../index.md) |
 | Where | [aibcf.org](https://aibcf.org/) | This site |
-| Licence | CC BY-SA 4.0 | CC BY 4.0 |
+| Licence | CC BY-SA 4.0 | CC BY-SA 4.0 |
 
 ## Purpose and goals
 
@@ -97,7 +97,7 @@ Credit:
 - Author: [Jan van Dijke on LinkedIn](https://www.linkedin.com/in/ACoAABXxfLIB4VxRSJzYxoxy316Wq0cv-vAL4Kw)
 - Licence: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 
-AI BCF is published under CC BY-SA 4.0, which requires derived material to carry the same licence. This wiki is published under CC BY 4.0. This page cites AI BCF identifiers and uses its own labels and wording, and does not reproduce AI BCF control text. If AI BCF text is quoted in this wiki later, that text must be credited as above and kept under CC BY-SA 4.0.
+AI BCF is published under CC BY-SA 4.0, which requires derived material to carry the same licence. This wiki is published under CC BY-SA 4.0 as well. This page cites AI BCF identifiers and uses its own labels and wording, and does not reproduce AI BCF control text. If AI BCF text is quoted in this wiki later, that text must be credited as above.
 
 ## Related pages
 
