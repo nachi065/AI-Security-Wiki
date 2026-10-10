@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/</loc><lastmod>2026-10-10</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/00_Foundations/</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/00_Foundations/01-Terminology-and-Two-Axis-Model.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/00_Foundations/02-AI-System-Boundary-and-Assets.html</loc><lastmod>2026-10-07</lastmod></url>
@@ -20,14 +20,15 @@
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/01_Strategy_and_Market/</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape_Expanded.html</loc><lastmod>2026-10-08</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/02_Risk_Management/</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/02_Risk_Management/</loc><lastmod>2026-10-10</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/02_Risk_Management/02A_AI_Risk_Methodology.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/02_Risk_Management/02B_Enterprise_AI_Risk_Register.html</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/02_Risk_Management/02B_Enterprise_AI_Risk_Register.html</loc><lastmod>2026-10-10</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/02_Risk_Management/02C_AI_Risk_Treatment_Plan.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html</loc><lastmod>2026-10-10</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/02_Risk_Management/02E_AI_Risk_Review_Template.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/03_Control_Library/</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/03_Control_Library/03_AI_Security_Control_Objectives_Library.html</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/02_Risk_Management/02F_AI_Use_Case_Risk_Triage.html</loc><lastmod>2026-10-10</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/03_Control_Library/</loc><lastmod>2026-10-10</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/03_Control_Library/03_AI_Security_Control_Objectives_Library.html</loc><lastmod>2026-10-10</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/03_Control_Library/04_Existing_Security_Control_Baseline.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.html</loc><lastmod>2026-10-06</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/04_Domain_Standards/</loc><lastmod>2026-10-07</lastmod></url>
@@ -36,7 +37,7 @@
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/04_Domain_Standards/10B_Sector_Overlays.html</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/04_Domain_Standards/10B_Sector_Overlays.html</loc><lastmod>2026-10-10</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/05_Vendor_Evaluation/</loc><lastmod>2026-10-08</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html</loc><lastmod>2026-10-08</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/06_Testing_and_Assurance/</loc><lastmod>2026-10-07</lastmod></url>
@@ -190,4 +191,6 @@
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/09_Reference/</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/09_Reference/18_AI_Security_Glossary_and_Taxonomy.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/community-rules.html</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/23_Framework_Crosswalks/</loc><lastmod>2026-10-10</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/23_Framework_Crosswalks/01_FINOS_AIGF_Crosswalk.html</loc><lastmod>2026-10-10</lastmod></url>
 </urlset>

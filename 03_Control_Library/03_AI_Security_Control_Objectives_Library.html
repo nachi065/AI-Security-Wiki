@@ -56,6 +56,7 @@
 <li><a href="../02_Risk_Management/02C_AI_Risk_Treatment_Plan.html">AI Risk Treatment Plan</a></li>
 <li><a href="../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a></li>
 <li><a href="../02_Risk_Management/02E_AI_Risk_Review_Template.html">AI Risk Review Template</a></li>
+<li><a href="../02_Risk_Management/02F_AI_Use_Case_Risk_Triage.html">AI Use-Case Risk Triage</a></li>
 </ul></details></li>
 <li style="--h:165"><details open><summary><a href="index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>Control Library</a></summary><ul>
 <li><a class="current" href="03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></li>
@@ -243,6 +244,9 @@
 <li><a href="../09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
 </ul></details></li>
 <li><a href="../community-rules.html">Community Rules</a></li>
+<li style="--h:120"><details><summary><a href="../23_Framework_Crosswalks/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h14l-3-3M20 16H6l3 3"/></svg>Framework Crosswalks</a></summary><ul>
+<li><a href="../23_Framework_Crosswalks/01_FINOS_AIGF_Crosswalk.html">FINOS AI Governance Framework Crosswalk</a></li>
+</ul></details></li>
 </ul>
 </nav>
 <main>
@@ -254,7 +258,7 @@
 <p><strong>Audience:</strong> Security engineering, GRC, audit, AI product teams, SOC.</p>
 <p><strong>How to use:</strong> Select controls by risk tier, then update the evidence, owners, control status, and links as implementation maturity improves.</p>
 </blockquote>
-<p>The library holds <strong>44 control objectives in 11 families</strong>. Each control has a stable ID that the rest of the wiki uses: the <a href="../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a> links risks to controls, the <a href="../04_Domain_Standards/index.html">domain standards</a> cite the controls they apply, the <a href="../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a> lists the evidence, and every one of the 629 cases in the <a href="../10_Test_Case_Library/index.html">Test Case Library</a> names the control it tests.</p>
+<p>The library holds <strong>46 control objectives in 11 families</strong>. Each control has a stable ID that the rest of the wiki uses: the <a href="../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a> links risks to controls, the <a href="../04_Domain_Standards/index.html">domain standards</a> cite the controls they apply, the <a href="../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a> lists the evidence, and every one of the 629 cases in the <a href="../10_Test_Case_Library/index.html">Test Case Library</a> names the control it tests.</p>
 <p>The controls follow the design principle set out in the <a href="../00_Foundations/07-Reference-Architecture.html">Foundations paper</a>: the model is an untrusted component, and authority to act, access data or spend money is enforced outside it.</p>
 <h2 id="framework-identifiers">Framework identifiers</h2>
 <p>Each control cites the identifiers published by the framework owner. Where a framework has no matching entry, the cell says so and the wiki's own control ID stands in.</p>
@@ -295,7 +299,7 @@
 <tr>
 <td>AI Security Wiki (own)</td>
 <td>This page</td>
-<td><code>AI-CTRL-001</code> to <code>AI-CTRL-044</code></td>
+<td><code>AI-CTRL-001</code> to <code>AI-CTRL-046</code></td>
 </tr>
 </tbody>
 </table></div>
@@ -313,7 +317,7 @@
 <tbody>
 <tr>
 <td>Governance and Compliance</td>
-<td><a class="chip" href="#ai-ctrl-007">AI-CTRL-007</a>, <a class="chip" href="#ai-ctrl-011">AI-CTRL-011</a>, <a class="chip" href="#ai-ctrl-012">AI-CTRL-012</a>, <a class="chip" href="#ai-ctrl-013">AI-CTRL-013</a>, <a class="chip" href="#ai-ctrl-014">AI-CTRL-014</a>, <a class="chip" href="#ai-ctrl-037">AI-CTRL-037</a>, <a class="chip" href="#ai-ctrl-042">AI-CTRL-042</a>, <a class="chip" href="#ai-ctrl-043">AI-CTRL-043</a>, <a class="chip" href="#ai-ctrl-044">AI-CTRL-044</a></td>
+<td><a class="chip" href="#ai-ctrl-007">AI-CTRL-007</a>, <a class="chip" href="#ai-ctrl-011">AI-CTRL-011</a>, <a class="chip" href="#ai-ctrl-012">AI-CTRL-012</a>, <a class="chip" href="#ai-ctrl-013">AI-CTRL-013</a>, <a class="chip" href="#ai-ctrl-014">AI-CTRL-014</a>, <a class="chip" href="#ai-ctrl-037">AI-CTRL-037</a>, <a class="chip" href="#ai-ctrl-042">AI-CTRL-042</a>, <a class="chip" href="#ai-ctrl-043">AI-CTRL-043</a>, <a class="chip" href="#ai-ctrl-044">AI-CTRL-044</a>, <a class="chip" href="#ai-ctrl-045">AI-CTRL-045</a>, <a class="chip" href="#ai-ctrl-046">AI-CTRL-046</a></td>
 </tr>
 <tr>
 <td>Discovery and Workforce AI Use</td>
@@ -677,6 +681,20 @@
 <td>Give everyone who builds, operates, oversees or uses AI the knowledge their role needs, and keep the records that show it.</td>
 <td>1</td>
 </tr>
+<tr>
+<td><a class="chip" href="#ai-ctrl-045">AI-CTRL-045</a></td>
+<td>Human Oversight Design and Effectiveness</td>
+<td>Governance and Compliance</td>
+<td>Design human review so the people named as overseers can understand, challenge, override and stop an AI system, and show with measures that they do.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a class="chip" href="#ai-ctrl-046">AI-CTRL-046</a></td>
+<td>Intellectual Property and Copyright Governance</td>
+<td>Governance and Compliance</td>
+<td>Control the intellectual property and copyright exposure of AI inputs, outputs and training data.</td>
+<td>0</td>
+</tr>
 </tbody>
 </table></div>
 <p>A test case is counted under every control it tests, so the counts add up to more than 629.</p>
@@ -770,7 +788,7 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R02</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R02</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R18</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
@@ -838,7 +856,7 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R02</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R03</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R02</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R03</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R18</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R19</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R27</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R28</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
@@ -906,7 +924,7 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R03</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R10</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R03</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R10</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R27</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R28</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
@@ -974,7 +992,7 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R08</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R10</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R08</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R10</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R16</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
@@ -1042,7 +1060,7 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R02</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R02</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R18</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R28</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
@@ -1110,7 +1128,7 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R10</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R12</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R10</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R12</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R28</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
@@ -1246,7 +1264,7 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R02</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R02</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R19</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
@@ -1291,6 +1309,150 @@
 <tr>
 <td><strong>Tested By (1 case)</strong></td>
 <td><strong>L03:</strong> <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-038">038</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-045"></a></p>
+<h4 id="ai-ctrl-045-human-oversight-design-and-effectiveness">AI-CTRL-045: Human Oversight Design and Effectiveness</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Design human review so the people named as overseers can understand, challenge, override and stop an AI system, and show with measures that they do.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Custom AI Applications / Agents / Vendors</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R12</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R14</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R18</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R19</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R28</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Set, by risk tier, where a person must review, approve or be able to intervene: before the output is used, while the system runs, and after the fact by sampling. Give each overseer the evidence behind the output (sources, confidence, alternatives) and not only the result, the authority and time to override, and training that matches the role (<a class="chip" href="#ai-ctrl-044">AI-CTRL-044</a>). Keep the volume per reviewer low enough to be reviewed, and give overseers a way to stop or roll back the system (<a class="chip" href="#ai-ctrl-025">AI-CTRL-025</a>). Measure effectiveness: override and escalation rates, time per review, results of independent re-review of a sample, and detection of seeded errors. Reassess the design when the measures show rubber-stamping. This control covers oversight of AI-assisted decisions in general; <a class="chip" href="#ai-ctrl-023">AI-CTRL-023</a> gates specific irreversible agent actions.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>Oversight design record per in-scope use case; overseer roles, authority and training records; sampled re-review results; override and escalation metrics; seeded-error test results.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Select a high-tier use case and compare the oversight points in operation with the design record. Interview two overseers about the evidence they see and their authority to override. Submit a set of known-wrong outputs and measure how many are caught. Confirm the overseers can stop the system and that override metrics are reviewed.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>AI Governance Lead / Application Owner</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Semi-annually and on material change</td>
+</tr>
+<tr>
+<td><strong>Regulatory Pointers</strong></td>
+<td>EU AI Act Article 14 (Human Oversight) and Article 26(2) (deployers assign oversight to competent, trained people with authority and support); GDPR Article 22 (Automated individual decision-making, including profiling). GCC: see rows U3, U6, U9 and Q4 of the <a href="../11_GCC_AI_Compliance/01_GCC_AI_Regulatory_Hub.html">GCC AI Regulatory Hub</a>. Article titles and paragraph content were checked on 10 October 2026 against a secondary source (artificialintelligenceact.eu) that shows amended text; check the Official Journal text before citing.</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>LLM06:2025 Excessive Agency; ASI09 Human-Agent Trust Exploitation</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>None published in MITRE ATLAS techniques. The wiki's own identifier applies: AI-CTRL-045.</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>AML.M0029 Human In-the-Loop for AI Agent Actions</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MAP 3.5; GOVERN 3.2</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.9.2 Processes for responsible use of AI systems; A.9.3 Objectives for responsible use of AI system</td>
+</tr>
+<tr>
+<td><strong>Tested By (0 cases)</strong></td>
+<td>None yet. No test case targets oversight effectiveness. The cases tested under <a class="chip" href="#ai-ctrl-023">AI-CTRL-023</a> are candidates to extend.</td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="ai-ctrl-046"></a></p>
+<h4 id="ai-ctrl-046-intellectual-property-and-copyright-governance">AI-CTRL-046: Intellectual Property and Copyright Governance</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Objective</strong></td>
+<td>Control the intellectual property and copyright exposure of AI inputs, outputs and training data.</td>
+</tr>
+<tr>
+<td><strong>Applies To</strong></td>
+<td>Browser AI / IDE AI / AI APIs / Custom AI Applications / Vendors</td>
+</tr>
+<tr>
+<td><strong>Risk Mapping</strong></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R27</a></td>
+</tr>
+<tr>
+<td><strong>Implementation Expectation</strong></td>
+<td>Set a policy on what third-party copyrighted or licensed material staff may submit to AI tools, and on how AI output may be used in products, code and publications. Review vendor terms for ownership of output, indemnity for infringement claims and use of inputs for training. Record the source and licence of training and fine-tuning data (<a class="chip" href="#ai-ctrl-029">AI-CTRL-029</a>). Where policy requires, scan AI-generated code and content for licence and similarity matches before release. Record exceptions with an owner and an expiry date.</td>
+</tr>
+<tr>
+<td><strong>Evidence Required</strong></td>
+<td>IP and acceptable-use policy; vendor terms review; training data provenance and licence records; scan results; exception log.</td>
+</tr>
+<tr>
+<td><strong>Audit Test Procedure</strong></td>
+<td>Sample vendors and confirm the terms were reviewed for output ownership and indemnity. Sample released AI-generated artefacts and confirm a scan result or a documented exception. Sample fine-tuning datasets and confirm source and licence are recorded.</td>
+</tr>
+<tr>
+<td><strong>Control Owner</strong></td>
+<td>Legal / Compliance</td>
+</tr>
+<tr>
+<td><strong>Review Frequency</strong></td>
+<td>Annually and when vendor terms change</td>
+</tr>
+<tr>
+<td><strong>Regulatory Pointers</strong></td>
+<td>EU AI Act Article 53(1): providers of general-purpose AI models keep a copyright compliance policy and publish a summary of training content (checked on 10 October 2026 against artificialintelligenceact.eu, a secondary source). GCC: row S9 of the <a href="../11_GCC_AI_Compliance/01_GCC_AI_Regulatory_Hub.html">GCC AI Regulatory Hub</a> (Saudi copyright exception for text and data mining, tagged [Reported]).</td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>None published in the OWASP Top 10 lists. The wiki's own identifier applies: AI-CTRL-046.</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Techniques</strong></td>
+<td>None published in MITRE ATLAS techniques. The wiki's own identifier applies: AI-CTRL-046.</td>
+</tr>
+<tr>
+<td><strong>MITRE ATLAS Mitigations</strong></td>
+<td>None published in MITRE ATLAS mitigations. The wiki's own identifier applies: AI-CTRL-046.</td>
+</tr>
+<tr>
+<td><strong>NIST AI RMF</strong></td>
+<td>MAP 4.1</td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 42001</strong></td>
+<td>A.7.5 Data provenance; A.10.3 Suppliers</td>
+</tr>
+<tr>
+<td><strong>Tested By (0 cases)</strong></td>
+<td>None yet. TC-L03-028 covers training-data intellectual property and is a candidate to point here.</td>
 </tr>
 </tbody>
 </table></div>
@@ -1383,7 +1545,7 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R01</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R03</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R01</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R03</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R27</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
@@ -1451,7 +1613,7 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R01</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R03</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R01</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R03</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R27</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
@@ -1519,7 +1681,7 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R04</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R04</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R22</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
@@ -1656,7 +1818,7 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R22</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R25</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
@@ -1724,11 +1886,11 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R06</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R06</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R22</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
-<td>Use short-lived credentials scoped per tool and resource. Act with the end user's rights where a user is present, not with a broad service account. Detect and correct permission drift.</td>
+<td>Use short-lived credentials scoped per tool and resource. Act with the end user's rights where a user is present, not with a broad service account. Detect and correct permission drift. Keep secrets out of locations an agent can read, such as environment variables, configuration files and shell history; issue short-lived tokens scoped to one task at the moment of the call; and plant canary credentials to detect an agent searching for credentials it was never given.</td>
 </tr>
 <tr>
 <td><strong>Evidence Required</strong></td>
@@ -1793,7 +1955,7 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R01</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R03</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R06</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R01</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R03</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R06</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R17</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
@@ -1929,11 +2091,11 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R05</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R08</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R05</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R08</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R17</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
-<td>Control who and what can write to the corpus. Record the source of every indexed item. Scan ingested content for embedded instructions, and keep the ability to find and remove items by source.</td>
+<td>Control who and what can write to the corpus. Record the source of every indexed item. Scan ingested content for embedded instructions, and keep the ability to find and remove items by source. Record an owner and a freshness limit for each source, and monitor retrieval quality for drift so that superseded or degraded content is found and removed.</td>
 </tr>
 <tr>
 <td><strong>Evidence Required</strong></td>
@@ -1998,7 +2160,7 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R05</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R06</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R05</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R06</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R24</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
@@ -2066,11 +2228,11 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R05</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R06</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R05</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R06</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R24</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R26</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
-<td>Validate and encode output before it is rendered, executed or passed to another system. Restrict what output can trigger, such as links, images and calls. Inspect responses for sensitive data.</td>
+<td>Validate and encode output before it is rendered, executed or passed to another system. Restrict what output can trigger, such as links, images and calls. Inspect responses for sensitive data. Treat reasoning traces, intermediate tool output and system instructions as sensitive content. Decide whether each is shown to users or written to logs, apply the same classification as the final output, and test for leakage.</td>
 </tr>
 <tr>
 <td><strong>Evidence Required</strong></td>
@@ -2202,7 +2364,7 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R12</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R12</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R14</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R20</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
@@ -2271,7 +2433,7 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R25</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
@@ -2339,7 +2501,7 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R24</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
@@ -2407,7 +2569,7 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R19</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
@@ -2475,11 +2637,11 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R08</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R08</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R23</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R24</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
-<td>Keep an allow-list of tools, plugins and MCP servers with an owner for each. Validate tool schemas, pin versions, and re-approve when a tool definition changes after approval.</td>
+<td>Keep an allow-list of tools, plugins and MCP servers with an owner for each. Validate tool schemas, pin versions, and re-approve when a tool definition changes after approval. The same governance applies to agent skills and plugins: approve them from an allowlist after review, pin the version, check integrity on load and keep a procedure to remove one quickly.</td>
 </tr>
 <tr>
 <td><strong>Evidence Required</strong></td>
@@ -2543,7 +2705,7 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R11</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R11</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R21</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R25</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
@@ -2611,7 +2773,7 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R05</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R05</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R21</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
@@ -2679,7 +2841,7 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R21</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R22</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R25</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
@@ -2953,11 +3115,11 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R08</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R08</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R16</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R23</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
-<td>Maintain an AI bill of materials per system. Take models and packages only from approved sources, verify provenance, and scan them. Re-run security tests when any component changes, including a provider-side model update.</td>
+<td>Maintain an AI bill of materials per system. Take models and packages only from approved sources, verify provenance, and scan them. Re-run security tests when any component changes, including a provider-side model update. Pin model versions rather than using floating aliases such as "latest", and track provider deprecation and change notices so that a model change is a reviewed change.</td>
 </tr>
 <tr>
 <td><strong>Evidence Required</strong></td>
@@ -3089,7 +3251,7 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R13</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R13</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R16</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
@@ -3158,7 +3320,7 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R05</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R08</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R05</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R08</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R14</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R16</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
@@ -3226,11 +3388,11 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R05</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R05</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R16</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R17</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R20</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
-<td>Red team each system against defined threat cases before release. Run a regression suite in the pipeline and whenever the model, prompt, tools or data change. The risk owner sets the acceptable attack success rate in writing.</td>
+<td>Red team each system against defined threat cases before release. Run a regression suite in the pipeline and whenever the model, prompt, tools or data change. The risk owner sets the acceptable attack success rate in writing. Re-run the regression suite whenever the model version, prompt, retrieval source or guardrail changes, including changes made by the provider, and set a tolerance for run-to-run output variation.</td>
 </tr>
 <tr>
 <td><strong>Evidence Required</strong></td>
@@ -3294,7 +3456,7 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R09</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R09</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R15</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R28</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
@@ -3362,7 +3524,7 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R12</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R12</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R14</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R15</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
@@ -3431,7 +3593,7 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R09</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R09</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R15</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R26</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
@@ -3567,7 +3729,7 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R09</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R09</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R20</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>

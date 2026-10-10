@@ -3,7 +3,7 @@ title: "Home"
 description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and 629 test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.14
+version: 2.15
 status: Published
 author: Nachiket Sathaye
 coauthors: Ankush Jain
@@ -11,13 +11,13 @@ owner: AI Security Program
 custodian: Security Architecture Team
 review_cycle: Quarterly
 approval_authority: AI Governance Committee
-last_updated: 2026-10-07
+last_updated: 2026-10-10
 ---
 
 # AI Security Wiki Home
 
 > **Document Type:** Enterprise AI Security Reference Architecture and Governance Wiki  
-> **Version:** 2.14  
+> **Version:** 2.15  
 > **Status:** Published  
 > **Original Author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
 > **Co-Author:** Ankush Jain ([about the co-author](#23-about-the-co-author))  
@@ -36,6 +36,21 @@ The wiki helps teams answer five practical questions:
 5. How will the AI capability be monitored, tested, audited, and improved over time?
 
 New to the subject? Start with [Foundations: AI Security vs. Security of AI](00_Foundations/index.md), the research paper that explains the concepts and sources behind the standards, templates, and test cases in the rest of the wiki.
+
+### How this wiki relates to other frameworks
+
+This wiki is the implementation layer: control objectives, evidence, audit procedures and test cases that turn AI governance requirements into something a team can build, test and audit. It works alongside the catalogues and standards that say what to worry about and what the law expects, and does not replace them.
+
+| If you need to... | Start with | Then use this wiki for |
+|---|---|---|
+| Build a financial-services AI risk catalogue | FINOS AI Governance Framework | Controls, evidence and tests per risk, through the [FINOS crosswalk](23_Framework_Crosswalks/01_FINOS_AIGF_Crosswalk.md) |
+| Structure a management system | ISO/IEC 42001 with ISO/IEC 27001 | Technical control objectives and test criteria |
+| Structure risk language and a programme | NIST AI RMF | Engineering controls, evidence and scoring |
+| Define attack classes for testing | OWASP lists, MITRE ATLAS, NIST AI 100-2 | The 629-case test library |
+| Meet regional legal duties | The primary legal texts | The [Regional AI Regulatory Hub](11_GCC_AI_Compliance/index.md) sections |
+| Decide which risks apply to a use case | n/a | The [use-case risk triage](02_Risk_Management/02F_AI_Use_Case_Risk_Triage.md) |
+
+The FINOS AI Governance Framework is published by FINOS under CC BY 4.0. This wiki cites its identifiers for traceability and does not reproduce its text.
 
 ## 2. Mission Statement
 
@@ -230,6 +245,10 @@ Review, Improve, Renew, or Retire
 22_US_AI_Compliance/
   Regulatory hub for the US (federal orders and enforcement, NIST AI RMF, state AI laws), role guide,\n  three templates, and regulatory crosswalk.
 
+23_Framework_Crosswalks/
+  Cross-references from this wiki to other AI governance frameworks, starting with the FINOS AI Governance Framework
+  (risk and mitigation identifiers mapped to wiki risks, control objectives and evidence).
+
 09_Reference/
   Glossary, taxonomy, abbreviations, mapping references, patterns, and reusable templates.
 ```
@@ -405,6 +424,7 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 | 2.12 | 2026-10-07 | Nachiket Sathaye | Added the UK AI Compliance section: regulatory hub, role guide, templates and crosswalk. Its content comes from secondary sources and from memory of the law, and has not been verified against primary legal text. |
 | 2.13 | 2026-10-07 | Nachiket Sathaye | Added the US AI Compliance section: regulatory hub, role guide, templates and crosswalk. Its content comes from secondary sources and from memory of the law, and has not been verified against primary legal text. |
 | 2.14 | 2026-10-07 | Nachiket Sathaye | Added four controls (AI-CTRL-041 to AI-CTRL-044: fairness, impact assessment, authority engagement, AI literacy), nine test cases (TC-L03-031 to TC-L03-039), a sector overlays page and a regional crosswalk by control theme. The regional sections now point to these controls and cases. |
+| 2.15 | 2026-10-10 | Nachiket Sathaye | Added 15 risks to the register (AI-R14 to AI-R28), two controls (AI-CTRL-045 human oversight design and AI-CTRL-046 intellectual property), wording changes to six existing controls, FINOS AI Governance Framework columns in the risk to control mapping, a use-case risk triage page, a Framework Crosswalks section with the FINOS crosswalk, and a positioning statement on the home page. |
 
 ## 21. Quick Links
 
@@ -433,6 +453,7 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 - [South Korea AI Compliance (regulatory hub, role guide and templates)](20_South_Korea_AI_Compliance/index.md)
 - [UK AI Compliance (regulatory hub, role guide and templates)](21_UK_AI_Compliance/index.md)
 - [US AI Compliance (regulatory hub, role guide and templates)](22_US_AI_Compliance/index.md)
+- [Framework Crosswalks (FINOS AI Governance Framework)](23_Framework_Crosswalks/index.md)
 - [Community Rules](community-rules.md)
 - [AI Security Audit and Evidence Checklist](06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md)
 - [AI Product Developer Playbook](07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.md)

@@ -56,6 +56,7 @@
 <li><a href="02C_AI_Risk_Treatment_Plan.html">AI Risk Treatment Plan</a></li>
 <li><a href="02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a></li>
 <li><a href="02E_AI_Risk_Review_Template.html">AI Risk Review Template</a></li>
+<li><a href="02F_AI_Use_Case_Risk_Triage.html">AI Use-Case Risk Triage</a></li>
 </ul></details></li>
 <li style="--h:165"><details><summary><a href="../03_Control_Library/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>Control Library</a></summary><ul>
 <li><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></li>
@@ -243,6 +244,9 @@
 <li><a href="../09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
 </ul></details></li>
 <li><a href="../community-rules.html">Community Rules</a></li>
+<li style="--h:120"><details><summary><a href="../23_Framework_Crosswalks/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h14l-3-3M20 16H6l3 3"/></svg>Framework Crosswalks</a></summary><ul>
+<li><a href="../23_Framework_Crosswalks/01_FINOS_AIGF_Crosswalk.html">FINOS AI Governance Framework Crosswalk</a></li>
+</ul></details></li>
 </ul>
 </nav>
 <main>
@@ -253,6 +257,7 @@
 <p><strong>Purpose:</strong> Provide a sample enterprise AI risk register covering AI usage, development, applications, agents, auditability, sovereignty, cost, output reliability and resilience, as a starting template.</p>
 <p><strong>Audience:</strong> Governance, cyber risk, security architecture, audit, AI product owners.</p>
 <p><strong>How to use:</strong> Use this page as a template. Re-score each risk using the AI Risk Methodology for your own environment, and add owners, evidence and treatment status.</p>
+<p><strong>Scope of AI-R14 to AI-R28:</strong> These fifteen entries were added in version 1.1 to make operational risks (bias, explainability, model change, drift, oversight, reputation) and agentic risks (memory poisoning, credential harvesting, plugin supply chain, tool chains, trust boundaries) first-class entries. The Example Priority column is not re-ranked across all 28 risks; re-rank it with the AI Risk Methodology. Each risk is cross-referenced to the FINOS AI Governance Framework in the <a href="02D_AI_Risk_to_Control_Mapping.html">risk to control mapping</a>.</p>
 <p><strong>Illustrative example:</strong> The ratings and entries on this page are generic examples, not an assessment of any specific organization. Replace them with your own findings before relying on them.</p>
 </blockquote>
 <div class="table-wrap"><table>
@@ -371,6 +376,126 @@
 <td><span class="badge sev-medium">Medium</span></td>
 <td>13</td>
 </tr>
+<tr>
+<td>AI-R14</td>
+<td>Biased or Discriminatory AI Outcomes</td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td><span class="badge sev-high">High</span></td>
+<td><span class="badge sev-high">High</span></td>
+<td>14</td>
+</tr>
+<tr>
+<td>AI-R15</td>
+<td>Lack of Explainability and Decision Traceability</td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td><span class="badge sev-high">High</span></td>
+<td><span class="badge sev-high">High</span></td>
+<td>15</td>
+</tr>
+<tr>
+<td>AI-R16</td>
+<td>Foundation Model Version Change and Non-Deterministic Behaviour</td>
+<td><span class="badge sev-high">High</span></td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td><span class="badge sev-high">High</span></td>
+<td>16</td>
+</tr>
+<tr>
+<td>AI-R17</td>
+<td>Data Quality Degradation and Model Drift</td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td><span class="badge sev-high">High</span></td>
+<td><span class="badge sev-high">High</span></td>
+<td>17</td>
+</tr>
+<tr>
+<td>AI-R18</td>
+<td>Model Overreach and Use Beyond Approved Purpose</td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td><span class="badge sev-high">High</span></td>
+<td><span class="badge sev-high">High</span></td>
+<td>18</td>
+</tr>
+<tr>
+<td>AI-R19</td>
+<td>Insufficient or Ineffective Human Oversight</td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td><span class="badge sev-high">High</span></td>
+<td><span class="badge sev-high">High</span></td>
+<td>19</td>
+</tr>
+<tr>
+<td>AI-R20</td>
+<td>Reputational Harm from AI Behaviour</td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td><span class="badge sev-high">High</span></td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td>20</td>
+</tr>
+<tr>
+<td>AI-R21</td>
+<td>Agent Memory and State Persistence Poisoning</td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td><span class="badge sev-high">High</span></td>
+<td><span class="badge sev-high">High</span></td>
+<td>21</td>
+</tr>
+<tr>
+<td>AI-R22</td>
+<td>Agent-Mediated Credential Discovery and Harvesting</td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td><span class="badge sev-critical">Critical</span></td>
+<td><span class="badge sev-high">High</span></td>
+<td>22</td>
+</tr>
+<tr>
+<td>AI-R23</td>
+<td>Skill, Plugin and MCP Server Supply Chain Compromise</td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td><span class="badge sev-critical">Critical</span></td>
+<td><span class="badge sev-high">High</span></td>
+<td>23</td>
+</tr>
+<tr>
+<td>AI-R24</td>
+<td>Tool Chain Manipulation and Injection</td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td><span class="badge sev-critical">Critical</span></td>
+<td><span class="badge sev-high">High</span></td>
+<td>24</td>
+</tr>
+<tr>
+<td>AI-R25</td>
+<td>Multi-Agent Trust Boundary Violation</td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td><span class="badge sev-high">High</span></td>
+<td><span class="badge sev-high">High</span></td>
+<td>25</td>
+</tr>
+<tr>
+<td>AI-R26</td>
+<td>Reasoning Trace and Intermediate Output Exposure</td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td>26</td>
+</tr>
+<tr>
+<td>AI-R27</td>
+<td>Intellectual Property and Copyright Infringement</td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td><span class="badge sev-high">High</span></td>
+<td><span class="badge sev-high">High</span></td>
+<td>27</td>
+</tr>
+<tr>
+<td>AI-R28</td>
+<td>Regulatory Non-Compliance from Unsupervised AI Decisions</td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td><span class="badge sev-critical">Critical</span></td>
+<td><span class="badge sev-high">High</span></td>
+<td>28</td>
+</tr>
 </tbody>
 </table></div>
 <h2 id="risk-narratives">Risk Narratives</h2>
@@ -400,6 +525,36 @@
 <p>AI systems can give confident wrong answers, invent sources, packages and links, drift outside their approved scope or produce harmful content, and people act on the result. Required controls include grounding in approved sources, citation verification, topic restriction, harmful content filtering and factuality evaluation.</p>
 <h3 id="ai-r13-ai-service-disruption-and-dependency-failure">AI-R13: AI Service Disruption and Dependency Failure</h3>
 <p>Business processes come to depend on AI services, model providers and the security controls in front of them. Outages, provider changes, overload or a control that fails open can stop the process or silently remove protection. Required controls include defined fail modes, failover that keeps policy intact, fallback paths, tested backups, provider exit plans and detection of silent control failure.</p>
+<h3 id="ai-r14-biased-or-discriminatory-ai-outcomes">AI-R14: Biased or Discriminatory AI Outcomes</h3>
+<p>AI outputs or decisions can disadvantage people or groups because of skewed data, proxy variables or the way a prompt frames the task. Required controls include group-level fairness testing before release and in operation, review of proxy variables, documented thresholds and human review of adverse outcomes.</p>
+<h3 id="ai-r15-lack-of-explainability-and-decision-traceability">AI-R15: Lack of Explainability and Decision Traceability</h3>
+<p>The basis for an AI-assisted decision may not be explainable to a customer, reviewer or regulator, and the decision may not be reconstructable later. Required controls include decision records that name the model version, prompt template and sources, explanation templates by audience and retention that matches the decision's life.</p>
+<h3 id="ai-r16-foundation-model-version-change-and-non-deterministic-behaviour">AI-R16: Foundation Model Version Change and Non-Deterministic Behaviour</h3>
+<p>Providers update, replace or retire models, and the same input can give different outputs. Guardrails, prompts and safety evaluations that passed before can regress without any change on the customer side. Required controls include version pinning, tracking of provider notices, a regression suite on every change, tolerance limits for output variation and tested rollback.</p>
+<h3 id="ai-r17-data-quality-degradation-and-model-drift">AI-R17: Data Quality Degradation and Model Drift</h3>
+<p>Source data, retrieval content or input patterns change over time, so output quality or safety falls without any code change. Required controls include quality baselines, freshness limits and named owners for each source, drift indicators with thresholds and a defined response when a threshold is crossed.</p>
+<h3 id="ai-r18-model-overreach-and-use-beyond-approved-purpose">AI-R18: Model Overreach and Use Beyond Approved Purpose</h3>
+<p>A system approved for a low-risk purpose may later be used for a higher-risk one, or its autonomy and data access may grow without a new assessment. Required controls include a purpose statement per use case, change triggers that force reassessment and monitoring of actual use against the approved purpose.</p>
+<h3 id="ai-r19-insufficient-or-ineffective-human-oversight">AI-R19: Insufficient or Ineffective Human Oversight</h3>
+<p>A person may be nominally in the loop but unable or unwilling to review meaningfully, through automation bias, missing context, no authority to override or a volume that forces rubber-stamping. Required controls include oversight points set by risk tier, reviewer context, authority and training, and effectiveness measures such as override rates and sampled re-review.</p>
+<h3 id="ai-r20-reputational-harm-from-ai-behaviour">AI-R20: Reputational Harm from AI Behaviour</h3>
+<p>A public-facing or customer-facing AI system may say something offensive, misleading or off-brand, or make a commitment the organisation did not intend, and the output becomes public. Required controls include content filtering, topic restriction, adversarial testing before release and a public-incident response path.</p>
+<h3 id="ai-r21-agent-memory-and-state-persistence-poisoning">AI-R21: Agent Memory and State Persistence Poisoning</h3>
+<p>Malicious or wrong content written into an agent's long-term memory or saved state can influence later sessions or other users and survive restarts. Required controls include memory integrity checks, provenance for stored entries, purge and rollback procedures and isolation of memory between users.</p>
+<h3 id="ai-r22-agent-mediated-credential-discovery-and-harvesting">AI-R22: Agent-Mediated Credential Discovery and Harvesting</h3>
+<p>An agent with file, shell or environment access can find and use credentials it was never meant to hold, and an injected instruction can make it send them out. Required controls include keeping secrets out of agent-readable locations, short-lived scoped tokens issued at call time, canary credentials and separate identities for agents.</p>
+<h3 id="ai-r23-skill-plugin-and-mcp-server-supply-chain-compromise">AI-R23: Skill, Plugin and MCP Server Supply Chain Compromise</h3>
+<p>Agent skills, plugins and MCP servers run with the agent's authority, and a compromised or malicious one can act as the agent. This narrows AI-R08 to the agent extension surface. Required controls include an allowlist, review before approval, version pinning, integrity checks and removal procedures.</p>
+<h3 id="ai-r24-tool-chain-manipulation-and-injection">AI-R24: Tool Chain Manipulation and Injection</h3>
+<p>An attacker can steer an agent through a sequence of individually permitted tool calls, or inject instructions through tool inputs and outputs, so the combined effect is one nobody authorised. Required controls include deterministic checks on call sequences, validation of tool inputs and outputs and runtime inspection.</p>
+<h3 id="ai-r25-multi-agent-trust-boundary-violation">AI-R25: Multi-Agent Trust Boundary Violation</h3>
+<p>Agents that call or delegate to other agents can pass on instructions, data or authority across boundaries nobody intended, so one compromised agent affects the rest. Required controls include an agent trust map, identity for every agent, containment and isolation between agents and logging of inter-agent requests.</p>
+<h3 id="ai-r26-reasoning-trace-and-intermediate-output-exposure">AI-R26: Reasoning Trace and Intermediate Output Exposure</h3>
+<p>Reasoning steps, intermediate tool output and system instructions can expose sensitive data, internal logic or attack paths when they are shown to users or written to logs. Required controls include classifying these traces, deciding what is displayed and retained, and testing for leakage.</p>
+<h3 id="ai-r27-intellectual-property-and-copyright-infringement">AI-R27: Intellectual Property and Copyright Infringement</h3>
+<p>Staff may submit third-party copyrighted or licensed material to AI tools, and AI output or training data may infringe the rights of others or carry licence obligations into products and code. Required controls include a usage policy, review of vendor terms for output ownership and indemnity, provenance records for training data and scanning of released output where policy requires.</p>
+<h3 id="ai-r28-regulatory-non-compliance-from-unsupervised-ai-decisions">AI-R28: Regulatory Non-Compliance from Unsupervised AI Decisions</h3>
+<p>A regulated process may use AI without the supervision, records or accountability the regulator expects of a human performing the same step. Required controls include an obligation register, impact assessment, decision records, human oversight appropriate to the tier and a named accountable owner.</p>
 </article>
 <nav class="pager" aria-label="Previous and next page"><a class="prev" href="02A_AI_Risk_Methodology.html">&larr; AI Risk Methodology</a><a class="next" href="02C_AI_Risk_Treatment_Plan.html">AI Risk Treatment Plan &rarr;</a></nav>
 <footer class="site-footer">Author: Nachiket Sathaye &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/02_Risk_Management/02B_Enterprise_AI_Risk_Register.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>

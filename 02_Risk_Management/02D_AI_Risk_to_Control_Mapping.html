@@ -56,6 +56,7 @@
 <li><a href="02C_AI_Risk_Treatment_Plan.html">AI Risk Treatment Plan</a></li>
 <li><a class="current" href="02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a></li>
 <li><a href="02E_AI_Risk_Review_Template.html">AI Risk Review Template</a></li>
+<li><a href="02F_AI_Use_Case_Risk_Triage.html">AI Use-Case Risk Triage</a></li>
 </ul></details></li>
 <li style="--h:165"><details><summary><a href="../03_Control_Library/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>Control Library</a></summary><ul>
 <li><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></li>
@@ -243,6 +244,9 @@
 <li><a href="../09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
 </ul></details></li>
 <li><a href="../community-rules.html">Community Rules</a></li>
+<li style="--h:120"><details><summary><a href="../23_Framework_Crosswalks/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h14l-3-3M20 16H6l3 3"/></svg>Framework Crosswalks</a></summary><ul>
+<li><a href="../23_Framework_Crosswalks/01_FINOS_AIGF_Crosswalk.html">FINOS AI Governance Framework Crosswalk</a></li>
+</ul></details></li>
 </ul>
 </nav>
 <main>
@@ -260,6 +264,8 @@
 <th>Primary Controls</th>
 <th>Control IDs</th>
 <th>Evidence Required</th>
+<th>FINOS AIGF Cross-Reference</th>
+<th>Match</th>
 </tr>
 </thead>
 <tbody>
@@ -268,81 +274,228 @@
 <td>Prompt inspection; file upload protection; classification-aware enforcement</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-002">AI-CTRL-002</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-003">AI-CTRL-003</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-010">AI-CTRL-010</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a></td>
 <td>Prompt logs; upload block logs; data classification policy; SOC alerts</td>
+<td>AIR-RC-001</td>
+<td>Partial</td>
 </tr>
 <tr>
 <td>AI-R02</td>
 <td>AI discovery; application risk classification; policy enforcement</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-010">AI-CTRL-010</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-011">AI-CTRL-011</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-037">AI-CTRL-037</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-044">AI-CTRL-044</a></td>
 <td>AI inventory; shadow AI reports; user activity dashboard</td>
+<td>None seen</td>
+<td>None seen</td>
 </tr>
 <tr>
 <td>AI-R03</td>
 <td>Sensitive data detection; redaction; block/warn policy</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-002">AI-CTRL-002</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-003">AI-CTRL-003</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-010">AI-CTRL-010</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a></td>
 <td>DLP events; AI prompt detections; policy screenshots</td>
+<td>AIR-RC-001</td>
+<td>Partial</td>
 </tr>
 <tr>
 <td>AI-R04</td>
 <td>IDE discovery; source code protection; secret detection</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-004">AI-CTRL-004</a></td>
 <td>IDE inventory; secret detection log; developer policy evidence</td>
+<td>AIR-RC-001</td>
+<td>Partial</td>
 </tr>
 <tr>
 <td>AI-R05</td>
 <td>Prompt injection detection; runtime inspection; RAG validation</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-019">AI-CTRL-019</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-020">AI-CTRL-020</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
 <td>Red team report; runtime logs; guardrail evidence</td>
+<td>AIR-SEC-010</td>
+<td>Direct</td>
 </tr>
 <tr>
 <td>AI-R06</td>
 <td>Output inspection; retrieval governance; source-document logging</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-018">AI-CTRL-018</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-020">AI-CTRL-020</a></td>
 <td>Response logs; retrieval logs; permission validation evidence</td>
+<td>AIR-SEC-002</td>
+<td>Partial</td>
 </tr>
 <tr>
 <td>AI-R07</td>
 <td>Agent identity; tool governance; approvals; action logging</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-045">AI-CTRL-045</a></td>
 <td>Agent registry; API/tool matrix; approval logs; SIEM events</td>
+<td>AIR-SEC-024</td>
+<td>Partial</td>
 </tr>
 <tr>
 <td>AI-R08</td>
 <td>AI asset inventory; model inventory; plugin governance; dependency scanning</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-019">AI-CTRL-019</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-028">AI-CTRL-028</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-029">AI-CTRL-029</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-030">AI-CTRL-030</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-031">AI-CTRL-031</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-032">AI-CTRL-032</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a></td>
 <td>AI BOM; model registry; vulnerability reports</td>
+<td>AIR-SEC-008; AIR-SEC-009; AIR-SEC-026</td>
+<td>Partial</td>
 </tr>
 <tr>
 <td>AI-R09</td>
 <td>Audit logging; SIEM integration; retention controls</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-043">AI-CTRL-043</a></td>
 <td>Exportable audit records; SIEM event IDs; retention policy</td>
+<td>None seen as a risk; FINOS addresses it through detective mitigations such as AIR-DET-004 and AIR-DET-021</td>
+<td>None seen</td>
 </tr>
 <tr>
 <td>AI-R10</td>
 <td>Residency; retention; training exclusion; admin access logging</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-007">AI-CTRL-007</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-032">AI-CTRL-032</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-042">AI-CTRL-042</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-043">AI-CTRL-043</a></td>
 <td>Vendor documentation; DPA clauses; residency attestation; admin logs</td>
+<td>AIR-RC-001</td>
+<td>Partial</td>
 </tr>
 <tr>
 <td>AI-R11</td>
 <td>Cost attribution; budgets, quotas and rate limits; spend anomaly detection; agent task limits</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a></td>
 <td>Cost attribution reports; budget and quota configuration; anomaly alerts; key revocation records</td>
+<td>None seen as a risk; related mitigation AIR-DET-009</td>
+<td>None seen</td>
 </tr>
 <tr>
 <td>AI-R12</td>
 <td>Grounding and citation verification; topic restriction; harmful content filtering; factuality evaluation</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-039">AI-CTRL-039</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-041">AI-CTRL-041</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-042">AI-CTRL-042</a></td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-039">AI-CTRL-039</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-041">AI-CTRL-041</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-042">AI-CTRL-042</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-045">AI-CTRL-045</a></td>
 <td>Grounding test results; topic policy; content filter results; factuality baseline</td>
+<td>AIR-OP-004</td>
+<td>Direct</td>
 </tr>
 <tr>
 <td>AI-R13</td>
 <td>Defined fail modes; resilient failover; continuity and exit planning; control health monitoring</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-040">AI-CTRL-040</a></td>
 <td>Fail-mode test results; failover and restore tests; continuity and exit plans; health alerts</td>
+<td>AIR-OP-007</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>AI-R14</td>
+<td>Group-level fairness testing; proxy review; oversight of adverse outcomes</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-039">AI-CTRL-039</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-041">AI-CTRL-041</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-045">AI-CTRL-045</a></td>
+<td>Fairness metric definitions; results by group; threshold approvals</td>
+<td>AIR-OP-016</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>AI-R15</td>
+<td>Decision records; explanation templates; retention</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-041">AI-CTRL-041</a></td>
+<td>Decision records; sample reconstructions; retention configuration</td>
+<td>AIR-OP-017</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>AI-R16</td>
+<td>Model version pinning; regression on change; rollback</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-031">AI-CTRL-031</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-040">AI-CTRL-040</a></td>
+<td>Model inventory with versions; regression results; rollback test</td>
+<td>AIR-OP-005; AIR-OP-006</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>AI-R17</td>
+<td>Quality baselines; freshness limits; drift monitoring</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-019">AI-CTRL-019</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
+<td>Baselines; drift alerts and actions; source ownership records</td>
+<td>AIR-OP-019</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>AI-R18</td>
+<td>Purpose statements; change triggers; use monitoring</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-011">AI-CTRL-011</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-037">AI-CTRL-037</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-045">AI-CTRL-045</a></td>
+<td>Approved purpose records; change-trigger logs; reassessment records</td>
+<td>AIR-OP-018; AIR-OP-014</td>
+<td>Partial</td>
+</tr>
+<tr>
+<td>AI-R19</td>
+<td>Oversight design by tier; reviewer authority and training; effectiveness measures</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-044">AI-CTRL-044</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-045">AI-CTRL-045</a></td>
+<td>Oversight design records; reviewer authority and training records; override metrics</td>
+<td>AIR-RC-022</td>
+<td>Partial</td>
+</tr>
+<tr>
+<td>AI-R20</td>
+<td>Content safety; adversarial testing; public incident response</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-039">AI-CTRL-039</a></td>
+<td>Filter results; red team reports; communications playbook</td>
+<td>AIR-OP-020</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>AI-R21</td>
+<td>Memory integrity; provenance; purge and isolation</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a></td>
+<td>Memory configuration; purge tests; provenance logs</td>
+<td>AIR-SEC-027</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>AI-R22</td>
+<td>Credential exposure prevention; scoped short-lived tokens; canaries</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-004">AI-CTRL-004</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a></td>
+<td>Runtime configuration review; canary alert tests; credential issuance logs</td>
+<td>AIR-SEC-029</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>AI-R23</td>
+<td>Skill, plugin and MCP governance; AI-BOM</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-031">AI-CTRL-031</a></td>
+<td>Allowlist; review records; pinning configuration</td>
+<td>AIR-SEC-030; AIR-SEC-026</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>AI-R24</td>
+<td>Sequence authorisation; tool I/O validation; runtime inspection</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-020">AI-CTRL-020</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a></td>
+<td>Tool permission matrix with sequence rules; multi-step test results</td>
+<td>AIR-SEC-025</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>AI-R25</td>
+<td>Agent trust map; identity; containment; isolation</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a></td>
+<td>Agent trust map; inter-agent request logs</td>
+<td>AIR-OP-028</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>AI-R26</td>
+<td>Trace classification; display and logging rules; leakage tests</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-020">AI-CTRL-020</a></td>
+<td>Classification decision; display configuration; leakage tests</td>
+<td>None seen in the FINOS repository</td>
+<td>None seen</td>
+</tr>
+<tr>
+<td>AI-R27</td>
+<td>IP policy; vendor terms review; provenance; output scanning</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-002">AI-CTRL-002</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-003">AI-CTRL-003</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-046">AI-CTRL-046</a></td>
+<td>Policy; vendor terms review; training data provenance; scan results</td>
+<td>AIR-RC-023</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>AI-R28</td>
+<td>Obligation register; impact assessment; decision records; oversight</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-037">AI-CTRL-037</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-042">AI-CTRL-042</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-045">AI-CTRL-045</a></td>
+<td>Obligation register; supervision records; impact assessments</td>
+<td>AIR-RC-022</td>
+<td>Direct</td>
 </tr>
 </tbody>
 </table></div>
+<p><strong>How to read the FINOS columns.</strong> The cross-reference cites FINOS AI Governance Framework (AIGF) risk identifiers for traceability. <strong>Match</strong> shows how closely the FINOS risk fits: <strong>Direct</strong> (same risk), <strong>Partial</strong> (overlaps part of it) or <strong>None seen</strong> (no equivalent in the FINOS repository). The matching is this wiki's judgment, made from FINOS titles and the links between FINOS risks and mitigations. The reverse index, from each FINOS risk and mitigation to this wiki, is in the <a href="../23_Framework_Crosswalks/01_FINOS_AIGF_Crosswalk.html">FINOS AI Governance Framework Crosswalk</a>.</p>
 <h2 id="mapping-usage">Mapping Usage</h2>
 <p>Use this mapping during solution architecture review, vendor PoC scoring, audit evidence collection and recurring risk review. Each AI project should identify applicable risks and provide the mapped evidence before production approval.</p>
 </article>
