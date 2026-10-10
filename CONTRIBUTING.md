@@ -40,6 +40,8 @@ nav_order: 6
 
 `author` is you: a page you add is credited to you, and your name appears in its footer. `parent` is the section title exactly as it appears in the sidebar, and `nav_order` sets the page's position in that section.
 
+The footer also shows the date the page last changed, taken from the repository history. If you have checked a page against its sources, you can record that by adding `last_reviewed: 2026-10-10` (your own date, written as year-month-day) to the header. The line is optional.
+
 ## What to expect
 
 - Every pull request is reviewed by the maintainer before it is merged.

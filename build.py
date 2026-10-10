@@ -5,6 +5,7 @@ Usage:  pip install markdown && python3 build.py
 """
 import datetime, hashlib, html, json, os, re, shutil, subprocess
 import markdown
+from markdown.extensions.toc import slugify
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(ROOT, "source")
@@ -34,6 +35,66 @@ for dirpath, dirs, files in os.walk(SRC):
             rel = os.path.relpath(os.path.join(dirpath, f), SRC)
             meta, body = read(os.path.join(dirpath, f))
             pages.append({"src": rel, "out": rel[:-3] + ".html", "meta": meta, "body": body})
+
+
+
+def traceability(page):
+    """Risk to control to test tables, read from the pages that own each link."""
+    def text(src):
+        return next(p["body"] for p in pages if p["src"].replace(os.sep, "/") == src)
+
+    def link(src, anchor=""):
+        return os.path.relpath(os.path.join(SRC, src), os.path.dirname(os.path.join(SRC, page["src"]))).replace(os.sep, "/") + anchor
+
+    register, mapping, library = "02_Risk_Management/02B_Enterprise_AI_Risk_Register.md", "02_Risk_Management/02D_AI_Risk_to_Control_Mapping.md", "03_Control_Library/03_AI_Security_Control_Objectives_Library.md"
+    risks = dict(re.findall(r"^### (AI-R\d\d): (.+)$", text(register), re.M))
+    controls = dict(re.findall(r"^#### (AI-CTRL-\d{3}): (.+)$", text(library), re.M))
+    treated_by = {m.group(1): re.findall(r"\[(AI-CTRL-\d{3})\]", m.group(0)) for m in re.finditer(r"^\| (AI-R\d\d) \|.*$", text(mapping), re.M)}
+    tests = {c: {} for c in controls}  # control -> {test page: [cases]}
+    for p in sorted(pages, key=lambda p: p["src"]):
+        for case, body in zip(*[iter(re.split(r"^### (TC-[LD]\d\d-\d{3}):", p["body"], flags=re.M)[1:])] * 2):
+            field = re.search(r"^\| \*\*Control\(s\) Tested\*\* \|(.*)$", body, re.M)
+            for c in set(re.findall(r"AI-CTRL-\d{3}", field.group(1) if field else "")):
+                tests[c].setdefault(p["src"].replace(os.sep, "/"), []).append(case)
+
+    def count(c):
+        return sum(len(cases) for cases in tests[c].values())
+
+    def risk(r):
+        return f"[{r}]({link(register, '#' + slugify(r + ': ' + risks[r], '-'))})"
+
+    def control(c):
+        return f"[{c}]({link(library, '#' + c.lower())})"
+
+    out = ["## Risks to controls and tests", "",
+           "The number after each control is its count of test cases. The last column counts the distinct test cases across the risk's controls.", "",
+           "| Risk | Title | Controls (test cases) | Test cases |", "|---|---|---|---|"]
+    for r in sorted(risks):
+        cases = {case for c in treated_by.get(r, []) for found in tests[c].values() for case in found}
+        out.append(f"| {risk(r)} | {risks[r]} | " + "; ".join(f"{control(c)} ({count(c)})" for c in treated_by.get(r, [])) + f" | {len(cases)} |")
+    out += ["", "## Controls to risks and tests", "",
+            "Each test page is followed by the number of its cases that test the control.", "",
+            "| Control | Name | Risks treated | Test cases | Test pages |", "|---|---|---|---|---|"]
+    for c in sorted(controls):
+        where = "; ".join(f"[{os.path.basename(src)[:3]}]({link(src)}) ({len(cases)})" for src, cases in tests[c].items())
+        out.append(f"| {control(c)} | {controls[c]} | " + "; ".join(risk(r) for r in sorted(risks) if c in treated_by.get(r, []))
+                   + f" | {count(c)} | {where or 'None'} |")
+    untested = [c for c in sorted(controls) if not count(c)]
+    unmapped = [c for c in sorted(controls) if not any(c in found for found in treated_by.values())]
+    exposed = [r for r in sorted(risks) if not treated_by.get(r) or any(c in untested for c in treated_by[r])]
+    out += ["", "## Gaps", "",
+            "| Check | Result |", "|---|---|",
+            "| Controls with no test case | " + ("; ".join(control(c) for c in untested) or "None") + " |",
+            "| Risks treated by a control that has no test case | " + ("; ".join(risk(r) for r in exposed) or "None") + " |",
+            "| Controls that no risk maps to | " + ("; ".join(control(c) for c in unmapped) or "None") + " |"]
+    return chr(10).join(out)
+
+
+# A page that holds this marker gets the generated traceability tables in its place.
+MATRIX = "<!-- traceability-matrix -->"
+for p in pages:
+    if MATRIX in p["body"]:
+        p["body"] = p["body"].replace(MATRIX, traceability(p))
 
 home = next(p for p in pages if p["src"] == "index.md")
 # Top-level entries in the sidebar: sections (which have child pages) and standalone pages.
@@ -285,7 +346,7 @@ TEMPLATE = """<!doctype html>
 {content}
 </article>
 {pager}
-<footer class="site-footer">{byline} &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="{repo}/edit/main/source/{src}" rel="noopener">Suggest an edit to this page</a> &middot; <a href="{base}community-rules.html">Community rules</a> &middot; <a href="{repo}/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
+<footer class="site-footer">{byline}{dates} &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="{repo}/edit/main/source/{src}" rel="noopener">Suggest an edit to this page</a> &middot; <a href="{base}community-rules.html">Community rules</a> &middot; <a href="{repo}/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
 {notice}</footer>
 </main>
 </div>
@@ -354,6 +415,24 @@ def last_modified():
     return lambda page: dates.get("source/" + page["src"].replace(os.sep, "/"), today)
 
 
+def long_date(iso):
+    day = datetime.date.fromisoformat(iso)
+    return f"{day.day} {day:%B %Y}"
+
+
+def dates(page):
+    """Shown after the byline: when the page last changed, and when it was last reviewed if its header says."""
+    line = f" &middot; Updated {long_date(modified(page))}"
+    reviewed = page["meta"].get("last_reviewed")
+    if reviewed:
+        try:
+            line += f" &middot; Last reviewed {long_date(reviewed)}"
+        except ValueError:
+            raise SystemExit(f"{page['src']}: last_reviewed must be a date written as YYYY-MM-DD")
+    return line
+
+
+modified = last_modified()
 order = [home] + [p for s in sections for p in [s] + s["children"]]
 index = []
 for i, page in enumerate(order):
@@ -389,7 +468,7 @@ for i, page in enumerate(order):
         title=html.escape(HOME_TITLE if page is home else f"{title} | {SITE_TITLE}"),
         description=html.escape(describe(page), quote=True), canonical=canonical(page),
         og_type="website" if page is home else "article",
-        site=SITE_TITLE, repo=REPO_URL, author=html.escape(", ".join(authors(page)), quote=True), byline=byline(page), src=page["src"].replace(os.sep, "/"), base=base, nav=nav(page), crumbs=crumbs, notice=NOTICE,
+        site=SITE_TITLE, repo=REPO_URL, author=html.escape(", ".join(authors(page)), quote=True), byline=byline(page), dates=dates(page), src=page["src"].replace(os.sep, "/"), base=base, nav=nav(page), crumbs=crumbs, notice=NOTICE,
         content=content, pager='<nav class="pager" aria-label="Previous and next page">' + "".join(links) + "</nav>",
     )
     dest = os.path.join(ROOT, page["out"])
@@ -415,7 +494,6 @@ for dirpath, dirs, files in os.walk(SRC):
 
 open(os.path.join(ROOT, "assets", "search-index.js"), "w", encoding="utf-8").write(
     "window.SEARCH_INDEX = " + json.dumps(index, ensure_ascii=False) + ";\n")
-modified = last_modified()
 open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8").write(
     '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     + "".join(f"  <url><loc>{canonical(p)}</loc><lastmod>{modified(p)}</lastmod></url>\n" for p in order) + "</urlset>\n")
