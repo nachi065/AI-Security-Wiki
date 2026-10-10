@@ -109,6 +109,5 @@ All sources are secondary unless marked as a regulator or government page. Each 
 | [DLA Piper: Artificial intelligence in China](https://intelligence.dlapiper.com/artificial-intelligence?c=CN) | Not read | Cross-check |
 | [Hogan Lovells AI hub: China](https://digital-client-solutions.hoganlovells.com/resources/ai-hub/jurisdiction/china) | Not read | Cross-check |
 | [Han Kun publication (Sept 2026, PDF)](https://hankunlaw.com/upload/portal/20260911/33f09b56e7a5e07d6a817a4b1d927f56.pdf) | Not read | Latest measures; read it before relying on CN4 to CN6 |
-| [Babl.ai: China's influence in AI regulation](https://babl.ai/an-analysis-of-chinas-growing-influence-in-ai-regulation/) | Not read | Context |
 
 No primary legal text (statute, regulation or circular) was read for any row. Confirm each row against the primary source, and add its URL and retrieval date in the [China Regulatory Crosswalk](03_Regulatory_Crosswalk.md).

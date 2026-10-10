@@ -14,12 +14,13 @@ That is all. You do not need to install anything or rebuild the HTML; the mainta
 
 1. Fork this repository and create a branch.
 2. Edit or add Markdown under `source/`. Do not edit the `.html` files by hand; they are generated.
-3. Rebuild the pages and run the author check:
+3. Rebuild the pages and run the two checks:
 
    ```sh
    pip install markdown
    python3 build.py
    python3 check_author.py
+   python3 check_links.py
    ```
 
 4. Commit the Markdown and the regenerated HTML together, then open a pull request against `main`.
