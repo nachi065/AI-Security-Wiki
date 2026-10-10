@@ -1,24 +1,24 @@
 ID,Instrument,Legal force,Type / status,Wiki controls,Control themes,Verification tag,To verify,Primary URL and retrieval date
-E1,AI Act (Regulation (EU) 2024/1689) as amended by the Digital Omnibus,Binding law,Binding; phased,All,GOV;RSK;POL;INV;OVS;AUD;CHG;INC,Reported; Recalled,Omnibus number; amended articles,
-E1a,AI Act Art. 5 prohibited practices,Binding law,Applies from 2 Feb 2025,AI-CTRL-012;AI-CTRL-011,GOV;POL,Reported,Current list incl. new prohibition from 2 Dec 2026,
-E1b,AI Act Art. 4 AI literacy,Binding law,Applies from 2 Feb 2025,AI-CTRL-012,TRN,Reported,Wording after omnibus,
-E1c,"AI Act high-risk (Arts. 9 to 17, 26, 27, 43 to 49, 72, 73)",Binding law,Annex III 2 Dec 2027; Annex I 2 Aug 2028 (reported),AI-CTRL-037;AI-CTRL-013;AI-CTRL-038;AI-CTRL-008;AI-CTRL-023;AI-CTRL-034;AI-CTRL-039;AI-CTRL-035,RSK;PRV;OVS;AUD;INC;CHG,Reported; Recalled,Dates; article text,
-E1d,AI Act Art. 50 transparency,Binding law,From 2 Aug 2026 with Art. 50(2) grace to 2 Dec 2026 (sources differ),AI-CTRL-039,OVS,Conflict,Exact application date,
-E1e,AI Act GPAI (Arts. 51 to 55),Binding law,Applies since 2 Aug 2025; enforcement from 2 Aug 2026,AI-CTRL-014;AI-CTRL-028;AI-CTRL-029,VND;POL,Reported,Text; guidelines,
-E2,GDPR,Binding law,Binding,AI-CTRL-013;AI-CTRL-007;AI-CTRL-017;AI-CTRL-035,PRV;XBT;RET;INC,Recalled,Articles; national law,
-E3,EDPB opinion on AI models and personal data,Guidance,Guidance,AI-CTRL-013,PRV,Recalled,Title and content,
+E1,AI Act (Regulation (EU) 2024/1689) as amended by the Digital Omnibus on AI (Regulation (EU) 2026/1744),Binding law,Binding; phased. Omnibus in force 27 Jul 2026,All,GOV;RSK;POL;INV;OVS;AUD;CHG;INC,Verified,Original Art. 113 wording; consolidated text,"https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng; https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng, retrieved 10 Oct 2026"
+E1a,AI Act Art. 5 prohibited practices,Binding law,Applies from 2 Feb 2025; new points (ba) and (bb) from 2 Dec 2026,AI-CTRL-012;AI-CTRL-011,GOV;POL,Verified,Full list of prohibited practices,"https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng, retrieved 10 Oct 2026"
+E1b,AI Act Art. 4 AI literacy,Binding law,Applies from 2 Feb 2025; reworded by the omnibus as a duty to support AI literacy,AI-CTRL-012,TRN,Verified,Commission examples under Art. 4(2),"https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng, retrieved 10 Oct 2026"
+E1c,"AI Act high-risk (Arts. 9 to 17, 26, 27, 43 to 49, 72, 73)",Binding law,Annex III from 2 Dec 2027; Annex I from 2 Aug 2028,AI-CTRL-037;AI-CTRL-013;AI-CTRL-038;AI-CTRL-008;AI-CTRL-023;AI-CTRL-034;AI-CTRL-039;AI-CTRL-035,RSK;PRV;OVS;AUD;INC;CHG,Verified,Article text,"https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng, retrieved 10 Oct 2026"
+E1d,AI Act Art. 50 transparency,Binding law,From 2 Aug 2026; systems placed on the market before that date have until 2 Dec 2026 for Art. 50(2),AI-CTRL-039,OVS,Verified; Reported,General 2 Aug 2026 date in the original Art. 113,"https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng, retrieved 10 Oct 2026"
+E1e,AI Act GPAI (Arts. 51 to 55),Binding law,Applies since 2 Aug 2025; enforcement from 2 Aug 2026,AI-CTRL-014;AI-CTRL-028;AI-CTRL-029,VND;POL,Reported,Art. 113 text; guidelines,"https://digital-strategy.ec.europa.eu/en/policies/guidelines-gpai-providers, retrieved 10 Oct 2026 (states application from 2 Aug 2025; not the OJ text)"
+E2,GDPR,Binding law,Binding,AI-CTRL-013;AI-CTRL-007;AI-CTRL-017;AI-CTRL-035,PRV;XBT;RET;INC,Recalled,Articles; national law,"https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng, retrieved 10 Oct 2026 (title and OJ reference only)"
+E3,EDPB opinion on AI models and personal data,Guidance,"Guidance; Opinion 28/2024, adopted 18 Dec 2024",AI-CTRL-013,PRV,Verified,Content,"https://www.edpb.europa.eu/our-work-tools/our-documents/opinion-board-art-64/opinion-282024-certain-data-protection-aspects_en, retrieved 10 Oct 2026"
 E4,Digital Omnibus (data/GDPR),Proposed,Proposal; not before 2027,AI-CTRL-013,PRV,Reported,Status,
-E5,NIS2,Binding law,Binding via national law,AI-CTRL-005;AI-CTRL-035,INC;VND;BCP,Recalled,National transposition,
-E6,DORA,Binding in scope,Binding for financial entities,AI-CTRL-014;AI-CTRL-035,VND;INC;BCP,Reported,Technical standards,
-E7,Cyber Resilience Act,Binding law,Reporting from 11 Sep 2026; full 11 Dec 2027,AI-CTRL-005;AI-CTRL-008,INC;AUD,Reported,Dates,
-E8,Product Liability Directive (new),Binding law,Directive,AI-CTRL-037,RSK,Unverified,Transposition date,
-E9,Data Act,Binding law,Regulation,AI-CTRL-007;AI-CTRL-014,XBT;VND,Recalled,Application date,
-E10,Digital Services Act,Binding law,Regulation,AI-CTRL-039,OVS,Recalled,Scope for AI,
-E11,Copyright TDM opt-out,Binding law,Directive,AI-CTRL-029,POL,Recalled,National law,
-E12,Commission guidelines: prohibited practices,Guidance,Guidance,AI-CTRL-012,POL,Recalled,Date and content,
-E13,Commission guidelines: GPAI,Guidance,Guidance (10 Jul 2025),AI-CTRL-014,VND,Reported,Content,
+E5,NIS2,Binding law,Binding via national law,AI-CTRL-005;AI-CTRL-035,INC;VND;BCP,Recalled,National transposition,"https://eur-lex.europa.eu/eli/dir/2022/2555/oj/eng, retrieved 10 Oct 2026 (title only)"
+E6,DORA,Binding in scope,Binding for financial entities,AI-CTRL-014;AI-CTRL-035,VND;INC;BCP,Reported,Technical standards,"https://eur-lex.europa.eu/eli/reg/2022/2554/oj/eng, retrieved 10 Oct 2026 (title only)"
+E7,Cyber Resilience Act,Binding law,Applies from 11 Dec 2027; Art. 14 reporting from 11 Sep 2026; Chapter IV from 11 Jun 2026,AI-CTRL-005;AI-CTRL-008,INC;AUD,Verified,Scope for AI products,"https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng, retrieved 10 Oct 2026"
+E8,Product Liability Directive (new),Binding law,Directive; Member States transpose by 9 Dec 2026; applies to products placed on the market after that date,AI-CTRL-037,RSK,Verified,National transposition,"https://eur-lex.europa.eu/eli/dir/2024/2853/oj/eng, retrieved 10 Oct 2026"
+E9,Data Act,Binding law,Regulation; applies from 12 Sep 2025,AI-CTRL-007;AI-CTRL-014,XBT;VND,Verified,Later dates for Art. 3(1) and Chapter IV,"https://eur-lex.europa.eu/eli/reg/2023/2854/oj/eng, retrieved 10 Oct 2026"
+E10,Digital Services Act,Binding law,Regulation,AI-CTRL-039,OVS,Recalled,Scope for AI,"https://eur-lex.europa.eu/eli/reg/2022/2065/oj/eng, retrieved 10 Oct 2026 (title only)"
+E11,Copyright TDM opt-out,Binding law,Directive (EU) 2019/790 Art. 4; transposition was due 7 Jun 2021,AI-CTRL-029,POL,Verified,National law,"https://eur-lex.europa.eu/eli/dir/2019/790/oj/eng, retrieved 10 Oct 2026"
+E12,Commission guidelines: prohibited practices,Guidance,Guidance; published 4 Feb 2025,AI-CTRL-012,POL,Verified,Content,"https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act, retrieved 10 Oct 2026"
+E13,Commission guidelines: GPAI,Guidance,Guidance (10 Jul 2025),AI-CTRL-014,VND,Reported,"Content; date (the Commission page shows none, and gives 10 Jul 2025 for the Code of Practice in E15)","https://digital-strategy.ec.europa.eu/en/policies/guidelines-gpai-providers, retrieved 10 Oct 2026 (title only)"
 E14,Commission draft guidelines: high-risk classification,Proposed,Draft 19 May 2026; consultation closed 23 Jul 2026,AI-CTRL-011,INV,Reported,Final adoption,
-E15,GPAI Code of Practice,Voluntary,Voluntary,AI-CTRL-014,VND,Reported,Signatory list,
+E15,GPAI Code of Practice,Voluntary,Voluntary; published 10 Jul 2025,AI-CTRL-014,VND,Verified,Signatory list,"https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai, retrieved 10 Oct 2026"
 E16,Code of Practice on marking and labelling AI content,Voluntary,Voluntary; final 10 Jun 2026,AI-CTRL-039,OVS,Reported,Adequacy assessment,
 E17,"CEN-CENELEC JTC 21 standards (EN 18286:2026; prEN 18228, 18229, 18282, 18284)",Voluntary,"EN 18286 approved 12 Jul 2026, OJ citation pending; others draft",AI-CTRL-012;AI-CTRL-037;AI-CTRL-005;AI-CTRL-013,GOV;RSK;AUD,Reported,Numbers; status,
 E18,ISO/IEC 42001,Voluntary,Voluntary standard,All,GOV;AUD,Recalled,Not harmonised,

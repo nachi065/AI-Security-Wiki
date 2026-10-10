@@ -10,7 +10,7 @@ version: 1.0
 
 # EU AI Regulatory Hub
 
-> **Verification required.** EU claims on this page were compiled on 7 October 2026 from secondary sources and from memory of the legal text. The Official Journal text was not read, and each claim is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text on EUR-Lex before relying on any of them. This is not legal advice.
+> **Verification required.** EU claims on this page were compiled on 7 October 2026 from secondary sources and from memory of the legal text. On 10 October 2026 the omnibus regulation and the dates tagged [Verified] below were checked against the Official Journal. Every other claim is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text on EUR-Lex before relying on any of them. This is not legal advice.
 
 This page maps EU laws, guidance and standards that bear on AI to the wiki's controls.
 
@@ -18,7 +18,7 @@ This page maps EU laws, guidance and standards that bear on AI to the wiki's con
 
 | Layer | Instruments | Question it answers |
 |---|---|---|
-| Horizontal AI law | AI Act (Regulation (EU) 2024/1689), as amended by the Digital Omnibus on AI [Reported] | Is it prohibited, high-risk, transparency-only or minimal? Which role are we in? |
+| Horizontal AI law | AI Act (Regulation (EU) 2024/1689), as amended by the Digital Omnibus on AI, Regulation (EU) 2026/1744 [Verified] | Is it prohibited, high-risk, transparency-only or minimal? Which role are we in? |
 | Data protection | GDPR, ePrivacy, EDPB guidance | Lawful basis, rights, DPIA, transfers, automated decisions |
 | Security and resilience | NIS2, DORA (finance), Cyber Resilience Act (products with digital elements) | Cyber risk management and reporting |
 | Product and liability | Sector product law (medical devices, machinery and others), Product Liability Directive | Conformity and compensation |
@@ -29,7 +29,7 @@ An AI system can fall inside several layers at once. For each topic, apply the s
 
 ## 2. AI Act timeline
 
-Verify every date against the Official Journal.
+Rows tagged [Verified] were checked against Regulation (EU) 2026/1744 on 10 October 2026. Verify the others against the Official Journal.
 
 | Date | What | Status |
 |---|---|---|
@@ -37,27 +37,29 @@ Verify every date against the Official Journal.
 | 2 Feb 2025 | Prohibited practices (Art. 5) and AI literacy (Art. 4) apply | [Reported] |
 | 2 Aug 2025 | General-purpose AI (GPAI) obligations apply (Arts. 51 to 55); penalties regime due from Member States | [Reported] |
 | 2 Aug 2026 | Commission and AI Office enforcement powers over GPAI; national market surveillance enforcement; transparency (Art. 50) application | [Reported] |
-| 2 Dec 2026 | Art. 50(2) marking grace ends for generative systems already on the market before 2 Aug 2026; new prohibition on generating non-consensual intimate imagery and CSAM | [Reported]; [Conflict] on exact scope, see 2.2 |
+| 2 Dec 2026 | Art. 50(2) marking grace ends for generative systems already on the market before 2 Aug 2026; new prohibition on generating non-consensual intimate imagery and CSAM | [Verified] |
 | 2 Aug 2027 | Grace period ends for GPAI models placed on the market before 2 Aug 2025 | [Reported] |
-| 2 Dec 2027 | High-risk AI, Annex III use cases (previously 2 Aug 2026) | [Reported] |
-| 2 Aug 2028 | High-risk AI embedded in Annex I regulated products (previously 2 Aug 2027) | [Reported] |
+| 2 Dec 2027 | High-risk AI, Annex III use cases (previously 2 Aug 2026) | [Verified] |
+| 2 Aug 2028 | High-risk AI embedded in Annex I regulated products (previously 2 Aug 2027) | [Verified] |
 
-### 2.1 Omnibus status: sources conflict
+### 2.1 Omnibus status
 
-- One firm reports a provisional agreement that awaits formal adoption.
-- Another reports Parliament approval on 16 June 2026 (423 votes to 57, with 174 abstentions), Council adoption on 29 June, signature on 8 July and entry into force on 27 July 2026, as Regulation (EU) 2026/1744.
-- A third says publication was "expected July 2026".
+The secondary sources disagreed on whether the omnibus had been adopted. The Official Journal settles it [Verified]:
 
-The later reports are more likely to be correct, but treat the status as [Conflict] until you have seen the Official Journal entry. Confirm the regulation number and whether the changes below are in force. The wiki's [Governance, Standards and Regulation](../00_Foundations/09-Governance-Standards-and-Regulation.md) page reports the same regulation number and the same high-risk dates, also from secondary sources.
+- The act is Regulation (EU) 2026/1744 of the European Parliament and of the Council of 8 July 2026, amending Regulations (EU) 2024/1689, (EU) 2018/1139 and (EU) 2023/1230 (Digital Omnibus on AI).
+- It was published on 24 July 2026 and entered into force on the third day after publication, 27 July 2026.
+- Text: [Regulation (EU) 2026/1744](https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng), retrieved 10 October 2026.
+
+The changes tagged [Verified] below were read from that text. The original Article 113 of Regulation (EU) 2024/1689 could not be read in full, so the dates that the omnibus did not change keep their earlier tags. The wiki's [Governance, Standards and Regulation](../00_Foundations/09-Governance-Standards-and-Regulation.md) page reports the same regulation number and the same high-risk dates.
 
 ### 2.2 Reported omnibus changes
 
 | Change | Detail | Tag |
 |---|---|---|
-| High-risk delay | Annex III to 2 Dec 2027; Annex I to 2 Aug 2028 | [Reported] |
-| Art. 50(2) marking | Grace to 2 Dec 2026 for systems already on the market; systems placed after 2 Aug 2026 comply on placement. One source says all transparency duties stay at 2 Aug 2026, another says the watermarking deadline moved | [Conflict] |
-| New prohibition | Systems generating non-consensual intimate imagery or CSAM, with a safe harbour where effective safeguards exist; from 2 Dec 2026 | [Reported] |
-| AI literacy (Art. 4) | Date reportedly unchanged (2 Feb 2025). Whether the obligation was softened is not confirmed | [Unverified] |
+| High-risk delay | Annex III to 2 Dec 2027; Annex I to 2 Aug 2028 | [Verified] |
+| Art. 50(2) marking | Providers of systems that generate synthetic audio, image, video or text and were placed on the market before 2 Aug 2026 have until 2 Dec 2026 to comply with Art. 50(2) (new Art. 111(4)). The general 2 Aug 2026 date for Art. 50 comes from the original Art. 113, which was not read | [Verified] for the grace period; [Reported] for the general date |
+| New prohibition | New points (ba) and (bb) of Art. 5(1): AI systems that generate or manipulate intimate images of an identifiable person without consent, or child sexual abuse material. Placing on the market is prohibited only where that is the intended purpose, or a foreseeable outcome that the system lacks reasonable safeguards against (Art. 5(1a)); from 2 Dec 2026 | [Verified] |
+| AI literacy (Art. 4) | Art. 4 is replaced. Providers and deployers "shall take measures to support the development of AI literacy" of staff, and the article says this does not require them to guarantee any specific level of literacy for any individual | [Verified] |
 | Special category data for bias detection | "Strictly necessary" standard retained | [Reported] |
 | Registration | Systems self-assessed as non-high-risk under Art. 6(3) still need EU database registration | [Reported] |
 | SME relief | Extended to small mid-caps | [Reported] |

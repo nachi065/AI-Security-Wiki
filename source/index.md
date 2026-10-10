@@ -3,7 +3,7 @@ title: "Home"
 description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and 632 test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.19
+version: 2.20
 status: Published
 author: Nachiket Sathaye
 coauthors: Ankush Jain
@@ -17,7 +17,7 @@ last_updated: 2026-10-10
 # AI Security Wiki Home
 
 > **Document Type:** Enterprise AI Security Reference Architecture and Governance Wiki  
-> **Version:** 2.19  
+> **Version:** 2.20  
 > **Status:** Published  
 > **Original Author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
 > **Co-Author:** Ankush Jain ([about the co-author](#23-about-the-co-author))  
@@ -430,6 +430,7 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 | 2.17 | 2026-10-10 | Nachiket Sathaye | Added a Legal force column to the twelve regional crosswalks and their CSV files, so each instrument is labelled as binding law, binding in scope, guidance, voluntary, proposed, context or unclear. Added a link and identifier check for contributors, and rules for reusing the wiki to the Community Rules. |
 | 2.18 | 2026-10-10 | Nachiket Sathaye | Added a Risk, Control and Test Traceability page, generated at build time from the risk mapping and the test cases. Every page footer now shows the date the page last changed, and a page can record a review date with an optional `last_reviewed` line. |
 | 2.19 | 2026-10-10 | Nachiket Sathaye | Added three test cases (TC-L03-040 to TC-L03-042) for human oversight effectiveness and AI vendor terms, and pointed four existing cases at AI-CTRL-045 and AI-CTRL-046, so every control now has at least one test case. The library holds 632 cases. |
+| 2.20 | 2026-10-10 | Nachiket Sathaye | EU AI Compliance: checked twelve crosswalk rows against the Official Journal or the issuing body's page and tagged them [Verified], with the primary URL and retrieval date. The Digital Omnibus on AI is confirmed as Regulation (EU) 2026/1744, in force since 27 July 2026, with the high-risk dates of 2 December 2027 and 2 August 2028. |
 
 ## 21. Quick Links
 

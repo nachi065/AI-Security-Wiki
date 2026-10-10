@@ -27,6 +27,7 @@ Resources for people who build, sell, deploy, audit or govern AI systems that to
 
 | Tag | Meaning |
 |---|---|
+| **[Verified]** | The point stated was checked against the primary text at the URL given, on the date given. The text was read with a retrieval tool and not line by line, so confirm the wording before you cite it. |
 | **[Reported]** | Stated by secondary web sources. Verify before relying on it. |
 | **[Recalled]** | Stated from memory of the legal text and not re-checked. Verify the article on EUR-Lex before citing it. |
 | **[Conflict]** | Secondary sources disagree. Resolve from the primary text. |
@@ -36,7 +37,7 @@ The templates are working documents, not regulator-approved forms. Where a templ
 
 ## AI Act dates have moved
 
-The AI Act's high-risk dates are reported to have moved under the "Digital Omnibus on AI" [Reported]: Annex III systems to 2 December 2027, and Annex I product-embedded systems to 2 August 2028. Sources conflict on whether the omnibus is already in force. One says it is Regulation (EU) 2026/1744, in force since 27 July 2026. Another describes a provisional agreement only. See [section 2 of the hub](01_EU_AI_Regulatory_Hub.md#2-ai-act-timeline).
+The Digital Omnibus on AI is Regulation (EU) 2026/1744 of 8 July 2026. It was published in the Official Journal on 24 July 2026 and entered into force on 27 July 2026 [Verified]. It moved the high-risk dates: Annex III systems to 2 December 2027, and Annex I product-embedded systems to 2 August 2028 [Verified]. See [section 2 of the hub](01_EU_AI_Regulatory_Hub.md#2-ai-act-timeline).
 
 ## Where to start
 

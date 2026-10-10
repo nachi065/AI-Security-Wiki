@@ -41,7 +41,7 @@ AI risk cannot be delegated to the security team alone. Product owners, data own
 
 The AI Act is Regulation (EU) 2024/1689 [7]. General-purpose AI obligations have applied since 2 August 2025. In 2026 EU institutions agreed an "AI Omnibus" amending the timetable. Secondary sources report **[Reported]** that:
 
-- the omnibus was published as Regulation (EU) 2026/1744 on 24 July 2026 and entered into force on 27 July 2026;
+- the omnibus was published as Regulation (EU) 2026/1744 on 24 July 2026 and entered into force on 27 July 2026 (checked against the Official Journal on 10 October 2026);
 - obligations for stand-alone high-risk systems (Annex III) now apply from **2 December 2027**, and for high-risk AI as safety components in regulated products (Annex I) from **2 August 2028**;
 - Article 50 transparency obligations apply from 2 August 2026, with a grace period for watermarking of systems already on the market until 2 December 2026;
 - new prohibited practices relating to AI-generated child sexual abuse material and non-consensual intimate deepfakes were added [8].

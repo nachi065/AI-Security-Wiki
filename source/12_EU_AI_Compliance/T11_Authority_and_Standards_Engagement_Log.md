@@ -44,7 +44,7 @@ Fill the duties and sources only from primary texts that you have checked. Autho
 
 | Item | Status as reported | Check date | Action |
 |---|---|---|---|
-| Omnibus regulation number and entry into force | Sources conflict [Conflict] | | Confirm in the OJ |
+| Omnibus regulation number and entry into force | Regulation (EU) 2026/1744; in force 27 July 2026 [Verified] | 10 Oct 2026 | Checked in the OJ |
 | Art. 50 date nuance | [Conflict] | | |
 | Final Art. 6 high-risk guidelines | Draft; consultation closed 23 Jul 2026 [Reported] | | |
 | EN 18286:2026 OJ citation | Pending [Reported] | | |
