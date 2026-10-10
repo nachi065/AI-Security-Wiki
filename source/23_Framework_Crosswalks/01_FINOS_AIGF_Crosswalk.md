@@ -103,7 +103,7 @@ These are the legal references the new and changed controls rely on, with what w
 | EU AI Act Article 53 | Title "Obligations for Providers of General-Purpose AI Models"; paragraph 1 includes a copyright compliance policy | artificialintelligenceact.eu, 10 Oct 2026 | Checked in a secondary source |
 | EU AI Act Article 86 | Title "Right to Explanation of Individual Decision-Making" | artificialintelligenceact.eu, 10 Oct 2026 | Checked in a secondary source |
 | GDPR Article 22 | Title "Automated individual decision-making, including profiling" | Earlier check in this project | Title only |
-| SR 11-7 | Federal Reserve and OCC supervisory guidance on model risk management, 4 April 2011 | Earlier check in this project | Date and issuers only |
+| SR 11-7, replaced by SR 26-2 and OCC Bulletin 2026-13 | SR 11-7 (4 April 2011) was superseded on 17 April 2026 by revised interagency guidance on model risk management. The revised guidance states that generative AI and agentic AI models are not within its scope | occ.gov and federalreserve.gov, 10 Oct 2026 | Checked on the regulators' pages. SR 11-7 is optional: usable as a voluntary benchmark, no longer current guidance. See the [US AI Regulatory Hub](../22_US_AI_Compliance/01_US_AI_Regulatory_Hub.md) |
 | PRA SS1/23 | Published 17 May 2023, effective 17 May 2024; a current version published and effective 23 April 2026 | Earlier check in this project | Dates only; the wiki has not mapped its principles |
 
 The EU AI Act is being amended, and the secondary source shows amended text. Article numbers and content may change again. Check every EU reference against the Official Journal of the European Union before citing it in an audit or filing.
