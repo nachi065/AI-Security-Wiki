@@ -2,7 +2,7 @@
 title: "Community Rules"
 description: "Community rules for the AI Security Wiki: how author and co-author credit works, which changes are blocked automatically, and how to contribute a page."
 author: Nachiket Sathaye
-nav_order: 13
+nav_order: 14
 ---
 
 # Community Rules

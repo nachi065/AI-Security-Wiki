@@ -26,7 +26,7 @@ This page was built from the repository at commit `a149dd1` (7 October 2026), wh
 
 ## FINOS risks to wiki risks
 
-**Match** shows how closely the wiki risk fits the FINOS risk: **Direct** (same risk) or **Partial** (overlaps part of it). The wiki risk IDs link to the [AI Risk to Control Mapping](../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.md). EU AI Act articles are the ones FINOS lists for the risk.
+**Match** shows how closely the wiki risk fits the FINOS risk: **Direct** (same risk) or **Partial** (overlaps part of it). AIR-RC-022 is a regulatory compliance risk that names human oversight as one of several supervisory duties, so it matches AI-R28 directly and AI-R19 only in part; FINOS has no separate risk for human oversight. The wiki risk IDs link to the [AI Risk to Control Mapping](../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.md). EU AI Act articles are the ones FINOS lists for the risk.
 
 | FINOS risk | Title | FINOS status | Wiki risks | Match | EU AI Act (per FINOS) |
 |---|---|---|---|---|---|
@@ -42,7 +42,7 @@ This page was built from the repository at commit `a149dd1` (7 October 2026), wh
 | AIR-OP-020 | Reputational Risk | Approved | AI-R20 | Direct | Art. 5, Art. 9, Art. 14 |
 | AIR-OP-028 | Multi-Agent Trust Boundary Violations | Approved | AI-R25 | Direct | None listed |
 | AIR-RC-001 | Information Leaked To Hosted Model | Approved | AI-R01, AI-R03, AI-R04, AI-R10 | Partial | Art. 10, Art. 13, Art. 53 |
-| AIR-RC-022 | Regulatory Compliance and Oversight | Approved | AI-R19, AI-R28 | Direct | Art. 8, Art. 10, Art. 16, Art. 21, Art. 27 |
+| AIR-RC-022 | Regulatory Compliance and Oversight | Approved | AI-R28, AI-R19 | Direct for AI-R28; Partial for AI-R19 | Art. 8, Art. 10, Art. 16, Art. 21, Art. 27 |
 | AIR-RC-023 | Intellectual Property (IP) and Copyright | Approved | AI-R27 | Direct | Art. 10, Art. 11, Art. 53 |
 | AIR-SEC-002 | Information Leaked to Vector Store | Approved | AI-R06 | Partial | Art. 10, Art. 15, Art. 16 |
 | AIR-SEC-008 | Tampering With the Foundational Model | Approved | AI-R08 | Partial | Art. 15, Art. 16, Art. 53 |
