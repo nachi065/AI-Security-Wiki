@@ -390,11 +390,11 @@ nav_order: 22
 | Field | Value |
 |---|---|
 | **Use-Case Domain** | D09: Agent and Non-Human Identity Governance |
-| **Lifecycle Layer(s)** | L09, L02 |
+| **Lifecycle Layer(s)** | L09, L02, L12 |
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | High |
-| **Related Layer Cases** | [TC-L09-021](L09-identity-and-access-mgmt.md#tc-l09-021) |
+| **Related Layer Cases** | [TC-L09-021](L09-identity-and-access-mgmt.md#tc-l09-021), [TC-L12-030](L12-model-layer.md#tc-l12-030) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -523,11 +523,11 @@ nav_order: 22
 | Field | Value |
 |---|---|
 | **Use-Case Domain** | D09: Agent and Non-Human Identity Governance |
-| **Lifecycle Layer(s)** | L09, L06 |
+| **Lifecycle Layer(s)** | L09, L06, L13 |
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P, W |
 | **Risk Severity** | Medium |
-| **Related Layer Cases** | [TC-L06-035](L06-agent-orchestration-layer.md#tc-l06-035) |
+| **Related Layer Cases** | [TC-L06-035](L06-agent-orchestration-layer.md#tc-l06-035), [TC-L13-026](L13-training-and-fine-tuning-layer.md#tc-l13-026) |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
 | **OWASP LLM / GenAI Mapping** | N/A |
 | **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
@@ -791,11 +791,11 @@ nav_order: 22
 | Field | Value |
 |---|---|
 | **Use-Case Domain** | D09: Agent and Non-Human Identity Governance |
-| **Lifecycle Layer(s)** | L09, L17 |
+| **Lifecycle Layer(s)** | L09, L17, L06 |
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A, P |
 | **Risk Severity** | High |
-| **Related Layer Cases** | [TC-L09-006](L09-identity-and-access-mgmt.md#tc-l09-006), [TC-L09-025](L09-identity-and-access-mgmt.md#tc-l09-025) |
+| **Related Layer Cases** | [TC-L09-006](L09-identity-and-access-mgmt.md#tc-l09-006), [TC-L09-025](L09-identity-and-access-mgmt.md#tc-l09-025), [TC-L06-045](L06-agent-orchestration-layer.md#tc-l06-045) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -858,11 +858,11 @@ nav_order: 22
 | Field | Value |
 |---|---|
 | **Use-Case Domain** | D09: Agent and Non-Human Identity Governance |
-| **Lifecycle Layer(s)** | L09 |
+| **Lifecycle Layer(s)** | L09, L06 |
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P, W |
 | **Risk Severity** | High |
-| **Related Layer Cases** | [TC-L09-001](L09-identity-and-access-mgmt.md#tc-l09-001) |
+| **Related Layer Cases** | [TC-L09-001](L09-identity-and-access-mgmt.md#tc-l09-001), [TC-L06-043](L06-agent-orchestration-layer.md#tc-l06-043) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
@@ -992,11 +992,11 @@ nav_order: 22
 | Field | Value |
 |---|---|
 | **Use-Case Domain** | D09: Agent and Non-Human Identity Governance |
-| **Lifecycle Layer(s)** | L09, L15 |
+| **Lifecycle Layer(s)** | L09, L15, L12, L13 |
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
-| **Related Layer Cases** | [TC-L09-024](L09-identity-and-access-mgmt.md#tc-l09-024) |
+| **Related Layer Cases** | [TC-L09-024](L09-identity-and-access-mgmt.md#tc-l09-024), [TC-L13-021](L13-training-and-fine-tuning-layer.md#tc-l13-021), [TC-L12-026](L12-model-layer.md#tc-l12-026) |
 | **MITRE ATLAS Mapping** | AML.T0055 Unsecured Credentials |
 | **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
@@ -1193,11 +1193,11 @@ nav_order: 22
 | Field | Value |
 |---|---|
 | **Use-Case Domain** | D09: Agent and Non-Human Identity Governance |
-| **Lifecycle Layer(s)** | L09, L16 |
+| **Lifecycle Layer(s)** | L09, L16, L06 |
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | High |
-| **Related Layer Cases** | [TC-L16-010](L16-supply-chain-and-third-party.md#tc-l16-010) |
+| **Related Layer Cases** | [TC-L16-010](L16-supply-chain-and-third-party.md#tc-l16-010), [TC-L06-043](L06-agent-orchestration-layer.md#tc-l06-043) |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |

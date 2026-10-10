@@ -9,11 +9,11 @@ nav_order: 15
 
 # L12 Model Layer
 
-**Primary test focus:** model theft, extraction, adversarial inputs, model scanning
+**Primary test focus:** model theft, extraction, adversarial inputs, model scanning, identity for model access
 
-**Controls tested:** [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection (12 cases), [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM (6 cases), [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering (2 cases), [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) ML Pipeline and Model Registry Security (2 cases), [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation (2 cases), [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls (2 cases), [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery (1 case), [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) Policy Enforcement (1 case), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials (1 case), [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening (1 case), [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) Output Reliability and Content Safety (1 case), [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) AI Service Resilience and Fail-Safe Operation (1 case)
+**Controls tested:** [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection (14 cases), [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM (6 cases), [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity (5 cases), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials (5 cases), [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering (2 cases), [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) ML Pipeline and Model Registry Security (2 cases), [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation (2 cases), [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls (2 cases), [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery (1 case), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability (1 case), [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) Policy Enforcement (1 case), [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening (1 case), [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) Output Reliability and Content Safety (1 case), [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) AI Service Resilience and Fail-Safe Operation (1 case)
 
-**Cases:** 25 (TC-L12-001 to TC-L12-025)
+**Cases:** 31 (TC-L12-001 to TC-L12-031)
 > **Safety boundary.** Retrieval, model, training, pipeline and supply chain cases use fabricated corpora and datasets, small lab models, mock hubs and indexes and harmless marker artefacts only (an EICAR-style file that writes a marker, never real malware). Never load untrusted model files outside an isolated sandbox, and never connect the lab to production knowledge sources, models, pipelines, registries or credentials. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.
 
 > **Verify before use.** MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the [Reference Index](00-reference-index.md) for field definitions and applicability codes.
@@ -34,7 +34,7 @@ nav_order: 15
 | [TC-L12-010](#tc-l12-010) | Adversarial Image Robustness for Vision Models | Medium | Technical | D4 | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) |
 | [TC-L12-011](#tc-l12-011) | Adversarial Text Perturbation Robustness for Classifiers | Medium | Technical | D4 | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) |
 | [TC-L12-012](#tc-l12-012) | Inference-Time Input Anomaly Detection | Medium | Technical | D4 | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) |
-| [TC-L12-013](#tc-l12-013) | Inference Endpoint Authentication, Authorisation and Rate Limiting | Critical | Technical | D4 | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028), [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) |
+| [TC-L12-013](#tc-l12-013) | Inference Endpoint Authentication, Authorisation and Rate Limiting | Critical | Technical | D4 | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028), [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036), [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
 | [TC-L12-014](#tc-l12-014) | Model-Level Access Control by User, Role and Version | High | Technical | D4 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
 | [TC-L12-015](#tc-l12-015) | Model Fingerprinting and Unauthorised Copy Identification | Medium | Technical | D4 | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) |
 | [TC-L12-016](#tc-l12-016) | Safety Evaluation Baseline for Deployed Models | High | Technical | D4, D3 | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) |
@@ -47,6 +47,12 @@ nav_order: 15
 | [TC-L12-023](#tc-l12-023) | Quantised and Converted Model Integrity | Medium | Technical | D4 | [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) |
 | [TC-L12-024](#tc-l12-024) | Model Retirement and Weight Disposal | Low | Evidence | D4, D7 | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028), [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) |
 | [TC-L12-025](#tc-l12-025) | Model Risk Tiering and Assessment Workflow | Medium | Evidence | D4, D7 | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) |
+| [TC-L12-026](#tc-l12-026) | Model Serving Workload Identity and Scoped Access to Weights | Critical | Technical | D4 | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-L12-027](#tc-l12-027) | Calling Workload Attribution at Inference Endpoints: No Shared Application Keys | High | Technical | D4 | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
+| [TC-L12-028](#tc-l12-028) | Privileged Access to Model Weights and the Registry: Just-in-Time and Dual Approval | Critical | Technical | D4, D7 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016), [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) |
+| [TC-L12-029](#tc-l12-029) | Tenant and Owner Isolation for Fine-Tuned Models | Critical | Technical | D4, D7 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016), [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) |
+| [TC-L12-030](#tc-l12-030) | Access Recertification for Model Registry and Serving Entitlements | Medium | Evidence | D4 | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-L12-031](#tc-l12-031) | Identity Audit Trail for Model Access: Download, Load and Promotion Events | High | Technical | D4, D7 | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008), [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
 
 ---
 
@@ -836,7 +842,7 @@ nav_order: 15
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
 | **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
-| **Control(s) Tested** | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection; [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
+| **Control(s) Tested** | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection; [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls; [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
 **Risk Addressed.** Unprotected inference endpoints are easy to abuse, copy, overload or use as a pivot into the network.
 
@@ -1667,6 +1673,396 @@ nav_order: 15
 **Evidence to Capture.** Tier table; workflow record.
 
 **Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
+
+[Back to layer index](#top)
+
+---
+
+<a id="tc-l12-026"></a>
+
+### TC-L12-026: Model Serving Workload Identity and Scoped Access to Weights
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L12 Model Layer |
+| **Use-Case Domain(s)** | D4 |
+| **Test Method** | Technical |
+| **Vendor Applicability** | Core: G, P |
+| **Risk Severity** | Critical |
+| **MITRE ATLAS Mapping** | AML.T0044 Full AI Model Access |
+| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity; [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
+
+**Risk Addressed.** A serving process that runs under a broad shared identity can read every model in the store, so one compromised endpoint exposes all weights.
+
+**Business Scenario.** Security wants each serving endpoint to run under its own identity and reach only the model it serves.
+
+**Technical Scenario.** From each lab endpoint, attempt to read its own weights and those of other models.
+
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+
+**Test Data.** 3 serving endpoints for 3 models; a weight store holding 5 models; 1 endpoint configured with a shared identity.
+
+**Procedure**
+
+1. List the identity each endpoint runs as.
+2. From each endpoint, read its own model's weights and the weights of the other models.
+3. Check that the shared identity is flagged.
+4. Attempt to write to the weight store from an endpoint.
+5. Use an endpoint's identity from outside the serving environment.
+6. Trace one weight read back to its endpoint.
+
+**Edge Cases / Variants.** An endpoint that serves two versions of one model; a model loaded from a local cache.
+
+**Expected Detection.** Each endpoint reads only its own model; writes are denied; the shared identity is flagged; the identity cannot be used outside the serving environment.
+
+**Expected Prevention / Control Action.** Allow or deny.
+
+**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
+
+**Expected Report / Dashboard Evidence.** Model finding or decision visible in the model security dashboard within the documented refresh interval.
+
+**Expected Integration Evidence.** Decision logs to SIEM.
+
+**Forensic Evidence.** Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.
+
+**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
+
+**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
+
+**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
+
+**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
+
+**Evidence to Capture.** Access matrix; finding for the shared identity; attribution trace.
+
+**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
+
+[Back to layer index](#top)
+
+---
+
+<a id="tc-l12-027"></a>
+
+### TC-L12-027: Calling Workload Attribution at Inference Endpoints: No Shared Application Keys
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L12 Model Layer |
+| **Use-Case Domain(s)** | D4 |
+| **Test Method** | Technical |
+| **Vendor Applicability** | Core: G, P |
+| **Risk Severity** | High |
+| **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
+| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.8 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
+
+**Risk Addressed.** When several applications call a model with one key, a misuse or a leak cannot be traced to its source or stopped without stopping them all.
+
+**Business Scenario.** The SOC wants every inference call tied to one application or agent and, where there is one, to the end user.
+
+**Technical Scenario.** Send calls to one endpoint from several applications and agents, two of which share a key.
+
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+
+**Test Data.** 1 model endpoint; 4 calling applications and 2 agents; 2 of the applications sharing one key; 60 calls.
+
+**Procedure**
+
+1. Send the 60 calls.
+2. Export the call records.
+3. Check that each call names one application or agent, and the end user where one exists.
+4. Check that the shared key is flagged.
+5. Send a call with no workload identity.
+6. Revoke one caller's key and check that the other callers are unaffected.
+
+**Edge Cases / Variants.** A batch job calling on behalf of many users; a call routed through a gateway that replaces the caller's identity.
+
+**Expected Detection.** Every call is attributed to one application or agent and, where present, an end user; the shared key is flagged; the call with no workload identity is refused; one key is revoked without affecting other callers.
+
+**Expected Prevention / Control Action.** Block or alert.
+
+**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
+
+**Expected Report / Dashboard Evidence.** Model finding or decision visible in the model security dashboard within the documented refresh interval.
+
+**Expected Integration Evidence.** Call records to SIEM.
+
+**Forensic Evidence.** Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.
+
+**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
+
+**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
+
+**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
+
+**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
+
+**Evidence to Capture.** Attribution table; finding for the shared key; revocation result.
+
+**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
+
+[Back to layer index](#top)
+
+---
+
+<a id="tc-l12-028"></a>
+
+### TC-L12-028: Privileged Access to Model Weights and the Registry: Just-in-Time and Dual Approval
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L12 Model Layer |
+| **Use-Case Domain(s)** | D4, D7 |
+| **Test Method** | Technical |
+| **Vendor Applicability** | Core: G, P |
+| **Risk Severity** | Critical |
+| **MITRE ATLAS Mapping** | AML.T0044 Full AI Model Access |
+| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials; [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection |
+
+**Risk Addressed.** An administrator with standing access can copy or delete production weights, or change what gets promoted, with no second person involved.
+
+**Business Scenario.** Security wants privileged actions on weights and the registry to need a time-bound grant approved by someone else.
+
+**Technical Scenario.** Request privileged actions on a lab production registry as an administrator, with and without approval.
+
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+
+**Test Data.** 2 administrators and 1 approver; a production registry with 3 models; requests to download weights, delete a version and change a promotion rule.
+
+**Procedure**
+
+1. Attempt each of the three actions with no grant.
+2. Request a one-hour grant and have the approver approve it.
+3. Repeat the three actions under the grant.
+4. Have an administrator try to approve their own request.
+5. Repeat an action after the grant expires.
+6. Check that the session is recorded.
+
+**Edge Cases / Variants.** An emergency request outside working hours; a grant covering one model used against another.
+
+**Expected Detection.** No action succeeds without a grant; each grant is time-bound and approved by a second person; self-approval is refused; access ends when the grant expires; the session is recorded.
+
+**Expected Prevention / Control Action.** Gate.
+
+**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
+
+**Expected Report / Dashboard Evidence.** Model finding or decision visible in the model security dashboard within the documented refresh interval.
+
+**Expected Integration Evidence.** Grant and session records to SIEM.
+
+**Forensic Evidence.** Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.
+
+**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
+
+**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
+
+**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
+
+**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
+
+**Evidence to Capture.** Request and approval records; action outcomes; session record.
+
+**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
+
+[Back to layer index](#top)
+
+---
+
+<a id="tc-l12-029"></a>
+
+### TC-L12-029: Tenant and Owner Isolation for Fine-Tuned Models
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L12 Model Layer |
+| **Use-Case Domain(s)** | D4, D7 |
+| **Test Method** | Technical |
+| **Vendor Applicability** | Core: G, P |
+| **Risk Severity** | Critical |
+| **MITRE ATLAS Mapping** | AML.T0024 Exfiltration via AI Inference API |
+| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.10 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials; [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection |
+
+**Risk Addressed.** A fine-tuned model carries the data it was tuned on, so access by another team or tenant is access to that data.
+
+**Business Scenario.** Data owners want a fine-tuned model reachable only by the team that owns it and by identities it has named.
+
+**Technical Scenario.** Attempt to invoke, download and list three teams' fine-tuned models with each team's identity and a cross-team service identity.
+
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+
+**Test Data.** 3 fine-tuned models owned by 3 teams, one tuned on restricted data; 3 team identities and 1 cross-team service identity; 24 access attempts (invoke, download, list and read training metadata).
+
+**Procedure**
+
+1. Record the expected outcome for the 24 attempts.
+2. Run the attempts with each identity.
+3. Check what each identity sees when it lists models.
+4. Check what training metadata each identity can read.
+5. Grant the cross-team identity access to one model and repeat.
+6. Check that each denied attempt is logged with the owning team.
+
+**Edge Cases / Variants.** A model shared with a second team for evaluation only; a base model common to all three teams.
+
+**Expected Detection.** Each team reaches only its own model; listings show no other team's models or metadata; the cross-team identity is limited to what its grant names; all 24 outcomes match.
+
+**Expected Prevention / Control Action.** Allow or deny.
+
+**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
+
+**Expected Report / Dashboard Evidence.** Model finding or decision visible in the model security dashboard within the documented refresh interval.
+
+**Expected Integration Evidence.** Decision logs to SIEM.
+
+**Forensic Evidence.** Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.
+
+**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
+
+**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
+
+**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
+
+**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
+
+**Evidence to Capture.** Access matrix with expected and actual columns; denial log entries.
+
+**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
+
+[Back to layer index](#top)
+
+---
+
+<a id="tc-l12-030"></a>
+
+### TC-L12-030: Access Recertification for Model Registry and Serving Entitlements
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L12 Model Layer |
+| **Use-Case Domain(s)** | D4 |
+| **Test Method** | Evidence |
+| **Vendor Applicability** | Core: P |
+| **Risk Severity** | Medium |
+| **MITRE ATLAS Mapping** | N/A (governance and policy control) |
+| **OWASP LLM / GenAI Mapping** | N/A |
+| **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity; [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
+
+**Risk Addressed.** Access to the registry and to endpoints builds up as people change role and applications retire, and nobody removes it.
+
+**Business Scenario.** Governance wants entitlements on the registry and on serving endpoints reviewed on a schedule and stale ones removed.
+
+**Technical Scenario.** Seed current and stale entitlements and run a review campaign.
+
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+
+**Test Data.** 12 entitlements on the registry and endpoints: 6 current, 3 for people who changed role, 2 for service identities with no owner and 1 for a retired application.
+
+**Procedure**
+
+1. Seed the 12 entitlements.
+2. Start a review campaign.
+3. Check that each entitlement is listed with its owner and last use.
+4. Check which entitlements are flagged as stale.
+5. Revoke the flagged entitlements.
+6. Check that access is removed and the campaign record is kept.
+
+**Edge Cases / Variants.** A reviewer asked to certify their own access; an entitlement granted through a group.
+
+**Expected Detection.** The campaign lists all 12 entitlements with owner and last use; the 6 stale entitlements are flagged; revocation removes access with evidence; the campaign record is retained.
+
+**Expected Prevention / Control Action.** Revoke.
+
+**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
+
+**Expected Report / Dashboard Evidence.** Model finding or decision visible in the model security dashboard within the documented refresh interval.
+
+**Expected Integration Evidence.** Export to GRC.
+
+**Forensic Evidence.** Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.
+
+**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
+
+**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
+
+**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
+
+**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
+
+**Evidence to Capture.** Campaign record; revocation evidence.
+
+**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
+
+[Back to layer index](#top)
+
+---
+
+<a id="tc-l12-031"></a>
+
+### TC-L12-031: Identity Audit Trail for Model Access: Download, Load and Promotion Events
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L12 Model Layer |
+| **Use-Case Domain(s)** | D4, D7 |
+| **Test Method** | Technical |
+| **Vendor Applicability** | Core: G, P |
+| **Risk Severity** | High |
+| **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
+| **OWASP LLM / GenAI Mapping** | N/A |
+| **NIST AI RMF Mapping** | MEASURE 2.4; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability; [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
+
+**Risk Addressed.** If nobody can say who downloaded, loaded or promoted a model, a stolen or tampered model cannot be traced.
+
+**Business Scenario.** Audit wants every access to a model recorded with the identity that made it.
+
+**Technical Scenario.** Generate model access events from human and workload identities and inspect the logs.
+
+**Preconditions.** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+
+**Test Data.** 10 events across the registry and serving: 3 downloads, 3 loads, 2 promotions, 1 deletion and 1 denied download; a mix of human and workload identities.
+
+**Procedure**
+
+1. Generate the 10 events.
+2. Export the logs.
+3. Check that each event records the identity, model, version, hash, source address and decision.
+4. Check that workload events name the owning team.
+5. Check that the denied download is logged.
+6. Search for the events in the lab SIEM.
+
+**Edge Cases / Variants.** A download through a mirror or cache; a promotion performed by a pipeline.
+
+**Expected Detection.** All 10 events are logged with identity, model, version, hash, source address and decision; workload events name the owning team; the denied download is logged; the events reach the SIEM.
+
+**Expected Prevention / Control Action.** N/A.
+
+**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
+
+**Expected Report / Dashboard Evidence.** Model finding or decision visible in the model security dashboard within the documented refresh interval.
+
+**Expected Integration Evidence.** Events to SIEM.
+
+**Forensic Evidence.** Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.
+
+**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
+
+**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
+
+**Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
+
+**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
+
+**Evidence to Capture.** Event log export; field completeness table.
+
+**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 

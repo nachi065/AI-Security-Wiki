@@ -1,9 +1,9 @@
 ---
 title: "Home"
-description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and 632 test cases."
+description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and 653 test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.22
+version: 2.23
 status: Published
 author: Nachiket Sathaye
 coauthors: Ankush Jain
@@ -17,7 +17,7 @@ last_updated: 2026-10-10
 # AI Security Wiki Home
 
 > **Document Type:** Enterprise AI Security Reference Architecture and Governance Wiki  
-> **Version:** 2.22  
+> **Version:** 2.23  
 > **Status:** Published  
 > **Original Author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
 > **Co-Author:** Ankush Jain ([about the co-author](#23-about-the-co-author))  
@@ -47,7 +47,7 @@ This wiki is the implementation layer: control objectives, evidence, audit proce
 | Set up a first, short AI governance baseline | AI Baseline Control Framework (AI BCF) | Control objectives, evidence and tests, through the [AI BCF crosswalk](23_Framework_Crosswalks/02_AI_BCF_Crosswalk.md) |
 | Structure a management system | ISO/IEC 42001 with ISO/IEC 27001 | Technical control objectives and test criteria |
 | Structure risk language and a programme | NIST AI RMF | Engineering controls, evidence and scoring |
-| Define attack classes for testing | OWASP lists, MITRE ATLAS, NIST AI 100-2 | The 632-case test library |
+| Define attack classes for testing | OWASP lists, MITRE ATLAS, NIST AI 100-2 | The 653-case test library |
 | Meet regional legal duties | The primary legal texts | The [Regional AI Regulatory Hub](11_GCC_AI_Compliance/index.md) sections |
 | Decide which risks apply to a use case | n/a | The [use-case risk triage](02_Risk_Management/02F_AI_Use_Case_Risk_Triage.md) |
 
@@ -203,7 +203,7 @@ Review, Improve, Renew, or Retire
   Operating model, acceptable AI use, approvals, committees, responsibilities, and reporting cadence.
 
 10_Test_Case_Library/
-  632 detailed product evaluation test cases across 17 AI lifecycle layers and 6 emerging domains, with reference index,
+  653 detailed product evaluation test cases across 17 AI lifecycle layers and 6 emerging domains, with reference index,
   lab prerequisites, and framework adoption guide.
 
 11_GCC_AI_Compliance/
@@ -433,6 +433,7 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 | 2.20 | 2026-10-10 | Nachiket Sathaye | EU AI Compliance: checked twelve crosswalk rows against the Official Journal or the issuing body's page and tagged them [Verified], with the primary URL and retrieval date. The Digital Omnibus on AI is confirmed as Regulation (EU) 2026/1744, in force since 27 July 2026, with the high-risk dates of 2 December 2027 and 2 August 2028. |
 | 2.21 | 2026-10-10 | Nachiket Sathaye | GCC AI Compliance: checked four crosswalk rows (S2, S3, S4 and B1) against documents on the SDAIA and Bahrain Personal Data Protection Authority sites and tagged them [Verified]. SDAIA's current AI Ethics Principles document is SDAIA-P114E, version 1, May 2025. Most other government sites refused automated retrieval, so the remaining rows keep their tags. |
 | 2.22 | 2026-10-10 | Nachiket Sathaye | Framework Crosswalks: added five pages. Four are generated at build time from the control library and the test cases (NIST AI RMF, ISO/IEC 42001, the OWASP Top 10 lists and MITRE ATLAS). The fifth maps the twelve generative AI risks in NIST AI 600-1 to the wiki's risks and controls. |
+| 2.23 | 2026-10-10 | Nachiket Sathaye | Added 21 test cases: nine on agent-to-agent communication (TC-L06-038 to TC-L06-046), six on identity for training jobs (TC-L13-021 to TC-L13-026) and six on identity for model serving and registries (TC-L12-026 to TC-L12-031). AI-CTRL-006 and AI-CTRL-015 now cite OWASP ASI07, AI-CTRL-016 maps to AI-R08, and three controls gained wording on agent-to-agent and workload identity. The library holds 653 cases. |
 
 ## 21. Quick Links
 
@@ -448,7 +449,7 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 - [Sovereign AI, UAE Compliance and Data Residency Requirements](04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.md)
 - [AI Security Vendor Evaluation Master Framework](05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.md)
 - [AI Security PoC Test Case Library](06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md)
-- [Test Case Library (632 cases, 17 layers and 6 emerging domains)](10_Test_Case_Library/index.md)
+- [Test Case Library (653 cases, 17 layers and 6 emerging domains)](10_Test_Case_Library/index.md)
 - [GCC AI Compliance (regulatory hub, role guides and templates)](11_GCC_AI_Compliance/index.md)
 - [EU AI Compliance (AI Act hub, role guides and templates)](12_EU_AI_Compliance/index.md)
 - [Australia AI Compliance (regulatory hub, role guide and templates)](13_Australia_AI_Compliance/index.md)

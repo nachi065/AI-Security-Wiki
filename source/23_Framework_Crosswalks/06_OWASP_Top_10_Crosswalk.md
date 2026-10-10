@@ -28,7 +28,7 @@ The tables are generated each time the site is built. They are read from the OWA
 
 - **Wiki controls** are the control objectives whose record cites the item.
 - **Test cases under those controls** counts the distinct test cases that test at least one of those controls.
-- **Test cases that cite it** counts the test cases whose own record names the item. Test cases name items from the LLM list only, so this column is zero for the agentic list.
+- **Test cases that cite it** counts the test cases whose own record names the item. Most test cases name items from the LLM list only. The agent-to-agent cases also name ASI07, so it is the one agentic item with a count in this column.
 
 ## Items to wiki controls
 

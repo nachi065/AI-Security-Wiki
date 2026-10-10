@@ -36,7 +36,7 @@
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/04_Domain_Standards/06_Browser_AI_Security_Standard.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html</loc><lastmod>2026-10-10</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/04_Domain_Standards/10B_Sector_Overlays.html</loc><lastmod>2026-10-10</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/05_Vendor_Evaluation/</loc><lastmod>2026-10-08</lastmod></url>
@@ -62,20 +62,20 @@
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/L03-legal-privacy-and-compliance.html</loc><lastmod>2026-10-10</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/L04-human-interaction-layer.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/L05-ai-applications.html</loc><lastmod>2026-10-10</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/L06-agent-orchestration-layer.html</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/L06-agent-orchestration-layer.html</loc><lastmod>2026-10-10</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/L07-prompt-and-context-layer.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/L08-ai-gateway-and-security-controls.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/L09-identity-and-access-mgmt.html</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/L09-identity-and-access-mgmt.html</loc><lastmod>2026-10-10</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/L10-data-layer.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/L12-model-layer.html</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/L12-model-layer.html</loc><lastmod>2026-10-10</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/L13-training-and-fine-tuning-layer.html</loc><lastmod>2026-10-10</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/L14-mlops-llmops-layer.html</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/L14-mlops-llmops-layer.html</loc><lastmod>2026-10-10</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/L15-infrastructure-layer.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/L16-supply-chain-and-third-party.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/L17-monitoring-detection-and-response.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html</loc><lastmod>2026-10-10</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/D10-browser-and-computer-use-agents.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/D11-multimodal-and-voice-input-security.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/D12-ai-incident-response-and-forensics.html</loc><lastmod>2026-10-07</lastmod></url>

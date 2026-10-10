@@ -9,11 +9,11 @@ nav_order: 16
 
 # L13 Training & Fine-Tuning Layer
 
-**Primary test focus:** data poisoning, dataset provenance, fine-tune integrity
+**Primary test focus:** data poisoning, dataset provenance, fine-tune integrity, training job identity
 
-**Controls tested:** [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity (13 cases), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance (3 cases), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines (2 cases), [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) ML Pipeline and Model Registry Security (2 cases), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance (1 case), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials (1 case), [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection (1 case), [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM (1 case), [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening (1 case), [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation (1 case), [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls (1 case), [AI-CTRL-046](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-046) Intellectual Property and Copyright Governance (1 case)
+**Controls tested:** [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity (14 cases), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials (5 cases), [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity (4 cases), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance (3 cases), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines (2 cases), [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) ML Pipeline and Model Registry Security (2 cases), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability (1 case), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance (1 case), [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection (1 case), [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM (1 case), [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening (1 case), [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation (1 case), [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls (1 case), [AI-CTRL-046](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-046) Intellectual Property and Copyright Governance (1 case)
 
-**Cases:** 20 (TC-L13-001 to TC-L13-020)
+**Cases:** 26 (TC-L13-001 to TC-L13-026)
 > **Safety boundary.** Retrieval, model, training, pipeline and supply chain cases use fabricated corpora and datasets, small lab models, mock hubs and indexes and harmless marker artefacts only (an EICAR-style file that writes a marker, never real malware). Never load untrusted model files outside an isolated sandbox, and never connect the lab to production knowledge sources, models, pipelines, registries or credentials. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.
 
 > **Verify before use.** MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the [Reference Index](00-reference-index.md) for field definitions and applicability codes.
@@ -42,6 +42,12 @@ nav_order: 16
 | [TC-L13-018](#tc-l13-018) | Feedback Loop and Preference Data Poisoning | High | Technical | D4, D3 | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) |
 | [TC-L13-019](#tc-l13-019) | Data Deletion and Unlearning Request Handling | Medium | Evidence | D7, D6 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
 | [TC-L13-020](#tc-l13-020) | Unauthorised Training Compute and Resource Abuse | Medium | Technical | D4 | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) |
+| [TC-L13-021](#tc-l13-021) | Training Job Workload Identity: Unique Identity Per Job, No Static Keys | Critical | Technical | D4 | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-L13-022](#tc-l13-022) | Least-Privilege Dataset Access Scoped to the Approved Training Run | High | Technical | D4 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016), [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) |
+| [TC-L13-023](#tc-l13-023) | Training Credential Lifetime and Revocation at Job End | High | Technical | D4 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-L13-024](#tc-l13-024) | Human Access to Training Environments: Roles, Just-in-Time Access and Separation of Duties | High | Technical | D4 | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
+| [TC-L13-025](#tc-l13-025) | Identity Attribution in Training Run Records | High | Technical | D4, D7 | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) |
+| [TC-L13-026](#tc-l13-026) | Dormant and Orphaned Training Identities | Medium | Evidence | D4 | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
 
 ---
 
@@ -1334,6 +1340,396 @@ nav_order: 16
 **Evidence to Capture.** Detection timeline; quota logs.
 
 **Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
+
+[Back to layer index](#top)
+
+---
+
+<a id="tc-l13-021"></a>
+
+### TC-L13-021: Training Job Workload Identity: Unique Identity Per Job, No Static Keys
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L13 Training & Fine-Tuning Layer |
+| **Use-Case Domain(s)** | D4 |
+| **Test Method** | Technical |
+| **Vendor Applicability** | Core: P |
+| **Risk Severity** | Critical |
+| **MITRE ATLAS Mapping** | AML.T0055 Unsecured Credentials |
+| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity; [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
+
+**Risk Addressed.** Training jobs that share one long-lived key cannot be told apart, and a leak from any of them exposes every dataset the key can reach.
+
+**Business Scenario.** Security wants each training job to run under its own identity with a named owner, and no stored keys.
+
+**Technical Scenario.** Inventory the identities used by lab training jobs, two of which are deliberately misconfigured.
+
+**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
+
+**Test Data.** 4 training jobs across 2 teams and 2 environments; 1 job configured with a static key in an environment variable; 1 job sharing a key with another.
+
+**Procedure**
+
+1. List the identity each of the four jobs runs as.
+2. Check that each job has its own workload identity and a named owner.
+3. Check that the static key and the shared key are flagged.
+4. Check that credentials are issued when the job starts and are not stored in the job definition or image.
+5. Start a job that has no registered identity.
+6. Trace one dataset read back to the job and its owner.
+
+**Edge Cases / Variants.** A job launched from a notebook under a personal account; a job that spawns worker processes.
+
+**Expected Detection.** Each job maps to one identity and one owner; the static key and the shared key are flagged; the unregistered job is refused or flagged; the dataset read is attributed to the job.
+
+**Expected Prevention / Control Action.** Block or alert.
+
+**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
+
+**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
+
+**Expected Integration Evidence.** Findings to SIEM.
+
+**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
+
+**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
+
+**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
+
+**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
+
+**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
+
+**Evidence to Capture.** Identity inventory; findings; attribution trace.
+
+**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
+
+[Back to layer index](#top)
+
+---
+
+<a id="tc-l13-022"></a>
+
+### TC-L13-022: Least-Privilege Dataset Access Scoped to the Approved Training Run
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L13 Training & Fine-Tuning Layer |
+| **Use-Case Domain(s)** | D4 |
+| **Test Method** | Technical |
+| **Vendor Applicability** | Core: P |
+| **Risk Severity** | High |
+| **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
+| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 1.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials; [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity |
+
+**Risk Addressed.** A training identity that can read every dataset, or write back to its sources, turns one job into a route to all training data.
+
+**Business Scenario.** Data owners want a training job to reach only the datasets approved for that run, read-only.
+
+**Technical Scenario.** Attempt reads, writes and listings from a training identity against approved and unapproved datasets.
+
+**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
+
+**Test Data.** 6 datasets (3 approved for the run, 2 not approved, 1 restricted); 1 training identity; 12 access attempts (reads, writes to source and listings).
+
+**Procedure**
+
+1. Record the datasets approved for the run.
+2. Read each of the 6 datasets with the training identity.
+3. Attempt to write to each approved source dataset.
+4. List the storage location and record what is visible.
+5. Add a dataset to the approval and check how soon access follows.
+6. Remove the approval mid-run and repeat a read.
+
+**Edge Cases / Variants.** A dataset reached through a symbolic link or a shared cache; a derived dataset built from a restricted one.
+
+**Expected Detection.** Reads of the 3 approved datasets allowed; reads of the other 3 denied; all writes to source datasets denied; listings show approved datasets only.
+
+**Expected Prevention / Control Action.** Allow or deny.
+
+**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
+
+**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
+
+**Expected Integration Evidence.** Decision logs to SIEM.
+
+**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
+
+**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
+
+**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
+
+**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
+
+**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
+
+**Evidence to Capture.** Access matrix with expected and actual outcomes.
+
+**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
+
+[Back to layer index](#top)
+
+---
+
+<a id="tc-l13-023"></a>
+
+### TC-L13-023: Training Credential Lifetime and Revocation at Job End
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L13 Training & Fine-Tuning Layer |
+| **Use-Case Domain(s)** | D4 |
+| **Test Method** | Technical |
+| **Vendor Applicability** | Core: P |
+| **Risk Severity** | High |
+| **MITRE ATLAS Mapping** | AML.T0055 Unsecured Credentials |
+| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
+
+**Risk Addressed.** Credentials that outlive the job they were issued for can be replayed against datasets and the registry long after training ends.
+
+**Business Scenario.** Security wants a training job's credentials to stop working when the job completes, fails or is cancelled.
+
+**Technical Scenario.** Capture a credential from each of three lab jobs during the run and replay it after the job ends.
+
+**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
+
+**Test Data.** 3 jobs: one completes, one fails and one is cancelled; a credential captured from each during the run, in the lab only; checkpoint storage and job logs.
+
+**Procedure**
+
+1. Capture a credential from each job while it runs.
+2. After each job ends, replay the credential against a dataset and the registry.
+3. Record the time until each replay is refused.
+4. Compare the credential lifetime with the documented maximum.
+5. Run a job longer than the lifetime and check that renewal needs no person.
+6. Search job logs and checkpoints for the credentials.
+
+**Edge Cases / Variants.** A job paused and resumed; a job whose node is lost before it can report completion.
+
+**Expected Detection.** Replayed credentials are refused within the stated time after completion, failure and cancellation; lifetimes are within the documented maximum; no credential appears in logs or checkpoints.
+
+**Expected Prevention / Control Action.** Revoke.
+
+**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
+
+**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
+
+**Expected Integration Evidence.** Audit export.
+
+**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
+
+**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
+
+**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
+
+**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
+
+**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
+
+**Evidence to Capture.** Replay results with timings; lifetime record; search results.
+
+**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
+
+[Back to layer index](#top)
+
+---
+
+<a id="tc-l13-024"></a>
+
+### TC-L13-024: Human Access to Training Environments: Roles, Just-in-Time Access and Separation of Duties
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L13 Training & Fine-Tuning Layer |
+| **Use-Case Domain(s)** | D4 |
+| **Test Method** | Technical |
+| **Vendor Applicability** | Core: P |
+| **Risk Severity** | High |
+| **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
+| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity; [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
+
+**Risk Addressed.** One person who can start a job, approve its data and promote its model can put anything into production unseen.
+
+**Business Scenario.** Governance wants the roles in a training environment separated, and administrator access granted only for a set time.
+
+**Technical Scenario.** Test every role against a matrix of training actions.
+
+**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
+
+**Test Data.** 5 test users: data scientist, ML engineer, data owner, platform administrator and contractor; a matrix of 8 actions (start a job, read raw data, change training code, approve a dataset, promote a model, read checkpoints, change a job's identity, delete a run record).
+
+**Procedure**
+
+1. Record the expected outcome for each of the 40 combinations.
+2. Attempt each action as each user.
+3. Have the user who started a job try to approve its dataset and promote its model.
+4. Request administrator access for one hour and check that it ends.
+5. Let the contractor's access reach its expiry date.
+6. Check that each denied attempt is logged.
+
+**Edge Cases / Variants.** A user holding two roles; an action performed through the API instead of the console.
+
+**Expected Detection.** All 40 outcomes match the matrix; the person who starts a job cannot approve its dataset or promote its model; administrator access is time-bound and logged; the contractor's access ends on its expiry date.
+
+**Expected Prevention / Control Action.** Allow or deny.
+
+**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
+
+**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
+
+**Expected Integration Evidence.** Decision logs to SIEM.
+
+**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
+
+**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
+
+**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
+
+**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
+
+**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
+
+**Evidence to Capture.** Role and action matrix with expected and actual columns; access grant record.
+
+**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
+
+[Back to layer index](#top)
+
+---
+
+<a id="tc-l13-025"></a>
+
+### TC-L13-025: Identity Attribution in Training Run Records
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L13 Training & Fine-Tuning Layer |
+| **Use-Case Domain(s)** | D4, D7 |
+| **Test Method** | Technical |
+| **Vendor Applicability** | Core: P |
+| **Risk Severity** | High |
+| **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
+| **OWASP LLM / GenAI Mapping** | N/A |
+| **NIST AI RMF Mapping** | MEASURE 2.4; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity; [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability |
+
+**Risk Addressed.** A run record that does not say who started a job, and as what, cannot support an investigation into a poisoned or leaking model.
+
+**Business Scenario.** Audit wants every training run tied to the person or scheduler that started it and to the identity it ran as.
+
+**Technical Scenario.** Start runs in three different ways and inspect the records.
+
+**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
+
+**Test Data.** 6 runs: 3 started by people, 2 by a scheduler and 1 by a pipeline acting for a user.
+
+**Procedure**
+
+1. Start the 6 runs.
+2. Export the run records.
+3. Check that each record names who or what started the run.
+4. Check that each record names the workload identity, the datasets read and the model written.
+5. Check that the pipeline run records both the pipeline and the user it acted for.
+6. Attempt to edit a run record as the person who started the run.
+
+**Edge Cases / Variants.** A run restarted by an administrator; a run started through an API token.
+
+**Expected Detection.** Every run record names the initiating person or scheduler, the workload identity, the datasets read and the model written; the pipeline run records both identities; the initiator cannot edit the record.
+
+**Expected Prevention / Control Action.** N/A.
+
+**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
+
+**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
+
+**Expected Integration Evidence.** Audit export.
+
+**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
+
+**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
+
+**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
+
+**Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
+
+**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
+
+**Evidence to Capture.** Run records; field completeness table; edit attempt result.
+
+**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
+
+[Back to layer index](#top)
+
+---
+
+<a id="tc-l13-026"></a>
+
+### TC-L13-026: Dormant and Orphaned Training Identities
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L13 Training & Fine-Tuning Layer |
+| **Use-Case Domain(s)** | D4 |
+| **Test Method** | Evidence |
+| **Vendor Applicability** | Core: P |
+| **Risk Severity** | Medium |
+| **MITRE ATLAS Mapping** | N/A (governance and policy control) |
+| **OWASP LLM / GenAI Mapping** | N/A |
+| **NIST AI RMF Mapping** | GOVERN 1.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
+
+**Risk Addressed.** Training identities left behind by finished projects and departed staff keep their access to datasets and compute.
+
+**Business Scenario.** Governance wants unused and ownerless training identities found, reviewed and removed.
+
+**Technical Scenario.** Create training identities in different states and run the platform's lifecycle controls.
+
+**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
+
+**Test Data.** 8 training identities: 3 active, 2 unused for 90 days (backdated), 2 whose owner has left and 1 belonging to a retired project.
+
+**Procedure**
+
+1. Create the eight identities.
+2. Run the dormancy and ownership review.
+3. Check which identities are flagged and why.
+4. Check that a review request goes to the owner or the owner's manager.
+5. Remove one flagged identity.
+6. Check that its access to datasets, compute and the registry is revoked.
+
+**Edge Cases / Variants.** An identity used only once a quarter; an identity shared with a serving workload.
+
+**Expected Detection.** The 5 dormant or ownerless identities are flagged; review requests are sent; removal revokes access to datasets, compute and the registry with evidence.
+
+**Expected Prevention / Control Action.** Disable and revoke.
+
+**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
+
+**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
+
+**Expected Integration Evidence.** Lifecycle report.
+
+**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
+
+**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
+
+**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
+
+**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
+
+**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
+
+**Evidence to Capture.** Review output; removal evidence.
+
+**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to layer index](#top)
 

@@ -46,7 +46,7 @@ This appendix compiles the setup each layer assumes, taken directly from the Pre
 
 **Standard setup (all cases):** Isolated PoC lab provisioned; lab agent framework, mock tools, mock MCP servers and test users seeded per this appendix; platform deployed in the documented mode for agent and tool traffic.
 
-- **Lab environment** (29 cases): Lab agent framework with a controllable model or scripted agent, mock tools and mock MCP servers writing to a lab sink, canary strings registered in advance, and attack-success baseline measured with the platform disabled.
+- **Lab environment** (38 cases): Lab agent framework with a controllable model or scripted agent, mock tools and mock MCP servers writing to a lab sink, canary strings registered in advance, and attack-success baseline measured with the platform disabled.
 - **Additional setup** ([TC-L06-003](L06-agent-orchestration-layer.md#tc-l06-003)): Cross-reference L04 and L05 discovery cases.
 - **Additional setup** ([TC-L06-004](L06-agent-orchestration-layer.md#tc-l06-004)): Low-code agent tenant available in the lab.
 - **Additional setup** ([TC-L06-005](L06-agent-orchestration-layer.md#tc-l06-005)): Test MCP servers are benign and written for the lab.
@@ -54,6 +54,9 @@ This appendix compiles the setup each layer assumes, taken directly from the Pre
 - **Additional setup** ([TC-L06-025](L06-agent-orchestration-layer.md#tc-l06-025)): Probes use canary files and lab hosts only.
 - **Additional setup** ([TC-L06-031](L06-agent-orchestration-layer.md#tc-l06-031)): Computer-use agent available in the lab.
 - **Developer and IDE test bench** (2 cases): Managed test workstations with two IDE families and AI coding assistant extensions, a CLI coding agent, corporate and personal test accounts, fabricated repositories (general, restricted and infrastructure-as-code) on a lab source-control server, a mock extension marketplace, mock MCP servers and a mock URL endpoint that records requests; no real source code, tokens or keys.
+- **Additional setup** ([TC-L06-041](L06-agent-orchestration-layer.md#tc-l06-041)): Lab agent directory in which entries can be added and changed.
+- **Additional setup** ([TC-L06-042](L06-agent-orchestration-layer.md#tc-l06-042)): Lab proxy between the agent pairs, and packet capture on each link.
+- **Additional setup** ([TC-L06-043](L06-agent-orchestration-layer.md#tc-l06-043)): Second lab tenant that hosts the two external agents.
 
 ## L07 Prompt & Context Layer
 
@@ -131,13 +134,13 @@ This appendix compiles the setup each layer assumes, taken directly from the Pre
 
 **Standard setup (all cases):** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per this appendix; platform connected to the lab model environment with least-privilege test credentials.
 
-- **Lab environment** (25 cases): Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+- **Lab environment** (31 cases): Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
 
 ## L13 Training & Fine-Tuning Layer
 
 **Standard setup (all cases):** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per this appendix; platform connected with least-privilege test credentials.
 
-- **Lab environment** (20 cases): Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
+- **Lab environment** (26 cases): Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
 
 ## L14 MLOps / LLMOps Layer
 

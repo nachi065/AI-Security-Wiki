@@ -290,7 +290,7 @@
 <h2 id="l06-agent-orchestration-layer">L06 Agent Orchestration Layer</h2>
 <p><strong>Standard setup (all cases):</strong> Isolated PoC lab provisioned; lab agent framework, mock tools, mock MCP servers and test users seeded per this appendix; platform deployed in the documented mode for agent and tool traffic.</p>
 <ul>
-<li><strong>Lab environment</strong> (29 cases): Lab agent framework with a controllable model or scripted agent, mock tools and mock MCP servers writing to a lab sink, canary strings registered in advance, and attack-success baseline measured with the platform disabled.</li>
+<li><strong>Lab environment</strong> (38 cases): Lab agent framework with a controllable model or scripted agent, mock tools and mock MCP servers writing to a lab sink, canary strings registered in advance, and attack-success baseline measured with the platform disabled.</li>
 <li><strong>Additional setup</strong> (<a class="chip" href="L06-agent-orchestration-layer.html#tc-l06-003">TC-L06-003</a>): Cross-reference L04 and L05 discovery cases.</li>
 <li><strong>Additional setup</strong> (<a class="chip" href="L06-agent-orchestration-layer.html#tc-l06-004">TC-L06-004</a>): Low-code agent tenant available in the lab.</li>
 <li><strong>Additional setup</strong> (<a class="chip" href="L06-agent-orchestration-layer.html#tc-l06-005">TC-L06-005</a>): Test MCP servers are benign and written for the lab.</li>
@@ -298,6 +298,9 @@
 <li><strong>Additional setup</strong> (<a class="chip" href="L06-agent-orchestration-layer.html#tc-l06-025">TC-L06-025</a>): Probes use canary files and lab hosts only.</li>
 <li><strong>Additional setup</strong> (<a class="chip" href="L06-agent-orchestration-layer.html#tc-l06-031">TC-L06-031</a>): Computer-use agent available in the lab.</li>
 <li><strong>Developer and IDE test bench</strong> (2 cases): Managed test workstations with two IDE families and AI coding assistant extensions, a CLI coding agent, corporate and personal test accounts, fabricated repositories (general, restricted and infrastructure-as-code) on a lab source-control server, a mock extension marketplace, mock MCP servers and a mock URL endpoint that records requests; no real source code, tokens or keys.</li>
+<li><strong>Additional setup</strong> (<a class="chip" href="L06-agent-orchestration-layer.html#tc-l06-041">TC-L06-041</a>): Lab agent directory in which entries can be added and changed.</li>
+<li><strong>Additional setup</strong> (<a class="chip" href="L06-agent-orchestration-layer.html#tc-l06-042">TC-L06-042</a>): Lab proxy between the agent pairs, and packet capture on each link.</li>
+<li><strong>Additional setup</strong> (<a class="chip" href="L06-agent-orchestration-layer.html#tc-l06-043">TC-L06-043</a>): Second lab tenant that hosts the two external agents.</li>
 </ul>
 <h2 id="l07-prompt-context-layer">L07 Prompt &amp; Context Layer</h2>
 <p><strong>Standard setup (all cases):</strong> Isolated PoC lab provisioned; test application, mock model or lab-hosted model, mock tools and test users seeded per this appendix; platform deployed in the documented mode for the channel under test.</p>
@@ -369,12 +372,12 @@
 <h2 id="l12-model-layer">L12 Model Layer</h2>
 <p><strong>Standard setup (all cases):</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per this appendix; platform connected to the lab model environment with least-privilege test credentials.</p>
 <ul>
-<li><strong>Lab environment</strong> (25 cases): Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</li>
+<li><strong>Lab environment</strong> (31 cases): Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</li>
 </ul>
 <h2 id="l13-training-fine-tuning-layer">L13 Training &amp; Fine-Tuning Layer</h2>
 <p><strong>Standard setup (all cases):</strong> Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per this appendix; platform connected with least-privilege test credentials.</p>
 <ul>
-<li><strong>Lab environment</strong> (20 cases): Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</li>
+<li><strong>Lab environment</strong> (26 cases): Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.</li>
 </ul>
 <h2 id="l14-mlops-llmops-layer">L14 MLOps / LLMOps Layer</h2>
 <p><strong>Standard setup (all cases):</strong> Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per this appendix; platform connected with least-privilege test credentials.</p>
