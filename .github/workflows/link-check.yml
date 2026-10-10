@@ -1,0 +1,33 @@
+name: Link check
+
+# pull_request_target runs this file and the checker from main, so a pull
+# request cannot weaken the check. The pull request's files are only read,
+# never executed. External links are checked weekly on main only.
+on:
+  pull_request_target:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "0 5 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the trusted checker from main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: trusted
+          persist-credentials: false
+      - name: Check out the files to verify
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: candidate
+          persist-credentials: false
+      - run: python3 trusted/check_links.py --root candidate ${{ (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && '--external' || '' }}

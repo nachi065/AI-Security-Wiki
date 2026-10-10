@@ -45,6 +45,7 @@ The footer also shows the date the page last changed, taken from the repository 
 ## What to expect
 
 - Every pull request is reviewed by the maintainer before it is merged.
+- Two automated checks run on every pull request. One protects author credit. The other fails if a link inside the wiki points to a page or heading that does not exist, or if a page cites a risk, control or test case ID that is not defined. Links to other websites are checked weekly on the main branch, so a pull request never fails because an outside site moved a page.
 - Keep content vendor-neutral and free of confidential, personal or organization-specific information.
 - Not sure whether an idea fits? [Open an issue](https://github.com/nachi065/AI-Security-Wiki/issues) first.
 - Think a rule should change? Suggestions are welcome. Rules change when a proposal is justified and mutually agreed with the maintainer; see [Suggesting changes to these rules](https://nachi065.github.io/AI-Security-Wiki/community-rules.html#suggesting-changes-to-these-rules).
