@@ -3,7 +3,7 @@ title: "Home"
 description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and 632 test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.21
+version: 2.22
 status: Published
 author: Nachiket Sathaye
 coauthors: Ankush Jain
@@ -17,7 +17,7 @@ last_updated: 2026-10-10
 # AI Security Wiki Home
 
 > **Document Type:** Enterprise AI Security Reference Architecture and Governance Wiki  
-> **Version:** 2.21  
+> **Version:** 2.22  
 > **Status:** Published  
 > **Original Author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
 > **Co-Author:** Ankush Jain ([about the co-author](#23-about-the-co-author))  
@@ -432,6 +432,7 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 | 2.19 | 2026-10-10 | Nachiket Sathaye | Added three test cases (TC-L03-040 to TC-L03-042) for human oversight effectiveness and AI vendor terms, and pointed four existing cases at AI-CTRL-045 and AI-CTRL-046, so every control now has at least one test case. The library holds 632 cases. |
 | 2.20 | 2026-10-10 | Nachiket Sathaye | EU AI Compliance: checked twelve crosswalk rows against the Official Journal or the issuing body's page and tagged them [Verified], with the primary URL and retrieval date. The Digital Omnibus on AI is confirmed as Regulation (EU) 2026/1744, in force since 27 July 2026, with the high-risk dates of 2 December 2027 and 2 August 2028. |
 | 2.21 | 2026-10-10 | Nachiket Sathaye | GCC AI Compliance: checked four crosswalk rows (S2, S3, S4 and B1) against documents on the SDAIA and Bahrain Personal Data Protection Authority sites and tagged them [Verified]. SDAIA's current AI Ethics Principles document is SDAIA-P114E, version 1, May 2025. Most other government sites refused automated retrieval, so the remaining rows keep their tags. |
+| 2.22 | 2026-10-10 | Nachiket Sathaye | Framework Crosswalks: added five pages. Four are generated at build time from the control library and the test cases (NIST AI RMF, ISO/IEC 42001, the OWASP Top 10 lists and MITRE ATLAS). The fifth maps the twelve generative AI risks in NIST AI 600-1 to the wiki's risks and controls. |
 
 ## 21. Quick Links
 
@@ -460,7 +461,7 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 - [South Korea AI Compliance (regulatory hub, role guide and templates)](20_South_Korea_AI_Compliance/index.md)
 - [UK AI Compliance (regulatory hub, role guide and templates)](21_UK_AI_Compliance/index.md)
 - [US AI Compliance (regulatory hub, role guide and templates)](22_US_AI_Compliance/index.md)
-- [Framework Crosswalks (FINOS AI Governance Framework, AI BCF)](23_Framework_Crosswalks/index.md)
+- [Framework Crosswalks (FINOS AIGF, AI BCF, NIST AI RMF, NIST AI 600-1, ISO/IEC 42001, OWASP, MITRE ATLAS)](23_Framework_Crosswalks/index.md)
 - [Community Rules](community-rules.md)
 - [AI Security Audit and Evidence Checklist](06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md)
 - [AI Product Developer Playbook](07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.md)

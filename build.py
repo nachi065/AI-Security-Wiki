@@ -90,11 +90,105 @@ def traceability(page):
     return chr(10).join(out)
 
 
+LIBRARY = "03_Control_Library/03_AI_Security_Control_Objectives_Library.md"
+# Framework identifiers as the control records and test cases write them.
+ITEM = r"LLM\d\d:2025|ASI\d\d|AML\.[TM]\d{4}(?:\.\d{3})?|(?:GOVERN|MAP|MEASURE|MANAGE) \d\.\d+|A\.\d+(?:\.\d+)+|Clause [\d.]+\d"
+# NIST AI RMF 1.0 Core: the number of subcategories in each category, in order.
+NIST_CORE = {"GOVERN": [7, 3, 2, 3, 2, 2], "MAP": [6, 3, 5, 2, 2], "MEASURE": [3, 13, 3, 3], "MANAGE": [4, 4, 2, 3]}
+# ISO/IEC 42001:2023 Annex A control numbers.
+ISO_ANNEX_A = ("A.2.2 A.2.3 A.2.4 A.3.2 A.3.3 A.4.2 A.4.3 A.4.4 A.4.5 A.4.6 A.5.2 A.5.3 A.5.4 A.5.5 A.6.1.2 A.6.1.3 A.6.2.2 A.6.2.3 A.6.2.4 "
+               "A.6.2.5 A.6.2.6 A.6.2.7 A.6.2.8 A.7.2 A.7.3 A.7.4 A.7.5 A.7.6 A.8.2 A.8.3 A.8.4 A.8.5 A.9.2 A.9.3 A.9.4 A.10.2 A.10.3 A.10.4").split()
+
+
+def framework_crosswalk(page, kind):
+    """Tables from one framework's identifiers to the wiki controls and test cases that cite them."""
+    def link(src, anchor=""):
+        return os.path.relpath(os.path.join(SRC, src), os.path.dirname(os.path.join(SRC, page["src"]))).replace(os.sep, "/") + anchor
+
+    def parent(identifier):
+        return identifier[:9] if identifier.startswith("AML.T") else identifier  # sub-techniques count under their technique
+
+    def entries(field):
+        for entry in field.split(";"):
+            m = re.match(rf"\s*({ITEM})(?![\d.]*\d) ?(.*)", entry)
+            if m:
+                yield parent(m.group(1)), m.group(2).strip() if parent(m.group(1)) == m.group(1) else ""
+
+    library = next(p["body"] for p in pages if p["src"].replace(os.sep, "/") == LIBRARY)
+    records = re.split(r"^#### (AI-CTRL-\d{3}): .+$", library, flags=re.M)[1:]
+    cited, names = {}, {}  # identifier -> controls that cite it; identifier -> name
+    for control, record in zip(records[::2], records[1::2]):
+        for field in re.findall(r"^\| \*\*(?:OWASP|MITRE ATLAS Techniques|MITRE ATLAS Mitigations|NIST AI RMF|ISO/IEC 42001)\*\* \| (.*) \|$", record, re.M):
+            for identifier, name in entries(field):
+                cited.setdefault(identifier, []).append(control)
+                if name:
+                    names.setdefault(identifier, name)
+    tested, direct = {}, {}  # control -> cases that test it; identifier -> cases that cite it
+    for p in pages:
+        for case, record in zip(*[iter(re.split(r"^### (TC-[LD]\d\d-\d{3}):", p["body"], flags=re.M)[1:])] * 2):
+            field = re.search(r"^\| \*\*Control\(s\) Tested\*\* \|(.*)$", record, re.M)
+            for control in re.findall(r"AI-CTRL-\d{3}", field.group(1) if field else ""):
+                tested.setdefault(control, set()).add(case)
+            for field in re.findall(r"^\| \*\*(?:MITRE ATLAS Mapping|OWASP LLM / GenAI Mapping|NIST AI RMF Mapping)\*\* \| (.*) \|$", record, re.M):
+                for identifier, name in entries(field):
+                    direct.setdefault(identifier, set()).add(case)
+                    if name:
+                        names.setdefault(identifier, re.sub(r"\s*\(.*\)$", "", name))
+    for identifier, name in re.findall(r"^\| (ASI\d\d) \| ([^|]+?) \|", "\n".join(p["body"] for p in pages), re.M):
+        names.setdefault(identifier, name)  # the agentic list is set out in full on another page
+
+    def order(identifier):
+        return [int(n) for n in re.findall(r"\d+", identifier)]
+
+    def table(identifiers, first, with_names=True, with_direct=True):
+        head = [first] + (["Name"] if with_names else []) + ["Wiki controls", "Test cases under those controls"] + (["Test cases that cite it"] if with_direct else [])
+        out = ["| " + " | ".join(head) + " |", "|" + "---|" * len(head)]
+        for identifier in identifiers:
+            controls = sorted(set(cited.get(identifier, [])))
+            cases = set().union(*(tested.get(c, set()) for c in controls)) if controls else set()
+            row = [identifier] + ([names.get(identifier, "")] if with_names else [])
+            row += ["; ".join(f"[{c}]({link(LIBRARY, '#' + c.lower())})" for c in controls) or "None", str(len(cases))]
+            out.append("| " + " | ".join(row + ([str(len(direct.get(identifier, ())))] if with_direct else [])) + " |")
+        return out
+
+    def uncited(identifiers):
+        return ", ".join(i for i in identifiers if i not in cited) or "None"
+
+    known = sorted(set(cited) | set(direct), key=order)
+    out = []
+    if kind == "nist-ai-rmf":
+        core = {f: [f"{f} {c}.{s}" for c, n in enumerate(counts, 1) for s in range(1, n + 1)] for f, counts in NIST_CORE.items()}
+        everything = [i for group in core.values() for i in group]
+        out += [f"{sum(1 for i in everything if i in cited)} of the {len(everything)} subcategories are cited by at least one control.", ""]
+        for function, group in core.items():
+            out += [f"### {function.title()}", ""] + table(group, "Subcategory", with_names=False) + [""]
+        out += ["### Subcategories that no control cites", "", uncited(everything) + "."]
+    elif kind == "iso-42001":
+        annex = [i for i in known if i.startswith("A.")]
+        out += [f"{sum(1 for i in ISO_ANNEX_A if i in cited)} of the {len(ISO_ANNEX_A)} Annex A controls are cited by at least one wiki control.", "",
+                "### Annex A controls", ""] + table(sorted(set(annex) | set(ISO_ANNEX_A), key=order), "Annex A control", with_direct=False)
+        out += ["", "### Management system clauses", ""] + table([i for i in known if i.startswith("Clause")], "Clause", with_direct=False)
+        out += ["", "### Annex A controls that no wiki control cites", "", uncited(ISO_ANNEX_A) + "."]
+    elif kind == "owasp":
+        llm, agentic = [f"LLM{n:02d}:2025" for n in range(1, 11)], [f"ASI{n:02d}" for n in range(1, 11)]
+        out += ["### Top 10 for LLM Applications 2025", ""] + table(llm, "Item") + ["", "### Top 10 for Agentic Applications", ""] + table(agentic, "Item")
+        out += ["", "### Items that no control cites", "", uncited(llm + agentic) + "."]
+    elif kind == "mitre-atlas":
+        out += ["### Techniques", ""] + table([i for i in known if i.startswith("AML.T")], "Technique")
+        out += ["", "### Mitigations", ""] + table([i for i in known if i.startswith("AML.M")], "Mitigation", with_direct=False)
+    else:
+        raise SystemExit(f"{page['src']}: unknown framework crosswalk '{kind}'")
+    return "\n".join(out)
+
+
 # A page that holds this marker gets the generated traceability tables in its place.
 MATRIX = "<!-- traceability-matrix -->"
 for p in pages:
     if MATRIX in p["body"]:
         p["body"] = p["body"].replace(MATRIX, traceability(p))
+# A marker that names a framework gets that framework's crosswalk tables.
+for p in pages:
+    p["body"] = re.sub(r"<!-- framework-crosswalk: ([\w-]+) -->", lambda m: framework_crosswalk(p, m.group(1)), p["body"])
 
 home = next(p for p in pages if p["src"] == "index.md")
 # Top-level entries in the sidebar: sections (which have child pages) and standalone pages.
