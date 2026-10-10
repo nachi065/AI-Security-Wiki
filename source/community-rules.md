@@ -1,6 +1,6 @@
 ---
 title: "Community Rules"
-description: "Community rules for the AI Security Wiki: how author and co-author credit works, which changes are blocked automatically, and how to contribute a page."
+description: "Community rules for the AI Security Wiki: how author and co-author credit works, which changes are blocked automatically, how to contribute a page, and how to reuse the wiki under CC BY-SA 4.0."
 author: Nachiket Sathaye
 nav_order: 14
 ---
@@ -131,6 +131,42 @@ Until a proposal is agreed, the current rules continue to apply. A pull request 
 
 ## Licence
 
-Everything in the wiki is published under [Creative Commons Attribution-ShareAlike 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Anyone may reuse it with credit to the authors, and anything built from it must be released under the same licence. By contributing, you agree to license your contribution under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), so that it can be published as part of the wiki.
+Everything in the wiki is published under the [Creative Commons Attribution-ShareAlike 4.0 International licence (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/). You may copy, share and adapt it for any purpose, including commercially, as long as you credit the authors and release anything you build from it under the same licence. The full terms are in the [LICENSE](https://github.com/nachi065/AI-Security-Wiki/blob/main/LICENSE) file.
+
+### Rules for reusing the wiki
+
+The conditions apply when you share the material outside your own organization.
+
+| What you do | What the licence asks of you |
+|---|---|
+| Use the wiki inside your own organization without publishing it | Nothing. |
+| Share a page, or part of one, unchanged | Credit the authors, link to the page and name the licence. |
+| Share an adapted version, such as a translation, an edited copy or a document that builds on wiki text | Credit the authors, link to the page, say what you changed, and release your version under CC BY-SA 4.0. |
+
+When you share wiki material, these rules apply:
+
+- **Credit the people named on the page.** Give the page title, the author and any co-authors shown in its footer, a link to the page, and the licence. The credit rule above applies to reuse too: names are not dropped or replaced.
+- **Say what you changed.** A short note such as "translated into Arabic" or "sections 3 and 4 shortened" is enough.
+- **Keep the same licence on adaptations.** Anyone who receives your version has the same rights you had, so it cannot be made proprietary.
+- **Add no further restrictions.** Do not attach terms or technical locks that stop others doing what the licence allows.
+- **Do not suggest endorsement.** Credit does not mean the authors approve of your version or of how you use it.
+
+A credit line can look like this:
+
+```
+"Enterprise AI Risk Register" by Nachiket Sathaye, AI Security Wiki
+(https://nachi065.github.io/AI-Security-Wiki/), licensed under CC BY-SA 4.0.
+Changes: adapted for a retail bank; risk scores removed.
+```
+
+The licence covers the wiki's own text. The frameworks, standards and laws it cites belong to their publishers and keep their own terms.
+
+Versions of the wiki published before 10 October 2026 were released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) and remain available under that licence. To use the content under other terms, contact the author.
+
+### Licence for contributions
+
+By contributing, you agree to license your contribution under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), so that it can be published as part of the wiki under CC BY-SA 4.0.
+
+Contribute only material you can license that way: your own writing, or material that is in the public domain or released under CC0 or CC BY, with the source cited. Text taken from a source under a NonCommercial or NoDerivatives licence cannot be accepted.
 
 The step-by-step guide to making a change is in [CONTRIBUTING.md](https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md).
