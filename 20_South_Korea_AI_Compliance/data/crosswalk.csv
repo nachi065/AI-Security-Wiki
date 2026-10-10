@@ -1,9 +1,9 @@
-ID,Instrument,Type / status,Wiki controls,Verification tag,To verify,Primary URL and retrieval date
-KR1,AI Basic Act,Binding; effective 22 Jan 2026,All,Reported,Article numbers; enforcement decree,
-KR2,Generative AI duties,Binding,AI-CTRL-039,Reported,Format rules,
-KR3,High-impact AI duties,Binding,AI-CTRL-037;AI-CTRL-023;AI-CTRL-041,Conflict,One source says only Level-4 autonomous vehicles currently trigger it,
-KR4,High-performance AI (training at 10^26 FLOP or more),Binding,AI-CTRL-037;AI-CTRL-005,Reported,Notification routes,
-KR5,Domestic representative,Binding,AI-CTRL-012,Reported,Thresholds and form,
-KR6,Fines and grace period,"Fines up to about KRW 30 million (about USD 21,000)",AI-CTRL-012,Reported,Enforcement decree,
-KR7,Personal Information Protection Act and PIPC guidance,Binding,AI-CTRL-013;AI-CTRL-007;AI-CTRL-035,Recalled,AI guidance,
-KR8,AI Basic Act Support Center,Government support,,Reported,Contact,
+ID,Instrument,Legal force,Type / status,Wiki controls,Verification tag,To verify,Primary URL and retrieval date
+KR1,AI Basic Act,Binding law,Binding; effective 22 Jan 2026,All,Reported,Article numbers; enforcement decree,
+KR2,Generative AI duties,Binding law,Binding,AI-CTRL-039,Reported,Format rules,
+KR3,High-impact AI duties,Binding law,Binding,AI-CTRL-037;AI-CTRL-023;AI-CTRL-041,Conflict,One source says only Level-4 autonomous vehicles currently trigger it,
+KR4,High-performance AI (training at 10^26 FLOP or more),Binding law,Binding,AI-CTRL-037;AI-CTRL-005,Reported,Notification routes,
+KR5,Domestic representative,Binding law,Binding,AI-CTRL-012,Reported,Thresholds and form,
+KR6,Fines and grace period,Binding law,"Fines up to about KRW 30 million (about USD 21,000)",AI-CTRL-012,Reported,Enforcement decree,
+KR7,Personal Information Protection Act and PIPC guidance,Binding law,Binding,AI-CTRL-013;AI-CTRL-007;AI-CTRL-035,Recalled,AI guidance,
+KR8,AI Basic Act Support Center,Context,Government support,,Reported,Contact,

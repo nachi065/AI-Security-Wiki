@@ -1,7 +1,7 @@
-ID,Instrument,Type / status,Wiki controls,Verification tag,To verify,Primary URL and retrieval date
-JP1,AI Promotion Act,Law; 4 Jun 2025,AI-CTRL-012,Reported,Any duties on businesses; investigation or publication powers,
-JP2,AI Basic Plan,"Cabinet decision; adopted 14 Jul 2026, replacing the 23 Dec 2025 plan",AI-CTRL-012,Reported,Content,
-JP3,"Guidelines for AI Business (MIC and METI), version 1.2 (31 Mar 2026)",Non-binding,AI-CTRL-012;AI-CTRL-037;AI-CTRL-039;AI-CTRL-041,Reported,Official text; English is provisional,
-JP4,Act on the Protection of Personal Information (APPI),Binding,AI-CTRL-013;AI-CTRL-007;AI-CTRL-035,Recalled,AI points from the PPC,
-JP5,Copyright Act Art. 30-4 (information analysis exception),Binding,AI-CTRL-029,Recalled,Current interpretation and limits,
-JP6,"Sector rules (financial, medical devices, others)",Binding,AI-CTRL-014;AI-CTRL-037,Unverified,Per sector,
+ID,Instrument,Legal force,Type / status,Wiki controls,Verification tag,To verify,Primary URL and retrieval date
+JP1,AI Promotion Act,Binding law,Law; 4 Jun 2025,AI-CTRL-012,Reported,Any duties on businesses; investigation or publication powers,
+JP2,AI Basic Plan,Context,"Cabinet decision; adopted 14 Jul 2026, replacing the 23 Dec 2025 plan",AI-CTRL-012,Reported,Content,
+JP3,"Guidelines for AI Business (MIC and METI), version 1.2 (31 Mar 2026)",Guidance,Non-binding,AI-CTRL-012;AI-CTRL-037;AI-CTRL-039;AI-CTRL-041,Reported,Official text; English is provisional,
+JP4,Act on the Protection of Personal Information (APPI),Binding law,Binding,AI-CTRL-013;AI-CTRL-007;AI-CTRL-035,Recalled,AI points from the PPC,
+JP5,Copyright Act Art. 30-4 (information analysis exception),Binding law,Binding,AI-CTRL-029,Recalled,Current interpretation and limits,
+JP6,"Sector rules (financial, medical devices, others)",Binding in scope,Binding,AI-CTRL-014;AI-CTRL-037,Unverified,Per sector,

@@ -16,13 +16,25 @@ One row per instrument in the [Canada AI Regulatory Hub](01_Canada_AI_Regulatory
 
 The same data is available as a CSV file for GRC tooling: [crosswalk.csv](data/crosswalk.csv).
 
-| ID | Instrument | Type / status | Wiki controls | Verification tag | To verify | Primary URL and retrieval date |
-|---|---|---|---|---|---|---|
-| CA1 | Artificial Intelligence and Data Act (Bill C-27) | Lapsed 6 Jan 2025; not resurrected as drafted | None | Reported | New bills |  |
-| CA2 | PIPEDA | Binding federal privacy law | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013); [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007); [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) | Reported | OPC guidance |  |
-| CA3 | Quebec Law 25 | Binding | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013); [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023); [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) | Reported | Section numbers |  |
-| CA4 | Treasury Board Directive on Automated Decision-Making; Algorithmic Impact Assessment | Binding for federal institutions; flows to vendors | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011); [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037); [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) | Reported | Current version |  |
-| CA5 | Voluntary Code of Conduct on generative AI (ISED) | Voluntary | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012); [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) | Reported | Signatories |  |
-| CA6 | OSFI Guideline E-23 | Guidance for federally regulated FIs | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011); [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037); [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) | Unverified | Final effective date |  |
-| CA7 | Bills C-34 (digital safety incl. AI chatbots) and C-36 (privacy reform) | Bills | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039); [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) | Unverified | Bill numbers and status; single source |  |
-| CA8 | Provincial public-sector AI rules (for example Ontario) | Varies | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) | Unverified | Details |  |
+**Legal force** sorts each row under one of seven labels, so that law is not mistaken for guidance or for a voluntary framework. The label is this wiki's reading of the sources and carries the same verification caveat as the rest of the row.
+
+| Label | Meaning |
+|---|---|
+| Binding law | Enacted law or regulation that applies generally in the jurisdiction, including provisions that start on a later date. |
+| Binding in scope | Binding only on a sector, a free zone, a state or province, or public bodies. |
+| Guidance | Published by a government or regulator, and not binding in itself. |
+| Voluntary | A standard, code or framework that an organization chooses to adopt. |
+| Proposed | A bill, draft or consultation, or a proposal that lapsed. It is not law. |
+| Context | A policy, authority, programme or summary row that sets no rule. |
+| Unclear | The sources used do not settle whether it binds. |
+
+| ID | Instrument | Legal force | Type / status | Wiki controls | Verification tag | To verify | Primary URL and retrieval date |
+|---|---|---|---|---|---|---|---|
+| CA1 | Artificial Intelligence and Data Act (Bill C-27) | Proposed | Lapsed 6 Jan 2025; not resurrected as drafted | None | Reported | New bills |  |
+| CA2 | PIPEDA | Binding law | Binding federal privacy law | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013); [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007); [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) | Reported | OPC guidance |  |
+| CA3 | Quebec Law 25 | Binding in scope | Binding | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013); [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023); [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) | Reported | Section numbers |  |
+| CA4 | Treasury Board Directive on Automated Decision-Making; Algorithmic Impact Assessment | Binding in scope | Binding for federal institutions; flows to vendors | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011); [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037); [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) | Reported | Current version |  |
+| CA5 | Voluntary Code of Conduct on generative AI (ISED) | Voluntary | Voluntary | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012); [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) | Reported | Signatories |  |
+| CA6 | OSFI Guideline E-23 | Guidance | Guidance for federally regulated FIs | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011); [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037); [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) | Unverified | Final effective date |  |
+| CA7 | Bills C-34 (digital safety incl. AI chatbots) and C-36 (privacy reform) | Proposed | Bills | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039); [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) | Unverified | Bill numbers and status; single source |  |
+| CA8 | Provincial public-sector AI rules (for example Ontario) | Unclear | Varies | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) | Unverified | Details |  |

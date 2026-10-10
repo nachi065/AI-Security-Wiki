@@ -16,9 +16,21 @@ One row per instrument in the [Brazil AI Regulatory Hub](01_Brazil_AI_Regulatory
 
 The same data is available as a CSV file for GRC tooling: [crosswalk.csv](data/crosswalk.csv).
 
-| ID | Instrument | Type / status | Wiki controls | Verification tag | To verify | Primary URL and retrieval date |
-|---|---|---|---|---|---|---|
-| BR1 | PL 2338/2023 (AI bill) | Pending; Senate approved 10 Dec 2024; awaiting committee opinion in the Chamber as at 2 Sep 2026 | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011); [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037); [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) | Reported | Chamber text; amendments |  |
-| BR2 | LGPD (Law 13.709/2018) | Binding | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013); [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007); [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017); [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) | Recalled | Article numbers; ANPD rules |  |
-| BR3 | ANPD and sector regulators advancing AI regulation | Regulator activity | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013); [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) | Reported | Specific instruments |  |
-| BR4 | Consumer Defence Code and sector rules (finance, health) | Binding | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014); [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) | Recalled | Applicability |  |
+**Legal force** sorts each row under one of seven labels, so that law is not mistaken for guidance or for a voluntary framework. The label is this wiki's reading of the sources and carries the same verification caveat as the rest of the row.
+
+| Label | Meaning |
+|---|---|
+| Binding law | Enacted law or regulation that applies generally in the jurisdiction, including provisions that start on a later date. |
+| Binding in scope | Binding only on a sector, a free zone, a state or province, or public bodies. |
+| Guidance | Published by a government or regulator, and not binding in itself. |
+| Voluntary | A standard, code or framework that an organization chooses to adopt. |
+| Proposed | A bill, draft or consultation, or a proposal that lapsed. It is not law. |
+| Context | A policy, authority, programme or summary row that sets no rule. |
+| Unclear | The sources used do not settle whether it binds. |
+
+| ID | Instrument | Legal force | Type / status | Wiki controls | Verification tag | To verify | Primary URL and retrieval date |
+|---|---|---|---|---|---|---|---|
+| BR1 | PL 2338/2023 (AI bill) | Proposed | Pending; Senate approved 10 Dec 2024; awaiting committee opinion in the Chamber as at 2 Sep 2026 | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011); [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037); [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) | Reported | Chamber text; amendments |  |
+| BR2 | LGPD (Law 13.709/2018) | Binding law | Binding | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013); [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007); [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017); [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) | Recalled | Article numbers; ANPD rules |  |
+| BR3 | ANPD and sector regulators advancing AI regulation | Context | Regulator activity | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013); [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) | Reported | Specific instruments |  |
+| BR4 | Consumer Defence Code and sector rules (finance, health) | Binding law | Binding | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014); [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) | Recalled | Applicability |  |

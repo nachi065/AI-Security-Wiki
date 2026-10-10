@@ -259,11 +259,51 @@
 </blockquote>
 <p>One row per instrument in the <a href="01_Japan_AI_Regulatory_Hub.html">Japan AI Regulatory Hub</a>, with the wiki controls that relate to it and its verification status. The last column is empty until a row has been confirmed against the primary text; record the primary URL and the date you retrieved it there.</p>
 <p>The same data is available as a CSV file for GRC tooling: <a href="data/crosswalk.csv">crosswalk.csv</a>.</p>
+<p><strong>Legal force</strong> sorts each row under one of seven labels, so that law is not mistaken for guidance or for a voluntary framework. The label is this wiki's reading of the sources and carries the same verification caveat as the rest of the row.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Binding law</td>
+<td>Enacted law or regulation that applies generally in the jurisdiction, including provisions that start on a later date.</td>
+</tr>
+<tr>
+<td>Binding in scope</td>
+<td>Binding only on a sector, a free zone, a state or province, or public bodies.</td>
+</tr>
+<tr>
+<td>Guidance</td>
+<td>Published by a government or regulator, and not binding in itself.</td>
+</tr>
+<tr>
+<td>Voluntary</td>
+<td>A standard, code or framework that an organization chooses to adopt.</td>
+</tr>
+<tr>
+<td>Proposed</td>
+<td>A bill, draft or consultation, or a proposal that lapsed. It is not law.</td>
+</tr>
+<tr>
+<td>Context</td>
+<td>A policy, authority, programme or summary row that sets no rule.</td>
+</tr>
+<tr>
+<td>Unclear</td>
+<td>The sources used do not settle whether it binds.</td>
+</tr>
+</tbody>
+</table></div>
 <div class="table-wrap"><table>
 <thead>
 <tr>
 <th>ID</th>
 <th>Instrument</th>
+<th>Legal force</th>
 <th>Type / status</th>
 <th>Wiki controls</th>
 <th>Verification tag</th>
@@ -275,6 +315,7 @@
 <tr>
 <td>JP1</td>
 <td>AI Promotion Act</td>
+<td>Binding law</td>
 <td>Law; 4 Jun 2025</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a></td>
 <td>Reported</td>
@@ -284,6 +325,7 @@
 <tr>
 <td>JP2</td>
 <td>AI Basic Plan</td>
+<td>Context</td>
 <td>Cabinet decision; adopted 14 Jul 2026, replacing the 23 Dec 2025 plan</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a></td>
 <td>Reported</td>
@@ -293,6 +335,7 @@
 <tr>
 <td>JP3</td>
 <td>Guidelines for AI Business (MIC and METI), version 1.2 (31 Mar 2026)</td>
+<td>Guidance</td>
 <td>Non-binding</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-037">AI-CTRL-037</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-039">AI-CTRL-039</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-041">AI-CTRL-041</a></td>
 <td>Reported</td>
@@ -302,6 +345,7 @@
 <tr>
 <td>JP4</td>
 <td>Act on the Protection of Personal Information (APPI)</td>
+<td>Binding law</td>
 <td>Binding</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-007">AI-CTRL-007</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></td>
 <td>Recalled</td>
@@ -311,6 +355,7 @@
 <tr>
 <td>JP5</td>
 <td>Copyright Act Art. 30-4 (information analysis exception)</td>
+<td>Binding law</td>
 <td>Binding</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-029">AI-CTRL-029</a></td>
 <td>Recalled</td>
@@ -320,6 +365,7 @@
 <tr>
 <td>JP6</td>
 <td>Sector rules (financial, medical devices, others)</td>
+<td>Binding in scope</td>
 <td>Binding</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-037">AI-CTRL-037</a></td>
 <td>Unverified</td>

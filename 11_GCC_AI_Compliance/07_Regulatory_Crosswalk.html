@@ -259,12 +259,52 @@
 </blockquote>
 <p>One row per instrument in the <a href="01_GCC_AI_Regulatory_Hub.html">GCC AI Regulatory Hub</a>, with the wiki controls that relate to it, the control themes from the <a href="../10_Test_Case_Library/framework-adoption-guide.html">Framework Adoption Guide</a> and its verification status. The last column is empty until a row has been confirmed against the primary text; record the primary URL and the date you retrieved it there.</p>
 <p>The same data is available as a CSV file for GRC tooling: <a href="data/crosswalk.csv">crosswalk.csv</a>.</p>
+<p><strong>Legal force</strong> sorts each row under one of seven labels, so that law is not mistaken for guidance or for a voluntary framework. The label is this wiki's reading of the sources and carries the same verification caveat as the rest of the row.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Binding law</td>
+<td>Enacted law or regulation that applies generally in the jurisdiction, including provisions that start on a later date.</td>
+</tr>
+<tr>
+<td>Binding in scope</td>
+<td>Binding only on a sector, a free zone, a state or province, or public bodies.</td>
+</tr>
+<tr>
+<td>Guidance</td>
+<td>Published by a government or regulator, and not binding in itself.</td>
+</tr>
+<tr>
+<td>Voluntary</td>
+<td>A standard, code or framework that an organization chooses to adopt.</td>
+</tr>
+<tr>
+<td>Proposed</td>
+<td>A bill, draft or consultation, or a proposal that lapsed. It is not law.</td>
+</tr>
+<tr>
+<td>Context</td>
+<td>A policy, authority, programme or summary row that sets no rule.</td>
+</tr>
+<tr>
+<td>Unclear</td>
+<td>The sources used do not settle whether it binds.</td>
+</tr>
+</tbody>
+</table></div>
 <div class="table-wrap"><table>
 <thead>
 <tr>
 <th>ID</th>
 <th>Jurisdiction</th>
 <th>Instrument</th>
+<th>Legal force</th>
 <th>Type / status</th>
 <th>Wiki controls</th>
 <th>Control themes</th>
@@ -278,6 +318,7 @@
 <td>U1</td>
 <td>UAE</td>
 <td>Federal Decree-Law 45/2021 (PDPL)</td>
+<td>Binding law</td>
 <td>Binding</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-007">AI-CTRL-007</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></td>
 <td>PRV; XBT; RET; INC</td>
@@ -289,6 +330,7 @@
 <td>U2</td>
 <td>UAE</td>
 <td>Federal Decree-Law 34/2021 (cybercrime)</td>
+<td>Binding law</td>
 <td>Binding</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-028">AI-CTRL-028</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></td>
 <td>INC</td>
@@ -300,6 +342,7 @@
 <td>U3</td>
 <td>UAE</td>
 <td>UAE Charter for Development and Use of AI</td>
+<td>Guidance</td>
 <td>Non-binding</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-039">AI-CTRL-039</a></td>
 <td>GOV; POL; OVS; TRN</td>
@@ -312,6 +355,7 @@
 <td>UAE</td>
 <td>UAE AI Ethics Principles and Self-Assessment</td>
 <td>Voluntary</td>
+<td>Voluntary</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-039">AI-CTRL-039</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-041">AI-CTRL-041</a></td>
 <td>POL; OVS</td>
 <td>Reported</td>
@@ -322,6 +366,7 @@
 <td>U5</td>
 <td>UAE</td>
 <td>Federal Authority for AI and Data</td>
+<td>Context</td>
 <td>Regulator (announced 14 Jun 2026)</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a></td>
 <td>GOV; AUD</td>
@@ -333,6 +378,7 @@
 <td>U6</td>
 <td>UAE-DIFC</td>
 <td>DIFC DP Law and Regulation 10</td>
+<td>Binding in scope</td>
 <td>Binding in DIFC</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-011">AI-CTRL-011</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-041">AI-CTRL-041</a></td>
 <td>PRV; OVS; RSK; CHG</td>
@@ -344,6 +390,7 @@
 <td>U7</td>
 <td>UAE-ADGM</td>
 <td>ADGM Data Protection Regulations</td>
+<td>Binding in scope</td>
 <td>Binding in ADGM</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-007">AI-CTRL-007</a></td>
 <td>PRV; XBT</td>
@@ -355,6 +402,7 @@
 <td>U8</td>
 <td>UAE-Dubai</td>
 <td>Dubai AI Security Policy (DESC)</td>
+<td>Unclear</td>
 <td>Policy Sept 2024</td>
 <td>All</td>
 <td>AUD; BCP; POL</td>
@@ -366,6 +414,7 @@
 <td>U9</td>
 <td>UAE</td>
 <td>CBUAE Guidance Note on AI/ML</td>
+<td>Guidance</td>
 <td>Supervisory guidance 23 Feb 2026</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-011">AI-CTRL-011</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-041">AI-CTRL-041</a></td>
 <td>GOV; INV; OVS; VND</td>
@@ -377,6 +426,7 @@
 <td>U10</td>
 <td>UAE-AbuDhabi</td>
 <td>AIATC Law 3/2024</td>
+<td>Context</td>
 <td>Governance body</td>
 <td></td>
 <td></td>
@@ -388,6 +438,7 @@
 <td>U11</td>
 <td>UAE</td>
 <td>UAE information assurance (NESA/IA)</td>
+<td>Unclear</td>
 <td>Baseline</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-032">AI-CTRL-032</a></td>
 <td>AUD; BCP</td>
@@ -399,6 +450,7 @@
 <td>U12</td>
 <td>UAE-Dubai</td>
 <td>Dubai AI Seal</td>
+<td>Unclear</td>
 <td>Certification (procurement)</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a></td>
 <td>POL; AUD</td>
@@ -410,6 +462,7 @@
 <td>S1</td>
 <td>Saudi</td>
 <td>PDPL</td>
+<td>Binding law</td>
 <td>Binding</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-007">AI-CTRL-007</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a></td>
 <td>PRV; XBT; RET; INC</td>
@@ -421,6 +474,7 @@
 <td>S2</td>
 <td>Saudi</td>
 <td>SDAIA AI Ethics Principles</td>
+<td>Guidance</td>
 <td>Non-binding</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-039">AI-CTRL-039</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-041">AI-CTRL-041</a></td>
 <td>POL; OVS; TRN</td>
@@ -432,6 +486,7 @@
 <td>S3</td>
 <td>Saudi</td>
 <td>SDAIA Generative AI Guidelines</td>
+<td>Guidance</td>
 <td>Non-binding</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-002">AI-CTRL-002</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-010">AI-CTRL-010</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a></td>
 <td>POL; OVS</td>
@@ -443,6 +498,7 @@
 <td>S4</td>
 <td>Saudi</td>
 <td>SDAIA AI Adoption Framework</td>
+<td>Guidance</td>
 <td>Non-binding</td>
 <td></td>
 <td>GOV</td>
@@ -454,6 +510,7 @@
 <td>S5</td>
 <td>Saudi</td>
 <td>SDAIA National AI Risk Mgmt Framework (SDAIA-P145)</td>
+<td>Unclear</td>
 <td>Published 2026</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-037">AI-CTRL-037</a></td>
 <td>RSK; INV; CHG</td>
@@ -465,6 +522,7 @@
 <td>S6</td>
 <td>Saudi</td>
 <td>NCA ECC and CCC</td>
+<td>Binding in scope</td>
 <td>Binding gov and CNI</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-032">AI-CTRL-032</a></td>
 <td>AUD; BCP; INC</td>
@@ -476,6 +534,7 @@
 <td>S7</td>
 <td>Saudi</td>
 <td>NCA NCNICC-1:2025</td>
+<td>Unclear</td>
 <td>Reported private sector from Jan 2026</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-032">AI-CTRL-032</a></td>
 <td>AUD</td>
@@ -487,6 +546,7 @@
 <td>S8</td>
 <td>Saudi</td>
 <td>NCA AI Cybersecurity Guidelines</td>
+<td>Proposed</td>
 <td>Consultation closed 5 Aug 2026</td>
 <td>All</td>
 <td>VND; AUD; BCP</td>
@@ -498,6 +558,7 @@
 <td>S9</td>
 <td>Saudi</td>
 <td>Copyright TDM exception</td>
+<td>Binding law</td>
 <td>Reported eff. 12 Aug 2026</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-029">AI-CTRL-029</a></td>
 <td>POL</td>
@@ -509,6 +570,7 @@
 <td>S10</td>
 <td>Saudi</td>
 <td>NDMO/CST/SAMA localisation overlays</td>
+<td>Unclear</td>
 <td>Overlay</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-007">AI-CTRL-007</a></td>
 <td>XBT</td>
@@ -520,6 +582,7 @@
 <td>Q1</td>
 <td>Qatar</td>
 <td>Law 13/2016 PDPPL</td>
+<td>Binding law</td>
 <td>Binding</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-007">AI-CTRL-007</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a></td>
 <td>PRV; XBT; RET; INC</td>
@@ -531,6 +594,7 @@
 <td>Q2</td>
 <td>Qatar</td>
 <td>NCSA Guidelines for Secure Adoption and Usage of AI</td>
+<td>Voluntary</td>
 <td>Voluntary (reported)</td>
 <td>All</td>
 <td>VND; AUD; INC; BCP</td>
@@ -542,6 +606,7 @@
 <td>Q3</td>
 <td>Qatar</td>
 <td>MCIT Ethical AI Principles</td>
+<td>Guidance</td>
 <td>Non-binding</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-039">AI-CTRL-039</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-041">AI-CTRL-041</a></td>
 <td>GOV; POL; OVS; TRN</td>
@@ -553,6 +618,7 @@
 <td>Q4</td>
 <td>Qatar</td>
 <td>QCB AI Guideline (4 Sep 2024)</td>
+<td>Binding in scope</td>
 <td>Reported binding for licensees</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-011">AI-CTRL-011</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-041">AI-CTRL-041</a></td>
 <td>GOV; RSK; INV; OVS; CHG</td>
@@ -564,6 +630,7 @@
 <td>B1</td>
 <td>Bahrain</td>
 <td>Law 30/2018 PDPL</td>
+<td>Binding law</td>
 <td>Binding</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a></td>
 <td>PRV; XBT; RET; INC</td>
@@ -575,6 +642,7 @@
 <td>B2</td>
 <td>Bahrain</td>
 <td>General Policy for Use of AI (May 2025)</td>
+<td>Binding in scope</td>
 <td>Reported binding on government</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a></td>
 <td>GOV; POL; OVS</td>
@@ -586,6 +654,7 @@
 <td>B3</td>
 <td>Bahrain</td>
 <td>Draft AI law (38 articles)</td>
+<td>Proposed</td>
 <td>Not enacted per sources</td>
 <td></td>
 <td></td>
@@ -597,6 +666,7 @@
 <td>B4</td>
 <td>Bahrain</td>
 <td>CBB digital financial advice directives</td>
+<td>Unclear</td>
 <td>Sector</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a></td>
 <td>VND</td>
@@ -608,6 +678,7 @@
 <td>O1</td>
 <td>Oman</td>
 <td>National AI Policy (9 Apr 2025)</td>
+<td>Binding in scope</td>
 <td>Reported mandatory within scope</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-011">AI-CTRL-011</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-037">AI-CTRL-037</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a></td>
 <td>GOV; RSK; INV; AUD; TRN; CHG</td>
@@ -619,6 +690,7 @@
 <td>O2</td>
 <td>Oman</td>
 <td>PDPL amendments</td>
+<td>Proposed</td>
 <td>Awaiting promulgation (reported)</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a></td>
 <td>PRV; RET</td>
@@ -630,6 +702,7 @@
 <td>K1</td>
 <td>Kuwait</td>
 <td>None listed</td>
+<td>Context</td>
 <td></td>
 <td></td>
 <td></td>

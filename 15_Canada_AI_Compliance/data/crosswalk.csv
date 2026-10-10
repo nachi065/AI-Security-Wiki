@@ -1,9 +1,9 @@
-ID,Instrument,Type / status,Wiki controls,Verification tag,To verify,Primary URL and retrieval date
-CA1,Artificial Intelligence and Data Act (Bill C-27),Lapsed 6 Jan 2025; not resurrected as drafted,,Reported,New bills,
-CA2,PIPEDA,Binding federal privacy law,AI-CTRL-013;AI-CTRL-007;AI-CTRL-035,Reported,OPC guidance,
-CA3,Quebec Law 25,Binding,AI-CTRL-013;AI-CTRL-023;AI-CTRL-041,Reported,Section numbers,
-CA4,Treasury Board Directive on Automated Decision-Making; Algorithmic Impact Assessment,Binding for federal institutions; flows to vendors,AI-CTRL-011;AI-CTRL-037;AI-CTRL-039,Reported,Current version,
-CA5,Voluntary Code of Conduct on generative AI (ISED),Voluntary,AI-CTRL-012;AI-CTRL-039,Reported,Signatories,
-CA6,OSFI Guideline E-23,Guidance for federally regulated FIs,AI-CTRL-011;AI-CTRL-037;AI-CTRL-038,Unverified,Final effective date,
-CA7,Bills C-34 (digital safety incl. AI chatbots) and C-36 (privacy reform),Bills,AI-CTRL-039;AI-CTRL-013,Unverified,Bill numbers and status; single source,
-CA8,Provincial public-sector AI rules (for example Ontario),Varies,AI-CTRL-012,Unverified,Details,
+ID,Instrument,Legal force,Type / status,Wiki controls,Verification tag,To verify,Primary URL and retrieval date
+CA1,Artificial Intelligence and Data Act (Bill C-27),Proposed,Lapsed 6 Jan 2025; not resurrected as drafted,,Reported,New bills,
+CA2,PIPEDA,Binding law,Binding federal privacy law,AI-CTRL-013;AI-CTRL-007;AI-CTRL-035,Reported,OPC guidance,
+CA3,Quebec Law 25,Binding in scope,Binding,AI-CTRL-013;AI-CTRL-023;AI-CTRL-041,Reported,Section numbers,
+CA4,Treasury Board Directive on Automated Decision-Making; Algorithmic Impact Assessment,Binding in scope,Binding for federal institutions; flows to vendors,AI-CTRL-011;AI-CTRL-037;AI-CTRL-039,Reported,Current version,
+CA5,Voluntary Code of Conduct on generative AI (ISED),Voluntary,Voluntary,AI-CTRL-012;AI-CTRL-039,Reported,Signatories,
+CA6,OSFI Guideline E-23,Guidance,Guidance for federally regulated FIs,AI-CTRL-011;AI-CTRL-037;AI-CTRL-038,Unverified,Final effective date,
+CA7,Bills C-34 (digital safety incl. AI chatbots) and C-36 (privacy reform),Proposed,Bills,AI-CTRL-039;AI-CTRL-013,Unverified,Bill numbers and status; single source,
+CA8,Provincial public-sector AI rules (for example Ontario),Unclear,Varies,AI-CTRL-012,Unverified,Details,
