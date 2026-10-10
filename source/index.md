@@ -44,6 +44,7 @@ This wiki is the implementation layer: control objectives, evidence, audit proce
 | If you need to... | Start with | Then use this wiki for |
 |---|---|---|
 | Build a financial-services AI risk catalogue | FINOS AI Governance Framework | Controls, evidence and tests per risk, through the [FINOS crosswalk](23_Framework_Crosswalks/01_FINOS_AIGF_Crosswalk.md) |
+| Set up a first, short AI governance baseline | AI Baseline Control Framework (AI BCF) | Control objectives, evidence and tests, through the [AI BCF crosswalk](23_Framework_Crosswalks/02_AI_BCF_Crosswalk.md) |
 | Structure a management system | ISO/IEC 42001 with ISO/IEC 27001 | Technical control objectives and test criteria |
 | Structure risk language and a programme | NIST AI RMF | Engineering controls, evidence and scoring |
 | Define attack classes for testing | OWASP lists, MITRE ATLAS, NIST AI 100-2 | The 629-case test library |
@@ -246,8 +247,8 @@ Review, Improve, Renew, or Retire
   Regulatory hub for the US (federal orders and enforcement, NIST AI RMF, state AI laws), role guide,\n  three templates, and regulatory crosswalk.
 
 23_Framework_Crosswalks/
-  Cross-references from this wiki to other AI governance frameworks, starting with the FINOS AI Governance Framework
-  (risk and mitigation identifiers mapped to wiki risks, control objectives and evidence).
+  Cross-references from this wiki to other AI governance frameworks, the FINOS AI Governance Framework (risk and
+  mitigation identifiers) and the AI Baseline Control Framework (20 baseline controls).
 
 09_Reference/
   Glossary, taxonomy, abbreviations, mapping references, patterns, and reusable templates.
@@ -424,7 +425,7 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 | 2.12 | 2026-10-07 | Nachiket Sathaye | Added the UK AI Compliance section: regulatory hub, role guide, templates and crosswalk. Its content comes from secondary sources and from memory of the law, and has not been verified against primary legal text. |
 | 2.13 | 2026-10-07 | Nachiket Sathaye | Added the US AI Compliance section: regulatory hub, role guide, templates and crosswalk. Its content comes from secondary sources and from memory of the law, and has not been verified against primary legal text. |
 | 2.14 | 2026-10-07 | Nachiket Sathaye | Added four controls (AI-CTRL-041 to AI-CTRL-044: fairness, impact assessment, authority engagement, AI literacy), nine test cases (TC-L03-031 to TC-L03-039), a sector overlays page and a regional crosswalk by control theme. The regional sections now point to these controls and cases. |
-| 2.15 | 2026-10-10 | Nachiket Sathaye | Added 15 risks to the register (AI-R14 to AI-R28), two controls (AI-CTRL-045 human oversight design and AI-CTRL-046 intellectual property), wording changes to six existing controls, FINOS AI Governance Framework columns in the risk to control mapping, a use-case risk triage page, a Framework Crosswalks section with the FINOS crosswalk, and a positioning statement on the home page. |
+| 2.15 | 2026-10-10 | Nachiket Sathaye | Added 15 risks to the register (AI-R14 to AI-R28), two controls (AI-CTRL-045 human oversight design and AI-CTRL-046 intellectual property), wording changes to six existing controls, FINOS AI Governance Framework columns in the risk to control mapping, a use-case risk triage page, a Framework Crosswalks section with the FINOS and AI BCF crosswalks, and a positioning statement on the home page. |
 
 ## 21. Quick Links
 
@@ -453,7 +454,7 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 - [South Korea AI Compliance (regulatory hub, role guide and templates)](20_South_Korea_AI_Compliance/index.md)
 - [UK AI Compliance (regulatory hub, role guide and templates)](21_UK_AI_Compliance/index.md)
 - [US AI Compliance (regulatory hub, role guide and templates)](22_US_AI_Compliance/index.md)
-- [Framework Crosswalks (FINOS AI Governance Framework)](23_Framework_Crosswalks/index.md)
+- [Framework Crosswalks (FINOS AI Governance Framework, AI BCF)](23_Framework_Crosswalks/index.md)
 - [Community Rules](community-rules.md)
 - [AI Security Audit and Evidence Checklist](06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md)
 - [AI Product Developer Playbook](07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.md)
