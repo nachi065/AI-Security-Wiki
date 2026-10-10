@@ -11,7 +11,7 @@ has_children: true
 
 Resources for people who build, sell, audit or run AI systems in the Gulf Cooperation Council states. The pages map regional laws, policies and security baselines to the wiki's [control library](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md) and [test cases](../10_Test_Case_Library/index.md). They cover the UAE, Saudi Arabia, Qatar, Bahrain and Oman. Kuwait has not been researched.
 
-> **Verification required.** Everything in this section about laws, regulators, dates and expectations was compiled from secondary sources (vendor documentation, law-firm trackers and press) on 7 October 2026. No primary legal text was read, and sources disagree on several dates. Check the primary text before relying on any regional claim. This is not legal advice.
+> **Verification required.** Everything in this section about laws, regulators, dates and expectations was compiled from secondary sources (vendor documentation, law-firm trackers and press) on 7 October 2026. On 10 October 2026 four rows of the crosswalk were checked against the issuing body's own documents; no other primary text was read, and sources disagree on several dates. Check the primary text before relying on any regional claim. This is not legal advice.
 
 ## What is in this section
 
@@ -27,6 +27,7 @@ Resources for people who build, sell, audit or run AI systems in the Gulf Cooper
 
 | Tag | Meaning |
 |---|---|
+| **[Verified]** | The point stated was checked against the issuing body's own document at the URL given, on the date given. The document was read with a retrieval tool and not line by line, so confirm the wording before you cite it. |
 | **[Reported]** | Stated by secondary sources only. Verify before relying on it. |
 | **[Conflict]** | Secondary sources disagree. Resolve from the primary text. |
 | **[Unverified]** | Single source, or not researched. |
