@@ -39,7 +39,7 @@ For vendors, SaaS providers and platforms.
 For internal, external and assurance auditors.
 
 - The criteria are mostly voluntary, so define them in the engagement letter.
-- For financial institutions, treat the MAS guidelines as the target even if the transition dates are not final, and state that basis.
+- For financial institutions, use the MAS Guidelines of 7 October 2026 as the criteria. Sections 3 and 4 are to be met from 7 October 2027 and Sections 5 and 6 by 7 October 2028, so state which date your opinion is measured against.
 - Test agent bounding by sampling permissions against the stated scope.
 - Re-perform one test from the AI Verify style record.
 - Check third-party AI arrangements.
@@ -49,10 +49,10 @@ For internal, external and assurance auditors.
 For programme leads, GRC teams, CISOs and DPOs.
 
 - Use the four agentic dimensions as the structure for agent governance.
-- Build the MAS-style inventory and materiality assessment first ([SG-T2](SG-T2_MAS_Style_Inventory_and_Materiality.md)).
+- Build the inventory and risk materiality assessment first ([SG-T2](SG-T2_MAS_Style_Inventory_and_Materiality.md)); the MAS Guidelines expect them from 7 October 2027.
 - Map controls to the CSA guidance for security.
 - Align privacy notices and uses with PDPC guidance ([SG-T3](SG-T3_PDPA_AI_Use_Note.md)).
-- Track the final MAS guidelines.
+- Plan the life cycle controls against the [paragraph crosswalk](03_Regulatory_Crosswalk.md#mas-guidelines-on-ai-risk-management-paragraph-crosswalk) of the MAS Guidelines, which are to be met by 7 October 2028.
 
 ## Shared evidence list
 

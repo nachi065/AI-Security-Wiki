@@ -11,11 +11,11 @@ has_children: true
 
 Resources for people who build, sell, audit or run AI systems in Singapore. The pages map Singapore laws, guidance and standards to the wiki's [control library](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md). The [GCC](../11_GCC_AI_Compliance/index.md) and [EU](../12_EU_AI_Compliance/index.md) sections cover their regions in more depth and hold the general templates.
 
-> **Verification required.** Everything in this section about Singapore law was compiled on 7 October 2026 from secondary web sources and from memory of the law. No primary legal text was read. Article, clause and section numbers are left blank unless a source showed them; fill them in from the primary text. Check the primary text before relying on any claim. This is not legal advice.
+> **Verification required.** Everything in this section about Singapore law was compiled on 7 October 2026 from secondary web sources and from memory of the law. On 10 October 2026 the MAS Guidelines on Artificial Intelligence Risk Management of 7 October 2026 were read and the pages updated from them; no other primary text was read. Article, clause and section numbers are left blank unless a source showed them; fill them in from the primary text. Check the primary text before relying on any claim. This is not legal advice.
 
 ## Singapore's position in one line
 
-Singapore has no horizontal AI law. It relies on voluntary but well-regarded frameworks (IMDA, AI Verify, CSA), the PDPA, and financial-sector guidelines from MAS [Reported].
+Singapore has no horizontal AI law. It relies on voluntary but well-regarded frameworks (IMDA, AI Verify, CSA), the PDPA [Reported], and the MAS Guidelines on Artificial Intelligence Risk Management for financial institutions, issued on 7 October 2026 and in effect from 7 October 2027 [Verified].
 
 ## What is in this section
 
@@ -24,14 +24,15 @@ Singapore has no horizontal AI law. It relies on voluntary but well-regarded fra
 | [Singapore AI Regulatory Hub](01_Singapore_AI_Regulatory_Hub.md) | Everyone | Instrument register, timeline, categories and roles, mapping to wiki controls, wiki coverage, verification checklist and sources |
 | [Singapore: Role Guide](02_Role_Guide.md) | Practitioners, product companies, auditors, implementors | One guide with a part for each role |
 | [SG-T1](SG-T1_Agentic_AI_Risk_Bounding_Worksheet.md) | All | Agentic AI risk bounding and accountability worksheet |
-| [SG-T2](SG-T2_MAS_Style_Inventory_and_Materiality.md) | Financial institutions | AI inventory and risk materiality assessment in the MAS style |
+| [SG-T2](SG-T2_MAS_Style_Inventory_and_Materiality.md) | Financial institutions | AI inventory and risk materiality assessment that follows the MAS Guidelines of 7 October 2026 |
 | [SG-T3](SG-T3_PDPA_AI_Use_Note.md) | All | PDPA AI use note |
-| [Singapore Regulatory Crosswalk](03_Regulatory_Crosswalk.md) | GRC tooling | Instrument-to-control map with verification status, also as a CSV file |
+| [Singapore Regulatory Crosswalk](03_Regulatory_Crosswalk.md) | GRC tooling | Instrument-to-control map with verification status, and a paragraph-by-paragraph crosswalk of the MAS Guidelines; both also as CSV files |
 
 ## How claims are tagged
 
 | Tag | Meaning |
 |---|---|
+| **[Verified]** | The point stated was checked against the regulator's own document, on the date given. Confirm the wording before you cite it. |
 | **[Reported]** | Stated by secondary web sources found on 7 October 2026 (law-firm notes, vendor blogs, research notes). Not read in the primary text. |
 | **[Recalled]** | Stated from memory of the law or guidance and not re-checked. Verify before citing it. |
 | **[Conflict]** | Secondary sources disagree. Resolve from the primary text. |
