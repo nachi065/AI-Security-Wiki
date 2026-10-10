@@ -18,36 +18,7 @@ document_type: Practitioner Research Paper
 
 ## 7.2 Layers
 
-```text
-Users / Upstream Systems
-        |
-        v
-Application Gateway              authn, rate limits, input checks
-        |
-        v
-Orchestration / Agent Runtime    prompt and context management
-        |
-        +--> Model Gateway  -->  Model Runtime (hosted or self-managed)
-        |      routing, redaction, logging
-        |
-        +--> Retrieval and Data Services (ACL-enforcing)
-        |
-        +--> Policy Enforcement Point    deterministic rules + approvals
-                   |
-                   v
-             Tool and Agent Gateway      scoped credentials
-                   |
-                   v
-             Enterprise Systems / APIs
-
-Security Telemetry  <--  Orchestration, Model Gateway, Policy Enforcement Point, Tool Gateway
-        |
-        v
-Detection and Response
-
-Evaluation / Red-team Platform    tests the Orchestration layer
-Governance (inventory, risk, policy)    sets rules for the Policy Enforcement Point
-```
+<img class="figure" src="images/secure-agentic-ai-system-architecture.jpg" width="1024" height="724" alt="Secure agentic AI system architecture. Users and upstream systems reach an application gateway, then the orchestration and agent runtime. The runtime calls model management (model gateway and model runtime), retrieval and data services, and a policy enforcement point. A policy decision point in the authorization control plane sets the rules for the enforcement point. Authorized actions pass through the tool and agent gateway to enterprise systems and APIs. Orchestration, the model gateway, the policy enforcement point and the tool gateway send security telemetry to detection and response. An evaluation and red-team platform tests the orchestration layer.">
 
 | Layer | Responsibility |
 |---|---|
