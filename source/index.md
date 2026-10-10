@@ -3,7 +3,7 @@ title: "Home"
 description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and 653 test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.25
+version: 2.26
 status: Published
 author: Nachiket Sathaye
 coauthors: Ankush Jain
@@ -17,7 +17,7 @@ last_updated: 2026-10-10
 # AI Security Wiki Home
 
 > **Document Type:** Enterprise AI Security Reference Architecture and Governance Wiki  
-> **Version:** 2.25  
+> **Version:** 2.26  
 > **Status:** Published  
 > **Original Author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
 > **Co-Author:** Ankush Jain ([about the co-author](#23-about-the-co-author))  
@@ -110,31 +110,9 @@ The wiki follows eight principles:
 
 The wiki supports the following end-to-end operating model:
 
-```text
-Discover AI Use Case or Tool
-        ↓
-Register Intake and Business Owner
-        ↓
-Classify Data, Users, Integrations, and Criticality
-        ↓
-Perform AI Risk Assessment
-        ↓
-Select Required Security, Privacy, Sovereignty, and Compliance Controls
-        ↓
-Review Architecture and Vendor Posture
-        ↓
-Approve, Reject, or Treat Risk
-        ↓
-Implement Secure Design and Controls
-        ↓
-Validate Through Testing, PoC, and Red Teaming
-        ↓
-Deploy with Monitoring, Logging, and Incident Response Coverage
-        ↓
-Collect Evidence and Perform Periodic Assurance
-        ↓
-Review, Improve, Renew, or Retire
-```
+<img class="figure" src="images/secure-ai-agent-operating-lifecycle.jpg" width="1024" height="724" alt="Secure AI agent operating lifecycle. Step 1, discover the AI use case or tool. Step 2, register intake and business owner. Step 3, classify data, users, integrations and criticality. Step 4, perform the AI risk assessment. Step 5, select the required security, privacy, sovereignty and compliance controls, informed by governance, regulations and frameworks through a policy decision point. Step 6, review architecture and vendor posture. Step 7, approve, reject or treat the risk. Step 8, implement secure design and controls, including a policy enforcement point and a tool and agent gateway. Step 9, validate through testing, proof of concept and red teaming. Step 10, deploy with monitoring, logging and incident response coverage. Step 11, collect evidence and perform periodic assurance. Telemetry, audit reports and incidents flow to the security operations centre, and the cycle returns to step 1.">
+
+The cycle then repeats: each use case is reviewed, improved, renewed or retired, and the result feeds the next round of discovery.
 
 ## 7. AI Security Lifecycle Navigation
 
@@ -436,6 +414,7 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 | 2.23 | 2026-10-10 | Nachiket Sathaye | Added 21 test cases: nine on agent-to-agent communication (TC-L06-038 to TC-L06-046), six on identity for training jobs (TC-L13-021 to TC-L13-026) and six on identity for model serving and registries (TC-L12-026 to TC-L12-031). AI-CTRL-006 and AI-CTRL-015 now cite OWASP ASI07, AI-CTRL-016 maps to AI-R08, and three controls gained wording on agent-to-agent and workload identity. The library holds 653 cases. |
 | 2.24 | 2026-10-10 | Nachiket Sathaye | Singapore AI Compliance: updated from the MAS Guidelines on Artificial Intelligence Risk Management issued on 7 October 2026, which take effect on 7 October 2027. The crosswalk now maps the Guidelines paragraph by paragraph to wiki controls and test cases, and the SG-T2 template follows the final text. The sector overlays cite the Guidelines. |
 | 2.25 | 2026-10-10 | Nachiket Sathaye | Foundations, section 7.2: replaced the text diagram of the reference architecture with an image of the secure agentic AI system architecture, which shows the policy decision point and governance. Added a policy decision row to the layer table. |
+| 2.26 | 2026-10-10 | Nachiket Sathaye | Home, section 6: replaced the text flow of the AI security operating model with an image of the secure AI agent operating lifecycle. |
 
 ## 21. Quick Links
 
