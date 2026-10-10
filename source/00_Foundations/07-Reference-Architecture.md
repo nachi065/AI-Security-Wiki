@@ -18,7 +18,7 @@ document_type: Practitioner Research Paper
 
 ## 7.2 Layers
 
-<img class="figure" src="images/secure-agentic-ai-system-architecture.jpg" width="1024" height="724" alt="Secure agentic AI system architecture. Users and upstream systems reach an application gateway, then the orchestration and agent runtime. The runtime calls model management (model gateway and model runtime), retrieval and data services, and a policy enforcement point. A policy decision point in the authorization control plane sets the rules for the enforcement point. Authorized actions pass through the tool and agent gateway to enterprise systems and APIs. Orchestration, the model gateway, the policy enforcement point and the tool gateway send security telemetry to detection and response. An evaluation and red-team platform tests the orchestration layer.">
+<img class="figure" src="images/secure-agentic-ai-system-architecture.jpg" width="1220" height="724" alt="Secure agentic AI system architecture. Users and upstream systems reach an application gateway, then the orchestration and agent runtime. The runtime calls model management (model gateway and model runtime), retrieval and data services, and a policy enforcement point. A policy decision point in the authorization control plane sets the rules for the enforcement point, and governance (inventory, risk and policy) sets the policy for the decision point. Authorized actions pass through the tool and agent gateway to enterprise systems and APIs. Orchestration, the model gateway, the policy enforcement point and the tool gateway send security telemetry to detection and response. An evaluation and red-team platform tests the orchestration layer.">
 
 | Layer | Responsibility |
 |---|---|
@@ -30,6 +30,7 @@ document_type: Practitioner Research Paper
 | Retrieval and data services | Enforce entitlements on every query; record provenance |
 | Tool and agent gateway | Expose only allow-listed, schema-validated tools with scoped credentials |
 | Policy enforcement | Deterministic checks and approval workflow for sensitive actions |
+| Policy decision | Evaluate each request against the policy that governance sets, return an allow, deny or approval-required decision to the enforcement point, and log the decision |
 | Security telemetry | Structured logs feeding detection and audit |
 | Evaluation and red-team platform | Pre-release and continuous testing against defined threat cases |
 | Incident response | AI-specific playbooks, containment levers, forensics |

@@ -268,7 +268,7 @@
 <li><strong>Telemetry by design.</strong> Capture identity, model version, prompt and retrieval provenance (where legally and operationally appropriate), tool invocations, policy decisions, outputs and downstream effects.</li>
 </ol>
 <h2 id="72-layers">7.2 Layers</h2>
-<p><img class="figure" src="images/secure-agentic-ai-system-architecture.jpg" width="1024" height="724" alt="Secure agentic AI system architecture. Users and upstream systems reach an application gateway, then the orchestration and agent runtime. The runtime calls model management (model gateway and model runtime), retrieval and data services, and a policy enforcement point. A policy decision point in the authorization control plane sets the rules for the enforcement point. Authorized actions pass through the tool and agent gateway to enterprise systems and APIs. Orchestration, the model gateway, the policy enforcement point and the tool gateway send security telemetry to detection and response. An evaluation and red-team platform tests the orchestration layer."></p>
+<p><img class="figure" src="images/secure-agentic-ai-system-architecture.jpg" width="1220" height="724" alt="Secure agentic AI system architecture. Users and upstream systems reach an application gateway, then the orchestration and agent runtime. The runtime calls model management (model gateway and model runtime), retrieval and data services, and a policy enforcement point. A policy decision point in the authorization control plane sets the rules for the enforcement point, and governance (inventory, risk and policy) sets the policy for the decision point. Authorized actions pass through the tool and agent gateway to enterprise systems and APIs. Orchestration, the model gateway, the policy enforcement point and the tool gateway send security telemetry to detection and response. An evaluation and red-team platform tests the orchestration layer."></p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -308,6 +308,10 @@
 <tr>
 <td>Policy enforcement</td>
 <td>Deterministic checks and approval workflow for sensitive actions</td>
+</tr>
+<tr>
+<td>Policy decision</td>
+<td>Evaluate each request against the policy that governance sets, return an allow, deny or approval-required decision to the enforcement point, and log the decision</td>
 </tr>
 <tr>
 <td>Security telemetry</td>
