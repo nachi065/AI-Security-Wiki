@@ -8,7 +8,7 @@ nav_order: 4
 
 # Payload Kit: Runnable Attack Sets for Critical Cases
 
-The cases in this library tell you what to test. This kit gives you something to run. For 36 of the 169 Critical cases it provides the attack payloads, the legitimate requests that must keep working, the pass thresholds and a runner that compares an unprotected build with a protected one.
+The cases in this library tell you what to test. This kit gives you something to run. For {{n:kit_cases}} of the {{n:critical}} Critical cases it provides the attack payloads, the legitimate requests that must keep working, the pass thresholds and a runner that compares an unprotected build with a protected one.
 
 > **Audience:** engineers and assessors who have an agent, assistant or RAG application and want a repeatable result, not a manual walk-through.
 
@@ -143,7 +143,7 @@ Two things in that table are worth knowing before you test your own system.
 
 ## What this kit does not do
 
-- **It covers 36 of 169 Critical cases.** The rest are inventory, evidence, configuration and infrastructure checks (agent and vector-store discovery, connector scopes, GPU and network isolation, provider terms, residency, forensics and so on) or need a browser, a voice channel or a training pipeline. A payload file would add nothing there, and inventing one would be worse than leaving it out.
+- **It covers {{n:kit_cases}} of {{n:critical}} Critical cases.** The rest are inventory, evidence, configuration and infrastructure checks (agent and vector-store discovery, connector scopes, GPU and network isolation, provider terms, residency, forensics and so on) or need a browser, a voice channel or a training pipeline. A payload file would add nothing there, and inventing one would be worse than leaving it out.
 - **It does not measure time.** Kill-switch deadlines, rule-propagation delays and detection intervals are in the case text and are still manual checks.
 - **The payloads are not tuned against real models.** They are written to be representative and varied, and the stand-in confirms they run. Whether they succeed against a given model or product is exactly what you are measuring. A short payload set can pass because it is weak. Add your own variants for anything you rely on.
 - **It does not check logs, dashboards or evidence fields.** Those parts of each case are unchanged.

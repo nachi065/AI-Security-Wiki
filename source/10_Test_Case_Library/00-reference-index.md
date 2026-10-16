@@ -8,7 +8,7 @@ nav_order: 1
 
 # Reference Index
 
-17-layer AI lifecycle model | 7 use-case domains | 6 emerging domains | 668 test cases
+{{n:layers}}-layer AI lifecycle model | 7 use-case domains | 6 emerging domains | {{n:tests}} test cases
 
 *Status: draft for review. Case counts, domain assignments and mappings are proposals until approved.*
 
@@ -16,7 +16,7 @@ nav_order: 1
 
 ## 1. Purpose and scope
 
-This index is the master reference for the test case library. It organises the library by the 17 layers of the AI lifecycle (primary axis) and tags each test case with one or more buyer-facing use-case domains (secondary axis). The layer files contain the full test cases; this index controls numbering, counts, field definitions and coverage.
+This index is the master reference for the test case library. It organises the library by the {{n:layers}} layers of the AI lifecycle (primary axis) and tags each test case with one or more buyer-facing use-case domains (secondary axis). The layer files contain the full test cases; this index controls numbering, counts, field definitions and coverage.
 
 **Safety boundary:** all test cases use synthetic, non-functional or clearly marked test data only. No real customer, employee, financial, health or credential data is to be used or substituted during execution.
 
@@ -47,7 +47,7 @@ Where a case is the detailed version of a scenario in the wiki's [AI Security Po
 | L15 | [Infrastructure Layer](L15-infrastructure-layer.md) | GPU/cluster hardening, secrets, network segmentation, sovereignty of control plane | 20 |
 | L16 | [Supply Chain & Third Party](L16-supply-chain-and-third-party.md) | AI-BOM, model and package provenance, third-party SaaS AI risk | 26 |
 | L17 | [Monitoring, Detection & Response](L17-monitoring-detection-and-response.md) | telemetry, SIEM/SOAR integration, AI incident response, forensics, tracing platforms, quality failures | 33 |
-| | **Total** | | **535** |
+| | **Total** | | **{{n:layer_tests}}** |
 
 ## 4. Use-case domain tags
 
@@ -71,9 +71,9 @@ Where a case is the detailed version of a scenario in the wiki's [AI Security Po
 | D11 | [Multimodal and Voice Input Security](D11-multimodal-and-voice-input-security.md) | 22 |
 | D12 | [AI Incident Response and Forensics](D12-ai-incident-response-and-forensics.md) | 22 |
 | D13 | [AI Cost and Abuse Controls](D13-ai-cost-and-abuse-controls.md) | 21 |
-| | **Total** | **133** |
+| | **Total** | **{{n:domain_tests}}** |
 
-These domains cut across the 17 layers. Their cases use a separate ID series so IDs stay unique, record the lifecycle layers they touch, and cross-reference the layer cases they build on. Their market relevance has not been independently verified.
+These domains cut across the {{n:layers}} layers. Their cases use a separate ID series so IDs stay unique, record the lifecycle layers they touch, and cross-reference the layer cases they build on. Their market relevance has not been independently verified.
 
 ## 5. Layer-to-domain coverage matrix (draft)
 

@@ -13,6 +13,10 @@ last_reviewed: 2026-10-15
 
 This page records each substantial update to the wiki, newest first, with what was checked and what is still work in progress. The full version history is in [section 20 of the home page](../index.md#20-version-history).
 
+## 16 October 2026: Control tiers and build-time counts
+
+The 46 controls are split into 22 Baseline and 24 Advanced. The split is the author's judgement, not a framework requirement; the [Control Tiers](../03_Control_Library/06_Control_Tiers.md) page is generated from a Tier field in each control record, and the link check requires the ten Builder Track controls to be Baseline. Separately, totals such as the number of test cases, layers, controls and risks are now computed from the source at build time (`counts.py`) and written in pages as placeholders, so they cannot drift; the link check fails on a hand-typed total. Per-layer counts inside the test-method table in the Test Case Library index are still typed by hand.
+
 ## 16 October 2026: Regional verification and a freeze on new regions
 
 India, the GCC and the EU were checked against primary texts where the texts could be fetched. India: the DPDP Act, the DPDP Rules (G.S.R. 846(E), phased commencement dates), the AI Governance Guidelines, the RBI FREE-AI report, the RBI draft model risk guidance and the CERT-In directions are now `[Verified]`; the IT Rules synthetic-content amendment and the SEBI amendments stay `[Reported]`; the IRDAI AI directive could not be confirmed and is `[Unverified]`. GCC: the UAE data protection law (article numbers) is `[Verified]`. The original EU AI Act Article 113 could not be retrieved, so those dates keep their earlier tags. Nothing outside these three sections was checked. New regions are frozen until the others are verified (see CONTRIBUTING.md).

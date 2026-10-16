@@ -38,6 +38,24 @@ for dirpath, dirs, files in os.walk(SRC):
 
 
 
+# Counts that pages quote are written as {{n:name}} and filled in from the source files here.
+from counts import site_counts
+COUNTS = site_counts(SRC)
+
+
+def fill_counts(text, where):
+    def value(m):
+        if m.group(1) not in COUNTS:
+            raise SystemExit(f"{where}: unknown count {m.group(0)}")
+        return str(COUNTS[m.group(1)])
+    return re.sub(r"\{\{n:(\w+)\}\}", value, text)
+
+
+for p in pages:
+    p["body"] = fill_counts(p["body"], p["src"])
+    p["meta"] = {k: fill_counts(v, p["src"]) for k, v in p["meta"].items()}
+
+
 def traceability(page):
     """Risk to control to test tables, read from the pages that own each link."""
     def text(src):

@@ -54,6 +54,8 @@ A new region is accepted only when its first version has `[Verified]` rows for i
 ## What to expect
 
 - Every pull request is reviewed by the maintainer before it is merged.
+- Do not type totals that the site can count (cases, layers, controls, risks, families). Write `{{n:tests}}`, `{{n:layer_tests}}`, `{{n:domain_tests}}`, `{{n:layers}}`, `{{n:controls}}`, `{{n:families}}` or `{{n:risks}}`; `build.py` fills them in and the link check fails on a hand-typed total. The list is in `counts.py`. Version-history rows and the Update Notes record what was true at the time and keep their numbers.
+- Give every new control a `Tier` field (Baseline or Advanced); the link check requires it.
 - When you add a test case, leave out any field that the [Standard Fields](https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/standard-fields.html) page already covers (scoring, pass and fail criteria, reviewer notes, standard evidence, the lab setup for the layer). Write the field only when your case needs different wording. The link check fails if a case repeats a standard word for word. The standard wording itself is in `source/10_Test_Case_Library/standard-fields.json`.
 - Two automated checks run on every pull request. One protects author credit. The other fails if a link inside the wiki points to a page or heading that does not exist, or if a page cites a risk, control or test case ID that is not defined. Links to other websites are checked weekly on the main branch, so a pull request never fails because an outside site moved a page.
 - Keep content vendor-neutral and free of confidential, personal or organization-specific information.

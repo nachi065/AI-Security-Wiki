@@ -1,6 +1,6 @@
 ---
 title: "Home"
-description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and 668 test cases."
+description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and {{n:tests}} test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
 version: 2.29
@@ -51,7 +51,7 @@ This wiki is the implementation layer: control objectives, evidence, audit proce
 | Extend an existing security programme to AI | NIST CSF, CIS Controls or SOC 2 | The AI control objectives under each category, control or criterion, through the [NIST CSF](23_Framework_Crosswalks/09_NIST_CSF_Crosswalk.md), [CIS Controls](23_Framework_Crosswalks/10_CIS_Controls_Crosswalk.md) and [SOC 2](23_Framework_Crosswalks/11_SOC_2_Crosswalk.md) crosswalks |
 | Compare privacy duties across jurisdictions | GDPR, CCPA, Quebec Law 25, Singapore PDPA and the GCC data protection laws | Controls per theme, through the [Privacy Law Crosswalk](23_Framework_Crosswalks/13_Privacy_Law_Crosswalk.md) |
 | Structure risk language and a programme | NIST AI RMF | Engineering controls, evidence and scoring |
-| Define attack classes for testing | OWASP lists, MITRE ATLAS, NIST AI 100-2 | The 668-case test library, and the [NIST AI 100-2 Crosswalk](23_Framework_Crosswalks/14_NIST_AI_100_2_Crosswalk.md) |
+| Define attack classes for testing | OWASP lists, MITRE ATLAS, NIST AI 100-2 | The {{n:tests}}-case test library, and the [NIST AI 100-2 Crosswalk](23_Framework_Crosswalks/14_NIST_AI_100_2_Crosswalk.md) |
 | Meet regional legal duties | The primary legal texts | The [Regional AI Regulatory Hub](11_GCC_AI_Compliance/index.md) sections |
 | Decide which risks apply to a use case | n/a | The [use-case risk triage](02_Risk_Management/02F_AI_Use_Case_Risk_Triage.md) |
 
@@ -185,7 +185,7 @@ The cycle then repeats: each use case is reviewed, improved, renewed or retired,
   Operating model, acceptable AI use, approvals, committees, responsibilities, and reporting cadence.
 
 10_Test_Case_Library/
-  668 detailed product evaluation test cases across 17 AI lifecycle layers and 6 emerging domains, with reference index,
+  {{n:tests}} detailed product evaluation test cases across {{n:layers}} AI lifecycle layers and 6 emerging domains, with reference index,
   lab prerequisites, and framework adoption guide.
 
 11_GCC_AI_Compliance/
@@ -435,6 +435,7 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 | 2.30 | 2026-10-16 | Nachiket Sathaye | Added the Builder Track section: one page, "Secure Your First Agent: Ten Controls With Code", with ten controls in build order and working configuration and code for tool allow-lists, argument validation, scoped short-lived credentials, sandboxing, egress limits and approval gates. The `code/` folder holds a reference guard, sandbox and egress proxy, a runnable demo and a test suite. The Python code was run and tested; the container and Kubernetes settings were not executed. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 | 2.31 | 2026-10-16 | Nachiket Sathaye | Added the Payload Kit: runnable attack and legitimate-request sets, thresholds and a runner for 36 of the 169 Critical test cases, linked from each covered case, and a Test Your Own Application page for owners of the code. Tested against stand-in applications only. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 | 2.32 | 2026-10-16 | Nachiket Sathaye | Moved wording that repeats across the test cases into one Standard Fields page. Cases show only the fields that differ from the standard. No wording was changed; the link check enforces the rule. See the [Update Notes](09_Reference/19_Update_Notes.md). |
+| 2.33 | 2026-10-16 | Nachiket Sathaye | Verified India, UAE and EU rows against primary texts where they could be fetched and added a Verified tag; froze new regions until the rest are checked. Split the controls into Baseline and Advanced tiers (new Tier field and a generated Control Tiers page). Counts that pages quote (cases, layers, controls, risks) are now filled in at build time. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 
 ## 21. Quick Links
 
@@ -451,7 +452,7 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 - [Sovereign AI, UAE Compliance and Data Residency Requirements](04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.md)
 - [AI Security Vendor Evaluation Master Framework](05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.md)
 - [AI Security PoC Test Case Library](06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md)
-- [Test Case Library (668 cases, 17 layers and 6 emerging domains)](10_Test_Case_Library/index.md)
+- [Test Case Library ({{n:tests}} cases, {{n:layers}} layers and 6 emerging domains)](10_Test_Case_Library/index.md)
 - [GCC AI Compliance (regulatory hub, role guides and templates)](11_GCC_AI_Compliance/index.md)
 - [EU AI Compliance (AI Act hub, role guides and templates)](12_EU_AI_Compliance/index.md)
 - [Australia AI Compliance (regulatory hub, role guide and templates)](13_Australia_AI_Compliance/index.md)

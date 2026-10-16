@@ -15,7 +15,7 @@ version: 2.4
 
 > **How to use:** Select controls by risk tier, then update the evidence, owners, control status, and links as implementation maturity improves.
 
-The library holds **46 control objectives in 11 families**, split into a [Baseline and an Advanced tier](06_Control_Tiers.md). Each control has a stable ID that the rest of the wiki uses: the [AI Risk to Control Mapping](../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.md) links risks to controls, the [domain standards](../04_Domain_Standards/index.md) cite the controls they apply, the [AI Security Audit and Evidence Checklist](../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md) lists the evidence, and every one of the 668 cases in the [Test Case Library](../10_Test_Case_Library/index.md) names the control it tests.
+The library holds **{{n:controls}} control objectives in {{n:families}} families**, split into a [Baseline and an Advanced tier](06_Control_Tiers.md). Each control has a stable ID that the rest of the wiki uses: the [AI Risk to Control Mapping](../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.md) links risks to controls, the [domain standards](../04_Domain_Standards/index.md) cite the controls they apply, the [AI Security Audit and Evidence Checklist](../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md) lists the evidence, and every one of the {{n:tests}} cases in the [Test Case Library](../10_Test_Case_Library/index.md) names the control it tests.
 
 The controls follow the design principle set out in the [Foundations paper](../00_Foundations/07-Reference-Architecture.md): the model is an untrusted component, and authority to act, access data or spend money is enforced outside it.
 
@@ -107,7 +107,7 @@ The last four are general security frameworks with no AI-specific content. A con
 | [AI-CTRL-045](#ai-ctrl-045) | Human Oversight Design and Effectiveness | Governance and Compliance | Design human review so the people named as overseers can understand, challenge, override and stop an AI system, and show with measures that they do. | 3 |
 | [AI-CTRL-046](#ai-ctrl-046) | Intellectual Property and Copyright Governance | Governance and Compliance | Control the intellectual property and copyright exposure of AI inputs, outputs and training data. | 4 |
 
-A test case is counted under every control it tests, so the counts add up to more than 668.
+A test case is counted under every control it tests, so the counts add up to more than {{n:tests}}.
 
 ## Control entries
 

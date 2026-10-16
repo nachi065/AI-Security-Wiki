@@ -132,6 +132,26 @@ for _c in sorted(set(re.findall(r"AI-CTRL-\d{3}", _builder.split("## The ten con
     if _tier.get(_c) != "Baseline":
         errors.append(f"source/24_Builder_Track: {_c} is used by the Builder Track but is not Baseline")
 
+# Counts. Totals that the site can work out are written as {{n:name}} and filled in at
+# build time (see counts.py). A page that types one of them by hand would go stale.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from counts import site_counts
+_counts = site_counts(SRC)
+_stale = [(rf"\b{_counts[k]}\b", k) for k in ("tests", "layer_tests", "domain_tests")]
+_stale += [(rf"\b{_counts['controls']} (?:controls|control objectives)\b", "controls"), (rf"\b{_counts['risks']} risks\b", "risks"), (rf"\b{_counts['families']} families\b", "families")]
+for path, text in pages.items():
+    if "Update_Notes" in path:
+        continue
+    for line_no, line in enumerate(text.split("\n"), 1):
+        if re.match(r"\| \d\.\d+ \|", line):  # version history rows record what was true then
+            continue
+        for pattern, key in _stale:
+            if re.search(pattern, line):
+                errors.append(f"source/{path}:{line_no}: writes a count by hand; use {{{{n:{key}}}}}")
+        for m in re.finditer(r"\{\{n:(\w+)\}\}", line):
+            if m.group(1) not in _counts:
+                errors.append(f"source/{path}:{line_no}: unknown count {m.group(0)}")
+
 # External URLs. Only a URL that is gone counts as an error: many sites refuse
 # automated requests, and that says nothing about the page.
 unchecked = []
