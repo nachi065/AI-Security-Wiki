@@ -123,6 +123,8 @@ D2 (Developer / IDE AI Security) has 29 cases. L05 is its primary home, with fur
 | **Scoring Criteria** | 0 = not demonstrated; 3 = partially met or evidence incomplete; 5 = fully met with complete evidence; N/A = architecture out of scope. |
 | **Pass / Fail Criteria** | Pass requires Expected Detection (and Prevention where stated) within SLA with evidence captured from the live PoC. Fail is any miss, SLA breach, missing attribution or reliance on vendor demo data. |
 
+The Preconditions, Scoring Criteria, Pass Criteria, Fail Criteria, Reviewer Notes, Expected Alert / Log, Expected Record / Log, Expected Report / Dashboard Evidence, Forensic Evidence, Compliance Evidence and Audit Evidence fields repeat across most cases, so their standard wording is held once on the [Standard Fields](standard-fields.md) page. A case shows one of these fields only when its text differs from the standard, and the build checks that no case repeats a standard word for word.
+
 ## 7. Known limitations
 
 - Reference identifiers (MITRE ATLAS, OWASP LLM, NIST AI RMF) come from working knowledge and must be checked against current releases before use in an RFP.

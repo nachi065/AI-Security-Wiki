@@ -93,6 +93,30 @@ for kind, (pattern, home) in IDS.items():
         for name in sorted(set(re.findall(rf"\b{pattern}\b", text)) - set(defined)):
             errors.append(f"source/{path}: cites {name}, but no such {kind} is defined")
 
+# Standard fields. Wording that cases share lives in standard-fields.json; a case may
+# show such a field only when its text differs from the standard.
+import json
+sf_path = os.path.join(SRC, "10_Test_Case_Library", "standard-fields.json")
+if os.path.exists(sf_path):
+    sf = json.load(open(sf_path, encoding="utf-8"))
+    KEY = {"all": lambda l, m, k: "all", "shape": lambda l, m, k: k, "method-shape": lambda l, m, k: f"{m.lower()}-{k}", "layer": lambda l, m, k: l}
+    for path, text in sorted(pages.items()):
+        layer = re.match(r"10_Test_Case_Library/([LD]\d\d)-", path)
+        if not layer:
+            continue
+        for block in re.split(r"(?m)^(?=### TC-[LD]\d\d-\d{3}:)", text)[1:]:
+            name = block.split(":", 1)[0].replace("### ", "")
+            method = re.search(r"\| \*\*Test Method\*\* \| ([^|]*) \|", block)
+            if not method:
+                errors.append(f"source/{path}: {name} has no Test Method")
+                continue
+            shape = "detect" if "**Expected Detection.**" in block else "result"
+            for field, standards in sf["standards"].items():
+                key = KEY[sf["keys"][field]](layer.group(1), method.group(1).strip(), shape)
+                shown = re.search(rf"(?m)^\*\*{re.escape(field)}\.\*\* (.*)$", block)
+                if shown and standards.get(key) == shown.group(1):
+                    errors.append(f"source/{path}: {name} repeats the standard {field}; remove it (see Standard Fields)")
+
 # External URLs. Only a URL that is gone counts as an error: many sites refuse
 # automated requests, and that says nothing about the page.
 unchecked = []

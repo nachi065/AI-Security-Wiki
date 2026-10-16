@@ -18,6 +18,8 @@ nav_order: 7
 
 > **Verify before use.** MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the [Reference Index](00-reference-index.md) for field definitions and applicability codes.
 
+> **Standard fields.** A field that a case does not show, such as scoring, pass and fail criteria, reviewer notes, standard evidence or the lab setup, uses the wording on the [Standard Fields](standard-fields.md) page.
+
 ## Cases in this layer
 
 | ID | Title | Severity | Method | Domain(s) | Controls |
@@ -82,8 +84,6 @@ nav_order: 7
 
 **Technical Scenario.** Test accounts browse to 3 public AI web tools absent from the approved list; the platform must classify each as unsanctioned.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** 3 unapproved public AI tools; 5 test accounts; approved-list file loaded in the platform.
 
 **Procedure**
@@ -96,25 +96,9 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** Optional warning banner per configured policy.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Unsanctioned list feeds the Shadow AI view and any exportable report.
 
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Alert/inventory export; raw log line per access; timestamp delta between action and detection.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -142,8 +126,6 @@ nav_order: 7
 
 **Technical Scenario.** Install 3 test AI extensions (summariser, writing assistant, chat sidebar) on 5 test endpoints and confirm inventory.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** 3 test extensions across 5 endpoints; mix of Chrome and Edge profiles.
 
 **Procedure**
@@ -157,25 +139,9 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** Ability to flag or block non-approved extensions per policy.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Inventory correlates to MDM/EDR asset records.
 
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Inventory export; permission list screenshot; before/after removal log entries.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -203,8 +169,6 @@ nav_order: 7
 
 **Technical Scenario.** 15 test accounts tagged to 3 directory departments generate a known mix of sanctioned and unsanctioned usage.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** 15 accounts (5 per department); scripted usage counts per account.
 
 **Procedure**
@@ -217,25 +181,11 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** N/A (visibility control).
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Departmental data exportable to the executive dashboard or BI tool.
-
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Report export; ground-truth sheet; variance calculation.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -263,8 +213,6 @@ nav_order: 7
 
 **Technical Scenario.** Test accounts in 2 distinct IdP groups generate usage; the platform must attribute by group membership, including after a group change.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** 10 accounts across 2 groups; 1 account moved between groups mid-test.
 
 **Procedure**
@@ -278,25 +226,11 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** N/A (visibility control).
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Group data correlates to IAM/IdP group definitions.
-
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Group report before and after the move; IdP membership export.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -324,8 +258,6 @@ nav_order: 7
 
 **Technical Scenario.** Generate usage from 1 managed laptop, 1 unmanaged laptop and 1 mobile device.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** 3 devices with known management status.
 
 **Procedure**
@@ -337,25 +269,11 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** N/A (feeds policy decisions elsewhere).
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Attribution correlates with MDM/UEM inventory.
-
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Session records showing device attributes; MDM export.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -383,8 +301,6 @@ nav_order: 7
 
 **Technical Scenario.** 1 test account uses AI tools over on-premises LAN, corporate VPN and an unmanaged external network.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** 1 account; 3 network paths.
 
 **Procedure**
@@ -396,25 +312,11 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** N/A (visibility control).
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Path data correlates to SASE/VPN logs.
-
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Session logs with path field; VPN log extract.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -442,8 +344,6 @@ nav_order: 7
 
 **Technical Scenario.** Ingest a proxy log sample containing known AI domains.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** Log sample with 5 known AI-tool domain accesses and 20 unrelated entries.
 
 **Procedure**
@@ -456,25 +356,11 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** N/A (visibility control).
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Confirms ingestion works with no additional agent.
-
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Ingestion job log; classified results; false-positive count.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -502,8 +388,6 @@ nav_order: 7
 
 **Technical Scenario.** Use a local AI app on an agent-equipped endpoint while disconnected, then reconnect.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** 1 endpoint with agent; 1 local AI application.
 
 **Procedure**
@@ -517,25 +401,11 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** N/A (visibility control).
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Agent telemetry correlates with EDR data.
-
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Agent queue log; reported event with original and received timestamps.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -563,8 +433,6 @@ nav_order: 7
 
 **Technical Scenario.** Sign in to one AI service first with a corporate SSO identity, then with a personal account, and submit synthetic data in each.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** 1 AI service with enterprise tenant; 1 personal test account; synthetic internal-labelled text.
 
 **Procedure**
@@ -577,25 +445,9 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** Policy can block or warn on personal-account sessions.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Tenant restriction data correlates with IdP and SaaS admin logs.
 
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Two session records with account-type field; policy screenshot.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -623,8 +475,6 @@ nav_order: 7
 
 **Technical Scenario.** Enable the built-in AI assistant in a managed browser and summarise a test page.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** 1 browser with built-in AI feature enabled; 1 internal-labelled test page.
 
 **Procedure**
@@ -637,25 +487,9 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** Ability to disable the feature by policy, or alert on its use.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Browser management policy state correlates with detection.
 
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Detection record or documented limitation; browser policy export.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -683,8 +517,6 @@ nav_order: 7
 
 **Technical Scenario.** Access an unsanctioned tool with coaching enabled and observe the message and click-through.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** 2 unsanctioned tools; 1 sanctioned alternative with link; 5 test users.
 
 **Procedure**
@@ -697,25 +529,9 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** Coaching without block (warn mode).
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Message content and response logged for reporting.
 
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Screenshot of message; log of user action.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -744,8 +560,6 @@ nav_order: 7
 
 **Technical Scenario.** Paste synthetic confidential text into a sanctioned and an unsanctioned AI prompt and observe the warning.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** Synthetic text labelled Confidential; neutral text for control.
 
 **Procedure**
@@ -758,25 +572,9 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** Warn and allow, or block, per policy.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Event includes classification label and user decision.
 
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Warning screenshot; event log including decision field.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -804,8 +602,6 @@ nav_order: 7
 
 **Technical Scenario.** User overrides a warning by entering a justification; the platform stores it with the event.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** 3 test users; 3 justification texts including one blank attempt.
 
 **Procedure**
@@ -818,25 +614,11 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** Proceed only after valid justification.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Justifications exportable for audit or GRC tooling.
-
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Export of justification records; blank-submit screenshot.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to layer index](#top)
 
@@ -864,8 +646,6 @@ nav_order: 7
 
 **Technical Scenario.** User requests access to a blocked AI tool; the approver approves or rejects in the workflow.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** 2 requests: 1 to approve, 1 to reject; named test approver.
 
 **Procedure**
@@ -879,25 +659,11 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** Access changes only after approval.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Workflow integrates with ticketing or IdP approval where supported.
-
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Workflow audit trail export; before/after access test results.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to layer index](#top)
 
@@ -925,8 +691,6 @@ nav_order: 7
 
 **Technical Scenario.** Grant a 1-hour exception, use the tool inside the window, then again after expiry.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** 1 user; 1 blocked tool; exception of 1 hour.
 
 **Procedure**
@@ -940,25 +704,9 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** Automatic revoke at expiry.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Expiry events visible in the exception register.
 
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Timestamped access logs either side of expiry.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -986,8 +734,6 @@ nav_order: 7
 
 **Technical Scenario.** Access a blocked public tool and confirm the block page offers the sanctioned alternative.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** 1 blocked tool; 1 sanctioned alternative.
 
 **Procedure**
@@ -1000,25 +746,9 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** Block with redirect.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Block events appear in the Shadow AI report.
 
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Block page screenshot; log entry.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1047,8 +777,6 @@ nav_order: 7
 
 **Technical Scenario.** Paste synthetic labelled data into a web AI prompt under monitor mode, then enforce mode.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** 5 synthetic confidential snippets (customer record, contract clause, HR note, price list, board paragraph).
 
 **Procedure**
@@ -1061,25 +789,9 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** Block in enforce mode; allow-and-log in monitor mode.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Events carry classification and rule that fired.
 
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Event exports for both modes; policy mode screenshot.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1108,8 +820,6 @@ nav_order: 7
 
 **Technical Scenario.** Upload files carrying sensitivity labels and fingerprints to a web AI tool.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** 4 synthetic files: labelled DOCX, labelled PDF, unlabelled but fingerprinted XLSX, clean TXT.
 
 **Procedure**
@@ -1122,25 +832,9 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** Block or warn per policy for sensitive files.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Detection uses labels from the classification platform where integrated.
 
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Per-file event with filename hash, label, action.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1169,8 +863,6 @@ nav_order: 7
 
 **Technical Scenario.** Paste and drag-drop synthetic proprietary code snippets into a web AI prompt.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** 3 synthetic code snippets: one with a fake API key, one with an internal hostname, one generic.
 
 **Procedure**
@@ -1183,25 +875,9 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** Block or redact for secret-bearing snippets.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Events tagged with repo or project metadata if available.
 
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Event records for each input route.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1229,8 +905,6 @@ nav_order: 7
 
 **Technical Scenario.** Upload synthetic screenshots containing fake customer data to a web AI tool.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** 3 images: screenshot with fake Emirates-ID-format number, photographed document, clean image.
 
 **Procedure**
@@ -1243,25 +917,9 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** Block or warn per policy.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Event carries detection method (OCR/classifier).
 
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Event records; processing delay measurements.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1289,8 +947,6 @@ nav_order: 7
 
 **Technical Scenario.** Use voice mode in a test AI assistant, speaking synthetic sensitive phrases.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** 1 voice-capable AI tool; 3 scripted spoken phrases.
 
 **Procedure**
@@ -1303,25 +959,9 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** Ability to block voice mode by policy.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Detection record or written limitation statement.
 
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Event record; vendor limitation statement if applicable.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1349,8 +989,6 @@ nav_order: 7
 
 **Technical Scenario.** Upload documents with sensitive data in hidden text, comments and metadata.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** 3 synthetic files: white-on-white text, tracked comment, EXIF metadata.
 
 **Procedure**
@@ -1362,25 +1000,9 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** Block or warn per policy.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Event identifies the location of the match.
 
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Event details; documented gap list.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1408,8 +1030,6 @@ nav_order: 7
 
 **Technical Scenario.** Run a test browser agent that fills a form and reads a page in the user's session.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** 1 test browser agent; internal test form; 1 test user session.
 
 **Procedure**
@@ -1422,25 +1042,9 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** Policy to restrict agent use on sensitive domains.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Events link to identity and endpoint records.
 
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Event records distinguishing agent from human actions.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1468,8 +1072,6 @@ nav_order: 7
 
 **Technical Scenario.** Use 3 AI mobile apps on an enrolled and a non-enrolled phone.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** 2 phones; 3 AI mobile apps.
 
 **Procedure**
@@ -1482,25 +1084,9 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** Per MDM/MAM policy where integrated.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Correlates with MDM/MAM enrolment status.
 
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Event records; written coverage statement.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1528,8 +1114,6 @@ nav_order: 7
 
 **Technical Scenario.** Access a sanctioned AI tool from an unmanaged browser and attempt copy, download and upload.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** 1 unmanaged device; 1 sanctioned AI tool; synthetic data.
 
 **Procedure**
@@ -1542,25 +1126,9 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** Browser isolation, restricted actions or deny per policy.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Device posture signal from IdP or MDM.
 
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Policy screenshot; action-level logs.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1588,8 +1156,6 @@ nav_order: 7
 
 **Technical Scenario.** Generate repeated violations from 2 test users and a clean baseline from a third.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** 3 users; scripted violation counts (10, 3, 0).
 
 **Procedure**
@@ -1602,25 +1168,9 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** N/A (analytics).
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Risk score exportable to SIEM or insider-risk tooling.
 
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Risk view screenshot; export; factor explanation.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to layer index](#top)
 
@@ -1648,8 +1198,6 @@ nav_order: 7
 
 **Technical Scenario.** Review user identity handling in dashboards and log exports under two admin roles.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** 2 admin roles (analyst, investigator); 5 test users.
 
 **Procedure**
@@ -1662,25 +1210,11 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** Role-based unmask control.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Audit entries exportable to SIEM.
-
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Role comparison screenshots; unmask audit log.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to layer index](#top)
 
@@ -1708,8 +1242,6 @@ nav_order: 7
 
 **Technical Scenario.** Submit synthetic sensitive content in Arabic, English and mixed text.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** 9 prompts: 3 each Arabic, English, mixed; same sensitive categories.
 
 **Procedure**
@@ -1722,25 +1254,9 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** Policy action applies equally across languages.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Event records include detected language.
 
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Per-language detection table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1768,8 +1284,6 @@ nav_order: 7
 
 **Technical Scenario.** Apply a stricter policy to a finance group and a lighter one to a general group, then test the same action.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** 2 groups; 1 identical sensitive paste action.
 
 **Procedure**
@@ -1782,25 +1296,9 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** Per-group enforcement.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Group source is the IdP.
 
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Policy configuration and two result records.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1828,8 +1326,6 @@ nav_order: 7
 
 **Technical Scenario.** Two test users sign in to one AI tool using the same shared credential from different devices.
 
-**Preconditions.** Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.
-
 **Test Data.** 1 shared test account; 2 devices; 2 users.
 
 **Procedure**
@@ -1842,25 +1338,9 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** Alert or block on shared-account use per policy.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Attribution uses endpoint or IdP identity.
 
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Two session records with user and account fields.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1907,25 +1387,9 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** Under the block policy the prompt does not leave the workstation or gateway, and the developer sees a reason and a policy reference.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Events forwarded to the SIEM with repository and file identifiers.
 
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Event export for all 18 proprietary submissions; block message screenshots; egress capture showing no blocked content was sent.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1971,25 +1435,9 @@ nav_order: 7
 
 **Expected Prevention / Control Action.** The block outcome stops the request; the justify outcome releases it only after text is entered.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Justifications exportable to ticketing or a GRC tool.
 
-**Forensic Evidence.** Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Screenshot of each message; justification record export.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 

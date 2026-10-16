@@ -15,6 +15,7 @@ A library of **668 test cases** for evaluating AI security products in a control
 ## Start here
 
 - [Reference Index](00-reference-index.md): numbering, field definitions, applicability codes, domain tags, coverage matrix
+- [Standard Fields](standard-fields.md): the wording that cases share (scoring, pass and fail criteria, reviewer notes, standard evidence, per-layer setup). A case shows a field only when it differs
 - [Appendix: Lab Prerequisites](appendix-lab-prerequisites.md): the lab environment, tooling and fabricated data each layer needs
 - [Framework Adoption Guide](framework-adoption-guide.md): how to use the governance and legal layers with ISO/IEC 27001, DPDP, NESA, PDPL or any other framework, plus a crosswalk template
 - [Test Your Own Application](test-your-own-app.md): the same testing written for an owner who can change the code, with no product or provider language, an adapter template and a plain procedure for each case in the payload kit

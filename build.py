@@ -224,6 +224,44 @@ def framework_crosswalk(page, kind):
     return "\n".join(out)
 
 
+def standard_fields(page):
+    """Tables of the standard wording that test cases leave out, read from standard-fields.json."""
+    data = json.load(open(os.path.join(SRC, "10_Test_Case_Library", "standard-fields.json"), encoding="utf-8"))
+    cell = lambda text: text.replace("|", "\\|")
+    layer_title = {}
+    for p in pages:
+        m = re.match(r"10_Test_Case_Library/([LD]\d\d)-", p["src"].replace(os.sep, "/"))
+        if m:
+            layer_title[m.group(1)] = p["meta"]["title"]
+    labels = {"all": "Every case", "detect": "Cases with an Expected Detection field", "result": "Cases with an Expected Result field"}
+    for method in ("technical", "evidence", "attestation"):
+        for shape, shape_label in (("detect", "detection"), ("result", "result")):
+            labels[f"{method}-{shape}"] = f"{method.capitalize()} method, {shape_label} cases"
+    out = []
+    by_kind = {"all": [], "shape": [], "method-shape": [], "layer": []}
+    for field, kind in data["keys"].items():
+        if field in data["standards"]:
+            by_kind[kind].append(field)
+    titles = {"all": "Fields that are the same in every case", "shape": "Fields that depend on the kind of case",
+              "method-shape": "Fields that depend on the test method and the kind of case", "layer": "Fields that depend on the layer or domain"}
+    for kind in ("all", "shape", "method-shape", "layer"):
+        if not by_kind[kind]:
+            continue
+        out += [f"## {titles[kind]}", ""]
+        for field in by_kind[kind]:
+            out += [f"### {field}", "", "| Applies to | Standard wording |", "|---|---|"]
+            for key, text in data["standards"][field].items():
+                name = labels.get(key) or f"{key} {layer_title.get(key, '').split(' ', 1)[-1]}".strip()
+                out.append(f"| {name} | {cell(text)} |")
+            out.append("")
+    return "\n".join(out)
+
+
+STANDARD_FIELDS = "<!-- standard-fields -->"
+for p in pages:
+    if STANDARD_FIELDS in p["body"]:
+        p["body"] = p["body"].replace(STANDARD_FIELDS, standard_fields(p))
+
 # A page that holds this marker gets the generated traceability tables in its place.
 MATRIX = "<!-- traceability-matrix -->"
 for p in pages:

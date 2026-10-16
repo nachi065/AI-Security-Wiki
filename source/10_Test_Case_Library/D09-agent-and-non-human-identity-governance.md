@@ -19,6 +19,8 @@ nav_order: 22
 
 > **How this relates to the layer cases.** Domain cases cross-reference the layer cases they build on (see **Related Layer Cases** in each case). The layer case tests the platform control; the domain case tests the buyer concern from the domain's own point of view. Verify all ATLAS, OWASP and NIST identifiers before use, and treat numeric thresholds as starting values.
 
+> **Standard fields.** A field that a case does not show, such as scoring, pass and fail criteria, reviewer notes, standard evidence or the lab setup, uses the wording on the [Standard Fields](standard-fields.md) page.
+
 ## Cases in this domain
 
 | ID | Title | Severity | Method | Controls |
@@ -71,8 +73,6 @@ nav_order: 22
 
 **Technical Scenario.** Create a known population of agent identities across four sources and test registry completeness, reconciliation and attributes.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, fabricated agent identities and entitlements, mock cloud and SaaS tenants, lab secret store and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider, lab agents with fabricated identities and entitlements, a mock cloud account and SaaS tenant, a lab secret store and a mock ticketing system; no production identities, credentials or directories are connected.
-
 **Test Data.** 40 identities: 10 in the identity provider, 12 cloud roles and service principals, 10 SaaS app registrations and API tokens, 8 agent tokens created in an orchestration platform; attributes recorded in advance (purpose, sponsor, risk tier, environment, expiry); 6 identities created outside any process.
 
 **Procedure**
@@ -91,25 +91,9 @@ nav_order: 22
 
 **Expected Prevention / Control Action.** Alert on unmanaged identities.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Identity finding or governance record visible in the identity governance view within the documented refresh interval.
-
 **Expected Integration Evidence.** Registry export to GRC and identity tools.
 
-**Forensic Evidence.** Identity, sponsor, entitlement, credential reference, request or decision, approver and timestamp exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Reconciliation report; ground-truth comparison.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -138,8 +122,6 @@ nav_order: 22
 
 **Technical Scenario.** Test sponsor assignment, validation and succession when sponsors leave or move.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, fabricated agent identities and entitlements, mock cloud and SaaS tenants, lab secret store and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider, lab agents with fabricated identities and entitlements, a mock cloud account and SaaS tenant, a lab secret store and a mock ticketing system; no production identities, credentials or directories are connected.
-
 **Test Data.** 20 agents with sponsors; 3 sponsors who leave, 2 who change role, 1 on long leave; 2 agents with a shared mailbox as sponsor.
 
 **Procedure**
@@ -158,25 +140,9 @@ nav_order: 22
 
 **Expected Prevention / Control Action.** Restrict or suspend.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Identity finding or governance record visible in the identity governance view within the documented refresh interval.
-
 **Expected Integration Evidence.** Directory integration.
 
-**Forensic Evidence.** Identity, sponsor, entitlement, credential reference, request or decision, approver and timestamp exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Sponsor history; succession records.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -205,8 +171,6 @@ nav_order: 22
 
 **Technical Scenario.** Request agent identities of different risk and test routing, approval, issuance and expiry.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, fabricated agent identities and entitlements, mock cloud and SaaS tenants, lab secret store and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider, lab agents with fabricated identities and entitlements, a mock cloud account and SaaS tenant, a lab secret store and a mock ticketing system; no production identities, credentials or directories are connected.
-
 **Test Data.** 8 requests: 3 low-risk read-only, 3 medium with write access, 2 high with production or financial access; approvers by tier; 1 request with weak justification.
 
 **Procedure**
@@ -225,25 +189,9 @@ nav_order: 22
 
 **Expected Prevention / Control Action.** Gate.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Identity finding or governance record visible in the identity governance view within the documented refresh interval.
-
 **Expected Integration Evidence.** Ticketing and IdP integration.
 
-**Forensic Evidence.** Identity, sponsor, entitlement, credential reference, request or decision, approver and timestamp exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Request and approval trail.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -272,8 +220,6 @@ nav_order: 22
 
 **Technical Scenario.** Tier a mixed population and check that tier drives required controls.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, fabricated agent identities and entitlements, mock cloud and SaaS tenants, lab secret store and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider, lab agents with fabricated identities and entitlements, a mock cloud account and SaaS tenant, a lab secret store and a mock ticketing system; no production identities, credentials or directories are connected.
-
 **Test Data.** 15 agents across 3 tiers with different reach (internal read-only, internal write, external or financial); control requirements per tier (maximum credential lifetime, recertification interval, approval for changes, monitoring level).
 
 **Procedure**
@@ -292,25 +238,9 @@ nav_order: 22
 
 **Expected Prevention / Control Action.** Gate on tier.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Identity finding or governance record visible in the identity governance view within the documented refresh interval.
-
 **Expected Integration Evidence.** Tier data to reporting.
 
-**Forensic Evidence.** Identity, sponsor, entitlement, credential reference, request or decision, approver and timestamp exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Tier table; compliance report.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -339,8 +269,6 @@ nav_order: 22
 
 **Technical Scenario.** Build a small catalogue and run agent access requests through approval.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, fabricated agent identities and entitlements, mock cloud and SaaS tenants, lab secret store and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider, lab agents with fabricated identities and entitlements, a mock cloud account and SaaS tenant, a lab secret store and a mock ticketing system; no production identities, credentials or directories are connected.
-
 **Test Data.** 12 catalogue entitlements with risk ratings (read tickets, write tickets, read customer records, export data, send external email, and similar); 6 agent requests including 2 for wide roles; requests for bundle versus single entitlements.
 
 **Procedure**
@@ -359,25 +287,9 @@ nav_order: 22
 
 **Expected Prevention / Control Action.** Gate.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Identity finding or governance record visible in the identity governance view within the documented refresh interval.
-
 **Expected Integration Evidence.** Grants applied through IdP or cloud IAM.
 
-**Forensic Evidence.** Identity, sponsor, entitlement, credential reference, request or decision, approver and timestamp exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Request records; grant verification.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -406,8 +318,6 @@ nav_order: 22
 
 **Technical Scenario.** Run a recertification campaign for 20 agents.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, fabricated agent identities and entitlements, mock cloud and SaaS tenants, lab secret store and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider, lab agents with fabricated identities and entitlements, a mock cloud account and SaaS tenant, a lab secret store and a mock ticketing system; no production identities, credentials or directories are connected.
-
 **Test Data.** 20 agents with 80 entitlements; 12 stale, 8 excessive; 6 reviewers; 14-day window; 2 reviewers who do not respond; 1 reviewer who certifies everything.
 
 **Procedure**
@@ -426,25 +336,9 @@ nav_order: 22
 
 **Expected Prevention / Control Action.** Revoke.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Identity finding or governance record visible in the identity governance view within the documented refresh interval.
-
 **Expected Integration Evidence.** Revocations applied to IdP or cloud IAM.
 
-**Forensic Evidence.** Identity, sponsor, entitlement, credential reference, request or decision, approver and timestamp exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Campaign report; effect verification.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -473,8 +367,6 @@ nav_order: 22
 
 **Technical Scenario.** Record approved baselines and change real permissions.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, fabricated agent identities and entitlements, mock cloud and SaaS tenants, lab secret store and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider, lab agents with fabricated identities and entitlements, a mock cloud account and SaaS tenant, a lab secret store and a mock ticketing system; no production identities, credentials or directories are connected.
-
 **Test Data.** 10 agents with approved baselines; 6 changes: added scope, new role, wider resource range, inherited group permission, token with extra audience, new trust relationship.
 
 **Procedure**
@@ -492,25 +384,9 @@ nav_order: 22
 
 **Expected Prevention / Control Action.** Alert or revert.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Identity finding or governance record visible in the identity governance view within the documented refresh interval.
-
 **Expected Integration Evidence.** Alerts to ticketing.
 
-**Forensic Evidence.** Identity, sponsor, entitlement, credential reference, request or decision, approver and timestamp exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Drift table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -539,8 +415,6 @@ nav_order: 22
 
 **Technical Scenario.** Create dormant and orphaned identities and run the clean-up workflow.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, fabricated agent identities and entitlements, mock cloud and SaaS tenants, lab secret store and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider, lab agents with fabricated identities and entitlements, a mock cloud account and SaaS tenant, a lab secret store and a mock ticketing system; no production identities, credentials or directories are connected.
-
 **Test Data.** 15 identities: 5 dormant for 90 days (backdated), 4 with departed sponsor, 3 unused tokens, 3 active.
 
 **Procedure**
@@ -559,25 +433,9 @@ nav_order: 22
 
 **Expected Prevention / Control Action.** Disable then delete.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Identity finding or governance record visible in the identity governance view within the documented refresh interval.
-
 **Expected Integration Evidence.** Workflow via IdP and cloud IAM.
 
-**Forensic Evidence.** Identity, sponsor, entitlement, credential reference, request or decision, approver and timestamp exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Clean-up log; removal proof.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -606,8 +464,6 @@ nav_order: 22
 
 **Technical Scenario.** Configure JIT elevation and run tasks that need it.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, fabricated agent identities and entitlements, mock cloud and SaaS tenants, lab secret store and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider, lab agents with fabricated identities and entitlements, a mock cloud account and SaaS tenant, a lab secret store and a mock ticketing system; no production identities, credentials or directories are connected.
-
 **Test Data.** 3 agents; 4 privileged tasks; elevation of 15 minutes; approver and automatic modes.
 
 **Procedure**
@@ -626,25 +482,9 @@ nav_order: 22
 
 **Expected Prevention / Control Action.** Time-limited grant.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Identity finding or governance record visible in the identity governance view within the documented refresh interval.
-
 **Expected Integration Evidence.** Events to SIEM.
 
-**Forensic Evidence.** Identity, sponsor, entitlement, credential reference, request or decision, approver and timestamp exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Elevation records.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -673,8 +513,6 @@ nav_order: 22
 
 **Technical Scenario.** Define conflict rules, then attempt violations directly and through combinations of roles.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, fabricated agent identities and entitlements, mock cloud and SaaS tenants, lab secret store and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider, lab agents with fabricated identities and entitlements, a mock cloud account and SaaS tenant, a lab secret store and a mock ticketing system; no production identities, credentials or directories are connected.
-
 **Test Data.** Conflict rules: an agent may not approve its own request; a requesting agent and approving agent may not share a sponsor; no single agent may hold both create-account and approve-access; no agent may modify its own permissions; 8 direct violation attempts and 4 combination conflicts built from innocuous-looking roles.
 
 **Procedure**
@@ -693,25 +531,9 @@ nav_order: 22
 
 **Expected Prevention / Control Action.** Block.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Identity finding or governance record visible in the identity governance view within the documented refresh interval.
-
 **Expected Integration Evidence.** Findings to GRC.
 
-**Forensic Evidence.** Identity, sponsor, entitlement, credential reference, request or decision, approver and timestamp exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Attempt table; conflict analysis output.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -740,8 +562,6 @@ nav_order: 22
 
 **Technical Scenario.** Create delegations from fabricated users, test enforcement inside and outside scope, and test revocation and export.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, fabricated agent identities and entitlements, mock cloud and SaaS tenants, lab secret store and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider, lab agents with fabricated identities and entitlements, a mock cloud account and SaaS tenant, a lab secret store and a mock ticketing system; no production identities, credentials or directories are connected.
-
 **Test Data.** 10 delegations from 5 fabricated users with scope (systems, actions, data classes), duration and conditions; 3 revocations; 4 actions inside scope and 4 outside; 1 delegation from a user who then leaves.
 
 **Procedure**
@@ -760,25 +580,11 @@ nav_order: 22
 
 **Expected Prevention / Control Action.** Block out-of-scope action.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Identity finding or governance record visible in the identity governance view within the documented refresh interval.
-
 **Expected Integration Evidence.** Audit export.
-
-**Forensic Evidence.** Identity, sponsor, entitlement, credential reference, request or decision, approver and timestamp exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Delegation records; export.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to domain index](#top)
 
@@ -807,8 +613,6 @@ nav_order: 22
 
 **Technical Scenario.** Run actions through an agent in both modes and check what downstream systems and logs record.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, fabricated agent identities and entitlements, mock cloud and SaaS tenants, lab secret store and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider, lab agents with fabricated identities and entitlements, a mock cloud account and SaaS tenant, a lab secret store and a mock ticketing system; no production identities, credentials or directories are connected.
-
 **Test Data.** 3 agents; 2 downstream mock systems; 2 users; 20 actions: 10 performed with delegated user authority, 10 performed with the agent's own authority; policy stating which action types are allowed in which mode.
 
 **Procedure**
@@ -827,25 +631,9 @@ nav_order: 22
 
 **Expected Prevention / Control Action.** Block wrong-mode action.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Identity finding or governance record visible in the identity governance view within the documented refresh interval.
-
 **Expected Integration Evidence.** Attribution fields in SIEM.
 
-**Forensic Evidence.** Identity, sponsor, entitlement, credential reference, request or decision, approver and timestamp exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Attribution table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -874,8 +662,6 @@ nav_order: 22
 
 **Technical Scenario.** Create agents that operate in three platforms and test linkage, policy consistency and revocation.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, fabricated agent identities and entitlements, mock cloud and SaaS tenants, lab secret store and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider, lab agents with fabricated identities and entitlements, a mock cloud account and SaaS tenant, a lab secret store and a mock ticketing system; no production identities, credentials or directories are connected.
-
 **Test Data.** 3 agents each with identities in 3 platforms (lab IdP, mock cloud account, mock SaaS tenant); 9 identities; 3 linkage mistakes (identity linked to the wrong agent).
 
 **Procedure**
@@ -894,25 +680,9 @@ nav_order: 22
 
 **Expected Prevention / Control Action.** Disable.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Identity finding or governance record visible in the identity governance view within the documented refresh interval.
-
 **Expected Integration Evidence.** Federation through standard protocols where available.
 
-**Forensic Evidence.** Identity, sponsor, entitlement, credential reference, request or decision, approver and timestamp exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Linkage table; disable test.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -941,8 +711,6 @@ nav_order: 22
 
 **Technical Scenario.** Define credential policies for agents and measure compliance across a seeded population.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, fabricated agent identities and entitlements, mock cloud and SaaS tenants, lab secret store and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider, lab agents with fabricated identities and entitlements, a mock cloud account and SaaS tenant, a lab secret store and a mock ticketing system; no production identities, credentials or directories are connected.
-
 **Test Data.** 30 credentials: 10 compliant, 6 older than the rotation limit, 5 without expiry, 4 stored outside the vault, 3 shared between agents, 2 with excessive scope; policy limits recorded.
 
 **Procedure**
@@ -961,25 +729,9 @@ nav_order: 22
 
 **Expected Prevention / Control Action.** Alert and escalate.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Identity finding or governance record visible in the identity governance view within the documented refresh interval.
-
 **Expected Integration Evidence.** Findings to ticketing.
 
-**Forensic Evidence.** Identity, sponsor, entitlement, credential reference, request or decision, approver and timestamp exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Compliance table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -1008,8 +760,6 @@ nav_order: 22
 
 **Technical Scenario.** Seed certificates and keys across workloads and test discovery, warning and renewal.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, fabricated agent identities and entitlements, mock cloud and SaaS tenants, lab secret store and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider, lab agents with fabricated identities and entitlements, a mock cloud account and SaaS tenant, a lab secret store and a mock ticketing system; no production identities, credentials or directories are connected.
-
 **Test Data.** 25 certificates and keys: 5 expiring within 30 days, 3 already expired, 4 weak (short key or old algorithm), 3 self-signed, 10 healthy; 3 workloads (gateway, inference server, tool server).
 
 **Procedure**
@@ -1028,25 +778,9 @@ nav_order: 22
 
 **Expected Prevention / Control Action.** Alert.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Identity finding or governance record visible in the identity governance view within the documented refresh interval.
-
 **Expected Integration Evidence.** Certificate authority integration.
 
-**Forensic Evidence.** Identity, sponsor, entitlement, credential reference, request or decision, approver and timestamp exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Inventory table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -1075,8 +809,6 @@ nav_order: 22
 
 **Technical Scenario.** Disable agents and measure the time until each system stops accepting them.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, fabricated agent identities and entitlements, mock cloud and SaaS tenants, lab secret store and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider, lab agents with fabricated identities and entitlements, a mock cloud account and SaaS tenant, a lab secret store and a mock ticketing system; no production identities, credentials or directories are connected.
-
 **Test Data.** 3 agents using tokens in 4 systems (IdP, mock cloud, mock SaaS, mock API gateway); token lifetimes of 5, 30 and 60 minutes; active sessions.
 
 **Procedure**
@@ -1095,25 +827,9 @@ nav_order: 22
 
 **Expected Prevention / Control Action.** Revoke.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Identity finding or governance record visible in the identity governance view within the documented refresh interval.
-
 **Expected Integration Evidence.** Events to SIEM.
 
-**Forensic Evidence.** Identity, sponsor, entitlement, credential reference, request or decision, approver and timestamp exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Propagation table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -1142,8 +858,6 @@ nav_order: 22
 
 **Technical Scenario.** Run four misuse cases through the case process.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, fabricated agent identities and entitlements, mock cloud and SaaS tenants, lab secret store and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider, lab agents with fabricated identities and entitlements, a mock cloud account and SaaS tenant, a lab secret store and a mock ticketing system; no production identities, credentials or directories are connected.
-
 **Test Data.** 4 cases: credential used from a new network, privilege above tier, orphaned agent still active, delegated action outside scope; roles (analyst, sponsor, identity team); service levels.
 
 **Procedure**
@@ -1162,25 +876,9 @@ nav_order: 22
 
 **Expected Prevention / Control Action.** Escalate.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Identity finding or governance record visible in the identity governance view within the documented refresh interval.
-
 **Expected Integration Evidence.** Ticketing integration.
 
-**Forensic Evidence.** Identity, sponsor, entitlement, credential reference, request or decision, approver and timestamp exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Case records.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -1209,8 +907,6 @@ nav_order: 22
 
 **Technical Scenario.** Register vendor agents and test the oversight controls.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, fabricated agent identities and entitlements, mock cloud and SaaS tenants, lab secret store and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider, lab agents with fabricated identities and entitlements, a mock cloud account and SaaS tenant, a lab secret store and a mock ticketing system; no production identities, credentials or directories are connected.
-
 **Test Data.** 4 vendor-operated agents with access to the lab tenant; contract terms; vendor sponsor and internal sponsor; scope documents.
 
 **Procedure**
@@ -1229,25 +925,11 @@ nav_order: 22
 
 **Expected Prevention / Control Action.** Restrict.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Identity finding or governance record visible in the identity governance view within the documented refresh interval.
-
 **Expected Integration Evidence.** Vendor management link.
-
-**Forensic Evidence.** Identity, sponsor, entitlement, credential reference, request or decision, approver and timestamp exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Registry entries; breach test.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to domain index](#top)
 
@@ -1276,8 +958,6 @@ nav_order: 22
 
 **Technical Scenario.** Load seeded data and compare indicators with hand calculation.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, fabricated agent identities and entitlements, mock cloud and SaaS tenants, lab secret store and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider, lab agents with fabricated identities and entitlements, a mock cloud account and SaaS tenant, a lab secret store and a mock ticketing system; no production identities, credentials or directories are connected.
-
 **Test Data.** 60 identities with attributes; indicators: share with no sponsor, share with stale credentials, share over-privileged for tier, recertification completion, mean time to revoke, dormant share, shared credential count; calculation sheet.
 
 **Procedure**
@@ -1295,25 +975,9 @@ nav_order: 22
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Identity finding or governance record visible in the identity governance view within the documented refresh interval.
-
 **Expected Integration Evidence.** Report export.
 
-**Forensic Evidence.** Identity, sponsor, entitlement, credential reference, request or decision, approver and timestamp exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Indicator table.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to domain index](#top)
 
@@ -1342,8 +1006,6 @@ nav_order: 22
 
 **Technical Scenario.** Decommission three agents across platforms.
 
-**Preconditions.** Isolated PoC lab provisioned; lab identity provider, fabricated agent identities and entitlements, mock cloud and SaaS tenants, lab secret store and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider, lab agents with fabricated identities and entitlements, a mock cloud account and SaaS tenant, a lab secret store and a mock ticketing system; no production identities, credentials or directories are connected.
-
 **Test Data.** 3 agents each with identities in 3 platforms, tokens, vault entries, role bindings and schedules.
 
 **Procedure**
@@ -1362,25 +1024,11 @@ nav_order: 22
 
 **Expected Prevention / Control Action.** Checklist.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Identity finding or governance record visible in the identity governance view within the documented refresh interval.
-
 **Expected Integration Evidence.** Evidence export.
-
-**Forensic Evidence.** Identity, sponsor, entitlement, credential reference, request or decision, approver and timestamp exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Removal proof.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to domain index](#top)
 

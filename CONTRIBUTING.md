@@ -45,6 +45,7 @@ The footer also shows the date the page last changed, taken from the repository 
 ## What to expect
 
 - Every pull request is reviewed by the maintainer before it is merged.
+- When you add a test case, leave out any field that the [Standard Fields](https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/standard-fields.html) page already covers (scoring, pass and fail criteria, reviewer notes, standard evidence, the lab setup for the layer). Write the field only when your case needs different wording. The link check fails if a case repeats a standard word for word. The standard wording itself is in `source/10_Test_Case_Library/standard-fields.json`.
 - Two automated checks run on every pull request. One protects author credit. The other fails if a link inside the wiki points to a page or heading that does not exist, or if a page cites a risk, control or test case ID that is not defined. Links to other websites are checked weekly on the main branch, so a pull request never fails because an outside site moved a page.
 - Keep content vendor-neutral and free of confidential, personal or organization-specific information.
 - Not sure whether an idea fits? [Open an issue](https://github.com/nachi065/AI-Security-Wiki/issues) first.

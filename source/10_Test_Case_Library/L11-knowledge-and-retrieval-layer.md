@@ -18,6 +18,8 @@ nav_order: 14
 
 > **Verify before use.** MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the [Reference Index](00-reference-index.md) for field definitions and applicability codes.
 
+> **Standard fields.** A field that a case does not show, such as scoring, pass and fail criteria, reviewer notes, standard evidence or the lab setup, uses the wording on the [Standard Fields](standard-fields.md) page.
+
 ## Cases in this layer
 
 | ID | Title | Severity | Method | Domain(s) | Controls |
@@ -77,8 +79,6 @@ nav_order: 14
 
 **Technical Scenario.** Connect a set of known sources to lab RAG applications and compare the platform's inventory with ground truth.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
-
 **Test Data.** 6 sources: shared drive, wiki, ticket system, code repository, email archive, public website crawl; 3 RAG applications using different combinations.
 
 **Procedure**
@@ -96,25 +96,11 @@ nav_order: 14
 
 **Expected Prevention / Control Action.** N/A (discovery).
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or retrieval decision visible in the knowledge and retrieval dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Inventory exportable to a data catalogue.
-
-**Forensic Evidence.** Query, rewritten query, retrieved chunk and document identifiers, source, requesting user, filters applied, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Inventory vs ground truth; detection delay.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -142,8 +128,6 @@ nav_order: 14
 
 **Technical Scenario.** Deploy vector stores with varied exposure and see what the platform reports.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
-
 **Test Data.** 4 vector stores: authenticated and internal, unauthenticated and internal, authenticated and exposed to a wider network segment, unauthenticated and exposed to a wider segment; each holding fabricated embeddings.
 
 **Procedure**
@@ -161,25 +145,11 @@ nav_order: 14
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or retrieval decision visible in the knowledge and retrieval dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Findings routed to ticketing.
-
-**Forensic Evidence.** Query, rewritten query, retrieved chunk and document identifiers, source, requesting user, filters applied, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Findings list; severity ranking.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -207,8 +177,6 @@ nav_order: 14
 
 **Technical Scenario.** Run the platform's configuration checks against stores with seeded weaknesses.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
-
 **Test Data.** 3 stores with 12 seeded weaknesses: no authentication, default credentials, admin interface exposed, TLS disabled, overly broad API key, no audit logging, no network restriction, backups unencrypted, and four benign settings.
 
 **Procedure**
@@ -225,25 +193,9 @@ nav_order: 14
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Finding or retrieval decision visible in the knowledge and retrieval dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Export to GRC.
 
-**Forensic Evidence.** Query, rewritten query, retrieved chunk and document identifiers, source, requesting user, filters applied, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Check results vs seeded list.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to layer index](#top)
 
@@ -272,8 +224,6 @@ nav_order: 14
 
 **Technical Scenario.** Ask questions as users with different entitlements whose answers lie in restricted documents.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
-
 **Test Data.** 3 users; 60 documents with ACLs; 40 questions (20 answerable only from restricted documents, 20 from permitted).
 
 **Runnable Payloads.** [TC-L11-004.json](kit/payloads/TC-L11-004.json) holds the attack and legitimate items for this case; run them with the [payload kit](payload-kit.md).
@@ -293,25 +243,9 @@ nav_order: 14
 
 **Expected Prevention / Control Action.** Filter at retrieval.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or retrieval decision visible in the knowledge and retrieval dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** User and document IDs in logs.
 
-**Forensic Evidence.** Query, rewritten query, retrieved chunk and document identifiers, source, requesting user, filters applied, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Question and answer table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -339,8 +273,6 @@ nav_order: 14
 
 **Technical Scenario.** Revoke and grant permissions in the source and measure when retrieval reflects them.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
-
 **Test Data.** 10 documents; 3 users; 5 revocations and 5 grants.
 
 **Procedure**
@@ -358,25 +290,9 @@ nav_order: 14
 
 **Expected Prevention / Control Action.** Fail closed.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or retrieval decision visible in the knowledge and retrieval dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Sync logs.
 
-**Forensic Evidence.** Query, rewritten query, retrieved chunk and document identifiers, source, requesting user, filters applied, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Delay table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -404,8 +320,6 @@ nav_order: 14
 
 **Technical Scenario.** Craft queries that resemble restricted content without naming it.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
-
 **Test Data.** 20 restricted chunks with canary phrases; 40 probing queries using paraphrase, topic hints and partial terms; 2 users without access.
 
 **Procedure**
@@ -422,25 +336,9 @@ nav_order: 14
 
 **Expected Prevention / Control Action.** Filter.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or retrieval decision visible in the knowledge and retrieval dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Filtered chunk IDs in events.
 
-**Forensic Evidence.** Query, rewritten query, retrieved chunk and document identifiers, source, requesting user, filters applied, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Probe results.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -468,8 +366,6 @@ nav_order: 14
 
 **Technical Scenario.** Seed two tenants and attempt cross-tenant retrieval through every interface.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
-
 **Test Data.** 2 tenants; 50 canary chunks each; API, application and admin access paths.
 
 **Runnable Payloads.** [TC-L11-007.json](kit/payloads/TC-L11-007.json) holds the attack and legitimate items for this case; run them with the [payload kit](payload-kit.md).
@@ -488,25 +384,9 @@ nav_order: 14
 
 **Expected Prevention / Control Action.** Block.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or retrieval decision visible in the knowledge and retrieval dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Tenant ID in logs.
 
-**Forensic Evidence.** Query, rewritten query, retrieved chunk and document identifiers, source, requesting user, filters applied, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Probe table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -534,8 +414,6 @@ nav_order: 14
 
 **Technical Scenario.** Add documents containing contradicting or false statements about a topic and observe answers.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
-
 **Test Data.** 10 genuine documents; 8 poisoned documents (false policy statements, altered numbers, fake approvals, fake contact details); 20 queries; canary values.
 
 **Runnable Payloads.** [TC-L11-008.json](kit/payloads/TC-L11-008.json) holds the attack and legitimate items for this case; run them with the [payload kit](payload-kit.md).
@@ -555,25 +433,9 @@ nav_order: 14
 
 **Expected Prevention / Control Action.** Quarantine.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or retrieval decision visible in the knowledge and retrieval dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Alerts to content owners.
 
-**Forensic Evidence.** Query, rewritten query, retrieved chunk and document identifiers, source, requesting user, filters applied, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Before and after answer table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -601,8 +463,6 @@ nav_order: 14
 
 **Technical Scenario.** Insert documents stuffed with target phrases and observe retrieval.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
-
 **Test Data.** 5 target questions; 10 documents with keyword stuffing, invisible repetition and duplicated chunks.
 
 **Procedure**
@@ -619,25 +479,9 @@ nav_order: 14
 
 **Expected Prevention / Control Action.** Down-rank or quarantine.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or retrieval decision visible in the knowledge and retrieval dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Findings to content owner.
 
-**Forensic Evidence.** Query, rewritten query, retrieved chunk and document identifiers, source, requesting user, filters applied, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Rank change table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -665,8 +509,6 @@ nav_order: 14
 
 **Technical Scenario.** Test who can add content and how approval operates.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
-
 **Test Data.** 3 collections (open, restricted, regulated); 4 contributors with different roles.
 
 **Procedure**
@@ -683,25 +525,11 @@ nav_order: 14
 
 **Expected Prevention / Control Action.** Approval gate.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Finding or retrieval decision visible in the knowledge and retrieval dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Audit export.
-
-**Forensic Evidence.** Query, rewritten query, retrieved chunk and document identifiers, source, requesting user, filters applied, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Role test; audit trail.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to layer index](#top)
 
@@ -729,8 +557,6 @@ nav_order: 14
 
 **Technical Scenario.** Alter indexed content directly in the store and in the source and look for detection.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
-
 **Test Data.** 20 documents with recorded hashes; 5 altered in the source, 5 altered directly in the vector store, 10 untouched.
 
 **Procedure**
@@ -747,25 +573,9 @@ nav_order: 14
 
 **Expected Prevention / Control Action.** Alert.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or retrieval decision visible in the knowledge and retrieval dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Alerts to SIEM.
 
-**Forensic Evidence.** Query, rewritten query, retrieved chunk and document identifiers, source, requesting user, filters applied, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Detection table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -793,8 +603,6 @@ nav_order: 14
 
 **Technical Scenario.** Request the vendor's assessment and run a basic inversion attempt on lab embeddings.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
-
 **Test Data.** Lab embeddings of 50 fabricated short sentences containing canary values; open-source inversion tool approved for lab use.
 
 **Procedure**
@@ -811,25 +619,11 @@ nav_order: 14
 
 **Expected Prevention / Control Action.** Restrict export.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Finding or retrieval decision visible in the knowledge and retrieval dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Access logs for exports.
-
-**Forensic Evidence.** Query, rewritten query, retrieved chunk and document identifiers, source, requesting user, filters applied, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Recovery results.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to layer index](#top)
 
@@ -857,8 +651,6 @@ nav_order: 14
 
 **Technical Scenario.** Switch embedding model versions and check retrieval and controls afterwards.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
-
 **Test Data.** 1 index; 2 embedding model versions; 40 test queries; ACL filters.
 
 **Procedure**
@@ -876,25 +668,9 @@ nav_order: 14
 
 **Expected Prevention / Control Action.** Approval.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or retrieval decision visible in the knowledge and retrieval dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Change log.
 
-**Forensic Evidence.** Query, rewritten query, retrieved chunk and document identifiers, source, requesting user, filters applied, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Before and after results.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -922,8 +698,6 @@ nav_order: 14
 
 **Technical Scenario.** Place instructions in titles, authors, tags and file names of test documents.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
-
 **Test Data.** 8 documents with instructions in metadata fields; canary CANARY-L11-014.
 
 **Procedure**
@@ -940,25 +714,9 @@ nav_order: 14
 
 **Expected Prevention / Control Action.** Strip or flag.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or retrieval decision visible in the knowledge and retrieval dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Field name in event.
 
-**Forensic Evidence.** Query, rewritten query, retrieved chunk and document identifiers, source, requesting user, filters applied, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Result table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -986,8 +744,6 @@ nav_order: 14
 
 **Technical Scenario.** Index a corpus seeded with sensitive items with the pre-index scan enabled and disabled.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
-
 **Test Data.** 200 documents; 30 with fabricated personal data, 20 with fake secrets, 10 with confidential markers; 140 clean.
 
 **Procedure**
@@ -1004,25 +760,9 @@ nav_order: 14
 
 **Expected Prevention / Control Action.** Redact or hold.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or retrieval decision visible in the knowledge and retrieval dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Findings to data owners.
 
-**Forensic Evidence.** Query, rewritten query, retrieved chunk and document identifiers, source, requesting user, filters applied, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Recall and false-positive counts.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1051,8 +791,6 @@ nav_order: 14
 
 **Technical Scenario.** Apply label-based rules at query time and test users with different clearances.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
-
 **Test Data.** 4 labels; 3 users with different clearances; 80 chunks labelled.
 
 **Procedure**
@@ -1069,25 +807,9 @@ nav_order: 14
 
 **Expected Prevention / Control Action.** Filter.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or retrieval decision visible in the knowledge and retrieval dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Label in logs.
 
-**Forensic Evidence.** Query, rewritten query, retrieved chunk and document identifiers, source, requesting user, filters applied, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Chunk label table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1115,8 +837,6 @@ nav_order: 14
 
 **Technical Scenario.** Insert documents claiming to be from authoritative sources.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
-
 **Test Data.** 6 documents with spoofed source labels (policy, regulator, CEO), 6 genuine ones.
 
 **Procedure**
@@ -1133,25 +853,9 @@ nav_order: 14
 
 **Expected Prevention / Control Action.** Label.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or retrieval decision visible in the knowledge and retrieval dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Source fields in logs.
 
-**Forensic Evidence.** Query, rewritten query, retrieved chunk and document identifiers, source, requesting user, filters applied, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Citation screenshots.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1179,8 +883,6 @@ nav_order: 14
 
 **Technical Scenario.** Mark documents withdrawn or expired and test retrieval.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
-
 **Test Data.** 10 documents; 5 withdrawn, 5 expired by metadata date.
 
 **Procedure**
@@ -1197,25 +899,9 @@ nav_order: 14
 
 **Expected Prevention / Control Action.** Exclude.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or retrieval decision visible in the knowledge and retrieval dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Lifecycle events.
 
-**Forensic Evidence.** Query, rewritten query, retrieved chunk and document identifiers, source, requesting user, filters applied, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Delay table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1243,8 +929,6 @@ nav_order: 14
 
 **Technical Scenario.** Run scripted crawling versus normal use.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
-
 **Test Data.** Knowledge base of 500 chunks; normal profile of 20 queries a day; crawler script of 1,000 queries designed to cover the corpus.
 
 **Procedure**
@@ -1262,25 +946,9 @@ nav_order: 14
 
 **Expected Prevention / Control Action.** Throttle.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or retrieval decision visible in the knowledge and retrieval dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Alerts to SIEM.
 
-**Forensic Evidence.** Query, rewritten query, retrieved chunk and document identifiers, source, requesting user, filters applied, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Detection timeline.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1308,8 +976,6 @@ nav_order: 14
 
 **Technical Scenario.** Run queries through rewriting steps and check enforcement at each stage.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
-
 **Test Data.** Application with query rewriting; 15 queries including sensitive and injection attempts.
 
 **Procedure**
@@ -1325,25 +991,9 @@ nav_order: 14
 
 **Expected Prevention / Control Action.** Block.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or retrieval decision visible in the knowledge and retrieval dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Original and rewritten query in logs.
 
-**Forensic Evidence.** Query, rewritten query, retrieved chunk and document identifiers, source, requesting user, filters applied, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Query pairs.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1371,8 +1021,6 @@ nav_order: 14
 
 **Technical Scenario.** Craft content designed to climb the reranked list for chosen queries and observe ranking and detection.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
-
 **Test Data.** 5 target queries; 10 crafted chunks using repeated key terms, copied headings, fake recency metadata, boosted fields and near-duplicates of authoritative chunks; 3 authoritative chunks per query as baseline.
 
 **Procedure**
@@ -1390,25 +1038,9 @@ nav_order: 14
 
 **Expected Prevention / Control Action.** Down-rank or quarantine.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or retrieval decision visible in the knowledge and retrieval dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Ranking events to monitoring.
 
-**Forensic Evidence.** Query, rewritten query, retrieved chunk and document identifiers, source, requesting user, filters applied, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Rank change table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1436,8 +1068,6 @@ nav_order: 14
 
 **Technical Scenario.** Review the accounts and permissions used by lab connectors and test reduction.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
-
 **Test Data.** 4 connectors (drive, wiki, ticketing, code repository) with privileges ranging from folder-level read-only to tenant administrator; 2 connector credentials stored in configuration files.
 
 **Procedure**
@@ -1456,25 +1086,11 @@ nav_order: 14
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or retrieval decision visible in the knowledge and retrieval dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Findings to ticketing.
-
-**Forensic Evidence.** Query, rewritten query, retrieved chunk and document identifiers, source, requesting user, filters applied, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Privilege report.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1502,8 +1118,6 @@ nav_order: 14
 
 **Technical Scenario.** Attempt exports under different roles and review backup handling.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
-
 **Test Data.** 1 knowledge base with 500 chunks and 3 collections of different sensitivity; 3 roles (reader, curator, administrator).
 
 **Procedure**
@@ -1521,25 +1135,11 @@ nav_order: 14
 
 **Expected Prevention / Control Action.** Restrict export.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Finding or retrieval decision visible in the knowledge and retrieval dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Audit export to SIEM.
-
-**Forensic Evidence.** Query, rewritten query, retrieved chunk and document identifiers, source, requesting user, filters applied, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Role and collection matrix; log samples.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to layer index](#top)
 
@@ -1567,8 +1167,6 @@ nav_order: 14
 
 **Technical Scenario.** Run a set of queries and reconstruct what happened from logs alone.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
-
 **Test Data.** 30 queries across 3 users including 5 with filtered results, 3 refused and 2 failed; 1 incident scenario (restricted document accessed).
 
 **Procedure**
@@ -1586,25 +1184,11 @@ nav_order: 14
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or retrieval decision visible in the knowledge and retrieval dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Export to SIEM.
-
-**Forensic Evidence.** Query, rewritten query, retrieved chunk and document identifiers, source, requesting user, filters applied, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Log sample; reconstruction notes.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1632,8 +1216,6 @@ nav_order: 14
 
 **Technical Scenario.** Compare answer quality with and without controls on a reference question set.
 
-**Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
-
 **Test Data.** 60 questions with reference answers, 40 answerable from permitted content and 20 touching restricted content; controls: access filtering, pre-index scanning, injection filtering, response DLP; 2 reviewers.
 
 **Procedure**
@@ -1652,25 +1234,11 @@ nav_order: 14
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or retrieval decision visible in the knowledge and retrieval dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Scores exportable.
-
-**Forensic Evidence.** Query, rewritten query, retrieved chunk and document identifiers, source, requesting user, filters applied, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Quality table by control; refusal review.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1716,21 +1284,7 @@ nav_order: 14
 
 **Expected Prevention / Control Action.** N/A (evidence control).
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Finding or retrieval decision visible in the knowledge and retrieval dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Approval record exportable to the model registry or GRC tool.
-
-**Forensic Evidence.** Query, rewritten query, retrieved chunk and document identifiers, source, requesting user, filters applied, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
 
 **Evidence to Capture.** Index-to-model listing; approved list; flag; change approval record.
 
@@ -1780,25 +1334,9 @@ nav_order: 14
 
 **Expected Prevention / Control Action.** Block, mask or reroute embedding calls that breach policy.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or retrieval decision visible in the knowledge and retrieval dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Embedding call decisions forwarded to the SIEM with document and endpoint identifiers.
 
-**Forensic Evidence.** Query, rewritten query, retrieved chunk and document identifiers, source, requesting user, filters applied, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Mock endpoint request logs; policy decision log; documents ingested.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1844,21 +1382,7 @@ nav_order: 14
 
 **Expected Prevention / Control Action.** N/A (evidence control).
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Finding or retrieval decision visible in the knowledge and retrieval dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Index inventory exportable with owners to the GRC tool; alerts to SIEM.
-
-**Forensic Evidence.** Query, rewritten query, retrieved chunk and document identifiers, source, requesting user, filters applied, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
 
 **Evidence to Capture.** Approval record; discovery output and flags; load attempt result; inventory export.
 

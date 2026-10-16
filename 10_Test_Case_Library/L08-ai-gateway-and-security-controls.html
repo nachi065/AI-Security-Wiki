@@ -102,6 +102,7 @@
 <li><a href="L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
 <li><a href="test-your-own-app.html">Test Your Own Application</a></li>
 <li><a href="L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>
+<li><a href="standard-fields.html">Standard Fields</a></li>
 <li><a href="L04-human-interaction-layer.html">L04 Human Interaction Layer</a></li>
 <li><a href="L05-ai-applications.html">L05 AI Applications</a></li>
 <li><a href="L06-agent-orchestration-layer.html">L06 Agent Orchestration Layer</a></li>
@@ -283,6 +284,7 @@
 <blockquote class="callout danger">
 <p><strong>Safety boundary.</strong> All test cases in this layer use synthetic, non-functional or clearly marked test data only. Card numbers must come from published test ranges; keys, identifiers and records must be fabricated.</p>
 <p><strong>Verify before use.</strong> MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the <a href="00-reference-index.html">Reference Index</a> for field definitions and applicability codes.</p>
+<p><strong>Standard fields.</strong> A field that a case does not show, such as scoring, pass and fail criteria, reviewer notes, standard evidence or the lab setup, uses the wording on the <a href="standard-fields.html">Standard Fields</a> page.</p>
 </blockquote>
 <h2 id="cases-in-this-layer">Cases in this layer</h2>
 <div class="table-wrap"><table>
@@ -711,16 +713,8 @@
 <p><strong>Edge Cases / Variants.</strong> Block all egress except the documented allow-list for a second run; disable internet entirely for an air-gap run if an on-premise claim is made; check licence and update checks fail gracefully.</p>
 <p><strong>Expected Detection.</strong> Every observed destination appears in the vendor's documentation; zero undocumented destinations; prompt content is not sent to any non-documented or out-of-region destination; behaviour under allow-list-only egress is identical.</p>
 <p><strong>Expected Prevention / Control Action.</strong> N/A (verification test). Where the claim is on-premise or in-country, all processing continues with the vendor cloud completely blocked.</p>
-<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Flow logs and the destination inventory can be reconciled to the vendor's sub-processor list.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Destination inventory table; packet or flow-log extract; annotated vendor diagram; allow-list-only run results.</p>
-<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-002"></a></p>
@@ -789,16 +783,8 @@
 <p><strong>Edge Cases / Variants.</strong> Subdomain and alternate-domain variants of the denied app; app accessed through a link inside an allowed app; new app released after policy creation; default action set to deny versus allow.</p>
 <p><strong>Expected Detection.</strong> Approved app allowed on all attempts; denied app blocked on all attempts; both category apps blocked, including the app not previously in the catalogue (or flagged as unclassified within the vendor's SLA); precedence behaves as documented.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Allow or deny per rule; unclassified apps follow the configured default (allow, warn or deny).</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Rule hits visible in the central log and exportable.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Rule configuration export; decision log for each access; precedence test result; classification delay measurement.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-003"></a></p>
@@ -866,16 +852,8 @@
 <p><strong>Edge Cases / Variants.</strong> User in two groups with conflicting policies; stale device posture; user switching network mid-session; group nesting in the directory.</p>
 <p><strong>Expected Detection.</strong> All 16 combinations match the expected matrix; group change takes effect within the vendor's documented time (and no later than 15 minutes unless the vendor documents otherwise); log entries name the matched conditions.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Allow, warn or block depending on conditions.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Identity from the IdP and device posture from MDM or EDR are both consumed.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> 16-row decision matrix with expected and actual columns; log extract; group change timing.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-004"></a></p>
@@ -944,16 +922,8 @@
 <p><strong>Edge Cases / Variants.</strong> Personal data in the middle of long text; data in tables; data split across two lines; common names that are also words; personal data inside a code block.</p>
 <p><strong>Expected Detection.</strong> True positive rate of at least 95 percent on the 20 records; false positive rate of no more than 5 percent on the control set; in mask mode, the provider-side capture contains no unmasked personal field.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Block in block mode; replace with placeholder in mask mode.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Events carry data category and rule name and are exportable to SIEM.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Detection table by field; false-positive list; provider-side capture; policy settings screenshot.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-005"></a></p>
@@ -1021,16 +991,8 @@
 <p><strong>Edge Cases / Variants.</strong> Cards in a CSV pasted as text; cards with checksum failing; numbers inside URLs; masked but reversible formats.</p>
 <p><strong>Expected Detection.</strong> At least 9 of 10 card numbers and 9 of 10 IBAN strings detected; no more than 2 of 20 look-alike numbers flagged; log entries do not store full card numbers.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Block or mask.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Events exportable with masked values.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Detection table; false-positive list; log excerpt showing masking.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-006"></a></p>
@@ -1098,16 +1060,8 @@
 <p><strong>Edge Cases / Variants.</strong> Numbers inside Arabic sentences; right-to-left text with embedded digits; IDs split by spaces.</p>
 <p><strong>Expected Detection.</strong> At least 90 percent detection per type in Latin digits; at least 80 percent for Arabic-Indic digits; custom pattern created and effective within one working day; false positives under 10 percent.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Block or mask.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Custom pattern definitions can be exported and version controlled.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Detection table by type and digit style; custom pattern definition; false-positive list.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-007"></a></p>
@@ -1181,16 +1135,8 @@
 <p><strong>Edge Cases / Variants.</strong> Secrets in comments, in base64 inside code, in .env pasted content, and in diff output.</p>
 <p><strong>Expected Detection.</strong> At least 11 of 12 secrets detected; internal-marker snippets flagged; generic public snippets not blocked; no clear-text secret in logs.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Block or mask secret; warn or block internal code per policy.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Secret findings can be routed to secret management or ticketing.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Detection table; false-positive list; log excerpts.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-008"></a></p>
@@ -1258,16 +1204,8 @@
 <p><strong>Edge Cases / Variants.</strong> Terms that are common words; terms in other languages; very large documents.</p>
 <p><strong>Expected Detection.</strong> All 20 terms matched; exact excerpts matched 100 percent; partial excerpts of 50 percent or more matched; paraphrase behaviour documented; removed term no longer matched; fingerprints stored without reconstructable content.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Block or warn.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Term and fingerprint lists manageable through an API.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Match table; storage documentation; screenshot of removal test.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-009"></a></p>
@@ -1335,16 +1273,8 @@
 <p><strong>Edge Cases / Variants.</strong> Switching mode while a session is active; warn mode with user ignoring the prompt; mask mode for multi-field data.</p>
 <p><strong>Expected Detection.</strong> Each mode behaves exactly as documented: log passes content unchanged with an event; warn requires user action; mask changes content before the provider; block stops the request; control prompt unaffected.</p>
 <p><strong>Expected Prevention / Control Action.</strong> All four modes available.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Mode appears in each event.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Table of user view, provider view and log per mode.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-010"></a></p>
@@ -1413,16 +1343,8 @@
 <p><strong>Edge Cases / Variants.</strong> Model changes the token (for example uppercases it); token appears in generated code; response truncated.</p>
 <p><strong>Expected Detection.</strong> Provider receives tokens only; user sees restored values in all cases; tokens differ across users or sessions as documented; token map is encrypted, access controlled and deletable.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Tokenise.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Token map key management integrates with the organisation's key store where offered.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Provider-side capture; user-side screenshot; storage documentation.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-011"></a></p>
@@ -1490,16 +1412,8 @@
 <p><strong>Edge Cases / Variants.</strong> Combination of two evasion methods; encoding of only the identifier portion.</p>
 <p><strong>Expected Detection.</strong> Plain record detected; at least 4 of 8 evasion methods detected; undetected methods documented as known gaps and matched to the vendor's stated coverage.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Block.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Detection method shown in events.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Method-by-method result table.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-012"></a></p>
@@ -1568,16 +1482,8 @@
 <p><strong>Edge Cases / Variants.</strong> Embedded objects inside Office files; scanned PDFs; renamed extensions.</p>
 <p><strong>Expected Detection.</strong> All seven formats detected; nested ZIP detected to the documented depth; password-protected and oversized files handled by a stated policy (block, flag or log) rather than silently passed.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Block, or block unscannable files per policy.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Events include file type and detection location.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Format table; behaviour on unscannable files; limits documentation.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-013"></a></p>
@@ -1644,16 +1550,8 @@
 <p><strong>Edge Cases / Variants.</strong> Very large images; text in tiny font; low-contrast text.</p>
 <p><strong>Expected Detection.</strong> At least 6 of 7 sensitive images detected including the Arabic image; clean image passes; added delay documented and within 5 seconds per image or the stated vendor figure.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Block or warn.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Method named in event.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Image result table; processing time table.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-014"></a></p>
@@ -1720,16 +1618,8 @@
 <p><strong>Edge Cases / Variants.</strong> Arabic dialect variations; transliterated Arabic in Latin letters; diacritics.</p>
 <p><strong>Expected Detection.</strong> Arabic and mixed detection within 10 percentage points of English; Arabic false positive rate not above 5 percent.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Block.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Language field present in events.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Per-language rate table.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-015"></a></p>
@@ -1798,16 +1688,8 @@
 <p><strong>Edge Cases / Variants.</strong> Re-run after a policy update; run in Arabic; run in a multi-turn format.</p>
 <p><strong>Expected Detection.</strong> Default setting: true positive rate at least 85 percent and false positive rate at most 3 percent; strict setting improves detection without false positives above 8 percent; results within 10 points of vendor claims.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Block.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Results export supports re-scoring in a spreadsheet.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Confusion matrix; per-prompt results; vendor claim comparison.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-016"></a></p>
@@ -1876,16 +1758,8 @@
 <p><strong>Edge Cases / Variants.</strong> Variants in Arabic; multi-turn build-up; long preamble before the request.</p>
 <p><strong>Expected Detection.</strong> Base set block rate at least 80 percent; variants no more than 20 points lower; no more than 1 of 10 legitimate role-play prompts blocked.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Block.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Rule name in event.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Result table with variant breakdown.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-017"></a></p>
@@ -1953,16 +1827,8 @@
 <p><strong>Edge Cases / Variants.</strong> Probes in Arabic; topic mentioned in passing; follow-up questions after a redirect.</p>
 <p><strong>Expected Detection.</strong> At least 13 of 15 probes blocked or redirected; no more than 1 of 10 controls affected; topic change effective within the vendor's documented time.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Block or redirect with a configured message.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Topic list managed centrally.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Probe result table; change timing.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-018"></a></p>
@@ -2030,16 +1896,8 @@
 <p><strong>Edge Cases / Variants.</strong> Borderline educational text; quoted harmful text inside a news summary.</p>
 <p><strong>Expected Detection.</strong> At least 10 of 12 filtered; no more than 1 of 6 benign responses filtered; category recorded.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Block, redact or replace.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Category reporting.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Category result table.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-019"></a></p>
@@ -2107,16 +1965,8 @@
 <p><strong>Edge Cases / Variants.</strong> Partial leaks of paraphrased rules; leak across turns.</p>
 <p><strong>Expected Detection.</strong> Canary or hostname exposed in no more than 1 of 12 attempts; at least 10 of 12 attempts flagged; no more than 1 of 5 legitimate questions blocked.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Block.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Event identifies attempt type.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Attempt table; response captures.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-020"></a></p>
@@ -2188,16 +2038,8 @@
 <p><strong>Edge Cases / Variants.</strong> Canary split across streamed chunks; canary in a table or code block.</p>
 <p><strong>Expected Detection.</strong> At least 11 of 12 canary responses masked or blocked; harmless responses unaffected; direction field present.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Mask or block.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Direction and rule name in events.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Response capture; log extract.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-021"></a></p>
@@ -2264,16 +2106,8 @@
 <p><strong>Edge Cases / Variants.</strong> Combining two transformations; right-to-left override characters.</p>
 <p><strong>Expected Detection.</strong> Overall block rate across variants at least 80 percent; no single transformation below 60 percent; vendor statement consistent with observed behaviour.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Block.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Normalisation behaviour noted in documentation.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Block rate per transformation; baseline confirmation.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-022"></a></p>
@@ -2342,16 +2176,8 @@
 <p><strong>Edge Cases / Variants.</strong> Protocol upgrade mid-session; long-lived WebSocket; QUIC disabled by policy.</p>
 <p><strong>Expected Detection.</strong> Enforcement identical on HTTP/1.1, HTTP/2 and WebSocket; HTTP/3 and gRPC either enforced or blocked/downgraded by policy; any gap documented.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Block, or force fallback to an inspectable protocol.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Protocol field in events.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Protocol coverage matrix.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-023"></a></p>
@@ -2418,16 +2244,8 @@
 <p><strong>Edge Cases / Variants.</strong> VPN that tunnels over port 443; hotspot used while corporate network is off.</p>
 <p><strong>Expected Detection.</strong> Direct IP, alternate domain, DoH and public proxy blocked or alerted; consumer VPN and hotspot either blocked or alerted by the endpoint agent; gaps documented.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Block or alert.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Alerts forwarded to SIEM.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Route result table.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-024"></a></p>
@@ -2494,16 +2312,9 @@
 <p><strong>Edge Cases / Variants.</strong> App updates that introduce pinning.</p>
 <p><strong>Expected Detection.</strong> Behaviour for each app documented; no silent bypass; pinned apps either blocked, covered by an endpoint control or listed as a known gap.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Per design.</p>
-<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Exception list change log.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Behaviour record per app.</p>
-<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-025"></a></p>
@@ -2572,16 +2383,8 @@
 <p><strong>Edge Cases / Variants.</strong> Safe-mode boot; removal via device management tools.</p>
 <p><strong>Expected Detection.</strong> Standard user cannot stop or remove the agent; admin actions need a protection key or generate an alert within 5 minutes; offline policy behaves per configuration.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Tamper protection.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Alert to console and SIEM.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Attempt log; alert timestamps.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-026"></a></p>
@@ -2648,16 +2451,8 @@
 <p><strong>Edge Cases / Variants.</strong> Container-based clients; clients using custom user agents.</p>
 <p><strong>Expected Detection.</strong> All four clients enforced or alerted; client type recorded; proxy-bypass behaviour documented.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Block.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Client type in event.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Client result table.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-027"></a></p>
@@ -2724,16 +2519,8 @@
 <p><strong>Edge Cases / Variants.</strong> Code-switching between languages mid-prompt.</p>
 <p><strong>Expected Detection.</strong> Block rate at least 80 percent for each language and for paraphrases; language recorded.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Block.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Language in event.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Block rate by language.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-028"></a></p>
@@ -2801,16 +2588,8 @@
 <p><strong>Edge Cases / Variants.</strong> Model alias names; fine-tuned model IDs; regional endpoints.</p>
 <p><strong>Expected Detection.</strong> Unapproved models blocked in all cases including body-level changes; unlisted new versions handled per documented default; provider and model recorded.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Block.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Model inventory fed from decisions.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Decision table.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-029"></a></p>
@@ -2879,16 +2658,8 @@
 <p><strong>Edge Cases / Variants.</strong> Key leaked in app logs; expired key.</p>
 <p><strong>Expected Detection.</strong> Apps never see the provider key; rotation causes no failed calls beyond the documented window; revocation affects only the target app; key stored encrypted with access logging.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Key isolation.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Rotation event logged.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Rotation and revocation test logs.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-030"></a></p>
@@ -2961,16 +2732,8 @@
 <p><strong>Edge Cases / Variants.</strong> Burst traffic; many users sharing one app key.</p>
 <p><strong>Expected Detection.</strong> Offending user throttled at the limit; others experience no added errors; token limit enforced; reset on schedule.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Throttle or block.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Quota status available through API.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Per-user request log; throttle events.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-031"></a></p>
@@ -3037,16 +2800,8 @@
 <p><strong>Edge Cases / Variants.</strong> Streaming calls; retries counted twice.</p>
 <p><strong>Expected Detection.</strong> Alerts delivered at each threshold within 5 minutes; cap enforced; reported usage within 5 percent of mock provider records.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Cap.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Alerts delivered by email or webhook.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Alert records; reconciliation table.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-032"></a></p>
@@ -3113,16 +2868,9 @@
 <p><strong>Edge Cases / Variants.</strong> Cold start after idle; first request in a session.</p>
 <p><strong>Expected Detection.</strong> Added p95 latency within the vendor's documented figure and no more than 300 ms for small prompts and 800 ms for large prompts, unless otherwise agreed.</p>
 <p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Metrics available via API.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Latency table by mode and size.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-033"></a></p>
@@ -3190,16 +2938,8 @@
 <p><strong>Edge Cases / Variants.</strong> Sudden spike; sustained load for 1 hour.</p>
 <p><strong>Expected Detection.</strong> Blocked content remains blocked up to 2x peak; above that any fail-open is alerted and matches configuration; recovery within 5 minutes.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Configured failure mode.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Alerts triggered on degradation.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Load graph; enforcement check results.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-034"></a></p>
@@ -3267,16 +3007,8 @@
 <p><strong>Edge Cases / Variants.</strong> Split-brain scenario; failure during policy change.</p>
 <p><strong>Expected Detection.</strong> Failover within the vendor's documented time; no blocked content allowed during failover unless fail-open is configured and alerted; policy consistent after recovery.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Configured mode.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Failure and recovery alerts.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Timeline of failover; request log.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-035"></a></p>
@@ -3344,16 +3076,8 @@
 <p><strong>Edge Cases / Variants.</strong> Very slow streams; stream interrupted by network drop.</p>
 <p><strong>Expected Detection.</strong> Time to first token increase within 500 ms; markers caught without being displayed; cut-off message clear.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Mask or cut stream.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Position of detection in event.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Timing table; captured user view.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-036"></a></p>
@@ -3422,16 +3146,9 @@
 <p><strong>Edge Cases / Variants.</strong> Offline endpoints; change during high load.</p>
 <p><strong>Expected Detection.</strong> Change effective on every component within the vendor's documented time and no later than 5 minutes unless agreed; rollback effective on same timing; invalid change rejected.</p>
 <p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Change log exportable.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Timing table per component; version history.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-037"></a></p>
@@ -3500,16 +3217,8 @@
 <p><strong>Edge Cases / Variants.</strong> Per-rule monitor mode while others enforce.</p>
 <p><strong>Expected Detection.</strong> Would-block list available and accurate; tuning reduces false positives by at least half without losing more than 1 true positive; enforce mode matches would-block results.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Enforce after review.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Review list exportable.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Before and after tuning counts.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-038"></a></p>
@@ -3576,16 +3285,8 @@
 <p><strong>Edge Cases / Variants.</strong> Long messages; special characters.</p>
 <p><strong>Expected Detection.</strong> Messages show in the correct language with correct direction; reference ID present and matches log.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Custom message.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Message ID in log.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Screenshots in both languages.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-039"></a></p>
@@ -3654,16 +3355,9 @@
 <p><strong>Edge Cases / Variants.</strong> Break-glass account; API token permissions.</p>
 <p><strong>Expected Detection.</strong> Actions outside role denied and logged; all 5 changes recorded with user, time, old and new values; audit trail cannot be edited by admins; MFA enforced.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Role limits.</p>
-<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Audit export to SIEM.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Permission test results; audit export.</p>
-<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-040"></a></p>
@@ -3732,16 +3426,9 @@
 <p><strong>Edge Cases / Variants.</strong> Backups containing old logs; export of logs to SIEM carrying raw prompts.</p>
 <p><strong>Expected Detection.</strong> Stored content matches configuration; masked values not recoverable; deletion verified; erasure supported; storage region as documented.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Mask or restrict.</p>
-<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Retention proof exportable.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Stored record samples; deletion confirmation.</p>
-<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-041"></a></p>
@@ -3811,16 +3498,8 @@
 <p><strong>Edge Cases / Variants.</strong> Repository identified by remote URL versus local path; fork under a personal namespace; detached copy without version-control metadata.</p>
 <p><strong>Expected Detection.</strong> Repository and file type correctly identified in 36 of 36 requests.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Restricted-repository prompts blocked on all 3 channels, including after the rename; the copied restricted file is still detected by content.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Policy can consume repository classification from source control or a CMDB.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Decision log for all requests; policy export; masked prompt samples.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-042"></a></p>
@@ -3887,16 +3566,8 @@
 <p><strong>Edge Cases / Variants.</strong> Local model bound to loopback only; endpoint set by environment variable; switch made through a model picker inside the extension.</p>
 <p><strong>Expected Detection.</strong> 4 of 4 alternative configurations detected with endpoint, key ownership where visible, and developer.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Requests to unapproved hosted endpoints and with personal keys are blocked; local model use is flagged or blocked per policy.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Approved model list shared with the gateway allow-list.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Event export per configuration; block evidence; developer report.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l08-043"></a></p>
@@ -3963,14 +3634,7 @@
 <p><strong>Edge Cases / Variants.</strong> An emergency change made under break-glass access; a rule inherited from a vendor default.</p>
 <p><strong>Expected Detection.</strong> Both policies show owner, version, approver and review date; the unapproved relaxing change is held or flagged; the history is complete.</p>
 <p><strong>Expected Prevention / Control Action.</strong> N/A (evidence control).</p>
-<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Policy change events forwarded to the SIEM with approver identity.</p>
-<p><strong>Forensic Evidence.</strong> Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Policy records; change history; held or flagged change; overdue review flag.</p>
 <p><strong>Reviewer Notes.</strong> Complements <a class="chip" href="#tc-l08-036">TC-L08-036</a> (change propagation) and <a class="chip" href="#tc-l08-039">TC-L08-039</a> (administrator RBAC). Documentation alone scores no higher than 3.</p>
 <p><a href="#top">Back to layer index</a></p>

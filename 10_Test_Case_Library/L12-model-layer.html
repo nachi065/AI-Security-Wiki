@@ -102,6 +102,7 @@
 <li><a href="L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
 <li><a href="test-your-own-app.html">Test Your Own Application</a></li>
 <li><a href="L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>
+<li><a href="standard-fields.html">Standard Fields</a></li>
 <li><a href="L04-human-interaction-layer.html">L04 Human Interaction Layer</a></li>
 <li><a href="L05-ai-applications.html">L05 AI Applications</a></li>
 <li><a href="L06-agent-orchestration-layer.html">L06 Agent Orchestration Layer</a></li>
@@ -283,6 +284,7 @@
 <blockquote class="callout danger">
 <p><strong>Safety boundary.</strong> Retrieval, model, training, pipeline and supply chain cases use fabricated corpora and datasets, small lab models, mock hubs and indexes and harmless marker artefacts only (an EICAR-style file that writes a marker, never real malware). Never load untrusted model files outside an isolated sandbox, and never connect the lab to production knowledge sources, models, pipelines, registries or credentials. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.</p>
 <p><strong>Verify before use.</strong> MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the <a href="00-reference-index.html">Reference Index</a> for field definitions and applicability codes.</p>
+<p><strong>Standard fields.</strong> A field that a case does not show, such as scoring, pass and fail criteria, reviewer notes, standard evidence or the lab setup, uses the wording on the <a href="standard-fields.html">Standard Fields</a> page.</p>
 </blockquote>
 <h2 id="cases-in-this-layer">Cases in this layer</h2>
 <div class="table-wrap"><table>
@@ -608,7 +610,6 @@
 <p><strong>Risk Addressed.</strong> Models run in notebooks, containers, cloud services and SaaS; unknown models are unmanaged risk.</p>
 <p><strong>Business Scenario.</strong> Model risk owners want all models listed with source, version, host and owner.</p>
 <p><strong>Technical Scenario.</strong> Deploy a known set of models in different places and compare the inventory.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 10 models: 3 hosted API models, 3 self-hosted open-weight models, 2 fine-tuned models, 1 embedding model, 1 classifier in a notebook.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -621,16 +622,9 @@
 <p><strong>Edge Cases / Variants.</strong> Model loaded only at runtime; model with renamed files.</p>
 <p><strong>Expected Detection.</strong> At least 9 of 10 models found; source and version correct for at least 8; new model detected within the stated interval.</p>
 <p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Inventory exportable to a model registry or catalogue.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Inventory vs ground truth.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-002"></a></p>
@@ -684,7 +678,6 @@
 <p><strong>Risk Addressed.</strong> Model files in some formats can execute code when loaded.</p>
 <p><strong>Business Scenario.</strong> Security wants unsafe model files caught before they are loaded.</p>
 <p><strong>Technical Scenario.</strong> Scan a set of model files including harmless marker artefacts.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 12 files: 4 in safe tensor format, 4 in a pickle-based format with benign content, 4 pickle-based files containing a harmless marker-writing payload (EICAR-style).</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -697,16 +690,8 @@
 <p><strong>Edge Cases / Variants.</strong> Payload hidden in a nested archive; obfuscated payload.</p>
 <p><strong>Expected Detection.</strong> All 4 marker files flagged; safe files pass; flagged files blocked from loading when the gate is on; scan time reasonable.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Block load.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Findings to registry.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Scan results; sandbox observations.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-003"></a></p>
@@ -760,7 +745,6 @@
 <p><strong>Risk Addressed.</strong> Backdoored models behave normally until a trigger appears.</p>
 <p><strong>Business Scenario.</strong> Security wants to know what the scanner can and cannot find.</p>
 <p><strong>Technical Scenario.</strong> Test the scanner on models with known benign trigger behaviour.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 3 small test models with an inserted harmless trigger that outputs a marker phrase; 3 clean models.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -773,16 +757,8 @@
 <p><strong>Edge Cases / Variants.</strong> Trigger in a language other than English; trigger via image.</p>
 <p><strong>Expected Detection.</strong> Detection rate reported honestly; at least 2 of 3 triggered models flagged or the limitation documented in writing.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Block or flag.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Findings to registry.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Result table; vendor method statement.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-004"></a></p>
@@ -836,7 +812,6 @@
 <p><strong>Risk Addressed.</strong> Policies banning unsafe formats are useless if not enforced at load and download.</p>
 <p><strong>Business Scenario.</strong> Security wants format policy enforced in pipelines and workstations.</p>
 <p><strong>Technical Scenario.</strong> Try to download and load models in disallowed formats.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 3 formats; 2 locations (pipeline, workstation).</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -848,16 +823,8 @@
 <p><strong>Edge Cases / Variants.</strong> Renamed file extension; archive containing disallowed file.</p>
 <p><strong>Expected Detection.</strong> Disallowed formats blocked in both locations; exceptions audited.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Block.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Events to SIEM.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Result table.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-005"></a></p>
@@ -911,7 +878,6 @@
 <p><strong>Risk Addressed.</strong> A model from an unknown source or modified in transit may not be what it claims to be.</p>
 <p><strong>Business Scenario.</strong> Supply chain owners want origin and integrity verified at load.</p>
 <p><strong>Technical Scenario.</strong> Load signed, unsigned and tampered models.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 3 signed models, 3 unsigned, 3 signed then tampered; trust policy.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -924,16 +890,8 @@
 <p><strong>Edge Cases / Variants.</strong> Expired signing key; key rotation.</p>
 <p><strong>Expected Detection.</strong> Tampered and unsigned models blocked per policy; signed models load; trust management documented.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Block.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Verification events.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Load results.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-006"></a></p>
@@ -987,7 +945,6 @@
 <p><strong>Risk Addressed.</strong> Using models against their licence terms creates legal exposure.</p>
 <p><strong>Business Scenario.</strong> Legal wants licence terms captured and violations flagged.</p>
 <p><strong>Technical Scenario.</strong> Register models with different licences and test policy.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 8 models with different licence types, including non-commercial and restricted-use terms.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1000,16 +957,9 @@
 <p><strong>Edge Cases / Variants.</strong> Custom licences; licence changes.</p>
 <p><strong>Expected Detection.</strong> Licences correctly identified for at least 7 of 8; policy blocks restricted deployments.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Block.</p>
-<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Report export.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Licence table.</p>
-<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-007"></a></p>
@@ -1063,7 +1013,6 @@
 <p><strong>Risk Addressed.</strong> Systematic querying can reproduce a model's behaviour and steal its value.</p>
 <p><strong>Business Scenario.</strong> Model owners want extraction patterns detected and throttled.</p>
 <p><strong>Technical Scenario.</strong> Run a scripted extraction-style query pattern against a protected inference endpoint.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> Inference endpoint; normal profile of 50 queries per user per day; extraction script making 20,000 structured queries.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1076,16 +1025,8 @@
 <p><strong>Edge Cases / Variants.</strong> Distributed extraction across accounts.</p>
 <p><strong>Expected Detection.</strong> Extraction detected at fast and medium rates within 15 minutes; slow rate behaviour documented; legitimate heavy user not blocked without review.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Throttle.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Alerts to SIEM.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Detection timeline.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-008"></a></p>
@@ -1139,7 +1080,6 @@
 <p><strong>Risk Addressed.</strong> Models may reproduce training data, including personal data.</p>
 <p><strong>Business Scenario.</strong> Privacy wants memorisation measured and extraction attempts blocked.</p>
 <p><strong>Technical Scenario.</strong> Run probes against a test model fine-tuned on canary content.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> Test model fine-tuned on 50 canary strings; 100 extraction prompts.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1153,16 +1093,8 @@
 <p><strong>Edge Cases / Variants.</strong> Prefix attacks; repeated token attacks.</p>
 <p><strong>Expected Detection.</strong> Canary reproduction rate reported; at least 90 percent of reproductions blocked or masked.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Mask.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Events with canary matches.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Probe results.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-009"></a></p>
@@ -1216,7 +1148,6 @@
 <p><strong>Risk Addressed.</strong> Weights represent the model's whole value and may encode sensitive training data.</p>
 <p><strong>Business Scenario.</strong> Security wants copying of weights outside controlled locations detected and blocked.</p>
 <p><strong>Technical Scenario.</strong> Attempt to copy model files to unauthorised destinations.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> Weights repository; destinations: personal cloud, removable media (lab), unapproved bucket, email; 4 file sizes.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1228,16 +1159,8 @@
 <p><strong>Edge Cases / Variants.</strong> Copy in split chunks; copy via compressed archive.</p>
 <p><strong>Expected Detection.</strong> All copy attempts blocked or alerted; storage access logged.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Block.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Events to SIEM.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Attempt table.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-010"></a></p>
@@ -1291,7 +1214,6 @@
 <p><strong>Risk Addressed.</strong> Small imperceptible changes can flip a vision model's decision.</p>
 <p><strong>Business Scenario.</strong> Model owners want robustness measured and attacks detected.</p>
 <p><strong>Technical Scenario.</strong> Apply standard perturbation methods to a test classifier and measure.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> Test image classifier; 100 images; perturbation levels low, medium, high; open-source robustness tooling.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1304,16 +1226,8 @@
 <p><strong>Edge Cases / Variants.</strong> Physical-world style perturbations.</p>
 <p><strong>Expected Detection.</strong> Accuracy loss measured; at least 70 percent of high-level perturbations detected; false positives under 5 percent.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Flag.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Findings exportable.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Robustness table.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-011"></a></p>
@@ -1367,7 +1281,6 @@
 <p><strong>Risk Addressed.</strong> Small wording changes can flip the decisions of fraud, spam, toxicity or routing classifiers, letting an attacker evade controls the business relies on.</p>
 <p><strong>Business Scenario.</strong> Model owners want to know how easily their text classifiers are fooled and whether the platform detects evasion attempts.</p>
 <p><strong>Technical Scenario.</strong> Perturb inputs to a lab text classifier with realistic evasion techniques and measure decision flips and platform detection.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> Lab classifier (for example a spam or fraud-style model); 200 labelled inputs; 5 perturbation types: character swaps and typos, synonym substitution, homoglyph substitution, inserted benign filler text, and translation round trip.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1382,16 +1295,8 @@
 <p><strong>Edge Cases / Variants.</strong> Perturbations in Arabic or mixed script; combined perturbations; adaptive attacker who tunes against the detector.</p>
 <p><strong>Expected Detection.</strong> Flip rate by perturbation type reported; at least 60 percent of flipped variants flagged; false positives on natural variation under 5 percent; explanations name the technique class.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Flag or route to review.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Findings exportable to model risk records.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Flip-rate table; detection and false-positive counts.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-012"></a></p>
@@ -1445,7 +1350,6 @@
 <p><strong>Risk Addressed.</strong> Crafted or out-of-distribution inputs are often the first signs of probing, extraction or evasion.</p>
 <p><strong>Business Scenario.</strong> Security wants unusual input patterns to the model flagged before they cause harm.</p>
 <p><strong>Technical Scenario.</strong> Send normal traffic and five classes of anomalous input to a lab inference endpoint and compare detection.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 300 normal inputs; 50 anomalous inputs across five classes: extreme length, unusual character distributions, repeated near-identical queries with small changes (probing), out-of-domain content, and malformed structured inputs.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1459,16 +1363,8 @@
 <p><strong>Edge Cases / Variants.</strong> Slow-and-low probing over days; anomalies from a trusted internal service.</p>
 <p><strong>Expected Detection.</strong> At least 80 percent of anomalous inputs flagged; false positives below 3 percent; explanations name the anomaly class; baseline adapts to the new legitimate input type within the stated period without suppressing true anomalies.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Flag or rate-limit.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Alerts to SIEM.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Detection table by anomaly class.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-013"></a></p>
@@ -1522,7 +1418,6 @@
 <p><strong>Risk Addressed.</strong> Unprotected inference endpoints are easy to abuse, copy, overload or use as a pivot into the network.</p>
 <p><strong>Business Scenario.</strong> Security wants every model endpoint authenticated, scoped and rate limited.</p>
 <p><strong>Technical Scenario.</strong> Test lab inference APIs with no credentials, bad credentials, wrong-scope credentials and abusive volume.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 2 lab inference endpoints (one internal, one exposed to a wider segment); credential sets: valid, expired, revoked, wrong scope, malformed; load script at 10 times normal volume.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1537,16 +1432,8 @@
 <p><strong>Edge Cases / Variants.</strong> Credentials passed in query strings; cross-origin browser calls; endpoint reachable by IP address.</p>
 <p><strong>Expected Detection.</strong> All invalid calls rejected with uninformative errors; wrong-scope access denied; rate limits enforced per identity; every rejection logged with source and credential identifier; no exposed debug routes.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Reject and throttle.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Events to SIEM.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Call and response table; log extract; scan output.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-014"></a></p>
@@ -1600,7 +1487,6 @@
 <p><strong>Risk Addressed.</strong> Different models and versions carry different data exposure, cost and risk; open access to all of them defeats risk tiering.</p>
 <p><strong>Business Scenario.</strong> Governance wants access defined per model and version and enforced consistently.</p>
 <p><strong>Technical Scenario.</strong> Define a role-by-model matrix and test every combination, including after version change.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 4 models (public, internal, restricted data, experimental), 3 versions of the restricted model, 3 roles, 2 service identities; 40 combinations.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1615,16 +1501,8 @@
 <p><strong>Edge Cases / Variants.</strong> Model alias names; version pinned in application code; identity belonging to two roles.</p>
 <p><strong>Expected Detection.</strong> All 40 outcomes match; new versions do not inherit broader access than intended; rule change effective in the stated time; deprecated versions blocked.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Allow or deny.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Decision logs to SIEM.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Matrix with expected and actual columns.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-015"></a></p>
@@ -1678,7 +1556,6 @@
 <p><strong>Risk Addressed.</strong> Without a fingerprint, an owner cannot show that a suspect model derives from its own.</p>
 <p><strong>Business Scenario.</strong> Legal and security want a way to identify unauthorised copies or derivatives with evidence.</p>
 <p><strong>Technical Scenario.</strong> Fingerprint a lab model, create copies and derivatives, and test identification.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 1 owned lab model; copies: exact copy, quantised copy, fine-tuned derivative, distilled student; 3 unrelated models.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1692,16 +1569,8 @@
 <p><strong>Edge Cases / Variants.</strong> Model with outputs filtered; derivative trained on heavy paraphrase.</p>
 <p><strong>Expected Detection.</strong> Exact and quantised copies identified; fine-tuned derivative identified or limitation documented; unrelated models not matched; vendor states known limits in writing; evidence report usable for escalation.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Alert.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Evidence export.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Match table; evidence report.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-016"></a></p>
@@ -1755,7 +1624,6 @@
 <p><strong>Risk Addressed.</strong> Models differ in how they handle policy-boundary requests, and tuning or version change can shift behaviour without notice.</p>
 <p><strong>Business Scenario.</strong> Risk owners want a repeatable safety score before go-live and after every change.</p>
 <p><strong>Technical Scenario.</strong> Run an agreed benign test set probing policy boundaries on each model and compare.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 150 benign test prompts across 6 policy categories (for example restricted internal topics, impersonation, privacy requests, unsafe instructions in mild form, bias-sensitive questions, regulated advice); expected behaviour defined per prompt; 3 models.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1769,16 +1637,8 @@
 <p><strong>Edge Cases / Variants.</strong> Same set in Arabic; adversarial rewording of prompts.</p>
 <p><strong>Expected Detection.</strong> Scores produced per category and model; automatic scoring agrees with human check on at least 90 percent of the sample; below-threshold models flagged; changes produce a comparison report.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Gate on threshold.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Results export to model risk records.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Score table; human check sample.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-017"></a></p>
@@ -1832,7 +1692,6 @@
 <p><strong>Risk Addressed.</strong> Confident wrong answers cause business, legal and safety harm.</p>
 <p><strong>Business Scenario.</strong> Business owners want factual accuracy and appropriate refusal measured on their own use cases.</p>
 <p><strong>Technical Scenario.</strong> Run a factual question set with reference answers, including unanswerable questions, with and without grounding controls.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 100 answerable questions from the organisation's own fabricated knowledge base; 20 unanswerable questions; 2 models; groundedness control on and off.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1846,16 +1705,8 @@
 <p><strong>Edge Cases / Variants.</strong> Questions requiring multi-step reasoning; questions with outdated knowledge.</p>
 <p><strong>Expected Detection.</strong> Accuracy and refusal rates reported; groundedness controls improve at least one metric without reducing the other by more than 5 points; low-confidence flags visible.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Warn or suppress.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Results exportable.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Score table by model and mode.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-018"></a></p>
@@ -1909,7 +1760,6 @@
 <p><strong>Risk Addressed.</strong> Hosted providers update models silently; behaviour, safety and cost change without a code change on the customer side.</p>
 <p><strong>Business Scenario.</strong> Operations wants version changes and behaviour drift detected quickly.</p>
 <p><strong>Technical Scenario.</strong> Pin versions, then simulate a provider update using a mock provider and monitor canary prompts.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> Mock provider with versions A and B; 30 canary prompts with expected outputs or properties (format, refusal, factual answer); 2 applications.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1924,16 +1774,8 @@
 <p><strong>Edge Cases / Variants.</strong> Drift that affects only one language; slow drift across several updates.</p>
 <p><strong>Expected Detection.</strong> Version change detected within the canary interval and no later than 24 hours; drift quantified per canary; affected applications listed; rollback works.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Alert or block on unapproved version.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Change events to SIEM.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Canary result table; alert.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-019"></a></p>
@@ -1987,7 +1829,6 @@
 <p><strong>Risk Addressed.</strong> Missing model documentation blocks risk review, audit and regulatory response.</p>
 <p><strong>Business Scenario.</strong> Governance wants required documentation captured and gaps visible before approval.</p>
 <p><strong>Technical Scenario.</strong> Register models with complete and incomplete documentation and check gap handling.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 8 models: 2 complete, 3 missing intended use and limitations, 2 missing training data summary, 1 missing licence; required field list agreed in advance.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2001,16 +1842,9 @@
 <p><strong>Edge Cases / Variants.</strong> Third-party model with no available card; model updated after approval.</p>
 <p><strong>Expected Detection.</strong> Gaps reported correctly for all 6 incomplete models; approval blocked until fields complete; export available in a structured format.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Gate.</p>
-<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Export for audit.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Gap report; approval attempt record.</p>
-<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-020"></a></p>
@@ -2064,7 +1898,6 @@
 <p><strong>Risk Addressed.</strong> Default settings for guardrails, tool access, logging and network exposure are often unsafe in production.</p>
 <p><strong>Business Scenario.</strong> Platform owners want a hardening baseline checked and gaps reported.</p>
 <p><strong>Technical Scenario.</strong> Run configuration checks against lab deployments with seeded weak settings.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 5 deployments with 20 seeded weaknesses: guardrails disabled, verbose error output, logging off, public network exposure, no authentication on admin routes, default credentials, unlimited tokens, unrestricted tools, debug mode on, and benign settings.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2078,16 +1911,8 @@
 <p><strong>Edge Cases / Variants.</strong> Settings changed after deployment (configuration drift); settings that differ per environment.</p>
 <p><strong>Expected Detection.</strong> At least 16 of 20 weaknesses detected; benign settings not flagged more than twice; findings clear after remediation; benchmark mapping stated.</p>
 <p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
-<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Findings to ticketing.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Check results vs seeded list.</p>
-<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-021"></a></p>
@@ -2141,7 +1966,6 @@
 <p><strong>Risk Addressed.</strong> Failover to a cheaper, weaker or less compliant model can bypass guardrails, residency and licence limits.</p>
 <p><strong>Business Scenario.</strong> Architecture wants fallback paths subject to the same policy as the primary.</p>
 <p><strong>Technical Scenario.</strong> Trigger failover and cost-based routing in a lab router and check policy at each destination.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> Router with a primary and 2 fallback models (one in a non-approved region, one with weaker safety scores, one approved); 30 requests with and without sensitive data.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2156,16 +1980,8 @@
 <p><strong>Edge Cases / Variants.</strong> All approved models unavailable; routing rule edited under load.</p>
 <p><strong>Expected Detection.</strong> Fallbacks to non-approved region or below-threshold safety are blocked; sensitive data does not reach non-approved fallbacks; each routing decision is logged with reason.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Block non-compliant fallback.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Events to SIEM.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Routing log; policy decisions.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-022"></a></p>
@@ -2219,7 +2035,6 @@
 <p><strong>Risk Addressed.</strong> Crafted requests such as very long inputs, repetition and expansion prompts can consume disproportionate compute.</p>
 <p><strong>Business Scenario.</strong> Operations wants costly requests limited without harming legitimate long-document use.</p>
 <p><strong>Technical Scenario.</strong> Send ten request types designed to be expensive and compare cost, latency and platform handling.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> Lab inference endpoint with a mock cost meter; 10 request types: maximum-length input, repeated token input, request for maximum-length output, nested expansion prompts, many parallel requests, large image or file input, recursive tool loop, streaming held open, tiny requests at high rate, and a legitimate 40-page document summary.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2233,16 +2048,8 @@
 <p><strong>Edge Cases / Variants.</strong> Distributed bursts; abuse from an authenticated internal service.</p>
 <p><strong>Expected Detection.</strong> Abusive types limited or throttled before exceeding 10 times typical cost; legitimate long document completes within an agreed ceiling; alerts raised; recovery within the stated time.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Limit.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Cost events to monitoring.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Cost and latency table.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-023"></a></p>
@@ -2296,7 +2103,6 @@
 <p><strong>Risk Addressed.</strong> Conversion and quantisation steps are places where a model can be swapped or altered while keeping a trusted name.</p>
 <p><strong>Business Scenario.</strong> Pipeline owners want provenance preserved through every transformation.</p>
 <p><strong>Technical Scenario.</strong> Convert a signed lab model and verify the chain of provenance, then tamper with the output.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 1 signed model; 2 conversions (format change, quantisation); tampering tests: altered weights file, swapped file with same name, altered metadata.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2310,16 +2116,8 @@
 <p><strong>Edge Cases / Variants.</strong> Conversion performed by a third party; multiple chained conversions.</p>
 <p><strong>Expected Detection.</strong> Provenance chain recorded for pipeline conversions; tampered output blocked; unrecorded conversions flagged or refused registration.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Block.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Records exportable.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Chain record; load attempt results.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-024"></a></p>
@@ -2373,7 +2171,6 @@
 <p><strong>Risk Addressed.</strong> Retired models keep weights, endpoints, keys and access, extending exposure and cost.</p>
 <p><strong>Business Scenario.</strong> Governance wants retirement to remove every trace and produce evidence.</p>
 <p><strong>Technical Scenario.</strong> Retire a lab model and check for residual access and copies.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 2 models with endpoints, API keys, registry entries, cached copies and backups.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2387,16 +2184,9 @@
 <p><strong>Edge Cases / Variants.</strong> Model referenced by other applications; model copies on developer laptops.</p>
 <p><strong>Expected Detection.</strong> All endpoints, keys and caches removed; redeploy blocked or requires approval; evidence record produced; backup retention stated.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Remove access.</p>
-<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Evidence export.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Residual access checks; evidence record.</p>
-<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-025"></a></p>
@@ -2450,7 +2240,6 @@
 <p><strong>Risk Addressed.</strong> Applying the same scrutiny to every model wastes effort on low risk and under-reviews high risk.</p>
 <p><strong>Business Scenario.</strong> Governance wants assessment depth to follow risk.</p>
 <p><strong>Technical Scenario.</strong> Submit models of different risk through the platform's workflow and check tiering, required assessments and approvals.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 4 models: internal summariser, customer-facing assistant, credit-style decision model, code assistant; scoring inputs (data sensitivity, autonomy, impact, exposure).</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2465,16 +2254,9 @@
 <p><strong>Edge Cases / Variants.</strong> Model with mixed use cases; tier override with justification.</p>
 <p><strong>Expected Detection.</strong> At least 3 of 4 tiers match expectation; required assessments differ by tier; changes trigger re-tiering; reviews scheduled.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Gate.</p>
-<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Export to GRC.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Tier table; workflow record.</p>
-<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-026"></a></p>
@@ -2528,7 +2310,6 @@
 <p><strong>Risk Addressed.</strong> A serving process that runs under a broad shared identity can read every model in the store, so one compromised endpoint exposes all weights.</p>
 <p><strong>Business Scenario.</strong> Security wants each serving endpoint to run under its own identity and reach only the model it serves.</p>
 <p><strong>Technical Scenario.</strong> From each lab endpoint, attempt to read its own weights and those of other models.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 3 serving endpoints for 3 models; a weight store holding 5 models; 1 endpoint configured with a shared identity.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2542,16 +2323,8 @@
 <p><strong>Edge Cases / Variants.</strong> An endpoint that serves two versions of one model; a model loaded from a local cache.</p>
 <p><strong>Expected Detection.</strong> Each endpoint reads only its own model; writes are denied; the shared identity is flagged; the identity cannot be used outside the serving environment.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Allow or deny.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Decision logs to SIEM.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Access matrix; finding for the shared identity; attribution trace.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-027"></a></p>
@@ -2605,7 +2378,6 @@
 <p><strong>Risk Addressed.</strong> When several applications call a model with one key, a misuse or a leak cannot be traced to its source or stopped without stopping them all.</p>
 <p><strong>Business Scenario.</strong> The SOC wants every inference call tied to one application or agent and, where there is one, to the end user.</p>
 <p><strong>Technical Scenario.</strong> Send calls to one endpoint from several applications and agents, two of which share a key.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 1 model endpoint; 4 calling applications and 2 agents; 2 of the applications sharing one key; 60 calls.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2619,16 +2391,8 @@
 <p><strong>Edge Cases / Variants.</strong> A batch job calling on behalf of many users; a call routed through a gateway that replaces the caller's identity.</p>
 <p><strong>Expected Detection.</strong> Every call is attributed to one application or agent and, where present, an end user; the shared key is flagged; the call with no workload identity is refused; one key is revoked without affecting other callers.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Block or alert.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Call records to SIEM.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Attribution table; finding for the shared key; revocation result.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-028"></a></p>
@@ -2682,7 +2446,6 @@
 <p><strong>Risk Addressed.</strong> An administrator with standing access can copy or delete production weights, or change what gets promoted, with no second person involved.</p>
 <p><strong>Business Scenario.</strong> Security wants privileged actions on weights and the registry to need a time-bound grant approved by someone else.</p>
 <p><strong>Technical Scenario.</strong> Request privileged actions on a lab production registry as an administrator, with and without approval.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 2 administrators and 1 approver; a production registry with 3 models; requests to download weights, delete a version and change a promotion rule.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2696,16 +2459,8 @@
 <p><strong>Edge Cases / Variants.</strong> An emergency request outside working hours; a grant covering one model used against another.</p>
 <p><strong>Expected Detection.</strong> No action succeeds without a grant; each grant is time-bound and approved by a second person; self-approval is refused; access ends when the grant expires; the session is recorded.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Gate.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Grant and session records to SIEM.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Request and approval records; action outcomes; session record.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-029"></a></p>
@@ -2759,7 +2514,6 @@
 <p><strong>Risk Addressed.</strong> A fine-tuned model carries the data it was tuned on, so access by another team or tenant is access to that data.</p>
 <p><strong>Business Scenario.</strong> Data owners want a fine-tuned model reachable only by the team that owns it and by identities it has named.</p>
 <p><strong>Technical Scenario.</strong> Attempt to invoke, download and list three teams' fine-tuned models with each team's identity and a cross-team service identity.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 3 fine-tuned models owned by 3 teams, one tuned on restricted data; 3 team identities and 1 cross-team service identity; 24 access attempts (invoke, download, list and read training metadata).</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2773,16 +2527,8 @@
 <p><strong>Edge Cases / Variants.</strong> A model shared with a second team for evaluation only; a base model common to all three teams.</p>
 <p><strong>Expected Detection.</strong> Each team reaches only its own model; listings show no other team's models or metadata; the cross-team identity is limited to what its grant names; all 24 outcomes match.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Allow or deny.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Decision logs to SIEM.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Access matrix with expected and actual columns; denial log entries.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-030"></a></p>
@@ -2836,7 +2582,6 @@
 <p><strong>Risk Addressed.</strong> Access to the registry and to endpoints builds up as people change role and applications retire, and nobody removes it.</p>
 <p><strong>Business Scenario.</strong> Governance wants entitlements on the registry and on serving endpoints reviewed on a schedule and stale ones removed.</p>
 <p><strong>Technical Scenario.</strong> Seed current and stale entitlements and run a review campaign.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 12 entitlements on the registry and endpoints: 6 current, 3 for people who changed role, 2 for service identities with no owner and 1 for a retired application.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2850,16 +2595,9 @@
 <p><strong>Edge Cases / Variants.</strong> A reviewer asked to certify their own access; an entitlement granted through a group.</p>
 <p><strong>Expected Detection.</strong> The campaign lists all 12 entitlements with owner and last use; the 6 stale entitlements are flagged; revocation removes access with evidence; the campaign record is retained.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Revoke.</p>
-<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Export to GRC.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Campaign record; revocation evidence.</p>
-<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-031"></a></p>
@@ -2913,7 +2651,6 @@
 <p><strong>Risk Addressed.</strong> If nobody can say who downloaded, loaded or promoted a model, a stolen or tampered model cannot be traced.</p>
 <p><strong>Business Scenario.</strong> Audit wants every access to a model recorded with the identity that made it.</p>
 <p><strong>Technical Scenario.</strong> Generate model access events from human and workload identities and inspect the logs.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.</p>
 <p><strong>Test Data.</strong> 10 events across the registry and serving: 3 downloads, 3 loads, 2 promotions, 1 deletion and 1 denied download; a mix of human and workload identities.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2927,16 +2664,9 @@
 <p><strong>Edge Cases / Variants.</strong> A download through a mirror or cache; a promotion performed by a pipeline.</p>
 <p><strong>Expected Detection.</strong> All 10 events are logged with identity, model, version, hash, source address and decision; workload events name the owning team; the denied download is logged; the events reach the SIEM.</p>
 <p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Events to SIEM.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Event log export; field completeness table.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l12-032"></a></p>
@@ -3003,21 +2733,14 @@
 <p><strong>Edge Cases / Variants.</strong> A new version of an approved model; a model approved for one use being called by another.</p>
 <p><strong>Expected Detection.</strong> Both submitted models have complete decision records with the correct approver for their tier; the directly added model is flagged; withdrawal reaches the allow-list within the documented time.</p>
 <p><strong>Expected Prevention / Control Action.</strong> N/A (evidence control).</p>
-<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Model finding or decision visible in the model security dashboard within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Decision records exportable; allow-list changes linked to decision IDs.</p>
-<p><strong>Forensic Evidence.</strong> Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Decision records; tier-to-approver rule; flag; allow-list before and after withdrawal.</p>
 <p><strong>Reviewer Notes.</strong> Pairs with <a class="chip" href="#tc-l12-025">TC-L12-025</a> (risk tiering) and <a class="chip" href="L08-ai-gateway-and-security-controls.html#tc-l08-028">TC-L08-028</a> (allow-list enforcement). Documentation alone scores no higher than 3.</p>
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 </article>
 <nav class="pager" aria-label="Previous and next page"><a class="prev" href="L11-knowledge-and-retrieval-layer.html">&larr; L11 Knowledge &amp; Retrieval Layer</a><a class="next" href="L13-training-and-fine-tuning-layer.html">L13 Training &amp; Fine-Tuning Layer &rarr;</a></nav>
-<footer class="site-footer">Author: Nachiket Sathaye &middot; Updated 15 October 2026 &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/10_Test_Case_Library/L12-model-layer.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
+<footer class="site-footer">Author: Nachiket Sathaye &middot; Updated 16 October 2026 &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/10_Test_Case_Library/L12-model-layer.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
 <div class="site-notice">
 <p><strong>Licence.</strong> <svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.441-3.5c8.951,0,16.572,3.125,22.857,9.372c3.008,3.009,5.295,6.448,6.857,10.314 c1.561,3.867,2.344,7.971,2.344,12.314c0,4.381-0.773,8.486-2.314,12.313c-1.543,3.828-3.82,7.21-6.828,10.143 c-3.123,3.085-6.666,5.448-10.629,7.086c-3.961,1.638-8.057,2.457-12.285,2.457s-8.276-0.808-12.143-2.429 c-3.866-1.618-7.333-3.961-10.4-7.027c-3.067-3.066-5.4-6.524-7-10.372S5.5,32.767,5.5,28.5c0-4.229,0.809-8.295,2.428-12.2 c1.619-3.905,3.972-7.4,7.057-10.486C21.08-0.394,28.565-3.5,37.441-3.5z M37.557,2.272c-7.314,0-13.467,2.553-18.458,7.657 c-2.515,2.553-4.448,5.419-5.8,8.6c-1.354,3.181-2.029,6.505-2.029,9.972c0,3.429,0.675,6.734,2.029,9.913 c1.353,3.183,3.285,6.021,5.8,8.516c2.514,2.496,5.351,4.399,8.515,5.715c3.161,1.314,6.476,1.971,9.943,1.971 c3.428,0,6.75-0.665,9.973-1.999c3.219-1.335,6.121-3.257,8.713-5.771c4.99-4.876,7.484-10.99,7.484-18.344 c0-3.543-0.648-6.895-1.943-10.057c-1.293-3.162-3.18-5.98-5.654-8.458C50.984,4.844,44.795,2.272,37.557,2.272z M37.156,23.187 l-4.287,2.229c-0.458-0.951-1.019-1.619-1.685-2c-0.667-0.38-1.286-0.571-1.858-0.571c-2.856,0-4.286,1.885-4.286,5.657 c0,1.714,0.362,3.084,1.085,4.113c0.724,1.029,1.791,1.544,3.201,1.544c1.867,0,3.181-0.915,3.944-2.743l3.942,2 c-0.838,1.563-2,2.791-3.486,3.686c-1.484,0.896-3.123,1.343-4.914,1.343c-2.857,0-5.163-0.875-6.915-2.629 c-1.752-1.752-2.628-4.19-2.628-7.313c0-3.048,0.886-5.466,2.657-7.257c1.771-1.79,4.009-2.686,6.715-2.686 C32.604,18.558,35.441,20.101,37.156,23.187z M55.613,23.187l-4.229,2.229c-0.457-0.951-1.02-1.619-1.686-2 c-0.668-0.38-1.307-0.571-1.914-0.571c-2.857,0-4.287,1.885-4.287,5.657c0,1.714,0.363,3.084,1.086,4.113 c0.723,1.029,1.789,1.544,3.201,1.544c1.865,0,3.18-0.915,3.941-2.743l4,2c-0.875,1.563-2.057,2.791-3.541,3.686 c-1.486,0.896-3.105,1.343-4.857,1.343c-2.896,0-5.209-0.875-6.941-2.629c-1.736-1.752-2.602-4.19-2.602-7.313 c0-3.048,0.885-5.466,2.658-7.257c1.77-1.79,4.008-2.686,6.713-2.686C51.117,18.558,53.938,20.101,55.613,23.187z"/></svg><svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.443-3.5c8.988,0,16.57,3.085,22.742,9.257C66.393,11.967,69.5,19.548,69.5,28.5c0,8.991-3.049,16.476-9.145,22.456 C53.879,57.319,46.242,60.5,37.443,60.5c-8.649,0-16.153-3.144-22.514-9.43C8.644,44.784,5.5,37.262,5.5,28.5 c0-8.761,3.144-16.342,9.429-22.742C21.101-0.415,28.604-3.5,37.443-3.5z M37.557,2.272c-7.276,0-13.428,2.553-18.457,7.657 c-5.22,5.334-7.829,11.525-7.829,18.572c0,7.086,2.59,13.22,7.77,18.398c5.181,5.182,11.352,7.771,18.514,7.771 c7.123,0,13.334-2.607,18.629-7.828c5.029-4.838,7.543-10.952,7.543-18.343c0-7.276-2.553-13.465-7.656-18.571 C50.967,4.824,44.795,2.272,37.557,2.272z M46.129,20.557v13.085h-3.656v15.542h-9.944V33.643h-3.656V20.557 c0-0.572,0.2-1.057,0.599-1.457c0.401-0.399,0.887-0.6,1.457-0.6h13.144c0.533,0,1.01,0.2,1.428,0.6 C45.918,19.5,46.129,19.986,46.129,20.557z M33.042,12.329c0-3.008,1.485-4.514,4.458-4.514s4.457,1.504,4.457,4.514 c0,2.971-1.486,4.457-4.457,4.457S33.042,15.3,33.042,12.329z"/></svg>This wiki is open to the community under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">Creative Commons Attribution-ShareAlike 4.0 International licence (CC BY-SA 4.0)</a>. You may copy, share and adapt it for any purpose, including commercially, as long as you credit the authors and release anything you build from it under the same licence.</p>
 <p><strong>Disclaimer.</strong> This wiki is an open, community driven educational reference, not legal, regulatory or professional advice. Regional regulatory content is compiled from secondary sources and its verification status is shown per row; verify against primary sources before relying on it. Content is provided "as is" without warranty. Named products and companies belong to their owners; statements about them reflect public information at the date shown. Views are the author's own.</p>

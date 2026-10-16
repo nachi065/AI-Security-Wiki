@@ -19,6 +19,7 @@ A review of the wiki found that it said well what to look for in an agent but ga
 
 ### What is new
 
+- **Standard Fields:** wording that repeated in most of the 668 test cases (scoring, pass and fail criteria, reviewer notes, standard evidence, and the lab setup for each layer) now lives once on the [Standard Fields](../10_Test_Case_Library/standard-fields.md) page, generated from `standard-fields.json`. A case shows a field only when it differs. This removes about 1.2 MB of repeated Markdown (about 42 percent of the case text) and 5,715 field entries; the cases now read as what is unique to each.
 - **Payload Kit:** a new page, [Payload Kit](../10_Test_Case_Library/payload-kit.md), with a `kit/` folder of attack and legitimate-request sets for 36 of the 169 Critical test cases (all Critical cases in L06, L07 and L11 that a payload can test, plus selected L08, L09 and L10 cases) and a runner that compares an unprotected build with a protected one. Each covered case links to its payload file.
 - **Test Your Own Application:** a new page, [Test Your Own Application](../10_Test_Case_Library/test-your-own-app.md), that restates the testing for an owner who can change the code. It drops the product and provider language, explains the setup, includes an adapter template, and gives a plain procedure for each of the 36 payload-kit cases.
 - **Builder Track:** a new section with one page, [Secure Your First Agent: Ten Controls With Code](../24_Builder_Track/01_Secure_Your_First_Agent.md). It sets out ten controls in build order, each tied to an existing control objective, with working configuration and code for tool allow-lists, argument validation, scoped short-lived credentials, sandboxing, egress limits and approval gates.
@@ -26,6 +27,7 @@ A review of the wiki found that it said well what to look for in an agent but ga
 
 ### What was checked
 
+- For the Standard Fields change, every field of every case was rebuilt from its explicit text or the standard for its test method, kind of case or layer and compared with the original. All matched, so no wording was lost or altered. The link check now fails if a case repeats a standard word for word, and a deliberate repeat was used to confirm it does.
 - The payload kit runner and stand-in applications have a test suite (38 tests). Eight deliberate breakages of the runner's judging were each caught. Against the stand-ins, the tool-governance cases pass and the cases that depend on what a model says fail, as expected; the resource-limit sandbox fails three of five probes.
 - The Python code was run on Python 3.13 on Linux. The test suite passes, with one test skipped where the environment can already remove the network.
 - To confirm that the tests protect something, twelve of the protective checks (path confinement, approval matching, self-approval, token signature, definition pinning, scope widening, private-address blocking, audit chain, child revocation, and the proxy's host, address and port checks) were switched off one at a time. The tests failed each time.

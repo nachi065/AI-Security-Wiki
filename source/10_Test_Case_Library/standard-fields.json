@@ -1,0 +1,128 @@
+{
+  "keys": {
+    "Compliance Evidence": "all",
+    "Audit Evidence": "shape",
+    "Fail Criteria": "shape",
+    "Scoring Criteria": "method-shape",
+    "Pass Criteria": "method-shape",
+    "Reviewer Notes": "method-shape",
+    "Expected Alert / Log": "method-shape",
+    "Expected Record / Log": "method-shape",
+    "Expected Report / Dashboard Evidence": "layer",
+    "Forensic Evidence": "layer",
+    "Preconditions": "layer"
+  },
+  "standards": {
+    "Compliance Evidence": {
+      "all": "Test execution log and captured evidence retained in the Test Case Execution Register for audit."
+    },
+    "Audit Evidence": {
+      "result": "Record identifier, actor, timestamp, before and after values, approval reference and source evidence exportable for audit."
+    },
+    "Fail Criteria": {
+      "detect": "Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.",
+      "result": "Expected Result is not met; evidence is missing or not from the live product; the control action does not occur where required; or the applicable requirement and its parameters were not recorded before testing."
+    },
+    "Scoring Criteria": {
+      "technical-detect": "0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.",
+      "evidence-detect": "0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.",
+      "attestation-detect": "0 = no statement; 3 = statement without supporting detail; 5 = statement with technical detail and an offer to demonstrate.",
+      "technical-result": "0 = not demonstrated; 3 = demonstrated but with missing fields, manual workarounds or SLA exceeded; 5 = fully met in the live product with complete evidence; N/A = capability out of scope by design.",
+      "evidence-result": "0 = not demonstrated; 3 = partly shown or shown only from documentation; 5 = shown in the live product with exportable evidence; N/A = capability out of scope by design."
+    },
+    "Pass Criteria": {
+      "technical-detect": "Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.",
+      "evidence-detect": "Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.",
+      "attestation-detect": "Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.",
+      "technical-result": "Expected Result and Expected Control Action are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC.",
+      "evidence-result": "Expected Result are met in full against the requirement recorded in Applicable Requirement, within the vendor's documented SLA, and the evidence under Evidence to Capture is obtained from the live PoC."
+    },
+    "Reviewer Notes": {
+      "technical-detect": "Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.",
+      "evidence-detect": "Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.",
+      "attestation-detect": "Attestation scores below demonstrated evidence. Request a demonstration where possible.",
+      "technical-result": "Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.",
+      "evidence-result": "Confirm the evidence is taken from the live product. Documentation alone scores no higher than 3."
+    },
+    "Expected Alert / Log": {
+      "technical-detect": "Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.",
+      "evidence-detect": "Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.",
+      "attestation-detect": "Signed written statement from the vendor."
+    },
+    "Expected Record / Log": {
+      "technical-result": "Record with timestamp, actor, record identifier, decision, before and after values and approval reference, within the vendor's documented SLA.",
+      "evidence-result": "Configuration state, record or export that supports the claim, with timestamp and the identity of the person who produced it."
+    },
+    "Expected Report / Dashboard Evidence": {
+      "D08": "Finding, run and verdict visible in the red-team console within the documented refresh interval.",
+      "D09": "Identity finding or governance record visible in the identity governance view within the documented refresh interval.",
+      "D10": "Agent action and decision visible in the browser agent dashboard within the documented refresh interval.",
+      "D11": "Media finding or decision visible in the multimodal or gateway dashboard within the documented refresh interval.",
+      "D12": "Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.",
+      "D13": "Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.",
+      "L01": "Record or report visible in the governance and compliance workspace within the documented refresh interval.",
+      "L02": "Record or report visible in the governance and compliance workspace within the documented refresh interval.",
+      "L03": "Record or report visible in the governance and compliance workspace within the documented refresh interval.",
+      "L04": "Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.",
+      "L05": "Finding visible in the application inventory or runtime protection dashboard within the documented refresh interval.",
+      "L06": "Agent, tool and decision visible in the agent governance dashboard within the documented refresh interval.",
+      "L07": "Detection and decision visible in the prompt-security dashboard within the documented refresh interval.",
+      "L08": "Policy decision and rule hit visible in the enforcement dashboard within the documented refresh interval.",
+      "L09": "Identity finding or access decision visible in the identity or access dashboard within the documented refresh interval.",
+      "L10": "Finding visible in the data security or data inventory dashboard within the documented refresh interval.",
+      "L11": "Finding or retrieval decision visible in the knowledge and retrieval dashboard within the documented refresh interval.",
+      "L12": "Model finding or decision visible in the model security dashboard within the documented refresh interval.",
+      "L13": "Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.",
+      "L14": "Finding or decision visible in the pipeline security dashboard within the documented refresh interval.",
+      "L15": "Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.",
+      "L16": "Finding or inventory entry visible in the supply chain dashboard within the documented refresh interval.",
+      "L17": "Detection, alert and case state visible in the platform and SIEM within the documented refresh interval."
+    },
+    "Forensic Evidence": {
+      "D08": "Attack identifier, library version, target version, full transcript, judge verdict and confidence, seed and settings, sink evidence and timestamp exportable for reproduction.",
+      "D09": "Identity, sponsor, entitlement, credential reference, request or decision, approver and timestamp exportable for audit and incident reconstruction.",
+      "D10": "Agent, user, site and element, action type, page or screen state, policy decision, approval record and timestamp exportable for incident reconstruction.",
+      "D11": "Media hash, type, channel, extracted text or transcript excerpt, region or time offset, policy decision and timestamp exportable for incident reconstruction, with sensitive values masked per policy.",
+      "D12": "Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.",
+      "D13": "Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.",
+      "L04": "Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.",
+      "L05": "Application, model, request and response identifiers, policy decision and timestamp exportable for incident reconstruction.",
+      "L06": "Agent identifier, requesting user, tool and arguments, delegation chain, policy decision, approval record and timestamp exportable for incident reconstruction.",
+      "L07": "Full prompt, context segment, source label, rule identifier, confidence, decision and timestamp exportable for incident reconstruction, with sensitive values masked per policy.",
+      "L08": "Rule identifier, policy version, direction (prompt or response), identity, destination and decision exportable for incident reconstruction.",
+      "L09": "Identity (user, agent, service), token or key identifier, scope, resource, decision and timestamp exportable for incident reconstruction.",
+      "L10": "Data object identifier, location, classification, accessing identity, action and timestamp exportable for incident reconstruction.",
+      "L11": "Query, rewritten query, retrieved chunk and document identifiers, source, requesting user, filters applied, decision and timestamp exportable for incident reconstruction.",
+      "L12": "Model identifier, version, hash, source, requesting identity, action and timestamp exportable for incident reconstruction.",
+      "L13": "Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.",
+      "L14": "Pipeline, stage, artefact identifier and hash, actor, approval reference, decision and timestamp exportable for incident reconstruction.",
+      "L15": "Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.",
+      "L16": "Component identifier, version, hash, source, publisher, decision and timestamp, plus the vendor evidence received, exportable for audit and incident reconstruction.",
+      "L17": "Event, alert, case and action identifiers with actor, source layer, decision and timestamp, plus evidence hashes, exportable for incident reconstruction."
+    },
+    "Preconditions": {
+      "D08": "Isolated PoC lab provisioned; seeded target applications, mock tools and sinks, canary strings and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); the vendor's red-team tooling licensed and pointed only at the lab targets. Seeded target applications with documented ground-truth weaknesses (a deliberately vulnerable lab chatbot, RAG application and tool-using agent), mock tools writing to a lab sink, registered canary strings and an isolated network; the vendor's red-team tooling licensed for the PoC; no production systems, real customer data or live third-party services are targeted.",
+      "D09": "Isolated PoC lab provisioned; lab identity provider, fabricated agent identities and entitlements, mock cloud and SaaS tenants, lab secret store and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider, lab agents with fabricated identities and entitlements, a mock cloud account and SaaS tenant, a lab secret store and a mock ticketing system; no production identities, credentials or directories are connected.",
+      "D10": "Isolated PoC lab provisioned; internal lab web sites, managed test browsers, desktop VM, test browser and computer-use agents and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform deployed for the agent type under test. Lab web sites hosted internally (intranet mock, shop with mock payment page, file-sharing mock, mock SSO with MFA, mock CAPTCHA, hostile-content test pages), managed test browsers and a desktop virtual machine, test browser and computer-use agents, and test users; no real websites, accounts, payment methods or credentials are used.",
+      "D11": "Isolated PoC lab provisioned; multimodal test applications and assistants, mock or lab-hosted multimodal model, fabricated media files and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform deployed for the media channel under test. Multimodal lab: test applications and assistants that accept images, documents, audio and video; a mock model or lab-hosted multimodal model; fabricated media (images with synthetic text, documents with hidden layers, synthetic-voice recordings of fabricated personas), registered canary strings and a lab sink; no real people's images, voices or documents are used.",
+      "D12": "Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.",
+      "D13": "Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md). Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.",
+      "L01": "Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.",
+      "L02": "Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample policies, risks, exceptions and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, review periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.",
+      "L03": "Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials. Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.",
+      "L04": "Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform agent or integration installed for the channel under test.",
+      "L05": "Isolated PoC lab provisioned; test applications, test tenants and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform integration or SDK deployed on the applications under test.",
+      "L06": "Isolated PoC lab provisioned; lab agent framework, mock tools, mock MCP servers and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform deployed in the documented mode for agent and tool traffic. Lab agent framework with a controllable model or scripted agent, mock tools and mock MCP servers writing to a lab sink, canary strings registered in advance, and attack-success baseline measured with the platform disabled.",
+      "L07": "Isolated PoC lab provisioned; test application, mock model or lab-hosted model, mock tools and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform deployed in the documented mode for the channel under test. Test application backed by a lab-hosted or mock model; mock tools writing to a lab sink; canary strings registered in advance; attack-success baseline measured with the platform disabled so only payloads that actually work are counted.",
+      "L09": "Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.",
+      "L10": "Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.",
+      "L11": "Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.",
+      "L12": "Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab model environment with least-privilege test credentials. Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.",
+      "L13": "Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.",
+      "L14": "Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.",
+      "L15": "Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.",
+      "L16": "Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.",
+      "L17": "Isolated PoC lab provisioned; lab SIEM and SOAR, the platform's event feed, simulated incident scenarios, test analysts and mock ticketing seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); no production alerting connected. Lab SIEM and SOAR (open-source or vendor-neutral), the platform's event feed, simulated incident scenarios, test analysts and a mock ticketing system; no production alerting, ticketing or on-call routing connected."
+    }
+  }
+}
