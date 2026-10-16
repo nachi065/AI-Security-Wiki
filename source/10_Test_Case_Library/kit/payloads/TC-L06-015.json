@@ -10,7 +10,7 @@
     "min_baseline_success": 0.3
   },
   "how_it_works": "An external send is held, then rejected, self-approved, changed after approval and replayed. Only a request approved by a different person and run unchanged once may execute. Approver screen content and timeouts are manual checks.",
-  "lab_setup": "Your application must accept action objects of type approve and reject that act on the most recent pending approval (README).",
+  "lab_setup": "Approve and reject act on the most recent pending approval.",
   "items": [
     {
       "id": "held-without-approval",

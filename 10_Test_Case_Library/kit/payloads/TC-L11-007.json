@@ -10,7 +10,7 @@
     "min_baseline_success": 0.3
   },
   "how_it_works": "Chunks from two tenants are available to the retriever. A user of one tenant tries to reach the other tenant's chunks by asking, by instruction and by guessing identifiers.",
-  "lab_setup": "The request carries the tenant and each document a tenant label. Direct access through the vector database's own API and admin paths is a manual check.",
+  "lab_setup": "Direct access through the vector database's own API and admin paths is a manual check.",
   "items": [
     {
       "id": "a-asks-b",

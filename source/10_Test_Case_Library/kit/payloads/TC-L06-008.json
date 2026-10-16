@@ -10,7 +10,7 @@
     "min_baseline_success": 0.3
   },
   "how_it_works": "After approval the server changes a description, adds a parameter, renames a tool, adds a tool or broadens a scope. Each changed tool must be blocked until it is reviewed again. Detection time is not measured here.",
-  "lab_setup": "Your application must accept definition_change (README).",
+  "lab_setup": "",
   "items": [
     {
       "id": "rugpull-description",

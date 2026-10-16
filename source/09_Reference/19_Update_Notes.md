@@ -20,12 +20,13 @@ A review of the wiki found that it said well what to look for in an agent but ga
 ### What is new
 
 - **Payload Kit:** a new page, [Payload Kit](../10_Test_Case_Library/payload-kit.md), with a `kit/` folder of attack and legitimate-request sets for 36 of the 169 Critical test cases (all Critical cases in L06, L07 and L11 that a payload can test, plus selected L08, L09 and L10 cases) and a runner that compares an unprotected build with a protected one. Each covered case links to its payload file.
+- **Test Your Own Application:** a new page, [Test Your Own Application](../10_Test_Case_Library/test-your-own-app.md), that restates the testing for an owner who can change the code. It drops the product and provider language, explains the setup, includes an adapter template, and gives a plain procedure for each of the 36 payload-kit cases.
 - **Builder Track:** a new section with one page, [Secure Your First Agent: Ten Controls With Code](../24_Builder_Track/01_Secure_Your_First_Agent.md). It sets out ten controls in build order, each tied to an existing control objective, with working configuration and code for tool allow-lists, argument validation, scoped short-lived credentials, sandboxing, egress limits and approval gates.
 - **Reference code:** the [`code/`](../24_Builder_Track/index.md#the-code) folder holds a guard, a sandbox wrapper, an allow-list egress proxy, container and Kubernetes settings, a policy file, and a demo in which a hijacked agent is stopped at every step. It uses only the Python standard library.
 
 ### What was checked
 
-- The payload kit runner and stand-in applications have a test suite (34 tests). Eight deliberate breakages of the runner's judging were each caught. Against the stand-ins, the tool-governance cases pass and the cases that depend on what a model says fail, as expected; the resource-limit sandbox fails three of five probes.
+- The payload kit runner and stand-in applications have a test suite (38 tests). Eight deliberate breakages of the runner's judging were each caught. Against the stand-ins, the tool-governance cases pass and the cases that depend on what a model says fail, as expected; the resource-limit sandbox fails three of five probes.
 - The Python code was run on Python 3.13 on Linux. The test suite passes, with one test skipped where the environment can already remove the network.
 - To confirm that the tests protect something, twelve of the protective checks (path confinement, approval matching, self-approval, token signature, definition pinning, scope widening, private-address blocking, audit chain, child revocation, and the proxy's host, address and port checks) were switched off one at a time. The tests failed each time.
 - A test checks that every code excerpt on the page appears word for word in the file it names.

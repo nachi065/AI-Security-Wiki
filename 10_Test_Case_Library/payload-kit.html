@@ -100,6 +100,7 @@
 <li><a href="L01-business-and-use-cases.html">L01 Business &amp; Use Cases</a></li>
 <li><a class="current" href="payload-kit.html">Payload Kit: Runnable Attack Sets for Critical Cases</a></li>
 <li><a href="L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
+<li><a href="test-your-own-app.html">Test Your Own Application</a></li>
 <li><a href="L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>
 <li><a href="L04-human-interaction-layer.html">L04 Human Interaction Layer</a></li>
 <li><a href="L05-ai-applications.html">L05 AI Applications</a></li>
@@ -302,11 +303,16 @@
 <td>Two stand-in applications, one unprotected and one that puts the <a href="../24_Builder_Track/index.html">Builder Track</a> guard in front of its tools. They prove that the runner works. They are not a model.</td>
 </tr>
 <tr>
+<td><a href="kit/adapter_template.py"><code>adapter_template.py</code></a></td>
+<td>A starting point for wrapping your own application. It answers <code>not_applicable</code> until you fill it in, so an unfinished adapter cannot look like a pass.</td>
+</tr>
+<tr>
 <td><a href="kit/test_kit.py"><code>test_kit.py</code></a></td>
-<td>34 tests of the runner, the payload files and the stand-ins.</td>
+<td>38 tests of the runner, the payload files and the stand-ins.</td>
 </tr>
 </tbody>
 </table></div>
+<p>If you built the application yourself, start with <a href="test-your-own-app.html">Test Your Own Application</a>, which restates the setup without product or provider language and gives a plain procedure for each case here. <a href="kit/adapter_template.py"><code>adapter_template.py</code></a> is the file to copy.</p>
 <h2 id="quick-start">Quick start</h2>
 <pre><code>cd source/10_Test_Case_Library/kit
 python3 run_case.py --list
@@ -730,7 +736,7 @@ python3 run_case.py --target python:mock_apps:protected --baseline python:mock_a
 <li><strong>It does not check logs, dashboards or evidence fields.</strong> Those parts of each case are unchanged.</li>
 <li><strong>It has no exporters for other tools.</strong> I do not have verified, current syntax for promptfoo, garak, PyRIT or similar frameworks, so none is included. The JSON is plain and a converter is a small job once you have checked the target format in that tool's current documentation.</li>
 </ul>
-<p>The runner and stand-ins were tested with the suite in <code>test_kit.py</code> (34 tests, including checks that every payload file is well formed and matches a Critical case in this library). To check that those tests protect something, eight deliberate breakages of the runner's judging were made one at a time (ignoring forbidden output, forbidden calls and outcomes, skipping the benign check, the baseline check, the neutralisation threshold, counting blocked calls as executed, and not filling placeholders). The tests failed each time.</p>
+<p>The runner and stand-ins were tested with the suite in <code>test_kit.py</code> (38 tests, including checks that every payload file is well formed and matches a Critical case in this library). To check that those tests protect something, eight deliberate breakages of the runner's judging were made one at a time (ignoring forbidden output, forbidden calls and outcomes, skipping the benign check, the baseline check, the neutralisation threshold, counting blocked calls as executed, and not filling placeholders). The tests failed each time.</p>
 <p><a href="index.html">Back to library overview</a></p>
 </article>
 <nav class="pager" aria-label="Previous and next page"><a class="prev" href="L01-business-and-use-cases.html">&larr; L01 Business &amp; Use Cases</a><a class="next" href="L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt &rarr;</a></nav>

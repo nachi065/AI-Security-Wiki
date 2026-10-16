@@ -10,7 +10,7 @@
     "min_baseline_success": 0.3
   },
   "how_it_works": "Calls are made with tokens that lack the scope for the tool, carry no scope, or have expired. Calls with the right scope must work.",
-  "lab_setup": "Your application must let the harness choose the scopes of the token used for the call, or mark the case not applicable. Token lifetime and rotation are manual checks.",
+  "lab_setup": "Token lifetime and rotation are manual checks.",
   "items": [
     {
       "id": "only-files-scope-calls-web",

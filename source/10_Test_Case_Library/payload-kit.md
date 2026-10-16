@@ -21,7 +21,10 @@ The cases in this library tell you what to test. This kit gives you something to
 | [`run_case.py`](kit/run_case.py) | The runner. Standard library only, Python 3.10 or later. It lists, validates and runs payload sets and prints a verdict per case. |
 | [`payloads/`](kit/payloads/) | One JSON file per case: attack items, legitimate items, the canary, thresholds and notes on what your application must support. |
 | [`mock_apps.py`](kit/mock_apps.py) | Two stand-in applications, one unprotected and one that puts the [Builder Track](../24_Builder_Track/index.md) guard in front of its tools. They prove that the runner works. They are not a model. |
-| [`test_kit.py`](kit/test_kit.py) | 34 tests of the runner, the payload files and the stand-ins. |
+| [`adapter_template.py`](kit/adapter_template.py) | A starting point for wrapping your own application. It answers `not_applicable` until you fill it in, so an unfinished adapter cannot look like a pass. |
+| [`test_kit.py`](kit/test_kit.py) | 38 tests of the runner, the payload files and the stand-ins. |
+
+If you built the application yourself, start with [Test Your Own Application](test-your-own-app.md), which restates the setup without product or provider language and gives a plain procedure for each case here. [`adapter_template.py`](kit/adapter_template.py) is the file to copy.
 
 ## Quick start
 
@@ -146,6 +149,6 @@ Two things in that table are worth knowing before you test your own system.
 - **It does not check logs, dashboards or evidence fields.** Those parts of each case are unchanged.
 - **It has no exporters for other tools.** I do not have verified, current syntax for promptfoo, garak, PyRIT or similar frameworks, so none is included. The JSON is plain and a converter is a small job once you have checked the target format in that tool's current documentation.
 
-The runner and stand-ins were tested with the suite in `test_kit.py` (34 tests, including checks that every payload file is well formed and matches a Critical case in this library). To check that those tests protect something, eight deliberate breakages of the runner's judging were made one at a time (ignoring forbidden output, forbidden calls and outcomes, skipping the benign check, the baseline check, the neutralisation threshold, counting blocked calls as executed, and not filling placeholders). The tests failed each time.
+The runner and stand-ins were tested with the suite in `test_kit.py` (38 tests, including checks that every payload file is well formed and matches a Critical case in this library). To check that those tests protect something, eight deliberate breakages of the runner's judging were made one at a time (ignoring forbidden output, forbidden calls and outcomes, skipping the benign check, the baseline check, the neutralisation threshold, counting blocked calls as executed, and not filling placeholders). The tests failed each time.
 
 [Back to library overview](index.md)
