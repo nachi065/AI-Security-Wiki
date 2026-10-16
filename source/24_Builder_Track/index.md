@@ -2,7 +2,7 @@
 title: "Builder Track"
 author: Nachiket Sathaye
 description: "Start here if you are building an AI agent: ten controls in build order with working configuration and code for allow-lists, argument validation, scoped credentials, sandboxing, egress limits and approval gates."
-nav_order: 1
+nav_order: 14
 has_children: true
 ---
 
