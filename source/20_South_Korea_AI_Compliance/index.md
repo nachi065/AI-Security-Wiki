@@ -2,7 +2,7 @@
 title: "South Korea AI Compliance"
 author: Nachiket Sathaye
 description: "South Korea AI compliance resources: regulatory hub covering the AI Basic Act in force since January 2026, a role guide, three templates and a crosswalk."
-nav_order: 11
+nav_order: 13
 group: "Regional AI Regulatory Hub"
 has_children: true
 ---

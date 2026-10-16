@@ -2,7 +2,7 @@
 title: "Framework Crosswalks"
 author: Nachiket Sathaye
 description: "Cross-references from this wiki to other frameworks: FINOS AIGF, AI BCF, NIST AI RMF, NIST AI 600-1, NIST AI 100-2, ISO/IEC 42001 and nine further ISO/IEC AI standards, OWASP, MITRE ATLAS, ISO/IEC 27001, NIST CSF, CIS Controls, SOC 2, the OECD AI Principles, trustworthy AI and ethics standards, international AI instruments and eight privacy laws."
-nav_order: 13
+nav_order: 15
 has_children: true
 ---
 

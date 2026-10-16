@@ -2,7 +2,7 @@
 title: "Australia AI Compliance"
 author: Nachiket Sathaye
 description: "Australia AI compliance resources: regulatory hub covering the Privacy Act automated-decision changes, a role guide, two templates and a crosswalk."
-nav_order: 11
+nav_order: 13
 group: "Regional AI Regulatory Hub"
 has_children: true
 ---
