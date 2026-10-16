@@ -42,6 +42,15 @@ nav_order: 6
 
 The footer also shows the date the page last changed, taken from the repository history. If you have checked a page against its sources, you can record that by adding `last_reviewed: 2026-10-10` (your own date, written as year-month-day) to the header. The line is optional.
 
+## Regional sections: new regions are frozen
+
+No new country or region section is added until the existing ones are verified. Status on 16 October 2026:
+
+- **Checked against primary documents (in part):** EU (the omnibus regulation and its dates, 10 October 2026), India (six instruments, 16 October 2026), GCC (Saudi SDAIA documents, Bahrain PDPL title, UAE PDPL, 10 and 16 October 2026). Rows are tagged `[Verified]` only when the primary text was read; the source and retrieval date are recorded beside the row.
+- **Not checked:** Australia, Brazil, Canada, China, Japan, Singapore, South Korea, UK and US. Treat every claim there as unverified until a page says otherwise.
+
+A new region is accepted only when its first version has `[Verified]` rows for its main binding instruments, with a URL and retrieval date for each. Pull requests that add a region without that are asked to wait. Fixing or verifying an existing region is always welcome.
+
 ## What to expect
 
 - Every pull request is reviewed by the maintainer before it is merged.

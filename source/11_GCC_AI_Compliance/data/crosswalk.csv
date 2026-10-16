@@ -1,5 +1,5 @@
 ID,Jurisdiction,Instrument,Legal force,Type / status,Wiki controls,Control themes,Verification tag,To verify,Primary URL and retrieval date
-U1,UAE,Federal Decree-Law 45/2021 (PDPL),Binding law,Binding,AI-CTRL-013;AI-CTRL-007;AI-CTRL-017;AI-CTRL-035,PRV;XBT;RET;INC,Reported,Executive Regulation status; article numbers,
+U1,UAE,Federal Decree-Law 45/2021 (PDPL),Binding law,Binding,AI-CTRL-013;AI-CTRL-007;AI-CTRL-017;AI-CTRL-035,PRV;XBT;RET;INC,Verified,Executive Regulation status; later amendments,https://uaelegislation.gov.ae/en/legislations/1972/download (retrieved 16 Oct 2026)
 U2,UAE,Federal Decree-Law 34/2021 (cybercrime),Binding law,Binding,AI-CTRL-005;AI-CTRL-028;AI-CTRL-035,INC,Unverified,AI relevance,
 U3,UAE,UAE Charter for Development and Use of AI,Guidance,Non-binding,AI-CTRL-012;AI-CTRL-023;AI-CTRL-039,GOV;POL;OVS;TRN,Conflict,Publication month,
 U4,UAE,UAE AI Ethics Principles and Self-Assessment,Voluntary,Voluntary,AI-CTRL-012;AI-CTRL-039;AI-CTRL-041,POL;OVS,Reported,Principle names,

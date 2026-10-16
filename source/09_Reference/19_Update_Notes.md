@@ -13,6 +13,10 @@ last_reviewed: 2026-10-15
 
 This page records each substantial update to the wiki, newest first, with what was checked and what is still work in progress. The full version history is in [section 20 of the home page](../index.md#20-version-history).
 
+## 16 October 2026: Regional verification and a freeze on new regions
+
+India, the GCC and the EU were checked against primary texts where the texts could be fetched. India: the DPDP Act, the DPDP Rules (G.S.R. 846(E), phased commencement dates), the AI Governance Guidelines, the RBI FREE-AI report, the RBI draft model risk guidance and the CERT-In directions are now `[Verified]`; the IT Rules synthetic-content amendment and the SEBI amendments stay `[Reported]`; the IRDAI AI directive could not be confirmed and is `[Unverified]`. GCC: the UAE data protection law (article numbers) is `[Verified]`. The original EU AI Act Article 113 could not be retrieved, so those dates keep their earlier tags. Nothing outside these three sections was checked. New regions are frozen until the others are verified (see CONTRIBUTING.md).
+
 ## 16 October 2026: Builder Track
 
 A review of the wiki found that it said well what to look for in an agent but gave builders little on how to secure one. The practitioner pages were short (the agentic standard is a single table) and there was no code anywhere in the wiki. The updates on this date work through that gap in order. This section covers the first.
