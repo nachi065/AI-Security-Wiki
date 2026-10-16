@@ -119,7 +119,7 @@ if os.path.exists(sf_path):
 
 # Control tiers. Every control record states Baseline or Advanced, and the controls the
 # Builder Track relies on must be Baseline.
-_lib = open(os.path.join("source", "03_Control_Library", "03_AI_Security_Control_Objectives_Library.md"), encoding="utf-8").read()
+_lib = open(os.path.join(SRC, "03_Control_Library", "03_AI_Security_Control_Objectives_Library.md"), encoding="utf-8").read()
 _tier = {}
 for _rec in re.split(r"^#### (?=AI-CTRL-\d{3}:)", _lib, flags=re.M)[1:]:
     _tm = re.search(r"^\| \*\*Tier\*\* \| (\w+) \|", _rec.split("\n#### ")[0], re.M)
@@ -127,7 +127,7 @@ for _rec in re.split(r"^#### (?=AI-CTRL-\d{3}:)", _lib, flags=re.M)[1:]:
 for _c, _t in _tier.items():
     if _t not in ("Baseline", "Advanced"):
         errors.append(f"source/03_Control_Library: {_c} has no valid Tier (Baseline or Advanced)")
-_builder = open(os.path.join("source", "24_Builder_Track", "01_Secure_Your_First_Agent.md"), encoding="utf-8").read()
+_builder = open(os.path.join(SRC, "24_Builder_Track", "01_Secure_Your_First_Agent.md"), encoding="utf-8").read()
 for _c in sorted(set(re.findall(r"AI-CTRL-\d{3}", _builder.split("## The ten controls at a glance")[1].split("Do the steps in order")[0]))):
     if _tier.get(_c) != "Baseline":
         errors.append(f"source/24_Builder_Track: {_c} is used by the Builder Track but is not Baseline")
