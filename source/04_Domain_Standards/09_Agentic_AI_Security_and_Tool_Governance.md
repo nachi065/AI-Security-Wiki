@@ -57,6 +57,10 @@ OWASP references are to the Top 10 for Agentic Applications (ASI) and the Top 10
 | Risk Analytics | [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006), [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) | Detect abnormal agent behavior. | Alerts and analytics rules |
 | SOC Integration | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) | Export events to monitoring platforms. | SIEM events |
 
+## How to Build This
+
+The [Builder Track](../24_Builder_Track/01_Secure_Your_First_Agent.md) shows one way to implement the controls above for a first agent, with working configuration and code for tool allow-lists, argument validation, scoped credentials, sandboxing, egress limits, approval gates and a kill switch.
+
 ## PoC Scenarios
 
 1. Agent attempts unauthorized application access.

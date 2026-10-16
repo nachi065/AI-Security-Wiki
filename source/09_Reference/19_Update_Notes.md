@@ -13,6 +13,26 @@ last_reviewed: 2026-10-15
 
 This page records each substantial update to the wiki, newest first, with what was checked and what is still work in progress. The full version history is in [section 20 of the home page](../index.md#20-version-history).
 
+## 16 October 2026: Builder Track
+
+A review of the wiki found that it said well what to look for in an agent but gave builders little on how to secure one. The practitioner pages were short (the agentic standard is a single table) and there was no code anywhere in the wiki. The updates on this date work through that gap in order. This section covers the first.
+
+### What is new
+
+- **Builder Track:** a new section with one page, [Secure Your First Agent: Ten Controls With Code](../24_Builder_Track/01_Secure_Your_First_Agent.md). It sets out ten controls in build order, each tied to an existing control objective, with working configuration and code for tool allow-lists, argument validation, scoped short-lived credentials, sandboxing, egress limits and approval gates.
+- **Reference code:** the [`code/`](../24_Builder_Track/index.md#the-code) folder holds a guard, a sandbox wrapper, an allow-list egress proxy, container and Kubernetes settings, a policy file, and a demo in which a hijacked agent is stopped at every step. It uses only the Python standard library.
+
+### What was checked
+
+- The Python code was run on Python 3.13 on Linux. The test suite passes, with one test skipped where the environment can already remove the network.
+- To confirm that the tests protect something, twelve of the protective checks (path confinement, approval matching, self-approval, token signature, definition pinning, scope widening, private-address blocking, audit chain, child revocation, and the proxy's host, address and port checks) were switched off one at a time. The tests failed each time.
+- A test checks that every code excerpt on the page appears word for word in the file it names.
+
+### What is still work in progress
+
+- The Docker command and the Kubernetes manifest were not executed, because no container runtime was available. Their settings come from standard documented options and need to be checked against the versions you run.
+- The reference code has not been through an independent security review.
+
 ## 15 October 2026: component ownership
 
 This update compared the wiki's 17 layers with a nine-part list of AI application stack components: LLMs, agents, embeddings, RAG, AI security, MCP and tools, observability, vector databases and memory. Each part came with an ownership question, such as "who decides which models are approved for use?". The original source of that list was not verified. Every part already had a home in the 17 layers, but the wiki answered only two of the nine ownership questions in full. Agent memory had no owner at all, and observability covered security incidents but not quality failures.

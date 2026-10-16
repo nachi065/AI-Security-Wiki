@@ -1,0 +1,76 @@
+# Kubernetes example: an agent pod that can only talk to the egress proxy and
+# cluster DNS, with a locked-down container.
+#
+# Not applied by this wiki's tests. Check field names against the Kubernetes
+# version you run. NetworkPolicy is only enforced if your cluster's network
+# plugin supports it.
+apiVersion: v1
+kind: Pod
+metadata:
+  name: support-agent
+  namespace: agents
+  labels:
+    app: support-agent
+spec:
+  automountServiceAccountToken: false      # the agent does not need the Kubernetes API
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 65534
+    seccompProfile:
+      type: RuntimeDefault
+  containers:
+    - name: agent
+      image: registry.example.com/support-agent@sha256:REPLACE_WITH_DIGEST
+      env:
+        - name: HTTPS_PROXY
+          value: http://egress-proxy.agents.svc:3128
+      securityContext:
+        allowPrivilegeEscalation: false
+        readOnlyRootFilesystem: true
+        capabilities:
+          drop: ["ALL"]
+      resources:
+        limits:
+          cpu: "500m"
+          memory: 256Mi
+      volumeMounts:
+        - name: scratch
+          mountPath: /tmp
+  volumes:
+    - name: scratch
+      emptyDir:
+        medium: Memory
+        sizeLimit: 64Mi
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: support-agent-egress
+  namespace: agents
+spec:
+  podSelector:
+    matchLabels:
+      app: support-agent
+  policyTypes: ["Egress"]
+  egress:
+    # Only the egress proxy...
+    - to:
+        - podSelector:
+            matchLabels:
+              app: egress-proxy
+      ports:
+        - protocol: TCP
+          port: 3128
+    # ...and cluster DNS. Everything else is denied.
+    - to:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: kube-system
+          podSelector:
+            matchLabels:
+              k8s-app: kube-dns
+      ports:
+        - protocol: UDP
+          port: 53
+        - protocol: TCP
+          port: 53

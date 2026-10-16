@@ -267,6 +267,7 @@ LOOKS = {
     "20_South_Korea_AI_Compliance": (250, '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>'),
     "21_UK_AI_Compliance": (278, '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>'),
     "22_US_AI_Compliance": (310, '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>'),
+    "24_Builder_Track": (42, '<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.6-.6-2.6z"/>'),
     "23_Framework_Crosswalks": (120, '<path d="M4 8h14l-3-3M20 16H6l3 3"/>'),
     "10_Test_Case_Library": (145, '<path d="M4 6l1.5 1.5L8 5M4 12l1.5 1.5L8 11M4 18l1.5 1.5L8 17M11 6h9M11 12h9M11 18h9"/>'),
 }
@@ -625,6 +626,7 @@ for i, page in enumerate(order):
 
 # Data files that pages link to (for example CSV downloads) are copied next to the generated pages.
 for dirpath, dirs, files in os.walk(SRC):
+    dirs[:] = [d for d in dirs if d != "__pycache__"]  # compiled Python is not published
     for f in files:
         if not f.endswith(".md") and not f.startswith("."):
             dest = os.path.join(ROOT, os.path.relpath(os.path.join(dirpath, f), SRC))
