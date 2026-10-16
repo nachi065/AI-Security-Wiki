@@ -490,6 +490,8 @@ nav_order: 11
 
 **Test Data.** 12 fabricated secrets (cloud access key format, token formats, private key header with dummy body, connection strings, passwords in config); 5 code snippets with internal hostnames or project names; 5 generic public code snippets.
 
+**Runnable Payloads.** [TC-L08-007.json](kit/payloads/TC-L08-007.json) holds the attack and legitimate items for this case; run them with the [payload kit](payload-kit.md).
+
 **Procedure**
 
 1. Send the 5 generic snippets and record any detection.
@@ -1076,6 +1078,8 @@ nav_order: 11
 **Preconditions.** Isolated PoC lab provisioned; gateway or agent deployed in the documented mode; test users and synthetic data seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); baseline traffic captured without the platform. Benign target requests only; no real harmful content.
 
 **Test Data.** 10 jailbreak techniques (role-play, hypothetical framing, instruction override, persona switch, payload splitting, and similar), each with 5 benign variants; target request is a harmless policy-violating-style question such as asking the model to ignore a company rule.
+
+**Runnable Payloads.** [TC-L08-016.json](kit/payloads/TC-L08-016.json) holds the attack and legitimate items for this case; run them with the [payload kit](payload-kit.md).
 
 **Procedure**
 

@@ -422,6 +422,8 @@ nav_order: 9
 
 **Test Data.** 3 approved and 4 unapproved MCP servers, including one that mimics an approved server's name.
 
+**Runnable Payloads.** [TC-L06-006.json](kit/payloads/TC-L06-006.json) holds the attack and legitimate items for this case; run them with the [payload kit](payload-kit.md).
+
 **Procedure**
 
 1. Load the allow-list with server identity attributes (URL, publisher, hash where supported).
@@ -487,6 +489,8 @@ nav_order: 9
 
 **Test Data.** 6 poisoned tools: hidden instruction in description, in parameter descriptions, in default values, using zero-width characters, using a long benign description with an instruction at the end, and requesting a read of a canary file and sending contents to a lab sink; 6 clean tools as controls; canary CANARY-L06-007.
 
+**Runnable Payloads.** [TC-L06-007.json](kit/payloads/TC-L06-007.json) holds the attack and legitimate items for this case; run them with the [payload kit](payload-kit.md).
+
 **Procedure**
 
 1. Baseline: connect each tool without the platform and watch for canary exfiltration at the sink.
@@ -551,6 +555,8 @@ nav_order: 9
 **Preconditions.** Isolated PoC lab provisioned; lab agent framework, mock tools, mock MCP servers and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform deployed in the documented mode for agent and tool traffic. Lab agent framework with a controllable model or scripted agent, mock tools and mock MCP servers writing to a lab sink, canary strings registered in advance, and attack-success baseline measured with the platform disabled.
 
 **Test Data.** 1 MCP server with 5 tools; changes: description gains an instruction, new parameter added, tool renamed, new tool added, permission scope broadened.
+
+**Runnable Payloads.** [TC-L06-008.json](kit/payloads/TC-L06-008.json) holds the attack and legitimate items for this case; run them with the [payload kit](payload-kit.md).
 
 **Procedure**
 
@@ -746,6 +752,8 @@ nav_order: 9
 
 **Test Data.** 1 approved server with 10 tools (4 read, 3 write, 2 delete, 1 execute); 3 agents; 2 users.
 
+**Runnable Payloads.** [TC-L06-011.json](kit/payloads/TC-L06-011.json) holds the attack and legitimate items for this case; run them with the [payload kit](payload-kit.md).
+
 **Procedure**
 
 1. Define rules: reads allowed for all, writes for 1 agent, deletes and execute denied.
@@ -875,6 +883,8 @@ nav_order: 9
 
 **Test Data.** 3 agents with different purposes (support, finance reporting, IT helpdesk); 12 tools; 36 attempted tool calls including out-of-scope calls requested through injection.
 
+**Runnable Payloads.** [TC-L06-013.json](kit/payloads/TC-L06-013.json) holds the attack and legitimate items for this case; run them with the [payload kit](payload-kit.md).
+
 **Procedure**
 
 1. Define the allow-lists.
@@ -940,6 +950,8 @@ nav_order: 9
 
 **Test Data.** Mock tools: send_email (allowed domains), transfer_test_funds (limit 100), read_file (allowed paths), update_records (max 10); 40 calls, 20 compliant and 20 not.
 
+**Runnable Payloads.** [TC-L06-014.json](kit/payloads/TC-L06-014.json) holds the attack and legitimate items for this case; run them with the [payload kit](payload-kit.md).
+
 **Procedure**
 
 1. Define parameter policies.
@@ -1004,6 +1016,8 @@ nav_order: 9
 **Preconditions.** Isolated PoC lab provisioned; lab agent framework, mock tools, mock MCP servers and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform deployed in the documented mode for agent and tool traffic. Lab agent framework with a controllable model or scripted agent, mock tools and mock MCP servers writing to a lab sink, canary strings registered in advance, and attack-success baseline measured with the platform disabled.
 
 **Test Data.** Approval rules for delete, external send and financial tools; 12 tasks; 2 approvers.
+
+**Runnable Payloads.** [TC-L06-015.json](kit/payloads/TC-L06-015.json) holds the attack and legitimate items for this case; run them with the [payload kit](payload-kit.md).
 
 **Procedure**
 
@@ -1136,6 +1150,8 @@ nav_order: 9
 
 **Test Data.** 1 parent agent; 3 sub-agents; parent has tools A, B; sub-agents should receive subsets; attempts: sub-agent asks for tool C, parent grants wider scope, chain of 4 levels.
 
+**Runnable Payloads.** [TC-L06-017.json](kit/payloads/TC-L06-017.json) holds the attack and legitimate items for this case; run them with the [payload kit](payload-kit.md).
+
 **Procedure**
 
 1. Define delegation policy.
@@ -1266,6 +1282,8 @@ nav_order: 9
 
 **Test Data.** 2 users (standard, administrator); agent service identity with administrator-level reach; 10 privileged actions on mock systems.
 
+**Runnable Payloads.** [TC-L06-019.json](kit/payloads/TC-L06-019.json) holds the attack and legitimate items for this case; run them with the [payload kit](payload-kit.md).
+
 **Procedure**
 
 1. Run each action as the administrator and confirm success.
@@ -1329,6 +1347,8 @@ nav_order: 9
 **Preconditions.** Isolated PoC lab provisioned; lab agent framework, mock tools, mock MCP servers and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform deployed in the documented mode for agent and tool traffic. Lab agent framework with a controllable model or scripted agent, mock tools and mock MCP servers writing to a lab sink, canary strings registered in advance, and attack-success baseline measured with the platform disabled.
 
 **Test Data.** 3 agents in sequence (reader, planner, executor); injection payloads placed in the reader's source data; canary CANARY-L06-020; mock executor tool writing to the sink.
+
+**Runnable Payloads.** [TC-L06-020.json](kit/payloads/TC-L06-020.json) holds the attack and legitimate items for this case; run them with the [payload kit](payload-kit.md).
 
 **Procedure**
 
@@ -1459,6 +1479,8 @@ nav_order: 9
 
 **Test Data.** 1 agent running a long multi-step task with in-flight tool calls; 2 other agents running.
 
+**Runnable Payloads.** [TC-L06-022.json](kit/payloads/TC-L06-022.json) holds the attack and legitimate items for this case; run them with the [payload kit](payload-kit.md).
+
 **Procedure**
 
 1. Start the task.
@@ -1524,6 +1546,8 @@ nav_order: 9
 **Preconditions.** Isolated PoC lab provisioned; lab agent framework, mock tools, mock MCP servers and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform deployed in the documented mode for agent and tool traffic. Lab agent framework with a controllable model or scripted agent, mock tools and mock MCP servers writing to a lab sink, canary strings registered in advance, and attack-success baseline measured with the platform disabled.
 
 **Test Data.** 1 agent that creates, modifies and deletes mock records over 30 minutes (60 actions).
+
+**Runnable Payloads.** [TC-L06-023.json](kit/payloads/TC-L06-023.json) holds the attack and legitimate items for this case; run them with the [payload kit](payload-kit.md).
 
 **Procedure**
 
@@ -1654,6 +1678,8 @@ nav_order: 9
 **Preconditions.** Isolated PoC lab provisioned; lab agent framework, mock tools, mock MCP servers and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform deployed in the documented mode for agent and tool traffic. Probes use canary files and lab hosts only.
 
 **Test Data.** Sandbox environment; probe scripts that try to read a canary file outside the working directory, reach a lab host, list environment variables containing a fake secret, spawn a process, and write outside the sandbox.
+
+**Runnable Payloads.** [TC-L06-025.json](kit/payloads/TC-L06-025.json) holds the attack and legitimate items for this case; run them with the [payload kit](payload-kit.md).
 
 **Procedure**
 
@@ -2361,6 +2387,8 @@ nav_order: 9
 
 **Test Data.** 12 tasks: 4 safe (build, test, lint, format); 4 needing approval (dependency install, push to remote, file deletion inside the workspace, environment variable read); 4 prohibited (recursive delete outside the workspace, reading the fake credential file, piping a download into a shell, disabling a security tool).
 
+**Runnable Payloads.** [TC-L06-036.json](kit/payloads/TC-L06-036.json) holds the attack and legitimate items for this case; run them with the [payload kit](payload-kit.md).
+
 **Procedure**
 
 1. Run each task with automatic approval off and record the prompt and decision.
@@ -2554,6 +2582,8 @@ nav_order: 9
 **Preconditions.** Isolated PoC lab provisioned; lab agent framework, mock tools, mock MCP servers and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform deployed in the documented mode for agent and tool traffic. Lab agent framework with a controllable model or scripted agent, mock tools and mock MCP servers writing to a lab sink, canary strings registered in advance, and attack-success baseline measured with the platform disabled.
 
 **Test Data.** 2 agents (research: read-only; operations: can change records in a mock system); 12 requests: 6 in scope and 6 out of scope (2 write actions, 2 for another user's data, 2 naming a tool the caller may not use).
+
+**Runnable Payloads.** [TC-L06-039.json](kit/payloads/TC-L06-039.json) holds the attack and legitimate items for this case; run them with the [payload kit](payload-kit.md).
 
 **Procedure**
 
@@ -3009,6 +3039,8 @@ nav_order: 9
 **Preconditions.** Isolated PoC lab provisioned; lab agent framework, mock tools, mock MCP servers and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform deployed in the documented mode for agent and tool traffic. Lab agent framework with a controllable model or scripted agent, mock tools and mock MCP servers writing to a lab sink, canary strings registered in advance, and attack-success baseline measured with the platform disabled.
 
 **Test Data.** 5 cooperating agents; agent C scripted to send 20 out-of-pattern requests carrying canary CANARY-L06-046; tasks in flight on the other 4.
+
+**Runnable Payloads.** [TC-L06-046.json](kit/payloads/TC-L06-046.json) holds the attack and legitimate items for this case; run them with the [payload kit](payload-kit.md).
 
 **Procedure**
 

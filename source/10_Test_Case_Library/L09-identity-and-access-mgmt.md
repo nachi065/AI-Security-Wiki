@@ -274,6 +274,8 @@ nav_order: 12
 
 **Test Data.** Token scopes: read:tickets, write:tickets; mock resources: tickets, payroll, files; 30 calls, 10 out of scope.
 
+**Runnable Payloads.** [TC-L09-004.json](kit/payloads/TC-L09-004.json) holds the attack and legitimate items for this case; run them with the [payload kit](payload-kit.md).
+
 **Procedure**
 
 1. Issue tokens.
@@ -468,6 +470,8 @@ nav_order: 12
 **Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
 
 **Test Data.** 3 agents; paths: tool that can edit roles, tool that reads credentials, tool that creates other agents; mock IAM.
+
+**Runnable Payloads.** [TC-L09-007.json](kit/payloads/TC-L09-007.json) holds the attack and legitimate items for this case; run them with the [payload kit](payload-kit.md).
 
 **Procedure**
 
@@ -984,6 +988,8 @@ nav_order: 12
 **Preconditions.** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
 
 **Test Data.** 12 fabricated secrets (passwords, tokens, keys, connection strings) in prompts, tool arguments and tool results.
+
+**Runnable Payloads.** [TC-L09-015.json](kit/payloads/TC-L09-015.json) holds the attack and legitimate items for this case; run them with the [payload kit](payload-kit.md).
 
 **Procedure**
 

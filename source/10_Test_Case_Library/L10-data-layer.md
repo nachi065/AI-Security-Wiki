@@ -733,6 +733,8 @@ nav_order: 13
 
 **Test Data.** 30 probes: direct ask, impersonation, indirect via summarisation, guessing identifiers, prompt injection asking to ignore tenant filter; tenant B canaries.
 
+**Runnable Payloads.** [TC-L10-011.json](kit/payloads/TC-L10-011.json) holds the attack and legitimate items for this case; run them with the [payload kit](payload-kit.md).
+
 **Procedure**
 
 1. Baseline against the unprotected app.

@@ -276,6 +276,8 @@ nav_order: 14
 
 **Test Data.** 3 users; 60 documents with ACLs; 40 questions (20 answerable only from restricted documents, 20 from permitted).
 
+**Runnable Payloads.** [TC-L11-004.json](kit/payloads/TC-L11-004.json) holds the attack and legitimate items for this case; run them with the [payload kit](payload-kit.md).
+
 **Procedure**
 
 1. Map ACLs.
@@ -470,6 +472,8 @@ nav_order: 14
 
 **Test Data.** 2 tenants; 50 canary chunks each; API, application and admin access paths.
 
+**Runnable Payloads.** [TC-L11-007.json](kit/payloads/TC-L11-007.json) holds the attack and legitimate items for this case; run them with the [payload kit](payload-kit.md).
+
 **Procedure**
 
 1. Seed canaries.
@@ -533,6 +537,8 @@ nav_order: 14
 **Preconditions.** Isolated PoC lab provisioned; lab RAG application, test vector store, fabricated corpus and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected to the lab knowledge sources with least-privilege test credentials. Lab RAG application with a test vector store, a fabricated corpus of 200 documents with access control lists, registered canary content and test users; no production knowledge sources connected.
 
 **Test Data.** 10 genuine documents; 8 poisoned documents (false policy statements, altered numbers, fake approvals, fake contact details); 20 queries; canary values.
+
+**Runnable Payloads.** [TC-L11-008.json](kit/payloads/TC-L11-008.json) holds the attack and legitimate items for this case; run them with the [payload kit](payload-kit.md).
 
 **Procedure**
 

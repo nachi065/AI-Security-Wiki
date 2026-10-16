@@ -547,6 +547,8 @@ python3 pin_definitions.py             # re-pin tool definitions after a human r
 
 Each step has tests in this folder and test cases in the wiki's library. The unit tests check this reference code. The wiki's test cases are how you test your own agent, and you should run them against it before release ([AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034)).
 
+For most of the cases in the table below that are Critical and testable with a payload, the wiki's [Payload Kit](../10_Test_Case_Library/payload-kit.md) has runnable attack sets and a runner that compares an unprotected build with a protected one. The kit's own stand-in applications include this reference guard, so you can see the runner give a result before you point it at your own agent. It also shows where this guard does not help: it stops tool misuse, not what the model says, and the resource-limit sandbox in B7 fails the sandbox probes, which is why B7 tells you to use a container.
+
 | Step | What to run in your own build | Wiki test cases |
 |---|---|---|
 | B1 | Inventory check: every running agent has an owner and an entry | [TC-L06-001](../10_Test_Case_Library/L06-agent-orchestration-layer.md#tc-l06-001), [TC-L06-002](../10_Test_Case_Library/L06-agent-orchestration-layer.md#tc-l06-002), [TC-L06-003](../10_Test_Case_Library/L06-agent-orchestration-layer.md#tc-l06-003) |
