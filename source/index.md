@@ -1,6 +1,6 @@
 ---
 title: "Home"
-description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and 668 test cases."
+description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and {{n:tests}} test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
 version: 2.29
@@ -51,7 +51,7 @@ This wiki is the implementation layer: control objectives, evidence, audit proce
 | Extend an existing security programme to AI | NIST CSF, CIS Controls or SOC 2 | The AI control objectives under each category, control or criterion, through the [NIST CSF](23_Framework_Crosswalks/09_NIST_CSF_Crosswalk.md), [CIS Controls](23_Framework_Crosswalks/10_CIS_Controls_Crosswalk.md) and [SOC 2](23_Framework_Crosswalks/11_SOC_2_Crosswalk.md) crosswalks |
 | Compare privacy duties across jurisdictions | GDPR, CCPA, Quebec Law 25, Singapore PDPA and the GCC data protection laws | Controls per theme, through the [Privacy Law Crosswalk](23_Framework_Crosswalks/13_Privacy_Law_Crosswalk.md) |
 | Structure risk language and a programme | NIST AI RMF | Engineering controls, evidence and scoring |
-| Define attack classes for testing | OWASP lists, MITRE ATLAS, NIST AI 100-2 | The 668-case test library, and the [NIST AI 100-2 Crosswalk](23_Framework_Crosswalks/14_NIST_AI_100_2_Crosswalk.md) |
+| Define attack classes for testing | OWASP lists, MITRE ATLAS, NIST AI 100-2 | The {{n:tests}}-case test library, and the [NIST AI 100-2 Crosswalk](23_Framework_Crosswalks/14_NIST_AI_100_2_Crosswalk.md) |
 | Meet regional legal duties | The primary legal texts | The [Regional AI Regulatory Hub](11_GCC_AI_Compliance/index.md) sections |
 | Decide which risks apply to a use case | n/a | The [use-case risk triage](02_Risk_Management/02F_AI_Use_Case_Risk_Triage.md) |
 
@@ -143,7 +143,7 @@ The cycle then repeats: each use case is reviewed, improved, renewed or retired,
 |---|---|---|---|
 | Executive Management | [AI Governance Operating Model](08_Governance/16_AI_Governance_Operating_Model.md) | [Enterprise AI Risk Register](02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI Security Audit and Evidence Checklist](06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md) | Clear AI risk posture, governance decisions, accountability, and audit readiness. |
 | AI Product Owner | [AI Risk Methodology](02_Risk_Management/02A_AI_Risk_Methodology.md) | [Custom AI Application Runtime Security Standard](04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.md), [AI Security PoC Test Case Library](06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md) | Approved risk treatment, implementation plan, release evidence. |
-| AI Product Developer | [Custom AI Application Runtime Security Standard](04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.md) | [AI Product Developer Playbook](07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.md), [AI Security PoC Test Case Library](06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md), [Guide for AI Practitioners in the GCC](11_GCC_AI_Compliance/02_Guide_AI_Practitioners.md), [Guide for AI Practitioners Working Under EU Rules](12_EU_AI_Compliance/02_Guide_AI_Practitioners.md) | Secure implementation aligned with required controls and test cases. |
+| AI Product Developer | [Secure Your First Agent: Ten Controls With Code](24_Builder_Track/01_Secure_Your_First_Agent.md) | [Custom AI Application Runtime Security Standard](04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.md), [AI Product Developer Playbook](07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.md), [AI Security PoC Test Case Library](06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md), [Guide for AI Practitioners in the GCC](11_GCC_AI_Compliance/02_Guide_AI_Practitioners.md), [Guide for AI Practitioners Working Under EU Rules](12_EU_AI_Compliance/02_Guide_AI_Practitioners.md) | Secure implementation aligned with required controls and test cases. |
 | AI Security Researcher | [AI Security Market and Technology Landscape: Summary](01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.md) | [AI Security Researcher Playbook](07_Role_Based_Playbooks/15B_AI_Security_Researcher_Playbook.md), [AI Security Glossary and Taxonomy](09_Reference/18_AI_Security_Glossary_and_Taxonomy.md) | Updated threat insights, control improvements, and emerging risk intelligence. |
 | AI Red Teamer | [AI Red Team Playbook](06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.md) | [Custom AI Application Runtime Security Standard](04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.md), [Agentic AI Security and Tool Governance](04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.md) | Test plans, findings, exploit paths, recommended mitigations. |
 | Security Engineering | [AI Security Control Objectives Library](03_Control_Library/03_AI_Security_Control_Objectives_Library.md) | [Existing Security Control Baseline](03_Control_Library/04_Existing_Security_Control_Baseline.md), [Microsoft Security Overlap and AI Gaps](03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.md) | Implementable controls, baseline mapping, monitoring requirements. |
@@ -185,7 +185,7 @@ The cycle then repeats: each use case is reviewed, improved, renewed or retired,
   Operating model, acceptable AI use, approvals, committees, responsibilities, and reporting cadence.
 
 10_Test_Case_Library/
-  668 detailed product evaluation test cases across 17 AI lifecycle layers and 6 emerging domains, with reference index,
+  {{n:tests}} detailed product evaluation test cases across {{n:layers}} AI lifecycle layers and 6 emerging domains, with reference index,
   lab prerequisites, and framework adoption guide.
 
 11_GCC_AI_Compliance/
@@ -232,6 +232,10 @@ The cycle then repeats: each use case is reviewed, improved, renewed or retired,
   Cross-references from this wiki to other frameworks: AI frameworks (FINOS AIGF, AI BCF, NIST AI RMF, NIST AI 600-1,
   ISO/IEC 42001, OWASP, MITRE ATLAS, OECD AI Principles), security frameworks (ISO/IEC 27001, NIST CSF, CIS Controls,
   SOC 2) and a comparison of eight privacy laws.
+
+24_Builder_Track/
+  Start here if you are building an agent: ten controls in build order with working configuration, reference code
+  (guard, sandbox, egress proxy), a runnable demo and tests.
 
 09_Reference/
   Glossary, taxonomy, abbreviations, mapping references, patterns, and reusable templates.
@@ -428,9 +432,14 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 | 2.27 | 2026-10-13 | Nachiket Sathaye | Framework Crosswalks: added six pages. Four are generated at build time from new fields in every control record (ISO/IEC 27001, NIST CSF, CIS Controls and SOC 2). The other two map the OECD AI Principles to wiki controls and compare eight privacy laws by theme. The section home page now has a table of every control's identifiers in every framework. Added NAIC, Colorado SB 21-169, FTC and HIPAA rows to the US section, and PCI DSS, insurance and health rows to the sector overlays. |
 | 2.28 | 2026-10-15 | Nachiket Sathaye | Framework Crosswalks: added four pages (NIST AI 100-2, ISO/IEC AI standards, trustworthy AI and ethics, and international AI instruments). Corrected Foundations section 3.1, which misdescribed the NIST AI 100-2 taxonomy. Marked the UK AI Management Essentials (AIME) as a withdrawn draft. Added governing body roles and ISO/IEC 38507 alignment to the governance operating model, ISO/IEC 23894 alignment to the risk methodology, ISO/IEC 42006 certification preparation to the audit checklist, and three data quality test cases (TC-L10-031 to TC-L10-033); the library holds 656 cases. The IEEE content is based on available public data, and unverified mappings are marked as work in progress. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 | 2.29 | 2026-10-15 | Nachiket Sathaye | Governance operating model: added a component ownership table covering models, agents, embeddings, retrieval sources, guardrails, tool and MCP access, observability, vector databases and agent memory, and two roles (AI Platform Owner and Agent Sponsor). Added 12 test cases: agent memory governance (TC-L07-042 to TC-L07-045), embedding and index governance (TC-L11-026 to TC-L11-028), model approval records (TC-L12-032), guardrail policy ownership (TC-L08-043), tool access grant approval (TC-L06-047), and tracing platforms and quality failures (TC-L17-032 and TC-L17-033). Extended AI-CTRL-026 to cover memory inventory, write policy, user control and data subject requests. The library holds 668 cases. See the [Update Notes](09_Reference/19_Update_Notes.md). |
+| 2.30 | 2026-10-16 | Nachiket Sathaye | Added the Builder Track section: one page, "Secure Your First Agent: Ten Controls With Code", with ten controls in build order and working configuration and code for tool allow-lists, argument validation, scoped short-lived credentials, sandboxing, egress limits and approval gates. The `code/` folder holds a reference guard, sandbox and egress proxy, a runnable demo and a test suite. The Python code was run and tested; the container and Kubernetes settings were not executed. See the [Update Notes](09_Reference/19_Update_Notes.md). |
+| 2.31 | 2026-10-16 | Nachiket Sathaye | Added the Payload Kit: runnable attack and legitimate-request sets, thresholds and a runner for 36 of the 169 Critical test cases, linked from each covered case, and a Test Your Own Application page for owners of the code. Tested against stand-in applications only. See the [Update Notes](09_Reference/19_Update_Notes.md). |
+| 2.32 | 2026-10-16 | Nachiket Sathaye | Moved wording that repeats across the test cases into one Standard Fields page. Cases show only the fields that differ from the standard. No wording was changed; the link check enforces the rule. See the [Update Notes](09_Reference/19_Update_Notes.md). |
+| 2.33 | 2026-10-16 | Nachiket Sathaye | Verified India, UAE and EU rows against primary texts where they could be fetched and added a Verified tag; froze new regions until the rest are checked. Split the controls into Baseline and Advanced tiers (new Tier field and a generated Control Tiers page). Counts that pages quote (cases, layers, controls, risks) are now filled in at build time. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 
 ## 21. Quick Links
 
+- [Secure Your First Agent: Ten Controls With Code](24_Builder_Track/01_Secure_Your_First_Agent.md)
 - [Foundations: AI Security vs. Security of AI](00_Foundations/index.md)
 - [AI Security Market and Technology Landscape: Summary](01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.md)
 - [AI Risk Methodology](02_Risk_Management/02A_AI_Risk_Methodology.md)
@@ -443,7 +452,7 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 - [Sovereign AI, UAE Compliance and Data Residency Requirements](04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.md)
 - [AI Security Vendor Evaluation Master Framework](05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.md)
 - [AI Security PoC Test Case Library](06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md)
-- [Test Case Library (668 cases, 17 layers and 6 emerging domains)](10_Test_Case_Library/index.md)
+- [Test Case Library ({{n:tests}} cases, {{n:layers}} layers and 6 emerging domains)](10_Test_Case_Library/index.md)
 - [GCC AI Compliance (regulatory hub, role guides and templates)](11_GCC_AI_Compliance/index.md)
 - [EU AI Compliance (AI Act hub, role guides and templates)](12_EU_AI_Compliance/index.md)
 - [Australia AI Compliance (regulatory hub, role guide and templates)](13_Australia_AI_Compliance/index.md)

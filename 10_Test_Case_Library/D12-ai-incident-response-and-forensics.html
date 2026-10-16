@@ -29,6 +29,9 @@
 <nav class="sidebar" id="sidebar" aria-label="Wiki sections">
 <ul class="nav">
 <li><a href="../index.html">Home</a></li>
+<li style="--h:42"><details><summary><a href="../24_Builder_Track/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.6-.6-2.6z"/></svg>Builder Track</a></summary><ul>
+<li><a href="../24_Builder_Track/01_Secure_Your_First_Agent.html">Secure Your First Agent: Ten Controls With Code</a></li>
+</ul></details></li>
 <li style="--h:255"><details><summary><a href="../00_Foundations/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h7a2 2 0 0 1 2 2v12a2 2 0 0 0-2-2H3zM21 5h-7a2 2 0 0 0-2 2v12a2 2 0 0 1 2-2h7z"/></svg>Foundations</a></summary><ul>
 <li><a href="../00_Foundations/01-Terminology-and-Two-Axis-Model.html">1. Terminology and the Two-Axis Model</a></li>
 <li><a href="../00_Foundations/02-AI-System-Boundary-and-Assets.html">2. The AI System Boundary and Assets</a></li>
@@ -63,6 +66,7 @@
 <li><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></li>
 <li><a href="../03_Control_Library/04_Existing_Security_Control_Baseline.html">Existing Security Control Baseline</a></li>
 <li><a href="../03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.html">Microsoft Security Overlap and AI Gaps</a></li>
+<li><a href="../03_Control_Library/06_Control_Tiers.html">Control Tiers</a></li>
 </ul></details></li>
 <li style="--h:280"><details><summary><a href="../04_Domain_Standards/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 12l9 5 9-5M3 16l9 5 9-5"/></svg>Domain Standards</a></summary><ul>
 <li><a href="../04_Domain_Standards/06_Browser_AI_Security_Standard.html">Browser AI Security Standard</a></li>
@@ -95,8 +99,11 @@
 <li><a href="framework-adoption-guide.html">Framework Adoption Guide</a></li>
 <li><a href="appendix-lab-prerequisites.html">Appendix: Lab Prerequisites</a></li>
 <li><a href="L01-business-and-use-cases.html">L01 Business &amp; Use Cases</a></li>
+<li><a href="payload-kit.html">Payload Kit: Runnable Attack Sets for Critical Cases</a></li>
 <li><a href="L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
+<li><a href="test-your-own-app.html">Test Your Own Application</a></li>
 <li><a href="L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>
+<li><a href="standard-fields.html">Standard Fields</a></li>
 <li><a href="L04-human-interaction-layer.html">L04 Human Interaction Layer</a></li>
 <li><a href="L05-ai-applications.html">L05 AI Applications</a></li>
 <li><a href="L06-agent-orchestration-layer.html">L06 Agent Orchestration Layer</a></li>
@@ -278,6 +285,7 @@
 <blockquote class="callout danger">
 <p><strong>Safety boundary.</strong> All cases use synthetic data and lab targets only. Use scripted lab incidents with known ground truth and fabricated data only. Never run lab exercises against production systems or real incidents.</p>
 <p><strong>How this relates to the layer cases.</strong> Domain cases cross-reference the layer cases they build on (see <strong>Related Layer Cases</strong> in each case). The layer case tests the platform control; the domain case tests the buyer concern from the domain's own point of view. Verify all ATLAS, OWASP and NIST identifiers before use, and treat numeric thresholds as starting values.</p>
+<p><strong>Standard fields.</strong> A field that a case does not show, such as scoring, pass and fail criteria, reviewer notes, standard evidence or the lab setup, uses the wording on the <a href="standard-fields.html">Standard Fields</a> page.</p>
 </blockquote>
 <h2 id="cases-in-this-domain">Cases in this domain</h2>
 <div class="table-wrap"><table>
@@ -504,7 +512,6 @@
 <p><strong>Risk Addressed.</strong> Without agreed incident types and severity criteria, AI events are handled inconsistently, under-reported or escalated too late.</p>
 <p><strong>Business Scenario.</strong> Security and risk want a taxonomy and severity scheme specific to AI incidents, configured in the platform.</p>
 <p><strong>Technical Scenario.</strong> Configure the taxonomy and run twelve scripted events through classification.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.</p>
 <p><strong>Test Data.</strong> 12 scripted events: prompt-injection data leak, agent taking an unapproved action, poisoned knowledge document, model update causing unsafe outputs, harmful output reaching a customer, biased decision pattern, supply chain compromise of a component, credential theft, runaway cost event, outage of an AI service, privacy complaint about an output, near-miss blocked attack; severity criteria (impact, scope, data, reversibility) and categories set by the assessor.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -519,16 +526,9 @@
 <p><strong>Edge Cases / Variants.</strong> Events that fit two categories; events starting as low and escalating.</p>
 <p><strong>Expected Detection.</strong> At least 10 of 12 classifications agree with the expert; criteria visible at classification time; re-classification audited; classification drives routing and deadlines.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Route by severity.</p>
-<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Taxonomy export to ticketing and SIEM.</p>
-<p><strong>Forensic Evidence.</strong> Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Classification comparison.</p>
-<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d12-002"></a></p>
@@ -586,7 +586,6 @@
 <p><strong>Risk Addressed.</strong> Many AI incidents are first noticed by users, staff or providers, not by tools, and need a defined way in.</p>
 <p><strong>Business Scenario.</strong> Operations wants every intake route working and every report triaged within a set time.</p>
 <p><strong>Technical Scenario.</strong> Submit reports through each intake route and track handling.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.</p>
 <p><strong>Test Data.</strong> 6 routes: platform alert, in-application report of harmful or wrong output, staff email or form, customer complaint, provider notice, regulator or media enquiry (simulated); 18 reports with different severity, 3 duplicates, 2 incomplete.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -601,16 +600,8 @@
 <p><strong>Edge Cases / Variants.</strong> Report in Arabic; report from a person who is not an employee.</p>
 <p><strong>Expected Detection.</strong> All 6 routes create records; duplicates merged; incomplete reports followed up; acknowledgement within the stated time; reporter identity protected where requested.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Triage.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Ticketing integration.</p>
-<p><strong>Forensic Evidence.</strong> Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Intake record table.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d12-003"></a></p>
@@ -668,7 +659,6 @@
 <p><strong>Risk Addressed.</strong> Generic runbooks do not tell responders what to check first when the problem is a model, an index or an agent.</p>
 <p><strong>Business Scenario.</strong> Responders want type-specific triage steps and decision support inside the platform.</p>
 <p><strong>Technical Scenario.</strong> Run six scripted incidents through type-specific runbooks and measure completeness and time to scope.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.</p>
 <p><strong>Test Data.</strong> 6 runbooks: injection with data leak, agent misuse, poisoned retrieval source, model regression, harmful output, vendor or model-provider incident; 6 scripted incidents with ground-truth causes; 2 responders.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -683,16 +673,8 @@
 <p><strong>Edge Cases / Variants.</strong> Incident that matches two runbooks; responder new to AI incidents.</p>
 <p><strong>Expected Detection.</strong> First scope statement within 30 minutes for at least 5 of 6 incidents; conclusions match ground truth in at least 5; runbook steps link to platform queries and actions.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Guided response.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Runbook export.</p>
-<p><strong>Forensic Evidence.</strong> Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Exercise log.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d12-004"></a></p>
@@ -750,7 +732,6 @@
 <p><strong>Risk Addressed.</strong> Logs show what happened but not what exactly was running; prompts, models, tool definitions and policies change often.</p>
 <p><strong>Business Scenario.</strong> Investigators want a point-in-time record of every component that shaped the incident.</p>
 <p><strong>Technical Scenario.</strong> Run an application through a change history, trigger an incident and capture state at the time.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.</p>
 <p><strong>Test Data.</strong> 1 application with 6 changes over a simulated month (model version, system prompt edits, tool added, guardrail rule changed, retrieval setting changed, policy changed); incident at a known time.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -765,16 +746,9 @@
 <p><strong>Edge Cases / Variants.</strong> Change made outside the platform; component updated by a provider without notice.</p>
 <p><strong>Expected Detection.</strong> State at incident time matches the change record for every component; earlier-time query accurate; snapshot tamper-evident and exportable.</p>
 <p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Export for case file.</p>
-<p><strong>Forensic Evidence.</strong> Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> State snapshot; comparison with change record.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d12-005"></a></p>
@@ -832,7 +806,6 @@
 <p><strong>Risk Addressed.</strong> If the index has changed since the incident, investigators cannot tell what the assistant could retrieve at the time.</p>
 <p><strong>Business Scenario.</strong> Investigators want the content and ranking of the knowledge base reconstructable at a past date.</p>
 <p><strong>Technical Scenario.</strong> Modify a lab knowledge base over time and reconstruct its state at the incident time.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.</p>
 <p><strong>Test Data.</strong> 1 RAG application; 200 documents; 30 changes over a simulated month (additions, edits, deletions, permission changes); incident at a known time involving a poisoned document later removed.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -847,16 +820,9 @@
 <p><strong>Edge Cases / Variants.</strong> Embedding model changed since the incident; document edited in place.</p>
 <p><strong>Expected Detection.</strong> Reconstructed state includes the removed document and correct permissions; query against the reconstructed state returns the original result or variance is explained; retention stated.</p>
 <p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Export.</p>
-<p><strong>Forensic Evidence.</strong> Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Reconstruction comparison.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d12-006"></a></p>
@@ -914,7 +880,6 @@
 <p><strong>Risk Addressed.</strong> The answer depends on everything in the context window, including memory, retrieved chunks and tool results the user never saw.</p>
 <p><strong>Business Scenario.</strong> Investigators want the complete model input for any response, not only the user's prompt.</p>
 <p><strong>Technical Scenario.</strong> Run five conversations with memory, retrieval and tool calls and reconstruct the model inputs.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.</p>
 <p><strong>Test Data.</strong> 5 conversations: with persistent memory entries, with retrieved chunks from 3 documents, with 2 tool results, with a system prompt update mid-session, with a truncated context; incident on one response.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -929,16 +894,9 @@
 <p><strong>Edge Cases / Variants.</strong> Streaming responses; conversations spanning several sessions.</p>
 <p><strong>Expected Detection.</strong> At least 4 of 5 reconstructions complete; truncation points shown; missing parts identified; access controlled and masked.</p>
 <p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Export.</p>
-<p><strong>Forensic Evidence.</strong> Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Reconstruction table.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d12-007"></a></p>
@@ -996,7 +954,6 @@
 <p><strong>Risk Addressed.</strong> If an incident cannot be reproduced, root cause analysis rests on opinion, and fixes cannot be verified.</p>
 <p><strong>Business Scenario.</strong> Investigators want to replay an incident under the same conditions and see how far results match.</p>
 <p><strong>Technical Scenario.</strong> Replay five recorded incidents using pinned versions and settings.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.</p>
 <p><strong>Test Data.</strong> 5 recorded incidents; settings captured: model version, parameters (temperature, seed where available), prompts, retrieved content, tool results (mocked from record); lab-hosted model and a hosted provider model.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1011,16 +968,9 @@
 <p><strong>Edge Cases / Variants.</strong> Provider model without seed control; incident depending on time-sensitive data.</p>
 <p><strong>Expected Detection.</strong> Replay reproduces the incident behaviour in at least 4 of 5 cases or variance is quantified; side effects never occur; fidelity report produced.</p>
 <p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Export.</p>
-<p><strong>Forensic Evidence.</strong> Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Replay comparison.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d12-008"></a></p>
@@ -1078,7 +1028,6 @@
 <p><strong>Risk Addressed.</strong> Treating a model fault as an attack, or the reverse, leads to wrong containment and wrong notifications.</p>
 <p><strong>Business Scenario.</strong> Investigators want structured evidence for each possible cause.</p>
 <p><strong>Technical Scenario.</strong> Run six scripted incidents with different true causes and check attribution quality.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.</p>
 <p><strong>Test Data.</strong> 6 incidents: external injection attack, insider misuse, misconfigured access, provider model regression, poisoned data, user error; ground-truth cause for each; 3 investigators.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1093,16 +1042,9 @@
 <p><strong>Edge Cases / Variants.</strong> Incident with two causes; insider acting through a compromised account.</p>
 <p><strong>Expected Detection.</strong> At least 5 of 6 correct attributions; hypotheses and evidence recorded; uncertainty stated where evidence is incomplete.</p>
 <p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Case export.</p>
-<p><strong>Forensic Evidence.</strong> Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Attribution table.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d12-009"></a></p>
@@ -1160,7 +1102,6 @@
 <p><strong>Risk Addressed.</strong> Missing part of the scope means harm continues or notifications are incomplete.</p>
 <p><strong>Business Scenario.</strong> Responders want the platform to list every user, data item, system and output touched by the incident.</p>
 <p><strong>Technical Scenario.</strong> Run three incidents of increasing reach and compare the platform's scope with ground truth.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.</p>
 <p><strong>Test Data.</strong> 3 incidents: single user data leak, shared knowledge source poisoned (30 users affected), agent action across 3 systems; ground-truth lists of users, records, outputs and systems.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1175,16 +1116,9 @@
 <p><strong>Edge Cases / Variants.</strong> Outputs forwarded outside the organisation; data copied to personal workspaces.</p>
 <p><strong>Expected Detection.</strong> At least 90 percent of affected users, records and systems identified; over-inclusion under 15 percent; scope updates audited.</p>
 <p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Export for notification workflow.</p>
-<p><strong>Forensic Evidence.</strong> Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Scope vs ground truth.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d12-010"></a></p>
@@ -1242,7 +1176,6 @@
 <p><strong>Risk Addressed.</strong> A wrong or harmful output may already be in documents, tickets, emails and customer messages by the time it is noticed.</p>
 <p><strong>Business Scenario.</strong> Responders want to find and recall downstream copies of affected outputs.</p>
 <p><strong>Technical Scenario.</strong> Generate a false output and let it flow into lab systems, then trace and recall.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.</p>
 <p><strong>Test Data.</strong> 1 false output (fabricated policy statement) produced for 6 users; copies: saved in 4 documents, pasted in 3 tickets, sent in 2 emails, quoted in 1 customer message (all lab); output fingerprinting enabled.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1257,16 +1190,8 @@
 <p><strong>Edge Cases / Variants.</strong> Output translated or summarised before reuse.</p>
 <p><strong>Expected Detection.</strong> At least 8 of 10 copies found; paraphrased copies flagged where fingerprinting allows or limitation documented; recall actions recorded.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Notify or recall.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Integration with document and messaging systems where available.</p>
-<p><strong>Forensic Evidence.</strong> Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Copy table.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d12-011"></a></p>
@@ -1324,7 +1249,6 @@
 <p><strong>Risk Addressed.</strong> Responders choose between rolling back a model, disabling a tool, quarantining an index or blocking a user, each with business impact; choosing wrongly costs time or service.</p>
 <p><strong>Business Scenario.</strong> Responders want the available actions listed with impact, approval and reversal for each incident type.</p>
 <p><strong>Technical Scenario.</strong> Present four incidents and have responders choose and execute containment.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.</p>
 <p><strong>Test Data.</strong> 4 incidents: injection leak from a tool-using agent, poisoned index, model regression, compromised key; catalogue of actions (disable tool, roll back model, quarantine documents, revoke token, block user, disable feature, change guardrail); impact descriptions per action.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1340,16 +1264,8 @@
 <p><strong>Edge Cases / Variants.</strong> Containment that stops a critical business service; containment requiring provider cooperation.</p>
 <p><strong>Expected Detection.</strong> Correct containment chosen for at least 3 of 4; actions take effect within the stated times; reversals work; approvals and logs complete.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Contain.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Actions through APIs.</p>
-<p><strong>Forensic Evidence.</strong> Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Action log.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d12-012"></a></p>
@@ -1407,7 +1323,6 @@
 <p><strong>Risk Addressed.</strong> Restoring service before checking that the cause is gone invites a repeat incident within hours.</p>
 <p><strong>Business Scenario.</strong> Responders want recovery gated on verified removal of the cause.</p>
 <p><strong>Technical Scenario.</strong> Run three incidents through eradication and recovery with gating checks.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.</p>
 <p><strong>Test Data.</strong> 3 incidents: poisoned document in an index, stolen credential, weakened guardrail after a change; recovery checklist; regression pack from earlier attack tests (D08).</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1422,16 +1337,8 @@
 <p><strong>Edge Cases / Variants.</strong> Recovery under business pressure; partial eradication accepted with a recorded risk.</p>
 <p><strong>Expected Detection.</strong> Recovery blocked until each eradication task is verified; regression pack passes before sign-off; heightened monitoring period configured.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Gate recovery.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Evidence export.</p>
-<p><strong>Forensic Evidence.</strong> Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Checklist; regression results.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d12-013"></a></p>
@@ -1489,7 +1396,6 @@
 <p><strong>Risk Addressed.</strong> Once poisoned data is in a model or index, finding it, its source and every model affected is hard without lineage.</p>
 <p><strong>Business Scenario.</strong> Investigators want poisoned records traced to their source and to every downstream model and index.</p>
 <p><strong>Technical Scenario.</strong> Seed a dataset with poisoned records, train and index, then investigate from a symptom.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.</p>
 <p><strong>Test Data.</strong> Dataset of 3,000 records with 30 poisoned records from one source; 2 fine-tuned models and 1 index built from it; symptom: a benign trigger phrase producing a marker response.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1504,16 +1410,8 @@
 <p><strong>Edge Cases / Variants.</strong> Poison split across several sources; data already used in a deleted model version.</p>
 <p><strong>Expected Detection.</strong> At least 27 of 30 poisoned records identified; all 3 downstream artefacts found; source and time established; retest shows symptom removed.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Quarantine data and artefacts.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Lineage export.</p>
-<p><strong>Forensic Evidence.</strong> Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Trace table.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d12-014"></a></p>
@@ -1571,7 +1469,6 @@
 <p><strong>Risk Addressed.</strong> A provider or internal model update can change safety and accuracy overnight, and the evidence is often lost.</p>
 <p><strong>Business Scenario.</strong> Responders want regression evidence, escalation to the provider and a rollback path.</p>
 <p><strong>Technical Scenario.</strong> Simulate a model update that degrades behaviour and run the incident.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.</p>
 <p><strong>Test Data.</strong> Mock provider with versions A and B; 40 canary prompts; behaviour regression on 8 of them after the switch; 2 dependent applications.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1586,16 +1483,8 @@
 <p><strong>Edge Cases / Variants.</strong> Silent alias change; regression affecting only one language.</p>
 <p><strong>Expected Detection.</strong> Regression detected within the canary interval; evidence package complete; rollback effective in under 15 minutes; provider escalation recorded.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Pin or roll back.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Evidence package export.</p>
-<p><strong>Forensic Evidence.</strong> Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Canary comparison.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d12-015"></a></p>
@@ -1653,7 +1542,6 @@
 <p><strong>Risk Addressed.</strong> Where AI outputs influenced decisions about people, responders must identify who was affected and how.</p>
 <p><strong>Business Scenario.</strong> Governance wants a structured assessment of impact on individuals and a list of those affected.</p>
 <p><strong>Technical Scenario.</strong> Run an incident in which an AI-supported process gave wrong outcomes to fabricated individuals.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.</p>
 <p><strong>Test Data.</strong> 1 scenario: eligibility assistant gave wrong guidance to 40 fabricated applicants over 3 days; 12 of them acted on it; outcomes recorded; harm categories set by the assessor.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1668,16 +1556,9 @@
 <p><strong>Edge Cases / Variants.</strong> Individuals who received the output through a third party; outputs partially relied on.</p>
 <p><strong>Expected Detection.</strong> At least 38 of 40 individuals identified; reliance and outcome correct for at least 10 of 12; remediation list produced; access to the list controlled.</p>
 <p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Export for the privacy and legal teams.</p>
-<p><strong>Forensic Evidence.</strong> Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Assessment record.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d12-016"></a></p>
@@ -1735,7 +1616,6 @@
 <p><strong>Risk Addressed.</strong> Notification duties and timelines differ by framework, so the decision, its reasoning and its timing must be recorded.</p>
 <p><strong>Business Scenario.</strong> Compliance and communications want a decision record and message drafts tied to the incident facts.</p>
 <p><strong>Technical Scenario.</strong> Run two incidents through the notification decision process with parameters supplied by the assessor.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.</p>
 <p><strong>Test Data.</strong> 2 incidents (personal data exposure of 120 fabricated individuals; unsafe advice to customers); timelines and criteria entered by the assessor from the adopted framework; templates for regulator, affected individuals, customers and staff.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1750,16 +1630,8 @@
 <p><strong>Edge Cases / Variants.</strong> Incident with several jurisdictions; facts changing after notification.</p>
 <p><strong>Expected Detection.</strong> Decision, reasoning and approvals recorded; clocks accurate; drafts match facts; decision file exportable.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Escalate.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Export to legal file.</p>
-<p><strong>Forensic Evidence.</strong> Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Decision file.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d12-017"></a></p>
@@ -1817,7 +1689,6 @@
 <p><strong>Risk Addressed.</strong> Many AI incidents involve a provider whose cooperation, logs and fixes are needed and whose terms may limit what is shared.</p>
 <p><strong>Business Scenario.</strong> Responders want the cooperation route, evidence requests and service levels tested before they are needed.</p>
 <p><strong>Technical Scenario.</strong> Run a mock joint incident with a provider contact and review the contract terms.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.</p>
 <p><strong>Test Data.</strong> 2 mock providers; incident requiring provider logs and a fix; contract terms for notice, cooperation, evidence and service levels; provider contact list.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1832,16 +1703,8 @@
 <p><strong>Edge Cases / Variants.</strong> Provider incident affecting many customers at once.</p>
 <p><strong>Expected Detection.</strong> Provider acknowledges within the contracted time; evidence request answered or refused with reasons; gaps recorded and owned.</p>
 <p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
-<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Documents attached.</p>
-<p><strong>Forensic Evidence.</strong> Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Request log; response times.</p>
-<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d12-018"></a></p>
@@ -1899,7 +1762,6 @@
 <p><strong>Risk Addressed.</strong> AI evidence is more than logs: models, indexes, prompts and configurations must be preserved and shown unchanged.</p>
 <p><strong>Business Scenario.</strong> Legal and investigators want artefacts hashed, stored and tracked from collection to use.</p>
 <p><strong>Technical Scenario.</strong> Collect evidence from a scripted incident and check handling.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.</p>
 <p><strong>Test Data.</strong> Evidence set: 30 log extracts, 1 prompt version, 1 model configuration, 1 index snapshot, 1 policy export, 5 screenshots; 3 handlers.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1914,16 +1776,8 @@
 <p><strong>Edge Cases / Variants.</strong> Evidence larger than a standard storage object; evidence collected remotely.</p>
 <p><strong>Expected Detection.</strong> All items hashed; custody complete; altered item detected; access logged; report exportable.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Preserve.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Export.</p>
-<p><strong>Forensic Evidence.</strong> Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Custody report.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d12-019"></a></p>
@@ -1981,7 +1835,6 @@
 <p><strong>Risk Addressed.</strong> Investigators read sensitive conversations; unrestricted forensic access is itself a privacy and insider risk.</p>
 <p><strong>Business Scenario.</strong> Privacy and security want investigator access scoped, approved and audited.</p>
 <p><strong>Technical Scenario.</strong> Test forensic roles and approvals on a seeded case.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.</p>
 <p><strong>Test Data.</strong> 3 roles (responder, investigator, privacy reviewer); case with 40 conversations containing fabricated personal data; approval workflow for unmasking.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -1996,16 +1849,8 @@
 <p><strong>Edge Cases / Variants.</strong> Investigator who is also a data subject; urgent access during a live incident.</p>
 <p><strong>Expected Detection.</strong> Masking default; unmask needs approval and expires; every access audited; source records immutable; unusual access alerted.</p>
 <p><strong>Expected Prevention / Control Action.</strong> Restrict.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Audit export.</p>
-<p><strong>Forensic Evidence.</strong> Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Role test table.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d12-020"></a></p>
@@ -2063,7 +1908,6 @@
 <p><strong>Risk Addressed.</strong> Root-cause reports that name only a rule or a person miss model, data and process factors, and similar incidents recur.</p>
 <p><strong>Business Scenario.</strong> Governance wants a structured method covering technical, data, model, process and human factors, with recurrence tracked.</p>
 <p><strong>Technical Scenario.</strong> Run root-cause analysis on four closed lab incidents and test the method.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.</p>
 <p><strong>Test Data.</strong> 4 incidents; factor categories (model, data, prompt, tool, access, process, vendor, human); 2 incidents with a common underlying cause.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2078,16 +1922,8 @@
 <p><strong>Edge Cases / Variants.</strong> Cause outside the organisation's control.</p>
 <p><strong>Expected Detection.</strong> All factor categories addressed; common cause across two incidents found; actions tracked to verified closure.</p>
 <p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
-<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Export.</p>
-<p><strong>Forensic Evidence.</strong> Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Analysis records.</p>
-<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d12-021"></a></p>
@@ -2145,7 +1981,6 @@
 <p><strong>Risk Addressed.</strong> Blocked attacks show how the system is being tested; ignoring them wastes the best free intelligence available.</p>
 <p><strong>Business Scenario.</strong> Security wants near-misses captured, summarised and fed into controls.</p>
 <p><strong>Technical Scenario.</strong> Generate blocked attacks and near-misses and test capture and review.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.</p>
 <p><strong>Test Data.</strong> 60 blocked events (injection, exfiltration attempts, policy evasion) and 5 near-misses (action prevented at the last step); weekly review.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2160,16 +1995,9 @@
 <p><strong>Edge Cases / Variants.</strong> Attack waves from one source.</p>
 <p><strong>Expected Detection.</strong> Near-misses captured and clustered; at least two improvements implemented and tested; trend report available.</p>
 <p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
-<p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Export.</p>
-<p><strong>Forensic Evidence.</strong> Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Review record.</p>
-<p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p>
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d12-022"></a></p>
@@ -2227,7 +2055,6 @@
 <p><strong>Risk Addressed.</strong> Leadership needs to see numbers by type, time to detect and contain, recurrence and cost.</p>
 <p><strong>Business Scenario.</strong> Governance wants a reliable register and a small set of defined metrics.</p>
 <p><strong>Technical Scenario.</strong> Load 12 months of simulated incidents and check indicators against hand calculation.</p>
-<p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.</p>
 <p><strong>Test Data.</strong> 60 simulated incidents across types and severities; indicators: count by type, mean time to detect, mean time to contain, mean time to recover, recurrence rate, notification rate, cost estimate; calculation sheet.</p>
 <p><strong>Procedure</strong></p>
 <ol>
@@ -2242,21 +2069,13 @@
 <p><strong>Edge Cases / Variants.</strong> Incidents reclassified after closure.</p>
 <p><strong>Expected Detection.</strong> All indicators match within 2 percent; definitions visible; drill-down works; reports scheduled and access controlled.</p>
 <p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
-<p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p>
-<p><strong>Expected Report / Dashboard Evidence.</strong> Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.</p>
 <p><strong>Expected Integration Evidence.</strong> Report export.</p>
-<p><strong>Forensic Evidence.</strong> Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.</p>
-<p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p>
-<p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p>
-<p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
-<p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p>
 <p><strong>Evidence to Capture.</strong> Indicator table.</p>
-<p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p>
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 </article>
 <nav class="pager" aria-label="Previous and next page"><a class="prev" href="D11-multimodal-and-voice-input-security.html">&larr; D11 Multimodal and Voice Input Security</a><a class="next" href="D13-ai-cost-and-abuse-controls.html">D13 AI Cost and Abuse Controls &rarr;</a></nav>
-<footer class="site-footer">Author: Nachiket Sathaye &middot; Updated 7 October 2026 &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/10_Test_Case_Library/D12-ai-incident-response-and-forensics.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
+<footer class="site-footer">Author: Nachiket Sathaye &middot; Updated 16 October 2026 &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/10_Test_Case_Library/D12-ai-incident-response-and-forensics.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
 <div class="site-notice">
 <p><strong>Licence.</strong> <svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.441-3.5c8.951,0,16.572,3.125,22.857,9.372c3.008,3.009,5.295,6.448,6.857,10.314 c1.561,3.867,2.344,7.971,2.344,12.314c0,4.381-0.773,8.486-2.314,12.313c-1.543,3.828-3.82,7.21-6.828,10.143 c-3.123,3.085-6.666,5.448-10.629,7.086c-3.961,1.638-8.057,2.457-12.285,2.457s-8.276-0.808-12.143-2.429 c-3.866-1.618-7.333-3.961-10.4-7.027c-3.067-3.066-5.4-6.524-7-10.372S5.5,32.767,5.5,28.5c0-4.229,0.809-8.295,2.428-12.2 c1.619-3.905,3.972-7.4,7.057-10.486C21.08-0.394,28.565-3.5,37.441-3.5z M37.557,2.272c-7.314,0-13.467,2.553-18.458,7.657 c-2.515,2.553-4.448,5.419-5.8,8.6c-1.354,3.181-2.029,6.505-2.029,9.972c0,3.429,0.675,6.734,2.029,9.913 c1.353,3.183,3.285,6.021,5.8,8.516c2.514,2.496,5.351,4.399,8.515,5.715c3.161,1.314,6.476,1.971,9.943,1.971 c3.428,0,6.75-0.665,9.973-1.999c3.219-1.335,6.121-3.257,8.713-5.771c4.99-4.876,7.484-10.99,7.484-18.344 c0-3.543-0.648-6.895-1.943-10.057c-1.293-3.162-3.18-5.98-5.654-8.458C50.984,4.844,44.795,2.272,37.557,2.272z M37.156,23.187 l-4.287,2.229c-0.458-0.951-1.019-1.619-1.685-2c-0.667-0.38-1.286-0.571-1.858-0.571c-2.856,0-4.286,1.885-4.286,5.657 c0,1.714,0.362,3.084,1.085,4.113c0.724,1.029,1.791,1.544,3.201,1.544c1.867,0,3.181-0.915,3.944-2.743l3.942,2 c-0.838,1.563-2,2.791-3.486,3.686c-1.484,0.896-3.123,1.343-4.914,1.343c-2.857,0-5.163-0.875-6.915-2.629 c-1.752-1.752-2.628-4.19-2.628-7.313c0-3.048,0.886-5.466,2.657-7.257c1.771-1.79,4.009-2.686,6.715-2.686 C32.604,18.558,35.441,20.101,37.156,23.187z M55.613,23.187l-4.229,2.229c-0.457-0.951-1.02-1.619-1.686-2 c-0.668-0.38-1.307-0.571-1.914-0.571c-2.857,0-4.287,1.885-4.287,5.657c0,1.714,0.363,3.084,1.086,4.113 c0.723,1.029,1.789,1.544,3.201,1.544c1.865,0,3.18-0.915,3.941-2.743l4,2c-0.875,1.563-2.057,2.791-3.541,3.686 c-1.486,0.896-3.105,1.343-4.857,1.343c-2.896,0-5.209-0.875-6.941-2.629c-1.736-1.752-2.602-4.19-2.602-7.313 c0-3.048,0.885-5.466,2.658-7.257c1.77-1.79,4.008-2.686,6.713-2.686C51.117,18.558,53.938,20.101,55.613,23.187z"/></svg><svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.443-3.5c8.988,0,16.57,3.085,22.742,9.257C66.393,11.967,69.5,19.548,69.5,28.5c0,8.991-3.049,16.476-9.145,22.456 C53.879,57.319,46.242,60.5,37.443,60.5c-8.649,0-16.153-3.144-22.514-9.43C8.644,44.784,5.5,37.262,5.5,28.5 c0-8.761,3.144-16.342,9.429-22.742C21.101-0.415,28.604-3.5,37.443-3.5z M37.557,2.272c-7.276,0-13.428,2.553-18.457,7.657 c-5.22,5.334-7.829,11.525-7.829,18.572c0,7.086,2.59,13.22,7.77,18.398c5.181,5.182,11.352,7.771,18.514,7.771 c7.123,0,13.334-2.607,18.629-7.828c5.029-4.838,7.543-10.952,7.543-18.343c0-7.276-2.553-13.465-7.656-18.571 C50.967,4.824,44.795,2.272,37.557,2.272z M46.129,20.557v13.085h-3.656v15.542h-9.944V33.643h-3.656V20.557 c0-0.572,0.2-1.057,0.599-1.457c0.401-0.399,0.887-0.6,1.457-0.6h13.144c0.533,0,1.01,0.2,1.428,0.6 C45.918,19.5,46.129,19.986,46.129,20.557z M33.042,12.329c0-3.008,1.485-4.514,4.458-4.514s4.457,1.504,4.457,4.514 c0,2.971-1.486,4.457-4.457,4.457S33.042,15.3,33.042,12.329z"/></svg>This wiki is open to the community under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">Creative Commons Attribution-ShareAlike 4.0 International licence (CC BY-SA 4.0)</a>. You may copy, share and adapt it for any purpose, including commercially, as long as you credit the authors and release anything you build from it under the same licence.</p>
 <p><strong>Disclaimer.</strong> This wiki is an open, community driven educational reference, not legal, regulatory or professional advice. Regional regulatory content is compiled from secondary sources and its verification status is shown per row; verify against primary sources before relying on it. Content is provided "as is" without warranty. Named products and companies belong to their owners; statements about them reflect public information at the date shown. Views are the author's own.</p>

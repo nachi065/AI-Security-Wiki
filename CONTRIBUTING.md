@@ -42,9 +42,21 @@ nav_order: 6
 
 The footer also shows the date the page last changed, taken from the repository history. If you have checked a page against its sources, you can record that by adding `last_reviewed: 2026-10-10` (your own date, written as year-month-day) to the header. The line is optional.
 
+## Regional sections: new regions are frozen
+
+No new country or region section is added until the existing ones are verified. Status on 16 October 2026:
+
+- **Checked against primary documents (in part):** EU (the omnibus regulation and its dates, 10 October 2026), India (six instruments, 16 October 2026), GCC (Saudi SDAIA documents, Bahrain PDPL title, UAE PDPL, 10 and 16 October 2026). Rows are tagged `[Verified]` only when the primary text was read; the source and retrieval date are recorded beside the row.
+- **Not checked:** Australia, Brazil, Canada, China, Japan, Singapore, South Korea, UK and US. Treat every claim there as unverified until a page says otherwise.
+
+A new region is accepted only when its first version has `[Verified]` rows for its main binding instruments, with a URL and retrieval date for each. Pull requests that add a region without that are asked to wait. Fixing or verifying an existing region is always welcome.
+
 ## What to expect
 
 - Every pull request is reviewed by the maintainer before it is merged.
+- Do not type totals that the site can count (cases, layers, controls, risks, families). Write `{{n:tests}}`, `{{n:layer_tests}}`, `{{n:domain_tests}}`, `{{n:layers}}`, `{{n:controls}}`, `{{n:families}}` or `{{n:risks}}`; `build.py` fills them in and the link check fails on a hand-typed total. The list is in `counts.py`. Version-history rows and the Update Notes record what was true at the time and keep their numbers.
+- Give every new control a `Tier` field (Baseline or Advanced); the link check requires it.
+- When you add a test case, leave out any field that the [Standard Fields](https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/standard-fields.html) page already covers (scoring, pass and fail criteria, reviewer notes, standard evidence, the lab setup for the layer). Write the field only when your case needs different wording. The link check fails if a case repeats a standard word for word. The standard wording itself is in `source/10_Test_Case_Library/standard-fields.json`.
 - Two automated checks run on every pull request. One protects author credit. The other fails if a link inside the wiki points to a page or heading that does not exist, or if a page cites a risk, control or test case ID that is not defined. Links to other websites are checked weekly on the main branch, so a pull request never fails because an outside site moved a page.
 - Keep content vendor-neutral and free of confidential, personal or organization-specific information.
 - Not sure whether an idea fits? [Open an issue](https://github.com/nachi065/AI-Security-Wiki/issues) first.

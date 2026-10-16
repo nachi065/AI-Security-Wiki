@@ -38,6 +38,24 @@ for dirpath, dirs, files in os.walk(SRC):
 
 
 
+# Counts that pages quote are written as {{n:name}} and filled in from the source files here.
+from counts import site_counts
+COUNTS = site_counts(SRC)
+
+
+def fill_counts(text, where):
+    def value(m):
+        if m.group(1) not in COUNTS:
+            raise SystemExit(f"{where}: unknown count {m.group(0)}")
+        return str(COUNTS[m.group(1)])
+    return re.sub(r"\{\{n:(\w+)\}\}", value, text)
+
+
+for p in pages:
+    p["body"] = fill_counts(p["body"], p["src"])
+    p["meta"] = {k: fill_counts(v, p["src"]) for k, v in p["meta"].items()}
+
+
 def traceability(page):
     """Risk to control to test tables, read from the pages that own each link."""
     def text(src):
@@ -224,6 +242,66 @@ def framework_crosswalk(page, kind):
     return "\n".join(out)
 
 
+def standard_fields(page):
+    """Tables of the standard wording that test cases leave out, read from standard-fields.json."""
+    data = json.load(open(os.path.join(SRC, "10_Test_Case_Library", "standard-fields.json"), encoding="utf-8"))
+    cell = lambda text: text.replace("|", "\\|")
+    layer_title = {}
+    for p in pages:
+        m = re.match(r"10_Test_Case_Library/([LD]\d\d)-", p["src"].replace(os.sep, "/"))
+        if m:
+            layer_title[m.group(1)] = p["meta"]["title"]
+    labels = {"all": "Every case", "detect": "Cases with an Expected Detection field", "result": "Cases with an Expected Result field"}
+    for method in ("technical", "evidence", "attestation"):
+        for shape, shape_label in (("detect", "detection"), ("result", "result")):
+            labels[f"{method}-{shape}"] = f"{method.capitalize()} method, {shape_label} cases"
+    out = []
+    by_kind = {"all": [], "shape": [], "method-shape": [], "layer": []}
+    for field, kind in data["keys"].items():
+        if field in data["standards"]:
+            by_kind[kind].append(field)
+    titles = {"all": "Fields that are the same in every case", "shape": "Fields that depend on the kind of case",
+              "method-shape": "Fields that depend on the test method and the kind of case", "layer": "Fields that depend on the layer or domain"}
+    for kind in ("all", "shape", "method-shape", "layer"):
+        if not by_kind[kind]:
+            continue
+        out += [f"## {titles[kind]}", ""]
+        for field in by_kind[kind]:
+            out += [f"### {field}", "", "| Applies to | Standard wording |", "|---|---|"]
+            for key, text in data["standards"][field].items():
+                name = labels.get(key) or f"{key} {layer_title.get(key, '').split(' ', 1)[-1]}".strip()
+                out.append(f"| {name} | {cell(text)} |")
+            out.append("")
+    return "\n".join(out)
+
+
+STANDARD_FIELDS = "<!-- standard-fields -->"
+for p in pages:
+    if STANDARD_FIELDS in p["body"]:
+        p["body"] = p["body"].replace(STANDARD_FIELDS, standard_fields(p))
+
+def control_tiers(page):
+    """Baseline and Advanced control lists, read from the Tier field of each control record."""
+    library = "03_Control_Library/03_AI_Security_Control_Objectives_Library.md"
+    text = next(p["body"] for p in pages if p["src"].replace(os.sep, "/") == library)
+    fam = {m.group(1): m.group(3) for m in re.finditer(r"^\| \[(AI-CTRL-\d{3})\]\(#[^)]*\) \| ([^|]+) \| ([^|]+) \|", text, re.M)}
+    name = dict(re.findall(r"^#### (AI-CTRL-\d{3}): (.+)$", text, re.M))
+    tier = {m.group(1): m.group(2) for m in re.finditer(r"^#### (AI-CTRL-\d{3}):.*\n\n\| Field \| Detail \|\n\|---\|---\|\n(?:\|.*\n)*?\| \*\*Tier\*\* \| (\w+) \|", text, re.M)}
+    out = []
+    for t in ("Baseline", "Advanced"):
+        ids = sorted(c for c in name if tier.get(c) == t)
+        out += [f"## {t} ({len(ids)} controls)", "", "| Control | Name | Family |", "|---|---|---|"]
+        out += [f"| [{c}](03_AI_Security_Control_Objectives_Library.md#{c.lower()}) | {name[c]} | {fam.get(c, '')} |" for c in ids]
+        out.append("")
+    return "\n".join(out)
+
+
+CONTROL_TIERS = "<!-- control-tiers -->"
+for p in pages:
+    if CONTROL_TIERS in p["body"]:
+        p["body"] = p["body"].replace(CONTROL_TIERS, control_tiers(p))
+
+
 # A page that holds this marker gets the generated traceability tables in its place.
 MATRIX = "<!-- traceability-matrix -->"
 for p in pages:
@@ -267,6 +345,7 @@ LOOKS = {
     "20_South_Korea_AI_Compliance": (250, '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>'),
     "21_UK_AI_Compliance": (278, '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>'),
     "22_US_AI_Compliance": (310, '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>'),
+    "24_Builder_Track": (42, '<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.6-.6-2.6z"/>'),
     "23_Framework_Crosswalks": (120, '<path d="M4 8h14l-3-3M20 16H6l3 3"/>'),
     "10_Test_Case_Library": (145, '<path d="M4 6l1.5 1.5L8 5M4 12l1.5 1.5L8 11M4 18l1.5 1.5L8 17M11 6h9M11 12h9M11 18h9"/>'),
 }
@@ -625,6 +704,7 @@ for i, page in enumerate(order):
 
 # Data files that pages link to (for example CSV downloads) are copied next to the generated pages.
 for dirpath, dirs, files in os.walk(SRC):
+    dirs[:] = [d for d in dirs if d != "__pycache__"]  # compiled Python is not published
     for f in files:
         if not f.endswith(".md") and not f.startswith("."):
             dest = os.path.join(ROOT, os.path.relpath(os.path.join(dirpath, f), SRC))

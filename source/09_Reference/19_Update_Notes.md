@@ -13,6 +13,40 @@ last_reviewed: 2026-10-15
 
 This page records each substantial update to the wiki, newest first, with what was checked and what is still work in progress. The full version history is in [section 20 of the home page](../index.md#20-version-history).
 
+## 16 October 2026: Control tiers and build-time counts
+
+The 46 controls are split into 22 Baseline and 24 Advanced. The split is the author's judgement, not a framework requirement; the [Control Tiers](../03_Control_Library/06_Control_Tiers.md) page is generated from a Tier field in each control record, and the link check requires the ten Builder Track controls to be Baseline. Separately, totals such as the number of test cases, layers, controls and risks are now computed from the source at build time (`counts.py`) and written in pages as placeholders, so they cannot drift; the link check fails on a hand-typed total. Per-layer counts inside the test-method table in the Test Case Library index are still typed by hand.
+
+## 16 October 2026: Regional verification and a freeze on new regions
+
+India, the GCC and the EU were checked against primary texts where the texts could be fetched. India: the DPDP Act, the DPDP Rules (G.S.R. 846(E), phased commencement dates), the AI Governance Guidelines, the RBI FREE-AI report, the RBI draft model risk guidance and the CERT-In directions are now `[Verified]`; the IT Rules synthetic-content amendment and the SEBI amendments stay `[Reported]`; the IRDAI AI directive could not be confirmed and is `[Unverified]`. GCC: the UAE data protection law (article numbers) is `[Verified]`. The original EU AI Act Article 113 could not be retrieved, so those dates keep their earlier tags. Nothing outside these three sections was checked. New regions are frozen until the others are verified (see CONTRIBUTING.md).
+
+## 16 October 2026: Builder Track
+
+A review of the wiki found that it said well what to look for in an agent but gave builders little on how to secure one. The practitioner pages were short (the agentic standard is a single table) and there was no code anywhere in the wiki. The updates on this date work through that gap in order. This section covers the first.
+
+### What is new
+
+- **Standard Fields:** wording that repeated in most of the 668 test cases (scoring, pass and fail criteria, reviewer notes, standard evidence, and the lab setup for each layer) now lives once on the [Standard Fields](../10_Test_Case_Library/standard-fields.md) page, generated from `standard-fields.json`. A case shows a field only when it differs. This removes about 1.2 MB of repeated Markdown (about 42 percent of the case text) and 5,715 field entries; the cases now read as what is unique to each.
+- **Payload Kit:** a new page, [Payload Kit](../10_Test_Case_Library/payload-kit.md), with a `kit/` folder of attack and legitimate-request sets for 36 of the 169 Critical test cases (all Critical cases in L06, L07 and L11 that a payload can test, plus selected L08, L09 and L10 cases) and a runner that compares an unprotected build with a protected one. Each covered case links to its payload file.
+- **Test Your Own Application:** a new page, [Test Your Own Application](../10_Test_Case_Library/test-your-own-app.md), that restates the testing for an owner who can change the code. It drops the product and provider language, explains the setup, includes an adapter template, and gives a plain procedure for each of the 36 payload-kit cases.
+- **Builder Track:** a new section with one page, [Secure Your First Agent: Ten Controls With Code](../24_Builder_Track/01_Secure_Your_First_Agent.md). It sets out ten controls in build order, each tied to an existing control objective, with working configuration and code for tool allow-lists, argument validation, scoped short-lived credentials, sandboxing, egress limits and approval gates.
+- **Reference code:** the [`code/`](../24_Builder_Track/index.md#the-code) folder holds a guard, a sandbox wrapper, an allow-list egress proxy, container and Kubernetes settings, a policy file, and a demo in which a hijacked agent is stopped at every step. It uses only the Python standard library.
+
+### What was checked
+
+- For the Standard Fields change, every field of every case was rebuilt from its explicit text or the standard for its test method, kind of case or layer and compared with the original. All matched, so no wording was lost or altered. The link check now fails if a case repeats a standard word for word, and a deliberate repeat was used to confirm it does.
+- The payload kit runner and stand-in applications have a test suite (38 tests). Eight deliberate breakages of the runner's judging were each caught. Against the stand-ins, the tool-governance cases pass and the cases that depend on what a model says fail, as expected; the resource-limit sandbox fails three of five probes.
+- The Python code was run on Python 3.13 on Linux. The test suite passes, with one test skipped where the environment can already remove the network.
+- To confirm that the tests protect something, twelve of the protective checks (path confinement, approval matching, self-approval, token signature, definition pinning, scope widening, private-address blocking, audit chain, child revocation, and the proxy's host, address and port checks) were switched off one at a time. The tests failed each time.
+- A test checks that every code excerpt on the page appears word for word in the file it names.
+
+### What is still work in progress
+
+- The 36-case payload kit covers 36 of 169 Critical cases. The others are inventory, evidence, configuration or infrastructure checks, or need a browser, voice or training pipeline. It does not measure time, and its payloads were run only against a stand-in application, not against any real model or product.
+- The Docker command and the Kubernetes manifest were not executed, because no container runtime was available. Their settings come from standard documented options and need to be checked against the versions you run.
+- The reference code has not been through an independent security review.
+
 ## 15 October 2026: component ownership
 
 This update compared the wiki's 17 layers with a nine-part list of AI application stack components: LLMs, agents, embeddings, RAG, AI security, MCP and tools, observability, vector databases and memory. Each part came with an ownership question, such as "who decides which models are approved for use?". The original source of that list was not verified. Every part already had a home in the 17 layers, but the wiki answered only two of the nine ownership questions in full. Agent memory had no owner at all, and observability covered security incidents but not quality failures.

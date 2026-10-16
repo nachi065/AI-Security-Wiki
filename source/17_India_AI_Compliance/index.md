@@ -32,6 +32,7 @@ India has no standalone AI law. Binding duties come from the DPDP Act and Rules 
 
 | Tag | Meaning |
 |---|---|
+| **[Verified]** | Read in the primary text (statute, rules, regulator document) on 16 October 2026. The source and retrieval date are in the crosswalk. Only the facts listed in the row were checked. |
 | **[Reported]** | Stated by secondary web sources found on 7 October 2026 (law-firm notes, vendor blogs, research notes). Not read in the primary text. |
 | **[Recalled]** | Stated from memory of the law or guidance and not re-checked. Verify before citing it. |
 | **[Conflict]** | Secondary sources disagree. Resolve from the primary text. |

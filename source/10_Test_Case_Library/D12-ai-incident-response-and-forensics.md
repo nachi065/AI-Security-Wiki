@@ -19,6 +19,8 @@ nav_order: 25
 
 > **How this relates to the layer cases.** Domain cases cross-reference the layer cases they build on (see **Related Layer Cases** in each case). The layer case tests the platform control; the domain case tests the buyer concern from the domain's own point of view. Verify all ATLAS, OWASP and NIST identifiers before use, and treat numeric thresholds as starting values.
 
+> **Standard fields.** A field that a case does not show, such as scoring, pass and fail criteria, reviewer notes, standard evidence or the lab setup, uses the wording on the [Standard Fields](standard-fields.md) page.
+
 ## Cases in this domain
 
 | ID | Title | Severity | Method | Controls |
@@ -73,8 +75,6 @@ nav_order: 25
 
 **Technical Scenario.** Configure the taxonomy and run twelve scripted events through classification.
 
-**Preconditions.** Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.
-
 **Test Data.** 12 scripted events: prompt-injection data leak, agent taking an unapproved action, poisoned knowledge document, model update causing unsafe outputs, harmful output reaching a customer, biased decision pattern, supply chain compromise of a component, credential theft, runaway cost event, outage of an AI service, privacy complaint about an output, near-miss blocked attack; severity criteria (impact, scope, data, reversibility) and categories set by the assessor.
 
 **Procedure**
@@ -93,25 +93,11 @@ nav_order: 25
 
 **Expected Prevention / Control Action.** Route by severity.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.
-
 **Expected Integration Evidence.** Taxonomy export to ticketing and SIEM.
-
-**Forensic Evidence.** Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Classification comparison.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to domain index](#top)
 
@@ -140,8 +126,6 @@ nav_order: 25
 
 **Technical Scenario.** Submit reports through each intake route and track handling.
 
-**Preconditions.** Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.
-
 **Test Data.** 6 routes: platform alert, in-application report of harmful or wrong output, staff email or form, customer complaint, provider notice, regulator or media enquiry (simulated); 18 reports with different severity, 3 duplicates, 2 incomplete.
 
 **Procedure**
@@ -160,25 +144,9 @@ nav_order: 25
 
 **Expected Prevention / Control Action.** Triage.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.
-
 **Expected Integration Evidence.** Ticketing integration.
 
-**Forensic Evidence.** Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Intake record table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -207,8 +175,6 @@ nav_order: 25
 
 **Technical Scenario.** Run six scripted incidents through type-specific runbooks and measure completeness and time to scope.
 
-**Preconditions.** Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.
-
 **Test Data.** 6 runbooks: injection with data leak, agent misuse, poisoned retrieval source, model regression, harmful output, vendor or model-provider incident; 6 scripted incidents with ground-truth causes; 2 responders.
 
 **Procedure**
@@ -227,25 +193,9 @@ nav_order: 25
 
 **Expected Prevention / Control Action.** Guided response.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.
-
 **Expected Integration Evidence.** Runbook export.
 
-**Forensic Evidence.** Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Exercise log.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -274,8 +224,6 @@ nav_order: 25
 
 **Technical Scenario.** Run an application through a change history, trigger an incident and capture state at the time.
 
-**Preconditions.** Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.
-
 **Test Data.** 1 application with 6 changes over a simulated month (model version, system prompt edits, tool added, guardrail rule changed, retrieval setting changed, policy changed); incident at a known time.
 
 **Procedure**
@@ -294,25 +242,11 @@ nav_order: 25
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.
-
 **Expected Integration Evidence.** Export for case file.
-
-**Forensic Evidence.** Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** State snapshot; comparison with change record.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -341,8 +275,6 @@ nav_order: 25
 
 **Technical Scenario.** Modify a lab knowledge base over time and reconstruct its state at the incident time.
 
-**Preconditions.** Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.
-
 **Test Data.** 1 RAG application; 200 documents; 30 changes over a simulated month (additions, edits, deletions, permission changes); incident at a known time involving a poisoned document later removed.
 
 **Procedure**
@@ -361,25 +293,11 @@ nav_order: 25
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.
-
 **Expected Integration Evidence.** Export.
-
-**Forensic Evidence.** Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Reconstruction comparison.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -408,8 +326,6 @@ nav_order: 25
 
 **Technical Scenario.** Run five conversations with memory, retrieval and tool calls and reconstruct the model inputs.
 
-**Preconditions.** Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.
-
 **Test Data.** 5 conversations: with persistent memory entries, with retrieved chunks from 3 documents, with 2 tool results, with a system prompt update mid-session, with a truncated context; incident on one response.
 
 **Procedure**
@@ -428,25 +344,11 @@ nav_order: 25
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.
-
 **Expected Integration Evidence.** Export.
-
-**Forensic Evidence.** Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Reconstruction table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -475,8 +377,6 @@ nav_order: 25
 
 **Technical Scenario.** Replay five recorded incidents using pinned versions and settings.
 
-**Preconditions.** Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.
-
 **Test Data.** 5 recorded incidents; settings captured: model version, parameters (temperature, seed where available), prompts, retrieved content, tool results (mocked from record); lab-hosted model and a hosted provider model.
 
 **Procedure**
@@ -495,25 +395,11 @@ nav_order: 25
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.
-
 **Expected Integration Evidence.** Export.
-
-**Forensic Evidence.** Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Replay comparison.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -542,8 +428,6 @@ nav_order: 25
 
 **Technical Scenario.** Run six scripted incidents with different true causes and check attribution quality.
 
-**Preconditions.** Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.
-
 **Test Data.** 6 incidents: external injection attack, insider misuse, misconfigured access, provider model regression, poisoned data, user error; ground-truth cause for each; 3 investigators.
 
 **Procedure**
@@ -562,25 +446,11 @@ nav_order: 25
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.
-
 **Expected Integration Evidence.** Case export.
-
-**Forensic Evidence.** Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Attribution table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -609,8 +479,6 @@ nav_order: 25
 
 **Technical Scenario.** Run three incidents of increasing reach and compare the platform's scope with ground truth.
 
-**Preconditions.** Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.
-
 **Test Data.** 3 incidents: single user data leak, shared knowledge source poisoned (30 users affected), agent action across 3 systems; ground-truth lists of users, records, outputs and systems.
 
 **Procedure**
@@ -629,25 +497,11 @@ nav_order: 25
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.
-
 **Expected Integration Evidence.** Export for notification workflow.
-
-**Forensic Evidence.** Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Scope vs ground truth.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -676,8 +530,6 @@ nav_order: 25
 
 **Technical Scenario.** Generate a false output and let it flow into lab systems, then trace and recall.
 
-**Preconditions.** Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.
-
 **Test Data.** 1 false output (fabricated policy statement) produced for 6 users; copies: saved in 4 documents, pasted in 3 tickets, sent in 2 emails, quoted in 1 customer message (all lab); output fingerprinting enabled.
 
 **Procedure**
@@ -696,25 +548,9 @@ nav_order: 25
 
 **Expected Prevention / Control Action.** Notify or recall.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.
-
 **Expected Integration Evidence.** Integration with document and messaging systems where available.
 
-**Forensic Evidence.** Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Copy table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -743,8 +579,6 @@ nav_order: 25
 
 **Technical Scenario.** Present four incidents and have responders choose and execute containment.
 
-**Preconditions.** Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.
-
 **Test Data.** 4 incidents: injection leak from a tool-using agent, poisoned index, model regression, compromised key; catalogue of actions (disable tool, roll back model, quarantine documents, revoke token, block user, disable feature, change guardrail); impact descriptions per action.
 
 **Procedure**
@@ -764,25 +598,9 @@ nav_order: 25
 
 **Expected Prevention / Control Action.** Contain.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.
-
 **Expected Integration Evidence.** Actions through APIs.
 
-**Forensic Evidence.** Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Action log.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -811,8 +629,6 @@ nav_order: 25
 
 **Technical Scenario.** Run three incidents through eradication and recovery with gating checks.
 
-**Preconditions.** Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.
-
 **Test Data.** 3 incidents: poisoned document in an index, stolen credential, weakened guardrail after a change; recovery checklist; regression pack from earlier attack tests (D08).
 
 **Procedure**
@@ -831,25 +647,9 @@ nav_order: 25
 
 **Expected Prevention / Control Action.** Gate recovery.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.
-
 **Expected Integration Evidence.** Evidence export.
 
-**Forensic Evidence.** Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Checklist; regression results.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -878,8 +678,6 @@ nav_order: 25
 
 **Technical Scenario.** Seed a dataset with poisoned records, train and index, then investigate from a symptom.
 
-**Preconditions.** Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.
-
 **Test Data.** Dataset of 3,000 records with 30 poisoned records from one source; 2 fine-tuned models and 1 index built from it; symptom: a benign trigger phrase producing a marker response.
 
 **Procedure**
@@ -898,25 +696,9 @@ nav_order: 25
 
 **Expected Prevention / Control Action.** Quarantine data and artefacts.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.
-
 **Expected Integration Evidence.** Lineage export.
 
-**Forensic Evidence.** Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Trace table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -945,8 +727,6 @@ nav_order: 25
 
 **Technical Scenario.** Simulate a model update that degrades behaviour and run the incident.
 
-**Preconditions.** Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.
-
 **Test Data.** Mock provider with versions A and B; 40 canary prompts; behaviour regression on 8 of them after the switch; 2 dependent applications.
 
 **Procedure**
@@ -965,25 +745,9 @@ nav_order: 25
 
 **Expected Prevention / Control Action.** Pin or roll back.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.
-
 **Expected Integration Evidence.** Evidence package export.
 
-**Forensic Evidence.** Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Canary comparison.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -1012,8 +776,6 @@ nav_order: 25
 
 **Technical Scenario.** Run an incident in which an AI-supported process gave wrong outcomes to fabricated individuals.
 
-**Preconditions.** Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.
-
 **Test Data.** 1 scenario: eligibility assistant gave wrong guidance to 40 fabricated applicants over 3 days; 12 of them acted on it; outcomes recorded; harm categories set by the assessor.
 
 **Procedure**
@@ -1032,25 +794,11 @@ nav_order: 25
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.
-
 **Expected Integration Evidence.** Export for the privacy and legal teams.
-
-**Forensic Evidence.** Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Assessment record.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -1079,8 +827,6 @@ nav_order: 25
 
 **Technical Scenario.** Run two incidents through the notification decision process with parameters supplied by the assessor.
 
-**Preconditions.** Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.
-
 **Test Data.** 2 incidents (personal data exposure of 120 fabricated individuals; unsafe advice to customers); timelines and criteria entered by the assessor from the adopted framework; templates for regulator, affected individuals, customers and staff.
 
 **Procedure**
@@ -1099,25 +845,9 @@ nav_order: 25
 
 **Expected Prevention / Control Action.** Escalate.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.
-
 **Expected Integration Evidence.** Export to legal file.
 
-**Forensic Evidence.** Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Decision file.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -1146,8 +876,6 @@ nav_order: 25
 
 **Technical Scenario.** Run a mock joint incident with a provider contact and review the contract terms.
 
-**Preconditions.** Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.
-
 **Test Data.** 2 mock providers; incident requiring provider logs and a fix; contract terms for notice, cooperation, evidence and service levels; provider contact list.
 
 **Procedure**
@@ -1166,25 +894,9 @@ nav_order: 25
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.
-
 **Expected Integration Evidence.** Documents attached.
 
-**Forensic Evidence.** Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Request log; response times.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to domain index](#top)
 
@@ -1213,8 +925,6 @@ nav_order: 25
 
 **Technical Scenario.** Collect evidence from a scripted incident and check handling.
 
-**Preconditions.** Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.
-
 **Test Data.** Evidence set: 30 log extracts, 1 prompt version, 1 model configuration, 1 index snapshot, 1 policy export, 5 screenshots; 3 handlers.
 
 **Procedure**
@@ -1233,25 +943,9 @@ nav_order: 25
 
 **Expected Prevention / Control Action.** Preserve.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.
-
 **Expected Integration Evidence.** Export.
 
-**Forensic Evidence.** Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Custody report.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -1280,8 +974,6 @@ nav_order: 25
 
 **Technical Scenario.** Test forensic roles and approvals on a seeded case.
 
-**Preconditions.** Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.
-
 **Test Data.** 3 roles (responder, investigator, privacy reviewer); case with 40 conversations containing fabricated personal data; approval workflow for unmasking.
 
 **Procedure**
@@ -1300,25 +992,9 @@ nav_order: 25
 
 **Expected Prevention / Control Action.** Restrict.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.
-
 **Expected Integration Evidence.** Audit export.
 
-**Forensic Evidence.** Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Role test table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -1347,8 +1023,6 @@ nav_order: 25
 
 **Technical Scenario.** Run root-cause analysis on four closed lab incidents and test the method.
 
-**Preconditions.** Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.
-
 **Test Data.** 4 incidents; factor categories (model, data, prompt, tool, access, process, vendor, human); 2 incidents with a common underlying cause.
 
 **Procedure**
@@ -1367,25 +1041,9 @@ nav_order: 25
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.
-
 **Expected Integration Evidence.** Export.
 
-**Forensic Evidence.** Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Analysis records.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to domain index](#top)
 
@@ -1414,8 +1072,6 @@ nav_order: 25
 
 **Technical Scenario.** Generate blocked attacks and near-misses and test capture and review.
 
-**Preconditions.** Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.
-
 **Test Data.** 60 blocked events (injection, exfiltration attempts, policy evasion) and 5 near-misses (action prevented at the last step); weekly review.
 
 **Procedure**
@@ -1434,25 +1090,11 @@ nav_order: 25
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.
-
 **Expected Integration Evidence.** Export.
-
-**Forensic Evidence.** Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Review record.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -1481,8 +1123,6 @@ nav_order: 25
 
 **Technical Scenario.** Load 12 months of simulated incidents and check indicators against hand calculation.
 
-**Preconditions.** Isolated PoC lab provisioned; lab AI applications with versioned prompts, models and indexes, lab SIEM and case tools, scripted incident scenarios with ground truth and test responders seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab AI applications (chatbot, RAG assistant, tool-using agent) with versioned prompts, models and indexes; a lab SIEM, ticketing and case tool; scripted incident scenarios with known ground truth; test responders, an investigator and a legal reviewer; no production systems, real incidents or real personal data.
-
 **Test Data.** 60 simulated incidents across types and severities; indicators: count by type, mean time to detect, mean time to contain, mean time to recover, recurrence rate, notification rate, cost estimate; calculation sheet.
 
 **Procedure**
@@ -1501,25 +1141,9 @@ nav_order: 25
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Incident, evidence and case state visible in the incident response workspace within the documented refresh interval.
-
 **Expected Integration Evidence.** Report export.
 
-**Forensic Evidence.** Incident, evidence and case identifiers with component versions, actors, decisions, approvals, hashes and timestamps exportable for investigation and audit.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Indicator table.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to domain index](#top)
 

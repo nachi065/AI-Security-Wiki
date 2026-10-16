@@ -1,0 +1,927 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Secure Your First Agent: Ten Controls With Code | AI Security Wiki</title>
+<meta name="author" content="Nachiket Sathaye">
+<meta name="description" content="Ten controls for a first tool-using AI agent, in build order, with working configuration and code for tool allow-lists, argument validation, scoped short-lived credentials, sandboxing, egress limits and approval gates.">
+<link rel="canonical" href="https://nachi065.github.io/AI-Security-Wiki/24_Builder_Track/01_Secure_Your_First_Agent.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="AI Security Wiki">
+<meta property="og:title" content="Secure Your First Agent: Ten Controls With Code | AI Security Wiki">
+<meta property="og:description" content="Ten controls for a first tool-using AI agent, in build order, with working configuration and code for tool allow-lists, argument validation, scoped short-lived credentials, sandboxing, egress limits and approval gates.">
+<meta property="og:url" content="https://nachi065.github.io/AI-Security-Wiki/24_Builder_Track/01_Secure_Your_First_Agent.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../assets/style.css?v=8368346b">
+</head>
+<body style="--h:42">
+<header class="topbar">
+  <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+  <a class="brand" href="../index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>AI Security Wiki</a>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Search the wiki" aria-label="Search the wiki" autocomplete="off">
+    <ul id="search-results" hidden></ul>
+  </div>
+  <a class="repo-link" href="https://github.com/nachi065/AI-Security-Wiki" rel="noopener">GitHub</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="sidebar" aria-label="Wiki sections">
+<ul class="nav">
+<li><a href="../index.html">Home</a></li>
+<li style="--h:42"><details open><summary><a href="index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.6-.6-2.6z"/></svg>Builder Track</a></summary><ul>
+<li><a class="current" href="01_Secure_Your_First_Agent.html">Secure Your First Agent: Ten Controls With Code</a></li>
+</ul></details></li>
+<li style="--h:255"><details><summary><a href="../00_Foundations/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h7a2 2 0 0 1 2 2v12a2 2 0 0 0-2-2H3zM21 5h-7a2 2 0 0 0-2 2v12a2 2 0 0 1 2-2h7z"/></svg>Foundations</a></summary><ul>
+<li><a href="../00_Foundations/01-Terminology-and-Two-Axis-Model.html">1. Terminology and the Two-Axis Model</a></li>
+<li><a href="../00_Foundations/02-AI-System-Boundary-and-Assets.html">2. The AI System Boundary and Assets</a></li>
+<li><a href="../00_Foundations/03-Threat-Taxonomy.html">3. Threat Taxonomy</a></li>
+<li><a href="../00_Foundations/04-LLMs-Prompt-Injection-and-RAG.html">4. LLMs, Prompt Injection and RAG</a></li>
+<li><a href="../00_Foundations/05-Agents-Identity-and-Excessive-Agency.html">5. Agents, Identity and Excessive Agency</a></li>
+<li><a href="../00_Foundations/06-Supply-Chain-and-Infrastructure.html">6. Supply Chain and Infrastructure</a></li>
+<li><a href="../00_Foundations/07-Reference-Architecture.html">7. Reference Architecture</a></li>
+<li><a href="../00_Foundations/08-Assurance-Testing-Monitoring-and-Response.html">8. Assurance: Testing, Monitoring and Response</a></li>
+<li><a href="../00_Foundations/09-Governance-Standards-and-Regulation.html">9. Governance, Standards and Regulation</a></li>
+<li><a href="../00_Foundations/10-AI-for-Security-and-AI-Enabled-Threats.html">10. AI for Security and AI-Enabled Threats</a></li>
+<li><a href="../00_Foundations/11-Maturity-Model-and-Roadmap.html">11. Maturity Model and Roadmap</a></li>
+<li><a href="../00_Foundations/12-Illustrative-Scenarios.html">12. Illustrative Scenarios</a></li>
+<li><a href="../00_Foundations/13-Limitations-and-Research-Gaps.html">13. Limitations and Research Gaps</a></li>
+<li><a href="../00_Foundations/Appendices.html">Appendices</a></li>
+<li><a href="../00_Foundations/References.html">References</a></li>
+</ul></details></li>
+<li style="--h:205"><details><summary><a href="../01_Strategy_and_Market/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg>Strategy and Market</a></summary><ul>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.html">AI Security Market and Technology Landscape: Summary</a></li>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape_Expanded.html">AI Security Market and Technology Landscape</a></li>
+</ul></details></li>
+<li style="--h:8"><details><summary><a href="../02_Risk_Management/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l9 16H3z"/><path d="M12 10v4M12 17v.5"/></svg>Risk Management</a></summary><ul>
+<li><a href="../02_Risk_Management/02A_AI_Risk_Methodology.html">AI Risk Methodology</a></li>
+<li><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a></li>
+<li><a href="../02_Risk_Management/02C_AI_Risk_Treatment_Plan.html">AI Risk Treatment Plan</a></li>
+<li><a href="../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a></li>
+<li><a href="../02_Risk_Management/02E_AI_Risk_Review_Template.html">AI Risk Review Template</a></li>
+<li><a href="../02_Risk_Management/02F_AI_Use_Case_Risk_Triage.html">AI Use-Case Risk Triage</a></li>
+<li><a href="../02_Risk_Management/02G_Risk_Control_Test_Traceability.html">Risk, Control and Test Traceability</a></li>
+</ul></details></li>
+<li style="--h:165"><details><summary><a href="../03_Control_Library/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>Control Library</a></summary><ul>
+<li><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></li>
+<li><a href="../03_Control_Library/04_Existing_Security_Control_Baseline.html">Existing Security Control Baseline</a></li>
+<li><a href="../03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.html">Microsoft Security Overlap and AI Gaps</a></li>
+<li><a href="../03_Control_Library/06_Control_Tiers.html">Control Tiers</a></li>
+</ul></details></li>
+<li style="--h:280"><details><summary><a href="../04_Domain_Standards/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 12l9 5 9-5M3 16l9 5 9-5"/></svg>Domain Standards</a></summary><ul>
+<li><a href="../04_Domain_Standards/06_Browser_AI_Security_Standard.html">Browser AI Security Standard</a></li>
+<li><a href="../04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.html">IDE AI Coding Assistant Security Standard</a></li>
+<li><a href="../04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a></li>
+<li><a href="../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
+<li><a href="../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
+<li><a href="../04_Domain_Standards/10B_Sector_Overlays.html">Sector Overlays: Financial Services, Insurance, Health and Government</a></li>
+</ul></details></li>
+<li style="--h:32"><details><summary><a href="../05_Vendor_Evaluation/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Vendor Evaluation</a></summary><ul>
+<li><a href="../05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
+</ul></details></li>
+<li style="--h:325"><details><summary><a href="../06_Testing_and_Assurance/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/><path d="M7.5 15h9"/></svg>Testing and Assurance</a></summary><ul>
+<li><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html">AI Security PoC Test Case Library</a></li>
+<li><a href="../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a></li>
+<li><a href="../06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.html">AI Red Team Playbook</a></li>
+</ul></details></li>
+<li style="--h:188"><details><summary><a href="../07_Role_Based_Playbooks/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.8.3 5 2.7 5 5.8"/></svg>Role-Based Playbooks</a></summary><ul>
+<li><a href="../07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.html">AI Product Developer Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15B_AI_Security_Researcher_Playbook.html">AI Security Researcher Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15D_Security_Engineering_Playbook.html">Security Engineering Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15E_Vendor_Evaluation_and_Audit_Playbook.html">Vendor Evaluation and Audit Playbook</a></li>
+</ul></details></li>
+<li style="--h:228"><details><summary><a href="../08_Governance/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-5 9 5M5 9v9M9.5 9v9M14.5 9v9M19 9v9M3 20h18"/></svg>Governance</a></summary><ul>
+<li><a href="../08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></li>
+<li><a href="../08_Governance/17_AI_Policy_Standards_and_Acceptable_Use.html">AI Policy, Standards and Acceptable Use</a></li>
+</ul></details></li>
+<li style="--h:145"><details><summary><a href="../10_Test_Case_Library/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l1.5 1.5L8 5M4 12l1.5 1.5L8 11M4 18l1.5 1.5L8 17M11 6h9M11 12h9M11 18h9"/></svg>Test Case Library</a></summary><ul>
+<li><a href="../10_Test_Case_Library/00-reference-index.html">Reference Index</a></li>
+<li><a href="../10_Test_Case_Library/framework-adoption-guide.html">Framework Adoption Guide</a></li>
+<li><a href="../10_Test_Case_Library/appendix-lab-prerequisites.html">Appendix: Lab Prerequisites</a></li>
+<li><a href="../10_Test_Case_Library/L01-business-and-use-cases.html">L01 Business &amp; Use Cases</a></li>
+<li><a href="../10_Test_Case_Library/payload-kit.html">Payload Kit: Runnable Attack Sets for Critical Cases</a></li>
+<li><a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
+<li><a href="../10_Test_Case_Library/test-your-own-app.html">Test Your Own Application</a></li>
+<li><a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>
+<li><a href="../10_Test_Case_Library/standard-fields.html">Standard Fields</a></li>
+<li><a href="../10_Test_Case_Library/L04-human-interaction-layer.html">L04 Human Interaction Layer</a></li>
+<li><a href="../10_Test_Case_Library/L05-ai-applications.html">L05 AI Applications</a></li>
+<li><a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html">L06 Agent Orchestration Layer</a></li>
+<li><a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html">L07 Prompt &amp; Context Layer</a></li>
+<li><a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html">L08 AI Gateway &amp; Security Controls</a></li>
+<li><a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html">L09 Identity &amp; Access Mgmt</a></li>
+<li><a href="../10_Test_Case_Library/L10-data-layer.html">L10 Data Layer</a></li>
+<li><a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html">L11 Knowledge &amp; Retrieval Layer</a></li>
+<li><a href="../10_Test_Case_Library/L12-model-layer.html">L12 Model Layer</a></li>
+<li><a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html">L13 Training &amp; Fine-Tuning Layer</a></li>
+<li><a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html">L14 MLOps / LLMOps Layer</a></li>
+<li><a href="../10_Test_Case_Library/L15-infrastructure-layer.html">L15 Infrastructure Layer</a></li>
+<li><a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html">L16 Supply Chain &amp; Third Party</a></li>
+<li><a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html">L17 Monitoring, Detection &amp; Response</a></li>
+<li><a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html">D08 AI Red Teaming and Continuous Testing</a></li>
+<li><a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html">D09 Agent and Non-Human Identity Governance</a></li>
+<li><a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html">D10 Browser and Computer-Use Agents</a></li>
+<li><a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html">D11 Multimodal and Voice Input Security</a></li>
+<li><a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html">D12 AI Incident Response and Forensics</a></li>
+<li><a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html">D13 AI Cost and Abuse Controls</a></li>
+</ul></details></li>
+<li><details><summary><span class="nav-group"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg>Regional AI Regulatory Hub</span></summary><ul>
+<li style="--h:60"><details><summary><a href="../11_GCC_AI_Compliance/index.html"><span class="icon emblem-gcc" aria-hidden="true"></span>GCC AI Compliance</a></summary><ul>
+<li><a href="../11_GCC_AI_Compliance/01_GCC_AI_Regulatory_Hub.html">GCC AI Regulatory Hub</a></li>
+<li><a href="../11_GCC_AI_Compliance/02_Guide_AI_Practitioners.html">Guide for AI Practitioners in the GCC</a></li>
+<li><a href="../11_GCC_AI_Compliance/03_Guide_Product_Companies.html">Guide for AI Product Companies Selling into the GCC</a></li>
+<li><a href="../11_GCC_AI_Compliance/04_Guide_Auditors.html">Guide for Auditors of AI Systems in the GCC</a></li>
+<li><a href="../11_GCC_AI_Compliance/05_Guide_Implementors.html">Guide for Implementors: Building an AI Governance Programme in the GCC</a></li>
+<li><a href="../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.html">GCC Drivers for AI-CTRL-041: Fairness, Bias Testing and Explainability</a></li>
+<li><a href="../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.html">Regulatory Crosswalk</a></li>
+<li><a href="../11_GCC_AI_Compliance/08_Evidence_Register.html">Evidence Register</a></li>
+<li><a href="../11_GCC_AI_Compliance/T01_AI_Use_Case_Intake_and_Risk_Tiering.html">T01 AI Use-Case Intake and Risk Tiering</a></li>
+<li><a href="../11_GCC_AI_Compliance/T02_AI_Impact_Assessment.html">T02 AI Impact Assessment</a></li>
+<li><a href="../11_GCC_AI_Compliance/T03_Vendor_Due_Diligence_GCC_Addendum.html">T03 Vendor Due-Diligence GCC Addendum</a></li>
+<li><a href="../11_GCC_AI_Compliance/T04_Data_Residency_Attestation.html">T04 Data Residency and Sovereignty Attestation</a></li>
+<li><a href="../11_GCC_AI_Compliance/T05_AI_Incident_and_Breach_Notification_Workflow.html">T05 AI Incident and Breach Notification Workflow</a></li>
+<li><a href="../11_GCC_AI_Compliance/T06_Bilingual_AI_Use_Notice.html">T06 Bilingual AI Use Notice (Arabic and English)</a></li>
+<li><a href="../11_GCC_AI_Compliance/T07_Ethics_Self_Assessment_Worksheet.html">T07 AI Ethics Self-Assessment Worksheet</a></li>
+<li><a href="../11_GCC_AI_Compliance/T08_Audit_Checklist.html">T08 AI Audit Checklist</a></li>
+<li><a href="../11_GCC_AI_Compliance/T09_AI_System_Inventory.html">T09 AI Model and System Inventory</a></li>
+<li><a href="../11_GCC_AI_Compliance/T10_Bias_Testing_Record.html">T10 Bias Testing Record</a></li>
+<li><a href="../11_GCC_AI_Compliance/T11_Regulator_Engagement_Log.html">T11 Regulator and Ethics-Body Engagement Log</a></li>
+<li><a href="../11_GCC_AI_Compliance/T12_Risk_Register_4x4.html">T12 AI Risk Register (4x4)</a></li>
+</ul></details></li>
+<li style="--h:225"><details><summary><a href="../12_EU_AI_Compliance/index.html"><svg class="icon flag" viewBox="0 0 24 24" aria-hidden="true"><svg x="2" y="5" width="20" height="14" viewBox="0 0 20 14"><rect width="20" height="14" fill="#003399"/><circle cx="14.3" cy="7" r=".75" fill="#ffcc00"/><circle cx="13.72" cy="9.15" r=".75" fill="#ffcc00"/><circle cx="12.15" cy="10.72" r=".75" fill="#ffcc00"/><circle cx="10" cy="11.3" r=".75" fill="#ffcc00"/><circle cx="7.85" cy="10.72" r=".75" fill="#ffcc00"/><circle cx="6.28" cy="9.15" r=".75" fill="#ffcc00"/><circle cx="5.7" cy="7" r=".75" fill="#ffcc00"/><circle cx="6.28" cy="4.85" r=".75" fill="#ffcc00"/><circle cx="7.85" cy="3.28" r=".75" fill="#ffcc00"/><circle cx="10" cy="2.7" r=".75" fill="#ffcc00"/><circle cx="12.15" cy="3.28" r=".75" fill="#ffcc00"/><circle cx="13.72" cy="4.85" r=".75" fill="#ffcc00"/></svg><rect x="2" y="5" width="20" height="14" fill="none" stroke="#000" stroke-opacity=".3" stroke-width=".6"/></svg>EU AI Compliance</a></summary><ul>
+<li><a href="../12_EU_AI_Compliance/01_EU_AI_Regulatory_Hub.html">EU AI Regulatory Hub</a></li>
+<li><a href="../12_EU_AI_Compliance/02_Guide_AI_Practitioners.html">Guide for AI Practitioners Working Under EU Rules</a></li>
+<li><a href="../12_EU_AI_Compliance/03_Guide_Product_Companies.html">Guide for AI Product Companies Selling into the EU</a></li>
+<li><a href="../12_EU_AI_Compliance/04_Guide_Auditors.html">Guide for Auditors of AI Systems Under EU Rules</a></li>
+<li><a href="../12_EU_AI_Compliance/05_Guide_Implementors.html">Guide for Implementors: Building an EU AI Governance Programme</a></li>
+<li><a href="../12_EU_AI_Compliance/06_Proposed_Control_Fundamental_Rights_Impact_Assessment.html">EU Drivers for AI-CTRL-041 and AI-CTRL-042</a></li>
+<li><a href="../12_EU_AI_Compliance/07_Regulatory_Crosswalk.html">EU Regulatory Crosswalk</a></li>
+<li><a href="../12_EU_AI_Compliance/08_Evidence_Register.html">EU Evidence Register</a></li>
+<li><a href="../12_EU_AI_Compliance/T01_AI_System_Classification.html">T01 AI System Classification (Role and Risk Tier)</a></li>
+<li><a href="../12_EU_AI_Compliance/T02_Impact_Assessment_FRIA_DPIA.html">T02 Impact Assessment (FRIA and DPIA Combined)</a></li>
+<li><a href="../12_EU_AI_Compliance/T03_Supplier_Due_Diligence_EU_Addendum.html">T03 Supplier Due-Diligence EU Addendum</a></li>
+<li><a href="../12_EU_AI_Compliance/T04_Data_Location_and_Transfer_Record.html">T04 Data Location and International Transfer Record</a></li>
+<li><a href="../12_EU_AI_Compliance/T05_AI_Incident_and_Breach_Reporting_Workflow.html">T05 AI Incident and Breach Reporting Workflow (EU)</a></li>
+<li><a href="../12_EU_AI_Compliance/T06_Transparency_Notice.html">T06 Transparency Notice (AI Act Article 50 and GDPR)</a></li>
+<li><a href="../12_EU_AI_Compliance/T07_AI_Literacy_Programme_Record.html">T07 AI Literacy Programme Record</a></li>
+<li><a href="../12_EU_AI_Compliance/T08_Audit_Checklist.html">T08 AI Audit Checklist (EU)</a></li>
+<li><a href="../12_EU_AI_Compliance/T09_AI_System_Inventory.html">T09 AI System Inventory (EU)</a></li>
+<li><a href="../12_EU_AI_Compliance/T10_Technical_Documentation_and_Conformity_Checklist.html">T10 Technical Documentation Index and Conformity Checklist</a></li>
+<li><a href="../12_EU_AI_Compliance/T11_Authority_and_Standards_Engagement_Log.html">T11 Authority and Standards Engagement Log</a></li>
+<li><a href="../12_EU_AI_Compliance/T12_GPAI_Model_Checklist.html">T12 General-Purpose AI Model Checklist</a></li>
+</ul></details></li>
+<li style="--h:195"><details><summary><a href="../13_Australia_AI_Compliance/index.html"><svg class="icon flag" viewBox="0 0 24 24" aria-hidden="true"><svg x="2" y="5" width="20" height="14" viewBox="0 0 20 14"><rect width="20" height="14" fill="#012169"/><path d="M0 3.5h10M5 0v7" stroke="#fff" stroke-width="1.9"/><path d="M0 3.5h10M5 0v7" stroke="#e4002b" stroke-width=".9"/><circle cx="5" cy="10.5" r="1.3" fill="#fff"/><circle cx="15" cy="3" r=".8" fill="#fff"/><circle cx="17.5" cy="5.5" r=".8" fill="#fff"/><circle cx="15" cy="10.5" r=".8" fill="#fff"/><circle cx="12.8" cy="6.5" r=".8" fill="#fff"/><circle cx="16.2" cy="7.6" r=".5" fill="#fff"/></svg><rect x="2" y="5" width="20" height="14" fill="none" stroke="#000" stroke-opacity=".3" stroke-width=".6"/></svg>Australia AI Compliance</a></summary><ul>
+<li><a href="../13_Australia_AI_Compliance/01_Australia_AI_Regulatory_Hub.html">Australia AI Regulatory Hub</a></li>
+<li><a href="../13_Australia_AI_Compliance/02_Role_Guide.html">Australia: Role Guide</a></li>
+<li><a href="../13_Australia_AI_Compliance/03_Regulatory_Crosswalk.html">Australia Regulatory Crosswalk</a></li>
+<li><a href="../13_Australia_AI_Compliance/AU-T1_ADM_Transparency_Register.html">AU-T1 Automated Decision Transparency Register</a></li>
+<li><a href="../13_Australia_AI_Compliance/AU-T2_AI_Adoption_Self_Assessment.html">AU-T2 Guidance for AI Adoption Self-Assessment</a></li>
+</ul></details></li>
+<li style="--h:135"><details><summary><a href="../14_Brazil_AI_Compliance/index.html"><svg class="icon flag" viewBox="0 0 24 24" aria-hidden="true"><svg x="2" y="5" width="20" height="14" viewBox="0 0 20 14"><rect width="20" height="14" fill="#009739"/><path d="M10 1.6L18.2 7 10 12.4 1.8 7z" fill="#fedd00"/><circle cx="10" cy="7" r="3" fill="#012169"/></svg><rect x="2" y="5" width="20" height="14" fill="none" stroke="#000" stroke-opacity=".3" stroke-width=".6"/></svg>Brazil AI Compliance</a></summary><ul>
+<li><a href="../14_Brazil_AI_Compliance/01_Brazil_AI_Regulatory_Hub.html">Brazil AI Regulatory Hub</a></li>
+<li><a href="../14_Brazil_AI_Compliance/02_Role_Guide.html">Brazil: Role Guide</a></li>
+<li><a href="../14_Brazil_AI_Compliance/03_Regulatory_Crosswalk.html">Brazil Regulatory Crosswalk</a></li>
+<li><a href="../14_Brazil_AI_Compliance/BR-T1_LGPD_Automated_Decision_Review_Record.html">BR-T1 LGPD Automated Decision Review Record</a></li>
+<li><a href="../14_Brazil_AI_Compliance/BR-T2_PL2338_Readiness_Watchlist.html">BR-T2 PL 2338/2023 Readiness Watchlist and Tier Mapping</a></li>
+</ul></details></li>
+<li style="--h:355"><details><summary><a href="../15_Canada_AI_Compliance/index.html"><svg class="icon flag" viewBox="0 0 24 24" aria-hidden="true"><svg x="2" y="5" width="20" height="14" viewBox="0 0 20 14"><rect width="20" height="14" fill="#fff"/><path d="M0 0h5v14H0zM15 0h5v14h-5z" fill="#d80621"/><path d="M10 2.5l1 2.1 1.6-.6-.5 2.2 1.7.4-1.6 1.6.4 1-2.2-.3v2.4h-.8V8.9l-2.2.3.4-1-1.6-1.6 1.7-.4L7.4 4l1.6.6z" fill="#d80621"/></svg><rect x="2" y="5" width="20" height="14" fill="none" stroke="#000" stroke-opacity=".3" stroke-width=".6"/></svg>Canada AI Compliance</a></summary><ul>
+<li><a href="../15_Canada_AI_Compliance/01_Canada_AI_Regulatory_Hub.html">Canada AI Regulatory Hub</a></li>
+<li><a href="../15_Canada_AI_Compliance/02_Role_Guide.html">Canada: Role Guide</a></li>
+<li><a href="../15_Canada_AI_Compliance/03_Regulatory_Crosswalk.html">Canada Regulatory Crosswalk</a></li>
+<li><a href="../15_Canada_AI_Compliance/CA-T1_Algorithmic_Impact_Assessment_Worksheet.html">CA-T1 Algorithmic Impact Assessment Worksheet</a></li>
+<li><a href="../15_Canada_AI_Compliance/CA-T2_Quebec_Law_25_ADM_Record.html">CA-T2 Quebec Law 25 Automated Decision Record</a></li>
+<li><a href="../15_Canada_AI_Compliance/CA-T3_OSFI_E23_Inventory_Addendum.html">CA-T3 OSFI E-23 Model Inventory Addendum</a></li>
+</ul></details></li>
+<li style="--h:25"><details><summary><a href="../16_China_AI_Compliance/index.html"><svg class="icon flag" viewBox="0 0 24 24" aria-hidden="true"><svg x="2" y="5" width="20" height="14" viewBox="0 0 20 14"><rect width="20" height="14" fill="#de2910"/><polygon points="4.5,2 5.09,3.69 6.88,3.73 5.45,4.81 5.97,6.52 4.5,5.5 3.03,6.52 3.55,4.81 2.12,3.73 3.91,3.69" fill="#ffde00"/><circle cx="8.2" cy="1.9" r=".55" fill="#ffde00"/><circle cx="9.6" cy="3.4" r=".55" fill="#ffde00"/><circle cx="9.6" cy="5.4" r=".55" fill="#ffde00"/><circle cx="8.2" cy="6.9" r=".55" fill="#ffde00"/></svg><rect x="2" y="5" width="20" height="14" fill="none" stroke="#000" stroke-opacity=".3" stroke-width=".6"/></svg>China AI Compliance</a></summary><ul>
+<li><a href="../16_China_AI_Compliance/01_China_AI_Regulatory_Hub.html">China AI Regulatory Hub</a></li>
+<li><a href="../16_China_AI_Compliance/02_Role_Guide.html">China (Mainland): Role Guide</a></li>
+<li><a href="../16_China_AI_Compliance/03_Regulatory_Crosswalk.html">China Regulatory Crosswalk</a></li>
+<li><a href="../16_China_AI_Compliance/CN-T1_Filing_and_Registration_Readiness.html">CN-T1 Filing and Registration Readiness Checklist</a></li>
+<li><a href="../16_China_AI_Compliance/CN-T2_Content_Labelling_Implementation_Record.html">CN-T2 AI-Generated Content Labelling Implementation Record</a></li>
+<li><a href="../16_China_AI_Compliance/CN-T3_Ethics_Review_Committee_Record.html">CN-T3 AI Ethics Review Committee Record</a></li>
+</ul></details></li>
+<li style="--h:95"><details><summary><a href="../17_India_AI_Compliance/index.html"><svg class="icon flag" viewBox="0 0 24 24" aria-hidden="true"><svg x="2" y="5" width="20" height="14" viewBox="0 0 20 14"><rect width="20" height="14" fill="#fff"/><rect width="20" height="4.67" fill="#ff9933"/><rect y="9.33" width="20" height="4.67" fill="#138808"/><circle cx="10" cy="7" r="1.7" fill="none" stroke="#000080" stroke-width=".5"/><circle cx="10" cy="7" r=".4" fill="#000080"/></svg><rect x="2" y="5" width="20" height="14" fill="none" stroke="#000" stroke-opacity=".3" stroke-width=".6"/></svg>India AI Compliance</a></summary><ul>
+<li><a href="../17_India_AI_Compliance/01_India_AI_Regulatory_Hub.html">India AI Regulatory Hub</a></li>
+<li><a href="../17_India_AI_Compliance/02_Role_Guide.html">India: Role Guide</a></li>
+<li><a href="../17_India_AI_Compliance/03_Regulatory_Crosswalk.html">India Regulatory Crosswalk</a></li>
+<li><a href="../17_India_AI_Compliance/IN-T1_DPDP_AI_Processing_Record_and_Notice.html">IN-T1 DPDP AI Processing Record, Notice and Consent</a></li>
+<li><a href="../17_India_AI_Compliance/IN-T2_Breach_and_Incident_Workflow.html">IN-T2 India Breach and Incident Workflow</a></li>
+<li><a href="../17_India_AI_Compliance/IN-T3_Regulated_Entity_AI_Readiness.html">IN-T3 Regulated-Entity AI Readiness Checklist (RBI, SEBI, IRDAI)</a></li>
+</ul></details></li>
+<li style="--h:335"><details><summary><a href="../18_Japan_AI_Compliance/index.html"><svg class="icon flag" viewBox="0 0 24 24" aria-hidden="true"><svg x="2" y="5" width="20" height="14" viewBox="0 0 20 14"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="4.1" fill="#bc002d"/></svg><rect x="2" y="5" width="20" height="14" fill="none" stroke="#000" stroke-opacity=".3" stroke-width=".6"/></svg>Japan AI Compliance</a></summary><ul>
+<li><a href="../18_Japan_AI_Compliance/01_Japan_AI_Regulatory_Hub.html">Japan AI Regulatory Hub</a></li>
+<li><a href="../18_Japan_AI_Compliance/02_Role_Guide.html">Japan: Role Guide</a></li>
+<li><a href="../18_Japan_AI_Compliance/03_Regulatory_Crosswalk.html">Japan Regulatory Crosswalk</a></li>
+<li><a href="../18_Japan_AI_Compliance/JP-T1_AI_Guidelines_for_Business_Self_Assessment.html">JP-T1 Guidelines for AI Business Self-Assessment</a></li>
+<li><a href="../18_Japan_AI_Compliance/JP-T2_Training_Data_Copyright_Record.html">JP-T2 Training Data and Copyright Record</a></li>
+</ul></details></li>
+<li style="--h:172"><details><summary><a href="../19_Singapore_AI_Compliance/index.html"><svg class="icon flag" viewBox="0 0 24 24" aria-hidden="true"><svg x="2" y="5" width="20" height="14" viewBox="0 0 20 14"><rect width="20" height="14" fill="#fff"/><rect width="20" height="7" fill="#ed2939"/><circle cx="4.8" cy="3.5" r="2.2" fill="#fff"/><circle cx="5.7" cy="3.5" r="2.2" fill="#ed2939"/><circle cx="7.9" cy="2.1" r=".42" fill="#fff"/><circle cx="6.9" cy="2.9" r=".42" fill="#fff"/><circle cx="8.9" cy="2.9" r=".42" fill="#fff"/><circle cx="7.3" cy="4.1" r=".42" fill="#fff"/><circle cx="8.5" cy="4.1" r=".42" fill="#fff"/></svg><rect x="2" y="5" width="20" height="14" fill="none" stroke="#000" stroke-opacity=".3" stroke-width=".6"/></svg>Singapore AI Compliance</a></summary><ul>
+<li><a href="../19_Singapore_AI_Compliance/01_Singapore_AI_Regulatory_Hub.html">Singapore AI Regulatory Hub</a></li>
+<li><a href="../19_Singapore_AI_Compliance/02_Role_Guide.html">Singapore: Role Guide</a></li>
+<li><a href="../19_Singapore_AI_Compliance/03_Regulatory_Crosswalk.html">Singapore Regulatory Crosswalk</a></li>
+<li><a href="../19_Singapore_AI_Compliance/SG-T1_Agentic_AI_Risk_Bounding_Worksheet.html">SG-T1 Agentic AI Risk Bounding and Accountability Worksheet</a></li>
+<li><a href="../19_Singapore_AI_Compliance/SG-T2_MAS_Style_Inventory_and_Materiality.html">SG-T2 AI Inventory and Risk Materiality Assessment (Financial Institutions)</a></li>
+<li><a href="../19_Singapore_AI_Compliance/SG-T3_PDPA_AI_Use_Note.html">SG-T3 PDPA AI Use Note</a></li>
+</ul></details></li>
+<li style="--h:250"><details><summary><a href="../20_South_Korea_AI_Compliance/index.html"><svg class="icon flag" viewBox="0 0 24 24" aria-hidden="true"><svg x="2" y="5" width="20" height="14" viewBox="0 0 20 14"><rect width="20" height="14" fill="#fff"/><path d="M6.5 7a3.5 3.5 0 0 1 7 0z" fill="#cd2e3a"/><path d="M6.5 7a3.5 3.5 0 0 0 7 0z" fill="#0047a0"/><path d="M2.2 3.6l2.2-2.2M3 4.4l2.2-2.2M3.8 5.2L6 3M14 11l2.2-2.2M14.8 11.8l2.2-2.2M15.6 12.6l2.2-2.2M15.6 1.4l2.2 2.2M14.8 2.2l2.2 2.2M14 3l2.2 2.2M2.2 10.4l2.2 2.2M3 9.6l2.2 2.2M3.8 8.8L6 11" stroke="#000" stroke-width=".7"/></svg><rect x="2" y="5" width="20" height="14" fill="none" stroke="#000" stroke-opacity=".3" stroke-width=".6"/></svg>South Korea AI Compliance</a></summary><ul>
+<li><a href="../20_South_Korea_AI_Compliance/01_South_Korea_AI_Regulatory_Hub.html">South Korea AI Regulatory Hub</a></li>
+<li><a href="../20_South_Korea_AI_Compliance/02_Role_Guide.html">South Korea: Role Guide</a></li>
+<li><a href="../20_South_Korea_AI_Compliance/03_Regulatory_Crosswalk.html">South Korea Regulatory Crosswalk</a></li>
+<li><a href="../20_South_Korea_AI_Compliance/KR-T1_High_Impact_AI_Determination.html">KR-T1 High-Impact AI Determination and Impact Assessment</a></li>
+<li><a href="../20_South_Korea_AI_Compliance/KR-T2_Generative_AI_Labelling_and_Notice.html">KR-T2 Generative AI Labelling and Notice Record</a></li>
+<li><a href="../20_South_Korea_AI_Compliance/KR-T3_Domestic_Representative_Check.html">KR-T3 Domestic Representative Threshold Check</a></li>
+</ul></details></li>
+<li style="--h:278"><details><summary><a href="../21_UK_AI_Compliance/index.html"><svg class="icon flag" viewBox="0 0 24 24" aria-hidden="true"><svg x="2" y="5" width="20" height="14" viewBox="0 0 20 14"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="2.8"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4.4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2.6"/></svg><rect x="2" y="5" width="20" height="14" fill="none" stroke="#000" stroke-opacity=".3" stroke-width=".6"/></svg>UK AI Compliance</a></summary><ul>
+<li><a href="../21_UK_AI_Compliance/01_UK_AI_Regulatory_Hub.html">UK AI Regulatory Hub</a></li>
+<li><a href="../21_UK_AI_Compliance/02_Role_Guide.html">UK: Role Guide</a></li>
+<li><a href="../21_UK_AI_Compliance/03_Regulatory_Crosswalk.html">UK Regulatory Crosswalk</a></li>
+<li><a href="../21_UK_AI_Compliance/UK-T1_ADM_Safeguards_Record.html">UK-T1 Automated Decision-Making Safeguards Record</a></li>
+<li><a href="../21_UK_AI_Compliance/UK-T2_Regulated_Firm_AI_Checklist.html">UK-T2 Regulated-Firm AI Checklist (FCA and PRA)</a></li>
+<li><a href="../21_UK_AI_Compliance/UK-T3_Public_Sector_Transparency_Record.html">UK-T3 Public-Sector Algorithmic Transparency Record</a></li>
+</ul></details></li>
+<li style="--h:310"><details><summary><a href="../22_US_AI_Compliance/index.html"><svg class="icon flag" viewBox="0 0 24 24" aria-hidden="true"><svg x="2" y="5" width="20" height="14" viewBox="0 0 20 14"><rect width="20" height="14" fill="#fff"/><rect y="0" width="20" height="1.08" fill="#b22234"/><rect y="2.15" width="20" height="1.08" fill="#b22234"/><rect y="4.31" width="20" height="1.08" fill="#b22234"/><rect y="6.46" width="20" height="1.08" fill="#b22234"/><rect y="8.62" width="20" height="1.08" fill="#b22234"/><rect y="10.77" width="20" height="1.08" fill="#b22234"/><rect y="12.92" width="20" height="1.08" fill="#b22234"/><rect width="8.5" height="7.54" fill="#3c3b6e"/><circle cx="1.4" cy="1.3" r=".35" fill="#fff"/><circle cx="3.3" cy="1.3" r=".35" fill="#fff"/><circle cx="5.2" cy="1.3" r=".35" fill="#fff"/><circle cx="7.1" cy="1.3" r=".35" fill="#fff"/><circle cx="1.4" cy="2.95" r=".35" fill="#fff"/><circle cx="3.3" cy="2.95" r=".35" fill="#fff"/><circle cx="5.2" cy="2.95" r=".35" fill="#fff"/><circle cx="7.1" cy="2.95" r=".35" fill="#fff"/><circle cx="1.4" cy="4.6" r=".35" fill="#fff"/><circle cx="3.3" cy="4.6" r=".35" fill="#fff"/><circle cx="5.2" cy="4.6" r=".35" fill="#fff"/><circle cx="7.1" cy="4.6" r=".35" fill="#fff"/><circle cx="1.4" cy="6.25" r=".35" fill="#fff"/><circle cx="3.3" cy="6.25" r=".35" fill="#fff"/><circle cx="5.2" cy="6.25" r=".35" fill="#fff"/><circle cx="7.1" cy="6.25" r=".35" fill="#fff"/></svg><rect x="2" y="5" width="20" height="14" fill="none" stroke="#000" stroke-opacity=".3" stroke-width=".6"/></svg>US AI Compliance</a></summary><ul>
+<li><a href="../22_US_AI_Compliance/01_US_AI_Regulatory_Hub.html">US AI Regulatory Hub</a></li>
+<li><a href="../22_US_AI_Compliance/02_Role_Guide.html">US: Role Guide</a></li>
+<li><a href="../22_US_AI_Compliance/03_Regulatory_Crosswalk.html">US Regulatory Crosswalk</a></li>
+<li><a href="../22_US_AI_Compliance/US-T1_State_Applicability_Matrix.html">US-T1 State AI Law Applicability Matrix</a></li>
+<li><a href="../22_US_AI_Compliance/US-T2_Consequential_Decision_Impact_Assessment.html">US-T2 Consequential-Decision and Discrimination Impact Assessment</a></li>
+<li><a href="../22_US_AI_Compliance/US-T3_GenAI_Provenance_and_Transparency_Checklist.html">US-T3 Generative AI Provenance and Transparency Checklist</a></li>
+</ul></details></li>
+</ul></details></li>
+<li style="--h:215"><details><summary><a href="../09_Reference/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg>Reference</a></summary><ul>
+<li><a href="../09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
+<li><a href="../09_Reference/19_Update_Notes.html">Update Notes</a></li>
+</ul></details></li>
+<li style="--h:120"><details><summary><a href="../23_Framework_Crosswalks/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h14l-3-3M20 16H6l3 3"/></svg>Framework Crosswalks</a></summary><ul>
+<li><a href="../23_Framework_Crosswalks/01_FINOS_AIGF_Crosswalk.html">FINOS AI Governance Framework Crosswalk</a></li>
+<li><a href="../23_Framework_Crosswalks/02_AI_BCF_Crosswalk.html">AI BCF Crosswalk</a></li>
+<li><a href="../23_Framework_Crosswalks/03_NIST_AI_RMF_Crosswalk.html">NIST AI RMF Crosswalk</a></li>
+<li><a href="../23_Framework_Crosswalks/04_NIST_AI_600_1_GenAI_Profile_Crosswalk.html">NIST AI 600-1 Generative AI Profile Crosswalk</a></li>
+<li><a href="../23_Framework_Crosswalks/05_ISO_IEC_42001_Crosswalk.html">ISO/IEC 42001 Crosswalk</a></li>
+<li><a href="../23_Framework_Crosswalks/06_OWASP_Top_10_Crosswalk.html">OWASP Top 10 Crosswalk</a></li>
+<li><a href="../23_Framework_Crosswalks/07_MITRE_ATLAS_Crosswalk.html">MITRE ATLAS Crosswalk</a></li>
+<li><a href="../23_Framework_Crosswalks/08_ISO_IEC_27001_Crosswalk.html">ISO/IEC 27001 Crosswalk</a></li>
+<li><a href="../23_Framework_Crosswalks/09_NIST_CSF_Crosswalk.html">NIST CSF Crosswalk</a></li>
+<li><a href="../23_Framework_Crosswalks/10_CIS_Controls_Crosswalk.html">CIS Controls Crosswalk</a></li>
+<li><a href="../23_Framework_Crosswalks/11_SOC_2_Crosswalk.html">SOC 2 Crosswalk</a></li>
+<li><a href="../23_Framework_Crosswalks/12_OECD_AI_Principles_Crosswalk.html">OECD AI Principles Crosswalk</a></li>
+<li><a href="../23_Framework_Crosswalks/13_Privacy_Law_Crosswalk.html">Privacy Law Crosswalk</a></li>
+<li><a href="../23_Framework_Crosswalks/14_NIST_AI_100_2_Crosswalk.html">NIST AI 100-2 Crosswalk</a></li>
+<li><a href="../23_Framework_Crosswalks/15_ISO_IEC_AI_Standards_Crosswalk.html">ISO/IEC AI Standards Crosswalk</a></li>
+<li><a href="../23_Framework_Crosswalks/16_Trustworthy_AI_Ethics_Crosswalk.html">Trustworthy AI and Ethics Standards Crosswalk</a></li>
+<li><a href="../23_Framework_Crosswalks/17_International_AI_Instruments_Crosswalk.html">International AI Instruments Crosswalk</a></li>
+</ul></details></li>
+<li><a href="../community-rules.html">Community Rules</a></li>
+</ul>
+</nav>
+<main>
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Builder Track</a> / <span>Secure Your First Agent: Ten Controls With Code</span></p>
+<article>
+<h1 id="secure-your-first-agent-ten-controls-with-code">Secure Your First Agent: Ten Controls With Code</h1>
+<blockquote class="callout note">
+<p><strong>Purpose:</strong> Give a team building its first tool-using AI agent a short, ordered set of controls it can put in place in about a week, with working configuration and code for each.</p>
+<p><strong>Audience:</strong> AI product developers, application security engineers and platform engineers. No governance background is needed.</p>
+<p><strong>How to use:</strong> Read the principle and the ten steps. Run the demo and the tests in the <a href="code/"><code>code/</code></a> folder. Copy the pattern into your own agent framework, keeping the single line where your framework hands a tool call to the guard. Then prove each step with the checks at the end.</p>
+</blockquote>
+<h2 id="the-one-idea">The one idea</h2>
+<p>Treat the model as an untrusted component. A model can be steered by anything it reads: a web page, a support ticket, a retrieved document, the description of a tool. Asking it to behave does not make it safe. So every power the agent has is enforced by code outside the model, which decides from three things only: who the agent is, what the policy says, and the exact arguments of the call.</p>
+<p>This is the design principle of the <a href="../00_Foundations/07-Reference-Architecture.html">reference architecture</a> applied to a first build. The pattern is the same whichever agent framework you use. Only the one line that passes a tool call to the guard changes.</p>
+<h2 id="the-scenario-these-controls-are-built-against">The scenario these controls are built against</h2>
+<p>The example agent triages support tickets. It can read files in a workspace, fetch pages from one documentation site, and draft email replies. One ticket contains a hidden instruction that tells the assistant to read a system file, email it to an outside address and call an attacker's URL. Assume the model obeys every word. What can the attacker actually do?</p>
+<p>With the ten controls in place, the answer is nothing. <a href="code/agent_demo.py"><code>agent_demo.py</code></a> plays out exactly this case with a scripted stand-in for the model, so it needs no API key:</p>
+<pre><code class="language-text">read the ticket                       OK                         ok
+read /etc/passwd (path escape)        DENY_ARGS                  ok
+email the attacker                    DENY_ARGS                  ok
+fetch the attacker's URL              DENY_ARGS                  ok
+use a tool this agent does not have   DENY_NOT_ALLOWED           ok
+tool definition changed after review  DENY_DEFINITION_CHANGED    ok
+legitimate reply (waits for a human)  PENDING_APPROVAL           ok
+same reply after approval             OK                         ok
+reuse the approval                    DENY_APPROVAL              ok
+any call after the kill switch        DENY_KILL                  ok
+</code></pre>
+<h2 id="the-ten-controls-at-a-glance">The ten controls at a glance</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Step</th>
+<th>What to do</th>
+<th>Control</th>
+<th>Main OWASP risks it addresses</th>
+<th>Where in the code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B1</td>
+<td>Register the agent and name an owner</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a></td>
+<td>ASI10 Rogue Agents</td>
+<td><code>policy.json</code></td>
+</tr>
+<tr>
+<td>B2</td>
+<td>Give it its own identity</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a></td>
+<td>ASI03 Identity &amp; Privilege Abuse</td>
+<td><code>TokenIssuer</code></td>
+</tr>
+<tr>
+<td>B3</td>
+<td>Issue scoped, short-lived credentials</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a></td>
+<td>ASI03 Identity &amp; Privilege Abuse</td>
+<td><code>TokenIssuer.mint</code>, <code>attenuate</code></td>
+</tr>
+<tr>
+<td>B4</td>
+<td>Allow-list tools and pin their definitions</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a></td>
+<td>ASI04 Agentic Supply Chain, ASI02 Tool Misuse</td>
+<td><code>definition_hash</code>, <code>pin_definitions.py</code></td>
+</tr>
+<tr>
+<td>B5</td>
+<td>Validate every argument outside the model</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a></td>
+<td>ASI02 Tool Misuse, LLM06 Excessive Agency</td>
+<td><code>validate_args</code></td>
+</tr>
+<tr>
+<td>B6</td>
+<td>Gate sensitive actions behind approval</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a></td>
+<td>ASI09 Human-Agent Trust Exploitation</td>
+<td><code>ApprovalGate</code></td>
+</tr>
+<tr>
+<td>B7</td>
+<td>Run generated code in a sandbox</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a></td>
+<td>ASI05 Unexpected Code Execution</td>
+<td><code>sandbox.py</code>, <code>docker-sandbox.sh</code></td>
+</tr>
+<tr>
+<td>B8</td>
+<td>Limit egress to named hosts</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a></td>
+<td>ASI05, LLM02 Sensitive Information Disclosure</td>
+<td><code>egress_proxy.py</code>, <code>k8s-agent-pod.yaml</code></td>
+</tr>
+<tr>
+<td>B9</td>
+<td>Cap the blast radius and keep a kill switch</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a></td>
+<td>ASI08 Cascading Failures, ASI10 Rogue Agents</td>
+<td><code>RateLimiter</code>, <code>KillSwitch</code></td>
+</tr>
+<tr>
+<td>B10</td>
+<td>Log every decision in a tamper-evident trace</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a></td>
+<td>Supports every other control</td>
+<td><code>AuditLog</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>Do the steps in order. B1 to B3 decide who may act, B4 to B6 decide what may be done, B7 to B9 limit the damage when something still goes wrong, and B10 lets you see it.</p>
+<h2 id="b1-register-the-agent-and-name-an-owner">B1. Register the agent and name an owner</h2>
+<p><strong>Control:</strong> <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a>. An agent nobody owns cannot be reviewed, rotated or switched off. Record, for each agent: a unique ID, a named owner, its purpose, the tools it may use, and its rate and action budget. In this example the registry is a block in the policy file. In an organisation, link it to the AI use-case registry (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-011">AI-CTRL-011</a>).</p>
+<!-- excerpt: policy.json -->
+
+<pre><code class="language-json">  &quot;agents&quot;: {
+    &quot;agent://support-triage&quot;: {
+      &quot;owner&quot;: &quot;support-platform-team@example.com&quot;,
+      &quot;purpose&quot;: &quot;Read tickets and docs, draft replies for human approval&quot;,
+      &quot;tools&quot;: [
+        &quot;read_file&quot;,
+        &quot;http_get&quot;,
+        &quot;send_email&quot;
+      ],
+      &quot;rate_per_minute&quot;: 30,
+      &quot;max_actions&quot;: 200
+    },
+    &quot;agent://code-helper&quot;: {
+      &quot;owner&quot;: &quot;developer-tools-team@example.com&quot;,
+      &quot;purpose&quot;: &quot;Run short analysis snippets for engineers&quot;,
+      &quot;tools&quot;: [
+        &quot;run_python&quot;
+      ],
+      &quot;rate_per_minute&quot;: 10,
+      &quot;max_actions&quot;: 50
+    }
+  },
+</code></pre>
+<p><em>From <a href="code/policy.json"><code>policy.json</code></a>.</em></p>
+<p>The guard refuses any call whose token names an agent that is not in this block.</p>
+<p><strong>Common mistake:</strong> giving the agent the tools "it might need later". The allow-list is what the agent may do today. Add tools through a reviewed change.</p>
+<h2 id="b2-give-it-its-own-identity">B2. Give it its own identity</h2>
+<p><strong>Control:</strong> <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a>. Each agent gets a unique identity with a named human sponsor (the owner from B1). Never share a key between agents or reuse a person's login. The identity travels in every call as the token subject, so every log line says which agent acted. A sub-agent gets a derived identity, here the parent's ID plus <code>/child</code>.</p>
+<!-- excerpt: agent_demo.py -->
+
+<pre><code class="language-python">    agent = &quot;agent://support-triage&quot;
+    token = issuer.mint(agent, [&quot;files:read&quot;, &quot;web:read&quot;, &quot;mail:send&quot;], &quot;tool-gateway&quot;, ttl=300)
+</code></pre>
+<p><em>From <a href="code/agent_demo.py"><code>agent_demo.py</code></a>.</em></p>
+<p><strong>In production:</strong> take the identity from your identity provider's workload identity or your cloud's security token service, and recertify it on a schedule. The token format in this folder exists to show the checks a gateway must make, not to be copied.</p>
+<h2 id="b3-issue-scoped-short-lived-credentials">B3. Issue scoped, short-lived credentials</h2>
+<p><strong>Control:</strong> <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a>. The credential names the agent, the one audience it is valid for, the scopes it holds and a short expiry. A stolen or leaked token is then narrow and expires in minutes. A sub-agent receives a token made by narrowing its parent's, and the code refuses to widen it.</p>
+<!-- excerpt: guard.py -->
+
+<pre><code class="language-python">    def mint(self, sub: str, scopes: list[str], audience: str, ttl: int = 300,
+             tools: list[str] | None = None, now: float | None = None) -&gt; str:
+        now = time.time() if now is None else now
+        ttl = min(ttl, self.max_ttl)
+        claims = {&quot;sub&quot;: sub, &quot;aud&quot;: audience, &quot;scopes&quot;: sorted(set(scopes)),
+                  &quot;tools&quot;: sorted(set(tools)) if tools is not None else None,
+                  &quot;iat&quot;: int(now), &quot;exp&quot;: int(now + ttl), &quot;jti&quot;: uuid.uuid4().hex}
+        body = _b64(json.dumps(claims, sort_keys=True).encode())
+        return f&quot;{body}.{self._sign(body)}&quot;
+</code></pre>
+<p><em>From <a href="code/guard.py"><code>guard.py</code></a>.</em></p>
+<!-- excerpt: guard.py -->
+
+<pre><code class="language-python">    def verify(self, token: str, audience: str, now: float | None = None) -&gt; dict:
+        now = time.time() if now is None else now
+        try:
+            body, signature = token.split(&quot;.&quot;)
+        except ValueError:
+            raise TokenError(&quot;malformed token&quot;)
+        if not hmac.compare_digest(signature, self._sign(body)):
+            raise TokenError(&quot;bad signature&quot;)
+        claims = json.loads(_unb64(body))
+        if claims[&quot;aud&quot;] != audience:
+            raise TokenError(&quot;wrong audience&quot;)
+        if now &gt;= claims[&quot;exp&quot;]:
+            raise TokenError(&quot;expired&quot;)
+        if claims[&quot;iat&quot;] &gt; now + 30:
+            raise TokenError(&quot;issued in the future&quot;)
+        return claims
+</code></pre>
+<p><em>From <a href="code/guard.py"><code>guard.py</code></a>.</em></p>
+<!-- excerpt: guard.py -->
+
+<pre><code class="language-python">    def attenuate(self, token: str, audience: str, scopes: list[str], ttl: int,
+                  tools: list[str] | None = None, now: float | None = None) -&gt; str:
+        &quot;&quot;&quot;Child token for a sub-agent. It can only narrow scopes, tools and lifetime.&quot;&quot;&quot;
+        now = time.time() if now is None else now
+        parent = self.verify(token, audience, now)
+        if not set(scopes) &lt;= set(parent[&quot;scopes&quot;]):
+            raise TokenError(&quot;child scopes exceed parent scopes&quot;)
+        if parent[&quot;tools&quot;] is not None and tools is not None and not set(tools) &lt;= set(parent[&quot;tools&quot;]):
+            raise TokenError(&quot;child tools exceed parent tools&quot;)
+        child_tools = tools if tools is not None else parent[&quot;tools&quot;]
+        remaining = int(parent[&quot;exp&quot;] - now)
+        return self.mint(parent[&quot;sub&quot;] + &quot;/child&quot;, scopes, audience, min(ttl, remaining), child_tools, now)
+</code></pre>
+<p><em>From <a href="code/guard.py"><code>guard.py</code></a>.</em></p>
+<p>Four rules this enforces: the expiry is capped (15 minutes here, whatever the caller asks for), the audience must match, the signature is compared in constant time, and a child can only subtract scopes, tools and time.</p>
+<p><strong>Common mistakes:</strong> a long-lived API key in an environment variable the agent can read; one broad service account shared by every agent; acting with the agent's rights where the end user's rights should apply. This example uses agent-level scopes for simplicity. Where a user is present, exchange the user's identity so the agent can never do more than that user may (<a class="chip" href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-006">TC-L09-006</a>).</p>
+<h2 id="b4-allow-list-tools-and-pin-their-definitions">B4. Allow-list tools and pin their definitions</h2>
+<p><strong>Control:</strong> <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a>. Two checks, both in code. First, each agent may call only the tools listed for it, in the policy and again in the token. Second, the model sees a description and a schema for every tool, and an attacker who can change either can steer the agent. So pin what the model sees: hash the name, description and schema when a person has reviewed them, store the hash in the policy, and refuse any call where the live definition no longer matches. That catches both a poisoned description and a "rug pull", where a tool server changes after approval.</p>
+<!-- excerpt: guard.py -->
+
+<pre><code class="language-python">def definition_hash(definition: dict) -&gt; str:
+    &quot;&quot;&quot;Hash of what the model is shown for a tool: name, description, schema.&quot;&quot;&quot;
+    canonical = json.dumps(
+        {k: definition.get(k) for k in (&quot;name&quot;, &quot;description&quot;, &quot;input_schema&quot;)},
+        sort_keys=True, separators=(&quot;,&quot;, &quot;:&quot;), ensure_ascii=True,
+    )
+    return hashlib.sha256(canonical.encode()).hexdigest()
+</code></pre>
+<p><em>From <a href="code/guard.py"><code>guard.py</code></a>.</em></p>
+<p>Pinning is a short ritual: a person reviews <code>tool_definitions.json</code>, runs the pin script, and commits the result.</p>
+<pre><code class="language-sh">python3 pin_definitions.py policy.json tool_definitions.json
+</code></pre>
+<p>The script also runs <code>description_findings</code>, which flags hidden zero-width characters, instruction-override wording and concealment from the user. Treat those findings as a prompt for a human to look, not as the control. The control is the hash.</p>
+<!-- excerpt: guard.py -->
+
+<pre><code class="language-python">def description_findings(definition: dict) -&gt; list[str]:
+    &quot;&quot;&quot;Cheap tells of a poisoned tool description. A detection aid for review,
+    not the control: the control is the pinned hash.&quot;&quot;&quot;
+    blob = json.dumps(definition, ensure_ascii=False)
+    findings = []
+    if _HIDDEN.search(blob):
+        findings.append(&quot;hidden or zero-width characters&quot;)
+    if re.search(r&quot;(?i)\b(ignore|disregard)\b.{0,40}\b(previous|prior|above|earlier)\b&quot;, blob):
+        findings.append(&quot;instruction-override wording&quot;)
+    if re.search(r&quot;(?i)\b(do not|don't|never)\b.{0,30}\b(tell|mention|reveal|show)\b.{0,20}\buser\b&quot;, blob):
+        findings.append(&quot;concealment from the user&quot;)
+    if len(definition.get(&quot;description&quot;, &quot;&quot;)) &gt; 1500:
+        findings.append(&quot;unusually long description&quot;)
+    return findings
+</code></pre>
+<p><em>From <a href="code/guard.py"><code>guard.py</code></a>.</em></p>
+<p>A test in <a href="code/test_guard.py"><code>test_guard.py</code></a> fails if the pins in <code>policy.json</code> no longer match the reviewed definitions, so a change that skips review cannot reach the main branch unnoticed.</p>
+<h2 id="b5-validate-every-argument-outside-the-model">B5. Validate every argument outside the model</h2>
+<p><strong>Control:</strong> <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a>. The guard checks the real arguments of every call against rules in the policy, before the tool runs. The rules are deterministic. They never ask the model to judge its own call. The checks that matter most for a first agent:</p>
+<ul>
+<li><strong>Unknown arguments are rejected</strong>, so the model cannot smuggle in a <code>mode</code> or <code>flags</code> field.</li>
+<li><strong>Paths</strong> are resolved, symlinks included, and must land inside an allowed folder.</li>
+<li><strong>URLs</strong> must use an allowed scheme, host and port, carry no embedded credentials, and must not resolve to a private or internal address (which blocks calls to cloud metadata services).</li>
+<li><strong>Email recipients</strong> must be on an allowed domain.</li>
+<li><strong>Strings</strong> have a length limit and may not contain hidden or control characters.</li>
+</ul>
+<!-- excerpt: guard.py -->
+
+<pre><code class="language-python">def _check_path(name: str, value, spec: dict, roots: dict[str, Path]) -&gt; str:
+    value = _check_string(name, value, spec)
+    root = roots[spec[&quot;root&quot;]].resolve()
+    if &quot;\x00&quot; in value or os.path.isabs(value):
+        raise ArgError(f&quot;{name}: absolute paths are not allowed&quot;)
+    candidate = (root / value).resolve()          # follows symlinks and ..
+    if candidate != root and root not in candidate.parents:
+        raise ArgError(f&quot;{name}: resolves outside the allowed directory&quot;)
+    return str(candidate)
+</code></pre>
+<p><em>From <a href="code/guard.py"><code>guard.py</code></a>.</em></p>
+<p>The rules for each tool live in the policy file, so a reviewer can read what a tool is allowed to do without reading code:</p>
+<!-- excerpt: policy.json -->
+
+<pre><code class="language-json">    &quot;send_email&quot;: {
+      &quot;definition_sha256&quot;: &quot;4e037f129da55b7a264c9b77b038b31f347e6b9f50b56a9dab7212cac0d83e7e&quot;,
+      &quot;scopes&quot;: [
+        &quot;mail:send&quot;
+      ],
+      &quot;approval&quot;: &quot;always&quot;,
+      &quot;args&quot;: {
+        &quot;to&quot;: {
+          &quot;type&quot;: &quot;email&quot;,
+          &quot;domains&quot;: [
+            &quot;example.com&quot;
+          ]
+        },
+        &quot;subject&quot;: {
+          &quot;type&quot;: &quot;string&quot;,
+          &quot;max_len&quot;: 120
+        },
+        &quot;body&quot;: {
+          &quot;type&quot;: &quot;string&quot;,
+          &quot;max_len&quot;: 4000
+        }
+      }
+    },
+</code></pre>
+<p><em>From <a href="code/policy.json"><code>policy.json</code></a>.</em></p>
+<p><strong>Common mistakes:</strong> checking the path text for <code>..</code> instead of resolving it; allow-listing a host with a string prefix test (<code>docs.example.com.evil.net</code> starts with <code>docs.example.com</code>); checking arguments once and then letting the model rewrite them. The guard passes only the cleaned arguments to the tool.</p>
+<h2 id="b6-gate-sensitive-actions-behind-approval">B6. Gate sensitive actions behind approval</h2>
+<p><strong>Control:</strong> <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a>. Pick the few actions that are external, irreversible or costly: sending email outside the company, deleting data, paying, deploying. The guard will not run them without a person's approval, and the approval has four properties that stop the usual bypasses:</p>
+<ol>
+<li>It is bound to the exact action. The approval stores a hash of the agent, tool and arguments, so approving one email does not approve a different one.</li>
+<li>It is single use.</li>
+<li>It expires.</li>
+<li>The person who asked cannot approve their own request, and the agent cannot approve itself.</li>
+</ol>
+<!-- excerpt: guard.py -->
+
+<pre><code class="language-python">def action_digest(agent: str, tool: str, args: dict) -&gt; str:
+    canonical = json.dumps({&quot;agent&quot;: agent, &quot;tool&quot;: tool, &quot;args&quot;: args}, sort_keys=True, separators=(&quot;,&quot;, &quot;:&quot;))
+    return hashlib.sha256(canonical.encode()).hexdigest()
+</code></pre>
+<p><em>From <a href="code/guard.py"><code>guard.py</code></a>.</em></p>
+<!-- excerpt: guard.py -->
+
+<pre><code class="language-python">    def consume(self, approval_id: str, agent: str, tool: str, args: dict, now: float | None = None) -&gt; str | None:
+        &quot;&quot;&quot;None if the approval covers exactly this action; otherwise the reason it does not.&quot;&quot;&quot;
+        now = time.time() if now is None else now
+        with self._lock:
+            req = self._requests.get(approval_id)
+            if req is None:
+                return &quot;unknown approval&quot;
+            if now &gt;= req.expires:
+                return &quot;approval expired&quot;
+            if req.status != &quot;approved&quot;:
+                return f&quot;approval is {req.status}&quot;
+            if req.digest != action_digest(agent, tool, args):
+                return &quot;approval was given for a different action&quot;
+            req.status = &quot;used&quot;
+            return None
+</code></pre>
+<p><em>From <a href="code/guard.py"><code>guard.py</code></a>.</em></p>
+<p>The approver is shown the real arguments, not a summary the model wrote. Keep the gated set small: if people approve fifty prompts a day they stop reading them (<a class="chip" href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-016">TC-L06-016</a>).</p>
+<h2 id="b7-run-generated-code-in-a-sandbox">B7. Run generated code in a sandbox</h2>
+<p><strong>Control:</strong> <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a>. If your agent writes and runs code, that code is attacker-influenced input. Run it in a separate process with hard limits and no secrets, inside a container that provides the real boundary.</p>
+<p>The Python wrapper sets CPU, memory, file-size and process limits, an empty environment, a throwaway working directory and a wall-clock timeout, and on Linux it removes the network when the kernel allows it:</p>
+<!-- excerpt: sandbox.py -->
+
+<pre><code class="language-python">def _limits(cpu_seconds: int, memory_mb: int, file_mb: int, processes: int):
+    def apply():
+        os.setsid()                                                    # own session, so we can kill the group
+        resource.setrlimit(resource.RLIMIT_CPU, (cpu_seconds, cpu_seconds))
+        resource.setrlimit(resource.RLIMIT_AS, (memory_mb &lt;&lt; 20, memory_mb &lt;&lt; 20))
+        resource.setrlimit(resource.RLIMIT_FSIZE, (file_mb &lt;&lt; 20, file_mb &lt;&lt; 20))
+        resource.setrlimit(resource.RLIMIT_CORE, (0, 0))
+        resource.setrlimit(resource.RLIMIT_NOFILE, (64, 64))
+        if hasattr(resource, &quot;RLIMIT_NPROC&quot;):
+            resource.setrlimit(resource.RLIMIT_NPROC, (processes, processes))
+    return apply
+</code></pre>
+<p><em>From <a href="code/sandbox.py"><code>sandbox.py</code></a>.</em></p>
+<p><strong>This is hygiene, not a boundary.</strong> Code in that process can still read any file its user can read. The boundary is the container. The command below drops the network and all capabilities, makes the root filesystem read-only and gives the job a small in-memory scratch space:</p>
+<!-- excerpt: docker-sandbox.sh -->
+
+<pre><code class="language-sh">exec docker run --rm \
+  --network none \
+  --read-only \
+  --tmpfs /tmp:rw,noexec,nosuid,size=64m \
+  --cap-drop ALL \
+  --security-opt no-new-privileges \
+  --pids-limit 64 \
+  --memory 256m --memory-swap 256m \
+  --cpus 0.5 \
+  --user 65534:65534 \
+  -v &quot;$JOB_DIR&quot;:/job:ro \
+  python:3.13-slim \
+  python -I /job/main.py
+</code></pre>
+<p><em>From <a href="code/docker-sandbox.sh"><code>docker-sandbox.sh</code></a>.</em></p>
+<p>For stronger isolation than a standard container, use a user-space kernel or a microVM, depending on your platform.</p>
+<h2 id="b8-limit-egress-to-named-hosts">B8. Limit egress to named hosts</h2>
+<p><strong>Control:</strong> <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a> (<a class="chip" href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-026">TC-L06-026</a>). Data theft needs a way out. Block every route from the agent except a proxy that allows named hosts only. <a href="code/egress_proxy.py"><code>egress_proxy.py</code></a> is a small working example. It checks the port, then the host name, then every address the name resolves to, and it connects to the address it checked rather than looking the name up again, so a DNS answer that changes between check and connect cannot redirect it.</p>
+<!-- excerpt: egress_proxy.py -->
+
+<pre><code class="language-python">    def check(self, host: str, port: int) -&gt; tuple[str | None, str]:
+        &quot;&quot;&quot;(address to connect to, or None) and the reason.&quot;&quot;&quot;
+        if port not in self.ports:
+            return None, f&quot;port {port} not allowed&quot;
+        if not host_allowed(host, self.hosts):
+            return None, &quot;host not on the allow-list&quot;
+        try:
+            infos = socket.getaddrinfo(host, port, type=socket.SOCK_STREAM)
+        except socket.gaierror:
+            return None, &quot;host does not resolve&quot;
+        addresses = [i[4][0] for i in infos]
+        if not self.allow_private and not all(is_public(a) for a in addresses):
+            return None, &quot;resolves to a non-public address&quot;
+        return addresses[0], &quot;ok&quot;
+</code></pre>
+<p><em>From <a href="code/egress_proxy.py"><code>egress_proxy.py</code></a>.</em></p>
+<p>The proxy only works if it is the only way out, so enforce that at the network layer. In Kubernetes that is a network policy that allows the agent pod to reach the proxy and cluster DNS and nothing else:</p>
+<!-- excerpt: k8s-agent-pod.yaml -->
+
+<pre><code class="language-yaml">apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: support-agent-egress
+  namespace: agents
+spec:
+  podSelector:
+    matchLabels:
+      app: support-agent
+  policyTypes: [&quot;Egress&quot;]
+  egress:
+    # Only the egress proxy...
+    - to:
+        - podSelector:
+            matchLabels:
+              app: egress-proxy
+      ports:
+        - protocol: TCP
+          port: 3128
+    # ...and cluster DNS. Everything else is denied.
+    - to:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: kube-system
+          podSelector:
+            matchLabels:
+              k8s-app: kube-dns
+      ports:
+        - protocol: UDP
+          port: 53
+        - protocol: TCP
+          port: 53
+</code></pre>
+<p><em>From <a href="code/k8s-agent-pod.yaml"><code>k8s-agent-pod.yaml</code></a>.</em></p>
+<p><strong>Common mistake:</strong> allow-listing a multi-tenant host such as a public storage service, paste site or webhook service. An attacker can create an account there and receive whatever the agent sends. Allow-list specific hostnames that you control. The proxy also does not read the encrypted contents of a tunnel: it limits where the agent can connect, not what it sends there.</p>
+<h2 id="b9-cap-the-blast-radius-and-keep-a-kill-switch">B9. Cap the blast radius and keep a kill switch</h2>
+<p><strong>Control:</strong> <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a>. Assume something will get through. Limit what one agent can do per minute and per session, so a loop or a hijack cannot do unlimited damage, and keep a tested way to stop one agent or all of them. The kill switch is checked on every call, before any policy lookup. Revoking an agent also revokes its children.</p>
+<!-- excerpt: guard.py -->
+
+<pre><code class="language-python">    def take(self, agent: str, now: float | None = None) -&gt; str | None:
+        now = time.monotonic() if now is None else now
+        with self._lock:
+            if self._count.get(agent, 0) &gt;= self.max_actions:
+                return &quot;action budget for this session is used up&quot;
+            tokens = self._tokens.get(agent, float(self.per_minute))
+            tokens = min(self.per_minute, tokens + (now - self._stamp.get(agent, now)) * self.per_minute / 60)
+            self._stamp[agent] = now
+            if tokens &lt; 1:
+                self._tokens[agent] = tokens
+                return &quot;rate limit exceeded&quot;
+            self._tokens[agent] = tokens - 1
+            self._count[agent] = self._count.get(agent, 0) + 1
+            return None
+</code></pre>
+<p><em>From <a href="code/guard.py"><code>guard.py</code></a>.</em></p>
+<!-- excerpt: guard.py -->
+
+<pre><code class="language-python">    def reason(self, agent: str) -&gt; str | None:
+        if self._stop_file and os.path.exists(self._stop_file):
+            return &quot;global stop file present&quot;
+        with self._lock:
+            base = agent.split(&quot;/child&quot;)[0]
+            return &quot;agent revoked&quot; if agent in self._revoked or base in self._revoked else None
+</code></pre>
+<p><em>From <a href="code/guard.py"><code>guard.py</code></a>.</em></p>
+<p>A kill switch you have never used is a hope, not a control. Test it on a schedule, and measure how long revocation takes to reach every system that holds a credential (<a class="chip" href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-022">TC-L06-022</a>, <a class="chip" href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-023">TC-L06-023</a>, <a class="chip" href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-016">TC-D09-016</a>).</p>
+<h2 id="b10-log-every-decision-in-a-tamper-evident-trace">B10. Log every decision in a tamper-evident trace</h2>
+<p><strong>Control:</strong> <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a>. Log each decision, including every denial, with the agent, the tool, the arguments, the reason code and any approval ID. Each entry carries the hash of the one before it, so an edited or deleted entry breaks the chain and the check fails.</p>
+<!-- excerpt: guard.py -->
+
+<pre><code class="language-python">    def write(self, **fields) -&gt; None:
+        entry = {&quot;ts&quot;: round(time.time(), 3), **fields, &quot;prev&quot;: self._last}
+        entry[&quot;hash&quot;] = hashlib.sha256(json.dumps(entry, sort_keys=True, default=str).encode()).hexdigest()
+        with self._lock:
+            with self.path.open(&quot;a&quot;) as f:
+                f.write(json.dumps(entry, sort_keys=True, default=str) + &quot;\n&quot;)
+            self._last = entry[&quot;hash&quot;]
+</code></pre>
+<p><em>From <a href="code/guard.py"><code>guard.py</code></a>.</em></p>
+<!-- excerpt: guard.py -->
+
+<pre><code class="language-python">    def verify(path: str) -&gt; tuple[bool, int]:
+        prev, n = &quot;0&quot; * 64, 0
+        for line in Path(path).read_text().splitlines():
+            entry = json.loads(line)
+            claimed = entry.pop(&quot;hash&quot;)
+            expect = hashlib.sha256(json.dumps(entry, sort_keys=True, default=str).encode()).hexdigest()
+            if entry[&quot;prev&quot;] != prev or claimed != expect:
+                return False, n
+            prev, n = claimed, n + 1
+        return True, n
+</code></pre>
+<p><em>From <a href="code/guard.py"><code>guard.py</code></a>.</em></p>
+<p>Send the log to your monitoring platform (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a>) and keep the latest hash somewhere the agent cannot write. Argument values can contain personal or confidential data, so mask them according to your data classification before the log leaves the application.</p>
+<h2 id="put-it-together">Put it together</h2>
+<p>The guard checks, in this order, and stops at the first failure. Every outcome is logged.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Order</th>
+<th>Check</th>
+<th>Denial code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>The token is valid, unexpired and for this audience</td>
+<td><code>DENY_TOKEN</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>The kill switch is not set for this agent or the whole system</td>
+<td><code>DENY_KILL</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>The tool is on this agent's allow-list and in its token</td>
+<td><code>DENY_NOT_ALLOWED</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>The tool definition matches the pinned version</td>
+<td><code>DENY_DEFINITION_CHANGED</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>The token holds the scopes the tool needs</td>
+<td><code>DENY_SCOPE</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>The arguments pass validation</td>
+<td><code>DENY_ARGS</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td>The agent is within its rate and action budget</td>
+<td><code>DENY_RATE</code></td>
+</tr>
+<tr>
+<td>8</td>
+<td>A sensitive action has an approval for exactly this action</td>
+<td><code>PENDING_APPROVAL</code>, <code>DENY_APPROVAL</code></td>
+</tr>
+<tr>
+<td>9</td>
+<td>The tool runs, with the cleaned arguments only</td>
+<td>none</td>
+</tr>
+</tbody>
+</table></div>
+<p>Wiring it into a framework is one call. This sketch is illustrative; use whatever hook your framework gives you for tool calls, and do not rely on the model to route around it:</p>
+<pre><code class="language-python">decision = guard.call(token, tool_name, tool_arguments,
+                      live_definition=definitions_from_server[tool_name],
+                      on_behalf_of=user_id)
+if decision.allowed:
+    tool_result = decision.result
+elif decision.status == &quot;pending_approval&quot;:
+    notify_approver(decision.approval_id, decision.detail)   # a person sees the real arguments
+    tool_result = &quot;Waiting for approval.&quot;
+else:
+    tool_result = &quot;That action was refused.&quot;                  # do not echo policy details to the model
+</code></pre>
+<h2 id="run-it">Run it</h2>
+<p>From the <code>code/</code> folder, with Python 3.10 or later and no packages to install:</p>
+<pre><code class="language-sh">python3 agent_demo.py                  # the scenario above; exits 0 when every outcome is as expected
+python3 -m unittest -v                 # the test suite
+python3 pin_definitions.py             # re-pin tool definitions after a human review
+</code></pre>
+<h2 id="prove-it">Prove it</h2>
+<p>Each step has tests in this folder and test cases in the wiki's library. The unit tests check this reference code. The wiki's test cases are how you test your own agent, and you should run them against it before release (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a>).</p>
+<p>For most of the cases in the table below that are Critical and testable with a payload, the wiki's <a href="../10_Test_Case_Library/payload-kit.html">Payload Kit</a> has runnable attack sets and a runner that compares an unprotected build with a protected one. The kit's own stand-in applications include this reference guard, so you can see the runner give a result before you point it at your own agent. It also shows where this guard does not help: it stops tool misuse, not what the model says, and the resource-limit sandbox in B7 fails the sandbox probes, which is why B7 tells you to use a container.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Step</th>
+<th>What to run in your own build</th>
+<th>Wiki test cases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B1</td>
+<td>Inventory check: every running agent has an owner and an entry</td>
+<td><a class="chip" href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-001">TC-L06-001</a>, <a class="chip" href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-002">TC-L06-002</a>, <a class="chip" href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-003">TC-L06-003</a></td>
+</tr>
+<tr>
+<td>B2</td>
+<td>Each agent has its own identity; no shared credentials</td>
+<td><a class="chip" href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-001">TC-L09-001</a>, <a class="chip" href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-002">TC-L09-002</a>, <a class="chip" href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-001">TC-D09-001</a></td>
+</tr>
+<tr>
+<td>B3</td>
+<td>Credentials are short-lived and scoped; children cannot widen</td>
+<td><a class="chip" href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-003">TC-L09-003</a>, <a class="chip" href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-004">TC-L09-004</a>, <a class="chip" href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-017">TC-L06-017</a></td>
+</tr>
+<tr>
+<td>B4</td>
+<td>An unlisted tool is blocked; a changed definition is caught</td>
+<td><a class="chip" href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-006">TC-L06-006</a>, <a class="chip" href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-007">TC-L06-007</a>, <a class="chip" href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-008">TC-L06-008</a>, <a class="chip" href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-013">TC-L06-013</a></td>
+</tr>
+<tr>
+<td>B5</td>
+<td>Hostile arguments are refused; an injected instruction cannot drive a tool</td>
+<td><a class="chip" href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-014">TC-L06-014</a>, <a class="chip" href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-019">TC-L06-019</a>, <a class="chip" href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-008">TC-L07-008</a></td>
+</tr>
+<tr>
+<td>B6</td>
+<td>A gated action cannot run without a matching approval</td>
+<td><a class="chip" href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-015">TC-L06-015</a>, <a class="chip" href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-016">TC-L06-016</a></td>
+</tr>
+<tr>
+<td>B7</td>
+<td>Generated code cannot read secrets or reach the network</td>
+<td><a class="chip" href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-025">TC-L06-025</a>, <a class="chip" href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-036">TC-L06-036</a></td>
+</tr>
+<tr>
+<td>B8</td>
+<td>Traffic to an unlisted host fails</td>
+<td><a class="chip" href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-026">TC-L06-026</a></td>
+</tr>
+<tr>
+<td>B9</td>
+<td>Limits hold under a loop; the kill switch stops one agent and all</td>
+<td><a class="chip" href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-021">TC-L06-021</a>, <a class="chip" href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-022">TC-L06-022</a>, <a class="chip" href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-023">TC-L06-023</a>, <a class="chip" href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-024">TC-L06-024</a></td>
+</tr>
+<tr>
+<td>B10</td>
+<td>A decision can be reconstructed from the log; tampering shows</td>
+<td><a class="chip" href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-028">TC-L06-028</a>, <a class="chip" href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-004">TC-L17-004</a>, <a class="chip" href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-020">TC-L17-020</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>The unit tests are built so that the protective checks fail loudly. When this page was written, twelve of the checks were switched off one at a time, and the tests failed every time. Do the same on your own copy of any check you rely on.</p>
+<h2 id="what-this-does-not-cover">What this does not cover</h2>
+<p>These ten steps contain the damage a hijacked agent can do. They do not make the model trustworthy, and they leave real gaps for later:</p>
+<ul>
+<li><strong>Untrusted content and output handling.</strong> Inspecting retrieved content for injection is probabilistic. Design so that a successful injection cannot do harm, as above, and add detection on top (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-020">AI-CTRL-020</a>).</li>
+<li><strong>Memory and context.</strong> Persistent agent memory can be poisoned (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a>).</li>
+<li><strong>Retrieval authorization.</strong> If the agent searches a knowledge base, it must see only what the user may see (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-018">AI-CTRL-018</a>).</li>
+<li><strong>Several cooperating agents.</strong> Trust maps and signed agent-to-agent messages need their own work (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a>).</li>
+<li><strong>Supply chain.</strong> Models, libraries and datasets are not covered here (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-031">AI-CTRL-031</a>).</li>
+<li><strong>Detection and response.</strong> Logging is B10. Alerting, triage and incident handling are separate (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a>).</li>
+<li><strong>Acting with the user's rights.</strong> The example uses agent-level scopes. Exchange the end user's identity where a user is present.</li>
+</ul>
+<h2 id="limits-of-this-reference">Limits of this reference</h2>
+<blockquote class="callout caution">
+<p><strong>Verify before use:</strong> The Python code is a teaching reference and has not been security reviewed or hardened. The token format is deliberately simple and is not a substitute for your identity provider. The argument check resolves DNS at validation time, and the egress proxy repeats the check at connect time, which is the one that matters. The sandbox's process limits are not a security boundary. The Docker command and the Kubernetes manifest were not executed when this page was written, because the tests need no container runtime. Check every flag and field against the current documentation for your runtime and Kubernetes version, and pin container images by digest. The tests were run with Python 3.13 on Linux. The network-removal step needs <code>unshare</code> and is skipped where the kernel does not allow it.</p>
+</blockquote>
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="index.html">&larr; Builder Track</a><a class="next" href="../00_Foundations/index.html">Foundations &rarr;</a></nav>
+<footer class="site-footer">Author: Nachiket Sathaye &middot; Updated 16 October 2026 &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/24_Builder_Track/01_Secure_Your_First_Agent.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
+<div class="site-notice">
+<p><strong>Licence.</strong> <svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.441-3.5c8.951,0,16.572,3.125,22.857,9.372c3.008,3.009,5.295,6.448,6.857,10.314 c1.561,3.867,2.344,7.971,2.344,12.314c0,4.381-0.773,8.486-2.314,12.313c-1.543,3.828-3.82,7.21-6.828,10.143 c-3.123,3.085-6.666,5.448-10.629,7.086c-3.961,1.638-8.057,2.457-12.285,2.457s-8.276-0.808-12.143-2.429 c-3.866-1.618-7.333-3.961-10.4-7.027c-3.067-3.066-5.4-6.524-7-10.372S5.5,32.767,5.5,28.5c0-4.229,0.809-8.295,2.428-12.2 c1.619-3.905,3.972-7.4,7.057-10.486C21.08-0.394,28.565-3.5,37.441-3.5z M37.557,2.272c-7.314,0-13.467,2.553-18.458,7.657 c-2.515,2.553-4.448,5.419-5.8,8.6c-1.354,3.181-2.029,6.505-2.029,9.972c0,3.429,0.675,6.734,2.029,9.913 c1.353,3.183,3.285,6.021,5.8,8.516c2.514,2.496,5.351,4.399,8.515,5.715c3.161,1.314,6.476,1.971,9.943,1.971 c3.428,0,6.75-0.665,9.973-1.999c3.219-1.335,6.121-3.257,8.713-5.771c4.99-4.876,7.484-10.99,7.484-18.344 c0-3.543-0.648-6.895-1.943-10.057c-1.293-3.162-3.18-5.98-5.654-8.458C50.984,4.844,44.795,2.272,37.557,2.272z M37.156,23.187 l-4.287,2.229c-0.458-0.951-1.019-1.619-1.685-2c-0.667-0.38-1.286-0.571-1.858-0.571c-2.856,0-4.286,1.885-4.286,5.657 c0,1.714,0.362,3.084,1.085,4.113c0.724,1.029,1.791,1.544,3.201,1.544c1.867,0,3.181-0.915,3.944-2.743l3.942,2 c-0.838,1.563-2,2.791-3.486,3.686c-1.484,0.896-3.123,1.343-4.914,1.343c-2.857,0-5.163-0.875-6.915-2.629 c-1.752-1.752-2.628-4.19-2.628-7.313c0-3.048,0.886-5.466,2.657-7.257c1.771-1.79,4.009-2.686,6.715-2.686 C32.604,18.558,35.441,20.101,37.156,23.187z M55.613,23.187l-4.229,2.229c-0.457-0.951-1.02-1.619-1.686-2 c-0.668-0.38-1.307-0.571-1.914-0.571c-2.857,0-4.287,1.885-4.287,5.657c0,1.714,0.363,3.084,1.086,4.113 c0.723,1.029,1.789,1.544,3.201,1.544c1.865,0,3.18-0.915,3.941-2.743l4,2c-0.875,1.563-2.057,2.791-3.541,3.686 c-1.486,0.896-3.105,1.343-4.857,1.343c-2.896,0-5.209-0.875-6.941-2.629c-1.736-1.752-2.602-4.19-2.602-7.313 c0-3.048,0.885-5.466,2.658-7.257c1.77-1.79,4.008-2.686,6.713-2.686C51.117,18.558,53.938,20.101,55.613,23.187z"/></svg><svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.443-3.5c8.988,0,16.57,3.085,22.742,9.257C66.393,11.967,69.5,19.548,69.5,28.5c0,8.991-3.049,16.476-9.145,22.456 C53.879,57.319,46.242,60.5,37.443,60.5c-8.649,0-16.153-3.144-22.514-9.43C8.644,44.784,5.5,37.262,5.5,28.5 c0-8.761,3.144-16.342,9.429-22.742C21.101-0.415,28.604-3.5,37.443-3.5z M37.557,2.272c-7.276,0-13.428,2.553-18.457,7.657 c-5.22,5.334-7.829,11.525-7.829,18.572c0,7.086,2.59,13.22,7.77,18.398c5.181,5.182,11.352,7.771,18.514,7.771 c7.123,0,13.334-2.607,18.629-7.828c5.029-4.838,7.543-10.952,7.543-18.343c0-7.276-2.553-13.465-7.656-18.571 C50.967,4.824,44.795,2.272,37.557,2.272z M46.129,20.557v13.085h-3.656v15.542h-9.944V33.643h-3.656V20.557 c0-0.572,0.2-1.057,0.599-1.457c0.401-0.399,0.887-0.6,1.457-0.6h13.144c0.533,0,1.01,0.2,1.428,0.6 C45.918,19.5,46.129,19.986,46.129,20.557z M33.042,12.329c0-3.008,1.485-4.514,4.458-4.514s4.457,1.504,4.457,4.514 c0,2.971-1.486,4.457-4.457,4.457S33.042,15.3,33.042,12.329z"/></svg>This wiki is open to the community under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">Creative Commons Attribution-ShareAlike 4.0 International licence (CC BY-SA 4.0)</a>. You may copy, share and adapt it for any purpose, including commercially, as long as you credit the authors and release anything you build from it under the same licence.</p>
+<p><strong>Disclaimer.</strong> This wiki is an open, community driven educational reference, not legal, regulatory or professional advice. Regional regulatory content is compiled from secondary sources and its verification status is shown per row; verify against primary sources before relying on it. Content is provided "as is" without warranty. Named products and companies belong to their owners; statements about them reflect public information at the date shown. Views are the author's own.</p>
+<p><strong>Privacy.</strong> This site does not use cookies or analytics and collects no personal data itself. It is hosted on GitHub Pages; GitHub may process technical data such as IP addresses under its own <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">privacy statement</a>. If you contribute through GitHub, your contribution and username are public under GitHub's terms.</p>
+</div>
+</footer>
+</main>
+</div>
+<script>window.SITE_BASE = "../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/site.js?v=f655e2dc"></script>
+</body>
+</html>

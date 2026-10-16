@@ -18,6 +18,8 @@ nav_order: 19
 
 > **Verify before use.** MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the [Reference Index](00-reference-index.md) for field definitions and applicability codes.
 
+> **Standard fields.** A field that a case does not show, such as scoring, pass and fail criteria, reviewer notes, standard evidence or the lab setup, uses the wording on the [Standard Fields](standard-fields.md) page.
+
 ## Cases in this layer
 
 | ID | Title | Severity | Method | Domain(s) | Controls |
@@ -75,8 +77,6 @@ nav_order: 19
 
 **Technical Scenario.** Generate bills of materials for lab applications with known components and compare content to ground truth.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
-
 **Test Data.** 3 applications: a RAG chatbot (hosted model, embedding model, vector store, 20 libraries, prompt templates), a classifier service (self-hosted model, dataset, 30 libraries), an agent (2 models, 4 tools, 2 MCP servers, 25 libraries).
 
 **Procedure**
@@ -94,25 +94,11 @@ nav_order: 19
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or inventory entry visible in the supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Export to a software supply chain or asset system.
-
-**Forensic Evidence.** Component identifier, version, hash, source, publisher, decision and timestamp, plus the vendor evidence received, exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Component comparison; relationship graph.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -140,8 +126,6 @@ nav_order: 19
 
 **Technical Scenario.** Export the bills of materials and test import into other tools and linkage to advisories.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
-
 **Test Data.** Bills of materials from the previous case; a second tool able to ingest a standard format; 5 seeded component issues from public advisory-style records.
 
 **Procedure**
@@ -158,25 +142,9 @@ nav_order: 19
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Finding or inventory entry visible in the supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Import into asset and vulnerability tools.
 
-**Forensic Evidence.** Component identifier, version, hash, source, publisher, decision and timestamp, plus the vendor evidence received, exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Validation output; import result.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to layer index](#top)
 
@@ -204,8 +172,6 @@ nav_order: 19
 
 **Technical Scenario.** Download lab models from a mock hub representing official, look-alike and altered sources.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
-
 **Test Data.** 8 models: 3 from official publishers with signatures or hashes, 2 from look-alike publisher names, 2 re-uploaded copies with changed weights, 1 with no publisher metadata.
 
 **Procedure**
@@ -223,25 +189,9 @@ nav_order: 19
 
 **Expected Prevention / Control Action.** Block.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or inventory entry visible in the supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Events to SIEM.
 
-**Forensic Evidence.** Component identifier, version, hash, source, publisher, decision and timestamp, plus the vendor evidence received, exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Verification table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -269,8 +219,6 @@ nav_order: 19
 
 **Technical Scenario.** Attempt to install lab packages and models with names close to popular ones from a mock index.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
-
 **Test Data.** 10 mock items: 4 typosquats of well-known AI libraries and models, 2 dependency-confusion names matching internal package names, 2 recently created packages with few downloads, 2 genuine ones; all harmless.
 
 **Procedure**
@@ -287,25 +235,9 @@ nav_order: 19
 
 **Expected Prevention / Control Action.** Block.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or inventory entry visible in the supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Events to SIEM.
 
-**Forensic Evidence.** Component identifier, version, hash, source, publisher, decision and timestamp, plus the vendor evidence received, exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Install attempt table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -333,8 +265,6 @@ nav_order: 19
 
 **Technical Scenario.** Download test models with harmless marker artefacts to different environments.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
-
 **Test Data.** 6 models (including 2 with marker payloads); 3 environments: pipeline, notebook server, developer workstation.
 
 **Procedure**
@@ -351,25 +281,9 @@ nav_order: 19
 
 **Expected Prevention / Control Action.** Block.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or inventory entry visible in the supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Events to SIEM.
 
-**Forensic Evidence.** Component identifier, version, hash, source, publisher, decision and timestamp, plus the vendor evidence received, exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Environment matrix.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -397,8 +311,6 @@ nav_order: 19
 
 **Technical Scenario.** Scan lab environments running seeded older versions of AI frameworks and servers.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
-
 **Test Data.** 3 environments; 12 seeded components with known public issues (use only component versions and published identifiers, no exploit code); 6 current versions.
 
 **Procedure**
@@ -415,25 +327,11 @@ nav_order: 19
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or inventory entry visible in the supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Findings to ticketing.
-
-**Forensic Evidence.** Component identifier, version, hash, source, publisher, decision and timestamp, plus the vendor evidence received, exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Findings vs seeded list.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -461,8 +359,6 @@ nav_order: 19
 
 **Technical Scenario.** Simulate dependency confusion in the lab build.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
-
 **Test Data.** Internal index; mock public index; 3 internal package names; harmless higher-version packages with the same names on the public index.
 
 **Procedure**
@@ -480,25 +376,9 @@ nav_order: 19
 
 **Expected Prevention / Control Action.** Block.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or inventory entry visible in the supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Alerts to SIEM.
 
-**Forensic Evidence.** Component identifier, version, hash, source, publisher, decision and timestamp, plus the vendor evidence received, exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Build logs.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -526,8 +406,6 @@ nav_order: 19
 
 **Technical Scenario.** Register SaaS tools with varied AI features and review the assessment output.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
-
 **Test Data.** 10 SaaS applications with differing AI features and data access; vendor questionnaires of varied completeness.
 
 **Procedure**
@@ -544,25 +422,11 @@ nav_order: 19
 
 **Expected Prevention / Control Action.** Flag.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Finding or inventory entry visible in the supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Export to vendor management.
-
-**Forensic Evidence.** Component identifier, version, hash, source, publisher, decision and timestamp, plus the vendor evidence received, exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Assessment table.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to layer index](#top)
 
@@ -590,8 +454,6 @@ nav_order: 19
 
 **Technical Scenario.** Request evidence from the vendor and review against the services in scope.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
-
 **Test Data.** Vendor-supplied reports and certificates; checklist of scope questions.
 
 **Procedure**
@@ -609,25 +471,9 @@ nav_order: 19
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Signed written statement from the vendor.
-
-**Expected Report / Dashboard Evidence.** Finding or inventory entry visible in the supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Documents attached to the register.
 
-**Forensic Evidence.** Component identifier, version, hash, source, publisher, decision and timestamp, plus the vendor evidence received, exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = no statement; 3 = statement without supporting detail; 5 = statement with technical detail and an offer to demonstrate.
-
-**Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Evidence checklist.
-
-**Reviewer Notes.** Attestation scores below demonstrated evidence. Request a demonstration where possible.
 
 [Back to layer index](#top)
 
@@ -655,8 +501,6 @@ nav_order: 19
 
 **Technical Scenario.** Request and verify the sub-processor and provider list and observe traffic.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
-
 **Test Data.** Vendor sub-processor list; lab traffic capture; data flow diagram.
 
 **Procedure**
@@ -673,25 +517,9 @@ nav_order: 19
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Finding or inventory entry visible in the supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Documents attached.
 
-**Forensic Evidence.** Component identifier, version, hash, source, publisher, decision and timestamp, plus the vendor evidence received, exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** List vs capture.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to layer index](#top)
 
@@ -719,8 +547,6 @@ nav_order: 19
 
 **Technical Scenario.** Review the vendor's draft terms and data processing agreement against a requirements checklist and record the vendor's response to each gap.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
-
 **Test Data.** Vendor draft terms and data processing agreement; requirements checklist with 15 items: purpose limitation, no training on customer data, retention limits, deletion on exit, sub-processor approval, audit rights, breach notice within a stated number of hours, data location, liability cap, indemnity for IP claims, security obligations, termination assistance, jurisdiction, change-of-control notice, and flow-down to model providers.
 
 **Procedure**
@@ -739,25 +565,9 @@ nav_order: 19
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Signed written statement from the vendor.
-
-**Expected Report / Dashboard Evidence.** Finding or inventory entry visible in the supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Documents attached to the register.
 
-**Forensic Evidence.** Component identifier, version, hash, source, publisher, decision and timestamp, plus the vendor evidence received, exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = no statement; 3 = statement without supporting detail; 5 = statement with technical detail and an offer to demonstrate.
-
-**Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Clause mapping table; amendment log.
-
-**Reviewer Notes.** Attestation scores below demonstrated evidence. Request a demonstration where possible.
 
 [Back to layer index](#top)
 
@@ -785,8 +595,6 @@ nav_order: 19
 
 **Technical Scenario.** Simulate outage, slow responses and API change against mock providers and review exit arrangements.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
-
 **Test Data.** 3 lab applications using a mock primary provider and a mock secondary; scenarios: full outage, partial outage with errors on 30 percent of calls, slow responses at 10 times normal latency, breaking API change, price change notice.
 
 **Procedure**
@@ -805,25 +613,9 @@ nav_order: 19
 
 **Expected Prevention / Control Action.** Failover.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or inventory entry visible in the supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Alerts to operations.
 
-**Forensic Evidence.** Component identifier, version, hash, source, publisher, decision and timestamp, plus the vendor evidence received, exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Outage timeline; policy check on fallback; export samples.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -851,8 +643,6 @@ nav_order: 19
 
 **Technical Scenario.** Simulate deprecation notices and behaviour changes through a mock provider and test detection and impact reporting.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
-
 **Test Data.** Mock provider feed with 4 announcements (deprecation, price change, new default model, safety policy change); 4 applications using different models; 25 canary prompts.
 
 **Procedure**
@@ -871,25 +661,9 @@ nav_order: 19
 
 **Expected Prevention / Control Action.** Alert.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or inventory entry visible in the supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Tickets created automatically.
 
-**Forensic Evidence.** Component identifier, version, hash, source, publisher, decision and timestamp, plus the vendor evidence received, exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Impact report; canary results.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -917,8 +691,6 @@ nav_order: 19
 
 **Technical Scenario.** Register components with differing licences and test detection, policy and reporting.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
-
 **Test Data.** 20 components: 6 permissive, 4 copyleft, 4 with non-commercial terms, 3 with responsible-use restrictions, 3 with unclear or custom terms; 3 intended uses (internal tool, customer product, research).
 
 **Procedure**
@@ -937,25 +709,9 @@ nav_order: 19
 
 **Expected Prevention / Control Action.** Gate.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or inventory entry visible in the supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Report export.
 
-**Forensic Evidence.** Component identifier, version, hash, source, publisher, decision and timestamp, plus the vendor evidence received, exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Licence table; policy test results.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -983,8 +739,6 @@ nav_order: 19
 
 **Technical Scenario.** Test version pinning and integrity checking against a mock index with a tampered release.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
-
 **Test Data.** 3 agent SDKs; mock index with releases 1.0, 1.1 and a tampered 1.1 with the same version number but different content; 2 applications, one pinned and one using a floating version.
 
 **Procedure**
@@ -1003,25 +757,9 @@ nav_order: 19
 
 **Expected Prevention / Control Action.** Block.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or inventory entry visible in the supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Alerts to SIEM.
 
-**Forensic Evidence.** Component identifier, version, hash, source, publisher, decision and timestamp, plus the vendor evidence received, exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Build logs; hash comparison.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1049,8 +787,6 @@ nav_order: 19
 
 **Technical Scenario.** Import lab prompt packs with seeded issues and review findings.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
-
 **Test Data.** 5 packs: clean, hidden instruction at the end of a long template, link that sends conversation data to a lab collector, request for broad tool permissions, text under a restrictive licence.
 
 **Procedure**
@@ -1069,25 +805,9 @@ nav_order: 19
 
 **Expected Prevention / Control Action.** Block.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or inventory entry visible in the supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Report export.
 
-**Forensic Evidence.** Component identifier, version, hash, source, publisher, decision and timestamp, plus the vendor evidence received, exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Findings table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1115,8 +835,6 @@ nav_order: 19
 
 **Technical Scenario.** Scan lab GPU nodes and images with seeded outdated components.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
-
 **Test Data.** 2 GPU nodes; 4 images; seeded issues: outdated driver version, outdated base image, unsigned image, image from an unapproved registry, unpatched runtime component, plus current components.
 
 **Procedure**
@@ -1134,25 +852,9 @@ nav_order: 19
 
 **Expected Prevention / Control Action.** Block at admission.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or inventory entry visible in the supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Tickets.
 
-**Forensic Evidence.** Component identifier, version, hash, source, publisher, decision and timestamp, plus the vendor evidence received, exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Scan results; admission test.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1180,8 +882,6 @@ nav_order: 19
 
 **Technical Scenario.** Request and review the vendor's own supply chain and security evidence and verify what can be verified in the lab.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
-
 **Test Data.** Evidence request list: software bill of materials for agent and gateway, recent independent penetration test summary, vulnerability disclosure policy, secure development practices, release signing, update mechanism design, access required by the agent, internal access controls for customer data.
 
 **Procedure**
@@ -1200,25 +900,9 @@ nav_order: 19
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Signed written statement from the vendor.
-
-**Expected Report / Dashboard Evidence.** Finding or inventory entry visible in the supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Documents attached.
 
-**Forensic Evidence.** Component identifier, version, hash, source, publisher, decision and timestamp, plus the vendor evidence received, exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = no statement; 3 = statement without supporting detail; 5 = statement with technical detail and an offer to demonstrate.
-
-**Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Evidence checklist; signature verification output.
-
-**Reviewer Notes.** Attestation scores below demonstrated evidence. Request a demonstration where possible.
 
 [Back to layer index](#top)
 
@@ -1246,8 +930,6 @@ nav_order: 19
 
 **Technical Scenario.** Request documentation and verify telemetry content and support access behaviour in the lab.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
-
 **Test Data.** Vendor telemetry documentation; lab traffic capture; telemetry settings; support access process; 10 fabricated sensitive prompts.
 
 **Procedure**
@@ -1266,25 +948,9 @@ nav_order: 19
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Signed written statement from the vendor.
-
-**Expected Report / Dashboard Evidence.** Finding or inventory entry visible in the supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Documents attached.
 
-**Forensic Evidence.** Component identifier, version, hash, source, publisher, decision and timestamp, plus the vendor evidence received, exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = no statement; 3 = statement without supporting detail; 5 = statement with technical detail and an offer to demonstrate.
-
-**Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Telemetry comparison; support log sample.
-
-**Reviewer Notes.** Attestation scores below demonstrated evidence. Request a demonstration where possible.
 
 [Back to layer index](#top)
 
@@ -1312,8 +978,6 @@ nav_order: 19
 
 **Technical Scenario.** Review continuity evidence and test configuration and data export.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
-
 **Test Data.** Vendor continuity statement; escrow or step-in terms if offered; data return process; lab tenant with configuration, policies and logs.
 
 **Procedure**
@@ -1331,25 +995,9 @@ nav_order: 19
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Signed written statement from the vendor.
-
-**Expected Report / Dashboard Evidence.** Finding or inventory entry visible in the supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Documents attached.
 
-**Forensic Evidence.** Component identifier, version, hash, source, publisher, decision and timestamp, plus the vendor evidence received, exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = no statement; 3 = statement without supporting detail; 5 = statement with technical detail and an offer to demonstrate.
-
-**Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Export samples; commitment summary.
-
-**Reviewer Notes.** Attestation scores below demonstrated evidence. Request a demonstration where possible.
 
 [Back to layer index](#top)
 
@@ -1377,8 +1025,6 @@ nav_order: 19
 
 **Technical Scenario.** Review the vendor's incident process and run a notification drill.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
-
 **Test Data.** Vendor incident policy and contact list; mock incident notification scenario; customer escalation contacts.
 
 **Procedure**
@@ -1396,25 +1042,9 @@ nav_order: 19
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Signed written statement from the vendor.
-
-**Expected Report / Dashboard Evidence.** Finding or inventory entry visible in the supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Documents and contacts attached.
 
-**Forensic Evidence.** Component identifier, version, hash, source, publisher, decision and timestamp, plus the vendor evidence received, exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = no statement; 3 = statement without supporting detail; 5 = statement with technical detail and an offer to demonstrate.
-
-**Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Drill timeline.
-
-**Reviewer Notes.** Attestation scores below demonstrated evidence. Request a demonstration where possible.
 
 [Back to layer index](#top)
 
@@ -1442,8 +1072,6 @@ nav_order: 19
 
 **Technical Scenario.** Review release history and test an upgrade and rollback in the lab.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
-
 **Test Data.** Last 12 months of release notes and advisories; lab deployment on the previous version.
 
 **Procedure**
@@ -1461,25 +1089,11 @@ nav_order: 19
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or inventory entry visible in the supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Release feed subscription.
-
-**Forensic Evidence.** Component identifier, version, hash, source, publisher, decision and timestamp, plus the vendor evidence received, exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Upgrade and rollback log.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1507,8 +1121,6 @@ nav_order: 19
 
 **Technical Scenario.** Collect dependencies for each shortlisted tool and build a concentration map.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
-
 **Test Data.** Dependency data for 5 tools, covering hosting provider, model providers, identity provider, telemetry services and sub-processors.
 
 **Procedure**
@@ -1525,25 +1137,9 @@ nav_order: 19
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Finding or inventory entry visible in the supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Diagram attached to the register.
 
-**Forensic Evidence.** Component identifier, version, hash, source, publisher, decision and timestamp, plus the vendor evidence received, exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Concentration map.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to layer index](#top)
 
@@ -1571,8 +1167,6 @@ nav_order: 19
 
 **Technical Scenario.** Run a lab drill with a mock compromised package and a withdrawn model.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
-
 **Test Data.** Scenario: a package used by 6 applications is reported malicious; a model used by 2 applications is withdrawn by its publisher; bills of materials loaded for all applications.
 
 **Procedure**
@@ -1591,25 +1185,9 @@ nav_order: 19
 
 **Expected Prevention / Control Action.** Block.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or inventory entry visible in the supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Incident report.
 
-**Forensic Evidence.** Component identifier, version, hash, source, publisher, decision and timestamp, plus the vendor evidence received, exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Timeline; report.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1637,8 +1215,6 @@ nav_order: 19
 
 **Technical Scenario.** Review audit rights and confirm what testing the vendor permits.
 
-**Preconditions.** Isolated PoC lab provisioned; mock model hub, mock package index, test applications and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); written vendor evidence requests issued before testing; platform connected with least-privilege test credentials. Lab environment with mock model hub, mock package index, test applications, fabricated vendor documents and test users; vendor evidence requests issued in writing before testing; no production dependencies or contracts altered.
-
 **Test Data.** Vendor contract; testing rules of engagement; list of permitted activities.
 
 **Procedure**
@@ -1656,25 +1232,9 @@ nav_order: 19
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Signed written statement from the vendor.
-
-**Expected Report / Dashboard Evidence.** Finding or inventory entry visible in the supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Documents attached.
 
-**Forensic Evidence.** Component identifier, version, hash, source, publisher, decision and timestamp, plus the vendor evidence received, exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = no statement; 3 = statement without supporting detail; 5 = statement with technical detail and an offer to demonstrate.
-
-**Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Clause summary.
-
-**Reviewer Notes.** Attestation scores below demonstrated evidence. Request a demonstration where possible.
 
 [Back to layer index](#top)
 
@@ -1721,25 +1281,11 @@ nav_order: 19
 
 **Expected Prevention / Control Action.** Risky extensions blocked from install where enforcement is claimed; the changed-publisher update is held for review.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or inventory entry visible in the supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Verdicts available to endpoint management for enforcement.
-
-**Forensic Evidence.** Component identifier, version, hash, source, publisher, decision and timestamp, plus the vendor evidence received, exportable for audit and incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Verdict table; risk report export; mock URL access log.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 

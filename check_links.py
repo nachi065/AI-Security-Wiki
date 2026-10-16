@@ -93,6 +93,65 @@ for kind, (pattern, home) in IDS.items():
         for name in sorted(set(re.findall(rf"\b{pattern}\b", text)) - set(defined)):
             errors.append(f"source/{path}: cites {name}, but no such {kind} is defined")
 
+# Standard fields. Wording that cases share lives in standard-fields.json; a case may
+# show such a field only when its text differs from the standard.
+import json
+sf_path = os.path.join(SRC, "10_Test_Case_Library", "standard-fields.json")
+if os.path.exists(sf_path):
+    sf = json.load(open(sf_path, encoding="utf-8"))
+    KEY = {"all": lambda l, m, k: "all", "shape": lambda l, m, k: k, "method-shape": lambda l, m, k: f"{m.lower()}-{k}", "layer": lambda l, m, k: l}
+    for path, text in sorted(pages.items()):
+        layer = re.match(r"10_Test_Case_Library/([LD]\d\d)-", path)
+        if not layer:
+            continue
+        for block in re.split(r"(?m)^(?=### TC-[LD]\d\d-\d{3}:)", text)[1:]:
+            name = block.split(":", 1)[0].replace("### ", "")
+            method = re.search(r"\| \*\*Test Method\*\* \| ([^|]*) \|", block)
+            if not method:
+                errors.append(f"source/{path}: {name} has no Test Method")
+                continue
+            shape = "detect" if "**Expected Detection.**" in block else "result"
+            for field, standards in sf["standards"].items():
+                key = KEY[sf["keys"][field]](layer.group(1), method.group(1).strip(), shape)
+                shown = re.search(rf"(?m)^\*\*{re.escape(field)}\.\*\* (.*)$", block)
+                if shown and standards.get(key) == shown.group(1):
+                    errors.append(f"source/{path}: {name} repeats the standard {field}; remove it (see Standard Fields)")
+
+# Control tiers. Every control record states Baseline or Advanced, and the controls the
+# Builder Track relies on must be Baseline.
+_lib = open(os.path.join("source", "03_Control_Library", "03_AI_Security_Control_Objectives_Library.md"), encoding="utf-8").read()
+_tier = {}
+for _rec in re.split(r"^#### (?=AI-CTRL-\d{3}:)", _lib, flags=re.M)[1:]:
+    _tm = re.search(r"^\| \*\*Tier\*\* \| (\w+) \|", _rec.split("\n#### ")[0], re.M)
+    _tier[_rec[:11]] = _tm.group(1) if _tm else None
+for _c, _t in _tier.items():
+    if _t not in ("Baseline", "Advanced"):
+        errors.append(f"source/03_Control_Library: {_c} has no valid Tier (Baseline or Advanced)")
+_builder = open(os.path.join("source", "24_Builder_Track", "01_Secure_Your_First_Agent.md"), encoding="utf-8").read()
+for _c in sorted(set(re.findall(r"AI-CTRL-\d{3}", _builder.split("## The ten controls at a glance")[1].split("Do the steps in order")[0]))):
+    if _tier.get(_c) != "Baseline":
+        errors.append(f"source/24_Builder_Track: {_c} is used by the Builder Track but is not Baseline")
+
+# Counts. Totals that the site can work out are written as {{n:name}} and filled in at
+# build time (see counts.py). A page that types one of them by hand would go stale.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from counts import site_counts
+_counts = site_counts(SRC)
+_stale = [(rf"\b{_counts[k]}\b", k) for k in ("tests", "layer_tests", "domain_tests")]
+_stale += [(rf"\b{_counts['controls']} (?:controls|control objectives)\b", "controls"), (rf"\b{_counts['risks']} risks\b", "risks"), (rf"\b{_counts['families']} families\b", "families")]
+for path, text in pages.items():
+    if "Update_Notes" in path:
+        continue
+    for line_no, line in enumerate(text.split("\n"), 1):
+        if re.match(r"\| \d\.\d+ \|", line):  # version history rows record what was true then
+            continue
+        for pattern, key in _stale:
+            if re.search(pattern, line):
+                errors.append(f"source/{path}:{line_no}: writes a count by hand; use {{{{n:{key}}}}}")
+        for m in re.finditer(r"\{\{n:(\w+)\}\}", line):
+            if m.group(1) not in _counts:
+                errors.append(f"source/{path}:{line_no}: unknown count {m.group(0)}")
+
 # External URLs. Only a URL that is gone counts as an error: many sites refuse
 # automated requests, and that says nothing about the page.
 unchecked = []

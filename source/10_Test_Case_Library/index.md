@@ -1,29 +1,32 @@
 ---
 title: "Test Case Library"
 author: Nachiket Sathaye
-description: "668 AI security test cases for vendor evaluation and PoC across 17 AI lifecycle layers and 6 emerging domains: prompt injection, DLP, agents, MCP, RAG."
+description: "{{n:tests}} AI security test cases for vendor evaluation and PoC across {{n:layers}} AI lifecycle layers and 6 emerging domains: prompt injection, DLP, agents, MCP, RAG."
 nav_order: 11
 has_children: true
 ---
 
 # AI Security Vendor Evaluation: Test Case Library
 
-A library of **668 test cases** for evaluating AI security products in a controlled proof of concept: **535 cases organised by the 17 layers of the AI lifecycle**, tagged with seven buyer-facing use-case domains, and **133 cases in six emerging domains** that cut across the layers.
+A library of **{{n:tests}} test cases** for evaluating AI security products in a controlled proof of concept: **{{n:layer_tests}} cases organised by the {{n:layers}} layers of the AI lifecycle**, tagged with seven buyer-facing use-case domains, and **{{n:domain_tests}} cases in six emerging domains** that cut across the layers.
 
 > **Status: draft for review.** Reference identifiers (MITRE ATLAS, OWASP LLM, NIST AI RMF) must be verified against current published versions, and numeric thresholds are starting values to tune to your risk appetite and vendor SLAs.
 
 ## Start here
 
 - [Reference Index](00-reference-index.md): numbering, field definitions, applicability codes, domain tags, coverage matrix
+- [Standard Fields](standard-fields.md): the wording that cases share (scoring, pass and fail criteria, reviewer notes, standard evidence, per-layer setup). A case shows a field only when it differs
 - [Appendix: Lab Prerequisites](appendix-lab-prerequisites.md): the lab environment, tooling and fabricated data each layer needs
 - [Framework Adoption Guide](framework-adoption-guide.md): how to use the governance and legal layers with ISO/IEC 27001, DPDP, NESA, PDPL or any other framework, plus a crosswalk template
+- [Test Your Own Application](test-your-own-app.md): the same testing written for an owner who can change the code, with no product or provider language, an adapter template and a plain procedure for each case in the payload kit
+- [Payload Kit](payload-kit.md): attack sets, legitimate requests and a runner for 36 Critical cases, with a baseline-versus-protected comparison you can point at your own application
 - [AI Security PoC Test Case Library](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md): a 20-scenario quick-start set for a first PoC, mapped to the layers below
 - [Regulatory Crosswalk](../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.md): UAE and other GCC instruments mapped to controls and to the control themes used in layers L01 to L03
 - [EU Regulatory Crosswalk](../12_EU_AI_Compliance/07_Regulatory_Crosswalk.md): the AI Act, GDPR and related EU instruments mapped to controls and to the same control themes
 
 Every case names the control it tests, by ID, from the [AI Security Control Objectives Library](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md).
 
-To find a specific case, type its ID (for example `TC-L08-014`) or a keyword into the search box at the top of any page. Each of the 668 cases is indexed individually.
+To find a specific case, type its ID (for example `TC-L08-014`) or a keyword into the search box at the top of any page. Each of the {{n:tests}} cases is indexed individually.
 
 ## Layers
 
@@ -46,7 +49,7 @@ To find a specific case, type its ID (for example `TC-L08-014`) or a keyword int
 | L15 | [Infrastructure Layer](L15-infrastructure-layer.md) | GPU/cluster hardening, secrets, network segmentation, sovereignty of control plane | 20 | 8 | 10 | 2 | 0 |
 | L16 | [Supply Chain & Third Party](L16-supply-chain-and-third-party.md) | AI-BOM, model and package provenance, third-party SaaS AI risk | 26 | 4 | 13 | 9 | 0 |
 | L17 | [Monitoring, Detection & Response](L17-monitoring-detection-and-response.md) | telemetry, SIEM/SOAR integration, AI incident response, forensics, tracing platforms, quality failures | 33 | 4 | 21 | 8 | 0 |
-| | **Total** | | **535** | **132** | **278** | **122** | **3** |
+| | **Total** | | **{{n:layer_tests}}** | **132** | **278** | **122** | **3** |
 
 ## Emerging domains
 
@@ -60,11 +63,11 @@ Six further domains cut across the layers and use their own ID series, `TC-D##-#
 | D11 | [Multimodal and Voice Input Security](D11-multimodal-and-voice-input-security.md) | images, documents, audio and video as injection and leakage channels, voice authentication, recording governance | 22 | 5 | 14 | 3 | 0 |
 | D12 | [AI Incident Response and Forensics](D12-ai-incident-response-and-forensics.md) | taxonomy, state preservation, replay, scoping, containment, provider coordination, evidence handling | 22 | 9 | 11 | 2 | 0 |
 | D13 | [AI Cost and Abuse Controls](D13-ai-cost-and-abuse-controls.md) | attribution, budgets, denial of wallet, key abuse, runaway agents, shadow spend, enforcement | 21 | 5 | 11 | 5 | 0 |
-| | **Total** | | **133** | **37** | **76** | **20** | **0** |
+| | **Total** | | **{{n:domain_tests}}** | **37** | **76** | **20** | **0** |
 
 ## Coverage at a glance
 
-Counts are taken from the case index of each layer and domain file. Test method covers all 668 cases; the domain tags below apply to the 535 layer cases.
+Counts are taken from the case index of each layer and domain file. Test method covers all {{n:tests}} cases; the domain tags below apply to the {{n:layer_tests}} layer cases.
 
 | Test method | Cases | Meaning |
 |---|---|---|
@@ -82,7 +85,7 @@ Counts are taken from the case index of each layer and domain file. Test method 
 | D6 | Data Protection / DLP / Investigation | 111 |
 | D7 | Sovereignty / Compliance / UAE Requirements | 167 |
 
-A case can carry more than one domain tag, so the domain counts add up to more than 535. D2 covers the developer workflow end to end: IDE prompts, assistant extensions, coding agents, MCP configuration, repository policy, pipeline bots and SOC telemetry, with L05 as its primary layer.
+A case can carry more than one domain tag, so the domain counts add up to more than {{n:layer_tests}}. D2 covers the developer workflow end to end: IDE prompts, assistant extensions, coding agents, MCP configuration, repository policy, pipeline bots and SOC telemetry, with L05 as its primary layer.
 
 ## Numbering and structure
 

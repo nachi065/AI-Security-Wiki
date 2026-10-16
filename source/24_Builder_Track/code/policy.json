@@ -1,0 +1,103 @@
+{
+  "token": {
+    "audience": "tool-gateway",
+    "ttl_seconds": 300,
+    "max_ttl_seconds": 900
+  },
+  "agents": {
+    "agent://support-triage": {
+      "owner": "support-platform-team@example.com",
+      "purpose": "Read tickets and docs, draft replies for human approval",
+      "tools": [
+        "read_file",
+        "http_get",
+        "send_email"
+      ],
+      "rate_per_minute": 30,
+      "max_actions": 200
+    },
+    "agent://code-helper": {
+      "owner": "developer-tools-team@example.com",
+      "purpose": "Run short analysis snippets for engineers",
+      "tools": [
+        "run_python"
+      ],
+      "rate_per_minute": 10,
+      "max_actions": 50
+    }
+  },
+  "tools": {
+    "read_file": {
+      "definition_sha256": "e7f39a85fa0adf998474f424a8d3c77b24e0f890132a5b7dad345bcef1ddc605",
+      "scopes": [
+        "files:read"
+      ],
+      "approval": "never",
+      "args": {
+        "path": {
+          "type": "path",
+          "root": "workspace",
+          "max_len": 256
+        }
+      }
+    },
+    "http_get": {
+      "definition_sha256": "a84017b7a8fcd49de01832495b0545efad5f24ed9b3e5ed09bcffc929c79a235",
+      "scopes": [
+        "web:read"
+      ],
+      "approval": "never",
+      "args": {
+        "url": {
+          "type": "url",
+          "schemes": [
+            "https"
+          ],
+          "hosts": [
+            "docs.example.com",
+            "*.docs.example.com"
+          ],
+          "ports": [
+            443
+          ]
+        }
+      }
+    },
+    "send_email": {
+      "definition_sha256": "4e037f129da55b7a264c9b77b038b31f347e6b9f50b56a9dab7212cac0d83e7e",
+      "scopes": [
+        "mail:send"
+      ],
+      "approval": "always",
+      "args": {
+        "to": {
+          "type": "email",
+          "domains": [
+            "example.com"
+          ]
+        },
+        "subject": {
+          "type": "string",
+          "max_len": 120
+        },
+        "body": {
+          "type": "string",
+          "max_len": 4000
+        }
+      }
+    },
+    "run_python": {
+      "definition_sha256": "9b9eea845a87daf0f4b81f3bb4d56f74b09cd8ba6dacc9e9504fc40f0f34b6c2",
+      "scopes": [
+        "code:run"
+      ],
+      "approval": "never",
+      "args": {
+        "code": {
+          "type": "string",
+          "max_len": 8000
+        }
+      }
+    }
+  }
+}

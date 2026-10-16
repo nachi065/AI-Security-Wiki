@@ -19,6 +19,8 @@ nav_order: 26
 
 > **How this relates to the layer cases.** Domain cases cross-reference the layer cases they build on (see **Related Layer Cases** in each case). The layer case tests the platform control; the domain case tests the buyer concern from the domain's own point of view. Verify all ATLAS, OWASP and NIST identifiers before use, and treat numeric thresholds as starting values.
 
+> **Standard fields.** A field that a case does not show, such as scoring, pass and fail criteria, reviewer notes, standard evidence or the lab setup, uses the wording on the [Standard Fields](standard-fields.md) page.
+
 ## Cases in this domain
 
 | ID | Title | Severity | Method | Controls |
@@ -72,8 +74,6 @@ nav_order: 26
 
 **Technical Scenario.** Generate known usage from several teams and compare attributed cost with ground truth.
 
-**Preconditions.** Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md). Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.
-
 **Test Data.** 5 teams, 8 applications, 20 users, 12 keys; 20,000 requests with known token counts; 8 requests with missing or wrong tags; mock pricing for 3 models.
 
 **Procedure**
@@ -92,25 +92,11 @@ nav_order: 26
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Export to finance systems.
-
-**Forensic Evidence.** Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Attribution vs ground truth.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -139,8 +125,6 @@ nav_order: 26
 
 **Technical Scenario.** Compare the platform's counts with a mock provider's billing export.
 
-**Preconditions.** Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md). Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.
-
 **Test Data.** 1 week of usage (50,000 requests); mock provider billing export with its own counts; special cases: streaming, cached prompts, retries, tool calls, images and audio, failed requests.
 
 **Procedure**
@@ -159,25 +143,11 @@ nav_order: 26
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Export.
-
-**Forensic Evidence.** Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Reconciliation table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -206,8 +176,6 @@ nav_order: 26
 
 **Technical Scenario.** Configure nested budgets and drive spend through each level.
 
-**Preconditions.** Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md). Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.
-
 **Test Data.** Budgets: organisation 100 units, 3 teams at 30 each, 6 applications at 10 each, 10 users at 2 each, 4 keys at 3 each; load script that reaches each limit in turn.
 
 **Procedure**
@@ -226,25 +194,9 @@ nav_order: 26
 
 **Expected Prevention / Control Action.** Alert, throttle or block per level.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Events to SIEM and chat.
 
-**Forensic Evidence.** Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Level-by-level table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -273,8 +225,6 @@ nav_order: 26
 
 **Technical Scenario.** Build a baseline and inject spend anomalies.
 
-**Preconditions.** Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md). Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.
-
 **Test Data.** 14 days of simulated baseline across 5 teams; 6 anomalies: sudden spike, slow ramp, off-hours burst, new expensive model, new application, key used from a new network.
 
 **Procedure**
@@ -293,25 +243,9 @@ nav_order: 26
 
 **Expected Prevention / Control Action.** Alert or throttle.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Alerts to chat, SIEM and finance.
 
-**Forensic Evidence.** Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Detection table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -340,8 +274,6 @@ nav_order: 26
 
 **Technical Scenario.** Simulate use of a fabricated key from unexpected places and volumes.
 
-**Preconditions.** Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md). Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.
-
 **Test Data.** 2 fabricated keys with normal usage profiles; misuse: use from a new network at 20 times normal volume, use of models never previously used, use at an unusual hour, use from two networks at once.
 
 **Procedure**
@@ -360,25 +292,9 @@ nav_order: 26
 
 **Expected Prevention / Control Action.** Suspend key.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Events to SIEM.
 
-**Forensic Evidence.** Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Timeline.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -407,8 +323,6 @@ nav_order: 26
 
 **Technical Scenario.** Drive scripted anonymous traffic at a lab public chatbot.
 
-**Preconditions.** Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md). Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.
-
 **Test Data.** 1 lab public chatbot; scripts: single address at high rate, 500 addresses at low rate, long-prompt flood, session cycling, replay of identical requests; challenge mechanism available in the lab; spend cap.
 
 **Procedure**
@@ -427,25 +341,9 @@ nav_order: 26
 
 **Expected Prevention / Control Action.** Throttle or challenge.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Events to SIEM.
 
-**Forensic Evidence.** Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Attack table; spend chart.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -474,8 +372,6 @@ nav_order: 26
 
 **Technical Scenario.** Create many lab accounts and consume trial credits.
 
-**Preconditions.** Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md). Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.
-
 **Test Data.** 1 lab service with free tier and referral credits; 200 scripted accounts from a small set of addresses and devices; 20 genuine accounts.
 
 **Procedure**
@@ -493,25 +389,9 @@ nav_order: 26
 
 **Expected Prevention / Control Action.** Limit or review.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Events to the abuse team.
 
-**Forensic Evidence.** Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Cohort table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -540,8 +420,6 @@ nav_order: 26
 
 **Technical Scenario.** Send expansion-style prompts and compare cost with ceilings.
 
-**Preconditions.** Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md). Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.
-
 **Test Data.** 12 prompts: maximum-length requests, repeat-until-limit, nested expansion, translate into many languages, long document summary (legitimate), conversation growing every turn; ceilings: 4,000 output tokens, 20,000 context tokens, 100,000 per session.
 
 **Procedure**
@@ -560,25 +438,9 @@ nav_order: 26
 
 **Expected Prevention / Control Action.** Truncate or block.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Events with token counts.
 
-**Forensic Evidence.** Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Token table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -607,8 +469,6 @@ nav_order: 26
 
 **Technical Scenario.** Run scripted agents that fan out, loop and spawn sub-agents against a mock provider.
 
-**Preconditions.** Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md). Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.
-
 **Test Data.** 4 behaviours: fan-out to 200 tool calls, loop of repeated retries, recursive sub-agent spawning to depth 8, parallel agents sharing one budget; per-task cap of 50 units, per-agent cap of 200.
 
 **Procedure**
@@ -627,25 +487,9 @@ nav_order: 26
 
 **Expected Prevention / Control Action.** Stop task.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Events to SIEM.
 
-**Forensic Evidence.** Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Cost-at-stop table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -674,8 +518,6 @@ nav_order: 26
 
 **Technical Scenario.** Inject provider errors and slow responses and measure request and cost amplification.
 
-**Preconditions.** Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md). Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.
-
 **Test Data.** Mock provider with error rates of 10, 30 and 60 percent, slow responses at 10 times normal, rate limit responses; 5,000 requests; retry settings: none, fixed, exponential with jitter.
 
 **Procedure**
@@ -694,25 +536,9 @@ nav_order: 26
 
 **Expected Prevention / Control Action.** Circuit-break.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Metrics to monitoring.
 
-**Forensic Evidence.** Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Amplification table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -741,8 +567,6 @@ nav_order: 26
 
 **Technical Scenario.** Run repeated and varied requests with caching enabled and attempt to defeat it.
 
-**Preconditions.** Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md). Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.
-
 **Test Data.** 1 application with response and prefix caching; 2,000 requests: 60 percent repeated, 40 percent unique; bypass attempts: tiny random changes to each prompt, unique session identifiers, cache-control manipulation; cache poisoning probe with a canary answer.
 
 **Procedure**
@@ -761,25 +585,9 @@ nav_order: 26
 
 **Expected Prevention / Control Action.** Flag or limit.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Metrics to monitoring.
 
-**Forensic Evidence.** Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Hit-rate table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -808,8 +616,6 @@ nav_order: 26
 
 **Technical Scenario.** Configure routing rules and test premium, standard and fallback paths.
 
-**Preconditions.** Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md). Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.
-
 **Test Data.** 3 models (premium, standard, small) with different prices and policy status; 4 request classes (sensitive, routine, bulk, experimental); rules by class, user and budget level; 300 requests.
 
 **Procedure**
@@ -828,25 +634,9 @@ nav_order: 26
 
 **Expected Prevention / Control Action.** Route or deny.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Decision logs.
 
-**Forensic Evidence.** Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Routing table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -875,8 +665,6 @@ nav_order: 26
 
 **Technical Scenario.** Apply layered limits and test fairness and burst behaviour.
 
-**Preconditions.** Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md). Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.
-
 **Test Data.** 20 users, 6 keys, 3 networks; limits: 60 requests per minute per user, 300 per key, 1,000 per network, concurrency 5 per user; load scripts: steady, burst of 200, sustained over-limit from one user.
 
 **Procedure**
@@ -895,25 +683,9 @@ nav_order: 26
 
 **Expected Prevention / Control Action.** Throttle.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Events with limit name.
 
-**Forensic Evidence.** Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Fairness table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -942,8 +714,6 @@ nav_order: 26
 
 **Technical Scenario.** Configure graded actions and trigger them in sequence.
 
-**Preconditions.** Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md). Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.
-
 **Test Data.** Budget with thresholds at 70, 90 and 100 percent; actions: notify, throttle non-critical applications, switch to a cheaper model, suspend non-critical applications, suspend all; 3 critical and 5 non-critical applications; manual override.
 
 **Procedure**
@@ -962,25 +732,9 @@ nav_order: 26
 
 **Expected Prevention / Control Action.** Graded automatic actions.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Events to chat and ticketing.
 
-**Forensic Evidence.** Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Threshold table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -1009,8 +763,6 @@ nav_order: 26
 
 **Technical Scenario.** Run scheduled jobs with defects and check ceilings.
 
-**Preconditions.** Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md). Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.
-
 **Test Data.** 4 jobs: nightly summarisation (normal), job with an infinite loop, job processing an unexpectedly large input set, job retrying a failing step forever; ceilings: time 2 hours, spend 40 units, calls 5,000.
 
 **Procedure**
@@ -1029,25 +781,9 @@ nav_order: 26
 
 **Expected Prevention / Control Action.** Stop job.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Alerts to owners.
 
-**Forensic Evidence.** Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Job table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -1076,8 +812,6 @@ nav_order: 26
 
 **Technical Scenario.** Create misuse patterns on lab self-hosted capacity.
 
-**Preconditions.** Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md). Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.
-
 **Test Data.** Lab cluster with 8 GPU units; patterns: idle allocation held for days, oversized request for small work, unauthorised training job, unusual continuous high load, jobs submitted by a service account.
 
 **Procedure**
@@ -1096,25 +830,9 @@ nav_order: 26
 
 **Expected Prevention / Control Action.** Reclaim or stop.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Alerts to platform and finance.
 
-**Forensic Evidence.** Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Pattern table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -1143,8 +861,6 @@ nav_order: 26
 
 **Technical Scenario.** Seed spending signals across several sources and compare discovery with ground truth.
 
-**Preconditions.** Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md). Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.
-
 **Test Data.** 25 signals: 8 card or expense lines for AI subscriptions, 5 direct provider accounts, 4 browser-based subscriptions seen in traffic, 4 SaaS add-ons, 4 approved subscriptions; mock billing export and expense feed.
 
 **Procedure**
@@ -1163,25 +879,9 @@ nav_order: 26
 
 **Expected Prevention / Control Action.** Review and approve or stop.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Feed integrations.
 
-**Forensic Evidence.** Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Discovery table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -1210,8 +910,6 @@ nav_order: 26
 
 **Technical Scenario.** Submit requests of different sizes and track approvals.
 
-**Preconditions.** Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md). Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.
-
 **Test Data.** 8 requests: premium model access, new application budget, budget increase, GPU allocation, long-term commitment, small experiment, emergency increase, request that exceeds the requester's authority.
 
 **Procedure**
@@ -1230,25 +928,9 @@ nav_order: 26
 
 **Expected Prevention / Control Action.** Gate.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Ticketing and finance integration.
 
-**Forensic Evidence.** Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Request records.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 
@@ -1277,8 +959,6 @@ nav_order: 26
 
 **Technical Scenario.** Review three lab SaaS products with AI add-ons and test visibility and controls.
 
-**Preconditions.** Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md). Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.
-
 **Test Data.** 3 mock SaaS tenants with AI features, usage meters, caps and overage prices; 4 weeks of simulated usage including one overage.
 
 **Procedure**
@@ -1297,25 +977,11 @@ nav_order: 26
 
 **Expected Prevention / Control Action.** Limit.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Usage export.
-
-**Forensic Evidence.** Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Feature table.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to domain index](#top)
 
@@ -1344,8 +1010,6 @@ nav_order: 26
 
 **Technical Scenario.** Produce chargeback reports and run a dispute through the evidence trail.
 
-**Preconditions.** Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md). Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.
-
 **Test Data.** 1 month of usage for 5 teams; 2 disputed charges (a key shared by two teams, a spike during an attack); allocation rules.
 
 **Procedure**
@@ -1364,25 +1028,9 @@ nav_order: 26
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Finance export.
 
-**Forensic Evidence.** Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Dispute records.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to domain index](#top)
 
@@ -1411,8 +1059,6 @@ nav_order: 26
 
 **Technical Scenario.** Run abuse patterns by lab users and walk the enforcement ladder.
 
-**Preconditions.** Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md). Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.
-
 **Test Data.** 10 lab users: 4 abusers (automation, account sharing, repeated limit testing, resale of access), 3 heavy genuine users, 3 normal users; ladder: warn, throttle, temporary suspend, permanent suspend; appeal workflow.
 
 **Procedure**
@@ -1431,25 +1077,9 @@ nav_order: 26
 
 **Expected Prevention / Control Action.** Warn, throttle or suspend.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Events to the abuse team.
 
-**Forensic Evidence.** Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Ladder table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to domain index](#top)
 

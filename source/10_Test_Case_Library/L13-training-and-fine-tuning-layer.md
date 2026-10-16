@@ -18,6 +18,8 @@ nav_order: 16
 
 > **Verify before use.** MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the [Reference Index](00-reference-index.md) for field definitions and applicability codes.
 
+> **Standard fields.** A field that a case does not show, such as scoring, pass and fail criteria, reviewer notes, standard evidence or the lab setup, uses the wording on the [Standard Fields](standard-fields.md) page.
+
 ## Cases in this layer
 
 | ID | Title | Severity | Method | Domain(s) | Controls |
@@ -75,8 +77,6 @@ nav_order: 16
 
 **Technical Scenario.** Create a known set of datasets across storage locations and compare the platform's inventory with ground truth.
 
-**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
-
 **Test Data.** 8 datasets: 3 in object storage, 2 in a notebook workspace, 1 on a shared drive, 1 in a repository, 1 in a managed fine-tuning service; sizes from 100 rows to 100,000 rows; varied sensitivity.
 
 **Procedure**
@@ -94,25 +94,11 @@ nav_order: 16
 
 **Expected Prevention / Control Action.** N/A (discovery).
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Inventory exportable to the data catalogue and model registry.
-
-**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Inventory vs ground truth; link accuracy.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -140,8 +126,6 @@ nav_order: 16
 
 **Technical Scenario.** Register datasets with and without provenance records and test gating.
 
-**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
-
 **Test Data.** 6 datasets: 2 with full provenance (source, licence, collection date, consent basis), 2 with partial, 2 with none.
 
 **Procedure**
@@ -159,25 +143,11 @@ nav_order: 16
 
 **Expected Prevention / Control Action.** Gate.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Export for audit and regulatory response.
-
-**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Gap report; gate test record.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to layer index](#top)
 
@@ -205,8 +175,6 @@ nav_order: 16
 
 **Technical Scenario.** Flip labels in a lab labelled dataset at different rates and test detection.
 
-**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
-
 **Test Data.** Lab dataset of 5,000 labelled examples; label-flip rates of 1, 3 and 10 percent applied in random and targeted patterns (targeted: one class pushed into another).
 
 **Procedure**
@@ -224,25 +192,9 @@ nav_order: 16
 
 **Expected Prevention / Control Action.** Quarantine dataset.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Findings to ticketing.
 
-**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Detection table; accuracy comparison.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -270,8 +222,6 @@ nav_order: 16
 
 **Technical Scenario.** Insert a harmless trigger-phrase pattern into a fine-tuning set and test data-side and model-side detection.
 
-**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
-
 **Test Data.** Fine-tuning set of 2,000 instruction-response pairs; 20 poisoned pairs (1 percent) mapping a benign trigger phrase to a marker response; clean control set.
 
 **Procedure**
@@ -289,25 +239,9 @@ nav_order: 16
 
 **Expected Prevention / Control Action.** Block training run.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Findings exportable to model risk records.
 
-**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Detection table; behaviour test results.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -335,8 +269,6 @@ nav_order: 16
 
 **Technical Scenario.** Ingest normal and anomalous batches and compare screening results.
 
-**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
-
 **Test Data.** Baseline set of 10,000 records; 5 incoming batches: clean, duplicated, distribution-shifted, injected with out-of-range values, injected with near-duplicate adversarial examples.
 
 **Procedure**
@@ -353,25 +285,9 @@ nav_order: 16
 
 **Expected Prevention / Control Action.** Quarantine.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Alerts to data owner.
 
-**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Batch results.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -399,8 +315,6 @@ nav_order: 16
 
 **Technical Scenario.** Scan a seeded training corpus.
 
-**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
-
 **Test Data.** 10,000 records; 300 with fabricated personal data, 100 with fake secrets, 50 with confidential markers; 9,550 clean.
 
 **Procedure**
@@ -417,25 +331,9 @@ nav_order: 16
 
 **Expected Prevention / Control Action.** Exclude or mask.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Findings to data owners.
 
-**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Recall and precision; training input check.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -463,8 +361,6 @@ nav_order: 16
 
 **Technical Scenario.** Test the platform on a mock set of crawled sources with different signals.
 
-**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
-
 **Test Data.** 20 mock sources: 6 with opt-out signals, 4 with restrictive terms, 4 licensed, 6 unrestricted; crawl record.
 
 **Procedure**
@@ -481,25 +377,11 @@ nav_order: 16
 
 **Expected Prevention / Control Action.** Gate.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Report export.
-
-**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Flag comparison.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to layer index](#top)
 
@@ -527,8 +409,6 @@ nav_order: 16
 
 **Technical Scenario.** Test who can start jobs and what approval is needed.
 
-**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
-
 **Test Data.** 4 roles; 3 datasets of different sensitivity; approval workflow.
 
 **Procedure**
@@ -545,25 +425,9 @@ nav_order: 16
 
 **Expected Prevention / Control Action.** Gate.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Audit export.
 
-**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Role and dataset matrix.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -591,8 +455,6 @@ nav_order: 16
 
 **Technical Scenario.** Attempt dataset uploads to approved and unapproved tuning services.
 
-**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
-
 **Test Data.** 2 mock tuning services (approved, unapproved); datasets with fabricated sensitive markers.
 
 **Procedure**
@@ -608,25 +470,9 @@ nav_order: 16
 
 **Expected Prevention / Control Action.** Block.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Events to SIEM.
 
-**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Upload results.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -654,8 +500,6 @@ nav_order: 16
 
 **Technical Scenario.** Fine-tune a lab model on benign data and compare safety before and after.
 
-**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
-
 **Test Data.** 1 base model; 2 benign fine-tuning sets; 150-prompt safety set from L12.
 
 **Procedure**
@@ -673,25 +517,9 @@ nav_order: 16
 
 **Expected Prevention / Control Action.** Gate.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Results to registry.
 
-**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Score comparison.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -719,8 +547,6 @@ nav_order: 16
 
 **Technical Scenario.** Run jobs that attempt outbound connections and file access.
 
-**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
-
 **Test Data.** Training environment; allowed: internal package mirror and dataset store; attempts: public internet, unapproved bucket, metadata service, other tenants' storage.
 
 **Procedure**
@@ -737,25 +563,9 @@ nav_order: 16
 
 **Expected Prevention / Control Action.** Block.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Events to SIEM.
 
-**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Attempt table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -783,8 +593,6 @@ nav_order: 16
 
 **Technical Scenario.** Create checkpoints and tamper with them.
 
-**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
-
 **Test Data.** 3 checkpoints; tampering: altered file, swapped file, altered metadata.
 
 **Procedure**
@@ -800,25 +608,9 @@ nav_order: 16
 
 **Expected Prevention / Control Action.** Block.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Records export.
 
-**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Test results.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -846,8 +638,6 @@ nav_order: 16
 
 **Technical Scenario.** Run training and inspect the record.
 
-**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
-
 **Test Data.** 2 training runs with different configurations.
 
 **Procedure**
@@ -864,25 +654,9 @@ nav_order: 16
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Export.
 
-**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Record; comparison.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to layer index](#top)
 
@@ -910,8 +684,6 @@ nav_order: 16
 
 **Technical Scenario.** Submit lab packages that imitate public hub downloads, with seeded defects, through the platform's vetting gate.
 
-**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
-
 **Test Data.** 6 packages: clean dataset, dataset with corrupted records, dataset with hidden instructions in text fields, dataset containing fabricated personal data, model package with an unsafe loader (harmless marker payload), model package with a licence that conflicts with intended use.
 
 **Procedure**
@@ -929,25 +701,9 @@ nav_order: 16
 
 **Expected Prevention / Control Action.** Block until approved.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Report export; findings to ticketing.
 
-**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Findings table; blocked-use test; audit trail.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -975,8 +731,6 @@ nav_order: 16
 
 **Technical Scenario.** Generate synthetic datasets in the lab and test tagging, seed-leakage detection, contamination checks and mixing policy.
 
-**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
-
 **Test Data.** 1 generator model; 3 synthetic sets generated from a seed set containing 50 canary records; an evaluation set with 100 items, 10 of which are close paraphrases of synthetic items.
 
 **Procedure**
@@ -994,25 +748,11 @@ nav_order: 16
 
 **Expected Prevention / Control Action.** Flag or block mixing.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Report export.
-
-**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Tag records; leakage and contamination results.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to layer index](#top)
 
@@ -1040,8 +780,6 @@ nav_order: 16
 
 **Technical Scenario.** Simulate a small federated round with one malicious participant submitting manipulated updates and test detection and exclusion.
 
-**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
-
 **Test Data.** 5 simulated participants with their own fabricated data shards; 1 malicious participant submitting scaled, sign-flipped and backdoor-style updates in separate rounds; 10 training rounds.
 
 **Procedure**
@@ -1059,25 +797,9 @@ nav_order: 16
 
 **Expected Prevention / Control Action.** Exclude participant.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Alerts to SIEM.
 
-**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Round-by-round results; quality chart.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1105,8 +827,6 @@ nav_order: 16
 
 **Technical Scenario.** Fine-tune a lab model with canaries at several repetition levels, then run extraction attempts and compare with and without output controls.
 
-**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
-
 **Test Data.** Fine-tuning set of 5,000 fabricated records containing 60 canary strings inserted at 1, 5 and 20 repetitions (20 each); 200 extraction prompts of four styles (prefix completion, direct question, repeated token, context reconstruction).
 
 **Procedure**
@@ -1125,25 +845,9 @@ nav_order: 16
 
 **Expected Prevention / Control Action.** Mask or block.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Results exportable to model risk records.
 
-**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Extraction table by repetition level.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1171,8 +875,6 @@ nav_order: 16
 
 **Technical Scenario.** Submit genuine and coordinated malicious feedback to a lab feedback pipeline and test detection and weighting.
 
-**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
-
 **Test Data.** 200 genuine ratings and corrections from 40 test users; 50 coordinated malicious ratings from 5 accounts pushing a specific wrong preference (for example rating a policy-violating answer as best); 2 slow campaigns spread over simulated days.
 
 **Procedure**
@@ -1191,25 +893,9 @@ nav_order: 16
 
 **Expected Prevention / Control Action.** Quarantine.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Alerts to the product owner.
 
-**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Detection table; model shift measurement.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1237,8 +923,6 @@ nav_order: 16
 
 **Technical Scenario.** Submit a deletion request for fabricated individuals whose records were used in tuning and follow it through the platform.
 
-**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
-
 **Test Data.** Training dataset with 20 canary records for 3 fabricated individuals; 2 model versions trained on it; erasure request for 1 individual.
 
 **Procedure**
@@ -1256,25 +940,11 @@ nav_order: 16
 
 **Expected Prevention / Control Action.** Workflow.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Evidence export for privacy office.
-
-**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Workflow record; extraction test.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to layer index](#top)
 
@@ -1302,8 +972,6 @@ nav_order: 16
 
 **Technical Scenario.** Launch unapproved lab jobs of several types and test discovery, quota enforcement and alerting.
 
-**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
-
 **Test Data.** 3 unapproved jobs: an unregistered fine-tuning job, a job disguised as a notebook session, a mining-style continuous load; project quotas defined; approved job list.
 
 **Procedure**
@@ -1321,25 +989,9 @@ nav_order: 16
 
 **Expected Prevention / Control Action.** Stop job.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Alerts to SIEM and chat.
 
-**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Detection timeline; quota logs.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1367,8 +1019,6 @@ nav_order: 16
 
 **Technical Scenario.** Inventory the identities used by lab training jobs, two of which are deliberately misconfigured.
 
-**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
-
 **Test Data.** 4 training jobs across 2 teams and 2 environments; 1 job configured with a static key in an environment variable; 1 job sharing a key with another.
 
 **Procedure**
@@ -1386,25 +1036,9 @@ nav_order: 16
 
 **Expected Prevention / Control Action.** Block or alert.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Findings to SIEM.
 
-**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Identity inventory; findings; attribution trace.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1432,8 +1066,6 @@ nav_order: 16
 
 **Technical Scenario.** Attempt reads, writes and listings from a training identity against approved and unapproved datasets.
 
-**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
-
 **Test Data.** 6 datasets (3 approved for the run, 2 not approved, 1 restricted); 1 training identity; 12 access attempts (reads, writes to source and listings).
 
 **Procedure**
@@ -1451,25 +1083,9 @@ nav_order: 16
 
 **Expected Prevention / Control Action.** Allow or deny.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Decision logs to SIEM.
 
-**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Access matrix with expected and actual outcomes.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1497,8 +1113,6 @@ nav_order: 16
 
 **Technical Scenario.** Capture a credential from each of three lab jobs during the run and replay it after the job ends.
 
-**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
-
 **Test Data.** 3 jobs: one completes, one fails and one is cancelled; a credential captured from each during the run, in the lab only; checkpoint storage and job logs.
 
 **Procedure**
@@ -1516,25 +1130,9 @@ nav_order: 16
 
 **Expected Prevention / Control Action.** Revoke.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Audit export.
 
-**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Replay results with timings; lifetime record; search results.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1562,8 +1160,6 @@ nav_order: 16
 
 **Technical Scenario.** Test every role against a matrix of training actions.
 
-**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
-
 **Test Data.** 5 test users: data scientist, ML engineer, data owner, platform administrator and contractor; a matrix of 8 actions (start a job, read raw data, change training code, approve a dataset, promote a model, read checkpoints, change a job's identity, delete a run record).
 
 **Procedure**
@@ -1581,25 +1177,9 @@ nav_order: 16
 
 **Expected Prevention / Control Action.** Allow or deny.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Decision logs to SIEM.
 
-**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Role and action matrix with expected and actual columns; access grant record.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1627,8 +1207,6 @@ nav_order: 16
 
 **Technical Scenario.** Start runs in three different ways and inspect the records.
 
-**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
-
 **Test Data.** 6 runs: 3 started by people, 2 by a scheduler and 1 by a pipeline acting for a user.
 
 **Procedure**
@@ -1646,25 +1224,11 @@ nav_order: 16
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Audit export.
-
-**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Run records; field completeness table; edit attempt result.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1692,8 +1256,6 @@ nav_order: 16
 
 **Technical Scenario.** Create training identities in different states and run the platform's lifecycle controls.
 
-**Preconditions.** Isolated PoC lab provisioned; lab training environment, fabricated datasets, small open-weight model, mock registry and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab training environment with fabricated datasets, a small open-weight model for fine-tuning, harmless trigger phrases, registered canary strings, a mock model registry and test users; no production data or production training pipelines connected.
-
 **Test Data.** 8 training identities: 3 active, 2 unused for 90 days (backdated), 2 whose owner has left and 1 belonging to a retired project.
 
 **Procedure**
@@ -1711,25 +1273,11 @@ nav_order: 16
 
 **Expected Prevention / Control Action.** Disable and revoke.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Finding or decision visible in the training and data supply chain dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Lifecycle report.
-
-**Forensic Evidence.** Dataset or checkpoint identifier, hash, source, training job, operator, decision and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Review output; removal evidence.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to layer index](#top)
 

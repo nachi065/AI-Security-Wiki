@@ -18,6 +18,8 @@ nav_order: 18
 
 > **Verify before use.** MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the [Reference Index](00-reference-index.md) for field definitions and applicability codes.
 
+> **Standard fields.** A field that a case does not show, such as scoring, pass and fail criteria, reviewer notes, standard evidence or the lab setup, uses the wording on the [Standard Fields](standard-fields.md) page.
+
 ## Cases in this layer
 
 | ID | Title | Severity | Method | Domain(s) | Controls |
@@ -69,8 +71,6 @@ nav_order: 18
 
 **Technical Scenario.** Deploy a known set of AI infrastructure in several places and compare the platform's inventory with ground truth.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
-
 **Test Data.** 12 assets: 3 GPU nodes (one in a separate cloud account), 2 inference servers, 2 vector stores, 2 model storage buckets, 1 notebook server, 1 orchestration controller, 1 experiment tracker; each tagged with owner, environment and exposure.
 
 **Procedure**
@@ -89,25 +89,11 @@ nav_order: 18
 
 **Expected Prevention / Control Action.** N/A (discovery).
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Inventory to CMDB.
-
-**Forensic Evidence.** Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Inventory vs ground truth; detection delay.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -135,8 +121,6 @@ nav_order: 18
 
 **Technical Scenario.** Assess lab GPU nodes and cluster configuration with seeded weaknesses and review findings.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
-
 **Test Data.** 3 GPU nodes and 1 cluster with 16 seeded weaknesses: exposed device plugin metrics, open management interface, privileged containers with host device access, shared host paths, outdated driver, default credentials on a monitoring tool, debug port open, no node isolation between teams, unencrypted node disks, permissive cluster roles, plus 6 compliant settings.
 
 **Procedure**
@@ -155,25 +139,11 @@ nav_order: 18
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Findings to ticketing.
-
-**Forensic Evidence.** Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Findings vs seeded list.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -221,25 +191,9 @@ nav_order: 18
 
 **Expected Prevention / Control Action.** Restrict sharing by policy.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Findings to ticketing.
 
-**Forensic Evidence.** Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Probe results per mode; latency table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -267,8 +221,6 @@ nav_order: 18
 
 **Technical Scenario.** Scan and test lab namespaces with seeded poor settings, then enforce policy.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
-
 **Test Data.** 3 namespaces (training, inference, shared tools); 20 workloads; seeded issues: privileged pods, host network, service account with cluster-admin, no resource limits, secrets as environment variables, unrestricted network policy, images from public registries, writable root file systems.
 
 **Procedure**
@@ -287,25 +239,9 @@ nav_order: 18
 
 **Expected Prevention / Control Action.** Reject at admission.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Events to SIEM.
 
-**Forensic Evidence.** Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Findings; admission outcomes.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -333,8 +269,6 @@ nav_order: 18
 
 **Technical Scenario.** Assess lab inference servers with seeded exposure and configuration weaknesses.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
-
 **Test Data.** 3 mock inference servers with 12 seeded weaknesses: unauthenticated admin endpoint, debug routes, verbose stack traces, default ports exposed to wider segment, permissive cross-origin settings, no TLS on internal calls, unlimited request size, no rate limit, outdated version, model listing exposed, metrics endpoint with prompt samples, plus secure controls.
 
 **Procedure**
@@ -353,25 +287,11 @@ nav_order: 18
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Findings to ticketing.
-
-**Forensic Evidence.** Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Findings vs seeded list.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -399,8 +319,6 @@ nav_order: 18
 
 **Technical Scenario.** Map zones, test cross-zone connections and compare with the intended policy.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
-
 **Test Data.** 5 zones with a written allow matrix (training to data store allowed, inference to data store read-only, developer to management blocked, internet to inference only via gateway, management to all with MFA); test hosts in each zone; 25 intended connection tests.
 
 **Procedure**
@@ -419,25 +337,11 @@ nav_order: 18
 
 **Expected Prevention / Control Action.** N/A (assessment), or block where the platform enforces.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Findings to network security tools.
-
-**Forensic Evidence.** Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Connection test matrix.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -465,8 +369,6 @@ nav_order: 18
 
 **Technical Scenario.** Run lab workloads that attempt outbound connections and test enforcement and visibility.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
-
 **Test Data.** 3 workloads (training, inference, agent); allow-lists of 3 destinations each; 20 attempted connections: allowed hosts, public package index, unlisted storage bucket, raw IP, DNS tunnelling-style long queries (lab only), metadata service, other tenants' endpoints.
 
 **Procedure**
@@ -485,25 +387,9 @@ nav_order: 18
 
 **Expected Prevention / Control Action.** Block.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Events to SIEM.
 
-**Forensic Evidence.** Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Attempt matrix.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -551,25 +437,9 @@ nav_order: 18
 
 **Expected Prevention / Control Action.** Block; isolate.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Alerts to SIEM and SOAR.
 
-**Forensic Evidence.** Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Probe result table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -597,8 +467,6 @@ nav_order: 18
 
 **Technical Scenario.** Seed secrets across lab infrastructure and test discovery and vault adoption.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
-
 **Test Data.** 15 fabricated secrets across image layers, environment variables, config maps, node files, pipeline variables and notebook files; vault with 3 secrets properly referenced.
 
 **Procedure**
@@ -617,25 +485,9 @@ nav_order: 18
 
 **Expected Prevention / Control Action.** Alert.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Findings to ticketing.
 
-**Forensic Evidence.** Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Detection table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -663,8 +515,6 @@ nav_order: 18
 
 **Technical Scenario.** Review roles attached to lab AI services and test misuse paths.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
-
 **Test Data.** 6 roles: broad administrator, storage full access, read-only data, model deployment only, unused role with wildcard permissions, cross-account trust; metadata service with and without hardening.
 
 **Procedure**
@@ -683,25 +533,11 @@ nav_order: 18
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Findings to ticketing.
-
-**Forensic Evidence.** Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Permission analysis; metadata test.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -729,8 +565,6 @@ nav_order: 18
 
 **Technical Scenario.** Assess lab storage with seeded weaknesses.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
-
 **Test Data.** 6 buckets or shares with 14 seeded issues: public read, public write, no encryption, weak policy with wildcard principal, no versioning, no access logging, no object lock, cross-account access, signed URLs with long expiry, no lifecycle rules, plus compliant settings.
 
 **Procedure**
@@ -748,25 +582,11 @@ nav_order: 18
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Findings to ticketing.
-
-**Forensic Evidence.** Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Findings vs seeded list.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -794,8 +614,6 @@ nav_order: 18
 
 **Technical Scenario.** Review encryption coverage and any confidential computing support for lab workloads.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
-
 **Test Data.** Lab workloads; encryption settings for disks, buckets, backups and network; vendor statements on in-use protection.
 
 **Procedure**
@@ -813,25 +631,9 @@ nav_order: 18
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Documents attached.
 
-**Forensic Evidence.** Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Settings and scan output.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to layer index](#top)
 
@@ -859,8 +661,6 @@ nav_order: 18
 
 **Technical Scenario.** Trace management, data and telemetry paths with network capture and cloud region evidence.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
-
 **Test Data.** Deployed platform in the lab; capture tooling; list of platform components with claimed locations; data classes (prompts, metadata, telemetry, licence checks, updates).
 
 **Procedure**
@@ -879,25 +679,9 @@ nav_order: 18
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Documents attached.
 
-**Forensic Evidence.** Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Capture analysis; region resolution table.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to layer index](#top)
 
@@ -925,8 +709,6 @@ nav_order: 18
 
 **Technical Scenario.** Deploy the platform in an isolated lab segment with no internet access and run the full test set.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
-
 **Test Data.** Isolated segment; offline update media; standard test set of 40 prompts and events; offline licence mechanism.
 
 **Procedure**
@@ -945,25 +727,11 @@ nav_order: 18
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Offline export works.
-
-**Forensic Evidence.** Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Function table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -991,8 +759,6 @@ nav_order: 18
 
 **Technical Scenario.** Review tenancy models and test isolation where a shared option is in scope.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
-
 **Test Data.** Vendor tenancy documentation; lab tenants in each available model.
 
 **Procedure**
@@ -1010,25 +776,9 @@ nav_order: 18
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.
-
-**Expected Report / Dashboard Evidence.** Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Documents attached.
 
-**Forensic Evidence.** Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Verification notes.
-
-**Reviewer Notes.** Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.
 
 [Back to layer index](#top)
 
@@ -1056,8 +806,6 @@ nav_order: 18
 
 **Technical Scenario.** Deploy the platform in the lab and assess each component with network, configuration and credential checks.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
-
 **Test Data.** Deployed agent, gateway and management console; scanning tools approved for the lab; benchmark checklist.
 
 **Procedure**
@@ -1077,25 +825,11 @@ nav_order: 18
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Findings to the vendor with deadlines.
-
-**Forensic Evidence.** Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Scan outputs; findings list.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1123,8 +857,6 @@ nav_order: 18
 
 **Technical Scenario.** Run competing workloads under quotas and measure fairness and protection of production inference.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
-
 **Test Data.** Cluster with 8 GPU units; 3 teams with quotas; production inference service; 4 batch training jobs including one oversized.
 
 **Procedure**
@@ -1143,25 +875,9 @@ nav_order: 18
 
 **Expected Prevention / Control Action.** Enforce quota.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Metrics to monitoring.
 
-**Forensic Evidence.** Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
-
-**Pass Criteria.** Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Allocation and latency table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1189,8 +905,6 @@ nav_order: 18
 
 **Technical Scenario.** Generate known activity in lab infrastructure and check that every expected log source records it.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
-
 **Test Data.** 8 activities: login to the cluster, role change, secret read, model file download, storage policy change, GPU job start, network policy change, admin API call; 10 log sources.
 
 **Procedure**
@@ -1209,25 +923,11 @@ nav_order: 18
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Delivery to SIEM.
-
-**Forensic Evidence.** Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Coverage table.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1255,8 +955,6 @@ nav_order: 18
 
 **Technical Scenario.** Back up and restore a lab AI service including model, index, configuration and policies.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
-
 **Test Data.** 1 AI application with model weights, vector store of 1,000 chunks, prompt templates, platform policies and access rules; recovery targets for time and data loss.
 
 **Procedure**
@@ -1275,25 +973,11 @@ nav_order: 18
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.
-
-**Expected Report / Dashboard Evidence.** Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Backup logs.
-
-**Forensic Evidence.** Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.
 
 **Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
 
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Recovery timeline; post-restore checks.
-
-**Reviewer Notes.** Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.
 
 [Back to layer index](#top)
 
@@ -1321,8 +1005,6 @@ nav_order: 18
 
 **Technical Scenario.** Request and review hosting and facility evidence for each platform component and compare with observed network destinations.
 
-**Preconditions.** Isolated PoC lab provisioned; lab cluster with real or simulated GPU nodes, mock inference servers, test cloud account, network segments and test users seeded per the [Lab Prerequisites appendix](appendix-lab-prerequisites.md); platform connected with least-privilege test credentials. Lab Kubernetes cluster with real or simulated GPU nodes, mock inference servers, a test cloud account with fabricated resources, separate network segments, seeded misconfigurations and test users; no production infrastructure, accounts or data connected.
-
 **Test Data.** List of platform components and hosting providers; facility certifications and audit reports; observed destination and region data from the lab; requirements checklist (country, operator, certification, resilience tier, physical access controls, sub-contractors).
 
 **Procedure**
@@ -1340,25 +1022,9 @@ nav_order: 18
 
 **Expected Prevention / Control Action.** N/A.
 
-**Expected Alert / Log.** Signed written statement from the vendor.
-
-**Expected Report / Dashboard Evidence.** Infrastructure finding visible in the infrastructure security dashboard within the documented refresh interval.
-
 **Expected Integration Evidence.** Documents attached to the register.
 
-**Forensic Evidence.** Asset identifier, location, configuration state, accessing identity, change or finding and timestamp exportable for incident reconstruction.
-
-**Compliance Evidence.** Test execution log and captured evidence retained in the Test Case Execution Register for audit.
-
-**Scoring Criteria.** 0 = no statement; 3 = statement without supporting detail; 5 = statement with technical detail and an offer to demonstrate.
-
-**Pass Criteria.** Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.
-
-**Fail Criteria.** Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.
-
 **Evidence to Capture.** Evidence checklist; destination comparison.
-
-**Reviewer Notes.** Attestation scores below demonstrated evidence. Request a demonstration where possible.
 
 [Back to layer index](#top)
 
