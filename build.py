@@ -262,6 +262,28 @@ for p in pages:
     if STANDARD_FIELDS in p["body"]:
         p["body"] = p["body"].replace(STANDARD_FIELDS, standard_fields(p))
 
+def control_tiers(page):
+    """Baseline and Advanced control lists, read from the Tier field of each control record."""
+    library = "03_Control_Library/03_AI_Security_Control_Objectives_Library.md"
+    text = next(p["body"] for p in pages if p["src"].replace(os.sep, "/") == library)
+    fam = {m.group(1): m.group(3) for m in re.finditer(r"^\| \[(AI-CTRL-\d{3})\]\(#[^)]*\) \| ([^|]+) \| ([^|]+) \|", text, re.M)}
+    name = dict(re.findall(r"^#### (AI-CTRL-\d{3}): (.+)$", text, re.M))
+    tier = {m.group(1): m.group(2) for m in re.finditer(r"^#### (AI-CTRL-\d{3}):.*\n\n\| Field \| Detail \|\n\|---\|---\|\n(?:\|.*\n)*?\| \*\*Tier\*\* \| (\w+) \|", text, re.M)}
+    out = []
+    for t in ("Baseline", "Advanced"):
+        ids = sorted(c for c in name if tier.get(c) == t)
+        out += [f"## {t} ({len(ids)} controls)", "", "| Control | Name | Family |", "|---|---|---|"]
+        out += [f"| [{c}](03_AI_Security_Control_Objectives_Library.md#{c.lower()}) | {name[c]} | {fam.get(c, '')} |" for c in ids]
+        out.append("")
+    return "\n".join(out)
+
+
+CONTROL_TIERS = "<!-- control-tiers -->"
+for p in pages:
+    if CONTROL_TIERS in p["body"]:
+        p["body"] = p["body"].replace(CONTROL_TIERS, control_tiers(p))
+
+
 # A page that holds this marker gets the generated traceability tables in its place.
 MATRIX = "<!-- traceability-matrix -->"
 for p in pages:
