@@ -386,17 +386,17 @@
 <tr>
 <td>Act for a user without borrowing their credentials</td>
 <td><a href="https://www.rfc-editor.org/rfc/rfc8693" rel="noopener">OAuth 2.0 Token Exchange, RFC 8693</a></td>
-<td>Issues a token that represents the agent acting on behalf of the user, so downstream systems see both and can enforce the user's permissions. This is the main treatment for AI-R46.</td>
+<td>Defines delegation, in which the agent keeps its own identity and acts for the user (recorded in the token's <code>act</code> claim), so downstream systems see both and can enforce the user's permissions. This is the main treatment for AI-R46.</td>
 </tr>
 <tr>
 <td>Make a token useless anywhere else</td>
 <td><a href="https://www.rfc-editor.org/rfc/rfc8707" rel="noopener">Resource Indicators for OAuth 2.0, RFC 8707</a></td>
-<td>Binds a token to the service it was issued for.</td>
+<td>Lets the client name the service a token is for, so the authorization server can restrict the token to that service.</td>
 </tr>
 <tr>
 <td>Make a stolen token hard to use</td>
 <td><a href="https://www.rfc-editor.org/rfc/rfc9449" rel="noopener">DPoP, RFC 9449</a>, or mutual TLS</td>
-<td>Binds the token to a key the client holds.</td>
+<td>Binds access and refresh tokens to a key pair the client holds, so a stolen token is useless without the private key.</td>
 </tr>
 <tr>
 <td>Give each workload an identity</td>
@@ -408,7 +408,7 @@
 <p><strong>MCP servers.</strong> The MCP specification's <a href="https://modelcontextprotocol.io/specification/2025-11-25/basic/security_best_practices" rel="noopener">security best practices</a> (version 2025-11-25, read on 17 October 2026) say that MCP servers must not accept any token that was not explicitly issued for that server, so token passthrough is forbidden. They also require clients to accept only <code>https</code> authorization URLs (or <code>http</code> for local development), to reject schemes such as <code>javascript:</code> and <code>file:</code>, and never to open URLs through a shell, which is the class of flaw in the <a href="../09_Reference/20_AI_Security_Incident_Casebook.html#mcp-remote-cve-2025-6514">mcp-remote case</a>. They recommend starting with minimal scopes and asking for more only when a privileged operation is first attempted.</p>
 <p>Keep credentials out of the model's context: tools fetch secrets from a vault when they run (<a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R22</a>).</p>
 <h2 id="tracing-and-shutdown">Tracing and shutdown</h2>
-<p>Trace every step: the prompt, the IDs of retrieved content, the model and version, each tool call with its arguments and result, each approval decision, and the identity of the agent and the user behind every action (<a href="01_Secure_Your_First_Agent.html#b10-log-every-decision-in-a-tamper-evident-trace">B10</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a>). OpenTelemetry publishes <a href="https://opentelemetry.io/docs/specs/semconv/gen-ai/gen-ai-spans/" rel="noopener">semantic conventions for generative AI</a> so these traces can join existing monitoring pipelines; check their status before depending on them, as they have not been marked stable.</p>
+<p>Trace every step: the prompt, the IDs of retrieved content, the model and version, each tool call with its arguments and result, each approval decision, and the identity of the agent and the user behind every action (<a href="01_Secure_Your_First_Agent.html#b10-log-every-decision-in-a-tamper-evident-trace">B10</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a>). OpenTelemetry publishes <a href="https://github.com/open-telemetry/semantic-conventions-genai" rel="noopener">semantic conventions for generative AI</a> so these traces can join existing monitoring pipelines. They are at the Development stability level, which means names can change between releases, so check their status before depending on them.</p>
 <p>Signals worth alerting on include unusual sequences of tool calls, sudden growth in token use, new outbound domains, repeated denied actions and retrieval much broader than usual. Telling sanctioned agent activity from an attack is itself a risk (<a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R45</a>). Shutdown must work in seconds: per-agent and per-tool disable switches, central token revocation, and circuit breakers that pause an agent after repeated policy violations or a cost threshold (<a href="01_Secure_Your_First_Agent.html#b9-cap-the-blast-radius-and-keep-a-kill-switch">B9</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a>).</p>
 <h2 id="architects-review-checklist">Architect's review checklist</h2>
 <p>Use these questions on any agent, LLM application or MCP design. A "no" or "don't know" is a finding.</p>

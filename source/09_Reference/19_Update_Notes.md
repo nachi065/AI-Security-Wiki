@@ -27,10 +27,14 @@ A review of the wiki against current agent and MCP security guidance found three
 ### What was checked and what was not
 
 - Each incident was checked against the source linked beside it (the researcher's or vendor's write-up, a CVE advisory, a court decision or a report citing one) on 17 October 2026. Four of the nine sources are secondary reports (SOC Prime, TechRadar, the AI Incident Database and a law firm's case summary) rather than the original advisory or decision.
-- The MCP Top 10 identifiers and titles were read from the OWASP project page, which calls the list a beta; titles may still change. One title differs from some secondary summaries: MCP06 is "Prompt Injection via Contextual Payloads".
-- The trifecta, the Rule of Two, the six design patterns and the MCP specification requirements were read from their primary sources. The RFC numbers were not re-read in full.
-- OpenTelemetry's generative AI conventions are named as an option, with a note that they are not yet stable.
+- The MCP Top 10 identifiers and titles were read from the OWASP project page, which calls the list a beta; titles may still change. One title differs from some summaries of the list: MCP06 is "Prompt Injection via Contextual Payloads".
+- The trifecta, the Rule of Two, the six design patterns, CaMeL, the MCP specification requirements and the titles and purpose of RFC 8693, RFC 8707 and RFC 9449 were read from their primary sources.
+- OpenTelemetry's generative AI conventions are named as an option, at the Development stability level. Their status was read from a secondary summary, because the OpenTelemetry pages moved to a new repository.
 - No test cases were added for these pages yet.
+
+### Second check, 17 October 2026
+
+Every statement on these pages that came from the review's source material was checked again against its primary source. Corrections made: EchoLeak now describes the actual exfiltration path (reference-style Markdown and a Teams domain allowed by the content security policy) with a second source; the Air Canada and Mata v. Avianca cases give exact dates, courts and what the source says; the mcp-remote case gives its disclosure date; the RFC descriptions now match each RFC's stated purpose; and the OpenTelemetry link points to the conventions' new repository with their stability level. None of the statements was contradicted by its source; the fixes add missing detail, correct imprecise wording or replace a link that had moved.
 
 ## 17 October 2026: Risks from the AI Risk Map
 
