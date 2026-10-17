@@ -3,7 +3,7 @@ title: "Home"
 description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and {{n:tests}} test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.29
+version: 2.34
 status: Published
 author: Nachiket Sathaye
 coauthors: Ankush Jain
@@ -287,6 +287,7 @@ The wiki supports mapping AI security requirements to recognized control and gov
 | ISO/IEC AI standards (38507, 42005, 42006, 23894, 5259 and others) | Board-level AI governance, impact assessment, certification audits, AI risk management and data quality. See the [ISO/IEC AI Standards Crosswalk](23_Framework_Crosswalks/15_ISO_IEC_AI_Standards_Crosswalk.md). |
 | Trustworthy AI and ethics (EU HLEG, UNESCO, IEEE 7000 series) | Ethical requirements, well-being and bias considerations. See the [Trustworthy AI and Ethics Crosswalk](23_Framework_Crosswalks/16_Trustworthy_AI_Ethics_Crosswalk.md). The IEEE content is based on available public data. |
 | International AI instruments (Council of Europe Framework Convention, G7 Hiroshima Process) | Treaty and international code of conduct commitments. See the [International AI Instruments Crosswalk](23_Framework_Crosswalks/17_International_AI_Instruments_Crosswalk.md). |
+| AI Risk Map (RiskFramework.org) | Risk identification across twelve ownership domains, including strategy, finance, workforce and legal risks. See the [AI Risk Map Crosswalk](23_Framework_Crosswalks/18_AI_Risk_Map_Crosswalk.md). |
 | OWASP Top 10 for LLM Applications and for Agentic Applications | Application and agent risk categories for developer guidance, threat modeling, and test-case design. |
 | MITRE ATLAS | Adversary tactics and techniques against AI-enabled systems for threat-informed testing and incident description. |
 | EU AI Act | Legal obligations for in-scope providers and deployers of AI systems. |
@@ -436,6 +437,7 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 | 2.31 | 2026-10-16 | Nachiket Sathaye | Added the Payload Kit: runnable attack and legitimate-request sets, thresholds and a runner for 36 of the 169 Critical test cases, linked from each covered case, and a Test Your Own Application page for owners of the code. Tested against stand-in applications only. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 | 2.32 | 2026-10-16 | Nachiket Sathaye | Moved wording that repeats across the test cases into one Standard Fields page. Cases show only the fields that differ from the standard. No wording was changed; the link check enforces the rule. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 | 2.33 | 2026-10-16 | Nachiket Sathaye | Verified India, UAE and EU rows against primary texts where they could be fetched and added a Verified tag; froze new regions until the rest are checked. Split the controls into Baseline and Advanced tiers (new Tier field and a generated Control Tiers page). Counts that pages quote (cases, layers, controls, risks) are now filled in at build time. See the [Update Notes](09_Reference/19_Update_Notes.md). |
+| 2.34 | 2026-10-17 | Nachiket Sathaye | Risk Management: added eighteen risks (AI-R29 to AI-R46) adapted from the AI Risk Map v1.3 by Evan Wheeler (RiskFramework.org, CC BY-SA 4.0), covering strategy and value, cost, provider concentration, workforce, energy use, licensing, legal hold, model validation, financial reporting, capability claims, emotional dependence and five security and agent risks. Added an Owner Domain column to the register, guidance on risk factors, ownership and quantification to the methodology, triage questions for the new risks and an AI Risk Map Crosswalk. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 
 ## 21. Quick Links
 

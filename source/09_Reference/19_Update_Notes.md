@@ -3,15 +3,35 @@ title: "Update Notes"
 author: Nachiket Sathaye
 parent: "Reference"
 nav_order: 2
-description: "What changed in the wiki and when, starting with the 15 October 2026 updates on AI governance frameworks and component ownership, with what was verified and what is still work in progress."
+description: "What changed in the wiki and when, starting with the 17 October 2026 risk register update from the AI Risk Map, then the 15 October 2026 updates on AI governance frameworks and component ownership, with what was verified and what is still work in progress."
 document_type: AI Security Wiki Reference
 version: 1.0
-last_reviewed: 2026-10-15
+last_reviewed: 2026-10-17
 ---
 
 # Update Notes
 
 This page records each substantial update to the wiki, newest first, with what was checked and what is still work in progress. The full version history is in [section 20 of the home page](../index.md#20-version-history).
+
+## 17 October 2026: Risks from the AI Risk Map
+
+The wiki's risk register was compared with the *AI Risk Map* v1.3 (2026) by Evan Wheeler, RiskFramework.org, a one-page map of 196 AI risk factors in 12 domains, grouped by who owns each risk. The map is licensed CC BY-SA 4.0, the same licence as the wiki, so its content could be adapted with credit. The comparison found the register strong on security, data and agent risks and thin on risks owned outside security.
+
+### What is new
+
+- **Eighteen register risks, AI-R29 to AI-R46**, adapted from the map: unrealised value, cost volatility, provider concentration and lock-in, model monoculture, deskilling, workforce change, energy and water use, output ownership and model licences, obligations triggered by modifying a model, legal hold, independent model validation, AI in financial reporting controls, AI-washing, emotional dependence, hallucinated package dependencies, safety training removed from self-hosted models, agent activity that looks like an attack, and insiders using agents to exceed their access. Each has controls and evidence in the [AI Risk to Control Mapping](../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.md), and each names the map domain it came from.
+- **Owner Domain column** on the [Enterprise AI Risk Register](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), using the map's twelve domains, with a suggested owner for each.
+- **Methodology:** sections on risk factors versus scenarios, owner domains and when to quantify (for example with FAIR), and two new review triggers, in the [AI Risk Methodology](../02_Risk_Management/02A_AI_Risk_Methodology.md).
+- **Triage:** section E of the [AI Use-Case Risk Triage](../02_Risk_Management/02F_AI_Use_Case_Risk_Triage.md) switches on the new risks.
+- **[AI Risk Map Crosswalk](../23_Framework_Crosswalks/18_AI_Risk_Map_Crosswalk.md)**: the map's 55 categories mapped to register risks.
+- The [NIST AI 600-1 Crosswalk](../23_Framework_Crosswalks/04_NIST_AI_600_1_GenAI_Profile_Crosswalk.md) now maps Environmental Impacts, homogenization and anthropomorphism to the new risks.
+
+### What was checked and what was not
+
+- The domain, category and risk factor wording was read from the one-page map PDF. The map's companion workbook, which gives the source of each factor, was not available, and the RiskFramework.org website could not be reached, so the map was not checked against either.
+- The ratings of the new risks are illustrative, like the rest of the register. The FINOS cross-references for AI-R29 to AI-R46 have not been checked and are marked Not checked.
+- The register entries paraphrase the map's factors rather than copy them. The mapping of map categories to wiki risks is this wiki's judgement.
+- No test cases were added for the new risks yet.
 
 ## 16 October 2026: Control tiers and build-time counts
 

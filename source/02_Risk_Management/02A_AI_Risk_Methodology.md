@@ -4,7 +4,7 @@ author: Nachiket Sathaye
 parent: "Risk Management"
 nav_order: 1
 document_type: AI Security Wiki Reference
-version: 1.0
+version: 1.1
 ---
 
 # AI Risk Methodology
@@ -36,6 +36,24 @@ The governing body approves an AI risk appetite statement (see the [AI Governanc
 | High | Likely or significant impact; additional controls, monitoring or enforcement required. |
 | Critical | May affect critical infrastructure, restricted data, regulatory obligations or operational continuity; strong preventive and detective controls required. |
 
+## Risk Factors and Risk Scenarios
+
+A list of risks, such as the [Enterprise AI Risk Register](02B_Enterprise_AI_Risk_Register.md) or the [AI Risk Map](../23_Framework_Crosswalks/18_AI_Risk_Map_Crosswalk.md), is a list of risk factors: conditions, failure modes or events that contribute to risk. A factor is not ready to rate. Before rating, turn it into a scenario for the system being assessed: what could happen, to which asset or people, through which path, and with what consequence. One factor can give several scenarios, and one scenario can combine several factors.
+
+- **Order is not likelihood.** The position of a risk in a list, or the space it takes, says nothing about how likely or severe it is. Rare, high-impact risks sit beside common ones.
+- **Lists seed the assessment; they do not replace it.** Use them to prompt threat modelling and risk identification, alongside a model of the specific system.
+- **Scope.** This methodology covers risks from the organization's own adoption of AI. Attacks that others carry out with AI against the organization belong on the threat register; see [AI for Security and AI-Enabled Threats](../00_Foundations/10-AI-for-Security-and-AI-Enabled-Threats.md).
+
+## Owner Domain
+
+Record which of the twelve owner domains a risk belongs to (listed under [Owner Domains](02B_Enterprise_AI_Risk_Register.md#owner-domains) on the register). The domains group risks by the part of the organization that owns them rather than by technology layer, so strategy, finance, workforce and legal risks reach their owners instead of defaulting to security. Some risks have two owners, for example accountability for harm caused by an agent, which sits with both governance and the agent's sponsor. Record the second domain in the risk entry's notes and name one accountable owner.
+
+## When to Quantify
+
+The four-level scale above suits most AI risks. Some scenarios can also be quantified in money, using cyber risk quantification methods such as FAIR (Factor Analysis of Information Risk): estimate how often the loss event could happen and the range of loss each time. This works best where loss data or credible estimates exist, such as data leakage, cost abuse, service disruption or regulatory fines. Other risks, such as erosion of staff expertise, loss of trust or strategic disadvantage, are hard to put a number on and are better reported to the governing body as a narrative with indicators. Record which approach was used for each risk, and do not present a quantified figure as more precise than its inputs.
+
+*The ideas in the three sections above (risk factors versus scenarios, order not implying likelihood, scope, ownership-based domains, split ownership and the choice between quantification and narrative) are adapted from the usage notes of the AI Risk Map v1.3 by Evan Wheeler, RiskFramework.org, licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). See the [credit on the risk register](02B_Enterprise_AI_Risk_Register.md#credit-ai-risk-map).*
+
 ## Required Fields for New AI Risk Entry
 
 ```markdown
@@ -53,6 +71,7 @@ Residual Risk:
 Required AI Security Capabilities:
 Evidence Required:
 Risk Owner:
+Owner Domain:
 Treatment Decision:
 Review Date:
 ```
@@ -71,6 +90,8 @@ At each stage, consult the people who can inform the assessment or are affected 
 - Regulatory, audit or third-party risk review.
 - A change to the system's purpose, users, deployment region or languages, or its data sources (these also trigger a review of its impact assessment, [AI-CTRL-042](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-042)).
 - A material incident, or monitoring that shows the system operating outside its validated boundaries.
+- A provider notice of a price change, licence change or model retirement.
+- Controls that have not been re-verified since the system last changed.
 
 ## Alignment with ISO/IEC 23894
 

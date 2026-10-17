@@ -5,7 +5,7 @@ parent: "Risk Management"
 nav_order: 6
 description: "Yes/No questions that decide which risks in the register apply to an AI use case, to use alongside the T01 intake form that sets the tier."
 document_type: AI Security Wiki Reference
-version: 1.0
+version: 1.1
 ---
 
 # AI Use-Case Risk Triage
@@ -68,13 +68,32 @@ version: 1.0
 | D6 | Does it lack a registered purpose, or could it be reused for a purpose other than the approved one? | AI-R18, AI-R02 |
 | D7 | Might its outputs or actions later need to be investigated or evidenced (an incident, a dispute, an audit)? | AI-R09, AI-R15 |
 
+## E. Business, people, legal and supply chain
+
+These questions were added in version 1.1 for risks AI-R29 to AI-R46, which were adapted from the AI Risk Map (see the credit on the [Enterprise AI Risk Register](02B_Enterprise_AI_Risk_Register.md#credit-ai-risk-map)).
+
+| # | Question | If Yes, apply risks |
+|---|---|---|
+| E1 | Is the use case being funded or scaled at significant cost, or without a stated problem and success measure? | AI-R29, AI-R30 |
+| E2 | Does the cost depend on a provider's pricing, or on usage that is hard to forecast? | AI-R30, AI-R35 |
+| E3 | Does it depend on one model provider, a proprietary API or fine-tuning that would not transfer to another provider? | AI-R31 |
+| E4 | Does it share a base model with other systems, or with the controls that check its output? | AI-R32 |
+| E5 | Will it take over work that people do today, or change their roles? | AI-R33, AI-R34 |
+| E6 | Will you fine-tune, rebrand or change the purpose of a third-party model, or self-host an open-weight model? | AI-R36, AI-R37, AI-R44 |
+| E7 | Could its prompts, outputs or traces be needed in litigation, a regulatory inquiry or a dispute? | AI-R38 |
+| E8 | Is it a model used in decisions that model risk management or financial reporting controls cover? | AI-R39, AI-R40 |
+| E9 | Will the organization make external claims about its AI capability, or rely on a vendor's claim? | AI-R41 |
+| E10 | Is it conversational, with a persona, or open to the public or to vulnerable users? | AI-R42 |
+| E11 | Will it write code or install software dependencies? | AI-R43 |
+| E12 | Can it act on behalf of users, with permissions broader than some of those users hold, or is its activity watched by security monitoring? | AI-R45, AI-R46 |
+
 ## When to run a full impact assessment
 
 Any **Yes** to C1, C3 or C4, or a **Yes** to both B2 and C2, should trigger a full impact assessment under [AI-CTRL-042](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-042) before go-live, in addition to the risk assessment. These are this wiki's thresholds for sensitive uses. ISO/IEC 42005:2025, clause 5.7, asks an organization to set its own thresholds for sensitive uses, restricted uses and impact scales, so adjust them to your own and record the version you use. Uses that your AI policy prohibits are stopped at intake and are not assessed.
 
 ## Worked examples
 
-These show how the answers combine. The answers are illustrative, not an assessment of any real system.
+These show how the answers combine. The answers are illustrative, not an assessment of any real system. They were written before section E was added and show answers to sections A to D only.
 
 | Use case | Yes answers | Applicable risks |
 |---|---|---|
@@ -84,7 +103,7 @@ These show how the answers combine. The answers are illustrative, not an assessm
 
 ## Coverage
 
-Every risk from AI-R01 to AI-R28 is switched on by at least one question. If you add a risk to the register, add or extend a question here so the new risk can be found at intake.
+Every risk in the register is switched on by at least one question. If you add a risk to the register, add or extend a question here so the new risk can be found at intake.
 
 ## Recording the result
 

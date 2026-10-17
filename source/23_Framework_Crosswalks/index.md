@@ -1,7 +1,7 @@
 ---
 title: "Framework Crosswalks"
 author: Nachiket Sathaye
-description: "Cross-references from this wiki to other frameworks: FINOS AIGF, AI BCF, NIST AI RMF, NIST AI 600-1, NIST AI 100-2, ISO/IEC 42001 and nine further ISO/IEC AI standards, OWASP, MITRE ATLAS, ISO/IEC 27001, NIST CSF, CIS Controls, SOC 2, the OECD AI Principles, trustworthy AI and ethics standards, international AI instruments and eight privacy laws."
+description: "Cross-references from this wiki to other frameworks: FINOS AIGF, AI BCF, NIST AI RMF, NIST AI 600-1, NIST AI 100-2, ISO/IEC 42001 and nine further ISO/IEC AI standards, OWASP, MITRE ATLAS, ISO/IEC 27001, NIST CSF, CIS Controls, SOC 2, the OECD AI Principles, trustworthy AI and ethics standards, international AI instruments, the AI Risk Map and eight privacy laws."
 nav_order: 13
 has_children: true
 ---
@@ -26,6 +26,7 @@ This section connects the wiki to other frameworks. The wiki cites their identif
 | [OECD AI Principles Crosswalk](12_OECD_AI_Principles_Crosswalk.md) | Your AI policy is written against the five OECD values-based principles and you need the controls that put each one into practice. |
 | [Trustworthy AI and Ethics Standards Crosswalk](16_Trustworthy_AI_Ethics_Crosswalk.md) | Your ethics commitments follow the EU Ethics Guidelines for Trustworthy AI, the UNESCO Recommendation or the IEEE 7000-series standards. |
 | [International AI Instruments Crosswalk](17_International_AI_Instruments_Crosswalk.md) | You need to know where the Council of Europe Framework Convention on AI and the G7 Hiroshima Code of Conduct meet the wiki's controls. |
+| [AI Risk Map Crosswalk](18_AI_Risk_Map_Crosswalk.md) | You identify AI risks with the AI Risk Map from RiskFramework.org, organised by who owns each risk, and need the matching register risks and the categories the wiki covers only in part. |
 
 ## Security frameworks
 
