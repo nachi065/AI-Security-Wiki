@@ -1,5 +1,5 @@
 ---
-title: "AI Risk Register Template (Excel)"
+title: "AI Risk Register Template (.xlsx)"
 author: Nachiket Sathaye
 parent: "Templates"
 nav_order: 1
@@ -8,7 +8,7 @@ document_type: AI Security Wiki Template
 version: 1.0
 ---
 
-# AI Risk Register Template (Excel)
+# AI Risk Register Template (.xlsx)
 
 **[Download the AI Risk Register Template (.xlsx)](AI_Risk_Register_Template.xlsx)**
 
