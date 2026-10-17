@@ -193,9 +193,10 @@
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/22_US_AI_Compliance/US-T1_State_Applicability_Matrix.html</loc><lastmod>2026-10-13</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/22_US_AI_Compliance/US-T2_Consequential_Decision_Impact_Assessment.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/22_US_AI_Compliance/US-T3_GenAI_Provenance_and_Transparency_Checklist.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/09_Reference/</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/09_Reference/</loc><lastmod>2026-10-17</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/09_Reference/18_AI_Security_Glossary_and_Taxonomy.html</loc><lastmod>2026-10-15</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/09_Reference/19_Update_Notes.html</loc><lastmod>2026-10-17</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/09_Reference/20_AI_Security_Incident_Casebook.html</loc><lastmod>2026-10-17</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/23_Framework_Crosswalks/</loc><lastmod>2026-10-17</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/23_Framework_Crosswalks/01_FINOS_AIGF_Crosswalk.html</loc><lastmod>2026-10-10</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/23_Framework_Crosswalks/02_AI_BCF_Crosswalk.html</loc><lastmod>2026-10-16</lastmod></url>
@@ -215,7 +216,9 @@
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/23_Framework_Crosswalks/16_Trustworthy_AI_Ethics_Crosswalk.html</loc><lastmod>2026-10-15</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/23_Framework_Crosswalks/17_International_AI_Instruments_Crosswalk.html</loc><lastmod>2026-10-15</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/23_Framework_Crosswalks/18_AI_Risk_Map_Crosswalk.html</loc><lastmod>2026-10-17</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/24_Builder_Track/</loc><lastmod>2026-10-16</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/23_Framework_Crosswalks/19_OWASP_MCP_Top_10_Crosswalk.html</loc><lastmod>2026-10-17</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/24_Builder_Track/</loc><lastmod>2026-10-17</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/24_Builder_Track/01_Secure_Your_First_Agent.html</loc><lastmod>2026-10-16</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/24_Builder_Track/02_Agent_Architecture_Patterns.html</loc><lastmod>2026-10-17</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/community-rules.html</loc><lastmod>2026-10-16</lastmod></url>
 </urlset>

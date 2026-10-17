@@ -3,7 +3,7 @@ title: "Update Notes"
 author: Nachiket Sathaye
 parent: "Reference"
 nav_order: 2
-description: "What changed in the wiki and when, starting with the 17 October 2026 risk register update from the AI Risk Map, then the 15 October 2026 updates on AI governance frameworks and component ownership, with what was verified and what is still work in progress."
+description: "What changed in the wiki and when, starting with the 17 October 2026 additions (incident casebook, agent architecture patterns, OWASP MCP Top 10, and risks from the AI Risk Map), then the 15 October 2026 updates on AI governance frameworks and component ownership, with what was verified and what is still work in progress."
 document_type: AI Security Wiki Reference
 version: 1.0
 last_reviewed: 2026-10-17
@@ -12,6 +12,25 @@ last_reviewed: 2026-10-17
 # Update Notes
 
 This page records each substantial update to the wiki, newest first, with what was checked and what is still work in progress. The full version history is in [section 20 of the home page](../index.md#20-version-history).
+
+## 17 October 2026: Incidents, agent architecture patterns and the OWASP MCP Top 10
+
+A review of the wiki against current agent and MCP security guidance found three gaps: the wiki named almost no real incidents, it said what to control in an agent but not how to arrange an agent so that a fooled model cannot leak data, and it did not cover the OWASP MCP Top 10.
+
+### What is new
+
+- **[AI Security Incident Casebook](20_AI_Security_Incident_Casebook.md):** nine cases (EchoLeak, the GitHub MCP toxic agent flow, postmark-mcp, mcp-remote, MCP Inspector, the Amazon Q Developer extension, the Replit database deletion, the Air Canada chatbot ruling and Mata v. Avianca), each mapped to register risks, controls and OWASP items, with the control that would have broken the chain.
+- **[Agent Architecture Patterns](../24_Builder_Track/02_Agent_Architecture_Patterns.md):** the lethal trifecta and Meta's Agents Rule of Two, six design patterns for containing prompt injection (including Dual LLM, Plan-Then-Execute and CaMeL), identity standards for agents (RFC 8693, RFC 8707, DPoP, workload identity), the MCP specification's ban on token passthrough, tracing and shutdown, a twelve-question architect's review checklist and four exercises.
+- **[OWASP MCP Top 10 Crosswalk](../23_Framework_Crosswalks/19_OWASP_MCP_Top_10_Crosswalk.md):** the ten items mapped to wiki risks and controls; 8 direct and 2 partial.
+- **Triage question A6** in the [AI Use-Case Risk Triage](../02_Risk_Management/02F_AI_Use_Case_Risk_Triage.md) asks whether a session combines all three legs of the trifecta.
+
+### What was checked and what was not
+
+- Each incident was checked against the source linked beside it (the researcher's or vendor's write-up, a CVE advisory, a court decision or a report citing one) on 17 October 2026. Four of the nine sources are secondary reports (SOC Prime, TechRadar, the AI Incident Database and a law firm's case summary) rather than the original advisory or decision.
+- The MCP Top 10 identifiers and titles were read from the OWASP project page, which calls the list a beta; titles may still change. One title differs from some secondary summaries: MCP06 is "Prompt Injection via Contextual Payloads".
+- The trifecta, the Rule of Two, the six design patterns and the MCP specification requirements were read from their primary sources. The RFC numbers were not re-read in full.
+- OpenTelemetry's generative AI conventions are named as an option, with a note that they are not yet stable.
+- No test cases were added for these pages yet.
 
 ## 17 October 2026: Risks from the AI Risk Map
 

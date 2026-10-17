@@ -1,7 +1,7 @@
 ---
 title: "Framework Crosswalks"
 author: Nachiket Sathaye
-description: "Cross-references from this wiki to other frameworks: FINOS AIGF, AI BCF, NIST AI RMF, NIST AI 600-1, NIST AI 100-2, ISO/IEC 42001 and nine further ISO/IEC AI standards, OWASP, MITRE ATLAS, ISO/IEC 27001, NIST CSF, CIS Controls, SOC 2, the OECD AI Principles, trustworthy AI and ethics standards, international AI instruments, the AI Risk Map and eight privacy laws."
+description: "Cross-references from this wiki to other frameworks: FINOS AIGF, AI BCF, NIST AI RMF, NIST AI 600-1, NIST AI 100-2, ISO/IEC 42001 and nine further ISO/IEC AI standards, OWASP, MITRE ATLAS, ISO/IEC 27001, NIST CSF, CIS Controls, SOC 2, the OECD AI Principles, trustworthy AI and ethics standards, international AI instruments, the AI Risk Map, the OWASP MCP Top 10 and eight privacy laws."
 nav_order: 13
 has_children: true
 ---
@@ -20,6 +20,7 @@ This section connects the wiki to other frameworks. The wiki cites their identif
 | [NIST AI 600-1 Generative AI Profile Crosswalk](04_NIST_AI_600_1_GenAI_Profile_Crosswalk.md) | You use the twelve generative AI risks in NIST AI 600-1 and need the matching wiki risks and controls. |
 | [ISO/IEC 42001 Crosswalk](05_ISO_IEC_42001_Crosswalk.md) | You are building or auditing an AI management system and need the control objectives and tests behind each Annex A control. |
 | [OWASP Top 10 Crosswalk](06_OWASP_Top_10_Crosswalk.md) | You name application risks with the OWASP lists for LLM and agentic applications and need the controls and test cases for each item. |
+| [OWASP MCP Top 10 Crosswalk](19_OWASP_MCP_Top_10_Crosswalk.md) | Your agents use MCP servers and you name their risks with the OWASP MCP Top 10 (beta), and need the matching wiki risks and controls. |
 | [MITRE ATLAS Crosswalk](07_MITRE_ATLAS_Crosswalk.md) | You work from ATLAS techniques and need the controls that address each one and the test cases that exercise it. |
 | [NIST AI 100-2 Crosswalk](14_NIST_AI_100_2_Crosswalk.md) | You describe attacks with the NIST adversarial machine learning taxonomy (NISTAML identifiers) and need the controls and test case layers for each attack class. |
 | [ISO/IEC AI Standards Crosswalk](15_ISO_IEC_AI_Standards_Crosswalk.md) | You work with ISO/IEC 38507, 42005, 42006, 23894, TR 24028, 5338, 23053, 22989 or the 5259 data quality series, and need the wiki pages and controls behind each clause. |

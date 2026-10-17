@@ -34,6 +34,7 @@ version: 1.1
 | A3 | Does it keep persistent memory, notes or state across sessions? | AI-R21 |
 | A4 | Does it interact with other agents, or use skills, plugins or MCP servers? | AI-R23, AI-R25 |
 | A5 | Can it reach files, a shell, a browser session or code repositories? | AI-R22, AI-R04 |
+| A6 | In a single session, does it read untrusted content, reach private data, and have a way to send data out (email, web requests, posting, rendering remote links or images)? See the [lethal trifecta](../24_Builder_Track/02_Agent_Architecture_Patterns.md#the-lethal-trifecta-and-the-rule-of-two). | AI-R05, AI-R06, AI-R24 |
 
 ## B. Data and hosting
 
