@@ -4,12 +4,12 @@ author: Nachiket Sathaye
 parent: "Risk Management"
 nav_order: 2
 document_type: AI Security Wiki Reference
-version: 1.1
+version: 1.2
 ---
 
 # Enterprise AI Risk Register
 
-> **Purpose:** Provide a sample enterprise AI risk register covering AI usage, development, applications, agents, auditability, sovereignty, cost, output reliability and resilience, as a starting template.
+> **Purpose:** Provide a sample enterprise AI risk register covering AI usage, development, applications, agents, auditability, sovereignty, cost, output reliability and resilience, and the strategy, financial, workforce and legal risks of adopting AI, as a starting template.
 
 > **Audience:** Governance, cyber risk, security architecture, audit, AI product owners.
 
@@ -17,38 +17,60 @@ version: 1.1
 
 > **Scope of AI-R14 to AI-R28:** These fifteen entries were added in version 1.1 to make operational risks (bias, explainability, model change, drift, oversight, reputation) and agentic risks (memory poisoning, credential harvesting, plugin supply chain, tool chains, trust boundaries) first-class entries. The Example Priority column is not re-ranked across all {{n:risks}} risks; re-rank it with the AI Risk Methodology. Each risk is cross-referenced to the FINOS AI Governance Framework in the [risk to control mapping](02D_AI_Risk_to_Control_Mapping.md).
 
+> **Scope of AI-R29 to AI-R46:** These eighteen entries were added in version 1.2 to cover risks that the [AI Risk Map](#credit-ai-risk-map) identifies and that the register did not have: strategy and value, cost and investment, provider concentration, workforce, energy use, licensing and legal records, model validation, financial reporting, capability claims and emotional dependence, and five specific security and agent risks. Each narrative names the map domain it was adapted from.
+
+> **Owner Domain:** The number is the domain of the [AI Risk Map](#credit-ai-risk-map) that the risk falls in. The map groups risks by who owns them rather than by how the technology works, so the column shows which part of the organization should hold each risk. The assignment of AI-R01 to AI-R28 is this wiki's judgement. The domains are listed under [Owner Domains](#owner-domains), and the [AI Risk Map Crosswalk](../23_Framework_Crosswalks/18_AI_Risk_Map_Crosswalk.md) maps each of the map's categories to this register.
+
 > **Illustrative example:** The ratings and entries on this page are generic examples, not an assessment of any specific organization. Replace them with your own findings before relying on them.
 
-| Risk ID | Risk Area | Example Likelihood | Example Impact | Example Residual Risk | Example Priority |
-|---|---|---|---|---|---|
-| AI-R01 | Critical Infrastructure Information Exposure | High | Critical | Critical | 1 |
-| AI-R02 | Shadow AI and Ungoverned AI Usage | High | High | High | 2 |
-| AI-R03 | Sensitive Data Leakage Through Prompts and Uploads | High | Critical | High | 3 |
-| AI-R04 | IDE-Based Source Code and Credential Exposure | Medium-High | High | High | 4 |
-| AI-R05 | Prompt Injection Against Custom AI Applications | Medium | Critical | High | 5 |
-| AI-R06 | AI Output Leakage and Oversharing | Medium | High | High | 6 |
-| AI-R07 | AI Agent and Tool-Calling Abuse | Medium | Critical | Critical | 7 |
-| AI-R08 | AI Supply Chain and Model Integrity Risk | Medium | High | High | 8 |
-| AI-R09 | Lack of AI Auditability and Forensic Visibility | High | High | High | 9 |
-| AI-R10 | Data Sovereignty and Third-Party Processing Risk | Medium | Critical | High | 10 |
-| AI-R11 | AI Cost Abuse and Resource Exhaustion | Medium | High | High | 11 |
-| AI-R12 | Unreliable or Harmful AI Output | Medium | High | High | 12 |
-| AI-R13 | AI Service Disruption and Dependency Failure | Medium | High | Medium | 13 |
-| AI-R14 | Biased or Discriminatory AI Outcomes | Medium | High | High | 14 |
-| AI-R15 | Lack of Explainability and Decision Traceability | Medium | High | High | 15 |
-| AI-R16 | Foundation Model Version Change and Non-Deterministic Behaviour | High | Medium | High | 16 |
-| AI-R17 | Data Quality Degradation and Model Drift | Medium | High | High | 17 |
-| AI-R18 | Model Overreach and Use Beyond Approved Purpose | Medium | High | High | 18 |
-| AI-R19 | Insufficient or Ineffective Human Oversight | Medium | High | High | 19 |
-| AI-R20 | Reputational Harm from AI Behaviour | Medium | High | Medium | 20 |
-| AI-R21 | Agent Memory and State Persistence Poisoning | Medium | High | High | 21 |
-| AI-R22 | Agent-Mediated Credential Discovery and Harvesting | Medium | Critical | High | 22 |
-| AI-R23 | Skill, Plugin and MCP Server Supply Chain Compromise | Medium | Critical | High | 23 |
-| AI-R24 | Tool Chain Manipulation and Injection | Medium | Critical | High | 24 |
-| AI-R25 | Multi-Agent Trust Boundary Violation | Medium | High | High | 25 |
-| AI-R26 | Reasoning Trace and Intermediate Output Exposure | Medium | Medium | Medium | 26 |
-| AI-R27 | Intellectual Property and Copyright Infringement | Medium | High | High | 27 |
-| AI-R28 | Regulatory Non-Compliance from Unsupervised AI Decisions | Medium | Critical | High | 28 |
+| Risk ID | Risk Area | Owner Domain | Example Likelihood | Example Impact | Example Residual Risk | Example Priority |
+|---|---|---|---|---|---|---|
+| AI-R01 | Critical Infrastructure Information Exposure | 03 | High | Critical | Critical | 1 |
+| AI-R02 | Shadow AI and Ungoverned AI Usage | 01 | High | High | High | 2 |
+| AI-R03 | Sensitive Data Leakage Through Prompts and Uploads | 03 | High | Critical | High | 3 |
+| AI-R04 | IDE-Based Source Code and Credential Exposure | 03 | Medium-High | High | High | 4 |
+| AI-R05 | Prompt Injection Against Custom AI Applications | 05 | Medium | Critical | High | 5 |
+| AI-R06 | AI Output Leakage and Oversharing | 05 | Medium | High | High | 6 |
+| AI-R07 | AI Agent and Tool-Calling Abuse | 12 | Medium | Critical | Critical | 7 |
+| AI-R08 | AI Supply Chain and Model Integrity Risk | 09 | Medium | High | High | 8 |
+| AI-R09 | Lack of AI Auditability and Forensic Visibility | 07 | High | High | High | 9 |
+| AI-R10 | Data Sovereignty and Third-Party Processing Risk | 08 | Medium | Critical | High | 10 |
+| AI-R11 | AI Cost Abuse and Resource Exhaustion | 07 | Medium | High | High | 11 |
+| AI-R12 | Unreliable or Harmful AI Output | 06 | Medium | High | High | 12 |
+| AI-R13 | AI Service Disruption and Dependency Failure | 07 | Medium | High | Medium | 13 |
+| AI-R14 | Biased or Discriminatory AI Outcomes | 06 | Medium | High | High | 14 |
+| AI-R15 | Lack of Explainability and Decision Traceability | 04 | Medium | High | High | 15 |
+| AI-R16 | Foundation Model Version Change and Non-Deterministic Behaviour | 07 | High | Medium | High | 16 |
+| AI-R17 | Data Quality Degradation and Model Drift | 04 | Medium | High | High | 17 |
+| AI-R18 | Model Overreach and Use Beyond Approved Purpose | 01 | Medium | High | High | 18 |
+| AI-R19 | Insufficient or Ineffective Human Oversight | 06 | Medium | High | High | 19 |
+| AI-R20 | Reputational Harm from AI Behaviour | 10 | Medium | High | Medium | 20 |
+| AI-R21 | Agent Memory and State Persistence Poisoning | 12 | Medium | High | High | 21 |
+| AI-R22 | Agent-Mediated Credential Discovery and Harvesting | 12 | Medium | Critical | High | 22 |
+| AI-R23 | Skill, Plugin and MCP Server Supply Chain Compromise | 12 | Medium | Critical | High | 23 |
+| AI-R24 | Tool Chain Manipulation and Injection | 12 | Medium | Critical | High | 24 |
+| AI-R25 | Multi-Agent Trust Boundary Violation | 12 | Medium | High | High | 25 |
+| AI-R26 | Reasoning Trace and Intermediate Output Exposure | 05 | Medium | Medium | Medium | 26 |
+| AI-R27 | Intellectual Property and Copyright Infringement | 08 | Medium | High | High | 27 |
+| AI-R28 | Regulatory Non-Compliance from Unsupervised AI Decisions | 08 | Medium | Critical | High | 28 |
+| AI-R29 | Unrealised AI Value and Misaligned AI Strategy | 02 | Medium | High | Medium | 29 |
+| AI-R30 | AI Cost Volatility and Stranded Investment | 11 | Medium | High | Medium | 30 |
+| AI-R31 | Model Provider Concentration, Lock-in and Deprecation | 09 | Medium | High | High | 31 |
+| AI-R32 | Model Monoculture and Correlated Failure | 09 | Medium | High | Medium | 32 |
+| AI-R33 | Workforce Deskilling and Loss of Institutional Knowledge | 10 | Medium | High | Medium | 33 |
+| AI-R34 | Workforce Change Failure and Skills Shortage | 10 | Medium | Medium | Medium | 34 |
+| AI-R35 | Unmeasured Energy and Water Use of AI | 11 | High | Medium | Medium | 35 |
+| AI-R36 | AI Output Ownership and Model Licence Breach | 08 | Medium | High | Medium | 36 |
+| AI-R37 | Provider Obligations Triggered by Modifying a Model | 08 | Medium | High | High | 37 |
+| AI-R38 | AI Records Not Preserved for Legal Hold and Discovery | 03 | Medium | High | High | 38 |
+| AI-R39 | Missing Independent Model Validation | 04 | Medium | High | High | 39 |
+| AI-R40 | AI Output Relied On in Financial Reporting Controls | 01 | Medium | High | High | 40 |
+| AI-R41 | AI-Washing and Unverified AI Capability Claims | 10 | Medium | High | Medium | 41 |
+| AI-R42 | Anthropomorphism and Emotional Dependence | 06 | Medium | High | Medium | 42 |
+| AI-R43 | Hallucinated Package Dependencies | 05 | Medium | High | High | 43 |
+| AI-R44 | Safety Training Removed from Self-Hosted Models | 09 | Medium | High | Medium | 44 |
+| AI-R45 | Agent Activity Indistinguishable from Attack | 07 | Medium | High | High | 45 |
+| AI-R46 | Insider Use of Agents to Exceed Own Access | 05 | Medium | High | High | 46 |
 
 ## Risk Narratives
 
@@ -135,3 +157,80 @@ Staff may submit third-party copyrighted or licensed material to AI tools, and A
 
 ### AI-R28: Regulatory Non-Compliance from Unsupervised AI Decisions
 A regulated process may use AI without the supervision, records or accountability the regulator expects of a human performing the same step. Required controls include an obligation register, impact assessment, decision records, human oversight appropriate to the tier and a named accountable owner.
+
+### AI-R29: Unrealised AI Value and Misaligned AI Strategy
+AI may be adopted because of hype rather than a stated problem, pilots may stall without ever showing value, returns may depend on redesigning work nobody planned to redesign, and the full cost of data, integration and people may not be counted. The opposite also applies: failing to weigh the competitive cost of not adopting AI is a risk too. Required controls include a business case with a success measure and a risk and benefit weighing for each use case, a stage gate that stops or scales a pilot on evidence, and a review of value delivered after go-live. Adapted from AI Risk Map domain 02 (Strategy and Value Realization).
+
+### AI-R30: AI Cost Volatility and Stranded Investment
+Providers can change token prices, tiers or context limits on their own terms, usage forecasts made in a pilot rarely hold at production scale, and money can be committed to a system that is scaled too early or kept going past failure. Insurance cover may also exclude AI losses or define a user as a human only. This differs from AI-R11, which is about abuse; this risk arises from normal use. Required controls include cost forecasts that are revisited as usage grows, contract terms on price changes, a decision point to stop funding, and a review of insurance wording for AI. Adapted from AI Risk Map domain 11 (Financial and Resource).
+
+### AI-R31: Model Provider Concentration, Lock-in and Deprecation
+Many systems may depend on a few model providers, proprietary APIs and fine-tunes make switching costly, and fine-tuned models, embeddings and prompts often do not transfer between providers. A provider can retire a model or change its behaviour and force an unplanned migration. AI-R13 covers outages and AI-R16 covers version changes; this risk covers the dependence itself. Required controls include a record of which systems depend on which provider and model, exit provisions in contracts, a tested migration path for critical systems and tracking of provider deprecation notices. Adapted from AI Risk Map domain 09 (Third-Party and Model Supply Chain).
+
+### AI-R32: Model Monoculture and Correlated Failure
+When many systems, or a system and the controls that check it, use the same underlying model, one blind spot or bias is repeated everywhere at once and independent checks are not independent. Required controls include an inventory that records the base model behind each system, a deliberate choice of a different model or a non-AI method where a check must be independent, and evaluation that looks for errors shared across systems. Adapted from AI Risk Map domain 09 (Third-Party and Model Supply Chain).
+
+### AI-R33: Workforce Deskilling and Loss of Institutional Knowledge
+Staff who hand work to AI can lose the expertise needed to check it, knowledge held in people's heads disappears as AI replaces processes, and the organization may be unable to operate when the AI is unavailable. Specialists who leave can take undocumented prompt and model knowledge with them. Required controls include keeping manual competence for critical processes and testing it, documented fallback procedures, and recording prompts, configurations and design decisions as part of the system. Adapted from AI Risk Map domain 10 (Workforce, Human and Societal).
+
+### AI-R34: Workforce Change Failure and Skills Shortage
+Leaders may manage AI like a conventional IT rollout and underestimate how much it changes the work itself, staff may resist or quietly avoid AI because of fear of displacement or distrust of its output, and AI and AI-risk specialists are scarce. Required controls include a change plan for each significant deployment, consultation with affected staff, adoption and trust measures, and AI literacy and role-based training. Adapted from AI Risk Map domain 10 (Workforce, Human and Societal).
+
+### AI-R35: Unmeasured Energy and Water Use of AI
+Training and inference use energy and, in many data centres, water for cooling, and these are rarely measured or weighed against the value of a use case. This can conflict with an organization's sustainability commitments and reporting. Required controls include an estimate of energy use per system from usage data and provider information, its inclusion in the use-case decision, and reporting where sustainability commitments require it. Adapted from AI Risk Map domain 11 (Financial and Resource).
+
+### AI-R36: AI Output Ownership and Model Licence Breach
+Who owns AI-generated content, and whether it can be protected by copyright at all, is unsettled in many jurisdictions. Open-weight models come with licences that may restrict commercial use, user numbers, fields of use or the training of other models, and those terms can be breached without anyone noticing. AI-R27 covers infringing the rights of others; this risk covers the organization's own rights and licence obligations. Required controls include a register of model licences and their conditions, review of output ownership in vendor terms, and legal advice before relying on ownership of AI-generated assets. Adapted from AI Risk Map domain 08 (Legal, Regulatory and Compliance).
+
+### AI-R37: Provider Obligations Triggered by Modifying a Model
+Fine-tuning, rebranding or changing the intended purpose of a third-party model can turn a deployer into a provider under some laws, with heavier obligations. Under the EU AI Act this can happen through a substantial modification or a change of purpose to a high-risk use (see the [EU AI Regulatory Hub](../12_EU_AI_Compliance/01_EU_AI_Regulatory_Hub.md)). Required controls include a role classification for each AI system that is repeated when the model, its purpose or its branding changes, and legal review of the obligations that follow. Adapted from AI Risk Map domain 08 (Legal, Regulatory and Compliance).
+
+### AI-R38: AI Records Not Preserved for Legal Hold and Discovery
+Prompts, outputs and agent traces can be relevant to litigation, regulatory inquiries or disputes, and may be subject to a legal hold. Short retention settings in AI tools and data spread across several stores can mean they are deleted or cannot be found. AI-R09 covers forensic visibility for security; this risk covers legal preservation. Required controls include a retention schedule that names AI records, a way to apply a legal hold to them, and a tested search across the stores that hold them. Adapted from AI Risk Map domain 03 (Data and Privacy).
+
+### AI-R39: Missing Independent Model Validation
+A model may be approved by the team that built or bought it, with no independent validation or effective challenge, and validation data may not represent real use, so weaknesses show only with live users. Model risk management guidance in banking, such as the US supervisory guidance SR 11-7, expects independent validation. Required controls include validation by people independent of the developer, test data that reflects intended use, and validation repeated when the model or its use changes. Adapted from AI Risk Map domain 04 (Model Development and Performance).
+
+### AI-R40: AI Output Relied On in Financial Reporting Controls
+AI may prepare reconciliations, journal entries or other inputs to financial reporting without the scope of internal control testing being changed to cover it. If nobody records which artifacts AI produced, a flaw in the model cannot be traced to what it affected. Required controls include notifying internal control owners and auditors when AI enters a financial reporting process, recording which outputs AI produced, and testing the AI step as part of the control. Adapted from AI Risk Map domain 01 (AI Governance and Accountability).
+
+### AI-R41: AI-Washing and Unverified AI Capability Claims
+An organization may overstate what its AI does to customers, investors or regulators, and may buy products whose "AI-powered" claims it cannot verify. Both can lead to regulatory action, disputes and lost trust. Required controls include review of external AI claims against evidence before publication, and testing of vendor capability claims during evaluation. Adapted from AI Risk Map domain 10 (Workforce, Human and Societal).
+
+### AI-R42: Anthropomorphism and Emotional Dependence
+People can attribute human qualities to conversational AI and come to depend on it emotionally, which raises the risk of manipulation and of harm to vulnerable users, including minors. This goes beyond the automation bias covered by AI-R19. Required controls include design review of personas and conversational style, clear disclosure that the user is talking to AI, safeguards and escalation for vulnerable users, and monitoring for patterns of dependence. Adapted from AI Risk Map domain 06 (Safety, Ethics and Responsible AI).
+
+### AI-R43: Hallucinated Package Dependencies
+AI coding assistants and agents can suggest or install packages that do not exist. An attacker who registers those names in a public package registry gets their code installed. AI-R12 covers invented packages as an output reliability problem; this risk covers the attack. Required controls include installing only from an approved registry or proxy, checking that a suggested package exists and is established before use, and dependency scanning in the release gate. Adapted from AI Risk Map domain 05 (Security and Adversarial Threats).
+
+### AI-R44: Safety Training Removed from Self-Hosted Models
+Open-weight models can be fine-tuned or modified so that their safety training is weakened or removed, and modified versions are published under names that hide their lineage. A team that self-hosts such a model may not know its refusals no longer work. Required controls include verifying where model weights came from, safety and refusal evaluation before deployment and after any fine-tuning, and recording the model's lineage in the AI-BOM. Adapted from AI Risk Map domain 09 (Third-Party and Model Supply Chain).
+
+### AI-R45: Agent Activity Indistinguishable from Attack
+Approved agents that read widely, call many tools and act quickly can look the same in logs as an attacker using agentic tooling, so detections either drown in false alarms or are tuned until they miss real attacks. Required controls include a distinct identity for each agent in telemetry, a record of who authorised each agent's task, and detection rules that use that context. Adapted from AI Risk Map domain 07 (Operations and Resilience).
+
+### AI-R46: Insider Use of Agents to Exceed Own Access
+An employee can ask an agent that holds broader permissions to read or do things the employee could not do directly. This turns the agent into a way around access controls. Required controls include agents acting with the requesting user's permissions, not a broader service identity, checks on the user's entitlement at each action, and logging that names both the user and the agent. Adapted from AI Risk Map domain 05 (Security and Adversarial Threats).
+
+## Owner Domains
+
+The twelve domains of the AI Risk Map, used in the Owner Domain column. The likely owner is this wiki's suggestion, not part of the map; assign owners to fit your own organization.
+
+| Domain | AI Risk Map domain | Likely owner |
+|---|---|---|
+| 01 | AI Governance and Accountability | AI governance committee, chief risk officer |
+| 02 | Strategy and Value Realization | Executive sponsor, business owners |
+| 03 | Data and Privacy | Data protection officer, data owners |
+| 04 | Model Development and Performance | Model owners, model risk management |
+| 05 | Security and Adversarial Threats | CISO |
+| 06 | Safety, Ethics and Responsible AI | Responsible AI lead, product owners |
+| 07 | Operations and Resilience | AI platform owner, IT operations |
+| 08 | Legal, Regulatory and Compliance | General counsel, compliance |
+| 09 | Third-Party and Model Supply Chain | Procurement, third-party risk |
+| 10 | Workforce, Human and Societal | HR, communications |
+| 11 | Financial and Resource | CFO, FinOps |
+| 12 | Autonomy and Delegated Action (Agentic AI) | Agent sponsors, AI platform owner |
+
+## Credit: AI Risk Map
+
+The Owner Domain column, the domain names above and entries AI-R29 to AI-R46 are adapted from the *AI Risk Map* v1.3 (2026) by Evan Wheeler, RiskFramework.org (https://riskframework.org/), licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Changes: the risk factors were paraphrased, combined into register entries, given controls and ratings, and mapped to this wiki. The map is a one-page thought-starter of 196 risk factors in 12 domains; its authors list its sources on the map and say a companion workbook gives the source of each factor. This wiki used the one-page map only.

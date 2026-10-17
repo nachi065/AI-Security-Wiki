@@ -3,15 +3,54 @@ title: "Update Notes"
 author: Nachiket Sathaye
 parent: "Reference"
 nav_order: 2
-description: "What changed in the wiki and when, starting with the 15 October 2026 updates on AI governance frameworks and component ownership, with what was verified and what is still work in progress."
+description: "What changed in the wiki and when, starting with the 17 October 2026 additions (incident casebook, agent architecture patterns, OWASP MCP Top 10, and risks from the AI Risk Map), then the 15 October 2026 updates on AI governance frameworks and component ownership, with what was verified and what is still work in progress."
 document_type: AI Security Wiki Reference
 version: 1.0
-last_reviewed: 2026-10-15
+last_reviewed: 2026-10-17
 ---
 
 # Update Notes
 
 This page records each substantial update to the wiki, newest first, with what was checked and what is still work in progress. The full version history is in [section 20 of the home page](../index.md#20-version-history).
+
+## 17 October 2026: Incidents, agent architecture patterns and the OWASP MCP Top 10
+
+A review of the wiki against current agent and MCP security guidance found three gaps: the wiki named almost no real incidents, it said what to control in an agent but not how to arrange an agent so that a fooled model cannot leak data, and it did not cover the OWASP MCP Top 10.
+
+### What is new
+
+- **[AI Security Incident Casebook](20_AI_Security_Incident_Casebook.md):** nine cases (EchoLeak, the GitHub MCP toxic agent flow, postmark-mcp, mcp-remote, MCP Inspector, the Amazon Q Developer extension, the Replit database deletion, the Air Canada chatbot ruling and Mata v. Avianca), each mapped to register risks, controls and OWASP items, with the control that would have broken the chain.
+- **[Agent Architecture Patterns](../24_Builder_Track/02_Agent_Architecture_Patterns.md):** the lethal trifecta and Meta's Agents Rule of Two, six design patterns for containing prompt injection (including Dual LLM, Plan-Then-Execute and CaMeL), identity standards for agents (RFC 8693, RFC 8707, DPoP, workload identity), the MCP specification's ban on token passthrough, tracing and shutdown, a twelve-question architect's review checklist and four exercises.
+- **[OWASP MCP Top 10 Crosswalk](../23_Framework_Crosswalks/19_OWASP_MCP_Top_10_Crosswalk.md):** the ten items mapped to wiki risks and controls; 8 direct and 2 partial.
+- **Triage question A6** in the [AI Use-Case Risk Triage](../02_Risk_Management/02F_AI_Use_Case_Risk_Triage.md) asks whether a session combines all three legs of the trifecta.
+
+### What was checked and what was not
+
+- Each incident was checked against the source linked beside it (the researcher's or vendor's write-up, a CVE advisory, a court decision or a report citing one) on 17 October 2026. Four of the nine sources are secondary reports (SOC Prime, TechRadar, the AI Incident Database and a law firm's case summary) rather than the original advisory or decision.
+- The MCP Top 10 identifiers and titles were read from the OWASP project page, which calls the list a beta; titles may still change. One title differs from some secondary summaries: MCP06 is "Prompt Injection via Contextual Payloads".
+- The trifecta, the Rule of Two, the six design patterns and the MCP specification requirements were read from their primary sources. The RFC numbers were not re-read in full.
+- OpenTelemetry's generative AI conventions are named as an option, with a note that they are not yet stable.
+- No test cases were added for these pages yet.
+
+## 17 October 2026: Risks from the AI Risk Map
+
+The wiki's risk register was compared with the *AI Risk Map* v1.3 (2026) by Evan Wheeler, RiskFramework.org, a one-page map of 196 AI risk factors in 12 domains, grouped by who owns each risk. The map is licensed CC BY-SA 4.0, the same licence as the wiki, so its content could be adapted with credit. The comparison found the register strong on security, data and agent risks and thin on risks owned outside security.
+
+### What is new
+
+- **Eighteen register risks, AI-R29 to AI-R46**, adapted from the map: unrealised value, cost volatility, provider concentration and lock-in, model monoculture, deskilling, workforce change, energy and water use, output ownership and model licences, obligations triggered by modifying a model, legal hold, independent model validation, AI in financial reporting controls, AI-washing, emotional dependence, hallucinated package dependencies, safety training removed from self-hosted models, agent activity that looks like an attack, and insiders using agents to exceed their access. Each has controls and evidence in the [AI Risk to Control Mapping](../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.md), and each names the map domain it came from.
+- **Owner Domain column** on the [Enterprise AI Risk Register](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), using the map's twelve domains, with a suggested owner for each.
+- **Methodology:** sections on risk factors versus scenarios, owner domains and when to quantify (for example with FAIR), and two new review triggers, in the [AI Risk Methodology](../02_Risk_Management/02A_AI_Risk_Methodology.md).
+- **Triage:** section E of the [AI Use-Case Risk Triage](../02_Risk_Management/02F_AI_Use_Case_Risk_Triage.md) switches on the new risks.
+- **[AI Risk Map Crosswalk](../23_Framework_Crosswalks/18_AI_Risk_Map_Crosswalk.md)**: the map's 55 categories mapped to register risks.
+- The [NIST AI 600-1 Crosswalk](../23_Framework_Crosswalks/04_NIST_AI_600_1_GenAI_Profile_Crosswalk.md) now maps Environmental Impacts, homogenization and anthropomorphism to the new risks.
+
+### What was checked and what was not
+
+- The domain, category and risk factor wording was read from the one-page map PDF. The map's companion workbook, which gives the source of each factor, was not available, and the RiskFramework.org website could not be reached, so the map was not checked against either.
+- The ratings of the new risks are illustrative, like the rest of the register. The FINOS cross-references for AI-R29 to AI-R46 have not been checked and are marked Not checked.
+- The register entries paraphrase the map's factors rather than copy them. The mapping of map categories to wiki risks is this wiki's judgement.
+- No test cases were added for the new risks yet.
 
 ## 16 October 2026: Control tiers and build-time counts
 

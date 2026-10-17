@@ -3,7 +3,7 @@ title: "Home"
 description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and {{n:tests}} test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.29
+version: 2.35
 status: Published
 author: Nachiket Sathaye
 coauthors: Ankush Jain
@@ -11,19 +11,19 @@ owner: AI Security Program
 custodian: Security Architecture Team
 review_cycle: Quarterly
 approval_authority: AI Governance Committee
-last_updated: 2026-10-15
+last_updated: 2026-10-17
 ---
 
 # AI Security Wiki Home
 
 > **Document Type:** Enterprise AI Security Reference Architecture and Governance Wiki  
-> **Version:** 2.29  
+> **Version:** 2.35  
 > **Status:** Published  
 > **Original Author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
 > **Co-Author:** Ankush Jain ([about the co-author](#23-about-the-co-author))  
 > **Intended Use:** Public, vendor-neutral reference and template set for AI security governance, engineering, risk management, assurance, audit, compliance, and vendor evaluation.
 
-> **Latest update (15 October 2026).** A component ownership table in the governance operating model that names who answers for models, agents, embeddings, retrieval sources, guardrails, tool access, observability, vector databases and agent memory, and 12 new test cases that check those decisions are recorded and enforced. See the [Update Notes](09_Reference/19_Update_Notes.md) for details.
+> **Latest update (17 October 2026).** The risk register grows from 28 to {{n:risks}} risks, adding strategy, cost, workforce, legal and model-validation risks adapted from the AI Risk Map (RiskFramework.org), with an owner domain for every risk and an [AI Risk Map Crosswalk](23_Framework_Crosswalks/18_AI_Risk_Map_Crosswalk.md). New pages: an [AI Security Incident Casebook](09_Reference/20_AI_Security_Incident_Casebook.md) of real incidents such as EchoLeak, the GitHub MCP exploit and postmark-mcp; [Agent Architecture Patterns](24_Builder_Track/02_Agent_Architecture_Patterns.md) covering the lethal trifecta, the Agents Rule of Two and design patterns that contain prompt injection; and an [OWASP MCP Top 10 Crosswalk](23_Framework_Crosswalks/19_OWASP_MCP_Top_10_Crosswalk.md). See the [Update Notes](09_Reference/19_Update_Notes.md) for details.
 
 ## 1. Purpose
 
@@ -287,7 +287,9 @@ The wiki supports mapping AI security requirements to recognized control and gov
 | ISO/IEC AI standards (38507, 42005, 42006, 23894, 5259 and others) | Board-level AI governance, impact assessment, certification audits, AI risk management and data quality. See the [ISO/IEC AI Standards Crosswalk](23_Framework_Crosswalks/15_ISO_IEC_AI_Standards_Crosswalk.md). |
 | Trustworthy AI and ethics (EU HLEG, UNESCO, IEEE 7000 series) | Ethical requirements, well-being and bias considerations. See the [Trustworthy AI and Ethics Crosswalk](23_Framework_Crosswalks/16_Trustworthy_AI_Ethics_Crosswalk.md). The IEEE content is based on available public data. |
 | International AI instruments (Council of Europe Framework Convention, G7 Hiroshima Process) | Treaty and international code of conduct commitments. See the [International AI Instruments Crosswalk](23_Framework_Crosswalks/17_International_AI_Instruments_Crosswalk.md). |
+| AI Risk Map (RiskFramework.org) | Risk identification across twelve ownership domains, including strategy, finance, workforce and legal risks. See the [AI Risk Map Crosswalk](23_Framework_Crosswalks/18_AI_Risk_Map_Crosswalk.md). |
 | OWASP Top 10 for LLM Applications and for Agentic Applications | Application and agent risk categories for developer guidance, threat modeling, and test-case design. |
+| OWASP MCP Top 10 (beta) | Risks of agents that connect to tools and data through the Model Context Protocol. See the [OWASP MCP Top 10 Crosswalk](23_Framework_Crosswalks/19_OWASP_MCP_Top_10_Crosswalk.md). |
 | MITRE ATLAS | Adversary tactics and techniques against AI-enabled systems for threat-informed testing and incident description. |
 | EU AI Act | Legal obligations for in-scope providers and deployers of AI systems. |
 | NIST Cybersecurity Framework | Govern, Identify, Protect, Detect, Respond, and Recover coverage for AI-enabled systems. See the [NIST CSF Crosswalk](23_Framework_Crosswalks/09_NIST_CSF_Crosswalk.md). |
@@ -436,6 +438,8 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 | 2.31 | 2026-10-16 | Nachiket Sathaye | Added the Payload Kit: runnable attack and legitimate-request sets, thresholds and a runner for 36 of the 169 Critical test cases, linked from each covered case, and a Test Your Own Application page for owners of the code. Tested against stand-in applications only. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 | 2.32 | 2026-10-16 | Nachiket Sathaye | Moved wording that repeats across the test cases into one Standard Fields page. Cases show only the fields that differ from the standard. No wording was changed; the link check enforces the rule. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 | 2.33 | 2026-10-16 | Nachiket Sathaye | Verified India, UAE and EU rows against primary texts where they could be fetched and added a Verified tag; froze new regions until the rest are checked. Split the controls into Baseline and Advanced tiers (new Tier field and a generated Control Tiers page). Counts that pages quote (cases, layers, controls, risks) are now filled in at build time. See the [Update Notes](09_Reference/19_Update_Notes.md). |
+| 2.34 | 2026-10-17 | Nachiket Sathaye | Risk Management: added eighteen risks (AI-R29 to AI-R46) adapted from the AI Risk Map v1.3 by Evan Wheeler (RiskFramework.org, CC BY-SA 4.0), covering strategy and value, cost, provider concentration, workforce, energy use, licensing, legal hold, model validation, financial reporting, capability claims, emotional dependence and five security and agent risks. Added an Owner Domain column to the register, guidance on risk factors, ownership and quantification to the methodology, triage questions for the new risks and an AI Risk Map Crosswalk. See the [Update Notes](09_Reference/19_Update_Notes.md). |
+| 2.35 | 2026-10-17 | Nachiket Sathaye | Added an AI Security Incident Casebook (nine incidents checked against their sources and mapped to risks and controls), an Agent Architecture Patterns page in the Builder Track (lethal trifecta, Agents Rule of Two, six prompt-injection design patterns, identity standards for agents and MCP, tracing, review checklist), an OWASP MCP Top 10 Crosswalk and triage question A6. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 
 ## 21. Quick Links
 

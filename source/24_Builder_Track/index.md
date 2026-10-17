@@ -16,6 +16,8 @@ The rest of this wiki tells you what to govern, what to control and what to test
 
 [Secure Your First Agent: Ten Controls With Code](01_Secure_Your_First_Agent.md) takes you through ten controls in build order. Each has the control it implements, the risk it addresses, a short explanation, and working configuration or code. It ends with the wiki test cases you should run against your own build.
 
+[Agent Architecture Patterns](02_Agent_Architecture_Patterns.md) is the design layer behind those controls: the lethal trifecta and the Agents Rule of Two, six patterns that contain prompt injection, identity standards for agents and MCP, tracing, and an architect's review checklist.
+
 ## The code
 
 Everything is in the [`code/`](code/) folder, uses only the Python standard library, and has tests.

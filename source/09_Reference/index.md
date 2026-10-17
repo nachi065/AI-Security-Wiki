@@ -1,14 +1,14 @@
 ---
 title: "Reference"
 author: Nachiket Sathaye
-description: "AI security glossary and taxonomy: plain definitions of prompt injection, RAG, agents, MCP, AI-SPM, guardrails and related terms."
+description: "AI security glossary and taxonomy, update notes and a casebook of real AI security incidents: plain definitions of prompt injection, RAG, agents, MCP, AI-SPM, guardrails and related terms."
 nav_order: 12
 has_children: true
 ---
 
 # Reference
 
-Glossary and taxonomy.
+Glossary and taxonomy, update notes, and the [AI Security Incident Casebook](20_AI_Security_Incident_Casebook.md) of real incidents mapped to the wiki's risks and controls.
 
 The [Regulatory Crosswalk](../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.md) maps UAE and other GCC instruments to the wiki's controls. The [EU Regulatory Crosswalk](../12_EU_AI_Compliance/07_Regulatory_Crosswalk.md) does the same for the AI Act, GDPR and related EU instruments.
 
