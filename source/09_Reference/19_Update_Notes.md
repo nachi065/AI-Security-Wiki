@@ -3,7 +3,7 @@ title: "Update Notes"
 author: Nachiket Sathaye
 parent: "Reference"
 nav_order: 2
-description: "What changed in the wiki and when, starting with the 17 October 2026 additions (incident casebook, agent architecture patterns, OWASP MCP Top 10, and risks from the AI Risk Map), then the 15 October 2026 updates on AI governance frameworks and component ownership, with what was verified and what is still work in progress."
+description: "What changed in the wiki and when, starting with the 17 October 2026 additions (AI risk register template, incident casebook, agent architecture patterns, OWASP MCP Top 10, and risks from the AI Risk Map), then the 15 October 2026 updates on AI governance frameworks and component ownership, with what was verified and what is still work in progress."
 document_type: AI Security Wiki Reference
 version: 1.0
 last_reviewed: 2026-10-17
@@ -12,6 +12,19 @@ last_reviewed: 2026-10-17
 # Update Notes
 
 This page records each substantial update to the wiki, newest first, with what was checked and what is still work in progress. The full version history is in [section 20 of the home page](../index.md#20-version-history).
+
+## 17 October 2026: Templates section and AI Risk Register Template
+
+### What is new
+
+- **[Templates](../25_Templates/index.md):** a new section, before Community Rules in the sidebar, for files you can download and fill in.
+- **[AI Risk Register Template](../25_Templates/01_AI_Risk_Register_Template.md):** an Excel workbook with the {{n:risks}} register risks pre-filled, use-case triage, likelihood by impact scoring with editable settings, mapped controls and evidence, the framework and regional regulatory crosswalks, a dashboard, deadline alerts and record checks. It carries a License sheet and file metadata for CC BY-SA 4.0.
+
+### What was checked and what was not
+
+- The workbook's formulas were recalculated with no errors, and sample triage answers, dates and treatment decisions were entered to check the triage result, deadlines, appetite check and record checks.
+- Its ratings are the register's generic examples and its settings (scales, bands, deadlines, appetite, acceptance authority) are defaults, not values from a standard.
+- Where a crosswalk names only controls, framework items are linked to risks through those controls; these links are broader than a direct mapping and are marked in the workbook.
 
 ## 17 October 2026: Incidents, agent architecture patterns and the OWASP MCP Top 10
 

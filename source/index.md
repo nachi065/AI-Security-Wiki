@@ -3,7 +3,7 @@ title: "Home"
 description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and {{n:tests}} test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.35
+version: 2.36
 status: Published
 author: Nachiket Sathaye
 coauthors: Ankush Jain
@@ -17,13 +17,13 @@ last_updated: 2026-10-17
 # AI Security Wiki Home
 
 > **Document Type:** Enterprise AI Security Reference Architecture and Governance Wiki  
-> **Version:** 2.35  
+> **Version:** 2.36  
 > **Status:** Published  
 > **Original Author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
 > **Co-Author:** Ankush Jain ([about the co-author](#23-about-the-co-author))  
 > **Intended Use:** Public, vendor-neutral reference and template set for AI security governance, engineering, risk management, assurance, audit, compliance, and vendor evaluation.
 
-> **Latest update (17 October 2026).** The risk register grows from 28 to {{n:risks}} risks, adding strategy, cost, workforce, legal and model-validation risks adapted from the AI Risk Map (RiskFramework.org), with an owner domain for every risk and an [AI Risk Map Crosswalk](23_Framework_Crosswalks/18_AI_Risk_Map_Crosswalk.md). New pages: an [AI Security Incident Casebook](09_Reference/20_AI_Security_Incident_Casebook.md) of real incidents such as EchoLeak, the GitHub MCP exploit and postmark-mcp; [Agent Architecture Patterns](24_Builder_Track/02_Agent_Architecture_Patterns.md) covering the lethal trifecta, the Agents Rule of Two and design patterns that contain prompt injection; and an [OWASP MCP Top 10 Crosswalk](23_Framework_Crosswalks/19_OWASP_MCP_Top_10_Crosswalk.md). See the [Update Notes](09_Reference/19_Update_Notes.md) for details.
+> **Latest update (17 October 2026).** New [Templates](25_Templates/index.md) section with a downloadable [AI Risk Register Template](25_Templates/01_AI_Risk_Register_Template.md) in Excel: the {{n:risks}} register risks pre-filled, use-case triage, likelihood and impact scoring, mapped controls and evidence, every framework and regional regulatory crosswalk, a dashboard and tracking checks. Earlier today: the risk register grew from 28 to {{n:risks}} risks with an owner domain for every risk, and new pages added an [AI Security Incident Casebook](09_Reference/20_AI_Security_Incident_Casebook.md), [Agent Architecture Patterns](24_Builder_Track/02_Agent_Architecture_Patterns.md) and an [OWASP MCP Top 10 Crosswalk](23_Framework_Crosswalks/19_OWASP_MCP_Top_10_Crosswalk.md). See the [Update Notes](09_Reference/19_Update_Notes.md) for details.
 
 ## 1. Purpose
 
@@ -237,6 +237,10 @@ The cycle then repeats: each use case is reviewed, improved, renewed or retired,
   Start here if you are building an agent: ten controls in build order with working configuration, reference code
   (guard, sandbox, egress proxy), a runnable demo and tests.
 
+25_Templates/
+  Downloadable templates built from the wiki: an Excel AI risk register with triage, scoring, controls,
+  framework and regulatory crosswalks and a dashboard.
+
 09_Reference/
   Glossary, taxonomy, abbreviations, mapping references, patterns, and reusable templates.
 ```
@@ -440,6 +444,7 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 | 2.33 | 2026-10-16 | Nachiket Sathaye | Verified India, UAE and EU rows against primary texts where they could be fetched and added a Verified tag; froze new regions until the rest are checked. Split the controls into Baseline and Advanced tiers (new Tier field and a generated Control Tiers page). Counts that pages quote (cases, layers, controls, risks) are now filled in at build time. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 | 2.34 | 2026-10-17 | Nachiket Sathaye | Risk Management: added eighteen risks (AI-R29 to AI-R46) adapted from the AI Risk Map v1.3 by Evan Wheeler (RiskFramework.org, CC BY-SA 4.0), covering strategy and value, cost, provider concentration, workforce, energy use, licensing, legal hold, model validation, financial reporting, capability claims, emotional dependence and five security and agent risks. Added an Owner Domain column to the register, guidance on risk factors, ownership and quantification to the methodology, triage questions for the new risks and an AI Risk Map Crosswalk. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 | 2.35 | 2026-10-17 | Nachiket Sathaye | Added an AI Security Incident Casebook (nine incidents checked against their sources and mapped to risks and controls), an Agent Architecture Patterns page in the Builder Track (lethal trifecta, Agents Rule of Two, six prompt-injection design patterns, identity standards for agents and MCP, tracing, review checklist), an OWASP MCP Top 10 Crosswalk and triage question A6. See the [Update Notes](09_Reference/19_Update_Notes.md). |
+| 2.36 | 2026-10-17 | Nachiket Sathaye | Added a Templates section with an AI Risk Register Template in Excel, built from the risk register, methodology, triage, control library and every framework and regional regulatory crosswalk, and licensed under CC BY-SA 4.0. Its ratings and settings are illustrative defaults. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 
 ## 21. Quick Links
 
@@ -470,6 +475,7 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 - [UK AI Compliance (regulatory hub, role guide and templates)](21_UK_AI_Compliance/index.md)
 - [US AI Compliance (regulatory hub, role guide and templates)](22_US_AI_Compliance/index.md)
 - [Framework Crosswalks (AI frameworks, NIST AI 100-2, ISO/IEC AI standards, trustworthy AI and ethics, international instruments, ISO/IEC 27001, NIST CSF, CIS Controls, SOC 2, OECD AI Principles and privacy laws)](23_Framework_Crosswalks/index.md)
+- [Templates: AI Risk Register Template (Excel)](25_Templates/01_AI_Risk_Register_Template.md)
 - [Community Rules](community-rules.md)
 - [AI Security Audit and Evidence Checklist](06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md)
 - [AI Product Developer Playbook](07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.md)
