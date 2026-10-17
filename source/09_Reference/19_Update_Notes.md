@@ -3,7 +3,7 @@ title: "Update Notes"
 author: Nachiket Sathaye
 parent: "Reference"
 nav_order: 2
-description: "What changed in the wiki and when, starting with the 17 October 2026 additions (AI risk register template, incident casebook, agent architecture patterns, OWASP MCP Top 10, and risks from the AI Risk Map), then the 15 October 2026 updates on AI governance frameworks and component ownership, with what was verified and what is still work in progress."
+description: "What changed in the wiki and when, starting with the 17 October 2026 additions (eight more templates, AI risk register template, incident casebook, agent architecture patterns, OWASP MCP Top 10, and risks from the AI Risk Map), then the 15 October 2026 updates on AI governance frameworks and component ownership, with what was verified and what is still work in progress."
 document_type: AI Security Wiki Reference
 version: 1.0
 last_reviewed: 2026-10-17
@@ -12,6 +12,27 @@ last_reviewed: 2026-10-17
 # Update Notes
 
 This page records each substantial update to the wiki, newest first, with what was checked and what is still work in progress. The full version history is in [section 20 of the home page](../index.md#20-version-history).
+
+## 17 October 2026: Eight more templates
+
+### What is new
+
+Eight templates were added to the [Templates](../25_Templates/index.md) section, each on its own page with a download link. Page names now end in the file type, (.xlsx) or (.docx).
+
+- **[AI System Inventory Template (.xlsx)](../25_Templates/02_AI_System_Inventory_Template.md):** the GCC and EU inventory templates and T01 tiering in one sheet, with record checks, review alerts, a discovery sweep log and a dashboard.
+- **[AI Use-Case Risk Triage Template (.xlsx)](../25_Templates/03_AI_Use_Case_Risk_Triage_Template.md):** a prohibited-use screen, the triage questions, T01 tier scoring, the register risks that apply and the impact assessment trigger.
+- **[AI Security Vendor Evaluation Scorecard (.xlsx)](../25_Templates/04_AI_Security_Vendor_Evaluation_Scorecard.md):** up to five vendors on the eight evaluation domains, required vendor evidence, PoC notes and a GCC and EU supplier due-diligence questionnaire.
+- **[AI Security Audit and Evidence Checklist Template (.xlsx)](../25_Templates/05_AI_Security_Audit_and_Evidence_Checklist_Template.md):** control tests, the GCC and EU audit checklists and evidence registers, a findings log, an exception register and ISO/IEC 42001 readiness.
+- **[AI Security Control Library and Crosswalks Template (.xlsx)](../25_Templates/06_AI_Security_Control_Library_and_Crosswalks_Template.md):** the {{n:controls}} controls with tracking columns, every framework crosswalk item and coverage by framework and by risk.
+- **[AI Security Test Case Tracker Template (.xlsx)](../25_Templates/07_AI_Security_Test_Case_Tracker_Template.md):** the quick-start PoC scenarios and all {{n:tests}} test cases, with scoring rules and coverage by control and by risk.
+- **[AI Acceptable Use Policy Template (.docx)](../25_Templates/08_AI_Acceptable_Use_Policy_Template.md):** a policy draft with a policy-to-control mapping, a quick reference card and a user acknowledgement form.
+- **[AI Impact Assessment Template (.docx)](../25_Templates/09_AI_Impact_Assessment_Template.md):** a combined data protection and fundamental rights impact assessment that adds benefits, misuse and interested parties from ISO/IEC 42005.
+
+### What was checked and what was not
+
+- The workbooks were recalculated with no formula errors, and the triage workbook gave the same result as the wiki for its three worked examples. The Word documents passed a schema check and were rendered to check their layout.
+- Settings marked orange in the workbooks, and placeholders in the Word documents, are defaults or decisions for the organization, not values from a standard.
+- The regional questions and citations come from the wiki's GCC and EU pages, which say they must be checked against the legal texts. The templates are not legal advice.
 
 ## 17 October 2026: Templates section and AI Risk Register Template
 
