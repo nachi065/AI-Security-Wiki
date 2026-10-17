@@ -22,7 +22,7 @@ version: 1.0
 
 | Sheet | What it holds | Built from |
 |---|---|---|
-| README and License | How to use the workbook, colour legend, sources, licence, credit and third-party notices | This page |
+| README and License | How to use the workbook, colour legend, sources, licence, credit and third-party notices | Written for the workbook |
 | Dashboard | Counts by rating, status and treatment, a likelihood by impact heat map, risks by owner domain, overdue items and risks to escalate | Calculated from the register |
 | AI Risk Register | The {{n:risks}} risks pre-filled with description, owner domain, triage questions, mapped controls, evidence and framework references, plus columns for scenario, scoring, treatment, target values, owners, dates, status and review | [Enterprise AI Risk Register](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI Risk to Control Mapping](../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.md), [Risk, Control and Test Traceability](../02_Risk_Management/02G_Risk_Control_Test_Traceability.md) |
 | Guidelines | What to enter in every register column, and an illustrative worked example | Written for the workbook |
