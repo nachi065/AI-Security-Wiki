@@ -13,7 +13,7 @@ version: 1.2
 
 > **Audience:** Governance, cyber risk, security architecture, audit, AI product owners.
 
-> **How to use:** Use this page as a template. Re-score each risk using the AI Risk Methodology for your own environment, and add owners, evidence and treatment status.
+> **How to use:** Use this page as a template. Re-score each risk using the AI Risk Methodology for your own environment, and add owners, evidence and treatment status. The [AI Risk Register Template](../25_Templates/01_AI_Risk_Register_Template.md) gives you the same register as an Excel workbook.
 
 > **Scope of AI-R14 to AI-R28:** These fifteen entries were added in version 1.1 to make operational risks (bias, explainability, model change, drift, oversight, reputation) and agentic risks (memory poisoning, credential harvesting, plugin supply chain, tool chains, trust boundaries) first-class entries. The Example Priority column is not re-ranked across all {{n:risks}} risks; re-rank it with the AI Risk Methodology. Each risk is cross-referenced to the FINOS AI Governance Framework in the [risk to control mapping](02D_AI_Risk_to_Control_Mapping.md).
 
