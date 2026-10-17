@@ -295,11 +295,13 @@
 <h3 id="what-was-checked-and-what-was-not">What was checked and what was not</h3>
 <ul>
 <li>Each incident was checked against the source linked beside it (the researcher's or vendor's write-up, a CVE advisory, a court decision or a report citing one) on 17 October 2026. Four of the nine sources are secondary reports (SOC Prime, TechRadar, the AI Incident Database and a law firm's case summary) rather than the original advisory or decision.</li>
-<li>The MCP Top 10 identifiers and titles were read from the OWASP project page, which calls the list a beta; titles may still change. One title differs from some secondary summaries: MCP06 is "Prompt Injection via Contextual Payloads".</li>
-<li>The trifecta, the Rule of Two, the six design patterns and the MCP specification requirements were read from their primary sources. The RFC numbers were not re-read in full.</li>
-<li>OpenTelemetry's generative AI conventions are named as an option, with a note that they are not yet stable.</li>
+<li>The MCP Top 10 identifiers and titles were read from the OWASP project page, which calls the list a beta; titles may still change. One title differs from some summaries of the list: MCP06 is "Prompt Injection via Contextual Payloads".</li>
+<li>The trifecta, the Rule of Two, the six design patterns, CaMeL, the MCP specification requirements and the titles and purpose of RFC 8693, RFC 8707 and RFC 9449 were read from their primary sources.</li>
+<li>OpenTelemetry's generative AI conventions are named as an option, at the Development stability level. Their status was read from a secondary summary, because the OpenTelemetry pages moved to a new repository.</li>
 <li>No test cases were added for these pages yet.</li>
 </ul>
+<h3 id="second-check-17-october-2026">Second check, 17 October 2026</h3>
+<p>Every statement on these pages that came from the review's source material was checked again against its primary source. Corrections made: EchoLeak now describes the actual exfiltration path (reference-style Markdown and a Teams domain allowed by the content security policy) with a second source; the Air Canada and Mata v. Avianca cases give exact dates, courts and what the source says; the mcp-remote case gives its disclosure date; the RFC descriptions now match each RFC's stated purpose; and the OpenTelemetry link points to the conventions' new repository with their stability level. None of the statements was contradicted by its source; the fixes add missing detail, correct imprecise wording or replace a link that had moved.</p>
 <h2 id="17-october-2026-risks-from-the-ai-risk-map">17 October 2026: Risks from the AI Risk Map</h2>
 <p>The wiki's risk register was compared with the <em>AI Risk Map</em> v1.3 (2026) by Evan Wheeler, RiskFramework.org, a one-page map of 196 AI risk factors in 12 domains, grouped by who owns each risk. The map is licensed CC BY-SA 4.0, the same licence as the wiki, so its content could be adapted with credit. The comparison found the register strong on security, data and agent risks and thin on risks owned outside security.</p>
 <h3 id="what-is-new_1">What is new</h3>

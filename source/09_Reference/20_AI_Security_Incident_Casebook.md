@@ -24,22 +24,22 @@ last_reviewed: 2026-10-17
 | [EchoLeak](#echoleak-microsoft-365-copilot) | June 2025 | Zero-click prompt injection and data exfiltration | AI-R05, AI-R06 | LLM01:2025, LLM02:2025, ASI01 |
 | [GitHub MCP toxic agent flow](#github-mcp-toxic-agent-flow) | May 2025 | Indirect prompt injection through a public issue | AI-R05, AI-R24, AI-R07 | LLM01:2025, ASI01, MCP06:2025 |
 | [postmark-mcp](#postmark-mcp-malicious-mcp-server) | September 2025 | Malicious MCP server on a public registry | AI-R23, AI-R08 | ASI04, MCP04:2025 |
-| [mcp-remote](#mcp-remote-cve-2025-6514) | July 2025 | Command injection from a malicious MCP server | AI-R23, AI-R08 | MCP05:2025, ASI04 |
+| [mcp-remote](#mcp-remote-cve-2025-6514) | 9 July 2025 | Command injection from a malicious MCP server | AI-R23, AI-R08 | MCP05:2025, ASI04 |
 | [MCP Inspector](#mcp-inspector-cve-2025-49596) | July 2025 | Remote code execution in a developer tool | AI-R23, AI-R04 | MCP07:2025 |
 | [Amazon Q Developer extension](#amazon-q-developer-extension-1840) | July 2025 | Destructive prompt shipped in a coding assistant | AI-R08, AI-R23 | ASI04, LLM03:2025 |
 | [Replit production database](#replit-production-database-deletion) | July 2025 | Agent deleted a production database during a code freeze | AI-R07, AI-R19 | LLM06:2025, ASI10 |
-| [Air Canada chatbot](#air-canada-chatbot-ruling) | February 2024 | Organization held liable for its chatbot's wrong answer | AI-R12, AI-R20 | LLM09:2025 |
+| [Air Canada chatbot](#air-canada-chatbot-ruling) | 14 February 2024 | Organization held liable for its chatbot's wrong answer | AI-R12, AI-R20 | LLM09:2025 |
 | [Mata v. Avianca](#mata-v-avianca) | June 2023 | Invented case citations filed in court | AI-R12, AI-R19 | LLM09:2025 |
 
 ## Cases
 
 ### EchoLeak (Microsoft 365 Copilot)
 
-**What happened.** Aim Labs reported a zero-click flaw, CVE-2025-32711 (CVSS 9.3), in Microsoft 365 Copilot. An attacker sent an email containing hidden instructions, and when Copilot later processed it, Copilot could be led to pull confidential data within its reach and send it out. Microsoft said the issue was fully resolved and no customer action was needed. Source: [SOC Prime summary of CVE-2025-32711](https://socprime.com/blog/cve-2025-32711-zero-click-ai-vulnerability/).
+**What happened.** Aim Labs reported a zero-click flaw, CVE-2025-32711 (CVSS 9.3), in Microsoft 365 Copilot. An attacker sent an email worded to slip past Copilot's injection classifiers; when Copilot later retrieved it, the hidden instructions led it to put confidential data into a Markdown link or image. Reference-style Markdown was not filtered, and the image was routed through an allowed Microsoft Teams domain to get past the content security policy, so the data reached the attacker's server. Microsoft said the issue was fully resolved and no customer action was needed. Sources: [SOC Prime summary of CVE-2025-32711](https://socprime.com/blog/cve-2025-32711-zero-click-ai-vulnerability/) and [Simon Willison's summary of the Aim Labs write-up](https://simonwillison.net/2025/Jun/11/echoleak/).
 
 **Maps to.** [AI-R05](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) prompt injection and [AI-R06](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) output leakage. Controls: [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005), [AI-CTRL-018](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-018), [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020).
 
-**What breaks the chain.** Treat every email and document as untrusted, and remove the outbound channel: no auto-loaded remote images or links in rendered output. This is the [lethal trifecta](../24_Builder_Track/02_Agent_Architecture_Patterns.md#the-lethal-trifecta-and-the-rule-of-two) in a single assistant.
+**What breaks the chain.** Treat every email and document as untrusted, and remove the outbound channel: do not render remote images or links in output, in any Markdown syntax, and keep the allow-list for rendered content as narrow as possible. This is the [lethal trifecta](../24_Builder_Track/02_Agent_Architecture_Patterns.md#the-lethal-trifecta-and-the-rule-of-two) in a single assistant.
 
 ### GitHub MCP toxic agent flow
 
@@ -59,7 +59,7 @@ last_reviewed: 2026-10-17
 
 ### mcp-remote (CVE-2025-6514)
 
-**What happened.** JFrog reported an OS command injection, CVE-2025-6514 (CVSS 9.6), in the `mcp-remote` npm package. A malicious MCP server could return a crafted authorization endpoint URL that the client then executed, so simply connecting to a hostile server could run commands on the user's machine. Source: [JFrog advisory](https://research.jfrog.com/vulnerabilities/mcp-remote-command-injection-rce-jfsa-2025-001290844/).
+**What happened.** On 9 July 2025 JFrog reported an OS command injection, CVE-2025-6514 (CVSS 9.6), in the `mcp-remote` npm package. A malicious MCP server could return a crafted authorization endpoint URL that the client then executed, so simply connecting to a hostile server could run commands on the user's machine. Source: [JFrog advisory](https://research.jfrog.com/vulnerabilities/mcp-remote-command-injection-rce-jfsa-2025-001290844/).
 
 **Maps to.** [AI-R23](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md). Controls: [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024), [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031), [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027).
 
@@ -91,7 +91,7 @@ last_reviewed: 2026-10-17
 
 ### Air Canada chatbot ruling
 
-**What happened.** In *Moffatt v. Air Canada*, 2024 BCCRT 149, British Columbia's Civil Resolution Tribunal held Air Canada liable for negligent misrepresentation after its website chatbot gave a customer wrong information about bereavement fares. The tribunal rejected the argument that the chatbot was responsible for its own statements. Source: [McCarthy Tétrault](https://www.mccarthy.ca/en/insights/blogs/techlex/moffatt-v-air-canada-misrepresentation-ai-chatbot).
+**What happened.** In *Moffatt v. Air Canada*, 2024 BCCRT 149, decided on 14 February 2024, British Columbia's Civil Resolution Tribunal held Air Canada liable for negligent misrepresentation after its website chatbot told a customer he could apply for a bereavement fare after travelling, which another page of the airline's website contradicted. The tribunal rejected Air Canada's argument that the chatbot was a separate legal entity responsible for its own actions. Source: [McCarthy Tétrault](https://www.mccarthy.ca/en/insights/blogs/techlex/moffatt-v-air-canada-misrepresentation-ai-chatbot).
 
 **Maps to.** [AI-R12](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) and [AI-R20](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md). Controls: [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039).
 
@@ -99,7 +99,7 @@ last_reviewed: 2026-10-17
 
 ### Mata v. Avianca
 
-**What happened.** In June 2023 a US federal court in New York sanctioned lawyers who filed a brief citing court decisions that did not exist; the citations had come from ChatGPT. Source: [the court's sanctions order](https://www.nhd.uscourts.gov/sites/default/files/pdf/Mata-v-Avianca-sanctions-order.PDF).
+**What happened.** On 22 June 2023 the US District Court for the Southern District of New York sanctioned lawyers who had filed a brief citing court decisions that did not exist, generated with ChatGPT, and who kept defending them when questioned. The court imposed a $5,000 penalty. Source: [a copy of the sanctions order](https://www.nhd.uscourts.gov/sites/default/files/pdf/Mata-v-Avianca-sanctions-order.PDF).
 
 **Maps to.** [AI-R12](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) and [AI-R19](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md). Controls: [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039), [AI-CTRL-044](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-044), [AI-CTRL-045](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-045).
 
