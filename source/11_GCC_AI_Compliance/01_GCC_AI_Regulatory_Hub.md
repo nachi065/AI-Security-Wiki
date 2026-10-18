@@ -96,7 +96,7 @@ No GCC state has an enacted horizontal AI statute comparable to the EU AI Act **
 | # | Instrument | Status | Wiki controls | Verify |
 |---|---|---|---|---|
 | O1 | National AI Policy (in force 9 April 2025, MTCIT) | Reported mandatory within scope: governance standards, regular assessments, documentation, compliance reports on request | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011), [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037), [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) | [Reported] |
-| O2 | PDPL amendments (automated processing, retention) | Reported cleared May 2026; awaiting royal promulgation | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) | [Reported] re-check |
+| O2 | PDPL amendments (automated processing, retention) | Reported issued by Royal Decree 68/2026 of 3 Sep 2026 and published in Official Gazette 1664 on 6 Sep 2026, in force the day after publication. Reported changes: new definitions of health data, controller and automated processing; Articles 2, 3, 7, 10, 14, 15, 22, 25 and 27 replaced; Articles 5bis and 10bis added | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) | [Reported] from an English translation and news reports; the Official Gazette text was not read |
 
 ## 7. Kuwait
 
