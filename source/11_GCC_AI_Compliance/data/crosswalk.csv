@@ -1,13 +1,13 @@
 ID,Jurisdiction,Instrument,Legal force,Type / status,Wiki controls,Control themes,Verification tag,To verify,Primary URL and retrieval date
-U1,UAE,Federal Decree-Law 45/2021 (PDPL),Binding law,Binding,AI-CTRL-013;AI-CTRL-007;AI-CTRL-017;AI-CTRL-035,PRV;XBT;RET;INC,Verified,Executive Regulation status; later amendments,https://uaelegislation.gov.ae/en/legislations/1972/download (retrieved 16 Oct 2026)
-U2,UAE,Federal Decree-Law 34/2021 (cybercrime),Binding law,Binding,AI-CTRL-005;AI-CTRL-028;AI-CTRL-035,INC,Unverified,AI relevance,
+U1,UAE,Federal Decree-Law 45/2021 (PDPL),Binding law,Binding,AI-CTRL-013;AI-CTRL-007;AI-CTRL-017;AI-CTRL-035,PRV;XBT;RET;INC,Verified,Executive Regulation status; later amendments,"https://uaelegislation.gov.ae/en/legislations/1972/download, retrieved 19 Oct 2026"
+U2,UAE,Federal Decree-Law 34/2021 (cybercrime),Binding law,Binding,AI-CTRL-005;AI-CTRL-028;AI-CTRL-035,INC,Verified,AI relevance,"https://uaelegislation.gov.ae/en/legislations/1526/download, retrieved 19 Oct 2026 (title, number, 20 Sep 2021 issue date and 74 articles read; AI is not named; Art. 54 covers e-robots used to spread false data)"
 U3,UAE,UAE Charter for Development and Use of AI,Guidance,Non-binding,AI-CTRL-012;AI-CTRL-023;AI-CTRL-039,GOV;POL;OVS;TRN,Conflict,Publication month,
 U4,UAE,UAE AI Ethics Principles and Self-Assessment,Voluntary,Voluntary,AI-CTRL-012;AI-CTRL-039;AI-CTRL-041,POL;OVS,Reported,Principle names,
 U5,UAE,Federal Authority for AI and Data,Context,Regulator (announced 14 Jun 2026),AI-CTRL-013;AI-CTRL-038,GOV;AUD,Reported,Official mandate,
 U6,UAE-DIFC,DIFC DP Law and Regulation 10,Binding in scope,Binding in DIFC,AI-CTRL-013;AI-CTRL-011;AI-CTRL-023;AI-CTRL-041,PRV;OVS;RSK;CHG,Conflict,Enforcement date; ASO; certification,"https://www.difc.com/business/registrars-and-commissioners/commissioner-of-data-protection/guidance, retrieved 10 Oct 2026 (guidance listing only; it shows a Regulation 10 certification scheme)"
 U7,UAE-ADGM,ADGM Data Protection Regulations,Binding in scope,Binding in ADGM,AI-CTRL-013;AI-CTRL-007,PRV;XBT,Unverified,All,
 U8,UAE-Dubai,Dubai AI Security Policy (DESC),Unclear,Policy Sept 2024,All,AUD;BCP;POL,Reported,Obtain text,
-U9,UAE,CBUAE Guidance Note on AI/ML,Guidance,Supervisory guidance 23 Feb 2026,AI-CTRL-011;AI-CTRL-014;AI-CTRL-023;AI-CTRL-025;AI-CTRL-041,GOV;INV;OVS;VND,Reported,Rulebook entry,
+U9,UAE,CBUAE Guidance Note on AI/ML,Guidance,Supervisory guidance 23 Feb 2026,AI-CTRL-011;AI-CTRL-014;AI-CTRL-023;AI-CTRL-025;AI-CTRL-041,GOV;INV;OVS;VND,Verified,Rulebook entry,"https://www.centralbank.ae/media/mykn5fue/cbuae-issues-guidance-note-to-protect-consumers-and-ensure-responsible-use-of-artificial-intelligence-in-the-financial-sector-en.pdf, retrieved 19 Oct 2026 (dated 23 Feb 2026; applies to licensed financial institutions; the note is hosted on the CBUAE Rulebook; note text not read)"
 U10,UAE-AbuDhabi,AIATC Law 3/2024,Context,Governance body,,,Reported,Scope,
 U11,UAE,UAE information assurance (NESA/IA),Unclear,Baseline,AI-CTRL-005;AI-CTRL-008;AI-CTRL-009;AI-CTRL-032,AUD;BCP,Unverified,Custodian and version,
 U12,UAE-Dubai,Dubai AI Seal,Unclear,Certification (procurement),AI-CTRL-012;AI-CTRL-038,POL;AUD,Unverified,Single source,
@@ -18,7 +18,7 @@ S4,Saudi,SDAIA AI Adoption Framework,Guidance,Guiding reference for government a
 S5,Saudi,SDAIA National AI Risk Mgmt Framework (SDAIA-P145),Unclear,Published 2026,AI-CTRL-037,RSK;INV;CHG,Conflict,Date April vs July 2026; not listed on the SDAIA regulations page on 10 Oct 2026,
 S6,Saudi,NCA ECC and CCC,Binding in scope,Binding gov and CNI,AI-CTRL-005;AI-CTRL-008;AI-CTRL-032,AUD;BCP;INC,Reported,Applicability,
 S7,Saudi,NCA NCNICC-1:2025,Unclear,Reported private sector from Jan 2026,AI-CTRL-005;AI-CTRL-008;AI-CTRL-032,AUD,Unverified,Applicability,
-S8,Saudi,NCA AI Cybersecurity Guidelines,Proposed,Consultation closed 5 Aug 2026,All,VND;AUD;BCP,Unverified,Final text,
+S8,Saudi,NCA AI Cybersecurity Guidelines,Proposed,Consultation closed 5 Aug 2026,All,VND;AUD;BCP,Verified,Final text,"https://nca.gov.sa/en/news/ai-cybersecurity-guidelines/; https://nca.gov.sa/en/public-consultations/ai-cybersecurity-guidelines/, retrieved 19 Oct 2026 (feedback deadline 5 Aug 2026; listed as Closed; no final text published)"
 S9,Saudi,Copyright TDM exception,Binding law,Reported eff. 12 Aug 2026,AI-CTRL-029,POL,Reported,Text,
 S10,Saudi,NDMO/CST/SAMA localisation overlays,Unclear,Overlay,AI-CTRL-007,XBT,Unverified,All,
 Q1,Qatar,Law 13/2016 PDPPL,Binding law,Binding,AI-CTRL-013;AI-CTRL-007;AI-CTRL-017,PRV;XBT;RET;INC,Reported,Articles,
