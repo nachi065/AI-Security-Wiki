@@ -6,7 +6,7 @@ nav_order: 2
 description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."
 document_type: AI Security Wiki Reference
 version: 1.1
-last_reviewed: 2026-10-18
+last_reviewed: 2026-10-19
 ---
 
 # Update Notes
@@ -17,6 +17,23 @@ This page is the wiki's change record. It has two parts:
 - **[Full version history](#full-version-history)**: every version since 1.0, newest first. The [home page](../index.md#20-version-history) shows only the three latest.
 
 Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.
+
+## Week ending 24 October 2026: crosswalk verification
+
+### What was checked
+
+- **GCC (19 October 2026):** every row of the [GCC Regulatory Crosswalk](../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.md) was checked for changes, and the rows not yet verified were checked against the issuing bodies' own pages where those pages could be read: the UAE legislation portal, the Central Bank of the UAE, the Saudi National Cybersecurity Authority (NCA) and the UAE AI Office.
+
+### What changed
+
+- **GCC, now [Verified]:** U2 (UAE cybercrime law, Federal Decree-Law No. 34 of 2021), U9 (CBUAE Guidance Note, 23 February 2026, for licensed financial institutions) and S8 (NCA AI Cybersecurity Guidelines: a consultation draft, feedback closed 5 August 2026, no final text yet). U1 (UAE PDPL) was read again with no change.
+- **GCC, O2 (Oman PDPL amendments):** an English translation of Royal Decree 68/2026 and news reports say the amendments were issued on 3 September 2026 and are in force. The row now reads Binding law, still tagged [Reported] because the Official Gazette text was not read.
+- **GCC, U3 (UAE AI Charter):** the two primary sources give different dates, 10 June 2024 on the legislation portal and July 2024 on the document. Both are now cited and the row stays [Conflict].
+
+### Still work in progress
+
+- GCC: Bahrain's AI law (B3) is still listed as a draft; news reports this year disagree on whether it has passed. The Saudi copyright text and data mining exception (S9) and the Saudi AI risk framework (S5) still have no primary source.
+- Several GCC government sites could not be read with a retrieval tool, so rows that cite them were not re-checked this week.
 
 ## 18 October 2026: Full version history moved here
 
