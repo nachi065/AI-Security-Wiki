@@ -3,15 +3,32 @@ title: "Update Notes"
 author: Nachiket Sathaye
 parent: "Reference"
 nav_order: 2
-description: "What changed in the wiki and when, starting with the 17 October 2026 additions (eight more templates, AI risk register template, incident casebook, agent architecture patterns, OWASP MCP Top 10, and risks from the AI Risk Map), then the 15 October 2026 updates on AI governance frameworks and component ownership, with what was verified and what is still work in progress."
+description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."
 document_type: AI Security Wiki Reference
-version: 1.0
-last_reviewed: 2026-10-17
+version: 1.1
+last_reviewed: 2026-10-18
 ---
 
 # Update Notes
 
-This page records each substantial update to the wiki, newest first, with what was checked and what is still work in progress. The full version history is in [section 20 of the home page](../index.md#20-version-history).
+This page is the wiki's change record. It has two parts:
+
+- **Update notes**, newest first: what changed in each substantial update, what was checked against sources, and what is still work in progress.
+- **[Full version history](#full-version-history)**: every version since 1.0, newest first. The [home page](../index.md#20-version-history) shows only the three latest.
+
+Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.
+
+## 18 October 2026: Full version history moved here
+
+### What is new
+
+- The complete version history, from 1.0 to the latest version, now lives at the end of this page, newest first.
+- [Section 20 of the home page](../index.md#20-version-history) shows only the three latest versions, with a link here.
+- From now on this page is maintained as an append-only record, including the results of the regular verification runs on the regional and framework crosswalks.
+
+### What was checked and what was not
+
+- The rows were moved without changing their wording. The only new row is version 2.38, for this change.
 
 ## 17 October 2026: Eight more templates
 
@@ -232,3 +249,50 @@ These have not been fully verified. Treat them as provisional until a later upda
 - **ALTAI:** the self-assessment web tool's address was found by search and not opened.
 - **All mappings to wiki controls** on the four new crosswalk pages are this wiki's own judgment and have not been reviewed by the issuing bodies.
 - **Not yet done:** recording NISTAML identifiers in each control and test case, so that the NIST AI 100-2 crosswalk can be generated at build time like the MITRE ATLAS one; adding the Council of Europe Convention to the regional hubs of its signatories; and a dedicated control for retiring AI systems (ISO/IEC 5338 clause 6.4.17).
+
+## Full version history
+
+Every version of the wiki, newest first. Rows are never edited after they are added.
+
+| Version | Date | Author | Summary of Change |
+|---|---|---|---|
+| 2.38 | 2026-10-18 | Nachiket Sathaye | Update Notes now hold the full version history, newest first, and are only ever added to. This section of the home page shows the three latest versions. |
+| 2.37 | 2026-10-17 | Nachiket Sathaye | Templates: added eight templates built from the wiki and licensed under CC BY-SA 4.0: AI System Inventory, AI Use-Case Risk Triage, AI Security Vendor Evaluation Scorecard, AI Security Audit and Evidence Checklist, AI Security Control Library and Crosswalks and AI Security Test Case Tracker (.xlsx), and AI Acceptable Use Policy and AI Impact Assessment (.docx). Template page names now show the file type. See the [Update Notes](../09_Reference/19_Update_Notes.md). |
+| 2.36 | 2026-10-17 | Nachiket Sathaye | Added a Templates section with an AI Risk Register Template in Excel, built from the risk register, methodology, triage, control library and every framework and regional regulatory crosswalk, and licensed under CC BY-SA 4.0. Its ratings and settings are illustrative defaults. See the [Update Notes](../09_Reference/19_Update_Notes.md). |
+| 2.35 | 2026-10-17 | Nachiket Sathaye | Added an AI Security Incident Casebook (nine incidents checked against their sources and mapped to risks and controls), an Agent Architecture Patterns page in the Builder Track (lethal trifecta, Agents Rule of Two, six prompt-injection design patterns, identity standards for agents and MCP, tracing, review checklist), an OWASP MCP Top 10 Crosswalk and triage question A6. See the [Update Notes](../09_Reference/19_Update_Notes.md). |
+| 2.34 | 2026-10-17 | Nachiket Sathaye | Risk Management: added eighteen risks (AI-R29 to AI-R46) adapted from the AI Risk Map v1.3 by Evan Wheeler (RiskFramework.org, CC BY-SA 4.0), covering strategy and value, cost, provider concentration, workforce, energy use, licensing, legal hold, model validation, financial reporting, capability claims, emotional dependence and five security and agent risks. Added an Owner Domain column to the register, guidance on risk factors, ownership and quantification to the methodology, triage questions for the new risks and an AI Risk Map Crosswalk. See the [Update Notes](../09_Reference/19_Update_Notes.md). |
+| 2.33 | 2026-10-16 | Nachiket Sathaye | Verified India, UAE and EU rows against primary texts where they could be fetched and added a Verified tag; froze new regions until the rest are checked. Split the controls into Baseline and Advanced tiers (new Tier field and a generated Control Tiers page). Counts that pages quote (cases, layers, controls, risks) are now filled in at build time. See the [Update Notes](../09_Reference/19_Update_Notes.md). |
+| 2.32 | 2026-10-16 | Nachiket Sathaye | Moved wording that repeats across the test cases into one Standard Fields page. Cases show only the fields that differ from the standard. No wording was changed; the link check enforces the rule. See the [Update Notes](../09_Reference/19_Update_Notes.md). |
+| 2.31 | 2026-10-16 | Nachiket Sathaye | Added the Payload Kit: runnable attack and legitimate-request sets, thresholds and a runner for 36 of the 169 Critical test cases, linked from each covered case, and a Test Your Own Application page for owners of the code. Tested against stand-in applications only. See the [Update Notes](../09_Reference/19_Update_Notes.md). |
+| 2.30 | 2026-10-16 | Nachiket Sathaye | Added the Builder Track section: one page, "Secure Your First Agent: Ten Controls With Code", with ten controls in build order and working configuration and code for tool allow-lists, argument validation, scoped short-lived credentials, sandboxing, egress limits and approval gates. The `code/` folder holds a reference guard, sandbox and egress proxy, a runnable demo and a test suite. The Python code was run and tested; the container and Kubernetes settings were not executed. See the [Update Notes](../09_Reference/19_Update_Notes.md). |
+| 2.29 | 2026-10-15 | Nachiket Sathaye | Governance operating model: added a component ownership table covering models, agents, embeddings, retrieval sources, guardrails, tool and MCP access, observability, vector databases and agent memory, and two roles (AI Platform Owner and Agent Sponsor). Added 12 test cases: agent memory governance (TC-L07-042 to TC-L07-045), embedding and index governance (TC-L11-026 to TC-L11-028), model approval records (TC-L12-032), guardrail policy ownership (TC-L08-043), tool access grant approval (TC-L06-047), and tracing platforms and quality failures (TC-L17-032 and TC-L17-033). Extended AI-CTRL-026 to cover memory inventory, write policy, user control and data subject requests. The library holds 668 cases. See the [Update Notes](../09_Reference/19_Update_Notes.md). |
+| 2.28 | 2026-10-15 | Nachiket Sathaye | Framework Crosswalks: added four pages (NIST AI 100-2, ISO/IEC AI standards, trustworthy AI and ethics, and international AI instruments). Corrected Foundations section 3.1, which misdescribed the NIST AI 100-2 taxonomy. Marked the UK AI Management Essentials (AIME) as a withdrawn draft. Added governing body roles and ISO/IEC 38507 alignment to the governance operating model, ISO/IEC 23894 alignment to the risk methodology, ISO/IEC 42006 certification preparation to the audit checklist, and three data quality test cases (TC-L10-031 to TC-L10-033); the library holds 656 cases. The IEEE content is based on available public data, and unverified mappings are marked as work in progress. See the [Update Notes](../09_Reference/19_Update_Notes.md). |
+| 2.27 | 2026-10-13 | Nachiket Sathaye | Framework Crosswalks: added six pages. Four are generated at build time from new fields in every control record (ISO/IEC 27001, NIST CSF, CIS Controls and SOC 2). The other two map the OECD AI Principles to wiki controls and compare eight privacy laws by theme. The section home page now has a table of every control's identifiers in every framework. Added NAIC, Colorado SB 21-169, FTC and HIPAA rows to the US section, and PCI DSS, insurance and health rows to the sector overlays. |
+| 2.26 | 2026-10-10 | Nachiket Sathaye | Home, section 6: replaced the text flow of the AI security operating model with an image of the secure AI agent operating lifecycle. |
+| 2.25 | 2026-10-10 | Nachiket Sathaye | Foundations, section 7.2: replaced the text diagram of the reference architecture with an image of the secure agentic AI system architecture, which shows the policy decision point and governance. Added a policy decision row to the layer table. |
+| 2.24 | 2026-10-10 | Nachiket Sathaye | Singapore AI Compliance: updated from the MAS Guidelines on Artificial Intelligence Risk Management issued on 7 October 2026, which take effect on 7 October 2027. The crosswalk now maps the Guidelines paragraph by paragraph to wiki controls and test cases, and the SG-T2 template follows the final text. The sector overlays cite the Guidelines. |
+| 2.23 | 2026-10-10 | Nachiket Sathaye | Added 21 test cases: nine on agent-to-agent communication (TC-L06-038 to TC-L06-046), six on identity for training jobs (TC-L13-021 to TC-L13-026) and six on identity for model serving and registries (TC-L12-026 to TC-L12-031). AI-CTRL-006 and AI-CTRL-015 now cite OWASP ASI07, AI-CTRL-016 maps to AI-R08, and three controls gained wording on agent-to-agent and workload identity. The library holds 653 cases. |
+| 2.22 | 2026-10-10 | Nachiket Sathaye | Framework Crosswalks: added five pages. Four are generated at build time from the control library and the test cases (NIST AI RMF, ISO/IEC 42001, the OWASP Top 10 lists and MITRE ATLAS). The fifth maps the twelve generative AI risks in NIST AI 600-1 to the wiki's risks and controls. |
+| 2.21 | 2026-10-10 | Nachiket Sathaye | GCC AI Compliance: checked four crosswalk rows (S2, S3, S4 and B1) against documents on the SDAIA and Bahrain Personal Data Protection Authority sites and tagged them [Verified]. SDAIA's current AI Ethics Principles document is SDAIA-P114E, version 1, May 2025. Most other government sites refused automated retrieval, so the remaining rows keep their tags. |
+| 2.20 | 2026-10-10 | Nachiket Sathaye | EU AI Compliance: checked twelve crosswalk rows against the Official Journal or the issuing body's page and tagged them [Verified], with the primary URL and retrieval date. The Digital Omnibus on AI is confirmed as Regulation (EU) 2026/1744, in force since 27 July 2026, with the high-risk dates of 2 December 2027 and 2 August 2028. |
+| 2.19 | 2026-10-10 | Nachiket Sathaye | Added three test cases (TC-L03-040 to TC-L03-042) for human oversight effectiveness and AI vendor terms, and pointed four existing cases at AI-CTRL-045 and AI-CTRL-046, so every control now has at least one test case. The library holds 632 cases. |
+| 2.18 | 2026-10-10 | Nachiket Sathaye | Added a Risk, Control and Test Traceability page, generated at build time from the risk mapping and the test cases. Every page footer now shows the date the page last changed, and a page can record a review date with an optional `last_reviewed` line. |
+| 2.17 | 2026-10-10 | Nachiket Sathaye | Added a Legal force column to the twelve regional crosswalks and their CSV files, so each instrument is labelled as binding law, binding in scope, guidance, voluntary, proposed, context or unclear. Added a link and identifier check for contributors, and rules for reusing the wiki to the Community Rules. |
+| 2.16 | 2026-10-10 | Nachiket Sathaye | Changed the licence from CC BY 4.0 to CC BY-SA 4.0; earlier versions remain available under CC BY 4.0. Updated the US bank model risk references after SR 11-7 was replaced by SR 26-2 and OCC Bulletin 2026-13. |
+| 2.15 | 2026-10-10 | Nachiket Sathaye | Added 15 risks to the register (AI-R14 to AI-R28), two controls (AI-CTRL-045 human oversight design and AI-CTRL-046 intellectual property), wording changes to six existing controls, FINOS AI Governance Framework columns in the risk to control mapping, a use-case risk triage page, a Framework Crosswalks section with the FINOS and AI BCF crosswalks, and a positioning statement on the home page. |
+| 2.14 | 2026-10-07 | Nachiket Sathaye | Added four controls (AI-CTRL-041 to AI-CTRL-044: fairness, impact assessment, authority engagement, AI literacy), nine test cases (TC-L03-031 to TC-L03-039), a sector overlays page and a regional crosswalk by control theme. The regional sections now point to these controls and cases. |
+| 2.13 | 2026-10-07 | Nachiket Sathaye | Added the US AI Compliance section: regulatory hub, role guide, templates and crosswalk. Its content comes from secondary sources and from memory of the law, and has not been verified against primary legal text. |
+| 2.12 | 2026-10-07 | Nachiket Sathaye | Added the UK AI Compliance section: regulatory hub, role guide, templates and crosswalk. Its content comes from secondary sources and from memory of the law, and has not been verified against primary legal text. |
+| 2.11 | 2026-10-07 | Nachiket Sathaye | Added the South Korea AI Compliance section: regulatory hub, role guide, templates and crosswalk. Its content comes from secondary sources and from memory of the law, and has not been verified against primary legal text. |
+| 2.10 | 2026-10-07 | Nachiket Sathaye | Added the Singapore AI Compliance section: regulatory hub, role guide, templates and crosswalk. Its content comes from secondary sources and from memory of the law, and has not been verified against primary legal text. |
+| 2.9 | 2026-10-07 | Nachiket Sathaye | Added the Japan AI Compliance section: regulatory hub, role guide, templates and crosswalk. Its content comes from secondary sources and from memory of the law, and has not been verified against primary legal text. |
+| 2.8 | 2026-10-07 | Nachiket Sathaye | Added the India AI Compliance section: regulatory hub, role guide, templates and crosswalk. Its content comes from secondary sources and from memory of the law, and has not been verified against primary legal text. |
+| 2.7 | 2026-10-07 | Nachiket Sathaye | Added the China AI Compliance section: regulatory hub, role guide, templates and crosswalk. Its content comes from secondary sources and from memory of the law, and has not been verified against primary legal text. |
+| 2.6 | 2026-10-07 | Nachiket Sathaye | Added the Canada AI Compliance section: regulatory hub, role guide, templates and crosswalk. Its content comes from secondary sources and from memory of the law, and has not been verified against primary legal text. |
+| 2.5 | 2026-10-07 | Nachiket Sathaye | Added the Brazil AI Compliance section: regulatory hub, role guide, templates and crosswalk. Its content comes from secondary sources and from memory of the law, and has not been verified against primary legal text. |
+| 2.4 | 2026-10-07 | Nachiket Sathaye | Added the Australia AI Compliance section: regulatory hub, role guide, templates and crosswalk. Its content comes from secondary sources and from memory of the law, and has not been verified against primary legal text. |
+| 2.3 | 2026-10-07 | Nachiket Sathaye | Added the EU AI Compliance section: regulatory hub, four role guides, twelve templates, proposed impact assessment control, crosswalk and evidence register. EU content comes from secondary sources and from memory of the legal text, and has not been verified against the Official Journal. |
+| 2.2 | 2026-10-07 | Nachiket Sathaye | Added the GCC AI Compliance section: regulatory hub, four role guides, twelve templates, proposed fairness control, crosswalk and evidence register. Regional content is secondary-sourced and its verification is in progress. |
+| 2.1 | 2026-10-07 | Nachiket Sathaye | Added the Foundations section (research paper: AI Security vs. Security of AI) and linked it from the purpose, navigation, framework mapping, roadmap, and metrics sections. |
+| 2.0 | 2026-07-27 | Nachiket Sathaye | Expanded the home page with mission, strategic objectives, operating model, governance, standards hierarchy, framework mapping, maintenance rules, roadmap, metrics, and fuller navigation. |
+| 1.0 | Initial release | Nachiket Sathaye | Initial wiki home page with purpose, audience, design principle, role navigation, lifecycle navigation, folder structure, and vendor-neutral operating rule. |
