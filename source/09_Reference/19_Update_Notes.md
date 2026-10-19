@@ -6,7 +6,7 @@ nav_order: 2
 description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."
 document_type: AI Security Wiki Reference
 version: 1.1
-last_reviewed: 2026-10-19
+last_reviewed: 2026-10-20
 ---
 
 # Update Notes
@@ -23,6 +23,7 @@ Entries are only ever added. Past entries are not rewritten or removed; when som
 ### What was checked
 
 - **GCC (19 October 2026):** every row of the [GCC Regulatory Crosswalk](../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.md) was checked for changes, and the rows not yet verified were checked against the issuing bodies' own pages where those pages could be read: the UAE legislation portal, the Central Bank of the UAE, the Saudi National Cybersecurity Authority (NCA) and the UAE AI Office.
+- **India and UK (20 October 2026):** every row of the [India Regulatory Crosswalk](../17_India_AI_Compliance/03_Regulatory_Crosswalk.md) and the [UK Regulatory Crosswalk](../21_UK_AI_Compliance/03_Regulatory_Crosswalk.md) was checked for changes. Ten rows not yet verified were checked against MeitY, the Lok Sabha, the Press Information Bureau, legislation.gov.uk, GOV.UK, the UK Parliament bill pages, the Bank of England and the NCSC.
 
 ### What changed
 
@@ -32,11 +33,21 @@ Entries are only ever added. Past entries are not rewritten or removed; when som
 - **GCC, B1 (Bahrain PDPL):** re-read on the Personal Data Protection Authority site; no amendment is listed.
 - **GCC, O2 (Oman PDPL amendments):** an English translation of Royal Decree 68/2026 and news reports say the amendments were issued on 3 September 2026 and are in force. The row now reads Binding law, still tagged [Reported] because the Official Gazette text was not read.
 - **GCC, U3 (UAE AI Charter):** the two primary sources give different dates, 10 June 2024 on the legislation portal and July 2024 on the document. Both are now cited and the row stays [Conflict].
+- **India, now [Verified]:** IN12 (IndiaAI Mission: Cabinet approval of 7 March 2024, outlay Rs 10,371.92 crore).
+- **India, IN3 (Data Protection Board):** MeitY invited applications for a Chairperson and four Members on 6 May 2026, and the government's answer in the Lok Sabha on 12 August 2026 names no appointment. The row now says this, tagged [Verified].
+- **India, IN9 (IT Rules on synthetic content):** MeitY's consolidated text shows the rules were made by G.S.R. 120(E) of 10 February 2026 (labelling and provenance in Rule 3(3), user declarations in Rule 4(1A)). The 20 February 2026 start date is still as reported.
+- **UK, now [Verified]:** UK1 (the five principles, non-statutory, March 2023 White Paper), UK9 (the AI (Regulation) private member's bill is not law; no stage after first reading is shown) and UK10 (the voluntary AI Cyber Security Code of Practice of 31 January 2025 and the NCSC guidelines it builds on).
+- **UK, UK3 (automated decision-making):** the new Articles 22A to 22D came into force on 5 February 2026 under SI 2026/82 and do not apply to decisions taken before that date.
+- **UK, UK6 (PRA SS1/23):** applies to banks, building societies and PRA-designated investment firms that have internal model approval for regulatory capital, not to all banks. The current version took effect on 23 April 2026.
+- **UK, UK8 (copyright and AI):** the government's report of 18 March 2026 says a text and data mining exception with an opt-out is no longer its preferred option. The existing exception (s.29A CDPA) covers non-commercial research only.
+- **UK, UK11 (Algorithmic Transparency Recording Standard):** mandatory by government policy, not by law, for central government departments and some arm's-length bodies; recommended for the rest of the public sector.
 
 ### Still work in progress
 
 - GCC: Bahrain's AI law (B3) is still listed as a draft; news reports this year disagree on whether it has passed. The Saudi copyright text and data mining exception (S9) and the Saudi AI risk framework (S5) still have no primary source.
 - The SDAIA site rejected automated requests on 19 October 2026, so the Saudi rows S1 to S4 were not re-checked this week.
+- India: the SEBI AI rules (IN7) and the IRDAI items (IN8) still lack a primary source; the SEBI notification PDF and the IRDAI site could not be read automatically. The RBI model risk guidance (IN6) is still a draft. The IT Act transition (IN11) was not checked.
+- UK: UK2, UK4, UK5, UK7 and UK12 were not checked this week.
 
 ## 18 October 2026: Full version history moved here
 
