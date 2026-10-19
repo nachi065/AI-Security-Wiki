@@ -26,14 +26,17 @@ Entries are only ever added. Past entries are not rewritten or removed; when som
 
 ### What changed
 
-- **GCC, now [Verified]:** U2 (UAE cybercrime law, Federal Decree-Law No. 34 of 2021), U9 (CBUAE Guidance Note, 23 February 2026, for licensed financial institutions) and S8 (NCA AI Cybersecurity Guidelines: a consultation draft, feedback closed 5 August 2026, no final text yet). U1 (UAE PDPL) was read again with no change.
+- **GCC, now [Verified]:** U2 (UAE cybercrime law, Federal Decree-Law No. 34 of 2021) and S8 (NCA AI Cybersecurity Guidelines: a consultation draft, feedback closed 5 August 2026, no final text yet). U1 (UAE PDPL) was read again with no change.
+- **GCC, U9 (CBUAE Guidance Note):** the CBUAE press release confirms the date (23 February 2026) and that it applies to licensed financial institutions. The row stays [Reported] because the note's own text has not been read.
+- **GCC, U7 (ADGM Data Protection Regulations):** moved from [Unverified] to [Reported]. ADGM's own briefing slides give the enactment date (11 February 2021) and scope; the regulations text could not be retrieved.
+- **GCC, B1 (Bahrain PDPL):** re-read on the Personal Data Protection Authority site; no amendment is listed.
 - **GCC, O2 (Oman PDPL amendments):** an English translation of Royal Decree 68/2026 and news reports say the amendments were issued on 3 September 2026 and are in force. The row now reads Binding law, still tagged [Reported] because the Official Gazette text was not read.
 - **GCC, U3 (UAE AI Charter):** the two primary sources give different dates, 10 June 2024 on the legislation portal and July 2024 on the document. Both are now cited and the row stays [Conflict].
 
 ### Still work in progress
 
 - GCC: Bahrain's AI law (B3) is still listed as a draft; news reports this year disagree on whether it has passed. The Saudi copyright text and data mining exception (S9) and the Saudi AI risk framework (S5) still have no primary source.
-- Several GCC government sites could not be read with a retrieval tool, so rows that cite them were not re-checked this week.
+- The SDAIA site rejected automated requests on 19 October 2026, so the Saudi rows S1 to S4 were not re-checked this week.
 
 ## 18 October 2026: Full version history moved here
 
