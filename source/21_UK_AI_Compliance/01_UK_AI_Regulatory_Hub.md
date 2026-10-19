@@ -11,7 +11,7 @@ last_reviewed: 2026-10-20
 
 # UK AI Regulatory Hub
 
-> **Verification required.** Claims on this page about UK law were compiled on 7 October 2026 from secondary web sources and from memory of the law. No primary legal text was read. Row UK13 (AI Management Essentials) was checked against the government's own documents on 15 October 2026, and rows UK1, UK9 and UK10 on 20 October 2026; those rows are tagged [Verified]; every other claim is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any of them. This is not legal advice.
+> **Verification required.** Claims on this page about UK law were compiled on 7 October 2026 from secondary web sources and from memory of the law. No primary legal text was read. Row UK13 (AI Management Essentials) was checked against the government's own documents on 15 October 2026, and rows UK1, UK9, UK10 and UK3 on 20 October 2026; those rows are tagged [Verified]; every other claim is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any of them. This is not legal advice.
 
 This page maps UK laws, guidance and standards that bear on AI to the wiki's controls.
 
@@ -32,7 +32,7 @@ The EU AI Act reaches UK firms that have EU customers or whose outputs affect pe
 |---|---|---|---|---|---|---|
 | UK1 | UK approach: five principles (safety and robustness; transparency; fairness; accountability; contestability and redress) | Non-statutory; from the March 2023 White Paper | Applied by existing regulators | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012), [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039), [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) | [Verified] five principles and non-statutory basis, from the [White Paper](https://www.gov.uk/government/publications/ai-regulation-a-pro-innovation-approach/white-paper), read 20 Oct 2026 | Current government position; the source describes it "as of 2025" |
 | UK2 | UK GDPR and Data Protection Act 2018 | Binding | Lawful basis, rights, DPIA, transfers, breach notice | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017), [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) | [Recalled] | Articles |
-| UK3 | Data (Use and Access) Act 2025: new Arts 22A to 22D | Binding; commencement dates unverified | Permits solely automated decisions with safeguards: meaningful information, human review and a right to contest. Meaningful human involvement must be real | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023), [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) | [Reported] | Commencement; ICO guidance |
+| UK3 | Data (Use and Access) Act 2025: new Arts 22A to 22D | Binding; section 80 in force 5 Feb 2026 (SI 2026/82, reg. 2(j)); not for decisions taken before that date (reg. 5) | Permits solely automated decisions with safeguards: meaningful information, human review and a right to contest. Meaningful human involvement must be real | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023), [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) | [Verified] substitution of Arts 22A to 22D and commencement, from [section 80](https://www.legislation.gov.uk/ukpga/2025/18/section/80/enacted) and [SI 2026/82](https://legislation.gov.uk/uksi/2026/82), read 20 Oct 2026. The key points were not re-read | ICO guidance |
 | UK4 | ICO guidance on AI and data protection | Regulator guidance | Fairness, transparency, DPIA and explainability for AI | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) | [Recalled] | Current versions; any AI and biometrics strategy |
 | UK5 | FCA approach (principles, Consumer Duty, SM&CR) | Regulatory framework | No AI-specific rulebook reported; existing rules apply | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012), [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023), [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037) | [Recalled] | Current FCA statements |
 | UK6 | PRA SS1/23 model risk management | Supervisory statement for banks | Model inventory, validation, governance | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011), [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037), [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) | [Recalled] | Applicability and date |
@@ -63,7 +63,7 @@ The EU AI Act reaches UK firms that have EU customers or whose outputs affect pe
 | Mar 2025 | AI private member's bill reintroduced (HL Bill 76, 4 Mar 2025) | [Verified] |
 | 6 Nov 2024 | AI Management Essentials (AIME) draft published for consultation (closed 29 Jan 2025) | [Verified] |
 | 6 Feb 2026 | Government response: AIME will not be published or required in procurement | [Verified] |
-| 2026 | Commencement of Arts 22A to 22D | [Unverified] |
+| 5 Feb 2026 | Commencement of Arts 22A to 22D (section 80, SI 2026/82) | [Verified] |
 
 ## 5. Mapping of common wiki controls
 
@@ -91,13 +91,13 @@ The topics raised on this page are covered by the following controls, test cases
 ## 7. Conflicts and cautions
 
 - One source describes the position "as of 2025". Check for a government AI bill announcement in 2026.
-- The commencement dates for Arts 22A to 22D are not confirmed.
+- Arts 22A to 22D (section 80) commenced on 5 February 2026 under SI 2026/82 and do not apply to decisions taken before that date. Checked on legislation.gov.uk on 20 October 2026.
 - The details of the NCSC and DSIT codes come from a single source or from memory.
 - **AI Management Essentials (UK13) is withdrawn, not current.** Some third-party lists of AI governance frameworks, written before February 2026, still present AIME as a UK management standard. The government response says: "DSIT will not be publishing AIME and therefore will not be making it a requirement of the government procurement process." The reasons it gives are that the tool's scope was too broad for one instrument and that DSIT will instead write narrower guidance on foundational governance measures aimed at SMEs, and point organisations to other support. The ten sections of the 2024 draft are still a usable lightweight self-check, but do not describe AIME as a UK requirement or standard. Checked against the response PDF on 15 October 2026.
 
 ## 8. Verification checklist
 
-- [ ] Data (Use and Access) Act commencement regulations
+- [x] Data (Use and Access) Act commencement regulations (SI 2026/82, checked 20 Oct 2026)
 - [ ] ICO's current list of AI guidance
 - [ ] FCA and PRA statements
 - [ ] Copyright position and any consultation response
@@ -122,6 +122,8 @@ All sources are secondary unless marked as a regulator or government page. Each 
 | [UK Parliament: Artificial Intelligence (Regulation) Bill [HL]](https://bills.parliament.uk/bills/3942) | Parliament page; fetched 20 Oct 2026 | UK9 |
 | [DSIT: Code of Practice for the Cyber Security of AI](https://www.gov.uk/government/publications/ai-cyber-security-code-of-practice/code-of-practice-for-the-cyber-security-of-ai) | Government page; fetched 20 Oct 2026 | UK10 |
 | [NCSC: New ETSI standard protects AI systems](https://www.ncsc.gov.uk/blog-post/new-etsi-standard-protects-ai-systems-from-evolving-cyber-threats) | Government page; fetched 20 Oct 2026 | UK10 |
+| [legislation.gov.uk: Data (Use and Access) Act 2025, section 80](https://www.legislation.gov.uk/ukpga/2025/18/section/80/enacted) | Legislation; fetched 20 Oct 2026 | UK3 |
+| [legislation.gov.uk: SI 2026/82](https://legislation.gov.uk/uksi/2026/82) | Legislation; fetched 20 Oct 2026 | UK3 |
 | [Scaffold Digital: UK AI regulation in 2026](https://www.scaffold.digital/news/uk-ai-regulation-in-2026-whats-in-force-whats-coming-and-what-your-business-should-do) | Not read | Cross-check |
 
 No primary legal text (statute, regulation or circular) was read for any row. Confirm each row against the primary source, and add its URL and retrieval date in the [UK Regulatory Crosswalk](03_Regulatory_Crosswalk.md).
