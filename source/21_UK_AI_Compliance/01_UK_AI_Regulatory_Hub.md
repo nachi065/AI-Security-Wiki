@@ -11,7 +11,7 @@ last_reviewed: 2026-10-20
 
 # UK AI Regulatory Hub
 
-> **Verification required.** Claims on this page about UK law were compiled on 7 October 2026 from secondary web sources and from memory of the law. No primary legal text was read. Row UK13 (AI Management Essentials) was checked against the government's own documents on 15 October 2026, and rows UK1, UK9, UK10, UK3, UK6, UK8 and UK11 on 20 October 2026; those rows are tagged [Verified]; every other claim is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any of them. This is not legal advice.
+> **Verification required.** Claims on this page about UK law were compiled on 7 October 2026 from secondary web sources and from memory of the law. Row UK13 (AI Management Essentials) was checked against the government's own documents on 15 October 2026, and rows UK1, UK9, UK10, UK3, UK6, UK8 and UK11 on 20 October 2026; those rows are tagged [Verified]; every other claim is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any of them. This is not legal advice.
 
 This page maps UK laws, guidance and standards that bear on AI to the wiki's controls.
 
@@ -128,4 +128,4 @@ All sources are secondary unless marked as a regulator or government page. Each 
 | [GOV.UK: ATRS mandatory scope and exemptions policy](https://www.gov.uk/government/publications/algorithmic-transparency-recording-standard-mandatory-scope-and-exemptions-policy/algorithmic-transparency-recording-standard-atrs-mandatory-scope-and-exemptions-policy) | Government page; fetched 20 Oct 2026 | UK11 |
 | [Scaffold Digital: UK AI regulation in 2026](https://www.scaffold.digital/news/uk-ai-regulation-in-2026-whats-in-force-whats-coming-and-what-your-business-should-do) | Not read | Cross-check |
 
-No primary legal text (statute, regulation or circular) was read for any row. Confirm each row against the primary source, and add its URL and retrieval date in the [UK Regulatory Crosswalk](03_Regulatory_Crosswalk.md).
+Primary legislation was read for row UK3 only (section 80 and SI 2026/82, 20 October 2026); the other [Verified] rows rest on government or Parliament pages. Confirm each row against the primary source, and add its URL and retrieval date in the [UK Regulatory Crosswalk](03_Regulatory_Crosswalk.md).
