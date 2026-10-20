@@ -6,7 +6,7 @@ nav_order: 2
 description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."
 document_type: AI Security Wiki Reference
 version: 1.1
-last_reviewed: 2026-10-20
+last_reviewed: 2026-10-21
 ---
 
 # Update Notes
@@ -24,6 +24,7 @@ Entries are only ever added. Past entries are not rewritten or removed; when som
 
 - **GCC (19 October 2026):** every row of the [GCC Regulatory Crosswalk](../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.md) was checked for changes, and the rows not yet verified were checked against the issuing bodies' own pages where those pages could be read: the UAE legislation portal, the Central Bank of the UAE, the Saudi National Cybersecurity Authority (NCA) and the UAE AI Office.
 - **India and UK (20 October 2026):** every row of the [India Regulatory Crosswalk](../17_India_AI_Compliance/03_Regulatory_Crosswalk.md) and the [UK Regulatory Crosswalk](../21_UK_AI_Compliance/03_Regulatory_Crosswalk.md) was checked for changes. Ten rows not yet verified were checked against MeitY, the Lok Sabha, the Press Information Bureau, legislation.gov.uk, GOV.UK, the UK Parliament bill pages, the Bank of England and the NCSC.
+- **Singapore, US and South Korea (21 October 2026):** every row of the [Singapore](../19_Singapore_AI_Compliance/03_Regulatory_Crosswalk.md), [US](../22_US_AI_Compliance/03_Regulatory_Crosswalk.md) and [South Korea](../20_South_Korea_AI_Compliance/03_Regulatory_Crosswalk.md) crosswalks was checked for changes. Rows not yet verified were checked against IMDA, the AI Verify Foundation, the PDPC, the CSA and MAS; govinfo.gov, justice.gov, whitehouse.gov, nist.gov, nyc.gov and the Colorado, New York, Utah and Texas legislatures; and MSIT, PIPC and the Korea Legislation Research Institute's English translations of the AI Basic Act and its decree.
 
 ### What changed
 
@@ -41,6 +42,19 @@ Entries are only ever added. Past entries are not rewritten or removed; when som
 - **UK, UK6 (PRA SS1/23):** applies to banks, building societies and PRA-designated investment firms that have internal model approval for regulatory capital, not to all banks. The current version took effect on 23 April 2026.
 - **UK, UK8 (copyright and AI):** the government's report of 18 March 2026 says a text and data mining exception with an opt-out is no longer its preferred option. The existing exception (s.29A CDPA) covers non-commercial research only.
 - **UK, UK11 (Algorithmic Transparency Recording Standard):** mandatory by government policy, not by law, for central government departments and some arm's-length bodies; recommended for the rest of the public sector.
+- **Singapore, now [Verified]:** SG4 (the PDPC advisory guidelines on AI recommendation and decision systems, 1 March 2024, and on generative AI, 20 July 2026) and SG7 (the CSA guidelines of October 2024 and the agentic AI addendum of 17 June 2026; consultation 22 October to 31 December 2025).
+- **Singapore, SG1 (Model AI Governance Framework):** the second edition (21 January 2020) is confirmed. Its second area is the level of human involvement in AI-augmented decision-making, not risk management as the row said. The framework for generative AI (30 May 2024) is added. Now [Verified].
+- **Singapore, SG2 (framework for agentic AI):** the date (22 January 2026) and the four dimensions are confirmed. IMDA updated the framework on 20 May 2026 with case studies and guidance on multi-agent systems. Now [Verified].
+- **Singapore, SG3 (AI Verify):** the 11 principles, listed before from memory, and the pilot launch on 11 February 2025 are confirmed. Now [Verified]. SG6 now records that Veritas concluded its third phase on 26 June 2023.
+- **US, now [Verified]:** US5 (Colorado SB 26-189: signed 14 May 2026, takes effect 1 January 2027; the 30 June 2026 date in older trackers was the date under SB 24-205, so the [Conflict] tag is resolved).
+- **US, US2 (Executive Order 14365):** the order's text is confirmed. The row said no complaints had been filed; on 24 April 2026 the US Department of Justice intervened in a case against Colorado SB 24-205 citing the order. Now [Verified].
+- **US, US3 (Executive Order 14409):** pre-release access is for up to 30 days, and the order disclaims, rather than bans, mandatory licensing. The memo of 5 June 2026 is NSPM-11 and does not set those measures. Now [Verified].
+- **US, US4 (NIST AI RMF):** the framework details are confirmed, but the Colorado SB 26-189 text does not appear to keep the NIST-based presumption reported under SB 24-205. Now [Conflict].
+- **US, US11:** the New York RAISE Act is enacted and takes effect on 1 January 2027 (it was described as targeted). Utah SB 149 was narrowed by SB 226 (2025) and the Utah chapter is repealed on 1 July 2027. Now [Verified].
+- **South Korea, KR2 (generative AI labelling):** the row said a visible or audible watermark is needed unless content is clearly fictional. The decree allows a machine-readable mark with a text or voice notice; animation is an example where an invisible mark is enough, not an exemption.
+- **South Korea, KR3 (high-impact AI):** the Act's list of sectors and duties is added. The impact assessment is a best-efforts duty. The claim that only Level-4 autonomous vehicles qualify was found only in news reports, so the tag moves from [Conflict] to [Reported].
+- **South Korea, KR1, KR4 to KR7:** law and decree numbers, article references, a fourth criterion for the domestic representative, the fine ceiling (up to KRW 30 million, for three breaches), the grace period as ministry policy rather than law, and PIPC's AI guides are added. These rows stay [Reported] or [Recalled] because the Korean text on law.go.kr could not be read automatically.
+- **South Korea, now [Verified]:** KR8, renamed the AI Basic Act Support Desk, from MSIT's own page.
 
 ### Still work in progress
 
@@ -48,6 +62,9 @@ Entries are only ever added. Past entries are not rewritten or removed; when som
 - The SDAIA site rejected automated requests on 19 October 2026, so the Saudi rows S1 to S4 were not re-checked this week.
 - India: the SEBI AI rules (IN7) and the IRDAI items (IN8) still lack a primary source; the SEBI notification PDF and the IRDAI site could not be read automatically. The RBI model risk guidance (IN6) is still a draft. The IT Act transition (IN11) was not checked.
 - UK: UK2, UK4, UK5, UK7 and UK12 were not checked this week.
+- Singapore: SG8 (Cybersecurity Act) was not changed; its 2024 amendment is confirmed but the commencement date was not found. Some IMDA pages refused automated retrieval.
+- US: the California legislature site could not be read automatically, so US6 (SB 53, AB 2013) and US7 (AI Transparency Act; a further amendment, SB 1000, is reported) are unchanged. The Illinois General Assembly site refused automated retrieval, so US10 is unchanged. No final HIPAA Security Rule was found (US17).
+- South Korea: the Korean text on law.go.kr, the decree amendment of 20 July 2026 and the template [KR-T2](../20_South_Korea_AI_Compliance/KR-T2_Generative_AI_Labelling_and_Notice.md), which still has a column for a "clearly fictional" exemption, need follow-up.
 
 ## 18 October 2026: Full version history moved here
 
