@@ -11,7 +11,7 @@ last_reviewed: 2026-10-21
 
 # US Regulatory Crosswalk
 
-> **Verification required.** Claims on this page about US law were compiled on 7 October 2026 from secondary web sources and from memory of the law. On 21 October 2026, row US5 (Colorado SB 26-189) was checked against the Colorado General Assembly's bill page and session law text and is tagged [Verified], with the source in the crosswalk. Every other claim is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any of them. This is not legal advice.
+> **Verification required.** Claims on this page about US law were compiled on 7 October 2026 from secondary web sources and from memory of the law. On 21 October 2026, rows US2, US3, US5 and US11 were checked against primary sources (govinfo.gov, justice.gov, whitehouse.gov, the Colorado, New York and Utah legislatures and nyc.gov) and are tagged [Verified], with the sources in the crosswalk. Row US4 is now tagged [Conflict]. Every other claim is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any of them. This is not legal advice.
 
 One row per instrument in the [US AI Regulatory Hub](01_US_AI_Regulatory_Hub.md), with the wiki controls that relate to it and its verification status. The last column is empty until a row has been confirmed against the primary text; record the primary URL and the date you retrieved it there.
 

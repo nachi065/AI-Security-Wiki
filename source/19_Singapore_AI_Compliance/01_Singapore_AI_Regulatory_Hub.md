@@ -11,7 +11,7 @@ last_reviewed: 2026-10-21
 
 # Singapore AI Regulatory Hub
 
-> **Verification required.** Claims on this page about Singapore law were compiled on 7 October 2026 from secondary web sources and from memory of the law. On 10 October 2026, rows SG5 and SG6 were checked against the MAS Guidelines on Artificial Intelligence Risk Management of 7 October 2026 and are tagged [Verified]. On 21 October 2026, rows SG4 (the PDPC advisory guidelines) and SG7 (the CSA guidelines and agentic addendum) were checked against the issuing bodies' own pages and are also tagged [Verified]. Every other claim is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any of them. This is not legal advice.
+> **Verification required.** Claims on this page about Singapore law were compiled on 7 October 2026 from secondary web sources and from memory of the law. On 10 October 2026, rows SG5 and SG6 were checked against the MAS Guidelines on Artificial Intelligence Risk Management of 7 October 2026 and are tagged [Verified]. On 21 October 2026, rows SG1, SG2, SG3, SG4 and SG7 were checked against the issuing bodies' own pages (IMDA, the AI Verify Foundation, the PDPC and the CSA) and are also tagged [Verified]. Every other claim is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any of them. This is not legal advice.
 
 This page maps Singapore laws, guidance and standards that bear on AI to the wiki's controls.
 

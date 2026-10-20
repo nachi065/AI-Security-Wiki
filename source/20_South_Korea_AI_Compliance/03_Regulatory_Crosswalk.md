@@ -11,7 +11,7 @@ last_reviewed: 2026-10-21
 
 # South Korea Regulatory Crosswalk
 
-> **Verification required.** Claims on this page about South Korean law were compiled on 7 October 2026 from secondary web sources and from memory of the law. No primary legal text was read, and each claim is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any of them. This is not legal advice.
+> **Verification required.** Claims on this page about South Korean law were compiled on 7 October 2026 from secondary web sources and from memory of the law. On 21 October 2026, the rows were checked against the English translation of the AI Basic Act and its Enforcement Decree by the Korea Legislation Research Institute (which has no legal effect) and against the Ministry of Science and ICT's own pages; row KR8 is tagged [Verified]. The Korean text on law.go.kr could not be read automatically, so every other claim is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any of them. This is not legal advice.
 
 One row per instrument in the [South Korea AI Regulatory Hub](01_South_Korea_AI_Regulatory_Hub.md), with the wiki controls that relate to it and its verification status. The last column is empty until a row has been confirmed against the primary text; record the primary URL and the date you retrieved it there.
 

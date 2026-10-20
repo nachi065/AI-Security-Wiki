@@ -6,11 +6,12 @@ nav_order: 1
 description: "South Korea's AI Basic Act mapped to AI security controls: generative AI labelling, high-impact and high-performance AI duties, and the domestic representative rule."
 document_type: AI Security Wiki Reference
 version: 1.0
+last_reviewed: 2026-10-21
 ---
 
 # South Korea AI Regulatory Hub
 
-> **Verification required.** Claims on this page about South Korean law were compiled on 7 October 2026 from secondary web sources and from memory of the law. No primary legal text was read, and each claim is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any of them. This is not legal advice.
+> **Verification required.** Claims on this page about South Korean law were compiled on 7 October 2026 from secondary web sources and from memory of the law. On 21 October 2026, the rows were checked against the English translation of the AI Basic Act and its Enforcement Decree by the Korea Legislation Research Institute (which has no legal effect) and against the Ministry of Science and ICT's own pages; row KR8 is tagged [Verified]. The Korean text on law.go.kr could not be read automatically, so every other claim is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any of them. This is not legal advice.
 
 This page maps South Korean laws, guidance and standards that bear on AI to the wiki's controls.
 
@@ -73,7 +74,7 @@ The topics raised on this page are covered by the following controls, test cases
 
 - The scope of high-impact AI: the English translation of the Act lists the sectors in Art 2(4) (see KR3). The claim that only Level-4 autonomous vehicles qualify now was found only in news reports, not in the Act, the decree or MSIT's pages (checked 21 October 2026).
 - The fine ceiling (KRW 30 million) is from the English translation of the Act; the amounts for each breach are in Appendix 2 of the decree, which was not read.
-- The enforcement decree and the guidelines were not read.
+- The enforcement decree was read only in the KLRI English translation, which does not yet show the amendment of 20 July 2026 (Decree No. 36506). MSIT's transparency guidelines were read in MSIT's English summary.
 
 ## 8. Verification checklist
 

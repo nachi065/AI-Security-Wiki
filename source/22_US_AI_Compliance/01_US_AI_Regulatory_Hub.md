@@ -11,7 +11,7 @@ last_reviewed: 2026-10-21
 
 # US AI Regulatory Hub
 
-> **Verification required.** Claims on this page about US law were compiled on 7 October 2026 from secondary web sources and from memory of the law. On 21 October 2026, row US5 (Colorado SB 26-189) was checked against the Colorado General Assembly's bill page and session law text and is tagged [Verified], with the source in the crosswalk. Every other claim is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any of them. This is not legal advice.
+> **Verification required.** Claims on this page about US law were compiled on 7 October 2026 from secondary web sources and from memory of the law. On 21 October 2026, rows US2, US3, US5 and US11 were checked against primary sources (govinfo.gov, justice.gov, whitehouse.gov, the Colorado, New York and Utah legislatures and nyc.gov) and are tagged [Verified], with the sources in the crosswalk. Row US4 is now tagged [Conflict]. Every other claim is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any of them. This is not legal advice.
 
 This page maps US laws, guidance and standards that bear on AI to the wiki's controls.
 
@@ -67,7 +67,7 @@ Apply the law of the strictest state you operate in.
 | Dec 2025 | Executive Order 14365 | [Reported] |
 | 1 Jan 2026 | California SB 53 and AB 2013, Texas TRAIGA and Illinois HB 3773 take effect | [Reported] |
 | 14 May 2026 | Colorado SB 26-189 signed | [Reported] |
-| 2 Jun 2026 | Executive Order 14409 | [Reported] |
+| 2 Jun 2026 | Executive Order 14409 | [Verified] |
 | 2 Aug 2026 | California AI Transparency Act operative | [Reported] |
 | 1 Sep 2026 | Texas complaint mechanism due | [Reported] |
 | 1 Jan 2027 | Colorado core duties; California ADMT compliance date for existing uses | [Reported] |
