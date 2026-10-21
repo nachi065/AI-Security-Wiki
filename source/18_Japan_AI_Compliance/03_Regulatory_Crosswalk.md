@@ -11,7 +11,7 @@ last_reviewed: 2026-10-22
 
 # Japan Regulatory Crosswalk
 
-> **Verification required.** Claims on this page about Japanese law were compiled on 7 October 2026 from secondary web sources and from memory of the law. On 22 October 2026, rows JP2 and JP3 were checked against the primary text on the issuing bodies' own sites (the Cabinet Office and METI) and are tagged [Verified]. Every other claim is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any of them. This is not legal advice.
+> **Verification required.** Claims on this page about Japanese law were compiled on 7 October 2026 from secondary web sources and from memory of the law. On 22 October 2026, rows JP1 to JP4 were checked against the primary text on the issuing bodies' own sites (the Cabinet Office, METI and the Personal Information Protection Commission) and are tagged [Verified]. Every other claim is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any of them. This is not legal advice.
 
 One row per instrument in the [Japan AI Regulatory Hub](01_Japan_AI_Regulatory_Hub.md), with the wiki controls that relate to it and its verification status. The last column is empty until a row has been confirmed against the primary text; record the primary URL and the date you retrieved it there.
 

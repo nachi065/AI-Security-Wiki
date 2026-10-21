@@ -11,7 +11,7 @@ last_reviewed: 2026-10-22
 
 # Brazil Regulatory Crosswalk
 
-> **Verification required.** Claims on this page about Brazilian law were compiled on 7 October 2026 from secondary web sources and from memory of the law. On 22 October 2026, rows BR1 were checked against the primary text on the issuing bodies' own sites (the Senate and Chamber of Deputies bill records) and are tagged [Verified]. Every other claim is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any of them. This is not legal advice.
+> **Verification required.** Claims on this page about Brazilian law were compiled on 7 October 2026 from secondary web sources and from memory of the law. On 22 October 2026, rows BR1 and BR3 were checked against the primary text on the issuing bodies' own sites (the Senate and Chamber of Deputies bill records, the ANPD and the Planalto legislation site) and are tagged [Verified]. Every other claim is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any of them. This is not legal advice.
 
 One row per instrument in the [Brazil AI Regulatory Hub](01_Brazil_AI_Regulatory_Hub.md), with the wiki controls that relate to it and its verification status. The last column is empty until a row has been confirmed against the primary text; record the primary URL and the date you retrieved it there.
 
