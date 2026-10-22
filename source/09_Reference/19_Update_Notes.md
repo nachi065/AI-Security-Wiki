@@ -6,7 +6,7 @@ nav_order: 2
 description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."
 document_type: AI Security Wiki Reference
 version: 1.1
-last_reviewed: 2026-10-18
+last_reviewed: 2026-10-22
 ---
 
 # Update Notes
@@ -17,6 +17,70 @@ This page is the wiki's change record. It has two parts:
 - **[Full version history](#full-version-history)**: every version since 1.0, newest first. The [home page](../index.md#20-version-history) shows only the three latest.
 
 Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.
+
+## Week ending 24 October 2026: crosswalk verification
+
+### What was checked
+
+- **GCC (19 October 2026):** every row of the [GCC Regulatory Crosswalk](../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.md) was checked for changes, and the rows not yet verified were checked against the issuing bodies' own pages where those pages could be read: the UAE legislation portal, the Central Bank of the UAE, the Saudi National Cybersecurity Authority (NCA) and the UAE AI Office.
+- **India and UK (20 October 2026):** every row of the [India Regulatory Crosswalk](../17_India_AI_Compliance/03_Regulatory_Crosswalk.md) and the [UK Regulatory Crosswalk](../21_UK_AI_Compliance/03_Regulatory_Crosswalk.md) was checked for changes. Ten rows not yet verified were checked against MeitY, the Lok Sabha, the Press Information Bureau, legislation.gov.uk, GOV.UK, the UK Parliament bill pages, the Bank of England and the NCSC.
+- **Singapore, US and South Korea (21 October 2026):** every row of the [Singapore](../19_Singapore_AI_Compliance/03_Regulatory_Crosswalk.md), [US](../22_US_AI_Compliance/03_Regulatory_Crosswalk.md) and [South Korea](../20_South_Korea_AI_Compliance/03_Regulatory_Crosswalk.md) crosswalks was checked for changes. Rows not yet verified were checked against IMDA, the AI Verify Foundation, the PDPC, the CSA and MAS; govinfo.gov, justice.gov, whitehouse.gov, nist.gov, nyc.gov and the Colorado, New York, Utah and Texas legislatures; and MSIT, PIPC and the Korea Legislation Research Institute's English translations of the AI Basic Act and its decree.
+- **Australia, Brazil, Canada, China and Japan (22 October 2026):** every row of the [Australia](../13_Australia_AI_Compliance/03_Regulatory_Crosswalk.md), [Brazil](../14_Brazil_AI_Compliance/03_Regulatory_Crosswalk.md), [Canada](../15_Canada_AI_Compliance/03_Regulatory_Crosswalk.md), [China](../16_China_AI_Compliance/03_Regulatory_Crosswalk.md) and [Japan](../18_Japan_AI_Compliance/03_Regulatory_Crosswalk.md) crosswalks was checked for changes. This was the first check of these five regions against primary sources. Rows were checked against the Federal Register of Legislation, the OAIC, the Department of Industry, APRA, Treasury, the ACCC and the Parliament of NSW; the Brazilian Senate and Chamber, the Planalto legislation site and the ANPD; Justice Laws, LegisQuebec, ISED, OSFI, the Parliament of Canada and the Ontario legislature and government; the CAC, MIIT, the State Council policy library and the national standards system; and the Cabinet Office, METI, the Personal Information Protection Commission, the Agency for Cultural Affairs and the FSA.
+
+### What changed
+
+- **GCC, now [Verified]:** U2 (UAE cybercrime law, Federal Decree-Law No. 34 of 2021) and S8 (NCA AI Cybersecurity Guidelines: a consultation draft, feedback closed 5 August 2026, no final text yet). U1 (UAE PDPL) was read again with no change.
+- **GCC, U9 (CBUAE Guidance Note):** the CBUAE press release confirms the date (23 February 2026) and that it applies to licensed financial institutions. The row stays [Reported] because the note's own text has not been read.
+- **GCC, U7 (ADGM Data Protection Regulations):** moved from [Unverified] to [Reported]. ADGM's own briefing slides give the enactment date (11 February 2021) and scope; the regulations text could not be retrieved.
+- **GCC, B1 (Bahrain PDPL):** re-read on the Personal Data Protection Authority site; no amendment is listed.
+- **GCC, O2 (Oman PDPL amendments):** an English translation of Royal Decree 68/2026 and news reports say the amendments were issued on 3 September 2026 and are in force. The row now reads Binding law, still tagged [Reported] because the Official Gazette text was not read.
+- **GCC, U3 (UAE AI Charter):** the two primary sources give different dates, 10 June 2024 on the legislation portal and July 2024 on the document. Both are now cited and the row stays [Conflict].
+- **India, now [Verified]:** IN12 (IndiaAI Mission: Cabinet approval of 7 March 2024, outlay Rs 10,371.92 crore).
+- **India, IN3 (Data Protection Board):** MeitY invited applications for a Chairperson and four Members on 6 May 2026, and the government's answer in the Lok Sabha on 12 August 2026 names no appointment. The row now says this, tagged [Verified].
+- **India, IN9 (IT Rules on synthetic content):** MeitY's consolidated text shows the rules were made by G.S.R. 120(E) of 10 February 2026 (labelling and provenance in Rule 3(3), user declarations in Rule 4(1A)). The 20 February 2026 start date is still as reported.
+- **UK, now [Verified]:** UK1 (the five principles, non-statutory, March 2023 White Paper), UK9 (the AI (Regulation) private member's bill is not law; no stage after first reading is shown) and UK10 (the voluntary AI Cyber Security Code of Practice of 31 January 2025 and the NCSC guidelines it builds on).
+- **UK, UK3 (automated decision-making):** the new Articles 22A to 22D came into force on 5 February 2026 under SI 2026/82 and do not apply to decisions taken before that date.
+- **UK, UK6 (PRA SS1/23):** applies to banks, building societies and PRA-designated investment firms that have internal model approval for regulatory capital, not to all banks. The current version took effect on 23 April 2026.
+- **UK, UK8 (copyright and AI):** the government's report of 18 March 2026 says a text and data mining exception with an opt-out is no longer its preferred option. The existing exception (s.29A CDPA) covers non-commercial research only.
+- **UK, UK11 (Algorithmic Transparency Recording Standard):** mandatory by government policy, not by law, for central government departments and some arm's-length bodies; recommended for the rest of the public sector.
+- **Singapore, now [Verified]:** SG4 (the PDPC advisory guidelines on AI recommendation and decision systems, 1 March 2024, and on generative AI, 20 July 2026) and SG7 (the CSA guidelines of October 2024 and the agentic AI addendum of 17 June 2026; consultation 22 October to 31 December 2025).
+- **Singapore, SG1 (Model AI Governance Framework):** the second edition (21 January 2020) is confirmed. Its second area is the level of human involvement in AI-augmented decision-making, not risk management as the row said. The framework for generative AI (30 May 2024) is added. Now [Verified].
+- **Singapore, SG2 (framework for agentic AI):** the date (22 January 2026) and the four dimensions are confirmed. IMDA updated the framework on 20 May 2026 with case studies and guidance on multi-agent systems. Now [Verified].
+- **Singapore, SG3 (AI Verify):** the 11 principles, listed before from memory, and the pilot launch on 11 February 2025 are confirmed. Now [Verified]. SG6 now records that Veritas concluded its third phase on 26 June 2023.
+- **US, now [Verified]:** US5 (Colorado SB 26-189: signed 14 May 2026, takes effect 1 January 2027; the 30 June 2026 date in older trackers was the date under SB 24-205, so the [Conflict] tag is resolved).
+- **US, US2 (Executive Order 14365):** the order's text is confirmed. The row said no complaints had been filed; on 24 April 2026 the US Department of Justice intervened in a case against Colorado SB 24-205 citing the order. Now [Verified].
+- **US, US3 (Executive Order 14409):** pre-release access is for up to 30 days, and the order disclaims, rather than bans, mandatory licensing. The memo of 5 June 2026 is NSPM-11 and does not set those measures. Now [Verified].
+- **US, US4 (NIST AI RMF):** the framework details are confirmed, but the Colorado SB 26-189 text does not appear to keep the NIST-based presumption reported under SB 24-205. Now [Conflict].
+- **US, US11:** the New York RAISE Act is enacted and takes effect on 1 January 2027 (it was described as targeted). Utah SB 149 was narrowed by SB 226 (2025) and the Utah chapter is repealed on 1 July 2027. Now [Verified].
+- **South Korea, KR2 (generative AI labelling):** the row said a visible or audible watermark is needed unless content is clearly fictional. The decree allows a machine-readable mark with a text or voice notice; animation is an example where an invisible mark is enough, not an exemption.
+- **South Korea, KR3 (high-impact AI):** the Act's list of sectors and duties is added. The impact assessment is a best-efforts duty. The claim that only Level-4 autonomous vehicles qualify was found only in news reports, so the tag moves from [Conflict] to [Reported].
+- **South Korea, KR1, KR4 to KR7:** law and decree numbers, article references, a fourth criterion for the domestic representative, the fine ceiling (up to KRW 30 million, for three breaches), the grace period as ministry policy rather than law, and PIPC's AI guides are added. These rows stay [Reported] or [Recalled] because the Korean text on law.go.kr could not be read automatically.
+- **South Korea, now [Verified]:** KR8, renamed the AI Basic Act Support Desk, from MSIT's own page.
+- **Australia, now [Verified]:** AU2 (automated-decision transparency in APP 1.7 to 1.9 starts on 10 December 2026; the OAIC published its APP 1 guidance on 30 September 2026), AU3 (the OAIC sweep) and AU5 (AI Safety Institute, early 2026, $29.9 million).
+- **Australia, AU6 and new row AU6a:** the NSW digital work systems bill is now law (Act No. 5 of 2026, assented 18 February 2026), so it moves to its own row, AU6a, as Binding in scope. Deepfake sexual material offences already exist under a 2024 Act; AU6 now covers only the further restrictions under consideration and Victoria.
+- **Australia, AU3a, AU4, AU7 and AU8:** a breach of APP 1.7 joins the infringement-notice list from 10 December 2026 (AU3a, now [Verified]). The Guidance for AI Adoption dates from 21 October 2025 and replaces the Voluntary AI Safety Standard (AU4, now [Verified]). The Treasury review of AI and the Consumer Law is recorded (AU7). An amended CPS 230 started on 1 July 2026 and APRA wrote to industry on AI on 30 April 2026 (AU8, now [Reported]).
+- **Brazil, now [Verified]:** BR1 (the AI bill PL 2338/2023 still waits for the rapporteur's opinion in the Chamber's special committee; nothing logged since 2 September 2026) and BR3 (the ANPD's AI sandbox, priority themes and duties towards minors under Decreto 12.880/2026).
+- **Brazil, BR2 and BR4:** the ANPD became a special-regime agency under Lei 15.352/2026 (BR2). Decreto 13.135/2026 on customer service, in force on 2 November 2026, allows AI and automated service only with the option of a real-time human agent (BR4). Both stay [Recalled] because the LGPD and Consumer Code texts could not be read automatically.
+- **Canada, now [Verified]:** CA2 (PIPEDA), CA3 (Quebec, s. 12.1 on automated decisions), CA5 (the voluntary code, 46 signatories), CA6 (OSFI E-23, effective 1 May 2027), CA7 (Bills C-34 and C-36, both at second reading) and CA8 (Ontario's Enhancing Digital Security and Trust Act and its AI directive; the label moves from Unclear to Binding in scope).
+- **China, now [Verified]:** CN1 to CN4 (generative AI, algorithm recommendation, deep synthesis and labelling, with official titles and dates). CN5 is a trial measure in force on issue (20 March 2026). CN6 is final: CAC Order No. 21, in force 15 July 2026. CN8: the State Council's 2026 work plan commits to comprehensive AI legislation; no draft is published.
+- **China, CN7:** the Cybersecurity Law amendment took effect on 1 January 2026. The row stays [Reported] because the Data Security Law was not read.
+- **Japan, now [Verified]:** JP1 (AI Promotion Act, Act No. 53 of 2025, fully in force 1 September 2025; no penalties), JP2 (AI Basic Plan of 14 July 2026), JP3 (AI Guidelines for Business version 1.2) and JP4 (the APPI amendment law promulgated on 17 July 2026, in force within two years, with a consent exception for statistics including AI development).
+
+### Still work in progress
+
+- GCC: Bahrain's AI law (B3) is still listed as a draft; news reports this year disagree on whether it has passed. The Saudi copyright text and data mining exception (S9) and the Saudi AI risk framework (S5) still have no primary source.
+- The SDAIA site rejected automated requests on 19 October 2026, so the Saudi rows S1 to S4 were not re-checked this week.
+- India: the SEBI AI rules (IN7) and the IRDAI items (IN8) still lack a primary source; the SEBI notification PDF and the IRDAI site could not be read automatically. The RBI model risk guidance (IN6) is still a draft. The IT Act transition (IN11) was not checked.
+- UK: UK2, UK4, UK5, UK7 and UK12 were not checked this week.
+- Singapore: SG8 (Cybersecurity Act) was not changed; its 2024 amendment is confirmed but the commencement date was not found. Some IMDA pages refused automated retrieval.
+- US: the California legislature site could not be read automatically, so US6 (SB 53, AB 2013) and US7 (AI Transparency Act; a further amendment, SB 1000, is reported) are unchanged. The Illinois General Assembly site refused automated retrieval, so US10 is unchanged. No final HIPAA Security Rule was found (US17).
+- South Korea: the Korean text on law.go.kr, the decree amendment of 20 July 2026 and the template [KR-T2](../20_South_Korea_AI_Compliance/KR-T2_Generative_AI_Labelling_and_Notice.md), which still has a column for a "clearly fictional" exemption, need follow-up.
+- Australia: AU1 (the date of the National AI Plan) could not be confirmed because the Department of Industry's publication pages refuse automated retrieval. The consolidated Privacy Act PDF and the NSW legislation site could not be read.
+- Brazil: the LGPD and Consumer Code pages on planalto.gov.br could not be read automatically, so BR2 and BR4 stay [Recalled].
+- Canada: CA1 (AIDA) and CA4 (the Treasury Board directive) are unchanged. The LEGISinfo bill pages could not be read automatically and the Treasury Board site refused the request.
+- China: CN9 was not checked. The NPC website could not be read, so the NPC Standing Committee work plan and the NPC copy of the Cybersecurity Law amendment were not checked.
+- Japan: JP5 (copyright) and JP6 (sector rules) are unchanged. The guidance on AI and copyright of 15 March 2024 and the FSA's AI discussion paper (version 1.1, 3 March 2026) were read, but the e-Gov law texts could not be read automatically.
+- The hub pages of Australia, Brazil, Canada, China and Japan have not yet been brought in line with these crosswalk changes.
 
 ## 18 October 2026: Full version history moved here
 
