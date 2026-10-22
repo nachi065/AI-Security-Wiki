@@ -117,6 +117,24 @@ if os.path.exists(sf_path):
                 if shown and standards.get(key) == shown.group(1):
                     errors.append(f"source/{path}: {name} repeats the standard {field}; remove it (see Standard Fields)")
 
+# Validation levels. A case that states its own level must use one of the four, and a case that claims
+# a run against a real product must say what was tested, when (YYYY-MM-DD) and where the evidence is.
+LEVELS = ("Documented", "Executable", "Lab-validated", "Independently reproduced")
+for path, text in sorted(pages.items()):
+    if not re.match(r"10_Test_Case_Library/[LD]\d\d-", path):
+        continue
+    for block in re.split(r"(?m)^(?=### TC-[LD]\d\d-\d{3}:)", text)[1:]:
+        name = block.split(":", 1)[0].replace("### ", "")
+        own = re.search(r"^\| \*\*Validation Level\*\* \| \[?([A-Za-z -]+?)\]?(?:\(|:| \|)", block, re.M)
+        if not own:
+            continue
+        if own.group(1).strip() not in LEVELS:
+            errors.append(f"source/{path}: {name} has Validation Level '{own.group(1).strip()}'; use one of {', '.join(LEVELS)}")
+        elif own.group(1).strip() in LEVELS[2:]:
+            against = re.search(r"^\| \*\*Validated Against\*\* \| (.*) \|$", block, re.M)
+            if not against or not re.search(r"\d{4}-\d\d-\d\d", against.group(1)) or "](" not in against.group(1):
+                errors.append(f"source/{path}: {name} is {own.group(1).strip()} but has no Validated Against row with a date and an evidence link")
+
 # Control tiers. Every control record states Baseline or Advanced, and the controls the
 # Builder Track relies on must be Baseline.
 _lib = open(os.path.join(SRC, "03_Control_Library", "03_AI_Security_Control_Objectives_Library.md"), encoding="utf-8").read()
