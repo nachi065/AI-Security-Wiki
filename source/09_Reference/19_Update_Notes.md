@@ -6,7 +6,7 @@ nav_order: 2
 description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."
 document_type: AI Security Wiki Reference
 version: 1.1
-last_reviewed: 2026-10-22
+last_reviewed: 2026-10-23
 ---
 
 # Update Notes
@@ -56,6 +56,7 @@ A review of the wiki found that it shows proof weakly (test cases could be read 
 - **India and UK (20 October 2026):** every row of the [India Regulatory Crosswalk](../17_India_AI_Compliance/03_Regulatory_Crosswalk.md) and the [UK Regulatory Crosswalk](../21_UK_AI_Compliance/03_Regulatory_Crosswalk.md) was checked for changes. Ten rows not yet verified were checked against MeitY, the Lok Sabha, the Press Information Bureau, legislation.gov.uk, GOV.UK, the UK Parliament bill pages, the Bank of England and the NCSC.
 - **Singapore, US and South Korea (21 October 2026):** every row of the [Singapore](../19_Singapore_AI_Compliance/03_Regulatory_Crosswalk.md), [US](../22_US_AI_Compliance/03_Regulatory_Crosswalk.md) and [South Korea](../20_South_Korea_AI_Compliance/03_Regulatory_Crosswalk.md) crosswalks was checked for changes. Rows not yet verified were checked against IMDA, the AI Verify Foundation, the PDPC, the CSA and MAS; govinfo.gov, justice.gov, whitehouse.gov, nist.gov, nyc.gov and the Colorado, New York, Utah and Texas legislatures; and MSIT, PIPC and the Korea Legislation Research Institute's English translations of the AI Basic Act and its decree.
 - **Australia, Brazil, Canada, China and Japan (22 October 2026):** every row of the [Australia](../13_Australia_AI_Compliance/03_Regulatory_Crosswalk.md), [Brazil](../14_Brazil_AI_Compliance/03_Regulatory_Crosswalk.md), [Canada](../15_Canada_AI_Compliance/03_Regulatory_Crosswalk.md), [China](../16_China_AI_Compliance/03_Regulatory_Crosswalk.md) and [Japan](../18_Japan_AI_Compliance/03_Regulatory_Crosswalk.md) crosswalks was checked for changes. This was the first check of these five regions against primary sources. Rows were checked against the Federal Register of Legislation, the OAIC, the Department of Industry, APRA, Treasury, the ACCC and the Parliament of NSW; the Brazilian Senate and Chamber, the Planalto legislation site and the ANPD; Justice Laws, LegisQuebec, ISED, OSFI, the Parliament of Canada and the Ontario legislature and government; the CAC, MIIT, the State Council policy library and the national standards system; and the Cabinet Office, METI, the Personal Information Protection Commission, the Agency for Cultural Affairs and the FSA.
+- **Framework crosswalks (23 October 2026):** every MITRE ATLAS technique and mitigation identifier the wiki cites (88 in all, in the control library and the test cases) was compared with MITRE's own ATLAS data, release 2026.09 of 15 September 2026, the latest release in the [atlas-data repository](https://github.com/mitre-atlas/atlas-data) on 23 October 2026. The [Trustworthy AI and Ethics Standards Crosswalk](../23_Framework_Crosswalks/16_Trustworthy_AI_Ethics_Crosswalk.md) and the [International AI Instruments Crosswalk](../23_Framework_Crosswalks/17_International_AI_Instruments_Crosswalk.md) were due for a check this week but could not be checked (see below).
 
 ### What changed
 
@@ -96,6 +97,7 @@ A review of the wiki found that it shows proof weakly (test cases could be read 
 - **China, CN7:** the Cybersecurity Law amendment took effect on 1 January 2026. The row stays [Reported] because the Data Security Law was not read.
 - **Japan, now [Verified]:** JP1 (AI Promotion Act, Act No. 53 of 2025, fully in force 1 September 2025; no penalties), JP2 (AI Basic Plan of 14 July 2026), JP3 (AI Guidelines for Business version 1.2) and JP4 (the APPI amendment law promulgated on 17 July 2026, in force within two years, with a consent exception for statistics including AI development).
 - **Home page (22 October 2026):** a Source Repository line in the document box now links to the GitHub repository and its contributing guide, and version 2.39 records this week's merged changes.
+- **MITRE ATLAS:** every identifier exists in release 2026.09, every name the wiki gives matches it, and none is deprecated. The [MITRE ATLAS Crosswalk](../23_Framework_Crosswalks/07_MITRE_ATLAS_Crosswalk.md) now has a review date. No mapping changed.
 
 ### Still work in progress
 
@@ -112,6 +114,7 @@ A review of the wiki found that it shows proof weakly (test cases could be read 
 - China: CN9 was not checked. The NPC website could not be read, so the NPC Standing Committee work plan and the NPC copy of the Cybersecurity Law amendment were not checked.
 - Japan: JP5 (copyright) and JP6 (sector rules) are unchanged. The guidance on AI and copyright of 15 March 2024 and the FSA's AI discussion paper (version 1.1, 3 March 2026) were read, but the e-Gov law texts could not be read automatically.
 - The hub pages of Australia, Brazil, Canada, China and Japan have not yet been brought in line with these crosswalk changes.
+- Framework crosswalks: on 23 October 2026 the retrieval tool could not read any outside web page (Council of Europe, IEEE, European Commission, UNESCO, the G7 Code text, OECD.AI, OWASP, NIST and CIS). The status of the Council of Europe Convention (signatories, ratifications, entry into force), the IEEE 7000-series statuses, and the OWASP, NIST AI RMF, ISO/IEC, NIST CSF, CIS Controls and SOC 2 identifiers in the control library were therefore not re-checked this week.
 
 ## 18 October 2026: Full version history moved here
 
