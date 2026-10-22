@@ -21,7 +21,8 @@ last_updated: 2026-10-18
 > **Status:** Published  
 > **Original Author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
 > **Co-Author:** Ankush Jain ([about the co-author](#23-about-the-co-author))  
-> **Intended Use:** Public, vendor-neutral reference and template set for AI security governance, engineering, risk management, assurance, audit, compliance, and vendor evaluation.
+> **Intended Use:** Public, vendor-neutral reference and template set for AI security governance, engineering, risk management, assurance, audit, compliance, and vendor evaluation.  
+> **Source Repository:** [github.com/nachi065/AI-Security-Wiki](https://github.com/nachi065/AI-Security-Wiki): the Markdown source, the change history, issues and pull requests. See [Contributing](https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md) to suggest a change.
 
 > **Latest update (17 October 2026).** The [Templates](25_Templates/index.md) section now holds nine downloadable templates: the AI risk register, an AI system inventory, use-case triage, a vendor evaluation scorecard, an audit and evidence checklist, a control library with crosswalks and a test case tracker (.xlsx), and an AI acceptable use policy and an AI impact assessment (.docx). Earlier today: the risk register grew from 28 to {{n:risks}} risks with an owner domain for every risk, and new pages added an [AI Security Incident Casebook](09_Reference/20_AI_Security_Incident_Casebook.md), [Agent Architecture Patterns](24_Builder_Track/02_Agent_Architecture_Patterns.md) and an [OWASP MCP Top 10 Crosswalk](23_Framework_Crosswalks/19_OWASP_MCP_Top_10_Crosswalk.md). See the [Update Notes](09_Reference/19_Update_Notes.md) for details.
 
