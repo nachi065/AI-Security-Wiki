@@ -210,3 +210,7 @@ article img.figure { display: block; max-width: 100%; height: auto; margin: 16px
   main { max-width: none; padding: 0; }
   .hero { color: #000; background: none; border: 1px solid #999; }
 }
+details.inherited { margin: 4px 0 16px; padding: 8px 14px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-soft); font-size: 14px; }
+details.inherited summary { cursor: pointer; color: var(--muted); }
+details.inherited[open] summary { margin-bottom: 6px; }
+details.inherited p { margin: 6px 0; }

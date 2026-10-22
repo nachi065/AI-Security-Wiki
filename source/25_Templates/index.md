@@ -1,7 +1,7 @@
 ---
 title: "Templates"
 author: Nachiket Sathaye
-description: "Downloadable .xlsx and .docx templates built from the wiki: an AI risk register, system inventory, use-case triage, vendor scorecard, audit checklist, control library and crosswalks, test case tracker, acceptable use policy and impact assessment."
+description: "Downloadable .xlsx and .docx templates built from the wiki: an AI risk register, system inventory, use-case triage, vendor scorecard, audit checklist, control library and crosswalks, test case tracker, acceptable use policy, impact assessment, programme charter and incident report."
 nav_order: 15
 has_children: true
 ---
@@ -23,3 +23,5 @@ This section holds files you can download and fill in. Each one is built from th
 | [AI Security Test Case Tracker Template (.xlsx)](07_AI_Security_Test_Case_Tracker_Template.md) | Plan, run and score AI security tests |
 | [AI Acceptable Use Policy Template (.docx)](08_AI_Acceptable_Use_Policy_Template.md) | Draft an AI acceptable use policy |
 | [AI Impact Assessment Template (.docx)](09_AI_Impact_Assessment_Template.md) | Assess an AI system's impact on people before go-live |
+| [AI Security Programme Charter Template (.docx)](10_AI_Security_Programme_Charter_Template.md) | Set up the AI security and governance programme in one approvable document |
+| [AI Incident Report Template (.docx)](11_AI_Incident_Report_Template.md) | Record one AI incident from detection to closure |

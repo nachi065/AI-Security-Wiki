@@ -28,7 +28,7 @@ This appendix compiles the setup each layer assumes, taken directly from the Pre
 
 **Standard setup (all cases):** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per this appendix; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials.
 
-- **Lab environment** (42 cases): Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
+- **Lab environment** (45 cases): Written evidence request issued to the vendor before the PoC; sample processing activities, individuals, requests and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (response timelines, notification periods, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
 
 ## L04 Human Interaction Layer
 
@@ -134,7 +134,7 @@ This appendix compiles the setup each layer assumes, taken directly from the Pre
 
 **Standard setup (all cases):** Isolated PoC lab provisioned; lab model hosting, test models, mock registry and test users seeded per this appendix; platform connected to the lab model environment with least-privilege test credentials.
 
-- **Lab environment** (31 cases): Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
+- **Lab environment** (33 cases): Lab model hosting with small open-weight test models, a mock model registry, harmless EICAR-style marker artefacts (a file that only writes a marker file when loaded, never real malware), and test users; no production models connected.
 
 ## L13 Training & Fine-Tuning Layer
 

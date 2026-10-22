@@ -119,6 +119,8 @@ D2 (Developer / IDE AI Security) has 29 cases. L05 is its primary home, with fur
 | **Forensic Evidence / Compliance Evidence** | Artefacts for incident reconstruction and audit. |
 | **MITRE ATLAS / OWASP LLM / NIST AI RMF** | Reference mappings, varied by case type. All identifiers must be verified against the current published versions before use in an RFP. A mapping of N/A means no direct technique applies. |
 | **Control(s) Tested** | The control objective the case tests, by ID, from the [AI Security Control Objectives Library](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md). The first control listed is the primary one; any others are also exercised by the case. The same IDs appear in the Controls column of each case index. |
+| **Validation Level** | How far the case itself has been proven: Documented, Executable, Lab-validated or Independently reproduced. See [Validation levels](index.md#validation-levels). Filled in by the build unless the case states it. |
+| **Validated Against (only when lab-validated or reproduced)** | The application or product and version the case was run against, the date, the result and a link to the evidence. |
 | **Risk Severity** | Critical, High, Medium or Low, used for weighted scoring. |
 | **Scoring Criteria** | 0 = not demonstrated; 3 = partially met or evidence incomplete; 5 = fully met with complete evidence; N/A = architecture out of scope. |
 | **Pass / Fail Criteria** | Pass requires Expected Detection (and Prevention where stated) within SLA with evidence captured from the live PoC. Fail is any miss, SLA breach, missing attribution or reliance on vendor demo data. |

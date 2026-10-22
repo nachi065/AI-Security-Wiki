@@ -9,11 +9,11 @@ nav_order: 15
 
 # L12 Model Layer
 
-**Primary test focus:** model theft, extraction, adversarial inputs, model scanning, identity for model access
+**Primary test focus:** model theft, extraction, adversarial inputs, model scanning, identity for model access, predictive model drift and privacy attacks
 
-**Controls tested:** [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection (15 cases), [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM (6 cases), [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity (5 cases), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials (5 cases), [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering (2 cases), [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) ML Pipeline and Model Registry Security (2 cases), [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation (2 cases), [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls (2 cases), [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery (1 case), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability (1 case), [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) Policy Enforcement (1 case), [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening (1 case), [AI-CTRL-033](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-033) AI Security Review and Release Gate (1 case), [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) Output Reliability and Content Safety (1 case), [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) AI Service Resilience and Fail-Safe Operation (1 case)
+**Controls tested:** [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection (16 cases), [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM (6 cases), [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity (5 cases), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials (5 cases), [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation (3 cases), [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering (2 cases), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines (2 cases), [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) ML Pipeline and Model Registry Security (2 cases), [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls (2 cases), [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery (1 case), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability (1 case), [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) Policy Enforcement (1 case), [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening (1 case), [AI-CTRL-033](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-033) AI Security Review and Release Gate (1 case), [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) Output Reliability and Content Safety (1 case), [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) AI Service Resilience and Fail-Safe Operation (1 case), [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) Fairness, Bias Testing and Explainability (1 case)
 
-**Cases:** 32 (TC-L12-001 to TC-L12-032)
+**Cases:** 34 (TC-L12-001 to TC-L12-034)
 > **Safety boundary.** Retrieval, model, training, pipeline and supply chain cases use fabricated corpora and datasets, small lab models, mock hubs and indexes and harmless marker artefacts only (an EICAR-style file that writes a marker, never real malware). Never load untrusted model files outside an isolated sandbox, and never connect the lab to production knowledge sources, models, pipelines, registries or credentials. Cases marked Attestation rest on vendor documents and score below demonstrated evidence.
 
 > **Verify before use.** MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the [Reference Index](00-reference-index.md) for field definitions and applicability codes.
@@ -56,6 +56,8 @@ nav_order: 15
 | [TC-L12-030](#tc-l12-030) | Access Recertification for Model Registry and Serving Entitlements | Medium | Evidence | D4 | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
 | [TC-L12-031](#tc-l12-031) | Identity Audit Trail for Model Access: Download, Load and Promotion Events | High | Technical | D4, D7 | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008), [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
 | [TC-L12-032](#tc-l12-032) | Model Approval Decision Record and Named Approver | High | Evidence | D4, D7 | [AI-CTRL-033](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-033), [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) |
+| [TC-L12-033](#tc-l12-033) | Predictive Model Drift, Performance Decay and Fairness Shift Monitoring | High | Technical | D3, D4 | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017), [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) |
+| [TC-L12-034](#tc-l12-034) | Membership Inference and Model Inversion Probes Against a Predictive Model | High | Technical | D4, D6 | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) |
 
 ---
 
@@ -1572,6 +1574,102 @@ nav_order: 15
 **Evidence to Capture.** Decision records; tier-to-approver rule; flag; allow-list before and after withdrawal.
 
 **Reviewer Notes.** Pairs with [TC-L12-025](#tc-l12-025) (risk tiering) and [TC-L08-028](L08-ai-gateway-and-security-controls.md#tc-l08-028) (allow-list enforcement). Documentation alone scores no higher than 3.
+
+[Back to layer index](#top)
+
+---
+
+<a id="tc-l12-033"></a>
+
+### TC-L12-033: Predictive Model Drift, Performance Decay and Fairness Shift Monitoring
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L12 Model Layer |
+| **Use-Case Domain(s)** | D3, D4 |
+| **Test Method** | Technical |
+| **Vendor Applicability** | Core: P, A |
+| **Risk Severity** | High |
+| **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
+| **OWASP LLM / GenAI Mapping** | N/A (predictive model) |
+| **NIST AI RMF Mapping** | MEASURE 2.4; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation; [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines; [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) Fairness, Bias Testing and Explainability |
+
+**Risk Addressed.** A classifier or scoring model can lose accuracy, or start treating a group differently, because its inputs change, with no change to its code and no error raised.
+
+**Business Scenario.** Model risk wants every production predictive model watched for input drift, prediction drift, accuracy decay and fairness shift against its validation baseline, with a named owner and a defined response.
+
+**Technical Scenario.** Replay scripted production traffic with injected drift through a monitored lab model and check what is detected, when, and what happens next.
+
+**Test Data.** 1 lab credit-style scoring model (open-weight or trained on fabricated data) with its validation baseline; 8 weeks of fabricated scoring traffic: weeks 1 to 2 match the baseline, week 3 shifts one input feature's distribution, week 5 introduces a new category value never seen in training, week 6 delays ground-truth labels by 30 days, week 7 widens the approval-rate gap between two fabricated groups; agreed thresholds for each signal.
+
+**Procedure**
+
+1. Record the baseline: input feature distributions, prediction distribution, accuracy measures and group outcome rates from validation.
+2. Configure drift measures (for example population stability index or a two-sample test per feature), prediction drift, accuracy on labelled outcomes and group outcome gaps, each with a threshold and an owner.
+3. Replay the 8 weeks of traffic.
+4. Record when each injected change is detected and by which measure.
+5. Check how the delayed labels are handled: accuracy marked as not yet measurable rather than reported as unchanged.
+6. Check that each breach reaches the owner and raises the defined response (investigate, retrain, restrict or roll back).
+7. Export the monitoring record and the response log.
+
+**Edge Cases / Variants.** Seasonal change that is expected and should not alert; drift in a feature the model hardly uses.
+
+**Expected Detection.** The week 3 feature shift, the week 5 unseen category and the week 7 fairness gap are each detected within one monitoring cycle of the agreed thresholds; delayed labels are shown as pending; each breach is routed to its owner.
+
+**Expected Prevention / Control Action.** Alert and raise the defined response; restrict or roll back where the response plan says so.
+
+**Expected Integration Evidence.** Alerts to the model owner's queue and the SIEM; export.
+
+**Evidence to Capture.** Baseline record; threshold configuration; detection timeline per injected change; response log.
+
+[Back to layer index](#top)
+
+---
+
+<a id="tc-l12-034"></a>
+
+### TC-L12-034: Membership Inference and Model Inversion Probes Against a Predictive Model
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L12 Model Layer |
+| **Use-Case Domain(s)** | D4, D6 |
+| **Test Method** | Technical |
+| **Vendor Applicability** | Core: R, G, A |
+| **Risk Severity** | High |
+| **MITRE ATLAS Mapping** | AML.T0024 Exfiltration via AI Inference API (includes model extraction and inversion techniques) |
+| **OWASP LLM / GenAI Mapping** | N/A (predictive model) |
+| **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.10 |
+| **Control(s) Tested** | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection; [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
+
+**Risk Addressed.** A model trained on personal data can reveal through its outputs whether a person's record was in the training set, or let an attacker reconstruct sensitive attributes, even when the training data itself is never exposed.
+
+**Business Scenario.** Privacy wants evidence, before release, that a model trained on personal data does not leak membership or sensitive attributes through its scoring API beyond an agreed level.
+
+**Technical Scenario.** Run membership inference and attribute inference probes against a lab model through its scoring API, with and without output hardening, and compare the attack success with the agreed level.
+
+**Test Data.** 1 lab classifier trained on 10,000 fabricated personal records; 1,000 training records and 1,000 held-out records of the same distribution as the probe set; 1 fabricated sensitive attribute not given to the API; API configurations: full confidence scores, rounded scores, label only.
+
+**Procedure**
+
+1. Agree the acceptable attack success before testing (for example, membership inference no better than a stated margin above chance).
+2. Run a membership inference probe on the 2,000 probe records with full confidence scores and record its success rate against the 50 percent chance level.
+3. Run an attribute inference probe for the sensitive attribute and record its success against the base rate.
+4. Repeat both with rounded scores and with label-only output.
+5. Check whether the probe traffic is detected or rate-limited at the API.
+6. Compare the results with the agreed level and record the release decision.
+7. Record the training measures in place (for example regularisation or differential privacy) and their effect on accuracy.
+
+**Edge Cases / Variants.** Records that are outliers in the training set, which are usually easier to identify; probes spread across many accounts.
+
+**Expected Detection.** Attack success is measured and recorded for each API configuration; the configuration that goes live keeps attack success within the agreed level; probe traffic is visible in API monitoring.
+
+**Expected Prevention / Control Action.** Restrict output detail; throttle probe traffic.
+
+**Expected Integration Evidence.** Test report attached to the release gate record; API alerts to SIEM.
+
+**Evidence to Capture.** Probe results per configuration; agreed level and release decision; API monitoring record.
 
 [Back to layer index](#top)
 
