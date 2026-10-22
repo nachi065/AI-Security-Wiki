@@ -4,7 +4,7 @@ author: Nachiket Sathaye
 parent: "Governance"
 nav_order: 1
 document_type: AI Security Wiki Reference
-version: 1.0
+version: 1.1
 ---
 
 # AI Governance Operating Model
@@ -67,6 +67,77 @@ The governing body should not delegate these decisions, even where it delegates 
 - Acceptance of residual risk rated Critical for an AI use case.
 - The AI policy and its scope ([AI Policy, Standards and Acceptable Use](17_AI_Policy_Standards_and_Acceptable_Use.md)).
 - The level of human oversight required where AI makes or supports decisions about people.
+
+## Committee Charters
+
+The tables below are starting charters for the two bodies most organizations need below the governing body. The meeting frequencies, membership and quorum are illustrative defaults, not requirements of any standard; adapt them and have the governing body or accountable executive approve the result. A smaller organization can merge the two bodies, as long as the decision rights below stay with named people.
+
+### AI Governance Committee
+
+| Item | Charter |
+|---|---|
+| Purpose | Decide on high-risk AI use, risk acceptances above the risk owner's authority, and exceptions; oversee the AI risk register and report to the governing body. |
+| Authority | Delegated by the governing body through the accountable executive. Cannot approve a use the governing body has prohibited, or accept a Critical residual risk on its own (see [Decisions Reserved for the Governing Body](#decisions-reserved-for-the-governing-body)). |
+| Chair | The accountable executive or a delegate named in writing. |
+| Members | GRC / Compliance, Security (CISO or delegate), Data Protection Officer, Legal, Data Owner representative, AI Platform Owner, and a business representative for each use case on the agenda. Internal audit attends as an observer and does not vote. |
+| Quorum | Chair plus at least half the members, including Security and the Data Protection Officer or their delegates. |
+| Frequency | Monthly, and within five working days when an urgent decision is requested. |
+| Inputs | Use-case intake and tier ([T01](../11_GCC_AI_Compliance/T01_AI_Use_Case_Intake_and_Risk_Tiering.md)), risk assessment scored under the [AI Risk Methodology](../02_Risk_Management/02A_AI_Risk_Methodology.md), impact assessment ([AI-CTRL-042](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-042)), exception requests, incident and monitoring summaries. |
+| Outputs | A decision record for each item: decision, conditions, owner, expiry or review date, and dissent if any. A quarterly report to the governing body covering the items under [Board-Level Reporting](#board-level-reporting). |
+| Conflicts | A member who sponsors or owns the item under decision states it and does not vote on it. |
+| Review of this charter | Annually, and after any material incident in which a committee decision played a part. |
+
+### AI Security Review Board
+
+| Item | Charter |
+|---|---|
+| Purpose | Carry out the technical reviews at Gates 3 to 6 and recommend go or no-go to the decision owner. |
+| Authority | Recommends; does not accept risk. May block a release that fails a mandatory control until the decision owner decides. |
+| Chair | Security Architecture. |
+| Members | AppSec / DevSecOps, SOC, AI Platform Owner, Data Protection / DLP, and the AI product owner and agent sponsor for the item under review. |
+| Quorum | Chair plus AppSec and the AI Platform Owner, or their delegates. |
+| Frequency | Weekly or per release, so that review does not hold up delivery. |
+| Inputs | Design and threat model, release gate evidence ([AI-CTRL-033](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-033)), adversarial test results ([AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034)), open findings. |
+| Outputs | Gate decision record with findings, mandatory fixes and the residual risks passed to the risk owner. |
+| Review of this charter | Annually. |
+
+## Decision Rights
+
+Who recommends, who approves and where a decision escalates. "Approve" means the named role owns the decision and its record. The allocation is one workable default; rename roles to match your organization, but keep exactly one approver per row.
+
+| Decision | Recommends | Approves | Escalates to | Kept informed |
+|---|---|---|---|---|
+| AI risk appetite and risk criteria | Accountable executive | Governing body | None | AI Governance Committee |
+| Prohibited and always-high-risk categories of AI use | AI Governance Committee | Governing body | None | All staff, through the AI policy |
+| AI policy and acceptable use | GRC / Compliance | Governing body | None | All staff |
+| New AI use case, Low or Medium tier | AI Product Owner | Risk owner, with Security and Data Protection review at the applicable gates | AI Governance Committee if a reviewer objects | AI Platform Owner |
+| New AI use case, High tier | AI Security Review Board and Data Protection Officer | AI Governance Committee | Governing body if the residual risk is Critical | Accountable executive |
+| Model approved for general use | AI Platform Owner | AI Platform Owner, within the tier rules | AI Governance Committee for models used in high-risk use cases | Security Architecture |
+| Agent permissions and tool grants | Agent Sponsor | Owner of the target system | AI Governance Committee if the grant includes irreversible actions without human approval | Security Architecture, SOC |
+| Release of a custom AI application or agent | AI Security Review Board | AI Product Owner, after the board's go recommendation | AI Governance Committee on a no-go the owner disputes | SOC |
+| Acceptance of residual risk | Risk owner | Authority for the rating in the [AI Risk Methodology](../02_Risk_Management/02A_AI_Risk_Methodology.md#scoring-method) | The next authority up when appetite is exceeded | GRC / Compliance |
+| Exception to a policy or control | Requesting owner | AI Governance Committee (High and Critical); GRC / Compliance (Low and Medium) | Governing body for an exception to a reserved decision | Internal audit |
+| Stopping an AI system in an incident | SOC or the system's overseer | Anyone named as able to stop it ([AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025)); confirmation by the accountable executive within one working day | Governing body for a material incident | Data Protection Officer, Legal, Communications |
+| Notification to a regulator or authority | Legal / Data Protection Officer | Accountable executive | Governing body for a material incident | AI Governance Committee |
+| Retirement of an AI system | AI Product Owner | Risk owner | AI Governance Committee if other systems depend on it | AI Platform Owner, Data Owner |
+
+## Role-Based Training Plan
+
+Training for [AI-CTRL-044](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-044). The groups, topics and intervals are a starting plan to adapt; where a law sets a specific literacy duty, check that the plan meets it (for the EU see [T07 AI Literacy Programme Record](../12_EU_AI_Compliance/T07_AI_Literacy_Programme_Record.md)).
+
+| Role group | What they need to know or do | When | How effectiveness is checked |
+|---|---|---|---|
+| Governing body and executives | AI risk appetite, reserved decisions, how to read the AI risk report, accountability that stays with them | On appointment and annually | Board evaluation; quality of questions recorded in minutes |
+| AI Governance Committee and risk owners | Scoring method and calibration, acceptance authority, impact assessment review | On appointment, annually, and with each change to the method | Calibration exercise against the [worked examples](../02_Risk_Management/02A_AI_Risk_Methodology.md#worked-calibration-examples) |
+| All staff | Acceptable use, which tools are approved, what data may not be entered, how to report a problem | At joining and annually; on a policy change | Short scenario quiz; trend in prompt and upload policy violations |
+| Developers and engineers using AI assistants | Secure use of coding assistants, reviewing AI-generated code, secrets, hallucinated packages | Before access is granted and annually | Insecure AI-generated code findings; secrets detected in prompts |
+| Builders of AI applications and agents | Prompt injection, tool and permission design, release gate, adversarial testing | Before the first release and annually | Release gate findings per release; adversarial test results |
+| Human reviewers and overseers | The system's limits, what evidence to check, authority to override and stop, automation bias | Before assignment, and on each material change to the system | Seeded-error catch rate and override rate ([AI-CTRL-045](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-045)) |
+| SOC and incident responders | AI telemetry, AI incident types, evidence preservation, provider coordination | Annually, with a tabletop exercise | Exercise results and time to contain |
+| Procurement, legal and vendor managers | AI terms: training on inputs, output ownership, indemnity, residency, sub-processors | On appointment and annually | Contract review findings |
+| Contractors and third parties with access | The same as the staff group they work alongside | Before access | Access is not granted without a completion record |
+
+Record completion and results by person and role ([TC-L03-038](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-038)) and check that the training changes behaviour ([TC-L03-045](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-045)).
 
 ## Board-Level Reporting
 

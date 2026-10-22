@@ -13,7 +13,7 @@
 <meta property="og:description" content="AI Governance Operating Model: Define ownership, gates, workflow, reporting and continuous governance for AI adoption.">
 <meta property="og:url" content="https://nachi065.github.io/AI-Security-Wiki/08_Governance/16_AI_Governance_Operating_Model.html">
 <meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="../assets/style.css?v=8368346b">
+<link rel="stylesheet" href="../assets/style.css?v=aa70096b">
 </head>
 <body style="--h:228">
 <header class="topbar">
@@ -72,6 +72,7 @@
 <li><a href="../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
 <li><a href="../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
 <li><a href="../04_Domain_Standards/10B_Sector_Overlays.html">Sector Overlays: Financial Services, Insurance, Health and Government</a></li>
+<li><a href="../04_Domain_Standards/11_Predictive_Model_Monitoring_and_Adversarial_ML.html">Predictive Model Monitoring and Adversarial ML</a></li>
 </ul></details></li>
 <li style="--h:32"><details><summary><a href="../05_Vendor_Evaluation/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Vendor Evaluation</a></summary><ul>
 <li><a href="../05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
@@ -90,6 +91,7 @@
 <li style="--h:228"><details open><summary><a href="index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-5 9 5M5 9v9M9.5 9v9M14.5 9v9M19 9v9M3 20h18"/></svg>Governance</a></summary><ul>
 <li><a class="current" href="16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></li>
 <li><a href="17_AI_Policy_Standards_and_Acceptable_Use.html">AI Policy, Standards and Acceptable Use</a></li>
+<li><a href="18_AI_Operating_Defaults.html">AI Operating Defaults</a></li>
 </ul></details></li>
 <li style="--h:145"><details><summary><a href="../10_Test_Case_Library/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l1.5 1.5L8 5M4 12l1.5 1.5L8 11M4 18l1.5 1.5L8 17M11 6h9M11 12h9M11 18h9"/></svg>Test Case Library</a></summary><ul>
 <li><a href="../10_Test_Case_Library/00-reference-index.html">Reference Index</a></li>
@@ -249,6 +251,7 @@
 <li><a href="../09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
 <li><a href="../09_Reference/19_Update_Notes.html">Update Notes</a></li>
 <li><a href="../09_Reference/20_AI_Security_Incident_Casebook.html">AI Security Incident Casebook</a></li>
+<li><a href="../09_Reference/21_Regulatory_Verification_Status.html">Regulatory Verification Status</a></li>
 </ul></details></li>
 <li style="--h:120"><details><summary><a href="../23_Framework_Crosswalks/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h14l-3-3M20 16H6l3 3"/></svg>Framework Crosswalks</a></summary><ul>
 <li><a href="../23_Framework_Crosswalks/01_FINOS_AIGF_Crosswalk.html">FINOS AI Governance Framework Crosswalk</a></li>
@@ -285,6 +288,8 @@
 <li><a href="../25_Templates/07_AI_Security_Test_Case_Tracker_Template.html">AI Security Test Case Tracker Template (.xlsx)</a></li>
 <li><a href="../25_Templates/08_AI_Acceptable_Use_Policy_Template.html">AI Acceptable Use Policy Template (.docx)</a></li>
 <li><a href="../25_Templates/09_AI_Impact_Assessment_Template.html">AI Impact Assessment Template (.docx)</a></li>
+<li><a href="../25_Templates/10_AI_Security_Programme_Charter_Template.html">AI Security Programme Charter Template (.docx)</a></li>
+<li><a href="../25_Templates/11_AI_Incident_Report_Template.html">AI Incident Report Template (.docx)</a></li>
 </ul></details></li>
 <li><a href="../community-rules.html">Community Rules</a></li>
 </ul>
@@ -489,6 +494,281 @@
 <li>The AI policy and its scope (<a href="17_AI_Policy_Standards_and_Acceptable_Use.html">AI Policy, Standards and Acceptable Use</a>).</li>
 <li>The level of human oversight required where AI makes or supports decisions about people.</li>
 </ul>
+<h2 id="committee-charters">Committee Charters</h2>
+<p>The tables below are starting charters for the two bodies most organizations need below the governing body. The meeting frequencies, membership and quorum are illustrative defaults, not requirements of any standard; adapt them and have the governing body or accountable executive approve the result. A smaller organization can merge the two bodies, as long as the decision rights below stay with named people.</p>
+<h3 id="ai-governance-committee">AI Governance Committee</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Charter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Purpose</td>
+<td>Decide on high-risk AI use, risk acceptances above the risk owner's authority, and exceptions; oversee the AI risk register and report to the governing body.</td>
+</tr>
+<tr>
+<td>Authority</td>
+<td>Delegated by the governing body through the accountable executive. Cannot approve a use the governing body has prohibited, or accept a Critical residual risk on its own (see <a href="#decisions-reserved-for-the-governing-body">Decisions Reserved for the Governing Body</a>).</td>
+</tr>
+<tr>
+<td>Chair</td>
+<td>The accountable executive or a delegate named in writing.</td>
+</tr>
+<tr>
+<td>Members</td>
+<td>GRC / Compliance, Security (CISO or delegate), Data Protection Officer, Legal, Data Owner representative, AI Platform Owner, and a business representative for each use case on the agenda. Internal audit attends as an observer and does not vote.</td>
+</tr>
+<tr>
+<td>Quorum</td>
+<td>Chair plus at least half the members, including Security and the Data Protection Officer or their delegates.</td>
+</tr>
+<tr>
+<td>Frequency</td>
+<td>Monthly, and within five working days when an urgent decision is requested.</td>
+</tr>
+<tr>
+<td>Inputs</td>
+<td>Use-case intake and tier (<a href="../11_GCC_AI_Compliance/T01_AI_Use_Case_Intake_and_Risk_Tiering.html">T01</a>), risk assessment scored under the <a href="../02_Risk_Management/02A_AI_Risk_Methodology.html">AI Risk Methodology</a>, impact assessment (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-042">AI-CTRL-042</a>), exception requests, incident and monitoring summaries.</td>
+</tr>
+<tr>
+<td>Outputs</td>
+<td>A decision record for each item: decision, conditions, owner, expiry or review date, and dissent if any. A quarterly report to the governing body covering the items under <a href="#board-level-reporting">Board-Level Reporting</a>.</td>
+</tr>
+<tr>
+<td>Conflicts</td>
+<td>A member who sponsors or owns the item under decision states it and does not vote on it.</td>
+</tr>
+<tr>
+<td>Review of this charter</td>
+<td>Annually, and after any material incident in which a committee decision played a part.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="ai-security-review-board">AI Security Review Board</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Charter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Purpose</td>
+<td>Carry out the technical reviews at Gates 3 to 6 and recommend go or no-go to the decision owner.</td>
+</tr>
+<tr>
+<td>Authority</td>
+<td>Recommends; does not accept risk. May block a release that fails a mandatory control until the decision owner decides.</td>
+</tr>
+<tr>
+<td>Chair</td>
+<td>Security Architecture.</td>
+</tr>
+<tr>
+<td>Members</td>
+<td>AppSec / DevSecOps, SOC, AI Platform Owner, Data Protection / DLP, and the AI product owner and agent sponsor for the item under review.</td>
+</tr>
+<tr>
+<td>Quorum</td>
+<td>Chair plus AppSec and the AI Platform Owner, or their delegates.</td>
+</tr>
+<tr>
+<td>Frequency</td>
+<td>Weekly or per release, so that review does not hold up delivery.</td>
+</tr>
+<tr>
+<td>Inputs</td>
+<td>Design and threat model, release gate evidence (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a>), adversarial test results (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a>), open findings.</td>
+</tr>
+<tr>
+<td>Outputs</td>
+<td>Gate decision record with findings, mandatory fixes and the residual risks passed to the risk owner.</td>
+</tr>
+<tr>
+<td>Review of this charter</td>
+<td>Annually.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="decision-rights">Decision Rights</h2>
+<p>Who recommends, who approves and where a decision escalates. "Approve" means the named role owns the decision and its record. The allocation is one workable default; rename roles to match your organization, but keep exactly one approver per row.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Recommends</th>
+<th>Approves</th>
+<th>Escalates to</th>
+<th>Kept informed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI risk appetite and risk criteria</td>
+<td>Accountable executive</td>
+<td>Governing body</td>
+<td>None</td>
+<td>AI Governance Committee</td>
+</tr>
+<tr>
+<td>Prohibited and always-high-risk categories of AI use</td>
+<td>AI Governance Committee</td>
+<td>Governing body</td>
+<td>None</td>
+<td>All staff, through the AI policy</td>
+</tr>
+<tr>
+<td>AI policy and acceptable use</td>
+<td>GRC / Compliance</td>
+<td>Governing body</td>
+<td>None</td>
+<td>All staff</td>
+</tr>
+<tr>
+<td>New AI use case, Low or Medium tier</td>
+<td>AI Product Owner</td>
+<td>Risk owner, with Security and Data Protection review at the applicable gates</td>
+<td>AI Governance Committee if a reviewer objects</td>
+<td>AI Platform Owner</td>
+</tr>
+<tr>
+<td>New AI use case, High tier</td>
+<td>AI Security Review Board and Data Protection Officer</td>
+<td>AI Governance Committee</td>
+<td>Governing body if the residual risk is Critical</td>
+<td>Accountable executive</td>
+</tr>
+<tr>
+<td>Model approved for general use</td>
+<td>AI Platform Owner</td>
+<td>AI Platform Owner, within the tier rules</td>
+<td>AI Governance Committee for models used in high-risk use cases</td>
+<td>Security Architecture</td>
+</tr>
+<tr>
+<td>Agent permissions and tool grants</td>
+<td>Agent Sponsor</td>
+<td>Owner of the target system</td>
+<td>AI Governance Committee if the grant includes irreversible actions without human approval</td>
+<td>Security Architecture, SOC</td>
+</tr>
+<tr>
+<td>Release of a custom AI application or agent</td>
+<td>AI Security Review Board</td>
+<td>AI Product Owner, after the board's go recommendation</td>
+<td>AI Governance Committee on a no-go the owner disputes</td>
+<td>SOC</td>
+</tr>
+<tr>
+<td>Acceptance of residual risk</td>
+<td>Risk owner</td>
+<td>Authority for the rating in the <a href="../02_Risk_Management/02A_AI_Risk_Methodology.html#scoring-method">AI Risk Methodology</a></td>
+<td>The next authority up when appetite is exceeded</td>
+<td>GRC / Compliance</td>
+</tr>
+<tr>
+<td>Exception to a policy or control</td>
+<td>Requesting owner</td>
+<td>AI Governance Committee (High and Critical); GRC / Compliance (Low and Medium)</td>
+<td>Governing body for an exception to a reserved decision</td>
+<td>Internal audit</td>
+</tr>
+<tr>
+<td>Stopping an AI system in an incident</td>
+<td>SOC or the system's overseer</td>
+<td>Anyone named as able to stop it (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a>); confirmation by the accountable executive within one working day</td>
+<td>Governing body for a material incident</td>
+<td>Data Protection Officer, Legal, Communications</td>
+</tr>
+<tr>
+<td>Notification to a regulator or authority</td>
+<td>Legal / Data Protection Officer</td>
+<td>Accountable executive</td>
+<td>Governing body for a material incident</td>
+<td>AI Governance Committee</td>
+</tr>
+<tr>
+<td>Retirement of an AI system</td>
+<td>AI Product Owner</td>
+<td>Risk owner</td>
+<td>AI Governance Committee if other systems depend on it</td>
+<td>AI Platform Owner, Data Owner</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="role-based-training-plan">Role-Based Training Plan</h2>
+<p>Training for <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-044">AI-CTRL-044</a>. The groups, topics and intervals are a starting plan to adapt; where a law sets a specific literacy duty, check that the plan meets it (for the EU see <a href="../12_EU_AI_Compliance/T07_AI_Literacy_Programme_Record.html">T07 AI Literacy Programme Record</a>).</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Role group</th>
+<th>What they need to know or do</th>
+<th>When</th>
+<th>How effectiveness is checked</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Governing body and executives</td>
+<td>AI risk appetite, reserved decisions, how to read the AI risk report, accountability that stays with them</td>
+<td>On appointment and annually</td>
+<td>Board evaluation; quality of questions recorded in minutes</td>
+</tr>
+<tr>
+<td>AI Governance Committee and risk owners</td>
+<td>Scoring method and calibration, acceptance authority, impact assessment review</td>
+<td>On appointment, annually, and with each change to the method</td>
+<td>Calibration exercise against the <a href="../02_Risk_Management/02A_AI_Risk_Methodology.html#worked-calibration-examples">worked examples</a></td>
+</tr>
+<tr>
+<td>All staff</td>
+<td>Acceptable use, which tools are approved, what data may not be entered, how to report a problem</td>
+<td>At joining and annually; on a policy change</td>
+<td>Short scenario quiz; trend in prompt and upload policy violations</td>
+</tr>
+<tr>
+<td>Developers and engineers using AI assistants</td>
+<td>Secure use of coding assistants, reviewing AI-generated code, secrets, hallucinated packages</td>
+<td>Before access is granted and annually</td>
+<td>Insecure AI-generated code findings; secrets detected in prompts</td>
+</tr>
+<tr>
+<td>Builders of AI applications and agents</td>
+<td>Prompt injection, tool and permission design, release gate, adversarial testing</td>
+<td>Before the first release and annually</td>
+<td>Release gate findings per release; adversarial test results</td>
+</tr>
+<tr>
+<td>Human reviewers and overseers</td>
+<td>The system's limits, what evidence to check, authority to override and stop, automation bias</td>
+<td>Before assignment, and on each material change to the system</td>
+<td>Seeded-error catch rate and override rate (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-045">AI-CTRL-045</a>)</td>
+</tr>
+<tr>
+<td>SOC and incident responders</td>
+<td>AI telemetry, AI incident types, evidence preservation, provider coordination</td>
+<td>Annually, with a tabletop exercise</td>
+<td>Exercise results and time to contain</td>
+</tr>
+<tr>
+<td>Procurement, legal and vendor managers</td>
+<td>AI terms: training on inputs, output ownership, indemnity, residency, sub-processors</td>
+<td>On appointment and annually</td>
+<td>Contract review findings</td>
+</tr>
+<tr>
+<td>Contractors and third parties with access</td>
+<td>The same as the staff group they work alongside</td>
+<td>Before access</td>
+<td>Access is not granted without a completion record</td>
+</tr>
+</tbody>
+</table></div>
+<p>Record completion and results by person and role (<a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-038">TC-L03-038</a>) and check that the training changes behaviour (<a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-045">TC-L03-045</a>).</p>
 <h2 id="board-level-reporting">Board-Level Reporting</h2>
 <p>Report these to the governing body at least each quarter:</p>
 <ul>
@@ -517,7 +797,7 @@
 <p>The governing body layer, the reserved decisions and the board-level reporting above follow the structure of ISO/IEC 38507:2022 (Governance implications of the use of artificial intelligence by organizations): clause 4.3 on maintaining accountability when introducing AI, and clause 6 on policies for governance oversight (6.2), decision-making (6.3), data use (6.4), culture and values (6.5), compliance (6.6) and risk appetite and management (6.7). The data owner row and the data quality metric follow ISO/IEC 5259-5:2025, clauses 7 and 8 (responsibilities of the governing body and of management for data quality). Clause numbers and headings were checked against the publishers' contents previews on 15 October 2026; the clause text was not read. See the <a href="../23_Framework_Crosswalks/15_ISO_IEC_AI_Standards_Crosswalk.html">ISO/IEC AI Standards Crosswalk</a>.</p>
 </article>
 <nav class="pager" aria-label="Previous and next page"><a class="prev" href="index.html">&larr; Governance</a><a class="next" href="17_AI_Policy_Standards_and_Acceptable_Use.html">AI Policy, Standards and Acceptable Use &rarr;</a></nav>
-<footer class="site-footer">Author: Nachiket Sathaye &middot; Updated 15 October 2026 &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/08_Governance/16_AI_Governance_Operating_Model.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
+<footer class="site-footer">Author: Nachiket Sathaye &middot; Updated 22 October 2026 &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/08_Governance/16_AI_Governance_Operating_Model.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
 <div class="site-notice">
 <p><strong>Licence.</strong> <svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.441-3.5c8.951,0,16.572,3.125,22.857,9.372c3.008,3.009,5.295,6.448,6.857,10.314 c1.561,3.867,2.344,7.971,2.344,12.314c0,4.381-0.773,8.486-2.314,12.313c-1.543,3.828-3.82,7.21-6.828,10.143 c-3.123,3.085-6.666,5.448-10.629,7.086c-3.961,1.638-8.057,2.457-12.285,2.457s-8.276-0.808-12.143-2.429 c-3.866-1.618-7.333-3.961-10.4-7.027c-3.067-3.066-5.4-6.524-7-10.372S5.5,32.767,5.5,28.5c0-4.229,0.809-8.295,2.428-12.2 c1.619-3.905,3.972-7.4,7.057-10.486C21.08-0.394,28.565-3.5,37.441-3.5z M37.557,2.272c-7.314,0-13.467,2.553-18.458,7.657 c-2.515,2.553-4.448,5.419-5.8,8.6c-1.354,3.181-2.029,6.505-2.029,9.972c0,3.429,0.675,6.734,2.029,9.913 c1.353,3.183,3.285,6.021,5.8,8.516c2.514,2.496,5.351,4.399,8.515,5.715c3.161,1.314,6.476,1.971,9.943,1.971 c3.428,0,6.75-0.665,9.973-1.999c3.219-1.335,6.121-3.257,8.713-5.771c4.99-4.876,7.484-10.99,7.484-18.344 c0-3.543-0.648-6.895-1.943-10.057c-1.293-3.162-3.18-5.98-5.654-8.458C50.984,4.844,44.795,2.272,37.557,2.272z M37.156,23.187 l-4.287,2.229c-0.458-0.951-1.019-1.619-1.685-2c-0.667-0.38-1.286-0.571-1.858-0.571c-2.856,0-4.286,1.885-4.286,5.657 c0,1.714,0.362,3.084,1.085,4.113c0.724,1.029,1.791,1.544,3.201,1.544c1.867,0,3.181-0.915,3.944-2.743l3.942,2 c-0.838,1.563-2,2.791-3.486,3.686c-1.484,0.896-3.123,1.343-4.914,1.343c-2.857,0-5.163-0.875-6.915-2.629 c-1.752-1.752-2.628-4.19-2.628-7.313c0-3.048,0.886-5.466,2.657-7.257c1.771-1.79,4.009-2.686,6.715-2.686 C32.604,18.558,35.441,20.101,37.156,23.187z M55.613,23.187l-4.229,2.229c-0.457-0.951-1.02-1.619-1.686-2 c-0.668-0.38-1.307-0.571-1.914-0.571c-2.857,0-4.287,1.885-4.287,5.657c0,1.714,0.363,3.084,1.086,4.113 c0.723,1.029,1.789,1.544,3.201,1.544c1.865,0,3.18-0.915,3.941-2.743l4,2c-0.875,1.563-2.057,2.791-3.541,3.686 c-1.486,0.896-3.105,1.343-4.857,1.343c-2.896,0-5.209-0.875-6.941-2.629c-1.736-1.752-2.602-4.19-2.602-7.313 c0-3.048,0.885-5.466,2.658-7.257c1.77-1.79,4.008-2.686,6.713-2.686C51.117,18.558,53.938,20.101,55.613,23.187z"/></svg><svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.443-3.5c8.988,0,16.57,3.085,22.742,9.257C66.393,11.967,69.5,19.548,69.5,28.5c0,8.991-3.049,16.476-9.145,22.456 C53.879,57.319,46.242,60.5,37.443,60.5c-8.649,0-16.153-3.144-22.514-9.43C8.644,44.784,5.5,37.262,5.5,28.5 c0-8.761,3.144-16.342,9.429-22.742C21.101-0.415,28.604-3.5,37.443-3.5z M37.557,2.272c-7.276,0-13.428,2.553-18.457,7.657 c-5.22,5.334-7.829,11.525-7.829,18.572c0,7.086,2.59,13.22,7.77,18.398c5.181,5.182,11.352,7.771,18.514,7.771 c7.123,0,13.334-2.607,18.629-7.828c5.029-4.838,7.543-10.952,7.543-18.343c0-7.276-2.553-13.465-7.656-18.571 C50.967,4.824,44.795,2.272,37.557,2.272z M46.129,20.557v13.085h-3.656v15.542h-9.944V33.643h-3.656V20.557 c0-0.572,0.2-1.057,0.599-1.457c0.401-0.399,0.887-0.6,1.457-0.6h13.144c0.533,0,1.01,0.2,1.428,0.6 C45.918,19.5,46.129,19.986,46.129,20.557z M33.042,12.329c0-3.008,1.485-4.514,4.458-4.514s4.457,1.504,4.457,4.514 c0,2.971-1.486,4.457-4.457,4.457S33.042,15.3,33.042,12.329z"/></svg>This wiki is open to the community under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">Creative Commons Attribution-ShareAlike 4.0 International licence (CC BY-SA 4.0)</a>. You may copy, share and adapt it for any purpose, including commercially, as long as you credit the authors and release anything you build from it under the same licence.</p>
 <p><strong>Disclaimer.</strong> This wiki is an open, community driven educational reference, not legal, regulatory or professional advice. Regional regulatory content is compiled from secondary sources and its verification status is shown per row; verify against primary sources before relying on it. Content is provided "as is" without warranty. Named products and companies belong to their owners; statements about them reflect public information at the date shown. Views are the author's own.</p>

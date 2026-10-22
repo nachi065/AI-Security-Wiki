@@ -13,7 +13,7 @@
 <meta property="og:description" content="AI Risk Methodology: Define the rating method for assessing AI risks consistently across AI platforms, custom AI applications and agentic AI workflows.">
 <meta property="og:url" content="https://nachi065.github.io/AI-Security-Wiki/02_Risk_Management/02A_AI_Risk_Methodology.html">
 <meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="../assets/style.css?v=8368346b">
+<link rel="stylesheet" href="../assets/style.css?v=aa70096b">
 </head>
 <body style="--h:8">
 <header class="topbar">
@@ -72,6 +72,7 @@
 <li><a href="../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
 <li><a href="../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
 <li><a href="../04_Domain_Standards/10B_Sector_Overlays.html">Sector Overlays: Financial Services, Insurance, Health and Government</a></li>
+<li><a href="../04_Domain_Standards/11_Predictive_Model_Monitoring_and_Adversarial_ML.html">Predictive Model Monitoring and Adversarial ML</a></li>
 </ul></details></li>
 <li style="--h:32"><details><summary><a href="../05_Vendor_Evaluation/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Vendor Evaluation</a></summary><ul>
 <li><a href="../05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
@@ -90,6 +91,7 @@
 <li style="--h:228"><details><summary><a href="../08_Governance/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-5 9 5M5 9v9M9.5 9v9M14.5 9v9M19 9v9M3 20h18"/></svg>Governance</a></summary><ul>
 <li><a href="../08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></li>
 <li><a href="../08_Governance/17_AI_Policy_Standards_and_Acceptable_Use.html">AI Policy, Standards and Acceptable Use</a></li>
+<li><a href="../08_Governance/18_AI_Operating_Defaults.html">AI Operating Defaults</a></li>
 </ul></details></li>
 <li style="--h:145"><details><summary><a href="../10_Test_Case_Library/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l1.5 1.5L8 5M4 12l1.5 1.5L8 11M4 18l1.5 1.5L8 17M11 6h9M11 12h9M11 18h9"/></svg>Test Case Library</a></summary><ul>
 <li><a href="../10_Test_Case_Library/00-reference-index.html">Reference Index</a></li>
@@ -249,6 +251,7 @@
 <li><a href="../09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
 <li><a href="../09_Reference/19_Update_Notes.html">Update Notes</a></li>
 <li><a href="../09_Reference/20_AI_Security_Incident_Casebook.html">AI Security Incident Casebook</a></li>
+<li><a href="../09_Reference/21_Regulatory_Verification_Status.html">Regulatory Verification Status</a></li>
 </ul></details></li>
 <li style="--h:120"><details><summary><a href="../23_Framework_Crosswalks/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h14l-3-3M20 16H6l3 3"/></svg>Framework Crosswalks</a></summary><ul>
 <li><a href="../23_Framework_Crosswalks/01_FINOS_AIGF_Crosswalk.html">FINOS AI Governance Framework Crosswalk</a></li>
@@ -285,6 +288,8 @@
 <li><a href="../25_Templates/07_AI_Security_Test_Case_Tracker_Template.html">AI Security Test Case Tracker Template (.xlsx)</a></li>
 <li><a href="../25_Templates/08_AI_Acceptable_Use_Policy_Template.html">AI Acceptable Use Policy Template (.docx)</a></li>
 <li><a href="../25_Templates/09_AI_Impact_Assessment_Template.html">AI Impact Assessment Template (.docx)</a></li>
+<li><a href="../25_Templates/10_AI_Security_Programme_Charter_Template.html">AI Security Programme Charter Template (.docx)</a></li>
+<li><a href="../25_Templates/11_AI_Incident_Report_Template.html">AI Incident Report Template (.docx)</a></li>
 </ul></details></li>
 <li><a href="../community-rules.html">Community Rules</a></li>
 </ul>
@@ -357,6 +362,118 @@
 </tr>
 </tbody>
 </table></div>
+<h2 id="scoring-method">Scoring Method</h2>
+<p>The four ratings above are applied with a simple score so that two assessors looking at the same scenario reach the same answer. The method is jurisdiction-neutral and is the same one the <a href="../25_Templates/01_AI_Risk_Register_Template.html">AI Risk Register Template (.xlsx)</a> uses. Every number below is a default for the governing body to approve or change; none comes from a standard.</p>
+<p><strong>Step 1. Screen for prohibited use first.</strong> If the use case falls into a category that the organization's AI policy prohibits, or that a law the organization is subject to prohibits, stop. Do not score it, do not offer it for risk acceptance and do not raise an exception. Record the decision and the reason, and close the request. A prohibited use is a decision already taken by the governing body (see <a href="../08_Governance/16_AI_Governance_Operating_Model.html#decisions-reserved-for-the-governing-body">Decisions Reserved for the Governing Body</a>), not a risk to be weighed.</p>
+<p><strong>Step 2. Score likelihood (1 to 4) with the controls that exist today.</strong> Use only controls that are in operation, not planned ones.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Score</th>
+<th>Level</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><span class="badge sev-low">Low</span></td>
+<td>Unlikely in the next three years, or needs unusual conditions or a skilled, motivated attacker; strong controls in place.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td>Could happen within one to three years; the exposure exists and controls are partial.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><span class="badge sev-high">High</span></td>
+<td>Likely within a year; the AI use is widespread, the path is known or the controls are weak.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Very High</td>
+<td>Expected within months, or already happening (for example, observed in monitoring or incidents).</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Step 3. Score impact (1 to 4)</strong> using the Risk Scale definitions above (1 Low, 2 Medium, 3 High, 4 Critical). Score the worst credible outcome of the scenario, not the worst imaginable one. Record the main impact type (confidentiality, integrity, availability, compliance, financial, people's rights or safety, reputation and so on) in a separate field, so risks that are not about security can be rated on the same scale.</p>
+<p><strong>Step 4. Record existing control coverage</strong> as None, Weak, Partial or Effective:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Coverage</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>No control addresses this scenario, or it is planned only.</td>
+</tr>
+<tr>
+<td>Weak</td>
+<td>A control exists but covers only part of the path, or has not been tested.</td>
+</tr>
+<tr>
+<td>Partial</td>
+<td>Controls cover the main path and have been tested, but there are known gaps or no evidence of operation over time.</td>
+</tr>
+<tr>
+<td>Effective</td>
+<td>Controls cover the path, are tested, and current evidence shows they operate (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a>).</td>
+</tr>
+</tbody>
+</table></div>
+<p>Coverage explains the likelihood score; it is not a third factor in the formula. A likelihood of 1 with coverage of None or Weak needs a written reason.</p>
+<p><strong>Step 5. Read the rating from the score</strong> (likelihood multiplied by impact, 1 to 16):</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Score</th>
+<th>Rating</th>
+<th>Default action</th>
+<th>Who may accept the residual risk</th>
+<th>Longest acceptance before re-approval</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 to 2</td>
+<td><span class="badge sev-low">Low</span></td>
+<td>Manage through routine processes</td>
+<td>Risk owner</td>
+<td>12 months</td>
+</tr>
+<tr>
+<td>3 to 4</td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td>Reduce where practical and monitor</td>
+<td>Risk owner, with GRC / Compliance agreement</td>
+<td>12 months</td>
+</tr>
+<tr>
+<td>6 to 9</td>
+<td><span class="badge sev-high">High</span></td>
+<td>Additional controls, monitoring or enforcement; report to the AI Governance Committee</td>
+<td>AI Governance Committee</td>
+<td>6 months</td>
+</tr>
+<tr>
+<td>12 to 16</td>
+<td><span class="badge sev-critical">Critical</span></td>
+<td>Strong preventive and detective controls before or immediately after go-live; report to the committee and the governing body</td>
+<td>Governing body or accountable executive, on the committee's recommendation</td>
+<td>3 months</td>
+</tr>
+</tbody>
+</table></div>
+<p>Scores of 5, 7, 10, 11, 13, 14 and 15 cannot occur on a 4 by 4 scale, so the bands have no gaps.</p>
+<p><strong>Step 6. Apply two overrides.</strong> First, a residual impact of 4 (Critical) is reported to the AI Governance Committee whatever the score, because a low likelihood can hide a severe outcome. Second, where an intake form sets a mandatory high tier, for example the override in <a href="../11_GCC_AI_Compliance/T01_AI_Use_Case_Intake_and_Risk_Tiering.html">T01 AI Use-Case Intake and Risk Tiering</a> for decisions on credit, insurance, employment or eligibility, the use case gets the treatment of that tier even if individual risks score lower. The tier describes the use case; the rating describes one risk scenario within it.</p>
+<p><strong>Step 7. Decide treatment and target.</strong> Choose Mitigate, Avoid, Transfer or Accept (<a href="02C_AI_Risk_Treatment_Plan.html">AI Risk Treatment Plan</a>), name the controls, and score the target likelihood and impact the treatment should reach. Preventive controls usually lower likelihood; impact falls only when a control limits the harm itself, for example by limiting what data an assistant can reach or how much an agent can spend.</p>
+<p><strong>Step 8. Accept or escalate.</strong> If the target rating is within the approved appetite, the risk owner records acceptance with an expiry date. If it is not, the authority in the Step 5 table decides, and the acceptance expires at the latest after the period shown.</p>
+<h3 id="calibrating-assessors">Calibrating assessors</h3>
+<p>Ratings drift apart when assessors do not compare their work. Before the first assessment cycle, and once a year after that, have at least two assessors score the four worked examples below independently, then compare. Where scores differ by more than one point on either factor, agree which reading of the scale was right and add a note to the scale. <a class="chip" href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-007">TC-L02-007</a> tests whether a risk tool supports this comparison.</p>
 <h2 id="risk-factors-and-risk-scenarios">Risk Factors and Risk Scenarios</h2>
 <p>A list of risks, such as the <a href="02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a> or the <a href="../23_Framework_Crosswalks/18_AI_Risk_Map_Crosswalk.html">AI Risk Map</a>, is a list of risk factors: conditions, failure modes or events that contribute to risk. A factor is not ready to rate. Before rating, turn it into a scenario for the system being assessed: what could happen, to which asset or people, through which path, and with what consequence. One factor can give several scenarios, and one scenario can combine several factors.</p>
 <ul>
@@ -369,6 +486,192 @@
 <h2 id="when-to-quantify">When to Quantify</h2>
 <p>The four-level scale above suits most AI risks. Some scenarios can also be quantified in money, using cyber risk quantification methods such as FAIR (Factor Analysis of Information Risk): estimate how often the loss event could happen and the range of loss each time. This works best where loss data or credible estimates exist, such as data leakage, cost abuse, service disruption or regulatory fines. Other risks, such as erosion of staff expertise, loss of trust or strategic disadvantage, are hard to put a number on and are better reported to the governing body as a narrative with indicators. Record which approach was used for each risk, and do not present a quantified figure as more precise than its inputs.</p>
 <p><em>The ideas in the three sections above (risk factors versus scenarios, order not implying likelihood, scope, ownership-based domains, split ownership and the choice between quantification and narrative) are adapted from the usage notes of the AI Risk Map v1.3 by Evan Wheeler, RiskFramework.org, licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener">CC BY-SA 4.0</a>. See the <a href="02B_Enterprise_AI_Risk_Register.html#credit-ai-risk-map">credit on the risk register</a>.</em></p>
+<h2 id="worked-calibration-examples">Worked Calibration Examples</h2>
+<p>The four examples below are illustrative. The organization, systems, numbers and decisions are invented to show the method end to end; they are not ratings of any real product or a recommendation for any real system. Use them to train assessors and to check that two people reach the same answer.</p>
+<h3 id="example-1-staff-pasting-customer-data-into-a-public-chatbot">Example 1: Staff pasting customer data into a public chatbot</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Record</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scenario</td>
+<td>Customer service staff paste customer complaints, including names, account numbers and order history, into a free public chatbot to draft replies. The provider's consumer terms allow it to retain and use inputs.</td>
+</tr>
+<tr>
+<td>Risks in the register</td>
+<td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r02-shadow-ai-and-ungoverned-ai-usage">AI-R02</a>, <a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r03-sensitive-data-leakage-through-prompts-and-uploads">AI-R03</a></td>
+</tr>
+<tr>
+<td>Prohibited use?</td>
+<td>No. The policy allows approved AI tools for drafting; it does not allow customer data in unapproved tools.</td>
+</tr>
+<tr>
+<td>Existing controls and coverage</td>
+<td>Acceptable use policy and annual training (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a>). Web proxy logs show the chatbot is used about 200 times a week from the service team; nothing inspects what is pasted. Coverage: Weak.</td>
+</tr>
+<tr>
+<td>Likelihood</td>
+<td>4 (Very High): the exposure is already happening, as the proxy logs show.</td>
+</tr>
+<tr>
+<td>Impact</td>
+<td>3 (High): personal data of customers sent to a third party without a contract; a reportable breach is possible in some jurisdictions. Not 4, because no special-category or restricted data is involved. Impact type: Compliance.</td>
+</tr>
+<tr>
+<td>Current rating</td>
+<td>4 x 3 = 12, Critical.</td>
+</tr>
+<tr>
+<td>Treatment</td>
+<td>Mitigate: provide an approved enterprise assistant under a contract that excludes training on inputs (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a>); inspect prompts and uploads to unapproved AI services and block customer identifiers (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-002">AI-CTRL-002</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-003">AI-CTRL-003</a>); keep discovery running for new tools (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a>).</td>
+</tr>
+<tr>
+<td>Target</td>
+<td>Likelihood 2 (blocked at the proxy, some residual use from unmanaged devices) x impact 3 = 6, High.</td>
+</tr>
+<tr>
+<td>Acceptance decision</td>
+<td>The target is still above an appetite of Medium, so the AI Governance Committee decides. It accepts the High residual for six months, on condition that unmanaged-device access to customer records is closed within that time, and asks for re-scoring then.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="example-2-prompt-injection-in-a-customer-support-assistant">Example 2: Prompt injection in a customer support assistant</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Record</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scenario</td>
+<td>A support assistant answers from help-centre articles and the customer's own open tickets. An attacker writes instructions into a ticket; when an agent asks the assistant to summarise it, the assistant could reveal other customers' ticket details from its retrieval results.</td>
+</tr>
+<tr>
+<td>Risks in the register</td>
+<td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r05-prompt-injection-against-custom-ai-applications">AI-R05</a>, <a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r06-ai-output-leakage-and-oversharing">AI-R06</a></td>
+</tr>
+<tr>
+<td>Prohibited use?</td>
+<td>No.</td>
+</tr>
+<tr>
+<td>Existing controls and coverage</td>
+<td>Input filter (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>); retrieval scoped to the customer's own tickets in the application code, but not enforced in the vector store (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-018">AI-CTRL-018</a>). No adversarial testing yet. Coverage: Weak.</td>
+</tr>
+<tr>
+<td>Likelihood</td>
+<td>3 (High): the injection path is well known and tickets are attacker-controlled text.</td>
+</tr>
+<tr>
+<td>Impact</td>
+<td>3 (High): exposure of other customers' personal data.</td>
+</tr>
+<tr>
+<td>Current rating</td>
+<td>3 x 3 = 9, High.</td>
+</tr>
+<tr>
+<td>Treatment</td>
+<td>Mitigate: enforce per-customer filtering in the vector store, inspect output for other customers' identifiers (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-020">AI-CTRL-020</a>), and run adversarial tests before go-live and on each change (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a>).</td>
+</tr>
+<tr>
+<td>Target</td>
+<td>Likelihood 2 x impact 2 (the store can no longer return other customers' records, so the worst case is the customer's own data being mishandled) = 4, Medium.</td>
+</tr>
+<tr>
+<td>Acceptance decision</td>
+<td>Within an appetite of Medium. The AI product owner accepts the residual risk for 12 months, with GRC / Compliance agreement, after the adversarial test report shows the filtering holds.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="example-3-an-agent-that-can-issue-refunds">Example 3: An agent that can issue refunds</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Record</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scenario</td>
+<td>A customer-facing agent can look up orders and issue refunds through a payments tool. A manipulated conversation, or a poisoned order note, could lead it to issue refunds that were never due.</td>
+</tr>
+<tr>
+<td>Risks in the register</td>
+<td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r07-ai-agent-and-tool-calling-abuse">AI-R07</a>, <a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r24-tool-chain-manipulation-and-injection">AI-R24</a></td>
+</tr>
+<tr>
+<td>Prohibited use?</td>
+<td>No.</td>
+</tr>
+<tr>
+<td>Existing controls and coverage</td>
+<td>The agent has its own identity and a scoped payments credential (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a>); a per-refund limit is enforced in the payments service, outside the model (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a>). No daily total limit and no human approval. Coverage: Partial.</td>
+</tr>
+<tr>
+<td>Likelihood</td>
+<td>2 (Medium): the hard per-refund limit blocks large single refunds, but many small ones are possible.</td>
+</tr>
+<tr>
+<td>Impact</td>
+<td>4 (Critical): repeated refunds at machine speed could cause a material financial loss before anyone notices.</td>
+</tr>
+<tr>
+<td>Current rating</td>
+<td>2 x 4 = 8, High.</td>
+</tr>
+<tr>
+<td>Treatment</td>
+<td>Mitigate: add a daily total limit in the payments service, require human approval above a lower threshold (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a>), alert on refund rate, and give the support lead a kill switch (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a>).</td>
+</tr>
+<tr>
+<td>Target</td>
+<td>Likelihood 1 x impact 3 (the daily limit caps the loss) = 3, Medium.</td>
+</tr>
+<tr>
+<td>Acceptance decision</td>
+<td>Within appetite, so the agent sponsor accepts for 12 months. Because the current impact was 4, the risk was also reported to the AI Governance Committee under the Step 6 override, and the committee noted the acceptance.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="example-4-inferring-employee-emotions-from-video-calls">Example 4: Inferring employee emotions from video calls</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Record</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scenario</td>
+<td>A team proposes a tool that scores employees' emotions from webcam video in internal meetings, to report on engagement.</td>
+</tr>
+<tr>
+<td>Risks in the register</td>
+<td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r14-biased-or-discriminatory-ai-outcomes">AI-R14</a>, <a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r28-regulatory-non-compliance-from-unsupervised-ai-decisions">AI-R28</a></td>
+</tr>
+<tr>
+<td>Prohibited use?</td>
+<td>Yes. In this example the organization's AI policy lists inferring the emotions of employees as prohibited. In the EU, certain emotion-recognition uses are among the AI Act's prohibited practices (see the <a href="../12_EU_AI_Compliance/01_EU_AI_Regulatory_Hub.html">EU AI Regulatory Hub</a>); check the exact scope with legal counsel.</td>
+</tr>
+<tr>
+<td>Scoring</td>
+<td>Not scored (Step 1).</td>
+</tr>
+<tr>
+<td>Acceptance decision</td>
+<td>Not eligible for risk acceptance or an exception. The request is closed and the reason recorded. If the team wants a different design, for example an anonymous engagement survey, that is a new use case with its own intake.</td>
+</tr>
+</tbody>
+</table></div>
 <h2 id="required-fields-for-new-ai-risk-entry">Required Fields for New AI Risk Entry</h2>
 <pre><code class="language-markdown">Risk ID:
 Risk Name:
@@ -380,12 +683,14 @@ Existing Controls:
 Likelihood:
 Impact:
 Existing Control Coverage:
-Residual Risk:
+Current Score and Rating:
+Residual Risk (target score and rating):
 Required AI Security Capabilities:
 Evidence Required:
 Risk Owner:
 Owner Domain:
 Treatment Decision:
+Acceptance Decision (who, date, expiry):
 Review Date:
 </code></pre>
 <h2 id="communication-and-consultation">Communication and Consultation</h2>
@@ -446,7 +751,7 @@ Review Date:
 <p>NIST publishes a crosswalk from ISO/IEC 23894 to the NIST AI RMF, so this table can be read together with the <a href="../23_Framework_Crosswalks/03_NIST_AI_RMF_Crosswalk.html">NIST AI RMF Crosswalk</a>. See also the <a href="../23_Framework_Crosswalks/15_ISO_IEC_AI_Standards_Crosswalk.html">ISO/IEC AI Standards Crosswalk</a>.</p>
 </article>
 <nav class="pager" aria-label="Previous and next page"><a class="prev" href="index.html">&larr; Risk Management</a><a class="next" href="02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register &rarr;</a></nav>
-<footer class="site-footer">Author: Nachiket Sathaye &middot; Updated 17 October 2026 &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/02_Risk_Management/02A_AI_Risk_Methodology.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
+<footer class="site-footer">Author: Nachiket Sathaye &middot; Updated 22 October 2026 &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/02_Risk_Management/02A_AI_Risk_Methodology.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
 <div class="site-notice">
 <p><strong>Licence.</strong> <svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.441-3.5c8.951,0,16.572,3.125,22.857,9.372c3.008,3.009,5.295,6.448,6.857,10.314 c1.561,3.867,2.344,7.971,2.344,12.314c0,4.381-0.773,8.486-2.314,12.313c-1.543,3.828-3.82,7.21-6.828,10.143 c-3.123,3.085-6.666,5.448-10.629,7.086c-3.961,1.638-8.057,2.457-12.285,2.457s-8.276-0.808-12.143-2.429 c-3.866-1.618-7.333-3.961-10.4-7.027c-3.067-3.066-5.4-6.524-7-10.372S5.5,32.767,5.5,28.5c0-4.229,0.809-8.295,2.428-12.2 c1.619-3.905,3.972-7.4,7.057-10.486C21.08-0.394,28.565-3.5,37.441-3.5z M37.557,2.272c-7.314,0-13.467,2.553-18.458,7.657 c-2.515,2.553-4.448,5.419-5.8,8.6c-1.354,3.181-2.029,6.505-2.029,9.972c0,3.429,0.675,6.734,2.029,9.913 c1.353,3.183,3.285,6.021,5.8,8.516c2.514,2.496,5.351,4.399,8.515,5.715c3.161,1.314,6.476,1.971,9.943,1.971 c3.428,0,6.75-0.665,9.973-1.999c3.219-1.335,6.121-3.257,8.713-5.771c4.99-4.876,7.484-10.99,7.484-18.344 c0-3.543-0.648-6.895-1.943-10.057c-1.293-3.162-3.18-5.98-5.654-8.458C50.984,4.844,44.795,2.272,37.557,2.272z M37.156,23.187 l-4.287,2.229c-0.458-0.951-1.019-1.619-1.685-2c-0.667-0.38-1.286-0.571-1.858-0.571c-2.856,0-4.286,1.885-4.286,5.657 c0,1.714,0.362,3.084,1.085,4.113c0.724,1.029,1.791,1.544,3.201,1.544c1.867,0,3.181-0.915,3.944-2.743l3.942,2 c-0.838,1.563-2,2.791-3.486,3.686c-1.484,0.896-3.123,1.343-4.914,1.343c-2.857,0-5.163-0.875-6.915-2.629 c-1.752-1.752-2.628-4.19-2.628-7.313c0-3.048,0.886-5.466,2.657-7.257c1.771-1.79,4.009-2.686,6.715-2.686 C32.604,18.558,35.441,20.101,37.156,23.187z M55.613,23.187l-4.229,2.229c-0.457-0.951-1.02-1.619-1.686-2 c-0.668-0.38-1.307-0.571-1.914-0.571c-2.857,0-4.287,1.885-4.287,5.657c0,1.714,0.363,3.084,1.086,4.113 c0.723,1.029,1.789,1.544,3.201,1.544c1.865,0,3.18-0.915,3.941-2.743l4,2c-0.875,1.563-2.057,2.791-3.541,3.686 c-1.486,0.896-3.105,1.343-4.857,1.343c-2.896,0-5.209-0.875-6.941-2.629c-1.736-1.752-2.602-4.19-2.602-7.313 c0-3.048,0.885-5.466,2.658-7.257c1.77-1.79,4.008-2.686,6.713-2.686C51.117,18.558,53.938,20.101,55.613,23.187z"/></svg><svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.443-3.5c8.988,0,16.57,3.085,22.742,9.257C66.393,11.967,69.5,19.548,69.5,28.5c0,8.991-3.049,16.476-9.145,22.456 C53.879,57.319,46.242,60.5,37.443,60.5c-8.649,0-16.153-3.144-22.514-9.43C8.644,44.784,5.5,37.262,5.5,28.5 c0-8.761,3.144-16.342,9.429-22.742C21.101-0.415,28.604-3.5,37.443-3.5z M37.557,2.272c-7.276,0-13.428,2.553-18.457,7.657 c-5.22,5.334-7.829,11.525-7.829,18.572c0,7.086,2.59,13.22,7.77,18.398c5.181,5.182,11.352,7.771,18.514,7.771 c7.123,0,13.334-2.607,18.629-7.828c5.029-4.838,7.543-10.952,7.543-18.343c0-7.276-2.553-13.465-7.656-18.571 C50.967,4.824,44.795,2.272,37.557,2.272z M46.129,20.557v13.085h-3.656v15.542h-9.944V33.643h-3.656V20.557 c0-0.572,0.2-1.057,0.599-1.457c0.401-0.399,0.887-0.6,1.457-0.6h13.144c0.533,0,1.01,0.2,1.428,0.6 C45.918,19.5,46.129,19.986,46.129,20.557z M33.042,12.329c0-3.008,1.485-4.514,4.458-4.514s4.457,1.504,4.457,4.514 c0,2.971-1.486,4.457-4.457,4.457S33.042,15.3,33.042,12.329z"/></svg>This wiki is open to the community under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">Creative Commons Attribution-ShareAlike 4.0 International licence (CC BY-SA 4.0)</a>. You may copy, share and adapt it for any purpose, including commercially, as long as you credit the authors and release anything you build from it under the same licence.</p>
 <p><strong>Disclaimer.</strong> This wiki is an open, community driven educational reference, not legal, regulatory or professional advice. Regional regulatory content is compiled from secondary sources and its verification status is shown per row; verify against primary sources before relying on it. Content is provided "as is" without warranty. Named products and companies belong to their owners; statements about them reflect public information at the date shown. Views are the author's own.</p>

@@ -13,7 +13,7 @@
 <meta property="og:description" content="The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0.">
 <meta property="og:url" content="https://nachi065.github.io/AI-Security-Wiki/09_Reference/19_Update_Notes.html">
 <meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="../assets/style.css?v=8368346b">
+<link rel="stylesheet" href="../assets/style.css?v=aa70096b">
 </head>
 <body style="--h:215">
 <header class="topbar">
@@ -72,6 +72,7 @@
 <li><a href="../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
 <li><a href="../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
 <li><a href="../04_Domain_Standards/10B_Sector_Overlays.html">Sector Overlays: Financial Services, Insurance, Health and Government</a></li>
+<li><a href="../04_Domain_Standards/11_Predictive_Model_Monitoring_and_Adversarial_ML.html">Predictive Model Monitoring and Adversarial ML</a></li>
 </ul></details></li>
 <li style="--h:32"><details><summary><a href="../05_Vendor_Evaluation/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Vendor Evaluation</a></summary><ul>
 <li><a href="../05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
@@ -90,6 +91,7 @@
 <li style="--h:228"><details><summary><a href="../08_Governance/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-5 9 5M5 9v9M9.5 9v9M14.5 9v9M19 9v9M3 20h18"/></svg>Governance</a></summary><ul>
 <li><a href="../08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></li>
 <li><a href="../08_Governance/17_AI_Policy_Standards_and_Acceptable_Use.html">AI Policy, Standards and Acceptable Use</a></li>
+<li><a href="../08_Governance/18_AI_Operating_Defaults.html">AI Operating Defaults</a></li>
 </ul></details></li>
 <li style="--h:145"><details><summary><a href="../10_Test_Case_Library/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l1.5 1.5L8 5M4 12l1.5 1.5L8 11M4 18l1.5 1.5L8 17M11 6h9M11 12h9M11 18h9"/></svg>Test Case Library</a></summary><ul>
 <li><a href="../10_Test_Case_Library/00-reference-index.html">Reference Index</a></li>
@@ -249,6 +251,7 @@
 <li><a href="18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
 <li><a class="current" href="19_Update_Notes.html">Update Notes</a></li>
 <li><a href="20_AI_Security_Incident_Casebook.html">AI Security Incident Casebook</a></li>
+<li><a href="21_Regulatory_Verification_Status.html">Regulatory Verification Status</a></li>
 </ul></details></li>
 <li style="--h:120"><details><summary><a href="../23_Framework_Crosswalks/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h14l-3-3M20 16H6l3 3"/></svg>Framework Crosswalks</a></summary><ul>
 <li><a href="../23_Framework_Crosswalks/01_FINOS_AIGF_Crosswalk.html">FINOS AI Governance Framework Crosswalk</a></li>
@@ -285,6 +288,8 @@
 <li><a href="../25_Templates/07_AI_Security_Test_Case_Tracker_Template.html">AI Security Test Case Tracker Template (.xlsx)</a></li>
 <li><a href="../25_Templates/08_AI_Acceptable_Use_Policy_Template.html">AI Acceptable Use Policy Template (.docx)</a></li>
 <li><a href="../25_Templates/09_AI_Impact_Assessment_Template.html">AI Impact Assessment Template (.docx)</a></li>
+<li><a href="../25_Templates/10_AI_Security_Programme_Charter_Template.html">AI Security Programme Charter Template (.docx)</a></li>
+<li><a href="../25_Templates/11_AI_Incident_Report_Template.html">AI Incident Report Template (.docx)</a></li>
 </ul></details></li>
 <li><a href="../community-rules.html">Community Rules</a></li>
 </ul>
@@ -299,15 +304,43 @@
 <li><strong><a href="#full-version-history">Full version history</a></strong>: every version since 1.0, newest first. The <a href="../index.html#20-version-history">home page</a> shows only the three latest.</li>
 </ul>
 <p>Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.</p>
-<h2 id="week-ending-24-october-2026-crosswalk-verification">Week ending 24 October 2026: crosswalk verification</h2>
+<h2 id="22-october-2026-weak-points-in-proof-rating-and-operation">22 October 2026: weak points in proof, rating and operation</h2>
+<p>A review of the wiki found that it shows proof weakly (test cases could be read as validated protection, risk ratings were not calibrated, regulatory claims were only partly verified) and is hard to run as a programme (no charter, few default numbers, thin governance detail). This update addresses those points.</p>
+<h3 id="what-changed">What changed</h3>
+<ul>
+<li><strong>Validation levels for test cases.</strong> Every case now shows a Validation Level: Documented, Executable, Lab-validated or Independently reproduced (<a href="../10_Test_Case_Library/index.html#validation-levels">Validation levels</a>). The build fills it in: a case with a payload file in the kit is Executable, every other case is Documented. A case can claim Lab-validated or Independently reproduced only with a Validated Against row that names the product and version, the date and an evidence link; the link check enforces this. No case is lab-validated: the payload kit has only been run against its own stand-in applications.</li>
+<li><strong>Self-contained test cases.</strong> Each case now ends with a closed box listing the <a href="../10_Test_Case_Library/standard-fields.html">Standard Fields</a> wording that applies to it, so a copied case keeps its pass and fail criteria, scoring and evidence rules. The <a href="../25_Templates/07_AI_Security_Test_Case_Tracker_Template.html">test case tracker workbook</a> (version 1.1) fills those fields into every row and adds the validation level.</li>
+<li><strong>Risk scoring and calibration.</strong> The <a href="../02_Risk_Management/02A_AI_Risk_Methodology.html">AI Risk Methodology</a> (version 1.2) now has a jurisdiction-neutral scoring method (likelihood 1 to 4 times impact 1 to 4, with rating bands and acceptance authority, matching the risk register workbook), a prohibited-use stop before scoring, two overrides, an assessor calibration step and four worked examples that go from scenario to acceptance decision. The examples are invented and illustrative.</li>
+<li><strong>Governance.</strong> The <a href="../08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a> (version 1.1) adds starting charters for the AI Governance Committee and an AI Security Review Board, a decision-rights table with one approver per decision, and a role-based training plan.</li>
+<li><strong>Test coverage of the newest controls.</strong> AI-CTRL-041 to AI-CTRL-046 were reviewed by outcome, not by case count (<a href="../02_Risk_Management/02G_Risk_Control_Test_Traceability.html#reading-the-case-counts">Reading the case counts</a>). Eight existing cases that already exercised one of their outcomes now name the control: TC-L03-008, TC-L03-029, TC-L03-010, TC-L03-011, TC-L03-019, TC-L02-020, TC-L02-022 and TC-D12-016. Three new cases close the gaps that were left: <a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-043">TC-L03-043</a> (bias profile and monitoring outside validated boundaries), <a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-044">TC-L03-044</a> (impact assessment content and periodic review) and <a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-045">TC-L03-045</a> (AI literacy effectiveness). AI-CTRL-045 and AI-CTRL-046 were judged adequately covered and get no new case.</li>
+<li><strong>Operating defaults.</strong> A new <a href="../08_Governance/18_AI_Operating_Defaults.html">AI Operating Defaults</a> page gives illustrative exception limits, incident severity levels and response times, monitoring thresholds, a review and audit calendar (the control part is generated from the control library), CI/CD release stages showing which checks are automated and which block a release, and a log retention baseline. Every number on it is the wiki's own starting value, not taken from a standard or a law.</li>
+<li><strong>Predictive models.</strong> A new standard, <a href="../04_Domain_Standards/11_Predictive_Model_Monitoring_and_Adversarial_ML.html">Predictive Model Monitoring and Adversarial ML</a>, covers input drift, concept drift, prediction drift, accuracy decay and fairness shift, and the predictive attack classes of NIST AI 100-2e2025. Two new cases test it: <a class="chip" href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-033">TC-L12-033</a> (drift, performance decay and fairness shift monitoring) and <a class="chip" href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-034">TC-L12-034</a> (membership inference and model inversion probes).</li>
+<li><strong>Regulatory verification.</strong> A new <a href="21_Regulatory_Verification_Status.html">Regulatory Verification Status</a> page counts the verification tags of every regional crosswalk at each build, sets an order for verification work, and starts an obligation-level tracker that splits the EU AI Act high-risk row into its obligations.</li>
+<li><strong>Templates.</strong> Two new Word templates: the <a href="../25_Templates/10_AI_Security_Programme_Charter_Template.html">AI Security Programme Charter</a>, which brings the programme into one approvable document and links each section to the wiki page behind it, and the <a href="../25_Templates/11_AI_Incident_Report_Template.html">AI Incident Report</a>.</li>
+<li><strong>Build.</strong> The committed search index had been built with a different markdown version and showed fill-in blanks on 18 template pages as broken text; it is rebuilt correctly.</li>
+</ul>
 <h3 id="what-was-checked">What was checked</h3>
+<ul>
+<li>The link and identifier check passes, including the new validation-level rule, which was tested by adding an invalid level and an unsupported Lab-validated claim to a copy of the source and confirming that both were rejected.</li>
+<li>The hand-kept case counts (layer headers, the Tested By rows of the control library and the tables on the library index) were recalculated by script from the case tables, after confirming that the same script reproduced the earlier counts exactly.</li>
+</ul>
+<h3 id="still-work-in-progress">Still work in progress</h3>
+<ul>
+<li><strong>No real-system validation yet.</strong> No case has been run against a real model, agent framework or product. Publishing reproducible results against representative applications is still to do; until then every case is Documented or Executable.</li>
+<li><strong>EU obligations not yet read one by one.</strong> On 22 October 2026 the article text of the EU AI Act could not be retrieved from EUR-Lex (only the recitals came back), so the obligation-level tracker lists the articles as recalled and no new [Verified] tag was added. The deployer log retention period (Art. 26) and the serious incident time limits (Art. 73) in particular must be read before they are relied on.</li>
+<li><strong>Order of verification is an assumption.</strong> The tracker puts the GCC first, then the EU, the UK and US, and India. Change it to match the jurisdictions that matter to you.</li>
+<li><strong>Risk register workbook not rebuilt.</strong> Its per-risk test case counts are a 17 October 2026 snapshot and do not include this update's new cases.</li>
+<li><strong>Operating defaults and thresholds are untested.</strong> They are starting values to tune, not benchmarks.</li>
+</ul>
+<h2 id="week-ending-24-october-2026-crosswalk-verification">Week ending 24 October 2026: crosswalk verification</h2>
+<h3 id="what-was-checked_1">What was checked</h3>
 <ul>
 <li><strong>GCC (19 October 2026):</strong> every row of the <a href="../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.html">GCC Regulatory Crosswalk</a> was checked for changes, and the rows not yet verified were checked against the issuing bodies' own pages where those pages could be read: the UAE legislation portal, the Central Bank of the UAE, the Saudi National Cybersecurity Authority (NCA) and the UAE AI Office.</li>
 <li><strong>India and UK (20 October 2026):</strong> every row of the <a href="../17_India_AI_Compliance/03_Regulatory_Crosswalk.html">India Regulatory Crosswalk</a> and the <a href="../21_UK_AI_Compliance/03_Regulatory_Crosswalk.html">UK Regulatory Crosswalk</a> was checked for changes. Ten rows not yet verified were checked against MeitY, the Lok Sabha, the Press Information Bureau, legislation.gov.uk, GOV.UK, the UK Parliament bill pages, the Bank of England and the NCSC.</li>
 <li><strong>Singapore, US and South Korea (21 October 2026):</strong> every row of the <a href="../19_Singapore_AI_Compliance/03_Regulatory_Crosswalk.html">Singapore</a>, <a href="../22_US_AI_Compliance/03_Regulatory_Crosswalk.html">US</a> and <a href="../20_South_Korea_AI_Compliance/03_Regulatory_Crosswalk.html">South Korea</a> crosswalks was checked for changes. Rows not yet verified were checked against IMDA, the AI Verify Foundation, the PDPC, the CSA and MAS; govinfo.gov, justice.gov, whitehouse.gov, nist.gov, nyc.gov and the Colorado, New York, Utah and Texas legislatures; and MSIT, PIPC and the Korea Legislation Research Institute's English translations of the AI Basic Act and its decree.</li>
 <li><strong>Australia, Brazil, Canada, China and Japan (22 October 2026):</strong> every row of the <a href="../13_Australia_AI_Compliance/03_Regulatory_Crosswalk.html">Australia</a>, <a href="../14_Brazil_AI_Compliance/03_Regulatory_Crosswalk.html">Brazil</a>, <a href="../15_Canada_AI_Compliance/03_Regulatory_Crosswalk.html">Canada</a>, <a href="../16_China_AI_Compliance/03_Regulatory_Crosswalk.html">China</a> and <a href="../18_Japan_AI_Compliance/03_Regulatory_Crosswalk.html">Japan</a> crosswalks was checked for changes. This was the first check of these five regions against primary sources. Rows were checked against the Federal Register of Legislation, the OAIC, the Department of Industry, APRA, Treasury, the ACCC and the Parliament of NSW; the Brazilian Senate and Chamber, the Planalto legislation site and the ANPD; Justice Laws, LegisQuebec, ISED, OSFI, the Parliament of Canada and the Ontario legislature and government; the CAC, MIIT, the State Council policy library and the national standards system; and the Cabinet Office, METI, the Personal Information Protection Commission, the Agency for Cultural Affairs and the FSA.</li>
 </ul>
-<h3 id="what-changed">What changed</h3>
+<h3 id="what-changed_1">What changed</h3>
 <ul>
 <li><strong>GCC, now [Verified]:</strong> U2 (UAE cybercrime law, Federal Decree-Law No. 34 of 2021) and S8 (NCA AI Cybersecurity Guidelines: a consultation draft, feedback closed 5 August 2026, no final text yet). U1 (UAE PDPL) was read again with no change.</li>
 <li><strong>GCC, U9 (CBUAE Guidance Note):</strong> the CBUAE press release confirms the date (23 February 2026) and that it applies to licensed financial institutions. The row stays [Reported] because the note's own text has not been read.</li>
@@ -347,7 +380,7 @@
 <li><strong>Japan, now [Verified]:</strong> JP1 (AI Promotion Act, Act No. 53 of 2025, fully in force 1 September 2025; no penalties), JP2 (AI Basic Plan of 14 July 2026), JP3 (AI Guidelines for Business version 1.2) and JP4 (the APPI amendment law promulgated on 17 July 2026, in force within two years, with a consent exception for statistics including AI development).</li>
 <li><strong>Home page (22 October 2026):</strong> a Source Repository line in the document box now links to the GitHub repository and its contributing guide, and version 2.39 records this week's merged changes.</li>
 </ul>
-<h3 id="still-work-in-progress">Still work in progress</h3>
+<h3 id="still-work-in-progress_1">Still work in progress</h3>
 <ul>
 <li>GCC: Bahrain's AI law (B3) is still listed as a draft; news reports this year disagree on whether it has passed. The Saudi copyright text and data mining exception (S9) and the Saudi AI risk framework (S5) still have no primary source.</li>
 <li>The SDAIA site rejected automated requests on 19 October 2026, so the Saudi rows S1 to S4 were not re-checked this week.</li>
@@ -383,7 +416,7 @@
 <li><strong><a href="../25_Templates/04_AI_Security_Vendor_Evaluation_Scorecard.html">AI Security Vendor Evaluation Scorecard (.xlsx)</a>:</strong> up to five vendors on the eight evaluation domains, required vendor evidence, PoC notes and a GCC and EU supplier due-diligence questionnaire.</li>
 <li><strong><a href="../25_Templates/05_AI_Security_Audit_and_Evidence_Checklist_Template.html">AI Security Audit and Evidence Checklist Template (.xlsx)</a>:</strong> control tests, the GCC and EU audit checklists and evidence registers, a findings log, an exception register and ISO/IEC 42001 readiness.</li>
 <li><strong><a href="../25_Templates/06_AI_Security_Control_Library_and_Crosswalks_Template.html">AI Security Control Library and Crosswalks Template (.xlsx)</a>:</strong> the 46 controls with tracking columns, every framework crosswalk item and coverage by framework and by risk.</li>
-<li><strong><a href="../25_Templates/07_AI_Security_Test_Case_Tracker_Template.html">AI Security Test Case Tracker Template (.xlsx)</a>:</strong> the quick-start PoC scenarios and all 668 test cases, with scoring rules and coverage by control and by risk.</li>
+<li><strong><a href="../25_Templates/07_AI_Security_Test_Case_Tracker_Template.html">AI Security Test Case Tracker Template (.xlsx)</a>:</strong> the quick-start PoC scenarios and all 673 test cases, with scoring rules and coverage by control and by risk.</li>
 <li><strong><a href="../25_Templates/08_AI_Acceptable_Use_Policy_Template.html">AI Acceptable Use Policy Template (.docx)</a>:</strong> a policy draft with a policy-to-control mapping, a quick reference card and a user acknowledgement form.</li>
 <li><strong><a href="../25_Templates/09_AI_Impact_Assessment_Template.html">AI Impact Assessment Template (.docx)</a>:</strong> a combined data protection and fundamental rights impact assessment that adds benefits, misuse and interested parties from ISO/IEC 42005.</li>
 </ul>
@@ -456,7 +489,7 @@
 <li><strong>Builder Track:</strong> a new section with one page, <a href="../24_Builder_Track/01_Secure_Your_First_Agent.html">Secure Your First Agent: Ten Controls With Code</a>. It sets out ten controls in build order, each tied to an existing control objective, with working configuration and code for tool allow-lists, argument validation, scoped short-lived credentials, sandboxing, egress limits and approval gates.</li>
 <li><strong>Reference code:</strong> the <a href="../24_Builder_Track/index.html#the-code"><code>code/</code></a> folder holds a guard, a sandbox wrapper, an allow-list egress proxy, container and Kubernetes settings, a policy file, and a demo in which a hijacked agent is stopped at every step. It uses only the Python standard library.</li>
 </ul>
-<h3 id="what-was-checked_1">What was checked</h3>
+<h3 id="what-was-checked_2">What was checked</h3>
 <ul>
 <li>For the Standard Fields change, every field of every case was rebuilt from its explicit text or the standard for its test method, kind of case or layer and compared with the original. All matched, so no wording was lost or altered. The link check now fails if a case repeats a standard word for word, and a deliberate repeat was used to confirm it does.</li>
 <li>The payload kit runner and stand-in applications have a test suite (38 tests). Eight deliberate breakages of the runner's judging were each caught. Against the stand-ins, the tool-governance cases pass and the cases that depend on what a model says fail, as expected; the resource-limit sandbox fails three of five probes.</li>
@@ -481,7 +514,7 @@
 <li><strong>Observability:</strong> <a class="chip" href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-032">TC-L17-032</a> covers access, masking, retention and residency of AI tracing and evaluation tools, and <a class="chip" href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-033">TC-L17-033</a> covers ownership and review of AI failures that are not security incidents.</li>
 <li>The library now holds 668 cases: 535 in the 17 layers and 133 in the six emerging domains.</li>
 </ul>
-<h3 id="what-was-checked_2">What was checked</h3>
+<h3 id="what-was-checked_3">What was checked</h3>
 <p>The OWASP and NIST AI RMF mappings on the 12 new cases were checked on 15 October 2026. The OWASP identifiers and titles were checked against the OWASP GenAI Security Project's pages for the <a href="https://genai.owasp.org/llmrisk/llm082025-vector-and-embedding-weaknesses/" rel="noopener">Top 10 for LLM Applications 2025</a>. The NIST identifiers were checked against the subcategory text in <a href="https://airc.nist.gov/airmf-resources/airmf/5-sec-core/" rel="noopener">section 5 of the AI RMF 1.0 Core</a>. Every identifier exists, but several did not fit the case and were changed:</p>
 <ul>
 <li>GOVERN 1.1 covers legal and regulatory requirements, not roles or approvals. On the ownership and approval cases it was replaced with GOVERN 2.1 (roles and responsibilities), and on the policy cases with GOVERN 1.4 (transparent policies and procedures).</li>
@@ -619,6 +652,12 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>2.40</td>
+<td>2026-10-22</td>
+<td>Nachiket Sathaye</td>
+<td>Weak points addressed: validation level on every test case and a self-contained copy of the shared fields on each case and in the test tracker; scoring method and worked calibration examples in the risk methodology; committee charters, decision rights and a role-based training plan; outcome review of AI-CTRL-041 to 046 with three new cases; illustrative operating defaults; a predictive model monitoring and adversarial ML standard with two new cases; regulatory verification status and an obligation-level tracker; programme charter and incident report templates.</td>
+</tr>
 <tr>
 <td>2.39</td>
 <td>2026-10-22</td>

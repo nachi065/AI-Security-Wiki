@@ -13,7 +13,7 @@
 <meta property="og:description" content="Every risk in the register traced to the control objectives that treat it and the test cases that exercise them, with the controls that have no test case yet.">
 <meta property="og:url" content="https://nachi065.github.io/AI-Security-Wiki/02_Risk_Management/02G_Risk_Control_Test_Traceability.html">
 <meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="../assets/style.css?v=8368346b">
+<link rel="stylesheet" href="../assets/style.css?v=aa70096b">
 </head>
 <body style="--h:8">
 <header class="topbar">
@@ -72,6 +72,7 @@
 <li><a href="../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
 <li><a href="../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
 <li><a href="../04_Domain_Standards/10B_Sector_Overlays.html">Sector Overlays: Financial Services, Insurance, Health and Government</a></li>
+<li><a href="../04_Domain_Standards/11_Predictive_Model_Monitoring_and_Adversarial_ML.html">Predictive Model Monitoring and Adversarial ML</a></li>
 </ul></details></li>
 <li style="--h:32"><details><summary><a href="../05_Vendor_Evaluation/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Vendor Evaluation</a></summary><ul>
 <li><a href="../05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
@@ -90,6 +91,7 @@
 <li style="--h:228"><details><summary><a href="../08_Governance/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-5 9 5M5 9v9M9.5 9v9M14.5 9v9M19 9v9M3 20h18"/></svg>Governance</a></summary><ul>
 <li><a href="../08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></li>
 <li><a href="../08_Governance/17_AI_Policy_Standards_and_Acceptable_Use.html">AI Policy, Standards and Acceptable Use</a></li>
+<li><a href="../08_Governance/18_AI_Operating_Defaults.html">AI Operating Defaults</a></li>
 </ul></details></li>
 <li style="--h:145"><details><summary><a href="../10_Test_Case_Library/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l1.5 1.5L8 5M4 12l1.5 1.5L8 11M4 18l1.5 1.5L8 17M11 6h9M11 12h9M11 18h9"/></svg>Test Case Library</a></summary><ul>
 <li><a href="../10_Test_Case_Library/00-reference-index.html">Reference Index</a></li>
@@ -249,6 +251,7 @@
 <li><a href="../09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
 <li><a href="../09_Reference/19_Update_Notes.html">Update Notes</a></li>
 <li><a href="../09_Reference/20_AI_Security_Incident_Casebook.html">AI Security Incident Casebook</a></li>
+<li><a href="../09_Reference/21_Regulatory_Verification_Status.html">Regulatory Verification Status</a></li>
 </ul></details></li>
 <li style="--h:120"><details><summary><a href="../23_Framework_Crosswalks/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h14l-3-3M20 16H6l3 3"/></svg>Framework Crosswalks</a></summary><ul>
 <li><a href="../23_Framework_Crosswalks/01_FINOS_AIGF_Crosswalk.html">FINOS AI Governance Framework Crosswalk</a></li>
@@ -285,6 +288,8 @@
 <li><a href="../25_Templates/07_AI_Security_Test_Case_Tracker_Template.html">AI Security Test Case Tracker Template (.xlsx)</a></li>
 <li><a href="../25_Templates/08_AI_Acceptable_Use_Policy_Template.html">AI Acceptable Use Policy Template (.docx)</a></li>
 <li><a href="../25_Templates/09_AI_Impact_Assessment_Template.html">AI Impact Assessment Template (.docx)</a></li>
+<li><a href="../25_Templates/10_AI_Security_Programme_Charter_Template.html">AI Security Programme Charter Template (.docx)</a></li>
+<li><a href="../25_Templates/11_AI_Incident_Report_Template.html">AI Incident Report Template (.docx)</a></li>
 </ul></details></li>
 <li><a href="../community-rules.html">Community Rules</a></li>
 </ul>
@@ -314,20 +319,20 @@
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r01-critical-infrastructure-information-exposure">AI-R01</a></td>
 <td>Critical Infrastructure Information Exposure</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-002">AI-CTRL-002</a> (16); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-003">AI-CTRL-003</a> (6); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-010">AI-CTRL-010</a> (28); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a> (34)</td>
-<td>82</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-002">AI-CTRL-002</a> (16); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-003">AI-CTRL-003</a> (6); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-010">AI-CTRL-010</a> (28); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a> (36)</td>
+<td>84</td>
 </tr>
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r02-shadow-ai-and-ungoverned-ai-usage">AI-R02</a></td>
 <td>Shadow AI and Ungoverned AI Usage</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a> (33); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-010">AI-CTRL-010</a> (28); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-011">AI-CTRL-011</a> (19); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a> (8); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-037">AI-CTRL-037</a> (10); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-044">AI-CTRL-044</a> (1)</td>
-<td>90</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a> (33); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-010">AI-CTRL-010</a> (28); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-011">AI-CTRL-011</a> (19); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a> (8); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-037">AI-CTRL-037</a> (10); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-044">AI-CTRL-044</a> (3)</td>
+<td>91</td>
 </tr>
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r03-sensitive-data-leakage-through-prompts-and-uploads">AI-R03</a></td>
 <td>Sensitive Data Leakage Through Prompts and Uploads</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-002">AI-CTRL-002</a> (16); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-003">AI-CTRL-003</a> (6); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-010">AI-CTRL-010</a> (28); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a> (8); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a> (41); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a> (34); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> (28)</td>
-<td>143</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-002">AI-CTRL-002</a> (16); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-003">AI-CTRL-003</a> (6); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-010">AI-CTRL-010</a> (28); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a> (8); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a> (41); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a> (36); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> (28)</td>
+<td>145</td>
 </tr>
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r04-ide-based-source-code-and-credential-exposure">AI-R04</a></td>
@@ -338,38 +343,38 @@
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r05-prompt-injection-against-custom-ai-applications">AI-R05</a></td>
 <td>Prompt Injection Against Custom AI Applications</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> (52); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-019">AI-CTRL-019</a> (15); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-020">AI-CTRL-020</a> (13); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> (28); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a> (9); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a> (7); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> (36)</td>
-<td>148</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> (52); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-019">AI-CTRL-019</a> (15); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-020">AI-CTRL-020</a> (13); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> (28); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a> (9); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a> (7); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> (37)</td>
+<td>149</td>
 </tr>
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r06-ai-output-leakage-and-oversharing">AI-R06</a></td>
 <td>AI Output Leakage and Oversharing</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> (52); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a> (51); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a> (34); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-018">AI-CTRL-018</a> (10); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-020">AI-CTRL-020</a> (13)</td>
-<td>155</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> (52); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a> (51); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a> (36); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-018">AI-CTRL-018</a> (10); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-020">AI-CTRL-020</a> (13)</td>
+<td>157</td>
 </tr>
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r07-ai-agent-and-tool-calling-abuse">AI-R07</a></td>
 <td>AI Agent and Tool-Calling Abuse</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a> (15); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a> (44); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a> (51); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a> (18); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a> (7); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a> (16); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a> (11); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a> (9); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a> (11); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a> (7); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> (36); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-045">AI-CTRL-045</a> (3)</td>
-<td>200</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a> (15); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a> (44); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a> (51); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a> (18); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a> (7); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a> (16); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a> (11); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a> (9); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a> (11); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a> (7); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> (37); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-045">AI-CTRL-045</a> (3)</td>
+<td>201</td>
 </tr>
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r08-ai-supply-chain-and-model-integrity-risk">AI-R08</a></td>
 <td>AI Supply Chain and Model Integrity Risk</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a> (25); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a> (51); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-019">AI-CTRL-019</a> (15); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a> (16); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-028">AI-CTRL-028</a> (19); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-029">AI-CTRL-029</a> (18); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-030">AI-CTRL-030</a> (16); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-031">AI-CTRL-031</a> (24); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-032">AI-CTRL-032</a> (27); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a> (7)</td>
-<td>194</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a> (25); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a> (51); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-019">AI-CTRL-019</a> (15); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a> (16); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-028">AI-CTRL-028</a> (20); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-029">AI-CTRL-029</a> (18); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-030">AI-CTRL-030</a> (16); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-031">AI-CTRL-031</a> (24); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-032">AI-CTRL-032</a> (27); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a> (7)</td>
+<td>195</td>
 </tr>
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r09-lack-of-ai-auditability-and-forensic-visibility">AI-R09</a></td>
 <td>Lack of AI Auditability and Forensic Visibility</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a> (23); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a> (22); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> (40); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a> (17); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-043">AI-CTRL-043</a> (1)</td>
-<td>97</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a> (23); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a> (22); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> (40); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a> (17); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-043">AI-CTRL-043</a> (4)</td>
+<td>98</td>
 </tr>
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r10-data-sovereignty-and-third-party-processing-risk">AI-R10</a></td>
 <td>Data Sovereignty and Third-Party Processing Risk</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-007">AI-CTRL-007</a> (15); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a> (41); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a> (25); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-032">AI-CTRL-032</a> (27); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-042">AI-CTRL-042</a> (1); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-043">AI-CTRL-043</a> (1)</td>
-<td>105</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-007">AI-CTRL-007</a> (15); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a> (41); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a> (25); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-032">AI-CTRL-032</a> (27); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-042">AI-CTRL-042</a> (4); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-043">AI-CTRL-043</a> (4)</td>
+<td>106</td>
 </tr>
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r11-ai-cost-abuse-and-resource-exhaustion">AI-R11</a></td>
@@ -380,8 +385,8 @@
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r12-unreliable-or-harmful-ai-output">AI-R12</a></td>
 <td>Unreliable or Harmful AI Output</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-039">AI-CTRL-039</a> (9); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-041">AI-CTRL-041</a> (3); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-042">AI-CTRL-042</a> (1); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-045">AI-CTRL-045</a> (3)</td>
-<td>15</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-039">AI-CTRL-039</a> (9); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-041">AI-CTRL-041</a> (7); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-042">AI-CTRL-042</a> (4); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-045">AI-CTRL-045</a> (3)</td>
+<td>22</td>
 </tr>
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r13-ai-service-disruption-and-dependency-failure">AI-R13</a></td>
@@ -392,26 +397,26 @@
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r14-biased-or-discriminatory-ai-outcomes">AI-R14</a></td>
 <td>Biased or Discriminatory AI Outcomes</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a> (7); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-039">AI-CTRL-039</a> (9); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-041">AI-CTRL-041</a> (3); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-045">AI-CTRL-045</a> (3)</td>
-<td>21</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a> (7); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-039">AI-CTRL-039</a> (9); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-041">AI-CTRL-041</a> (7); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-045">AI-CTRL-045</a> (3)</td>
+<td>25</td>
 </tr>
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r15-lack-of-explainability-and-decision-traceability">AI-R15</a></td>
 <td>Lack of Explainability and Decision Traceability</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a> (23); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a> (17); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-041">AI-CTRL-041</a> (3)</td>
-<td>42</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a> (23); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a> (17); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-041">AI-CTRL-041</a> (7)</td>
+<td>46</td>
 </tr>
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r16-foundation-model-version-change-and-non-deterministic-behaviour">AI-R16</a></td>
 <td>Foundation Model Version Change and Non-Deterministic Behaviour</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a> (25); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-031">AI-CTRL-031</a> (24); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a> (7); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> (36); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-040">AI-CTRL-040</a> (13)</td>
-<td>102</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a> (25); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-031">AI-CTRL-031</a> (24); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a> (7); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> (37); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-040">AI-CTRL-040</a> (13)</td>
+<td>103</td>
 </tr>
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r17-data-quality-degradation-and-model-drift">AI-R17</a></td>
 <td>Data Quality Degradation and Model Drift</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a> (34); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-019">AI-CTRL-019</a> (15); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> (36)</td>
-<td>84</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a> (36); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-019">AI-CTRL-019</a> (15); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> (37)</td>
+<td>86</td>
 </tr>
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r18-model-overreach-and-use-beyond-approved-purpose">AI-R18</a></td>
@@ -422,14 +427,14 @@
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r19-insufficient-or-ineffective-human-oversight">AI-R19</a></td>
 <td>Insufficient or Ineffective Human Oversight</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a> (8); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a> (7); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-044">AI-CTRL-044</a> (1); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-045">AI-CTRL-045</a> (3)</td>
-<td>18</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a> (8); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a> (7); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-044">AI-CTRL-044</a> (3); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-045">AI-CTRL-045</a> (3)</td>
+<td>19</td>
 </tr>
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r20-reputational-harm-from-ai-behaviour">AI-R20</a></td>
 <td>Reputational Harm from AI Behaviour</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> (36); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> (40); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-039">AI-CTRL-039</a> (9)</td>
-<td>83</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> (37); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> (40); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-039">AI-CTRL-039</a> (9)</td>
+<td>84</td>
 </tr>
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r21-agent-memory-and-state-persistence-poisoning">AI-R21</a></td>
@@ -476,8 +481,8 @@
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r28-regulatory-non-compliance-from-unsupervised-ai-decisions">AI-R28</a></td>
 <td>Regulatory Non-Compliance from Unsupervised AI Decisions</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a> (8); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a> (41); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-037">AI-CTRL-037</a> (10); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a> (17); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-042">AI-CTRL-042</a> (1); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-045">AI-CTRL-045</a> (3)</td>
-<td>80</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a> (8); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a> (41); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-037">AI-CTRL-037</a> (10); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a> (17); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-042">AI-CTRL-042</a> (4); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-045">AI-CTRL-045</a> (3)</td>
+<td>81</td>
 </tr>
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r29-unrealised-ai-value-and-misaligned-ai-strategy">AI-R29</a></td>
@@ -500,20 +505,20 @@
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r32-model-monoculture-and-correlated-failure">AI-R32</a></td>
 <td>Model Monoculture and Correlated Failure</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-011">AI-CTRL-011</a> (19); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-031">AI-CTRL-031</a> (24); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> (36)</td>
-<td>78</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-011">AI-CTRL-011</a> (19); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-031">AI-CTRL-031</a> (24); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> (37)</td>
+<td>79</td>
 </tr>
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r33-workforce-deskilling-and-loss-of-institutional-knowledge">AI-R33</a></td>
 <td>Workforce Deskilling and Loss of Institutional Knowledge</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-044">AI-CTRL-044</a> (1); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-040">AI-CTRL-040</a> (13); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-045">AI-CTRL-045</a> (3)</td>
-<td>17</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-044">AI-CTRL-044</a> (3); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-040">AI-CTRL-040</a> (13); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-045">AI-CTRL-045</a> (3)</td>
+<td>19</td>
 </tr>
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r34-workforce-change-failure-and-skills-shortage">AI-R34</a></td>
 <td>Workforce Change Failure and Skills Shortage</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-044">AI-CTRL-044</a> (1); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a> (8)</td>
-<td>9</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-044">AI-CTRL-044</a> (3); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a> (8)</td>
+<td>10</td>
 </tr>
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r35-unmeasured-energy-and-water-use-of-ai">AI-R35</a></td>
@@ -542,8 +547,8 @@
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r39-missing-independent-model-validation">AI-R39</a></td>
 <td>Missing Independent Model Validation</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a> (7); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> (36); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a> (17)</td>
-<td>60</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a> (7); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> (37); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a> (17)</td>
+<td>61</td>
 </tr>
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r40-ai-output-relied-on-in-financial-reporting-controls">AI-R40</a></td>
@@ -572,8 +577,8 @@
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r44-safety-training-removed-from-self-hosted-models">AI-R44</a></td>
 <td>Safety Training Removed from Self-Hosted Models</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-031">AI-CTRL-031</a> (24); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> (36); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a> (7)</td>
-<td>66</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-031">AI-CTRL-031</a> (24); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> (37); <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a> (7)</td>
+<td>67</td>
 </tr>
 <tr>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r45-agent-activity-indistinguishable-from-attack">AI-R45</a></td>
@@ -718,8 +723,8 @@
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a></td>
 <td>Data Protection in AI Pipelines</td>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r01-critical-infrastructure-information-exposure">AI-R01</a>; <a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r03-sensitive-data-leakage-through-prompts-and-uploads">AI-R03</a>; <a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r06-ai-output-leakage-and-oversharing">AI-R06</a>; <a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r17-data-quality-degradation-and-model-drift">AI-R17</a></td>
-<td>34</td>
-<td><a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html">D08</a> (1); <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html">D10</a> (1); <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html">D11</a> (1); <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html">L03</a> (2); <a href="../10_Test_Case_Library/L05-ai-applications.html">L05</a> (1); <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html">L06</a> (1); <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html">L07</a> (1); <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html">L08</a> (1); <a href="../10_Test_Case_Library/L10-data-layer.html">L10</a> (15); <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html">L11</a> (5); <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html">L13</a> (2); <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html">L14</a> (1); <a href="../10_Test_Case_Library/L15-infrastructure-layer.html">L15</a> (1); <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html">L17</a> (1)</td>
+<td>36</td>
+<td><a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html">D08</a> (1); <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html">D10</a> (1); <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html">D11</a> (1); <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html">L03</a> (2); <a href="../10_Test_Case_Library/L05-ai-applications.html">L05</a> (1); <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html">L06</a> (1); <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html">L07</a> (1); <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html">L08</a> (1); <a href="../10_Test_Case_Library/L10-data-layer.html">L10</a> (15); <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html">L11</a> (5); <a href="../10_Test_Case_Library/L12-model-layer.html">L12</a> (2); <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html">L13</a> (2); <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html">L14</a> (1); <a href="../10_Test_Case_Library/L15-infrastructure-layer.html">L15</a> (1); <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html">L17</a> (1)</td>
 </tr>
 <tr>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-018">AI-CTRL-018</a></td>
@@ -795,8 +800,8 @@
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-028">AI-CTRL-028</a></td>
 <td>Model Protection</td>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r08-ai-supply-chain-and-model-integrity-risk">AI-R08</a></td>
-<td>19</td>
-<td><a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html">D11</a> (1); <a href="../10_Test_Case_Library/L12-model-layer.html">L12</a> (15); <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html">L13</a> (1); <a href="../10_Test_Case_Library/L15-infrastructure-layer.html">L15</a> (1); <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html">L16</a> (1)</td>
+<td>20</td>
+<td><a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html">D11</a> (1); <a href="../10_Test_Case_Library/L12-model-layer.html">L12</a> (16); <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html">L13</a> (1); <a href="../10_Test_Case_Library/L15-infrastructure-layer.html">L15</a> (1); <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html">L16</a> (1)</td>
 </tr>
 <tr>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-029">AI-CTRL-029</a></td>
@@ -837,8 +842,8 @@
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
 <td>Adversarial Testing and Continuous Evaluation</td>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r05-prompt-injection-against-custom-ai-applications">AI-R05</a>; <a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r07-ai-agent-and-tool-calling-abuse">AI-R07</a>; <a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r16-foundation-model-version-change-and-non-deterministic-behaviour">AI-R16</a>; <a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r17-data-quality-degradation-and-model-drift">AI-R17</a>; <a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r20-reputational-harm-from-ai-behaviour">AI-R20</a>; <a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r32-model-monoculture-and-correlated-failure">AI-R32</a>; <a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r39-missing-independent-model-validation">AI-R39</a>; <a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r44-safety-training-removed-from-self-hosted-models">AI-R44</a></td>
-<td>36</td>
-<td><a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html">D08</a> (25); <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html">D12</a> (1); <a href="../10_Test_Case_Library/L05-ai-applications.html">L05</a> (1); <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html">L07</a> (2); <a href="../10_Test_Case_Library/L12-model-layer.html">L12</a> (2); <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html">L13</a> (1); <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html">L14</a> (3); <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html">L17</a> (1)</td>
+<td>37</td>
+<td><a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html">D08</a> (25); <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html">D12</a> (1); <a href="../10_Test_Case_Library/L05-ai-applications.html">L05</a> (1); <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html">L07</a> (2); <a href="../10_Test_Case_Library/L12-model-layer.html">L12</a> (3); <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html">L13</a> (1); <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html">L14</a> (3); <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html">L17</a> (1)</td>
 </tr>
 <tr>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></td>
@@ -886,29 +891,29 @@
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-041">AI-CTRL-041</a></td>
 <td>Fairness, Bias Testing and Explainability</td>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r12-unreliable-or-harmful-ai-output">AI-R12</a>; <a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r14-biased-or-discriminatory-ai-outcomes">AI-R14</a>; <a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r15-lack-of-explainability-and-decision-traceability">AI-R15</a></td>
-<td>3</td>
-<td><a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html">L03</a> (3)</td>
+<td>7</td>
+<td><a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html">L03</a> (6); <a href="../10_Test_Case_Library/L12-model-layer.html">L12</a> (1)</td>
 </tr>
 <tr>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-042">AI-CTRL-042</a></td>
 <td>Fundamental Rights and Data Protection Impact Assessment</td>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r10-data-sovereignty-and-third-party-processing-risk">AI-R10</a>; <a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r12-unreliable-or-harmful-ai-output">AI-R12</a>; <a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r28-regulatory-non-compliance-from-unsupervised-ai-decisions">AI-R28</a></td>
-<td>1</td>
-<td><a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html">L03</a> (1)</td>
+<td>4</td>
+<td><a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html">L03</a> (4)</td>
 </tr>
 <tr>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-043">AI-CTRL-043</a></td>
 <td>Regulator and Authority Engagement</td>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r09-lack-of-ai-auditability-and-forensic-visibility">AI-R09</a>; <a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r10-data-sovereignty-and-third-party-processing-risk">AI-R10</a></td>
-<td>1</td>
-<td><a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html">L03</a> (1)</td>
+<td>4</td>
+<td><a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html">D12</a> (1); <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html">L02</a> (1); <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html">L03</a> (2)</td>
 </tr>
 <tr>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-044">AI-CTRL-044</a></td>
 <td>AI Literacy and Role-Based Competence</td>
 <td><a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r02-shadow-ai-and-ungoverned-ai-usage">AI-R02</a>; <a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r19-insufficient-or-ineffective-human-oversight">AI-R19</a>; <a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r33-workforce-deskilling-and-loss-of-institutional-knowledge">AI-R33</a>; <a class="chip" href="02B_Enterprise_AI_Risk_Register.html#ai-r34-workforce-change-failure-and-skills-shortage">AI-R34</a></td>
-<td>1</td>
-<td><a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html">L03</a> (1)</td>
+<td>3</td>
+<td><a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html">L02</a> (1); <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html">L03</a> (2)</td>
 </tr>
 <tr>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-045">AI-CTRL-045</a></td>
@@ -949,9 +954,116 @@
 </tr>
 </tbody>
 </table></div>
+<h2 id="reading-the-case-counts">Reading the case counts</h2>
+<p>A case count shows how much has been written for a control, not whether the control is tested well. Runtime and identity controls have many cases because each attack path needs its own; a governance control can be tested adequately by a few cases if together they exercise everything the control must achieve. Judge coverage by outcome and risk, not by count:</p>
+<ol>
+<li>Take the control's <strong>Implementation Expectation</strong> and <strong>Audit Test Procedure</strong> from the <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">control library</a> and list the outcomes the control must achieve.</li>
+<li>For each outcome, find the cases whose procedure actually exercises it, including cases filed under another control.</li>
+<li>Where a case does exercise it, add the control to that case's Control(s) Tested field. Write a new case only for an outcome that no case exercises.</li>
+<li>Weigh the gaps by the risks the control treats: an untested outcome on a control that treats a Critical risk matters more than one on a Low risk.</li>
+</ol>
+<h3 id="review-of-ai-ctrl-041-to-ai-ctrl-046-22-october-2026">Review of AI-CTRL-041 to AI-CTRL-046 (22 October 2026)</h3>
+<p>These six controls were the newest in the library and had between one and four cases each. The review below followed the four steps above. Cases marked <em>new</em> were written to close a gap; cases marked <em>tagged</em> already exercised the outcome and now name the control.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Outcomes the control must achieve</th>
+<th>Cases that exercise them</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-041">AI-CTRL-041</a> Fairness, bias testing and explainability</td>
+<td>Bias test before release and on change, with a release gate</td>
+<td><a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-031">TC-L03-031</a>, <a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-032">TC-L03-032</a>, <a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-033">TC-L03-033</a></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td></td>
+<td>Explanation for each high-impact decision</td>
+<td><a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-029">TC-L03-029</a> (tagged)</td>
+<td>Covered</td>
+</tr>
+<tr>
+<td></td>
+<td>Route to human review</td>
+<td><a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-008">TC-L03-008</a> (tagged)</td>
+<td>Covered</td>
+</tr>
+<tr>
+<td></td>
+<td>Versioned bias profile and monitoring outside validated boundaries</td>
+<td><a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-043">TC-L03-043</a> (new)</td>
+<td>Gap closed</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-042">AI-CTRL-042</a> Rights and data protection impact assessment</td>
+<td>Assessment approved before go-live, risks mapped to mitigations, officer's advice recorded</td>
+<td><a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-034">TC-L03-034</a>, <a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-010">TC-L03-010</a> (tagged)</td>
+<td>Covered</td>
+</tr>
+<tr>
+<td></td>
+<td>Reassessment on material change</td>
+<td><a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-011">TC-L03-011</a> (tagged), <a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-034">TC-L03-034</a></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td></td>
+<td>Required content (misuse, regions, languages, benefits, consultation) and annual review without a change</td>
+<td><a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-044">TC-L03-044</a> (new)</td>
+<td>Gap closed</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-043">AI-CTRL-043</a> Regulator and authority engagement</td>
+<td>Authority register, filings, representatives and contact log</td>
+<td><a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-039">TC-L03-039</a></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td></td>
+<td>Notification duties met to their deadlines</td>
+<td><a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-019">TC-L03-019</a> (tagged), <a class="chip" href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-016">TC-D12-016</a> (tagged)</td>
+<td>Covered</td>
+</tr>
+<tr>
+<td></td>
+<td>New guidance and pending rules tracked through to the affected systems</td>
+<td><a class="chip" href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-020">TC-L02-020</a> (tagged)</td>
+<td>Covered</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-044">AI-CTRL-044</a> AI literacy and role-based competence</td>
+<td>Training by role, reviewers trained before assignment, records</td>
+<td><a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-038">TC-L03-038</a>, <a class="chip" href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-022">TC-L02-022</a> (tagged)</td>
+<td>Covered</td>
+</tr>
+<tr>
+<td></td>
+<td>Training shown to work</td>
+<td><a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-045">TC-L03-045</a> (new)</td>
+<td>Gap closed</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-045">AI-CTRL-045</a> Human oversight design and effectiveness</td>
+<td>Design record by tier; evidence, authority and workload; effectiveness measured with seeded errors</td>
+<td><a class="chip" href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-012">TC-L01-012</a>, <a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-040">TC-L03-040</a>, <a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-041">TC-L03-041</a></td>
+<td>Covered; no new case</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-046">AI-CTRL-046</a> Intellectual property and copyright</td>
+<td>Input and output policy; vendor terms; training data licences; release scans</td>
+<td><a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-028">TC-L03-028</a>, <a class="chip" href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-042">TC-L03-042</a>, <a class="chip" href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-007">TC-L13-007</a>, <a class="chip" href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-035">TC-L05-035</a></td>
+<td>Covered; no new case</td>
+</tr>
+</tbody>
+</table></div>
+<p>All of these cases are at the Documented <a href="../10_Test_Case_Library/index.html#validation-levels">validation level</a>: covering an outcome on paper is not the same as having run the test.</p>
 </article>
 <nav class="pager" aria-label="Previous and next page"><a class="prev" href="02F_AI_Use_Case_Risk_Triage.html">&larr; AI Use-Case Risk Triage</a><a class="next" href="../03_Control_Library/index.html">Control Library &rarr;</a></nav>
-<footer class="site-footer">Author: Nachiket Sathaye &middot; Updated 10 October 2026 &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/02_Risk_Management/02G_Risk_Control_Test_Traceability.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
+<footer class="site-footer">Author: Nachiket Sathaye &middot; Updated 22 October 2026 &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/02_Risk_Management/02G_Risk_Control_Test_Traceability.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
 <div class="site-notice">
 <p><strong>Licence.</strong> <svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.441-3.5c8.951,0,16.572,3.125,22.857,9.372c3.008,3.009,5.295,6.448,6.857,10.314 c1.561,3.867,2.344,7.971,2.344,12.314c0,4.381-0.773,8.486-2.314,12.313c-1.543,3.828-3.82,7.21-6.828,10.143 c-3.123,3.085-6.666,5.448-10.629,7.086c-3.961,1.638-8.057,2.457-12.285,2.457s-8.276-0.808-12.143-2.429 c-3.866-1.618-7.333-3.961-10.4-7.027c-3.067-3.066-5.4-6.524-7-10.372S5.5,32.767,5.5,28.5c0-4.229,0.809-8.295,2.428-12.2 c1.619-3.905,3.972-7.4,7.057-10.486C21.08-0.394,28.565-3.5,37.441-3.5z M37.557,2.272c-7.314,0-13.467,2.553-18.458,7.657 c-2.515,2.553-4.448,5.419-5.8,8.6c-1.354,3.181-2.029,6.505-2.029,9.972c0,3.429,0.675,6.734,2.029,9.913 c1.353,3.183,3.285,6.021,5.8,8.516c2.514,2.496,5.351,4.399,8.515,5.715c3.161,1.314,6.476,1.971,9.943,1.971 c3.428,0,6.75-0.665,9.973-1.999c3.219-1.335,6.121-3.257,8.713-5.771c4.99-4.876,7.484-10.99,7.484-18.344 c0-3.543-0.648-6.895-1.943-10.057c-1.293-3.162-3.18-5.98-5.654-8.458C50.984,4.844,44.795,2.272,37.557,2.272z M37.156,23.187 l-4.287,2.229c-0.458-0.951-1.019-1.619-1.685-2c-0.667-0.38-1.286-0.571-1.858-0.571c-2.856,0-4.286,1.885-4.286,5.657 c0,1.714,0.362,3.084,1.085,4.113c0.724,1.029,1.791,1.544,3.201,1.544c1.867,0,3.181-0.915,3.944-2.743l3.942,2 c-0.838,1.563-2,2.791-3.486,3.686c-1.484,0.896-3.123,1.343-4.914,1.343c-2.857,0-5.163-0.875-6.915-2.629 c-1.752-1.752-2.628-4.19-2.628-7.313c0-3.048,0.886-5.466,2.657-7.257c1.771-1.79,4.009-2.686,6.715-2.686 C32.604,18.558,35.441,20.101,37.156,23.187z M55.613,23.187l-4.229,2.229c-0.457-0.951-1.02-1.619-1.686-2 c-0.668-0.38-1.307-0.571-1.914-0.571c-2.857,0-4.287,1.885-4.287,5.657c0,1.714,0.363,3.084,1.086,4.113 c0.723,1.029,1.789,1.544,3.201,1.544c1.865,0,3.18-0.915,3.941-2.743l4,2c-0.875,1.563-2.057,2.791-3.541,3.686 c-1.486,0.896-3.105,1.343-4.857,1.343c-2.896,0-5.209-0.875-6.941-2.629c-1.736-1.752-2.602-4.19-2.602-7.313 c0-3.048,0.885-5.466,2.658-7.257c1.77-1.79,4.008-2.686,6.713-2.686C51.117,18.558,53.938,20.101,55.613,23.187z"/></svg><svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.443-3.5c8.988,0,16.57,3.085,22.742,9.257C66.393,11.967,69.5,19.548,69.5,28.5c0,8.991-3.049,16.476-9.145,22.456 C53.879,57.319,46.242,60.5,37.443,60.5c-8.649,0-16.153-3.144-22.514-9.43C8.644,44.784,5.5,37.262,5.5,28.5 c0-8.761,3.144-16.342,9.429-22.742C21.101-0.415,28.604-3.5,37.443-3.5z M37.557,2.272c-7.276,0-13.428,2.553-18.457,7.657 c-5.22,5.334-7.829,11.525-7.829,18.572c0,7.086,2.59,13.22,7.77,18.398c5.181,5.182,11.352,7.771,18.514,7.771 c7.123,0,13.334-2.607,18.629-7.828c5.029-4.838,7.543-10.952,7.543-18.343c0-7.276-2.553-13.465-7.656-18.571 C50.967,4.824,44.795,2.272,37.557,2.272z M46.129,20.557v13.085h-3.656v15.542h-9.944V33.643h-3.656V20.557 c0-0.572,0.2-1.057,0.599-1.457c0.401-0.399,0.887-0.6,1.457-0.6h13.144c0.533,0,1.01,0.2,1.428,0.6 C45.918,19.5,46.129,19.986,46.129,20.557z M33.042,12.329c0-3.008,1.485-4.514,4.458-4.514s4.457,1.504,4.457,4.514 c0,2.971-1.486,4.457-4.457,4.457S33.042,15.3,33.042,12.329z"/></svg>This wiki is open to the community under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">Creative Commons Attribution-ShareAlike 4.0 International licence (CC BY-SA 4.0)</a>. You may copy, share and adapt it for any purpose, including commercially, as long as you credit the authors and release anything you build from it under the same licence.</p>
 <p><strong>Disclaimer.</strong> This wiki is an open, community driven educational reference, not legal, regulatory or professional advice. Regional regulatory content is compiled from secondary sources and its verification status is shown per row; verify against primary sources before relying on it. Content is provided "as is" without warranty. Named products and companies belong to their owners; statements about them reflect public information at the date shown. Views are the author's own.</p>

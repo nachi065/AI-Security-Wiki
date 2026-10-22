@@ -13,7 +13,7 @@
 <meta property="og:description" content="21 AI security test cases for AI Cost and Abuse Controls: attribution, budgets, denial of wallet, key abuse, runaway agents, shadow spend, enforcement.">
 <meta property="og:url" content="https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html">
 <meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="../assets/style.css?v=8368346b">
+<link rel="stylesheet" href="../assets/style.css?v=aa70096b">
 </head>
 <body style="--h:145">
 <header class="topbar">
@@ -72,6 +72,7 @@
 <li><a href="../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
 <li><a href="../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
 <li><a href="../04_Domain_Standards/10B_Sector_Overlays.html">Sector Overlays: Financial Services, Insurance, Health and Government</a></li>
+<li><a href="../04_Domain_Standards/11_Predictive_Model_Monitoring_and_Adversarial_ML.html">Predictive Model Monitoring and Adversarial ML</a></li>
 </ul></details></li>
 <li style="--h:32"><details><summary><a href="../05_Vendor_Evaluation/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Vendor Evaluation</a></summary><ul>
 <li><a href="../05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
@@ -90,6 +91,7 @@
 <li style="--h:228"><details><summary><a href="../08_Governance/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-5 9 5M5 9v9M9.5 9v9M14.5 9v9M19 9v9M3 20h18"/></svg>Governance</a></summary><ul>
 <li><a href="../08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></li>
 <li><a href="../08_Governance/17_AI_Policy_Standards_and_Acceptable_Use.html">AI Policy, Standards and Acceptable Use</a></li>
+<li><a href="../08_Governance/18_AI_Operating_Defaults.html">AI Operating Defaults</a></li>
 </ul></details></li>
 <li style="--h:145"><details open><summary><a href="index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l1.5 1.5L8 5M4 12l1.5 1.5L8 11M4 18l1.5 1.5L8 17M11 6h9M11 12h9M11 18h9"/></svg>Test Case Library</a></summary><ul>
 <li><a href="00-reference-index.html">Reference Index</a></li>
@@ -249,6 +251,7 @@
 <li><a href="../09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
 <li><a href="../09_Reference/19_Update_Notes.html">Update Notes</a></li>
 <li><a href="../09_Reference/20_AI_Security_Incident_Casebook.html">AI Security Incident Casebook</a></li>
+<li><a href="../09_Reference/21_Regulatory_Verification_Status.html">Regulatory Verification Status</a></li>
 </ul></details></li>
 <li style="--h:120"><details><summary><a href="../23_Framework_Crosswalks/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h14l-3-3M20 16H6l3 3"/></svg>Framework Crosswalks</a></summary><ul>
 <li><a href="../23_Framework_Crosswalks/01_FINOS_AIGF_Crosswalk.html">FINOS AI Governance Framework Crosswalk</a></li>
@@ -285,6 +288,8 @@
 <li><a href="../25_Templates/07_AI_Security_Test_Case_Tracker_Template.html">AI Security Test Case Tracker Template (.xlsx)</a></li>
 <li><a href="../25_Templates/08_AI_Acceptable_Use_Policy_Template.html">AI Acceptable Use Policy Template (.docx)</a></li>
 <li><a href="../25_Templates/09_AI_Impact_Assessment_Template.html">AI Impact Assessment Template (.docx)</a></li>
+<li><a href="../25_Templates/10_AI_Security_Programme_Charter_Template.html">AI Security Programme Charter Template (.docx)</a></li>
+<li><a href="../25_Templates/11_AI_Incident_Report_Template.html">AI Incident Report Template (.docx)</a></li>
 </ul></details></li>
 <li><a href="../community-rules.html">Community Rules</a></li>
 </ul>
@@ -515,6 +520,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Spend that cannot be attributed cannot be controlled, charged back or investigated.</p>
@@ -537,6 +546,8 @@
 <p><strong>Expected Integration Evidence.</strong> Export to finance systems.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
 <p><strong>Evidence to Capture.</strong> Attribution vs ground truth.</p>
+<details class="inherited"><summary>Standard fields for this case (8): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p></details>
+
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d13-002"></a></p>
@@ -589,6 +600,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Platform meters that disagree with provider invoices cause disputes and hide waste.</p>
@@ -611,6 +626,8 @@
 <p><strong>Expected Integration Evidence.</strong> Export.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
 <p><strong>Evidence to Capture.</strong> Reconciliation table.</p>
+<details class="inherited"><summary>Standard fields for this case (8): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p></details>
+
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d13-003"></a></p>
@@ -663,6 +680,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> A single global cap protects the organisation but lets one runaway key consume everyone's budget.</p>
@@ -684,6 +705,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Alert, throttle or block per level.</p>
 <p><strong>Expected Integration Evidence.</strong> Events to SIEM and chat.</p>
 <p><strong>Evidence to Capture.</strong> Level-by-level table.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p></details>
+
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d13-004"></a></p>
@@ -736,6 +759,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Monthly invoices find overspend weeks late; spikes need catching in minutes.</p>
@@ -757,6 +784,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Alert or throttle.</p>
 <p><strong>Expected Integration Evidence.</strong> Alerts to chat, SIEM and finance.</p>
 <p><strong>Evidence to Capture.</strong> Detection table.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p></details>
+
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d13-005"></a></p>
@@ -809,6 +838,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a> Least Privilege and Scoped Credentials</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> A leaked key can run up large bills within minutes, long before anyone reads an invoice.</p>
@@ -830,6 +863,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Suspend key.</p>
 <p><strong>Expected Integration Evidence.</strong> Events to SIEM.</p>
 <p><strong>Evidence to Capture.</strong> Timeline.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p></details>
+
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d13-006"></a></p>
@@ -882,6 +917,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Public chat endpoints can be driven by automated traffic to burn budget, with no account to block.</p>
@@ -903,6 +942,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Throttle or challenge.</p>
 <p><strong>Expected Integration Evidence.</strong> Events to SIEM.</p>
 <p><strong>Evidence to Capture.</strong> Attack table; spend chart.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p></details>
+
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d13-007"></a></p>
@@ -955,6 +996,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Free tiers, trials and credits attract mass account creation that drains budget and masks other abuse.</p>
@@ -975,6 +1020,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Limit or review.</p>
 <p><strong>Expected Integration Evidence.</strong> Events to the abuse team.</p>
 <p><strong>Evidence to Capture.</strong> Cohort table.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p></details>
+
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d13-008"></a></p>
@@ -1027,6 +1074,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Prompts that demand very long outputs or expand repeatedly multiply cost per request.</p>
@@ -1048,6 +1099,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Truncate or block.</p>
 <p><strong>Expected Integration Evidence.</strong> Events with token counts.</p>
 <p><strong>Evidence to Capture.</strong> Token table.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p></details>
+
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d13-009"></a></p>
@@ -1100,6 +1153,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a> Agent Containment and Kill Switch</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> One request that triggers hundreds of tool calls, model calls and sub-agents can cost far more than expected.</p>
@@ -1121,6 +1178,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Stop task.</p>
 <p><strong>Expected Integration Evidence.</strong> Events to SIEM.</p>
 <p><strong>Evidence to Capture.</strong> Cost-at-stop table.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p></details>
+
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d13-010"></a></p>
@@ -1173,6 +1232,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Poorly tuned retries multiply cost during provider trouble and can overload the service further.</p>
@@ -1194,6 +1257,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Circuit-break.</p>
 <p><strong>Expected Integration Evidence.</strong> Metrics to monitoring.</p>
 <p><strong>Evidence to Capture.</strong> Amplification table.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p></details>
+
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d13-011"></a></p>
@@ -1246,6 +1311,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Caching cuts cost when it works, and attackers or bad configuration can bypass it to push cost up or poison what is cached.</p>
@@ -1267,6 +1336,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Flag or limit.</p>
 <p><strong>Expected Integration Evidence.</strong> Metrics to monitoring.</p>
 <p><strong>Evidence to Capture.</strong> Hit-rate table.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p></details>
+
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d13-012"></a></p>
@@ -1319,6 +1390,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Routing everything to the most expensive model, or silently to a cheaper and weaker one, changes both cost and risk.</p>
@@ -1340,6 +1415,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Route or deny.</p>
 <p><strong>Expected Integration Evidence.</strong> Decision logs.</p>
 <p><strong>Evidence to Capture.</strong> Routing table.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p></details>
+
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d13-013"></a></p>
@@ -1392,6 +1469,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Limits set only globally let one user, key or address crowd out everyone else.</p>
@@ -1413,6 +1494,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Throttle.</p>
 <p><strong>Expected Integration Evidence.</strong> Events with limit name.</p>
 <p><strong>Evidence to Capture.</strong> Fairness table.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p></details>
+
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d13-014"></a></p>
@@ -1465,6 +1548,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Alerts that nobody reads at 3am do not stop spend; automatic actions can also take essential services down.</p>
@@ -1486,6 +1573,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Graded automatic actions.</p>
 <p><strong>Expected Integration Evidence.</strong> Events to chat and ticketing.</p>
 <p><strong>Evidence to Capture.</strong> Threshold table.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p></details>
+
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d13-015"></a></p>
@@ -1538,6 +1627,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Overnight jobs run unattended, so a bug or bad input can burn budget for hours.</p>
@@ -1559,6 +1652,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Stop job.</p>
 <p><strong>Expected Integration Evidence.</strong> Alerts to owners.</p>
 <p><strong>Evidence to Capture.</strong> Job table.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p></details>
+
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d13-016"></a></p>
@@ -1611,6 +1706,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Self-hosted capacity costs money whether it is used well or not, and spare capacity attracts misuse.</p>
@@ -1632,6 +1731,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Reclaim or stop.</p>
 <p><strong>Expected Integration Evidence.</strong> Alerts to platform and finance.</p>
 <p><strong>Evidence to Capture.</strong> Pattern table.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p></details>
+
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d13-017"></a></p>
@@ -1684,6 +1785,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a> AI Discovery</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> AI services bought on cards and expense claims sit outside central budgets and security review.</p>
@@ -1705,6 +1810,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Review and approve or stop.</p>
 <p><strong>Expected Integration Evidence.</strong> Feed integrations.</p>
 <p><strong>Evidence to Capture.</strong> Discovery table.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p></details>
+
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d13-018"></a></p>
@@ -1757,6 +1864,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Costly choices made by individual teams commit the organisation beyond its plan.</p>
@@ -1778,6 +1889,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Gate.</p>
 <p><strong>Expected Integration Evidence.</strong> Ticketing and finance integration.</p>
 <p><strong>Evidence to Capture.</strong> Request records.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p></details>
+
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d13-019"></a></p>
@@ -1830,6 +1943,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a> Third-Party and Vendor AI Assurance</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> AI add-ons inside other products are metered by the vendor, with limits and overage prices the buyer rarely sees.</p>
@@ -1852,6 +1969,8 @@
 <p><strong>Expected Integration Evidence.</strong> Usage export.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
 <p><strong>Evidence to Capture.</strong> Feature table.</p>
+<details class="inherited"><summary>Standard fields for this case (8): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p><p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p><p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p></details>
+
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d13-020"></a></p>
@@ -1904,6 +2023,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Teams contest charges they cannot trace, and auditors want to see how costs were allocated.</p>
@@ -1925,6 +2048,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> N/A.</p>
 <p><strong>Expected Integration Evidence.</strong> Finance export.</p>
 <p><strong>Evidence to Capture.</strong> Dispute records.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p><p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p></details>
+
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 <p><a id="tc-d13-021"></a></p>
@@ -1977,6 +2102,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Authenticated users can abuse allowances by automation, sharing accounts or hammering expensive features, and heavy-handed bans harm genuine users.</p>
@@ -1998,6 +2127,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Warn, throttle or suspend.</p>
 <p><strong>Expected Integration Evidence.</strong> Events to the abuse team.</p>
 <p><strong>Evidence to Capture.</strong> Ladder table.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Spend, budget and abuse state visible in the cost and abuse dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Request, key, user, application, team, model, tokens, cost, policy decision and timestamp exportable for investigation, chargeback and dispute handling.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; lab applications and gateway pointed at a mock provider with per-token pricing, fabricated keys and budgets, abuse scripts acting only on lab endpoints and a mock billing export seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>. Lab AI applications and a gateway pointed at a mock provider with per-token pricing and configurable rate limits; fabricated keys, accounts and budgets; load and abuse scripts that act only against lab endpoints; a mock billing export and expense feed; no real provider accounts, spend or customer traffic.</p></details>
+
 <p><a href="#top">Back to domain index</a></p>
 <hr />
 </article>

@@ -13,7 +13,7 @@
 <meta property="og:description" content="32 AI security test cases for the Human Interaction Layer: browser/workforce AI, user coaching, approval prompts, multimodal input.">
 <meta property="og:url" content="https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/L04-human-interaction-layer.html">
 <meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="../assets/style.css?v=8368346b">
+<link rel="stylesheet" href="../assets/style.css?v=aa70096b">
 </head>
 <body style="--h:145">
 <header class="topbar">
@@ -72,6 +72,7 @@
 <li><a href="../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
 <li><a href="../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
 <li><a href="../04_Domain_Standards/10B_Sector_Overlays.html">Sector Overlays: Financial Services, Insurance, Health and Government</a></li>
+<li><a href="../04_Domain_Standards/11_Predictive_Model_Monitoring_and_Adversarial_ML.html">Predictive Model Monitoring and Adversarial ML</a></li>
 </ul></details></li>
 <li style="--h:32"><details><summary><a href="../05_Vendor_Evaluation/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Vendor Evaluation</a></summary><ul>
 <li><a href="../05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
@@ -90,6 +91,7 @@
 <li style="--h:228"><details><summary><a href="../08_Governance/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-5 9 5M5 9v9M9.5 9v9M14.5 9v9M19 9v9M3 20h18"/></svg>Governance</a></summary><ul>
 <li><a href="../08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></li>
 <li><a href="../08_Governance/17_AI_Policy_Standards_and_Acceptable_Use.html">AI Policy, Standards and Acceptable Use</a></li>
+<li><a href="../08_Governance/18_AI_Operating_Defaults.html">AI Operating Defaults</a></li>
 </ul></details></li>
 <li style="--h:145"><details open><summary><a href="index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l1.5 1.5L8 5M4 12l1.5 1.5L8 11M4 18l1.5 1.5L8 17M11 6h9M11 12h9M11 18h9"/></svg>Test Case Library</a></summary><ul>
 <li><a href="00-reference-index.html">Reference Index</a></li>
@@ -249,6 +251,7 @@
 <li><a href="../09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
 <li><a href="../09_Reference/19_Update_Notes.html">Update Notes</a></li>
 <li><a href="../09_Reference/20_AI_Security_Incident_Casebook.html">AI Security Incident Casebook</a></li>
+<li><a href="../09_Reference/21_Regulatory_Verification_Status.html">Regulatory Verification Status</a></li>
 </ul></details></li>
 <li style="--h:120"><details><summary><a href="../23_Framework_Crosswalks/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h14l-3-3M20 16H6l3 3"/></svg>Framework Crosswalks</a></summary><ul>
 <li><a href="../23_Framework_Crosswalks/01_FINOS_AIGF_Crosswalk.html">FINOS AI Governance Framework Crosswalk</a></li>
@@ -285,6 +288,8 @@
 <li><a href="../25_Templates/07_AI_Security_Test_Case_Tracker_Template.html">AI Security Test Case Tracker Template (.xlsx)</a></li>
 <li><a href="../25_Templates/08_AI_Acceptable_Use_Policy_Template.html">AI Acceptable Use Policy Template (.docx)</a></li>
 <li><a href="../25_Templates/09_AI_Impact_Assessment_Template.html">AI Impact Assessment Template (.docx)</a></li>
+<li><a href="../25_Templates/10_AI_Security_Programme_Charter_Template.html">AI Security Programme Charter Template (.docx)</a></li>
+<li><a href="../25_Templates/11_AI_Incident_Report_Template.html">AI Incident Report Template (.docx)</a></li>
 </ul></details></li>
 <li><a href="../community-rules.html">Community Rules</a></li>
 </ul>
@@ -625,6 +630,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a> AI Discovery</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Public AI web tools that bypassed procurement and security review are an unmanaged data-exposure surface.</p>
@@ -641,6 +650,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Optional warning banner per configured policy.</p>
 <p><strong>Expected Integration Evidence.</strong> Unsanctioned list feeds the Shadow AI view and any exportable report.</p>
 <p><strong>Evidence to Capture.</strong> Alert/inventory export; raw log line per access; timestamp delta between action and detection.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-002"></a></p>
@@ -689,6 +700,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a> AI Discovery</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> AI browser extensions can read page content, including sensitive data, outside normal DLP visibility.</p>
@@ -706,6 +721,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Ability to flag or block non-approved extensions per policy.</p>
 <p><strong>Expected Integration Evidence.</strong> Inventory correlates to MDM/EDR asset records.</p>
 <p><strong>Evidence to Capture.</strong> Inventory export; permission list screenshot; before/after removal log entries.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-003"></a></p>
@@ -754,6 +771,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a> AI Discovery</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Without a departmental breakdown, AI risk cannot be prioritised or routed to the right business owner.</p>
@@ -771,6 +792,8 @@
 <p><strong>Expected Integration Evidence.</strong> Departmental data exportable to the executive dashboard or BI tool.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
 <p><strong>Evidence to Capture.</strong> Report export; ground-truth sheet; variance calculation.</p>
+<details class="inherited"><summary>Standard fields for this case (8): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-004"></a></p>
@@ -819,6 +842,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a> AI Discovery</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Risk differs sharply between groups (finance, engineering, contractors); group-level visibility enables targeted policy.</p>
@@ -837,6 +864,8 @@
 <p><strong>Expected Integration Evidence.</strong> Group data correlates to IAM/IdP group definitions.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
 <p><strong>Evidence to Capture.</strong> Group report before and after the move; IdP membership export.</p>
+<details class="inherited"><summary>Standard fields for this case (8): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-005"></a></p>
@@ -885,6 +914,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a> AI Discovery</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Managed laptops, unmanaged personal devices and mobiles carry materially different risk.</p>
@@ -901,6 +934,8 @@
 <p><strong>Expected Integration Evidence.</strong> Attribution correlates with MDM/UEM inventory.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
 <p><strong>Evidence to Capture.</strong> Session records showing device attributes; MDM export.</p>
+<details class="inherited"><summary>Standard fields for this case (8): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-006"></a></p>
@@ -949,6 +984,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a> AI Discovery</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Usage from outside the corporate perimeter may bypass inline controls.</p>
@@ -965,6 +1004,8 @@
 <p><strong>Expected Integration Evidence.</strong> Path data correlates to SASE/VPN logs.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
 <p><strong>Evidence to Capture.</strong> Session logs with path field; VPN log extract.</p>
+<details class="inherited"><summary>Standard fields for this case (8): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-007"></a></p>
@@ -1013,6 +1054,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a> AI Discovery</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Proxy telemetry already exists; the platform should use it rather than demand a parallel data path.</p>
@@ -1030,6 +1075,8 @@
 <p><strong>Expected Integration Evidence.</strong> Confirms ingestion works with no additional agent.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
 <p><strong>Evidence to Capture.</strong> Ingestion job log; classified results; false-positive count.</p>
+<details class="inherited"><summary>Standard fields for this case (8): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-008"></a></p>
@@ -1078,6 +1125,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a> AI Discovery</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Endpoint-level visibility catches AI use that never crosses a monitored network.</p>
@@ -1096,6 +1147,8 @@
 <p><strong>Expected Integration Evidence.</strong> Agent telemetry correlates with EDR data.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
 <p><strong>Evidence to Capture.</strong> Agent queue log; reported event with original and received timestamps.</p>
+<details class="inherited"><summary>Standard fields for this case (8): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-009"></a></p>
@@ -1144,6 +1197,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a> AI Discovery; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-010">AI-CTRL-010</a> Policy Enforcement</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Data pasted into a personal tenant of an approved service leaves corporate control even though the service itself is sanctioned.</p>
@@ -1160,6 +1217,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Policy can block or warn on personal-account sessions.</p>
 <p><strong>Expected Integration Evidence.</strong> Tenant restriction data correlates with IdP and SaaS admin logs.</p>
 <p><strong>Evidence to Capture.</strong> Two session records with account-type field; policy screenshot.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-010"></a></p>
@@ -1208,6 +1267,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a> AI Discovery</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> AI assistants built into browsers or operating systems may send page content to a provider without any separate install.</p>
@@ -1224,6 +1287,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Ability to disable the feature by policy, or alert on its use.</p>
 <p><strong>Expected Integration Evidence.</strong> Browser management policy state correlates with detection.</p>
 <p><strong>Evidence to Capture.</strong> Detection record or documented limitation; browser policy export.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-011"></a></p>
@@ -1272,6 +1337,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-010">AI-CTRL-010</a> Policy Enforcement; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a> AI Policy, Roles and Acceptable Use</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Users who are told why a tool is risky and where to go instead change behaviour; silent blocking creates workarounds.</p>
@@ -1288,6 +1357,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Coaching without block (warn mode).</p>
 <p><strong>Expected Integration Evidence.</strong> Message content and response logged for reporting.</p>
 <p><strong>Evidence to Capture.</strong> Screenshot of message; log of user action.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-012"></a></p>
@@ -1340,6 +1411,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-010">AI-CTRL-010</a> Policy Enforcement; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-002">AI-CTRL-002</a> Prompt Inspection</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Generic warnings are ignored; warnings that name the detected data type are acted on.</p>
@@ -1356,6 +1431,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Warn and allow, or block, per policy.</p>
 <p><strong>Expected Integration Evidence.</strong> Event includes classification label and user decision.</p>
 <p><strong>Evidence to Capture.</strong> Warning screenshot; event log including decision field.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-013"></a></p>
@@ -1404,6 +1481,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-037">AI-CTRL-037</a> AI Risk Assessment and Exception Management; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-010">AI-CTRL-010</a> Policy Enforcement</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Without recorded justification, risk acceptance by individual users is unauditable.</p>
@@ -1421,6 +1502,8 @@
 <p><strong>Expected Integration Evidence.</strong> Justifications exportable for audit or GRC tooling.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
 <p><strong>Evidence to Capture.</strong> Export of justification records; blank-submit screenshot.</p>
+<details class="inherited"><summary>Standard fields for this case (8): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p><p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p><p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-014"></a></p>
@@ -1469,6 +1552,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-037">AI-CTRL-037</a> AI Risk Assessment and Exception Management</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Ad-hoc exceptions granted over chat leave no audit trail and are rarely revoked.</p>
@@ -1487,6 +1574,8 @@
 <p><strong>Expected Integration Evidence.</strong> Workflow integrates with ticketing or IdP approval where supported.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
 <p><strong>Evidence to Capture.</strong> Workflow audit trail export; before/after access test results.</p>
+<details class="inherited"><summary>Standard fields for this case (8): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p><p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p><p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-015"></a></p>
@@ -1535,6 +1624,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-037">AI-CTRL-037</a> AI Risk Assessment and Exception Management</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Permanent exceptions accumulate and silently widen the exposure surface.</p>
@@ -1552,6 +1645,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Automatic revoke at expiry.</p>
 <p><strong>Expected Integration Evidence.</strong> Expiry events visible in the exception register.</p>
 <p><strong>Evidence to Capture.</strong> Timestamped access logs either side of expiry.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-016"></a></p>
@@ -1600,6 +1695,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-010">AI-CTRL-010</a> Policy Enforcement</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Hard blocks without an alternative push users to personal devices.</p>
@@ -1616,6 +1715,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Block with redirect.</p>
 <p><strong>Expected Integration Evidence.</strong> Block events appear in the Shadow AI report.</p>
 <p><strong>Evidence to Capture.</strong> Block page screenshot; log entry.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-017"></a></p>
@@ -1668,6 +1769,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-002">AI-CTRL-002</a> Prompt Inspection</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Pasted confidential text is the most common route of leakage to public AI tools.</p>
@@ -1684,6 +1789,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Block in enforce mode; allow-and-log in monitor mode.</p>
 <p><strong>Expected Integration Evidence.</strong> Events carry classification and rule that fired.</p>
 <p><strong>Evidence to Capture.</strong> Event exports for both modes; policy mode screenshot.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-018"></a></p>
@@ -1736,6 +1843,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-003">AI-CTRL-003</a> File Upload Protection</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Uploads move whole documents in one action.</p>
@@ -1752,6 +1863,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Block or warn per policy for sensitive files.</p>
 <p><strong>Expected Integration Evidence.</strong> Detection uses labels from the classification platform where integrated.</p>
 <p><strong>Evidence to Capture.</strong> Per-file event with filename hash, label, action.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-019"></a></p>
@@ -1804,6 +1917,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-002">AI-CTRL-002</a> Prompt Inspection; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-004">AI-CTRL-004</a> IDE AI Governance</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Source code pasted into public AI tools can expose proprietary logic and embedded secrets.</p>
@@ -1820,6 +1937,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Block or redact for secret-bearing snippets.</p>
 <p><strong>Expected Integration Evidence.</strong> Events tagged with repo or project metadata if available.</p>
 <p><strong>Evidence to Capture.</strong> Event records for each input route.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-020"></a></p>
@@ -1868,6 +1987,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-003">AI-CTRL-003</a> File Upload Protection</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Images bypass text-only DLP; screenshots of dashboards or documents leak data directly.</p>
@@ -1884,6 +2007,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Block or warn per policy.</p>
 <p><strong>Expected Integration Evidence.</strong> Event carries detection method (OCR/classifier).</p>
 <p><strong>Evidence to Capture.</strong> Event records; processing delay measurements.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-021"></a></p>
@@ -1932,6 +2057,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Voice input to AI assistants is rarely covered by prompt-inspection controls.</p>
@@ -1948,6 +2077,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Ability to block voice mode by policy.</p>
 <p><strong>Expected Integration Evidence.</strong> Detection record or written limitation statement.</p>
 <p><strong>Evidence to Capture.</strong> Event record; vendor limitation statement if applicable.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-022"></a></p>
@@ -1996,6 +2127,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-003">AI-CTRL-003</a> File Upload Protection; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Hidden text, comments and metadata can carry sensitive data or injected instructions that users never see.</p>
@@ -2011,6 +2146,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Block or warn per policy.</p>
 <p><strong>Expected Integration Evidence.</strong> Event identifies the location of the match.</p>
 <p><strong>Evidence to Capture.</strong> Event details; documented gap list.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-023"></a></p>
@@ -2059,6 +2196,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a> Agent Governance</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Browser agents act with the user's session and can read or submit data without per-step user awareness.</p>
@@ -2075,6 +2216,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Policy to restrict agent use on sensitive domains.</p>
 <p><strong>Expected Integration Evidence.</strong> Events link to identity and endpoint records.</p>
 <p><strong>Evidence to Capture.</strong> Event records distinguishing agent from human actions.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-024"></a></p>
@@ -2123,6 +2266,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a> AI Discovery</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Personal and mobile devices are a major route for AI use outside inline controls.</p>
@@ -2139,6 +2286,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Per MDM/MAM policy where integrated.</p>
 <p><strong>Expected Integration Evidence.</strong> Correlates with MDM/MAM enrolment status.</p>
 <p><strong>Evidence to Capture.</strong> Event records; written coverage statement.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-025"></a></p>
@@ -2187,6 +2336,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a> AI Discovery; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-010">AI-CTRL-010</a> Policy Enforcement</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Sanctioned AI tools reached from unmanaged devices can let data be copied out of reach of endpoint controls.</p>
@@ -2203,6 +2356,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Browser isolation, restricted actions or deny per policy.</p>
 <p><strong>Expected Integration Evidence.</strong> Device posture signal from IdP or MDM.</p>
 <p><strong>Evidence to Capture.</strong> Policy screenshot; action-level logs.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-026"></a></p>
@@ -2251,6 +2406,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-010">AI-CTRL-010</a> Policy Enforcement</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Repeated risky behaviour by one user is a better signal than any single event.</p>
@@ -2267,6 +2426,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> N/A (analytics).</p>
 <p><strong>Expected Integration Evidence.</strong> Risk score exportable to SIEM or insider-risk tooling.</p>
 <p><strong>Evidence to Capture.</strong> Risk view screenshot; export; factor explanation.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p><p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-027"></a></p>
@@ -2315,6 +2476,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a> Privacy and Regulatory Compliance</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Detailed per-user prompt monitoring may breach employment, works-council or UAE privacy expectations if left unrestricted.</p>
@@ -2332,6 +2497,8 @@
 <p><strong>Expected Integration Evidence.</strong> Audit entries exportable to SIEM.</p>
 <p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p>
 <p><strong>Evidence to Capture.</strong> Role comparison screenshots; unmask audit log.</p>
+<details class="inherited"><summary>Standard fields for this case (8): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = partially shown or shown only on documentation; 5 = shown in the live product with exportable evidence; N/A = architecture out of scope.</p><p><strong>Reviewer Notes.</strong> Confirm the evidence is taken from the live product in the PoC tenant. Documentation alone scores no higher than 3.</p><p><strong>Expected Alert / Log.</strong> Configuration state, audit record or export that supports the claim, with timestamp and the identity of the person who produced it.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-028"></a></p>
@@ -2380,6 +2547,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-002">AI-CTRL-002</a> Prompt Inspection</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Classifiers trained mainly on English can miss sensitive content in Arabic or mixed-script prompts.</p>
@@ -2396,6 +2567,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Policy action applies equally across languages.</p>
 <p><strong>Expected Integration Evidence.</strong> Event records include detected language.</p>
 <p><strong>Evidence to Capture.</strong> Per-language detection table.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-029"></a></p>
@@ -2444,6 +2617,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-010">AI-CTRL-010</a> Policy Enforcement</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> One policy for all staff is either too loose for finance or too tight for marketing.</p>
@@ -2460,6 +2637,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Per-group enforcement.</p>
 <p><strong>Expected Integration Evidence.</strong> Group source is the IdP.</p>
 <p><strong>Evidence to Capture.</strong> Policy configuration and two result records.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-030"></a></p>
@@ -2508,6 +2687,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a> Human and Agent Identity</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Shared logins make individual accountability for AI use impossible.</p>
@@ -2524,6 +2707,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Alert or block on shared-account use per policy.</p>
 <p><strong>Expected Integration Evidence.</strong> Attribution uses endpoint or IdP identity.</p>
 <p><strong>Evidence to Capture.</strong> Two session records with user and account fields.</p>
+<details class="inherited"><summary>Standard fields for this case (9): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p><p><strong>Preconditions.</strong> Isolated PoC lab provisioned; test users, managed and unmanaged test endpoints and synthetic data seeded per the <a href="appendix-lab-prerequisites.html">Lab Prerequisites appendix</a>; platform agent or integration installed for the channel under test.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-031"></a></p>
@@ -2576,6 +2761,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-004">AI-CTRL-004</a> IDE AI Governance</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> Developers paste or attach proprietary code into an IDE assistant chat panel, a channel that browser-focused controls do not see.</p>
@@ -2596,6 +2785,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> Under the block policy the prompt does not leave the workstation or gateway, and the developer sees a reason and a policy reference.</p>
 <p><strong>Expected Integration Evidence.</strong> Events forwarded to the SIEM with repository and file identifiers.</p>
 <p><strong>Evidence to Capture.</strong> Event export for all 18 proprietary submissions; block message screenshots; egress capture showing no blocked content was sent.</p>
+<details class="inherited"><summary>Standard fields for this case (8): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 <p><a id="tc-l04-032"></a></p>
@@ -2644,6 +2835,10 @@
 <td><strong>Control(s) Tested</strong></td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-004">AI-CTRL-004</a> IDE AI Governance</td>
 </tr>
+<tr>
+<td><strong>Validation Level</strong></td>
+<td><a href="index.html#validation-levels">Documented</a>: no run against a real product is recorded</td>
+</tr>
 </tbody>
 </table></div>
 <p><strong>Risk Addressed.</strong> A silent block inside an IDE looks like a tool failure, so developers move to unmanaged tools.</p>
@@ -2664,6 +2859,8 @@
 <p><strong>Expected Prevention / Control Action.</strong> The block outcome stops the request; the justify outcome releases it only after text is entered.</p>
 <p><strong>Expected Integration Evidence.</strong> Justifications exportable to ticketing or a GRC tool.</p>
 <p><strong>Evidence to Capture.</strong> Screenshot of each message; justification record export.</p>
+<details class="inherited"><summary>Standard fields for this case (8): the wording from the <a href="standard-fields.html">Standard Fields</a> page that applies here</summary><p><strong>Compliance Evidence.</strong> Test execution log and captured evidence retained in the Test Case Execution Register for audit.</p><p><strong>Fail Criteria.</strong> Any seeded item is missed, the control action does not occur where required, SLA is exceeded, attribution fields are missing, or the result can only be reproduced with vendor-supplied data.</p><p><strong>Scoring Criteria.</strong> 0 = not demonstrated; 3 = detected or enforced but one or more attribution or evidence fields missing, or SLA exceeded; 5 = fully met with complete evidence; N/A = architecture out of scope.</p><p><strong>Pass Criteria.</strong> Expected Detection and Expected Prevention / Control Action are met in full within the vendor's documented SLA, and the evidence listed under Evidence to Capture is obtained from the live PoC.</p><p><strong>Reviewer Notes.</strong> Confirm evidence comes from the live PoC environment, not vendor-supplied demo data. Record the build and policy version tested.</p><p><strong>Expected Alert / Log.</strong> Log entry with timestamp, user or application identity, device or host, destination, policy or rule matched, action taken and classification, within the vendor's documented SLA.</p><p><strong>Expected Report / Dashboard Evidence.</strong> Event visible in the workforce/Shadow AI dashboard within the documented refresh interval.</p><p><strong>Forensic Evidence.</strong> Full session metadata (user, device, browser, destination, network path, timestamp and policy decision) exportable for incident reconstruction.</p></details>
+
 <p><a href="#top">Back to layer index</a></p>
 <hr />
 </article>

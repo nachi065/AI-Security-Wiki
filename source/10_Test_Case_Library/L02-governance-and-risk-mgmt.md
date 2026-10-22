@@ -11,7 +11,7 @@ nav_order: 5
 
 **Primary test focus:** policy-to-control mapping, risk register, exceptions workflow
 
-**Controls tested:** [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Control Assurance and Audit Evidence (10 cases), [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037) AI Risk Assessment and Exception Management (7 cases), [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) AI Policy, Roles and Acceptable Use (6 cases), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability (1 case), [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) Policy Enforcement (1 case), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance (1 case), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance (1 case)
+**Controls tested:** [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Control Assurance and Audit Evidence (10 cases), [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037) AI Risk Assessment and Exception Management (7 cases), [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) AI Policy, Roles and Acceptable Use (6 cases), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability (1 case), [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) Policy Enforcement (1 case), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance (1 case), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance (1 case), [AI-CTRL-043](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-043) Regulator and Authority Engagement (1 case), [AI-CTRL-044](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-044) AI Literacy and Role-Based Competence (1 case)
 
 **Cases:** 25 (TC-L02-001 to TC-L02-025)
 > **Safety boundary.** All cases use fabricated use cases, policies, records and individuals only. This layer is framework-neutral: see the [Framework Adoption Guide](framework-adoption-guide.md) before testing, and complete the Applicable Requirement and Framework Crosswalk fields for each case.
@@ -43,9 +43,9 @@ nav_order: 5
 | [TC-L02-017](#tc-l02-017) | Internal and External Audit Support: Read-Only Access and Sampling | High | Technical | D7 | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) |
 | [TC-L02-018](#tc-l02-018) | Finding, Nonconformity and Corrective Action Management | High | Technical | D3 | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) |
 | [TC-L02-019](#tc-l02-019) | Governance Metrics and KPI Reporting | Medium | Evidence | D7 | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) |
-| [TC-L02-020](#tc-l02-020) | Regulatory and Framework Change Management | High | Technical | D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L02-020](#tc-l02-020) | Regulatory and Framework Change Management | High | Technical | D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-043](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-043) |
 | [TC-L02-021](#tc-l02-021) | Third-Party Governance Integration | High | Technical | D7 | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) |
-| [TC-L02-022](#tc-l02-022) | Training and Awareness Tracking for AI Policies | Medium | Technical | D1, D7 | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) |
+| [TC-L02-022](#tc-l02-022) | Training and Awareness Tracking for AI Policies | Medium | Technical | D1, D7 | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012), [AI-CTRL-044](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-044) |
 | [TC-L02-023](#tc-l02-023) | Acceptable Use Acknowledgement and Re-Acknowledgement | Medium | Technical | D1, D7 | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) |
 | [TC-L02-024](#tc-l02-024) | Management Review Inputs and Outputs | Medium | Evidence | D7 | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) |
 | [TC-L02-025](#tc-l02-025) | Governance Record Integrity: Change History and Tamper Evidence | High | Technical | D7 | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) |
@@ -1234,7 +1234,7 @@ nav_order: 5
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | GOVERN (policies, accountability and oversight) |
-| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance; [AI-CTRL-043](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-043) Regulator and Authority Engagement |
 
 **Risk Addressed.** New or revised requirements are missed or implemented late, and nobody can show how a change was handled.
 
@@ -1358,7 +1358,7 @@ nav_order: 5
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Medium |
 | **NIST AI RMF Mapping** | GOVERN (workforce competence and awareness) |
-| **Control(s) Tested** | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) AI Policy, Roles and Acceptable Use |
+| **Control(s) Tested** | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) AI Policy, Roles and Acceptable Use; [AI-CTRL-044](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-044) AI Literacy and Role-Based Competence |
 
 **Risk Addressed.** Policies are not followed if people do not know them, and many frameworks expect evidence of awareness and training.
 

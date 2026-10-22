@@ -144,6 +144,7 @@ Two things in that table are worth knowing before you test your own system.
 ## What this kit does not do
 
 - **It covers {{n:kit_cases}} of {{n:critical}} Critical cases.** The rest are inventory, evidence, configuration and infrastructure checks (agent and vector-store discovery, connector scopes, GPU and network isolation, provider terms, residency, forensics and so on) or need a browser, a voice channel or a training pipeline. A payload file would add nothing there, and inventing one would be worse than leaving it out.
+- **A PASS here is not validation.** Running a case against the stand-ins puts it at the Executable [validation level](index.md#validation-levels), nothing more. No run of the kit against a real model, agent framework or product has been published yet, so none of these cases is lab-validated. If you run the kit against a named application and version, record the result, including a FAIL, in the case's Validated Against row so others can reproduce it.
 - **It does not measure time.** Kill-switch deadlines, rule-propagation delays and detection intervals are in the case text and are still manual checks.
 - **The payloads are not tuned against real models.** They are written to be representative and varied, and the stand-in confirms they run. Whether they succeed against a given model or product is exactly what you are measuring. A short payload set can pass because it is weak. Add your own variants for anything you rely on.
 - **It does not check logs, dashboards or evidence fields.** Those parts of each case are unchanged.

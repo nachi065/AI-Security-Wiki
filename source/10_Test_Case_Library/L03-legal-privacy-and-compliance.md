@@ -11,9 +11,9 @@ nav_order: 6
 
 **Primary test focus:** UAE/GCC residency, PDPL-type obligations, evidence export, DPIA support, fairness, transparency, human oversight, intellectual property and authority engagement
 
-**Controls tested:** [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance (21 cases), [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Control Assurance and Audit Evidence (5 cases), [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) Data Sovereignty (3 cases), [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) Fairness, Bias Testing and Explainability (3 cases), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance (2 cases), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines (2 cases), [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics (2 cases), [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) Output Reliability and Content Safety (2 cases), [AI-CTRL-045](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-045) Human Oversight Design and Effectiveness (2 cases), [AI-CTRL-046](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-046) Intellectual Property and Copyright Governance (2 cases), [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering (1 case), [AI-CTRL-042](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-042) Fundamental Rights and Data Protection Impact Assessment (1 case), [AI-CTRL-043](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-043) Regulator and Authority Engagement (1 case), [AI-CTRL-044](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-044) AI Literacy and Role-Based Competence (1 case)
+**Controls tested:** [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance (21 cases), [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) Fairness, Bias Testing and Explainability (6 cases), [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Control Assurance and Audit Evidence (5 cases), [AI-CTRL-042](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-042) Fundamental Rights and Data Protection Impact Assessment (4 cases), [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) Data Sovereignty (3 cases), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance (2 cases), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines (2 cases), [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics (2 cases), [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) Output Reliability and Content Safety (2 cases), [AI-CTRL-043](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-043) Regulator and Authority Engagement (2 cases), [AI-CTRL-044](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-044) AI Literacy and Role-Based Competence (2 cases), [AI-CTRL-045](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-045) Human Oversight Design and Effectiveness (2 cases), [AI-CTRL-046](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-046) Intellectual Property and Copyright Governance (2 cases), [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering (1 case)
 
-**Cases:** 42 (TC-L03-001 to TC-L03-042)
+**Cases:** 45 (TC-L03-001 to TC-L03-045)
 > **Safety boundary.** All cases use fabricated use cases, policies, records and individuals only. This layer is framework-neutral: see the [Framework Adoption Guide](framework-adoption-guide.md) before testing, and complete the Applicable Requirement and Framework Crosswalk fields for each case.
 
 > **Verify before use.** MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the [Reference Index](00-reference-index.md) for field definitions and applicability codes.
@@ -31,10 +31,10 @@ nav_order: 6
 | [TC-L03-005](#tc-l03-005) | Data Subject Rights: Access Request Workflow | Critical | Technical | D6, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
 | [TC-L03-006](#tc-l03-006) | Data Subject Rights: Correction Request Handling | Medium | Technical | D6, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
 | [TC-L03-007](#tc-l03-007) | Data Subject Rights: Erasure Across AI Stores | Critical | Technical | D6, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
-| [TC-L03-008](#tc-l03-008) | Rights to Object, Restrict and Request Human Review | High | Technical | D6, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L03-008](#tc-l03-008) | Rights to Object, Restrict and Request Human Review | High | Technical | D6, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) |
 | [TC-L03-009](#tc-l03-009) | Rights Request Timeline Tracking and Evidence | High | Technical | D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
-| [TC-L03-010](#tc-l03-010) | Impact Assessment Support (Privacy, Data Protection and AI Impact Assessments) | Critical | Technical | D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
-| [TC-L03-011](#tc-l03-011) | Impact Assessment Triggers | High | Technical | D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L03-010](#tc-l03-010) | Impact Assessment Support (Privacy, Data Protection and AI Impact Assessments) | Critical | Technical | D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-042](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-042) |
+| [TC-L03-011](#tc-l03-011) | Impact Assessment Triggers | High | Technical | D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-042](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-042) |
 | [TC-L03-012](#tc-l03-012) | Cross-Border Transfer Register and Assessment | Critical | Technical | D7 | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) |
 | [TC-L03-013](#tc-l03-013) | Cross-Border Transfer Enforcement | Critical | Technical | D7, D6 | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) |
 | [TC-L03-014](#tc-l03-014) | Residency Evidence Export for a Regulator | High | Evidence | D7 | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) |
@@ -42,7 +42,7 @@ nav_order: 6
 | [TC-L03-016](#tc-l03-016) | Retention Schedule Enforcement for AI Data | High | Technical | D6, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
 | [TC-L03-017](#tc-l03-017) | Children's and Vulnerable Persons' Data Handling | High | Technical | D6, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
 | [TC-L03-018](#tc-l03-018) | Special and Sensitive Categories of Data: Identification and Heightened Controls | Critical | Technical | D6, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) |
-| [TC-L03-019](#tc-l03-019) | Breach and Incident Notification Workflow | Critical | Technical | D7 | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L03-019](#tc-l03-019) | Breach and Incident Notification Workflow | Critical | Technical | D7 | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-043](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-043) |
 | [TC-L03-020](#tc-l03-020) | Controller, Processor and Joint Role Mapping with Agreements | High | Technical | D7 | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
 | [TC-L03-021](#tc-l03-021) | AI Provider Compliance Due-Diligence Evidence | High | Attestation | D7 | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) |
 | [TC-L03-022](#tc-l03-022) | Compliance Evidence Export: Formats, Signing and Integrity | High | Technical | D7 | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) |
@@ -52,7 +52,7 @@ nav_order: 6
 | [TC-L03-026](#tc-l03-026) | Regulator Inspection Simulation: Rapid Evidence Request | Critical | Technical | D7 | [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) |
 | [TC-L03-027](#tc-l03-027) | Litigation Hold and Regulatory Preservation Notice | High | Technical | D6, D7 | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) |
 | [TC-L03-028](#tc-l03-028) | Intellectual Property and Copyright Controls for AI Inputs and Outputs | Medium | Technical | D3, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-046](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-046) |
-| [TC-L03-029](#tc-l03-029) | Automated Decision Explanation Records | High | Technical | D3, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
+| [TC-L03-029](#tc-l03-029) | Automated Decision Explanation Records | High | Technical | D3, D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013), [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) |
 | [TC-L03-030](#tc-l03-030) | Language and Jurisdiction Configuration (Arabic, English and Regional Rule Sets) | Medium | Technical | D7 | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) |
 | [TC-L03-031](#tc-l03-031) | Bias Testing Before Release and on Material Change | Critical | Technical | D3, D7 | [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) |
 | [TC-L03-032](#tc-l03-032) | Adverse-Impact Analysis for Employment, Credit and Other Consequential Decisions | High | Technical | D3, D7 | [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) |
@@ -66,6 +66,9 @@ nav_order: 6
 | [TC-L03-040](#tc-l03-040) | Human Oversight Effectiveness: Seeded-Error Detection and Review Metrics | High | Technical | D3, D7 | [AI-CTRL-045](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-045) |
 | [TC-L03-041](#tc-l03-041) | Overseer Evidence, Override Authority and Review Workload | High | Evidence | D3, D7 | [AI-CTRL-045](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-045) |
 | [TC-L03-042](#tc-l03-042) | AI Vendor Terms: Output Ownership, Infringement Indemnity and Training Use | Medium | Evidence | D7 | [AI-CTRL-046](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-046) |
+| [TC-L03-043](#tc-l03-043) | Bias Profile and Monitoring Outside Validated Boundaries | High | Technical | D3, D7 | [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) |
+| [TC-L03-044](#tc-l03-044) | Impact Assessment Content and Periodic Review | High | Evidence | D7 | [AI-CTRL-042](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-042) |
+| [TC-L03-045](#tc-l03-045) | AI Literacy Effectiveness: Scenario Assessment and Operational Measures | Medium | Evidence | D1, D7 | [AI-CTRL-044](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-044) |
 
 ---
 
@@ -514,7 +517,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: W, A |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | GOVERN and MANAGE (human oversight, transparency) |
-| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance; [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) Fairness, Bias Testing and Explainability |
 
 **Risk Addressed.** Where decisions are automated, individuals may be entitled to contest them or ask for human involvement.
 
@@ -635,7 +638,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Critical |
 | **NIST AI RMF Mapping** | MAP and MANAGE (risk identification and treatment) |
-| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance; [AI-CTRL-042](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-042) Fundamental Rights and Data Protection Impact Assessment |
 
 **Risk Addressed.** Impact assessments are required by many frameworks for higher-risk processing and are often written without the facts to hand.
 
@@ -698,7 +701,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | MAP and MANAGE (risk identification and treatment) |
-| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance; [AI-CTRL-042](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-042) Fundamental Rights and Data Protection Impact Assessment |
 
 **Risk Addressed.** Assessments are missed when new uses or changes do not trigger them.
 
@@ -1181,7 +1184,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: W |
 | **Risk Severity** | Critical |
 | **NIST AI RMF Mapping** | MANAGE (incident response and communication) |
-| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics; [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
+| **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics; [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance; [AI-CTRL-043](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-043) Regulator and Authority Engagement |
 
 **Risk Addressed.** Notification deadlines to regulators and individuals are short, differ by framework and need a documented decision.
 
@@ -1806,7 +1809,7 @@ nav_order: 6
 | **Vendor Applicability** | Core: A, W |
 | **Risk Severity** | High |
 | **NIST AI RMF Mapping** | GOVERN and MANAGE (human oversight, transparency) |
-| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
+| **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance; [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) Fairness, Bias Testing and Explainability |
 
 **Risk Addressed.** People affected by automated decisions may be entitled to meaningful information about the logic and factors involved.
 
@@ -2688,6 +2691,189 @@ nav_order: 6
 **Evidence to Capture.** Terms review register; vendor and use-case links; exception record; re-review trigger record.
 
 **Reviewer Notes.** Confirm evidence comes from the live PoC tenant, not vendor-supplied demo data. Record the product version tested and any manual steps needed.
+
+[Back to layer index](#top)
+
+---
+
+<a id="tc-l03-043"></a>
+
+### TC-L03-043: Bias Profile and Monitoring Outside Validated Boundaries
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L03 Legal, Privacy & Compliance |
+| **Use-Case Domain(s)** | D3, D7 |
+| **Control Theme** | OVS: Human oversight and transparency |
+| **Test Method** | Technical |
+| **Vendor Applicability** | Core: A, W, P |
+| **Risk Severity** | High |
+| **NIST AI RMF Mapping** | MEASURE and MANAGE (fairness, bias evaluation) |
+| **Control(s) Tested** | [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) Fairness, Bias Testing and Explainability |
+
+**Risk Addressed.** A bias test passed at release says nothing about a population, region or use the system was never tested on, and that is where unfair outcomes appear later.
+
+**Business Scenario.** Model risk wants a versioned bias profile for each high-impact system that states the groups, data and application boundaries it was validated for, and an alert when live use moves outside them.
+
+**Technical Scenario.** Record a bias profile for a fabricated decision system, then send it live traffic that stays inside its validated boundaries and traffic that goes outside them, and check what is detected and who is told.
+
+**Applicable Requirement *(assessor to complete)***
+
+- Framework and clause: `________`
+- Requirement text: `________`
+- Parameters (timelines, periods, thresholds): `________`
+
+**Test Data.** 1 fabricated eligibility-scoring system validated for 2 regions, 1 language and applicants aged 18 to 65; a bias profile listing intended and unintended differences in treatment, the groups considered, the test data's coverage and 1 accepted residual risk with its approver; 3,000 fabricated live decisions, of which 400 come from a third region, 150 from applicants over 65 and 200 show a widening selection-rate gap for one group.
+
+**Procedure**
+
+1. Record the bias profile with its version, validated boundaries, groups, test-data coverage and accepted risks with approvers.
+2. Configure monitoring of the boundaries (region, language, age band) and of the selection-rate and error-rate gaps against the approved thresholds.
+3. Replay the 3,000 live decisions.
+4. Check which out-of-boundary decisions and which threshold breaches are detected, and how fast.
+5. Check that the owner is alerted and that a retest or a restriction is raised.
+6. Change the model version and check that the profile is marked out of date until it is re-validated.
+7. Export the profile history and the monitoring record.
+
+**Edge Cases / Variants.** A boundary attribute that is missing from live records; a gap that stays just under the threshold for several weeks.
+
+**Expected Result.** The profile is versioned and complete; the third-region and over-65 decisions are flagged as outside validated boundaries; the widening gap is detected against the threshold; the owner is alerted and a retest or restriction is recorded; the model change marks the profile out of date.
+
+**Expected Control Action.** Alert and raise a retest; restrict use outside the validated boundaries where policy requires it.
+
+**Expected Integration Evidence.** Export; alert to the case or ticketing system.
+
+**Framework Crosswalk *(assessor to complete)***
+
+- ISO/IEC 27001 ISMS: `________`
+- India DPDP: `________`
+- UAE NESA / information assurance: `________`
+- UAE PDPL: `________`
+- Other: `________`
+
+**Evidence to Capture.** Bias profile versions; boundary and threshold configuration; detection and alert records; retest or restriction record.
+
+[Back to layer index](#top)
+
+---
+
+<a id="tc-l03-044"></a>
+
+### TC-L03-044: Impact Assessment Content and Periodic Review
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L03 Legal, Privacy & Compliance |
+| **Use-Case Domain(s)** | D7 |
+| **Control Theme** | RSK: Risk management |
+| **Test Method** | Evidence |
+| **Vendor Applicability** | Core: W |
+| **Risk Severity** | High |
+| **NIST AI RMF Mapping** | MAP and GOVERN (impact assessment) |
+| **Control(s) Tested** | [AI-CTRL-042](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-042) Fundamental Rights and Data Protection Impact Assessment |
+
+**Risk Addressed.** An assessment can be approved on time and still be thin: it may leave out foreseeable misuse, some regions or languages, the benefits weighed against the harms, or the people affected, and it may never be reviewed again if nothing changes.
+
+**Business Scenario.** The data protection officer wants every in-scope assessment checked for the contents the organisation's method requires, and an annual review that happens even when the system has not changed.
+
+**Technical Scenario.** Inspect a set of fabricated assessments against a content checklist, and move the clock past the review date of one that has had no change.
+
+**Applicable Requirement *(assessor to complete)***
+
+- Framework and clause: `________`
+- Requirement text: `________`
+- Parameters (timelines, periods, thresholds): `________`
+
+**Test Data.** 4 fabricated approved assessments: 1 complete; 1 with no foreseeable misuse; 1 that covers one of the system's three deployment languages; 1 with no record of consulting the people affected or their representatives; a content checklist (intended use, foreseeable misuse, regions and languages, data and its quality, groups affected, benefits and harms, mitigations, oversight, consultation, decision); 1 assessment whose review date has passed with no change to the system.
+
+**Procedure**
+
+1. Check each assessment against the content checklist and record the gaps.
+2. Confirm each gap is raised as a finding with an owner.
+3. Check that the incomplete assessments are not treated as current approvals for go-live.
+4. Move the clock past the review date of the unchanged system.
+5. Check that the review falls due, the owner is reminded and the overdue review is reported.
+6. Complete the review and check that the next review date is set.
+7. Export the checklist results and the review history.
+
+**Edge Cases / Variants.** One assessment covering several similar systems; a system whose only change is a new deployment language.
+
+**Expected Result.** The three content gaps are found and raised as findings; incomplete assessments do not count as approvals; the time-based review falls due without any system change, is reminded and reported when overdue; the next review date is set.
+
+**Expected Control Action.** N/A.
+
+**Expected Integration Evidence.** Export.
+
+**Framework Crosswalk *(assessor to complete)***
+
+- ISO/IEC 27001 ISMS: `________`
+- India DPDP: `________`
+- UAE NESA / information assurance: `________`
+- UAE PDPL: `________`
+- Other: `________`
+
+**Evidence to Capture.** Content checklist results; findings; review reminder and overdue report; completed review with next date.
+
+[Back to layer index](#top)
+
+---
+
+<a id="tc-l03-045"></a>
+
+### TC-L03-045: AI Literacy Effectiveness: Scenario Assessment and Operational Measures
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L03 Legal, Privacy & Compliance |
+| **Use-Case Domain(s)** | D1, D7 |
+| **Control Theme** | TRN: Training and awareness |
+| **Test Method** | Evidence |
+| **Vendor Applicability** | Core: W |
+| **Risk Severity** | Medium |
+| **NIST AI RMF Mapping** | GOVERN (workforce competence) |
+| **Control(s) Tested** | [AI-CTRL-044](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-044) AI Literacy and Role-Based Competence |
+
+**Risk Addressed.** Completion records show that people sat the training, not that they can do what their role needs. Training that does not work is found only after an incident.
+
+**Business Scenario.** The governance lead wants each role group's training judged by what people do afterwards, and wants weak results to change the training.
+
+**Technical Scenario.** Compare scenario assessment results and operational measures for fabricated role groups before and after training, and check that a poor result leads to action.
+
+**Applicable Requirement *(assessor to complete)***
+
+- Framework and clause: `________`
+- Requirement text: `________`
+- Parameters (timelines, periods, thresholds): `________`
+
+**Test Data.** 3 fabricated role groups (human reviewers, developers, general staff); a scenario assessment for each group with an agreed pass mark; operational measures for each group: reviewer catch rate on seeded errors, prompt and upload policy violations, and insecure AI-generated code findings, for the quarter before and the quarter after training; 1 group whose measure does not improve.
+
+**Procedure**
+
+1. Record for each role group what the training must change and how it will be measured.
+2. Load the scenario assessment results and check them against the pass marks.
+3. Load the operational measures for both quarters and compare them.
+4. Confirm the group whose measure did not improve is flagged.
+5. Confirm the flag raises a change to the training or to the role's controls, with an owner.
+6. Check that people who failed the scenario assessment are not assigned to roles that require it until they pass.
+7. Export the effectiveness report by role group.
+
+**Edge Cases / Variants.** A measure that improves for reasons unrelated to training; a role group too small to compare.
+
+**Expected Result.** Each role group has a stated outcome and measure; results are compared with the pass marks and with the earlier quarter; the group that did not improve is flagged and an owned change is raised; people who failed are held from the role until they pass.
+
+**Expected Control Action.** N/A.
+
+**Expected Integration Evidence.** Import from the learning system and the monitoring sources; export.
+
+**Framework Crosswalk *(assessor to complete)***
+
+- ISO/IEC 27001 ISMS: `________`
+- India DPDP: `________`
+- UAE NESA / information assurance: `________`
+- UAE PDPL: `________`
+- Other: `________`
+
+**Evidence to Capture.** Outcome and measure per role group; assessment results; before and after measures; flag and change record; role assignment hold.
 
 [Back to layer index](#top)
 

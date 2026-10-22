@@ -3,7 +3,7 @@
 
 Usage:  pip install markdown && python3 build.py
 """
-import datetime, hashlib, html, json, os, re, shutil, subprocess
+import collections, datetime, hashlib, html, json, os, re, shutil, subprocess
 import markdown
 from markdown.extensions.toc import slugify
 
@@ -294,6 +294,108 @@ def control_tiers(page):
         out += [f"| [{c}](03_AI_Security_Control_Objectives_Library.md#{c.lower()}) | {name[c]} | {fam.get(c, '')} |" for c in ids]
         out.append("")
     return "\n".join(out)
+
+
+def expand_cases(page):
+    """Give each test case its validation level and a closed list of the standard fields it inherits.
+
+    The level comes from the case's own Validation Level row if it has one, otherwise from the payload kit:
+    a case with a payload file is Executable, any other case is Documented. The inherited fields are the
+    Standard Fields wording that applies to the case, so a case copied from the page carries them with it.
+    """
+    layer = re.match(r"10_Test_Case_Library/([LD]\d\d)-", page["src"].replace(os.sep, "/"))
+    if not layer:
+        return
+    data = json.load(open(os.path.join(SRC, "10_Test_Case_Library", "standard-fields.json"), encoding="utf-8"))
+    key = {"all": lambda m, s: "all", "shape": lambda m, s: s, "method-shape": lambda m, s: f"{m.lower()}-{s}", "layer": lambda m, s: layer.group(1)}
+    kit = os.path.join(SRC, "10_Test_Case_Library", "kit", "payloads")
+    blocks = re.split(r"(?m)^(?=<a id=\"tc-[ld]\d\d-\d{3}\"></a>)", page["body"])
+    for i, block in enumerate(blocks):
+        name = re.search(r"^### (TC-[LD]\d\d-\d{3}):", block, re.M)
+        if not name:
+            continue
+        case = name.group(1)
+        if not re.search(r"^\| \*\*Validation Level\*\* \|", block, re.M):
+            if os.path.exists(os.path.join(kit, case + ".json")):
+                level = (f"[Executable](index.md#validation-levels): the [payload set](kit/payloads/{case}.json) runs against the "
+                         "[payload kit](payload-kit.md)'s stand-in applications only. No run against a real model or product is recorded")
+            else:
+                level = "[Documented](index.md#validation-levels): no run against a real product is recorded"
+            block = re.sub(r"^(\| \*\*Control\(s\) Tested\*\* \|.*)$", lambda m: m.group(1) + f"\n| **Validation Level** | {level} |", block, count=1, flags=re.M)
+        method = re.search(r"\| \*\*Test Method\*\* \| ([^|]*) \|", block).group(1).strip()
+        shape = "detect" if "**Expected Detection.**" in block else "result"
+        inherited = []
+        for field, standards in data["standards"].items():
+            text = standards.get(key[data["keys"][field]](method, shape))
+            if text and not re.search(rf"(?m)^\*\*{re.escape(field)}\.\*\* ", block):
+                inline = re.sub(r"^<p>|</p>$", "", markdown.markdown(text))  # the standard wording may hold links
+                inherited.append(f"<p><strong>{html.escape(field)}.</strong> {inline}</p>")
+        if inherited:
+            details = (f'<details class="inherited"><summary>Standard fields for this case ({len(inherited)}): '
+                       f'the wording from the <a href="standard-fields.md">Standard Fields</a> page that applies here</summary>'
+                       + "".join(inherited) + "</details>")
+            block = re.sub(r"^(\[Back to (?:layer|domain) index\]\(#top\))", lambda m: details + "\n\n" + m.group(1), block, count=1, flags=re.M)
+        blocks[i] = block
+    page["body"] = "".join(blocks)
+
+
+for p in pages:
+    expand_cases(p)
+
+
+def review_calendar(page):
+    """Controls grouped by how often the control library says to review them, read from each record's Review Frequency."""
+    library = "03_Control_Library/03_AI_Security_Control_Objectives_Library.md"
+    text = next(p["body"] for p in pages if p["src"].replace(os.sep, "/") == library)
+    link = os.path.relpath(os.path.join(SRC, library), os.path.dirname(os.path.join(SRC, page["src"]))).replace(os.sep, "/")
+    cadences = ("Continuously", "Quarterly", "Semi-annually", "Annually")
+    rows = {c: [] for c in cadences + ("Event only",)}
+    for control, name, record in re.findall(r"^#### (AI-CTRL-\d{3}): (.+)\n([\s\S]*?)(?=^#### |\Z)", text, re.M):
+        freq = re.search(r"^\| \*\*Review Frequency\*\* \| (.*) \|$", record, re.M).group(1)
+        parts = [x.strip() for x in re.split(r",| and ", freq) if x.strip()]
+        cadence = next((c for c in cadences if any(x.lower() == c.lower() for x in parts)), "Event only")
+        events = [x[0].lower() + x[1:] for x in parts if x.lower() != cadence.lower()]
+        rows[cadence].append(f"[{control}]({link}#{control.lower()}) {name}" + (f" (also {', '.join(events)})" if events else ""))
+    out = ["| Cadence | Controls to review, with any event that also triggers a review |", "|---|---|"]
+    for cadence, items in rows.items():
+        if items:
+            out.append(f"| {cadence} ({len(items)}) | " + "<br>".join(sorted(items)) + " |")
+    return "\n".join(out)
+
+
+def verification_status(page):
+    """Count the verification tags in the Regulatory Crosswalk table of each regional section."""
+    tags = ("Verified", "Partly verified", "Reported", "Recalled", "Unverified", "Conflict")
+    out = ["| Section | Crosswalk rows | " + " | ".join(tags) + " | Share verified |", "|---" * (len(tags) + 3) + "|"]
+    for p in sorted(pages, key=lambda p: p["src"]):
+        src = p["src"].replace(os.sep, "/")
+        if not re.match(r"\d\d_[A-Za-z_]+_AI_Compliance/0[37]_Regulatory_Crosswalk\.md$", src):
+            continue
+        header = re.search(r"^\| ID \|(.*)\|$", p["body"], re.M)
+        column = [c.strip() for c in header.group(1).split("|")].index("Verification tag") + 1
+        count = collections.Counter()
+        table = p["body"][header.end():].split("\n\n", 1)[0]
+        for row in re.findall(r"^\| [A-Z]{1,3}\d+[a-z]? \|.*\|$", table, re.M):
+            tag = [c.strip() for c in row.strip("|").split("|")][column]
+            names = [t.strip() for t in tag.split(";")]
+            count["Partly verified" if len(names) > 1 and "Verified" in names else names[0]] += 1
+        rows = sum(count.values())
+        section = next(s for s in pages if s["src"].replace(os.sep, "/") == src.split("/")[0] + "/index.md")["meta"]["title"]
+        link = os.path.relpath(os.path.join(SRC, src), os.path.dirname(os.path.join(SRC, page["src"]))).replace(os.sep, "/")
+        out.append(f"| [{section}]({link}) | {rows} | " + " | ".join(str(count[t]) for t in tags) + f" | {round(100 * count['Verified'] / rows)}% |")
+    return "\n".join(out)
+
+
+VERIFICATION = "<!-- verification-status -->"
+for p in pages:
+    if VERIFICATION in p["body"]:
+        p["body"] = p["body"].replace(VERIFICATION, verification_status(p))
+
+
+REVIEW_CALENDAR = "<!-- review-calendar -->"
+for p in pages:
+    if REVIEW_CALENDAR in p["body"]:
+        p["body"] = p["body"].replace(REVIEW_CALENDAR, review_calendar(p))
 
 
 CONTROL_TIERS = "<!-- control-tiers -->"

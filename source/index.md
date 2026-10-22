@@ -3,7 +3,7 @@ title: "Home"
 description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and {{n:tests}} test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.39
+version: 2.40
 status: Published
 author: Nachiket Sathaye
 coauthors: Ankush Jain
@@ -17,14 +17,14 @@ last_updated: 2026-10-22
 # AI Security Wiki Home
 
 > **Document Type:** Enterprise AI Security Reference Architecture and Governance Wiki  
-> **Version:** 2.39  
+> **Version:** 2.40  
 > **Status:** Published  
 > **Original Author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
 > **Co-Author:** Ankush Jain ([about the co-author](#23-about-the-co-author))  
 > **Intended Use:** Public, vendor-neutral reference and template set for AI security governance, engineering, risk management, assurance, audit, compliance, and vendor evaluation.  
 > **Source Repository:** [github.com/nachi065/AI-Security-Wiki](https://github.com/nachi065/AI-Security-Wiki): the Markdown source, the change history, issues and pull requests. See [Contributing](https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md) to suggest a change.
 
-> **Latest update (22 October 2026).** This week's verification run checked the regional crosswalks for the GCC, India, the UK, Singapore, the US, South Korea, Australia, Brazil, Canada, China and Japan against official sources. Rows confirmed by the primary text are now tagged [Verified] with the source and retrieval date, and rows that had fallen out of date were corrected, such as the NSW digital work systems Act, China's final rules on anthropomorphic AI services and Japan's 2026 amendment of its personal information law. The home page now also links to the [GitHub source repository](https://github.com/nachi065/AI-Security-Wiki). See the [Update Notes](09_Reference/19_Update_Notes.md) for details.
+> **Latest update (22 October 2026).** Known weak points in testing, risk rating, governance and regulatory verification were addressed. Every test case now shows a **validation level**, so a published case is no longer read as proof of protection; each case carries the shared Standard Fields wording that applies to it, and so does the test tracker workbook. The [risk methodology](02_Risk_Management/02A_AI_Risk_Methodology.md) has a scoring method and four worked calibration examples. Governance gains committee charters, a decision-rights table and a role-based training plan, and three new cases test outcomes that the newest controls left untested. New pages set out [illustrative operating defaults](08_Governance/18_AI_Operating_Defaults.md), [predictive model monitoring and adversarial ML](04_Domain_Standards/11_Predictive_Model_Monitoring_and_Adversarial_ML.md) and the [regulatory verification status](09_Reference/21_Regulatory_Verification_Status.md) of every region, with programme charter and incident report templates. See the [Update Notes](09_Reference/19_Update_Notes.md) for details and what is still open.
 
 ## 1. Purpose
 
@@ -171,7 +171,8 @@ The cycle then repeats: each use case is reviewed, improved, renewed or retired,
   Control objectives, existing baseline, Microsoft overlap, control gaps, and implementation guidance.
 
 04_Domain_Standards/
-  Browser AI, IDE AI, runtime AI applications, agentic AI, sovereignty, and data residency standards.
+  Browser AI, IDE AI, runtime AI applications, agentic AI, sovereignty, and data residency standards,
+  sector overlays, and monitoring and adversarial ML for predictive models.
 
 05_Vendor_Evaluation/
   Vendor master framework, supplier evidence model, and proof-of-concept scorecards.
@@ -183,7 +184,9 @@ The cycle then repeats: each use case is reviewed, improved, renewed or retired,
   Persona-specific guidance for developers, researchers, red teamers, governance, audit, and operations.
 
 08_Governance/
-  Operating model, acceptable AI use, approvals, committees, responsibilities, and reporting cadence.
+  Operating model, committee charters, decision rights, training plan, acceptable AI use, and illustrative
+  operating defaults (exception limits, incident response times, monitoring thresholds, review calendar,
+  release stages, log retention).
 
 10_Test_Case_Library/
   {{n:tests}} detailed product evaluation test cases across {{n:layers}} AI lifecycle layers and 6 emerging domains, with reference index,
@@ -241,10 +244,10 @@ The cycle then repeats: each use case is reviewed, improved, renewed or retired,
 25_Templates/
   Downloadable .xlsx and .docx templates built from the wiki: AI risk register, system inventory, use-case
   triage, vendor scorecard, audit checklist, control library and crosswalks, test case tracker, acceptable
-  use policy and impact assessment.
+  use policy, impact assessment, programme charter and incident report.
 
 09_Reference/
-  Glossary, taxonomy, abbreviations, mapping references, patterns, and reusable templates.
+  Glossary, taxonomy, update notes, incident casebook, and the regulatory verification status of each region.
 ```
 
 ## 10. Standards and Policy Hierarchy
@@ -411,9 +414,9 @@ The three latest versions, newest first. The full history since version 1.0 is i
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.40 | 2026-10-22 | Nachiket Sathaye | Weak points addressed: validation level on every test case and a self-contained copy of the shared fields on each case and in the test tracker; scoring method and worked calibration examples in the risk methodology; committee charters, decision rights and a role-based training plan; outcome review of AI-CTRL-041 to 046 with three new cases; illustrative operating defaults; a predictive model monitoring and adversarial ML standard with two new cases; regulatory verification status and an obligation-level tracker; programme charter and incident report templates. |
 | 2.39 | 2026-10-22 | Nachiket Sathaye | Weekly crosswalk verification (19 to 22 October 2026): the GCC, India, UK, Singapore, US, South Korea, Australia, Brazil, Canada, China and Japan crosswalks were checked against primary sources. Confirmed rows are tagged [Verified] with source and retrieval date, and out-of-date rows were corrected. The home page now links to the GitHub source repository. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 | 2.38 | 2026-10-18 | Nachiket Sathaye | Update Notes now hold the full version history, newest first, and are only ever added to. This section of the home page shows the three latest versions. |
-| 2.37 | 2026-10-17 | Nachiket Sathaye | Templates: added eight templates built from the wiki and licensed under CC BY-SA 4.0: AI System Inventory, AI Use-Case Risk Triage, AI Security Vendor Evaluation Scorecard, AI Security Audit and Evidence Checklist, AI Security Control Library and Crosswalks and AI Security Test Case Tracker (.xlsx), and AI Acceptable Use Policy and AI Impact Assessment (.docx). Template page names now show the file type. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 
 ## 21. Quick Links
 
