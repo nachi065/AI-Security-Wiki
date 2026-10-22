@@ -6,11 +6,12 @@ nav_order: 1
 description: "Indian AI-relevant law mapped to AI security controls: the DPDP Act and Rules, MeitY AI guidelines, RBI, SEBI and IRDAI expectations, and CERT-In reporting."
 document_type: AI Security Wiki Reference
 version: 1.0
+last_reviewed: 2026-10-20
 ---
 
 # India AI Regulatory Hub
 
-> **Verification status.** On 16 October 2026 the rows tagged [Verified] (IN1, IN2, IN4, IN5, IN6, IN10) were checked against primary documents; the crosswalk gives each source and what was and was not read. Everything else was compiled on 7 October 2026 from secondary sources or memory and is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any claim. This is not legal advice.
+> **Verification status.** On 16 October 2026 the rows tagged [Verified] (IN1, IN2, IN4, IN5, IN6, IN10), and on 20 October 2026 row IN12, were checked against primary documents; the crosswalk gives each source and what was and was not read. Everything else was compiled on 7 October 2026 from secondary sources or memory and is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any claim. This is not legal advice.
 
 This page maps Indian laws, guidance and standards that bear on AI to the wiki's controls.
 
@@ -40,7 +41,7 @@ Apply the strictest layer that fits. If personal data is involved, the DPDP Act 
 | IN9 | IT Rules amendments on synthetic content labelling | Reported as notified 10 Feb 2026 and in force from 20 Feb 2026 (amendment rules to the IT Rules 2021) | Intermediaries that offer tools to create synthetic content must label it prominently and embed provenance metadata; significant social media intermediaries must obtain and check user declarations; takedown deadlines are shorter, for example 3 hours after a court order or an authorised officer's intimation | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) | [Reported] | Gazette text, G.S.R. number and exact scope (law-firm sources agree but the gazette was not read) |
 | IN10 | CERT-In incident reporting directions (2022) and AI guidance | Binding directions of 28 Apr 2022 (No. 20(3)/2022-CERT-In) under section 70B(6) of the IT Act | Listed cyber incidents must be reported to CERT-In within 6 hours; the directions took effect 60 days after issue; the list of reportable incidents includes attacks or suspicious activity related to AI and ML systems | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035), [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) | [Verified] | Whether CERT-In has issued separate AI-specific guidance |
 | IN11 | IT Act 2000 and SPDI Rules | Existing law until the DPDP regime fully commences | Reasonable security practices for sensitive data | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) | [Recalled] | Transition provisions |
-| IN12 | IndiaAI Mission | Programme (Mar 2024; INR 10,372 crore) | Compute, datasets, skilling. Listed for context; it creates no obligation | None | [Reported] | n/a |
+| IN12 | IndiaAI Mission | Programme (Mar 2024; INR 10,372 crore) | Compute, datasets, skilling. Listed for context; it creates no obligation | None | [Verified] date and outlay, from the [PIB release of 7 Mar 2024](https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2012355) (Rs 10,371.92 crore), read 20 Oct 2026 | n/a |
 
 ## 3. Categories, tiers and roles
 
