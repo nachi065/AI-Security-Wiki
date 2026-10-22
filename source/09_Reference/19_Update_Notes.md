@@ -65,6 +65,7 @@ Entries are only ever added. Past entries are not rewritten or removed; when som
 - **China, now [Verified]:** CN1 to CN4 (generative AI, algorithm recommendation, deep synthesis and labelling, with official titles and dates). CN5 is a trial measure in force on issue (20 March 2026). CN6 is final: CAC Order No. 21, in force 15 July 2026. CN8: the State Council's 2026 work plan commits to comprehensive AI legislation; no draft is published.
 - **China, CN7:** the Cybersecurity Law amendment took effect on 1 January 2026. The row stays [Reported] because the Data Security Law was not read.
 - **Japan, now [Verified]:** JP1 (AI Promotion Act, Act No. 53 of 2025, fully in force 1 September 2025; no penalties), JP2 (AI Basic Plan of 14 July 2026), JP3 (AI Guidelines for Business version 1.2) and JP4 (the APPI amendment law promulgated on 17 July 2026, in force within two years, with a consent exception for statistics including AI development).
+- **Home page (22 October 2026):** a Source Repository line in the document box now links to the GitHub repository and its contributing guide, and version 2.39 records this week's merged changes.
 
 ### Still work in progress
 
@@ -320,6 +321,7 @@ Every version of the wiki, newest first. Rows are never edited after they are ad
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.39 | 2026-10-22 | Nachiket Sathaye | Weekly crosswalk verification (19 to 22 October 2026): the GCC, India, UK, Singapore, US, South Korea, Australia, Brazil, Canada, China and Japan crosswalks were checked against primary sources. Confirmed rows are tagged [Verified] with source and retrieval date, and out-of-date rows were corrected. The home page now links to the GitHub source repository. See the [note for the week ending 24 October 2026](#week-ending-24-october-2026-crosswalk-verification). |
 | 2.38 | 2026-10-18 | Nachiket Sathaye | Update Notes now hold the full version history, newest first, and are only ever added to. This section of the home page shows the three latest versions. |
 | 2.37 | 2026-10-17 | Nachiket Sathaye | Templates: added eight templates built from the wiki and licensed under CC BY-SA 4.0: AI System Inventory, AI Use-Case Risk Triage, AI Security Vendor Evaluation Scorecard, AI Security Audit and Evidence Checklist, AI Security Control Library and Crosswalks and AI Security Test Case Tracker (.xlsx), and AI Acceptable Use Policy and AI Impact Assessment (.docx). Template page names now show the file type. See the [Update Notes](../09_Reference/19_Update_Notes.md). |
 | 2.36 | 2026-10-17 | Nachiket Sathaye | Added a Templates section with an AI Risk Register Template in Excel, built from the risk register, methodology, triage, control library and every framework and regional regulatory crosswalk, and licensed under CC BY-SA 4.0. Its ratings and settings are illustrative defaults. See the [Update Notes](../09_Reference/19_Update_Notes.md). |
