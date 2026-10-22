@@ -3,7 +3,7 @@ title: "Home"
 description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and {{n:tests}} test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.38
+version: 2.39
 status: Published
 author: Nachiket Sathaye
 coauthors: Ankush Jain
@@ -11,20 +11,20 @@ owner: AI Security Program
 custodian: Security Architecture Team
 review_cycle: Quarterly
 approval_authority: AI Governance Committee
-last_updated: 2026-10-18
+last_updated: 2026-10-22
 ---
 
 # AI Security Wiki Home
 
 > **Document Type:** Enterprise AI Security Reference Architecture and Governance Wiki  
-> **Version:** 2.37  
+> **Version:** 2.39  
 > **Status:** Published  
 > **Original Author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
 > **Co-Author:** Ankush Jain ([about the co-author](#23-about-the-co-author))  
 > **Intended Use:** Public, vendor-neutral reference and template set for AI security governance, engineering, risk management, assurance, audit, compliance, and vendor evaluation.  
 > **Source Repository:** [github.com/nachi065/AI-Security-Wiki](https://github.com/nachi065/AI-Security-Wiki): the Markdown source, the change history, issues and pull requests. See [Contributing](https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md) to suggest a change.
 
-> **Latest update (17 October 2026).** The [Templates](25_Templates/index.md) section now holds nine downloadable templates: the AI risk register, an AI system inventory, use-case triage, a vendor evaluation scorecard, an audit and evidence checklist, a control library with crosswalks and a test case tracker (.xlsx), and an AI acceptable use policy and an AI impact assessment (.docx). Earlier today: the risk register grew from 28 to {{n:risks}} risks with an owner domain for every risk, and new pages added an [AI Security Incident Casebook](09_Reference/20_AI_Security_Incident_Casebook.md), [Agent Architecture Patterns](24_Builder_Track/02_Agent_Architecture_Patterns.md) and an [OWASP MCP Top 10 Crosswalk](23_Framework_Crosswalks/19_OWASP_MCP_Top_10_Crosswalk.md). See the [Update Notes](09_Reference/19_Update_Notes.md) for details.
+> **Latest update (22 October 2026).** This week's verification run checked the regional crosswalks for the GCC, India, the UK, Singapore, the US, South Korea, Australia, Brazil, Canada, China and Japan against official sources. Rows confirmed by the primary text are now tagged [Verified] with the source and retrieval date, and rows that had fallen out of date were corrected, such as the NSW digital work systems Act, China's final rules on anthropomorphic AI services and Japan's 2026 amendment of its personal information law. The home page now also links to the [GitHub source repository](https://github.com/nachi065/AI-Security-Wiki). See the [Update Notes](09_Reference/19_Update_Notes.md) for details.
 
 ## 1. Purpose
 
@@ -411,9 +411,9 @@ The three latest versions, newest first. The full history since version 1.0 is i
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.39 | 2026-10-22 | Nachiket Sathaye | Weekly crosswalk verification (19 to 22 October 2026): the GCC, India, UK, Singapore, US, South Korea, Australia, Brazil, Canada, China and Japan crosswalks were checked against primary sources. Confirmed rows are tagged [Verified] with source and retrieval date, and out-of-date rows were corrected. The home page now links to the GitHub source repository. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 | 2.38 | 2026-10-18 | Nachiket Sathaye | Update Notes now hold the full version history, newest first, and are only ever added to. This section of the home page shows the three latest versions. |
 | 2.37 | 2026-10-17 | Nachiket Sathaye | Templates: added eight templates built from the wiki and licensed under CC BY-SA 4.0: AI System Inventory, AI Use-Case Risk Triage, AI Security Vendor Evaluation Scorecard, AI Security Audit and Evidence Checklist, AI Security Control Library and Crosswalks and AI Security Test Case Tracker (.xlsx), and AI Acceptable Use Policy and AI Impact Assessment (.docx). Template page names now show the file type. See the [Update Notes](09_Reference/19_Update_Notes.md). |
-| 2.36 | 2026-10-17 | Nachiket Sathaye | Added a Templates section with an AI Risk Register Template in Excel, built from the risk register, methodology, triage, control library and every framework and regional regulatory crosswalk, and licensed under CC BY-SA 4.0. Its ratings and settings are illustrative defaults. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 
 ## 21. Quick Links
 
