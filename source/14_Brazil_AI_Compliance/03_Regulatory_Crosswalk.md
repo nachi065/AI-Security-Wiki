@@ -6,11 +6,12 @@ nav_order: 3
 description: "Brazilian instruments mapped one per row to AI security controls, with verification status. Also available as a CSV file."
 document_type: AI Security Wiki Reference
 version: 1.0
+last_reviewed: 2026-10-22
 ---
 
 # Brazil Regulatory Crosswalk
 
-> **Verification required.** Claims on this page about Brazilian law were compiled on 7 October 2026 from secondary web sources and from memory of the law. No primary legal text was read, and each claim is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any of them. This is not legal advice.
+> **Verification required.** Claims on this page about Brazilian law were compiled on 7 October 2026 from secondary web sources and from memory of the law. On 22 October 2026, rows BR1 were checked against the primary text on the issuing bodies' own sites (the Senate and Chamber of Deputies bill records) and are tagged [Verified]. Every other claim is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any of them. This is not legal advice.
 
 One row per instrument in the [Brazil AI Regulatory Hub](01_Brazil_AI_Regulatory_Hub.md), with the wiki controls that relate to it and its verification status. The last column is empty until a row has been confirmed against the primary text; record the primary URL and the date you retrieved it there.
 
@@ -30,7 +31,7 @@ The same data is available as a CSV file for GRC tooling: [crosswalk.csv](data/c
 
 | ID | Instrument | Legal force | Type / status | Wiki controls | Verification tag | To verify | Primary URL and retrieval date |
 |---|---|---|---|---|---|---|---|
-| BR1 | PL 2338/2023 (AI bill) | Proposed | Pending; Senate approved 10 Dec 2024; awaiting committee opinion in the Chamber as at 2 Sep 2026 | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011); [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037); [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) | Reported | Chamber text; amendments |  |
+| BR1 | PL 2338/2023 (AI bill) | Proposed | Pending; Senate approved 10 Dec 2024; awaiting committee opinion in the Chamber as at 2 Sep 2026 | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011); [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037); [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) | Verified | Chamber text, once the rapporteur files an opinion | [Senado Federal: PL 2338/2023 record](https://www25.senado.leg.br/web/atividade/materias/-/materia/157233/pdf); [Camara dos Deputados: PL 2338/2023 tramitacao](https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2487262), retrieved 22 Oct 2026 (Senate approved the substitute on 10 Dec 2024; the Chamber page shows "Aguardando Parecer do(a) Relator(a) na Comissao Especial", no amendments and no entry after 2 Sep 2026) |
 | BR2 | LGPD (Law 13.709/2018) | Binding law | Binding | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013); [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007); [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017); [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) | Recalled | Article numbers; ANPD rules |  |
 | BR3 | ANPD and sector regulators advancing AI regulation | Context | Regulator activity | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013); [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) | Reported | Specific instruments |  |
 | BR4 | Consumer Defence Code and sector rules (finance, health) | Binding law | Binding | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014); [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) | Recalled | Applicability |  |

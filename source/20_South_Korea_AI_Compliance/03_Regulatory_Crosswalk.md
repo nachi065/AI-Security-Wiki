@@ -6,6 +6,7 @@ nav_order: 3
 description: "South Korean instruments mapped one per row to AI security controls, with verification status. Also available as a CSV file."
 document_type: AI Security Wiki Reference
 version: 1.0
+last_reviewed: 2026-10-21
 ---
 
 # South Korea Regulatory Crosswalk

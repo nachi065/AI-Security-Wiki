@@ -6,11 +6,12 @@ nav_order: 3
 description: "Indian instruments mapped one per row to AI security controls, with verification status. Also available as a CSV file."
 document_type: AI Security Wiki Reference
 version: 1.0
+last_reviewed: 2026-10-20
 ---
 
 # India Regulatory Crosswalk
 
-> **Verification required.** Claims on this page about Indian law were compiled on 7 October 2026 from secondary web sources and from memory of the law. No primary legal text was read, and each claim is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any of them. This is not legal advice.
+> **Verification required.** Claims on this page about Indian law were compiled on 7 October 2026 from secondary web sources and from memory of the law. Rows checked since then against primary documents (16 October 2026: IN1, IN2, IN4, IN5, IN6, IN10; 20 October 2026: IN12) are tagged [Verified] with the source in the last column. Every other claim is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any of them. This is not legal advice.
 
 One row per instrument in the [India AI Regulatory Hub](01_India_AI_Regulatory_Hub.md), with the wiki controls that relate to it and its verification status. The last column is empty until a row has been confirmed against the primary text; record the primary URL and the date you retrieved it there.
 
@@ -41,4 +42,4 @@ The same data is available as a CSV file for GRC tooling: [crosswalk.csv](data/c
 | IN9 | IT Rules amendments on synthetic content labelling | Binding in scope | Reported as notified 10 Feb 2026 and in force from 20 Feb 2026 (amendment rules to the IT Rules 2021) | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) | Reported | Gazette text, G.S.R. number and exact scope (law-firm sources agree but the gazette was not read) |  |
 | IN10 | CERT-In incident reporting directions (2022) and AI guidance | Binding law | Binding directions of 28 Apr 2022 (No. 20(3)/2022-CERT-In) under section 70B(6) of the IT Act | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035); [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) | Verified | Whether CERT-In has issued separate AI-specific guidance | [Directions (CERT-In)](https://www.cert-in.org.in/PDF/CERT-In_Directions_70B_28.04.2022.pdf), retrieved 16 Oct 2026 |
 | IN11 | IT Act 2000 and SPDI Rules | Binding law | Existing law until DPDP fully commences | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005); [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) | Recalled | Transition provisions |  |
-| IN12 | IndiaAI Mission | Context | Programme (Mar 2024; INR 10,372 crore) | None | Reported | n/a |  |
+| IN12 | IndiaAI Mission | Context | Programme (Mar 2024; INR 10,372 crore) | None | Verified | n/a | [Cabinet approval (PIB)](https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2012355), retrieved 20 Oct 2026 (release of 7 Mar 2024; outlay Rs 10,371.92 crore) |
