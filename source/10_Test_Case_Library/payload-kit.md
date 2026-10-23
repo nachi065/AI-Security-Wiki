@@ -1,6 +1,7 @@
 ---
 title: "Payload Kit: Runnable Attack Sets for Critical Cases"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 description: "Payload files and a small runner for 36 Critical test cases, with a baseline-versus-protected comparison you can point at your own application."
 parent: "Test Case Library"
 nav_order: 4

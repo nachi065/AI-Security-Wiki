@@ -1,6 +1,7 @@
 ---
 title: "D10 Browser and Computer-Use Agents"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Test Case Library"
 nav_order: 23
 ---

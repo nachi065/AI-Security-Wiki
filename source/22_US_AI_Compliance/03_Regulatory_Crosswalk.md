@@ -1,6 +1,7 @@
 ---
 title: "US Regulatory Crosswalk"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "US AI Compliance"
 nav_order: 3
 description: "US federal and state instruments mapped one per row to AI security controls, with verification status. Also available as a CSV file."

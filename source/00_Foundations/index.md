@@ -2,6 +2,7 @@
 title: "Foundations"
 description: "AI security vs. security of AI: a practitioner research paper separating the terms, with a two-axis model, design principle, reference architecture and cited sources."
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 nav_order: 2
 has_children: true
 document_type: Practitioner Research Paper
@@ -11,7 +12,7 @@ document_type: Practitioner Research Paper
 
 **A practitioner research paper on protecting AI systems, securing AI-enabled enterprises, and using AI for defence**
 
-*Revision: October 2026 · Status: living document · Author: Nachiket Sathaye · Licence: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)*
+*Revision: October 2026 · Status: living document · Author: Nachiket Sathaye · Co-author: Ankush Jain · Licence: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)*
 
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Appendix: Lab Prerequisites"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 description: "Lab prerequisites for AI security PoC testing: the environment, mock services, tooling and synthetic data needed for each AI lifecycle layer."
 parent: "Test Case Library"
 nav_order: 3

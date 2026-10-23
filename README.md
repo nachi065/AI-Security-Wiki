@@ -56,7 +56,7 @@ Every page names its author, and community members are credited for the pages th
 
 Original author: **Nachiket Sathaye**
 
-Contributor: **Ankush Jain**
+Co-author: **Ankush Jain**
 
 ### About the author
 

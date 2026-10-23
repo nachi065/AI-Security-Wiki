@@ -1,6 +1,7 @@
 ---
 title: "Australia: Role Guide"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Australia AI Compliance"
 nav_order: 2
 description: "What Australian AI rules ask of practitioners, product companies, auditors and implementors, with a shared evidence list and audit limitation wording."

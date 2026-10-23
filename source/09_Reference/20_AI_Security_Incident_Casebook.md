@@ -1,6 +1,7 @@
 ---
 title: "AI Security Incident Casebook"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Reference"
 nav_order: 3
 description: "Real AI security incidents and disclosed vulnerabilities, each mapped to the wiki's risks, controls and OWASP items, with what would have stopped it and a link to the primary write-up."

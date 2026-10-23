@@ -1,6 +1,7 @@
 ---
 title: "BR-T2 PL 2338/2023 Readiness Watchlist and Tier Mapping"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Brazil AI Compliance"
 nav_order: 5
 description: "Planning worksheet that maps AI systems to their likely risk tier under Brazil's pending AI bill, with a list of items to watch."

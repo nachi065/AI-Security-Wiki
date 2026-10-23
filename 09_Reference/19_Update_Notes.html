@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Update Notes | AI Security Wiki</title>
-<meta name="author" content="Nachiket Sathaye">
+<meta name="author" content="Nachiket Sathaye, Ankush Jain">
 <meta name="description" content="The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0.">
 <link rel="canonical" href="https://nachi065.github.io/AI-Security-Wiki/09_Reference/19_Update_Notes.html">
 <meta property="og:type" content="article">
@@ -67,7 +67,7 @@
 </ul></details></li>
 <li style="--h:280"><details><summary><a href="../04_Domain_Standards/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 12l9 5 9-5M3 16l9 5 9-5"/></svg>Domain Standards</a></summary><ul>
 <li><a href="../04_Domain_Standards/06_Browser_AI_Security_Standard.html">Browser AI Security Standard</a></li>
-<li><a href="../04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.html">IDE AI Coding Assistant Security Standard</a></li>
+<li><a href="../04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.html">AI Coding Assistant and Coding Agent Security Standard</a></li>
 <li><a href="../04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a></li>
 <li><a href="../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
 <li><a href="../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
@@ -273,10 +273,13 @@
 <li><a href="../23_Framework_Crosswalks/17_International_AI_Instruments_Crosswalk.html">International AI Instruments Crosswalk</a></li>
 <li><a href="../23_Framework_Crosswalks/18_AI_Risk_Map_Crosswalk.html">AI Risk Map Crosswalk</a></li>
 <li><a href="../23_Framework_Crosswalks/19_OWASP_MCP_Top_10_Crosswalk.html">OWASP MCP Top 10 Crosswalk</a></li>
+<li><a href="../23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.html">NIST SSDF and SP 800-218A Crosswalk</a></li>
 </ul></details></li>
 <li style="--h:42"><details><summary><a href="../24_Builder_Track/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.6-.6-2.6z"/></svg>Builder Track</a></summary><ul>
 <li><a href="../24_Builder_Track/01_Secure_Your_First_Agent.html">Secure Your First Agent: Ten Controls With Code</a></li>
 <li><a href="../24_Builder_Track/02_Agent_Architecture_Patterns.html">Agent Architecture Patterns</a></li>
+<li><a href="../24_Builder_Track/03_Privacy_Duties_in_Code.html">Privacy Duties in Code: Consent, Rights, Retention and Children&#x27;s Data</a></li>
+<li><a href="../24_Builder_Track/04_Developer_Pipeline_Checks.html">Developer Pipeline Checks for AI-Assisted Code</a></li>
 </ul></details></li>
 <li style="--h:75"><details><summary><a href="../25_Templates/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M4 15h16M10 4v16"/></svg>Templates</a></summary><ul>
 <li><a href="../25_Templates/01_AI_Risk_Register_Template.html">AI Risk Register Template (.xlsx)</a></li>
@@ -304,9 +307,35 @@
 <li><strong><a href="#full-version-history">Full version history</a></strong>: every version since 1.0, newest first. The <a href="../index.html#20-version-history">home page</a> shows only the three latest.</li>
 </ul>
 <p>Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.</p>
+<h2 id="23-october-2026-secure-development-and-privacy-in-code">23 October 2026: secure development and privacy in code</h2>
+<p>A comparison with <a href="https://github.com/ankush1982/ai-secure-by-design" rel="noopener">ai-secure-by-design</a>, an open-source plugin for AI coding agents by the wiki's co-author Ankush Jain, found five gaps in the wiki. It never cited the NIST Secure Software Development Framework or its generative AI profile. Its standard for AI coding assistants was short and did not cover coding agents. It had no controls before commit. It described privacy duties as forms, not code. And the Builder Track tests were not run in CI. This update closes those gaps.</p>
+<h3 id="what-changed">What changed</h3>
+<ul>
+<li><strong>NIST SSDF crosswalk.</strong> A new <a href="../23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.html">NIST SSDF and SP 800-218A Crosswalk</a> maps the 19 practices of SSDF 1.1, plus the new PW.3 practice of SP 800-218A, to the wiki's controls, pages, code and test cases: 17 direct and 3 partial. It records the PW.3 renumbering and the new PO.5.3 task.</li>
+<li><strong>Coding assistants and coding agents.</strong> The <a href="../04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.html">AI Coding Assistant and Coding Agent Security Standard</a> (version 2.0, same address) now covers completion assistants, coding agents, pipeline agents, and the extensions, plugins, MCP servers and rules files that steer them. New requirements cover approved models and accounts, command and file-system guardrails, scoped agent credentials, MCP servers and plugins, repository content as untrusted input, managed agent settings and hooks, generated code review, dependency verification, provenance of AI-made changes, and review bot permissions. Each requirement links to the existing test case that proves it. A pipeline gates table shows which checks run in the agent, before commit, in CI and at merge, and which of them the author can bypass.</li>
+<li><strong>Privacy duties in code.</strong> A new Builder Track page, <a href="../24_Builder_Track/03_Privacy_Duties_in_Code.html">Privacy Duties in Code</a>, maps the duties of the DPDP Act (s.5, s.6, s.8(5) to s.8(10), s.9, s.11 to s.14, s.16) to tested reference code: a consent ledger keyed to the notice version, a rights desk, a retention runner with advance notice, a children's gate, and a logger that uses keyed pseudonyms. All of it is driven by one data map. The time limits from the DPDP Rules are settings, each with a verification tag.</li>
+<li><strong>Developer pipeline checks.</strong> A new Builder Track page, <a href="../24_Builder_Track/04_Developer_Pipeline_Checks.html">Developer Pipeline Checks</a>, runs the same checks in git hooks, a coding agent's pre-write hook and CI. The checks look for secrets and for personal data written to logs, using the same data map, and require an <code>AI-Assistance</code> trailer that records whether a person, an assistant or an agent made each change. The trailer is this wiki's convention and supports <a class="chip" href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-021">TC-L14-021</a>.</li>
+<li><strong>Tests in CI.</strong> A new workflow, <code>builder-tests.yml</code>, runs every Builder Track test on Python 3.10 and 3.13 for every pull request that changes the section. It runs with a read-only token and no secrets. The check that page excerpts match the code now covers every Builder Track page. Its first run caught a real bug in the <a href="../24_Builder_Track/01_Secure_Your_First_Agent.html#b8-limit-egress-to-named-hosts">egress proxy</a>. When a name resolved to several addresses, the proxy connected only to the first one. On a dual-stack host that lists an IPv6 address first, connections to a service listening only on IPv4 therefore failed. The proxy now checks every address and tries each in turn, and a new test covers the case.</li>
+<li><strong>Cards.</strong> The Domain Standards, Framework Crosswalks, India and Builder Track cards on the home page describe the new content.</li>
+</ul>
+<h3 id="what-was-checked">What was checked</h3>
+<ul>
+<li>The DPDP Act sections cited on the privacy page were read in the Act text published by MeitY on 23 October 2026 [Verified]. That reading confirmed two points. The Act has no "sensitive personal data" category. Section 7's legitimate uses include no general contract ground.</li>
+<li>The DPDP Rules numbers were also read on 23 October 2026, from the Hindi text only. The English text was not read. They are: at least 48 hours' notice before erasure (Rule 8(2)), a three-year retention for the classes in the Third Schedule (Rule 8(1)), and one year for logs (Rule 6). All three are tagged [Reported]. Two numbers are tagged [Unverified]: the ninety-day grievance limit (Rule 14(3)), because the extracted number was garbled, and the hours for the detailed breach report (Rule 7(2)(b)), because they were not legible.</li>
+<li>These items of SP 800-218 and SP 800-218A were read on the NIST publication pages and in the PDFs on 23 October 2026 [Verified]: the titles, dates and audiences, the four practice groups, the titles of PO.1 to PO.5 and PS.1, the new PW.3 practice, task PO.5.3, and the note that PO.1.3 was formerly PW.3.1. The PDFs were read only in part. The other practice titles are tagged [Reported] on the crosswalk.</li>
+<li>The Builder Track tests pass on Python 3.10, 3.11, 3.12 and 3.13 (90 tests, 1 skipped where the kernel does not allow a network namespace). The new git hook tests install the hooks in a throwaway repository and confirm that a secret or a missing trailer blocks the commit.</li>
+<li>The link and identifier check and the author check pass.</li>
+</ul>
+<h3 id="still-work-in-progress">Still work in progress</h3>
+<ul>
+<li>The DPDP Rules numbers above need checking against the English text before anyone relies on them.</li>
+<li>The SSDF crosswalk maps at practice level. SP 800-218A adds recommendations at task level, and those are not yet mapped.</li>
+<li>No test case covers the right to nominate (s.14) or the deemed end of purpose after a period without contact (s.8(8)).</li>
+<li>The privacy code is written against India's DPDP Act. Other laws differ, for example in the GDPR's special categories and contract basis.</li>
+</ul>
 <h2 id="22-october-2026-weak-points-in-proof-rating-and-operation">22 October 2026: weak points in proof, rating and operation</h2>
 <p>A review of the wiki found that it shows proof weakly (test cases could be read as validated protection, risk ratings were not calibrated, regulatory claims were only partly verified) and is hard to run as a programme (no charter, few default numbers, thin governance detail). This update addresses those points.</p>
-<h3 id="what-changed">What changed</h3>
+<h3 id="what-changed_1">What changed</h3>
 <ul>
 <li><strong>Validation levels for test cases.</strong> Every case now shows a Validation Level: Documented, Executable, Lab-validated or Independently reproduced (<a href="../10_Test_Case_Library/index.html#validation-levels">Validation levels</a>). The build fills it in: a case with a payload file in the kit is Executable, every other case is Documented. A case can claim Lab-validated or Independently reproduced only with a Validated Against row that names the product and version, the date and an evidence link; the link check enforces this. No case is lab-validated: the payload kit has only been run against its own stand-in applications.</li>
 <li><strong>Self-contained test cases.</strong> Each case now ends with a closed box listing the <a href="../10_Test_Case_Library/standard-fields.html">Standard Fields</a> wording that applies to it, so a copied case keeps its pass and fail criteria, scoring and evidence rules. The <a href="../25_Templates/07_AI_Security_Test_Case_Tracker_Template.html">test case tracker workbook</a> (version 1.1) fills those fields into every row and adds the validation level.</li>
@@ -319,12 +348,12 @@
 <li><strong>Templates.</strong> Two new Word templates: the <a href="../25_Templates/10_AI_Security_Programme_Charter_Template.html">AI Security Programme Charter</a>, which brings the programme into one approvable document and links each section to the wiki page behind it, and the <a href="../25_Templates/11_AI_Incident_Report_Template.html">AI Incident Report</a>.</li>
 <li><strong>Build.</strong> The committed search index had been built with a different markdown version and showed fill-in blanks on 18 template pages as broken text; it is rebuilt correctly.</li>
 </ul>
-<h3 id="what-was-checked">What was checked</h3>
+<h3 id="what-was-checked_1">What was checked</h3>
 <ul>
 <li>The link and identifier check passes, including the new validation-level rule, which was tested by adding an invalid level and an unsupported Lab-validated claim to a copy of the source and confirming that both were rejected.</li>
 <li>The hand-kept case counts (layer headers, the Tested By rows of the control library and the tables on the library index) were recalculated by script from the case tables, after confirming that the same script reproduced the earlier counts exactly.</li>
 </ul>
-<h3 id="still-work-in-progress">Still work in progress</h3>
+<h3 id="still-work-in-progress_1">Still work in progress</h3>
 <ul>
 <li><strong>No real-system validation yet.</strong> No case has been run against a real model, agent framework or product. Publishing reproducible results against representative applications is still to do; until then every case is Documented or Executable.</li>
 <li><strong>EU obligations not yet read one by one.</strong> On 22 October 2026 the article text of the EU AI Act could not be retrieved from EUR-Lex (only the recitals came back), so the obligation-level tracker lists the articles as recalled and no new [Verified] tag was added. The deployer log retention period (Art. 26) and the serious incident time limits (Art. 73) in particular must be read before they are relied on.</li>
@@ -333,7 +362,7 @@
 <li><strong>Operating defaults and thresholds are untested.</strong> They are starting values to tune, not benchmarks.</li>
 </ul>
 <h2 id="week-ending-24-october-2026-crosswalk-verification">Week ending 24 October 2026: crosswalk verification</h2>
-<h3 id="what-was-checked_1">What was checked</h3>
+<h3 id="what-was-checked_2">What was checked</h3>
 <ul>
 <li><strong>GCC (19 October 2026):</strong> every row of the <a href="../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.html">GCC Regulatory Crosswalk</a> was checked for changes, and the rows not yet verified were checked against the issuing bodies' own pages where those pages could be read: the UAE legislation portal, the Central Bank of the UAE, the Saudi National Cybersecurity Authority (NCA) and the UAE AI Office.</li>
 <li><strong>India and UK (20 October 2026):</strong> every row of the <a href="../17_India_AI_Compliance/03_Regulatory_Crosswalk.html">India Regulatory Crosswalk</a> and the <a href="../21_UK_AI_Compliance/03_Regulatory_Crosswalk.html">UK Regulatory Crosswalk</a> was checked for changes. Ten rows not yet verified were checked against MeitY, the Lok Sabha, the Press Information Bureau, legislation.gov.uk, GOV.UK, the UK Parliament bill pages, the Bank of England and the NCSC.</li>
@@ -341,7 +370,7 @@
 <li><strong>Australia, Brazil, Canada, China and Japan (22 October 2026):</strong> every row of the <a href="../13_Australia_AI_Compliance/03_Regulatory_Crosswalk.html">Australia</a>, <a href="../14_Brazil_AI_Compliance/03_Regulatory_Crosswalk.html">Brazil</a>, <a href="../15_Canada_AI_Compliance/03_Regulatory_Crosswalk.html">Canada</a>, <a href="../16_China_AI_Compliance/03_Regulatory_Crosswalk.html">China</a> and <a href="../18_Japan_AI_Compliance/03_Regulatory_Crosswalk.html">Japan</a> crosswalks was checked for changes. This was the first check of these five regions against primary sources. Rows were checked against the Federal Register of Legislation, the OAIC, the Department of Industry, APRA, Treasury, the ACCC and the Parliament of NSW; the Brazilian Senate and Chamber, the Planalto legislation site and the ANPD; Justice Laws, LegisQuebec, ISED, OSFI, the Parliament of Canada and the Ontario legislature and government; the CAC, MIIT, the State Council policy library and the national standards system; and the Cabinet Office, METI, the Personal Information Protection Commission, the Agency for Cultural Affairs and the FSA.</li>
 <li><strong>Framework crosswalks (23 October 2026):</strong> every MITRE ATLAS technique and mitigation identifier the wiki cites (88 in all, in the control library and the test cases) was compared with MITRE's own ATLAS data, release 2026.09 of 15 September 2026, the latest release in the <a href="https://github.com/mitre-atlas/atlas-data" rel="noopener">atlas-data repository</a> on 23 October 2026. The <a href="../23_Framework_Crosswalks/16_Trustworthy_AI_Ethics_Crosswalk.html">Trustworthy AI and Ethics Standards Crosswalk</a> and the <a href="../23_Framework_Crosswalks/17_International_AI_Instruments_Crosswalk.html">International AI Instruments Crosswalk</a> were due for a check this week but could not be checked (see below).</li>
 </ul>
-<h3 id="what-changed_1">What changed</h3>
+<h3 id="what-changed_2">What changed</h3>
 <ul>
 <li><strong>GCC, now [Verified]:</strong> U2 (UAE cybercrime law, Federal Decree-Law No. 34 of 2021) and S8 (NCA AI Cybersecurity Guidelines: a consultation draft, feedback closed 5 August 2026, no final text yet). U1 (UAE PDPL) was read again with no change.</li>
 <li><strong>GCC, U9 (CBUAE Guidance Note):</strong> the CBUAE press release confirms the date (23 February 2026) and that it applies to licensed financial institutions. The row stays [Reported] because the note's own text has not been read.</li>
@@ -382,7 +411,7 @@
 <li><strong>Home page (22 October 2026):</strong> a Source Repository line in the document box now links to the GitHub repository and its contributing guide, and version 2.39 records this week's merged changes.</li>
 <li><strong>MITRE ATLAS:</strong> every identifier exists in release 2026.09, every name the wiki gives matches it, and none is deprecated. The <a href="../23_Framework_Crosswalks/07_MITRE_ATLAS_Crosswalk.html">MITRE ATLAS Crosswalk</a> now has a review date. No mapping changed.</li>
 </ul>
-<h3 id="still-work-in-progress_1">Still work in progress</h3>
+<h3 id="still-work-in-progress_2">Still work in progress</h3>
 <ul>
 <li>GCC: Bahrain's AI law (B3) is still listed as a draft; news reports this year disagree on whether it has passed. The Saudi copyright text and data mining exception (S9) and the Saudi AI risk framework (S5) still have no primary source.</li>
 <li>The SDAIA site rejected automated requests on 19 October 2026, so the Saudi rows S1 to S4 were not re-checked this week.</li>
@@ -492,7 +521,7 @@
 <li><strong>Builder Track:</strong> a new section with one page, <a href="../24_Builder_Track/01_Secure_Your_First_Agent.html">Secure Your First Agent: Ten Controls With Code</a>. It sets out ten controls in build order, each tied to an existing control objective, with working configuration and code for tool allow-lists, argument validation, scoped short-lived credentials, sandboxing, egress limits and approval gates.</li>
 <li><strong>Reference code:</strong> the <a href="../24_Builder_Track/index.html#the-code"><code>code/</code></a> folder holds a guard, a sandbox wrapper, an allow-list egress proxy, container and Kubernetes settings, a policy file, and a demo in which a hijacked agent is stopped at every step. It uses only the Python standard library.</li>
 </ul>
-<h3 id="what-was-checked_2">What was checked</h3>
+<h3 id="what-was-checked_3">What was checked</h3>
 <ul>
 <li>For the Standard Fields change, every field of every case was rebuilt from its explicit text or the standard for its test method, kind of case or layer and compared with the original. All matched, so no wording was lost or altered. The link check now fails if a case repeats a standard word for word, and a deliberate repeat was used to confirm it does.</li>
 <li>The payload kit runner and stand-in applications have a test suite (38 tests). Eight deliberate breakages of the runner's judging were each caught. Against the stand-ins, the tool-governance cases pass and the cases that depend on what a model says fail, as expected; the resource-limit sandbox fails three of five probes.</li>
@@ -517,7 +546,7 @@
 <li><strong>Observability:</strong> <a class="chip" href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-032">TC-L17-032</a> covers access, masking, retention and residency of AI tracing and evaluation tools, and <a class="chip" href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-033">TC-L17-033</a> covers ownership and review of AI failures that are not security incidents.</li>
 <li>The library now holds 668 cases: 535 in the 17 layers and 133 in the six emerging domains.</li>
 </ul>
-<h3 id="what-was-checked_3">What was checked</h3>
+<h3 id="what-was-checked_4">What was checked</h3>
 <p>The OWASP and NIST AI RMF mappings on the 12 new cases were checked on 15 October 2026. The OWASP identifiers and titles were checked against the OWASP GenAI Security Project's pages for the <a href="https://genai.owasp.org/llmrisk/llm082025-vector-and-embedding-weaknesses/" rel="noopener">Top 10 for LLM Applications 2025</a>. The NIST identifiers were checked against the subcategory text in <a href="https://airc.nist.gov/airmf-resources/airmf/5-sec-core/" rel="noopener">section 5 of the AI RMF 1.0 Core</a>. Every identifier exists, but several did not fit the case and were changed:</p>
 <ul>
 <li>GOVERN 1.1 covers legal and regulatory requirements, not roles or approvals. On the ownership and approval cases it was replaced with GOVERN 2.1 (roles and responsibilities), and on the policy cases with GOVERN 1.4 (transparent policies and procedures).</li>
@@ -655,6 +684,12 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>2.41</td>
+<td>2026-10-23</td>
+<td>Nachiket Sathaye</td>
+<td>Secure development and privacy in code, after a comparison with the ai-secure-by-design repository: new NIST SSDF and SP 800-218A crosswalk; the IDE coding assistant standard rewritten (version 2.0) to cover coding agents, pipeline agents, plugins, MCP servers and rules files, with pipeline gates and a test case per requirement; two new Builder Track pages with tested code, Privacy Duties in Code (DPDP consent, rights, retention, children's data, log redaction) and Developer Pipeline Checks (secrets, personal data in logs and an AI-Assistance trailer, run in git hooks, a coding agent's hook and CI); the Builder Track tests now run in CI.</td>
+</tr>
 <tr>
 <td>2.40</td>
 <td>2026-10-22</td>
@@ -911,7 +946,7 @@
 </table></div>
 </article>
 <nav class="pager" aria-label="Previous and next page"><a class="prev" href="18_AI_Security_Glossary_and_Taxonomy.html">&larr; AI Security Glossary and Taxonomy</a><a class="next" href="20_AI_Security_Incident_Casebook.html">AI Security Incident Casebook &rarr;</a></nav>
-<footer class="site-footer">Author: Nachiket Sathaye &middot; Updated 22 October 2026 &middot; Last reviewed 23 October 2026 &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/09_Reference/19_Update_Notes.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
+<footer class="site-footer">Author: Nachiket Sathaye &middot; Co-author: Ankush Jain &middot; Updated 23 October 2026 &middot; Last reviewed 23 October 2026 &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/09_Reference/19_Update_Notes.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
 <div class="site-notice">
 <p><strong>Licence.</strong> <svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.441-3.5c8.951,0,16.572,3.125,22.857,9.372c3.008,3.009,5.295,6.448,6.857,10.314 c1.561,3.867,2.344,7.971,2.344,12.314c0,4.381-0.773,8.486-2.314,12.313c-1.543,3.828-3.82,7.21-6.828,10.143 c-3.123,3.085-6.666,5.448-10.629,7.086c-3.961,1.638-8.057,2.457-12.285,2.457s-8.276-0.808-12.143-2.429 c-3.866-1.618-7.333-3.961-10.4-7.027c-3.067-3.066-5.4-6.524-7-10.372S5.5,32.767,5.5,28.5c0-4.229,0.809-8.295,2.428-12.2 c1.619-3.905,3.972-7.4,7.057-10.486C21.08-0.394,28.565-3.5,37.441-3.5z M37.557,2.272c-7.314,0-13.467,2.553-18.458,7.657 c-2.515,2.553-4.448,5.419-5.8,8.6c-1.354,3.181-2.029,6.505-2.029,9.972c0,3.429,0.675,6.734,2.029,9.913 c1.353,3.183,3.285,6.021,5.8,8.516c2.514,2.496,5.351,4.399,8.515,5.715c3.161,1.314,6.476,1.971,9.943,1.971 c3.428,0,6.75-0.665,9.973-1.999c3.219-1.335,6.121-3.257,8.713-5.771c4.99-4.876,7.484-10.99,7.484-18.344 c0-3.543-0.648-6.895-1.943-10.057c-1.293-3.162-3.18-5.98-5.654-8.458C50.984,4.844,44.795,2.272,37.557,2.272z M37.156,23.187 l-4.287,2.229c-0.458-0.951-1.019-1.619-1.685-2c-0.667-0.38-1.286-0.571-1.858-0.571c-2.856,0-4.286,1.885-4.286,5.657 c0,1.714,0.362,3.084,1.085,4.113c0.724,1.029,1.791,1.544,3.201,1.544c1.867,0,3.181-0.915,3.944-2.743l3.942,2 c-0.838,1.563-2,2.791-3.486,3.686c-1.484,0.896-3.123,1.343-4.914,1.343c-2.857,0-5.163-0.875-6.915-2.629 c-1.752-1.752-2.628-4.19-2.628-7.313c0-3.048,0.886-5.466,2.657-7.257c1.771-1.79,4.009-2.686,6.715-2.686 C32.604,18.558,35.441,20.101,37.156,23.187z M55.613,23.187l-4.229,2.229c-0.457-0.951-1.02-1.619-1.686-2 c-0.668-0.38-1.307-0.571-1.914-0.571c-2.857,0-4.287,1.885-4.287,5.657c0,1.714,0.363,3.084,1.086,4.113 c0.723,1.029,1.789,1.544,3.201,1.544c1.865,0,3.18-0.915,3.941-2.743l4,2c-0.875,1.563-2.057,2.791-3.541,3.686 c-1.486,0.896-3.105,1.343-4.857,1.343c-2.896,0-5.209-0.875-6.941-2.629c-1.736-1.752-2.602-4.19-2.602-7.313 c0-3.048,0.885-5.466,2.658-7.257c1.77-1.79,4.008-2.686,6.713-2.686C51.117,18.558,53.938,20.101,55.613,23.187z"/></svg><svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.443-3.5c8.988,0,16.57,3.085,22.742,9.257C66.393,11.967,69.5,19.548,69.5,28.5c0,8.991-3.049,16.476-9.145,22.456 C53.879,57.319,46.242,60.5,37.443,60.5c-8.649,0-16.153-3.144-22.514-9.43C8.644,44.784,5.5,37.262,5.5,28.5 c0-8.761,3.144-16.342,9.429-22.742C21.101-0.415,28.604-3.5,37.443-3.5z M37.557,2.272c-7.276,0-13.428,2.553-18.457,7.657 c-5.22,5.334-7.829,11.525-7.829,18.572c0,7.086,2.59,13.22,7.77,18.398c5.181,5.182,11.352,7.771,18.514,7.771 c7.123,0,13.334-2.607,18.629-7.828c5.029-4.838,7.543-10.952,7.543-18.343c0-7.276-2.553-13.465-7.656-18.571 C50.967,4.824,44.795,2.272,37.557,2.272z M46.129,20.557v13.085h-3.656v15.542h-9.944V33.643h-3.656V20.557 c0-0.572,0.2-1.057,0.599-1.457c0.401-0.399,0.887-0.6,1.457-0.6h13.144c0.533,0,1.01,0.2,1.428,0.6 C45.918,19.5,46.129,19.986,46.129,20.557z M33.042,12.329c0-3.008,1.485-4.514,4.458-4.514s4.457,1.504,4.457,4.514 c0,2.971-1.486,4.457-4.457,4.457S33.042,15.3,33.042,12.329z"/></svg>This wiki is open to the community under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">Creative Commons Attribution-ShareAlike 4.0 International licence (CC BY-SA 4.0)</a>. You may copy, share and adapt it for any purpose, including commercially, as long as you credit the authors and release anything you build from it under the same licence.</p>
 <p><strong>Disclaimer.</strong> This wiki is an open, community driven educational reference, not legal, regulatory or professional advice. Regional regulatory content is compiled from secondary sources and its verification status is shown per row; verify against primary sources before relying on it. Content is provided "as is" without warranty. Named products and companies belong to their owners; statements about them reflect public information at the date shown. Views are the author's own.</p>

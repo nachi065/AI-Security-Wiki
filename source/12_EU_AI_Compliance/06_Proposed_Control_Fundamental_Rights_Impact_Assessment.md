@@ -1,6 +1,7 @@
 ---
 title: "EU Drivers for AI-CTRL-041 and AI-CTRL-042"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "EU AI Compliance"
 nav_order: 6
 description: "The EU instruments behind AI-CTRL-042 on fundamental rights and data protection impact assessment and AI-CTRL-041 on fairness, with templates and test cases."

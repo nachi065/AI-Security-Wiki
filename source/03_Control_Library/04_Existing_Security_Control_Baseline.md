@@ -1,6 +1,7 @@
 ---
 title: "Existing Security Control Baseline"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Control Library"
 nav_order: 2
 document_type: AI Security Wiki Reference

@@ -1,6 +1,7 @@
 ---
 title: "AI Risk Map Crosswalk"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Framework Crosswalks"
 nav_order: 18
 description: "The 55 categories of the AI Risk Map (RiskFramework.org, v1.3) mapped to this wiki's risk register, with the categories the wiki covers only in part."

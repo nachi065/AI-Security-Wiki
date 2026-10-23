@@ -1,6 +1,7 @@
 ---
 title: "China AI Regulatory Hub"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "China AI Compliance"
 nav_order: 1
 description: "Chinese AI measures mapped to AI security controls: generative AI, algorithm recommendation, deep synthesis, content labelling, ethics review, and the PIPL and data laws."

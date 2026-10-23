@@ -1,6 +1,7 @@
 ---
 title: "Canada: Role Guide"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Canada AI Compliance"
 nav_order: 2
 description: "What Canadian rules ask of AI practitioners, product companies, auditors and implementors across federal, Quebec and sector layers."

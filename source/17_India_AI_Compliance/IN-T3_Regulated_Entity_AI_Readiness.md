@@ -1,6 +1,7 @@
 ---
 title: "IN-T3 Regulated-Entity AI Readiness Checklist (RBI, SEBI, IRDAI)"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "India AI Compliance"
 nav_order: 6
 description: "Twelve-theme AI readiness checklist for Indian banks, NBFCs, market intermediaries and insurers, each theme mapped to a wiki control."

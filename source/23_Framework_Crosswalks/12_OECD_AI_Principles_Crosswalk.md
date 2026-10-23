@@ -1,6 +1,7 @@
 ---
 title: "OECD AI Principles Crosswalk"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Framework Crosswalks"
 nav_order: 12
 description: "The five values-based OECD AI Principles mapped to this wiki's control objectives, with the principles the wiki covers only in part or not at all."

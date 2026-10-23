@@ -1,6 +1,7 @@
 ---
 title: "Brazil: Role Guide"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Brazil AI Compliance"
 nav_order: 2
 description: "What Brazilian rules ask of AI practitioners, product companies, auditors and implementors while the AI bill is pending, with a shared evidence list."

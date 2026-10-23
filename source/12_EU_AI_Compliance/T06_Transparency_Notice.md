@@ -1,6 +1,7 @@
 ---
 title: "T06 Transparency Notice (AI Act Article 50 and GDPR)"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "EU AI Compliance"
 nav_order: 14
 description: "Draft AI transparency notice: short notice, full GDPR notice elements, AI Act Article 50 disclosures and labels, and a publication checklist."

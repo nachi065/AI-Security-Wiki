@@ -1,6 +1,7 @@
 ---
 title: "AI Incident Report Template (.docx)"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Templates"
 nav_order: 11
 description: "A downloadable Word template for recording one AI incident from detection to closure: summary, what happened, timeline, containment, evidence, notifications with their legal source, root cause across eight factors, impact, actions and closure."
@@ -32,4 +33,4 @@ For jurisdiction-specific notification workflows, see the incident templates in 
 
 ## Licence and credit
 
-The document is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI Incident Report" by Nachiket Sathaye, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence.
+The document is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI Incident Report" by Nachiket Sathaye and Ankush Jain, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence.

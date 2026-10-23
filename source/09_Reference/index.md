@@ -1,6 +1,7 @@
 ---
 title: "Reference"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 description: "AI security glossary and taxonomy, update notes and a casebook of real AI security incidents: plain definitions of prompt injection, RAG, agents, MCP, AI-SPM, guardrails and related terms."
 nav_order: 12
 has_children: true

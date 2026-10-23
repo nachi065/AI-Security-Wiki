@@ -1,6 +1,7 @@
 ---
 title: "EU Evidence Register"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "EU AI Compliance"
 nav_order: 8
 description: "Starter list of 31 evidence items an auditor would request for an AI system under EU rules, by control family. Also available as a CSV file."

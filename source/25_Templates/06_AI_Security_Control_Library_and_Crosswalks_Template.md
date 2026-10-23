@@ -1,6 +1,7 @@
 ---
 title: "AI Security Control Library and Crosswalks Template (.xlsx)"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Templates"
 nav_order: 6
 description: "A downloadable Excel workbook of the wiki's AI security controls with every library field, ready to track implementation and testing, cross-referenced to every item of the wiki's framework crosswalks and to the register risks."
@@ -41,4 +42,4 @@ version: 1.0
 
 ## Licence and credit
 
-The workbook is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI Security Control Library and Crosswalks" by Nachiket Sathaye, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence. The AI Risk Map v1.3 crosswalk items, and the risks AI-R29 to AI-R46 they map to, are adapted from the AI Risk Map v1.3 by Evan Wheeler, RiskFramework.org, licensed under CC BY-SA 4.0. Framework names, identifiers and short titles belong to their owners and are cited for mapping only.
+The workbook is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI Security Control Library and Crosswalks" by Nachiket Sathaye and Ankush Jain, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence. The AI Risk Map v1.3 crosswalk items, and the risks AI-R29 to AI-R46 they map to, are adapted from the AI Risk Map v1.3 by Evan Wheeler, RiskFramework.org, licensed under CC BY-SA 4.0. Framework names, identifiers and short titles belong to their owners and are cited for mapping only.

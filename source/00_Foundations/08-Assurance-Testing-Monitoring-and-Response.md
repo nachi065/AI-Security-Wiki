@@ -2,6 +2,7 @@
 title: "8. Assurance: Testing, Monitoring and Response"
 description: "AI assurance: threat modelling, adversarial testing and red teaming, monitoring and detection, AI incident response and control-effectiveness metrics."
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Foundations"
 nav_order: 8
 document_type: Practitioner Research Paper

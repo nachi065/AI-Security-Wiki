@@ -1,6 +1,7 @@
 ---
 title: "CN-T1 Filing and Registration Readiness Checklist"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "China AI Compliance"
 nav_order: 4
 description: "Twelve-question checklist on filings, content review, verification and data transfer for an AI service offered to the public in mainland China."

@@ -1,6 +1,7 @@
 ---
 title: "Trustworthy AI and Ethics Standards Crosswalk"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Framework Crosswalks"
 nav_order: 16
 description: "The EU Ethics Guidelines for Trustworthy AI, the UNESCO Recommendation on the Ethics of AI and the IEEE 7000-series standards mapped to this wiki's controls, with the gaps."

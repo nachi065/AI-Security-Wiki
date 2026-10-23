@@ -1,6 +1,7 @@
 ---
 title: "CIS Controls Crosswalk"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Framework Crosswalks"
 nav_order: 10
 description: "The 18 CIS Critical Security Controls, version 8, with the wiki control objectives and test cases that cite them, and the wiki controls that have no CIS equivalent."

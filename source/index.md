@@ -3,7 +3,7 @@ title: "Home"
 description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and {{n:tests}} test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.40
+version: 2.41
 status: Published
 author: Nachiket Sathaye
 coauthors: Ankush Jain
@@ -11,20 +11,20 @@ owner: AI Security Program
 custodian: Security Architecture Team
 review_cycle: Quarterly
 approval_authority: AI Governance Committee
-last_updated: 2026-10-22
+last_updated: 2026-10-23
 ---
 
 # AI Security Wiki Home
 
 > **Document Type:** Enterprise AI Security Reference Architecture and Governance Wiki  
-> **Version:** 2.40  
+> **Version:** 2.41  
 > **Status:** Published  
 > **Original Author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
 > **Co-Author:** Ankush Jain ([about the co-author](#23-about-the-co-author))  
 > **Intended Use:** Public, vendor-neutral reference and template set for AI security governance, engineering, risk management, assurance, audit, compliance, and vendor evaluation.  
 > **Source Repository:** [github.com/nachi065/AI-Security-Wiki](https://github.com/nachi065/AI-Security-Wiki): the Markdown source, the change history, issues and pull requests. See [Contributing](https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md) to suggest a change.
 
-> **Latest update (22 October 2026).** Known weak points in testing, risk rating, governance and regulatory verification were addressed. Every test case now shows a **validation level**, so a published case is no longer read as proof of protection; each case carries the shared Standard Fields wording that applies to it, and so does the test tracker workbook. The [risk methodology](02_Risk_Management/02A_AI_Risk_Methodology.md) has a scoring method and four worked calibration examples. Governance gains committee charters, a decision-rights table and a role-based training plan, and three new cases test outcomes that the newest controls left untested. New pages set out [illustrative operating defaults](08_Governance/18_AI_Operating_Defaults.md), [predictive model monitoring and adversarial ML](04_Domain_Standards/11_Predictive_Model_Monitoring_and_Adversarial_ML.md) and the [regulatory verification status](09_Reference/21_Regulatory_Verification_Status.md) of every region, with programme charter and incident report templates. See the [Update Notes](09_Reference/19_Update_Notes.md) for details and what is still open.
+> **Latest update (23 October 2026).** Secure development and privacy now come with code. A new [NIST SSDF and SP 800-218A crosswalk](23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.md) maps the secure development practices, including those for generative AI, to the wiki's controls and tests. The [AI coding assistant standard](04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.md) now covers coding agents, plugins, MCP servers and rules files, with the gates that run before commit, in CI and at merge. Two new Builder Track pages have working, tested code: [privacy duties under India's DPDP Act](24_Builder_Track/03_Privacy_Duties_in_Code.md) (consent, rights, retention, children's data, log redaction) and [developer pipeline checks](24_Builder_Track/04_Developer_Pipeline_Checks.md) for git hooks, coding agents and CI. The Builder Track tests now run in CI. See the [Update Notes](09_Reference/19_Update_Notes.md) for details and what is still open.
 
 ## 1. Purpose
 
@@ -50,6 +50,7 @@ This wiki is the implementation layer: control objectives, evidence, audit proce
 | Set up a first, short AI governance baseline | AI Baseline Control Framework (AI BCF) | Control objectives, evidence and tests, through the [AI BCF crosswalk](23_Framework_Crosswalks/02_AI_BCF_Crosswalk.md) |
 | Structure a management system | ISO/IEC 42001 with ISO/IEC 27001 | Technical control objectives and test criteria, through the [ISO/IEC 42001](23_Framework_Crosswalks/05_ISO_IEC_42001_Crosswalk.md) and [ISO/IEC 27001](23_Framework_Crosswalks/08_ISO_IEC_27001_Crosswalk.md) crosswalks |
 | Extend an existing security programme to AI | NIST CSF, CIS Controls or SOC 2 | The AI control objectives under each category, control or criterion, through the [NIST CSF](23_Framework_Crosswalks/09_NIST_CSF_Crosswalk.md), [CIS Controls](23_Framework_Crosswalks/10_CIS_Controls_Crosswalk.md) and [SOC 2](23_Framework_Crosswalks/11_SOC_2_Crosswalk.md) crosswalks |
+| Run a secure software development lifecycle | NIST SSDF (SP 800-218) and, for generative AI, SP 800-218A | AI-specific controls, code and tests per practice, through the [NIST SSDF Crosswalk](23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.md) |
 | Compare privacy duties across jurisdictions | GDPR, CCPA, Quebec Law 25, Singapore PDPA and the GCC data protection laws | Controls per theme, through the [Privacy Law Crosswalk](23_Framework_Crosswalks/13_Privacy_Law_Crosswalk.md) |
 | Structure risk language and a programme | NIST AI RMF | Engineering controls, evidence and scoring |
 | Define attack classes for testing | OWASP lists, MITRE ATLAS, NIST AI 100-2 | The {{n:tests}}-case test library, and the [NIST AI 100-2 Crosswalk](23_Framework_Crosswalks/14_NIST_AI_100_2_Crosswalk.md) |
@@ -127,7 +128,7 @@ The cycle then repeats: each use case is reviewed, improved, renewed or retired,
 | AI Risk Assessment | Assess business impact, data sensitivity, model exposure, access paths, and vendor dependencies. | [Enterprise AI Risk Register](02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI Security Control Objectives Library](03_Control_Library/03_AI_Security_Control_Objectives_Library.md) | Completed risk assessment, inherent/residual risk, treatment plan. |
 | Architecture and Control Design | Define security architecture, data boundaries, identity model, logging, and control requirements. | [AI Security Control Objectives Library](03_Control_Library/03_AI_Security_Control_Objectives_Library.md), [Existing Security Control Baseline](03_Control_Library/04_Existing_Security_Control_Baseline.md), [Microsoft Security Overlap and AI Gaps](03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.md) | Architecture review, control mapping, exception decisions. |
 | AI User Adoption | Govern use of browser AI, enterprise copilots, external AI tools, and acceptable use. | Browser AI security standard, acceptable use standard, governance operating model | User guidance, approved tool list, access controls, awareness records. |
-| AI-Assisted Development | Govern developers using AI coding assistants, IDE plugins, and generated code. | IDE security standard, [AI Product Developer Playbook](07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.md) | Secure coding checklist, repository review, generated code validation. |
+| AI-Assisted Development | Govern developers using AI coding assistants, coding agents, IDE plugins, and generated code. | [AI Coding Assistant and Coding Agent Security Standard](04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.md), [Developer Pipeline Checks](24_Builder_Track/04_Developer_Pipeline_Checks.md), [AI Product Developer Playbook](07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.md) | Secure coding checklist, agent settings, hook and CI results, repository review, generated code validation. |
 | Custom AI Application Build | Secure LLM apps, RAG pipelines, prompts, APIs, connectors, model gateways, and runtime controls. | [Custom AI Application Runtime Security Standard](04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.md), [AI Red Team Playbook](06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.md) | Threat model, secure design review, runtime control evidence. |
 | Agentic AI Deployment | Govern agents that invoke tools, access systems, perform actions, or chain tasks. | [Agentic AI Security and Tool Governance](04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.md) | Tool permission matrix, approval rules, action logs, rollback controls. |
 | Vendor Evaluation | Evaluate AI suppliers, cloud services, models, integrations, and data handling. | [AI Security Vendor Evaluation Master Framework](05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.md) | Vendor questionnaire, evidence pack, PoC results, risk decision. |
@@ -171,8 +172,8 @@ The cycle then repeats: each use case is reviewed, improved, renewed or retired,
   Control objectives, existing baseline, Microsoft overlap, control gaps, and implementation guidance.
 
 04_Domain_Standards/
-  Browser AI, IDE AI, runtime AI applications, agentic AI, sovereignty, and data residency standards,
-  sector overlays, and monitoring and adversarial ML for predictive models.
+  Browser AI, AI coding assistants and coding agents (with pipeline gates), runtime AI applications, agentic AI,
+  sovereignty, and data residency standards, sector overlays, and monitoring and adversarial ML for predictive models.
 
 05_Vendor_Evaluation/
   Vendor master framework, supplier evidence model, and proof-of-concept scorecards.
@@ -235,11 +236,12 @@ The cycle then repeats: each use case is reviewed, improved, renewed or retired,
 23_Framework_Crosswalks/
   Cross-references from this wiki to other frameworks: AI frameworks (FINOS AIGF, AI BCF, NIST AI RMF, NIST AI 600-1,
   ISO/IEC 42001, OWASP, MITRE ATLAS, OECD AI Principles), security frameworks (ISO/IEC 27001, NIST CSF, CIS Controls,
-  SOC 2) and a comparison of eight privacy laws.
+  SOC 2), secure development (NIST SSDF and SP 800-218A) and a comparison of eight privacy laws.
 
 24_Builder_Track/
-  Start here if you are building an agent: ten controls in build order with working configuration, reference code
-  (guard, sandbox, egress proxy), a runnable demo and tests.
+  Start here if you are building with AI: ten controls for a first agent with reference code (guard, sandbox,
+  egress proxy) and a runnable demo, privacy duties in code (DPDP consent, rights, retention, children's data)
+  and developer pipeline checks, all with tests that run in CI.
 
 25_Templates/
   Downloadable .xlsx and .docx templates built from the wiki: AI risk register, system inventory, use-case
@@ -401,6 +403,7 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 | Item | Value |
 |---|---|
 | Original Author | Nachiket Sathaye |
+| Co-Author | Ankush Jain |
 | Document Owner | AI Security Program |
 | Custodian | Security Architecture Team |
 | Status | Published |
@@ -414,9 +417,9 @@ The three latest versions, newest first. The full history since version 1.0 is i
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.41 | 2026-10-23 | Nachiket Sathaye | Secure development and privacy in code, after a comparison with the ai-secure-by-design repository: new NIST SSDF and SP 800-218A crosswalk; the IDE coding assistant standard rewritten (version 2.0) to cover coding agents, pipeline agents, plugins, MCP servers and rules files, with pipeline gates and a test case per requirement; two new Builder Track pages with tested code, Privacy Duties in Code (DPDP consent, rights, retention, children's data, log redaction) and Developer Pipeline Checks (secrets, personal data in logs and an AI-Assistance trailer, run in git hooks, a coding agent's hook and CI); the Builder Track tests now run in CI. |
 | 2.40 | 2026-10-22 | Nachiket Sathaye | Weak points addressed: validation level on every test case and a self-contained copy of the shared fields on each case and in the test tracker; scoring method and worked calibration examples in the risk methodology; committee charters, decision rights and a role-based training plan; outcome review of AI-CTRL-041 to 046 with three new cases; illustrative operating defaults; a predictive model monitoring and adversarial ML standard with two new cases; regulatory verification status and an obligation-level tracker; programme charter and incident report templates. |
 | 2.39 | 2026-10-22 | Nachiket Sathaye | Weekly crosswalk verification (19 to 22 October 2026): the GCC, India, UK, Singapore, US, South Korea, Australia, Brazil, Canada, China and Japan crosswalks were checked against primary sources. Confirmed rows are tagged [Verified] with source and retrieval date, and out-of-date rows were corrected. The home page now links to the GitHub source repository. See the [Update Notes](09_Reference/19_Update_Notes.md). |
-| 2.38 | 2026-10-18 | Nachiket Sathaye | Update Notes now hold the full version history, newest first, and are only ever added to. This section of the home page shows the three latest versions. |
 
 ## 21. Quick Links
 

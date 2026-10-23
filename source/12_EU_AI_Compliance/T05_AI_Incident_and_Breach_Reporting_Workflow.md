@@ -1,6 +1,7 @@
 ---
 title: "T05 AI Incident and Breach Reporting Workflow (EU)"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "EU AI Compliance"
 nav_order: 13
 description: "AI incident types, a reporting matrix across GDPR, the AI Act, NIS2, DORA and the CRA, and a ten-step response workflow to complete in advance."

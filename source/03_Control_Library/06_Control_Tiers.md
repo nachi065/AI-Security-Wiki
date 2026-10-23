@@ -1,6 +1,7 @@
 ---
 title: "Control Tiers"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Control Library"
 nav_order: 6
 description: "The {{n:controls}} controls split into a Baseline set to put in place first and an Advanced set for higher risk or greater maturity."

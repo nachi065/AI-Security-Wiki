@@ -1,6 +1,7 @@
 ---
 title: "US AI Regulatory Hub"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "US AI Compliance"
 nav_order: 1
 description: "US AI-relevant law mapped to AI security controls: federal executive orders and enforcement, NIST AI RMF, and state laws in California, Colorado, Texas and Illinois."

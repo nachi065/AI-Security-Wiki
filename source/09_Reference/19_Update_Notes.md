@@ -1,6 +1,7 @@
 ---
 title: "Update Notes"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Reference"
 nav_order: 2
 description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."
@@ -17,6 +18,34 @@ This page is the wiki's change record. It has two parts:
 - **[Full version history](#full-version-history)**: every version since 1.0, newest first. The [home page](../index.md#20-version-history) shows only the three latest.
 
 Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.
+
+## 23 October 2026: secure development and privacy in code
+
+A comparison with [ai-secure-by-design](https://github.com/ankush1982/ai-secure-by-design), an open-source plugin for AI coding agents by the wiki's co-author Ankush Jain, found five gaps in the wiki. It never cited the NIST Secure Software Development Framework or its generative AI profile. Its standard for AI coding assistants was short and did not cover coding agents. It had no controls before commit. It described privacy duties as forms, not code. And the Builder Track tests were not run in CI. This update closes those gaps.
+
+### What changed
+
+- **NIST SSDF crosswalk.** A new [NIST SSDF and SP 800-218A Crosswalk](../23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.md) maps the 19 practices of SSDF 1.1, plus the new PW.3 practice of SP 800-218A, to the wiki's controls, pages, code and test cases: 17 direct and 3 partial. It records the PW.3 renumbering and the new PO.5.3 task.
+- **Coding assistants and coding agents.** The [AI Coding Assistant and Coding Agent Security Standard](../04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.md) (version 2.0, same address) now covers completion assistants, coding agents, pipeline agents, and the extensions, plugins, MCP servers and rules files that steer them. New requirements cover approved models and accounts, command and file-system guardrails, scoped agent credentials, MCP servers and plugins, repository content as untrusted input, managed agent settings and hooks, generated code review, dependency verification, provenance of AI-made changes, and review bot permissions. Each requirement links to the existing test case that proves it. A pipeline gates table shows which checks run in the agent, before commit, in CI and at merge, and which of them the author can bypass.
+- **Privacy duties in code.** A new Builder Track page, [Privacy Duties in Code](../24_Builder_Track/03_Privacy_Duties_in_Code.md), maps the duties of the DPDP Act (s.5, s.6, s.8(5) to s.8(10), s.9, s.11 to s.14, s.16) to tested reference code: a consent ledger keyed to the notice version, a rights desk, a retention runner with advance notice, a children's gate, and a logger that uses keyed pseudonyms. All of it is driven by one data map. The time limits from the DPDP Rules are settings, each with a verification tag.
+- **Developer pipeline checks.** A new Builder Track page, [Developer Pipeline Checks](../24_Builder_Track/04_Developer_Pipeline_Checks.md), runs the same checks in git hooks, a coding agent's pre-write hook and CI. The checks look for secrets and for personal data written to logs, using the same data map, and require an `AI-Assistance` trailer that records whether a person, an assistant or an agent made each change. The trailer is this wiki's convention and supports [TC-L14-021](../10_Test_Case_Library/L14-mlops-llmops-layer.md#tc-l14-021).
+- **Tests in CI.** A new workflow, `builder-tests.yml`, runs every Builder Track test on Python 3.10 and 3.13 for every pull request that changes the section. It runs with a read-only token and no secrets. The check that page excerpts match the code now covers every Builder Track page. Its first run caught a real bug in the [egress proxy](../24_Builder_Track/01_Secure_Your_First_Agent.md#b8-limit-egress-to-named-hosts). When a name resolved to several addresses, the proxy connected only to the first one. On a dual-stack host that lists an IPv6 address first, connections to a service listening only on IPv4 therefore failed. The proxy now checks every address and tries each in turn, and a new test covers the case.
+- **Cards.** The Domain Standards, Framework Crosswalks, India and Builder Track cards on the home page describe the new content.
+
+### What was checked
+
+- The DPDP Act sections cited on the privacy page were read in the Act text published by MeitY on 23 October 2026 [Verified]. That reading confirmed two points. The Act has no "sensitive personal data" category. Section 7's legitimate uses include no general contract ground.
+- The DPDP Rules numbers were also read on 23 October 2026, from the Hindi text only. The English text was not read. They are: at least 48 hours' notice before erasure (Rule 8(2)), a three-year retention for the classes in the Third Schedule (Rule 8(1)), and one year for logs (Rule 6). All three are tagged [Reported]. Two numbers are tagged [Unverified]: the ninety-day grievance limit (Rule 14(3)), because the extracted number was garbled, and the hours for the detailed breach report (Rule 7(2)(b)), because they were not legible.
+- These items of SP 800-218 and SP 800-218A were read on the NIST publication pages and in the PDFs on 23 October 2026 [Verified]: the titles, dates and audiences, the four practice groups, the titles of PO.1 to PO.5 and PS.1, the new PW.3 practice, task PO.5.3, and the note that PO.1.3 was formerly PW.3.1. The PDFs were read only in part. The other practice titles are tagged [Reported] on the crosswalk.
+- The Builder Track tests pass on Python 3.10, 3.11, 3.12 and 3.13 (90 tests, 1 skipped where the kernel does not allow a network namespace). The new git hook tests install the hooks in a throwaway repository and confirm that a secret or a missing trailer blocks the commit.
+- The link and identifier check and the author check pass.
+
+### Still work in progress
+
+- The DPDP Rules numbers above need checking against the English text before anyone relies on them.
+- The SSDF crosswalk maps at practice level. SP 800-218A adds recommendations at task level, and those are not yet mapped.
+- No test case covers the right to nominate (s.14) or the deemed end of purpose after a period without contact (s.8(8)).
+- The privacy code is written against India's DPDP Act. Other laws differ, for example in the GDPR's special categories and contract basis.
 
 ## 22 October 2026: weak points in proof, rating and operation
 
@@ -354,6 +383,7 @@ Every version of the wiki, newest first. Rows are never edited after they are ad
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.41 | 2026-10-23 | Nachiket Sathaye | Secure development and privacy in code, after a comparison with the ai-secure-by-design repository: new NIST SSDF and SP 800-218A crosswalk; the IDE coding assistant standard rewritten (version 2.0) to cover coding agents, pipeline agents, plugins, MCP servers and rules files, with pipeline gates and a test case per requirement; two new Builder Track pages with tested code, Privacy Duties in Code (DPDP consent, rights, retention, children's data, log redaction) and Developer Pipeline Checks (secrets, personal data in logs and an AI-Assistance trailer, run in git hooks, a coding agent's hook and CI); the Builder Track tests now run in CI. |
 | 2.40 | 2026-10-22 | Nachiket Sathaye | Weak points addressed: validation level on every test case and a self-contained copy of the shared fields on each case and in the test tracker; scoring method and worked calibration examples in the risk methodology; committee charters, decision rights and a role-based training plan; outcome review of AI-CTRL-041 to 046 with three new cases; illustrative operating defaults; a predictive model monitoring and adversarial ML standard with two new cases; regulatory verification status and an obligation-level tracker; programme charter and incident report templates. |
 | 2.39 | 2026-10-22 | Nachiket Sathaye | Weekly crosswalk verification (19 to 22 October 2026): the GCC, India, UK, Singapore, US, South Korea, Australia, Brazil, Canada, China and Japan crosswalks were checked against primary sources. Confirmed rows are tagged [Verified] with source and retrieval date, and out-of-date rows were corrected. The home page now links to the GitHub source repository. See the [note for the week ending 24 October 2026](#week-ending-24-october-2026-crosswalk-verification). |
 | 2.38 | 2026-10-18 | Nachiket Sathaye | Update Notes now hold the full version history, newest first, and are only ever added to. This section of the home page shows the three latest versions. |

@@ -1,6 +1,7 @@
 ---
 title: "Control Library"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 description: "AI security control library: {{n:controls}} control objectives in {{n:families}} families with evidence, audit tests and framework mappings, plus a baseline and Microsoft gap analysis."
 nav_order: 5
 has_children: true

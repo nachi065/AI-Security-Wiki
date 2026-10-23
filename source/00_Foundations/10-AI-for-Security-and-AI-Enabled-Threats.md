@@ -2,6 +2,7 @@
 title: "10. AI for Security and AI-Enabled Threats"
 description: "AI for security and AI-enabled threats: SOC copilots as AI systems needing protection, and how AI changes phishing, reconnaissance and exploit timelines."
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Foundations"
 nav_order: 10
 document_type: Practitioner Research Paper

@@ -1,6 +1,7 @@
 ---
 title: "AI Security Audit and Evidence Checklist Template (.xlsx)"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Templates"
 nav_order: 5
 description: "A downloadable Excel audit workbook: tests for every wiki control with evidence and audit procedures, the GCC and EU audit checklists and evidence registers, a findings log, an exception register and ISO/IEC 42001 certification readiness."
@@ -46,4 +47,4 @@ Results use the wiki T08 scale: E (effective), P (partially effective, finding r
 
 ## Licence and credit
 
-The workbook is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI Security Audit and Evidence Checklist" by Nachiket Sathaye, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence. Framework names, identifiers and short titles belong to their owners and are cited for mapping only.
+The workbook is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI Security Audit and Evidence Checklist" by Nachiket Sathaye and Ankush Jain, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence. Framework names, identifiers and short titles belong to their owners and are cited for mapping only.

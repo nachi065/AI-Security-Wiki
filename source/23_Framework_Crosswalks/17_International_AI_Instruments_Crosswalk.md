@@ -1,6 +1,7 @@
 ---
 title: "International AI Instruments Crosswalk"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Framework Crosswalks"
 nav_order: 17
 description: "The Council of Europe Framework Convention on AI and the G7 Hiroshima Process Code of Conduct mapped to this wiki's controls and templates, with their status."

@@ -1,6 +1,7 @@
 ---
 title: "OWASP Top 10 Crosswalk"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Framework Crosswalks"
 nav_order: 6
 description: "Each item in the OWASP Top 10 for LLM Applications 2025 and the OWASP Top 10 for Agentic Applications with the wiki control objectives and test cases that cover it."

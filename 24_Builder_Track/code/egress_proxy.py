@@ -52,20 +52,38 @@ class EgressPolicy:
     def __init__(self, hosts: list[str], ports: tuple[int, ...] = (443,), allow_private: bool = False):
         self.hosts, self.ports, self.allow_private = hosts, tuple(ports), allow_private
 
-    def check(self, host: str, port: int) -> tuple[str | None, str]:
-        """(address to connect to, or None) and the reason."""
+    def resolve(self, host: str, port: int) -> tuple[list[str], str]:
+        """(checked addresses to connect to, in order; empty if denied) and the reason."""
         if port not in self.ports:
-            return None, f"port {port} not allowed"
+            return [], f"port {port} not allowed"
         if not host_allowed(host, self.hosts):
-            return None, "host not on the allow-list"
+            return [], "host not on the allow-list"
         try:
             infos = socket.getaddrinfo(host, port, type=socket.SOCK_STREAM)
         except socket.gaierror:
-            return None, "host does not resolve"
-        addresses = [i[4][0] for i in infos]
+            return [], "host does not resolve"
+        addresses = list(dict.fromkeys(i[4][0] for i in infos))
         if not self.allow_private and not all(is_public(a) for a in addresses):
-            return None, "resolves to a non-public address"
-        return addresses[0], "ok"
+            return [], "resolves to a non-public address"
+        return addresses, "ok"
+
+    def check(self, host: str, port: int) -> tuple[str | None, str]:
+        """(first address to connect to, or None) and the reason."""
+        addresses, why = self.resolve(host, port)
+        return (addresses[0] if addresses else None), why
+
+
+def connect_checked(addresses: list[str], port: int) -> tuple[socket.socket, str]:
+    """Connect to the first checked address that answers. A dual-stack name often
+    lists an IPv6 address first; trying only that one fails where the service
+    listens on IPv4. Every address here was checked, so none can be a surprise."""
+    error: OSError = OSError("no address")
+    for address in addresses:
+        try:
+            return socket.create_connection((address, port), timeout=10), address
+        except OSError as e:
+            error = e
+    raise error
 
 
 def make_handler(policy: EgressPolicy, log):
@@ -85,11 +103,11 @@ def make_handler(policy: EgressPolicy, log):
                 port = int(port)
             except ValueError:
                 return self._deny(self.path, 0, "bad target")
-            address, why = policy.check(host, port)
-            if address is None:
+            addresses, why = policy.resolve(host, port)
+            if not addresses:
                 return self._deny(host, port, why)
             try:
-                upstream = socket.create_connection((address, port), timeout=10)
+                upstream, address = connect_checked(addresses, port)
             except OSError:
                 return self._deny(host, port, "connect failed")
             log({"ts": round(time.time(), 3), "decision": "allow", "host": host, "port": port, "address": address})
@@ -102,11 +120,11 @@ def make_handler(policy: EgressPolicy, log):
             if parts.scheme != "http" or not parts.hostname:
                 return self._deny(self.path, 0, "only absolute http URLs are proxied; use CONNECT for https")
             port = parts.port or 80
-            address, why = policy.check(parts.hostname, port)
-            if address is None:
+            addresses, why = policy.resolve(parts.hostname, port)
+            if not addresses:
                 return self._deny(parts.hostname, port, why)
             try:
-                upstream = socket.create_connection((address, port), timeout=10)
+                upstream, address = connect_checked(addresses, port)
                 target = (parts.path or "/") + (f"?{parts.query}" if parts.query else "")
                 upstream.sendall(f"GET {target} HTTP/1.0\r\nHost: {parts.netloc}\r\nConnection: close\r\n\r\n".encode())
             except OSError:

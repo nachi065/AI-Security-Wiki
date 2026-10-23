@@ -1,6 +1,7 @@
 ---
 title: "Australia AI Regulatory Hub"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Australia AI Compliance"
 nav_order: 1
 description: "Australian AI-relevant laws, reforms and guidance, including Privacy Act automated-decision transparency, mapped to AI security controls."

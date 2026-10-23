@@ -1,6 +1,7 @@
 ---
 title: "Secure Your First Agent: Ten Controls With Code"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Builder Track"
 nav_order: 1
 description: "Ten controls for a first tool-using AI agent, in build order, with working configuration and code for tool allow-lists, argument validation, scoped short-lived credentials, sandboxing, egress limits and approval gates."
@@ -365,24 +366,24 @@ For stronger isolation than a standard container, use a user-space kernel or a m
 
 ## B8. Limit egress to named hosts
 
-**Control:** [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) ([TC-L06-026](../10_Test_Case_Library/L06-agent-orchestration-layer.md#tc-l06-026)). Data theft needs a way out. Block every route from the agent except a proxy that allows named hosts only. [`egress_proxy.py`](code/egress_proxy.py) is a small working example. It checks the port, then the host name, then every address the name resolves to, and it connects to the address it checked rather than looking the name up again, so a DNS answer that changes between check and connect cannot redirect it.
+**Control:** [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) ([TC-L06-026](../10_Test_Case_Library/L06-agent-orchestration-layer.md#tc-l06-026)). Data theft needs a way out. Block every route from the agent except a proxy that allows named hosts only. [`egress_proxy.py`](code/egress_proxy.py) is a small working example. It checks the port, then the host name, then every address the name resolves to, and it connects only to the addresses it checked, trying each in turn, rather than looking the name up again, so a DNS answer that changes between check and connect cannot redirect it.
 
 <!-- excerpt: egress_proxy.py -->
 ```python
-    def check(self, host: str, port: int) -> tuple[str | None, str]:
-        """(address to connect to, or None) and the reason."""
+    def resolve(self, host: str, port: int) -> tuple[list[str], str]:
+        """(checked addresses to connect to, in order; empty if denied) and the reason."""
         if port not in self.ports:
-            return None, f"port {port} not allowed"
+            return [], f"port {port} not allowed"
         if not host_allowed(host, self.hosts):
-            return None, "host not on the allow-list"
+            return [], "host not on the allow-list"
         try:
             infos = socket.getaddrinfo(host, port, type=socket.SOCK_STREAM)
         except socket.gaierror:
-            return None, "host does not resolve"
-        addresses = [i[4][0] for i in infos]
+            return [], "host does not resolve"
+        addresses = list(dict.fromkeys(i[4][0] for i in infos))
         if not self.allow_private and not all(is_public(a) for a in addresses):
-            return None, "resolves to a non-public address"
-        return addresses[0], "ok"
+            return [], "resolves to a non-public address"
+        return addresses, "ok"
 ```
 
 *From [`egress_proxy.py`](code/egress_proxy.py).*

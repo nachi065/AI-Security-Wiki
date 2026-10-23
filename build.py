@@ -363,6 +363,43 @@ def review_calendar(page):
     return "\n".join(out)
 
 
+def audit_evidence(page):
+    """One table per control family with each control's evidence, audit test, owner and review frequency, copied from its record."""
+    library = "03_Control_Library/03_AI_Security_Control_Objectives_Library.md"
+    text = next(p["body"] for p in pages if p["src"].replace(os.sep, "/") == library)
+    here = os.path.dirname(os.path.join(SRC, page["src"]))
+    link = os.path.relpath(os.path.join(SRC, library), here).replace(os.sep, "/")
+
+    def relink(cell):
+        # Links in a record are relative to the library; point them at the same targets from this page.
+        def fix(m):
+            target = m.group(1)
+            if target.startswith("#"):
+                return f"]({link}{target})"
+            return "](" + os.path.relpath(os.path.join(SRC, os.path.dirname(library), target), here).replace(os.sep, "/") + ")"
+        return re.sub(r"\]\((?!https?:)([^)]+)\)", fix, cell)
+
+    fields = ("Tier", "Evidence Required", "Audit Test Procedure", "Control Owner", "Review Frequency")
+    records = {}
+    for control, name, record in re.findall(r"^#### (AI-CTRL-\d{3}): (.+)\n([\s\S]*?)(?=^#### |\Z)", text, re.M):
+        values = dict(re.findall(r"^\| \*\*([^*]+)\*\* \| (.*) \|$", record, re.M))
+        missing = [f for f in fields if f not in values]
+        if missing:
+            raise SystemExit(f"{library}: {control} has no {', '.join(missing)} field for the audit evidence tables")
+        records[control] = [f"[{control}]({link}#{control.lower()}) {name}"] + [relink(values[f]) for f in fields]
+    families = re.findall(r"^\| ([^|\[]+?) \| ((?:\[AI-CTRL-\d{3}\]\(#ai-ctrl-\d{3}\)(?:, )?)+) \|$", text, re.M)
+    placed = [c for _, ids in families for c in re.findall(r"AI-CTRL-\d{3}", ids)]
+    if sorted(placed) != sorted(records):
+        raise SystemExit(f"{library}: the Control families table and the control records list different controls")
+    out = []
+    for family, ids in families:
+        out += [f"### {family.strip()}", "",
+                "| Control | Tier | Evidence Required | Audit Test Procedure | Evidence Owner | Review Frequency |", "|---|---|---|---|---|---|"]
+        out += ["| " + " | ".join(records[c]) + " |" for c in re.findall(r"AI-CTRL-\d{3}", ids)]
+        out.append("")
+    return "\n".join(out).rstrip()
+
+
 def verification_status(page):
     """Count the verification tags in the Regulatory Crosswalk table of each regional section."""
     tags = ("Verified", "Partly verified", "Reported", "Recalled", "Unverified", "Conflict")
@@ -396,6 +433,12 @@ REVIEW_CALENDAR = "<!-- review-calendar -->"
 for p in pages:
     if REVIEW_CALENDAR in p["body"]:
         p["body"] = p["body"].replace(REVIEW_CALENDAR, review_calendar(p))
+
+
+AUDIT_EVIDENCE = "<!-- audit-evidence -->"
+for p in pages:
+    if AUDIT_EVIDENCE in p["body"]:
+        p["body"] = p["body"].replace(AUDIT_EVIDENCE, audit_evidence(p))
 
 
 CONTROL_TIERS = "<!-- control-tiers -->"

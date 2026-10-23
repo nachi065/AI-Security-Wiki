@@ -1,6 +1,7 @@
 ---
 title: "AI Security Vendor Evaluation Master Framework"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Vendor Evaluation"
 nav_order: 1
 document_type: AI Security Wiki Reference

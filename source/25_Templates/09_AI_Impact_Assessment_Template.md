@@ -1,6 +1,7 @@
 ---
 title: "AI Impact Assessment Template (.docx)"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Templates"
 nav_order: 9
 description: "A downloadable Word template for a combined data protection and fundamental rights impact assessment of an AI system, built from the wiki's GCC and EU impact assessment forms, with benefits, misuse, fairness, oversight, consultation and decision sections."
@@ -45,4 +46,4 @@ The wiki's ISO/IEC AI Standards Crosswalk notes that its impact assessment templ
 
 ## Licence and credit
 
-The document is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI Impact Assessment Template" by Nachiket Sathaye, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence. Framework names, identifiers and short titles belong to their owners and are cited for mapping only.
+The document is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI Impact Assessment Template" by Nachiket Sathaye and Ankush Jain, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence. Framework names, identifiers and short titles belong to their owners and are cited for mapping only.

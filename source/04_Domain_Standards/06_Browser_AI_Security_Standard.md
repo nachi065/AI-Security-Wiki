@@ -1,6 +1,7 @@
 ---
 title: "Browser AI Security Standard"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Domain Standards"
 nav_order: 1
 document_type: AI Security Wiki Reference
