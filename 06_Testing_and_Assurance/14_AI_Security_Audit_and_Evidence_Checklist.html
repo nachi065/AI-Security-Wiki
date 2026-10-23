@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AI Security Audit and Evidence Checklist | AI Security Wiki</title>
 <meta name="author" content="Nachiket Sathaye, Ankush Jain">
-<meta name="description" content="AI Security Audit and Evidence Checklist: Define audit evidence required to verify AI security controls across every family of the control library, from…">
+<meta name="description" content="AI Security Audit and Evidence Checklist: Define the audit evidence, test procedure, owner and review frequency for each of the 46 controls in the [AI…">
 <link rel="canonical" href="https://nachi065.github.io/AI-Security-Wiki/06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="AI Security Wiki">
 <meta property="og:title" content="AI Security Audit and Evidence Checklist | AI Security Wiki">
-<meta property="og:description" content="AI Security Audit and Evidence Checklist: Define audit evidence required to verify AI security controls across every family of the control library, from…">
+<meta property="og:description" content="AI Security Audit and Evidence Checklist: Define the audit evidence, test procedure, owner and review frequency for each of the 46 controls in the [AI…">
 <meta property="og:url" content="https://nachi065.github.io/AI-Security-Wiki/06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="../assets/style.css?v=aa70096b">
@@ -302,187 +302,746 @@
 <article>
 <h1 id="ai-security-audit-and-evidence-checklist">AI Security Audit and Evidence Checklist</h1>
 <blockquote class="callout note">
-<p><strong>Purpose:</strong> Define audit evidence required to verify AI security controls across every family of the control library, from discovery and DLP to agents, models, supply chain and incident response.</p>
+<p><strong>Purpose:</strong> Define the audit evidence, test procedure, owner and review frequency for each of the 46 controls in the <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a>, and the ISO/IEC 42001 management system evidence an AI audit also needs.</p>
 <p><strong>Audience:</strong> Audit teams, governance teams, control owners, security engineering.</p>
+<p><strong>Run the audit in the workbook.</strong> The <a href="../25_Templates/05_AI_Security_Audit_and_Evidence_Checklist_Template.html">AI Security Audit and Evidence Checklist Template (.xlsx)</a> holds every control on this page with columns for sample size, result and evidence status, plus the GCC and EU checklists, a findings log and an exception register.</p>
 </blockquote>
+<h2 id="how-to-use-this-page">How to use this page</h2>
+<ol>
+<li><strong>Set the scope.</strong> List the AI systems in scope from the use-case registry (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-011">AI-CTRL-011</a>) and select the controls that apply to them. Use the control tier to decide what a first audit covers.</li>
+<li><strong>Request the evidence</strong> in the Evidence Required column from the Evidence Owner, with a due date.</li>
+<li><strong>Test design, then operation.</strong> Check that the control as designed meets its objective, then follow the Audit Test Procedure over the evidence period using the <a href="#evidence-period-and-sampling">sampling guidance</a> below.</li>
+<li><strong>Check the evidence</strong> against the <a href="#evidence-quality-criteria">evidence quality criteria</a>.</li>
+<li><strong>Record the result</strong> on the T08 scale used across the wiki: Effective (E), Partially effective (P), Ineffective (I) or Not tested (N, with the reason).</li>
+<li><strong>Raise a finding</strong> for every P or I result in the <a href="#findings-log-fields">findings log</a>, and record approved deviations in the <a href="#exception-register-fields">exception register</a>.</li>
+</ol>
+<h2 id="evidence-by-control">Evidence by control</h2>
+<p>The tables are generated from the <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a> each time the site is built, one table per control family. To change a row, edit the control; this page follows on the next build. The Evidence Owner is the library's Control Owner.</p>
+<h3 id="governance-and-compliance">Governance and Compliance</h3>
 <div class="table-wrap"><table>
 <thead>
 <tr>
-<th>Control Area</th>
-<th>Control IDs</th>
+<th>Control</th>
+<th>Tier</th>
 <th>Evidence Required</th>
+<th>Audit Test Procedure</th>
 <th>Evidence Owner</th>
+<th>Review Frequency</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>AI Discovery</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a></td>
-<td>AI inventory, usage dashboard, user/device reports</td>
-<td>Security Engineering</td>
-</tr>
-<tr>
-<td>Prompt Inspection</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-002">AI-CTRL-002</a></td>
-<td>Prompt detection logs, policy actions, sampled test results</td>
-<td>AI Security Team</td>
-</tr>
-<tr>
-<td>File Upload Protection</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-003">AI-CTRL-003</a></td>
-<td>Upload block/warn logs, classification policy, screenshots</td>
-<td>DLP Team</td>
-</tr>
-<tr>
-<td>IDE Governance</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-004">AI-CTRL-004</a></td>
-<td>IDE assistant inventory, source code/secret detection events</td>
-<td>DevSecOps</td>
-</tr>
-<tr>
-<td>Runtime Protection</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-020">AI-CTRL-020</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-039">AI-CTRL-039</a></td>
-<td>Prompt injection test reports, runtime logs, guardrail evidence, grounding and content safety results</td>
-<td>AppSec</td>
-</tr>
-<tr>
-<td>Agent Governance</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a></td>
-<td>Agent inventory, tool access logs, approval logs</td>
-<td>AI Platform Team</td>
-</tr>
-<tr>
-<td>Sovereignty</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-007">AI-CTRL-007</a></td>
-<td>Residency, retention, training exclusion and admin access evidence</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-007">AI-CTRL-007</a> Data Sovereignty</td>
+<td>Advanced</td>
+<td>Residency attestation; retention configuration; training exclusion terms; administrative access logs.</td>
+<td>Trace a test prompt and upload end to end and verify processing and storage locations against the approved list. Verify retention settings by checking that expired records are gone.</td>
 <td>GRC / Legal</td>
+<td>Annually and on vendor change</td>
 </tr>
 <tr>
-<td>SOC Integration</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a></td>
-<td>SIEM events, parser mapping, alert correlation and runbook</td>
-<td>SOC</td>
-</tr>
-<tr>
-<td>Policy Enforcement</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-010">AI-CTRL-010</a></td>
-<td>Policy configuration, action logs by type, exception register, bypass test results</td>
-<td>AI Security Team</td>
-</tr>
-<tr>
-<td>Auditability</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a></td>
-<td>Exportable audit records, log schema, retention policy, sample reconstruction</td>
-<td>Security Engineering</td>
-</tr>
-<tr>
-<td>Governance, Risk and Use-Case Registry</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-011">AI-CTRL-011</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-037">AI-CTRL-037</a></td>
-<td>Use-case registry, intake approvals, risk tiering, policy-to-control mapping, risk register, exception register</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-011">AI-CTRL-011</a> AI Use-Case Registry and Risk Tiering</td>
+<td>Baseline</td>
+<td>Use-case registry; intake and approval records; tiering criteria; re-tiering history.</td>
+<td>Sample use cases in production and confirm each has a registry entry, an owner and a tier consistent with the criteria. Sample registry entries and confirm they match what is deployed.</td>
 <td>AI Governance Lead</td>
+<td>Quarterly</td>
 </tr>
 <tr>
-<td>Privacy and Vendor Assurance</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a></td>
-<td>Impact assessments, data subject request tests, vendor assessments, contract clauses</td>
-<td>Privacy Office / Procurement</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a> AI Policy, Roles and Acceptable Use</td>
+<td>Baseline</td>
+<td>Approved policy; roles and responsibilities record; governance decision log; policy-to-control mapping; training and acknowledgement records.</td>
+<td>Select policy statements and trace each to a control and to evidence that it operates. Confirm the policy was reviewed within its cycle.</td>
+<td>GRC</td>
+<td>Annually</td>
 </tr>
 <tr>
-<td>Identity and Access</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a></td>
-<td>Identity registry, sponsor records, permission maps, recertification and drift reports</td>
-<td>IAM Team</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a> Privacy and Regulatory Compliance</td>
+<td>Baseline</td>
+<td>Impact assessments; records of processing; data subject request tests; evidence exports.</td>
+<td>Run a data subject access and deletion request against a test identity and confirm the data is found and removed across prompts, logs, indexes and memory.</td>
+<td>Privacy Office / Legal</td>
+<td>Annually and on material change</td>
 </tr>
 <tr>
-<td>Data and Retrieval</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-018">AI-CTRL-018</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-019">AI-CTRL-019</a></td>
-<td>Masking rules, tenant isolation tests, retrieval permission tests, ingestion provenance</td>
-<td>Data Owner / Application Owner</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a> Third-Party and Vendor AI Assurance</td>
+<td>Baseline</td>
+<td>Vendor assessments; contract clauses; sub-processor list; model change notices.</td>
+<td>Sample AI vendors in use and confirm each has a current assessment and the required contract terms. Confirm the last model or terms change triggered a review.</td>
+<td>Procurement / GRC</td>
+<td>Annually and on vendor change</td>
 </tr>
 <tr>
-<td>Model, Training and Pipeline</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-028">AI-CTRL-028</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-029">AI-CTRL-029</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-030">AI-CTRL-030</a></td>
-<td>Model access list, dataset provenance, artifact signing, release gate results</td>
-<td>ML Engineering / MLOps</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-037">AI-CTRL-037</a> AI Risk Assessment and Exception Management</td>
+<td>Advanced</td>
+<td>AI risk register; treatment plans; risk acceptance records; exception register with expiry dates.</td>
+<td>Sample accepted risks and confirm the approver had the authority. Let a test exception expire and confirm the technical control blocks the activity again.</td>
+<td>Cyber Risk / GRC</td>
+<td>Quarterly</td>
 </tr>
 <tr>
-<td>Supply Chain, Infrastructure and Resilience</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-031">AI-CTRL-031</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-032">AI-CTRL-032</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-040">AI-CTRL-040</a></td>
-<td>AI-BOM, approved source list, scan reports, segmentation and secrets configuration, fail-mode and failover test results</td>
-<td>DevSecOps / Platform Engineering</td>
-</tr>
-<tr>
-<td>Security Review and Adversarial Testing</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
-<td>Threat models, approvals, red team reports, regression suite results, agreed thresholds</td>
-<td>Security Architecture / AI Red Team</td>
-</tr>
-<tr>
-<td>Control Assurance</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a></td>
-<td>Control effectiveness results, evidence packs with collection dates, owner attestations, findings log</td>
-<td>GRC / Internal Audit</td>
-</tr>
-<tr>
-<td>Fairness and Explainability</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-041">AI-CTRL-041</a></td>
-<td>Bias test results, threshold approvals, explanation records, human-review log</td>
-<td>AI Governance Lead / Model Risk</td>
-</tr>
-<tr>
-<td>Impact Assessment</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-042">AI-CTRL-042</a></td>
-<td>Completed assessments, data protection officer advice, approvals dated before go-live, review dates</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-042">AI-CTRL-042</a> Fundamental Rights and Data Protection Impact Assessment</td>
+<td>Advanced</td>
+<td>Completed assessments; data protection officer advice; approvals dated before go-live; review dates; reassessment records.</td>
+<td>Sample in-scope systems and confirm the assessment predates go-live. Check that each risk maps to a mitigation. Confirm that the last material change triggered a reassessment.</td>
 <td>Data Protection Officer / AI Governance Lead</td>
+<td>Before deployment, annually and on material change</td>
 </tr>
 <tr>
-<td>Authority Engagement</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-043">AI-CTRL-043</a></td>
-<td>Authority register, filing and registration records, contact log</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-043">AI-CTRL-043</a> Regulator and Authority Engagement</td>
+<td>Advanced</td>
+<td>Authority register; filing and registration records; representative appointments; contact log; watchlist of pending rules.</td>
+<td>Sample AI systems and confirm each lists its authorities and duties. Trace one filing or notification to its due date and evidence. Confirm the register was reviewed in the period.</td>
 <td>Legal / Compliance</td>
+<td>Quarterly</td>
 </tr>
 <tr>
-<td>AI Literacy</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-044">AI-CTRL-044</a></td>
-<td>Role and needs matrix, completion records, effectiveness checks</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-044">AI-CTRL-044</a> AI Literacy and Role-Based Competence</td>
+<td>Advanced</td>
+<td>Role and needs matrix; programme and modules; completion records; effectiveness checks.</td>
+<td>Sample staff in three role groups and confirm each completed training that matches the role. Confirm human reviewers were trained before they were assigned. Review one effectiveness check.</td>
 <td>AI Governance Lead / HR</td>
+<td>Annually and on role change</td>
 </tr>
 <tr>
-<td>Incident Response and Forensics</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a></td>
-<td>Playbooks, exercise records, preserved-state checklist, provider escalation path</td>
-<td>SOC / Incident Response</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-045">AI-CTRL-045</a> Human Oversight Design and Effectiveness</td>
+<td>Advanced</td>
+<td>Oversight design record per in-scope use case; overseer roles, authority and training records; sampled re-review results; override and escalation metrics; seeded-error test results.</td>
+<td>Select a high-tier use case and compare the oversight points in operation with the design record. Interview two overseers about the evidence they see and their authority to override. Submit a set of known-wrong outputs and measure how many are caught. Confirm the overseers can stop the system and that override metrics are reviewed.</td>
+<td>AI Governance Lead / Application Owner</td>
+<td>Semi-annually and on material change</td>
 </tr>
 <tr>
-<td>Cost and Abuse</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a></td>
-<td>Cost attribution reports, budget and quota configuration, anomaly alerts</td>
-<td>FinOps / AI Platform Team</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-046">AI-CTRL-046</a> Intellectual Property and Copyright Governance</td>
+<td>Advanced</td>
+<td>IP and acceptable-use policy; vendor terms review; training data provenance and licence records; scan results; exception log.</td>
+<td>Sample vendors and confirm the terms were reviewed for output ownership and indemnity. Sample released AI-generated artefacts and confirm a scan result or a documented exception. Sample fine-tuning datasets and confirm source and licence are recorded.</td>
+<td>Legal / Compliance</td>
+<td>Annually and when vendor terms change</td>
 </tr>
 </tbody>
 </table></div>
+<h3 id="discovery-and-workforce-ai-use">Discovery and Workforce AI Use</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Tier</th>
+<th>Evidence Required</th>
+<th>Audit Test Procedure</th>
+<th>Evidence Owner</th>
+<th>Review Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a> AI Discovery</td>
+<td>Baseline</td>
+<td>AI service inventory; usage dashboard; user and device reports; classification of each service.</td>
+<td>Seed a known set of approved and unapproved AI tools in a test group and compare the discovered inventory with ground truth. Confirm new tools appear within the stated interval.</td>
+<td>Security Engineering</td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-002">AI-CTRL-002</a> Prompt Inspection</td>
+<td>Baseline</td>
+<td>Prompt detection logs; policy outcomes; sampled test results by data type.</td>
+<td>Submit a labelled set of sensitive and benign prompts through each channel. Measure detection rate and false positives, and confirm each detection is logged with user, device and destination.</td>
+<td>AI Security Team</td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-003">AI-CTRL-003</a> File Upload Protection</td>
+<td>Advanced</td>
+<td>Upload block and warn logs; classification policy; file type coverage matrix.</td>
+<td>Upload labelled test files of each supported type to approved and unapproved services. Confirm the expected action and log entry for each.</td>
+<td>DLP Team</td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-004">AI-CTRL-004</a> IDE AI Governance</td>
+<td>Advanced</td>
+<td>IDE assistant inventory; secret and source code detection events; repository policy; developer rules.</td>
+<td>Send seeded secrets and marked source code through each approved assistant. Confirm detection, policy action and attribution. Confirm an unapproved extension is discovered.</td>
+<td>DevSecOps</td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-010">AI-CTRL-010</a> Policy Enforcement</td>
+<td>Advanced</td>
+<td>Policy configuration; action logs by type; exception register; bypass test results.</td>
+<td>For each policy action, run a matching test and confirm the action and log entry. Attempt documented bypass methods and record the result.</td>
+<td>AI Security Team</td>
+<td>Quarterly</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="identity-and-access">Identity and Access</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Tier</th>
+<th>Evidence Required</th>
+<th>Audit Test Procedure</th>
+<th>Evidence Owner</th>
+<th>Review Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a> Human and Agent Identity</td>
+<td>Baseline</td>
+<td>Identity registry; sponsor records; recertification results; orphaned identity report.</td>
+<td>Sample agent identities and confirm each has a sponsor and a current recertification. Remove a test sponsor and confirm the agent identity is flagged.</td>
+<td>IAM Team</td>
+<td>Semi-annually</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a> Least Privilege and Scoped Credentials</td>
+<td>Baseline</td>
+<td>Permission maps; token scope configuration; access review records; drift reports.</td>
+<td>Have a test agent attempt a tool or resource outside its scope and confirm it is denied and logged. Confirm credentials expire as configured.</td>
+<td>IAM Team</td>
+<td>Quarterly</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="data-and-retrieval">Data and Retrieval</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Tier</th>
+<th>Evidence Required</th>
+<th>Audit Test Procedure</th>
+<th>Evidence Owner</th>
+<th>Review Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a> Data Protection in AI Pipelines</td>
+<td>Baseline</td>
+<td>Data flow diagrams; classification and masking rules; tenant isolation tests; lineage records.</td>
+<td>Send labelled sensitive records through the pipeline and confirm masking at each stage. Attempt to read another tenant's data through the AI interface.</td>
+<td>Data Owner / Security Engineering</td>
+<td>Semi-annually</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-018">AI-CTRL-018</a> Retrieval Access Control</td>
+<td>Baseline</td>
+<td>Permission test results; retrieval logs with source documents; propagation timing.</td>
+<td>Query as users with different entitlements and confirm restricted documents are never retrieved. Revoke access to a document and measure how long it remains retrievable.</td>
+<td>Application Owner</td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-019">AI-CTRL-019</a> Knowledge Base Integrity</td>
+<td>Advanced</td>
+<td>Ingestion access list; provenance records; ingestion scan results; removal test.</td>
+<td>Add a document with a planted instruction and a false fact through each ingestion path. Confirm it is detected or neutralized, and that it can be traced and removed.</td>
+<td>Application Owner</td>
+<td>Quarterly</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="application-runtime">Application Runtime</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Tier</th>
+<th>Evidence Required</th>
+<th>Audit Test Procedure</th>
+<th>Evidence Owner</th>
+<th>Review Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> Runtime AI Security</td>
+<td>Baseline</td>
+<td>Prompt injection test reports; runtime logs; guardrail configuration; bypass test results.</td>
+<td>Run the prompt injection and jailbreak cases with the control disabled and then enabled. Record attack success rate in both states against the agreed threshold.</td>
+<td>AppSec</td>
+<td>Before each release and quarterly</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-020">AI-CTRL-020</a> Output Handling</td>
+<td>Baseline</td>
+<td>Output validation rules; response inspection logs; injection test results.</td>
+<td>Induce the model to emit script, markup and command payloads and confirm none executes downstream. Confirm sensitive data in a response is detected.</td>
+<td>AppSec</td>
+<td>Before each release and quarterly</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a> Multimodal and Voice Input Security</td>
+<td>Advanced</td>
+<td>Modality coverage matrix; detection results by modality; recording retention configuration.</td>
+<td>Submit images, documents and audio carrying sensitive data and hidden instructions. Compare detection with the text-channel result for the same content.</td>
+<td>AI Security Team</td>
+<td>Semi-annually</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-039">AI-CTRL-039</a> Output Reliability and Content Safety</td>
+<td>Advanced</td>
+<td>Grounding and citation test results; topic policy; harmful content filter results; factuality baseline.</td>
+<td>Ask questions the sources cannot answer and confirm the assistant says so. Confirm fabricated package names and links are flagged, and off-topic requests are refused.</td>
+<td>Application Owner / AppSec</td>
+<td>Before each release and quarterly</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="agents-and-tools">Agents and Tools</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Tier</th>
+<th>Evidence Required</th>
+<th>Audit Test Procedure</th>
+<th>Evidence Owner</th>
+<th>Review Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a> Agent Governance</td>
+<td>Baseline</td>
+<td>Agent registry; tool access logs; delegation maps; shadow agent reports.</td>
+<td>Deploy registered and unregistered test agents. Confirm the unregistered agents are detected, and that owner, tools and data scope are correct for the registered ones.</td>
+<td>AI Platform Team</td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a> Deterministic Action Authorization</td>
+<td>Baseline</td>
+<td>Policy rules; allow and deny logs; architecture review record.</td>
+<td>Instruct a test agent, through injected content, to make a call the policy forbids. Confirm the enforcement point denies it regardless of what the model outputs.</td>
+<td>Security Architecture</td>
+<td>Semi-annually</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a> Human Approval for Sensitive Actions</td>
+<td>Baseline</td>
+<td>List of gated actions; approval logs with parameters shown; rejection samples.</td>
+<td>Trigger a gated action and confirm it does not run without approval. Confirm the approver sees the real parameters and that the decision is logged.</td>
+<td>Application Owner</td>
+<td>Semi-annually</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a> Tool and MCP Server Governance</td>
+<td>Baseline</td>
+<td>Tool and MCP server registry; allow-list configuration; change detection alerts.</td>
+<td>Connect an unlisted tool server and confirm it is blocked. Change the description of an approved tool and confirm the change is detected before use.</td>
+<td>AI Platform Team</td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a> Agent Containment and Kill Switch</td>
+<td>Baseline</td>
+<td>Kill switch procedure; test records with timings; task limits configuration.</td>
+<td>Start a long-running test agent and stop it. Measure the time until no further actions occur and credentials are invalid.</td>
+<td>AI Platform Team / SOC</td>
+<td>Semi-annually</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a> Agent Memory and Context Integrity</td>
+<td>Advanced</td>
+<td>Memory isolation tests; memory provenance records; purge procedure and test; memory store inventory with owners; memory write policy and enforcement results; access and erasure request records that cover memory.</td>
+<td>Plant an instruction in memory through untrusted content and confirm it does not affect a later session. Confirm one user cannot read another's memory.</td>
+<td>Application Owner</td>
+<td>Semi-annually</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a> Agent Execution Isolation</td>
+<td>Baseline</td>
+<td>Sandbox configuration; egress rules; isolation test results.</td>
+<td>Have a test agent run code that tries to reach the network, read secrets and write outside its workspace. Confirm each attempt fails and is logged.</td>
+<td>Platform Engineering</td>
+<td>Semi-annually</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="model-training-and-pipeline">Model, Training and Pipeline</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Tier</th>
+<th>Evidence Required</th>
+<th>Audit Test Procedure</th>
+<th>Evidence Owner</th>
+<th>Review Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-028">AI-CTRL-028</a> Model Protection</td>
+<td>Advanced</td>
+<td>Model access list; query monitoring rules; model scan reports; robustness test results.</td>
+<td>Run a scripted extraction pattern against a test endpoint and confirm it is detected and throttled. Attempt to read model weights with a non-privileged identity.</td>
+<td>ML Engineering</td>
+<td>Semi-annually</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-029">AI-CTRL-029</a> Training and Fine-Tuning Data Integrity</td>
+<td>Advanced</td>
+<td>Dataset provenance records; integrity checks; screening results; model-to-data lineage; approved data quality profile and the measured results for each run.</td>
+<td>Alter a sample of a test dataset and confirm the integrity check fails the run. Trace a deployed model back to the exact dataset versions used.</td>
+<td>ML Engineering / Data Owner</td>
+<td>Before each training run</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-030">AI-CTRL-030</a> ML Pipeline and Model Registry Security</td>
+<td>Advanced</td>
+<td>Signing configuration; registry access list; release gate results; version history.</td>
+<td>Attempt to deploy an unsigned or altered artifact and confirm it is rejected. Confirm a failed security test blocks a release.</td>
+<td>MLOps / DevSecOps</td>
+<td>Semi-annually</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="supply-chain-infrastructure-and-resilience">Supply Chain, Infrastructure and Resilience</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Tier</th>
+<th>Evidence Required</th>
+<th>Audit Test Procedure</th>
+<th>Evidence Owner</th>
+<th>Review Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-031">AI-CTRL-031</a> AI Supply Chain and AI-BOM</td>
+<td>Advanced</td>
+<td>AI-BOM; approved source list; scan reports; change-triggered test records.</td>
+<td>Compare the AI-BOM of a sampled system with what is deployed. Introduce a component from an unapproved source and confirm it is blocked or flagged.</td>
+<td>DevSecOps</td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-032">AI-CTRL-032</a> AI Infrastructure Hardening</td>
+<td>Advanced</td>
+<td>Network segmentation rules; secrets management configuration; hardening baseline; isolation tests.</td>
+<td>Attempt to reach production data from the experimentation environment and to open unapproved egress from a model runtime. Confirm both fail.</td>
+<td>Platform Engineering</td>
+<td>Semi-annually</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-040">AI-CTRL-040</a> AI Service Resilience and Fail-Safe Operation</td>
+<td>Advanced</td>
+<td>Fail-mode test results; latency and load measurements; failover and restore tests; continuity and exit plans; health monitoring alerts.</td>
+<td>Disable the protection layer in the lab and confirm the documented fail mode. Fail over to the secondary model or region and confirm policy, logging and residency still hold.</td>
+<td>Platform Engineering / Application Owner</td>
+<td>Semi-annually</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="assurance-and-testing">Assurance and Testing</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Tier</th>
+<th>Evidence Required</th>
+<th>Audit Test Procedure</th>
+<th>Evidence Owner</th>
+<th>Review Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a> AI Security Review and Release Gate</td>
+<td>Baseline</td>
+<td>Threat models; architecture review records; control selection; approvals and exceptions.</td>
+<td>Sample production systems and confirm each has a current threat model, a control selection that matches its tier and a signed approval.</td>
+<td>Security Architecture</td>
+<td>Before each release and annually</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation</td>
+<td>Advanced</td>
+<td>Red team reports; regression suite results; agreed thresholds; retest records.</td>
+<td>Confirm the last model or prompt change triggered the regression suite. Reproduce a sample of reported findings and confirm fixes hold.</td>
+<td>AI Red Team / AppSec</td>
+<td>Before each release and continuously</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a> Control Assurance and Audit Evidence</td>
+<td>Advanced</td>
+<td>Control effectiveness results; evidence packs with collection dates; owner attestations; findings log; record change history.</td>
+<td>Request an evidence pack for a sampled control at short notice and check that the evidence is current. Confirm a closed finding was verified before closure.</td>
+<td>GRC / Internal Audit</td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-041">AI-CTRL-041</a> Fairness, Bias Testing and Explainability</td>
+<td>Advanced</td>
+<td>Bias test plan and results; threshold approvals; necessity record for sensitive data; explanation records; human-review log; retest evidence; current bias profile with its validated application boundaries.</td>
+<td>Sample high-impact use cases and confirm a current bias test exists. Re-perform one test. Trace one decision to its explanation and review outcome. Confirm a failed result led to action.</td>
+<td>AI Governance Lead / Model Risk</td>
+<td>Annually and on material model change</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="detection-and-response">Detection and Response</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Tier</th>
+<th>Evidence Required</th>
+<th>Audit Test Procedure</th>
+<th>Evidence Owner</th>
+<th>Review Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a> Auditability</td>
+<td>Baseline</td>
+<td>Exportable audit records; log schema; retention policy; sample reconstruction.</td>
+<td>Pick a completed test interaction and reconstruct it from logs alone: who, what was sent, what was retrieved, what the model returned and what action followed.</td>
+<td>Security Engineering</td>
+<td>Semi-annually</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a> SOC Integration</td>
+<td>Advanced</td>
+<td>SIEM event IDs; parser mapping; detection rules; runbooks; alert samples.</td>
+<td>Trigger each AI event type in the lab and confirm it arrives in the SIEM within the stated time, parses correctly and raises the expected alert.</td>
+<td>SOC</td>
+<td>Semi-annually</td>
+</tr>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a> AI Incident Response and Forensics</td>
+<td>Baseline</td>
+<td>Playbooks; exercise records; preserved-state checklist; provider contact and escalation path.</td>
+<td>Run a tabletop or lab exercise for a prompt injection incident. Confirm the interaction can be replayed, scoped and contained using the playbook.</td>
+<td>SOC / Incident Response</td>
+<td>Annually and after each incident</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="cost-and-abuse">Cost and Abuse</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Tier</th>
+<th>Evidence Required</th>
+<th>Audit Test Procedure</th>
+<th>Evidence Owner</th>
+<th>Review Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a> AI Cost and Abuse Controls</td>
+<td>Baseline</td>
+<td>Cost attribution reports; budget and quota configuration; anomaly alerts; key revocation records.</td>
+<td>Drive a test key past its budget and confirm enforcement. Simulate a traffic spike on a public endpoint and confirm detection and throttling.</td>
+<td>FinOps / AI Platform Team</td>
+<td>Quarterly</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="evidence-period-and-sampling">Evidence period and sampling</h2>
+<p>Test each control in two steps:</p>
+<ul>
+<li><strong>Design:</strong> walk one example through the control and confirm that, as built, it meets the control objective. A control that fails design is Ineffective; do not sample its operation.</li>
+<li><strong>Operation:</strong> confirm that the control worked throughout the evidence period. For a first audit, choose a period that covers at least one full cycle of the control's review frequency. For a surveillance audit, the period is the time since the last audit.</li>
+</ul>
+<p>Sample sizes below are common audit practice, not a requirement of any standard. The audit plan sets the final numbers and records why.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>How often the control operates</th>
+<th>Suggested sample over the period</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Annually or less often</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Quarterly</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Monthly</td>
+<td>2 to 3</td>
+</tr>
+<tr>
+<td>Weekly</td>
+<td>5 to 10</td>
+</tr>
+<tr>
+<td>Daily</td>
+<td>20 to 40</td>
+</tr>
+<tr>
+<td>Many times a day</td>
+<td>25 to 60</td>
+</tr>
+<tr>
+<td>Automated, configured once</td>
+<td>1, plus evidence that the configuration did not change during the period (change records or configuration history)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Draw the sample from the full population in the system of record, such as the SIEM, the policy engine log or the registry, and not from a list the control owner prepares.</p>
 <h2 id="evidence-quality-criteria">Evidence Quality Criteria</h2>
 <p>Evidence should be:</p>
 <ul>
-<li>Exportable.</li>
-<li>Timestamped.</li>
-<li>Attributable to user/device/application where applicable.</li>
-<li>Linked to a policy or control ID.</li>
-<li>Retained according to approved retention requirements.</li>
-<li>Sufficient for incident reconstruction and audit sampling.</li>
+<li><strong>Exportable.</strong> It can leave the source system in a readable format.</li>
+<li><strong>Timestamped.</strong> Each item shows when the event happened and when the evidence was collected.</li>
+<li><strong>Attributable</strong> to user, device, application or agent where applicable.</li>
+<li><strong>Linked to a policy or control ID.</strong></li>
+<li><strong>Retained</strong> according to approved retention requirements.</li>
+<li><strong>Sufficient</strong> for incident reconstruction and audit sampling.</li>
+<li><strong>Complete.</strong> The population it is drawn from is the whole population. Reconcile counts against the source, for example events in the SIEM against events at the AI gateway (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a>).</li>
+<li><strong>Reliable.</strong> Prefer evidence the system generates over evidence a person prepares. Accept a screenshot only when it shows the date, the system and the context, and corroborate it with a log or configuration export.</li>
+<li><strong>Tamper-evident.</strong> Logs and governance records are protected from silent change, for example with write-once storage, hashes or a change history (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a>).</li>
+<li><strong>Current.</strong> Collected within the evidence period, with its collection date recorded.</li>
+<li><strong>Protected.</strong> AI evidence often contains prompts, uploaded files, retrieved documents and model output, and with them personal data, secrets and confidential material. Share the minimum needed, redact or pseudonymize content the test does not need, restrict access to the audit team, and apply a retention period to the evidence pack itself (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a>).</li>
 </ul>
+<h2 id="findings-log-fields">Findings Log Fields</h2>
+<pre><code class="language-markdown">Finding ID:
+Control ID:
+AI System / Vendor:
+Test Result: (P or I)
+Description:
+Root Cause:
+Risk ID: (from the Enterprise AI Risk Register)
+Severity:
+Remediation Owner:
+Due Date:
+Status:
+Closure Verified By:
+Verification Date:
+</code></pre>
+<p>A finding is closed only after someone other than the remediation owner has verified the fix (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a>).</p>
 <h2 id="exception-register-fields">Exception Register Fields</h2>
 <pre><code class="language-markdown">Exception ID:
 Control ID:
+Risk ID: (from the Enterprise AI Risk Register)
 AI System / Vendor:
 Reason for Exception:
+Residual Risk Rating:
 Compensating Control:
+Compensating Control Evidence:
 Business Owner:
 Risk Owner:
+Approved By:
+Approval Authority: (the level allowed to accept this rating of risk)
 Approval Date:
 Expiry Date:
+Renewal Count:
+Linked Finding ID:
 Review Status:
 </code></pre>
+<p>Track exceptions with an expiry date and treat repeated renewals as a signal that the risk should be treated, not accepted again (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-037">AI-CTRL-037</a>).</p>
+<h2 id="isoiec-42001-management-system-evidence">ISO/IEC 42001 Management System Evidence</h2>
+<p>A certification audit against ISO/IEC 42001 tests the management system before it samples controls. The table lists the clauses and the evidence to prepare. "Cited by" lists the controls whose library entry cites the clause; "Related evidence" lists controls whose evidence helps but which do not cite it.</p>
+<blockquote class="callout caution">
+<p><strong>Verify before use.</strong> Clause numbers and titles follow the structure of ISO/IEC 42001:2023. Titles the control library already cites were taken from it; the others were written from the structure of the standard and were not checked against a copy. Check them against your own copy before quoting them in an audit.</p>
+</blockquote>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ISO/IEC 42001 clause</th>
+<th>Evidence to prepare</th>
+<th>Cited by</th>
+<th>Related evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4.1 Understanding the organization and its context; 4.2 Understanding the needs and expectations of interested parties</td>
+<td>Record of internal and external issues, interested parties and their requirements, including regulators and the organization's role for each AI system (for example provider or deployer).</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-043">AI-CTRL-043</a></td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-011">AI-CTRL-011</a></td>
+</tr>
+<tr>
+<td>4.3 Determining the scope of the AI management system</td>
+<td>Scope statement naming the AI systems, activities, sites and exclusions, with the reason for each exclusion. It must match the systems in the registry.</td>
+<td>None</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-011">AI-CTRL-011</a></td>
+</tr>
+<tr>
+<td>5.1 Leadership and commitment; 5.2 AI policy; 5.3 Roles, responsibilities and authorities</td>
+<td>Approved AI policy with review date, record of top management approval, and named roles with their authority.</td>
+<td>None</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a></td>
+</tr>
+<tr>
+<td>6.1.2 AI risk assessment; 6.1.3 AI risk treatment</td>
+<td>AI risk register, risk criteria, treatment plans and risk acceptance records. Clause 6.1.3 also requires a statement of applicability: each Annex A control, whether it is included, why, and its implementation status. The <a href="../23_Framework_Crosswalks/05_ISO_IEC_42001_Crosswalk.html">ISO/IEC 42001 Crosswalk</a> shows which wiki controls support each Annex A control.</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-037">AI-CTRL-037</a></td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a></td>
+</tr>
+<tr>
+<td>6.1.4 AI system impact assessment</td>
+<td>Completed impact assessments for in-scope AI systems, with approvals dated before go-live.</td>
+<td>None</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-042">AI-CTRL-042</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a></td>
+</tr>
+<tr>
+<td>6.2 AI objectives and planning to achieve them</td>
+<td>Measurable AI objectives with owners, targets, resources, deadlines and progress records. No wiki control covers this yet.</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<td>7.2 Competence; 7.3 Awareness</td>
+<td>Competence requirements by role, training and completion records, effectiveness checks.</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-044">AI-CTRL-044</a></td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-045">AI-CTRL-045</a></td>
+</tr>
+<tr>
+<td>7.5 Documented information</td>
+<td>Document control: approved, versioned documents with owners and a change history.</td>
+<td>None</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a></td>
+</tr>
+<tr>
+<td>8.1 Operational planning and control; 8.2 AI risk assessment; 8.3 AI risk treatment; 8.4 AI system impact assessment</td>
+<td>Records showing that risk and impact assessments are rerun at planned intervals and on significant change, and that release gates are applied.</td>
+<td>None</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-037">AI-CTRL-037</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-042">AI-CTRL-042</a></td>
+</tr>
+<tr>
+<td>9.1 Monitoring, measurement, analysis and evaluation</td>
+<td>Control effectiveness results and the measures behind them.</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a></td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
+</tr>
+<tr>
+<td>9.2 Internal audit</td>
+<td>Internal audit programme, audit reports, and evidence that auditors were independent of the area they audited.</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>9.3 Management review</td>
+<td>Minutes of management reviews with their inputs, decisions and actions.</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>10.1 Continual improvement; 10.2 Nonconformity and corrective action</td>
+<td>Findings log with root cause, corrective action and verified closure.</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a></td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-037">AI-CTRL-037</a></td>
+</tr>
+</tbody>
+</table></div>
 <h2 id="preparing-for-isoiec-42001-certification">Preparing for ISO/IEC 42001 Certification</h2>
 <p>Certification bodies that certify AI management systems against ISO/IEC 42001 work to ISO/IEC 42006:2025, which adds AI-specific requirements to ISO/IEC 17021-1. Knowing what it asks of them helps you prepare. The clause numbers and headings below were checked against the publisher's contents preview on 15 October 2026; the clause text was not read.</p>
 <div class="table-wrap"><table>
@@ -497,7 +1056,7 @@ Review Status:
 <tr>
 <td>7.1.3 Specific technical competence requirements</td>
 <td>Expect auditors, or technical experts with them, who can examine AI-specific controls, not only management-system documents.</td>
-<td>The evidence in the table above, by control</td>
+<td>The evidence in the tables above, by control</td>
 </tr>
 <tr>
 <td>8.4.2 Access to the documentation of the organization</td>
@@ -522,6 +1081,16 @@ Review Status:
 </tbody>
 </table></div>
 <p>When you rely on a supplier's ISO/IEC 42001 certificate, ask which AI systems it covers and which body issued it. See the <a href="../05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a> and the <a href="../23_Framework_Crosswalks/15_ISO_IEC_AI_Standards_Crosswalk.html">ISO/IEC AI Standards Crosswalk</a>.</p>
+<h2 id="related-pages">Related pages</h2>
+<ul>
+<li><a href="../25_Templates/05_AI_Security_Audit_and_Evidence_Checklist_Template.html">AI Security Audit and Evidence Checklist Template (.xlsx)</a></li>
+<li><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></li>
+<li><a href="../02_Risk_Management/02G_Risk_Control_Test_Traceability.html">Risk, Control and Test Traceability</a></li>
+<li><a href="../11_GCC_AI_Compliance/T08_Audit_Checklist.html">GCC T08 AI Audit Checklist</a> and <a href="../11_GCC_AI_Compliance/08_Evidence_Register.html">GCC Evidence Register</a></li>
+<li><a href="../12_EU_AI_Compliance/T08_Audit_Checklist.html">EU T08 AI Audit Checklist</a> and <a href="../12_EU_AI_Compliance/08_Evidence_Register.html">EU Evidence Register</a></li>
+<li><a href="../23_Framework_Crosswalks/05_ISO_IEC_42001_Crosswalk.html">ISO/IEC 42001 Crosswalk</a></li>
+<li><a href="13_AI_Security_PoC_Test_Case_Library.html">AI Security PoC Test Case Library</a></li>
+</ul>
 </article>
 <nav class="pager" aria-label="Previous and next page"><a class="prev" href="13_AI_Security_PoC_Test_Case_Library.html">&larr; AI Security PoC Test Case Library</a><a class="next" href="15C_AI_Red_Team_Playbook.html">AI Red Team Playbook &rarr;</a></nav>
 <footer class="site-footer">Author: Nachiket Sathaye &middot; Co-author: Ankush Jain &middot; Updated 23 October 2026 &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
