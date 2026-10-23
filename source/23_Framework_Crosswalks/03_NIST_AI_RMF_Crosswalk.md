@@ -1,6 +1,7 @@
 ---
 title: "NIST AI RMF Crosswalk"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Framework Crosswalks"
 nav_order: 3
 description: "Every NIST AI RMF 1.0 subcategory with the wiki control objectives and test cases that cite it, and the subcategories no control cites yet."

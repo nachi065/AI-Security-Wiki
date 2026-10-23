@@ -1,6 +1,7 @@
 ---
 title: "India AI Compliance"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 description: "India AI compliance resources: regulatory hub covering the DPDP Act and Rules, MeitY guidelines, RBI, SEBI, IRDAI and CERT-In, a role guide, three templates and tested code for DPDP privacy duties."
 nav_order: 11
 group: "Regional AI Regulatory Hub"

@@ -1,6 +1,7 @@
 ---
 title: "AI Risk Register Template (.xlsx)"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Templates"
 nav_order: 1
 description: "A downloadable Excel workbook for running an AI risk register: the wiki's risks pre-filled, use-case triage, likelihood and impact scoring, mapped controls and evidence, framework and regulatory crosswalks, a dashboard and tracking checks."
@@ -52,4 +53,4 @@ Where a wiki crosswalk names register risks (FINOS risks, the AI Risk Map, NIST 
 
 ## Licence and credit
 
-The workbook is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI Risk Register Workbook" by Nachiket Sathaye, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence. The owner domains and risks AI-R29 to AI-R46 are adapted from the AI Risk Map v1.3 by Evan Wheeler, RiskFramework.org, licensed under CC BY-SA 4.0. Framework names, identifiers and short titles belong to their owners and are cited for mapping only.
+The workbook is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI Risk Register Workbook" by Nachiket Sathaye and Ankush Jain, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence. The owner domains and risks AI-R29 to AI-R46 are adapted from the AI Risk Map v1.3 by Evan Wheeler, RiskFramework.org, licensed under CC BY-SA 4.0. Framework names, identifiers and short titles belong to their owners and are cited for mapping only.

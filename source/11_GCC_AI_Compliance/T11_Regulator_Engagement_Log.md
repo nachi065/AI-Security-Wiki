@@ -1,6 +1,7 @@
 ---
 title: "T11 Regulator and Ethics-Body Engagement Log"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "GCC AI Compliance"
 nav_order: 19
 description: "Register of GCC authorities and a log of contacts, pending filings and consultations with regulators and ethics bodies."

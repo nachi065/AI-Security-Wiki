@@ -1,6 +1,7 @@
 ---
 title: "AI Operating Defaults"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Governance"
 nav_order: 3
 description: "Illustrative starting values for running an AI security programme: exception limits, incident severity and response times, monitoring thresholds, a review and audit calendar, CI/CD release stages and a log retention baseline."

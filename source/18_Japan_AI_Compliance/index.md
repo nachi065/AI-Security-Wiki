@@ -1,6 +1,7 @@
 ---
 title: "Japan AI Compliance"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 description: "Japan AI compliance resources: regulatory hub covering the AI Promotion Act, the Guidelines for AI Business, the APPI and copyright law, a role guide and two templates."
 nav_order: 11
 group: "Regional AI Regulatory Hub"

@@ -1,6 +1,7 @@
 ---
 title: "Guide for Implementors: Building an AI Governance Programme in the GCC"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "GCC AI Compliance"
 nav_order: 5
 description: "For programme leads, GRC teams and CISOs: a 90-day plan, RACI, early decisions, maturity steps and metrics for AI governance in the GCC."

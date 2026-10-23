@@ -1,6 +1,7 @@
 ---
 title: "Guide for AI Practitioners Working Under EU Rules"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "EU AI Compliance"
 nav_order: 2
 description: "What EU rules ask of the people who build AI: role and tier, engineering requirements by AI Act article, a lifecycle checklist and evidence to keep."

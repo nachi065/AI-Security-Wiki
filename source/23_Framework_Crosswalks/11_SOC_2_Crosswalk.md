@@ -1,6 +1,7 @@
 ---
 title: "SOC 2 Crosswalk"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Framework Crosswalks"
 nav_order: 11
 description: "The SOC 2 Trust Services Criteria with the wiki control objectives and test cases that cite them, for service organizations that put AI systems in the scope of a SOC 2 report."

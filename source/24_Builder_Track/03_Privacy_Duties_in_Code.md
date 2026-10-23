@@ -1,6 +1,7 @@
 ---
 title: "Privacy Duties in Code: Consent, Rights, Retention and Children's Data"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Builder Track"
 nav_order: 3
 description: "Working, tested code for the privacy duties an AI product carries under India's DPDP Act: consent per purpose and notice version, access, correction, erasure, grievance and nomination, retention with advance notice, children's data, and log redaction with keyed pseudonyms."

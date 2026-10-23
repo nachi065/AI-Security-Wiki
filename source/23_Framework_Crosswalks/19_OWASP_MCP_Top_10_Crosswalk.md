@@ -1,6 +1,7 @@
 ---
 title: "OWASP MCP Top 10 Crosswalk"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Framework Crosswalks"
 nav_order: 19
 description: "The ten items of the OWASP MCP Top 10 (beta) mapped to this wiki's risks and controls, with incidents that illustrate them."

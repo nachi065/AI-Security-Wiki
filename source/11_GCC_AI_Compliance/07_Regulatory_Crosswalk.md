@@ -1,6 +1,7 @@
 ---
 title: "Regulatory Crosswalk"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "GCC AI Compliance"
 nav_order: 7
 description: "GCC instruments mapped one per row to AI security controls and control themes, with verification status. Also available as a CSV file."

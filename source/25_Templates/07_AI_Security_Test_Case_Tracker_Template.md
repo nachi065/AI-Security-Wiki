@@ -1,6 +1,7 @@
 ---
 title: "AI Security Test Case Tracker Template (.xlsx)"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Templates"
 nav_order: 7
 description: "A downloadable Excel tracker for AI security testing: the wiki's quick-start PoC scenarios and every case in the Test Case Library, with columns to select, run, score and evidence each one, and coverage by control and by register risk."
@@ -44,4 +45,4 @@ Scores use the wiki scale of 5, 3, 0 or N/A. Evidence from vendor documentation 
 
 ## Licence and credit
 
-The workbook is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI Security Test Case Tracker" by Nachiket Sathaye, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence. Framework names, identifiers and short titles belong to their owners and are cited for mapping only.
+The workbook is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI Security Test Case Tracker" by Nachiket Sathaye and Ankush Jain, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence. Framework names, identifiers and short titles belong to their owners and are cited for mapping only.

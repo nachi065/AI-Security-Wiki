@@ -1,6 +1,7 @@
 ---
 title: "UK AI Regulatory Hub"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "UK AI Compliance"
 nav_order: 1
 description: "UK AI-relevant law mapped to AI security controls: UK GDPR, the Data (Use and Access) Act 2025, the five principles, ICO, FCA and PRA expectations."

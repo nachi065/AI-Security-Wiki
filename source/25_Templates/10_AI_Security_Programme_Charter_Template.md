@@ -1,6 +1,7 @@
 ---
 title: "AI Security Programme Charter Template (.docx)"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Templates"
 nav_order: 10
 description: "A downloadable Word template that sets up an AI security and governance programme in one approvable document: scope, risk appetite, governance bodies, decision rights, policy, risk method, operating defaults, assurance, regulatory obligations, training, reporting and roadmap."
@@ -40,4 +41,4 @@ version: 1.0
 
 ## Licence and credit
 
-The document is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI Security Programme Charter" by Nachiket Sathaye, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence.
+The document is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI Security Programme Charter" by Nachiket Sathaye and Ankush Jain, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence.

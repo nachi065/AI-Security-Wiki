@@ -2,6 +2,7 @@
 title: "11. Maturity Model and Roadmap"
 description: "AI security maturity levels with typical evidence, and a roadmap from the first 30 days to 24 months."
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Foundations"
 nav_order: 11
 document_type: Practitioner Research Paper

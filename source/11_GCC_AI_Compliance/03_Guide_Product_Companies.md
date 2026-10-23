@@ -1,6 +1,7 @@
 ---
 title: "Guide for AI Product Companies Selling into the GCC"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "GCC AI Compliance"
 nav_order: 3
 description: "For AI vendors selling into the GCC: what buyers ask for, a market-entry checklist, the evidence pack to prepare and contract clauses to expect."

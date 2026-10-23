@@ -1,6 +1,7 @@
 ---
 title: "AI Product Developer Playbook"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Role-Based Playbooks"
 nav_order: 1
 document_type: AI Security Wiki Reference

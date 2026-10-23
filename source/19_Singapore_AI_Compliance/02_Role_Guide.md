@@ -1,6 +1,7 @@
 ---
 title: "Singapore: Role Guide"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Singapore AI Compliance"
 nav_order: 2
 description: "What Singapore's AI frameworks ask of practitioners, product companies, auditors and implementors: agent bounding, MAS materiality, PDPA and CSA guidance."

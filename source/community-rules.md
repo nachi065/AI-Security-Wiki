@@ -2,6 +2,7 @@
 title: "Community Rules"
 description: "Community rules for the AI Security Wiki: how author and co-author credit works, which changes are blocked automatically, how to contribute a page, and how to reuse the wiki under CC BY-SA 4.0."
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 nav_order: 16
 ---
 
@@ -154,7 +155,7 @@ When you share wiki material, these rules apply:
 A credit line can look like this:
 
 ```
-"Enterprise AI Risk Register" by Nachiket Sathaye, AI Security Wiki
+"Enterprise AI Risk Register" by Nachiket Sathaye and Ankush Jain, AI Security Wiki
 (https://nachi065.github.io/AI-Security-Wiki/), licensed under CC BY-SA 4.0.
 Changes: adapted for a retail bank; risk scores removed.
 ```

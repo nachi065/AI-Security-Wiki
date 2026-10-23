@@ -1,6 +1,7 @@
 ---
 title: "AI Coding Assistant and Coding Agent Security Standard"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Domain Standards"
 nav_order: 2
 description: "Controls for AI coding assistants and coding agents: inventory, approved models and accounts, context scope, command and file-system guardrails, scoped credentials, MCP servers and plugins, rules files, hooks, provenance of AI-made changes, and the checks that run before commit, in CI and at merge."

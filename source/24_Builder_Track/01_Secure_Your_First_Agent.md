@@ -1,6 +1,7 @@
 ---
 title: "Secure Your First Agent: Ten Controls With Code"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Builder Track"
 nav_order: 1
 description: "Ten controls for a first tool-using AI agent, in build order, with working configuration and code for tool allow-lists, argument validation, scoped short-lived credentials, sandboxing, egress limits and approval gates."

@@ -1,6 +1,7 @@
 ---
 title: "T01 AI System Classification (Role and Risk Tier)"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "EU AI Compliance"
 nav_order: 9
 description: "Fill-in form to classify an AI system under the EU AI Act: prohibited-practice screen, provider or deployer role, risk tier, GDPR flags and next steps."

@@ -1,6 +1,7 @@
 ---
 title: "China Regulatory Crosswalk"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "China AI Compliance"
 nav_order: 3
 description: "Chinese instruments mapped one per row to AI security controls, with verification status. Also available as a CSV file."

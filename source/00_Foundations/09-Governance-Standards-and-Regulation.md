@@ -2,6 +2,7 @@
 title: "9. Governance, Standards and Regulation"
 description: "AI governance and standards compared: NIST AI RMF, NIST AI 100-2, ISO/IEC 42001, OWASP, MITRE ATLAS, Google SAIF, ENISA and the EU AI Act timetable."
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Foundations"
 nav_order: 9
 document_type: Practitioner Research Paper

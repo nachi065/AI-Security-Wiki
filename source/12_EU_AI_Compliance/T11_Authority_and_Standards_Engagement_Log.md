@@ -1,6 +1,7 @@
 ---
 title: "T11 Authority and Standards Engagement Log"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "EU AI Compliance"
 nav_order: 19
 description: "Register of EU and national authorities, a log of contacts with them, and a watchlist of pending AI Act guidelines, standards and dates."

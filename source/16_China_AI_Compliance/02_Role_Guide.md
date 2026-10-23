@@ -1,6 +1,7 @@
 ---
 title: "China (Mainland): Role Guide"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "China AI Compliance"
 nav_order: 2
 description: "What mainland China's AI measures ask of practitioners, product companies, auditors and implementors: labelling, filings, ethics review and data rules."

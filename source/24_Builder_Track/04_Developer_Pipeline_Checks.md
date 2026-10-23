@@ -1,6 +1,7 @@
 ---
 title: "Developer Pipeline Checks for AI-Assisted Code"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Builder Track"
 nav_order: 4
 description: "Working, tested checks that run in three places (git hooks on the developer's machine, a coding agent's pre-write hook, and CI): secrets, personal data written to logs, and a trailer that records how each change was made."

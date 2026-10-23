@@ -1,6 +1,7 @@
 ---
 title: "UK-T2 Regulated-Firm AI Checklist (FCA and PRA)"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "UK AI Compliance"
 nav_order: 5
 description: "Ten-area AI checklist for UK regulated firms: accountability, Consumer Duty, model risk, resilience, outsourcing and incident routes."

@@ -1,6 +1,7 @@
 ---
 title: "AI Use-Case Risk Triage Template (.xlsx)"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Templates"
 nav_order: 3
 description: "A downloadable Excel questionnaire for one AI use case: a prohibited-use screen, the wiki's triage questions, T01 tier scoring, the register risks that apply with their controls and evidence, and whether a full impact assessment is needed."
@@ -50,4 +51,4 @@ Assess each applicable risk on the [AI Risk Register Template (.xlsx)](01_AI_Ris
 
 ## Licence and credit
 
-The workbook is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI Use-Case Risk Triage" by Nachiket Sathaye, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence. The owner domains and risks AI-R29 to AI-R46 are adapted from the AI Risk Map v1.3 by Evan Wheeler, RiskFramework.org, licensed under CC BY-SA 4.0. Framework names, identifiers and short titles belong to their owners and are cited for mapping only.
+The workbook is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI Use-Case Risk Triage" by Nachiket Sathaye and Ankush Jain, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence. The owner domains and risks AI-R29 to AI-R46 are adapted from the AI Risk Map v1.3 by Evan Wheeler, RiskFramework.org, licensed under CC BY-SA 4.0. Framework names, identifiers and short titles belong to their owners and are cited for mapping only.
