@@ -1,7 +1,7 @@
 ---
 title: "Framework Crosswalks"
 author: Nachiket Sathaye
-description: "Cross-references from this wiki to other frameworks: FINOS AIGF, AI BCF, NIST AI RMF, NIST AI 600-1, NIST AI 100-2, ISO/IEC 42001 and nine further ISO/IEC AI standards, OWASP, MITRE ATLAS, ISO/IEC 27001, NIST CSF, CIS Controls, SOC 2, the OECD AI Principles, trustworthy AI and ethics standards, international AI instruments, the AI Risk Map, the OWASP MCP Top 10 and eight privacy laws."
+description: "Cross-references from this wiki to other frameworks: FINOS AIGF, AI BCF, NIST AI RMF, NIST AI 600-1, NIST AI 100-2, ISO/IEC 42001 and nine further ISO/IEC AI standards, OWASP, MITRE ATLAS, ISO/IEC 27001, NIST CSF, CIS Controls, SOC 2, the OECD AI Principles, trustworthy AI and ethics standards, international AI instruments, the AI Risk Map, the OWASP MCP Top 10, the NIST SSDF and its generative AI profile SP 800-218A, and eight privacy laws."
 nav_order: 13
 has_children: true
 ---
@@ -39,6 +39,12 @@ These four have no AI-specific content. Each crosswalk shows which wiki controls
 | [NIST CSF Crosswalk](09_NIST_CSF_Crosswalk.md) | Your security programme reports against the six functions and 22 categories of the Cybersecurity Framework 2.0. |
 | [CIS Controls Crosswalk](10_CIS_Controls_Crosswalk.md) | Your baseline is the 18 CIS Critical Security Controls and you need to know what AI systems add to each. |
 | [SOC 2 Crosswalk](11_SOC_2_Crosswalk.md) | You are a service organization with AI in the scope of a SOC 2 report, or you read vendors' reports. |
+
+## Secure software development
+
+| Crosswalk | Use it when |
+|---|---|
+| [NIST SSDF and SP 800-218A Crosswalk](20_NIST_SSDF_Crosswalk.md) | Your development lifecycle follows the NIST Secure Software Development Framework, or you produce or acquire generative AI models and systems under SP 800-218A, and need the controls, code and tests for each practice. |
 
 ## Privacy laws
 

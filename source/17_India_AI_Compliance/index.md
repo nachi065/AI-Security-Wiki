@@ -1,7 +1,7 @@
 ---
 title: "India AI Compliance"
 author: Nachiket Sathaye
-description: "India AI compliance resources: regulatory hub covering the DPDP Act and Rules, MeitY guidelines, RBI, SEBI, IRDAI and CERT-In, a role guide and three templates."
+description: "India AI compliance resources: regulatory hub covering the DPDP Act and Rules, MeitY guidelines, RBI, SEBI, IRDAI and CERT-In, a role guide, three templates and tested code for DPDP privacy duties."
 nav_order: 11
 group: "Regional AI Regulatory Hub"
 has_children: true
@@ -26,6 +26,7 @@ India has no standalone AI law. Binding duties come from the DPDP Act and Rules 
 | [IN-T1](IN-T1_DPDP_AI_Processing_Record_and_Notice.md) | All | DPDP AI processing record, notice and consent |
 | [IN-T2](IN-T2_Breach_and_Incident_Workflow.md) | All | Breach and incident workflow |
 | [IN-T3](IN-T3_Regulated_Entity_AI_Readiness.md) | Banks, NBFCs, intermediaries, insurers | Regulated-entity AI readiness checklist (RBI, SEBI, IRDAI) |
+| [Privacy Duties in Code](../24_Builder_Track/03_Privacy_Duties_in_Code.md) (Builder Track) | Developers | Tested reference code for DPDP consent, data principal rights, retention, children's data and log redaction |
 | [India Regulatory Crosswalk](03_Regulatory_Crosswalk.md) | GRC tooling | Instrument-to-control map with verification status, also as a CSV file |
 
 ## How claims are tagged
