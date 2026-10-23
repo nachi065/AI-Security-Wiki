@@ -1,6 +1,7 @@
 ---
 title: "CA-T3 OSFI E-23 Model Inventory Addendum"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Canada AI Compliance"
 nav_order: 6
 description: "Extra inventory columns for model risk management under OSFI Guideline E-23, to add to the GCC or EU inventory template."

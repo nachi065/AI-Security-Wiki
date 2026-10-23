@@ -1,6 +1,7 @@
 ---
 title: "Singapore Regulatory Crosswalk"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Singapore AI Compliance"
 nav_order: 3
 description: "Singapore instruments mapped to AI security controls, with a paragraph-by-paragraph crosswalk of the MAS Guidelines on AI Risk Management of 7 October 2026."

@@ -1,6 +1,7 @@
 ---
 title: "T01 AI Use-Case Intake and Risk Tiering"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "GCC AI Compliance"
 nav_order: 9
 description: "Fill-in form to register an AI use case and score it into a Low, Medium or High risk tier before build or purchase."

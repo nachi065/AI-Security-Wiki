@@ -1,6 +1,7 @@
 ---
 title: "UK-T3 Public-Sector Algorithmic Transparency Record"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "UK AI Compliance"
 nav_order: 6
 description: "Working draft of a transparency record for an algorithmic tool used by a UK public body, modelled on the Algorithmic Transparency Recording Standard."

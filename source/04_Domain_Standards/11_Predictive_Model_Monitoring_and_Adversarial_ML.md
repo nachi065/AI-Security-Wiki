@@ -1,6 +1,7 @@
 ---
 title: "Predictive Model Monitoring and Adversarial ML"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Domain Standards"
 nav_order: 7
 description: "Security and monitoring requirements for classic predictive models (classifiers, scoring and forecasting models): input and prediction drift, accuracy decay, fairness shift, and the adversarial ML attacks of evasion, poisoning, extraction, membership inference and inversion."

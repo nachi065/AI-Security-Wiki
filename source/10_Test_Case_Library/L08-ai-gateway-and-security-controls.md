@@ -1,6 +1,7 @@
 ---
 title: "L08 AI Gateway & Security Controls"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Test Case Library"
 nav_order: 11
 ---

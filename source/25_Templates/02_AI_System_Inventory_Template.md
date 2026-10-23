@@ -1,6 +1,7 @@
 ---
 title: "AI System Inventory Template (.xlsx)"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Templates"
 nav_order: 2
 description: "A downloadable Excel workbook for keeping an inventory of every AI system, model, agent and AI feature in use, with owner, tier, data, supplier, regulatory scope, assurance evidence and review checks."
@@ -44,4 +45,4 @@ Use the [AI Use-Case Risk Triage Template (.xlsx)](03_AI_Use_Case_Risk_Triage_Te
 
 ## Licence and credit
 
-The workbook is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI System Inventory" by Nachiket Sathaye, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence. Framework names, identifiers and short titles belong to their owners and are cited for mapping only.
+The workbook is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI System Inventory" by Nachiket Sathaye and Ankush Jain, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence. Framework names, identifiers and short titles belong to their owners and are cited for mapping only.

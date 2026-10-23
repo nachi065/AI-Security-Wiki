@@ -1,6 +1,7 @@
 ---
 title: "Role-Based Playbooks"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 description: "Role-based AI security playbooks for product developers, security researchers, security engineers, and vendor evaluation and audit teams."
 nav_order: 9
 has_children: true

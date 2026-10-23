@@ -1,6 +1,7 @@
 ---
 title: "T06 Bilingual AI Use Notice (Arabic and English)"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "GCC AI Compliance"
 nav_order: 14
 description: "Draft AI use notice in Arabic and English: short notice, full notice, publication checklist and a generative AI add-on."

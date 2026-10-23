@@ -1,6 +1,7 @@
 ---
 title: "Update Notes"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Reference"
 nav_order: 2
 description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."

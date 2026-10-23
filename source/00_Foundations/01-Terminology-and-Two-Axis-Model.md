@@ -2,6 +2,7 @@
 title: "1. Terminology and the Two-Axis Model"
 description: "Security of AI, AI for security and AI security defined, with a two-axis object and mission model for placing any AI security question."
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Foundations"
 nav_order: 1
 document_type: Practitioner Research Paper

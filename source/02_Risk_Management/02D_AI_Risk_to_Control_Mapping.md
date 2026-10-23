@@ -1,6 +1,7 @@
 ---
 title: "AI Risk to Control Mapping"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Risk Management"
 nav_order: 4
 document_type: AI Security Wiki Reference

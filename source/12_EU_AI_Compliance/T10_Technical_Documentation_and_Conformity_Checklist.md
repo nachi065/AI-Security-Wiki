@@ -1,6 +1,7 @@
 ---
 title: "T10 Technical Documentation Index and Conformity Checklist"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "EU AI Compliance"
 nav_order: 18
 description: "Readiness index for high-risk AI providers: technical file sections, data governance, logging, human oversight, QMS and the conformity route."

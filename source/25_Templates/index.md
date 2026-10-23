@@ -1,6 +1,7 @@
 ---
 title: "Templates"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 description: "Downloadable .xlsx and .docx templates built from the wiki: an AI risk register, system inventory, use-case triage, vendor scorecard, audit checklist, control library and crosswalks, test case tracker, acceptable use policy, impact assessment, programme charter and incident report."
 nav_order: 15
 has_children: true

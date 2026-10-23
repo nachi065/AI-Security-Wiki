@@ -1,6 +1,7 @@
 ---
 title: "Canada AI Compliance"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 description: "Canada AI compliance resources: regulatory hub covering PIPEDA, Quebec Law 25, the federal automated decision directive and OSFI E-23, a role guide and three templates."
 nav_order: 11
 group: "Regional AI Regulatory Hub"

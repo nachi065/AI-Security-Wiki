@@ -75,6 +75,6 @@ Every page names its author in the page header, and the footer of the published 
   - deletes or renames a page that carries a credit, or
   - removes or alters an existing line in `AUTHORS`.
 - The check runs from the main branch, so editing the checker or workflow in a pull request has no effect on it.
-- The wiki was created by **Nachiket Sathaye**, the original author. The pages he wrote are protected by the same rule.
+- The wiki was created by **Nachiket Sathaye**, the original author, and is co-authored by **Ankush Jain**. Their pages are protected by the same rule.
 - Add your name to the Contributors list in `AUTHORS` in your first pull request.
 - By contributing, you agree to license your contribution under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), so that it can be published as part of the wiki under [CC BY-SA 4.0](LICENSE).

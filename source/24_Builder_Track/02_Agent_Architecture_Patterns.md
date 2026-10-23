@@ -1,6 +1,7 @@
 ---
 title: "Agent Architecture Patterns"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Builder Track"
 nav_order: 2
 description: "Design-level defences for agents: the lethal trifecta and the Agents Rule of Two, six design patterns that contain prompt injection, identity and authorization standards for agents and MCP, tracing, and an architect's review checklist."

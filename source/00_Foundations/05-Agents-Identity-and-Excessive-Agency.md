@@ -2,6 +2,7 @@
 title: "5. Agents, Identity and Excessive Agency"
 description: "Agentic AI risk: the OWASP Agentic Top 10, advisory output with enforced authority, non-human identity, tool design, approval gates and memory."
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Foundations"
 nav_order: 5
 document_type: Practitioner Research Paper

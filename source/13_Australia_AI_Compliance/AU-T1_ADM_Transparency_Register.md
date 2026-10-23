@@ -1,6 +1,7 @@
 ---
 title: "AU-T1 Automated Decision Transparency Register"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Australia AI Compliance"
 nav_order: 4
 description: "Fill-in register of automated decisions that significantly affect individuals, for the Privacy Act transparency duty in APP 1.7 to 1.9."

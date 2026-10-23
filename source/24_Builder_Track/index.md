@@ -1,6 +1,7 @@
 ---
 title: "Builder Track"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 description: "Start here if you are building with AI: ten controls for a first agent, privacy duties (consent, rights, retention, children's data) and developer pipeline checks, all with working code and tests that run in CI."
 nav_order: 14
 has_children: true

@@ -1,6 +1,7 @@
 ---
 title: "UK Regulatory Crosswalk"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "UK AI Compliance"
 nav_order: 3
 description: "UK instruments mapped one per row to AI security controls, with verification status. Also available as a CSV file."

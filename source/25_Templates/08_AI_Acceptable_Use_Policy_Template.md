@@ -1,6 +1,7 @@
 ---
 title: "AI Acceptable Use Policy Template (.docx)"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Templates"
 nav_order: 8
 description: "A downloadable Word policy template for the acceptable use of AI: rules for everyone and for developers, approval before use, monitoring, roles, exceptions and training, with a policy-to-control mapping, a quick reference card and a user acknowledgement form."
@@ -41,4 +42,4 @@ version: 1.0
 
 ## Licence and credit
 
-The document is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI Acceptable Use Policy Template" by Nachiket Sathaye, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence. Framework names, identifiers and short titles belong to their owners and are cited for mapping only.
+The document is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI Acceptable Use Policy Template" by Nachiket Sathaye and Ankush Jain, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence. Framework names, identifiers and short titles belong to their owners and are cited for mapping only.

@@ -1,6 +1,7 @@
 ---
 title: "D08 AI Red Teaming and Continuous Testing"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Test Case Library"
 nav_order: 21
 ---

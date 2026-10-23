@@ -1,6 +1,7 @@
 ---
 title: "Privacy Law Crosswalk"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Framework Crosswalks"
 nav_order: 13
 description: "Eight privacy laws compared by the themes that matter for AI systems, with the wiki control objectives for each theme: GDPR, CCPA, Quebec Law 25, Singapore PDPA and the UAE, Saudi, Qatar and Bahrain data protection laws."

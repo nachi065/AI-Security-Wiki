@@ -403,6 +403,7 @@ These metrics measure coverage. For control-effectiveness metrics such as inject
 | Item | Value |
 |---|---|
 | Original Author | Nachiket Sathaye |
+| Co-Author | Ankush Jain |
 | Document Owner | AI Security Program |
 | Custodian | Security Architecture Team |
 | Status | Published |

@@ -1,6 +1,7 @@
 ---
 title: "IN-T1 DPDP AI Processing Record, Notice and Consent"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "India AI Compliance"
 nav_order: 4
 description: "Fill-in record for AI processing under India's DPDP Act: processing details, notice content, a consent artefact log and children's data."

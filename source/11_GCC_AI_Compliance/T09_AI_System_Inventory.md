@@ -1,6 +1,7 @@
 ---
 title: "T09 AI Model and System Inventory"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "GCC AI Compliance"
 nav_order: 17
 description: "Column definitions, a CSV header row and maintenance rules for an inventory of AI models and systems."

@@ -1,6 +1,7 @@
 ---
 title: "South Korea AI Regulatory Hub"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "South Korea AI Compliance"
 nav_order: 1
 description: "South Korea's AI Basic Act mapped to AI security controls: generative AI labelling, high-impact and high-performance AI duties, and the domestic representative rule."

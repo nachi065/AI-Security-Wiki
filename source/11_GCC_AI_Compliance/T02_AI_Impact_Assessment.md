@@ -1,6 +1,7 @@
 ---
 title: "T02 AI Impact Assessment"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "GCC AI Compliance"
 nav_order: 10
 description: "Fill-in AI impact assessment in the style of a DPIA, extended to cover fairness, explainability, human oversight and safety."

@@ -1,6 +1,7 @@
 ---
 title: "AI Security Researcher Playbook"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Role-Based Playbooks"
 nav_order: 2
 document_type: AI Security Wiki Reference

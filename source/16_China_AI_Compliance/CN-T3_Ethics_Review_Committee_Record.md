@@ -1,6 +1,7 @@
 ---
 title: "CN-T3 AI Ethics Review Committee Record"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "China AI Compliance"
 nav_order: 6
 description: "Record of an AI ethics committee review: activity category, questions reviewed, internal decision and any external expert review."

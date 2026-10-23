@@ -1,6 +1,7 @@
 ---
 title: "AI Security Vendor Evaluation Scorecard (.xlsx)"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Templates"
 nav_order: 4
 description: "A downloadable Excel scorecard to compare up to five AI security products on the wiki's eight evaluation domains, with weighted scores, flags, required vendor evidence, PoC notes, a recommendation and a GCC and EU supplier due-diligence questionnaire."
@@ -46,4 +47,4 @@ Each domain is scored on the wiki scale, from 5 (strong capability demonstrated 
 
 ## Licence and credit
 
-The workbook is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI Security Vendor Evaluation Scorecard" by Nachiket Sathaye, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence. Framework names, identifiers and short titles belong to their owners and are cited for mapping only.
+The workbook is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI Security Vendor Evaluation Scorecard" by Nachiket Sathaye and Ankush Jain, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence. Framework names, identifiers and short titles belong to their owners and are cited for mapping only.

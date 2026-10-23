@@ -1,6 +1,7 @@
 ---
 title: "China AI Compliance"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 description: "China AI compliance resources: regulatory hub covering generative AI, algorithm, deep synthesis, labelling and ethics review measures, a role guide and three templates."
 nav_order: 11
 group: "Regional AI Regulatory Hub"

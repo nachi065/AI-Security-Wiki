@@ -1,6 +1,7 @@
 ---
 title: "T03 Vendor Due-Diligence GCC Addendum"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "GCC AI Compliance"
 nav_order: 11
 description: "Questions to add to a third-party security questionnaire for AI suppliers: data location, model governance, security, incidents and exit."

@@ -1,6 +1,7 @@
 ---
 title: "US-T2 Consequential-Decision and Discrimination Impact Assessment"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "US AI Compliance"
 nav_order: 5
 description: "Impact assessment for AI used in employment, credit, housing, healthcare and similar decisions: group testing, notices, appeal and sign-off."

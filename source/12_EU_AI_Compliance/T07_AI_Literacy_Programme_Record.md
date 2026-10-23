@@ -1,6 +1,7 @@
 ---
 title: "T07 AI Literacy Programme Record"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "EU AI Compliance"
 nav_order: 15
 description: "Record of an AI literacy programme under AI Act Article 4: role groups and needs, modules, completion records and effectiveness checks."

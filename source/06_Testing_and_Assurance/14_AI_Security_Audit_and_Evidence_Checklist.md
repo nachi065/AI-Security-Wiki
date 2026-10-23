@@ -1,6 +1,7 @@
 ---
 title: "AI Security Audit and Evidence Checklist"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Testing and Assurance"
 nav_order: 2
 document_type: AI Security Wiki Reference

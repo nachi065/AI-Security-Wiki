@@ -1,6 +1,7 @@
 ---
 title: "SG-T1 Agentic AI Risk Bounding and Accountability Worksheet"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Singapore AI Compliance"
 nav_order: 4
 description: "Worksheet for one AI agent following the four dimensions reported for Singapore's agentic AI framework: bounding, accountability, controls and users."

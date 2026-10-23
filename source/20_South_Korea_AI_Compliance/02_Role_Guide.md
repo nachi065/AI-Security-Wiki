@@ -1,6 +1,7 @@
 ---
 title: "South Korea: Role Guide"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "South Korea AI Compliance"
 nav_order: 2
 description: "What South Korea's AI Basic Act asks of practitioners, product companies, auditors and implementors during the grace period and after it."

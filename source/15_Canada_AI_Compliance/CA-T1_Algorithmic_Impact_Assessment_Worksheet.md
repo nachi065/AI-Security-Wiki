@@ -1,6 +1,7 @@
 ---
 title: "CA-T1 Algorithmic Impact Assessment Worksheet"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Canada AI Compliance"
 nav_order: 4
 description: "Working worksheet modelled on Canada's federal Algorithmic Impact Assessment: six question areas and an impact level from 1 to 4."

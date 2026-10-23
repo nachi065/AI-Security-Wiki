@@ -1,6 +1,7 @@
 ---
 title: "SG-T3 PDPA AI Use Note"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Singapore AI Compliance"
 nav_order: 6
 description: "Fill-in note on the use of personal data in an AI system under Singapore's PDPA: basis, minimisation, transfers, access and retention."

@@ -1,6 +1,7 @@
 ---
 title: "Guide for AI Product Companies Selling into the EU"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "EU AI Compliance"
 nav_order: 3
 description: "For AI vendors selling into the EU: whether the AI Act reaches you, product classification, buyer questions, a go-to-market checklist and contract points."

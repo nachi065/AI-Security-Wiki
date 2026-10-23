@@ -1,6 +1,7 @@
 ---
 title: "Regulatory Verification Status"
 author: Nachiket Sathaye
+coauthors: Ankush Jain
 parent: "Reference"
 nav_order: 4
 description: "How far the wiki's regulatory claims have been checked against primary legal texts: verification counts for every regional crosswalk, the order in which regions are verified, and an obligation-level tracker that starts with the EU AI Act."
