@@ -54,6 +54,16 @@ class Proxy(unittest.TestCase):
         status, body = self.get_via_proxy("localhost", self.origin_port)
         self.assertEqual((status, body), (200, b"hello from origin"))
 
+    def test_ipv6_first_answer_falls_back_to_the_next_checked_address(self):
+        # Dual-stack hosts (CI runners among them) list ::1 before 127.0.0.1 for
+        # localhost; the origin listens on IPv4 only, so the proxy must try the next one.
+        answers = [(10, 1, 6, "", ("::1", self.origin_port, 0, 0)), (2, 1, 6, "", ("127.0.0.1", self.origin_port))]
+        real = socket.getaddrinfo
+        fake = lambda host, *a, **k: answers if host == "localhost" else real(host, *a, **k)
+        with mock.patch("egress_proxy.socket.getaddrinfo", side_effect=fake):
+            status, body = self.get_via_proxy("localhost", self.origin_port)
+        self.assertEqual((status, body), (200, b"hello from origin"))
+
     def test_host_not_on_list_is_denied(self):
         status, _ = self.get_via_proxy("evil.example.net", self.origin_port)
         self.assertEqual(status, 403)

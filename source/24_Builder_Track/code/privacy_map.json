@@ -1,0 +1,37 @@
+{
+  "_comment": "Example data map for privacy.py and pipeline_checks.py. One place that says which fields are personal, why they are held and for how long. Replace with your own; the values here are illustrative, not legal advice.",
+  "system": "support-assistant",
+  "categories": [
+    {
+      "name": "contact",
+      "sensitivity": "personal",
+      "fields": ["name", "email", "phone"],
+      "purposes": ["support-ticket", "service-updates"],
+      "retention_days": 365
+    },
+    {
+      "name": "account-age",
+      "sensitivity": "personal",
+      "fields": ["date_of_birth"],
+      "purposes": ["age-check"],
+      "retention_days": 365
+    },
+    {
+      "name": "ticket-content",
+      "sensitivity": "personal",
+      "fields": ["ticket_text"],
+      "purposes": ["support-ticket"],
+      "retention_days": 180
+    },
+    {
+      "name": "telemetry",
+      "sensitivity": "not-personal",
+      "fields": ["request_id", "latency_ms"],
+      "purposes": ["operations"],
+      "retention_days": 30
+    }
+  ],
+  "processors": [
+    {"name": "model-provider", "country": "example-country", "categories": ["ticket-content"]}
+  ]
+}
