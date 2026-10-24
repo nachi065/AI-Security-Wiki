@@ -53,7 +53,7 @@ A new region is accepted only when its first version has `[Verified]` rows for i
 
 ## What to expect
 
-- Every pull request is reviewed by the maintainer before it is merged.
+- Every pull request is reviewed and approved by the author (Nachiket Sathaye) or the co-author (Ankush Jain), and only they merge it. Your commits keep your name as their author after the merge.
 - Do not type totals that the site can count (cases, layers, controls, risks, families). Write `{{n:tests}}`, `{{n:layer_tests}}`, `{{n:domain_tests}}`, `{{n:layers}}`, `{{n:controls}}`, `{{n:families}}`, `{{n:risks}}`, `{{n:critical}}`, `{{n:kit_cases}}` or a validation-level count such as `{{n:documented}}`; `build.py` fills them in and the link check fails on a hand-typed total. The list is in `counts.py`. Version-history rows and the Update Notes record what was true at the time and keep their numbers.
 - Do not mark a test case as validated unless it has been run against a real system. A case shows its [validation level](https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/index.html#validation-levels) automatically; to record a run, add a `Validation Level` row (Lab-validated or Independently reproduced) and a `Validated Against` row with the product and version, the date (YYYY-MM-DD), the result and an evidence link. The link check rejects anything else.
 - Give every new control a `Tier` field (Baseline or Advanced); the link check requires it.
