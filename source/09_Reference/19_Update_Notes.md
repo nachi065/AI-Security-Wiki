@@ -7,7 +7,7 @@ nav_order: 2
 description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."
 document_type: AI Security Wiki Reference
 version: 1.1
-last_reviewed: 2026-10-23
+last_reviewed: 2026-10-25
 ---
 
 # Update Notes
@@ -18,6 +18,25 @@ This page is the wiki's change record. It has two parts:
 - **[Full version history](#full-version-history)**: every version since 1.0, newest first. The [home page](../index.md#20-version-history) shows only the three latest.
 
 Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.
+
+## Week ending 31 October 2026: crosswalk verification
+
+The nightly verification pass checks one slice of the wiki each night. This week's changes are proposed in one pull request and go live when it is merged.
+
+### What was checked
+
+- **EU (25 October 2026):** every row of the [EU Regulatory Crosswalk](../12_EU_AI_Compliance/07_Regulatory_Crosswalk.md) was checked for changes. Rows not yet verified were checked against the European Commission's AI Act pages: the news items on the GPAI guidelines and on the Code of Practice on marking and labelling AI-generated content, the guidelines library page, the GPAI questions and answers, the AI Act standardisation page and the press release of 31 July 2026 on enforcement. E4 and E14 were left alone because last week's open pull request already changes them.
+
+### What changed
+
+- **EU, E16 now [Verified]:** the Commission published the final Code of Practice on marking and labelling AI-generated content on 10 June 2026, and says it is voluntary.
+- **EU, E13 date corrected:** the Commission's guidelines for providers of general-purpose AI models were published on 18 July 2025, not 10 July 2025. 10 July 2025 is the date of the GPAI Code of Practice (E15). The row is now [Verified] for its title and date. The hub row and the [GPAI Model Checklist](../12_EU_AI_Compliance/T12_GPAI_Model_Checklist.md) give the same date.
+
+### Still work in progress
+
+- EU: EUR-Lex could not be read automatically on 25 October 2026. E17 (EN 18286 and the Official Journal citation) and E18 (ISO/IEC 42001) were therefore not changed again: the Annex of Commission Implementing Decision (EU) 2026/2274 still has to be read before E17 is rewritten. E2, E5, E6 and E10 (GDPR, NIS2, DORA, Digital Services Act) were not checked against the Official Journal for the same reason.
+- EU, E1e: the Commission's pages confirm that GPAI duties apply from 2 August 2025 and that the AI Office could enforce them from 2 August 2026, but the Official Journal text of Art. 113 was not read, so the row stays [Reported].
+- EU: the Commission published guidelines on the transparency obligations of Article 50 on 20 July 2026. They are not yet a row in the crosswalk.
 
 ## 23 October 2026: secure development and privacy in code
 
