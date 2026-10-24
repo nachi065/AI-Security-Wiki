@@ -6,7 +6,7 @@ parent: "Templates"
 nav_order: 6
 description: "A downloadable Excel workbook of the wiki's AI security controls with every library field, ready to track implementation and testing, cross-referenced to every item of the wiki's framework crosswalks and to the register risks."
 document_type: AI Security Wiki Template
-version: 1.0
+version: 1.1
 ---
 
 # AI Security Control Library and Crosswalks Template (.xlsx)
@@ -25,7 +25,7 @@ version: 1.0
 |---|---|---|
 | README and License | How to use the workbook, colour legend, sources, licence, credit and disclaimer | Written for the workbook |
 | Dashboard | Implementation and testing status by tier and family, and overdue testing | Calculated from the library |
-| Control Library | The {{n:controls}} controls with every library field, plus columns for applicability, status, owner, evidence location and testing | [Control Objectives Library](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md), [Control Tiers](../03_Control_Library/06_Control_Tiers.md) |
+| Control Library | The {{n:controls}} controls with every library field (including assurance stage and deployment model), plus columns for applicability, status, owner, evidence location and testing | [Control Objectives Library](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md), [Control Tiers](../03_Control_Library/06_Control_Tiers.md) |
 | Coverage | How much of each of the 47 framework columns your implemented controls cover | [Framework Crosswalks](../23_Framework_Crosswalks/index.md) |
 | Framework Crosswalk | 890 framework items with their controls and whether those are implemented | [Framework Crosswalks](../23_Framework_Crosswalks/index.md) and the regional crosswalks |
 | Framework Matrix | One row per control across all 47 frameworks | Framework Crosswalks |

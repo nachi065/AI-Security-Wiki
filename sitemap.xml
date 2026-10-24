@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/00_Foundations/</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/00_Foundations/01-Terminology-and-Two-Axis-Model.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/00_Foundations/02-AI-System-Boundary-and-Assets.html</loc><lastmod>2026-10-23</lastmod></url>
@@ -27,9 +27,9 @@
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/02_Risk_Management/02E_AI_Risk_Review_Template.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/02_Risk_Management/02F_AI_Use_Case_Risk_Triage.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/02_Risk_Management/02G_Risk_Control_Test_Traceability.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/02_Risk_Management/02G_Risk_Control_Test_Traceability.html</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/03_Control_Library/</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/03_Control_Library/03_AI_Security_Control_Objectives_Library.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/03_Control_Library/03_AI_Security_Control_Objectives_Library.html</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/03_Control_Library/04_Existing_Security_Control_Baseline.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/03_Control_Library/06_Control_Tiers.html</loc><lastmod>2026-10-23</lastmod></url>
@@ -42,16 +42,16 @@
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/04_Domain_Standards/10B_Sector_Overlays.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/04_Domain_Standards/11_Predictive_Model_Monitoring_and_Adversarial_ML.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/05_Vendor_Evaluation/</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/06_Testing_and_Assurance/</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/07_Role_Based_Playbooks/</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/07_Role_Based_Playbooks/15B_AI_Security_Researcher_Playbook.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/07_Role_Based_Playbooks/15D_Security_Engineering_Playbook.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/07_Role_Based_Playbooks/15E_Vendor_Evaluation_and_Audit_Playbook.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/07_Role_Based_Playbooks/15E_Vendor_Evaluation_and_Audit_Playbook.html</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/08_Governance/</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/08_Governance/16_AI_Governance_Operating_Model.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/08_Governance/17_AI_Policy_Standards_and_Acceptable_Use.html</loc><lastmod>2026-10-23</lastmod></url>
@@ -197,7 +197,7 @@
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/22_US_AI_Compliance/US-T3_GenAI_Provenance_and_Transparency_Checklist.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/09_Reference/</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/09_Reference/18_AI_Security_Glossary_and_Taxonomy.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/09_Reference/19_Update_Notes.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/09_Reference/19_Update_Notes.html</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/09_Reference/20_AI_Security_Incident_Casebook.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/09_Reference/21_Regulatory_Verification_Status.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/23_Framework_Crosswalks/</loc><lastmod>2026-10-23</lastmod></url>
@@ -226,17 +226,18 @@
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/24_Builder_Track/02_Agent_Architecture_Patterns.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/24_Builder_Track/03_Privacy_Duties_in_Code.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/24_Builder_Track/04_Developer_Pipeline_Checks.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/25_Templates/</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/25_Templates/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/25_Templates/01_AI_Risk_Register_Template.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/25_Templates/02_AI_System_Inventory_Template.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/25_Templates/03_AI_Use_Case_Risk_Triage_Template.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/25_Templates/04_AI_Security_Vendor_Evaluation_Scorecard.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/25_Templates/05_AI_Security_Audit_and_Evidence_Checklist_Template.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/25_Templates/06_AI_Security_Control_Library_and_Crosswalks_Template.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/25_Templates/05_AI_Security_Audit_and_Evidence_Checklist_Template.html</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/25_Templates/06_AI_Security_Control_Library_and_Crosswalks_Template.html</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/25_Templates/07_AI_Security_Test_Case_Tracker_Template.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/25_Templates/08_AI_Acceptable_Use_Policy_Template.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/25_Templates/09_AI_Impact_Assessment_Template.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/25_Templates/10_AI_Security_Programme_Charter_Template.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/25_Templates/11_AI_Incident_Report_Template.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/25_Templates/12_AI_Security_Requirements_Traceability_Matrix_Template.html</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/community-rules.html</loc><lastmod>2026-10-23</lastmod></url>
 </urlset>

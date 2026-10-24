@@ -7,7 +7,7 @@ nav_order: 2
 description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."
 document_type: AI Security Wiki Reference
 version: 1.1
-last_reviewed: 2026-10-23
+last_reviewed: 2026-10-24
 ---
 
 # Update Notes
@@ -18,6 +18,25 @@ This page is the wiki's change record. It has two parts:
 - **[Full version history](#full-version-history)**: every version since 1.0, newest first. The [home page](../index.md#20-version-history) shows only the three latest.
 
 Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.
+
+## 24 October 2026: requirements traceability
+
+Two workbooks by Nachiket Sathaye and Ankush Jain were compared with the wiki: an AI security risk review checklist and a requirements traceability matrix drafted for an AI security review. The matrix had a format the wiki lacked: one row per testable requirement, scoped by assurance stage and deployment model, with columns for the vendor's answer and the assessor's review. No wiki page said which controls apply to SaaS, PaaS or IaaS delivery.
+
+### What changed
+
+- **Assurance stage and deployment model.** Every control in the [Control Objectives Library](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#assurance-stages-and-deployment-models) (version 2.5) now names the stage at which a reviewer first checks it and the deployment models it applies to. The link checker rejects a control without valid values. Both are starting values for a review to adjust.
+- **Requirements traceability matrix.** A new [AI Security Requirements Traceability Matrix Template](../25_Templates/12_AI_Security_Requirements_Traceability_Matrix_Template.md) turns each sentence of a control's Implementation Expectation into one requirement, traced to the control, its risks, test cases and framework and regional crosswalks. It adds scoping, vendor and assessor columns, thirteen evidence types, a response check that treats a "Yes" with no detail as unanswered, and a live dashboard.
+- **Workbooks rebuilt.** The [Control Library and Crosswalks](../25_Templates/06_AI_Security_Control_Library_and_Crosswalks_Template.md) and [Audit and Evidence Checklist](../25_Templates/05_AI_Security_Audit_and_Evidence_Checklist_Template.md) workbooks (version 1.1) carry the two new fields and were rebuilt from the current wiki. The audit workbook now reads control areas and evidence owners from the per-family tables of the [Audit and Evidence Checklist](../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md) page, so each control's area is now its family.
+
+### What was checked
+
+- The matrix dashboard's formulas were recalculated with sample answers (a Yes with no detail, an accepted row, a gap without an owner and an out-of-scope row) and gave the expected counts and flags. All three workbooks recalculate with no formula errors.
+- The regulatory references in the matrix come from the wiki's crosswalks and keep their verification status. The UAE and Dubai instruments named in the source matrix (the DESC Information Security Regulation, the national AI security policy and the Dubai Data Law) were not added, because their text has not been read.
+
+### Still work in progress
+
+- About fifteen topics in the source matrix have no or thin coverage in the control library, such as recovery time objectives, DDoS protection, key custody, model decommissioning and detection validation. They are listed for a later update.
 
 ## 23 October 2026: secure development and privacy in code
 
@@ -380,6 +399,7 @@ Every version of the wiki, newest first. Rows are never edited after they are ad
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.42 | 2026-10-24 | Nachiket Sathaye | Requirements traceability: every control now names the assurance stage at which it is first checked (Discovery, Design, Implementation, Platform or Production) and the deployment models it applies to (All, Cloud, or PaaS/IaaS/Self-hosted), enforced by the link checker; new AI Security Requirements Traceability Matrix template with one row per control requirement, vendor and assessor columns, a response check and a live dashboard; the Control Library and Audit Checklist workbooks carry the two new fields and were rebuilt from the current wiki. |
 | 2.41 | 2026-10-23 | Nachiket Sathaye | Secure development and privacy in code, after a comparison with the ai-secure-by-design repository: new NIST SSDF and SP 800-218A crosswalk; the IDE coding assistant standard rewritten (version 2.0) to cover coding agents, pipeline agents, plugins, MCP servers and rules files, with pipeline gates and a test case per requirement; two new Builder Track pages with tested code, Privacy Duties in Code (DPDP consent, rights, retention, children's data, log redaction) and Developer Pipeline Checks (secrets, personal data in logs and an AI-Assistance trailer, run in git hooks, a coding agent's hook and CI); the Builder Track tests now run in CI. |
 | 2.40 | 2026-10-22 | Nachiket Sathaye | Weak points addressed: validation level on every test case and a self-contained copy of the shared fields on each case and in the test tracker; scoring method and worked calibration examples in the risk methodology; committee charters, decision rights and a role-based training plan; outcome review of AI-CTRL-041 to 046 with three new cases; illustrative operating defaults; a predictive model monitoring and adversarial ML standard with two new cases; regulatory verification status and an obligation-level tracker; programme charter and incident report templates. |
 | 2.39 | 2026-10-22 | Nachiket Sathaye | Weekly crosswalk verification (19 to 22 October 2026): the GCC, India, UK, Singapore, US, South Korea, Australia, Brazil, Canada, China and Japan crosswalks were checked against primary sources. Confirmed rows are tagged [Verified] with source and retrieval date, and out-of-date rows were corrected. The home page now links to the GitHub source repository. See the [note for the week ending 24 October 2026](#week-ending-24-october-2026-crosswalk-verification). |
