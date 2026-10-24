@@ -35,6 +35,7 @@ version: 1.0
 ## Required Artifacts
 
 - AI risk review template.
+- Requirements traceability matrix scoped to the review, with the vendor's responses and evidence ([template](../25_Templates/12_AI_Security_Requirements_Traceability_Matrix_Template.md)).
 - Control mapping.
 - Evidence checklist.
 - Test results.

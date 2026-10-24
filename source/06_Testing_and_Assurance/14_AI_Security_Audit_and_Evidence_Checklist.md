@@ -151,6 +151,7 @@ When you rely on a supplier's ISO/IEC 42001 certificate, ask which AI systems it
 ## Related pages
 
 - [AI Security Audit and Evidence Checklist Template (.xlsx)](../25_Templates/05_AI_Security_Audit_and_Evidence_Checklist_Template.md)
+- [AI Security Requirements Traceability Matrix Template (.xlsx)](../25_Templates/12_AI_Security_Requirements_Traceability_Matrix_Template.md), for a review of one system before it goes live
 - [AI Security Control Objectives Library](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md)
 - [Risk, Control and Test Traceability](../02_Risk_Management/02G_Risk_Control_Test_Traceability.md)
 - [GCC T08 AI Audit Checklist](../11_GCC_AI_Compliance/T08_Audit_Checklist.md) and [GCC Evidence Register](../11_GCC_AI_Compliance/08_Evidence_Register.md)

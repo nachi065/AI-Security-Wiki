@@ -5,7 +5,7 @@ coauthors: Ankush Jain
 parent: "Control Library"
 nav_order: 1
 document_type: AI Security Wiki Reference
-version: 2.4
+version: 2.5
 ---
 
 # AI Security Control Objectives Library
@@ -40,6 +40,28 @@ Each control cites the identifiers published by the framework owner. Where a fra
 The last four are general security frameworks with no AI-specific content. A control cites the entries it supports when it is applied to an AI system. The labels after the SOC 2 criteria numbers are this wiki's own short descriptions, because the criteria text belongs to the AICPA.
 
 > **Verify before use.** Frameworks are revised. MITRE ATLAS in particular is updated monthly and renames techniques. Check identifiers against the current published versions before quoting them in an RFP or audit. Owners and review frequencies are starting values; set your own.
+
+## Assurance stages and deployment models
+
+Each control names the **assurance stage** at which a reviewer first checks it, and the **deployment models** it applies to. Use them to scope a review: filter to the stage you are at and the way the AI system is delivered. The [AI Security Requirements Traceability Matrix](../25_Templates/12_AI_Security_Requirements_Traceability_Matrix_Template.md) carries both fields for every requirement.
+
+| Assurance stage | What is checked |
+|---|---|
+| Discovery | Before design or purchase: the use case is registered, tiered and in scope of policy, and the supplier is screened. |
+| Design | The design: data flows, authority, oversight and impact assessments, before build or configuration starts. |
+| Implementation | The built or configured system, before release: inspection, access, output handling and testing. |
+| Platform | The hosting platform and infrastructure: isolation, hardening, logging pipelines, resilience and cost limits. |
+| Production | The system in operation: monitoring, response, containment, audit evidence and regulator duties. |
+
+The stage is where checking starts, not where it ends. A control first checked at Design is tested again before release and in periodic audits, at its review frequency.
+
+| Deployment model | Meaning |
+|---|---|
+| All | Applies however the AI system is delivered. For a SaaS or AIaaS service, the supplier provides the evidence and you check it under [AI-CTRL-014](#ai-ctrl-014). |
+| Cloud | Applies when any part of the system is hosted by a cloud or AI service provider (SaaS, AIaaS, PaaS or IaaS). |
+| PaaS/IaaS/Self-hosted | Applies when you host or operate the model, pipeline or infrastructure yourself. For SaaS and AIaaS, the supplier owns it and you ask for its assurance evidence instead. |
+
+The stage and deployment model of each control are the wiki's starting values. Change them to suit your own review process.
 
 ## Control families
 
@@ -123,6 +145,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Ensure prompts, logs and uploads are processed and retained in approved locations. |
 | **Tier** | Advanced |
 | **Applies To** | Browser AI / IDE AI / AI APIs / Custom AI Applications / Agents / Vendors |
+| **Assurance Stage** | Discovery |
+| **Deployment Model** | Cloud |
 | **Risk Mapping** | [AI-R10](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Confirm where prompts, uploads, outputs, metadata and logs are processed and stored, including the control plane and support access. Configure retention and training exclusion, and record any cross-border transfer. |
 | **Evidence Required** | Residency attestation; retention configuration; training exclusion terms; administrative access logs. |
@@ -149,6 +173,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Record every AI use case with a business owner and a risk tier that decides which controls apply. |
 | **Tier** | Baseline |
 | **Applies To** | Browser AI / IDE AI / AI APIs / Custom AI Applications / Agents / Vendors |
+| **Assurance Stage** | Discovery |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R02](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R18](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Require intake and approval before deployment. Record owner, purpose, data, model, users and autonomy for each use case. Assign a risk tier using published criteria, and re-tier when the use case changes. |
 | **Evidence Required** | Use-case registry; intake and approval records; tiering criteria; re-tiering history. |
@@ -175,6 +201,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Set and communicate the rules and responsibilities for using and building AI, and map each rule to a control. |
 | **Tier** | Baseline |
 | **Applies To** | Browser AI / IDE AI / AI APIs / Custom AI Applications / Agents |
+| **Assurance Stage** | Discovery |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R02](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R03](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R18](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R19](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R27](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R28](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Publish an AI policy and acceptable-use standard with scope, owner and review date. Define roles and decision rights, and record governance decisions. Map each policy statement to a control in this library. Train users and reinforce the rules at the point of use. |
 | **Evidence Required** | Approved policy; roles and responsibilities record; governance decision log; policy-to-control mapping; training and acknowledgement records. |
@@ -201,6 +229,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Meet privacy and regulatory obligations for personal data handled by AI systems. |
 | **Tier** | Baseline |
 | **Applies To** | Browser AI / AI APIs / Custom AI Applications / Agents / Vendors |
+| **Assurance Stage** | Design |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R03](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R10](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R27](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R28](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Complete a privacy impact assessment for AI systems that process personal data. Define lawful basis, minimization, retention and data subject request handling, including data held in prompts, logs, indexes and memory. |
 | **Evidence Required** | Impact assessments; records of processing; data subject request tests; evidence exports. |
@@ -227,6 +257,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Assess AI vendors and embedded AI features before use, and reassess when they change. |
 | **Tier** | Baseline |
 | **Applies To** | Vendors / AI APIs / Browser AI |
+| **Assurance Stage** | Discovery |
+| **Deployment Model** | Cloud |
 | **Risk Mapping** | [AI-R08](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R10](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R16](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Evaluate vendors against the vendor evaluation framework. Cover training use of customer data, retention, sub-processors, model changes and incident notification in contracts. Re-evaluate when a vendor changes model or terms. |
 | **Evidence Required** | Vendor assessments; contract clauses; sub-processor list; model change notices. |
@@ -253,6 +285,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Assess, treat and accept AI risks consistently, and keep every exception owned and time-bound. |
 | **Tier** | Advanced |
 | **Applies To** | Browser AI / IDE AI / AI APIs / Custom AI Applications / Agents / Vendors |
+| **Assurance Stage** | Design |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R02](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R18](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R28](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Keep an AI risk register with an owner and a score for every risk. Use one scoring method so that different assessors reach the same result. Accept residual risk only at the right authority level. Give every exception an owner, a compensating control and an expiry date that the technical control enforces. |
 | **Evidence Required** | AI risk register; treatment plans; risk acceptance records; exception register with expiry dates. |
@@ -279,6 +313,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Assess the impact on people's rights before deploying AI that is high-risk or that puts personal data at risk, and keep the assessment current. |
 | **Tier** | Advanced |
 | **Applies To** | AI APIs / Custom AI Applications / Agents / Vendors |
+| **Assurance Stage** | Design |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R10](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R12](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R28](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Run a combined data protection and fundamental rights impact assessment before go-live for in-scope systems. Record purpose, data, groups affected, risks, oversight, mitigation, consultation and decision. Include intended and reasonably foreseeable unintended uses and misuse, the deployment regions and languages, the data and its quality, and benefits as well as harms, as listed in ISO/IEC 42005:2025 clause 6. Record the data protection officer's advice and how it was handled. Reassess on material change and at least annually. |
 | **Evidence Required** | Completed assessments; data protection officer advice; approvals dated before go-live; review dates; reassessment records. |
@@ -305,6 +341,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Know which authorities oversee each AI system, meet the registration, filing and notification duties they set, and keep a record of every contact. |
 | **Tier** | Advanced |
 | **Applies To** | Browser AI / IDE AI / AI APIs / Custom AI Applications / Agents / Vendors |
+| **Assurance Stage** | Production |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R09](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R10](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Keep a register of the authorities and ethics bodies relevant to each AI system and jurisdiction, with the duties each one sets and an owner for each duty. Track filings, registrations and local representative appointments to their due dates. Log every contact and its outcome. Watch for new guidance and pending rules, and review the register on a schedule. |
 | **Evidence Required** | Authority register; filing and registration records; representative appointments; contact log; watchlist of pending rules. |
@@ -331,6 +369,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Give everyone who builds, operates, oversees or uses AI the knowledge their role needs, and keep the records that show it. |
 | **Tier** | Advanced |
 | **Applies To** | Browser AI / IDE AI / AI APIs / Custom AI Applications / Agents |
+| **Assurance Stage** | Implementation |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R02](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R19](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Define the knowledge each role group needs, from board members to human reviewers and contractors. Deliver role-based training on a schedule and when a role or a system changes. Record completion and results. Check that the training works, for example through scenario tests and reviewer override rates. |
 | **Evidence Required** | Role and needs matrix; programme and modules; completion records; effectiveness checks. |
@@ -357,6 +397,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Design human review so the people named as overseers can understand, challenge, override and stop an AI system, and show with measures that they do. |
 | **Tier** | Advanced |
 | **Applies To** | Custom AI Applications / Agents / Vendors |
+| **Assurance Stage** | Design |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R07](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R12](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R14](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R18](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R19](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R28](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Set, by risk tier, where a person must review, approve or be able to intervene: before the output is used, while the system runs, and after the fact by sampling. Give each overseer the evidence behind the output (sources, confidence, alternatives) and not only the result, the authority and time to override, and training that matches the role ([AI-CTRL-044](#ai-ctrl-044)). Keep the volume per reviewer low enough to be reviewed, and give overseers a way to stop or roll back the system ([AI-CTRL-025](#ai-ctrl-025)). Measure effectiveness: override and escalation rates, time per review, results of independent re-review of a sample, and detection of seeded errors. Reassess the design when the measures show rubber-stamping. This control covers oversight of AI-assisted decisions in general; [AI-CTRL-023](#ai-ctrl-023) gates specific irreversible agent actions. |
 | **Evidence Required** | Oversight design record per in-scope use case; overseer roles, authority and training records; sampled re-review results; override and escalation metrics; seeded-error test results. |
@@ -384,6 +426,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Control the intellectual property and copyright exposure of AI inputs, outputs and training data. |
 | **Tier** | Advanced |
 | **Applies To** | Browser AI / IDE AI / AI APIs / Custom AI Applications / Vendors |
+| **Assurance Stage** | Design |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R27](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Set a policy on what third-party copyrighted or licensed material staff may submit to AI tools, and on how AI output may be used in products, code and publications. Review vendor terms for ownership of output, indemnity for infringement claims and use of inputs for training. Record the source and licence of training and fine-tuning data ([AI-CTRL-029](#ai-ctrl-029)). Where policy requires, scan AI-generated code and content for licence and similarity matches before release. Record exceptions with an owner and an expiry date. |
 | **Evidence Required** | IP and acceptable-use policy; vendor terms review; training data provenance and licence records; scan results; exception log. |
@@ -413,6 +457,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Identify approved/unapproved AI platforms across browsers, endpoints, IDEs, SaaS, APIs and custom apps. |
 | **Tier** | Baseline |
 | **Applies To** | Browser AI / IDE AI / AI APIs / Custom AI Applications / Agents |
+| **Assurance Stage** | Discovery |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R02](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Discover AI services, extensions, plugins, embedded SaaS AI features and API usage continuously. Classify each as approved, tolerated or unapproved, and attribute use to a user, device and application. |
 | **Evidence Required** | AI service inventory; usage dashboard; user and device reports; classification of each service. |
@@ -439,6 +485,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Detect sensitive, restricted or risky content submitted to AI platforms. |
 | **Tier** | Baseline |
 | **Applies To** | Browser AI / IDE AI / AI APIs / Custom AI Applications |
+| **Assurance Stage** | Implementation |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R01](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R03](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R27](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Inspect prompts in line or at the endpoint for classified data, personal data, credentials and source code. Apply the data classification scheme already in use, and record the policy outcome for every detection. |
 | **Evidence Required** | Prompt detection logs; policy outcomes; sampled test results by data type. |
@@ -465,6 +513,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Prevent uploads of confidential or restricted files to unauthorized AI services. |
 | **Tier** | Advanced |
 | **Applies To** | Browser AI / AI APIs / Custom AI Applications |
+| **Assurance Stage** | Implementation |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R01](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R03](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R27](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Inspect files sent to AI services, including nested archives, images and documents with embedded content. Block or warn according to classification and the approval status of the destination. |
 | **Evidence Required** | Upload block and warn logs; classification policy; file type coverage matrix. |
@@ -491,6 +541,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Monitor and control AI coding assistants, source code sharing and secret leakage. |
 | **Tier** | Advanced |
 | **Applies To** | IDE AI |
+| **Assurance Stage** | Implementation |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R04](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R22](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Inventory AI coding assistants and extensions. Detect proprietary source code and secrets in assistant traffic, restrict assistants on restricted repositories, and attribute activity to developer, device and IDE. |
 | **Evidence Required** | IDE assistant inventory; secret and source code detection events; repository policy; developer rules. |
@@ -517,6 +569,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Support monitor, warn, redact, block and allow policies based on risk and classification. |
 | **Tier** | Advanced |
 | **Applies To** | Browser AI / IDE AI / AI APIs / Custom AI Applications |
+| **Assurance Stage** | Implementation |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R01](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R02](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R03](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Apply graduated actions by user group, destination, data classification and risk. Coach users at the point of use, resist simple bypass, and manage exceptions with an owner and expiry date. |
 | **Evidence Required** | Policy configuration; action logs by type; exception register; bypass test results. |
@@ -545,6 +599,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Give every user, application and agent that uses AI a unique, attributable identity. |
 | **Tier** | Baseline |
 | **Applies To** | AI APIs / Custom AI Applications / Agents |
+| **Assurance Stage** | Implementation |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R07](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R22](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R25](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Issue a unique identity to each agent and AI workload, with a named human sponsor. Do not share keys between workloads. Recertify identities on a schedule and remove them when the sponsor leaves or the use case ends. Authenticate agents to each other and sign the messages they exchange, so that one agent cannot pass as another. Give training jobs, pipelines and model-serving processes their own workload identities. |
 | **Evidence Required** | Identity registry; sponsor records; recertification results; orphaned identity report. |
@@ -571,6 +627,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Limit what each AI workload and agent can reach to the minimum its task needs. |
 | **Tier** | Baseline |
 | **Applies To** | AI APIs / Custom AI Applications / Agents |
+| **Assurance Stage** | Implementation |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R06](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R07](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R08](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R22](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Use short-lived credentials scoped per tool and resource. Act with the end user's rights where a user is present, not with a broad service account. Detect and correct permission drift. Keep secrets out of locations an agent can read, such as environment variables, configuration files and shell history; issue short-lived tokens scoped to one task at the moment of the call; and plant canary credentials to detect an agent searching for credentials it was never given. Apply the same limits to training jobs, pipelines and model-serving identities: scope them to the datasets and models the task names, and revoke them when the job ends. |
 | **Evidence Required** | Permission maps; token scope configuration; access review records; drift reports. |
@@ -599,6 +657,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Apply classification, minimization and isolation to data that AI systems ingest, process and produce. |
 | **Tier** | Baseline |
 | **Applies To** | AI APIs / Custom AI Applications / Agents |
+| **Assurance Stage** | Implementation |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R01](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R03](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R06](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R17](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Carry data classification into AI pipelines. Minimize or mask sensitive fields before they reach a model. Keep tenants separate in indexes, caches, memory and logs, and record data lineage. |
 | **Evidence Required** | Data flow diagrams; classification and masking rules; tenant isolation tests; lineage records. |
@@ -625,6 +685,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Return only content the requesting user is entitled to see. |
 | **Tier** | Baseline |
 | **Applies To** | Custom AI Applications / Agents |
+| **Assurance Stage** | Implementation |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R06](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Enforce document-level permissions at query time using the end user's identity. Propagate permission changes to the index promptly. Do not rely on the model to withhold content. Return citations that users can check. |
 | **Evidence Required** | Permission test results; retrieval logs with source documents; propagation timing. |
@@ -651,6 +713,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Stop untrusted or poisoned content from entering the corpus that AI systems retrieve from. |
 | **Tier** | Advanced |
 | **Applies To** | Custom AI Applications / Agents |
+| **Assurance Stage** | Implementation |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R05](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R08](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R17](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Control who and what can write to the corpus. Record the source of every indexed item. Scan ingested content for embedded instructions, and keep the ability to find and remove items by source. Record an owner and a freshness limit for each source, and monitor retrieval quality for drift so that superseded or degraded content is found and removed. Measure the corpus against data quality thresholds for currentness, credibility of source and duplication, so that stale or low-quality content is treated as a defect and not only tampering. |
 | **Evidence Required** | Ingestion access list; provenance records; ingestion scan results; removal test. |
@@ -679,6 +743,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Protect custom AI applications from prompt injection, misuse and output leakage. |
 | **Tier** | Baseline |
 | **Applies To** | Custom AI Applications / AI APIs |
+| **Assurance Stage** | Implementation |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R05](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R06](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R24](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Inspect inputs and retrieved content for direct and indirect prompt injection and jailbreaks. Treat retrieved text as untrusted data. Protect the system prompt, and keep high-privilege tools out of sessions that read untrusted content. |
 | **Evidence Required** | Prompt injection test reports; runtime logs; guardrail configuration; bypass test results. |
@@ -705,6 +771,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Treat model output as untrusted input to whatever consumes it. |
 | **Tier** | Baseline |
 | **Applies To** | Custom AI Applications / AI APIs / Agents |
+| **Assurance Stage** | Implementation |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R05](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R06](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R24](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R26](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Validate and encode output before it is rendered, executed or passed to another system. Restrict what output can trigger, such as links, images and calls. Inspect responses for sensitive data. Treat reasoning traces, intermediate tool output and system instructions as sensitive content. Decide whether each is shown to users or written to logs, apply the same classification as the final output, and test for leakage. |
 | **Evidence Required** | Output validation rules; response inspection logs; injection test results. |
@@ -731,6 +799,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Apply the same inspection and policy to images, documents, audio and video as to text. |
 | **Tier** | Advanced |
 | **Applies To** | Browser AI / Custom AI Applications / Agents |
+| **Assurance Stage** | Implementation |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R03](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R05](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Inspect non-text inputs for sensitive content and hidden instructions. Do not treat voice as proof of identity for sensitive actions. Govern recordings and transcripts under the retention policy. |
 | **Evidence Required** | Modality coverage matrix; detection results by modality; recording retention configuration. |
@@ -757,6 +827,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Keep AI output grounded, within its approved scope and free of harmful content. |
 | **Tier** | Advanced |
 | **Applies To** | Custom AI Applications / AI APIs / IDE AI |
+| **Assurance Stage** | Implementation |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R12](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R14](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R20](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Ground answers in approved sources and verify citations. Restrict assistants to their approved topics. Filter harmful and policy-violating output. Detect fabricated packages, links and references before users act on them, and measure factual accuracy against a baseline. |
 | **Evidence Required** | Grounding and citation test results; topic policy; harmful content filter results; factuality baseline. |
@@ -785,6 +857,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Monitor AI agents, tool calls, API access and autonomous actions. |
 | **Tier** | Baseline |
 | **Applies To** | Agents |
+| **Assurance Stage** | Design |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R07](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R25](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Keep a registry of every agent with its owner, purpose, model, tools, data scope and approval status. Monitor decisions, tool calls and delegation chains, and detect unregistered agents. Keep a map of which agents may call or delegate to which, and alert on links outside it. |
 | **Evidence Required** | Agent registry; tool access logs; delegation maps; shadow agent reports. |
@@ -811,6 +885,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Enforce authority to act, access data or spend money outside the model. |
 | **Tier** | Baseline |
 | **Applies To** | Agents / Custom AI Applications |
+| **Assurance Stage** | Design |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R07](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R24](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Place a policy enforcement point between the model and every tool. It authorizes each call with deterministic rules using the real parameters, the acting identity and the end user's rights. Model output is advice, never authority. |
 | **Evidence Required** | Policy rules; allow and deny logs; architecture review record. |
@@ -837,6 +913,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Require a person to approve irreversible or high-impact actions before they run. |
 | **Tier** | Baseline |
 | **Applies To** | Agents |
+| **Assurance Stage** | Design |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R07](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R19](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Define which actions need approval. Show the approver the real parameters and the consequence, not a model-written summary. Record the decision, and guard against approval fatigue by keeping the set of gated actions small. |
 | **Evidence Required** | List of gated actions; approval logs with parameters shown; rejection samples. |
@@ -863,6 +941,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Allow agents to use only vetted tools and tool servers, and detect when they change. |
 | **Tier** | Baseline |
 | **Applies To** | Agents / IDE AI |
+| **Assurance Stage** | Implementation |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R07](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R08](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R23](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R24](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Keep an allow-list of tools, plugins and MCP servers with an owner for each. Validate tool schemas, pin versions, and re-approve when a tool definition changes after approval. The same governance applies to agent skills and plugins: approve them from an allowlist after review, pin the version, check integrity on load and keep a procedure to remove one quickly. |
 | **Evidence Required** | Tool and MCP server registry; allow-list configuration; change detection alerts. |
@@ -889,6 +969,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Stop an agent, revoke its access and limit the damage within minutes. |
 | **Tier** | Baseline |
 | **Applies To** | Agents |
+| **Assurance Stage** | Production |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R07](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R11](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R21](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R25](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Provide a tested way to stop a single agent and to revoke credentials for all agents. Set limits on steps, time and spend per task. Know which actions can be rolled back and how. |
 | **Evidence Required** | Kill switch procedure; test records with timings; task limits configuration. |
@@ -915,6 +997,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Prevent poisoned or cross-user content from persisting in agent memory and context. |
 | **Tier** | Advanced |
 | **Applies To** | Agents / Custom AI Applications |
+| **Assurance Stage** | Implementation |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R05](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R07](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R21](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Separate memory by user and tenant. Record the source of each memory item, apply expiry, and provide a way to inspect and purge memory. Do not let untrusted content write to long-term memory unchecked. Keep an inventory of memory stores with a named owner for each. Write down what each assistant may and may not remember, and enforce it when memory is written. Let users see, correct and delete what is remembered about them, and include memory in data subject access and erasure requests. |
 | **Evidence Required** | Memory isolation tests; memory provenance records; purge procedure and test; memory store inventory with owners; memory write policy and enforcement results; access and erasure request records that cover memory. |
@@ -941,6 +1025,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Run agent-generated code and browser or computer-use sessions in isolation. |
 | **Tier** | Baseline |
 | **Applies To** | Agents |
+| **Assurance Stage** | Platform |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R07](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R21](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R22](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R25](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Execute generated code in a sandbox with no network, filesystem or secrets access by default. Run browser and computer-use agents in a separate profile or container with their own credentials and sessions. |
 | **Evidence Required** | Sandbox configuration; egress rules; isolation test results. |
@@ -969,6 +1055,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Protect models from theft, extraction and adversarial inputs. |
 | **Tier** | Advanced |
 | **Applies To** | Custom AI Applications / AI APIs |
+| **Assurance Stage** | Platform |
+| **Deployment Model** | PaaS/IaaS/Self-hosted |
 | **Risk Mapping** | [AI-R08](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Restrict access to model weights and encrypt them at rest. Limit and monitor inference queries for extraction patterns. Scan models before use, and test robustness for models that make security or safety decisions. |
 | **Evidence Required** | Model access list; query monitoring rules; model scan reports; robustness test results. |
@@ -995,6 +1083,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Know where training data came from and detect tampering before it shapes a model. |
 | **Tier** | Advanced |
 | **Applies To** | Custom AI Applications |
+| **Assurance Stage** | Implementation |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R08](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Record provenance for every dataset. Verify integrity before each training or fine-tuning run. Screen data for sensitive content and poisoning, and keep the ability to trace a model back to its data. Define a data quality profile for each dataset: choose the quality characteristics that matter for the task (for example completeness, accuracy, balance and representativeness, as named in ISO/IEC 5259-2), set a measured threshold for each, and have the data owner approve them. Check the thresholds before each run, and treat labelling quality as part of the profile when data is labelled. |
 | **Evidence Required** | Dataset provenance records; integrity checks; screening results; model-to-data lineage; approved data quality profile and the measured results for each run. |
@@ -1021,6 +1111,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Protect the pipeline that builds, stores and releases models and prompts. |
 | **Tier** | Advanced |
 | **Applies To** | Custom AI Applications |
+| **Assurance Stage** | Platform |
+| **Deployment Model** | PaaS/IaaS/Self-hosted |
 | **Risk Mapping** | [AI-R08](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Sign model artifacts and verify signatures at deployment. Restrict who can write to the registry. Gate releases on security tests, and version models, prompts and configuration together. |
 | **Evidence Required** | Signing configuration; registry access list; release gate results; version history. |
@@ -1049,6 +1141,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Know exactly which models, datasets, packages and prompts run in each environment. |
 | **Tier** | Advanced |
 | **Applies To** | Custom AI Applications / Agents / IDE AI / Vendors |
+| **Assurance Stage** | Implementation |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R08](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R16](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R23](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Maintain an AI bill of materials per system. Take models and packages only from approved sources, verify provenance, and scan them. Re-run security tests when any component changes, including a provider-side model update. Pin model versions rather than using floating aliases such as "latest", and track provider deprecation and change notices so that a model change is a reviewed change. |
 | **Evidence Required** | AI-BOM; approved source list; scan reports; change-triggered test records. |
@@ -1075,6 +1169,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Harden and segment the infrastructure that trains and serves models. |
 | **Tier** | Advanced |
 | **Applies To** | Custom AI Applications |
+| **Assurance Stage** | Platform |
+| **Deployment Model** | PaaS/IaaS/Self-hosted |
 | **Risk Mapping** | [AI-R08](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R10](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Separate experimentation, training, evaluation and production. Isolate model runtimes at the network level and allow only required egress. Manage secrets centrally, and isolate tenants on shared GPUs. |
 | **Evidence Required** | Network segmentation rules; secrets management configuration; hardening baseline; isolation tests. |
@@ -1101,6 +1197,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Keep AI services and their security controls available, and make them fail safely. |
 | **Tier** | Advanced |
 | **Applies To** | AI APIs / Custom AI Applications / Agents / Vendors |
+| **Assurance Stage** | Platform |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R13](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R16](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Decide for each control whether it fails open or closed, and test it. Measure the latency and quality cost of controls so that teams do not remove them. Provide failover that keeps guardrails, residency and logging intact. Keep tested fallback paths for AI-dependent processes, tested backups and an exit plan for each provider. Detect silent failure of controls. |
 | **Evidence Required** | Fail-mode test results; latency and load measurements; failover and restore tests; continuity and exit plans; health monitoring alerts. |
@@ -1129,6 +1227,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Review every AI system against its threats before production and after material change. |
 | **Tier** | Baseline |
 | **Applies To** | Custom AI Applications / Agents / Vendors |
+| **Assurance Stage** | Implementation |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R05](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R07](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R08](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R14](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R16](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Threat model each system: assets, trust boundaries, worst-case output and maximum damage. Select controls from this library by risk tier. Record open risks and exceptions, and require sign-off before release. |
 | **Evidence Required** | Threat models; architecture review records; control selection; approvals and exceptions. |
@@ -1155,6 +1255,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Test AI systems against attacks before release and continuously afterwards. |
 | **Tier** | Advanced |
 | **Applies To** | Custom AI Applications / Agents |
+| **Assurance Stage** | Implementation |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R05](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R07](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R16](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R17](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R20](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Red team each system against defined threat cases before release. Run a regression suite in the pipeline and whenever the model, prompt, tools or data change. The risk owner sets the acceptable attack success rate in writing. Re-run the regression suite whenever the model version, prompt, retrieval source or guardrail changes, including changes made by the provider, and set a tolerance for run-to-run output variation. |
 | **Evidence Required** | Red team reports; regression suite results; agreed thresholds; retest records. |
@@ -1181,6 +1283,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Show, with current evidence, that each AI control is operating and that findings are closed. |
 | **Tier** | Advanced |
 | **Applies To** | Browser AI / IDE AI / AI APIs / Custom AI Applications / Agents / Vendors |
+| **Assurance Stage** | Production |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R09](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R15](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R28](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Measure control effectiveness on a schedule. Collect evidence automatically where possible and record its age. Have control owners attest periodically. Track findings to verified closure, and protect governance records from silent change. |
 | **Evidence Required** | Control effectiveness results; evidence packs with collection dates; owner attestations; findings log; record change history. |
@@ -1207,6 +1311,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Test AI systems that make or support high-impact decisions for unfair bias, and keep explanations that a person can understand and a reviewer can challenge. |
 | **Tier** | Advanced |
 | **Applies To** | Custom AI Applications / Agents / Vendors |
+| **Assurance Stage** | Implementation |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R12](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R14](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R15](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Define which decisions are high-impact. Identify the relevant groups with legal input. Test for bias before release, at least annually and on material model change, and record the method, data, thresholds, results and approvals. Where sensitive data is needed for testing, record why it is necessary and the safeguards. Give an explanation for each high-impact decision and a route to human review. Block or condition release when a threshold fails. Keep a versioned bias profile for each system that records which differences in treatment are intended and which are not, the stakeholder groups considered, how representative the test data is, the risks accepted and who accepted them, and the application boundaries within which the system was validated; monitor for drift outside them. |
 | **Evidence Required** | Bias test plan and results; threshold approvals; necessity record for sensitive data; explanation records; human-review log; retest evidence; current bias profile with its validated application boundaries. |
@@ -1235,6 +1341,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Maintain logs for prompts, responses, files, users, devices, applications and actions. |
 | **Tier** | Baseline |
 | **Applies To** | Browser AI / IDE AI / AI APIs / Custom AI Applications / Agents |
+| **Assurance Stage** | Platform |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R09](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R15](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R26](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Log prompts, responses, uploads, retrieved sources, model calls, tool calls and policy decisions according to policy. Records must be timestamped, attributable, exportable and retained for the approved period. |
 | **Evidence Required** | Exportable audit records; log schema; retention policy; sample reconstruction. |
@@ -1261,6 +1369,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Forward AI security events and logs to monitoring and response platforms. |
 | **Tier** | Advanced |
 | **Applies To** | Browser AI / IDE AI / AI APIs / Custom AI Applications / Agents |
+| **Assurance Stage** | Production |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R09](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Forward AI security events to the SIEM with a documented schema. Build detections and runbooks for AI-specific events, and correlate them with identity, endpoint and network telemetry. |
 | **Evidence Required** | SIEM event IDs; parser mapping; detection rules; runbooks; alert samples. |
@@ -1287,6 +1397,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Detect, contain, investigate and recover from AI security incidents. |
 | **Tier** | Baseline |
 | **Applies To** | Browser AI / IDE AI / AI APIs / Custom AI Applications / Agents / Vendors |
+| **Assurance Stage** | Production |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R09](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R20](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Maintain AI-specific playbooks and an incident taxonomy. Preserve state needed for investigation: prompts, context, index snapshots, memory and model version. Define containment options and how to work with the model provider. |
 | **Evidence Required** | Playbooks; exercise records; preserved-state checklist; provider contact and escalation path. |
@@ -1315,6 +1427,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Objective** | Attribute AI spend and stop abuse that exhausts budget or capacity. |
 | **Tier** | Baseline |
 | **Applies To** | AI APIs / Custom AI Applications / Agents |
+| **Assurance Stage** | Platform |
+| **Deployment Model** | All |
 | **Risk Mapping** | [AI-R11](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
 | **Implementation Expectation** | Attribute usage to team, application, user and key. Set budgets, rate limits and quotas with enforcement. Detect spend anomalies and leaked keys, and limit loops and retries in agents. |
 | **Evidence Required** | Cost attribution reports; budget and quota configuration; anomaly alerts; key revocation records. |
