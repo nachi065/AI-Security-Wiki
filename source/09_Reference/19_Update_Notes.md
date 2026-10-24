@@ -21,7 +21,7 @@ Entries are only ever added. Past entries are not rewritten or removed; when som
 
 ## 24 October 2026: requirements traceability
 
-Two workbooks by Nachiket Sathaye and Ankush Jain were compared with the wiki: an AI security risk review checklist and a requirements traceability matrix drafted for an AI security review. The matrix had a format the wiki lacked: one row per testable requirement, scoped by assurance stage and deployment model, with columns for the vendor's answer and the assessor's review. No wiki page said which controls apply to SaaS, PaaS or IaaS delivery.
+The wiki lacked a requirements matrix: one row per testable requirement, scoped by assurance stage and deployment model, with columns for the vendor's answer and the assessor's review. No wiki page said which controls apply to SaaS, PaaS or IaaS delivery.
 
 ### What changed
 
@@ -32,11 +32,11 @@ Two workbooks by Nachiket Sathaye and Ankush Jain were compared with the wiki: a
 ### What was checked
 
 - The matrix dashboard's formulas were recalculated with sample answers (a Yes with no detail, an accepted row, a gap without an owner and an out-of-scope row) and gave the expected counts and flags. All three workbooks recalculate with no formula errors.
-- The regulatory references in the matrix come from the wiki's crosswalks and keep their verification status. The UAE and Dubai instruments named in the source matrix (the DESC Information Security Regulation, the national AI security policy and the Dubai Data Law) were not added, because their text has not been read.
+- The regulatory references in the matrix come from the wiki's crosswalks and keep their verification status. The UAE and Dubai instruments a Dubai Government review would cite (the DESC Information Security Regulation, the national AI security policy and the Dubai Data Law) were not added, because their text has not been read.
 
 ### Still work in progress
 
-- About fifteen topics in the source matrix have no or thin coverage in the control library, such as recovery time objectives, DDoS protection, key custody, model decommissioning and detection validation. They are listed for a later update.
+- About fifteen review topics have no or thin coverage in the control library, such as recovery time objectives, DDoS protection, key custody, model decommissioning and detection validation. They are listed for a later update.
 
 ## 23 October 2026: secure development and privacy in code
 
