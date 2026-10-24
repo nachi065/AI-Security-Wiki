@@ -294,6 +294,8 @@
 <li><a href="../25_Templates/10_AI_Security_Programme_Charter_Template.html">AI Security Programme Charter Template (.docx)</a></li>
 <li><a href="../25_Templates/11_AI_Incident_Report_Template.html">AI Incident Report Template (.docx)</a></li>
 <li><a href="../25_Templates/12_AI_Security_Requirements_Traceability_Matrix_Template.html">AI Security Requirements Traceability Matrix Template (.xlsx)</a></li>
+<li><a href="../25_Templates/13_AI_System_Security_Risk_Review_Checklist_Template.html">AI System Security Risk Review Checklist Template (.xlsx)</a></li>
+<li><a href="../25_Templates/14_AI_Security_Assurance_Baseline_Template.html">AI Security Assurance Baseline Template (.xlsx)</a></li>
 </ul></details></li>
 <li><a href="../community-rules.html">Community Rules</a></li>
 </ul>
@@ -308,16 +310,22 @@
 <li><strong><a href="#full-version-history">Full version history</a></strong>: every version since 1.0, newest first. The <a href="../index.html#20-version-history">home page</a> shows only the three latest.</li>
 </ul>
 <p>Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.</p>
-<h2 id="24-october-2026-requirements-traceability">24 October 2026: requirements traceability</h2>
+<h2 id="24-october-2026-requirements-traceability-and-review-templates">24 October 2026: requirements traceability and review templates</h2>
 <p>The wiki lacked a requirements matrix: one row per testable requirement, scoped by assurance stage and deployment model, with columns for the vendor's answer and the assessor's review. No wiki page said which controls apply to SaaS, PaaS or IaaS delivery.</p>
 <h3 id="what-changed">What changed</h3>
 <ul>
 <li><strong>Assurance stage and deployment model.</strong> Every control in the <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#assurance-stages-and-deployment-models">Control Objectives Library</a> (version 2.5) now names the stage at which a reviewer first checks it and the deployment models it applies to. The link checker rejects a control without valid values. Both are starting values for a review to adjust.</li>
 <li><strong>Requirements traceability matrix.</strong> A new <a href="../25_Templates/12_AI_Security_Requirements_Traceability_Matrix_Template.html">AI Security Requirements Traceability Matrix Template</a> turns each sentence of a control's Implementation Expectation into one requirement, traced to the control, its risks, test cases and framework and regional crosswalks. It adds scoping, vendor and assessor columns, thirteen evidence types, a response check that treats a "Yes" with no detail as unanswered, and a live dashboard.</li>
-<li><strong>Workbooks rebuilt.</strong> The <a href="../25_Templates/06_AI_Security_Control_Library_and_Crosswalks_Template.html">Control Library and Crosswalks</a> and <a href="../25_Templates/05_AI_Security_Audit_and_Evidence_Checklist_Template.html">Audit and Evidence Checklist</a> workbooks (version 1.1) carry the two new fields and were rebuilt from the current wiki. The audit workbook now reads control areas and evidence owners from the per-family tables of the <a href="../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">Audit and Evidence Checklist</a> page, so each control's area is now its family.</li>
+<li>
+<p><strong>Workbooks rebuilt.</strong> The <a href="../25_Templates/06_AI_Security_Control_Library_and_Crosswalks_Template.html">Control Library and Crosswalks</a> and <a href="../25_Templates/05_AI_Security_Audit_and_Evidence_Checklist_Template.html">Audit and Evidence Checklist</a> workbooks (version 1.1) carry the two new fields and were rebuilt from the current wiki. The audit workbook now reads control areas and evidence owners from the per-family tables of the <a href="../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">Audit and Evidence Checklist</a> page, so each control's area is now its family.</p>
+</li>
+<li>
+<p><strong>Two more templates.</strong> The <a href="../25_Templates/13_AI_System_Security_Risk_Review_Checklist_Template.html">AI System Security Risk Review Checklist</a> holds 150 review questions across the AI lifecycle, with impact and risk registers, threat and vulnerability lists and severity criteria. Organisation names were removed, its dropdowns rebuilt and the standard editions corrected. The <a href="../25_Templates/14_AI_Security_Assurance_Baseline_Template.html">AI Security Assurance Baseline</a> holds 165 testable requirements in 14 domains, mapped to ISO/IEC 42001, NIST AI RMF, the EU AI Act and OWASP, with vendor and assessor columns and a dashboard. Its UAE and Dubai requirements and references moved to optional sheets so that the baseline applies anywhere.</p>
+</li>
 </ul>
 <h3 id="what-was-checked">What was checked</h3>
 <ul>
+<li>The baseline's dashboard and response check were recalculated with sample answers and gave the expected counts and flags. The checklist's dropdowns now read from its own Ref Tables sheet rather than an external workbook.</li>
 <li>The matrix dashboard's formulas were recalculated with sample answers (a Yes with no detail, an accepted row, a gap without an owner and an out-of-scope row) and gave the expected counts and flags. All three workbooks recalculate with no formula errors.</li>
 <li>The regulatory references in the matrix come from the wiki's crosswalks and keep their verification status. The UAE and Dubai instruments a Dubai Government review would cite (the DESC Information Security Regulation, the national AI security policy and the Dubai Data Law) were not added, because their text has not been read.</li>
 </ul>
@@ -703,7 +711,7 @@
 <td>2.42</td>
 <td>2026-10-24</td>
 <td>Nachiket Sathaye</td>
-<td>Requirements traceability: every control now names the assurance stage at which it is first checked (Discovery, Design, Implementation, Platform or Production) and the deployment models it applies to (All, Cloud, or PaaS/IaaS/Self-hosted), enforced by the link checker; new AI Security Requirements Traceability Matrix template with one row per control requirement, vendor and assessor columns, a response check and a live dashboard; the Control Library and Audit Checklist workbooks carry the two new fields and were rebuilt from the current wiki.</td>
+<td>Requirements traceability: every control now names the assurance stage at which it is first checked (Discovery, Design, Implementation, Platform or Production) and the deployment models it applies to (All, Cloud, or PaaS/IaaS/Self-hosted), enforced by the link checker; new AI Security Requirements Traceability Matrix template with one row per control requirement, vendor and assessor columns, a response check and a live dashboard; the Control Library and Audit Checklist workbooks carry the two new fields and were rebuilt from the current wiki; two templates by Nachiket Sathaye and Ankush Jain published: the AI System Security Risk Review Checklist (150 lifecycle review questions with impact and risk registers) and the AI Security Assurance Baseline (165 requirements in 14 domains, with an optional UAE and Dubai overlay).</td>
 </tr>
 <tr>
 <td>2.41</td>

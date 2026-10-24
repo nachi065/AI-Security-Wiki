@@ -60,6 +60,8 @@ Every control in the library names the [assurance stage](../03_Control_Library/0
 |---|---|
 | [AI Security Vendor Evaluation Scorecard](04_AI_Security_Vendor_Evaluation_Scorecard.md) | Comparing several AI security products and shortlisting one |
 | This matrix | Reviewing one AI system, bought or built, against every control requirement |
+| [AI Security Assurance Baseline](14_AI_Security_Assurance_Baseline_Template.md) | The same kind of review with a standalone, domain-organised requirement set and an optional UAE and Dubai overlay |
+| [AI System Security Risk Review Checklist](13_AI_System_Security_Risk_Review_Checklist_Template.md) | Lifecycle review questions with an impact and risk record |
 | [AI Security Audit and Evidence Checklist](05_AI_Security_Audit_and_Evidence_Checklist_Template.md) | Testing whether controls operated over an audit period |
 | [AI Security Control Library and Crosswalks](06_AI_Security_Control_Library_and_Crosswalks_Template.md) | Tracking which controls your organisation has implemented |
 
