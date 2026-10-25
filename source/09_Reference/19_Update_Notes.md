@@ -19,6 +19,24 @@ This page is the wiki's change record. It has two parts:
 
 Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.
 
+## 25 October 2026: templates rebuilt for the regulator changes
+
+This entry closes an item left open in the entry below ("financial regulators and the kill switch"), which said the Excel templates had not been rebuilt.
+
+### What changed
+
+- **Five workbooks rebuilt from wiki 2.44.** The [AI Risk Register](../25_Templates/01_AI_Risk_Register_Template.md) (version 1.1), [Audit and Evidence Checklist](../25_Templates/05_AI_Security_Audit_and_Evidence_Checklist_Template.md) (1.2), [Control Library and Crosswalks](../25_Templates/06_AI_Security_Control_Library_and_Crosswalks_Template.md) (1.2), [Test Case Tracker](../25_Templates/07_AI_Security_Test_Case_Tracker_Template.md) (1.2) and [Requirements Traceability Matrix](../25_Templates/12_AI_Security_Requirements_Traceability_Matrix_Template.md) (1.1) now show AI-CTRL-025 as AI Containment and Kill Switch with its wider text, the extended text of AI-CTRL-011, 012, 014 and 041, and test case TC-L01-021.
+- **Hong Kong column.** The framework matrices and the traceability matrix have a Hong Kong regulation (incl. HKMA) column, and the crosswalk sheets carry the 18 Hong Kong items (nine instruments and nine HKMA principles). The control library workbook now lists 910 framework items.
+- **Risk register catch-up.** The risk register had not been rebuilt since 17 October 2026, so this rebuild also brings in other wiki changes made since then. Its file properties now credit both authors.
+
+### What was checked
+
+- Every rebuilt workbook was recalculated with no formula errors, and its sheets match the previous version's sheet list.
+
+### Still work in progress
+
+- The NIST SSDF crosswalk (added in 2.41) is not yet a column in the risk register's framework matrix.
+
 ## 25 October 2026: financial regulators and the kill switch
 
 A comparison of the wiki with a published chart of six financial regulators' AI expectations (MAS, RBI, SEBI, the EU AI Act, the FCA and the HKMA) found that the wiki had no Hong Kong coverage at all, and that its only kill-switch control applied to agents, while MAS, the HKMA and the RBI draft expect a way to suspend any high-risk AI. It also found that the chart understated MAS, the RBI and the HKMA on kill switches, and showed SEBI's guidelines as requirements before they were issued.
@@ -438,6 +456,7 @@ Every version of the wiki, newest first. Rows are never edited after they are ad
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.45 | 2026-10-25 | Nachiket Sathaye | Templates rebuilt from wiki 2.44: AI Risk Register (version 1.1), Audit and Evidence Checklist (1.2), Control Library and Crosswalks (1.2), Test Case Tracker (1.2) and Requirements Traceability Matrix (1.1) now carry AI-CTRL-025's new title and text, the extended control text, TC-L01-021 and a Hong Kong regulation column. |
 | 2.44 | 2026-10-25 | Nachiket Sathaye | Financial regulators: new Hong Kong section (HKMA Supervisory Guidance for Responsible Adoption of AI of 15 October 2026, read in the HKMA text; SFC, PCPD, PDPO; HK-T1 self-assessment; principle crosswalk); new Financial Regulator AI Comparison page (MAS, RBI, SEBI, EU AI Act, FCA, HKMA on eight themes); AI-CTRL-025 renamed AI Containment and Kill Switch and widened to high-risk models, with new test case TC-L01-021; AI-CTRL-011, 012, 014 and 041 extended (unlisted AI restricted, board-approved AI strategy, no vendor training on data without authorisation, customer AI-use notice); India IN6 verified against the RBI draft text and new row IN13 for SEBI; UK5 updated for the FCA Mills Review. |
 | 2.43 | 2026-10-24 | Nachiket Sathaye | Requirements traceability: every control now names the assurance stage at which it is first checked (Discovery, Design, Implementation, Platform or Production) and the deployment models it applies to (All, Cloud, or PaaS/IaaS/Self-hosted), enforced by the link checker; new AI Security Requirements Traceability Matrix template with one row per control requirement, vendor and assessor columns, a response check and a live dashboard; the Control Library and Audit Checklist workbooks carry the two new fields and were rebuilt from the current wiki; two templates by Nachiket Sathaye and Ankush Jain published: the AI System Security Risk Review Checklist (150 lifecycle review questions with impact and risk registers) and the AI Security Assurance Baseline (165 requirements in 14 domains, with an optional UAE and Dubai overlay). |
 | 2.42 | 2026-10-24 | Nachiket Sathaye | Weekly crosswalk verification, second part (23 to 24 October 2026): MITRE ATLAS identifiers checked against ATLAS release 2026.09, with no change; weekly watch of proposed and pending rows in every region. EU E14 (draft guidelines on high-risk classification) confirmed against the Commission's pages and tagged [Verified]; EU E4 updated for the Council's negotiating mandate on the Digital Omnibus for data and the GDPR (21 October 2026). |

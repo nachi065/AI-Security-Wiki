@@ -6,7 +6,7 @@ parent: "Templates"
 nav_order: 5
 description: "A downloadable Excel audit workbook: tests for every wiki control with evidence and audit procedures, the GCC and EU audit checklists and evidence registers, a findings log, an exception register and ISO/IEC 42001 certification readiness."
 document_type: AI Security Wiki Template
-version: 1.1
+version: 1.2
 ---
 
 # AI Security Audit and Evidence Checklist Template (.xlsx)
