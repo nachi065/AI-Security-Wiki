@@ -55,7 +55,7 @@ The link check rejects any other level, and rejects a Lab-validated or Independe
 
 | Layer | Name | Primary test focus | Cases | Critical | High | Medium | Low |
 |---|---|---|---|---|---|---|---|
-| L01 | [Business & Use Cases](L01-business-and-use-cases.md) | use-case registry, risk-tiering, business-owner attribution | 20 | 6 | 8 | 5 | 1 |
+| L01 | [Business & Use Cases](L01-business-and-use-cases.md) | use-case registry, risk-tiering, business-owner attribution | 21 | 6 | 9 | 5 | 1 |
 | L02 | [Governance & Risk Mgmt](L02-governance-and-risk-mgmt.md) | policy-to-control mapping, risk register, exceptions workflow | 25 | 7 | 11 | 7 | 0 |
 | L03 | [Legal, Privacy & Compliance](L03-legal-privacy-and-compliance.md) | UAE/GCC residency, PDPL-type obligations, evidence export, DPIA support, fairness, transparency, human oversight, intellectual property and authority engagement | 45 | 12 | 25 | 8 | 0 |
 | L04 | [Human Interaction Layer](L04-human-interaction-layer.md) | browser/workforce AI, user coaching, approval prompts, multimodal input | 32 | 6 | 16 | 10 | 0 |
@@ -72,7 +72,7 @@ The link check rejects any other level, and rejects a Lab-validated or Independe
 | L15 | [Infrastructure Layer](L15-infrastructure-layer.md) | GPU/cluster hardening, secrets, network segmentation, sovereignty of control plane | 20 | 8 | 10 | 2 | 0 |
 | L16 | [Supply Chain & Third Party](L16-supply-chain-and-third-party.md) | AI-BOM, model and package provenance, third-party SaaS AI risk | 26 | 4 | 13 | 9 | 0 |
 | L17 | [Monitoring, Detection & Response](L17-monitoring-detection-and-response.md) | telemetry, SIEM/SOAR integration, AI incident response, forensics, tracing platforms, quality failures | 33 | 4 | 21 | 8 | 0 |
-| | **Total** | | **{{n:layer_tests}}** | **132** | **282** | **123** | **3** |
+| | **Total** | | **{{n:layer_tests}}** | **132** | **283** | **123** | **3** |
 
 ## Emerging domains
 

@@ -45,7 +45,7 @@ Complete once per adoption. Leave a cell blank where the framework has no corres
 | AUD | Audit, evidence and assurance | 14 |  |  |  |  |  |
 | TRN | Training and awareness | 3 |  |  |  |  |  |
 | CHG | Change and lifecycle management | 3 |  |  |  |  |  |
-| BCP | Resilience and continuity | 2 |  |  |  |  |  |
+| BCP | Resilience and continuity | 3 |  |  |  |  |  |
 
 ## Case index by control theme
 
@@ -64,7 +64,7 @@ Complete once per adoption. Leave a cell blank where the framework has no corres
 | AUD | Audit, evidence and assurance | [TC-L02-003](L02-governance-and-risk-mgmt.md#tc-l02-003), [TC-L02-013](L02-governance-and-risk-mgmt.md#tc-l02-013), [TC-L02-014](L02-governance-and-risk-mgmt.md#tc-l02-014), [TC-L02-015](L02-governance-and-risk-mgmt.md#tc-l02-015), [TC-L02-016](L02-governance-and-risk-mgmt.md#tc-l02-016), [TC-L02-017](L02-governance-and-risk-mgmt.md#tc-l02-017), [TC-L02-018](L02-governance-and-risk-mgmt.md#tc-l02-018), [TC-L02-025](L02-governance-and-risk-mgmt.md#tc-l02-025), [TC-L03-009](L03-legal-privacy-and-compliance.md#tc-l03-009), [TC-L03-022](L03-legal-privacy-and-compliance.md#tc-l03-022), [TC-L03-023](L03-legal-privacy-and-compliance.md#tc-l03-023), [TC-L03-024](L03-legal-privacy-and-compliance.md#tc-l03-024), [TC-L03-025](L03-legal-privacy-and-compliance.md#tc-l03-025), [TC-L03-026](L03-legal-privacy-and-compliance.md#tc-l03-026) |
 | TRN | Training and awareness | [TC-L02-022](L02-governance-and-risk-mgmt.md#tc-l02-022), [TC-L02-023](L02-governance-and-risk-mgmt.md#tc-l02-023), [TC-L03-038](L03-legal-privacy-and-compliance.md#tc-l03-038) |
 | CHG | Change and lifecycle management | [TC-L01-013](L01-business-and-use-cases.md#tc-l01-013), [TC-L01-015](L01-business-and-use-cases.md#tc-l01-015), [TC-L01-019](L01-business-and-use-cases.md#tc-l01-019) |
-| BCP | Resilience and continuity | [TC-L01-009](L01-business-and-use-cases.md#tc-l01-009), [TC-L01-018](L01-business-and-use-cases.md#tc-l01-018) |
+| BCP | Resilience and continuity | [TC-L01-009](L01-business-and-use-cases.md#tc-l01-009), [TC-L01-018](L01-business-and-use-cases.md#tc-l01-018), [TC-L01-021](L01-business-and-use-cases.md#tc-l01-021) |
 
 ## Regional instruments by control theme
 
