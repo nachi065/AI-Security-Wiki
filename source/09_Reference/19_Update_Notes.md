@@ -7,7 +7,7 @@ nav_order: 2
 description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."
 document_type: AI Security Wiki Reference
 version: 1.1
-last_reviewed: 2026-10-25
+last_reviewed: 2026-10-26
 ---
 
 # Update Notes
@@ -26,17 +26,25 @@ The nightly verification pass checks one slice of the wiki each night. This week
 ### What was checked
 
 - **EU (25 October 2026):** every row of the [EU Regulatory Crosswalk](../12_EU_AI_Compliance/07_Regulatory_Crosswalk.md) was checked for changes. Rows not yet verified were checked against the European Commission's AI Act pages: the news items on the GPAI guidelines and on the Code of Practice on marking and labelling AI-generated content, the guidelines library page, the GPAI questions and answers, the AI Act standardisation page and the press release of 31 July 2026 on enforcement. E4 and E14 were left alone because last week's open pull request already changes them.
+- **GCC (26 October 2026):** every row of the [GCC Regulatory Crosswalk](../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.md) was checked for changes. Ten rows not yet verified were checked against the issuing bodies' own pages where those pages could be read: the UAE AI Office and u.ae, the UAE Cabinet, the CBUAE Rulebook, the DIFC, Bahrain's Information & eGovernment Authority (iGA) and Oman's Ministry of Transport, Communications and Information Technology (MTCIT).
 
 ### What changed
 
 - **EU, E16 now [Verified]:** the Commission published the final Code of Practice on marking and labelling AI-generated content on 10 June 2026, and says it is voluntary.
 - **EU, E13 date corrected:** the Commission's guidelines for providers of general-purpose AI models were published on 18 July 2025, not 10 July 2025. 10 July 2025 is the date of the GPAI Code of Practice (E15). The row is now [Verified] for its title and date. The hub row and the [GPAI Model Checklist](../12_EU_AI_Compliance/T12_GPAI_Model_Checklist.md) give the same date.
+- **GCC, U4 and B2 now [Verified]:** the UAE AI Ethics Principles and Guidelines (December 2022) say they are non-binding and name eight principles, and the AI Office's self-assessment is recommended, not compulsory. Bahrain's General Policy for the Use of AI (version 1.0) was approved on 20 May 2025 and all government entities must comply with it.
+- **GCC, U5 renamed:** the UAE Cabinet's announcement of 14 June 2026 names the new body the Artificial Intelligence and Data Authority, not the Federal Authority for AI and Data. It is the single national body for data, AI and digital government and brings together the AI Office, the TDRA Digital Government Sector and the UAE Data Office. The announcement names no founding law and does not mention data protection. The row is now [Verified] for its name, date and mandate.
+- **GCC, U9 now [Verified]:** the CBUAE Guidance Note on AI and machine learning was read on the CBUAE Rulebook. It applies to licensed financial institutions, including insurers, and is guidance. The Rulebook shows it issued on 11 February 2026; the press release of 23 February 2026 announced it. Each expectation in section 2.1 of the [GCC hub](../11_GCC_AI_Compliance/01_GCC_AI_Regulatory_Hub.md) is now worded as in the note, with its section number.
+- **GCC, U6 (DIFC Regulation 10):** the DIFC says Regulation 10 was enacted on 1 September 2023 and lists an accreditation and certification framework with approved certification bodies. A June 2026 consultation proposes a new Regulation 11 and wider duties for the Autonomous Systems Officer; it is still a draft. No DIFC page gives the January 2026 date, so the row stays [Conflict].
 
 ### Still work in progress
 
 - EU: EUR-Lex could not be read automatically on 25 October 2026. E17 (EN 18286 and the Official Journal citation) and E18 (ISO/IEC 42001) were therefore not changed again: the Annex of Commission Implementing Decision (EU) 2026/2274 still has to be read before E17 is rewritten. E2, E5, E6 and E10 (GDPR, NIS2, DORA, Digital Services Act) were not checked against the Official Journal for the same reason.
 - EU, E1e: the Commission's pages confirm that GPAI duties apply from 2 August 2025 and that the AI Office could enforce them from 2 August 2026, but the Official Journal text of Art. 113 was not read, so the row stays [Reported].
 - EU: the Commission published guidelines on the transparency obligations of Article 50 on 20 July 2026. They are not yet a row in the crosswalk.
+- GCC: the Qatar Central Bank's AI Guideline (Q4), Saudi Arabia's Umm Al-Qura gazette (S9, the copyright exception) and the MTCIT policy document (O1) refused automated retrieval or were not reachable on 26 October 2026, so those rows keep their tags. MTCIT lists a "General Policy for the Safe and Ethical Use of Artificial Intelligence Systems" published on 1 April 2025; the row gives 9 April 2025 and calls it the National AI Policy. Whether these are the same document is still to be checked.
+- GCC, B3: a Gulf Daily News report of 11 October 2026 still describes Bahrain's AI law as under debate. No official text of an enacted law was found, so the row is unchanged.
+- GCC, U5: the implementors' guide, T05 and T11 still use the old name "Federal Authority for AI and Data"; they will be updated after the owner reviews the U5 change.
 
 ## 23 October 2026: secure development and privacy in code
 
