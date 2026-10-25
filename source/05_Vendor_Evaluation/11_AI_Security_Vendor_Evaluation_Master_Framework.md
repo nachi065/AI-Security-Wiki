@@ -55,6 +55,8 @@ Apply the same checklist to every supplier under evaluation, and score each doma
 
 ## Required Vendor Evidence
 
+For a full review of one shortlisted product or AI service, send the [AI Security Requirements Traceability Matrix](../25_Templates/12_AI_Security_Requirements_Traceability_Matrix_Template.md) scoped to the assurance stage and deployment model. The list below is the minimum evidence for the evaluation itself.
+
 - Product architecture.
 - Deployment options.
 - Data flow and processing locations.

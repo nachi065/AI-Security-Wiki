@@ -2,7 +2,7 @@
 title: "Templates"
 author: Nachiket Sathaye
 coauthors: Ankush Jain
-description: "Downloadable .xlsx and .docx templates built from the wiki: an AI risk register, system inventory, use-case triage, vendor scorecard, audit checklist, control library and crosswalks, test case tracker, acceptable use policy, impact assessment, programme charter and incident report."
+description: "Downloadable .xlsx and .docx templates built from the wiki: an AI risk register, system inventory, use-case triage, vendor scorecard, audit checklist, requirements traceability matrix, security risk review checklist, assurance baseline, control library and crosswalks, test case tracker, acceptable use policy, impact assessment, programme charter and incident report."
 nav_order: 15
 has_children: true
 ---
@@ -26,3 +26,6 @@ This section holds files you can download and fill in. Each one is built from th
 | [AI Impact Assessment Template (.docx)](09_AI_Impact_Assessment_Template.md) | Assess an AI system's impact on people before go-live |
 | [AI Security Programme Charter Template (.docx)](10_AI_Security_Programme_Charter_Template.md) | Set up the AI security and governance programme in one approvable document |
 | [AI Incident Report Template (.docx)](11_AI_Incident_Report_Template.md) | Record one AI incident from detection to closure |
+| [AI Security Requirements Traceability Matrix Template (.xlsx)](12_AI_Security_Requirements_Traceability_Matrix_Template.md) | Send a scoped set of control requirements to a vendor or system owner and review the answers |
+| [AI System Security Risk Review Checklist Template (.xlsx)](13_AI_System_Security_Risk_Review_Checklist_Template.md) | Review one AI system's security risk across its lifecycle and record its impacts and risks |
+| [AI Security Assurance Baseline Template (.xlsx)](14_AI_Security_Assurance_Baseline_Template.md) | Send a standalone, domain-organised requirements baseline to a vendor or system owner |

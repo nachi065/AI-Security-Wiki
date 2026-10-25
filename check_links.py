@@ -145,6 +145,14 @@ for _rec in re.split(r"^#### (?=AI-CTRL-\d{3}:)", _lib, flags=re.M)[1:]:
 for _c, _t in _tier.items():
     if _t not in ("Baseline", "Advanced"):
         errors.append(f"source/03_Control_Library: {_c} has no valid Tier (Baseline or Advanced)")
+# Every control states the assurance stage it is first checked at and the deployment models it applies to.
+for _rec in re.split(r"^#### (?=AI-CTRL-\d{3}:)", _lib, flags=re.M)[1:]:
+    _body = _rec.split("\n#### ")[0]
+    for _field, _ok in (("Assurance Stage", ("Discovery", "Design", "Implementation", "Platform", "Production")),
+                        ("Deployment Model", ("All", "Cloud", "PaaS/IaaS/Self-hosted"))):
+        _fm = re.search(rf"^\| \*\*{_field}\*\* \| ([^|]+?) \|", _body, re.M)
+        if not _fm or _fm.group(1) not in _ok:
+            errors.append(f"source/03_Control_Library: {_rec[:11]} has no valid {_field} ({', '.join(_ok)})")
 _builder = open(os.path.join(SRC, "24_Builder_Track", "01_Secure_Your_First_Agent.md"), encoding="utf-8").read()
 for _c in sorted(set(re.findall(r"AI-CTRL-\d{3}", _builder.split("## The ten controls at a glance")[1].split("Do the steps in order")[0]))):
     if _tier.get(_c) != "Baseline":
