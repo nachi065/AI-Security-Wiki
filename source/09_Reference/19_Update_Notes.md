@@ -19,6 +19,21 @@ This page is the wiki's change record. It has two parts:
 
 Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.
 
+## 25 October 2026: NIST SSDF crosswalk in the template workbooks
+
+This entry closes the item left open in the entry below ("templates rebuilt for the regulator changes"), which said the NIST SSDF crosswalk was not yet a column in the risk register's framework matrix.
+
+### What changed
+
+- **SSDF column.** The [NIST SSDF and SP 800-218A Crosswalk](../23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.md) (added in 2.41) is now read by the template generators. Its 20 practices (PO, PS, PW and RV) appear as a column in the framework matrix and as rows in the Framework Crosswalk sheet of the [AI Risk Register](../25_Templates/01_AI_Risk_Register_Template.md) (version 1.2) and the [Control Library and Crosswalks](../25_Templates/06_AI_Security_Control_Library_and_Crosswalks_Template.md) (1.3) workbooks. Before this, the generators skipped the SSDF page, so the crosswalk was missing from the control library workbook as well as the risk register.
+- **Counts corrected.** The control library workbook now lists 930 framework items (910 before) in 49 framework columns. The template page had said 47 columns, which was already one short after the Hong Kong column was added.
+- **Risk links are via controls.** The SSDF crosswalk names controls, not risks, so the risk register links each practice to the risks its controls treat. The Framework Matrix marks that column "via controls".
+
+### What was checked
+
+- Both rebuilt workbooks were recalculated with no formula errors. In the risk register matrix, 24 of the 46 risks have at least one SSDF practice. In the control library matrix, 20 of the 46 controls do.
+- The Requirements Traceability Matrix was not rebuilt: its framework columns come from each control's own fields, not from the crosswalks, so the SSDF change does not affect it.
+
 ## 25 October 2026: templates rebuilt for the regulator changes
 
 This entry closes an item left open in the entry below ("financial regulators and the kill switch"), which said the Excel templates had not been rebuilt.
@@ -456,6 +471,7 @@ Every version of the wiki, newest first. Rows are never edited after they are ad
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.46 | 2026-10-25 | Nachiket Sathaye | NIST SSDF crosswalk added to the template workbooks: its 20 practices are now a column in the AI Risk Register (version 1.2) and Control Library and Crosswalks (1.3) framework matrices and rows in their Framework Crosswalk sheets. |
 | 2.45 | 2026-10-25 | Nachiket Sathaye | Templates rebuilt from wiki 2.44: AI Risk Register (version 1.1), Audit and Evidence Checklist (1.2), Control Library and Crosswalks (1.2), Test Case Tracker (1.2) and Requirements Traceability Matrix (1.1) now carry AI-CTRL-025's new title and text, the extended control text, TC-L01-021 and a Hong Kong regulation column. |
 | 2.44 | 2026-10-25 | Nachiket Sathaye | Financial regulators: new Hong Kong section (HKMA Supervisory Guidance for Responsible Adoption of AI of 15 October 2026, read in the HKMA text; SFC, PCPD, PDPO; HK-T1 self-assessment; principle crosswalk); new Financial Regulator AI Comparison page (MAS, RBI, SEBI, EU AI Act, FCA, HKMA on eight themes); AI-CTRL-025 renamed AI Containment and Kill Switch and widened to high-risk models, with new test case TC-L01-021; AI-CTRL-011, 012, 014 and 041 extended (unlisted AI restricted, board-approved AI strategy, no vendor training on data without authorisation, customer AI-use notice); India IN6 verified against the RBI draft text and new row IN13 for SEBI; UK5 updated for the FCA Mills Review. |
 | 2.43 | 2026-10-24 | Nachiket Sathaye | Requirements traceability: every control now names the assurance stage at which it is first checked (Discovery, Design, Implementation, Platform or Production) and the deployment models it applies to (All, Cloud, or PaaS/IaaS/Self-hosted), enforced by the link checker; new AI Security Requirements Traceability Matrix template with one row per control requirement, vendor and assessor columns, a response check and a live dashboard; the Control Library and Audit Checklist workbooks carry the two new fields and were rebuilt from the current wiki; two templates by Nachiket Sathaye and Ankush Jain published: the AI System Security Risk Review Checklist (150 lifecycle review questions with impact and risk registers) and the AI Security Assurance Baseline (165 requirements in 14 domains, with an optional UAE and Dubai overlay). |
