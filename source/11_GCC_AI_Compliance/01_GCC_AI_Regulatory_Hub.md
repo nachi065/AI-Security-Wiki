@@ -90,7 +90,7 @@ The expectations below were checked against the note's text on the [CBUAE Rulebo
 | # | Instrument | Status | Wiki controls | Verify |
 |---|---|---|---|---|
 | B1 | Law 30/2018 (PDPL) | Binding. Published by the Personal Data Protection Authority as Law No. (30) of 2018 with Respect to Personal Data Protection Law | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) | [Verified] title, re-read 19 Oct 2026 with no amendment listed; articles not checked |
-| B2 | General Policy for the Use of AI (v1.0, May 2025) | Reported binding on government entities | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) | [Verified] version 1.0, approval on 20 May 2025 and scope, from the [iGA policy document](https://iga.gov.bh/Media/Publications/National%20Digital%20Policies/General%20Policy%20for%20the%20Use%20of%20AI.pdf) (read 26 Oct 2026) |
+| B2 | General Policy for the Use of AI (v1.0, May 2025) | Binding on all government entities from its approval by the Ministerial Committee for ICT on 20 May 2025; some provisions say "should" rather than "must" | [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) | [Verified] version 1.0, approval on 20 May 2025 and scope, from the [iGA policy document](https://iga.gov.bh/Media/Publications/National%20Digital%20Policies/General%20Policy%20for%20the%20Use%20of%20AI.pdf) (read 26 Oct 2026) |
 | B3 | Draft AI law (38 articles) | Not enacted as of July 2026 per sources; criminal penalties proposed | Watchlist | [Reported] re-check |
 | B4 | CBB digital financial advice directives | Sector | [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) | [Reported] |
 
