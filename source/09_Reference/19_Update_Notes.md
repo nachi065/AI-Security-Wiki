@@ -7,7 +7,7 @@ nav_order: 2
 description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."
 document_type: AI Security Wiki Reference
 version: 1.1
-last_reviewed: 2026-10-24
+last_reviewed: 2026-10-25
 ---
 
 # Update Notes
@@ -18,6 +18,33 @@ This page is the wiki's change record. It has two parts:
 - **[Full version history](#full-version-history)**: every version since 1.0, newest first. The [home page](../index.md#20-version-history) shows only the three latest.
 
 Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.
+
+## 25 October 2026: financial regulators and the kill switch
+
+A comparison of the wiki with a published chart of six financial regulators' AI expectations (MAS, RBI, SEBI, the EU AI Act, the FCA and the HKMA) found that the wiki had no Hong Kong coverage at all, and that its only kill-switch control applied to agents, while MAS, the HKMA and the RBI draft expect a way to suspend any high-risk AI. It also found that the chart understated MAS, the RBI and the HKMA on kill switches, and showed SEBI's guidelines as requirements before they were issued.
+
+### What changed
+
+- **Hong Kong section.** A new [Hong Kong AI Compliance](../26_Hong_Kong_AI_Compliance/index.md) section has a regulatory hub (nine instruments, HK1 to HK9), a role guide, the [HK-T1 HKMA ART Principles Self-Assessment](../26_Hong_Kong_AI_Compliance/HK-T1_HKMA_ART_Principles_Self_Assessment.md) and a [crosswalk](../26_Hong_Kong_AI_Compliance/03_Regulatory_Crosswalk.md) that maps the HKMA guidance principle by principle: seven direct and two partial. Both tables are also CSV files.
+- **Financial regulator comparison.** A new [Financial Regulator AI Comparison](../04_Domain_Standards/10C_Financial_Regulator_AI_Comparison.md) sets the six regulators side by side on board accountability, risk tiering, inventory, lifecycle controls, human oversight, third-party AI, customer transparency and kill switch, with the strictest version of each and the wiki control that meets it.
+- **Kill switch beyond agents.** [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) is renamed AI Containment and Kill Switch. It now asks for a named person, triggers, a fallback, re-approval before restart and a yearly test for every high-risk AI use case, including models that are not agents and third-party AI. New test case [TC-L01-021](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-021) tests it. It stays a Baseline control.
+- **Other control text.** [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) restricts AI that is not in the registry; [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) asks for a board-approved AI strategy and risk appetite; [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) bars vendors by default from training on personal or confidential data without authorisation and adds audit, suspension and exit terms; [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) asks for a customer notice of AI use and its risks before the service.
+- **India and UK.** IN6 now records the RBI draft's kill-switch, human oversight, fallback and board expectations. New row IN13 records SEBI's AI and ML guidelines as proposed. UK5 records the FCA's Mills Review and its reported position that it plans no AI-specific rules.
+- **Sector Overlays.** The financial-services table adds the HKMA, the RBI draft and SEBI where they apply, and a row on telling customers that AI is used.
+
+### What was checked
+
+- The HKMA Supervisory Guidance for Responsible Adoption of Artificial Intelligence (Annex A to the circular of 15 October 2026), the HKMA press release of the same day and the government's GenA.I. Sandbox++ announcement of 5 March 2026 were read on 25 October 2026 [Verified].
+- The RBI draft Guidance on Regulatory Principles for Model Risk Management was read on 25 October 2026: paras 8 to 12, 43 and 59 to 63, including "override, suspension, or deactivation mechanisms, including kill-switch arrangements" (para 60(ii)) [Verified]. It is still a draft and has no effective date.
+- The MAS Guidelines' kill-switch text (paras 5.3 and 5.23(b), footnote 29) was re-read on 25 October 2026 [Verified].
+- The FCA's Mills Review page was read on 25 October 2026 [Verified]. The FCA's statement that it plans no AI-specific rules was seen only in secondary sources [Reported].
+
+### Still work in progress
+
+- The SFC circular of 12 November 2024, the PCPD framework and the PDPO rest on secondary sources or memory. The Insurance Authority's and the MPFA's AI guidance was not researched.
+- SEBI's guidelines have not been issued; IN13 will need updating when they are.
+- Article 14(4)(e) of the EU AI Act is cited from memory on the comparison page.
+- The Excel and Word templates under Templates were not rebuilt, so the Control Library and Test Case Tracker workbooks still show AI-CTRL-025's old title and do not include TC-L01-021.
 
 ## 24 October 2026: requirements traceability and review templates
 
@@ -411,6 +438,7 @@ Every version of the wiki, newest first. Rows are never edited after they are ad
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.44 | 2026-10-25 | Nachiket Sathaye | Financial regulators: new Hong Kong section (HKMA Supervisory Guidance for Responsible Adoption of AI of 15 October 2026, read in the HKMA text; SFC, PCPD, PDPO; HK-T1 self-assessment; principle crosswalk); new Financial Regulator AI Comparison page (MAS, RBI, SEBI, EU AI Act, FCA, HKMA on eight themes); AI-CTRL-025 renamed AI Containment and Kill Switch and widened to high-risk models, with new test case TC-L01-021; AI-CTRL-011, 012, 014 and 041 extended (unlisted AI restricted, board-approved AI strategy, no vendor training on data without authorisation, customer AI-use notice); India IN6 verified against the RBI draft text and new row IN13 for SEBI; UK5 updated for the FCA Mills Review. |
 | 2.43 | 2026-10-24 | Nachiket Sathaye | Requirements traceability: every control now names the assurance stage at which it is first checked (Discovery, Design, Implementation, Platform or Production) and the deployment models it applies to (All, Cloud, or PaaS/IaaS/Self-hosted), enforced by the link checker; new AI Security Requirements Traceability Matrix template with one row per control requirement, vendor and assessor columns, a response check and a live dashboard; the Control Library and Audit Checklist workbooks carry the two new fields and were rebuilt from the current wiki; two templates by Nachiket Sathaye and Ankush Jain published: the AI System Security Risk Review Checklist (150 lifecycle review questions with impact and risk registers) and the AI Security Assurance Baseline (165 requirements in 14 domains, with an optional UAE and Dubai overlay). |
 | 2.42 | 2026-10-24 | Nachiket Sathaye | Weekly crosswalk verification, second part (23 to 24 October 2026): MITRE ATLAS identifiers checked against ATLAS release 2026.09, with no change; weekly watch of proposed and pending rows in every region. EU E14 (draft guidelines on high-risk classification) confirmed against the Commission's pages and tagged [Verified]; EU E4 updated for the Council's negotiating mandate on the Digital Omnibus for data and the GDPR (21 October 2026). |
 | 2.41 | 2026-10-23 | Nachiket Sathaye | Secure development and privacy in code, after a comparison with the ai-secure-by-design repository: new NIST SSDF and SP 800-218A crosswalk; the IDE coding assistant standard rewritten (version 2.0) to cover coding agents, pipeline agents, plugins, MCP servers and rules files, with pipeline gates and a test case per requirement; two new Builder Track pages with tested code, Privacy Duties in Code (DPDP consent, rights, retention, children's data, log redaction) and Developer Pipeline Checks (secrets, personal data in logs and an AI-Assistance trailer, run in git hooks, a coding agent's hook and CI); the Builder Track tests now run in CI. |

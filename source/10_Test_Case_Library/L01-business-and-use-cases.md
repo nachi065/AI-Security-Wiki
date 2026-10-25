@@ -12,9 +12,9 @@ nav_order: 4
 
 **Primary test focus:** use-case registry, risk-tiering, business-owner attribution
 
-**Controls tested:** [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering (13 cases), [AI-CTRL-033](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-033) AI Security Review and Release Gate (4 cases), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance (2 cases), [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery (1 case), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance (1 case), [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) Human Approval for Sensitive Actions (1 case), [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) AI Service Resilience and Fail-Safe Operation (1 case), [AI-CTRL-045](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-045) Human Oversight Design and Effectiveness (1 case)
+**Controls tested:** [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering (13 cases), [AI-CTRL-033](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-033) AI Security Review and Release Gate (4 cases), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance (2 cases), [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery (1 case), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance (1 case), [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) Human Approval for Sensitive Actions (1 case), [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) AI Service Resilience and Fail-Safe Operation (2 cases), [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) AI Containment and Kill Switch (1 case), [AI-CTRL-045](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-045) Human Oversight Design and Effectiveness (1 case)
 
-**Cases:** 20 (TC-L01-001 to TC-L01-020)
+**Cases:** 21 (TC-L01-001 to TC-L01-021)
 > **Safety boundary.** All cases use fabricated use cases, policies, records and individuals only. This layer is framework-neutral: see the [Framework Adoption Guide](framework-adoption-guide.md) before testing, and complete the Applicable Requirement and Framework Crosswalk fields for each case.
 
 > **Verify before use.** MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the [Reference Index](00-reference-index.md) for field definitions and applicability codes.
@@ -45,6 +45,7 @@ nav_order: 4
 | [TC-L01-018](#tc-l01-018) | Fallback and Continuity Plans for AI-Dependent Processes | Medium | Evidence | D3, D7 | [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) |
 | [TC-L01-019](#tc-l01-019) | Use-Case Retirement and Decommission Evidence | Medium | Evidence | D3, D7 | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) |
 | [TC-L01-020](#tc-l01-020) | Portfolio View and Executive Reporting on Use Cases | Medium | Evidence | D3, D7 | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) |
+| [TC-L01-021](#tc-l01-021) | Kill Switch for High-Risk AI Use Cases Defined and Tested | High | Evidence | D3, D7 | [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025), [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) |
 
 ---
 
@@ -1269,3 +1270,65 @@ nav_order: 4
 
 ---
 
+
+<a id="tc-l01-021"></a>
+
+### TC-L01-021: Kill Switch for High-Risk AI Use Cases Defined and Tested
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L01 Business & Use Cases |
+| **Use-Case Domain(s)** | D3, D7 |
+| **Control Theme** | BCP: Resilience and continuity |
+| **Test Method** | Evidence |
+| **Vendor Applicability** | Core: W |
+| **Risk Severity** | High |
+| **NIST AI RMF Mapping** | MANAGE (response and recovery) |
+| **Control(s) Tested** | [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) AI Containment and Kill Switch; [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) AI Service Resilience and Fail-Safe Operation |
+
+**Risk Addressed.** A high-risk AI model that is not an agent, such as a credit decision or fraud model, keeps making harmful decisions because nobody can switch it off quickly, or because switching it off stops the business process with no fallback.
+
+**Business Scenario.** The risk function wants every high-risk or material AI use case to have a named person who can suspend it, a documented trigger, a fallback path and a recent test, as several financial regulators now expect.
+
+**Technical Scenario.** Review the kill-switch records for high-risk use cases in the registry, then suspend one fabricated model in the lab and route its decisions to the fallback.
+
+**Applicable Requirement *(assessor to complete)***
+
+- Framework and clause: `________`
+- Requirement text: `________`
+- Parameters (timelines, periods, thresholds): `________`
+
+**Test Data.** A registry of 10 fabricated use cases, 3 of them rated high risk (one credit decision model, one fraud model, one customer-facing assistant); a lab deployment of the credit decision model with a manual-review queue as its fallback; risk tolerances that the model is set to breach.
+
+**Procedure**
+
+1. List the use cases rated high risk or material in the registry.
+2. For each, confirm the record names the kill switch or override mechanism, who may activate it, the triggers (risk tolerance breached, incident, regulator request) and the fallback.
+3. Confirm each kill switch was tested within the review period and the test was recorded.
+4. In the lab, push the credit decision model past its risk tolerance and confirm the trigger fires or an alert reaches the named person.
+5. Activate the kill switch and time how long until the model makes no further decisions.
+6. Confirm new decisions go to the fallback path and that customers are not left without service.
+7. Restore the model through the documented re-approval step and confirm it does not restart on its own.
+8. Record findings and corrective actions.
+
+**Edge Cases / Variants.** A third-party model that the institution cannot switch off directly; a kill switch that stops the model but leaves queued decisions to be sent; activation outside working hours.
+
+**Expected Result.** Every high-risk use case has a recorded kill switch, owner, triggers, fallback and a current test; in the lab the model stops within the target time, decisions route to the fallback, and restart needs re-approval.
+
+**Expected Control Action.** Model suspended; decisions routed to fallback; activation logged and escalated.
+
+**Expected Integration Evidence.** Activation log entry and the alert or ticket raised.
+
+**Framework Crosswalk *(assessor to complete)***
+
+- ISO/IEC 27001 ISMS: `________`
+- India DPDP: `________`
+- UAE NESA / information assurance: `________`
+- UAE PDPL: `________`
+- Other: `________`
+
+**Evidence to Capture.** Kill-switch register extract; last test record for each high-risk use case; lab timeline; fallback queue sample.
+
+[Back to layer index](#top)
+
+---

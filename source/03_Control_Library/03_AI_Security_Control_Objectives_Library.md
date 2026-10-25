@@ -5,7 +5,7 @@ coauthors: Ankush Jain
 parent: "Control Library"
 nav_order: 1
 document_type: AI Security Wiki Reference
-version: 2.5
+version: 2.6
 ---
 
 # AI Security Control Objectives Library
@@ -107,7 +107,7 @@ The stage and deployment model of each control are the wiki's starting values. C
 | [AI-CTRL-022](#ai-ctrl-022) | Deterministic Action Authorization | Agents and Tools | Enforce authority to act, access data or spend money outside the model. | 18 |
 | [AI-CTRL-023](#ai-ctrl-023) | Human Approval for Sensitive Actions | Agents and Tools | Require a person to approve irreversible or high-impact actions before they run. | 7 |
 | [AI-CTRL-024](#ai-ctrl-024) | Tool and MCP Server Governance | Agents and Tools | Allow agents to use only vetted tools and tool servers, and detect when they change. | 16 |
-| [AI-CTRL-025](#ai-ctrl-025) | Agent Containment and Kill Switch | Agents and Tools | Stop an agent, revoke its access and limit the damage within minutes. | 11 |
+| [AI-CTRL-025](#ai-ctrl-025) | AI Containment and Kill Switch | Agents and Tools | Stop an agent or suspend a high-risk AI model, revoke its access and limit the damage within minutes. | 12 |
 | [AI-CTRL-026](#ai-ctrl-026) | Agent Memory and Context Integrity | Agents and Tools | Prevent poisoned or cross-user content from persisting in agent memory and context. | 9 |
 | [AI-CTRL-027](#ai-ctrl-027) | Agent Execution Isolation | Agents and Tools | Run agent-generated code and browser or computer-use sessions in isolation. | 11 |
 | [AI-CTRL-028](#ai-ctrl-028) | Model Protection | Model, Training and Pipeline | Protect models from theft, extraction and adversarial inputs. | 19 |
@@ -122,7 +122,7 @@ The stage and deployment model of each control are the wiki's starting values. C
 | [AI-CTRL-037](#ai-ctrl-037) | AI Risk Assessment and Exception Management | Governance and Compliance | Assess, treat and accept AI risks consistently, and keep every exception owned and time-bound. | 10 |
 | [AI-CTRL-038](#ai-ctrl-038) | Control Assurance and Audit Evidence | Assurance and Testing | Show, with current evidence, that each AI control is operating and that findings are closed. | 17 |
 | [AI-CTRL-039](#ai-ctrl-039) | Output Reliability and Content Safety | Application Runtime | Keep AI output grounded, within its approved scope and free of harmful content. | 9 |
-| [AI-CTRL-040](#ai-ctrl-040) | AI Service Resilience and Fail-Safe Operation | Supply Chain, Infrastructure and Resilience | Keep AI services and their security controls available, and make them fail safely. | 13 |
+| [AI-CTRL-040](#ai-ctrl-040) | AI Service Resilience and Fail-Safe Operation | Supply Chain, Infrastructure and Resilience | Keep AI services and their security controls available, and make them fail safely. | 14 |
 | [AI-CTRL-041](#ai-ctrl-041) | Fairness, Bias Testing and Explainability | Assurance and Testing | Test AI systems that make or support high-impact decisions for unfair bias, and keep explanations that a person can understand and a reviewer can challenge. | 3 |
 | [AI-CTRL-042](#ai-ctrl-042) | Fundamental Rights and Data Protection Impact Assessment | Governance and Compliance | Assess the impact on people's rights before deploying AI that is high-risk or that puts personal data at risk, and keep the assessment current. | 1 |
 | [AI-CTRL-043](#ai-ctrl-043) | Regulator and Authority Engagement | Governance and Compliance | Know which authorities oversee each AI system, meet the registration, filing and notification duties they set, and keep a record of every contact. | 1 |
@@ -176,8 +176,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Assurance Stage** | Discovery |
 | **Deployment Model** | All |
 | **Risk Mapping** | [AI-R02](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R18](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
-| **Implementation Expectation** | Require intake and approval before deployment. Record owner, purpose, data, model, users and autonomy for each use case. Assign a risk tier using published criteria, and re-tier when the use case changes. |
-| **Evidence Required** | Use-case registry; intake and approval records; tiering criteria; re-tiering history. |
+| **Implementation Expectation** | Require intake and approval before deployment. Record owner, purpose, data, model, users and autonomy for each use case. Assign a risk tier using published criteria, and re-tier when the use case changes. Define what counts as AI use, include third-party and embedded AI, and restrict AI that is not in the registry: block it or treat it as shadow AI to be approved or removed. |
+| **Evidence Required** | Use-case registry; intake and approval records; tiering criteria; re-tiering history; rule that restricts unlisted AI and records of its enforcement. |
 | **Audit Test Procedure** | Sample use cases in production and confirm each has a registry entry, an owner and a tier consistent with the criteria. Sample registry entries and confirm they match what is deployed. |
 | **Control Owner** | AI Governance Lead |
 | **Review Frequency** | Quarterly |
@@ -204,8 +204,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Assurance Stage** | Discovery |
 | **Deployment Model** | All |
 | **Risk Mapping** | [AI-R02](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R03](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R18](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R19](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R27](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R28](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
-| **Implementation Expectation** | Publish an AI policy and acceptable-use standard with scope, owner and review date. Define roles and decision rights, and record governance decisions. Map each policy statement to a control in this library. Train users and reinforce the rules at the point of use. |
-| **Evidence Required** | Approved policy; roles and responsibilities record; governance decision log; policy-to-control mapping; training and acknowledgement records. |
+| **Implementation Expectation** | Publish an AI policy and acceptable-use standard with scope, owner and review date. Have the board, or the body that holds that authority, approve an AI strategy that states the organization's approach to AI and its AI risk appetite, and review it at least annually. Define roles and decision rights across the three lines, and record governance decisions. Map each policy statement to a control in this library. Train users and reinforce the rules at the point of use. |
+| **Evidence Required** | Approved policy; board-approved AI strategy and risk appetite with its review record; roles and responsibilities record; governance decision log; policy-to-control mapping; training and acknowledgement records. |
 | **Audit Test Procedure** | Select policy statements and trace each to a control and to evidence that it operates. Confirm the policy was reviewed within its cycle. |
 | **Control Owner** | GRC |
 | **Review Frequency** | Annually |
@@ -260,7 +260,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Assurance Stage** | Discovery |
 | **Deployment Model** | Cloud |
 | **Risk Mapping** | [AI-R08](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R10](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R16](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
-| **Implementation Expectation** | Evaluate vendors against the vendor evaluation framework. Cover training use of customer data, retention, sub-processors, model changes and incident notification in contracts. Re-evaluate when a vendor changes model or terms. |
+| **Implementation Expectation** | Evaluate vendors against the vendor evaluation framework. Cover training use of customer data, retention, sub-processors, model changes and incident notification in contracts; by default the contract should bar the provider from using personal or confidential data to train or improve its models unless the organization has authorised it. Include audit rights, a right to have the service suspended, and exit and concentration risk where few providers can replace it. Re-evaluate when a vendor changes model or terms. |
 | **Evidence Required** | Vendor assessments; contract clauses; sub-processor list; model change notices. |
 | **Audit Test Procedure** | Sample AI vendors in use and confirm each has a current assessment and the required contract terms. Confirm the last model or terms change triggered a review. |
 | **Control Owner** | Procurement / GRC |
@@ -962,19 +962,19 @@ A test case is counted under every control it tests, so the counts add up to mor
 
 <a id="ai-ctrl-025"></a>
 
-#### AI-CTRL-025: Agent Containment and Kill Switch
+#### AI-CTRL-025: AI Containment and Kill Switch
 
 | Field | Detail |
 |---|---|
-| **Control Objective** | Stop an agent, revoke its access and limit the damage within minutes. |
+| **Control Objective** | Stop an agent or suspend a high-risk AI model, revoke its access and limit the damage within minutes, with a tested fallback. |
 | **Tier** | Baseline |
-| **Applies To** | Agents |
+| **Applies To** | Agents / Custom AI Applications / AI APIs / Vendors |
 | **Assurance Stage** | Production |
 | **Deployment Model** | All |
 | **Risk Mapping** | [AI-R07](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R11](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R21](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R25](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
-| **Implementation Expectation** | Provide a tested way to stop a single agent and to revoke credentials for all agents. Set limits on steps, time and spend per task. Know which actions can be rolled back and how. |
-| **Evidence Required** | Kill switch procedure; test records with timings; task limits configuration. |
-| **Audit Test Procedure** | Start a long-running test agent and stop it. Measure the time until no further actions occur and credentials are invalid. |
+| **Implementation Expectation** | Provide a tested way to stop a single agent and to revoke credentials for all agents. Set limits on steps, time and spend per task. Know which actions can be rolled back and how. For every AI use case rated high risk or material, including models that are not agents (for example credit, fraud or pricing models) and third-party AI, name who may suspend it, set the triggers (risk tolerance breached, incident, regulator request), route decisions to a fallback or manual process while it is off, require re-approval before restart, and test activation at least once a year. Where a vendor runs the model, secure the right to have it suspended in the contract. |
+| **Evidence Required** | Kill switch procedure; register of kill switches for high-risk use cases with owners, triggers and fallbacks; test records with timings; task limits configuration. |
+| **Audit Test Procedure** | Start a long-running test agent and stop it. Measure the time until no further actions occur and credentials are invalid. Sample high-risk use cases and confirm each has a kill switch, a fallback and a test within the last year; suspend one model in the lab and confirm decisions route to the fallback. |
 | **Control Owner** | AI Platform Team / SOC |
 | **Review Frequency** | Semi-annually |
 | **OWASP** | LLM06:2025 Excessive Agency; ASI08 Cascading Failures; ASI10 Rogue Agents |
@@ -986,7 +986,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **NIST CSF** | RS.MA Incident Management; RS.MI Incident Mitigation |
 | **CIS Controls** | CIS 6 Access Control Management; CIS 17 Incident Response Management |
 | **SOC 2** | CC6.2 Registration and removal of access; CC7.4 Incident response |
-| **Tested By (11 cases)** | **D09:** [016](../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.md#tc-d09-016)<br>**D10:** [019](../10_Test_Case_Library/D10-browser-and-computer-use-agents.md#tc-d10-019), [020](../10_Test_Case_Library/D10-browser-and-computer-use-agents.md#tc-d10-020)<br>**D12:** [011](../10_Test_Case_Library/D12-ai-incident-response-and-forensics.md#tc-d12-011)<br>**D13:** [009](../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.md#tc-d13-009)<br>**L06:** [021](../10_Test_Case_Library/L06-agent-orchestration-layer.md#tc-l06-021), [022](../10_Test_Case_Library/L06-agent-orchestration-layer.md#tc-l06-022), [023](../10_Test_Case_Library/L06-agent-orchestration-layer.md#tc-l06-023), [024](../10_Test_Case_Library/L06-agent-orchestration-layer.md#tc-l06-024), [046](../10_Test_Case_Library/L06-agent-orchestration-layer.md#tc-l06-046)<br>**L17:** [019](../10_Test_Case_Library/L17-monitoring-detection-and-response.md#tc-l17-019) |
+| **Tested By (12 cases)** | **D09:** [016](../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.md#tc-d09-016)<br>**D10:** [019](../10_Test_Case_Library/D10-browser-and-computer-use-agents.md#tc-d10-019), [020](../10_Test_Case_Library/D10-browser-and-computer-use-agents.md#tc-d10-020)<br>**D12:** [011](../10_Test_Case_Library/D12-ai-incident-response-and-forensics.md#tc-d12-011)<br>**D13:** [009](../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.md#tc-d13-009)<br>**L01:** [021](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-021)<br>**L06:** [021](../10_Test_Case_Library/L06-agent-orchestration-layer.md#tc-l06-021), [022](../10_Test_Case_Library/L06-agent-orchestration-layer.md#tc-l06-022), [023](../10_Test_Case_Library/L06-agent-orchestration-layer.md#tc-l06-023), [024](../10_Test_Case_Library/L06-agent-orchestration-layer.md#tc-l06-024), [046](../10_Test_Case_Library/L06-agent-orchestration-layer.md#tc-l06-046)<br>**L17:** [019](../10_Test_Case_Library/L17-monitoring-detection-and-response.md#tc-l17-019) |
 
 <a id="ai-ctrl-026"></a>
 
@@ -1214,7 +1214,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **NIST CSF** | PR.IR Technology Infrastructure Resilience; RC.RP Incident Recovery Plan Execution |
 | **CIS Controls** | CIS 11 Data Recovery |
 | **SOC 2** | A1.1 Capacity; A1.2 Backup and recovery infrastructure; A1.3 Recovery plan testing; CC9.1 Risk mitigation for business disruption |
-| **Tested By (13 cases)** | **L01:** [018](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-018)<br>**L05:** [013](../10_Test_Case_Library/L05-ai-applications.md#tc-l05-013), [030](../10_Test_Case_Library/L05-ai-applications.md#tc-l05-030)<br>**L08:** [032](../10_Test_Case_Library/L08-ai-gateway-and-security-controls.md#tc-l08-032), [033](../10_Test_Case_Library/L08-ai-gateway-and-security-controls.md#tc-l08-033), [034](../10_Test_Case_Library/L08-ai-gateway-and-security-controls.md#tc-l08-034), [035](../10_Test_Case_Library/L08-ai-gateway-and-security-controls.md#tc-l08-035)<br>**L11:** [025](../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.md#tc-l11-025)<br>**L12:** [021](../10_Test_Case_Library/L12-model-layer.md#tc-l12-021)<br>**L15:** [019](../10_Test_Case_Library/L15-infrastructure-layer.md#tc-l15-019)<br>**L16:** [012](../10_Test_Case_Library/L16-supply-chain-and-third-party.md#tc-l16-012), [020](../10_Test_Case_Library/L16-supply-chain-and-third-party.md#tc-l16-020)<br>**L17:** [028](../10_Test_Case_Library/L17-monitoring-detection-and-response.md#tc-l17-028) |
+| **Tested By (14 cases)** | **L01:** [018](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-018), [021](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-021)<br>**L05:** [013](../10_Test_Case_Library/L05-ai-applications.md#tc-l05-013), [030](../10_Test_Case_Library/L05-ai-applications.md#tc-l05-030)<br>**L08:** [032](../10_Test_Case_Library/L08-ai-gateway-and-security-controls.md#tc-l08-032), [033](../10_Test_Case_Library/L08-ai-gateway-and-security-controls.md#tc-l08-033), [034](../10_Test_Case_Library/L08-ai-gateway-and-security-controls.md#tc-l08-034), [035](../10_Test_Case_Library/L08-ai-gateway-and-security-controls.md#tc-l08-035)<br>**L11:** [025](../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.md#tc-l11-025)<br>**L12:** [021](../10_Test_Case_Library/L12-model-layer.md#tc-l12-021)<br>**L15:** [019](../10_Test_Case_Library/L15-infrastructure-layer.md#tc-l15-019)<br>**L16:** [012](../10_Test_Case_Library/L16-supply-chain-and-third-party.md#tc-l16-012), [020](../10_Test_Case_Library/L16-supply-chain-and-third-party.md#tc-l16-020)<br>**L17:** [028](../10_Test_Case_Library/L17-monitoring-detection-and-response.md#tc-l17-028) |
 
 ### Assurance and Testing
 
@@ -1314,8 +1314,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Assurance Stage** | Implementation |
 | **Deployment Model** | All |
 | **Risk Mapping** | [AI-R12](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R14](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R15](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
-| **Implementation Expectation** | Define which decisions are high-impact. Identify the relevant groups with legal input. Test for bias before release, at least annually and on material model change, and record the method, data, thresholds, results and approvals. Where sensitive data is needed for testing, record why it is necessary and the safeguards. Give an explanation for each high-impact decision and a route to human review. Block or condition release when a threshold fails. Keep a versioned bias profile for each system that records which differences in treatment are intended and which are not, the stakeholder groups considered, how representative the test data is, the risks accepted and who accepted them, and the application boundaries within which the system was validated; monitor for drift outside them. |
-| **Evidence Required** | Bias test plan and results; threshold approvals; necessity record for sensitive data; explanation records; human-review log; retest evidence; current bias profile with its validated application boundaries. |
+| **Implementation Expectation** | Define which decisions are high-impact. Identify the relevant groups with legal input. Test for bias before release, at least annually and on material model change, and record the method, data, thresholds, results and approvals. Where sensitive data is needed for testing, record why it is necessary and the safeguards. Tell customers before an AI-powered service is provided that AI is used and what its main risks and limits are, in plain language. Give an explanation for each high-impact decision and a route to human review. Block or condition release when a threshold fails. Keep a versioned bias profile for each system that records which differences in treatment are intended and which are not, the stakeholder groups considered, how representative the test data is, the risks accepted and who accepted them, and the application boundaries within which the system was validated; monitor for drift outside them. |
+| **Evidence Required** | Bias test plan and results; customer AI-use notices; threshold approvals; necessity record for sensitive data; explanation records; human-review log; retest evidence; current bias profile with its validated application boundaries. |
 | **Audit Test Procedure** | Sample high-impact use cases and confirm a current bias test exists. Re-perform one test. Trace one decision to its explanation and review outcome. Confirm a failed result led to action. |
 | **Control Owner** | AI Governance Lead / Model Risk |
 | **Review Frequency** | Annually and on material model change |
