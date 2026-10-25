@@ -49,6 +49,8 @@ Production Target Date:
 11. Where is data processed and stored?
 12. Is customer data excluded from model training?
 
+For a full lifecycle review with an impact and risk record, use the [AI System Security Risk Review Checklist](../25_Templates/13_AI_System_Security_Risk_Review_Checklist_Template.md), which has 150 questions.
+
 ## Approval Decision
 
 ```markdown

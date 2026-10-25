@@ -46,6 +46,88 @@ The nightly verification pass checks one slice of the wiki each night. This week
 - GCC, B3: a Gulf Daily News report of 11 October 2026 still describes Bahrain's AI law as under debate. No official text of an enacted law was found, so the row is unchanged.
 - GCC, U5: the implementors' guide, T05 and T11 still use the old name "Federal Authority for AI and Data"; they will be updated after the owner reviews the U5 change.
 
+## 25 October 2026: NIST SSDF crosswalk in the template workbooks
+
+This entry closes the item left open in the entry below ("templates rebuilt for the regulator changes"), which said the NIST SSDF crosswalk was not yet a column in the risk register's framework matrix.
+
+### What changed
+
+- **SSDF column.** The [NIST SSDF and SP 800-218A Crosswalk](../23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.md) (added in 2.41) is now read by the template generators. Its 20 practices (PO, PS, PW and RV) appear as a column in the framework matrix and as rows in the Framework Crosswalk sheet of the [AI Risk Register](../25_Templates/01_AI_Risk_Register_Template.md) (version 1.2) and the [Control Library and Crosswalks](../25_Templates/06_AI_Security_Control_Library_and_Crosswalks_Template.md) (1.3) workbooks. Before this, the generators skipped the SSDF page, so the crosswalk was missing from the control library workbook as well as the risk register.
+- **Counts corrected.** The control library workbook now lists 930 framework items (910 before) in 49 framework columns. The template page had said 47 columns, which was already one short after the Hong Kong column was added.
+- **Risk links are via controls.** The SSDF crosswalk names controls, not risks, so the risk register links each practice to the risks its controls treat. The Framework Matrix marks that column "via controls".
+
+### What was checked
+
+- Both rebuilt workbooks were recalculated with no formula errors. In the risk register matrix, 24 of the 46 risks have at least one SSDF practice. In the control library matrix, 20 of the 46 controls do.
+- The Requirements Traceability Matrix was not rebuilt: its framework columns come from each control's own fields, not from the crosswalks, so the SSDF change does not affect it.
+
+## 25 October 2026: templates rebuilt for the regulator changes
+
+This entry closes an item left open in the entry below ("financial regulators and the kill switch"), which said the Excel templates had not been rebuilt.
+
+### What changed
+
+- **Five workbooks rebuilt from wiki 2.44.** The [AI Risk Register](../25_Templates/01_AI_Risk_Register_Template.md) (version 1.1), [Audit and Evidence Checklist](../25_Templates/05_AI_Security_Audit_and_Evidence_Checklist_Template.md) (1.2), [Control Library and Crosswalks](../25_Templates/06_AI_Security_Control_Library_and_Crosswalks_Template.md) (1.2), [Test Case Tracker](../25_Templates/07_AI_Security_Test_Case_Tracker_Template.md) (1.2) and [Requirements Traceability Matrix](../25_Templates/12_AI_Security_Requirements_Traceability_Matrix_Template.md) (1.1) now show AI-CTRL-025 as AI Containment and Kill Switch with its wider text, the extended text of AI-CTRL-011, 012, 014 and 041, and test case TC-L01-021.
+- **Hong Kong column.** The framework matrices and the traceability matrix have a Hong Kong regulation (incl. HKMA) column, and the crosswalk sheets carry the 18 Hong Kong items (nine instruments and nine HKMA principles). The control library workbook now lists 910 framework items.
+- **Risk register catch-up.** The risk register had not been rebuilt since 17 October 2026, so this rebuild also brings in other wiki changes made since then. Its file properties now credit both authors.
+
+### What was checked
+
+- Every rebuilt workbook was recalculated with no formula errors, and its sheets match the previous version's sheet list.
+
+### Still work in progress
+
+- The NIST SSDF crosswalk (added in 2.41) is not yet a column in the risk register's framework matrix.
+
+## 25 October 2026: financial regulators and the kill switch
+
+A comparison of the wiki with a published chart of six financial regulators' AI expectations (MAS, RBI, SEBI, the EU AI Act, the FCA and the HKMA) found that the wiki had no Hong Kong coverage at all, and that its only kill-switch control applied to agents, while MAS, the HKMA and the RBI draft expect a way to suspend any high-risk AI. It also found that the chart understated MAS, the RBI and the HKMA on kill switches, and showed SEBI's guidelines as requirements before they were issued.
+
+### What changed
+
+- **Hong Kong section.** A new [Hong Kong AI Compliance](../26_Hong_Kong_AI_Compliance/index.md) section has a regulatory hub (nine instruments, HK1 to HK9), a role guide, the [HK-T1 HKMA ART Principles Self-Assessment](../26_Hong_Kong_AI_Compliance/HK-T1_HKMA_ART_Principles_Self_Assessment.md) and a [crosswalk](../26_Hong_Kong_AI_Compliance/03_Regulatory_Crosswalk.md) that maps the HKMA guidance principle by principle: seven direct and two partial. Both tables are also CSV files.
+- **Financial regulator comparison.** A new [Financial Regulator AI Comparison](../04_Domain_Standards/10C_Financial_Regulator_AI_Comparison.md) sets the six regulators side by side on board accountability, risk tiering, inventory, lifecycle controls, human oversight, third-party AI, customer transparency and kill switch, with the strictest version of each and the wiki control that meets it.
+- **Kill switch beyond agents.** [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) is renamed AI Containment and Kill Switch. It now asks for a named person, triggers, a fallback, re-approval before restart and a yearly test for every high-risk AI use case, including models that are not agents and third-party AI. New test case [TC-L01-021](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-021) tests it. It stays a Baseline control.
+- **Other control text.** [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) restricts AI that is not in the registry; [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012) asks for a board-approved AI strategy and risk appetite; [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) bars vendors by default from training on personal or confidential data without authorisation and adds audit, suspension and exit terms; [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) asks for a customer notice of AI use and its risks before the service.
+- **India and UK.** IN6 now records the RBI draft's kill-switch, human oversight, fallback and board expectations. New row IN13 records SEBI's AI and ML guidelines as proposed. UK5 records the FCA's Mills Review and its reported position that it plans no AI-specific rules.
+- **Sector Overlays.** The financial-services table adds the HKMA, the RBI draft and SEBI where they apply, and a row on telling customers that AI is used.
+
+### What was checked
+
+- The HKMA Supervisory Guidance for Responsible Adoption of Artificial Intelligence (Annex A to the circular of 15 October 2026), the HKMA press release of the same day and the government's GenA.I. Sandbox++ announcement of 5 March 2026 were read on 25 October 2026 [Verified].
+- The RBI draft Guidance on Regulatory Principles for Model Risk Management was read on 25 October 2026: paras 8 to 12, 43 and 59 to 63, including "override, suspension, or deactivation mechanisms, including kill-switch arrangements" (para 60(ii)) [Verified]. It is still a draft and has no effective date.
+- The MAS Guidelines' kill-switch text (paras 5.3 and 5.23(b), footnote 29) was re-read on 25 October 2026 [Verified].
+- The FCA's Mills Review page was read on 25 October 2026 [Verified]. The FCA's statement that it plans no AI-specific rules was seen only in secondary sources [Reported].
+
+### Still work in progress
+
+- The SFC circular of 12 November 2024, the PCPD framework and the PDPO rest on secondary sources or memory. The Insurance Authority's and the MPFA's AI guidance was not researched.
+- SEBI's guidelines have not been issued; IN13 will need updating when they are.
+- Article 14(4)(e) of the EU AI Act is cited from memory on the comparison page.
+- The Excel and Word templates under Templates were not rebuilt, so the Control Library and Test Case Tracker workbooks still show AI-CTRL-025's old title and do not include TC-L01-021.
+
+## 24 October 2026: requirements traceability and review templates
+
+The wiki lacked a requirements matrix: one row per testable requirement, scoped by assurance stage and deployment model, with columns for the vendor's answer and the assessor's review. No wiki page said which controls apply to SaaS, PaaS or IaaS delivery.
+
+### What changed
+
+- **Assurance stage and deployment model.** Every control in the [Control Objectives Library](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#assurance-stages-and-deployment-models) (version 2.5) now names the stage at which a reviewer first checks it and the deployment models it applies to. The link checker rejects a control without valid values. Both are starting values for a review to adjust.
+- **Requirements traceability matrix.** A new [AI Security Requirements Traceability Matrix Template](../25_Templates/12_AI_Security_Requirements_Traceability_Matrix_Template.md) turns each sentence of a control's Implementation Expectation into one requirement, traced to the control, its risks, test cases and framework and regional crosswalks. It adds scoping, vendor and assessor columns, thirteen evidence types, a response check that treats a "Yes" with no detail as unanswered, and a live dashboard.
+- **Workbooks rebuilt.** The [Control Library and Crosswalks](../25_Templates/06_AI_Security_Control_Library_and_Crosswalks_Template.md) and [Audit and Evidence Checklist](../25_Templates/05_AI_Security_Audit_and_Evidence_Checklist_Template.md) workbooks (version 1.1) carry the two new fields and were rebuilt from the current wiki. The audit workbook now reads control areas and evidence owners from the per-family tables of the [Audit and Evidence Checklist](../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md) page, so each control's area is now its family.
+
+- **Two more templates.** The [AI System Security Risk Review Checklist](../25_Templates/13_AI_System_Security_Risk_Review_Checklist_Template.md) holds 150 review questions across the AI lifecycle, with impact and risk registers, threat and vulnerability lists and severity criteria. Organisation names were removed, its dropdowns rebuilt and the standard editions corrected. The [AI Security Assurance Baseline](../25_Templates/14_AI_Security_Assurance_Baseline_Template.md) holds 165 testable requirements in 14 domains, mapped to ISO/IEC 42001, NIST AI RMF, the EU AI Act and OWASP, with vendor and assessor columns and a dashboard. Its UAE and Dubai requirements and references moved to optional sheets so that the baseline applies anywhere.
+
+### What was checked
+
+- The baseline's dashboard and response check were recalculated with sample answers and gave the expected counts and flags. The checklist's dropdowns now read from its own Ref Tables sheet rather than an external workbook.
+- The matrix dashboard's formulas were recalculated with sample answers (a Yes with no detail, an accepted row, a gap without an owner and an out-of-scope row) and gave the expected counts and flags. All three workbooks recalculate with no formula errors.
+- The regulatory references in the matrix come from the wiki's crosswalks and keep their verification status. The UAE and Dubai instruments a Dubai Government review would cite (the DESC Information Security Regulation, the national AI security policy and the Dubai Data Law) were not added, because their text has not been read.
+
+### Still work in progress
+
+- About fifteen review topics have no or thin coverage in the control library, such as recovery time objectives, DDoS protection, key custody, model decommissioning and detection validation. They are listed for a later update.
+
 ## 23 October 2026: secure development and privacy in code
 
 A comparison with [ai-secure-by-design](https://github.com/ankush1982/ai-secure-by-design), an open-source plugin for AI coding agents by the wiki's co-author Ankush Jain, found five gaps in the wiki. It never cited the NIST Secure Software Development Framework or its generative AI profile. Its standard for AI coding assistants was short and did not cover coding agents. It had no controls before commit. It described privacy duties as forms, not code. And the Builder Track tests were not run in CI. This update closes those gaps.
@@ -112,6 +194,8 @@ A review of the wiki found that it shows proof weakly (test cases could be read 
 - **India and UK (20 October 2026):** every row of the [India Regulatory Crosswalk](../17_India_AI_Compliance/03_Regulatory_Crosswalk.md) and the [UK Regulatory Crosswalk](../21_UK_AI_Compliance/03_Regulatory_Crosswalk.md) was checked for changes. Ten rows not yet verified were checked against MeitY, the Lok Sabha, the Press Information Bureau, legislation.gov.uk, GOV.UK, the UK Parliament bill pages, the Bank of England and the NCSC.
 - **Singapore, US and South Korea (21 October 2026):** every row of the [Singapore](../19_Singapore_AI_Compliance/03_Regulatory_Crosswalk.md), [US](../22_US_AI_Compliance/03_Regulatory_Crosswalk.md) and [South Korea](../20_South_Korea_AI_Compliance/03_Regulatory_Crosswalk.md) crosswalks was checked for changes. Rows not yet verified were checked against IMDA, the AI Verify Foundation, the PDPC, the CSA and MAS; govinfo.gov, justice.gov, whitehouse.gov, nist.gov, nyc.gov and the Colorado, New York, Utah and Texas legislatures; and MSIT, PIPC and the Korea Legislation Research Institute's English translations of the AI Basic Act and its decree.
 - **Australia, Brazil, Canada, China and Japan (22 October 2026):** every row of the [Australia](../13_Australia_AI_Compliance/03_Regulatory_Crosswalk.md), [Brazil](../14_Brazil_AI_Compliance/03_Regulatory_Crosswalk.md), [Canada](../15_Canada_AI_Compliance/03_Regulatory_Crosswalk.md), [China](../16_China_AI_Compliance/03_Regulatory_Crosswalk.md) and [Japan](../18_Japan_AI_Compliance/03_Regulatory_Crosswalk.md) crosswalks was checked for changes. This was the first check of these five regions against primary sources. Rows were checked against the Federal Register of Legislation, the OAIC, the Department of Industry, APRA, Treasury, the ACCC and the Parliament of NSW; the Brazilian Senate and Chamber, the Planalto legislation site and the ANPD; Justice Laws, LegisQuebec, ISED, OSFI, the Parliament of Canada and the Ontario legislature and government; the CAC, MIIT, the State Council policy library and the national standards system; and the Cabinet Office, METI, the Personal Information Protection Commission, the Agency for Cultural Affairs and the FSA.
+- **Framework crosswalks (23 October 2026):** every MITRE ATLAS technique and mitigation identifier the wiki cites (88 in all, in the control library and the test cases) was compared with MITRE's own ATLAS data, release 2026.09 of 15 September 2026, the latest release in the [atlas-data repository](https://github.com/mitre-atlas/atlas-data) on 23 October 2026. The [Trustworthy AI and Ethics Standards Crosswalk](../23_Framework_Crosswalks/16_Trustworthy_AI_Ethics_Crosswalk.md) and the [International AI Instruments Crosswalk](../23_Framework_Crosswalks/17_International_AI_Instruments_Crosswalk.md) were due for a check this week but could not be checked (see below).
+- **Weekly change watch (24 October 2026):** in every region, the rows still marked Proposed, pending, draft or under consultation were checked for news. Primary sources read: the European Commission's AI Act guideline pages, the Council of the EU, the Congresso Nacional page on [PL 2338/2023](../14_Brazil_AI_Compliance/03_Regulatory_Crosswalk.md), the Saudi NCA consultation page and the RBI draft on model risk. EUR-Lex was searched for new citations of AI Act harmonised standards, and the CEN-CENELEC AI page for news on JTC 21.
 
 ### What changed
 
@@ -152,6 +236,10 @@ A review of the wiki found that it shows proof weakly (test cases could be read 
 - **China, CN7:** the Cybersecurity Law amendment took effect on 1 January 2026. The row stays [Reported] because the Data Security Law was not read.
 - **Japan, now [Verified]:** JP1 (AI Promotion Act, Act No. 53 of 2025, fully in force 1 September 2025; no penalties), JP2 (AI Basic Plan of 14 July 2026), JP3 (AI Guidelines for Business version 1.2) and JP4 (the APPI amendment law promulgated on 17 July 2026, in force within two years, with a consent exception for statistics including AI development).
 - **Home page (22 October 2026):** a Source Repository line in the document box now links to the GitHub repository and its contributing guide, and version 2.39 records this week's merged changes.
+- **MITRE ATLAS:** every identifier exists in release 2026.09, every name the wiki gives matches it, and none is deprecated. The [MITRE ATLAS Crosswalk](../23_Framework_Crosswalks/07_MITRE_ATLAS_Crosswalk.md) now has a review date. No mapping changed.
+- **EU, E14 now [Verified]:** the Commission's draft guidelines on high-risk classification are dated 19 May 2026, and the Commission's page (updated 19 October 2026) still calls them a draft. The consultation was open until 23 July 2026. See the [EU Regulatory Crosswalk](../12_EU_AI_Compliance/07_Regulatory_Crosswalk.md).
+- **EU, E4:** the Council agreed its negotiating mandate on the Digital Omnibus for data and the GDPR on 21 October 2026 [Verified]. Talks with Parliament start once Parliament adopts its own position. The row stays [Reported] because no adoption date is given; "not before 2027" still comes from secondary sources.
+- **Home page (24 October 2026):** version 2.42 records this week's verification.
 
 ### Still work in progress
 
@@ -168,6 +256,9 @@ A review of the wiki found that it shows proof weakly (test cases could be read 
 - China: CN9 was not checked. The NPC website could not be read, so the NPC Standing Committee work plan and the NPC copy of the Cybersecurity Law amendment were not checked.
 - Japan: JP5 (copyright) and JP6 (sector rules) are unchanged. The guidance on AI and copyright of 15 March 2024 and the FSA's AI discussion paper (version 1.1, 3 March 2026) were read, but the e-Gov law texts could not be read automatically.
 - The hub pages of Australia, Brazil, Canada, China and Japan have not yet been brought in line with these crosswalk changes.
+- Framework crosswalks: on 23 October 2026 the retrieval tool could not read any outside web page (Council of Europe, IEEE, European Commission, UNESCO, the G7 Code text, OECD.AI, OWASP, NIST and CIS). The status of the Council of Europe Convention (signatories, ratifications, entry into force), the IEEE 7000-series statuses, and the OWASP, NIST AI RMF, ISO/IEC, NIST CSF, CIS Controls and SOC 2 identifiers in the control library were therefore not re-checked this week.
+- EU: E17 still says the Official Journal citation of EN 18286 is pending. Commission Implementing Decision (EU) 2026/2274 of 12 October 2026 now references EN 18286:2026 (EUR-Lex gives 14 October 2026 as its entry into force), but the Annex of the Decision could not be read automatically, so the row was not changed. It will be corrected, and E18 annotated, on the next EU check.
+- No change found for GCC S8 and B3, India IN6 or Brazil BR1. The US HIPAA Security Rule update (US17) was not checked against a primary source.
 
 ## 18 October 2026: Full version history moved here
 
@@ -407,6 +498,11 @@ Every version of the wiki, newest first. Rows are never edited after they are ad
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.46 | 2026-10-25 | Nachiket Sathaye | NIST SSDF crosswalk added to the template workbooks: its 20 practices are now a column in the AI Risk Register (version 1.2) and Control Library and Crosswalks (1.3) framework matrices and rows in their Framework Crosswalk sheets. |
+| 2.45 | 2026-10-25 | Nachiket Sathaye | Templates rebuilt from wiki 2.44: AI Risk Register (version 1.1), Audit and Evidence Checklist (1.2), Control Library and Crosswalks (1.2), Test Case Tracker (1.2) and Requirements Traceability Matrix (1.1) now carry AI-CTRL-025's new title and text, the extended control text, TC-L01-021 and a Hong Kong regulation column. |
+| 2.44 | 2026-10-25 | Nachiket Sathaye | Financial regulators: new Hong Kong section (HKMA Supervisory Guidance for Responsible Adoption of AI of 15 October 2026, read in the HKMA text; SFC, PCPD, PDPO; HK-T1 self-assessment; principle crosswalk); new Financial Regulator AI Comparison page (MAS, RBI, SEBI, EU AI Act, FCA, HKMA on eight themes); AI-CTRL-025 renamed AI Containment and Kill Switch and widened to high-risk models, with new test case TC-L01-021; AI-CTRL-011, 012, 014 and 041 extended (unlisted AI restricted, board-approved AI strategy, no vendor training on data without authorisation, customer AI-use notice); India IN6 verified against the RBI draft text and new row IN13 for SEBI; UK5 updated for the FCA Mills Review. |
+| 2.43 | 2026-10-24 | Nachiket Sathaye | Requirements traceability: every control now names the assurance stage at which it is first checked (Discovery, Design, Implementation, Platform or Production) and the deployment models it applies to (All, Cloud, or PaaS/IaaS/Self-hosted), enforced by the link checker; new AI Security Requirements Traceability Matrix template with one row per control requirement, vendor and assessor columns, a response check and a live dashboard; the Control Library and Audit Checklist workbooks carry the two new fields and were rebuilt from the current wiki; two templates by Nachiket Sathaye and Ankush Jain published: the AI System Security Risk Review Checklist (150 lifecycle review questions with impact and risk registers) and the AI Security Assurance Baseline (165 requirements in 14 domains, with an optional UAE and Dubai overlay). |
+| 2.42 | 2026-10-24 | Nachiket Sathaye | Weekly crosswalk verification, second part (23 to 24 October 2026): MITRE ATLAS identifiers checked against ATLAS release 2026.09, with no change; weekly watch of proposed and pending rows in every region. EU E14 (draft guidelines on high-risk classification) confirmed against the Commission's pages and tagged [Verified]; EU E4 updated for the Council's negotiating mandate on the Digital Omnibus for data and the GDPR (21 October 2026). |
 | 2.41 | 2026-10-23 | Nachiket Sathaye | Secure development and privacy in code, after a comparison with the ai-secure-by-design repository: new NIST SSDF and SP 800-218A crosswalk; the IDE coding assistant standard rewritten (version 2.0) to cover coding agents, pipeline agents, plugins, MCP servers and rules files, with pipeline gates and a test case per requirement; two new Builder Track pages with tested code, Privacy Duties in Code (DPDP consent, rights, retention, children's data, log redaction) and Developer Pipeline Checks (secrets, personal data in logs and an AI-Assistance trailer, run in git hooks, a coding agent's hook and CI); the Builder Track tests now run in CI. |
 | 2.40 | 2026-10-22 | Nachiket Sathaye | Weak points addressed: validation level on every test case and a self-contained copy of the shared fields on each case and in the test tracker; scoring method and worked calibration examples in the risk methodology; committee charters, decision rights and a role-based training plan; outcome review of AI-CTRL-041 to 046 with three new cases; illustrative operating defaults; a predictive model monitoring and adversarial ML standard with two new cases; regulatory verification status and an obligation-level tracker; programme charter and incident report templates. |
 | 2.39 | 2026-10-22 | Nachiket Sathaye | Weekly crosswalk verification (19 to 22 October 2026): the GCC, India, UK, Singapore, US, South Korea, Australia, Brazil, Canada, China and Japan crosswalks were checked against primary sources. Confirmed rows are tagged [Verified] with source and retrieval date, and out-of-date rows were corrected. The home page now links to the GitHub source repository. See the [note for the week ending 24 October 2026](#week-ending-24-october-2026-crosswalk-verification). |

@@ -6,7 +6,7 @@ parent: "Templates"
 nav_order: 5
 description: "A downloadable Excel audit workbook: tests for every wiki control with evidence and audit procedures, the GCC and EU audit checklists and evidence registers, a findings log, an exception register and ISO/IEC 42001 certification readiness."
 document_type: AI Security Wiki Template
-version: 1.0
+version: 1.2
 ---
 
 # AI Security Audit and Evidence Checklist Template (.xlsx)
@@ -26,7 +26,7 @@ version: 1.0
 | README and License | How to use the workbook, colour legend, sources, licence, credit and disclaimer | Written for the workbook |
 | Summary | Result totals, evidence status, open findings and exceptions for the audit report | Calculated from the other sheets |
 | Audit Plan | Scope, period, team, regional selection, the result scale and the six evidence quality criteria | [GCC T08 AI Audit Checklist](../11_GCC_AI_Compliance/T08_Audit_Checklist.md), [AI Security Audit and Evidence Checklist](../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md) |
-| Control Tests | The {{n:controls}} controls with evidence, audit test, owners, sample size, result and the six quality checks | [Control Objectives Library](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md) |
+| Control Tests | The {{n:controls}} controls with evidence, audit test, owners, sample size, result, the six quality checks, and each control's assurance stage and deployment model | [Control Objectives Library](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md) |
 | Regional Tests | The 86 tests of the GCC and EU audit checklists | [GCC T08](../11_GCC_AI_Compliance/T08_Audit_Checklist.md), [EU T08 AI Audit Checklist](../12_EU_AI_Compliance/T08_Audit_Checklist.md) |
 | Evidence Requests | 58 items from the GCC and EU evidence registers plus blank rows, with due dates and status | [GCC Evidence Register](../11_GCC_AI_Compliance/08_Evidence_Register.md), [EU Evidence Register](../12_EU_AI_Compliance/08_Evidence_Register.md) |
 | Findings Log and Exception Register | Findings with owners, due dates and verification; approved exceptions with expiry checks | [AI Security Audit and Evidence Checklist](../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md) |

@@ -3,7 +3,7 @@ title: "Home"
 description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and {{n:tests}} test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.41
+version: 2.46
 status: Published
 author: Nachiket Sathaye
 coauthors: Ankush Jain
@@ -11,20 +11,20 @@ owner: AI Security Program
 custodian: Security Architecture Team
 review_cycle: Quarterly
 approval_authority: AI Governance Committee
-last_updated: 2026-10-23
+last_updated: 2026-10-25
 ---
 
 # AI Security Wiki Home
 
 > **Document Type:** Enterprise AI Security Reference Architecture and Governance Wiki  
-> **Version:** 2.41  
+> **Version:** 2.46  
 > **Status:** Published  
 > **Original Author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
 > **Co-Author:** Ankush Jain ([about the co-author](#23-about-the-co-author))  
 > **Intended Use:** Public, vendor-neutral reference and template set for AI security governance, engineering, risk management, assurance, audit, compliance, and vendor evaluation.  
 > **Source Repository:** [github.com/nachi065/AI-Security-Wiki](https://github.com/nachi065/AI-Security-Wiki): the Markdown source, the change history, issues and pull requests. See [Contributing](https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md) to suggest a change.
 
-> **Latest update (23 October 2026).** Secure development and privacy now come with code. A new [NIST SSDF and SP 800-218A crosswalk](23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.md) maps the secure development practices, including those for generative AI, to the wiki's controls and tests. The [AI coding assistant standard](04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.md) now covers coding agents, plugins, MCP servers and rules files, with the gates that run before commit, in CI and at merge. Two new Builder Track pages have working, tested code: [privacy duties under India's DPDP Act](24_Builder_Track/03_Privacy_Duties_in_Code.md) (consent, rights, retention, children's data, log redaction) and [developer pipeline checks](24_Builder_Track/04_Developer_Pipeline_Checks.md) for git hooks, coding agents and CI. The Builder Track tests now run in CI. See the [Update Notes](09_Reference/19_Update_Notes.md) for details and what is still open.
+> **Latest update (25 October 2026).** A new [Hong Kong](26_Hong_Kong_AI_Compliance/index.md) section covers the HKMA guidance on responsible AI adoption of 15 October 2026, read in the HKMA's own text. A new [Financial Regulator AI Comparison](04_Domain_Standards/10C_Financial_Regulator_AI_Comparison.md) sets MAS, RBI, SEBI, the EU AI Act, the FCA and the HKMA side by side on eight themes. The kill-switch control, AI-CTRL-025, now covers high-risk AI models as well as agents, with a new test case. India adds the RBI draft's kill-switch expectation and SEBI's announced AI guidelines; the UK row on the FCA records the Mills Review. The five workbooks built from wiki data (risk register, audit checklist, control library, test case tracker and requirements traceability matrix) were rebuilt with these changes, and the NIST SSDF crosswalk is now a column in the risk register and control library workbooks. See the [Update Notes](09_Reference/19_Update_Notes.md) for details and what is still open.
 
 ## 1. Purpose
 
@@ -96,7 +96,7 @@ This wiki is intended for the following personas:
 | GRC and Compliance | Map AI controls to governance, regulatory, privacy, and assurance requirements. |
 | Teams Building, Selling or Auditing AI in the GCC | Find the regional instruments that apply, with role guides and fill-in templates. |
 | Teams Building, Selling or Auditing AI under EU Rules | Find the AI Act, GDPR and related instruments that apply, with role guides and fill-in templates. |
-| Teams Building, Selling or Auditing AI in Other Jurisdictions | Find the national instruments that apply in Australia, Brazil, Canada, China, India, Japan, Singapore, South Korea, the UK and the US, with a role guide and region-specific templates. |
+| Teams Building, Selling or Auditing AI in Other Jurisdictions | Find the national instruments that apply in Australia, Brazil, Canada, China, Hong Kong, India, Japan, Singapore, South Korea, the UK and the US, with a role guide and region-specific templates. |
 | Internal Audit | Validate control operation, evidence quality, decision traceability, and governance effectiveness. |
 
 ## 5. Wiki Design Principles
@@ -137,7 +137,7 @@ The cycle then repeats: each use case is reviewed, improved, renewed or retired,
 | Audit and Continuous Improvement | Review governance effectiveness, control operation, exceptions, and maturity. | [AI Security Audit and Evidence Checklist](06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md), [AI Governance Operating Model](08_Governance/16_AI_Governance_Operating_Model.md) | Audit evidence, management actions, maturity roadmap. |
 | Regional Compliance (GCC) | Identify the UAE and other GCC instruments that apply, and record what has been verified against the primary text. | [GCC AI Regulatory Hub](11_GCC_AI_Compliance/01_GCC_AI_Regulatory_Hub.md), [Regulatory Crosswalk](11_GCC_AI_Compliance/07_Regulatory_Crosswalk.md), [templates T01 to T12](11_GCC_AI_Compliance/index.md) | Regulator register, impact assessments, residency attestation, bilingual notices. |
 | Regional Compliance (EU) | Classify each system by AI Act role and risk tier, identify the EU instruments that apply, and record what has been verified against the primary text. | [EU AI Regulatory Hub](12_EU_AI_Compliance/01_EU_AI_Regulatory_Hub.md), [EU Regulatory Crosswalk](12_EU_AI_Compliance/07_Regulatory_Crosswalk.md), [templates T01 to T12](12_EU_AI_Compliance/index.md) | Classification records, impact assessments, transfer records, transparency notices, technical file index. |
-| Regional Compliance (Other Jurisdictions) | Identify the national instruments that apply, and record what has been verified against the primary text. | [Australia](13_Australia_AI_Compliance/index.md), [Brazil](14_Brazil_AI_Compliance/index.md), [Canada](15_Canada_AI_Compliance/index.md), [China](16_China_AI_Compliance/index.md), [India](17_India_AI_Compliance/index.md), [Japan](18_Japan_AI_Compliance/index.md), [Singapore](19_Singapore_AI_Compliance/index.md), [South Korea](20_South_Korea_AI_Compliance/index.md), [UK](21_UK_AI_Compliance/index.md), [US](22_US_AI_Compliance/index.md) | Regulatory register, region-specific records and templates. |
+| Regional Compliance (Other Jurisdictions) | Identify the national instruments that apply, and record what has been verified against the primary text. | [Australia](13_Australia_AI_Compliance/index.md), [Brazil](14_Brazil_AI_Compliance/index.md), [Canada](15_Canada_AI_Compliance/index.md), [China](16_China_AI_Compliance/index.md), [Hong Kong](26_Hong_Kong_AI_Compliance/index.md), [India](17_India_AI_Compliance/index.md), [Japan](18_Japan_AI_Compliance/index.md), [Singapore](19_Singapore_AI_Compliance/index.md), [South Korea](20_South_Korea_AI_Compliance/index.md), [UK](21_UK_AI_Compliance/index.md), [US](22_US_AI_Compliance/index.md) | Regulatory register, region-specific records and templates. |
 
 ## 8. Navigation by Role
 
@@ -232,6 +232,10 @@ The cycle then repeats: each use case is reviewed, improved, renewed or retired,
 
 22_US_AI_Compliance/
   Regulatory hub for the US (federal orders and enforcement, NIST AI RMF, state AI laws), role guide,\n  three templates, and regulatory crosswalk.
+
+26_Hong_Kong_AI_Compliance/
+  Regulatory hub for Hong Kong (HKMA guidance on responsible AI adoption, SFC generative AI circular, PCPD guidance, PDPO),
+  role guide, one template, and regulatory crosswalk with a principle-by-principle HKMA crosswalk.
 
 23_Framework_Crosswalks/
   Cross-references from this wiki to other frameworks: AI frameworks (FINOS AIGF, AI BCF, NIST AI RMF, NIST AI 600-1,
@@ -417,9 +421,9 @@ The three latest versions, newest first. The full history since version 1.0 is i
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
-| 2.41 | 2026-10-23 | Nachiket Sathaye | Secure development and privacy in code, after a comparison with the ai-secure-by-design repository: new NIST SSDF and SP 800-218A crosswalk; the IDE coding assistant standard rewritten (version 2.0) to cover coding agents, pipeline agents, plugins, MCP servers and rules files, with pipeline gates and a test case per requirement; two new Builder Track pages with tested code, Privacy Duties in Code (DPDP consent, rights, retention, children's data, log redaction) and Developer Pipeline Checks (secrets, personal data in logs and an AI-Assistance trailer, run in git hooks, a coding agent's hook and CI); the Builder Track tests now run in CI. |
-| 2.40 | 2026-10-22 | Nachiket Sathaye | Weak points addressed: validation level on every test case and a self-contained copy of the shared fields on each case and in the test tracker; scoring method and worked calibration examples in the risk methodology; committee charters, decision rights and a role-based training plan; outcome review of AI-CTRL-041 to 046 with three new cases; illustrative operating defaults; a predictive model monitoring and adversarial ML standard with two new cases; regulatory verification status and an obligation-level tracker; programme charter and incident report templates. |
-| 2.39 | 2026-10-22 | Nachiket Sathaye | Weekly crosswalk verification (19 to 22 October 2026): the GCC, India, UK, Singapore, US, South Korea, Australia, Brazil, Canada, China and Japan crosswalks were checked against primary sources. Confirmed rows are tagged [Verified] with source and retrieval date, and out-of-date rows were corrected. The home page now links to the GitHub source repository. See the [Update Notes](09_Reference/19_Update_Notes.md). |
+| 2.46 | 2026-10-25 | Nachiket Sathaye | NIST SSDF crosswalk added to the template workbooks: its 20 practices are now a column in the AI Risk Register (version 1.2) and Control Library and Crosswalks (1.3) framework matrices and rows in their Framework Crosswalk sheets. |
+| 2.45 | 2026-10-25 | Nachiket Sathaye | Templates rebuilt from wiki 2.44: AI Risk Register (version 1.1), Audit and Evidence Checklist (1.2), Control Library and Crosswalks (1.2), Test Case Tracker (1.2) and Requirements Traceability Matrix (1.1) now carry AI-CTRL-025's new title and text, the extended control text, TC-L01-021 and a Hong Kong regulation column. |
+| 2.44 | 2026-10-25 | Nachiket Sathaye | Financial regulators: new Hong Kong section (HKMA Supervisory Guidance for Responsible Adoption of AI of 15 October 2026, read in the HKMA text; SFC, PCPD, PDPO; HK-T1 self-assessment; principle crosswalk); new Financial Regulator AI Comparison page (MAS, RBI, SEBI, EU AI Act, FCA, HKMA on eight themes); AI-CTRL-025 renamed AI Containment and Kill Switch and widened to high-risk models, with new test case TC-L01-021; AI-CTRL-011, 012, 014 and 041 extended (unlisted AI restricted, board-approved AI strategy, no vendor training on data without authorisation, customer AI-use notice); India IN6 verified against the RBI draft text and new row IN13 for SEBI; UK5 updated for the FCA Mills Review. |
 
 ## 21. Quick Links
 
@@ -449,6 +453,7 @@ The three latest versions, newest first. The full history since version 1.0 is i
 - [South Korea AI Compliance (regulatory hub, role guide and templates)](20_South_Korea_AI_Compliance/index.md)
 - [UK AI Compliance (regulatory hub, role guide and templates)](21_UK_AI_Compliance/index.md)
 - [US AI Compliance (regulatory hub, role guide and templates)](22_US_AI_Compliance/index.md)
+- [Hong Kong AI Compliance (regulatory hub, role guide and template)](26_Hong_Kong_AI_Compliance/index.md)
 - [Framework Crosswalks (AI frameworks, NIST AI 100-2, ISO/IEC AI standards, trustworthy AI and ethics, international instruments, ISO/IEC 27001, NIST CSF, CIS Controls, SOC 2, OECD AI Principles and privacy laws)](23_Framework_Crosswalks/index.md)
 - [Templates (AI risk register, inventory, triage, vendor scorecard, audit checklist, control library, test tracker, acceptable use policy and impact assessment)](25_Templates/index.md)
 - [Community Rules](community-rules.md)

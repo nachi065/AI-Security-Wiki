@@ -33,6 +33,7 @@ I built this AI security wiki over the past year and have published it here on G
 | South Korea AI compliance (regulatory hub, role guide, templates) | https://nachi065.github.io/AI-Security-Wiki/20_South_Korea_AI_Compliance/ |
 | UK AI compliance (regulatory hub, role guide, templates) | https://nachi065.github.io/AI-Security-Wiki/21_UK_AI_Compliance/ |
 | US AI compliance (regulatory hub, role guide, templates) | https://nachi065.github.io/AI-Security-Wiki/22_US_AI_Compliance/ |
+| Hong Kong AI compliance (regulatory hub, role guide, template) | https://nachi065.github.io/AI-Security-Wiki/26_Hong_Kong_AI_Compliance/ |
 
 The pages are plain HTML, so the site also works offline: download the repository and open `index.html` in a browser.
 
