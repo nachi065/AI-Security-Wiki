@@ -6,7 +6,7 @@ parent: "Templates"
 nav_order: 12
 description: "A downloadable Excel requirements matrix for the security review of one AI system: every requirement of the wiki's controls, scoped by assurance stage and deployment model, with columns for the vendor's response and the assessor's review and a live dashboard."
 document_type: AI Security Wiki Template
-version: 1.0
+version: 1.1
 ---
 
 # AI Security Requirements Traceability Matrix Template (.xlsx)
