@@ -7,7 +7,7 @@ nav_order: 3
 description: "Indian instruments mapped one per row to AI security controls, with verification status. Also available as a CSV file."
 document_type: AI Security Wiki Reference
 version: 1.0
-last_reviewed: 2026-10-20
+last_reviewed: 2026-10-27
 ---
 
 # India Regulatory Crosswalk
