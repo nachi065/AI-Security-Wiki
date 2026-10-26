@@ -7,7 +7,7 @@ nav_order: 2
 description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."
 document_type: AI Security Wiki Reference
 version: 1.1
-last_reviewed: 2026-10-26
+last_reviewed: 2026-10-27
 ---
 
 # Update Notes
@@ -27,6 +27,7 @@ The nightly verification pass checks one slice of the wiki each night. This week
 
 - **EU (25 October 2026):** every row of the [EU Regulatory Crosswalk](../12_EU_AI_Compliance/07_Regulatory_Crosswalk.md) was checked for changes. Rows not yet verified were checked against the European Commission's AI Act pages: the news items on the GPAI guidelines and on the Code of Practice on marking and labelling AI-generated content, the guidelines library page, the GPAI questions and answers, the AI Act standardisation page and the press release of 31 July 2026 on enforcement. E4 and E14 were left alone because last week's open pull request already changes them.
 - **GCC (26 October 2026):** every row of the [GCC Regulatory Crosswalk](../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.md) was checked for changes. Ten rows not yet verified were checked against the issuing bodies' own pages where those pages could be read: the UAE AI Office and u.ae, the UAE Cabinet, the CBUAE Rulebook, the DIFC, Bahrain's Information & eGovernment Authority (iGA) and Oman's Ministry of Transport, Communications and Information Technology (MTCIT).
+- **India and UK (27 October 2026):** every row of the [India Regulatory Crosswalk](../17_India_AI_Compliance/03_Regulatory_Crosswalk.md) and the [UK Regulatory Crosswalk](../21_UK_AI_Compliance/03_Regulatory_Crosswalk.md) was checked for changes. The nine rows not yet verified were checked against primary sources where they could be read: MeitY (the DPDP Act and its commencement notification), SEBI, CERT-In, legislation.gov.uk, the ICO, the FCA, GOV.UK (CMA) and Ofcom.
 
 ### What changed
 
@@ -36,6 +37,12 @@ The nightly verification pass checks one slice of the wiki each night. This week
 - **GCC, U5 renamed:** the UAE Cabinet's announcement of 14 June 2026 names the new body the Artificial Intelligence and Data Authority, not the Federal Authority for AI and Data. It is the single national body for data, AI and digital government and brings together the AI Office, the TDRA Digital Government Sector and the UAE Data Office. The announcement names no founding law and does not mention data protection. The row is now [Verified] for its name, date and mandate.
 - **GCC, U9 now [Verified]:** the CBUAE Guidance Note on AI and machine learning was read on the CBUAE Rulebook. It applies to licensed financial institutions, including insurers, and is guidance. The Rulebook shows it issued on 11 February 2026; the press release of 23 February 2026 announced it. Each expectation in section 2.1 of the [GCC hub](../11_GCC_AI_Compliance/01_GCC_AI_Regulatory_Hub.md) is now worded as in the note, with its section number.
 - **GCC, U6 (DIFC Regulation 10):** the DIFC says Regulation 10 was enacted on 1 September 2023 and lists an accreditation and certification framework with approved certification bodies. A June 2026 consultation proposes a new Regulation 11 and wider duties for the Autonomous Systems Officer; it is still a draft. No DIFC page gives the January 2026 date, so the row stays [Conflict].
+- **UK, UK2, UK4 and UK12 now [Verified]:** the Data Protection Act 2018 and the UK GDPR, and the Equality Act 2010, were read on legislation.gov.uk. The ICO guidance on AI and data protection exists as regulator guidance; the ICO says it is under review because of the Data (Use and Access) Act.
+- **UK, UK5 now [Verified]:** the FCA's own press release of 27 January 2026 says it "does not plan to introduce AI-specific regulation". Its press release of 6 July 2026 confirms the Mills Review date and promises an AI good and poor practice publication later this year.
+- **UK, UK7 now [Verified]:** the row now names the CMA's AI Foundation Models update paper (11 April 2024) and Ofcom's open letter of 8 November 2024 on how the Online Safety Act applies to generative AI and chatbots.
+- **India, IN11 now [Verified]:** section 44(2) of the DPDP Act omits section 43A of the IT Act. Under the commencement notification G.S.R. 843(E) of 13 November 2025, that takes effect eighteen months after publication, about 13 May 2027. The rest of the IT Act continues.
+- **India, IN10:** CERT-In issued Guidelines regarding AI-Accelerated Vulnerability Protection and Response Requirements for OEMs and Technology Providers on 10 June 2026. The row now names them. They use advisory wording; the 2022 directions stay the binding part of the row.
+- **India, IN13:** SEBI's own listing confirms the consultation paper of 20 June 2025. SEBI had listed no final AI and ML guidelines when checked, so the row stays Proposed and [Reported] for the announcement of 10 October 2026.
 
 ### Still work in progress
 
@@ -45,6 +52,9 @@ The nightly verification pass checks one slice of the wiki each night. This week
 - GCC: the Qatar Central Bank's AI Guideline (Q4), Saudi Arabia's Umm Al-Qura gazette (S9, the copyright exception) and the MTCIT policy document (O1) refused automated retrieval or were not reachable on 26 October 2026, so those rows keep their tags. MTCIT lists a "General Policy for the Safe and Ethical Use of Artificial Intelligence Systems" published on 1 April 2025; the row gives 9 April 2025 and calls it the National AI Policy. Whether these are the same document is still to be checked.
 - GCC, B3: a Gulf Daily News report of 11 October 2026 still describes Bahrain's AI law as under debate. No official text of an enacted law was found, so the row is unchanged.
 - GCC, U5: the implementors' guide, T05 and T11 still use the old name "Federal Authority for AI and Data"; they will be updated after the owner reviews the U5 change.
+- India, IN8 (IRDAI): irdai.gov.in refused automated retrieval on 27 October 2026, so the row stays [Unverified]. News reports describe an IRDAI request to insurers in May 2026 and an AI working group in June 2026, but no IRDAI document was read.
+- India, IN7 (SEBI AI and ML amendments): SEBI lists both amendment regulations under 10 February 2025, but the regulation text could not be opened, so the notification date of 6 February 2025 and the AI content stay [Reported].
+- UK, UK9: the bill page on the UK Parliament site could not be read on 27 October 2026, so the bill's progress since 20 October was not re-checked.
 
 ## 25 October 2026: NIST SSDF crosswalk in the template workbooks
 

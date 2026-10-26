@@ -12,7 +12,7 @@ last_reviewed: 2026-10-27
 
 # India Regulatory Crosswalk
 
-> **Verification required.** Claims on this page about Indian law were compiled on 7 October 2026 from secondary web sources and from memory of the law. Rows checked since then against primary documents (16 October 2026: IN1, IN2, IN4, IN5, IN6, IN10; 20 October 2026: IN12, IN3, IN9; 25 October 2026: the text of the RBI draft for IN6) are tagged [Verified] with the source in the last column. Every other claim is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any of them. This is not legal advice.
+> **Verification required.** Claims on this page about Indian law were compiled on 7 October 2026 from secondary web sources and from memory of the law. Rows checked since then against primary documents (16 October 2026: IN1, IN2, IN4, IN5, IN6, IN10; 20 October 2026: IN12, IN3, IN9; 25 October 2026: the text of the RBI draft for IN6; 27 October 2026: IN11) are tagged [Verified] with the source in the last column. Every other claim is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any of them. This is not legal advice.
 
 One row per instrument in the [India AI Regulatory Hub](01_India_AI_Regulatory_Hub.md), with the wiki controls that relate to it and its verification status. The last column is empty until a row has been confirmed against the primary text; record the primary URL and the date you retrieved it there.
 

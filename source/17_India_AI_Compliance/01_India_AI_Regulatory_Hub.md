@@ -12,7 +12,7 @@ last_reviewed: 2026-10-20
 
 # India AI Regulatory Hub
 
-> **Verification status.** On 16 October 2026 the rows tagged [Verified] (IN1, IN2, IN4, IN5, IN6, IN10), on 20 October 2026 rows IN12, IN3 and IN9, and on 25 October 2026 the text of the RBI draft (IN6), were checked against primary documents; the crosswalk gives each source and what was and was not read. Everything else was compiled on 7 October 2026 from secondary sources or memory and is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any claim. This is not legal advice.
+> **Verification status.** On 16 October 2026 the rows tagged [Verified] (IN1, IN2, IN4, IN5, IN6, IN10), on 20 October 2026 rows IN12, IN3 and IN9, on 25 October 2026 the text of the RBI draft (IN6), and on 27 October 2026 row IN11, were checked against primary documents; the crosswalk gives each source and what was and was not read. Everything else was compiled on 7 October 2026 from secondary sources or memory and is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any claim. This is not legal advice.
 
 This page maps Indian laws, guidance and standards that bear on AI to the wiki's controls.
 

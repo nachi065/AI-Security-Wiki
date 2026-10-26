@@ -12,7 +12,7 @@ last_reviewed: 2026-10-27
 
 # UK AI Regulatory Hub
 
-> **Verification required.** Claims on this page about UK law were compiled on 7 October 2026 from secondary web sources and from memory of the law. Row UK13 (AI Management Essentials) was checked against the government's own documents on 15 October 2026, rows UK1, UK9, UK10, UK3, UK6, UK8 and UK11 on 20 October 2026, and rows UK2, UK4 and UK12 on 27 October 2026; those rows are tagged [Verified]; every other claim is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any of them. This is not legal advice.
+> **Verification required.** Claims on this page about UK law were compiled on 7 October 2026 from secondary web sources and from memory of the law. Row UK13 (AI Management Essentials) was checked against the government's own documents on 15 October 2026, rows UK1, UK9, UK10, UK3, UK6, UK8 and UK11 on 20 October 2026, and rows UK2, UK4, UK5, UK7 and UK12 on 27 October 2026; those rows are tagged [Verified]; every other claim is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any of them. This is not legal advice.
 
 This page maps UK laws, guidance and standards that bear on AI to the wiki's controls.
 
