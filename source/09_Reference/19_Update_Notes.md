@@ -7,7 +7,7 @@ nav_order: 2
 description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."
 document_type: AI Security Wiki Reference
 version: 1.1
-last_reviewed: 2026-10-27
+last_reviewed: 2026-10-28
 ---
 
 # Update Notes
@@ -28,6 +28,7 @@ The nightly verification pass checks one slice of the wiki each night. This week
 - **EU (25 October 2026):** every row of the [EU Regulatory Crosswalk](../12_EU_AI_Compliance/07_Regulatory_Crosswalk.md) was checked for changes. Rows not yet verified were checked against the European Commission's AI Act pages: the news items on the GPAI guidelines and on the Code of Practice on marking and labelling AI-generated content, the guidelines library page, the GPAI questions and answers, the AI Act standardisation page and the press release of 31 July 2026 on enforcement. E4 and E14 were left alone because last week's open pull request already changes them.
 - **GCC (26 October 2026):** every row of the [GCC Regulatory Crosswalk](../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.md) was checked for changes. Ten rows not yet verified were checked against the issuing bodies' own pages where those pages could be read: the UAE AI Office and u.ae, the UAE Cabinet, the CBUAE Rulebook, the DIFC, Bahrain's Information & eGovernment Authority (iGA) and Oman's Ministry of Transport, Communications and Information Technology (MTCIT).
 - **India and UK (27 October 2026):** every row of the [India Regulatory Crosswalk](../17_India_AI_Compliance/03_Regulatory_Crosswalk.md) and the [UK Regulatory Crosswalk](../21_UK_AI_Compliance/03_Regulatory_Crosswalk.md) was checked for changes. The nine rows not yet verified were checked against primary sources where they could be read: MeitY (the DPDP Act and its commencement notification), SEBI, CERT-In, legislation.gov.uk, the ICO, the FCA, GOV.UK (CMA) and Ofcom.
+- **Singapore, US and South Korea (28 October 2026):** every row of the [Singapore Regulatory Crosswalk](../19_Singapore_AI_Compliance/03_Regulatory_Crosswalk.md), the [US Regulatory Crosswalk](../22_US_AI_Compliance/03_Regulatory_Crosswalk.md) and the [South Korea Regulatory Crosswalk](../20_South_Korea_AI_Compliance/03_Regulatory_Crosswalk.md) was checked for changes. Nine rows not yet verified were checked against primary sources where they could be read: Singapore Statutes Online and the CSA, the Texas Legislature, the California Privacy Protection Agency, the Governor of California, the NAIC, eCFR, HHS and the Unified Agenda, and the PIPC.
 
 ### What changed
 
@@ -43,6 +44,10 @@ The nightly verification pass checks one slice of the wiki each night. This week
 - **India, IN11 now [Verified]:** section 44(2) of the DPDP Act omits section 43A of the IT Act. Under the commencement notification G.S.R. 843(E) of 13 November 2025, that takes effect eighteen months after publication, about 13 May 2027. The rest of the IT Act continues.
 - **India, IN10:** CERT-In issued Guidelines regarding AI-Accelerated Vulnerability Protection and Response Requirements for OEMs and Technology Providers on 10 June 2026. The row now names them. They use advisory wording; the 2022 directions stay the binding part of the row.
 - **India, IN13:** SEBI's own listing confirms the consultation paper of 20 June 2025. SEBI had listed no final AI and ML guidelines when checked, so the row stays Proposed and [Reported] for the announcement of 10 October 2026.
+- **Singapore, SG8 now [Verified]:** the Cybersecurity Act 2018 was read on Singapore Statutes Online; its Part 3 applies to critical information infrastructure, and the CSA describes the duties of its owners.
+- **US, US8, US9, US15 and US17 now [Verified]:** the CPPA says its regulations on ADMT, risk assessments and cybersecurity audits were approved on 22 September 2025 and took effect on 1 January 2026. The enrolled text of Texas HB 149 (TRAIGA) takes effect on 1 January 2026 and gives the attorney general sole enforcement power. The NAIC adopted its AI principles in 2020 and its model bulletin on 4 December 2023. The HIPAA rules in 45 CFR Part 164 apply to covered entities and business associates; the proposed Security Rule changes of January 2025 are still a proposal.
+- **US, US7 now [Conflict]:** the Governor of California signed SB 1000 (California AI Transparency Act) and AB 2713 on 30 September 2026. The bill author's office says the Act's implementation began on 1 August 2026; the row gave 2 August 2026. The statute text has to be read to settle the date.
+- **South Korea, KR7:** the PIPC says an amendment to the Personal Information Protection Act passed on 20 August 2026. It lets lawfully collected personal data be used to develop AI under extra safeguards, and takes effect six months after it is promulgated. The row tag is unchanged because the Act's text was not read.
 
 ### Still work in progress
 
@@ -55,6 +60,9 @@ The nightly verification pass checks one slice of the wiki each night. This week
 - India, IN8 (IRDAI): irdai.gov.in refused automated retrieval on 27 October 2026, so the row stays [Unverified]. News reports describe an IRDAI request to insurers in May 2026 and an AI working group in June 2026, but no IRDAI document was read.
 - India, IN7 (SEBI AI and ML amendments): SEBI lists both amendment regulations under 10 February 2025, but the regulation text could not be opened, so the notification date of 6 February 2025 and the AI content stay [Reported].
 - UK, UK9: the bill page on the UK Parliament site could not be read on 27 October 2026, so the bill's progress since 20 October was not re-checked.
+- US: leginfo.legislature.ca.gov could not be read on 28 October 2026, so the California rows (US6 for SB 53 and AB 2013, US7) were not checked against the statute text. Illinois HB 3773 (US10) could not be checked because ilga.gov refused automated retrieval. California also signed other AI bills on 30 September 2026 (among them SB 947 on automated decision systems in employment); none is a row yet.
+- Singapore: the 2024 amendments to the Cybersecurity Act (new duties for foundational digital infrastructure and other new categories) are not yet described in SG8; their start date was found only in law-firm notes.
+- South Korea: the Korean text on law.go.kr was still not read, so KR1 to KR6 stay [Reported]. A news report of 27 October 2026 says MSIT plans a public hearing on revising the AI Basic Act at the end of the year; no draft has been published.
 
 ## 25 October 2026: NIST SSDF crosswalk in the template workbooks
 
