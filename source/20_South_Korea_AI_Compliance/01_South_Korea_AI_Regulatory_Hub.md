@@ -7,7 +7,7 @@ nav_order: 1
 description: "South Korea's AI Basic Act mapped to AI security controls: generative AI labelling, high-impact and high-performance AI duties, and the domestic representative rule."
 document_type: AI Security Wiki Reference
 version: 1.0
-last_reviewed: 2026-10-21
+last_reviewed: 2026-10-28
 ---
 
 # South Korea AI Regulatory Hub
