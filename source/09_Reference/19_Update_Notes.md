@@ -19,6 +19,23 @@ This page is the wiki's change record. It has two parts:
 
 Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.
 
+## 29 October 2026: CSV data files and rebuilt workbooks
+
+This entry follows the one below ("eight risks to close the AI Risk Map gaps").
+
+### What changed
+
+- **CSV data files.** The [Templates](../25_Templates/index.md#data-files-csv) section now offers five CSV files: the risk register, the risk-to-control mapping, the control objectives, the test cases and the AI Risk Map crosswalk. A new script, `export_data.py`, writes them from the Markdown pages on every build, so they cannot fall out of step with the pages. This follows the AI Risk Map's practice of publishing a flat CSV with stable IDs.
+- **Workbooks rebuilt.** The [AI Risk Register](../25_Templates/01_AI_Risk_Register_Template.md) (version 1.3), [AI Use-Case Risk Triage](../25_Templates/03_AI_Use_Case_Risk_Triage_Template.md) (1.1), [Control Library and Crosswalks](../25_Templates/06_AI_Security_Control_Library_and_Crosswalks_Template.md) (1.4) and [Test Case Tracker](../25_Templates/07_AI_Security_Test_Case_Tracker_Template.md) (1.3) workbooks now include AI-R47 to AI-R54 and triage questions E13 to E19. Their licence sheets credit the AI Risk Map to Evan Wheeler (GitHub wheels344i-gte) and link https://github.com/wheels344i-gte/ai-risk-map.
+- **Generator fixes.** The risk register generator no longer assumes 46 risks. The data extraction now finds the Owner Domains table by its heading (the new Considered and Not Added table had come first), and it now reads the Hong Kong regulatory crosswalk, which it had been skipping.
+
+### What was checked and what is still open
+
+- All four workbooks were recalculated with no formula errors. The register sheet holds AI-R01 to AI-R54 in rows 5 to 58, and rows 59 to 150 are free for new risks.
+- The CSV files hold 54 risks, 46 controls and 674 test cases, the same counts the link check reports.
+- The audit checklist, requirements traceability matrix and other workbooks were not rebuilt, because they do not list register risks.
+- The CSV crosswalk maps the AI Risk Map's categories, not its factor IDs. Mapping each AIRM factor ID still needs the map's own CSV.
+
 ## 29 October 2026: eight risks to close the AI Risk Map gaps
 
 This entry follows the one below ("rules for what goes on the risk register") and applies its four tests.
@@ -505,6 +522,7 @@ Every version of the wiki, newest first. Rows are never edited after they are ad
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.49 | 2026-10-29 | Nachiket Sathaye | CSV data files for the risk register, risk-to-control mapping, controls, test cases and AI Risk Map crosswalk, regenerated on every build; four workbooks rebuilt with AI-R47 to AI-R54 and the AI Risk Map credit linking its GitHub repository: AI Risk Register (version 1.3), AI Use-Case Risk Triage (1.1), Control Library and Crosswalks (1.4), Test Case Tracker (1.3). |
 | 2.48 | 2026-10-29 | Nachiket Sathaye | Risk register 1.4: eight risks AI-R47 to AI-R54 (model extraction and inference, AI incidents, personal data inside models, training-serving skew, liability, unmaintained open-source components, unlabelled AI-generated content, agent actions others cannot identify), with control mappings and triage questions E13 to E19; AI-R29 and AI-R31 widened; the AI Risk Map Crosswalk now has 42 direct and 13 partial matches. |
 | 2.47 | 2026-10-29 | Nachiket Sathaye | Risk register rules: the four tests a risk must pass to join the register (AI Risk Methodology 1.3), a Considered and Not Added list on the register (1.3), a rule in the contributing guide that risk, control and test case IDs are never reused, and the AI Risk Map Crosswalk (1.1) updated after reading the map's website, and every credit for the map now links its GitHub repository (wheels344i-gte/ai-risk-map). |
 | 2.46 | 2026-10-25 | Nachiket Sathaye | NIST SSDF crosswalk added to the template workbooks: its 20 practices are now a column in the AI Risk Register (version 1.2) and Control Library and Crosswalks (1.3) framework matrices and rows in their Framework Crosswalk sheets. |

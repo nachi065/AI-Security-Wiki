@@ -40,6 +40,8 @@ for dirpath, dirs, files in os.walk(SRC):
 
 # Counts that pages quote are written as {{n:name}} and filled in from the source files here.
 from counts import site_counts
+import export_data
+export_data.main(SRC)  # CSV copies of the register, controls and test cases, served from 25_Templates/data/
 COUNTS = site_counts(SRC)
 
 

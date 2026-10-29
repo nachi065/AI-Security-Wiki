@@ -6,7 +6,7 @@ parent: "Templates"
 nav_order: 3
 description: "A downloadable Excel questionnaire for one AI use case: a prohibited-use screen, the wiki's triage questions, T01 tier scoring, the register risks that apply with their controls and evidence, and whether a full impact assessment is needed."
 document_type: AI Security Wiki Template
-version: 1.0
+version: 1.1
 ---
 
 # AI Use-Case Risk Triage Template (.xlsx)
@@ -27,7 +27,7 @@ version: 1.0
 | Result | Tier, applicable risks, impact assessment trigger, next step, decision and approvals | Calculated from the other sheets |
 | Use Case | Basics, purpose and data | [GCC T01 Intake and Risk Tiering](../11_GCC_AI_Compliance/T01_AI_Use_Case_Intake_and_Risk_Tiering.md) sections A to C |
 | Stop Screen | A policy prohibition question and the EU AI Act Art. 5 practices | [EU T01 AI System Classification](../12_EU_AI_Compliance/T01_AI_System_Classification.md) |
-| Risk Questions | The 36 triage questions A1 to E12, each linked to the register risks it switches on | [AI Use-Case Risk Triage](../02_Risk_Management/02F_AI_Use_Case_Risk_Triage.md) |
+| Risk Questions | The 43 triage questions A1 to E19, each linked to the register risks it switches on | [AI Use-Case Risk Triage](../02_Risk_Management/02F_AI_Use_Case_Risk_Triage.md) |
 | Tiering | The eight scored T01 questions, tier bands and the two mandatory High overrides | [GCC T01 Intake and Risk Tiering](../11_GCC_AI_Compliance/T01_AI_Use_Case_Intake_and_Risk_Tiering.md) |
 | Applicable Risks | All {{n:risks}} register risks, which questions switched each on, and the wiki controls and evidence | [Enterprise AI Risk Register](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI Risk to Control Mapping](../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.md) |
 | Triage Log and Worked Examples | A history of triage runs across use cases, and the wiki's three worked examples with how to calibrate | [AI Use-Case Risk Triage](../02_Risk_Management/02F_AI_Use_Case_Risk_Triage.md) |
