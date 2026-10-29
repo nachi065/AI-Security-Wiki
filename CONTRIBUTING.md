@@ -13,7 +13,7 @@ That is all. You do not need to install anything or rebuild the HTML; the mainta
 ## The full way: work locally
 
 1. Fork this repository and create a branch.
-2. Edit or add Markdown under `source/`. Do not edit the `.html` files by hand; they are generated.
+2. Edit or add Markdown under `source/`. Do not edit the `.html` files or the CSV files in `source/25_Templates/data/` by hand; they are generated.
 3. Rebuild the pages and run the two checks:
 
    ```sh
