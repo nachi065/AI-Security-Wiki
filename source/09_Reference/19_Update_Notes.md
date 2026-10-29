@@ -19,6 +19,25 @@ This page is the wiki's change record. It has two parts:
 
 Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.
 
+## 29 October 2026: PCI DSS and the PCI SSC guidance on AI systems
+
+### What is new
+
+- **[PCI DSS AI Crosswalk](../23_Framework_Crosswalks/21_PCI_DSS_AI_Crosswalk.md):** a new crosswalk page for the PCI Security Standards Council information supplement *Security Considerations for AI Systems* (version 1.0, September 2026). It maps the PCI DSS requirements the supplement applies to AI (1.2.4, Requirement 3 and 3.3.1, 6.2.3 and 6.2.3.1, 6.5.1, 8.4.2, 12.5.1, 12.5.2, 12.8.x and 12.10.x) and every theme of the guidance to wiki controls and test cases, adds a short scoping checklist, and names what the wiki does not cover.
+- **Eight test cases**, bringing the library to 682: a human-over-the-loop authorisation record ([TC-L01-022](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-022)), AI chat widgets on payment pages ([TC-L05-036](../10_Test_Case_Library/L05-ai-applications.md#tc-l05-036)), egress DLP that the AI system cannot switch off or route around ([TC-L08-044](../10_Test_Case_Library/L08-ai-gateway-and-security-controls.md#tc-l08-044)), agent credentials where a person would need MFA ([TC-L09-027](../10_Test_Case_Library/L09-identity-and-access-mgmt.md#tc-l09-027)), keeping keys, passwords and random values away from models ([TC-L10-034](../10_Test_Case_Library/L10-data-layer.md#tc-l10-034)), tokenised data plus a reachable detokenisation path ([TC-L10-035](../10_Test_Case_Library/L10-data-layer.md#tc-l10-035)), change control and tested rollback for changes agents make ([TC-L14-023](../10_Test_Case_Library/L14-mlops-llmops-layer.md#tc-l14-023)), and measuring an AI code reviewer against seeded flaws ([TC-L14-024](../10_Test_Case_Library/L14-mlops-llmops-layer.md#tc-l14-024)).
+- **Eleven controls extended** from the guidance: shadow AI detection methods (AI-CTRL-001), logging detail for reconstruction (AI-CTRL-008), embedded third-party AI (AI-CTRL-014), agent credentials and MFA (AI-CTRL-015), high-impact secrets, effective data reach and AI-created data stores (AI-CTRL-017), logs that survive rollback and fail-secure shutdown (AI-CTRL-025), AI-BOM fields and payment page widgets (AI-CTRL-031), agent-made changes (AI-CTRL-033), quarterly review and AI code reviewer measurement (AI-CTRL-034), AI scenarios in the incident response plan (AI-CTRL-035), and the human-over-the-loop record (AI-CTRL-045).
+- The PCI DSS row of the [Sector Overlays](../04_Domain_Standards/10B_Sector_Overlays.md) now cites the requirement numbers from the supplement and links the new page.
+- **Workbooks rebuilt.** The [AI Risk Register](../25_Templates/01_AI_Risk_Register_Template.md) (version 1.4) and [Control Library and Crosswalks](../25_Templates/06_AI_Security_Control_Library_and_Crosswalks_Template.md) (1.5) have two new crosswalk columns, PCI DSS requirements and PCI SSC guidance themes. The [Test Case Tracker](../25_Templates/07_AI_Security_Test_Case_Tracker_Template.md) (1.4) holds the eight new cases. The [Audit and Evidence Checklist](../25_Templates/05_AI_Security_Audit_and_Evidence_Checklist_Template.md) (1.3) and [Requirements Traceability Matrix](../25_Templates/12_AI_Security_Requirements_Traceability_Matrix_Template.md) (1.2) carry the extended control text; the matrix grows from 169 to 188 requirements because each new sentence is a requirement.
+- Corrected hand-kept counts that had drifted in earlier updates: test case counts in the control index for seven controls, the per-method and per-domain totals on the test library home page, and the control theme counts and case lists in the [framework adoption guide](../10_Test_Case_Library/framework-adoption-guide.md).
+
+### What was checked and what was not
+
+- The supplement was read in full from a copy of the PDF supplied on 29 October 2026. Its publication was confirmed only through a Help Net Security report of 9 October 2026; the PCI SSC Document Library copy could not be reached, so the copy used has not been compared with it.
+- Requirement numbers the supplement cites are marked as read from it. Numbers it does not cite (targeted risk analysis, logging, penetration and segmentation testing, payment page scripts and vulnerability scanning) were added from memory of PCI DSS v4.0.1 and are marked [Recalled] until checked against the standard.
+- The mapping is the wiki's own and has not been reviewed by PCI SSC or a QSA. The supplement's CUSTODY categorisation framework was not reviewed.
+- The new test cases are at the Documented level: none has been run against a product.
+- All five workbooks were recalculated with no formula errors.
+
 ## 29 October 2026: 2026 cases in the incident casebook
 
 ### What is new
@@ -590,6 +609,7 @@ Every version of the wiki, newest first. Rows are never edited after they are ad
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.54 | 2026-10-29 | Nachiket Sathaye | PCI DSS AI Crosswalk for the PCI SSC information supplement Security Considerations for AI Systems (September 2026); eight test cases (TC-L01-022, TC-L05-036, TC-L08-044, TC-L09-027, TC-L10-034, TC-L10-035, TC-L14-023, TC-L14-024) and eleven controls extended from it; PCI DSS sector overlay row updated; five workbooks rebuilt with PCI DSS crosswalk columns and the new cases; drifted test case counts corrected. See the [Update Notes](../09_Reference/19_Update_Notes.md). |
 | 2.53 | 2026-10-29 | Nachiket Sathaye | AI Security Incident Casebook: seven 2026 cases (Load/Mine on Hugging Face, the OpenClaw gym booking incident, the Hugging Face breach by autonomous agents, Clinejection and Cline CLI 2.3.0, the Moltbook database exposure, ClawHavoc on ClawHub and OpenClaw CVE-2026-25253), each mapped to risks, controls, OWASP items and test cases, with what is not confirmed marked. |
 | 2.52 | 2026-10-29 | Nachiket Sathaye | Home page "Latest update" now lists every update of the newest day, built by build.py from the Update Notes headings and the full version history, instead of a hand-written summary of the last change. |
 | 2.51 | 2026-10-29 | Nachiket Sathaye | Builder Track runs on Windows: the sandbox uses a Windows Job Object for CPU, memory and process limits and reports which limits it applied, the git hooks fall back from python3 to python and run under Git for Windows, files are read and written as UTF-8, a PowerShell version of the container command, and every Builder Track test now runs in CI on Linux, macOS and Windows. |

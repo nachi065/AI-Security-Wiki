@@ -153,6 +153,7 @@ TC-L01-018,Fallback and Continuity Plans for AI-Dependent Processes,Medium,Evide
 TC-L01-019,Use-Case Retirement and Decommission Evidence,Medium,Evidence,"D3, D7",AI-CTRL-011,L01,L01 Business & Use Cases
 TC-L01-020,Portfolio View and Executive Reporting on Use Cases,Medium,Evidence,"D3, D7",AI-CTRL-011,L01,L01 Business & Use Cases
 TC-L01-021,Kill Switch for High-Risk AI Use Cases Defined and Tested,High,Evidence,"D3, D7","AI-CTRL-025, AI-CTRL-040",L01,L01 Business & Use Cases
+TC-L01-022,Human-Over-the-Loop Authorisation Record,High,Evidence,"D5, D7","AI-CTRL-045, AI-CTRL-023, AI-CTRL-025",L01,L01 Business & Use Cases
 TC-L02-001,"AI Policy Framework: Scope, Ownership, Approval and Review Cycle",High,Evidence,D7,AI-CTRL-012,L02,L02 Governance & Risk Mgmt
 TC-L02-002,Policy-to-Control Mapping,Critical,Technical,"D3, D7",AI-CTRL-012,L02,L02 Governance & Risk Mgmt
 TC-L02-003,Control Library and Multi-Framework Crosswalk Capability,Critical,Technical,D7,AI-CTRL-038,L02,L02 Governance & Risk Mgmt
@@ -290,6 +291,7 @@ TC-L05-032,Personal vs Corporate Account in AI Coding Assistants,Critical,Techni
 TC-L05-033,Coding Assistant Workspace Context Scope and File Exclusion,High,Technical,"D2, D6",AI-CTRL-004,L05,L05 AI Applications
 TC-L05-034,Insecure Code Suggestion Detection,High,Technical,"D2, D3",AI-CTRL-004,L05,L05 AI Applications
 TC-L05-035,AI-Generated Code: Licence and Public-Code Match Detection,Medium,Technical,"D2, D7","AI-CTRL-004, AI-CTRL-046",L05,L05 AI Applications
+TC-L05-036,"AI Chat Widget on a Payment Page: Authorised, Inventoried and Monitored for Tampering",High,Technical,"D3, D7","AI-CTRL-031, AI-CTRL-014",L05,L05 AI Applications
 TC-L06-001,Agent Discovery Across Platforms and Custom Builds,Critical,Technical,D5,AI-CTRL-006,L06,L06 Agent Orchestration Layer
 TC-L06-002,"Agent Inventory Enrichment: Owner, Tools, Data and Model",High,Evidence,D5,AI-CTRL-006,L06,L06 Agent Orchestration Layer
 TC-L06-003,Shadow Agent Detection (Unregistered and Local Agents),Critical,Technical,"D5, D2",AI-CTRL-006,L06,L06 Agent Orchestration Layer
@@ -425,6 +427,7 @@ TC-L08-040,"Log Content, Masking and Retention Controls",High,Evidence,"D6, D7",
 TC-L08-041,Repository-Aware Policy for AI Assistance (Restricted Repositories and File Types),High,Technical,"D2, D6","AI-CTRL-004, AI-CTRL-010",L08,L08 AI Gateway & Security Controls
 TC-L08-042,"Coding Assistant Model, Provider and Local-Model Allow-List",High,Technical,"D2, D4","AI-CTRL-004, AI-CTRL-031",L08,L08 AI Gateway & Security Controls
 TC-L08-043,"Guardrail Policy Ownership, Approval and Review",Medium,Evidence,"D3, D7","AI-CTRL-010, AI-CTRL-012",L08,L08 AI Gateway & Security Controls
+TC-L08-044,"Egress DLP Independent of the Monitored AI System: Encoded, High-Entropy and Image Output",High,Technical,"D3, D6","AI-CTRL-020, AI-CTRL-017",L08,L08 AI Gateway & Security Controls
 TC-L09-001,Non-Human Identity Inventory for AI Workloads,Critical,Technical,D5,AI-CTRL-015,L09,L09 Identity & Access Mgmt
 TC-L09-002,Unique Identity Per Agent (No Shared Credentials),High,Technical,D5,AI-CTRL-015,L09,L09 Identity & Access Mgmt
 TC-L09-003,Short-Lived Scoped Credentials for Agents,Critical,Technical,D5,AI-CTRL-016,L09,L09 Identity & Access Mgmt
@@ -451,6 +454,7 @@ TC-L09-023,Emergency (Break-Glass) Access Controls,Medium,Technical,D7,AI-CTRL-0
 TC-L09-024,Mutual Authentication Between AI Components,High,Technical,"D3, D7",AI-CTRL-015,L09,L09 Identity & Access Mgmt
 TC-L09-025,"Identity Audit Trail: Who, What and On Whose Behalf",Critical,Technical,"D5, D7","AI-CTRL-008, AI-CTRL-015",L09,L09 Identity & Access Mgmt
 TC-L09-026,Coding Agent Repository and Cloud Credentials: Scope and Lifetime,Critical,Technical,"D2, D5","AI-CTRL-016, AI-CTRL-004",L09,L09 Identity & Access Mgmt
+TC-L09-027,"Agent Credentials Where a Person Would Need MFA: Device-Bound, Time-Bound and Not Reusable",High,Technical,"D5, D7","AI-CTRL-015, AI-CTRL-016",L09,L09 Identity & Access Mgmt
 TC-L10-001,Sensitive Data Discovery in AI Data Stores,Critical,Technical,D6,AI-CTRL-017,L10,L10 Data Layer
 TC-L10-002,Classification Accuracy on Structured Data,High,Technical,D6,AI-CTRL-017,L10,L10 Data Layer
 TC-L10-003,Classification Accuracy on Unstructured Documents,High,Technical,D6,AI-CTRL-017,L10,L10 Data Layer
@@ -484,6 +488,8 @@ TC-L10-030,Leakage Metrics and Regulatory Reporting Evidence,Medium,Evidence,D7,
 TC-L10-031,Dataset Quality Thresholds Before Training or Fine-Tuning,High,Technical,"D6, D4",AI-CTRL-029,L10,L10 Data Layer
 TC-L10-032,Retrieval Corpus Currentness and Source Credibility,High,Technical,"D6, D3",AI-CTRL-019,L10,L10 Data Layer
 TC-L10-033,Data Quality Profile and Evidence for Audit,Medium,Evidence,"D6, D7",AI-CTRL-029,L10,L10 Data Layer
+TC-L10-034,"High-Impact Secrets Kept Away from Models and Agents: Keys, Key Components, Passwords and Random Values",Critical,Technical,"D5, D6","AI-CTRL-017, AI-CTRL-016",L10,L10 Data Layer
+TC-L10-035,Effective Data Reach: Tokenised or Encrypted Data Plus a Reachable Detokenisation or Decryption Path,Critical,Technical,"D6, D7","AI-CTRL-017, AI-CTRL-027",L10,L10 Data Layer
 TC-L11-001,Knowledge Source and Connector Inventory,High,Technical,"D3, D6","AI-CTRL-019, AI-CTRL-001",L11,L11 Knowledge & Retrieval Layer
 TC-L11-002,Vector Store Discovery and Exposure,Critical,Technical,D3,AI-CTRL-032,L11,L11 Knowledge & Retrieval Layer
 TC-L11-003,Vector Store Authentication and Hardening Checks,High,Evidence,D3,AI-CTRL-032,L11,L11 Knowledge & Retrieval Layer
@@ -594,6 +600,8 @@ TC-L14-019,Pipeline Audit Trail and Change Attribution,High,Technical,"D4, D7","
 TC-L14-020,Policy-as-Code Admission Control for AI Workloads,High,Technical,"D4, D7",AI-CTRL-032,L14,L14 MLOps / LLMOps Layer
 TC-L14-021,AI-Assisted Commit and Pull Request Identification,Medium,Technical,"D2, D4",AI-CTRL-004,L14,L14 MLOps / LLMOps Layer
 TC-L14-022,AI Code Review and Fix Bot Permissions in the Pipeline,High,Technical,"D2, D5","AI-CTRL-016, AI-CTRL-005",L14,L14 MLOps / LLMOps Layer
+TC-L14-023,Agent-Made Production Changes Follow Change Control with a Tested Rollback,High,Technical,"D5, D7","AI-CTRL-033, AI-CTRL-022",L14,L14 MLOps / LLMOps Layer
+TC-L14-024,AI Code Review Effectiveness Against Seeded Vulnerabilities,High,Technical,"D2, D7","AI-CTRL-034, AI-CTRL-004",L14,L14 MLOps / LLMOps Layer
 TC-L15-001,AI Infrastructure Asset Discovery,High,Technical,"D4, D3","AI-CTRL-032, AI-CTRL-001",L15,L15 Infrastructure Layer
 TC-L15-002,GPU Cluster Configuration Hardening,High,Technical,D4,AI-CTRL-032,L15,L15 Infrastructure Layer
 TC-L15-003,GPU Multi-Tenancy Isolation and Memory Residue,Critical,Technical,"D4, D6",AI-CTRL-032,L15,L15 Infrastructure Layer

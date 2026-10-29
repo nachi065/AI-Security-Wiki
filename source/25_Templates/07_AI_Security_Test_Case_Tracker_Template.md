@@ -6,7 +6,7 @@ parent: "Templates"
 nav_order: 7
 description: "A downloadable Excel tracker for AI security testing: the wiki's quick-start PoC scenarios and every case in the Test Case Library, with columns to select, run, score and evidence each one, and coverage by control and by register risk."
 document_type: AI Security Wiki Template
-version: 1.3
+version: 1.4
 ---
 
 # AI Security Test Case Tracker Template (.xlsx)

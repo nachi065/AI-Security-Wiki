@@ -3,7 +3,7 @@ title: "Home"
 description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and {{n:tests}} test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.53
+version: 2.54
 status: Published
 author: Nachiket Sathaye
 coauthors: Ankush Jain
@@ -11,13 +11,13 @@ owner: AI Security Program
 custodian: Security Architecture Team
 review_cycle: Quarterly
 approval_authority: AI Governance Committee
-last_updated: 2026-10-25
+last_updated: 2026-10-29
 ---
 
 # AI Security Wiki Home
 
 > **Document Type:** Enterprise AI Security Reference Architecture and Governance Wiki  
-> **Version:** 2.52  
+> **Version:** 2.54  
 > **Status:** Published  
 > **Original Author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
 > **Co-Author:** Ankush Jain ([about the co-author](#23-about-the-co-author))  
@@ -50,6 +50,7 @@ This wiki is the implementation layer: control objectives, evidence, audit proce
 | Set up a first, short AI governance baseline | AI Baseline Control Framework (AI BCF) | Control objectives, evidence and tests, through the [AI BCF crosswalk](23_Framework_Crosswalks/02_AI_BCF_Crosswalk.md) |
 | Structure a management system | ISO/IEC 42001 with ISO/IEC 27001 | Technical control objectives and test criteria, through the [ISO/IEC 42001](23_Framework_Crosswalks/05_ISO_IEC_42001_Crosswalk.md) and [ISO/IEC 27001](23_Framework_Crosswalks/08_ISO_IEC_27001_Crosswalk.md) crosswalks |
 | Extend an existing security programme to AI | NIST CSF, CIS Controls or SOC 2 | The AI control objectives under each category, control or criterion, through the [NIST CSF](23_Framework_Crosswalks/09_NIST_CSF_Crosswalk.md), [CIS Controls](23_Framework_Crosswalks/10_CIS_Controls_Crosswalk.md) and [SOC 2](23_Framework_Crosswalks/11_SOC_2_Crosswalk.md) crosswalks |
+| Keep AI systems in a payment environment secure | PCI DSS v4.0.1 and the PCI SSC supplement Security Considerations for AI Systems | Controls and tests for each requirement and theme the supplement applies to AI, and a scoping checklist, through the [PCI DSS AI Crosswalk](23_Framework_Crosswalks/21_PCI_DSS_AI_Crosswalk.md) |
 | Run a secure software development lifecycle | NIST SSDF (SP 800-218) and, for generative AI, SP 800-218A | AI-specific controls, code and tests per practice, through the [NIST SSDF Crosswalk](23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.md) |
 | Compare privacy duties across jurisdictions | GDPR, CCPA, Quebec Law 25, Singapore PDPA and the GCC data protection laws | Controls per theme, through the [Privacy Law Crosswalk](23_Framework_Crosswalks/13_Privacy_Law_Crosswalk.md) |
 | Structure risk language and a programme | NIST AI RMF | Engineering controls, evidence and scoring |
@@ -240,7 +241,8 @@ The cycle then repeats: each use case is reviewed, improved, renewed or retired,
 23_Framework_Crosswalks/
   Cross-references from this wiki to other frameworks: AI frameworks (FINOS AIGF, AI BCF, NIST AI RMF, NIST AI 600-1,
   ISO/IEC 42001, OWASP, MITRE ATLAS, OECD AI Principles), security frameworks (ISO/IEC 27001, NIST CSF, CIS Controls,
-  SOC 2), secure development (NIST SSDF and SP 800-218A) and a comparison of eight privacy laws.
+  SOC 2), secure development (NIST SSDF and SP 800-218A), payment card security (PCI DSS and the PCI SSC AI guidance)
+  and a comparison of eight privacy laws.
 
 24_Builder_Track/
   Start here if you are building with AI: ten controls for a first agent with reference code (guard, sandbox,
@@ -422,9 +424,9 @@ The three latest versions, newest first. The full history since version 1.0 is i
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.54 | 2026-10-29 | Nachiket Sathaye | PCI DSS AI Crosswalk for the PCI SSC information supplement Security Considerations for AI Systems (September 2026); eight test cases (TC-L01-022, TC-L05-036, TC-L08-044, TC-L09-027, TC-L10-034, TC-L10-035, TC-L14-023, TC-L14-024) and eleven controls extended from it; PCI DSS sector overlay row updated; five workbooks rebuilt with PCI DSS crosswalk columns and the new cases; drifted test case counts corrected. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 | 2.53 | 2026-10-29 | Nachiket Sathaye | AI Security Incident Casebook: seven 2026 cases (Load/Mine on Hugging Face, the OpenClaw gym booking incident, the Hugging Face breach by autonomous agents, Clinejection and Cline CLI 2.3.0, the Moltbook database exposure, ClawHavoc on ClawHub and OpenClaw CVE-2026-25253), each mapped to risks, controls, OWASP items and test cases, with what is not confirmed marked. |
 | 2.52 | 2026-10-29 | Nachiket Sathaye | Home page "Latest update" now lists every update of the newest day, built by build.py from the Update Notes headings and the full version history, instead of a hand-written summary of the last change. |
-| 2.51 | 2026-10-29 | Nachiket Sathaye | Builder Track runs on Windows: the sandbox uses a Windows Job Object for CPU, memory and process limits and reports which limits it applied, the git hooks fall back from python3 to python and run under Git for Windows, files are read and written as UTF-8, a PowerShell version of the container command, and every Builder Track test now runs in CI on Linux, macOS and Windows. |
 
 ## 21. Quick Links
 
