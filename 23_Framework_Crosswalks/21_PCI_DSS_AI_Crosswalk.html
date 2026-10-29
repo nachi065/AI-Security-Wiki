@@ -455,14 +455,14 @@
 <tr>
 <td>Vulnerability scanning (not numbered; 11.3.1 and 11.3.2 [Recalled])</td>
 <td>Quarterly scans remain required; the supplement recommends continuous scanning and a rapid triage process because AI speeds up exploitation.</td>
-<td>None</td>
-<td>None</td>
-<td>Gap</td>
-<td>The wiki covers the security of AI systems, not vulnerability management for all systems. See <a href="#where-the-wiki-stops">Where the wiki stops</a>.</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-037">AI-CTRL-037</a></td>
+<td><a class="chip" href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-023">TC-L14-023</a></td>
+<td>Partial</td>
+<td>Register risk <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html#ai-r55-ai-accelerated-exploitation-and-patch-gap">AI-R55</a> names this. The wiki sets remediation and exception time limits through <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-037">AI-CTRL-037</a> and governs AI agents that patch; it does not cover scanning programmes themselves. See <a href="#where-the-wiki-stops">Where the wiki stops</a>.</td>
 </tr>
 </tbody>
 </table></div>
-<p>Of the 14 rows, 12 are a direct match, 1 is partial and 1 is a gap.</p>
+<p>Of the 14 rows, 12 are a direct match and 2 are partial.</p>
 <h2 id="guidance-themes-to-wiki-controls">Guidance themes to wiki controls</h2>
 <h3 id="securing-the-use-of-ai">Securing the use of AI</h3>
 <div class="table-wrap"><table>
@@ -695,10 +695,10 @@
 <tr>
 <td>Continuous monitoring and rapid triage</td>
 <td>Continuous rather than only periodic scanning, and a fast way to triage and rank the higher volume of findings and patches.</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a></td>
-<td>None</td>
-<td>Gap</td>
-<td>Out of the wiki's scope for systems that are not AI. AI agents used for patching are covered by <a class="chip" href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-023">TC-L14-023</a>.</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-037">AI-CTRL-037</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a></td>
+<td><a class="chip" href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-023">TC-L14-023</a></td>
+<td>Partial</td>
+<td>Register risk <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html#ai-r55-ai-accelerated-exploitation-and-patch-gap">AI-R55</a> covers the patch gap. Scanning programmes for systems that are not AI stay outside the wiki; AI agents used for patching are covered by the test case.</td>
 </tr>
 <tr>
 <td>AI-enabled social engineering and biometric attacks</td>
@@ -736,7 +736,7 @@
 <li>Where any part of the AI system is run by an external party and can reach sensitive data, that party is a third-party service provider.</li>
 </ol>
 <h2 id="where-the-wiki-stops">Where the wiki stops</h2>
-<p>The supplement has two halves. This wiki is about the first, securing AI systems, and covers most of it. The second half, defending all systems against attackers who use AI, is mostly general security practice: asset inventory, continuous vulnerability scanning and triage, patching speed, phishing-resistant authentication, segmentation, encryption and key management in a KMS or HSM. The wiki does not repeat that practice. Use PCI DSS and general security guidance for it.</p>
+<p>The supplement has two halves. This wiki is about the first, securing AI systems, and covers most of it. The second half, defending all systems against attackers who use AI, is recorded as register risk <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html#ai-r55-ai-accelerated-exploitation-and-patch-gap">AI-R55</a>, but its treatment is mostly general security practice: asset inventory, continuous vulnerability scanning and triage, patching speed, phishing-resistant authentication, segmentation, encryption and key management in a KMS or HSM. The wiki does not repeat that practice. Use PCI DSS and general security guidance for it.</p>
 <p>The wiki also does not map the PCI PIN, PCI KMO, PCI MPoC or other PCI standards that the supplement mentions, and it does not cover AI used in PCI assessments or for making payments.</p>
 <h2 id="attribution">Attribution</h2>
 <p><em>Security Considerations for AI Systems</em> and PCI DSS are publications of the PCI Security Standards Council. This page cites requirement numbers and paraphrases the guidance; it does not reproduce the standard. Publication of the supplement was reported in <a href="https://www.helpnetsecurity.com/2026/10/09/pci-ssc-payment-environments-ai-security-guidance/" rel="noopener">Help Net Security, 9 October 2026</a>, read on 29 October 2026. The earlier principles are in the PCI SSC blog post <a href="https://blog.pcisecuritystandards.org/ai-principles-securing-the-use-of-ai-in-payment-environments" rel="noopener">AI Principles: Securing the Use of AI in Payment Environments</a>, 11 September 2025, read on 29 October 2026. Get the supplement and PCI DSS v4.0.1 from the <a href="https://www.pcisecuritystandards.org/document_library/" rel="noopener">PCI SSC Document Library</a>.</p>
