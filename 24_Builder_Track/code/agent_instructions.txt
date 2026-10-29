@@ -1,0 +1,30 @@
+# AI security rules for this repository
+
+These rules come from the AI Security Wiki's Builder Track (https://nachi065.github.io/AI-Security-Wiki/24_Builder_Track/). They apply whichever assistant or agent is writing the code. The checks named below run in git hooks and CI as well, so code that skips them will still be stopped there.
+
+## When you write code that calls a model or acts as an agent
+
+1. Treat everything the model returns as untrusted input. Never pass it to eval, exec, a shell, raw HTML or a SQL string (AI-CTRL-020).
+2. Enforce each tool call outside the model: an allow-list of tools, argument validation, and scoped, short-lived credentials for the agent's own identity (AI-CTRL-022, AI-CTRL-024, AI-CTRL-015, AI-CTRL-016).
+3. Ask a person before any action that sends, pays, deletes or changes access (AI-CTRL-023).
+4. Run generated code only in a sandbox with no secrets and an egress allow-list (AI-CTRL-027).
+5. Keep a rate limit and a kill switch for every agent, and log every tool decision in a tamper-evident log (AI-CTRL-025, AI-CTRL-008).
+6. Load models from files that cannot carry code (for example safetensors), pin model revisions and MCP server versions, and never set trust_remote_code without review (AI-CTRL-031).
+7. Do not put secrets or personal data in prompts, logs or code.
+
+## Before you save a file
+
+Run the checks (use python3 where python is not on the path) and fix what they report, or explain why a finding does not apply:
+
+    python tools/aiwiki_check.py --stdin --filename <path of the file>   < the new content
+    python tools/pipeline_checks.py scan                                  < the new content
+
+If the ai-security-wiki MCP server is connected, the check_ai_code and check_secrets tools run the same checks.
+
+## When you cite the wiki
+
+Use only control, risk and test case IDs you have looked up (wiki_get or wiki_search on the MCP server, or python tools/wiki_data.py get <ID>). Do not invent IDs. Link the wiki page each answer gives you; the page is authoritative.
+
+## Commits
+
+End each commit message with an AI-Assistance trailer: `AI-Assistance: none`, `assistant` or `agent`.
