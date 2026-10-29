@@ -23,6 +23,7 @@ class Sandbox(unittest.TestCase):
         self.assertFalse(r.ok)
         self.assertIn("MemoryError", r.stderr)
 
+    @unittest.skipIf(os.name == "nt", "Windows has no per-process file-size limit; sandbox.py reports this in result.limits")
     def test_large_file_write_is_stopped(self):
         r = run_python("open('big', 'wb').write(b'x' * (5 * 1024 * 1024))", file_mb=1)
         self.assertFalse(r.ok)
@@ -35,6 +36,13 @@ class Sandbox(unittest.TestCase):
             del os.environ["AGENT_SECRET_TOKEN"]
         self.assertNotIn("AGENT_SECRET_TOKEN", r.stdout)
         self.assertNotIn("do-not-leak", r.stdout)
+
+    def test_result_says_which_limits_applied(self):
+        r = run_python("print(1)")
+        for limit in ("cpu", "memory", "processes", "timeout", "empty-env"):
+            self.assertIn(limit, r.limits)
+        self.assertEqual("file-size" in r.limits, os.name != "nt")
+        self.assertEqual("no-network" in r.limits, r.network_isolated)
 
     def test_output_is_capped(self):
         r = run_python("print('a' * 100000)", max_output=1000)

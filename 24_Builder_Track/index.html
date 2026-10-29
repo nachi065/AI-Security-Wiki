@@ -381,15 +381,15 @@
 <td>Writes the hash of each reviewed tool definition into the policy</td>
 </tr>
 <tr>
-<td><a href="code/sandbox.py"><code>sandbox.py</code></a></td>
-<td>Runs generated code with process limits and, where the kernel allows, no network</td>
+<td><a href="code/sandbox.py"><code>sandbox.py</code></a> and <a href="code/winjob.py"><code>winjob.py</code></a></td>
+<td>Runs generated code with process limits (a Job Object on Windows) and, where the kernel allows, no network</td>
 </tr>
 <tr>
 <td><a href="code/egress_proxy.py"><code>egress_proxy.py</code></a></td>
 <td>An allow-list forward proxy that checks hosts and resolved addresses</td>
 </tr>
 <tr>
-<td><a href="code/docker-sandbox.sh"><code>docker-sandbox.sh</code></a> and <a href="code/k8s-agent-pod.yaml"><code>k8s-agent-pod.yaml</code></a></td>
+<td><a href="code/docker-sandbox.sh"><code>docker-sandbox.sh</code></a>, <a href="code/docker-sandbox.ps1"><code>docker-sandbox.ps1</code></a> and <a href="code/k8s-agent-pod.yaml"><code>k8s-agent-pod.yaml</code></a></td>
 <td>Container and Kubernetes settings for the real isolation boundary</td>
 </tr>
 <tr>
@@ -430,11 +430,11 @@
 </tr>
 <tr>
 <td><code>test_*.py</code></td>
-<td>Tests for all of the above, including a check that the pages' code excerpts match the files. The <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/.github/workflows/builder-tests.yml" rel="noopener">Builder Track tests workflow</a> runs them on Python 3.10 and 3.13 for every change to this section, and runs the toolkit tests on Linux, macOS and Windows</td>
+<td>Tests for all of the above, including a check that the pages' code excerpts match the files. The <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/.github/workflows/builder-tests.yml" rel="noopener">Builder Track tests workflow</a> runs them on Python 3.10 and 3.13 for every change to this section, on Linux, macOS and Windows</td>
 </tr>
 </tbody>
 </table></div>
-<p>None of the code calls a model provider's API or depends on one assistant: the agent demo uses a scripted stand-in for the model, and the checks run from a terminal, git hooks, CI or any assistant that can run a command or call an MCP tool. The toolkit runs on Linux, macOS and Windows. The sandbox in <a href="code/sandbox.py"><code>sandbox.py</code></a> and the shell-based git hooks on the pipeline page need Linux or macOS.</p>
+<p>None of the code calls a model provider's API or depends on one assistant: the agent demo uses a scripted stand-in for the model, and the checks run from a terminal, git hooks, CI or any assistant that can run a command or call an MCP tool. All of it runs on Linux, macOS and Windows. Where a platform cannot do something, the code says so: on Windows, <a href="code/sandbox.py"><code>sandbox.py</code></a> uses a Job Object and has no file-size limit, and only Linux can remove the network from the sandboxed process.</p>
 <h2 id="how-this-fits-the-rest-of-the-wiki">How this fits the rest of the wiki</h2>
 <ul>
 <li>The ten controls are control objectives from the <a href="../03_Control_Library/index.html">Control Library</a>. Their evidence and audit tests are there. The <a href="01_Secure_Your_First_Agent.html#the-ten-controls-at-a-glance">ten controls table</a> names the <a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">register risks</a> each one treats.</li>

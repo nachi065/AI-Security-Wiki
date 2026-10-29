@@ -33,13 +33,13 @@ def main() -> int:
     issuer = TokenIssuer(b"demo-only-secret-demo-only-secret-0000")   # use a real secret store
     g = Guard(Policy.load(str(HERE / "policy.json")), issuer, AuditLog(str(work / "audit.jsonl")),
               roots={"workspace": work / "workspace"})
-    g.register_tool("read_file", lambda path: Path(path).read_text())
+    g.register_tool("read_file", lambda path: Path(path).read_text(encoding="utf-8"))
     g.register_tool("http_get", lambda url: f"fetched {url}")
     g.register_tool("send_email", lambda to, subject, body: outbox.append((to, subject, body)) or "sent")
 
     agent = "agent://support-triage"
     token = issuer.mint(agent, ["files:read", "web:read", "mail:send"], "tool-gateway", ttl=300)
-    definitions = json.loads((HERE / "tool_definitions.json").read_text())
+    definitions = json.loads((HERE / "tool_definitions.json").read_text(encoding="utf-8"))
 
     results = []
 
