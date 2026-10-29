@@ -3,7 +3,7 @@ title: "Home"
 description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and {{n:tests}} test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.51
+version: 2.53
 status: Published
 author: Nachiket Sathaye
 coauthors: Ankush Jain
@@ -422,9 +422,9 @@ The three latest versions, newest first. The full history since version 1.0 is i
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.53 | 2026-10-29 | Nachiket Sathaye | AI Security Incident Casebook: seven 2026 cases (Load/Mine on Hugging Face, the OpenClaw gym booking incident, the Hugging Face breach by autonomous agents, Clinejection and Cline CLI 2.3.0, the Moltbook database exposure, ClawHavoc on ClawHub and OpenClaw CVE-2026-25253), each mapped to risks, controls, OWASP items and test cases, with what is not confirmed marked. |
 | 2.52 | 2026-10-29 | Nachiket Sathaye | Home page "Latest update" now lists every update of the newest day, built by build.py from the Update Notes headings and the full version history, instead of a hand-written summary of the last change. |
 | 2.51 | 2026-10-29 | Nachiket Sathaye | Builder Track runs on Windows: the sandbox uses a Windows Job Object for CPU, memory and process limits and reports which limits it applied, the git hooks fall back from python3 to python and run under Git for Windows, files are read and written as UTF-8, a PowerShell version of the container command, and every Builder Track test now runs in CI on Linux, macOS and Windows. |
-| 2.50 | 2026-10-29 | Nachiket Sathaye | Builder Toolkit (Builder Track page 5): AI-specific code and configuration checker with ten rules and SARIF output, read-only MCP server, offline look-ups over the CSV data files, evidence export for the audit checklist and test tracker, instruction files for five coding assistants from one source, GitHub, GitLab and pre-commit examples, toolkit tests on Linux, macOS and Windows; Builder Track pages link register risks, templates, CSV files and the OWASP crosswalk, and six template pages link back. |
 
 ## 21. Quick Links
 
