@@ -47,6 +47,10 @@ This wiki is open to everyone. Corrections, new pages, better examples and updat
 
 Contributors are credited in [AUTHORS](AUTHORS). The [Community Rules](https://nachi065.github.io/AI-Security-Wiki/community-rules.html) explain how author and co-author credit works and which changes are blocked automatically.
 
+## Third-party content
+
+Some pages adapt material from other openly licensed works and credit it where it is used. The main one is the *AI Risk Map* v1.3 (2026) by Evan Wheeler (GitHub [wheels344i-gte](https://github.com/wheels344i-gte)), from [https://github.com/wheels344i-gte/ai-risk-map](https://github.com/wheels344i-gte/ai-risk-map) and https://riskframework.org/, licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The wiki's risk owner domains, register risks AI-R29 to AI-R46, parts of the AI Risk Methodology and the AI Risk Map Crosswalk are adapted from it; the credit on each page says what was changed.
+
 ## Licence and author
 
 The wiki is licensed under [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](LICENSE). You may copy, adapt and reuse it for any purpose, including commercially, as long as you credit the original author and release anything you build from it under the same licence. To use the content under other terms, contact the author.

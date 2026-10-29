@@ -421,7 +421,7 @@ The three latest versions, newest first. The full history since version 1.0 is i
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
-| 2.47 | 2026-10-29 | Nachiket Sathaye | Risk register rules: the four tests a risk must pass to join the register (AI Risk Methodology 1.3), a Considered and Not Added list on the register (1.3), a rule in the contributing guide that risk, control and test case IDs are never reused, and the AI Risk Map Crosswalk (1.1) updated after reading the map's website. |
+| 2.47 | 2026-10-29 | Nachiket Sathaye | Risk register rules: the four tests a risk must pass to join the register (AI Risk Methodology 1.3), a Considered and Not Added list on the register (1.3), a rule in the contributing guide that risk, control and test case IDs are never reused, and the AI Risk Map Crosswalk (1.1) updated after reading the map's website, and every credit for the map now links its GitHub repository (wheels344i-gte/ai-risk-map). |
 | 2.46 | 2026-10-25 | Nachiket Sathaye | NIST SSDF crosswalk added to the template workbooks: its 20 practices are now a column in the AI Risk Register (version 1.2) and Control Library and Crosswalks (1.3) framework matrices and rows in their Framework Crosswalk sheets. |
 | 2.45 | 2026-10-25 | Nachiket Sathaye | Templates rebuilt from wiki 2.44: AI Risk Register (version 1.1), Audit and Evidence Checklist (1.2), Control Library and Crosswalks (1.2), Test Case Tracker (1.2) and Requirements Traceability Matrix (1.1) now carry AI-CTRL-025's new title and text, the extended control text, TC-L01-021 and a Hong Kong regulation column. |
 
