@@ -7,7 +7,7 @@ nav_order: 2
 description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."
 document_type: AI Security Wiki Reference
 version: 1.1
-last_reviewed: 2026-10-25
+last_reviewed: 2026-10-29
 ---
 
 # Update Notes
@@ -18,6 +18,40 @@ This page is the wiki's change record. It has two parts:
 - **[Full version history](#full-version-history)**: every version since 1.0, newest first. The [home page](../index.md#20-version-history) shows only the three latest.
 
 Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.
+
+## 29 October 2026: eight risks to close the AI Risk Map gaps
+
+This entry follows the one below ("rules for what goes on the risk register") and applies its four tests.
+
+### What changed
+
+- **Eight new risks.** The [Enterprise AI Risk Register](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) (version 1.4) adds AI-R47 Model Extraction and Inference Attacks, AI-R48 AI Incidents Not Recognised or Handled, AI-R49 Personal Data That Cannot Be Removed from Models, AI-R50 Training-Serving Skew and Unreproducible Models, AI-R51 Liability for Harm Caused by AI Decisions, AI-R52 Unmaintained Open-Source AI Components, AI-R53 Unlabelled AI-Generated Content and AI-R54 Agent Actions Others Cannot Identify as AI. Each is adapted from a category of the AI Risk Map by Evan Wheeler ([wheels344i-gte/ai-risk-map](https://github.com/wheels344i-gte/ai-risk-map)) that the register covered only in part.
+- **Two risks widened instead of added.** AI-R29 now includes customers reaching the organization through their own agents, and AI-R31 includes shortages of GPUs, compute and power. Segregation of duties was considered and not added. All three decisions are recorded under Considered and Not Added.
+- **Controls and triage.** The [AI Risk to Control Mapping](../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.md) (1.3) maps each new risk to existing controls, so the [traceability page](../02_Risk_Management/02G_Risk_Control_Test_Traceability.md) links them to existing test cases. The [AI Use-Case Risk Triage](../02_Risk_Management/02F_AI_Use_Case_Risk_Triage.md) (1.2) adds questions E13 to E19.
+- **Crosswalk.** The [AI Risk Map Crosswalk](../23_Framework_Crosswalks/18_AI_Risk_Map_Crosswalk.md) (1.2) now shows 42 direct and 13 partial matches, up from 31 and 24.
+
+### What was checked and what is still open
+
+- Five of the eight narratives name a second source as well as the map: NIST AI 100-2 (AI-R47), the EU AI Act Article 73 (AI-R48), the GDPR and EDPB Opinion 28/2024 (AI-R49), the new EU Product Liability Directive (AI-R51), and the EU AI Act Article 50 and China's labelling rules (AI-R53). These sources are cited from the wiki's own regional pages and crosswalks and were not re-read for this change. AI-R50, AI-R52 and AI-R54 say that only the map names them.
+- No new test cases were written. The new risks are tested through the cases already filed under their controls. Whether those cases cover each risk well has not been reviewed.
+- Ratings are illustrative, like the rest of the register. FINOS cross-references for the new risks are marked Not checked.
+
+## 29 October 2026: rules for what goes on the risk register
+
+A second comparison with the *AI Risk Map* by Evan Wheeler (RiskFramework.org), this time with its website, found that the map states why each factor is included and records what it left out, and that its factor IDs are never reused. The wiki had neither rule written down.
+
+### What changed
+
+- **What Belongs on the Register.** A new section of the [AI Risk Methodology](../02_Risk_Management/02A_AI_Risk_Methodology.md#what-belongs-on-the-register) (version 1.3) sets four tests for a new register risk: AI-specific, a distinct response, corroborated by at least two independent sources (or marked as the wiki's own framing), and treatable by at least one control. The tests are adapted from the map's inclusion gates and credited to it.
+- **Considered and Not Added.** The [Enterprise AI Risk Register](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md#considered-and-not-added) (version 1.3) now records proposed risks that were left out, with the reason. It starts with the two scope decisions the methodology already made: attacks others carry out with AI, and general IT risks with no AI-specific change.
+- **IDs are never reused.** The contributing guide now says AI-R, AI-CTRL and TC numbers are permanent and how to retire an item.
+- **Credit for the AI Risk Map.** Every credit for the map (crosswalk, register, methodology, the three template pages and a new Third-party content section in the README) now names the author's GitHub account, wheels344i-gte, and links the map's repository, https://github.com/wheels344i-gte/ai-risk-map, as well as RiskFramework.org. The crosswalk gives the citation the author asks for.
+- **AI Risk Map Crosswalk** (version 1.1). The page no longer says the map's website could not be reached. It records that the website was read on 29 October 2026 and still shows version 1.3, and that the map's workbook and CSV have not yet been compared with the page.
+
+### What was checked and what is still open
+
+- The website was read through a summarising web reader. The map's CSV, workbook and Markdown files could not be downloaded from the environment used, so the crosswalk is still by category, not by factor ID.
+- The existing 46 register risks have not yet been re-tested against the four new tests. In particular, most narratives do not yet name their sources, which the corroboration test asks for.
 
 ## 25 October 2026: NIST SSDF crosswalk in the template workbooks
 
@@ -471,6 +505,8 @@ Every version of the wiki, newest first. Rows are never edited after they are ad
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.48 | 2026-10-29 | Nachiket Sathaye | Risk register 1.4: eight risks AI-R47 to AI-R54 (model extraction and inference, AI incidents, personal data inside models, training-serving skew, liability, unmaintained open-source components, unlabelled AI-generated content, agent actions others cannot identify), with control mappings and triage questions E13 to E19; AI-R29 and AI-R31 widened; the AI Risk Map Crosswalk now has 42 direct and 13 partial matches. |
+| 2.47 | 2026-10-29 | Nachiket Sathaye | Risk register rules: the four tests a risk must pass to join the register (AI Risk Methodology 1.3), a Considered and Not Added list on the register (1.3), a rule in the contributing guide that risk, control and test case IDs are never reused, and the AI Risk Map Crosswalk (1.1) updated after reading the map's website, and every credit for the map now links its GitHub repository (wheels344i-gte/ai-risk-map). |
 | 2.46 | 2026-10-25 | Nachiket Sathaye | NIST SSDF crosswalk added to the template workbooks: its 20 practices are now a column in the AI Risk Register (version 1.2) and Control Library and Crosswalks (1.3) framework matrices and rows in their Framework Crosswalk sheets. |
 | 2.45 | 2026-10-25 | Nachiket Sathaye | Templates rebuilt from wiki 2.44: AI Risk Register (version 1.1), Audit and Evidence Checklist (1.2), Control Library and Crosswalks (1.2), Test Case Tracker (1.2) and Requirements Traceability Matrix (1.1) now carry AI-CTRL-025's new title and text, the extended control text, TC-L01-021 and a Hong Kong regulation column. |
 | 2.44 | 2026-10-25 | Nachiket Sathaye | Financial regulators: new Hong Kong section (HKMA Supervisory Guidance for Responsible Adoption of AI of 15 October 2026, read in the HKMA text; SFC, PCPD, PDPO; HK-T1 self-assessment; principle crosswalk); new Financial Regulator AI Comparison page (MAS, RBI, SEBI, EU AI Act, FCA, HKMA on eight themes); AI-CTRL-025 renamed AI Containment and Kill Switch and widened to high-risk models, with new test case TC-L01-021; AI-CTRL-011, 012, 014 and 041 extended (unlisted AI restricted, board-approved AI strategy, no vendor training on data without authorisation, customer AI-use notice); India IN6 verified against the RBI draft text and new row IN13 for SEBI; UK5 updated for the FCA Mills Review. |

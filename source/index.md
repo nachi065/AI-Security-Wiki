@@ -3,7 +3,7 @@ title: "Home"
 description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and {{n:tests}} test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.46
+version: 2.48
 status: Published
 author: Nachiket Sathaye
 coauthors: Ankush Jain
@@ -17,14 +17,14 @@ last_updated: 2026-10-25
 # AI Security Wiki Home
 
 > **Document Type:** Enterprise AI Security Reference Architecture and Governance Wiki  
-> **Version:** 2.46  
+> **Version:** 2.48  
 > **Status:** Published  
 > **Original Author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
 > **Co-Author:** Ankush Jain ([about the co-author](#23-about-the-co-author))  
 > **Intended Use:** Public, vendor-neutral reference and template set for AI security governance, engineering, risk management, assurance, audit, compliance, and vendor evaluation.  
 > **Source Repository:** [github.com/nachi065/AI-Security-Wiki](https://github.com/nachi065/AI-Security-Wiki): the Markdown source, the change history, issues and pull requests. See [Contributing](https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md) to suggest a change.
 
-> **Latest update (25 October 2026).** A new [Hong Kong](26_Hong_Kong_AI_Compliance/index.md) section covers the HKMA guidance on responsible AI adoption of 15 October 2026, read in the HKMA's own text. A new [Financial Regulator AI Comparison](04_Domain_Standards/10C_Financial_Regulator_AI_Comparison.md) sets MAS, RBI, SEBI, the EU AI Act, the FCA and the HKMA side by side on eight themes. The kill-switch control, AI-CTRL-025, now covers high-risk AI models as well as agents, with a new test case. India adds the RBI draft's kill-switch expectation and SEBI's announced AI guidelines; the UK row on the FCA records the Mills Review. The five workbooks built from wiki data (risk register, audit checklist, control library, test case tracker and requirements traceability matrix) were rebuilt with these changes, and the NIST SSDF crosswalk is now a column in the risk register and control library workbooks. See the [Update Notes](09_Reference/19_Update_Notes.md) for details and what is still open.
+> **Latest update (29 October 2026).** The [risk register](02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) adds eight risks, AI-R47 to AI-R54, adapted from the [AI Risk Map](23_Framework_Crosswalks/18_AI_Risk_Map_Crosswalk.md) by Evan Wheeler ([wheels344i-gte/ai-risk-map](https://github.com/wheels344i-gte/ai-risk-map)): model extraction, AI incidents, personal data inside models, training-serving skew, liability, unmaintained open-source components, labelling of AI-generated content and agent actions seen from outside. The [AI Risk Methodology](02_Risk_Management/02A_AI_Risk_Methodology.md#what-belongs-on-the-register) now sets four tests a risk must pass to join the register, and risk, control and test case IDs are never reused. See the [Update Notes](09_Reference/19_Update_Notes.md) for details and what is still open.
 
 ## 1. Purpose
 
@@ -421,9 +421,9 @@ The three latest versions, newest first. The full history since version 1.0 is i
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.48 | 2026-10-29 | Nachiket Sathaye | Risk register 1.4: eight risks AI-R47 to AI-R54 (model extraction and inference, AI incidents, personal data inside models, training-serving skew, liability, unmaintained open-source components, unlabelled AI-generated content, agent actions others cannot identify), with control mappings and triage questions E13 to E19; AI-R29 and AI-R31 widened; the AI Risk Map Crosswalk now has 42 direct and 13 partial matches. |
+| 2.47 | 2026-10-29 | Nachiket Sathaye | Risk register rules: the four tests a risk must pass to join the register (AI Risk Methodology 1.3), a Considered and Not Added list on the register (1.3), a rule in the contributing guide that risk, control and test case IDs are never reused, and the AI Risk Map Crosswalk (1.1) updated after reading the map's website, and every credit for the map now links its GitHub repository (wheels344i-gte/ai-risk-map). |
 | 2.46 | 2026-10-25 | Nachiket Sathaye | NIST SSDF crosswalk added to the template workbooks: its 20 practices are now a column in the AI Risk Register (version 1.2) and Control Library and Crosswalks (1.3) framework matrices and rows in their Framework Crosswalk sheets. |
-| 2.45 | 2026-10-25 | Nachiket Sathaye | Templates rebuilt from wiki 2.44: AI Risk Register (version 1.1), Audit and Evidence Checklist (1.2), Control Library and Crosswalks (1.2), Test Case Tracker (1.2) and Requirements Traceability Matrix (1.1) now carry AI-CTRL-025's new title and text, the extended control text, TC-L01-021 and a Hong Kong regulation column. |
-| 2.44 | 2026-10-25 | Nachiket Sathaye | Financial regulators: new Hong Kong section (HKMA Supervisory Guidance for Responsible Adoption of AI of 15 October 2026, read in the HKMA text; SFC, PCPD, PDPO; HK-T1 self-assessment; principle crosswalk); new Financial Regulator AI Comparison page (MAS, RBI, SEBI, EU AI Act, FCA, HKMA on eight themes); AI-CTRL-025 renamed AI Containment and Kill Switch and widened to high-risk models, with new test case TC-L01-021; AI-CTRL-011, 012, 014 and 041 extended (unlisted AI restricted, board-approved AI strategy, no vendor training on data without authorisation, customer AI-use notice); India IN6 verified against the RBI draft text and new row IN13 for SEBI; UK5 updated for the FCA Mills Review. |
 
 ## 21. Quick Links
 

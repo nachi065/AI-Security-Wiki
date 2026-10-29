@@ -315,7 +315,8 @@
 <p><strong>Purpose:</strong> Provide a sample enterprise AI risk register covering AI usage, development, applications, agents, auditability, sovereignty, cost, output reliability and resilience, and the strategy, financial, workforce and legal risks of adopting AI, as a starting template.</p>
 <p><strong>Audience:</strong> Governance, cyber risk, security architecture, audit, AI product owners.</p>
 <p><strong>How to use:</strong> Use this page as a template. Re-score each risk using the AI Risk Methodology for your own environment, and add owners, evidence and treatment status. The <a href="../25_Templates/01_AI_Risk_Register_Template.html">AI Risk Register Template</a> gives you the same register as an Excel workbook.</p>
-<p><strong>Scope of AI-R14 to AI-R28:</strong> These fifteen entries were added in version 1.1 to make operational risks (bias, explainability, model change, drift, oversight, reputation) and agentic risks (memory poisoning, credential harvesting, plugin supply chain, tool chains, trust boundaries) first-class entries. The Example Priority column is not re-ranked across all 46 risks; re-rank it with the AI Risk Methodology. Each risk is cross-referenced to the FINOS AI Governance Framework in the <a href="02D_AI_Risk_to_Control_Mapping.html">risk to control mapping</a>.</p>
+<p><strong>Scope of AI-R14 to AI-R28:</strong> These fifteen entries were added in version 1.1 to make operational risks (bias, explainability, model change, drift, oversight, reputation) and agentic risks (memory poisoning, credential harvesting, plugin supply chain, tool chains, trust boundaries) first-class entries. The Example Priority column is not re-ranked across all 54 risks; re-rank it with the AI Risk Methodology. Each risk is cross-referenced to the FINOS AI Governance Framework in the <a href="02D_AI_Risk_to_Control_Mapping.html">risk to control mapping</a>.</p>
+<p><strong>Scope of AI-R47 to AI-R54:</strong> These eight entries were added in version 1.4 to close categories of the <a href="#credit-ai-risk-map">AI Risk Map</a> that the register covered only in part: model extraction and inference, incident handling, personal data inside models, training-serving skew, liability, unmaintained open-source components, labelling of AI-generated content and agent actions seen from outside. Each passes the tests in <a href="02A_AI_Risk_Methodology.html#what-belongs-on-the-register">What Belongs on the Register</a>; where only the map names a risk, the narrative says so. AI-R29 and AI-R31 were widened at the same time.</p>
 <p><strong>Scope of AI-R29 to AI-R46:</strong> These eighteen entries were added in version 1.2 to cover risks that the <a href="#credit-ai-risk-map">AI Risk Map</a> identifies and that the register did not have: strategy and value, cost and investment, provider concentration, workforce, energy use, licensing and legal records, model validation, financial reporting, capability claims and emotional dependence, and five specific security and agent risks. Each narrative names the map domain it was adapted from.</p>
 <p><strong>Owner Domain:</strong> The number is the domain of the <a href="#credit-ai-risk-map">AI Risk Map</a> that the risk falls in. The map groups risks by who owns them rather than by how the technology works, so the column shows which part of the organization should hold each risk. The assignment of AI-R01 to AI-R28 is this wiki's judgement. The domains are listed under <a href="#owner-domains">Owner Domains</a>, and the <a href="../23_Framework_Crosswalks/18_AI_Risk_Map_Crosswalk.html">AI Risk Map Crosswalk</a> maps each of the map's categories to this register.</p>
 <p><strong>Illustrative example:</strong> The ratings and entries on this page are generic examples, not an assessment of any specific organization. Replace them with your own findings before relying on them.</p>
@@ -747,6 +748,78 @@
 <td><span class="badge sev-high">High</span></td>
 <td>46</td>
 </tr>
+<tr>
+<td>AI-R47</td>
+<td>Model Extraction and Inference Attacks</td>
+<td>05</td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td><span class="badge sev-high">High</span></td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td>47</td>
+</tr>
+<tr>
+<td>AI-R48</td>
+<td>AI Incidents Not Recognised or Handled</td>
+<td>07</td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td><span class="badge sev-high">High</span></td>
+<td><span class="badge sev-high">High</span></td>
+<td>48</td>
+</tr>
+<tr>
+<td>AI-R49</td>
+<td>Personal Data That Cannot Be Removed from Models</td>
+<td>03</td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td><span class="badge sev-high">High</span></td>
+<td><span class="badge sev-high">High</span></td>
+<td>49</td>
+</tr>
+<tr>
+<td>AI-R50</td>
+<td>Training-Serving Skew and Unreproducible Models</td>
+<td>04</td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td>50</td>
+</tr>
+<tr>
+<td>AI-R51</td>
+<td>Liability for Harm Caused by AI Decisions</td>
+<td>08</td>
+<td><span class="badge sev-low">Low</span></td>
+<td><span class="badge sev-high">High</span></td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td>51</td>
+</tr>
+<tr>
+<td>AI-R52</td>
+<td>Unmaintained Open-Source AI Components</td>
+<td>09</td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td>52</td>
+</tr>
+<tr>
+<td>AI-R53</td>
+<td>Unlabelled AI-Generated Content</td>
+<td>06</td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td><span class="badge sev-high">High</span></td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td>53</td>
+</tr>
+<tr>
+<td>AI-R54</td>
+<td>Agent Actions Others Cannot Identify as AI</td>
+<td>12</td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td><span class="badge sev-medium">Medium</span></td>
+<td>54</td>
+</tr>
 </tbody>
 </table></div>
 <h2 id="risk-narratives">Risk Narratives</h2>
@@ -807,11 +880,11 @@
 <h3 id="ai-r28-regulatory-non-compliance-from-unsupervised-ai-decisions">AI-R28: Regulatory Non-Compliance from Unsupervised AI Decisions</h3>
 <p>A regulated process may use AI without the supervision, records or accountability the regulator expects of a human performing the same step. Required controls include an obligation register, impact assessment, decision records, human oversight appropriate to the tier and a named accountable owner.</p>
 <h3 id="ai-r29-unrealised-ai-value-and-misaligned-ai-strategy">AI-R29: Unrealised AI Value and Misaligned AI Strategy</h3>
-<p>AI may be adopted because of hype rather than a stated problem, pilots may stall without ever showing value, returns may depend on redesigning work nobody planned to redesign, and the full cost of data, integration and people may not be counted. The opposite also applies: failing to weigh the competitive cost of not adopting AI is a risk too. Required controls include a business case with a success measure and a risk and benefit weighing for each use case, a stage gate that stops or scales a pilot on evidence, and a review of value delivered after go-live. Adapted from AI Risk Map domain 02 (Strategy and Value Realization).</p>
+<p>AI may be adopted because of hype rather than a stated problem, pilots may stall without ever showing value, returns may depend on redesigning work nobody planned to redesign, and the full cost of data, integration and people may not be counted. The opposite also applies: failing to weigh the competitive cost of not adopting AI is a risk too, as is customers starting to reach the organization through their own AI agents, which can cut it off from the customer relationship. Required controls include a business case with a success measure and a risk and benefit weighing for each use case, a stage gate that stops or scales a pilot on evidence, and a review of value delivered after go-live. Adapted from AI Risk Map domain 02 (Strategy and Value Realization).</p>
 <h3 id="ai-r30-ai-cost-volatility-and-stranded-investment">AI-R30: AI Cost Volatility and Stranded Investment</h3>
 <p>Providers can change token prices, tiers or context limits on their own terms, usage forecasts made in a pilot rarely hold at production scale, and money can be committed to a system that is scaled too early or kept going past failure. Insurance cover may also exclude AI losses or define a user as a human only. This differs from AI-R11, which is about abuse; this risk arises from normal use. Required controls include cost forecasts that are revisited as usage grows, contract terms on price changes, a decision point to stop funding, and a review of insurance wording for AI. Adapted from AI Risk Map domain 11 (Financial and Resource).</p>
 <h3 id="ai-r31-model-provider-concentration-lock-in-and-deprecation">AI-R31: Model Provider Concentration, Lock-in and Deprecation</h3>
-<p>Many systems may depend on a few model providers, proprietary APIs and fine-tunes make switching costly, and fine-tuned models, embeddings and prompts often do not transfer between providers. A provider can retire a model or change its behaviour and force an unplanned migration. AI-R13 covers outages and AI-R16 covers version changes; this risk covers the dependence itself. Required controls include a record of which systems depend on which provider and model, exit provisions in contracts, a tested migration path for critical systems and tracking of provider deprecation notices. Adapted from AI Risk Map domain 09 (Third-Party and Model Supply Chain).</p>
+<p>Many systems may depend on a few model providers, proprietary APIs and fine-tunes make switching costly, and fine-tuned models, embeddings and prompts often do not transfer between providers. A provider can retire a model or change its behaviour and force an unplanned migration, and shortages of GPUs, compute capacity or power can limit how far a system can scale, or lead a provider to ration capacity. AI-R13 covers outages and AI-R16 covers version changes; this risk covers the dependence itself. Required controls include a record of which systems depend on which provider and model, exit provisions in contracts, a tested migration path for critical systems and tracking of provider deprecation notices. Adapted from AI Risk Map domain 09 (Third-Party and Model Supply Chain).</p>
 <h3 id="ai-r32-model-monoculture-and-correlated-failure">AI-R32: Model Monoculture and Correlated Failure</h3>
 <p>When many systems, or a system and the controls that check it, use the same underlying model, one blind spot or bias is repeated everywhere at once and independent checks are not independent. Required controls include an inventory that records the base model behind each system, a deliberate choice of a different model or a non-AI method where a check must be independent, and evaluation that looks for errors shared across systems. Adapted from AI Risk Map domain 09 (Third-Party and Model Supply Chain).</p>
 <h3 id="ai-r33-workforce-deskilling-and-loss-of-institutional-knowledge">AI-R33: Workforce Deskilling and Loss of Institutional Knowledge</h3>
@@ -842,6 +915,60 @@
 <p>Approved agents that read widely, call many tools and act quickly can look the same in logs as an attacker using agentic tooling, so detections either drown in false alarms or are tuned until they miss real attacks. Required controls include a distinct identity for each agent in telemetry, a record of who authorised each agent's task, and detection rules that use that context. Adapted from AI Risk Map domain 07 (Operations and Resilience).</p>
 <h3 id="ai-r46-insider-use-of-agents-to-exceed-own-access">AI-R46: Insider Use of Agents to Exceed Own Access</h3>
 <p>An employee can ask an agent that holds broader permissions to read or do things the employee could not do directly. This turns the agent into a way around access controls. Required controls include agents acting with the requesting user's permissions, not a broader service identity, checks on the user's entitlement at each action, and logging that names both the user and the agent. Adapted from AI Risk Map domain 05 (Security and Adversarial Threats).</p>
+<h3 id="ai-r47-model-extraction-and-inference-attacks">AI-R47: Model Extraction and Inference Attacks</h3>
+<p>An attacker who can query a model at volume can copy its behaviour into a model of their own, or work out whether a given record was in its training data. Both are possible through an ordinary API or chat interface, without access to the model files. AI-R08 covers the supply chain and AI-R06 covers data leaking in outputs; this risk covers attacks that use the model's answers to steal the model or reveal its training data. Required controls include rate limits and query-pattern detection, limits on how much detail outputs reveal (such as confidence scores), and extraction and membership inference testing before release. Adapted from AI Risk Map domain 05 (Security and Adversarial Threats). Also named in NIST AI 100-2 as model extraction and membership inference (see the <a href="../23_Framework_Crosswalks/14_NIST_AI_100_2_Crosswalk.html">NIST AI 100-2 Crosswalk</a>).</p>
+<h3 id="ai-r48-ai-incidents-not-recognised-or-handled">AI-R48: AI Incidents Not Recognised or Handled</h3>
+<p>An incident response plan written for conventional systems may not recognise an AI incident, such as a successful prompt injection, an agent acting outside its task, harmful output reaching customers or a model behaving differently after a provider change. Such events can go unreported, be closed as user error, or miss legal reporting deadlines. Required controls include AI incident categories and severity criteria in the response plan, routing of AI alerts to the security operations team, the evidence to preserve for each AI component, exercises that use AI scenarios, and a record of which incidents must be reported to which authority. Adapted from AI Risk Map domain 07 (Operations and Resilience). Also named in the EU AI Act, Article 73, as serious incident reporting for high-risk systems (see the <a href="../12_EU_AI_Compliance/01_EU_AI_Regulatory_Hub.html">EU AI Regulatory Hub</a>).</p>
+<h3 id="ai-r49-personal-data-that-cannot-be-removed-from-models">AI-R49: Personal Data That Cannot Be Removed from Models</h3>
+<p>Once personal data has been used to train or fine-tune a model, or copied into embeddings and caches, it may not be possible to delete it on request or at the end of its retention period. A model may also repeat it in outputs. Required controls include knowing which training, fine-tuning and retrieval stores hold personal data, a procedure for data subject requests that covers models, embeddings and replicated stores, filtering or retraining decisions when deletion is required, and an assessment of whether the model itself holds personal data before it is shared or reused. Adapted from AI Risk Map domain 03 (Data and Privacy). Also named in the GDPR (the right to erasure, Article 17) and in EDPB Opinion 28/2024 on AI models and personal data (see the <a href="../12_EU_AI_Compliance/01_EU_AI_Regulatory_Hub.html">EU AI Regulatory Hub</a>).</p>
+<h3 id="ai-r50-training-serving-skew-and-unreproducible-models">AI-R50: Training-Serving Skew and Unreproducible Models</h3>
+<p>A model can behave differently in production from how it behaved in evaluation because features, preprocessing or data are prepared differently in the two places. Without versioned code, data and settings, a model cannot be rebuilt to investigate a fault or to show a regulator how it was produced. AI-R17 covers drift over time; this risk covers a gap that exists from the first day. Required controls include one shared definition of features and preprocessing for training and serving, versioning of the data, code and settings behind each model, a check that production inputs match the evaluation data, and a test that a model can be rebuilt from its records. Adapted from AI Risk Map domains 04 (Model Development and Performance) and 07 (Operations and Resilience). No second source has been checked, so this entry is partly the wiki's own framing.</p>
+<h3 id="ai-r51-liability-for-harm-caused-by-ai-decisions">AI-R51: Liability for Harm Caused by AI Decisions</h3>
+<p>When an AI decision or output harms a customer or a third party, the organization may be liable even if a vendor built the model, and contracts may leave the organization carrying the loss. Some laws now treat software, including AI, as a product for liability purposes. Required controls include an impact assessment that names who could be harmed and how, human oversight sized to the harm, contract terms that allocate liability and indemnity with AI vendors, and a recorded acceptance of the residual risk by an accountable owner. Adapted from AI Risk Map domain 08 (Legal, Regulatory and Compliance). Also named in the new EU Product Liability Directive, which covers software (see the <a href="../12_EU_AI_Compliance/01_EU_AI_Regulatory_Hub.html">EU AI Regulatory Hub</a>).</p>
+<h3 id="ai-r52-unmaintained-open-source-ai-components">AI-R52: Unmaintained Open-Source AI Components</h3>
+<p>AI systems often depend on open-source libraries, model-serving tools, agent frameworks and models that a small number of volunteers maintain. A component can be abandoned, stop receiving security fixes, or change owner, while systems keep using it. AI-R08 covers tampered components and AI-R43 covers invented package names; this risk covers genuine components that are no longer maintained. Required controls include recording each component's maintenance status in the AI-BOM, a release-gate check for unmaintained or end-of-life components, and a plan to replace or take over components that critical systems rely on. Adapted from AI Risk Map domain 09 (Third-Party and Model Supply Chain). No second source has been checked, so this entry is partly the wiki's own framing.</p>
+<h3 id="ai-r53-unlabelled-ai-generated-content">AI-R53: Unlabelled AI-Generated Content</h3>
+<p>Images, audio, video and text generated by AI can be taken for real when they are not marked as AI-generated, and some laws now require marking or labelling. Content that loses its marking when it is edited or shared can still cause the same harm. AI-R41 covers claims about AI capability; this risk covers the content itself. Required controls include machine-readable marking of generated content where the law or the use case requires it, visible labels where people could be misled, a test that the marking survives the system's normal output path, and a record of which jurisdictions' labelling rules apply. Adapted from AI Risk Map domain 06 (Safety, Ethics and Responsible AI). Also named in the EU AI Act, Article 50 (see the <a href="../12_EU_AI_Compliance/01_EU_AI_Regulatory_Hub.html">EU AI Regulatory Hub</a>), and in China's rules on labelling AI-generated content (see the <a href="../16_China_AI_Compliance/CN-T2_Content_Labelling_Implementation_Record.html">CN-T2 Content Labelling Implementation Record</a>).</p>
+<h3 id="ai-r54-agent-actions-others-cannot-identify-as-ai">AI-R54: Agent Actions Others Cannot Identify as AI</h3>
+<p>When an agent sends messages, makes bookings, files requests or calls other organizations' systems, the people and systems on the other side may not be able to tell that an agent acted, or for whom. That makes disputes hard to resolve and can breach the other party's terms. AI-R07 covers what the agent is allowed to do and AI-R45 covers how its activity looks in your own logs; this risk covers how it appears to others. Required controls include identifying the agent and the organization it acts for in outbound messages and requests where the other party expects it, keeping a record of each external action that names the agent and the user who started it, and following other services' rules on automated access. Adapted from AI Risk Map domain 12 (Autonomy and Delegated Action). No second source has been checked, so this entry is partly the wiki's own framing.</p>
+<h2 id="considered-and-not-added">Considered and Not Added</h2>
+<p>Risks proposed for this register and left out, with the reason. The tests are in <a href="02A_AI_Risk_Methodology.html#what-belongs-on-the-register">What Belongs on the Register</a>. A decision can be reopened when there is new information; say what changed.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Proposed risk</th>
+<th>Decision</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Attacks that others carry out with AI against the organization, such as deepfake fraud, voice cloning or AI-written phishing</td>
+<td>Out of scope</td>
+<td>These are threats from outside, not risks of the organization's own adoption of AI, and belong on the threat register. See <a href="../00_Foundations/10-AI-for-Security-and-AI-Enabled-Threats.html">AI for Security and AI-Enabled Threats</a>.</td>
+</tr>
+<tr>
+<td>General IT risks with no AI-specific change, such as unpatched servers hosting a model</td>
+<td>Not added</td>
+<td>Fails the AI-specific test; these stay on the enterprise risk register and are treated by general security controls.</td>
+</tr>
+<tr>
+<td>Segregation of duties across AI configuration, operation and review (AI Risk Map, Roles and accountability)</td>
+<td>Not added</td>
+<td>Fails the distinct-response test: general segregation-of-duties controls apply, and the <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">release gate</a> already requires review before a change reaches production.</td>
+</tr>
+<tr>
+<td>Customers reaching the organization through their own AI agents and bypassing it (AI Risk Map, Competitive position)</td>
+<td>Merged into AI-R29</td>
+<td>Same owner and response as other strategy risks; added to AI-R29's narrative in version 1.4.</td>
+</tr>
+<tr>
+<td>Shortage of GPUs, compute capacity or power (AI Risk Map, Scaling and resource constraints)</td>
+<td>Merged into AI-R31</td>
+<td>Same response as provider dependence (dependency record, exit and migration plans); added to AI-R31's narrative in version 1.4.</td>
+</tr>
+</tbody>
+</table></div>
 <h2 id="owner-domains">Owner Domains</h2>
 <p>The twelve domains of the AI Risk Map, used in the Owner Domain column. The likely owner is this wiki's suggestion, not part of the map; assign owners to fit your own organization.</p>
 <div class="table-wrap"><table>
@@ -916,10 +1043,10 @@
 </tbody>
 </table></div>
 <h2 id="credit-ai-risk-map">Credit: AI Risk Map</h2>
-<p>The Owner Domain column, the domain names above and entries AI-R29 to AI-R46 are adapted from the <em>AI Risk Map</em> v1.3 (2026) by Evan Wheeler, RiskFramework.org (https://riskframework.org/), licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener">CC BY-SA 4.0</a>. Changes: the risk factors were paraphrased, combined into register entries, given controls and ratings, and mapped to this wiki. The map is a one-page thought-starter of 196 risk factors in 12 domains; its authors list its sources on the map and say a companion workbook gives the source of each factor. This wiki used the one-page map only.</p>
+<p>The Owner Domain column, the domain names above and entries AI-R29 to AI-R54 are adapted from the <em>AI Risk Map</em> v1.3 (2026) by Evan Wheeler (GitHub <a href="https://github.com/wheels344i-gte" rel="noopener">wheels344i-gte</a>), published in the repository <a href="https://github.com/wheels344i-gte/ai-risk-map" rel="noopener">wheels344i-gte/ai-risk-map</a> and at RiskFramework.org (https://riskframework.org/), licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener">CC BY-SA 4.0</a>. Changes: the risk factors were paraphrased, combined into register entries, given controls and ratings, and mapped to this wiki. The map is a one-page thought-starter of 196 risk factors in 12 domains; its authors list its sources on the map and say a companion workbook gives the source of each factor. This wiki used the one-page map only.</p>
 </article>
 <nav class="pager" aria-label="Previous and next page"><a class="prev" href="02A_AI_Risk_Methodology.html">&larr; AI Risk Methodology</a><a class="next" href="02C_AI_Risk_Treatment_Plan.html">AI Risk Treatment Plan &rarr;</a></nav>
-<footer class="site-footer">Author: Nachiket Sathaye &middot; Co-author: Ankush Jain &middot; Updated 23 October 2026 &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/02_Risk_Management/02B_Enterprise_AI_Risk_Register.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
+<footer class="site-footer">Author: Nachiket Sathaye &middot; Co-author: Ankush Jain &middot; Updated 29 October 2026 &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/02_Risk_Management/02B_Enterprise_AI_Risk_Register.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
 <div class="site-notice">
 <p><strong>Licence.</strong> <svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.441-3.5c8.951,0,16.572,3.125,22.857,9.372c3.008,3.009,5.295,6.448,6.857,10.314 c1.561,3.867,2.344,7.971,2.344,12.314c0,4.381-0.773,8.486-2.314,12.313c-1.543,3.828-3.82,7.21-6.828,10.143 c-3.123,3.085-6.666,5.448-10.629,7.086c-3.961,1.638-8.057,2.457-12.285,2.457s-8.276-0.808-12.143-2.429 c-3.866-1.618-7.333-3.961-10.4-7.027c-3.067-3.066-5.4-6.524-7-10.372S5.5,32.767,5.5,28.5c0-4.229,0.809-8.295,2.428-12.2 c1.619-3.905,3.972-7.4,7.057-10.486C21.08-0.394,28.565-3.5,37.441-3.5z M37.557,2.272c-7.314,0-13.467,2.553-18.458,7.657 c-2.515,2.553-4.448,5.419-5.8,8.6c-1.354,3.181-2.029,6.505-2.029,9.972c0,3.429,0.675,6.734,2.029,9.913 c1.353,3.183,3.285,6.021,5.8,8.516c2.514,2.496,5.351,4.399,8.515,5.715c3.161,1.314,6.476,1.971,9.943,1.971 c3.428,0,6.75-0.665,9.973-1.999c3.219-1.335,6.121-3.257,8.713-5.771c4.99-4.876,7.484-10.99,7.484-18.344 c0-3.543-0.648-6.895-1.943-10.057c-1.293-3.162-3.18-5.98-5.654-8.458C50.984,4.844,44.795,2.272,37.557,2.272z M37.156,23.187 l-4.287,2.229c-0.458-0.951-1.019-1.619-1.685-2c-0.667-0.38-1.286-0.571-1.858-0.571c-2.856,0-4.286,1.885-4.286,5.657 c0,1.714,0.362,3.084,1.085,4.113c0.724,1.029,1.791,1.544,3.201,1.544c1.867,0,3.181-0.915,3.944-2.743l3.942,2 c-0.838,1.563-2,2.791-3.486,3.686c-1.484,0.896-3.123,1.343-4.914,1.343c-2.857,0-5.163-0.875-6.915-2.629 c-1.752-1.752-2.628-4.19-2.628-7.313c0-3.048,0.886-5.466,2.657-7.257c1.771-1.79,4.009-2.686,6.715-2.686 C32.604,18.558,35.441,20.101,37.156,23.187z M55.613,23.187l-4.229,2.229c-0.457-0.951-1.02-1.619-1.686-2 c-0.668-0.38-1.307-0.571-1.914-0.571c-2.857,0-4.287,1.885-4.287,5.657c0,1.714,0.363,3.084,1.086,4.113 c0.723,1.029,1.789,1.544,3.201,1.544c1.865,0,3.18-0.915,3.941-2.743l4,2c-0.875,1.563-2.057,2.791-3.541,3.686 c-1.486,0.896-3.105,1.343-4.857,1.343c-2.896,0-5.209-0.875-6.941-2.629c-1.736-1.752-2.602-4.19-2.602-7.313 c0-3.048,0.885-5.466,2.658-7.257c1.77-1.79,4.008-2.686,6.713-2.686C51.117,18.558,53.938,20.101,55.613,23.187z"/></svg><svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.443-3.5c8.988,0,16.57,3.085,22.742,9.257C66.393,11.967,69.5,19.548,69.5,28.5c0,8.991-3.049,16.476-9.145,22.456 C53.879,57.319,46.242,60.5,37.443,60.5c-8.649,0-16.153-3.144-22.514-9.43C8.644,44.784,5.5,37.262,5.5,28.5 c0-8.761,3.144-16.342,9.429-22.742C21.101-0.415,28.604-3.5,37.443-3.5z M37.557,2.272c-7.276,0-13.428,2.553-18.457,7.657 c-5.22,5.334-7.829,11.525-7.829,18.572c0,7.086,2.59,13.22,7.77,18.398c5.181,5.182,11.352,7.771,18.514,7.771 c7.123,0,13.334-2.607,18.629-7.828c5.029-4.838,7.543-10.952,7.543-18.343c0-7.276-2.553-13.465-7.656-18.571 C50.967,4.824,44.795,2.272,37.557,2.272z M46.129,20.557v13.085h-3.656v15.542h-9.944V33.643h-3.656V20.557 c0-0.572,0.2-1.057,0.599-1.457c0.401-0.399,0.887-0.6,1.457-0.6h13.144c0.533,0,1.01,0.2,1.428,0.6 C45.918,19.5,46.129,19.986,46.129,20.557z M33.042,12.329c0-3.008,1.485-4.514,4.458-4.514s4.457,1.504,4.457,4.514 c0,2.971-1.486,4.457-4.457,4.457S33.042,15.3,33.042,12.329z"/></svg>This wiki is open to the community under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">Creative Commons Attribution-ShareAlike 4.0 International licence (CC BY-SA 4.0)</a>. You may copy, share and adapt it for any purpose, including commercially, as long as you credit the authors and release anything you build from it under the same licence.</p>
 <p><strong>Disclaimer.</strong> This wiki is an open, community driven educational reference, not legal, regulatory or professional advice. Regional regulatory content is compiled from secondary sources and its verification status is shown per row; verify against primary sources before relying on it. Content is provided "as is" without warranty. Named products and companies belong to their owners; statements about them reflect public information at the date shown. Views are the author's own.</p>
