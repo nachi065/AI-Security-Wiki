@@ -6,8 +6,8 @@ parent: "Framework Crosswalks"
 nav_order: 18
 description: "The 55 categories of the AI Risk Map (RiskFramework.org, v1.3) mapped to this wiki's risk register, with the categories the wiki covers only in part."
 document_type: AI Security Wiki Reference
-version: 1.0
-last_reviewed: 2026-10-17
+version: 1.1
+last_reviewed: 2026-10-29
 ---
 
 # AI Risk Map Crosswalk
@@ -22,7 +22,7 @@ last_reviewed: 2026-10-17
 
 The *AI Risk Map* v1.3 (2026) by Evan Wheeler, published at RiskFramework.org, is a one-page thought-starter for identifying the risks of an organization's adoption of AI before a formal assessment. It lists 196 risk factors in 55 categories and 12 domains, and groups them by who owns the risk rather than by how the technology works. Some factors are marked as split pairs, where another domain owns the other side. The map names its sources (among them the NIST AI RMF, the EU AI Act, ISO/IEC 42001, the OWASP lists and MITRE ATLAS) and says a companion workbook gives the source of each factor.
 
-The domain and category names below were read from the map itself, a PDF supplied to this wiki on 17 October 2026. The companion workbook was not available, and the RiskFramework.org website could not be reached from the environment used to write this page, so nothing here was checked against either. The mapping to wiki risks is this wiki's own judgment and has not been reviewed by the map's author.
+The domain and category names below were read from the map itself, a PDF supplied to this wiki on 17 October 2026. On 29 October 2026 the map's website (https://riskframework.org/ai-risk-map/) was read and still showed version 1.3 with the same counts. The website also offers a taxonomy workbook (with the source of each factor and the author's scope decisions), a flat CSV with stable factor IDs (AIRM-nnn) and a Markdown version for AI assistants. These files have not yet been compared with this page, so the mapping is still by category, not by factor ID. The mapping to wiki risks is this wiki's own judgment and has not been reviewed by the map's author. The map's author takes proposed changes to the map as issues on its GitHub repository.
 
 **Match** shows how closely the wiki covers the category: **Direct** (one or more register risks cover it), **Partial** (the wiki covers part of it, as the last column explains) or **None**. A category is mapped as a whole; individual risk factors are not.
 

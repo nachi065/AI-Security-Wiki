@@ -5,7 +5,7 @@ coauthors: Ankush Jain
 parent: "Risk Management"
 nav_order: 2
 document_type: AI Security Wiki Reference
-version: 1.2
+version: 1.3
 ---
 
 # Enterprise AI Risk Register
@@ -212,6 +212,15 @@ Approved agents that read widely, call many tools and act quickly can look the s
 
 ### AI-R46: Insider Use of Agents to Exceed Own Access
 An employee can ask an agent that holds broader permissions to read or do things the employee could not do directly. This turns the agent into a way around access controls. Required controls include agents acting with the requesting user's permissions, not a broader service identity, checks on the user's entitlement at each action, and logging that names both the user and the agent. Adapted from AI Risk Map domain 05 (Security and Adversarial Threats).
+
+## Considered and Not Added
+
+Risks proposed for this register and left out, with the reason. The tests are in [What Belongs on the Register](02A_AI_Risk_Methodology.md#what-belongs-on-the-register). A decision can be reopened when there is new information; say what changed.
+
+| Proposed risk | Decision | Reason |
+|---|---|---|
+| Attacks that others carry out with AI against the organization, such as deepfake fraud, voice cloning or AI-written phishing | Out of scope | These are threats from outside, not risks of the organization's own adoption of AI, and belong on the threat register. See [AI for Security and AI-Enabled Threats](../00_Foundations/10-AI-for-Security-and-AI-Enabled-Threats.md). |
+| General IT risks with no AI-specific change, such as unpatched servers hosting a model | Not added | Fails the AI-specific test; these stay on the enterprise risk register and are treated by general security controls. |
 
 ## Owner Domains
 

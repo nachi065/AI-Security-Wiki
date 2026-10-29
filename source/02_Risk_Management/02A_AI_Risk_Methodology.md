@@ -5,7 +5,7 @@ coauthors: Ankush Jain
 parent: "Risk Management"
 nav_order: 1
 document_type: AI Security Wiki Reference
-version: 1.2
+version: 1.3
 ---
 
 # AI Risk Methodology
@@ -94,6 +94,17 @@ A list of risks, such as the [Enterprise AI Risk Register](02B_Enterprise_AI_Ris
 - **Lists seed the assessment; they do not replace it.** Use them to prompt threat modelling and risk identification, alongside a model of the specific system.
 - **Scope.** This methodology covers risks from the organization's own adoption of AI. Attacks that others carry out with AI against the organization belong on the threat register; see [AI for Security and AI-Enabled Threats](../00_Foundations/10-AI-for-Security-and-AI-Enabled-Threats.md).
 
+## What Belongs on the Register
+
+A risk is added to the [Enterprise AI Risk Register](02B_Enterprise_AI_Risk_Register.md) only when it passes all four tests below. Apply the same tests to an organization's own register so that it stays short enough to manage.
+
+1. **AI-specific.** AI creates the risk, or materially changes its likelihood, impact or treatment. A general IT or business risk that is the same with or without AI stays on the enterprise risk register.
+2. **A distinct response.** The risk needs a different owner, control, evidence or test from the entries already there. If an existing entry already owns it, widen that entry's narrative instead of adding a new one.
+3. **Corroborated.** At least two independent sources name the risk: a law, regulator guidance, a standard, a recognised framework or a documented incident. A risk that only this wiki names may still be added, but its narrative must say that it is the wiki's own framing.
+4. **Treatable.** At least one control in the [AI Risk to Control Mapping](02D_AI_Risk_to_Control_Mapping.md) treats it. If no control does, add the control first or record the gap.
+
+Record every decision not to add a proposed risk, with the reason, under [Considered and Not Added](02B_Enterprise_AI_Risk_Register.md#considered-and-not-added), so the same question is not reopened without new information.
+
 ## Owner Domain
 
 Record which of the twelve owner domains a risk belongs to (listed under [Owner Domains](02B_Enterprise_AI_Risk_Register.md#owner-domains) on the register). The domains group risks by the part of the organization that owns them rather than by technology layer, so strategy, finance, workforce and legal risks reach their owners instead of defaulting to security. Some risks have two owners, for example accountability for harm caused by an agent, which sits with both governance and the agent's sponsor. Record the second domain in the risk entry's notes and name one accountable owner.
@@ -102,7 +113,7 @@ Record which of the twelve owner domains a risk belongs to (listed under [Owner 
 
 The four-level scale above suits most AI risks. Some scenarios can also be quantified in money, using cyber risk quantification methods such as FAIR (Factor Analysis of Information Risk): estimate how often the loss event could happen and the range of loss each time. This works best where loss data or credible estimates exist, such as data leakage, cost abuse, service disruption or regulatory fines. Other risks, such as erosion of staff expertise, loss of trust or strategic disadvantage, are hard to put a number on and are better reported to the governing body as a narrative with indicators. Record which approach was used for each risk, and do not present a quantified figure as more precise than its inputs.
 
-*The ideas in the three sections above (risk factors versus scenarios, order not implying likelihood, scope, ownership-based domains, split ownership and the choice between quantification and narrative) are adapted from the usage notes of the AI Risk Map v1.3 by Evan Wheeler, RiskFramework.org, licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). See the [credit on the risk register](02B_Enterprise_AI_Risk_Register.md#credit-ai-risk-map).*
+*The ideas in the four sections above (risk factors versus scenarios, order not implying likelihood, scope, the tests for what belongs on a register, recording decisions not to add a risk, ownership-based domains, split ownership and the choice between quantification and narrative) are adapted from the usage notes, inclusion gates and scope decisions of the AI Risk Map v1.3 by Evan Wheeler, RiskFramework.org, licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). See the [credit on the risk register](02B_Enterprise_AI_Risk_Register.md#credit-ai-risk-map).*
 
 ## Worked Calibration Examples
 
