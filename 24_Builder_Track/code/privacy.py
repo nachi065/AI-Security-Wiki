@@ -55,7 +55,7 @@ class DataMap:
 
     @classmethod
     def load(cls, path: str | Path) -> "DataMap":
-        return cls(json.loads(Path(path).read_text()))
+        return cls(json.loads(Path(path).read_text(encoding="utf-8")))
 
     def category(self, name: str) -> dict:
         if name not in self._field:

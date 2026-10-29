@@ -319,7 +319,7 @@
 </blockquote>
 <h2 id="the-one-idea">The one idea</h2>
 <p>The checks are code, not prompts. Anything that must give the same answer every time (does this line pass model output to <code>eval</code>, is this MCP server pinned, which controls does AI-R23 map to) runs in a small Python program with tests. An assistant can call it and explain the result, but it does not decide the result. So Claude, ChatGPT, Gemini, Copilot, Cursor, any other assistant, or a person at a terminal all get the same findings, and CI enforces them whoever wrote the code.</p>
-<p>Every tool uses only the Python standard library (3.10 or later), so there is nothing to install. The toolkit's tests run on Linux, macOS and Windows on every change (<a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/.github/workflows/builder-tests.yml" rel="noopener">Builder Track tests workflow</a>).</p>
+<p>Every tool uses only the Python standard library (3.10 or later), so there is nothing to install. The toolkit's tests, and the rest of the Builder Track's, run on Linux, macOS and Windows on every change (<a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/.github/workflows/builder-tests.yml" rel="noopener">Builder Track tests workflow</a>).</p>
 <h2 id="what-is-in-the-toolkit">What is in the toolkit</h2>
 <div class="table-wrap"><table>
 <thead>
@@ -664,7 +664,7 @@ python aiwiki_check.py .                 # the reference code is clean; the test
 </ul>
 <h2 id="limits-of-this-reference">Limits of this reference</h2>
 <blockquote class="callout caution">
-<p><strong>Verify before use:</strong> The rules are line-based pattern checks. They miss model output that passes through a variable with an unrelated name, and they can flag safe code; treat each finding as a prompt for a reviewer, and a clean result as no proof of safety. The MCP server has not been tested with any particular vendor's client. HTTP mode is for local use and has no TLS. Client configuration formats, instruction-file locations and agent flag names change often, and the ones on this page were not re-checked against each vendor's current documentation. The toolkit tests run on Linux, macOS and Windows; the rest of the Builder Track code needs Linux or macOS, because its sandbox uses Unix process limits.</p>
+<p><strong>Verify before use:</strong> The rules are line-based pattern checks. They miss model output that passes through a variable with an unrelated name, and they can flag safe code; treat each finding as a prompt for a reviewer, and a clean result as no proof of safety. The MCP server has not been tested with any particular vendor's client. HTTP mode is for local use and has no TLS. Client configuration formats, instruction-file locations and agent flag names change often, and the ones on this page were not re-checked against each vendor's current documentation. All the Builder Track tests, including the toolkit's, run on Linux, macOS and Windows.</p>
 </blockquote>
 <h2 id="related-pages">Related pages</h2>
 <ul>

@@ -3,7 +3,7 @@ title: "Home"
 description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and {{n:tests}} test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.50
+version: 2.51
 status: Published
 author: Nachiket Sathaye
 coauthors: Ankush Jain
@@ -17,14 +17,14 @@ last_updated: 2026-10-25
 # AI Security Wiki Home
 
 > **Document Type:** Enterprise AI Security Reference Architecture and Governance Wiki  
-> **Version:** 2.50  
+> **Version:** 2.51  
 > **Status:** Published  
 > **Original Author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
 > **Co-Author:** Ankush Jain ([about the co-author](#23-about-the-co-author))  
 > **Intended Use:** Public, vendor-neutral reference and template set for AI security governance, engineering, risk management, assurance, audit, compliance, and vendor evaluation.  
 > **Source Repository:** [github.com/nachi065/AI-Security-Wiki](https://github.com/nachi065/AI-Security-Wiki): the Markdown source, the change history, issues and pull requests. See [Contributing](https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md) to suggest a change.
 
-> **Latest update (29 October 2026).** The [Builder Track](24_Builder_Track/index.md) adds a vendor-neutral [Builder Toolkit](24_Builder_Track/05_Builder_Toolkit.md): a checker for AI-specific risks in code and agent configuration (with SARIF output for CI), a read-only MCP server that any MCP-capable assistant can use to look up the wiki's controls, risks and test cases, an export that turns an agent's audit log into rows for the audit and test templates, and one set of rules written as each coding assistant's instruction file. It runs on Linux, macOS and Windows and complements Ankush Jain's [ai-secure-by-design](https://github.com/ankush1982/ai-secure-by-design). The track's pages now link the register risks, templates and CSV files they relate to. Earlier the same day: [CSV data files](25_Templates/index.md#data-files-csv) and eight new register risks. See the [Update Notes](09_Reference/19_Update_Notes.md) for details and what is still open.
+> **Latest update (29 October 2026).** The [Builder Track](24_Builder_Track/index.md) adds a vendor-neutral [Builder Toolkit](24_Builder_Track/05_Builder_Toolkit.md): a checker for AI-specific risks in code and agent configuration (with SARIF output for CI), a read-only MCP server that any MCP-capable assistant can use to look up the wiki's controls, risks and test cases, an export that turns an agent's audit log into rows for the audit and test templates, and one set of rules written as each coding assistant's instruction file. It runs on Linux, macOS and Windows, as does the rest of the Builder Track code since version 2.51, and complements Ankush Jain's [ai-secure-by-design](https://github.com/ankush1982/ai-secure-by-design). The track's pages now link the register risks, templates and CSV files they relate to. Earlier the same day: [CSV data files](25_Templates/index.md#data-files-csv) and eight new register risks. See the [Update Notes](09_Reference/19_Update_Notes.md) for details and what is still open.
 
 ## 1. Purpose
 
@@ -422,9 +422,9 @@ The three latest versions, newest first. The full history since version 1.0 is i
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.51 | 2026-10-29 | Nachiket Sathaye | Builder Track runs on Windows: the sandbox uses a Windows Job Object for CPU, memory and process limits and reports which limits it applied, the git hooks fall back from python3 to python and run under Git for Windows, files are read and written as UTF-8, a PowerShell version of the container command, and every Builder Track test now runs in CI on Linux, macOS and Windows. |
 | 2.50 | 2026-10-29 | Nachiket Sathaye | Builder Toolkit (Builder Track page 5): AI-specific code and configuration checker with ten rules and SARIF output, read-only MCP server, offline look-ups over the CSV data files, evidence export for the audit checklist and test tracker, instruction files for five coding assistants from one source, GitHub, GitLab and pre-commit examples, toolkit tests on Linux, macOS and Windows; Builder Track pages link register risks, templates, CSV files and the OWASP crosswalk, and six template pages link back. |
 | 2.49 | 2026-10-29 | Nachiket Sathaye | CSV data files for the risk register, risk-to-control mapping, controls, test cases and AI Risk Map crosswalk, regenerated on every build; four workbooks rebuilt with AI-R47 to AI-R54 and the AI Risk Map credit linking its GitHub repository: AI Risk Register (version 1.3), AI Use-Case Risk Triage (1.1), Control Library and Crosswalks (1.4), Test Case Tracker (1.3). |
-| 2.48 | 2026-10-29 | Nachiket Sathaye | Risk register 1.4: eight risks AI-R47 to AI-R54 (model extraction and inference, AI incidents, personal data inside models, training-serving skew, liability, unmaintained open-source components, unlabelled AI-generated content, agent actions others cannot identify), with control mappings and triage questions E13 to E19; AI-R29 and AI-R31 widened; the AI Risk Map Crosswalk now has 42 direct and 13 partial matches. |
 
 ## 21. Quick Links
 

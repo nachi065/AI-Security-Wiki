@@ -71,13 +71,13 @@ TRAILER = re.compile(r"(?mi)^AI-Assistance:\s*(none|suggestions|agent)\s*$")
 
 ```sh
 mkdir -p .githooks
-printf '#!/bin/sh\nexec python3 tools/pipeline_checks.py pre-commit\n' > .githooks/pre-commit
-printf '#!/bin/sh\nexec python3 tools/pipeline_checks.py commit-msg "$1"\n' > .githooks/commit-msg
+printf '#!/bin/sh\nexec "$(command -v python3 || command -v python)" tools/pipeline_checks.py pre-commit\n' > .githooks/pre-commit
+printf '#!/bin/sh\nexec "$(command -v python3 || command -v python)" tools/pipeline_checks.py commit-msg "$1"\n' > .githooks/commit-msg
 chmod +x .githooks/*
 git config core.hooksPath .githooks
 ```
 
-The tests in [`test_pipeline_checks.py`](code/test_pipeline_checks.py) install these two hooks in a throwaway repository and check that a secret or a missing trailer blocks the commit.
+The tests in [`test_pipeline_checks.py`](code/test_pipeline_checks.py) install these two hooks in a throwaway repository and check that a secret or a missing trailer blocks the commit, on Linux, macOS and Windows. On Windows, run the commands above in Git Bash: Git for Windows runs hooks with its own shell, so the same hook files work there. The hooks use `python3` where it exists and `python` otherwise. The [pre-commit configuration](05_Builder_Toolkit.md#wire-it-into-hooks-and-ci) in the Builder Toolkit is an alternative that needs no shell scripts.
 
 **The coding agent.** Many coding agents can run a command before they write a file or run a shell command, and refuse the action if the command fails. Send the content the agent is about to write to `pipeline_checks.py scan` on standard input; it exits with a non-zero status when it finds something. How the content reaches your hook, and which exit status blocks the action, differ between tools, so check your agent's hook documentation and test that a planted fake key is actually blocked. Keep the hook configuration in a file the agent cannot edit ([TC-L06-036](../10_Test_Case_Library/L06-agent-orchestration-layer.md#tc-l06-036)).
 

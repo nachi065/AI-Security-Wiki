@@ -647,19 +647,17 @@ any call after the kill switch        DENY_KILL                  ok
 <p>The approver is shown the real arguments, not a summary the model wrote. Keep the gated set small: if people approve fifty prompts a day they stop reading them (<a class="chip" href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-016">TC-L06-016</a>).</p>
 <h2 id="b7-run-generated-code-in-a-sandbox">B7. Run generated code in a sandbox</h2>
 <p><strong>Control:</strong> <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a>. If your agent writes and runs code, that code is attacker-influenced input. Run it in a separate process with hard limits and no secrets, inside a container that provides the real boundary.</p>
-<p>The Python wrapper sets CPU, memory, file-size and process limits, an empty environment, a throwaway working directory and a wall-clock timeout, and on Linux it removes the network when the kernel allows it:</p>
+<p>The Python wrapper sets CPU, memory, file-size and process limits, an empty environment, a throwaway working directory and a wall-clock timeout, and on Linux it removes the network when the kernel allows it. On Windows it puts the process in a Job Object (<a href="code/winjob.py"><code>winjob.py</code></a>) with CPU, memory and process-count limits instead; Windows has no per-process file-size limit, and macOS does not enforce a memory (address-space) limit. Where the operating system refuses a limit, the sandbox runs without it and the result's <code>limits</code> field lists the limits that were actually applied, so check it before you rely on one. The Unix version:</p>
 <!-- excerpt: sandbox.py -->
 
 <pre><code class="language-python">def _limits(cpu_seconds: int, memory_mb: int, file_mb: int, processes: int):
     def apply():
         os.setsid()                                                    # own session, so we can kill the group
-        resource.setrlimit(resource.RLIMIT_CPU, (cpu_seconds, cpu_seconds))
-        resource.setrlimit(resource.RLIMIT_AS, (memory_mb &lt;&lt; 20, memory_mb &lt;&lt; 20))
-        resource.setrlimit(resource.RLIMIT_FSIZE, (file_mb &lt;&lt; 20, file_mb &lt;&lt; 20))
-        resource.setrlimit(resource.RLIMIT_CORE, (0, 0))
-        resource.setrlimit(resource.RLIMIT_NOFILE, (64, 64))
-        if hasattr(resource, &quot;RLIMIT_NPROC&quot;):
-            resource.setrlimit(resource.RLIMIT_NPROC, (processes, processes))
+        for _, name, value in _wanted(cpu_seconds, memory_mb, file_mb, processes):
+            try:
+                resource.setrlimit(getattr(resource, name), (value, value))
+            except (AttributeError, OSError, ValueError):
+                pass   # not supported here (macOS refuses RLIMIT_AS); supported_limits() reports it
     return apply
 </code></pre>
 <p><em>From <a href="code/sandbox.py"><code>sandbox.py</code></a>.</em></p>
@@ -680,7 +678,7 @@ any call after the kill switch        DENY_KILL                  ok
   python:3.13-slim \
   python -I /job/main.py
 </code></pre>
-<p><em>From <a href="code/docker-sandbox.sh"><code>docker-sandbox.sh</code></a>.</em></p>
+<p><em>From <a href="code/docker-sandbox.sh"><code>docker-sandbox.sh</code></a>. <a href="code/docker-sandbox.ps1"><code>docker-sandbox.ps1</code></a> runs the same command from PowerShell on Windows.</em></p>
 <p>For stronger isolation than a standard container, use a user-space kernel or a microVM, depending on your platform.</p>
 <h2 id="b8-limit-egress-to-named-hosts">B8. Limit egress to named hosts</h2>
 <p><strong>Control:</strong> <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a> (<a class="chip" href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-026">TC-L06-026</a>). Data theft needs a way out. Block every route from the agent except a proxy that allows named hosts only. <a href="code/egress_proxy.py"><code>egress_proxy.py</code></a> is a small working example. It checks the port, then the host name, then every address the name resolves to, and it connects only to the addresses it checked, trying each in turn, rather than looking the name up again, so a DNS answer that changes between check and connect cannot redirect it.</p>
@@ -779,7 +777,7 @@ spec:
         entry = {&quot;ts&quot;: round(time.time(), 3), **fields, &quot;prev&quot;: self._last}
         entry[&quot;hash&quot;] = hashlib.sha256(json.dumps(entry, sort_keys=True, default=str).encode()).hexdigest()
         with self._lock:
-            with self.path.open(&quot;a&quot;) as f:
+            with self.path.open(&quot;a&quot;, encoding=&quot;utf-8&quot;) as f:
                 f.write(json.dumps(entry, sort_keys=True, default=str) + &quot;\n&quot;)
             self._last = entry[&quot;hash&quot;]
 </code></pre>
@@ -788,7 +786,7 @@ spec:
 
 <pre><code class="language-python">    def verify(path: str) -&gt; tuple[bool, int]:
         prev, n = &quot;0&quot; * 64, 0
-        for line in Path(path).read_text().splitlines():
+        for line in Path(path).read_text(encoding=&quot;utf-8&quot;).splitlines():
             entry = json.loads(line)
             claimed = entry.pop(&quot;hash&quot;)
             expect = hashlib.sha256(json.dumps(entry, sort_keys=True, default=str).encode()).hexdigest()
@@ -954,7 +952,7 @@ python3 pin_definitions.py             # re-pin tool definitions after a human r
 </ul>
 <h2 id="limits-of-this-reference">Limits of this reference</h2>
 <blockquote class="callout caution">
-<p><strong>Verify before use:</strong> The Python code is a teaching reference and has not been security reviewed or hardened. The token format is deliberately simple and is not a substitute for your identity provider. The argument check resolves DNS at validation time, and the egress proxy repeats the check at connect time, which is the one that matters. The sandbox's process limits are not a security boundary. The Docker command and the Kubernetes manifest were not executed when this page was written, because the tests need no container runtime. Check every flag and field against the current documentation for your runtime and Kubernetes version, and pin container images by digest. The tests were run with Python 3.13 on Linux. The network-removal step needs <code>unshare</code> and is skipped where the kernel does not allow it.</p>
+<p><strong>Verify before use:</strong> The Python code is a teaching reference and has not been security reviewed or hardened. The token format is deliberately simple and is not a substitute for your identity provider. The argument check resolves DNS at validation time, and the egress proxy repeats the check at connect time, which is the one that matters. The sandbox's process limits are not a security boundary. The Docker command and the Kubernetes manifest were not executed when this page was written, because the tests need no container runtime. Check every flag and field against the current documentation for your runtime and Kubernetes version, and pin container images by digest. The tests run in CI on Linux, macOS and Windows. The network-removal step needs <code>unshare</code> and is skipped where the kernel does not allow it, which includes every macOS and Windows machine. On Windows the child process is placed in its Job Object just after it starts, so its first instructions run before the limits apply.</p>
 </blockquote>
 </article>
 <nav class="pager" aria-label="Previous and next page"><a class="prev" href="index.html">&larr; Builder Track</a><a class="next" href="02_Agent_Architecture_Patterns.html">Agent Architecture Patterns &rarr;</a></nav>

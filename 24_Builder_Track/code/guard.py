@@ -426,7 +426,7 @@ class AuditLog:
         self._lock = threading.Lock()
         self._last = "0" * 64
         if self.path.exists():
-            lines = self.path.read_text().splitlines()
+            lines = self.path.read_text(encoding="utf-8").splitlines()
             if lines:
                 self._last = json.loads(lines[-1])["hash"]
 
@@ -434,14 +434,14 @@ class AuditLog:
         entry = {"ts": round(time.time(), 3), **fields, "prev": self._last}
         entry["hash"] = hashlib.sha256(json.dumps(entry, sort_keys=True, default=str).encode()).hexdigest()
         with self._lock:
-            with self.path.open("a") as f:
+            with self.path.open("a", encoding="utf-8") as f:
                 f.write(json.dumps(entry, sort_keys=True, default=str) + "\n")
             self._last = entry["hash"]
 
     @staticmethod
     def verify(path: str) -> tuple[bool, int]:
         prev, n = "0" * 64, 0
-        for line in Path(path).read_text().splitlines():
+        for line in Path(path).read_text(encoding="utf-8").splitlines():
             entry = json.loads(line)
             claimed = entry.pop("hash")
             expect = hashlib.sha256(json.dumps(entry, sort_keys=True, default=str).encode()).hexdigest()
@@ -461,7 +461,7 @@ class Policy:
 
     @classmethod
     def load(cls, path: str) -> "Policy":
-        return cls(json.loads(Path(path).read_text()))
+        return cls(json.loads(Path(path).read_text(encoding="utf-8")))
 
     @property
     def audience(self) -> str:

@@ -14,8 +14,8 @@ from guard import definition_hash, description_findings
 
 policy_path = Path(sys.argv[1] if len(sys.argv) > 1 else "policy.json")
 defs_path = Path(sys.argv[2] if len(sys.argv) > 2 else "tool_definitions.json")
-policy = json.loads(policy_path.read_text())
-definitions = json.loads(defs_path.read_text())
+policy = json.loads(policy_path.read_text(encoding="utf-8"))
+definitions = json.loads(defs_path.read_text(encoding="utf-8"))
 
 for name, spec in policy["tools"].items():
     findings = description_findings(definitions[name])
@@ -24,4 +24,4 @@ for name, spec in policy["tools"].items():
     spec["definition_sha256"] = definition_hash(definitions[name])
     print(f"pinned {name}: {spec['definition_sha256'][:16]}...")
 
-policy_path.write_text(json.dumps(policy, indent=2) + "\n")
+policy_path.write_text(json.dumps(policy, indent=2) + "\n", encoding="utf-8")
