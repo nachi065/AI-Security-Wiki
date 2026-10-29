@@ -324,20 +324,18 @@ The approver is shown the real arguments, not a summary the model wrote. Keep th
 
 **Control:** [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027). If your agent writes and runs code, that code is attacker-influenced input. Run it in a separate process with hard limits and no secrets, inside a container that provides the real boundary.
 
-The Python wrapper sets CPU, memory, file-size and process limits, an empty environment, a throwaway working directory and a wall-clock timeout, and on Linux it removes the network when the kernel allows it. On Windows it puts the process in a Job Object ([`winjob.py`](code/winjob.py)) with CPU, memory and process-count limits instead; Windows has no per-process file-size limit, so the result's `limits` field says which limits were applied. The Unix version:
+The Python wrapper sets CPU, memory, file-size and process limits, an empty environment, a throwaway working directory and a wall-clock timeout, and on Linux it removes the network when the kernel allows it. On Windows it puts the process in a Job Object ([`winjob.py`](code/winjob.py)) with CPU, memory and process-count limits instead; Windows has no per-process file-size limit, and macOS does not enforce a memory (address-space) limit. Where the operating system refuses a limit, the sandbox runs without it and the result's `limits` field lists the limits that were actually applied, so check it before you rely on one. The Unix version:
 
 <!-- excerpt: sandbox.py -->
 ```python
 def _limits(cpu_seconds: int, memory_mb: int, file_mb: int, processes: int):
     def apply():
         os.setsid()                                                    # own session, so we can kill the group
-        resource.setrlimit(resource.RLIMIT_CPU, (cpu_seconds, cpu_seconds))
-        resource.setrlimit(resource.RLIMIT_AS, (memory_mb << 20, memory_mb << 20))
-        resource.setrlimit(resource.RLIMIT_FSIZE, (file_mb << 20, file_mb << 20))
-        resource.setrlimit(resource.RLIMIT_CORE, (0, 0))
-        resource.setrlimit(resource.RLIMIT_NOFILE, (64, 64))
-        if hasattr(resource, "RLIMIT_NPROC"):
-            resource.setrlimit(resource.RLIMIT_NPROC, (processes, processes))
+        for _, name, value in _wanted(cpu_seconds, memory_mb, file_mb, processes):
+            try:
+                resource.setrlimit(getattr(resource, name), (value, value))
+            except (AttributeError, OSError, ValueError):
+                pass   # not supported here (macOS refuses RLIMIT_AS); supported_limits() reports it
     return apply
 ```
 

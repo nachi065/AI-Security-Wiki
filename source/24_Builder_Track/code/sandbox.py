@@ -7,6 +7,10 @@ process-count limits, a wall-clock timeout, an empty environment, a throwaway
 working directory, no stdin, capped output, and (on Linux, when the kernel
 allows it) a network namespace with no network.
 
+Where the operating system refuses a limit (macOS does not enforce an
+address-space limit, for example) the sandbox runs without it rather than
+failing, and SandboxResult.limits lists the limits that were applied.
+
 On Windows the limits come from a Job Object instead of resource limits:
 CPU time, memory, process count and kill-on-close are enforced, but there is
 no file-size limit and no network removal (SandboxResult.limits lists what
@@ -20,6 +24,7 @@ docker-sandbox.sh and k8s-agent-pod.yaml in this folder.
 """
 from __future__ import annotations
 
+import functools
 import os
 import shutil
 import signal
@@ -60,17 +65,35 @@ def netns_available() -> bool:
         return False
 
 
+def _wanted(cpu_seconds: int, memory_mb: int, file_mb: int, processes: int) -> list[tuple[str, str, int]]:
+    """(label, resource.RLIMIT_* name, value) for each limit the sandbox asks for."""
+    return [("cpu", "RLIMIT_CPU", cpu_seconds), ("memory", "RLIMIT_AS", memory_mb << 20),
+            ("file-size", "RLIMIT_FSIZE", file_mb << 20), ("no-core", "RLIMIT_CORE", 0),
+            ("open-files", "RLIMIT_NOFILE", 64), ("processes", "RLIMIT_NPROC", processes)]
+
+
 def _limits(cpu_seconds: int, memory_mb: int, file_mb: int, processes: int):
     def apply():
         os.setsid()                                                    # own session, so we can kill the group
-        resource.setrlimit(resource.RLIMIT_CPU, (cpu_seconds, cpu_seconds))
-        resource.setrlimit(resource.RLIMIT_AS, (memory_mb << 20, memory_mb << 20))
-        resource.setrlimit(resource.RLIMIT_FSIZE, (file_mb << 20, file_mb << 20))
-        resource.setrlimit(resource.RLIMIT_CORE, (0, 0))
-        resource.setrlimit(resource.RLIMIT_NOFILE, (64, 64))
-        if hasattr(resource, "RLIMIT_NPROC"):
-            resource.setrlimit(resource.RLIMIT_NPROC, (processes, processes))
+        for _, name, value in _wanted(cpu_seconds, memory_mb, file_mb, processes):
+            try:
+                resource.setrlimit(getattr(resource, name), (value, value))
+            except (AttributeError, OSError, ValueError):
+                pass   # not supported here (macOS refuses RLIMIT_AS); supported_limits() reports it
     return apply
+
+
+@functools.lru_cache(maxsize=None)
+def supported_limits(cpu_seconds: int, memory_mb: int, file_mb: int, processes: int) -> tuple[str, ...]:
+    """Which of the wanted limits this platform accepts, found by trying them in a throwaway process."""
+    probe = ("import resource\n"
+             f"for label, name, value in {_wanted(cpu_seconds, memory_mb, file_mb, processes)!r}:\n"
+             "    try:\n"
+             "        resource.setrlimit(getattr(resource, name), (value, value)); print(label)\n"
+             "    except (AttributeError, OSError, ValueError):\n"
+             "        pass\n")
+    out = subprocess.run([sys.executable, "-I", "-c", probe], capture_output=True, text=True, timeout=30).stdout
+    return tuple(out.split())
 
 
 def run_python(code: str, timeout: int = 5, cpu_seconds: int = 3, memory_mb: int = 256,
@@ -99,7 +122,7 @@ def run_python(code: str, timeout: int = 5, cpu_seconds: int = 3, memory_mb: int
                 stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                 preexec_fn=_limits(cpu_seconds, memory_mb, file_mb, processes),
             )
-            limits = ["cpu", "memory", "file-size", "processes", "open-files", "timeout", "empty-env", "temp-dir"]
+            limits = list(supported_limits(cpu_seconds, memory_mb, file_mb, processes)) + ["timeout", "empty-env", "temp-dir"]
             limits += ["no-network"] if isolated else []
         timed_out = False
         try:

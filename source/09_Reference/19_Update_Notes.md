@@ -25,7 +25,7 @@ This entry follows the one below ("Builder Toolkit and Builder Track links"), wh
 
 ### What changed
 
-- **Sandbox.** On Windows, [`sandbox.py`](../24_Builder_Track/01_Secure_Your_First_Agent.md#b7-run-generated-code-in-a-sandbox) now places the child process in a Job Object (new file `winjob.py`, standard-library `ctypes`) that limits CPU time, memory and process count and kills everything the job started when it closes or times out. Its result has a new `limits` field that lists what the platform actually applied.
+- **Sandbox.** On macOS, the sandbox now starts (it failed there before). On Windows, [`sandbox.py`](../24_Builder_Track/01_Secure_Your_First_Agent.md#b7-run-generated-code-in-a-sandbox) now places the child process in a Job Object (new file `winjob.py`, standard-library `ctypes`) that limits CPU time, memory and process count and kills everything the job started when it closes or times out. Its result has a new `limits` field that lists what the platform actually applied.
 - **Git hooks.** The hook commands on [Developer Pipeline Checks](../24_Builder_Track/04_Developer_Pipeline_Checks.md#wire-it-in) use `python3` where it exists and `python` otherwise, and the page says to install them from Git Bash on Windows.
 - **Text files.** The reference code and tests read and write files as UTF-8 instead of the platform's default encoding.
 - **Container command.** `docker-sandbox.ps1` runs the same locked-down container command from PowerShell.
@@ -34,7 +34,8 @@ This entry follows the one below ("Builder Toolkit and Builder Track links"), wh
 ### What was checked and what is still open
 
 - All Builder Track tests pass on Linux locally. The macOS and Windows results come from the CI run on the pull request.
-- Two tests are skipped where the platform cannot do what they test: the file-size limit on Windows, which has no per-process file-size limit, and network removal everywhere except Linux machines that allow `unshare --net`.
+- **macOS.** Running every test on macOS for the first time showed that the sandbox had never worked there: macOS refuses one of the Unix limits (the address-space limit, as far as the tests show), and the whole launch failed. The sandbox now applies each limit it can, runs without the ones the system refuses, and lists the applied ones in `limits`, as it does on Windows.
+- Tests skip what a platform cannot do, with the reason: the memory limit where the system refuses it (macOS), the file-size limit on Windows, and network removal everywhere except Linux machines that allow `unshare --net`.
 - On Windows the child process joins its Job Object just after it starts, so its first instructions run before the limits apply. The sandbox remains hygiene, not a security boundary, on every platform.
 - `docker-sandbox.ps1` was not executed, like `docker-sandbox.sh`, because the tests need no container runtime.
 
