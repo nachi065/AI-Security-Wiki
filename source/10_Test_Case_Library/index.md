@@ -55,24 +55,24 @@ The link check rejects any other level, and rejects a Lab-validated or Independe
 
 | Layer | Name | Primary test focus | Cases | Critical | High | Medium | Low |
 |---|---|---|---|---|---|---|---|
-| L01 | [Business & Use Cases](L01-business-and-use-cases.md) | use-case registry, risk-tiering, business-owner attribution | 21 | 6 | 9 | 5 | 1 |
+| L01 | [Business & Use Cases](L01-business-and-use-cases.md) | use-case registry, risk-tiering, business-owner attribution | 22 | 6 | 10 | 5 | 1 |
 | L02 | [Governance & Risk Mgmt](L02-governance-and-risk-mgmt.md) | policy-to-control mapping, risk register, exceptions workflow | 25 | 7 | 11 | 7 | 0 |
 | L03 | [Legal, Privacy & Compliance](L03-legal-privacy-and-compliance.md) | UAE/GCC residency, PDPL-type obligations, evidence export, DPIA support, fairness, transparency, human oversight, intellectual property and authority engagement | 45 | 12 | 25 | 8 | 0 |
 | L04 | [Human Interaction Layer](L04-human-interaction-layer.md) | browser/workforce AI, user coaching, approval prompts, multimodal input | 32 | 6 | 16 | 10 | 0 |
-| L05 | [AI Applications](L05-ai-applications.md) | discovery, app-level runtime protection, output handling | 35 | 8 | 19 | 8 | 0 |
+| L05 | [AI Applications](L05-ai-applications.md) | discovery, app-level runtime protection, output handling | 36 | 8 | 20 | 8 | 0 |
 | L06 | [Agent Orchestration Layer](L06-agent-orchestration-layer.md) | agent and MCP discovery, tool governance, access grant approval, delegation chains, agent-to-agent trust, kill switch | 47 | 19 | 25 | 3 | 0 |
 | L07 | [Prompt & Context Layer](L07-prompt-and-context-layer.md) | prompt injection (direct/indirect), jailbreak, context and memory poisoning, memory governance | 45 | 11 | 27 | 7 | 0 |
-| L08 | [AI Gateway & Security Controls](L08-ai-gateway-and-security-controls.md) | inline policy, DLP, guardrails, guardrail policy ownership, bypass resistance, latency | 43 | 8 | 26 | 8 | 1 |
-| L09 | [Identity & Access Mgmt](L09-identity-and-access-mgmt.md) | user and agent (non-human) identity, scoped tokens, RBAC | 26 | 9 | 14 | 3 | 0 |
-| L10 | [Data Layer](L10-data-layer.md) | sensitive-data classification, DLP, lineage, tenant isolation, data quality | 33 | 9 | 16 | 8 | 0 |
+| L08 | [AI Gateway & Security Controls](L08-ai-gateway-and-security-controls.md) | inline policy, DLP, guardrails, guardrail policy ownership, bypass resistance, latency | 44 | 8 | 27 | 8 | 1 |
+| L09 | [Identity & Access Mgmt](L09-identity-and-access-mgmt.md) | user and agent (non-human) identity, scoped tokens, RBAC | 27 | 9 | 15 | 3 | 0 |
+| L10 | [Data Layer](L10-data-layer.md) | sensitive-data classification, DLP, lineage, tenant isolation, data quality | 35 | 11 | 16 | 8 | 0 |
 | L11 | [Knowledge & Retrieval Layer](L11-knowledge-and-retrieval-layer.md) | RAG poisoning, vector-store access control, retrieval leakage, embedding and index governance | 28 | 6 | 12 | 10 | 0 |
 | L12 | [Model Layer](L12-model-layer.md) | model theft, extraction, adversarial inputs, model scanning, identity for model access, model approval, predictive model drift and privacy attacks | 34 | 7 | 13 | 13 | 1 |
 | L13 | [Training & Fine-Tuning Layer](L13-training-and-fine-tuning-layer.md) | data poisoning, dataset provenance, fine-tune integrity, training job identity | 26 | 4 | 14 | 8 | 0 |
-| L14 | [MLOps / LLMOps Layer](L14-mlops-llmops-layer.md) | pipeline and registry security, CI/CD gates, artifact signing | 22 | 4 | 12 | 6 | 0 |
+| L14 | [MLOps / LLMOps Layer](L14-mlops-llmops-layer.md) | pipeline and registry security, CI/CD gates, artifact signing | 24 | 4 | 14 | 6 | 0 |
 | L15 | [Infrastructure Layer](L15-infrastructure-layer.md) | GPU/cluster hardening, secrets, network segmentation, sovereignty of control plane | 20 | 8 | 10 | 2 | 0 |
 | L16 | [Supply Chain & Third Party](L16-supply-chain-and-third-party.md) | AI-BOM, model and package provenance, third-party SaaS AI risk | 26 | 4 | 13 | 9 | 0 |
 | L17 | [Monitoring, Detection & Response](L17-monitoring-detection-and-response.md) | telemetry, SIEM/SOAR integration, AI incident response, forensics, tracing platforms, quality failures | 33 | 4 | 21 | 8 | 0 |
-| | **Total** | | **{{n:layer_tests}}** | **132** | **283** | **123** | **3** |
+| | **Total** | | **{{n:layer_tests}}** | **134** | **289** | **123** | **3** |
 
 ## Emerging domains
 
@@ -94,19 +94,19 @@ Counts are taken from the case index of each layer and domain file. Test method 
 
 | Test method | Cases | Meaning |
 |---|---|---|
-| Technical | 554 | Executed live in the PoC lab |
-| Evidence | 105 | Verified by configuration, export, workflow or document inspection |
+| Technical | 561 | Executed live in the PoC lab |
+| Evidence | 107 | Verified by configuration, export, workflow or document inspection |
 | Attestation | 14 | Vendor written declaration, scored lower than demonstrated evidence |
 
 | Tag | Use-case domain | Cases tagged |
 |---|---|---|
 | D1 | Workforce / Browser AI Governance | 56 |
-| D2 | Developer / IDE AI Security | 29 |
-| D3 | Custom AI Application Runtime Security | 197 |
+| D2 | Developer / IDE AI Security | 30 |
+| D3 | Custom AI Application Runtime Security | 200 |
 | D4 | Model Security / AI Supply Chain | 122 |
-| D5 | Agentic AI / MCP / Tool Governance | 89 |
-| D6 | Data Protection / DLP / Investigation | 112 |
-| D7 | Sovereignty / Compliance / UAE Requirements | 170 |
+| D5 | Agentic AI / MCP / Tool Governance | 93 |
+| D6 | Data Protection / DLP / Investigation | 115 |
+| D7 | Sovereignty / Compliance / UAE Requirements | 177 |
 
 A case can carry more than one domain tag, so the domain counts add up to more than {{n:layer_tests}}. D2 covers the developer workflow end to end: IDE prompts, assistant extensions, coding agents, MCP configuration, repository policy, pipeline bots and SOC telemetry, with L05 as its primary layer.
 

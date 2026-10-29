@@ -12,9 +12,9 @@ nav_order: 12
 
 **Primary test focus:** user and agent (non-human) identity, scoped tokens, RBAC
 
-**Controls tested:** [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials (15 cases), [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity (11 cases), [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance (1 case), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability (1 case), [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration (1 case), [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization (1 case), [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) Human Approval for Sensitive Actions (1 case), [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening (1 case)
+**Controls tested:** [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials (16 cases), [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity (12 cases), [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance (1 case), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability (1 case), [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration (1 case), [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization (1 case), [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) Human Approval for Sensitive Actions (1 case), [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening (1 case)
 
-**Cases:** 26 (TC-L09-001 to TC-L09-026)
+**Cases:** 27 (TC-L09-001 to TC-L09-027)
 > **Safety boundary.** Agent and MCP cases use a lab agent framework, benign mock tools and mock MCP servers that write only to a lab sink. Where an attack is simulated, success is first measured with the platform disabled. Never connect lab agents to production systems or real credentials.
 
 > **Verify before use.** MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the [Reference Index](00-reference-index.md) for field definitions and applicability codes.
@@ -51,6 +51,7 @@ nav_order: 12
 | [TC-L09-024](#tc-l09-024) | Mutual Authentication Between AI Components | High | Technical | D3, D7 | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
 | [TC-L09-025](#tc-l09-025) | Identity Audit Trail: Who, What and On Whose Behalf | Critical | Technical | D5, D7 | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008), [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) |
 | [TC-L09-026](#tc-l09-026) | Coding Agent Repository and Cloud Credentials: Scope and Lifetime | Critical | Technical | D2, D5 | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016), [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) |
+| [TC-L09-027](#tc-l09-027) | Agent Credentials Where a Person Would Need MFA: Device-Bound, Time-Bound and Not Reusable | High | Technical | D5, D7 | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) |
 
 ---
 
@@ -1272,6 +1273,55 @@ nav_order: 12
 **Expected Integration Evidence.** Findings to ticketing.
 
 **Evidence to Capture.** Token scope report; denial log; expiry test result.
+
+[Back to layer index](#top)
+
+---
+
+<a id="tc-l09-027"></a>
+
+### TC-L09-027: Agent Credentials Where a Person Would Need MFA: Device-Bound, Time-Bound and Not Reusable
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L09 Identity & Access Mgmt |
+| **Use-Case Domain(s)** | D5, D7 |
+| **Test Method** | Technical |
+| **Vendor Applicability** | Core: A, P |
+| **Risk Severity** | High |
+| **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
+| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity; [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
+
+**Risk Addressed.** An agent cannot hold a possession or inherence factor, so it cannot perform multi-factor authentication. Where a person would need MFA, an agent given a plain reusable secret becomes the weakest way into the protected environment.
+
+**Business Scenario.** Identity teams want any agent that reaches an environment where people need MFA, such as a cardholder data environment from outside it, to use credentials bound to its device, limited in time and usable by nothing else.
+
+**Technical Scenario.** Inspect and attack the credentials of a lab agent that reaches a protected lab segment where human users must use MFA.
+
+**Test Data.** 1 lab agent with access to a protected segment; its credential (for example a device-specific certificate over mutual TLS, or a hardware-backed key); a copy of the credential material placed on a second host; a human test account for comparison.
+
+**Procedure**
+
+1. Record the credential type and confirm it is bound to the agent's device and preferably cryptographic.
+2. Use the copied credential material from the second host and confirm access fails.
+3. Confirm the credential expires at its stated lifetime and that a new one is issued only to the bound device.
+4. Confirm no other agent, service or person shares the credential and that it can be revoked without affecting them.
+5. Confirm the agent cannot reach the protected segment through a path that avoids the control a person would face (for example a jump host session it was handed).
+6. Confirm access events identify this agent uniquely.
+
+**Edge Cases / Variants.** Agent running in a container that is rescheduled to another node; long-running task outliving the credential lifetime.
+
+**Expected Detection.** Use from the second host fails and is logged; each access is attributed to the one agent.
+
+**Expected Prevention / Control Action.** No reusable or shared credential; expiry enforced; no path around the MFA-protected entry.
+
+**Expected Integration Evidence.** Certificate or key issuance and denial events in the SIEM.
+
+**Evidence to Capture.** Credential configuration; replay result; expiry and reissue record; access log sample.
+
+**Reviewer Notes.** Builds on [TC-L09-002](#tc-l09-002) (unique identity) and [TC-L09-003](#tc-l09-003) (short-lived credentials). The PCI SSC supplement "Security Considerations for AI Systems" (September 2026) states that an AI system cannot implement MFA and, where it accesses the CDE from outside under PCI DSS Requirement 8.4.2, should use at least device-bound and ideally cryptographic credentials. Whether this satisfies 8.4.2 for a given entity is for the assessor. See the [PCI DSS AI Crosswalk](../23_Framework_Crosswalks/21_PCI_DSS_AI_Crosswalk.md).
 
 [Back to layer index](#top)
 
