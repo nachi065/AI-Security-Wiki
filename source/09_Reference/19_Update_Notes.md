@@ -19,6 +19,30 @@ This page is the wiki's change record. It has two parts:
 
 Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.
 
+## 29 October 2026: 2026 cases in the incident casebook
+
+### What is new
+
+The [AI Security Incident Casebook](20_AI_Security_Incident_Casebook.md) has seven cases from 2026, bringing it to sixteen:
+
+- **Load/Mine** (Pluto Security, 29 October): 31 Hugging Face repositories that ran a cryptominer through `trust_remote_code=True`.
+- **OpenClaw gym booking** (ABC News, 10 August): a personal agent found a booking API that did not check who owned a reservation, and cancelled another person's booking.
+- **Hugging Face breach** (July): an intrusion by autonomous agents that OpenAI later attributed to its own models running in an evaluation.
+- **Clinejection and Cline CLI 2.3.0** (February): a prompt injection in a GitHub issue title, and a tampered npm release that installed OpenClaw.
+- **Moltbook** (Wiz, 2 February): a social network for agents that exposed about 1.5 million agent API tokens.
+- **ClawHavoc** (February): 341 malicious skills on ClawHub, most of them installing a password stealer.
+- **OpenClaw CVE-2026-25253** (31 January): one click on a link let an attacker take the agent's gateway token and run commands.
+
+New cases also list the test cases that check the controls they map to, and say under **Not confirmed** what the sources do not settle.
+
+### What was checked and what was not
+
+- Each case was checked on 29 October 2026 against the source linked beside it. The Hugging Face breach, the Moltbook exposure, Load/Mine and CVE-2026-25253 were read from the primary write-ups (Hugging Face and OpenAI, Wiz, Pluto Security, the GitHub advisory and depthfirst). The gym incident comes from the ABC's report of the user's own account, and ClawHavoc and Clinejection from security news and vendor reports that cite the original researchers, whose own posts were not read.
+- Hugging Face's and OpenAI's accounts of the breach differ on the entry point and on what was accessed, and Hugging Face's post does not confirm OpenAI's attribution. OpenAI's later posts on the incident could not be retrieved and are not used.
+- The gym incident has no vendor or independent confirmation. Aikido's test against a synthetic app shows it is plausible, not that it happened.
+- Load/Mine was published on the day it was added, and Hugging Face had not commented.
+- The nine earlier cases do not yet list test cases.
+
 ## 29 October 2026: the Builder Track on Windows
 
 This entry follows the one below ("Builder Toolkit and Builder Track links"), which listed Windows support for the sandbox and the shell-based git hooks as not done.
@@ -566,6 +590,7 @@ Every version of the wiki, newest first. Rows are never edited after they are ad
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.53 | 2026-10-29 | Nachiket Sathaye | AI Security Incident Casebook: seven 2026 cases (Load/Mine on Hugging Face, the OpenClaw gym booking incident, the Hugging Face breach by autonomous agents, Clinejection and Cline CLI 2.3.0, the Moltbook database exposure, ClawHavoc on ClawHub and OpenClaw CVE-2026-25253), each mapped to risks, controls, OWASP items and test cases, with what is not confirmed marked. |
 | 2.52 | 2026-10-29 | Nachiket Sathaye | Home page "Latest update" now lists every update of the newest day, built by build.py from the Update Notes headings and the full version history, instead of a hand-written summary of the last change. |
 | 2.51 | 2026-10-29 | Nachiket Sathaye | Builder Track runs on Windows: the sandbox uses a Windows Job Object for CPU, memory and process limits and reports which limits it applied, the git hooks fall back from python3 to python and run under Git for Windows, files are read and written as UTF-8, a PowerShell version of the container command, and every Builder Track test now runs in CI on Linux, macOS and Windows. |
 | 2.50 | 2026-10-29 | Nachiket Sathaye | Builder Toolkit (Builder Track page 5): AI-specific code and configuration checker with ten rules and SARIF output, read-only MCP server, offline look-ups over the CSV data files, evidence export for the audit checklist and test tracker, instruction files for five coding assistants from one source, GitHub, GitLab and pre-commit examples, toolkit tests on Linux, macOS and Windows; Builder Track pages link register risks, templates, CSV files and the OWASP crosswalk, and six template pages link back. |
