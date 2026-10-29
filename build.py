@@ -458,9 +458,6 @@ for p in pages:
 for p in pages:
     p["body"] = re.sub(r"<!-- framework-crosswalk: ([\w-]+) -->", lambda m: framework_crosswalk(p, m.group(1)), p["body"])
 
-WORDS = "zero one two three four five six seven eight nine ten".split()
-
-
 def latest_updates(notes):
     # Every update of the newest day: its date comes from the full version history, its entries from the dated note headings.
     versions = re.findall(r"^\| (\d+\.\d+) \| (\d{4}-\d{2}-\d{2}) \|", notes["body"], flags=re.M)
@@ -472,8 +469,7 @@ def latest_updates(notes):
     heading = f"{when.day} {when:%B %Y}"
     entries = re.findall(rf"^## ((?:Week ending )?{re.escape(heading)}: (.+))$", notes["body"], flags=re.M)
     page = "09_Reference/19_Update_Notes.md"
-    lines = [f"> **Latest update ({heading}).** "
-             + (f"{WORDS[len(entries)].capitalize() if len(entries) < len(WORDS) else len(entries)} updates that day, newest first:" if len(entries) > 1 else ""), ">"]
+    lines = [f"> **What's new: {heading}**", ">"]
     for full, title in entries:
         lines += [f"> - [{title[0].upper() + title[1:]}]({page}#{slugify(full, '-')})"]
     span = numbers[0] if len(numbers) == 1 else f"{numbers[-1]} to {numbers[0]}"
