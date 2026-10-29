@@ -19,6 +19,19 @@ This page is the wiki's change record. It has two parts:
 
 Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.
 
+## 29 October 2026: every update of the day on the home page
+
+### What changed
+
+- **Latest update.** The callout under the home page header now lists every update made on the newest day, newest first, each linked to its entry on this page, and names the versions published that day. Before, it was written by hand and described only the last change, with a line about the earlier ones.
+- **Generated, not hand-written.** `build.py` writes the callout in place of a `<!-- latest-updates -->` marker in the home page source. It takes the newest date in the full version history below, every version row with that date, and every entry heading on this page that starts with that date (or with "Week ending" and that date).
+- **Contributing guide.** It now says to add the update note and the version-history row, and not to edit the callout.
+
+### What was checked and what is still open
+
+- The site was rebuilt and the link and author checks pass, which confirms each generated link reaches its entry on this page.
+- An entry whose heading does not start with the date of its version row is not listed, though its version is still named. The version-history table on the home page (section 20) is still kept by hand.
+
 ## 29 October 2026: the Builder Track on Windows
 
 This entry follows the one below ("Builder Toolkit and Builder Track links"), which listed Windows support for the sandbox and the shell-based git hooks as not done.
@@ -566,6 +579,7 @@ Every version of the wiki, newest first. Rows are never edited after they are ad
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.52 | 2026-10-29 | Nachiket Sathaye | Home page "Latest update" now lists every update of the newest day, built by build.py from the Update Notes headings and the full version history, instead of a hand-written summary of the last change. |
 | 2.51 | 2026-10-29 | Nachiket Sathaye | Builder Track runs on Windows: the sandbox uses a Windows Job Object for CPU, memory and process limits and reports which limits it applied, the git hooks fall back from python3 to python and run under Git for Windows, files are read and written as UTF-8, a PowerShell version of the container command, and every Builder Track test now runs in CI on Linux, macOS and Windows. |
 | 2.50 | 2026-10-29 | Nachiket Sathaye | Builder Toolkit (Builder Track page 5): AI-specific code and configuration checker with ten rules and SARIF output, read-only MCP server, offline look-ups over the CSV data files, evidence export for the audit checklist and test tracker, instruction files for five coding assistants from one source, GitHub, GitLab and pre-commit examples, toolkit tests on Linux, macOS and Windows; Builder Track pages link register risks, templates, CSV files and the OWASP crosswalk, and six template pages link back. |
 | 2.49 | 2026-10-29 | Nachiket Sathaye | CSV data files for the risk register, risk-to-control mapping, controls, test cases and AI Risk Map crosswalk, regenerated on every build; four workbooks rebuilt with AI-R47 to AI-R54 and the AI Risk Map credit linking its GitHub repository: AI Risk Register (version 1.3), AI Use-Case Risk Triage (1.1), Control Library and Crosswalks (1.4), Test Case Tracker (1.3). |
