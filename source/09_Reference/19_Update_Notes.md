@@ -7,7 +7,7 @@ nav_order: 2
 description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."
 document_type: AI Security Wiki Reference
 version: 1.1
-last_reviewed: 2026-10-28
+last_reviewed: 2026-10-29
 ---
 
 # Update Notes
@@ -63,6 +63,178 @@ The nightly verification pass checks one slice of the wiki each night. This week
 - US: leginfo.legislature.ca.gov could not be read on 28 October 2026, so the California rows (US6 for SB 53 and AB 2013, US7) were not checked against the statute text. Illinois HB 3773 (US10) could not be checked because ilga.gov refused automated retrieval. California also signed other AI bills on 30 September 2026 (among them SB 947 on automated decision systems in employment); none is a row yet.
 - Singapore: the 2024 amendments to the Cybersecurity Act (new duties for foundational digital infrastructure and other new categories) are not yet described in SG8; their start date was found only in law-firm notes.
 - South Korea: the Korean text on law.go.kr was still not read, so KR1 to KR6 stay [Reported]. A news report of 27 October 2026 says MSIT plans a public hearing on revising the AI Basic Act at the end of the year; no draft has been published.
+
+## 29 October 2026: Full ISO/IEC 42001 Annex A coverage and wider ISO/IEC 27001 coverage
+
+### What is new
+
+- **[ISO/IEC 42001 Crosswalk](../23_Framework_Crosswalks/05_ISO_IEC_42001_Crosswalk.md) (1.1):** all 38 Annex A controls are now cited by at least one wiki control, up from 33. The five new citations are A.2.3 Alignment with other organizational policies (AI-CTRL-012), A.6.1.2 Objectives for responsible development of AI systems (AI-CTRL-033), A.6.1.3 Processes for responsible design and development (AI-CTRL-030, AI-CTRL-033), A.6.2.7 AI system technical documentation (AI-CTRL-030, AI-CTRL-031) and A.10.4 Customers (AI-CTRL-041).
+- **[ISO/IEC 27001 Crosswalk](../23_Framework_Crosswalks/08_ISO_IEC_27001_Crosswalk.md) (1.1):** 75 of the 93 Annex A controls are now cited, up from 65. The ten new citations are A.5.6 Contact with special interest groups (AI-CTRL-043), A.5.7 Threat intelligence (AI-CTRL-034), A.5.11 Return of assets (AI-CTRL-014), A.5.37 Documented operating procedures (AI-CTRL-009, AI-CTRL-035), A.6.2 Terms and conditions of employment and A.6.4 Disciplinary process (AI-CTRL-012), A.8.1 User endpoint devices (AI-CTRL-001, AI-CTRL-002, AI-CTRL-004), A.8.18 Use of privileged utility programs (AI-CTRL-024), A.8.21 Security of network services (AI-CTRL-032) and A.8.34 Protection of information systems during audit testing (AI-CTRL-034). The 18 left uncited are the 14 physical controls and four people controls (A.6.1, A.6.5, A.6.6, A.6.7), which the page now names as left to the existing ISMS.
+- **Eight controls extended** where a new citation needed text to support it: policy alignment and AI use in employment terms (AI-CTRL-012), return or deletion of data and models at contract end (AI-CTRL-014), privileged tools for agents (AI-CTRL-024), security requirements for model APIs and other network services (AI-CTRL-032), responsible development objectives as release criteria (AI-CTRL-033), AI threat intelligence and safeguards for testing production systems (AI-CTRL-034), and contact with AI security interest groups (AI-CTRL-043). The other new citations rest on text the controls already had.
+- **Workbooks rebuilt:** AI Risk Register (1.6), Control Library and Crosswalks (1.7), Audit and Evidence Checklist (1.5) and Requirements Traceability Matrix (1.4). The matrix grows from 188 to 198 requirements because each new sentence is a requirement.
+
+### What was checked and what was not
+
+- Every Annex A number and title on both pages was checked on 29 October 2026 against two published listings per standard (for ISO/IEC 42001, RiskProfs and TCSA; for ISO/IEC 27001:2022, Open Security Architecture and HighTable). The ISO Online Browsing Platform could not be reached, so nothing was checked against the standards themselves. The listings word some titles differently; the wiki keeps the wording it already used where the two disagree.
+- This corrects the earlier note on the ISO/IEC 27001 Crosswalk that its numbers and titles were written from memory.
+- The new mappings are the wiki's own judgment from the control titles and have not been reviewed by ISO or a certification body. No test case was added, so the new citations count the existing test cases under each control.
+- All four workbooks were recalculated with no formula errors.
+
+## 29 October 2026: AI-accelerated exploitation on the risk register
+
+This entry follows the one below ("PCI DSS and the PCI SSC guidance on AI systems") and closes the gap it recorded for attackers' use of AI.
+
+### What is new
+
+- **AI-R55 AI-Accelerated Exploitation and Patch Gap** on the [Enterprise AI Risk Register](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) (version 1.5), owner domain 05 (Security and Adversarial Threats), example rating High. It covers attackers using AI to find and exploit vulnerabilities faster than vulnerability management sized for human attackers can respond.
+- **A register decision reopened.** Under Considered and Not Added, attacks others carry out with AI were out of scope. The exploitation-speed part is now in scope as AI-R55, with the reason recorded; deepfake fraud, voice cloning and phishing stay out of scope.
+- **Controls.** The [AI Risk to Control Mapping](../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.md) maps AI-R55 to AI-CTRL-037, AI-CTRL-027, AI-CTRL-033 and AI-CTRL-025, and [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037) now asks for remediation and exception time limits set for fast exploitation and triage sized for more findings.
+- The [PCI DSS AI Crosswalk](../23_Framework_Crosswalks/21_PCI_DSS_AI_Crosswalk.md) (1.1) now shows the vulnerability scanning and rapid triage rows as partial matches through AI-R55, and [AI for Security and AI-Enabled Threats](../00_Foundations/10-AI-for-Security-and-AI-Enabled-Threats.md) links to the risk.
+- **Workbooks rebuilt** with 55 risks: AI Risk Register (1.5), AI Use-Case Risk Triage (1.2), Control Library and Crosswalks (1.6), Test Case Tracker (1.5), Audit and Evidence Checklist (1.4) and Requirements Traceability Matrix (1.3).
+
+### What was checked and what was not
+
+- AI-R55 passes the four tests in [What Belongs on the Register](../02_Risk_Management/02A_AI_Risk_Methodology.md#what-belongs-on-the-register). It is corroborated by the PCI SSC supplement and by the UK NCSC assessment *Impact of AI on cyber threat from now to 2027* (7 May 2025), whose wording on the disclosure-to-exploitation window was read on 29 October 2026.
+- No triage question was added: the risk applies to the whole organization rather than to one use case.
+- Most of the treatment is general vulnerability management, which the wiki does not cover; the mapped controls treat the AI-specific part. No new test case was added for it.
+
+## 29 October 2026: PCI DSS and the PCI SSC guidance on AI systems
+
+### What is new
+
+- **[PCI DSS AI Crosswalk](../23_Framework_Crosswalks/21_PCI_DSS_AI_Crosswalk.md):** a new crosswalk page for the PCI Security Standards Council information supplement *Security Considerations for AI Systems* (version 1.0, September 2026). It maps the PCI DSS requirements the supplement applies to AI (1.2.4, Requirement 3 and 3.3.1, 6.2.3 and 6.2.3.1, 6.5.1, 8.4.2, 12.5.1, 12.5.2, 12.8.x and 12.10.x) and every theme of the guidance to wiki controls and test cases, adds a short scoping checklist, and names what the wiki does not cover.
+- **Eight test cases**, bringing the library to 682: a human-over-the-loop authorisation record ([TC-L01-022](../10_Test_Case_Library/L01-business-and-use-cases.md#tc-l01-022)), AI chat widgets on payment pages ([TC-L05-036](../10_Test_Case_Library/L05-ai-applications.md#tc-l05-036)), egress DLP that the AI system cannot switch off or route around ([TC-L08-044](../10_Test_Case_Library/L08-ai-gateway-and-security-controls.md#tc-l08-044)), agent credentials where a person would need MFA ([TC-L09-027](../10_Test_Case_Library/L09-identity-and-access-mgmt.md#tc-l09-027)), keeping keys, passwords and random values away from models ([TC-L10-034](../10_Test_Case_Library/L10-data-layer.md#tc-l10-034)), tokenised data plus a reachable detokenisation path ([TC-L10-035](../10_Test_Case_Library/L10-data-layer.md#tc-l10-035)), change control and tested rollback for changes agents make ([TC-L14-023](../10_Test_Case_Library/L14-mlops-llmops-layer.md#tc-l14-023)), and measuring an AI code reviewer against seeded flaws ([TC-L14-024](../10_Test_Case_Library/L14-mlops-llmops-layer.md#tc-l14-024)).
+- **Eleven controls extended** from the guidance: shadow AI detection methods (AI-CTRL-001), logging detail for reconstruction (AI-CTRL-008), embedded third-party AI (AI-CTRL-014), agent credentials and MFA (AI-CTRL-015), high-impact secrets, effective data reach and AI-created data stores (AI-CTRL-017), logs that survive rollback and fail-secure shutdown (AI-CTRL-025), AI-BOM fields and payment page widgets (AI-CTRL-031), agent-made changes (AI-CTRL-033), quarterly review and AI code reviewer measurement (AI-CTRL-034), AI scenarios in the incident response plan (AI-CTRL-035), and the human-over-the-loop record (AI-CTRL-045).
+- The PCI DSS row of the [Sector Overlays](../04_Domain_Standards/10B_Sector_Overlays.md) now cites the requirement numbers from the supplement and links the new page.
+- **Workbooks rebuilt.** The [AI Risk Register](../25_Templates/01_AI_Risk_Register_Template.md) (version 1.4) and [Control Library and Crosswalks](../25_Templates/06_AI_Security_Control_Library_and_Crosswalks_Template.md) (1.5) have two new crosswalk columns, PCI DSS requirements and PCI SSC guidance themes. The [Test Case Tracker](../25_Templates/07_AI_Security_Test_Case_Tracker_Template.md) (1.4) holds the eight new cases. The [Audit and Evidence Checklist](../25_Templates/05_AI_Security_Audit_and_Evidence_Checklist_Template.md) (1.3) and [Requirements Traceability Matrix](../25_Templates/12_AI_Security_Requirements_Traceability_Matrix_Template.md) (1.2) carry the extended control text; the matrix grows from 169 to 188 requirements because each new sentence is a requirement.
+- Corrected hand-kept counts that had drifted in earlier updates: test case counts in the control index for seven controls, the per-method and per-domain totals on the test library home page, and the control theme counts and case lists in the [framework adoption guide](../10_Test_Case_Library/framework-adoption-guide.md).
+
+### What was checked and what was not
+
+- The supplement was read in full from a copy of the PDF supplied on 29 October 2026. Its publication was confirmed only through a Help Net Security report of 9 October 2026; the PCI SSC Document Library copy could not be reached, so the copy used has not been compared with it.
+- Requirement numbers the supplement cites are marked as read from it. Numbers it does not cite (targeted risk analysis, logging, penetration and segmentation testing, payment page scripts and vulnerability scanning) were added from memory of PCI DSS v4.0.1 and are marked [Recalled] until checked against the standard.
+- The mapping is the wiki's own and has not been reviewed by PCI SSC or a QSA. The supplement's CUSTODY categorisation framework was not reviewed.
+- The new test cases are at the Documented level: none has been run against a product.
+- All five workbooks were recalculated with no formula errors.
+
+## 29 October 2026: 2026 cases in the incident casebook
+
+### What is new
+
+The [AI Security Incident Casebook](20_AI_Security_Incident_Casebook.md) has seven cases from 2026, bringing it to sixteen:
+
+- **Load/Mine** (Pluto Security, 29 October): 31 Hugging Face repositories that ran a cryptominer through `trust_remote_code=True`.
+- **OpenClaw gym booking** (ABC News, 10 August): a personal agent found a booking API that did not check who owned a reservation, and cancelled another person's booking.
+- **Hugging Face breach** (July): an intrusion by autonomous agents that OpenAI later attributed to its own models running in an evaluation.
+- **Clinejection and Cline CLI 2.3.0** (February): a prompt injection in a GitHub issue title, and a tampered npm release that installed OpenClaw.
+- **Moltbook** (Wiz, 2 February): a social network for agents that exposed about 1.5 million agent API tokens.
+- **ClawHavoc** (February): 341 malicious skills on ClawHub, most of them installing a password stealer.
+- **OpenClaw CVE-2026-25253** (31 January): one click on a link let an attacker take the agent's gateway token and run commands.
+
+New cases also list the test cases that check the controls they map to, and say under **Not confirmed** what the sources do not settle.
+
+### What was checked and what was not
+
+- Each case was checked on 29 October 2026 against the source linked beside it. The Hugging Face breach, the Moltbook exposure, Load/Mine and CVE-2026-25253 were read from the primary write-ups (Hugging Face and OpenAI, Wiz, Pluto Security, the GitHub advisory and depthfirst). The gym incident comes from the ABC's report of the user's own account, and ClawHavoc and Clinejection from security news and vendor reports that cite the original researchers, whose own posts were not read.
+- Hugging Face's and OpenAI's accounts of the breach differ on the entry point and on what was accessed, and Hugging Face's post does not confirm OpenAI's attribution. OpenAI's later posts on the incident could not be retrieved and are not used.
+- The gym incident has no vendor or independent confirmation. Aikido's test against a synthetic app shows it is plausible, not that it happened.
+- Load/Mine was published on the day it was added, and Hugging Face had not commented.
+- The nine earlier cases do not yet list test cases.
+
+## 29 October 2026: the Builder Track on Windows
+
+This entry follows the one below ("Builder Toolkit and Builder Track links"), which listed Windows support for the sandbox and the shell-based git hooks as not done.
+
+### What changed
+
+- **Sandbox.** On macOS, the sandbox now starts (it failed there before). On Windows, [`sandbox.py`](../24_Builder_Track/01_Secure_Your_First_Agent.md#b7-run-generated-code-in-a-sandbox) now places the child process in a Job Object (new file `winjob.py`, standard-library `ctypes`) that limits CPU time, memory and process count and kills everything the job started when it closes or times out. Its result has a new `limits` field that lists what the platform actually applied.
+- **Git hooks.** The hook commands on [Developer Pipeline Checks](../24_Builder_Track/04_Developer_Pipeline_Checks.md#wire-it-in) use `python3` where it exists and `python` otherwise, and the page says to install them from Git Bash on Windows.
+- **Text files.** The reference code and tests read and write files as UTF-8 instead of the platform's default encoding.
+- **Container command.** `docker-sandbox.ps1` runs the same locked-down container command from PowerShell.
+- **CI.** The Builder Track tests workflow runs every Builder Track test, not only the toolkit's, on Linux, macOS and Windows.
+
+### What was checked and what is still open
+
+- All Builder Track tests pass on Linux locally. The macOS and Windows results come from the CI run on the pull request.
+- **macOS.** Running every test on macOS for the first time showed that the sandbox had never worked there: macOS refuses one of the Unix limits (the address-space limit, as far as the tests show), and the whole launch failed. The sandbox now applies each limit it can, runs without the ones the system refuses, and lists the applied ones in `limits`, as it does on Windows.
+- Tests skip what a platform cannot do, with the reason: the memory limit where the system refuses it (macOS), the file-size limit on Windows, and network removal everywhere except Linux machines that allow `unshare --net`.
+- On Windows the child process joins its Job Object just after it starts, so its first instructions run before the limits apply. The sandbox remains hygiene, not a security boundary, on every platform.
+- `docker-sandbox.ps1` was not executed, like `docker-sandbox.sh`, because the tests need no container runtime.
+
+## 29 October 2026: Builder Toolkit and Builder Track links
+
+This entry follows the one below ("CSV data files and rebuilt workbooks"). It acts on a review of the Builder Track against the rest of the wiki and on Ankush Jain's [ai-secure-by-design](https://github.com/ankush1982/ai-secure-by-design) v0.2 (commit `70ef026`, 24 October 2026).
+
+### What changed
+
+- **[Builder Toolkit](../24_Builder_Track/05_Builder_Toolkit.md)**, a new Builder Track page with tools in the track's `code/` folder, all standard-library Python:
+  - `aiwiki_check.py` with `ai_rules.json`: ten AI-specific rules (AIW-001 to AIW-010) for model output reaching `eval`, HTML or SQL, unsafe model loading, `trust_remote_code`, unpinned models and MCP servers, MCP over plain HTTP, auto-approved MCP tools and coding agents run with approvals off. Each rule names its controls, risks and test cases. Output is text, JSON or SARIF 2.1.0, with exit codes for hooks and CI and a mode that checks only the lines a change adds.
+  - `mcp_server.py`: a read-only MCP server (stdio, and HTTP on loopback with token and Host and Origin checks) with six tools for wiki look-ups and the checks, and a design-review prompt.
+  - `wiki_data.py`: offline look-ups and search over the CSV data files.
+  - `evidence_export.py`: rows for the Audit and Evidence Checklist and the Test Case Tracker from the guard's audit log and SARIF results, after checking the log's hash chain.
+  - `gen_instructions.py`: one set of rules written as `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, the Copilot instructions file and a Cursor rule.
+  - GitHub Actions, GitLab CI and pre-commit examples.
+- **Tests on three operating systems.** `test_toolkit.py` (32 tests) runs on Linux, macOS and Windows in the Builder Track tests workflow, which now also runs when the CSV data files change.
+- **Links across the track.** The ten controls table on [Secure Your First Agent](../24_Builder_Track/01_Secure_Your_First_Agent.md#the-ten-controls-at-a-glance) gains a column of register risks and a link to the OWASP Top 10 Crosswalk. The track's pages link the inventory, triage, audit checklist, test tracker, impact assessment and incident report templates; the [section index](../24_Builder_Track/index.md) adds a where-to-start table and an evidence table; and those six template pages link back. The home page links the section index and the toolkit.
+
+### What was checked and what is still open
+
+- All Builder Track tests pass locally on Linux with Python 3.13 (122 tests, 1 skipped where the kernel does not allow `unshare`). The macOS and Windows results come from the CI run on the pull request.
+- The checker reports nothing on the Builder Track's own reference code, on the Payload Kit or on the ai-secure-by-design repository. Its rules are line-based heuristics: they miss renamed variables and can flag safe code.
+- The register risks in the ten controls table are the main ones the risk-to-control mapping links to each step's control, chosen by hand; the test suite checks only that every ID exists.
+- **Not verified against vendor documentation:** MCP client configuration layouts, instruction-file locations for each assistant, the coding-agent flag names in AIW-010, and the MCP protocol revisions the server answers. The MCP server was tested with JSON-RPC messages written from the specification, not with any vendor's client.
+- **Not done:** Windows support for the sandbox and the shell-based git hooks on the pipeline page; a hosted, TLS-protected MCP endpoint; per-agent hook adapters; dedicated pages for retrieval authorisation, model supply chain and detection and response.
+
+## 29 October 2026: CSV data files and rebuilt workbooks
+
+This entry follows the one below ("eight risks to close the AI Risk Map gaps").
+
+### What changed
+
+- **CSV data files.** The [Templates](../25_Templates/index.md#data-files-csv) section now offers five CSV files: the risk register, the risk-to-control mapping, the control objectives, the test cases and the AI Risk Map crosswalk. A new script, `export_data.py`, writes them from the Markdown pages on every build, so they cannot fall out of step with the pages. This follows the AI Risk Map's practice of publishing a flat CSV with stable IDs.
+- **Workbooks rebuilt.** The [AI Risk Register](../25_Templates/01_AI_Risk_Register_Template.md) (version 1.3), [AI Use-Case Risk Triage](../25_Templates/03_AI_Use_Case_Risk_Triage_Template.md) (1.1), [Control Library and Crosswalks](../25_Templates/06_AI_Security_Control_Library_and_Crosswalks_Template.md) (1.4) and [Test Case Tracker](../25_Templates/07_AI_Security_Test_Case_Tracker_Template.md) (1.3) workbooks now include AI-R47 to AI-R54 and triage questions E13 to E19. Their licence sheets credit the AI Risk Map to Evan Wheeler (GitHub wheels344i-gte) and link https://github.com/wheels344i-gte/ai-risk-map.
+- **Generator fixes.** The risk register generator no longer assumes 46 risks. The data extraction now finds the Owner Domains table by its heading (the new Considered and Not Added table had come first), and it now reads the Hong Kong regulatory crosswalk, which it had been skipping.
+
+### What was checked and what is still open
+
+- All four workbooks were recalculated with no formula errors. The register sheet holds AI-R01 to AI-R54 in rows 5 to 58, and rows 59 to 150 are free for new risks.
+- The CSV files hold 54 risks, 46 controls and 674 test cases, the same counts the link check reports.
+- The audit checklist, requirements traceability matrix and other workbooks were not rebuilt, because they do not list register risks.
+- The CSV crosswalk maps the AI Risk Map's categories, not its factor IDs. Mapping each AIRM factor ID still needs the map's own CSV.
+
+## 29 October 2026: eight risks to close the AI Risk Map gaps
+
+This entry follows the one below ("rules for what goes on the risk register") and applies its four tests.
+
+### What changed
+
+- **Eight new risks.** The [Enterprise AI Risk Register](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) (version 1.4) adds AI-R47 Model Extraction and Inference Attacks, AI-R48 AI Incidents Not Recognised or Handled, AI-R49 Personal Data That Cannot Be Removed from Models, AI-R50 Training-Serving Skew and Unreproducible Models, AI-R51 Liability for Harm Caused by AI Decisions, AI-R52 Unmaintained Open-Source AI Components, AI-R53 Unlabelled AI-Generated Content and AI-R54 Agent Actions Others Cannot Identify as AI. Each is adapted from a category of the AI Risk Map by Evan Wheeler ([wheels344i-gte/ai-risk-map](https://github.com/wheels344i-gte/ai-risk-map)) that the register covered only in part.
+- **Two risks widened instead of added.** AI-R29 now includes customers reaching the organization through their own agents, and AI-R31 includes shortages of GPUs, compute and power. Segregation of duties was considered and not added. All three decisions are recorded under Considered and Not Added.
+- **Controls and triage.** The [AI Risk to Control Mapping](../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.md) (1.3) maps each new risk to existing controls, so the [traceability page](../02_Risk_Management/02G_Risk_Control_Test_Traceability.md) links them to existing test cases. The [AI Use-Case Risk Triage](../02_Risk_Management/02F_AI_Use_Case_Risk_Triage.md) (1.2) adds questions E13 to E19.
+- **Crosswalk.** The [AI Risk Map Crosswalk](../23_Framework_Crosswalks/18_AI_Risk_Map_Crosswalk.md) (1.2) now shows 42 direct and 13 partial matches, up from 31 and 24.
+
+### What was checked and what is still open
+
+- Five of the eight narratives name a second source as well as the map: NIST AI 100-2 (AI-R47), the EU AI Act Article 73 (AI-R48), the GDPR and EDPB Opinion 28/2024 (AI-R49), the new EU Product Liability Directive (AI-R51), and the EU AI Act Article 50 and China's labelling rules (AI-R53). These sources are cited from the wiki's own regional pages and crosswalks and were not re-read for this change. AI-R50, AI-R52 and AI-R54 say that only the map names them.
+- No new test cases were written. The new risks are tested through the cases already filed under their controls. Whether those cases cover each risk well has not been reviewed.
+- Ratings are illustrative, like the rest of the register. FINOS cross-references for the new risks are marked Not checked.
+
+## 29 October 2026: rules for what goes on the risk register
+
+A second comparison with the *AI Risk Map* by Evan Wheeler (RiskFramework.org), this time with its website, found that the map states why each factor is included and records what it left out, and that its factor IDs are never reused. The wiki had neither rule written down.
+
+### What changed
+
+- **What Belongs on the Register.** A new section of the [AI Risk Methodology](../02_Risk_Management/02A_AI_Risk_Methodology.md#what-belongs-on-the-register) (version 1.3) sets four tests for a new register risk: AI-specific, a distinct response, corroborated by at least two independent sources (or marked as the wiki's own framing), and treatable by at least one control. The tests are adapted from the map's inclusion gates and credited to it.
+- **Considered and Not Added.** The [Enterprise AI Risk Register](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md#considered-and-not-added) (version 1.3) now records proposed risks that were left out, with the reason. It starts with the two scope decisions the methodology already made: attacks others carry out with AI, and general IT risks with no AI-specific change.
+- **IDs are never reused.** The contributing guide now says AI-R, AI-CTRL and TC numbers are permanent and how to retire an item.
+- **Credit for the AI Risk Map.** Every credit for the map (crosswalk, register, methodology, the three template pages and a new Third-party content section in the README) now names the author's GitHub account, wheels344i-gte, and links the map's repository, https://github.com/wheels344i-gte/ai-risk-map, as well as RiskFramework.org. The crosswalk gives the citation the author asks for.
+- **AI Risk Map Crosswalk** (version 1.1). The page no longer says the map's website could not be reached. It records that the website was read on 29 October 2026 and still shows version 1.3, and that the map's workbook and CSV have not yet been compared with the page.
+
+### What was checked and what is still open
+
+- The website was read through a summarising web reader. The map's CSV, workbook and Markdown files could not be downloaded from the environment used, so the crosswalk is still by category, not by factor ID.
+- The existing 46 register risks have not yet been re-tested against the four new tests. In particular, most narratives do not yet name their sources, which the corroboration test asks for.
 
 ## 25 October 2026: NIST SSDF crosswalk in the template workbooks
 
@@ -516,6 +688,16 @@ Every version of the wiki, newest first. Rows are never edited after they are ad
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.56 | 2026-10-29 | Nachiket Sathaye | ISO/IEC 42001 Crosswalk now covers all 38 Annex A controls (was 33) and ISO/IEC 27001 Crosswalk 75 of 93 (was 65), with titles checked against published listings; eight controls extended; four workbooks rebuilt. See the [Update Notes](../09_Reference/19_Update_Notes.md). |
+| 2.55 | 2026-10-29 | Nachiket Sathaye | Risk register 1.5: AI-R55 AI-Accelerated Exploitation and Patch Gap, mapped to four controls, with AI-CTRL-037 extended and the earlier out-of-scope decision on AI-enabled attacks reopened for exploitation speed; PCI DSS AI Crosswalk rows updated; six workbooks rebuilt. See the [Update Notes](../09_Reference/19_Update_Notes.md). |
+| 2.54 | 2026-10-29 | Nachiket Sathaye | PCI DSS AI Crosswalk for the PCI SSC information supplement Security Considerations for AI Systems (September 2026); eight test cases (TC-L01-022, TC-L05-036, TC-L08-044, TC-L09-027, TC-L10-034, TC-L10-035, TC-L14-023, TC-L14-024) and eleven controls extended from it; PCI DSS sector overlay row updated; five workbooks rebuilt with PCI DSS crosswalk columns and the new cases; drifted test case counts corrected. See the [Update Notes](../09_Reference/19_Update_Notes.md). |
+| 2.53 | 2026-10-29 | Nachiket Sathaye | AI Security Incident Casebook: seven 2026 cases (Load/Mine on Hugging Face, the OpenClaw gym booking incident, the Hugging Face breach by autonomous agents, Clinejection and Cline CLI 2.3.0, the Moltbook database exposure, ClawHavoc on ClawHub and OpenClaw CVE-2026-25253), each mapped to risks, controls, OWASP items and test cases, with what is not confirmed marked. |
+| 2.52 | 2026-10-29 | Nachiket Sathaye | Home page "Latest update" now lists every update of the newest day, built by build.py from the Update Notes headings and the full version history, instead of a hand-written summary of the last change. |
+| 2.51 | 2026-10-29 | Nachiket Sathaye | Builder Track runs on Windows: the sandbox uses a Windows Job Object for CPU, memory and process limits and reports which limits it applied, the git hooks fall back from python3 to python and run under Git for Windows, files are read and written as UTF-8, a PowerShell version of the container command, and every Builder Track test now runs in CI on Linux, macOS and Windows. |
+| 2.50 | 2026-10-29 | Nachiket Sathaye | Builder Toolkit (Builder Track page 5): AI-specific code and configuration checker with ten rules and SARIF output, read-only MCP server, offline look-ups over the CSV data files, evidence export for the audit checklist and test tracker, instruction files for five coding assistants from one source, GitHub, GitLab and pre-commit examples, toolkit tests on Linux, macOS and Windows; Builder Track pages link register risks, templates, CSV files and the OWASP crosswalk, and six template pages link back. |
+| 2.49 | 2026-10-29 | Nachiket Sathaye | CSV data files for the risk register, risk-to-control mapping, controls, test cases and AI Risk Map crosswalk, regenerated on every build; four workbooks rebuilt with AI-R47 to AI-R54 and the AI Risk Map credit linking its GitHub repository: AI Risk Register (version 1.3), AI Use-Case Risk Triage (1.1), Control Library and Crosswalks (1.4), Test Case Tracker (1.3). |
+| 2.48 | 2026-10-29 | Nachiket Sathaye | Risk register 1.4: eight risks AI-R47 to AI-R54 (model extraction and inference, AI incidents, personal data inside models, training-serving skew, liability, unmaintained open-source components, unlabelled AI-generated content, agent actions others cannot identify), with control mappings and triage questions E13 to E19; AI-R29 and AI-R31 widened; the AI Risk Map Crosswalk now has 42 direct and 13 partial matches. |
+| 2.47 | 2026-10-29 | Nachiket Sathaye | Risk register rules: the four tests a risk must pass to join the register (AI Risk Methodology 1.3), a Considered and Not Added list on the register (1.3), a rule in the contributing guide that risk, control and test case IDs are never reused, and the AI Risk Map Crosswalk (1.1) updated after reading the map's website, and every credit for the map now links its GitHub repository (wheels344i-gte/ai-risk-map). |
 | 2.46 | 2026-10-25 | Nachiket Sathaye | NIST SSDF crosswalk added to the template workbooks: its 20 practices are now a column in the AI Risk Register (version 1.2) and Control Library and Crosswalks (1.3) framework matrices and rows in their Framework Crosswalk sheets. |
 | 2.45 | 2026-10-25 | Nachiket Sathaye | Templates rebuilt from wiki 2.44: AI Risk Register (version 1.1), Audit and Evidence Checklist (1.2), Control Library and Crosswalks (1.2), Test Case Tracker (1.2) and Requirements Traceability Matrix (1.1) now carry AI-CTRL-025's new title and text, the extended control text, TC-L01-021 and a Hong Kong regulation column. |
 | 2.44 | 2026-10-25 | Nachiket Sathaye | Financial regulators: new Hong Kong section (HKMA Supervisory Guidance for Responsible Adoption of AI of 15 October 2026, read in the HKMA text; SFC, PCPD, PDPO; HK-T1 self-assessment; principle crosswalk); new Financial Regulator AI Comparison page (MAS, RBI, SEBI, EU AI Act, FCA, HKMA on eight themes); AI-CTRL-025 renamed AI Containment and Kill Switch and widened to high-risk models, with new test case TC-L01-021; AI-CTRL-011, 012, 014 and 041 extended (unlisted AI restricted, board-approved AI strategy, no vendor training on data without authorisation, customer AI-use notice); India IN6 verified against the RBI draft text and new row IN13 for SEBI; UK5 updated for the FCA Mills Review. |

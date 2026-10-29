@@ -88,7 +88,7 @@ def personal_fields(map_path: Path) -> set[str]:
     """Field names the data map classifies as personal or sensitive. The map is
     the single place where a team says which fields are personal; the same file
     drives redaction in privacy.py."""
-    data = json.loads(Path(map_path).read_text())
+    data = json.loads(Path(map_path).read_text(encoding="utf-8"))
     return {f for c in data["categories"] if c["sensitivity"] != "not-personal" for f in c["fields"]}
 
 
@@ -174,7 +174,7 @@ def main(argv: list[str]) -> int:
     if mode == "pre-commit":
         findings = scan_diff(_git("diff", "--cached", "--unified=0", "--no-color"), fields)
     elif mode == "commit-msg":
-        findings = check_trailer(Path(rest[0]).read_text())
+        findings = check_trailer(Path(rest[0]).read_text(encoding="utf-8"))
     elif mode == "scan":
         text = sys.stdin.read()
         findings = scan_secrets(text) + scan_log_lines(text, fields)

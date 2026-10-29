@@ -71,13 +71,13 @@ TRAILER = re.compile(r"(?mi)^AI-Assistance:\s*(none|suggestions|agent)\s*$")
 
 ```sh
 mkdir -p .githooks
-printf '#!/bin/sh\nexec python3 tools/pipeline_checks.py pre-commit\n' > .githooks/pre-commit
-printf '#!/bin/sh\nexec python3 tools/pipeline_checks.py commit-msg "$1"\n' > .githooks/commit-msg
+printf '#!/bin/sh\nexec "$(command -v python3 || command -v python)" tools/pipeline_checks.py pre-commit\n' > .githooks/pre-commit
+printf '#!/bin/sh\nexec "$(command -v python3 || command -v python)" tools/pipeline_checks.py commit-msg "$1"\n' > .githooks/commit-msg
 chmod +x .githooks/*
 git config core.hooksPath .githooks
 ```
 
-The tests in [`test_pipeline_checks.py`](code/test_pipeline_checks.py) install these two hooks in a throwaway repository and check that a secret or a missing trailer blocks the commit.
+The tests in [`test_pipeline_checks.py`](code/test_pipeline_checks.py) install these two hooks in a throwaway repository and check that a secret or a missing trailer blocks the commit, on Linux, macOS and Windows. On Windows, run the commands above in Git Bash: Git for Windows runs hooks with its own shell, so the same hook files work there. The hooks use `python3` where it exists and `python` otherwise. The [pre-commit configuration](05_Builder_Toolkit.md#wire-it-into-hooks-and-ci) in the Builder Toolkit is an alternative that needs no shell scripts.
 
 **The coding agent.** Many coding agents can run a command before they write a file or run a shell command, and refuse the action if the command fails. Send the content the agent is about to write to `pipeline_checks.py scan` on standard input; it exits with a non-zero status when it finds something. How the content reaches your hook, and which exit status blocks the action, differ between tools, so check your agent's hook documentation and test that a planted fake key is actually blocked. Keep the hook configuration in a file the agent cannot edit ([TC-L06-036](../10_Test_Case_Library/L06-agent-orchestration-layer.md#tc-l06-036)).
 
@@ -121,11 +121,13 @@ The [Builder Track tests workflow](https://github.com/nachi065/AI-Security-Wiki/
 
 - The secret patterns cover common formats only, and the personal-data check matches field names, not values. Both are prompts for a reviewer, not proof.
 - The trailer records what the author declares. It does not detect undeclared AI use.
-- It does not cover dependency scanning, package hallucination or code review of generated code. Those are in the [standard](../04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.md) and the release stages table.
+- It does not cover dependency scanning, package hallucination or code review of generated code. For AI-specific patterns in code and agent configuration, add the [Builder Toolkit's](05_Builder_Toolkit.md#the-checker) checker. Those are in the [standard](../04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.md) and the release stages table.
 
 ## Related pages
 
 - [AI Coding Assistant and Coding Agent Security Standard](../04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.md)
 - [NIST SSDF Crosswalk](../23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.md)
 - [Privacy Duties in Code](03_Privacy_Duties_in_Code.md)
+- [Builder Toolkit](05_Builder_Toolkit.md), which adds AI-specific checks with SARIF output and runs alongside these in the same hooks and CI job
+- [AI Security Audit and Evidence Checklist template](../25_Templates/05_AI_Security_Audit_and_Evidence_Checklist_Template.md), where CI results go as evidence
 - [Illustrative Operating Defaults: CI/CD release stages](../08_Governance/18_AI_Operating_Defaults.md#cicd-release-stages-for-ai-applications)

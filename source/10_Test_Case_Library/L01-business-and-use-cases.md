@@ -12,9 +12,9 @@ nav_order: 4
 
 **Primary test focus:** use-case registry, risk-tiering, business-owner attribution
 
-**Controls tested:** [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering (13 cases), [AI-CTRL-033](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-033) AI Security Review and Release Gate (4 cases), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance (2 cases), [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery (1 case), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance (1 case), [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) Human Approval for Sensitive Actions (1 case), [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) AI Service Resilience and Fail-Safe Operation (2 cases), [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) AI Containment and Kill Switch (1 case), [AI-CTRL-045](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-045) Human Oversight Design and Effectiveness (1 case)
+**Controls tested:** [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering (13 cases), [AI-CTRL-033](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-033) AI Security Review and Release Gate (4 cases), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance (2 cases), [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) Human Approval for Sensitive Actions (2 cases), [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) AI Containment and Kill Switch (2 cases), [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) AI Service Resilience and Fail-Safe Operation (2 cases), [AI-CTRL-045](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-045) Human Oversight Design and Effectiveness (2 cases), [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery (1 case), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance (1 case)
 
-**Cases:** 21 (TC-L01-001 to TC-L01-021)
+**Cases:** 22 (TC-L01-001 to TC-L01-022)
 > **Safety boundary.** All cases use fabricated use cases, policies, records and individuals only. This layer is framework-neutral: see the [Framework Adoption Guide](framework-adoption-guide.md) before testing, and complete the Applicable Requirement and Framework Crosswalk fields for each case.
 
 > **Verify before use.** MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the [Reference Index](00-reference-index.md) for field definitions and applicability codes.
@@ -46,6 +46,7 @@ nav_order: 4
 | [TC-L01-019](#tc-l01-019) | Use-Case Retirement and Decommission Evidence | Medium | Evidence | D3, D7 | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) |
 | [TC-L01-020](#tc-l01-020) | Portfolio View and Executive Reporting on Use Cases | Medium | Evidence | D3, D7 | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) |
 | [TC-L01-021](#tc-l01-021) | Kill Switch for High-Risk AI Use Cases Defined and Tested | High | Evidence | D3, D7 | [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025), [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) |
+| [TC-L01-022](#tc-l01-022) | Human-Over-the-Loop Authorisation Record | High | Evidence | D5, D7 | [AI-CTRL-045](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-045), [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023), [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) |
 
 ---
 
@@ -1328,6 +1329,66 @@ nav_order: 4
 - Other: `________`
 
 **Evidence to Capture.** Kill-switch register extract; last test record for each high-risk use case; lab timeline; fallback queue sample.
+
+[Back to layer index](#top)
+
+---
+
+<a id="tc-l01-022"></a>
+
+### TC-L01-022: Human-Over-the-Loop Authorisation Record
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L01 Business & Use Cases |
+| **Use-Case Domain(s)** | D5, D7 |
+| **Control Theme** | OVS: Human oversight and transparency |
+| **Test Method** | Evidence |
+| **Vendor Applicability** | Core: W |
+| **Risk Severity** | High |
+| **NIST AI RMF Mapping** | GOVERN 1.4; MANAGE 2.3 |
+| **Control(s) Tested** | [AI-CTRL-045](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-045) Human Oversight Design and Effectiveness; [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) Human Approval for Sensitive Actions; [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) AI Containment and Kill Switch |
+
+**Risk Addressed.** An agent is allowed to act without per-action approval, but nobody wrote down why, who answers for it, what it may do alone, or how it is stopped and its actions undone.
+
+**Business Scenario.** Governance wants every agent that acts without a person approving each action to have an approved record that answers the same questions before it goes live.
+
+**Technical Scenario.** Review the authorisation records for agents that run with a person over the loop rather than in it, and test the disable and reversal steps for one of them in the lab.
+
+**Applicable Requirement *(assessor to complete)***
+
+- Framework and clause: `________`
+- Requirement text: `________`
+- Parameters (timelines, periods, thresholds): `________`
+
+**Test Data.** 3 agents that act without per-action approval (for example a patching agent, a ticket triage agent and a report-filing agent); their authorisation records; 1 lab instance of one agent with a test action that can be reversed.
+
+**Procedure**
+
+1. For each agent, check that the record answers: why per-action approval is not workable; who the responsible person is and why they are suited; which actions run without approval and which still need it; the minimum privileges and data access; how output is validated; how actions are logged and how often the logs are reviewed; how the agent is disabled and which events trigger that; how its actions are reversed; and who approved deployment (management and the owners of the systems and data it touches).
+2. Check that the responsible person could otherwise be trusted with the same actions themselves.
+3. Compare the actions the agent took in the last period with the actions the record allows.
+4. In the lab, trigger one listed disablement event and time the stop.
+5. Reverse one completed test action using the documented method and confirm the system returns to its prior state.
+6. Confirm the log of the reversed action is still present and cannot be deleted by the agent or the reversal.
+
+**Edge Cases / Variants.** The responsible person has left; an action outside the allowed set that the agent took during an incident; an agent that cannot reverse an action because the downstream system has no undo.
+
+**Expected Result.** All 3 records answer every question in step 1 and carry the approvals; observed actions match the allowed set; the agent stops within the target time after the trigger; the test action is reversed; its log survives the reversal.
+
+**Expected Control Action.** N/A.
+
+**Expected Integration Evidence.** Disable and reversal events in the SIEM with the responsible person's identity.
+
+**Framework Crosswalk *(assessor to complete)***
+
+- ISO/IEC 27001 ISMS: `________`
+- PCI DSS: `________`
+- Other: `________`
+
+**Evidence to Capture.** Authorisation records; action log sample against the allowed set; disable timing; reversal record; log integrity check.
+
+**Reviewer Notes.** The list in step 1 follows the questions in the PCI SSC information supplement "Security Considerations for AI Systems" (September 2026), section "Human-in-the-Loop or Human-Over-the-Loop". See the [PCI DSS AI Crosswalk](../23_Framework_Crosswalks/21_PCI_DSS_AI_Crosswalk.md). For an agent that can reach cleartext cardholder data, the same supplement advises against human-over-the-loop operation; use [TC-L06-015](L06-agent-orchestration-layer.md#tc-l06-015) instead.
 
 [Back to layer index](#top)
 

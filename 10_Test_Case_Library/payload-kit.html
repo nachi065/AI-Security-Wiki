@@ -281,12 +281,14 @@
 <li><a href="../23_Framework_Crosswalks/18_AI_Risk_Map_Crosswalk.html">AI Risk Map Crosswalk</a></li>
 <li><a href="../23_Framework_Crosswalks/19_OWASP_MCP_Top_10_Crosswalk.html">OWASP MCP Top 10 Crosswalk</a></li>
 <li><a href="../23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.html">NIST SSDF and SP 800-218A Crosswalk</a></li>
+<li><a href="../23_Framework_Crosswalks/21_PCI_DSS_AI_Crosswalk.html">PCI DSS AI Crosswalk</a></li>
 </ul></details></li>
 <li style="--h:42"><details><summary><a href="../24_Builder_Track/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.6-.6-2.6z"/></svg>Builder Track</a></summary><ul>
 <li><a href="../24_Builder_Track/01_Secure_Your_First_Agent.html">Secure Your First Agent: Ten Controls With Code</a></li>
 <li><a href="../24_Builder_Track/02_Agent_Architecture_Patterns.html">Agent Architecture Patterns</a></li>
 <li><a href="../24_Builder_Track/03_Privacy_Duties_in_Code.html">Privacy Duties in Code: Consent, Rights, Retention and Children&#x27;s Data</a></li>
 <li><a href="../24_Builder_Track/04_Developer_Pipeline_Checks.html">Developer Pipeline Checks for AI-Assisted Code</a></li>
+<li><a href="../24_Builder_Track/05_Builder_Toolkit.html">Builder Toolkit: Checks, MCP Server and Agent Instructions</a></li>
 </ul></details></li>
 <li style="--h:75"><details><summary><a href="../25_Templates/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M4 15h16M10 4v16"/></svg>Templates</a></summary><ul>
 <li><a href="../25_Templates/01_AI_Risk_Register_Template.html">AI Risk Register Template (.xlsx)</a></li>
@@ -311,7 +313,7 @@
 <p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Test Case Library</a> / <span>Payload Kit: Runnable Attack Sets for Critical Cases</span></p>
 <article>
 <h1 id="payload-kit-runnable-attack-sets-for-critical-cases">Payload Kit: Runnable Attack Sets for Critical Cases</h1>
-<p>The cases in this library tell you what to test. This kit gives you something to run. For 36 of the 169 Critical cases it provides the attack payloads, the legitimate requests that must keep working, the pass thresholds and a runner that compares an unprotected build with a protected one.</p>
+<p>The cases in this library tell you what to test. This kit gives you something to run. For 36 of the 171 Critical cases it provides the attack payloads, the legitimate requests that must keep working, the pass thresholds and a runner that compares an unprotected build with a protected one.</p>
 <blockquote class="callout note">
 <p><strong>Audience:</strong> engineers and assessors who have an agent, assistant or RAG application and want a repeatable result, not a manual walk-through.</p>
 <p><strong>Safety boundary.</strong> Run this only against a lab copy. The payloads try to send mail, delete records, read files, run code and fetch URLs. Every secret, address and host in them is invented, but the application you point them at will try to act on them.</p>
@@ -765,7 +767,7 @@ python3 run_case.py --target python:mock_apps:protected --baseline python:mock_a
 </table></div>
 <h2 id="what-this-kit-does-not-do">What this kit does not do</h2>
 <ul>
-<li><strong>It covers 36 of 169 Critical cases.</strong> The rest are inventory, evidence, configuration and infrastructure checks (agent and vector-store discovery, connector scopes, GPU and network isolation, provider terms, residency, forensics and so on) or need a browser, a voice channel or a training pipeline. A payload file would add nothing there, and inventing one would be worse than leaving it out.</li>
+<li><strong>It covers 36 of 171 Critical cases.</strong> The rest are inventory, evidence, configuration and infrastructure checks (agent and vector-store discovery, connector scopes, GPU and network isolation, provider terms, residency, forensics and so on) or need a browser, a voice channel or a training pipeline. A payload file would add nothing there, and inventing one would be worse than leaving it out.</li>
 <li><strong>A PASS here is not validation.</strong> Running a case against the stand-ins puts it at the Executable <a href="index.html#validation-levels">validation level</a>, nothing more. No run of the kit against a real model, agent framework or product has been published yet, so none of these cases is lab-validated. If you run the kit against a named application and version, record the result, including a FAIL, in the case's Validated Against row so others can reproduce it.</li>
 <li><strong>It does not measure time.</strong> Kill-switch deadlines, rule-propagation delays and detection intervals are in the case text and are still manual checks.</li>
 <li><strong>The payloads are not tuned against real models.</strong> They are written to be representative and varied, and the stand-in confirms they run. Whether they succeed against a given model or product is exactly what you are measuring. A short payload set can pass because it is weak. Add your own variants for anything you rely on.</li>

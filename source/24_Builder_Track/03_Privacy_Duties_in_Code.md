@@ -148,4 +148,5 @@ The tests cover consent and withdrawal, the access summary, correction, erasure 
 
 - [India AI Regulatory Hub](../17_India_AI_Compliance/01_India_AI_Regulatory_Hub.md) and [IN-T1 DPDP AI Processing Record, Notice and Consent](../17_India_AI_Compliance/IN-T1_DPDP_AI_Processing_Record_and_Notice.md)
 - [Developer Pipeline Checks](04_Developer_Pipeline_Checks.md), which reads the same data map
+- [AI Impact Assessment template](../25_Templates/09_AI_Impact_Assessment_Template.md), which records the data, purposes and safeguards this page puts into code
 - [Privacy and Regulatory Compliance (AI-CTRL-013)](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) and [Data Protection in AI Pipelines (AI-CTRL-017)](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017)

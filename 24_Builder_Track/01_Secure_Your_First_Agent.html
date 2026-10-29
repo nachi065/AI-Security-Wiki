@@ -281,12 +281,14 @@
 <li><a href="../23_Framework_Crosswalks/18_AI_Risk_Map_Crosswalk.html">AI Risk Map Crosswalk</a></li>
 <li><a href="../23_Framework_Crosswalks/19_OWASP_MCP_Top_10_Crosswalk.html">OWASP MCP Top 10 Crosswalk</a></li>
 <li><a href="../23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.html">NIST SSDF and SP 800-218A Crosswalk</a></li>
+<li><a href="../23_Framework_Crosswalks/21_PCI_DSS_AI_Crosswalk.html">PCI DSS AI Crosswalk</a></li>
 </ul></details></li>
 <li style="--h:42"><details open><summary><a href="index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.6-.6-2.6z"/></svg>Builder Track</a></summary><ul>
 <li><a class="current" href="01_Secure_Your_First_Agent.html">Secure Your First Agent: Ten Controls With Code</a></li>
 <li><a href="02_Agent_Architecture_Patterns.html">Agent Architecture Patterns</a></li>
 <li><a href="03_Privacy_Duties_in_Code.html">Privacy Duties in Code: Consent, Rights, Retention and Children&#x27;s Data</a></li>
 <li><a href="04_Developer_Pipeline_Checks.html">Developer Pipeline Checks for AI-Assisted Code</a></li>
+<li><a href="05_Builder_Toolkit.html">Builder Toolkit: Checks, MCP Server and Agent Instructions</a></li>
 </ul></details></li>
 <li style="--h:75"><details><summary><a href="../25_Templates/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M4 15h16M10 4v16"/></svg>Templates</a></summary><ul>
 <li><a href="../25_Templates/01_AI_Risk_Register_Template.html">AI Risk Register Template (.xlsx)</a></li>
@@ -341,6 +343,7 @@ any call after the kill switch        DENY_KILL                  ok
 <th>What to do</th>
 <th>Control</th>
 <th>Main OWASP risks it addresses</th>
+<th>Main register risks</th>
 <th>Where in the code</th>
 </tr>
 </thead>
@@ -350,6 +353,7 @@ any call after the kill switch        DENY_KILL                  ok
 <td>Register the agent and name an owner</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a></td>
 <td>ASI10 Rogue Agents</td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html#ai-r07-ai-agent-and-tool-calling-abuse">AI-R07</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html#ai-r25-multi-agent-trust-boundary-violation">AI-R25</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html#ai-r54-agent-actions-others-cannot-identify-as-ai">AI-R54</a></td>
 <td><code>policy.json</code></td>
 </tr>
 <tr>
@@ -357,6 +361,7 @@ any call after the kill switch        DENY_KILL                  ok
 <td>Give it its own identity</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a></td>
 <td>ASI03 Identity &amp; Privilege Abuse</td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html#ai-r22-agent-mediated-credential-discovery-and-harvesting">AI-R22</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html#ai-r45-agent-activity-indistinguishable-from-attack">AI-R45</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html#ai-r46-insider-use-of-agents-to-exceed-own-access">AI-R46</a></td>
 <td><code>TokenIssuer</code></td>
 </tr>
 <tr>
@@ -364,6 +369,7 @@ any call after the kill switch        DENY_KILL                  ok
 <td>Issue scoped, short-lived credentials</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a></td>
 <td>ASI03 Identity &amp; Privilege Abuse</td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html#ai-r22-agent-mediated-credential-discovery-and-harvesting">AI-R22</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html#ai-r46-insider-use-of-agents-to-exceed-own-access">AI-R46</a></td>
 <td><code>TokenIssuer.mint</code>, <code>attenuate</code></td>
 </tr>
 <tr>
@@ -371,6 +377,7 @@ any call after the kill switch        DENY_KILL                  ok
 <td>Allow-list tools and pin their definitions</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a></td>
 <td>ASI04 Agentic Supply Chain, ASI02 Tool Misuse</td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html#ai-r23-skill-plugin-and-mcp-server-supply-chain-compromise">AI-R23</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html#ai-r24-tool-chain-manipulation-and-injection">AI-R24</a></td>
 <td><code>definition_hash</code>, <code>pin_definitions.py</code></td>
 </tr>
 <tr>
@@ -378,6 +385,7 @@ any call after the kill switch        DENY_KILL                  ok
 <td>Validate every argument outside the model</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a></td>
 <td>ASI02 Tool Misuse, LLM06 Excessive Agency</td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html#ai-r07-ai-agent-and-tool-calling-abuse">AI-R07</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html#ai-r24-tool-chain-manipulation-and-injection">AI-R24</a></td>
 <td><code>validate_args</code></td>
 </tr>
 <tr>
@@ -385,6 +393,7 @@ any call after the kill switch        DENY_KILL                  ok
 <td>Gate sensitive actions behind approval</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a></td>
 <td>ASI09 Human-Agent Trust Exploitation</td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html#ai-r07-ai-agent-and-tool-calling-abuse">AI-R07</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html#ai-r19-insufficient-or-ineffective-human-oversight">AI-R19</a></td>
 <td><code>ApprovalGate</code></td>
 </tr>
 <tr>
@@ -392,6 +401,7 @@ any call after the kill switch        DENY_KILL                  ok
 <td>Run generated code in a sandbox</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a></td>
 <td>ASI05 Unexpected Code Execution</td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html#ai-r07-ai-agent-and-tool-calling-abuse">AI-R07</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html#ai-r22-agent-mediated-credential-discovery-and-harvesting">AI-R22</a></td>
 <td><code>sandbox.py</code>, <code>docker-sandbox.sh</code></td>
 </tr>
 <tr>
@@ -399,6 +409,7 @@ any call after the kill switch        DENY_KILL                  ok
 <td>Limit egress to named hosts</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a></td>
 <td>ASI05, LLM02 Sensitive Information Disclosure</td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html#ai-r07-ai-agent-and-tool-calling-abuse">AI-R07</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html#ai-r22-agent-mediated-credential-discovery-and-harvesting">AI-R22</a></td>
 <td><code>egress_proxy.py</code>, <code>k8s-agent-pod.yaml</code></td>
 </tr>
 <tr>
@@ -406,6 +417,7 @@ any call after the kill switch        DENY_KILL                  ok
 <td>Cap the blast radius and keep a kill switch</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a></td>
 <td>ASI08 Cascading Failures, ASI10 Rogue Agents</td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html#ai-r11-ai-cost-abuse-and-resource-exhaustion">AI-R11</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html#ai-r25-multi-agent-trust-boundary-violation">AI-R25</a></td>
 <td><code>RateLimiter</code>, <code>KillSwitch</code></td>
 </tr>
 <tr>
@@ -413,13 +425,15 @@ any call after the kill switch        DENY_KILL                  ok
 <td>Log every decision in a tamper-evident trace</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a></td>
 <td>Supports every other control</td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html#ai-r09-lack-of-ai-auditability-and-forensic-visibility">AI-R09</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html#ai-r45-agent-activity-indistinguishable-from-attack">AI-R45</a></td>
 <td><code>AuditLog</code></td>
 </tr>
 </tbody>
 </table></div>
+<p>The OWASP IDs are explained in the <a href="../23_Framework_Crosswalks/06_OWASP_Top_10_Crosswalk.html">OWASP Top 10 Crosswalk</a>. The register risks are the main ones the <a href="../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">risk to control mapping</a> links to each step's control; most steps also help with others, and <a href="code/wiki_data.py"><code>wiki_data.py</code></a> lists them all.</p>
 <p>Do the steps in order. B1 to B3 decide who may act, B4 to B6 decide what may be done, B7 to B9 limit the damage when something still goes wrong, and B10 lets you see it.</p>
 <h2 id="b1-register-the-agent-and-name-an-owner">B1. Register the agent and name an owner</h2>
-<p><strong>Control:</strong> <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a>. An agent nobody owns cannot be reviewed, rotated or switched off. Record, for each agent: a unique ID, a named owner, its purpose, the tools it may use, and its rate and action budget. In this example the registry is a block in the policy file. In an organisation, link it to the AI use-case registry (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-011">AI-CTRL-011</a>).</p>
+<p><strong>Control:</strong> <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a>. An agent nobody owns cannot be reviewed, rotated or switched off. Record, for each agent: a unique ID, a named owner, its purpose, the tools it may use, and its rate and action budget. In this example the registry is a block in the policy file. In an organisation, link it to the AI use-case registry (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-011">AI-CTRL-011</a>). The <a href="../25_Templates/02_AI_System_Inventory_Template.html">AI System Inventory template</a> has a column for each of these facts, including the tools the agent can call and the date its kill switch was last tested.</p>
 <!-- excerpt: policy.json -->
 
 <pre><code class="language-json">  &quot;agents&quot;: {
@@ -634,19 +648,17 @@ any call after the kill switch        DENY_KILL                  ok
 <p>The approver is shown the real arguments, not a summary the model wrote. Keep the gated set small: if people approve fifty prompts a day they stop reading them (<a class="chip" href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-016">TC-L06-016</a>).</p>
 <h2 id="b7-run-generated-code-in-a-sandbox">B7. Run generated code in a sandbox</h2>
 <p><strong>Control:</strong> <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a>. If your agent writes and runs code, that code is attacker-influenced input. Run it in a separate process with hard limits and no secrets, inside a container that provides the real boundary.</p>
-<p>The Python wrapper sets CPU, memory, file-size and process limits, an empty environment, a throwaway working directory and a wall-clock timeout, and on Linux it removes the network when the kernel allows it:</p>
+<p>The Python wrapper sets CPU, memory, file-size and process limits, an empty environment, a throwaway working directory and a wall-clock timeout, and on Linux it removes the network when the kernel allows it. On Windows it puts the process in a Job Object (<a href="code/winjob.py"><code>winjob.py</code></a>) with CPU, memory and process-count limits instead; Windows has no per-process file-size limit, and macOS does not enforce a memory (address-space) limit. Where the operating system refuses a limit, the sandbox runs without it and the result's <code>limits</code> field lists the limits that were actually applied, so check it before you rely on one. The Unix version:</p>
 <!-- excerpt: sandbox.py -->
 
 <pre><code class="language-python">def _limits(cpu_seconds: int, memory_mb: int, file_mb: int, processes: int):
     def apply():
         os.setsid()                                                    # own session, so we can kill the group
-        resource.setrlimit(resource.RLIMIT_CPU, (cpu_seconds, cpu_seconds))
-        resource.setrlimit(resource.RLIMIT_AS, (memory_mb &lt;&lt; 20, memory_mb &lt;&lt; 20))
-        resource.setrlimit(resource.RLIMIT_FSIZE, (file_mb &lt;&lt; 20, file_mb &lt;&lt; 20))
-        resource.setrlimit(resource.RLIMIT_CORE, (0, 0))
-        resource.setrlimit(resource.RLIMIT_NOFILE, (64, 64))
-        if hasattr(resource, &quot;RLIMIT_NPROC&quot;):
-            resource.setrlimit(resource.RLIMIT_NPROC, (processes, processes))
+        for _, name, value in _wanted(cpu_seconds, memory_mb, file_mb, processes):
+            try:
+                resource.setrlimit(getattr(resource, name), (value, value))
+            except (AttributeError, OSError, ValueError):
+                pass   # not supported here (macOS refuses RLIMIT_AS); supported_limits() reports it
     return apply
 </code></pre>
 <p><em>From <a href="code/sandbox.py"><code>sandbox.py</code></a>.</em></p>
@@ -667,7 +679,7 @@ any call after the kill switch        DENY_KILL                  ok
   python:3.13-slim \
   python -I /job/main.py
 </code></pre>
-<p><em>From <a href="code/docker-sandbox.sh"><code>docker-sandbox.sh</code></a>.</em></p>
+<p><em>From <a href="code/docker-sandbox.sh"><code>docker-sandbox.sh</code></a>. <a href="code/docker-sandbox.ps1"><code>docker-sandbox.ps1</code></a> runs the same command from PowerShell on Windows.</em></p>
 <p>For stronger isolation than a standard container, use a user-space kernel or a microVM, depending on your platform.</p>
 <h2 id="b8-limit-egress-to-named-hosts">B8. Limit egress to named hosts</h2>
 <p><strong>Control:</strong> <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a> (<a class="chip" href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-026">TC-L06-026</a>). Data theft needs a way out. Block every route from the agent except a proxy that allows named hosts only. <a href="code/egress_proxy.py"><code>egress_proxy.py</code></a> is a small working example. It checks the port, then the host name, then every address the name resolves to, and it connects only to the addresses it checked, trying each in turn, rather than looking the name up again, so a DNS answer that changes between check and connect cannot redirect it.</p>
@@ -766,7 +778,7 @@ spec:
         entry = {&quot;ts&quot;: round(time.time(), 3), **fields, &quot;prev&quot;: self._last}
         entry[&quot;hash&quot;] = hashlib.sha256(json.dumps(entry, sort_keys=True, default=str).encode()).hexdigest()
         with self._lock:
-            with self.path.open(&quot;a&quot;) as f:
+            with self.path.open(&quot;a&quot;, encoding=&quot;utf-8&quot;) as f:
                 f.write(json.dumps(entry, sort_keys=True, default=str) + &quot;\n&quot;)
             self._last = entry[&quot;hash&quot;]
 </code></pre>
@@ -775,7 +787,7 @@ spec:
 
 <pre><code class="language-python">    def verify(path: str) -&gt; tuple[bool, int]:
         prev, n = &quot;0&quot; * 64, 0
-        for line in Path(path).read_text().splitlines():
+        for line in Path(path).read_text(encoding=&quot;utf-8&quot;).splitlines():
             entry = json.loads(line)
             claimed = entry.pop(&quot;hash&quot;)
             expect = hashlib.sha256(json.dumps(entry, sort_keys=True, default=str).encode()).hexdigest()
@@ -926,6 +938,7 @@ python3 pin_definitions.py             # re-pin tool definitions after a human r
 </tr>
 </tbody>
 </table></div>
+<p>Record each run in the <a href="../25_Templates/07_AI_Security_Test_Case_Tracker_Template.html">Test Case Tracker</a>. The <a href="05_Builder_Toolkit.html#evidence-for-the-templates">Builder Toolkit's</a> <code>evidence_export.py</code> turns the guard's audit log into rows for the tracker and the <a href="../25_Templates/05_AI_Security_Audit_and_Evidence_Checklist_Template.html">Audit and Evidence Checklist</a>, using the mapping in this table.</p>
 <p>The unit tests are built so that the protective checks fail loudly. When this page was written, twelve of the checks were switched off one at a time, and the tests failed every time. Do the same on your own copy of any check you rely on.</p>
 <h2 id="what-this-does-not-cover">What this does not cover</h2>
 <p>These ten steps contain the damage a hijacked agent can do. They do not make the model trustworthy, and they leave real gaps for later:</p>
@@ -934,17 +947,17 @@ python3 pin_definitions.py             # re-pin tool definitions after a human r
 <li><strong>Memory and context.</strong> Persistent agent memory can be poisoned (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a>).</li>
 <li><strong>Retrieval authorization.</strong> If the agent searches a knowledge base, it must see only what the user may see (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-018">AI-CTRL-018</a>).</li>
 <li><strong>Several cooperating agents.</strong> Trust maps and signed agent-to-agent messages need their own work (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a>).</li>
-<li><strong>Supply chain.</strong> Models, libraries and datasets are not covered here (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-031">AI-CTRL-031</a>).</li>
-<li><strong>Detection and response.</strong> Logging is B10. Alerting, triage and incident handling are separate (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a>).</li>
+<li><strong>Supply chain.</strong> Models, libraries and datasets are not covered here (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-031">AI-CTRL-031</a>). The <a href="05_Builder_Toolkit.html#the-checker">Builder Toolkit's</a> checker flags unsafe model loading and unpinned models and MCP servers.</li>
+<li><strong>Detection and response.</strong> Logging is B10. Alerting, triage and incident handling are separate (<a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a>). Record an incident, including any use of the kill switch, in the <a href="../25_Templates/11_AI_Incident_Report_Template.html">AI Incident Report template</a>.</li>
 <li><strong>Acting with the user's rights.</strong> The example uses agent-level scopes. Exchange the end user's identity where a user is present.</li>
 </ul>
 <h2 id="limits-of-this-reference">Limits of this reference</h2>
 <blockquote class="callout caution">
-<p><strong>Verify before use:</strong> The Python code is a teaching reference and has not been security reviewed or hardened. The token format is deliberately simple and is not a substitute for your identity provider. The argument check resolves DNS at validation time, and the egress proxy repeats the check at connect time, which is the one that matters. The sandbox's process limits are not a security boundary. The Docker command and the Kubernetes manifest were not executed when this page was written, because the tests need no container runtime. Check every flag and field against the current documentation for your runtime and Kubernetes version, and pin container images by digest. The tests were run with Python 3.13 on Linux. The network-removal step needs <code>unshare</code> and is skipped where the kernel does not allow it.</p>
+<p><strong>Verify before use:</strong> The Python code is a teaching reference and has not been security reviewed or hardened. The token format is deliberately simple and is not a substitute for your identity provider. The argument check resolves DNS at validation time, and the egress proxy repeats the check at connect time, which is the one that matters. The sandbox's process limits are not a security boundary. The Docker command and the Kubernetes manifest were not executed when this page was written, because the tests need no container runtime. Check every flag and field against the current documentation for your runtime and Kubernetes version, and pin container images by digest. The tests run in CI on Linux, macOS and Windows. The network-removal step needs <code>unshare</code> and is skipped where the kernel does not allow it, which includes every macOS and Windows machine. On Windows the child process is placed in its Job Object just after it starts, so its first instructions run before the limits apply.</p>
 </blockquote>
 </article>
 <nav class="pager" aria-label="Previous and next page"><a class="prev" href="index.html">&larr; Builder Track</a><a class="next" href="02_Agent_Architecture_Patterns.html">Agent Architecture Patterns &rarr;</a></nav>
-<footer class="site-footer">Author: Nachiket Sathaye &middot; Co-author: Ankush Jain &middot; Updated 23 October 2026 &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/24_Builder_Track/01_Secure_Your_First_Agent.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
+<footer class="site-footer">Author: Nachiket Sathaye &middot; Co-author: Ankush Jain &middot; Updated 29 October 2026 &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/24_Builder_Track/01_Secure_Your_First_Agent.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
 <div class="site-notice">
 <p><strong>Licence.</strong> <svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.441-3.5c8.951,0,16.572,3.125,22.857,9.372c3.008,3.009,5.295,6.448,6.857,10.314 c1.561,3.867,2.344,7.971,2.344,12.314c0,4.381-0.773,8.486-2.314,12.313c-1.543,3.828-3.82,7.21-6.828,10.143 c-3.123,3.085-6.666,5.448-10.629,7.086c-3.961,1.638-8.057,2.457-12.285,2.457s-8.276-0.808-12.143-2.429 c-3.866-1.618-7.333-3.961-10.4-7.027c-3.067-3.066-5.4-6.524-7-10.372S5.5,32.767,5.5,28.5c0-4.229,0.809-8.295,2.428-12.2 c1.619-3.905,3.972-7.4,7.057-10.486C21.08-0.394,28.565-3.5,37.441-3.5z M37.557,2.272c-7.314,0-13.467,2.553-18.458,7.657 c-2.515,2.553-4.448,5.419-5.8,8.6c-1.354,3.181-2.029,6.505-2.029,9.972c0,3.429,0.675,6.734,2.029,9.913 c1.353,3.183,3.285,6.021,5.8,8.516c2.514,2.496,5.351,4.399,8.515,5.715c3.161,1.314,6.476,1.971,9.943,1.971 c3.428,0,6.75-0.665,9.973-1.999c3.219-1.335,6.121-3.257,8.713-5.771c4.99-4.876,7.484-10.99,7.484-18.344 c0-3.543-0.648-6.895-1.943-10.057c-1.293-3.162-3.18-5.98-5.654-8.458C50.984,4.844,44.795,2.272,37.557,2.272z M37.156,23.187 l-4.287,2.229c-0.458-0.951-1.019-1.619-1.685-2c-0.667-0.38-1.286-0.571-1.858-0.571c-2.856,0-4.286,1.885-4.286,5.657 c0,1.714,0.362,3.084,1.085,4.113c0.724,1.029,1.791,1.544,3.201,1.544c1.867,0,3.181-0.915,3.944-2.743l3.942,2 c-0.838,1.563-2,2.791-3.486,3.686c-1.484,0.896-3.123,1.343-4.914,1.343c-2.857,0-5.163-0.875-6.915-2.629 c-1.752-1.752-2.628-4.19-2.628-7.313c0-3.048,0.886-5.466,2.657-7.257c1.771-1.79,4.009-2.686,6.715-2.686 C32.604,18.558,35.441,20.101,37.156,23.187z M55.613,23.187l-4.229,2.229c-0.457-0.951-1.02-1.619-1.686-2 c-0.668-0.38-1.307-0.571-1.914-0.571c-2.857,0-4.287,1.885-4.287,5.657c0,1.714,0.363,3.084,1.086,4.113 c0.723,1.029,1.789,1.544,3.201,1.544c1.865,0,3.18-0.915,3.941-2.743l4,2c-0.875,1.563-2.057,2.791-3.541,3.686 c-1.486,0.896-3.105,1.343-4.857,1.343c-2.896,0-5.209-0.875-6.941-2.629c-1.736-1.752-2.602-4.19-2.602-7.313 c0-3.048,0.885-5.466,2.658-7.257c1.77-1.79,4.008-2.686,6.713-2.686C51.117,18.558,53.938,20.101,55.613,23.187z"/></svg><svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.443-3.5c8.988,0,16.57,3.085,22.742,9.257C66.393,11.967,69.5,19.548,69.5,28.5c0,8.991-3.049,16.476-9.145,22.456 C53.879,57.319,46.242,60.5,37.443,60.5c-8.649,0-16.153-3.144-22.514-9.43C8.644,44.784,5.5,37.262,5.5,28.5 c0-8.761,3.144-16.342,9.429-22.742C21.101-0.415,28.604-3.5,37.443-3.5z M37.557,2.272c-7.276,0-13.428,2.553-18.457,7.657 c-5.22,5.334-7.829,11.525-7.829,18.572c0,7.086,2.59,13.22,7.77,18.398c5.181,5.182,11.352,7.771,18.514,7.771 c7.123,0,13.334-2.607,18.629-7.828c5.029-4.838,7.543-10.952,7.543-18.343c0-7.276-2.553-13.465-7.656-18.571 C50.967,4.824,44.795,2.272,37.557,2.272z M46.129,20.557v13.085h-3.656v15.542h-9.944V33.643h-3.656V20.557 c0-0.572,0.2-1.057,0.599-1.457c0.401-0.399,0.887-0.6,1.457-0.6h13.144c0.533,0,1.01,0.2,1.428,0.6 C45.918,19.5,46.129,19.986,46.129,20.557z M33.042,12.329c0-3.008,1.485-4.514,4.458-4.514s4.457,1.504,4.457,4.514 c0,2.971-1.486,4.457-4.457,4.457S33.042,15.3,33.042,12.329z"/></svg>This wiki is open to the community under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">Creative Commons Attribution-ShareAlike 4.0 International licence (CC BY-SA 4.0)</a>. You may copy, share and adapt it for any purpose, including commercially, as long as you credit the authors and release anything you build from it under the same licence.</p>
 <p><strong>Disclaimer.</strong> This wiki is an open, community driven educational reference, not legal, regulatory or professional advice. Regional regulatory content is compiled from secondary sources and its verification status is shown per row; verify against primary sources before relying on it. Content is provided "as is" without warranty. Named products and companies belong to their owners; statements about them reflect public information at the date shown. Views are the author's own.</p>

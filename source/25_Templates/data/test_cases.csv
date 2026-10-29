@@ -1,0 +1,683 @@
+Test Case ID,Title,Severity,Method,Domain(s),Controls,Layer or Domain,Page
+TC-D08-001,Seeded Vulnerable Target: Ground-Truth Benchmark for Findings,Critical,Technical,,AI-CTRL-034,D08,D08 AI Red Teaming and Continuous Testing
+TC-D08-002,Attack Library Coverage Across Risk Classes,High,Evidence,,AI-CTRL-034,D08,D08 AI Red Teaming and Continuous Testing
+TC-D08-003,Attack Library Freshness and Update Cadence,High,Technical,,AI-CTRL-034,D08,D08 AI Red Teaming and Continuous Testing
+TC-D08-004,Single-Turn Attack Generation: Diversity and Mutation Quality,Medium,Technical,,AI-CTRL-034,D08,D08 AI Red Teaming and Continuous Testing
+TC-D08-005,Multi-Turn Adaptive Attack Campaigns,High,Technical,,AI-CTRL-034,D08,D08 AI Red Teaming and Continuous Testing
+TC-D08-006,Agentic Attack Scenarios Against Tool-Using Agents,Critical,Technical,,AI-CTRL-034,D08,D08 AI Red Teaming and Continuous Testing
+TC-D08-007,Retrieval and RAG Attack Coverage,High,Technical,,AI-CTRL-034,D08,D08 AI Red Teaming and Continuous Testing
+TC-D08-008,"Indirect Injection Through Web, Email and File Content (Automated)",Critical,Technical,,AI-CTRL-034,D08,D08 AI Red Teaming and Continuous Testing
+TC-D08-009,"Multimodal Attack Coverage (Images, Audio, Documents)",High,Technical,,AI-CTRL-034,D08,D08 AI Red Teaming and Continuous Testing
+TC-D08-010,"Multilingual Attack Coverage (Arabic, Hindi, Urdu, French and Mixed)",High,Technical,,AI-CTRL-034,D08,D08 AI Red Teaming and Continuous Testing
+TC-D08-011,Custom Attack Authoring for Domain-Specific Scenarios,High,Technical,,AI-CTRL-034,D08,D08 AI Red Teaming and Continuous Testing
+TC-D08-012,Target Connectivity and Authentication Modes,High,Technical,,AI-CTRL-034,D08,D08 AI Red Teaming and Continuous Testing
+TC-D08-013,Attack Success Judging: Accuracy of Automated Verdicts,Critical,Technical,,AI-CTRL-034,D08,D08 AI Red Teaming and Continuous Testing
+TC-D08-014,"Judge Robustness: Formatting, Persuasion and Cross-Judge Consistency",High,Technical,,AI-CTRL-034,D08,D08 AI Red Teaming and Continuous Testing
+TC-D08-015,Severity Scoring and Prioritisation of Findings,High,Technical,,AI-CTRL-034,D08,D08 AI Red Teaming and Continuous Testing
+TC-D08-016,Reproducibility and Run-to-Run Variance,High,Technical,,AI-CTRL-034,D08,D08 AI Red Teaming and Continuous Testing
+TC-D08-017,Finding Evidence Quality and Redaction,High,Evidence,,AI-CTRL-034,D08,D08 AI Red Teaming and Continuous Testing
+TC-D08-018,Remediation Guidance Quality and Verified Retest,High,Technical,,AI-CTRL-034,D08,D08 AI Red Teaming and Continuous Testing
+TC-D08-019,"Regression Testing After Model, Prompt or Guardrail Changes",High,Technical,,AI-CTRL-034,D08,D08 AI Red Teaming and Continuous Testing
+TC-D08-020,CI/CD Integration and Release Gates,Critical,Technical,,"AI-CTRL-034, AI-CTRL-030",D08,D08 AI Red Teaming and Continuous Testing
+TC-D08-021,Continuous and Scheduled Testing with Change-Triggered Runs,High,Technical,,AI-CTRL-034,D08,D08 AI Red Teaming and Continuous Testing
+TC-D08-022,Safe Execution Against Production-Like Targets,Critical,Technical,,AI-CTRL-034,D08,D08 AI Red Teaming and Continuous Testing
+TC-D08-023,"Handling of Adversarial Payloads, Responses and Test Data",High,Attestation,,"AI-CTRL-034, AI-CTRL-017",D08,D08 AI Red Teaming and Continuous Testing
+TC-D08-024,"Test Cost, Runtime and Scalability",Medium,Technical,,AI-CTRL-034,D08,D08 AI Red Teaming and Continuous Testing
+TC-D08-025,Transparency of Benchmarks and Published Results,Medium,Attestation,,AI-CTRL-034,D08,D08 AI Red Teaming and Continuous Testing
+TC-D09-001,Agent Identity Registry as System of Record,Critical,Technical,,AI-CTRL-015,D09,D09 Agent and Non-Human Identity Governance
+TC-D09-002,Human Sponsor Accountability for Every Agent Identity,Critical,Technical,,AI-CTRL-015,D09,D09 Agent and Non-Human Identity Governance
+TC-D09-003,Agent Identity Provisioning Workflow and Approval,High,Technical,,AI-CTRL-015,D09,D09 Agent and Non-Human Identity Governance
+TC-D09-004,Agent Identity Risk Tiering and Privilege Classes,High,Technical,,AI-CTRL-015,D09,D09 Agent and Non-Human Identity Governance
+TC-D09-005,Entitlement Governance: Agent Access Requests and Least-Privilege Catalogue,High,Technical,,AI-CTRL-016,D09,D09 Agent and Non-Human Identity Governance
+TC-D09-006,Periodic Access Recertification for Agent Entitlements,High,Technical,,AI-CTRL-016,D09,D09 Agent and Non-Human Identity Governance
+TC-D09-007,Privilege Drift Detection Against an Approved Baseline,High,Technical,,AI-CTRL-016,D09,D09 Agent and Non-Human Identity Governance
+TC-D09-008,Dormant and Orphaned Agent Identity Clean-Up,Medium,Technical,,AI-CTRL-015,D09,D09 Agent and Non-Human Identity Governance
+TC-D09-009,Time-Bound and Just-in-Time Elevation for Agents,High,Technical,,AI-CTRL-016,D09,D09 Agent and Non-Human Identity Governance
+TC-D09-010,Separation of Duties for Agents,High,Technical,,"AI-CTRL-016, AI-CTRL-022",D09,D09 Agent and Non-Human Identity Governance
+TC-D09-011,Delegation Records and Consent Evidence,High,Evidence,,AI-CTRL-015,D09,D09 Agent and Non-Human Identity Governance
+TC-D09-012,Acting as the User versus Acting as Itself: Attribution Policy and Evidence,High,Technical,,"AI-CTRL-015, AI-CTRL-008",D09,D09 Agent and Non-Human Identity Governance
+TC-D09-013,Cross-Platform Agent Identity Federation and Consistency,High,Technical,,AI-CTRL-015,D09,D09 Agent and Non-Human Identity Governance
+TC-D09-014,Agent Credential Lifecycle Governance and Compliance Reporting,High,Technical,,AI-CTRL-016,D09,D09 Agent and Non-Human Identity Governance
+TC-D09-015,Machine Identity Certificate and Key Lifecycle for AI Workloads,Medium,Technical,,AI-CTRL-015,D09,D09 Agent and Non-Human Identity Governance
+TC-D09-016,Revocation Propagation Time Across Systems,Critical,Technical,,"AI-CTRL-025, AI-CTRL-015",D09,D09 Agent and Non-Human Identity Governance
+TC-D09-017,Agent Identity Misuse Case Handling Process,High,Technical,,"AI-CTRL-035, AI-CTRL-015",D09,D09 Agent and Non-Human Identity Governance
+TC-D09-018,Third-Party and Vendor-Operated Agent Identities,High,Evidence,,"AI-CTRL-015, AI-CTRL-014",D09,D09 Agent and Non-Human Identity Governance
+TC-D09-019,Non-Human Identity Governance Metrics and Audit Evidence,Medium,Evidence,,"AI-CTRL-038, AI-CTRL-015",D09,D09 Agent and Non-Human Identity Governance
+TC-D09-020,Agent Identity Offboarding and Decommission Evidence,Medium,Evidence,,"AI-CTRL-015, AI-CTRL-006",D09,D09 Agent and Non-Human Identity Governance
+TC-D10-001,Browser and Computer-Use Agent Inventory and Classification,Critical,Technical,,"AI-CTRL-006, AI-CTRL-001",D10,D10 Browser and Computer-Use Agents
+TC-D10-002,"Execution Environment Isolation (Profile, Container or Virtual Machine)",Critical,Technical,,AI-CTRL-027,D10,D10 Browser and Computer-Use Agents
+TC-D10-003,Credential and Session Isolation for Agents,Critical,Technical,,"AI-CTRL-027, AI-CTRL-016",D10,D10 Browser and Computer-Use Agents
+TC-D10-004,Domain and URL Policy with Redirect and Subdomain Handling,High,Technical,,AI-CTRL-022,D10,D10 Browser and Computer-Use Agents
+TC-D10-005,"Action-Level Policy: Click, Type, Submit, Download, Upload, Purchase, Delete",Critical,Technical,,AI-CTRL-022,D10,D10 Browser and Computer-Use Agents
+TC-D10-006,Purchase and Payment Guard,Critical,Technical,,"AI-CTRL-022, AI-CTRL-023",D10,D10 Browser and Computer-Use Agents
+TC-D10-007,Form Submission and Sensitive Data Entry Guard,High,Technical,,AI-CTRL-022,D10,D10 Browser and Computer-Use Agents
+TC-D10-008,File Download Controls and Malicious File Handling,High,Technical,,AI-CTRL-027,D10,D10 Browser and Computer-Use Agents
+TC-D10-009,File Upload and Clipboard Access Controls,High,Technical,,"AI-CTRL-003, AI-CTRL-027",D10,D10 Browser and Computer-Use Agents
+TC-D10-010,"Indirect Injection via Web Content: Visible, Hidden and Layout-Based",Critical,Technical,,AI-CTRL-005,D10,D10 Browser and Computer-Use Agents
+TC-D10-011,"Fake Authority Cues: Banners, System Messages, Security Checks and Support Chats",High,Technical,,AI-CTRL-005,D10,D10 Browser and Computer-Use Agents
+TC-D10-012,Intent Verification: Agent Actions Compared with the User's Task,Critical,Technical,,"AI-CTRL-005, AI-CTRL-022",D10,D10 Browser and Computer-Use Agents
+TC-D10-013,Step-Level Approval and Human Handoff,High,Technical,,AI-CTRL-023,D10,D10 Browser and Computer-Use Agents
+TC-D10-014,CAPTCHA and Bot-Detection Compliance,Medium,Technical,,AI-CTRL-022,D10,D10 Browser and Computer-Use Agents
+TC-D10-015,"Authentication Flows: SSO, MFA and Session Handling",High,Technical,,AI-CTRL-015,D10,D10 Browser and Computer-Use Agents
+TC-D10-016,Cross-Tab and Cross-Site Data Leakage,High,Technical,,AI-CTRL-027,D10,D10 Browser and Computer-Use Agents
+TC-D10-017,Screenshot and Screen-Content Handling,High,Technical,,AI-CTRL-017,D10,D10 Browser and Computer-Use Agents
+TC-D10-018,"Session Recording, Action Audit Trail and Replay",High,Technical,,AI-CTRL-008,D10,D10 Browser and Computer-Use Agents
+TC-D10-019,Rate and Scope Limits on Agent Actions,Medium,Technical,,AI-CTRL-025,D10,D10 Browser and Computer-Use Agents
+TC-D10-020,Kill Switch and Session Termination for Browser Agents,Critical,Technical,,AI-CTRL-025,D10,D10 Browser and Computer-Use Agents
+TC-D10-021,Desktop Computer-Use Agents: File System and Application Access Controls,Critical,Technical,,"AI-CTRL-027, AI-CTRL-016",D10,D10 Browser and Computer-Use Agents
+TC-D10-022,Managed Browser Policy and Agent Extension Permission Governance,High,Evidence,,"AI-CTRL-024, AI-CTRL-001",D10,D10 Browser and Computer-Use Agents
+TC-D10-023,Detecting Agent-Driven Traffic on Internal Applications (Application-Side Signals),Medium,Technical,,AI-CTRL-006,D10,D10 Browser and Computer-Use Agents
+TC-D11-001,Multimodal Input Channel Inventory and Exposure Map,High,Technical,,"AI-CTRL-021, AI-CTRL-001",D11,D11 Multimodal and Voice Input Security
+TC-D11-002,"Image Text Injection: Visible, Small and Low-Contrast Text",Critical,Technical,,"AI-CTRL-021, AI-CTRL-005",D11,D11 Multimodal and Voice Input Security
+TC-D11-003,"Image Injection: Rotated, Distorted, Layout-Based and Screenshot Content",High,Technical,,"AI-CTRL-021, AI-CTRL-005",D11,D11 Multimodal and Voice Input Security
+TC-D11-004,Adversarial Image Perturbation Against Vision Components,Medium,Technical,,"AI-CTRL-028, AI-CTRL-021",D11,D11 Multimodal and Voice Input Security
+TC-D11-005,Image Metadata and Embedded Data: Injection and Leakage,High,Technical,,AI-CTRL-021,D11,D11 Multimodal and Voice Input Security
+TC-D11-006,Sensitive Data in Images: OCR and Visual DLP Accuracy,Critical,Technical,,"AI-CTRL-021, AI-CTRL-002",D11,D11 Multimodal and Voice Input Security
+TC-D11-007,"Faces, Biometric Images and Personal Identifiers in Images",High,Technical,,"AI-CTRL-013, AI-CTRL-021",D11,D11 Multimodal and Voice Input Security
+TC-D11-008,Document Parser Attack Surface: Malformed and Spoofed Files,High,Technical,,AI-CTRL-021,D11,D11 Multimodal and Voice Input Security
+TC-D11-009,"Active Content in Documents: Macros, Formulas, Links and Embedded Objects",High,Technical,,AI-CTRL-021,D11,D11 Multimodal and Voice Input Security
+TC-D11-010,"Hidden Layers in Documents: White Text, Comments, Tracked Changes, Annotations and Notes",Critical,Technical,,AI-CTRL-021,D11,D11 Multimodal and Voice Input Security
+TC-D11-011,Document and Media Bombs: Resource Exhaustion in Ingestion,Medium,Technical,,"AI-CTRL-036, AI-CTRL-021",D11,D11 Multimodal and Voice Input Security
+TC-D11-012,Cross-Modal Consistency Attacks,High,Technical,,"AI-CTRL-021, AI-CTRL-005",D11,D11 Multimodal and Voice Input Security
+TC-D11-013,Audio Injection: Spoken Instructions in Synthetic Voice,Critical,Technical,,"AI-CTRL-021, AI-CTRL-005",D11,D11 Multimodal and Voice Input Security
+TC-D11-014,Audio Injection in Background and Noisy Conditions (Audible Range),Medium,Technical,,AI-CTRL-021,D11,D11 Multimodal and Voice Input Security
+TC-D11-015,"Transcription Errors as Policy Bypass (Accents, Dialects, Homophones and Code-Switching)",High,Technical,,"AI-CTRL-021, AI-CTRL-002",D11,D11 Multimodal and Voice Input Security
+TC-D11-016,Real-Time Voice DLP and Redaction Under Latency Limits,High,Technical,,"AI-CTRL-021, AI-CTRL-002",D11,D11 Multimodal and Voice Input Security
+TC-D11-017,Voice Authentication and Synthetic Voice Resistance,Critical,Technical,,"AI-CTRL-021, AI-CTRL-015",D11,D11 Multimodal and Voice Input Security
+TC-D11-018,"Speaker Identification, Voiceprints and Biometric Data Handling",High,Evidence,,"AI-CTRL-013, AI-CTRL-021",D11,D11 Multimodal and Voice Input Security
+TC-D11-019,"Meeting and Call Recording: Consent, Notice and Transcript Governance",High,Technical,,"AI-CTRL-013, AI-CTRL-021",D11,D11 Multimodal and Voice Input Security
+TC-D11-020,Video and Live Camera Input: Frame-Based Injection and Bystander Privacy,High,Technical,,"AI-CTRL-021, AI-CTRL-013",D11,D11 Multimodal and Voice Input Security
+TC-D11-021,"Multimodal Output Leakage: Generated Images, Spoken Output and Documents",High,Technical,,"AI-CTRL-020, AI-CTRL-021",D11,D11 Multimodal and Voice Input Security
+TC-D11-022,"Storage, Retention and Access Controls for Media Inputs and Outputs",High,Technical,,"AI-CTRL-017, AI-CTRL-021",D11,D11 Multimodal and Voice Input Security
+TC-D12-001,AI Incident Taxonomy and Severity Classification,High,Evidence,,AI-CTRL-035,D12,D12 AI Incident Response and Forensics
+TC-D12-002,"AI Incident Intake: Detection Alerts, User Reports and Third-Party Notices",High,Technical,,AI-CTRL-035,D12,D12 AI Incident Response and Forensics
+TC-D12-003,Triage Runbooks by AI Incident Type,Critical,Technical,,AI-CTRL-035,D12,D12 AI Incident Response and Forensics
+TC-D12-004,"Preserving AI System State at Incident Time: Model, Prompt, Configuration, Tools and Policy",Critical,Technical,,AI-CTRL-035,D12,D12 AI Incident Response and Forensics
+TC-D12-005,Retrieval Index and Knowledge Snapshots for Forensics,High,Technical,,AI-CTRL-035,D12,D12 AI Incident Response and Forensics
+TC-D12-006,"Reconstructing What the Model Saw: Context, Memory and Retrieved Content",Critical,Technical,,"AI-CTRL-035, AI-CTRL-008",D12,D12 AI Incident Response and Forensics
+TC-D12-007,Deterministic Replay: Reproducing an Incident with Pinned Versions and Recorded Inputs,High,Technical,,AI-CTRL-035,D12,D12 AI Incident Response and Forensics
+TC-D12-008,"Attribution Analysis: Attacker, Insider, Misconfiguration or Model Fault",High,Technical,,AI-CTRL-035,D12,D12 AI Incident Response and Forensics
+TC-D12-009,"Scoping and Blast Radius: Users, Data, Systems and Outputs Affected",Critical,Technical,,AI-CTRL-035,D12,D12 AI Incident Response and Forensics
+TC-D12-010,Downstream Propagation of Harmful or False Outputs,High,Technical,,AI-CTRL-035,D12,D12 AI Incident Response and Forensics
+TC-D12-011,Containment Option Catalogue and Selection Guidance,Critical,Technical,,"AI-CTRL-035, AI-CTRL-025",D12,D12 AI Incident Response and Forensics
+TC-D12-012,Eradication and Recovery Validation,High,Technical,,AI-CTRL-035,D12,D12 AI Incident Response and Forensics
+TC-D12-013,Poisoning and Training-Data Incident Forensics,Critical,Technical,,"AI-CTRL-035, AI-CTRL-029",D12,D12 AI Incident Response and Forensics
+TC-D12-014,Model Behaviour Regression Incident,High,Technical,,"AI-CTRL-035, AI-CTRL-034",D12,D12 AI Incident Response and Forensics
+TC-D12-015,Harm Assessment and Affected-Person Identification,Critical,Technical,,"AI-CTRL-035, AI-CTRL-013",D12,D12 AI Incident Response and Forensics
+TC-D12-016,Notification Decision and Communications (Framework-Neutral),Critical,Technical,,"AI-CTRL-035, AI-CTRL-013, AI-CTRL-043",D12,D12 AI Incident Response and Forensics
+TC-D12-017,Third-Party and Model-Provider Incident Coordination,High,Evidence,,"AI-CTRL-035, AI-CTRL-014",D12,D12 AI Incident Response and Forensics
+TC-D12-018,Evidence Handling for AI Artefacts and Chain of Custody,Critical,Technical,,AI-CTRL-035,D12,D12 AI Incident Response and Forensics
+TC-D12-019,"Forensic Tooling Access, Separation of Duties and Audit",High,Technical,,AI-CTRL-035,D12,D12 AI Incident Response and Forensics
+TC-D12-020,AI Root-Cause Analysis Method and Recurrence Tracking,High,Evidence,,AI-CTRL-035,D12,D12 AI Incident Response and Forensics
+TC-D12-021,Near-Miss and Blocked-Attack Learning,Medium,Technical,,AI-CTRL-035,D12,D12 AI Incident Response and Forensics
+TC-D12-022,"AI Incident Register, Metrics and Trend Analysis",Medium,Evidence,,AI-CTRL-035,D12,D12 AI Incident Response and Forensics
+TC-D13-001,"Cost Attribution: Tagging Spend to Team, Application, User and Key",High,Technical,,AI-CTRL-036,D13,D13 AI Cost and Abuse Controls
+TC-D13-002,Token Accounting Accuracy Against Provider Invoices,High,Technical,,AI-CTRL-036,D13,D13 AI Cost and Abuse Controls
+TC-D13-003,"Budget Hierarchy and Enforcement: Organisation, Team, Application, User and Key",Critical,Technical,,AI-CTRL-036,D13,D13 AI Cost and Abuse Controls
+TC-D13-004,Real-Time Spend Anomaly Detection,High,Technical,,AI-CTRL-036,D13,D13 AI Cost and Abuse Controls
+TC-D13-005,Leaked or Stolen API Key: Cost-Spike Detection and Automatic Containment,Critical,Technical,,"AI-CTRL-036, AI-CTRL-016",D13,D13 AI Cost and Abuse Controls
+TC-D13-006,Denial of Wallet via Public Chatbot Endpoints: Anonymous Traffic Abuse,Critical,Technical,,AI-CTRL-036,D13,D13 AI Cost and Abuse Controls
+TC-D13-007,"Quota and Credit Abuse: Multi-Account, Free-Tier and Trial Exploitation",High,Technical,,AI-CTRL-036,D13,D13 AI Cost and Abuse Controls
+TC-D13-008,Prompt and Output Expansion Abuse: Length and Amplification Limits,High,Technical,,AI-CTRL-036,D13,D13 AI Cost and Abuse Controls
+TC-D13-009,Tool Fan-Out and Recursive Agent Cost Explosion,Critical,Technical,,"AI-CTRL-036, AI-CTRL-025",D13,D13 AI Cost and Abuse Controls
+TC-D13-010,"Retry Storms, Timeouts and the Cost of Failure Handling",Medium,Technical,,AI-CTRL-036,D13,D13 AI Cost and Abuse Controls
+TC-D13-011,Caching and Prefix Reuse: Cost Effects and Cache Abuse,Medium,Technical,,AI-CTRL-036,D13,D13 AI Cost and Abuse Controls
+TC-D13-012,Model Routing Cost Controls: Premium Model Misuse and Downgrade Policy,High,Technical,,AI-CTRL-036,D13,D13 AI Cost and Abuse Controls
+TC-D13-013,"Rate and Concurrency Limits per Identity, Key and Network",High,Technical,,AI-CTRL-036,D13,D13 AI Cost and Abuse Controls
+TC-D13-014,Circuit Breakers and Automatic Actions on Budget Breach,Critical,Technical,,AI-CTRL-036,D13,D13 AI Cost and Abuse Controls
+TC-D13-015,"Batch Jobs, Scheduled Runs and Long-Running Tasks: Timeouts and Spend Ceilings",High,Technical,,AI-CTRL-036,D13,D13 AI Cost and Abuse Controls
+TC-D13-016,GPU and Self-Hosted Inference Cost Abuse,High,Technical,,AI-CTRL-036,D13,D13 AI Cost and Abuse Controls
+TC-D13-017,Shadow Spend Discovery: Unapproved AI Subscriptions and Direct Provider Accounts,High,Technical,,"AI-CTRL-036, AI-CTRL-001",D13,D13 AI Cost and Abuse Controls
+TC-D13-018,"Spend Approval Workflow for Expensive Models, Features and Contracts",Medium,Technical,,AI-CTRL-036,D13,D13 AI Cost and Abuse Controls
+TC-D13-019,Cost Controls for Third-Party and Embedded AI Features,Medium,Evidence,,"AI-CTRL-036, AI-CTRL-014",D13,D13 AI Cost and Abuse Controls
+TC-D13-020,"Cost Reporting, Chargeback Evidence and Dispute Handling",Medium,Evidence,,AI-CTRL-036,D13,D13 AI Cost and Abuse Controls
+TC-D13-021,"Abuse Enforcement Ladder: Warn, Throttle, Suspend and Appeal for Authenticated Users",High,Technical,,AI-CTRL-036,D13,D13 AI Cost and Abuse Controls
+TC-L01-001,"AI Use-Case Registry: Creation, Mandatory Fields and Uniqueness",High,Technical,"D3, D7",AI-CTRL-011,L01,L01 Business & Use Cases
+TC-L01-002,Use-Case Intake and Approval Workflow Before Deployment,Critical,Technical,"D3, D7","AI-CTRL-011, AI-CTRL-033",L01,L01 Business & Use Cases
+TC-L01-003,Business Owner and Accountable Executive Attribution,High,Technical,D3,AI-CTRL-011,L01,L01 Business & Use Cases
+TC-L01-004,"Use-Case to System, Model and Data Traceability",High,Technical,"D3, D4, D6",AI-CTRL-011,L01,L01 Business & Use Cases
+TC-L01-005,Risk Tiering of Use Cases: Criteria and Consistency,Critical,Technical,"D3, D7",AI-CTRL-011,L01,L01 Business & Use Cases
+TC-L01-006,Screening for Prohibited or Restricted Use Cases,Critical,Technical,"D3, D7",AI-CTRL-011,L01,L01 Business & Use Cases
+TC-L01-007,Intended Purpose Documentation and Purpose-Drift Detection,High,Technical,"D3, D6",AI-CTRL-011,L01,L01 Business & Use Cases
+TC-L01-008,Reconciliation of Discovered AI Use Against the Registry,Critical,Technical,"D1, D3","AI-CTRL-011, AI-CTRL-001",L01,L01 Business & Use Cases
+TC-L01-009,Business Impact and Criticality Classification,Medium,Technical,"D3, D7",AI-CTRL-011,L01,L01 Business & Use Cases
+TC-L01-010,Impacted Persons and Stakeholder Identification,High,Technical,"D3, D7",AI-CTRL-013,L01,L01 Business & Use Cases
+TC-L01-011,Identification of Automated Decisions and Profiling,Critical,Technical,"D3, D6, D7",AI-CTRL-013,L01,L01 Business & Use Cases
+TC-L01-012,Human Oversight Design Recorded and Tested,Critical,Evidence,"D3, D5","AI-CTRL-023, AI-CTRL-045",L01,L01 Business & Use Cases
+TC-L01-013,Use-Case Lifecycle States and Required Controls per State,Medium,Technical,D3,"AI-CTRL-011, AI-CTRL-033",L01,L01 Business & Use Cases
+TC-L01-014,Pilot and Proof-of-Concept Guardrails,High,Technical,"D3, D6",AI-CTRL-033,L01,L01 Business & Use Cases
+TC-L01-015,Material Change Triggers Re-Assessment,High,Technical,"D3, D4",AI-CTRL-033,L01,L01 Business & Use Cases
+TC-L01-016,"Benefit, Risk and KPI Tracking per Use Case",Low,Evidence,D3,AI-CTRL-011,L01,L01 Business & Use Cases
+TC-L01-017,Third-Party AI Dependency Recording per Use Case,High,Technical,"D3, D4",AI-CTRL-014,L01,L01 Business & Use Cases
+TC-L01-018,Fallback and Continuity Plans for AI-Dependent Processes,Medium,Evidence,"D3, D7",AI-CTRL-040,L01,L01 Business & Use Cases
+TC-L01-019,Use-Case Retirement and Decommission Evidence,Medium,Evidence,"D3, D7",AI-CTRL-011,L01,L01 Business & Use Cases
+TC-L01-020,Portfolio View and Executive Reporting on Use Cases,Medium,Evidence,"D3, D7",AI-CTRL-011,L01,L01 Business & Use Cases
+TC-L01-021,Kill Switch for High-Risk AI Use Cases Defined and Tested,High,Evidence,"D3, D7","AI-CTRL-025, AI-CTRL-040",L01,L01 Business & Use Cases
+TC-L01-022,Human-Over-the-Loop Authorisation Record,High,Evidence,"D5, D7","AI-CTRL-045, AI-CTRL-023, AI-CTRL-025",L01,L01 Business & Use Cases
+TC-L02-001,"AI Policy Framework: Scope, Ownership, Approval and Review Cycle",High,Evidence,D7,AI-CTRL-012,L02,L02 Governance & Risk Mgmt
+TC-L02-002,Policy-to-Control Mapping,Critical,Technical,"D3, D7",AI-CTRL-012,L02,L02 Governance & Risk Mgmt
+TC-L02-003,Control Library and Multi-Framework Crosswalk Capability,Critical,Technical,D7,AI-CTRL-038,L02,L02 Governance & Risk Mgmt
+TC-L02-004,Roles and Responsibilities (RACI) Recorded and Enforced,High,Technical,D3,AI-CTRL-012,L02,L02 Governance & Risk Mgmt
+TC-L02-005,AI Governance Committee Workflow and Decision Record,Medium,Evidence,"D3, D7",AI-CTRL-012,L02,L02 Governance & Risk Mgmt
+TC-L02-006,"AI Risk Register: Creation, Scoring and Ownership",Critical,Technical,D3,AI-CTRL-037,L02,L02 Governance & Risk Mgmt
+TC-L02-007,Risk Assessment Consistency Between Assessors,High,Technical,D3,AI-CTRL-037,L02,L02 Governance & Risk Mgmt
+TC-L02-008,Risk Treatment Tracking,High,Technical,D3,AI-CTRL-037,L02,L02 Governance & Risk Mgmt
+TC-L02-009,Residual Risk Acceptance with Authority Limits,Critical,Technical,"D3, D7",AI-CTRL-037,L02,L02 Governance & Risk Mgmt
+TC-L02-010,"Exception and Waiver Workflow: Request, Approval, Expiry and Review",Critical,Technical,"D3, D7",AI-CTRL-037,L02,L02 Governance & Risk Mgmt
+TC-L02-011,Exception Expiry Enforced in Technical Controls,High,Technical,"D1, D3","AI-CTRL-037, AI-CTRL-010",L02,L02 Governance & Risk Mgmt
+TC-L02-012,"Exception Reporting, Ageing and Concentration",Medium,Evidence,D3,AI-CTRL-037,L02,L02 Governance & Risk Mgmt
+TC-L02-013,Control Effectiveness Measurement and Evidence Freshness,Critical,Technical,"D3, D7",AI-CTRL-038,L02,L02 Governance & Risk Mgmt
+TC-L02-014,Control Owner Attestation,Medium,Technical,D3,AI-CTRL-038,L02,L02 Governance & Risk Mgmt
+TC-L02-015,Automated Evidence Collection and Freshness,High,Technical,"D3, D7",AI-CTRL-038,L02,L02 Governance & Risk Mgmt
+TC-L02-016,Audit Readiness: Evidence Pack on Demand,Critical,Technical,D7,AI-CTRL-038,L02,L02 Governance & Risk Mgmt
+TC-L02-017,Internal and External Audit Support: Read-Only Access and Sampling,High,Technical,D7,AI-CTRL-038,L02,L02 Governance & Risk Mgmt
+TC-L02-018,"Finding, Nonconformity and Corrective Action Management",High,Technical,D3,AI-CTRL-038,L02,L02 Governance & Risk Mgmt
+TC-L02-019,Governance Metrics and KPI Reporting,Medium,Evidence,D7,AI-CTRL-038,L02,L02 Governance & Risk Mgmt
+TC-L02-020,Regulatory and Framework Change Management,High,Technical,D7,"AI-CTRL-013, AI-CTRL-043",L02,L02 Governance & Risk Mgmt
+TC-L02-021,Third-Party Governance Integration,High,Technical,D7,AI-CTRL-014,L02,L02 Governance & Risk Mgmt
+TC-L02-022,Training and Awareness Tracking for AI Policies,Medium,Technical,"D1, D7","AI-CTRL-012, AI-CTRL-044",L02,L02 Governance & Risk Mgmt
+TC-L02-023,Acceptable Use Acknowledgement and Re-Acknowledgement,Medium,Technical,"D1, D7",AI-CTRL-012,L02,L02 Governance & Risk Mgmt
+TC-L02-024,Management Review Inputs and Outputs,Medium,Evidence,D7,AI-CTRL-038,L02,L02 Governance & Risk Mgmt
+TC-L02-025,Governance Record Integrity: Change History and Tamper Evidence,High,Technical,D7,"AI-CTRL-038, AI-CTRL-008",L02,L02 Governance & Risk Mgmt
+TC-L03-001,Register of AI Processing Activities,Critical,Technical,"D6, D7",AI-CTRL-013,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-002,Lawful Basis or Legal Ground Recording per Processing Activity,High,Evidence,"D6, D7",AI-CTRL-013,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-003,Notice and Transparency: Disclosing AI Interaction and Processing,High,Technical,"D1, D7",AI-CTRL-013,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-004,"Consent Capture, Evidence and Withdrawal",Critical,Technical,"D6, D7",AI-CTRL-013,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-005,Data Subject Rights: Access Request Workflow,Critical,Technical,"D6, D7",AI-CTRL-013,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-006,Data Subject Rights: Correction Request Handling,Medium,Technical,"D6, D7",AI-CTRL-013,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-007,Data Subject Rights: Erasure Across AI Stores,Critical,Technical,"D6, D7",AI-CTRL-013,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-008,"Rights to Object, Restrict and Request Human Review",High,Technical,"D6, D7","AI-CTRL-013, AI-CTRL-041",L03,"L03 Legal, Privacy & Compliance"
+TC-L03-009,Rights Request Timeline Tracking and Evidence,High,Technical,D7,AI-CTRL-013,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-010,"Impact Assessment Support (Privacy, Data Protection and AI Impact Assessments)",Critical,Technical,D7,"AI-CTRL-013, AI-CTRL-042",L03,"L03 Legal, Privacy & Compliance"
+TC-L03-011,Impact Assessment Triggers,High,Technical,D7,"AI-CTRL-013, AI-CTRL-042",L03,"L03 Legal, Privacy & Compliance"
+TC-L03-012,Cross-Border Transfer Register and Assessment,Critical,Technical,D7,AI-CTRL-007,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-013,Cross-Border Transfer Enforcement,Critical,Technical,"D7, D6",AI-CTRL-007,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-014,Residency Evidence Export for a Regulator,High,Evidence,D7,AI-CTRL-007,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-015,Data Minimisation and Purpose Limitation Enforcement,High,Technical,"D6, D7","AI-CTRL-013, AI-CTRL-017",L03,"L03 Legal, Privacy & Compliance"
+TC-L03-016,Retention Schedule Enforcement for AI Data,High,Technical,"D6, D7",AI-CTRL-013,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-017,Children's and Vulnerable Persons' Data Handling,High,Technical,"D6, D7",AI-CTRL-013,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-018,Special and Sensitive Categories of Data: Identification and Heightened Controls,Critical,Technical,"D6, D7","AI-CTRL-013, AI-CTRL-017",L03,"L03 Legal, Privacy & Compliance"
+TC-L03-019,Breach and Incident Notification Workflow,Critical,Technical,D7,"AI-CTRL-035, AI-CTRL-013, AI-CTRL-043",L03,"L03 Legal, Privacy & Compliance"
+TC-L03-020,"Controller, Processor and Joint Role Mapping with Agreements",High,Technical,D7,"AI-CTRL-014, AI-CTRL-013",L03,"L03 Legal, Privacy & Compliance"
+TC-L03-021,AI Provider Compliance Due-Diligence Evidence,High,Attestation,D7,AI-CTRL-014,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-022,"Compliance Evidence Export: Formats, Signing and Integrity",High,Technical,D7,AI-CTRL-038,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-023,Multi-Framework Compliance Dashboard: Coverage and Gaps,High,Technical,D7,AI-CTRL-038,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-024,Adopting a New Framework: Custom Framework Onboarding,Critical,Technical,D7,AI-CTRL-038,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-025,Evidence Reuse Across Frameworks,High,Technical,D7,AI-CTRL-038,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-026,Regulator Inspection Simulation: Rapid Evidence Request,Critical,Technical,D7,AI-CTRL-038,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-027,Litigation Hold and Regulatory Preservation Notice,High,Technical,"D6, D7",AI-CTRL-035,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-028,Intellectual Property and Copyright Controls for AI Inputs and Outputs,Medium,Technical,"D3, D7","AI-CTRL-013, AI-CTRL-046",L03,"L03 Legal, Privacy & Compliance"
+TC-L03-029,Automated Decision Explanation Records,High,Technical,"D3, D7","AI-CTRL-013, AI-CTRL-041",L03,"L03 Legal, Privacy & Compliance"
+TC-L03-030,"Language and Jurisdiction Configuration (Arabic, English and Regional Rule Sets)",Medium,Technical,D7,AI-CTRL-013,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-031,Bias Testing Before Release and on Material Change,Critical,Technical,"D3, D7",AI-CTRL-041,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-032,"Adverse-Impact Analysis for Employment, Credit and Other Consequential Decisions",High,Technical,"D3, D7",AI-CTRL-041,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-033,Language Parity: Output Quality and Safety Controls Across Languages,Medium,Technical,"D3, D7","AI-CTRL-039, AI-CTRL-041",L03,"L03 Legal, Privacy & Compliance"
+TC-L03-034,Fundamental Rights Impact Assessment Before Deployment,High,Technical,D7,AI-CTRL-042,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-035,"AI-Generated Content Marking, Labels and Provenance",High,Technical,"D3, D7",AI-CTRL-039,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-036,Automated Decision Register and Published Transparency Statement,Medium,Evidence,D7,AI-CTRL-013,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-037,Statutory Role and Risk-Class Determination per AI System,High,Technical,D7,AI-CTRL-011,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-038,AI Literacy Programme and Role-Based Training Records,Medium,Evidence,"D1, D7",AI-CTRL-044,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-039,"Authority Register, Filings and Local Representative Records",High,Evidence,D7,AI-CTRL-043,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-040,Human Oversight Effectiveness: Seeded-Error Detection and Review Metrics,High,Technical,"D3, D7",AI-CTRL-045,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-041,"Overseer Evidence, Override Authority and Review Workload",High,Evidence,"D3, D7",AI-CTRL-045,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-042,"AI Vendor Terms: Output Ownership, Infringement Indemnity and Training Use",Medium,Evidence,D7,AI-CTRL-046,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-043,Bias Profile and Monitoring Outside Validated Boundaries,High,Technical,"D3, D7",AI-CTRL-041,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-044,Impact Assessment Content and Periodic Review,High,Evidence,D7,AI-CTRL-042,L03,"L03 Legal, Privacy & Compliance"
+TC-L03-045,AI Literacy Effectiveness: Scenario Assessment and Operational Measures,Medium,Evidence,"D1, D7",AI-CTRL-044,L03,"L03 Legal, Privacy & Compliance"
+TC-L04-001,Unsanctioned Public AI Web Tool Discovery,Medium,Technical,D1,AI-CTRL-001,L04,L04 Human Interaction Layer
+TC-L04-002,AI Browser Extension Discovery,High,Technical,D1,AI-CTRL-001,L04,L04 Human Interaction Layer
+TC-L04-003,AI Usage Attribution by Department,High,Technical,D1,AI-CTRL-001,L04,L04 Human Interaction Layer
+TC-L04-004,AI Usage Attribution by User Group,Critical,Technical,D1,AI-CTRL-001,L04,L04 Human Interaction Layer
+TC-L04-005,AI Usage by Device Type and Management Status,High,Technical,D1,AI-CTRL-001,L04,L04 Human Interaction Layer
+TC-L04-006,AI Usage by Network Path,High,Technical,D1,AI-CTRL-001,L04,L04 Human Interaction Layer
+TC-L04-007,Discovery from Existing Proxy/SWG Logs,Medium,Technical,D1,AI-CTRL-001,L04,L04 Human Interaction Layer
+TC-L04-008,Off-Network Endpoint Usage Reporting,High,Technical,D1,AI-CTRL-001,L04,L04 Human Interaction Layer
+TC-L04-009,Personal vs Corporate Account Detection on the Same AI Service,Critical,Technical,"D1, D6","AI-CTRL-001, AI-CTRL-010",L04,L04 Human Interaction Layer
+TC-L04-010,Native Browser-Embedded AI Assistant Detection,High,Technical,D1,AI-CTRL-001,L04,L04 Human Interaction Layer
+TC-L04-011,Real-Time Coaching Banner on Unsanctioned Tool,Medium,Technical,D1,"AI-CTRL-010, AI-CTRL-012",L04,L04 Human Interaction Layer
+TC-L04-012,Content-Aware Warning on Sensitive Paste,High,Technical,"D1, D6","AI-CTRL-010, AI-CTRL-002",L04,L04 Human Interaction Layer
+TC-L04-013,Business Justification Workflow (Justify and Proceed),Medium,Evidence,D1,"AI-CTRL-037, AI-CTRL-010",L04,L04 Human Interaction Layer
+TC-L04-014,Approval Workflow for AI Access Exceptions,High,Evidence,D1,AI-CTRL-037,L04,L04 Human Interaction Layer
+TC-L04-015,Time-Bound Exception Expiry Enforcement,Medium,Technical,D1,AI-CTRL-037,L04,L04 Human Interaction Layer
+TC-L04-016,Block with Redirect to Sanctioned Alternative,Medium,Technical,D1,AI-CTRL-010,L04,L04 Human Interaction Layer
+TC-L04-017,Sensitive Text Paste into Web AI Prompt: Monitor vs Block,Critical,Technical,"D1, D6",AI-CTRL-002,L04,L04 Human Interaction Layer
+TC-L04-018,File Upload to AI Web Tool: Classified File Detection,Critical,Technical,"D1, D6",AI-CTRL-003,L04,L04 Human Interaction Layer
+TC-L04-019,Source Code Snippet Paste or Drag-and-Drop,High,Technical,"D1, D2","AI-CTRL-002, AI-CTRL-004",L04,L04 Human Interaction Layer
+TC-L04-020,Screenshot and Image Upload with Sensitive Content,High,Technical,"D1, D6","AI-CTRL-021, AI-CTRL-003",L04,L04 Human Interaction Layer
+TC-L04-021,Voice and Audio Input to AI Tools,Medium,Technical,D1,AI-CTRL-021,L04,L04 Human Interaction Layer
+TC-L04-022,Hidden Text and Metadata in Uploaded Documents,High,Technical,"D1, D6","AI-CTRL-003, AI-CTRL-021",L04,L04 Human Interaction Layer
+TC-L04-023,Browser-Based AI Agent (Computer-Use) Activity Detection,Critical,Technical,"D1, D5",AI-CTRL-006,L04,L04 Human Interaction Layer
+TC-L04-024,Mobile and BYOD AI App Visibility,High,Technical,D1,AI-CTRL-001,L04,L04 Human Interaction Layer
+TC-L04-025,Unmanaged Device Access to Sanctioned AI Tools,High,Technical,"D1, D6","AI-CTRL-001, AI-CTRL-010",L04,L04 Human Interaction Layer
+TC-L04-026,User Risk Scoring from Repeated AI Policy Violations,Medium,Evidence,"D1, D6",AI-CTRL-010,L04,L04 Human Interaction Layer
+TC-L04-027,Privacy Controls on User-Level AI Activity Data,High,Evidence,"D1, D7",AI-CTRL-013,L04,L04 Human Interaction Layer
+TC-L04-028,Arabic and Mixed-Language Prompt Handling,High,Technical,"D1, D7",AI-CTRL-002,L04,L04 Human Interaction Layer
+TC-L04-029,Differential Policy Enforcement by Group,High,Technical,D1,AI-CTRL-010,L04,L04 Human Interaction Layer
+TC-L04-030,Shared or Generic Account Use of AI Tools,Medium,Technical,D1,AI-CTRL-015,L04,L04 Human Interaction Layer
+TC-L04-031,IDE Chat Prompt Containing Proprietary Source Code: Monitor vs Block,Critical,Technical,"D2, D6",AI-CTRL-004,L04,L04 Human Interaction Layer
+TC-L04-032,Developer Coaching and Justification Inside the IDE,Medium,Technical,D2,AI-CTRL-004,L04,L04 Human Interaction Layer
+TC-L05-001,Sanctioned AI Application Discovery,High,Technical,D3,AI-CTRL-001,L05,L05 AI Applications
+TC-L05-002,AI Plugin and Connector Discovery in Sanctioned SaaS,Critical,Technical,"D3, D5",AI-CTRL-001,L05,L05 AI Applications
+TC-L05-003,AI API Usage Discovery,Critical,Technical,"D3, D4",AI-CTRL-001,L05,L05 AI Applications
+TC-L05-004,IDE-Based AI Coding Assistant Discovery,High,Technical,D2,"AI-CTRL-001, AI-CTRL-004",L05,L05 AI Applications
+TC-L05-005,Embedded AI Features in Sanctioned SaaS,High,Evidence,D3,AI-CTRL-001,L05,L05 AI Applications
+TC-L05-006,Internally Built AI Application Discovery,High,Technical,D3,AI-CTRL-001,L05,L05 AI Applications
+TC-L05-007,AI Application Risk Classification,High,Evidence,"D3, D7","AI-CTRL-001, AI-CTRL-011",L05,L05 AI Applications
+TC-L05-008,"Application Inventory Enrichment (Owner, Data, Model)",Medium,Evidence,D3,AI-CTRL-001,L05,L05 AI Applications
+TC-L05-009,New AI Application Detection Latency,Medium,Technical,D3,AI-CTRL-001,L05,L05 AI Applications
+TC-L05-010,Model API Key Exposure in Application Configuration,High,Technical,"D3, D4",AI-CTRL-016,L05,L05 AI Applications
+TC-L05-011,Inventory Export to CMDB or Asset Management,Medium,Evidence,D3,AI-CTRL-001,L05,L05 AI Applications
+TC-L05-012,Runtime Protection Coverage Verification,Critical,Evidence,D3,AI-CTRL-005,L05,L05 AI Applications
+TC-L05-013,Runtime Protection Fail-Open vs Fail-Closed Behaviour,Critical,Technical,D3,AI-CTRL-040,L05,L05 AI Applications
+TC-L05-014,Output Handling: Script Injection in Rendered Responses,High,Technical,D3,AI-CTRL-020,L05,L05 AI Applications
+TC-L05-015,Output Handling: Injection into Downstream Systems,Critical,Technical,D3,AI-CTRL-020,L05,L05 AI Applications
+TC-L05-016,Output Handling: PII in Model Responses,Critical,Technical,"D3, D6",AI-CTRL-020,L05,L05 AI Applications
+TC-L05-017,Output Handling: Secrets and Credentials in Responses,High,Technical,D3,AI-CTRL-020,L05,L05 AI Applications
+TC-L05-018,Output Handling: Harmful or Policy-Violating Content,High,Technical,D3,AI-CTRL-039,L05,L05 AI Applications
+TC-L05-019,Output Handling: Fabricated Package and URL Detection,High,Technical,"D2, D4","AI-CTRL-039, AI-CTRL-031",L05,L05 AI Applications
+TC-L05-020,Output Handling: Markdown Image and Link Exfiltration,High,Technical,D3,AI-CTRL-020,L05,L05 AI Applications
+TC-L05-021,Response Grounding and Citation Verification,Medium,Technical,D3,AI-CTRL-039,L05,L05 AI Applications
+TC-L05-022,Structured Output and Function-Call Argument Validation,High,Technical,"D3, D5","AI-CTRL-020, AI-CTRL-022",L05,L05 AI Applications
+TC-L05-023,Tenant Data Isolation in Multi-Tenant AI Applications,Critical,Technical,"D3, D6",AI-CTRL-017,L05,L05 AI Applications
+TC-L05-024,Streaming Response Inspection,High,Technical,D3,AI-CTRL-020,L05,L05 AI Applications
+TC-L05-025,Application Logging Completeness,High,Evidence,D3,AI-CTRL-008,L05,L05 AI Applications
+TC-L05-026,Multi-Turn Conversation Protection,High,Technical,D3,AI-CTRL-005,L05,L05 AI Applications
+TC-L05-027,Pre-Production Automated Red-Team Scan,High,Technical,"D3, D4",AI-CTRL-034,L05,L05 AI Applications
+TC-L05-028,Per-Application Policy as Code,Medium,Evidence,D3,AI-CTRL-010,L05,L05 AI Applications
+TC-L05-029,Orphaned and Decommissioned AI Application Detection,Medium,Evidence,D3,"AI-CTRL-001, AI-CTRL-011",L05,L05 AI Applications
+TC-L05-030,Protection Overhead Under Load,Medium,Technical,D3,AI-CTRL-040,L05,L05 AI Applications
+TC-L05-031,AI Coding Assistant Extension Inventory and Version Risk,High,Technical,D2,AI-CTRL-004,L05,L05 AI Applications
+TC-L05-032,Personal vs Corporate Account in AI Coding Assistants,Critical,Technical,D2,AI-CTRL-004,L05,L05 AI Applications
+TC-L05-033,Coding Assistant Workspace Context Scope and File Exclusion,High,Technical,"D2, D6",AI-CTRL-004,L05,L05 AI Applications
+TC-L05-034,Insecure Code Suggestion Detection,High,Technical,"D2, D3",AI-CTRL-004,L05,L05 AI Applications
+TC-L05-035,AI-Generated Code: Licence and Public-Code Match Detection,Medium,Technical,"D2, D7","AI-CTRL-004, AI-CTRL-046",L05,L05 AI Applications
+TC-L05-036,"AI Chat Widget on a Payment Page: Authorised, Inventoried and Monitored for Tampering",High,Technical,"D3, D7","AI-CTRL-031, AI-CTRL-014",L05,L05 AI Applications
+TC-L06-001,Agent Discovery Across Platforms and Custom Builds,Critical,Technical,D5,AI-CTRL-006,L06,L06 Agent Orchestration Layer
+TC-L06-002,"Agent Inventory Enrichment: Owner, Tools, Data and Model",High,Evidence,D5,AI-CTRL-006,L06,L06 Agent Orchestration Layer
+TC-L06-003,Shadow Agent Detection (Unregistered and Local Agents),Critical,Technical,"D5, D2",AI-CTRL-006,L06,L06 Agent Orchestration Layer
+TC-L06-004,Low-Code and No-Code Agent Builder Discovery,High,Technical,"D5, D1",AI-CTRL-006,L06,L06 Agent Orchestration Layer
+TC-L06-005,MCP Server Discovery (Local and Remote),Critical,Technical,D5,AI-CTRL-024,L06,L06 Agent Orchestration Layer
+TC-L06-006,MCP Server Trust: Registry and Allow-List Enforcement,Critical,Technical,D5,AI-CTRL-024,L06,L06 Agent Orchestration Layer
+TC-L06-007,MCP Tool Description Poisoning,Critical,Technical,"D5, D3",AI-CTRL-024,L06,L06 Agent Orchestration Layer
+TC-L06-008,MCP Rug-Pull: Tool Definition Change After Approval,Critical,Technical,D5,AI-CTRL-024,L06,L06 Agent Orchestration Layer
+TC-L06-009,MCP Tool Shadowing and Name Collision,High,Technical,D5,AI-CTRL-024,L06,L06 Agent Orchestration Layer
+TC-L06-010,MCP Authentication and Transport Security,High,Technical,"D5, D7","AI-CTRL-024, AI-CTRL-015",L06,L06 Agent Orchestration Layer
+TC-L06-011,MCP Gateway Policy: Per-Tool Allow and Deny,Critical,Technical,D5,"AI-CTRL-024, AI-CTRL-022",L06,L06 Agent Orchestration Layer
+TC-L06-012,Tool Inventory and Permission Scope Mapping,High,Evidence,D5,"AI-CTRL-024, AI-CTRL-016",L06,L06 Agent Orchestration Layer
+TC-L06-013,Least-Privilege Tool Allow-Listing Per Agent,Critical,Technical,D5,"AI-CTRL-016, AI-CTRL-024",L06,L06 Agent Orchestration Layer
+TC-L06-014,Tool Call Argument Validation and Parameter-Level Policy,Critical,Technical,"D5, D3",AI-CTRL-022,L06,L06 Agent Orchestration Layer
+TC-L06-015,High-Risk Action Approval (Human in the Loop),Critical,Technical,D5,AI-CTRL-023,L06,L06 Agent Orchestration Layer
+TC-L06-016,Approval Fatigue and Approval Bypass Resistance,High,Technical,D5,AI-CTRL-023,L06,L06 Agent Orchestration Layer
+TC-L06-017,Delegation Chains: Sub-Agent Authority Attenuation,Critical,Technical,D5,"AI-CTRL-016, AI-CTRL-006",L06,L06 Agent Orchestration Layer
+TC-L06-018,Agent-to-Agent Message Authenticity,High,Technical,D5,AI-CTRL-015,L06,L06 Agent Orchestration Layer
+TC-L06-019,Confused Deputy: Agent Acting Beyond the User's Intent,Critical,Technical,D5,"AI-CTRL-022, AI-CTRL-016",L06,L06 Agent Orchestration Layer
+TC-L06-020,Cross-Agent Prompt Injection Propagation,Critical,Technical,"D5, D3",AI-CTRL-005,L06,L06 Agent Orchestration Layer
+TC-L06-021,Runaway Loop and Recursion Detection,High,Technical,D5,"AI-CTRL-025, AI-CTRL-036",L06,L06 Agent Orchestration Layer
+TC-L06-022,Kill Switch: Stopping a Single Agent,Critical,Technical,D5,AI-CTRL-025,L06,L06 Agent Orchestration Layer
+TC-L06-023,Kill Switch: Global Credential Revocation and Action Rollback,Critical,Technical,"D5, D7",AI-CTRL-025,L06,L06 Agent Orchestration Layer
+TC-L06-024,Action Rate Limits and Blast-Radius Caps,High,Technical,D5,"AI-CTRL-025, AI-CTRL-022",L06,L06 Agent Orchestration Layer
+TC-L06-025,Agent Sandboxing for Code Execution,Critical,Technical,"D5, D3",AI-CTRL-027,L06,L06 Agent Orchestration Layer
+TC-L06-026,Agent Runtime File and Network Egress Restrictions,High,Technical,"D5, D7",AI-CTRL-027,L06,L06 Agent Orchestration Layer
+TC-L06-027,Goal Hijacking Mid-Task,High,Technical,D5,AI-CTRL-005,L06,L06 Agent Orchestration Layer
+TC-L06-028,Agent Action Logging and Replayable Traces,High,Technical,D5,AI-CTRL-008,L06,L06 Agent Orchestration Layer
+TC-L06-029,Agent Behaviour Baselining and Anomaly Detection,High,Technical,D5,"AI-CTRL-006, AI-CTRL-009",L06,L06 Agent Orchestration Layer
+TC-L06-030,Tool Output DLP and Sanitisation,High,Technical,"D6, D5",AI-CTRL-020,L06,L06 Agent Orchestration Layer
+TC-L06-031,Browser and Computer-Use Agent Controls,High,Technical,"D5, D1",AI-CTRL-027,L06,L06 Agent Orchestration Layer
+TC-L06-032,Third-Party Agent and Plugin Vetting,High,Evidence,"D5, D4","AI-CTRL-024, AI-CTRL-014",L06,L06 Agent Orchestration Layer
+TC-L06-033,Orchestration Graph Policy as Code,Medium,Technical,D5,AI-CTRL-022,L06,L06 Agent Orchestration Layer
+TC-L06-034,Agent Change Control and Re-Approval,Medium,Technical,D5,"AI-CTRL-033, AI-CTRL-006",L06,L06 Agent Orchestration Layer
+TC-L06-035,Agent Decommissioning and Orphan Agent Handling,Medium,Evidence,D5,"AI-CTRL-006, AI-CTRL-015",L06,L06 Agent Orchestration Layer
+TC-L06-036,Coding Agent Terminal Command and File-System Guardrails,Critical,Technical,"D2, D5","AI-CTRL-027, AI-CTRL-022",L06,L06 Agent Orchestration Layer
+TC-L06-037,IDE and Coding Agent MCP Server Configuration Discovery,High,Technical,"D2, D5","AI-CTRL-024, AI-CTRL-004",L06,L06 Agent Orchestration Layer
+TC-L06-038,Agent Trust Map: Permitted Agent-to-Agent Relationships,High,Evidence,D5,"AI-CTRL-006, AI-CTRL-015",L06,L06 Agent Orchestration Layer
+TC-L06-039,Inter-Agent Request Authorisation: Low-Trust Agent Instructing a High-Trust Agent,Critical,Technical,D5,"AI-CTRL-022, AI-CTRL-016",L06,L06 Agent Orchestration Layer
+TC-L06-040,Inter-Agent Message Schema and Content Validation,High,Technical,"D5, D3","AI-CTRL-020, AI-CTRL-022",L06,L06 Agent Orchestration Layer
+TC-L06-041,Agent Discovery and Agent Card Spoofing,High,Technical,D5,"AI-CTRL-015, AI-CTRL-024",L06,L06 Agent Orchestration Layer
+TC-L06-042,Inter-Agent Channel Encryption and Protocol Downgrade,High,Technical,"D5, D7","AI-CTRL-015, AI-CTRL-032",L06,L06 Agent Orchestration Layer
+TC-L06-043,Cross-Organisation Agent Federation: Third-Party Agent Trust,High,Technical,"D5, D4","AI-CTRL-015, AI-CTRL-014",L06,L06 Agent Orchestration Layer
+TC-L06-044,Hand-Off Data Scope: Context Over-Sharing Between Agents,High,Technical,"D5, D6","AI-CTRL-017, AI-CTRL-016",L06,L06 Agent Orchestration Layer
+TC-L06-045,Inter-Agent Request Logging and Cross-Agent Trace Correlation,High,Technical,D5,"AI-CTRL-008, AI-CTRL-006",L06,L06 Agent Orchestration Layer
+TC-L06-046,Compromised Agent Containment in a Multi-Agent System,Critical,Technical,D5,"AI-CTRL-025, AI-CTRL-027",L06,L06 Agent Orchestration Layer
+TC-L06-047,Tool and System Access Grant Approval Record,High,Evidence,D5,"AI-CTRL-024, AI-CTRL-016",L06,L06 Agent Orchestration Layer
+TC-L07-001,Direct Injection: Instruction Override Baseline,Critical,Technical,D3,AI-CTRL-005,L07,L07 Prompt & Context Layer
+TC-L07-002,Direct Injection: Delimiter and Format Confusion,High,Technical,D3,AI-CTRL-005,L07,L07 Prompt & Context Layer
+TC-L07-003,Direct Injection: Authority and Role Impersonation,High,Technical,D3,AI-CTRL-005,L07,L07 Prompt & Context Layer
+TC-L07-004,Direct Injection: Payload Splitting Across Turns,High,Technical,D3,AI-CTRL-005,L07,L07 Prompt & Context Layer
+TC-L07-005,Direct Injection: Encoded and Obfuscated Payloads,High,Technical,D3,AI-CTRL-005,L07,L07 Prompt & Context Layer
+TC-L07-006,"Direct Injection: Multilingual Payloads (Arabic, Hindi, Urdu, French)",High,Technical,"D3, D7",AI-CTRL-005,L07,L07 Prompt & Context Layer
+TC-L07-007,Direct Injection: Long-Context Burying and Many-Shot Patterns,Medium,Technical,D3,AI-CTRL-005,L07,L07 Prompt & Context Layer
+TC-L07-008,Direct Injection Leading to Unauthorised Tool Action,Critical,Technical,"D3, D5","AI-CTRL-005, AI-CTRL-022",L07,L07 Prompt & Context Layer
+TC-L07-009,Indirect Injection: Web Page Content,Critical,Technical,"D3, D5",AI-CTRL-005,L07,L07 Prompt & Context Layer
+TC-L07-010,Indirect Injection: Email and Document Content,Critical,Technical,"D3, D5",AI-CTRL-005,L07,L07 Prompt & Context Layer
+TC-L07-011,Indirect Injection: Hidden Text and File Metadata,High,Technical,"D3, D6",AI-CTRL-005,L07,L07 Prompt & Context Layer
+TC-L07-012,Indirect Injection: Retrieved Knowledge Base Documents,Critical,Technical,D3,"AI-CTRL-005, AI-CTRL-019",L07,L07 Prompt & Context Layer
+TC-L07-013,Indirect Injection: Tool and API Responses,High,Technical,"D3, D5",AI-CTRL-005,L07,L07 Prompt & Context Layer
+TC-L07-014,Indirect Injection: Images with Embedded Text,High,Technical,"D3, D5","AI-CTRL-005, AI-CTRL-021",L07,L07 Prompt & Context Layer
+TC-L07-015,"Indirect Injection: Collaboration Data (Chat, Tickets, Calendar)",High,Technical,"D3, D5",AI-CTRL-005,L07,L07 Prompt & Context Layer
+TC-L07-016,Indirect Injection Driving Data Exfiltration via URL,Critical,Technical,"D3, D6","AI-CTRL-005, AI-CTRL-020",L07,L07 Prompt & Context Layer
+TC-L07-017,Jailbreak: Persona and Role-Play,Critical,Technical,D3,AI-CTRL-005,L07,L07 Prompt & Context Layer
+TC-L07-018,Jailbreak: Hypothetical and Fictional Framing,High,Technical,D3,AI-CTRL-005,L07,L07 Prompt & Context Layer
+TC-L07-019,Jailbreak: Gradual Multi-Turn Escalation,High,Technical,D3,AI-CTRL-005,L07,L07 Prompt & Context Layer
+TC-L07-020,Jailbreak: Refusal Suppression and Prefix Injection,Medium,Technical,D3,AI-CTRL-005,L07,L07 Prompt & Context Layer
+TC-L07-021,Jailbreak: Automated Adversarial Suffixes and Fuzzing,High,Technical,"D3, D4",AI-CTRL-005,L07,L07 Prompt & Context Layer
+TC-L07-022,Jailbreak: Cross-Lingual and Low-Resource Languages,High,Technical,"D3, D7",AI-CTRL-005,L07,L07 Prompt & Context Layer
+TC-L07-023,Jailbreak: Instructions Embedded in Images (Multimodal),High,Technical,D3,"AI-CTRL-005, AI-CTRL-021",L07,L07 Prompt & Context Layer
+TC-L07-024,Jailbreak Regression After Model or Policy Update,High,Technical,"D3, D4","AI-CTRL-034, AI-CTRL-005",L07,L07 Prompt & Context Layer
+TC-L07-025,System Prompt Extraction Under Probing,High,Technical,D3,AI-CTRL-005,L07,L07 Prompt & Context Layer
+TC-L07-026,Instruction Hierarchy Enforcement,Critical,Technical,D3,AI-CTRL-005,L07,L07 Prompt & Context Layer
+TC-L07-027,Context Window Poisoning Within a Session,High,Technical,D3,AI-CTRL-026,L07,L07 Prompt & Context Layer
+TC-L07-028,Long-Term Memory Poisoning,Critical,Technical,"D3, D5",AI-CTRL-026,L07,L07 Prompt & Context Layer
+TC-L07-029,Memory Isolation Between Users,Critical,Technical,"D3, D6",AI-CTRL-026,L07,L07 Prompt & Context Layer
+TC-L07-030,Memory Deletion and Retention Verification,High,Evidence,"D3, D7","AI-CTRL-026, AI-CTRL-013",L07,L07 Prompt & Context Layer
+TC-L07-031,Conversation History Tampering via API,High,Technical,D3,AI-CTRL-005,L07,L07 Prompt & Context Layer
+TC-L07-032,Context Stuffing and Token Flooding,Medium,Technical,D3,"AI-CTRL-005, AI-CTRL-036",L07,L07 Prompt & Context Layer
+TC-L07-033,Prompt Template Injection (Variable Interpolation),High,Technical,D3,AI-CTRL-005,L07,L07 Prompt & Context Layer
+TC-L07-034,Prompt Library and Shared Prompt Store Integrity,High,Evidence,D3,AI-CTRL-030,L07,L07 Prompt & Context Layer
+TC-L07-035,Context Provenance and Trust Labelling,High,Technical,"D3, D5","AI-CTRL-005, AI-CTRL-026",L07,L07 Prompt & Context Layer
+TC-L07-036,Canary Token and Leak Detection,Medium,Technical,D3,AI-CTRL-005,L07,L07 Prompt & Context Layer
+TC-L07-037,Injection Detection Explainability and Alert Triage,Medium,Evidence,D3,"AI-CTRL-009, AI-CTRL-005",L07,L07 Prompt & Context Layer
+TC-L07-038,Human Approval for Suspected Injection in Tool Flows,High,Technical,"D3, D5",AI-CTRL-023,L07,L07 Prompt & Context Layer
+TC-L07-039,Secrets and Personal Data in System Prompts and Few-Shot Examples,High,Technical,"D3, D6","AI-CTRL-005, AI-CTRL-016",L07,L07 Prompt & Context Layer
+TC-L07-040,Detection Update Cadence and Benchmark Coverage,Medium,Attestation,D4,AI-CTRL-034,L07,L07 Prompt & Context Layer
+TC-L07-041,"Indirect Injection: Repository Files, Comments and Assistant Rule Files",Critical,Technical,"D2, D3","AI-CTRL-005, AI-CTRL-004",L07,L07 Prompt & Context Layer
+TC-L07-042,Memory Store Inventory and Accountable Owner,High,Evidence,"D3, D5","AI-CTRL-026, AI-CTRL-011",L07,L07 Prompt & Context Layer
+TC-L07-043,Memory Write Policy: What an Assistant May Remember,High,Technical,"D3, D6","AI-CTRL-026, AI-CTRL-017",L07,L07 Prompt & Context Layer
+TC-L07-044,User Visibility and Control Over Stored Memories,Medium,Technical,"D3, D7","AI-CTRL-026, AI-CTRL-013",L07,L07 Prompt & Context Layer
+TC-L07-045,Agent Memory in Data Subject Access and Erasure Requests,High,Evidence,"D6, D7","AI-CTRL-026, AI-CTRL-013",L07,L07 Prompt & Context Layer
+TC-L08-001,Deployment Mode and Traffic Coverage Verification,Critical,Evidence,D7,"AI-CTRL-007, AI-CTRL-010",L08,L08 AI Gateway & Security Controls
+TC-L08-002,Allow and Deny by AI Application and Category,High,Technical,"D1, D3",AI-CTRL-010,L08,L08 AI Gateway & Security Controls
+TC-L08-003,"Policy by User, Group and Context",High,Technical,D1,AI-CTRL-010,L08,L08 AI Gateway & Security Controls
+TC-L08-004,DLP: Personal Data in Prompts,Critical,Technical,D6,AI-CTRL-002,L08,L08 AI Gateway & Security Controls
+TC-L08-005,DLP: Payment Card and Financial Data,Critical,Technical,D6,AI-CTRL-002,L08,L08 AI Gateway & Security Controls
+TC-L08-006,DLP: UAE and GCC Identifiers,High,Technical,"D6, D7",AI-CTRL-002,L08,L08 AI Gateway & Security Controls
+TC-L08-007,DLP: Source Code and Secrets,Critical,Technical,"D2, D6","AI-CTRL-002, AI-CTRL-004",L08,L08 AI Gateway & Security Controls
+TC-L08-008,DLP: Custom Dictionary and Document Fingerprinting,High,Technical,D6,AI-CTRL-002,L08,L08 AI Gateway & Security Controls
+TC-L08-009,"DLP: Action Modes (Block, Mask, Warn, Log)",High,Technical,D6,AI-CTRL-010,L08,L08 AI Gateway & Security Controls
+TC-L08-010,DLP: Reversible Pseudonymisation Round Trip,Medium,Technical,"D6, D7","AI-CTRL-002, AI-CTRL-010",L08,L08 AI Gateway & Security Controls
+TC-L08-011,DLP: Encoded and Fragmented Data,High,Technical,D6,AI-CTRL-002,L08,L08 AI Gateway & Security Controls
+TC-L08-012,DLP: File Types and Nested Archives,High,Technical,D6,AI-CTRL-003,L08,L08 AI Gateway & Security Controls
+TC-L08-013,DLP: Sensitive Text Inside Images,High,Technical,D6,"AI-CTRL-021, AI-CTRL-003",L08,L08 AI Gateway & Security Controls
+TC-L08-014,DLP: Arabic and Mixed-Script Content,High,Technical,"D6, D7",AI-CTRL-002,L08,L08 AI Gateway & Security Controls
+TC-L08-015,Guardrail Detection Accuracy Baseline,Critical,Technical,D3,AI-CTRL-005,L08,L08 AI Gateway & Security Controls
+TC-L08-016,Guardrail: Jailbreak Policy,Critical,Technical,D3,AI-CTRL-005,L08,L08 AI Gateway & Security Controls
+TC-L08-017,Guardrail: Topic and Off-Policy Restriction,Medium,Technical,D3,AI-CTRL-039,L08,L08 AI Gateway & Security Controls
+TC-L08-018,Guardrail: Toxic and Harmful Output,High,Technical,D3,AI-CTRL-039,L08,L08 AI Gateway & Security Controls
+TC-L08-019,Guardrail: System Prompt Leakage,High,Technical,D3,AI-CTRL-005,L08,L08 AI Gateway & Security Controls
+TC-L08-020,Guardrail: Response-Side DLP,High,Technical,D6,AI-CTRL-020,L08,L08 AI Gateway & Security Controls
+TC-L08-021,"Bypass Resistance: Unicode, Homoglyph and Obfuscation",High,Technical,D3,AI-CTRL-010,L08,L08 AI Gateway & Security Controls
+TC-L08-022,Bypass Resistance: Protocol Variants,High,Technical,"D1, D3",AI-CTRL-010,L08,L08 AI Gateway & Security Controls
+TC-L08-023,"Bypass Resistance: Alternate Endpoints, VPN and DoH",Critical,Technical,D1,AI-CTRL-010,L08,L08 AI Gateway & Security Controls
+TC-L08-024,Bypass Resistance: Certificate Pinning and TLS Inspection Exceptions,Medium,Evidence,D1,AI-CTRL-010,L08,L08 AI Gateway & Security Controls
+TC-L08-025,Bypass Resistance: Agent Tampering and Uninstall,High,Technical,D1,AI-CTRL-010,L08,L08 AI Gateway & Security Controls
+TC-L08-026,"Bypass Resistance: Native Apps, CLI and SDK Traffic",High,Technical,"D2, D3",AI-CTRL-010,L08,L08 AI Gateway & Security Controls
+TC-L08-027,Bypass Resistance: Translation and Paraphrase Evasion,High,Technical,D3,AI-CTRL-002,L08,L08 AI Gateway & Security Controls
+TC-L08-028,Model Provider and Model Allow-List Enforcement,Critical,Technical,D4,"AI-CTRL-010, AI-CTRL-031",L08,L08 AI Gateway & Security Controls
+TC-L08-029,Central API Key Management at the Gateway,High,Technical,D3,AI-CTRL-016,L08,L08 AI Gateway & Security Controls
+TC-L08-030,Rate Limiting and Token Quotas,High,Technical,D3,AI-CTRL-036,L08,L08 AI Gateway & Security Controls
+TC-L08-031,Cost Controls and Budget Alerts,Medium,Technical,D3,AI-CTRL-036,L08,L08 AI Gateway & Security Controls
+TC-L08-032,Latency Overhead Under Normal Load,Medium,Technical,D3,AI-CTRL-040,L08,L08 AI Gateway & Security Controls
+TC-L08-033,Throughput and Behaviour at Peak Load,High,Technical,D3,AI-CTRL-040,L08,L08 AI Gateway & Security Controls
+TC-L08-034,High Availability and Failover,High,Technical,D3,AI-CTRL-040,L08,L08 AI Gateway & Security Controls
+TC-L08-035,Streaming Inspection Without Breaking User Experience,Medium,Technical,D3,"AI-CTRL-040, AI-CTRL-020",L08,L08 AI Gateway & Security Controls
+TC-L08-036,Policy Change Propagation and Rollback,High,Technical,D3,AI-CTRL-010,L08,L08 AI Gateway & Security Controls
+TC-L08-037,Monitor-Only Mode and False-Positive Review,Medium,Technical,D3,AI-CTRL-010,L08,L08 AI Gateway & Security Controls
+TC-L08-038,Block Page Customisation and Arabic Localisation,Low,Technical,"D1, D7",AI-CTRL-010,L08,L08 AI Gateway & Security Controls
+TC-L08-039,Administrator RBAC and Policy Change Audit,High,Evidence,D7,AI-CTRL-016,L08,L08 AI Gateway & Security Controls
+TC-L08-040,"Log Content, Masking and Retention Controls",High,Evidence,"D6, D7","AI-CTRL-008, AI-CTRL-017",L08,L08 AI Gateway & Security Controls
+TC-L08-041,Repository-Aware Policy for AI Assistance (Restricted Repositories and File Types),High,Technical,"D2, D6","AI-CTRL-004, AI-CTRL-010",L08,L08 AI Gateway & Security Controls
+TC-L08-042,"Coding Assistant Model, Provider and Local-Model Allow-List",High,Technical,"D2, D4","AI-CTRL-004, AI-CTRL-031",L08,L08 AI Gateway & Security Controls
+TC-L08-043,"Guardrail Policy Ownership, Approval and Review",Medium,Evidence,"D3, D7","AI-CTRL-010, AI-CTRL-012",L08,L08 AI Gateway & Security Controls
+TC-L08-044,"Egress DLP Independent of the Monitored AI System: Encoded, High-Entropy and Image Output",High,Technical,"D3, D6","AI-CTRL-020, AI-CTRL-017",L08,L08 AI Gateway & Security Controls
+TC-L09-001,Non-Human Identity Inventory for AI Workloads,Critical,Technical,D5,AI-CTRL-015,L09,L09 Identity & Access Mgmt
+TC-L09-002,Unique Identity Per Agent (No Shared Credentials),High,Technical,D5,AI-CTRL-015,L09,L09 Identity & Access Mgmt
+TC-L09-003,Short-Lived Scoped Credentials for Agents,Critical,Technical,D5,AI-CTRL-016,L09,L09 Identity & Access Mgmt
+TC-L09-004,Token Scope Enforcement Per Tool and Resource,Critical,Technical,D5,AI-CTRL-016,L09,L09 Identity & Access Mgmt
+TC-L09-005,OAuth Consent and Grant Control for AI Applications,Critical,Technical,"D1, D5",AI-CTRL-016,L09,L09 Identity & Access Mgmt
+TC-L09-006,Delegated User Identity Propagation (On-Behalf-Of),Critical,Technical,D5,"AI-CTRL-016, AI-CTRL-022",L09,L09 Identity & Access Mgmt
+TC-L09-007,Privilege Escalation via Agent,Critical,Technical,D5,AI-CTRL-016,L09,L09 Identity & Access Mgmt
+TC-L09-008,Role-Based Access to AI Applications and Models,High,Technical,"D1, D3",AI-CTRL-016,L09,L09 Identity & Access Mgmt
+TC-L09-009,Attribute and Context-Based Access Conditions,High,Technical,"D1, D7",AI-CTRL-016,L09,L09 Identity & Access Mgmt
+TC-L09-010,SSO and SCIM Integration for the AI Platform,High,Technical,D7,AI-CTRL-015,L09,L09 Identity & Access Mgmt
+TC-L09-011,Leaver and Mover Access Removal for AI Access,High,Technical,D7,AI-CTRL-015,L09,L09 Identity & Access Mgmt
+TC-L09-012,Step-Up Authentication for Sensitive AI Actions,High,Technical,D5,"AI-CTRL-023, AI-CTRL-015",L09,L09 Identity & Access Mgmt
+TC-L09-013,Privileged Access to the AI Platform (Just-in-Time and Separation),High,Technical,D7,AI-CTRL-016,L09,L09 Identity & Access Mgmt
+TC-L09-014,"Model API Key Lifecycle: Issue, Rotate, Expire, Revoke",High,Technical,D4,AI-CTRL-016,L09,L09 Identity & Access Mgmt
+TC-L09-015,Credentials Passing Through Prompts and Tool Arguments,Critical,Technical,"D5, D6",AI-CTRL-016,L09,L09 Identity & Access Mgmt
+TC-L09-016,Vault Integration: Agents Retrieve Secrets Without Exposure,High,Technical,D5,AI-CTRL-016,L09,L09 Identity & Access Mgmt
+TC-L09-017,Anomalous Use of Agent and Service Identities,High,Technical,D5,"AI-CTRL-015, AI-CTRL-009",L09,L09 Identity & Access Mgmt
+TC-L09-018,Impersonation Resistance: Agent or User Claims Another Identity,High,Technical,D5,AI-CTRL-015,L09,L09 Identity & Access Mgmt
+TC-L09-019,Environment and Tenant Identity Boundaries (Prod vs Non-Prod),High,Technical,"D3, D7","AI-CTRL-016, AI-CTRL-032",L09,L09 Identity & Access Mgmt
+TC-L09-020,Session Management for AI Chat Sessions,Medium,Technical,D1,AI-CTRL-015,L09,L09 Identity & Access Mgmt
+TC-L09-021,Access Reviews and Recertification for AI Access,Medium,Evidence,D7,AI-CTRL-015,L09,L09 Identity & Access Mgmt
+TC-L09-022,Effective Permissions Visibility for Users and Agents,High,Evidence,D5,AI-CTRL-016,L09,L09 Identity & Access Mgmt
+TC-L09-023,Emergency (Break-Glass) Access Controls,Medium,Technical,D7,AI-CTRL-016,L09,L09 Identity & Access Mgmt
+TC-L09-024,Mutual Authentication Between AI Components,High,Technical,"D3, D7",AI-CTRL-015,L09,L09 Identity & Access Mgmt
+TC-L09-025,"Identity Audit Trail: Who, What and On Whose Behalf",Critical,Technical,"D5, D7","AI-CTRL-008, AI-CTRL-015",L09,L09 Identity & Access Mgmt
+TC-L09-026,Coding Agent Repository and Cloud Credentials: Scope and Lifetime,Critical,Technical,"D2, D5","AI-CTRL-016, AI-CTRL-004",L09,L09 Identity & Access Mgmt
+TC-L09-027,"Agent Credentials Where a Person Would Need MFA: Device-Bound, Time-Bound and Not Reusable",High,Technical,"D5, D7","AI-CTRL-015, AI-CTRL-016",L09,L09 Identity & Access Mgmt
+TC-L10-001,Sensitive Data Discovery in AI Data Stores,Critical,Technical,D6,AI-CTRL-017,L10,L10 Data Layer
+TC-L10-002,Classification Accuracy on Structured Data,High,Technical,D6,AI-CTRL-017,L10,L10 Data Layer
+TC-L10-003,Classification Accuracy on Unstructured Documents,High,Technical,D6,AI-CTRL-017,L10,L10 Data Layer
+TC-L10-004,Classification of Arabic and Regional-Language Documents,High,Technical,"D6, D7",AI-CTRL-017,L10,L10 Data Layer
+TC-L10-005,Label Inheritance to AI Outputs and Derived Data,High,Technical,D6,AI-CTRL-017,L10,L10 Data Layer
+TC-L10-006,Label-Aware Access: AI Cannot Read Beyond User Entitlement,Critical,Technical,D6,AI-CTRL-018,L10,L10 Data Layer
+TC-L10-007,Field-Level Masking and Data Minimisation Before the Model,High,Technical,D6,AI-CTRL-017,L10,L10 Data Layer
+TC-L10-008,Data Lineage: Source to Prompt to Output,High,Evidence,D6,AI-CTRL-017,L10,L10 Data Layer
+TC-L10-009,Lineage for Knowledge Base and Dataset Versions,Medium,Evidence,D6,AI-CTRL-017,L10,L10 Data Layer
+TC-L10-010,Tenant Isolation in Shared AI Data Stores,Critical,Technical,"D6, D3",AI-CTRL-017,L10,L10 Data Layer
+TC-L10-011,Tenant Isolation Under Adversarial Probing,Critical,Technical,"D6, D3",AI-CTRL-017,L10,L10 Data Layer
+TC-L10-012,Data Residency: Processing Region Enforcement,Critical,Technical,D7,AI-CTRL-007,L10,L10 Data Layer
+TC-L10-013,"Data Residency: Logs, Telemetry, Backups and Support Access",Critical,Evidence,D7,AI-CTRL-007,L10,L10 Data Layer
+TC-L10-014,Cross-Border Transfer Detection to Non-Approved Providers,High,Technical,"D7, D6",AI-CTRL-007,L10,L10 Data Layer
+TC-L10-015,Encryption and Key Ownership (BYOK and HYOK),High,Evidence,D7,"AI-CTRL-017, AI-CTRL-007",L10,L10 Data Layer
+TC-L10-016,Key Rotation and Crypto-Shredding,Medium,Technical,D7,AI-CTRL-017,L10,L10 Data Layer
+TC-L10-017,Dataset Access Control for AI Service Identities,Critical,Technical,D6,AI-CTRL-016,L10,L10 Data Layer
+TC-L10-018,Oversharing Discovery: Data Reachable by AI Assistants Beyond Need,Critical,Technical,D6,AI-CTRL-018,L10,L10 Data Layer
+TC-L10-019,Bulk Data Extraction Through AI Queries,High,Technical,D6,AI-CTRL-018,L10,L10 Data Layer
+TC-L10-020,Retention and Deletion Across the AI Pipeline,High,Evidence,"D7, D6","AI-CTRL-013, AI-CTRL-017",L10,L10 Data Layer
+TC-L10-021,Erasure Propagation to Vector Stores and Derived Data,High,Technical,"D7, D6",AI-CTRL-013,L10,L10 Data Layer
+TC-L10-022,Data Subject Access Request Support,Medium,Evidence,"D7, D6",AI-CTRL-013,L10,L10 Data Layer
+TC-L10-023,Production Data in Development and Test AI Environments,High,Technical,"D6, D2","AI-CTRL-017, AI-CTRL-032",L10,L10 Data Layer
+TC-L10-024,Ingestion Validation for Untrusted Data Sources,High,Technical,"D6, D3",AI-CTRL-019,L10,L10 Data Layer
+TC-L10-025,Provider Data-Use Terms: Zero Retention and No Training Verification,Critical,Attestation,D7,"AI-CTRL-014, AI-CTRL-007",L10,L10 Data Layer
+TC-L10-026,Data Access Forensics: Who Accessed What via AI,High,Technical,D6,AI-CTRL-008,L10,L10 Data Layer
+TC-L10-027,Insider Investigation Workflow and Case Management,Medium,Technical,D6,AI-CTRL-035,L10,L10 Data Layer
+TC-L10-028,Legal Hold and eDiscovery for AI Conversations,Medium,Evidence,D7,AI-CTRL-035,L10,L10 Data Layer
+TC-L10-029,Classification and Label Synchronisation with Enterprise Tools,Medium,Technical,D6,AI-CTRL-017,L10,L10 Data Layer
+TC-L10-030,Leakage Metrics and Regulatory Reporting Evidence,Medium,Evidence,D7,AI-CTRL-038,L10,L10 Data Layer
+TC-L10-031,Dataset Quality Thresholds Before Training or Fine-Tuning,High,Technical,"D6, D4",AI-CTRL-029,L10,L10 Data Layer
+TC-L10-032,Retrieval Corpus Currentness and Source Credibility,High,Technical,"D6, D3",AI-CTRL-019,L10,L10 Data Layer
+TC-L10-033,Data Quality Profile and Evidence for Audit,Medium,Evidence,"D6, D7",AI-CTRL-029,L10,L10 Data Layer
+TC-L10-034,"High-Impact Secrets Kept Away from Models and Agents: Keys, Key Components, Passwords and Random Values",Critical,Technical,"D5, D6","AI-CTRL-017, AI-CTRL-016",L10,L10 Data Layer
+TC-L10-035,Effective Data Reach: Tokenised or Encrypted Data Plus a Reachable Detokenisation or Decryption Path,Critical,Technical,"D6, D7","AI-CTRL-017, AI-CTRL-027",L10,L10 Data Layer
+TC-L11-001,Knowledge Source and Connector Inventory,High,Technical,"D3, D6","AI-CTRL-019, AI-CTRL-001",L11,L11 Knowledge & Retrieval Layer
+TC-L11-002,Vector Store Discovery and Exposure,Critical,Technical,D3,AI-CTRL-032,L11,L11 Knowledge & Retrieval Layer
+TC-L11-003,Vector Store Authentication and Hardening Checks,High,Evidence,D3,AI-CTRL-032,L11,L11 Knowledge & Retrieval Layer
+TC-L11-004,Document-Level Access Control at Retrieval,Critical,Technical,"D6, D3",AI-CTRL-018,L11,L11 Knowledge & Retrieval Layer
+TC-L11-005,Permission Change Propagation to the Index,High,Technical,D6,AI-CTRL-018,L11,L11 Knowledge & Retrieval Layer
+TC-L11-006,Retrieval Leakage via Semantic Neighbours,High,Technical,"D6, D3",AI-CTRL-018,L11,L11 Knowledge & Retrieval Layer
+TC-L11-007,Namespace and Tenant Isolation in the Vector Store,Critical,Technical,"D6, D3","AI-CTRL-017, AI-CTRL-018",L11,L11 Knowledge & Retrieval Layer
+TC-L11-008,RAG Poisoning: False Facts in Indexed Documents,Critical,Technical,"D3, D4",AI-CTRL-019,L11,L11 Knowledge & Retrieval Layer
+TC-L11-009,RAG Poisoning: Trigger-Phrase Retrieval Hijack,High,Technical,D3,AI-CTRL-019,L11,L11 Knowledge & Retrieval Layer
+TC-L11-010,Ingestion Provenance and Approval Workflow,High,Evidence,"D3, D6",AI-CTRL-019,L11,L11 Knowledge & Retrieval Layer
+TC-L11-011,Indexed Content Integrity and Tamper Detection,Medium,Technical,D3,AI-CTRL-019,L11,L11 Knowledge & Retrieval Layer
+TC-L11-012,Embedding Inversion and Text Recovery Risk,Medium,Evidence,D6,AI-CTRL-017,L11,L11 Knowledge & Retrieval Layer
+TC-L11-013,Embedding Model Version Change and Re-Indexing Integrity,Medium,Technical,"D3, D4",AI-CTRL-019,L11,L11 Knowledge & Retrieval Layer
+TC-L11-014,Chunk Metadata Injection,High,Technical,D3,"AI-CTRL-005, AI-CTRL-019",L11,L11 Knowledge & Retrieval Layer
+TC-L11-015,Sensitive Data Scan Before Indexing,Critical,Technical,D6,AI-CTRL-017,L11,L11 Knowledge & Retrieval Layer
+TC-L11-016,Retrieval-Time Filtering by User Clearance,High,Technical,D6,AI-CTRL-018,L11,L11 Knowledge & Retrieval Layer
+TC-L11-017,Citation and Source Attribution Integrity,Medium,Technical,D3,AI-CTRL-019,L11,L11 Knowledge & Retrieval Layer
+TC-L11-018,"Stale, Withdrawn and Expired Content Handling",Medium,Technical,D3,AI-CTRL-019,L11,L11 Knowledge & Retrieval Layer
+TC-L11-019,Knowledge Base Extraction and Crawling Detection,High,Technical,"D6, D3",AI-CTRL-018,L11,L11 Knowledge & Retrieval Layer
+TC-L11-020,Query Rewriting and Expansion Safety,Medium,Technical,D3,AI-CTRL-005,L11,L11 Knowledge & Retrieval Layer
+TC-L11-021,Reranker and Hybrid Search Manipulation,Medium,Technical,D3,AI-CTRL-019,L11,L11 Knowledge & Retrieval Layer
+TC-L11-022,Connector Credentials and Scope Security,Critical,Technical,D6,AI-CTRL-016,L11,L11 Knowledge & Retrieval Layer
+TC-L11-023,Knowledge Base Backup and Export Controls,Medium,Evidence,D6,AI-CTRL-017,L11,L11 Knowledge & Retrieval Layer
+TC-L11-024,Retrieval Logging and Audit Completeness,High,Technical,D6,AI-CTRL-008,L11,L11 Knowledge & Retrieval Layer
+TC-L11-025,Security Control Impact on Answer Quality,Medium,Technical,D3,AI-CTRL-040,L11,L11 Knowledge & Retrieval Layer
+TC-L11-026,Embedding Model Approval and Change Record,Medium,Evidence,"D3, D4","AI-CTRL-019, AI-CTRL-014",L11,L11 Knowledge & Retrieval Layer
+TC-L11-027,Content Sent to External Embedding Providers,High,Technical,"D6, D7","AI-CTRL-017, AI-CTRL-007",L11,L11 Knowledge & Retrieval Layer
+TC-L11-028,Index and Collection Creation Approval and Owner,High,Evidence,"D3, D6","AI-CTRL-019, AI-CTRL-018",L11,L11 Knowledge & Retrieval Layer
+TC-L12-001,Model Inventory and Registry Discovery,High,Technical,D4,"AI-CTRL-031, AI-CTRL-001",L12,L12 Model Layer
+TC-L12-002,Model Artefact Scanning: Unsafe Serialisation,Critical,Technical,D4,"AI-CTRL-028, AI-CTRL-031",L12,L12 Model Layer
+TC-L12-003,Model Scanning: Backdoor and Trojan Indicators,High,Technical,D4,AI-CTRL-028,L12,L12 Model Layer
+TC-L12-004,Model File Format Policy Enforcement,Medium,Technical,D4,"AI-CTRL-028, AI-CTRL-030",L12,L12 Model Layer
+TC-L12-005,Model Provenance and Signature Verification,Critical,Technical,D4,AI-CTRL-031,L12,L12 Model Layer
+TC-L12-006,Model Licence and Usage Terms Check,Medium,Evidence,D4,AI-CTRL-031,L12,L12 Model Layer
+TC-L12-007,Model Extraction Attack Detection,High,Technical,D4,AI-CTRL-028,L12,L12 Model Layer
+TC-L12-008,Training Data Extraction and Memorisation Probes,High,Technical,"D4, D6",AI-CTRL-028,L12,L12 Model Layer
+TC-L12-009,Model Weights Exfiltration Protection,Critical,Technical,"D4, D7",AI-CTRL-028,L12,L12 Model Layer
+TC-L12-010,Adversarial Image Robustness for Vision Models,Medium,Technical,D4,AI-CTRL-028,L12,L12 Model Layer
+TC-L12-011,Adversarial Text Perturbation Robustness for Classifiers,Medium,Technical,D4,AI-CTRL-028,L12,L12 Model Layer
+TC-L12-012,Inference-Time Input Anomaly Detection,Medium,Technical,D4,AI-CTRL-028,L12,L12 Model Layer
+TC-L12-013,"Inference Endpoint Authentication, Authorisation and Rate Limiting",Critical,Technical,D4,"AI-CTRL-028, AI-CTRL-036, AI-CTRL-015",L12,L12 Model Layer
+TC-L12-014,"Model-Level Access Control by User, Role and Version",High,Technical,D4,AI-CTRL-016,L12,L12 Model Layer
+TC-L12-015,Model Fingerprinting and Unauthorised Copy Identification,Medium,Technical,D4,AI-CTRL-028,L12,L12 Model Layer
+TC-L12-016,Safety Evaluation Baseline for Deployed Models,High,Technical,"D4, D3",AI-CTRL-034,L12,L12 Model Layer
+TC-L12-017,Hallucination and Factuality Evaluation Baseline,Medium,Technical,D4,AI-CTRL-039,L12,L12 Model Layer
+TC-L12-018,Model Version Pinning and Behaviour Drift Detection,High,Technical,D4,"AI-CTRL-031, AI-CTRL-034",L12,L12 Model Layer
+TC-L12-019,Model Cards and AI-BOM Completeness,Medium,Evidence,"D4, D7",AI-CTRL-031,L12,L12 Model Layer
+TC-L12-020,Model Deployment Configuration Hardening,Medium,Evidence,D4,AI-CTRL-032,L12,L12 Model Layer
+TC-L12-021,Multi-Model Routing and Fallback Security,High,Technical,"D4, D7","AI-CTRL-010, AI-CTRL-040",L12,L12 Model Layer
+TC-L12-022,Model Resource Exhaustion and Long-Sequence Abuse,Medium,Technical,D4,AI-CTRL-036,L12,L12 Model Layer
+TC-L12-023,Quantised and Converted Model Integrity,Medium,Technical,D4,AI-CTRL-030,L12,L12 Model Layer
+TC-L12-024,Model Retirement and Weight Disposal,Low,Evidence,"D4, D7","AI-CTRL-028, AI-CTRL-011",L12,L12 Model Layer
+TC-L12-025,Model Risk Tiering and Assessment Workflow,Medium,Evidence,"D4, D7",AI-CTRL-011,L12,L12 Model Layer
+TC-L12-026,Model Serving Workload Identity and Scoped Access to Weights,Critical,Technical,D4,"AI-CTRL-015, AI-CTRL-016",L12,L12 Model Layer
+TC-L12-027,Calling Workload Attribution at Inference Endpoints: No Shared Application Keys,High,Technical,D4,AI-CTRL-015,L12,L12 Model Layer
+TC-L12-028,Privileged Access to Model Weights and the Registry: Just-in-Time and Dual Approval,Critical,Technical,"D4, D7","AI-CTRL-016, AI-CTRL-028",L12,L12 Model Layer
+TC-L12-029,Tenant and Owner Isolation for Fine-Tuned Models,Critical,Technical,"D4, D7","AI-CTRL-016, AI-CTRL-028",L12,L12 Model Layer
+TC-L12-030,Access Recertification for Model Registry and Serving Entitlements,Medium,Evidence,D4,"AI-CTRL-015, AI-CTRL-016",L12,L12 Model Layer
+TC-L12-031,"Identity Audit Trail for Model Access: Download, Load and Promotion Events",High,Technical,"D4, D7","AI-CTRL-008, AI-CTRL-015",L12,L12 Model Layer
+TC-L12-032,Model Approval Decision Record and Named Approver,High,Evidence,"D4, D7","AI-CTRL-033, AI-CTRL-028",L12,L12 Model Layer
+TC-L12-033,"Predictive Model Drift, Performance Decay and Fairness Shift Monitoring",High,Technical,"D3, D4","AI-CTRL-034, AI-CTRL-017, AI-CTRL-041",L12,L12 Model Layer
+TC-L12-034,Membership Inference and Model Inversion Probes Against a Predictive Model,High,Technical,"D4, D6","AI-CTRL-028, AI-CTRL-017",L12,L12 Model Layer
+TC-L13-001,Training Dataset Inventory and Ownership,High,Technical,D4,AI-CTRL-029,L13,L13 Training & Fine-Tuning Layer
+TC-L13-002,"Dataset Provenance, Licence and Consent Verification",High,Evidence,"D4, D7","AI-CTRL-029, AI-CTRL-013",L13,L13 Training & Fine-Tuning Layer
+TC-L13-003,Data Poisoning: Label Flipping Detection,High,Technical,D4,AI-CTRL-029,L13,L13 Training & Fine-Tuning Layer
+TC-L13-004,Data Poisoning: Backdoor Trigger Insertion in Fine-Tuning Data,Critical,Technical,D4,AI-CTRL-029,L13,L13 Training & Fine-Tuning Layer
+TC-L13-005,Outlier and Anomaly Screening at Ingestion,Medium,Technical,D4,AI-CTRL-029,L13,L13 Training & Fine-Tuning Layer
+TC-L13-006,Personal Data and Secrets in Training Data,Critical,Technical,"D6, D4","AI-CTRL-029, AI-CTRL-017",L13,L13 Training & Fine-Tuning Layer
+TC-L13-007,"Copyright, Opt-Out and Terms Compliance for Training Data",Medium,Evidence,D7,"AI-CTRL-013, AI-CTRL-029, AI-CTRL-046",L13,L13 Training & Fine-Tuning Layer
+TC-L13-008,Fine-Tuning Job Access Control and Approval,High,Technical,D4,"AI-CTRL-016, AI-CTRL-029",L13,L13 Training & Fine-Tuning Layer
+TC-L13-009,Data Exfiltration via Provider Fine-Tuning Interfaces,Critical,Technical,"D6, D4","AI-CTRL-017, AI-CTRL-014",L13,L13 Training & Fine-Tuning Layer
+TC-L13-010,Safety Regression After Fine-Tuning,High,Technical,D4,AI-CTRL-034,L13,L13 Training & Fine-Tuning Layer
+TC-L13-011,Training Environment Isolation and Egress Control,High,Technical,"D4, D7",AI-CTRL-032,L13,L13 Training & Fine-Tuning Layer
+TC-L13-012,Checkpoint and Artefact Integrity,High,Technical,D4,AI-CTRL-030,L13,L13 Training & Fine-Tuning Layer
+TC-L13-013,Training Run Reproducibility and Audit Record,Medium,Evidence,"D4, D7","AI-CTRL-030, AI-CTRL-029",L13,L13 Training & Fine-Tuning Layer
+TC-L13-014,Third-Party Dataset and Base Model Ingestion Vetting,High,Technical,D4,"AI-CTRL-031, AI-CTRL-029",L13,L13 Training & Fine-Tuning Layer
+TC-L13-015,Synthetic Data Generation Controls,Medium,Evidence,D4,AI-CTRL-029,L13,L13 Training & Fine-Tuning Layer
+TC-L13-016,Distributed and Federated Training Participant Trust,Medium,Technical,D4,AI-CTRL-029,L13,L13 Training & Fine-Tuning Layer
+TC-L13-017,Memorisation Testing of Fine-Tuned Models,High,Technical,"D6, D4",AI-CTRL-028,L13,L13 Training & Fine-Tuning Layer
+TC-L13-018,Feedback Loop and Preference Data Poisoning,High,Technical,"D4, D3",AI-CTRL-029,L13,L13 Training & Fine-Tuning Layer
+TC-L13-019,Data Deletion and Unlearning Request Handling,Medium,Evidence,"D7, D6",AI-CTRL-013,L13,L13 Training & Fine-Tuning Layer
+TC-L13-020,Unauthorised Training Compute and Resource Abuse,Medium,Technical,D4,AI-CTRL-036,L13,L13 Training & Fine-Tuning Layer
+TC-L13-021,"Training Job Workload Identity: Unique Identity Per Job, No Static Keys",Critical,Technical,D4,"AI-CTRL-015, AI-CTRL-016",L13,L13 Training & Fine-Tuning Layer
+TC-L13-022,Least-Privilege Dataset Access Scoped to the Approved Training Run,High,Technical,D4,"AI-CTRL-016, AI-CTRL-029",L13,L13 Training & Fine-Tuning Layer
+TC-L13-023,Training Credential Lifetime and Revocation at Job End,High,Technical,D4,AI-CTRL-016,L13,L13 Training & Fine-Tuning Layer
+TC-L13-024,"Human Access to Training Environments: Roles, Just-in-Time Access and Separation of Duties",High,Technical,D4,"AI-CTRL-015, AI-CTRL-016",L13,L13 Training & Fine-Tuning Layer
+TC-L13-025,Identity Attribution in Training Run Records,High,Technical,"D4, D7","AI-CTRL-015, AI-CTRL-008",L13,L13 Training & Fine-Tuning Layer
+TC-L13-026,Dormant and Orphaned Training Identities,Medium,Evidence,D4,AI-CTRL-015,L13,L13 Training & Fine-Tuning Layer
+TC-L14-001,AI Pipeline and LLMOps Tool Inventory,High,Technical,"D4, D2","AI-CTRL-030, AI-CTRL-001",L14,L14 MLOps / LLMOps Layer
+TC-L14-002,CI/CD Security Gates for AI Releases,Critical,Technical,"D4, D2","AI-CTRL-030, AI-CTRL-034",L14,L14 MLOps / LLMOps Layer
+TC-L14-003,"Artefact Signing and Verification (Models, Containers, Prompts)",Critical,Technical,D4,AI-CTRL-030,L14,L14 MLOps / LLMOps Layer
+TC-L14-004,Model Registry Access Control and Immutability,High,Technical,D4,"AI-CTRL-030, AI-CTRL-016",L14,L14 MLOps / LLMOps Layer
+TC-L14-005,Prompts and Configuration as Code: Review and Version Control,High,Technical,"D4, D2",AI-CTRL-030,L14,L14 MLOps / LLMOps Layer
+TC-L14-006,"Secrets in Pipelines, Notebooks and Experiment Logs",Critical,Technical,"D4, D2",AI-CTRL-032,L14,L14 MLOps / LLMOps Layer
+TC-L14-007,Notebook Server Security,High,Technical,D4,AI-CTRL-032,L14,L14 MLOps / LLMOps Layer
+TC-L14-008,Pipeline Runner Least Privilege,High,Technical,D4,AI-CTRL-016,L14,L14 MLOps / LLMOps Layer
+TC-L14-009,Dependency Scanning for ML Libraries and Serving Images,High,Technical,D4,AI-CTRL-031,L14,L14 MLOps / LLMOps Layer
+TC-L14-010,Container Image and Runtime Configuration Scanning for Model Serving,High,Technical,D4,AI-CTRL-032,L14,L14 MLOps / LLMOps Layer
+TC-L14-011,Infrastructure-as-Code Scanning for AI Infrastructure,Medium,Technical,D4,AI-CTRL-032,L14,L14 MLOps / LLMOps Layer
+TC-L14-012,Promotion Workflow Across Environments,High,Technical,D4,"AI-CTRL-030, AI-CTRL-033",L14,L14 MLOps / LLMOps Layer
+TC-L14-013,Rollback and Emergency Model Disable,Critical,Technical,"D4, D5",AI-CTRL-030,L14,L14 MLOps / LLMOps Layer
+TC-L14-014,Feature Store and Data Pipeline Integrity,Medium,Technical,"D4, D6","AI-CTRL-029, AI-CTRL-030",L14,L14 MLOps / LLMOps Layer
+TC-L14-015,Experiment Tracking Data Leakage,Medium,Technical,"D6, D4",AI-CTRL-017,L14,L14 MLOps / LLMOps Layer
+TC-L14-016,Post-Deployment Monitoring Coverage and Drift Signals,Medium,Technical,D4,"AI-CTRL-009, AI-CTRL-034",L14,L14 MLOps / LLMOps Layer
+TC-L14-017,Evaluation Harness and Test Set Integrity,Medium,Technical,D4,AI-CTRL-034,L14,L14 MLOps / LLMOps Layer
+TC-L14-018,Shadow Deployments and Unregistered Model Endpoints,High,Technical,"D4, D3","AI-CTRL-030, AI-CTRL-001",L14,L14 MLOps / LLMOps Layer
+TC-L14-019,Pipeline Audit Trail and Change Attribution,High,Technical,"D4, D7","AI-CTRL-008, AI-CTRL-030",L14,L14 MLOps / LLMOps Layer
+TC-L14-020,Policy-as-Code Admission Control for AI Workloads,High,Technical,"D4, D7",AI-CTRL-032,L14,L14 MLOps / LLMOps Layer
+TC-L14-021,AI-Assisted Commit and Pull Request Identification,Medium,Technical,"D2, D4",AI-CTRL-004,L14,L14 MLOps / LLMOps Layer
+TC-L14-022,AI Code Review and Fix Bot Permissions in the Pipeline,High,Technical,"D2, D5","AI-CTRL-016, AI-CTRL-005",L14,L14 MLOps / LLMOps Layer
+TC-L14-023,Agent-Made Production Changes Follow Change Control with a Tested Rollback,High,Technical,"D5, D7","AI-CTRL-033, AI-CTRL-022",L14,L14 MLOps / LLMOps Layer
+TC-L14-024,AI Code Review Effectiveness Against Seeded Vulnerabilities,High,Technical,"D2, D7","AI-CTRL-034, AI-CTRL-004",L14,L14 MLOps / LLMOps Layer
+TC-L15-001,AI Infrastructure Asset Discovery,High,Technical,"D4, D3","AI-CTRL-032, AI-CTRL-001",L15,L15 Infrastructure Layer
+TC-L15-002,GPU Cluster Configuration Hardening,High,Technical,D4,AI-CTRL-032,L15,L15 Infrastructure Layer
+TC-L15-003,GPU Multi-Tenancy Isolation and Memory Residue,Critical,Technical,"D4, D6",AI-CTRL-032,L15,L15 Infrastructure Layer
+TC-L15-004,Kubernetes Hardening for AI Workloads,High,Technical,"D4, D3",AI-CTRL-032,L15,L15 Infrastructure Layer
+TC-L15-005,Inference Server Hardening and Exposure,High,Technical,"D3, D4",AI-CTRL-032,L15,L15 Infrastructure Layer
+TC-L15-006,Network Segmentation Between AI Zones,Critical,Technical,"D3, D7",AI-CTRL-032,L15,L15 Infrastructure Layer
+TC-L15-007,Egress Control for AI Workloads,High,Technical,"D4, D7",AI-CTRL-032,L15,L15 Infrastructure Layer
+TC-L15-008,Lateral Movement Containment from a Compromised Inference Pod,Critical,Technical,"D3, D5",AI-CTRL-032,L15,L15 Infrastructure Layer
+TC-L15-009,Secrets Management for AI Infrastructure,Critical,Technical,D4,AI-CTRL-032,L15,L15 Infrastructure Layer
+TC-L15-010,Cloud IAM Roles for AI Services and Metadata Service Protection,Critical,Technical,"D4, D7","AI-CTRL-016, AI-CTRL-032",L15,L15 Infrastructure Layer
+TC-L15-011,Model and Dataset Storage Security,Critical,Technical,"D4, D6","AI-CTRL-032, AI-CTRL-028",L15,L15 Infrastructure Layer
+TC-L15-012,Encryption and Confidential Computing Evidence,Medium,Evidence,D7,"AI-CTRL-032, AI-CTRL-017",L15,L15 Infrastructure Layer
+TC-L15-013,Control Plane and Data Plane Location Proof (Sovereignty),Critical,Evidence,D7,AI-CTRL-007,L15,L15 Infrastructure Layer
+TC-L15-014,Air-Gapped and On-Premise Operation,High,Technical,D7,AI-CTRL-007,L15,L15 Infrastructure Layer
+TC-L15-015,Single-Tenant and Dedicated Deployment Evidence,High,Evidence,"D7, D4","AI-CTRL-007, AI-CTRL-032",L15,L15 Infrastructure Layer
+TC-L15-016,Hardening of the Evaluated Platform's Own Components,Critical,Technical,D7,"AI-CTRL-032, AI-CTRL-014",L15,L15 Infrastructure Layer
+TC-L15-017,Resource Quotas and Noisy-Neighbour Protection on Shared GPU Capacity,Medium,Technical,D4,AI-CTRL-036,L15,L15 Infrastructure Layer
+TC-L15-018,Infrastructure Logging and Telemetry Coverage,High,Technical,"D4, D7",AI-CTRL-008,L15,L15 Infrastructure Layer
+TC-L15-019,"Backup, Disaster Recovery and Restoration of AI Services",High,Technical,"D3, D7",AI-CTRL-040,L15,L15 Infrastructure Layer
+TC-L15-020,Hosting Location and Data Centre Assurance,High,Attestation,D7,AI-CTRL-007,L15,L15 Infrastructure Layer
+TC-L16-001,AI Bill of Materials Generation,High,Technical,"D4, D7",AI-CTRL-031,L16,L16 Supply Chain & Third Party
+TC-L16-002,"AI Bill of Materials Format, Export and Vulnerability Linkage",Medium,Evidence,"D4, D7",AI-CTRL-031,L16,L16 Supply Chain & Third Party
+TC-L16-003,Model Provenance Verification for Hub-Sourced Models,Critical,Technical,D4,AI-CTRL-031,L16,L16 Supply Chain & Third Party
+TC-L16-004,Malicious or Typosquatted Model and Package Detection,Critical,Technical,D4,AI-CTRL-031,L16,L16 Supply Chain & Third Party
+TC-L16-005,Third-Party Model Repository Scanning at Download,High,Technical,D4,"AI-CTRL-031, AI-CTRL-028",L16,L16 Supply Chain & Third Party
+TC-L16-006,Known Vulnerabilities in AI Frameworks and Serving Components,High,Technical,D4,AI-CTRL-031,L16,L16 Supply Chain & Third Party
+TC-L16-007,Dependency Confusion and Build-Time Substitution in AI SDKs,High,Technical,"D4, D2",AI-CTRL-031,L16,L16 Supply Chain & Third Party
+TC-L16-008,Third-Party SaaS AI Feature and Vendor Risk Assessment,High,Evidence,"D1, D7",AI-CTRL-014,L16,L16 Supply Chain & Third Party
+TC-L16-009,"Third-Party Assurance Evidence (SOC 2, ISO 27001, ISO/IEC 42001)",Medium,Attestation,D7,AI-CTRL-014,L16,L16 Supply Chain & Third Party
+TC-L16-010,Sub-Processor and Model-Provider Chain Visibility,High,Evidence,D7,AI-CTRL-014,L16,L16 Supply Chain & Third Party
+TC-L16-011,"Contractual Data Use, Training Opt-Out and Breach Notification Terms",High,Attestation,D7,AI-CTRL-014,L16,L16 Supply Chain & Third Party
+TC-L16-012,"Provider Outage, API Change and Exit Resilience",Medium,Technical,D7,"AI-CTRL-040, AI-CTRL-014",L16,L16 Supply Chain & Third Party
+TC-L16-013,Provider Model Deprecation and Behaviour Change Monitoring,Medium,Technical,D4,AI-CTRL-031,L16,L16 Supply Chain & Third Party
+TC-L16-014,"Open-Source Licence Compliance for Models, Datasets and Code",Medium,Technical,D7,AI-CTRL-031,L16,L16 Supply Chain & Third Party
+TC-L16-015,Agent Framework and SDK Supply Chain Integrity,High,Technical,"D5, D4","AI-CTRL-031, AI-CTRL-024",L16,L16 Supply Chain & Third Party
+TC-L16-016,Third-Party Prompt and Template Pack Vetting,Medium,Technical,D3,"AI-CTRL-031, AI-CTRL-005",L16,L16 Supply Chain & Third Party
+TC-L16-017,Container Base Image and GPU Driver Supply Chain,Medium,Technical,D4,"AI-CTRL-031, AI-CTRL-032",L16,L16 Supply Chain & Third Party
+TC-L16-018,Evaluated Vendor's Own Software Supply Chain and Security Programme,Critical,Attestation,D7,AI-CTRL-014,L16,L16 Supply Chain & Third Party
+TC-L16-019,Vendor Handling of Customer Telemetry and Support Access,Critical,Attestation,"D7, D6","AI-CTRL-014, AI-CTRL-007",L16,L16 Supply Chain & Third Party
+TC-L16-020,"Vendor Continuity, Escrow and Data Return",Medium,Attestation,D7,"AI-CTRL-014, AI-CTRL-040",L16,L16 Supply Chain & Third Party
+TC-L16-021,Vendor Incident Response and Breach Notification,High,Attestation,D7,"AI-CTRL-014, AI-CTRL-035",L16,L16 Supply Chain & Third Party
+TC-L16-022,Vendor Patch Cadence and Vulnerability Handling,High,Technical,D7,AI-CTRL-014,L16,L16 Supply Chain & Third Party
+TC-L16-023,Fourth-Party and Concentration Risk Across AI Controls,Medium,Evidence,D7,AI-CTRL-014,L16,L16 Supply Chain & Third Party
+TC-L16-024,Supply Chain Incident Response Exercise,High,Technical,"D4, D7","AI-CTRL-035, AI-CTRL-031",L16,L16 Supply Chain & Third Party
+TC-L16-025,Right to Audit and Independent Security Testing of the Vendor Platform,High,Attestation,D7,AI-CTRL-014,L16,L16 Supply Chain & Third Party
+TC-L16-026,IDE Extension and AI Plugin Marketplace Vetting,High,Technical,"D2, D4","AI-CTRL-024, AI-CTRL-004",L16,L16 Supply Chain & Third Party
+TC-L17-001,Telemetry Coverage Map Across the 17 Layers,High,Evidence,"D3, D5, D7","AI-CTRL-009, AI-CTRL-008",L17,"L17 Monitoring, Detection & Response"
+TC-L17-002,Event Schema and Field Completeness,High,Technical,D3,AI-CTRL-008,L17,"L17 Monitoring, Detection & Response"
+TC-L17-003,"Log Delivery to SIEM: Formats, Reliability and Backfill",High,Technical,D3,AI-CTRL-009,L17,"L17 Monitoring, Detection & Response"
+TC-L17-004,Log Integrity and Tamper Evidence,High,Technical,D7,AI-CTRL-008,L17,"L17 Monitoring, Detection & Response"
+TC-L17-005,"Log Retention, Immutability and Storage Location",Medium,Evidence,D7,AI-CTRL-008,L17,"L17 Monitoring, Detection & Response"
+TC-L17-006,Prebuilt AI Detection Content and SIEM Rules,High,Technical,"D3, D5",AI-CTRL-009,L17,"L17 Monitoring, Detection & Response"
+TC-L17-007,"Alert Quality: Severity, Deduplication and Noise",High,Technical,D3,AI-CTRL-009,L17,"L17 Monitoring, Detection & Response"
+TC-L17-008,"Alert Enrichment with User, Device, Asset and Risk Context",Medium,Technical,"D1, D3",AI-CTRL-009,L17,"L17 Monitoring, Detection & Response"
+TC-L17-009,"Correlation of AI Events with Endpoint, Identity and Network Events",High,Technical,"D3, D6",AI-CTRL-009,L17,"L17 Monitoring, Detection & Response"
+TC-L17-010,Detection of Data Exfiltration Through AI Services,Critical,Technical,"D6, D1",AI-CTRL-009,L17,"L17 Monitoring, Detection & Response"
+TC-L17-011,Detection of Account Takeover on AI Tools,High,Technical,"D1, D3",AI-CTRL-009,L17,"L17 Monitoring, Detection & Response"
+TC-L17-012,Detection of Agent Compromise Indicators,Critical,Technical,D5,"AI-CTRL-009, AI-CTRL-006",L17,"L17 Monitoring, Detection & Response"
+TC-L17-013,Detection of Insider Misuse and Policy Evasion,High,Technical,"D1, D6",AI-CTRL-009,L17,"L17 Monitoring, Detection & Response"
+TC-L17-014,Mapping of Detections to MITRE ATLAS and ATT&CK,Medium,Evidence,D3,AI-CTRL-009,L17,"L17 Monitoring, Detection & Response"
+TC-L17-015,SOAR Playbooks for Automated Containment,Critical,Technical,"D5, D3","AI-CTRL-035, AI-CTRL-009",L17,"L17 Monitoring, Detection & Response"
+TC-L17-016,SOAR and Ticketing Integration: Bidirectional Flow,High,Technical,D3,AI-CTRL-009,L17,"L17 Monitoring, Detection & Response"
+TC-L17-017,Case Management and Evidence Attachment,Medium,Technical,D6,AI-CTRL-035,L17,"L17 Monitoring, Detection & Response"
+TC-L17-018,AI Incident Response Runbook and Tabletop Exercise,High,Technical,"D3, D5, D7",AI-CTRL-035,L17,"L17 Monitoring, Detection & Response"
+TC-L17-019,Containment Time Measurement,High,Technical,D5,"AI-CTRL-035, AI-CTRL-025",L17,"L17 Monitoring, Detection & Response"
+TC-L17-020,Forensics: Conversation and Tool Call Reconstruction,Critical,Technical,"D6, D5","AI-CTRL-035, AI-CTRL-008",L17,"L17 Monitoring, Detection & Response"
+TC-L17-021,"Forensics: Evidence Preservation, Legal Hold and Integrity",High,Technical,D7,AI-CTRL-035,L17,"L17 Monitoring, Detection & Response"
+TC-L17-022,"Forensics: Cross-User, Agent and Tool Timeline",High,Technical,"D5, D3",AI-CTRL-035,L17,"L17 Monitoring, Detection & Response"
+TC-L17-023,Post-Incident Feedback into Policy and Detection,Medium,Evidence,D3,AI-CTRL-035,L17,"L17 Monitoring, Detection & Response"
+TC-L17-024,AI Threat Intelligence Ingestion,Medium,Technical,D3,AI-CTRL-009,L17,"L17 Monitoring, Detection & Response"
+TC-L17-025,Dashboards and Executive Metrics (Detection and Response Times),Medium,Evidence,D7,AI-CTRL-009,L17,"L17 Monitoring, Detection & Response"
+TC-L17-026,Regulatory Incident Reporting Evidence (UAE and GCC),High,Evidence,D7,"AI-CTRL-035, AI-CTRL-013",L17,"L17 Monitoring, Detection & Response"
+TC-L17-027,"24x7 Monitoring, MDR Support and Escalation Model",High,Attestation,D7,"AI-CTRL-009, AI-CTRL-035",L17,"L17 Monitoring, Detection & Response"
+TC-L17-028,Platform Health and Silent Failure Detection,High,Technical,D3,"AI-CTRL-040, AI-CTRL-009",L17,"L17 Monitoring, Detection & Response"
+TC-L17-029,Purple-Team Detection Validation: Replay of Earlier Attacks,High,Technical,"D3, D5, D6","AI-CTRL-034, AI-CTRL-009",L17,"L17 Monitoring, Detection & Response"
+TC-L17-030,"SOC Analyst Access to Raw Prompts: Masking, Role Separation and Unmask Audit",High,Technical,"D1, D7",AI-CTRL-008,L17,"L17 Monitoring, Detection & Response"
+TC-L17-031,Developer AI Activity Telemetry and Investigation Timeline,High,Technical,"D2, D6","AI-CTRL-004, AI-CTRL-008",L17,"L17 Monitoring, Detection & Response"
+TC-L17-032,"AI Tracing and Evaluation Platform Access, Masking and Retention",High,Technical,"D3, D6, D7","AI-CTRL-008, AI-CTRL-017",L17,"L17 Monitoring, Detection & Response"
+TC-L17-033,"Quality Failure Ownership, Triage and Review",Medium,Evidence,D3,"AI-CTRL-039, AI-CTRL-035",L17,"L17 Monitoring, Detection & Response"

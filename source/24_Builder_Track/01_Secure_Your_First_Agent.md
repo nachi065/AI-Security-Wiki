@@ -44,24 +44,26 @@ any call after the kill switch        DENY_KILL                  ok
 
 ## The ten controls at a glance
 
-| Step | What to do | Control | Main OWASP risks it addresses | Where in the code |
-|---|---|---|---|---|
-| B1 | Register the agent and name an owner | [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) | ASI10 Rogue Agents | `policy.json` |
-| B2 | Give it its own identity | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) | ASI03 Identity & Privilege Abuse | `TokenIssuer` |
-| B3 | Issue scoped, short-lived credentials | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) | ASI03 Identity & Privilege Abuse | `TokenIssuer.mint`, `attenuate` |
-| B4 | Allow-list tools and pin their definitions | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) | ASI04 Agentic Supply Chain, ASI02 Tool Misuse | `definition_hash`, `pin_definitions.py` |
-| B5 | Validate every argument outside the model | [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) | ASI02 Tool Misuse, LLM06 Excessive Agency | `validate_args` |
-| B6 | Gate sensitive actions behind approval | [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) | ASI09 Human-Agent Trust Exploitation | `ApprovalGate` |
-| B7 | Run generated code in a sandbox | [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) | ASI05 Unexpected Code Execution | `sandbox.py`, `docker-sandbox.sh` |
-| B8 | Limit egress to named hosts | [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) | ASI05, LLM02 Sensitive Information Disclosure | `egress_proxy.py`, `k8s-agent-pod.yaml` |
-| B9 | Cap the blast radius and keep a kill switch | [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) | ASI08 Cascading Failures, ASI10 Rogue Agents | `RateLimiter`, `KillSwitch` |
-| B10 | Log every decision in a tamper-evident trace | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) | Supports every other control | `AuditLog` |
+| Step | What to do | Control | Main OWASP risks it addresses | Main register risks | Where in the code |
+|---|---|---|---|---|---|
+| B1 | Register the agent and name an owner | [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) | ASI10 Rogue Agents | [AI-R07](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md#ai-r07-ai-agent-and-tool-calling-abuse), [AI-R25](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md#ai-r25-multi-agent-trust-boundary-violation), [AI-R54](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md#ai-r54-agent-actions-others-cannot-identify-as-ai) | `policy.json` |
+| B2 | Give it its own identity | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) | ASI03 Identity & Privilege Abuse | [AI-R22](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md#ai-r22-agent-mediated-credential-discovery-and-harvesting), [AI-R45](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md#ai-r45-agent-activity-indistinguishable-from-attack), [AI-R46](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md#ai-r46-insider-use-of-agents-to-exceed-own-access) | `TokenIssuer` |
+| B3 | Issue scoped, short-lived credentials | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) | ASI03 Identity & Privilege Abuse | [AI-R22](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md#ai-r22-agent-mediated-credential-discovery-and-harvesting), [AI-R46](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md#ai-r46-insider-use-of-agents-to-exceed-own-access) | `TokenIssuer.mint`, `attenuate` |
+| B4 | Allow-list tools and pin their definitions | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) | ASI04 Agentic Supply Chain, ASI02 Tool Misuse | [AI-R23](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md#ai-r23-skill-plugin-and-mcp-server-supply-chain-compromise), [AI-R24](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md#ai-r24-tool-chain-manipulation-and-injection) | `definition_hash`, `pin_definitions.py` |
+| B5 | Validate every argument outside the model | [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) | ASI02 Tool Misuse, LLM06 Excessive Agency | [AI-R07](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md#ai-r07-ai-agent-and-tool-calling-abuse), [AI-R24](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md#ai-r24-tool-chain-manipulation-and-injection) | `validate_args` |
+| B6 | Gate sensitive actions behind approval | [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) | ASI09 Human-Agent Trust Exploitation | [AI-R07](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md#ai-r07-ai-agent-and-tool-calling-abuse), [AI-R19](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md#ai-r19-insufficient-or-ineffective-human-oversight) | `ApprovalGate` |
+| B7 | Run generated code in a sandbox | [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) | ASI05 Unexpected Code Execution | [AI-R07](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md#ai-r07-ai-agent-and-tool-calling-abuse), [AI-R22](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md#ai-r22-agent-mediated-credential-discovery-and-harvesting) | `sandbox.py`, `docker-sandbox.sh` |
+| B8 | Limit egress to named hosts | [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) | ASI05, LLM02 Sensitive Information Disclosure | [AI-R07](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md#ai-r07-ai-agent-and-tool-calling-abuse), [AI-R22](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md#ai-r22-agent-mediated-credential-discovery-and-harvesting) | `egress_proxy.py`, `k8s-agent-pod.yaml` |
+| B9 | Cap the blast radius and keep a kill switch | [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) | ASI08 Cascading Failures, ASI10 Rogue Agents | [AI-R11](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md#ai-r11-ai-cost-abuse-and-resource-exhaustion), [AI-R25](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md#ai-r25-multi-agent-trust-boundary-violation) | `RateLimiter`, `KillSwitch` |
+| B10 | Log every decision in a tamper-evident trace | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) | Supports every other control | [AI-R09](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md#ai-r09-lack-of-ai-auditability-and-forensic-visibility), [AI-R45](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md#ai-r45-agent-activity-indistinguishable-from-attack) | `AuditLog` |
+
+The OWASP IDs are explained in the [OWASP Top 10 Crosswalk](../23_Framework_Crosswalks/06_OWASP_Top_10_Crosswalk.md). The register risks are the main ones the [risk to control mapping](../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.md) links to each step's control; most steps also help with others, and [`wiki_data.py`](code/wiki_data.py) lists them all.
 
 Do the steps in order. B1 to B3 decide who may act, B4 to B6 decide what may be done, B7 to B9 limit the damage when something still goes wrong, and B10 lets you see it.
 
 ## B1. Register the agent and name an owner
 
-**Control:** [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006). An agent nobody owns cannot be reviewed, rotated or switched off. Record, for each agent: a unique ID, a named owner, its purpose, the tools it may use, and its rate and action budget. In this example the registry is a block in the policy file. In an organisation, link it to the AI use-case registry ([AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011)).
+**Control:** [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006). An agent nobody owns cannot be reviewed, rotated or switched off. Record, for each agent: a unique ID, a named owner, its purpose, the tools it may use, and its rate and action budget. In this example the registry is a block in the policy file. In an organisation, link it to the AI use-case registry ([AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011)). The [AI System Inventory template](../25_Templates/02_AI_System_Inventory_Template.md) has a column for each of these facts, including the tools the agent can call and the date its kill switch was last tested.
 
 <!-- excerpt: policy.json -->
 ```json
@@ -322,20 +324,18 @@ The approver is shown the real arguments, not a summary the model wrote. Keep th
 
 **Control:** [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027). If your agent writes and runs code, that code is attacker-influenced input. Run it in a separate process with hard limits and no secrets, inside a container that provides the real boundary.
 
-The Python wrapper sets CPU, memory, file-size and process limits, an empty environment, a throwaway working directory and a wall-clock timeout, and on Linux it removes the network when the kernel allows it:
+The Python wrapper sets CPU, memory, file-size and process limits, an empty environment, a throwaway working directory and a wall-clock timeout, and on Linux it removes the network when the kernel allows it. On Windows it puts the process in a Job Object ([`winjob.py`](code/winjob.py)) with CPU, memory and process-count limits instead; Windows has no per-process file-size limit, and macOS does not enforce a memory (address-space) limit. Where the operating system refuses a limit, the sandbox runs without it and the result's `limits` field lists the limits that were actually applied, so check it before you rely on one. The Unix version:
 
 <!-- excerpt: sandbox.py -->
 ```python
 def _limits(cpu_seconds: int, memory_mb: int, file_mb: int, processes: int):
     def apply():
         os.setsid()                                                    # own session, so we can kill the group
-        resource.setrlimit(resource.RLIMIT_CPU, (cpu_seconds, cpu_seconds))
-        resource.setrlimit(resource.RLIMIT_AS, (memory_mb << 20, memory_mb << 20))
-        resource.setrlimit(resource.RLIMIT_FSIZE, (file_mb << 20, file_mb << 20))
-        resource.setrlimit(resource.RLIMIT_CORE, (0, 0))
-        resource.setrlimit(resource.RLIMIT_NOFILE, (64, 64))
-        if hasattr(resource, "RLIMIT_NPROC"):
-            resource.setrlimit(resource.RLIMIT_NPROC, (processes, processes))
+        for _, name, value in _wanted(cpu_seconds, memory_mb, file_mb, processes):
+            try:
+                resource.setrlimit(getattr(resource, name), (value, value))
+            except (AttributeError, OSError, ValueError):
+                pass   # not supported here (macOS refuses RLIMIT_AS); supported_limits() reports it
     return apply
 ```
 
@@ -360,7 +360,7 @@ exec docker run --rm \
   python -I /job/main.py
 ```
 
-*From [`docker-sandbox.sh`](code/docker-sandbox.sh).*
+*From [`docker-sandbox.sh`](code/docker-sandbox.sh). [`docker-sandbox.ps1`](code/docker-sandbox.ps1) runs the same command from PowerShell on Windows.*
 
 For stronger isolation than a standard container, use a user-space kernel or a microVM, depending on your platform.
 
@@ -478,7 +478,7 @@ A kill switch you have never used is a hope, not a control. Test it on a schedul
         entry = {"ts": round(time.time(), 3), **fields, "prev": self._last}
         entry["hash"] = hashlib.sha256(json.dumps(entry, sort_keys=True, default=str).encode()).hexdigest()
         with self._lock:
-            with self.path.open("a") as f:
+            with self.path.open("a", encoding="utf-8") as f:
                 f.write(json.dumps(entry, sort_keys=True, default=str) + "\n")
             self._last = entry["hash"]
 ```
@@ -489,7 +489,7 @@ A kill switch you have never used is a hope, not a control. Test it on a schedul
 ```python
     def verify(path: str) -> tuple[bool, int]:
         prev, n = "0" * 64, 0
-        for line in Path(path).read_text().splitlines():
+        for line in Path(path).read_text(encoding="utf-8").splitlines():
             entry = json.loads(line)
             claimed = entry.pop("hash")
             expect = hashlib.sha256(json.dumps(entry, sort_keys=True, default=str).encode()).hexdigest()
@@ -563,6 +563,8 @@ For most of the cases in the table below that are Critical and testable with a p
 | B9 | Limits hold under a loop; the kill switch stops one agent and all | [TC-L06-021](../10_Test_Case_Library/L06-agent-orchestration-layer.md#tc-l06-021), [TC-L06-022](../10_Test_Case_Library/L06-agent-orchestration-layer.md#tc-l06-022), [TC-L06-023](../10_Test_Case_Library/L06-agent-orchestration-layer.md#tc-l06-023), [TC-L06-024](../10_Test_Case_Library/L06-agent-orchestration-layer.md#tc-l06-024) |
 | B10 | A decision can be reconstructed from the log; tampering shows | [TC-L06-028](../10_Test_Case_Library/L06-agent-orchestration-layer.md#tc-l06-028), [TC-L17-004](../10_Test_Case_Library/L17-monitoring-detection-and-response.md#tc-l17-004), [TC-L17-020](../10_Test_Case_Library/L17-monitoring-detection-and-response.md#tc-l17-020) |
 
+Record each run in the [Test Case Tracker](../25_Templates/07_AI_Security_Test_Case_Tracker_Template.md). The [Builder Toolkit's](05_Builder_Toolkit.md#evidence-for-the-templates) `evidence_export.py` turns the guard's audit log into rows for the tracker and the [Audit and Evidence Checklist](../25_Templates/05_AI_Security_Audit_and_Evidence_Checklist_Template.md), using the mapping in this table.
+
 The unit tests are built so that the protective checks fail loudly. When this page was written, twelve of the checks were switched off one at a time, and the tests failed every time. Do the same on your own copy of any check you rely on.
 
 ## What this does not cover
@@ -573,10 +575,10 @@ These ten steps contain the damage a hijacked agent can do. They do not make the
 - **Memory and context.** Persistent agent memory can be poisoned ([AI-CTRL-026](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-026)).
 - **Retrieval authorization.** If the agent searches a knowledge base, it must see only what the user may see ([AI-CTRL-018](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-018)).
 - **Several cooperating agents.** Trust maps and signed agent-to-agent messages need their own work ([AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006), [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015)).
-- **Supply chain.** Models, libraries and datasets are not covered here ([AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031)).
-- **Detection and response.** Logging is B10. Alerting, triage and incident handling are separate ([AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009), [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035)).
+- **Supply chain.** Models, libraries and datasets are not covered here ([AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031)). The [Builder Toolkit's](05_Builder_Toolkit.md#the-checker) checker flags unsafe model loading and unpinned models and MCP servers.
+- **Detection and response.** Logging is B10. Alerting, triage and incident handling are separate ([AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009), [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035)). Record an incident, including any use of the kill switch, in the [AI Incident Report template](../25_Templates/11_AI_Incident_Report_Template.md).
 - **Acting with the user's rights.** The example uses agent-level scopes. Exchange the end user's identity where a user is present.
 
 ## Limits of this reference
 
-> **Verify before use:** The Python code is a teaching reference and has not been security reviewed or hardened. The token format is deliberately simple and is not a substitute for your identity provider. The argument check resolves DNS at validation time, and the egress proxy repeats the check at connect time, which is the one that matters. The sandbox's process limits are not a security boundary. The Docker command and the Kubernetes manifest were not executed when this page was written, because the tests need no container runtime. Check every flag and field against the current documentation for your runtime and Kubernetes version, and pin container images by digest. The tests were run with Python 3.13 on Linux. The network-removal step needs `unshare` and is skipped where the kernel does not allow it.
+> **Verify before use:** The Python code is a teaching reference and has not been security reviewed or hardened. The token format is deliberately simple and is not a substitute for your identity provider. The argument check resolves DNS at validation time, and the egress proxy repeats the check at connect time, which is the one that matters. The sandbox's process limits are not a security boundary. The Docker command and the Kubernetes manifest were not executed when this page was written, because the tests need no container runtime. Check every flag and field against the current documentation for your runtime and Kubernetes version, and pin container images by digest. The tests run in CI on Linux, macOS and Windows. The network-removal step needs `unshare` and is skipped where the kernel does not allow it, which includes every macOS and Windows machine. On Windows the child process is placed in its Job Object just after it starts, so its first instructions run before the limits apply.

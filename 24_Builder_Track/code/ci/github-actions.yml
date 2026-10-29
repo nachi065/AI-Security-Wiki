@@ -1,0 +1,29 @@
+# AI Security Wiki Builder Track checks for GitHub Actions.
+# Copy to .github/workflows/ai-security-checks.yml and copy the Builder Track
+# tools to tools/ in your repository. Pin each action to a commit SHA you have reviewed.
+name: AI security checks
+on: [pull_request]
+permissions:
+  contents: read
+  security-events: write        # only needed for the SARIF upload step
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # the diff needs the base branch
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Secrets, personal data in logs, AI-Assistance trailers
+        run: python tools/pipeline_checks.py ci origin/${{ github.base_ref }}
+      - name: AI-specific checks on the lines this pull request adds
+        run: python tools/aiwiki_check.py --diff origin/${{ github.base_ref }} --format sarif --output aiwiki.sarif --fail-on HIGH
+      - name: Show the findings in code scanning
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: aiwiki.sarif
+          category: aiwiki-check

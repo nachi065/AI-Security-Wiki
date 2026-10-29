@@ -6,7 +6,7 @@ parent: "Risk Management"
 nav_order: 6
 description: "Yes/No questions that decide which risks in the register apply to an AI use case, to use alongside the T01 intake form that sets the tier."
 document_type: AI Security Wiki Reference
-version: 1.1
+version: 1.2
 ---
 
 # AI Use-Case Risk Triage
@@ -72,7 +72,7 @@ version: 1.1
 
 ## E. Business, people, legal and supply chain
 
-These questions were added in version 1.1 for risks AI-R29 to AI-R46, which were adapted from the AI Risk Map (see the credit on the [Enterprise AI Risk Register](02B_Enterprise_AI_Risk_Register.md#credit-ai-risk-map)).
+These questions were added in version 1.1 for risks AI-R29 to AI-R46, and E13 to E19 in version 1.2 for AI-R47 to AI-R54, which were adapted from the AI Risk Map (see the credit on the [Enterprise AI Risk Register](02B_Enterprise_AI_Risk_Register.md#credit-ai-risk-map)).
 
 | # | Question | If Yes, apply risks |
 |---|---|---|
@@ -88,6 +88,13 @@ These questions were added in version 1.1 for risks AI-R29 to AI-R46, which were
 | E10 | Is it conversational, with a persona, or open to the public or to vulnerable users? | AI-R42 |
 | E11 | Will it write code or install software dependencies? | AI-R43 |
 | E12 | Can it act on behalf of users, with permissions broader than some of those users hold, or is its activity watched by security monitoring? | AI-R45, AI-R46 |
+| E13 | Can people outside the organization query the model at volume, through an API or an application? | AI-R47 |
+| E14 | Was the model trained or fine-tuned on personal data, or does it retrieve personal data from embeddings or caches? | AI-R49 |
+| E15 | Do you train, fine-tune or host models yourselves, or build on open-source models, libraries or agent frameworks? | AI-R50, AI-R52 |
+| E16 | Could its decisions or outputs harm customers or other third parties? | AI-R51 |
+| E17 | Will it generate images, audio, video or text that people outside the organization will see? | AI-R53 |
+| E18 | Will its agents send messages to, or act in, other organizations' systems? | AI-R54 |
+| E19 | Does the incident response plan lack AI-specific categories for this system, such as prompt injection, harmful output or an agent acting outside its task? | AI-R48 |
 
 ## When to run a full impact assessment
 

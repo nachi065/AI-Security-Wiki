@@ -22,10 +22,10 @@ PATTERN = re.compile(r"<!-- excerpt: (?P<file>[\w.\-]+) -->\n```\w*\n(?P<body>.*
 
 class PageExcerpts(unittest.TestCase):
     def test_excerpts_match_the_files(self):
-        self.assertGreater(len(PATTERN.findall(PAGE.read_text())), 10, "the page should contain its code excerpts")
+        self.assertGreater(len(PATTERN.findall(PAGE.read_text(encoding="utf-8"))), 10, "the page should contain its code excerpts")
         for page in PAGES:
-            for m in PATTERN.finditer(page.read_text()):
-                source = (HERE / m["file"]).read_text()
+            for m in PATTERN.finditer(page.read_text(encoding="utf-8")):
+                source = (HERE / m["file"]).read_text(encoding="utf-8")
                 self.assertIn(m["body"], source,
                               f"{page.name}: excerpt from {m['file']} no longer matches:\n{m['body'][:200]}")
 

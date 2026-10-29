@@ -1,0 +1,56 @@
+Map domain,Category,Wiki risks,Match,What the match leaves out
+01 AI Governance and Accountability,Governance and oversight,"AI-R02, AI-R18",Partial,"Shadow AI and use beyond approved purpose are register risks. Board oversight and the governance body are covered by the AI Governance Operating Model, not as risks."
+01 AI Governance and Accountability,Roles and accountability,AI-R28,Partial,Named accountable owners are required in AI-R28 and the operating model. Segregation of duties was considered and not added as a separate risk; see Considered and Not Added.
+01 AI Governance and Accountability,Policy and standards,AI-R02,Partial,"Covered by AI Policy, Standards and Acceptable Use and AI-CTRL-012 rather than as register risks."
+01 AI Governance and Accountability,Risk-management integration,None,Partial,"Covered by the AI Risk Methodology (risk appetite) and impact assessment under AI-CTRL-042, not as a register risk."
+01 AI Governance and Accountability,Audit and assurance,"AI-R09, AI-R40",Partial,Auditability and AI in financial reporting controls are register risks; independent assurance is AI-CTRL-038. Internal audit competence has no separate risk.
+02 Strategy and Value Realization,Competitive position,AI-R29,Direct,
+02 Strategy and Value Realization,AI strategy and roadmap,AI-R29,Direct,
+02 Strategy and Value Realization,Use-case selection and sourcing,"AI-R29, AI-R18",Partial,"The choice between training, fine-tuning, retrieval and an API has no separate risk."
+02 Strategy and Value Realization,Value measurement / ROI,"AI-R29, AI-R30",Direct,
+03 Data and Privacy,Sourcing and provenance,"AI-R08, AI-R27",Partial,Training data provenance is under AI-CTRL-029. Data lineage through the pipeline has no separate risk.
+03 Data and Privacy,Quality and labeling,AI-R17,Direct,
+03 Data and Privacy,Privacy and consent,"AI-R03, AI-R06, AI-R10, AI-R28, AI-R49",Direct,
+03 Data and Privacy,Training-data rights and IP,"AI-R27, AI-R36",Direct,
+03 Data and Privacy,Retention and disposal,"AI-R38, AI-R21, AI-R49",Direct,
+04 Model Development and Performance,Design and training,AI-R08,Partial,Pipeline and registry security is AI-CTRL-030. Choosing an unsuitable model for the problem has no separate risk.
+04 Model Development and Performance,Accuracy and validation,"AI-R12, AI-R39",Direct,
+04 Model Development and Performance,Robustness and drift,"AI-R17, AI-R16",Direct,
+04 Model Development and Performance,Explainability,AI-R15,Direct,
+04 Model Development and Performance,Reproducibility and documentation,"AI-R15, AI-R09, AI-R50",Direct,
+05 Security and Adversarial Threats,Data and pipeline attacks,"AI-R08, AI-R05",Direct,Poisoning is treated by AI-CTRL-029 and tampering with retrieval sources by AI-CTRL-019.
+05 Security and Adversarial Threats,Model attacks,"AI-R08, AI-R47",Direct,
+05 Security and Adversarial Threats,Inference-time (input) attacks,"AI-R05, AI-R26",Direct,
+05 Security and Adversarial Threats,Output and integration security,"AI-R06, AI-R24, AI-R07",Direct,
+05 Security and Adversarial Threats,Supply-chain and artifact integrity,"AI-R08, AI-R23, AI-R43",Direct,
+05 Security and Adversarial Threats,AI access and identity,"AI-R22, AI-R46, AI-R06",Direct,
+"06 Safety, Ethics and Responsible AI",Bias and fairness,"AI-R14, AI-R32",Direct,
+"06 Safety, Ethics and Responsible AI",Harmful / inaccurate output,"AI-R12, AI-R20",Direct,
+"06 Safety, Ethics and Responsible AI","Transparency, disclosure and provenance","AI-R42, AI-R16, AI-R53",Partial,Disclosure that a user is talking to AI is part of AI-R42 and labelling of generated content is AI-R53. Telling customers when your AI service changes has no separate risk.
+"06 Safety, Ethics and Responsible AI",Misuse and dual-use,AI-R12,Partial,"Treated as one kind of harmful output, as in the NIST AI 600-1 Crosswalk."
+"06 Safety, Ethics and Responsible AI",Human agency and over-reliance,"AI-R19, AI-R42",Direct,
+07 Operations and Resilience,MLOps and deployment,"AI-R02, AI-R16, AI-R50",Direct,
+07 Operations and Resilience,Monitoring and observability,"AI-R09, AI-R45",Direct,
+07 Operations and Resilience,Availability and scalability,"AI-R13, AI-R11",Direct,
+07 Operations and Resilience,Incident management,"AI-R09, AI-R48",Direct,
+07 Operations and Resilience,Change and lifecycle management,"AI-R16, AI-R31",Direct,
+"08 Legal, Regulatory and Compliance",Regulatory compliance,"AI-R28, AI-R37",Direct,
+"08 Legal, Regulatory and Compliance",IP and liability,"AI-R27, AI-R36, AI-R51",Direct,
+"08 Legal, Regulatory and Compliance",Contractual and licensing,"AI-R36, AI-R10",Partial,Vendor contract terms are covered by the vendor evaluation framework and AI-CTRL-014.
+"08 Legal, Regulatory and Compliance",Cross-border,AI-R10,Direct,
+09 Third-Party and Model Supply Chain,Foundation-model dependence,"AI-R31, AI-R32",Direct,
+09 Third-Party and Model Supply Chain,Vendor due diligence,"AI-R10, AI-R41",Partial,Covered mainly by AI-CTRL-014 and the vendor evaluation framework.
+09 Third-Party and Model Supply Chain,Lock-in and portability,AI-R31,Direct,
+09 Third-Party and Model Supply Chain,Open-source component risk,"AI-R08, AI-R44, AI-R52",Direct,
+"10 Workforce, Human and Societal",Skills and talent,"AI-R34, AI-R33",Direct,
+"10 Workforce, Human and Societal",Deskilling and loss of institutional knowledge,AI-R33,Direct,
+"10 Workforce, Human and Societal",Workforce disruption / change,AI-R34,Direct,
+"10 Workforce, Human and Societal",Societal and reputational,"AI-R20, AI-R41",Partial,"Harm to people who never chose to use the system is addressed through impact assessment (AI-CTRL-042), not as a register risk."
+11 Financial and Resource,Cost and compute economics,"AI-R11, AI-R30, AI-R35",Direct,
+11 Financial and Resource,Investment / procurement,AI-R30,Direct,
+11 Financial and Resource,Scaling and resource constraints,"AI-R13, AI-R31",Direct,
+12 Autonomy and Delegated Action (Agentic AI),"Autonomy, alignment and oversight","AI-R07, AI-R19",Direct,
+12 Autonomy and Delegated Action (Agentic AI),Tool access and authorization,"AI-R07, AI-R22, AI-R23",Direct,
+12 Autonomy and Delegated Action (Agentic AI),Memory and context integrity,AI-R21,Direct,
+12 Autonomy and Delegated Action (Agentic AI),Multi-agent orchestration,AI-R25,Direct,
+12 Autonomy and Delegated Action (Agentic AI),Action integrity and traceability,"AI-R07, AI-R09, AI-R54",Direct,

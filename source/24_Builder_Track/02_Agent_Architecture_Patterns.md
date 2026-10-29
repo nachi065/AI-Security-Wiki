@@ -115,3 +115,5 @@ Use these questions on any agent, LLM application or MCP design. A "no" or "don'
 - [AI Security Incident Casebook](../09_Reference/20_AI_Security_Incident_Casebook.md)
 - [OWASP MCP Top 10 Crosswalk](../23_Framework_Crosswalks/19_OWASP_MCP_Top_10_Crosswalk.md)
 - [Agents, Identity and Excessive Agency](../00_Foundations/05-Agents-Identity-and-Excessive-Agency.md)
+- [AI Use-Case Risk Triage template](../25_Templates/03_AI_Use_Case_Risk_Triage_Template.md), to record the tier a design review sets
+- [Builder Toolkit](05_Builder_Toolkit.md): its MCP server offers a `review-agent-design` prompt built on the ten controls

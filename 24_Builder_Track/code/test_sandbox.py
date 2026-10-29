@@ -1,5 +1,6 @@
 """Tests for sandbox.py. Run:  python3 -m unittest -v test_sandbox   (from this folder)"""
 import os
+import sys
 import unittest
 
 from sandbox import netns_available, run_python
@@ -18,11 +19,13 @@ class Sandbox(unittest.TestCase):
         r = run_python("import time; time.sleep(30)", timeout=1)
         self.assertTrue(r.timed_out)
 
+    @unittest.skipUnless("memory" in run_python("pass").limits, "this platform refuses a memory limit; result.limits says so")
     def test_memory_bomb_is_stopped(self):
         r = run_python("x = bytearray(2 * 1024**3)", memory_mb=128)
         self.assertFalse(r.ok)
         self.assertIn("MemoryError", r.stderr)
 
+    @unittest.skipUnless("file-size" in run_python("pass").limits, "no per-process file-size limit here (Windows); result.limits says so")
     def test_large_file_write_is_stopped(self):
         r = run_python("open('big', 'wb').write(b'x' * (5 * 1024 * 1024))", file_mb=1)
         self.assertFalse(r.ok)
@@ -35,6 +38,15 @@ class Sandbox(unittest.TestCase):
             del os.environ["AGENT_SECRET_TOKEN"]
         self.assertNotIn("AGENT_SECRET_TOKEN", r.stdout)
         self.assertNotIn("do-not-leak", r.stdout)
+
+    def test_result_says_which_limits_applied(self):
+        r = run_python("print(1)")
+        for limit in ("cpu", "processes", "timeout", "empty-env"):
+            self.assertIn(limit, r.limits)
+        if sys.platform.startswith("linux") or os.name == "nt":
+            self.assertIn("memory", r.limits)
+        self.assertEqual("file-size" in r.limits, os.name != "nt")
+        self.assertEqual("no-network" in r.limits, r.network_isolated)
 
     def test_output_is_capped(self):
         r = run_python("print('a' * 100000)", max_output=1000)

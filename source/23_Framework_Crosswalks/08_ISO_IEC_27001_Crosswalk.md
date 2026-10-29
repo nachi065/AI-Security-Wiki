@@ -6,7 +6,7 @@ parent: "Framework Crosswalks"
 nav_order: 8
 description: "ISO/IEC 27001:2022 Annex A controls and management system clauses with the wiki control objectives and test cases that cite them, and the Annex A controls not yet cited."
 document_type: AI Security Wiki Reference
-version: 1.0
+version: 1.1
 ---
 
 # ISO/IEC 27001 Crosswalk
@@ -25,7 +25,7 @@ The standard has no AI-specific content. A wiki control cites an Annex A control
 
 The tables are generated each time the site is built. They are read from the ISO/IEC 27001 field of each control in the [AI Security Control Objectives Library](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md). To change a mapping, edit the control; this page follows on the next build.
 
-> **Verify before use.** Control numbers and titles were written from memory of the 2022 edition and were not checked against a copy of the standard for this page. The mapping is this wiki's own judgment and has not been reviewed by ISO or a certification body. Check every number and title against your own copy before quoting it in a statement of applicability or an audit. A wiki control citing an Annex A control means it supports that control for AI systems, not that it satisfies it.
+> **Verify before use.** On 29 October 2026 all 93 control numbers and titles were checked against two published Annex A listings ([Open Security Architecture](https://opensecurityarchitecture.org/frameworks/iso-27001-2022) and [HighTable](https://hightable.io/iso-27001-annex-a-controls-reference-guide/)), not against a copy of the standard. The two listings word a few titles differently (for example A.5.31 and A.5.36). The mapping is this wiki's own judgment and has not been reviewed by ISO or a certification body. Check every number and title against your own copy before quoting it in a statement of applicability or an audit. A wiki control citing an Annex A control means it supports that control for AI systems, not that it satisfies it.
 
 ## How to read the tables
 
@@ -39,7 +39,7 @@ The tables are generated each time the site is built. They are read from the ISO
 
 ## Where the wiki stops
 
-The wiki cites no physical control (A.7.1 to A.7.14). Data centre and office security for AI infrastructure is the same as for any other system, and the wiki adds nothing to it. Most people controls and the general controls for networks, endpoints, backup and malware are also left to the existing ISMS. The [Existing Security Control Baseline](../03_Control_Library/04_Existing_Security_Control_Baseline.md) is a template for assessing how far those general controls already address AI risks.
+The wiki cites no physical control (A.7.1 to A.7.14). Data centre and office security for AI infrastructure is the same as for any other system, and the wiki adds nothing to it. Four people controls are also left to the existing ISMS: screening (A.6.1), responsibilities after termination (A.6.5), confidentiality agreements (A.6.6) and remote working (A.6.7). Where the wiki does cite a general control, such as endpoints, backup or malware, it covers only the AI part, and the rest stays with the ISMS. The [Existing Security Control Baseline](../03_Control_Library/04_Existing_Security_Control_Baseline.md) is a template for assessing how far those general controls already address AI risks.
 
 Four wiki controls cite no Annex A control: fairness and bias testing ([AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041)), output reliability ([AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039)), human oversight design ([AI-CTRL-045](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-045)) and risk assessment ([AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037)), which cites clauses 6.1.2 and 6.1.3 instead. An ISMS that takes AI into scope needs these from ISO/IEC 42001 or from this wiki.
 

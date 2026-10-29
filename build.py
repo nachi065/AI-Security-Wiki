@@ -40,6 +40,8 @@ for dirpath, dirs, files in os.walk(SRC):
 
 # Counts that pages quote are written as {{n:name}} and filled in from the source files here.
 from counts import site_counts
+import export_data
+export_data.main(SRC)  # CSV copies of the register, controls and test cases, served from 25_Templates/data/
 COUNTS = site_counts(SRC)
 
 
@@ -456,7 +458,31 @@ for p in pages:
 for p in pages:
     p["body"] = re.sub(r"<!-- framework-crosswalk: ([\w-]+) -->", lambda m: framework_crosswalk(p, m.group(1)), p["body"])
 
+def latest_updates(notes):
+    # Every update of the newest day: its date comes from the full version history, its entries from the dated note headings.
+    versions = re.findall(r"^\| (\d+\.\d+) \| (\d{4}-\d{2}-\d{2}) \|", notes["body"], flags=re.M)
+    if not versions:
+        raise SystemExit(f"{notes['src']}: no rows in the full version history")
+    day = max(d for _, d in versions)
+    numbers = [v for v, d in versions if d == day]
+    when = datetime.date.fromisoformat(day)
+    heading = f"{when.day} {when:%B %Y}"
+    entries = re.findall(rf"^## ((?:Week ending )?{re.escape(heading)}: (.+))$", notes["body"], flags=re.M)
+    page = "09_Reference/19_Update_Notes.md"
+    lines = [f"> **What's new: {heading}**", ">"]
+    for full, title in entries:
+        lines += [f"> - [{title[0].upper() + title[1:]}]({page}#{slugify(full, '-')})"]
+    span = numbers[0] if len(numbers) == 1 else f"{numbers[-1]} to {numbers[0]}"
+    lines += [">", f"> Version{'s' if len(numbers) > 1 else ''} {span}; the [full version history]({page}#full-version-history) summarises each. "
+              f"See the [Update Notes]({page}) for what was checked and what is still open."]
+    return "\n".join(lines)
+
+
 home = next(p for p in pages if p["src"] == "index.md")
+# The home page's "Latest update" callout lists every update of the newest day, so it never shows only the last one.
+LATEST = "<!-- latest-updates -->"
+if LATEST in home["body"]:
+    home["body"] = home["body"].replace(LATEST, latest_updates(next(p for p in pages if p["src"] == "09_Reference/19_Update_Notes.md")))
 # Top-level entries in the sidebar: sections (which have child pages) and standalone pages.
 sections = sorted((p for p in pages if p is not home and not p["meta"].get("parent")), key=lambda p: int(p["meta"]["nav_order"]))
 for s in sections:

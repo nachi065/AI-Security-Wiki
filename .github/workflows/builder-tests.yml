@@ -7,11 +7,13 @@ on:
   pull_request:
     paths:
       - "source/24_Builder_Track/**"
+      - "source/25_Templates/data/**"
       - ".github/workflows/builder-tests.yml"
   push:
     branches: [main]
     paths:
       - "source/24_Builder_Track/**"
+      - "source/25_Templates/data/**"
       - ".github/workflows/builder-tests.yml"
   workflow_dispatch:
 
@@ -33,5 +35,26 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - name: Run the tests (standard library only, nothing to install)
+        working-directory: source/24_Builder_Track/code
+        run: python -m unittest discover -v -p "test_*.py"
+
+  # The Builder Track promises that its code runs on every major operating
+  # system, so every test runs on each of them. Tests for things a platform
+  # cannot do (network removal outside Linux, file-size limits on Windows)
+  # are skipped there with the reason, and the code reports what it applied.
+  portability:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - name: Run all Builder Track tests
         working-directory: source/24_Builder_Track/code
         run: python -m unittest discover -v -p "test_*.py"

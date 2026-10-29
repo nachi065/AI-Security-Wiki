@@ -12,9 +12,9 @@ nav_order: 8
 
 **Primary test focus:** discovery, app-level runtime protection, output handling
 
-**Controls tested:** [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery (11 cases), [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) Output Handling (7 cases), [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance (6 cases), [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) Output Reliability and Content Safety (3 cases), [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security (2 cases), [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering (2 cases), [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) AI Service Resilience and Fail-Safe Operation (2 cases), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability (1 case), [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) Policy Enforcement (1 case), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials (1 case), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines (1 case), [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization (1 case), [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM (1 case), [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation (1 case), [AI-CTRL-046](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-046) Intellectual Property and Copyright Governance (1 case)
+**Controls tested:** [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery (11 cases), [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) Output Handling (7 cases), [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance (6 cases), [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) Output Reliability and Content Safety (3 cases), [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security (2 cases), [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011) AI Use-Case Registry and Risk Tiering (2 cases), [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM (2 cases), [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) AI Service Resilience and Fail-Safe Operation (2 cases), [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability (1 case), [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) Policy Enforcement (1 case), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance (1 case), [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials (1 case), [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines (1 case), [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization (1 case), [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation (1 case), [AI-CTRL-046](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-046) Intellectual Property and Copyright Governance (1 case)
 
-**Cases:** 35 (TC-L05-001 to TC-L05-035)
+**Cases:** 36 (TC-L05-001 to TC-L05-036)
 > **Safety boundary.** All test cases in this layer use synthetic, non-functional or clearly marked test data only. Card numbers must come from published test ranges; keys, identifiers and records must be fabricated.
 
 > **Verify before use.** MITRE ATLAS, OWASP LLM and NIST AI RMF identifiers must be checked against the current published versions. Numeric thresholds are starting values to tune. See the [Reference Index](00-reference-index.md) for field definitions and applicability codes.
@@ -60,6 +60,7 @@ nav_order: 8
 | [TC-L05-033](#tc-l05-033) | Coding Assistant Workspace Context Scope and File Exclusion | High | Technical | D2, D6 | [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) |
 | [TC-L05-034](#tc-l05-034) | Insecure Code Suggestion Detection | High | Technical | D2, D3 | [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) |
 | [TC-L05-035](#tc-l05-035) | AI-Generated Code: Licence and Public-Code Match Detection | Medium | Technical | D2, D7 | [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004), [AI-CTRL-046](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-046) |
+| [TC-L05-036](#tc-l05-036) | AI Chat Widget on a Payment Page: Authorised, Inventoried and Monitored for Tampering | High | Technical | D3, D7 | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) |
 
 ---
 
@@ -1577,6 +1578,55 @@ nav_order: 8
 **Expected Integration Evidence.** Report exportable for legal review.
 
 **Evidence to Capture.** Match report; event export.
+
+[Back to layer index](#top)
+
+---
+
+<a id="tc-l05-036"></a>
+
+### TC-L05-036: AI Chat Widget on a Payment Page: Authorised, Inventoried and Monitored for Tampering
+
+| Field | Value |
+|---|---|
+| **Lifecycle Layer** | L05 AI Applications |
+| **Use-Case Domain(s)** | D3, D7 |
+| **Test Method** | Technical |
+| **Vendor Applicability** | Core: P, A |
+| **Risk Severity** | High |
+| **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
+| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
+| **NIST AI RMF Mapping** | GOVERN 6.1; MANAGE 4.1 |
+| **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM; [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance |
+
+**Risk Addressed.** A third-party AI chat widget loaded on a payment page runs in the same page as card entry. If it is unlisted, unapproved or altered, it can read or redirect what the customer types.
+
+**Business Scenario.** Payments security wants AI widgets on payment pages treated like any other page script: approved, listed with a reason, checked for integrity and monitored for change, and the provider treated as a service provider when it can reach account data.
+
+**Technical Scenario.** Load a lab checkout page that includes an approved chat widget and an unapproved one, then alter the approved widget's script and check what the platform detects.
+
+**Test Data.** 1 lab checkout page with synthetic card entry; 1 approved widget script with an integrity hash; 1 unapproved widget added to the page; 1 modified copy of the approved script that reads the card field.
+
+**Procedure**
+
+1. Retrieve the inventory of scripts on the payment page and confirm the approved widget is listed with owner, business reason and approval.
+2. Confirm the unapproved widget is detected as not in the inventory.
+3. Replace the approved script with the modified copy and record the time to detection and the alert.
+4. Check whether the page's content security policy or integrity check stops the modified script from loading.
+5. Confirm the widget provider appears in the third-party service provider list with a written agreement on account data.
+6. Check that conversation transcripts from the widget do not contain the synthetic card numbers.
+
+**Edge Cases / Variants.** Widget that loads further scripts at run time; widget inside an iframe from the provider's domain; widget that asks the customer to type card details into the chat.
+
+**Expected Detection.** Unapproved widget flagged; modified script detected within the configured interval with an alert naming the page and script.
+
+**Expected Prevention / Control Action.** Modified or unlisted script blocked by policy where enforcement is configured; no card numbers in widget transcripts.
+
+**Expected Integration Evidence.** Script change alerts in the SIEM; provider record in the third-party register.
+
+**Evidence to Capture.** Script inventory; detection timeline; policy configuration; third-party record; transcript sample.
+
+**Reviewer Notes.** The PCI SSC supplement "Security Considerations for AI Systems" (September 2026, section "Third-Party and External AI Services") says AI systems implemented within a payment page should be authorised, inventoried and monitored for tampering like other page scripts. It does not cite requirement numbers for this; the payment-page script requirements in PCI DSS v4.0.1 are recalled as 6.4.3 and 11.6.1 and should be checked. See the [PCI DSS AI Crosswalk](../23_Framework_Crosswalks/21_PCI_DSS_AI_Crosswalk.md).
 
 [Back to layer index](#top)
 

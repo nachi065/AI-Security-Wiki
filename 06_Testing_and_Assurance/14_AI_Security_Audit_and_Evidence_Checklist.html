@@ -281,12 +281,14 @@
 <li><a href="../23_Framework_Crosswalks/18_AI_Risk_Map_Crosswalk.html">AI Risk Map Crosswalk</a></li>
 <li><a href="../23_Framework_Crosswalks/19_OWASP_MCP_Top_10_Crosswalk.html">OWASP MCP Top 10 Crosswalk</a></li>
 <li><a href="../23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.html">NIST SSDF and SP 800-218A Crosswalk</a></li>
+<li><a href="../23_Framework_Crosswalks/21_PCI_DSS_AI_Crosswalk.html">PCI DSS AI Crosswalk</a></li>
 </ul></details></li>
 <li style="--h:42"><details><summary><a href="../24_Builder_Track/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.6-.6-2.6z"/></svg>Builder Track</a></summary><ul>
 <li><a href="../24_Builder_Track/01_Secure_Your_First_Agent.html">Secure Your First Agent: Ten Controls With Code</a></li>
 <li><a href="../24_Builder_Track/02_Agent_Architecture_Patterns.html">Agent Architecture Patterns</a></li>
 <li><a href="../24_Builder_Track/03_Privacy_Duties_in_Code.html">Privacy Duties in Code: Consent, Rights, Retention and Children&#x27;s Data</a></li>
 <li><a href="../24_Builder_Track/04_Developer_Pipeline_Checks.html">Developer Pipeline Checks for AI-Assisted Code</a></li>
+<li><a href="../24_Builder_Track/05_Builder_Toolkit.html">Builder Toolkit: Checks, MCP Server and Agent Instructions</a></li>
 </ul></details></li>
 <li style="--h:75"><details><summary><a href="../25_Templates/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M4 15h16M10 4v16"/></svg>Templates</a></summary><ul>
 <li><a href="../25_Templates/01_AI_Risk_Register_Template.html">AI Risk Register Template (.xlsx)</a></li>
@@ -359,7 +361,7 @@
 <tr>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a> AI Policy, Roles and Acceptable Use</td>
 <td>Baseline</td>
-<td>Approved policy; board-approved AI strategy and risk appetite with its review record; roles and responsibilities record; governance decision log; policy-to-control mapping; training and acknowledgement records.</td>
+<td>Approved policy; board-approved AI strategy and risk appetite with its review record; roles and responsibilities record; governance decision log; policy-to-control mapping; training and acknowledgement records; policy alignment record; employment and contractor terms covering AI use.</td>
 <td>Select policy statements and trace each to a control and to evidence that it operates. Confirm the policy was reviewed within its cycle.</td>
 <td>GRC</td>
 <td>Annually</td>
@@ -375,7 +377,7 @@
 <tr>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a> Third-Party and Vendor AI Assurance</td>
 <td>Baseline</td>
-<td>Vendor assessments; contract clauses; sub-processor list; model change notices.</td>
+<td>Vendor assessments; contract clauses; sub-processor list; model change notices; exit return or deletion confirmation.</td>
 <td>Sample AI vendors in use and confirm each has a current assessment and the required contract terms. Confirm the last model or terms change triggered a review.</td>
 <td>Procurement / GRC</td>
 <td>Annually and on vendor change</td>
@@ -767,7 +769,7 @@
 <tr>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-033">AI-CTRL-033</a> AI Security Review and Release Gate</td>
 <td>Baseline</td>
-<td>Threat models; architecture review records; control selection; approvals and exceptions.</td>
+<td>Threat models; architecture review records; control selection; approvals and exceptions; responsible development objectives.</td>
 <td>Sample production systems and confirm each has a current threat model, a control selection that matches its tier and a signed approval.</td>
 <td>Security Architecture</td>
 <td>Before each release and annually</td>
@@ -775,7 +777,7 @@
 <tr>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> Adversarial Testing and Continuous Evaluation</td>
 <td>Advanced</td>
-<td>Red team reports; regression suite results; agreed thresholds; retest records.</td>
+<td>Red team reports; regression suite results; agreed thresholds; retest records; threat intelligence review log; production test authorisations.</td>
 <td>Confirm the last model or prompt change triggered the regression suite. Reproduce a sample of reported findings and confirm fixes hold.</td>
 <td>AI Red Team / AppSec</td>
 <td>Before each release and continuously</td>

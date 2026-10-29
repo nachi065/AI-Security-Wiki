@@ -6,7 +6,7 @@ parent: "Templates"
 nav_order: 3
 description: "A downloadable Excel questionnaire for one AI use case: a prohibited-use screen, the wiki's triage questions, T01 tier scoring, the register risks that apply with their controls and evidence, and whether a full impact assessment is needed."
 document_type: AI Security Wiki Template
-version: 1.0
+version: 1.2
 ---
 
 # AI Use-Case Risk Triage Template (.xlsx)
@@ -27,7 +27,7 @@ version: 1.0
 | Result | Tier, applicable risks, impact assessment trigger, next step, decision and approvals | Calculated from the other sheets |
 | Use Case | Basics, purpose and data | [GCC T01 Intake and Risk Tiering](../11_GCC_AI_Compliance/T01_AI_Use_Case_Intake_and_Risk_Tiering.md) sections A to C |
 | Stop Screen | A policy prohibition question and the EU AI Act Art. 5 practices | [EU T01 AI System Classification](../12_EU_AI_Compliance/T01_AI_System_Classification.md) |
-| Risk Questions | The 36 triage questions A1 to E12, each linked to the register risks it switches on | [AI Use-Case Risk Triage](../02_Risk_Management/02F_AI_Use_Case_Risk_Triage.md) |
+| Risk Questions | The 43 triage questions A1 to E19, each linked to the register risks it switches on | [AI Use-Case Risk Triage](../02_Risk_Management/02F_AI_Use_Case_Risk_Triage.md) |
 | Tiering | The eight scored T01 questions, tier bands and the two mandatory High overrides | [GCC T01 Intake and Risk Tiering](../11_GCC_AI_Compliance/T01_AI_Use_Case_Intake_and_Risk_Tiering.md) |
 | Applicable Risks | All {{n:risks}} register risks, which questions switched each on, and the wiki controls and evidence | [Enterprise AI Risk Register](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI Risk to Control Mapping](../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.md) |
 | Triage Log and Worked Examples | A history of triage runs across use cases, and the wiki's three worked examples with how to calibrate | [AI Use-Case Risk Triage](../02_Risk_Management/02F_AI_Use_Case_Risk_Triage.md) |
@@ -49,6 +49,10 @@ The Result sheet asks for a full impact assessment on the wiki's own threshold: 
 
 Assess each applicable risk on the [AI Risk Register Template (.xlsx)](01_AI_Risk_Register_Template.md), and record the system on the [AI System Inventory Template (.xlsx)](02_AI_System_Inventory_Template.md).
 
+## From the Builder Track
+
+For an agent, the [Agent Architecture Patterns](../24_Builder_Track/02_Agent_Architecture_Patterns.md) review checklist and the lethal trifecta test help answer the triage questions about actions and data.
+
 ## Licence and credit
 
-The workbook is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI Use-Case Risk Triage" by Nachiket Sathaye and Ankush Jain, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence. The owner domains and risks AI-R29 to AI-R46 are adapted from the AI Risk Map v1.3 by Evan Wheeler, RiskFramework.org, licensed under CC BY-SA 4.0. Framework names, identifiers and short titles belong to their owners and are cited for mapping only.
+The workbook is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI Use-Case Risk Triage" by Nachiket Sathaye and Ankush Jain, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence. The owner domains and risks AI-R29 to AI-R46 are adapted from the AI Risk Map v1.3 by Evan Wheeler (https://github.com/wheels344i-gte/ai-risk-map, RiskFramework.org), licensed under CC BY-SA 4.0. Framework names, identifiers and short titles belong to their owners and are cited for mapping only.

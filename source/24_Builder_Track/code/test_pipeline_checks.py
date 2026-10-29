@@ -83,7 +83,9 @@ class GitHookTests(unittest.TestCase):
         hooks = self.repo / ".git" / "hooks"
         script = HERE / "pipeline_checks.py"
         for hook, args in (("pre-commit", "pre-commit"), ("commit-msg", 'commit-msg "$1"')):
-            (hooks / hook).write_text(f'#!/bin/sh\nexec "{sys.executable}" "{script}" {args}\n')
+            # Forward slashes and LF line endings, so Git for Windows' shell runs the hook too.
+            (hooks / hook).write_text(f'#!/bin/sh\nexec "{Path(sys.executable).as_posix()}" "{script.as_posix()}" {args}\n',
+                                      newline="\n")
             (hooks / hook).chmod(0o755)
 
     def tearDown(self):

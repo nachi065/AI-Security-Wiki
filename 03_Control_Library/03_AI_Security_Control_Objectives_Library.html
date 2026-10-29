@@ -281,12 +281,14 @@
 <li><a href="../23_Framework_Crosswalks/18_AI_Risk_Map_Crosswalk.html">AI Risk Map Crosswalk</a></li>
 <li><a href="../23_Framework_Crosswalks/19_OWASP_MCP_Top_10_Crosswalk.html">OWASP MCP Top 10 Crosswalk</a></li>
 <li><a href="../23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.html">NIST SSDF and SP 800-218A Crosswalk</a></li>
+<li><a href="../23_Framework_Crosswalks/21_PCI_DSS_AI_Crosswalk.html">PCI DSS AI Crosswalk</a></li>
 </ul></details></li>
 <li style="--h:42"><details><summary><a href="../24_Builder_Track/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.6-.6-2.6z"/></svg>Builder Track</a></summary><ul>
 <li><a href="../24_Builder_Track/01_Secure_Your_First_Agent.html">Secure Your First Agent: Ten Controls With Code</a></li>
 <li><a href="../24_Builder_Track/02_Agent_Architecture_Patterns.html">Agent Architecture Patterns</a></li>
 <li><a href="../24_Builder_Track/03_Privacy_Duties_in_Code.html">Privacy Duties in Code: Consent, Rights, Retention and Children&#x27;s Data</a></li>
 <li><a href="../24_Builder_Track/04_Developer_Pipeline_Checks.html">Developer Pipeline Checks for AI-Assisted Code</a></li>
+<li><a href="../24_Builder_Track/05_Builder_Toolkit.html">Builder Toolkit: Checks, MCP Server and Agent Instructions</a></li>
 </ul></details></li>
 <li style="--h:75"><details><summary><a href="../25_Templates/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M4 15h16M10 4v16"/></svg>Templates</a></summary><ul>
 <li><a href="../25_Templates/01_AI_Risk_Register_Template.html">AI Risk Register Template (.xlsx)</a></li>
@@ -316,7 +318,7 @@
 <p><strong>Audience:</strong> Security engineering, GRC, audit, AI product teams, SOC.</p>
 <p><strong>How to use:</strong> Select controls by risk tier, then update the evidence, owners, control status, and links as implementation maturity improves.</p>
 </blockquote>
-<p>The library holds <strong>46 control objectives in 11 families</strong>, split into a <a href="06_Control_Tiers.html">Baseline and an Advanced tier</a>. Each control has a stable ID that the rest of the wiki uses: the <a href="../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a> links risks to controls, the <a href="../04_Domain_Standards/index.html">domain standards</a> cite the controls they apply, the <a href="../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a> lists the evidence, and every one of the 674 cases in the <a href="../10_Test_Case_Library/index.html">Test Case Library</a> names the control it tests.</p>
+<p>The library holds <strong>46 control objectives in 11 families</strong>, split into a <a href="06_Control_Tiers.html">Baseline and an Advanced tier</a>. Each control has a stable ID that the rest of the wiki uses: the <a href="../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a> links risks to controls, the <a href="../04_Domain_Standards/index.html">domain standards</a> cite the controls they apply, the <a href="../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a> lists the evidence, and every one of the 682 cases in the <a href="../10_Test_Case_Library/index.html">Test Case Library</a> names the control it tests.</p>
 <p>The controls follow the design principle set out in the <a href="../00_Foundations/07-Reference-Architecture.html">Foundations paper</a>: the model is an untrusted component, and authority to act, access data or spend money is enforced outside it.</p>
 <h2 id="framework-identifiers">Framework identifiers</h2>
 <p>Each control cites the identifiers published by the framework owner. Where a framework has no matching entry, the cell says so and the wiki's own control ID stands in.</p>
@@ -534,7 +536,7 @@
 <td>IDE AI Governance</td>
 <td>Discovery and Workforce AI Use</td>
 <td>Monitor and control AI coding assistants, source code sharing and secret leakage.</td>
-<td>18</td>
+<td>19</td>
 </tr>
 <tr>
 <td><a class="chip" href="#ai-ctrl-005">AI-CTRL-005</a></td>
@@ -604,28 +606,28 @@
 <td>Third-Party and Vendor AI Assurance</td>
 <td>Governance and Compliance</td>
 <td>Assess AI vendors and embedded AI features before use, and reassess when they change.</td>
-<td>25</td>
+<td>26</td>
 </tr>
 <tr>
 <td><a class="chip" href="#ai-ctrl-015">AI-CTRL-015</a></td>
 <td>Human and Agent Identity</td>
 <td>Identity and Access</td>
 <td>Give every user, application and agent that uses AI a unique, attributable identity.</td>
-<td>44</td>
+<td>45</td>
 </tr>
 <tr>
 <td><a class="chip" href="#ai-ctrl-016">AI-CTRL-016</a></td>
 <td>Least Privilege and Scoped Credentials</td>
 <td>Identity and Access</td>
 <td>Limit what each AI workload and agent can reach to the minimum its task needs.</td>
-<td>51</td>
+<td>53</td>
 </tr>
 <tr>
 <td><a class="chip" href="#ai-ctrl-017">AI-CTRL-017</a></td>
 <td>Data Protection in AI Pipelines</td>
 <td>Data and Retrieval</td>
 <td>Apply classification, minimization and isolation to data that AI systems ingest, process and produce.</td>
-<td>34</td>
+<td>39</td>
 </tr>
 <tr>
 <td><a class="chip" href="#ai-ctrl-018">AI-CTRL-018</a></td>
@@ -646,7 +648,7 @@
 <td>Output Handling</td>
 <td>Application Runtime</td>
 <td>Treat model output as untrusted input to whatever consumes it.</td>
-<td>13</td>
+<td>14</td>
 </tr>
 <tr>
 <td><a class="chip" href="#ai-ctrl-021">AI-CTRL-021</a></td>
@@ -660,14 +662,14 @@
 <td>Deterministic Action Authorization</td>
 <td>Agents and Tools</td>
 <td>Enforce authority to act, access data or spend money outside the model.</td>
-<td>18</td>
+<td>19</td>
 </tr>
 <tr>
 <td><a class="chip" href="#ai-ctrl-023">AI-CTRL-023</a></td>
 <td>Human Approval for Sensitive Actions</td>
 <td>Agents and Tools</td>
 <td>Require a person to approve irreversible or high-impact actions before they run.</td>
-<td>7</td>
+<td>8</td>
 </tr>
 <tr>
 <td><a class="chip" href="#ai-ctrl-024">AI-CTRL-024</a></td>
@@ -681,7 +683,7 @@
 <td>AI Containment and Kill Switch</td>
 <td>Agents and Tools</td>
 <td>Stop an agent or suspend a high-risk AI model, revoke its access and limit the damage within minutes.</td>
-<td>12</td>
+<td>13</td>
 </tr>
 <tr>
 <td><a class="chip" href="#ai-ctrl-026">AI-CTRL-026</a></td>
@@ -695,14 +697,14 @@
 <td>Agent Execution Isolation</td>
 <td>Agents and Tools</td>
 <td>Run agent-generated code and browser or computer-use sessions in isolation.</td>
-<td>11</td>
+<td>12</td>
 </tr>
 <tr>
 <td><a class="chip" href="#ai-ctrl-028">AI-CTRL-028</a></td>
 <td>Model Protection</td>
 <td>Model, Training and Pipeline</td>
 <td>Protect models from theft, extraction and adversarial inputs.</td>
-<td>19</td>
+<td>20</td>
 </tr>
 <tr>
 <td><a class="chip" href="#ai-ctrl-029">AI-CTRL-029</a></td>
@@ -723,7 +725,7 @@
 <td>AI Supply Chain and AI-BOM</td>
 <td>Supply Chain, Infrastructure and Resilience</td>
 <td>Know exactly which models, datasets, packages and prompts run in each environment.</td>
-<td>24</td>
+<td>25</td>
 </tr>
 <tr>
 <td><a class="chip" href="#ai-ctrl-032">AI-CTRL-032</a></td>
@@ -737,14 +739,14 @@
 <td>AI Security Review and Release Gate</td>
 <td>Assurance and Testing</td>
 <td>Review every AI system against its threats before production and after material change.</td>
-<td>7</td>
+<td>8</td>
 </tr>
 <tr>
 <td><a class="chip" href="#ai-ctrl-034">AI-CTRL-034</a></td>
 <td>Adversarial Testing and Continuous Evaluation</td>
 <td>Assurance and Testing</td>
 <td>Test AI systems against attacks before release and continuously afterwards.</td>
-<td>36</td>
+<td>38</td>
 </tr>
 <tr>
 <td><a class="chip" href="#ai-ctrl-035">AI-CTRL-035</a></td>
@@ -793,35 +795,35 @@
 <td>Fairness, Bias Testing and Explainability</td>
 <td>Assurance and Testing</td>
 <td>Test AI systems that make or support high-impact decisions for unfair bias, and keep explanations that a person can understand and a reviewer can challenge.</td>
-<td>3</td>
+<td>7</td>
 </tr>
 <tr>
 <td><a class="chip" href="#ai-ctrl-042">AI-CTRL-042</a></td>
 <td>Fundamental Rights and Data Protection Impact Assessment</td>
 <td>Governance and Compliance</td>
 <td>Assess the impact on people's rights before deploying AI that is high-risk or that puts personal data at risk, and keep the assessment current.</td>
-<td>1</td>
+<td>4</td>
 </tr>
 <tr>
 <td><a class="chip" href="#ai-ctrl-043">AI-CTRL-043</a></td>
 <td>Regulator and Authority Engagement</td>
 <td>Governance and Compliance</td>
 <td>Know which authorities oversee each AI system, meet the registration, filing and notification duties they set, and keep a record of every contact.</td>
-<td>1</td>
+<td>4</td>
 </tr>
 <tr>
 <td><a class="chip" href="#ai-ctrl-044">AI-CTRL-044</a></td>
 <td>AI Literacy and Role-Based Competence</td>
 <td>Governance and Compliance</td>
 <td>Give everyone who builds, operates, oversees or uses AI the knowledge their role needs, and keep the records that show it.</td>
-<td>1</td>
+<td>3</td>
 </tr>
 <tr>
 <td><a class="chip" href="#ai-ctrl-045">AI-CTRL-045</a></td>
 <td>Human Oversight Design and Effectiveness</td>
 <td>Governance and Compliance</td>
 <td>Design human review so the people named as overseers can understand, challenge, override and stop an AI system, and show with measures that they do.</td>
-<td>3</td>
+<td>4</td>
 </tr>
 <tr>
 <td><a class="chip" href="#ai-ctrl-046">AI-CTRL-046</a></td>
@@ -832,7 +834,7 @@
 </tr>
 </tbody>
 </table></div>
-<p>A test case is counted under every control it tests, so the counts add up to more than 674.</p>
+<p>A test case is counted under every control it tests, so the counts add up to more than 682.</p>
 <h2 id="control-entries">Control entries</h2>
 <h3 id="governance-and-compliance">Governance and Compliance</h3>
 <p><a id="ai-ctrl-007"></a></p>
@@ -1063,11 +1065,11 @@
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
-<td>Publish an AI policy and acceptable-use standard with scope, owner and review date. Have the board, or the body that holds that authority, approve an AI strategy that states the organization's approach to AI and its AI risk appetite, and review it at least annually. Define roles and decision rights across the three lines, and record governance decisions. Map each policy statement to a control in this library. Train users and reinforce the rules at the point of use.</td>
+<td>Publish an AI policy and acceptable-use standard with scope, owner and review date. Have the board, or the body that holds that authority, approve an AI strategy that states the organization's approach to AI and its AI risk appetite, and review it at least annually. Define roles and decision rights across the three lines, and record governance decisions. Map each policy statement to a control in this library. Train users and reinforce the rules at the point of use. Align the AI policy with the information security, privacy, data and other organizational policies it touches, and record where they overlap or conflict. Include AI acceptable use in terms of employment and contractor agreements, and handle breaches through the existing disciplinary process.</td>
 </tr>
 <tr>
 <td><strong>Evidence Required</strong></td>
-<td>Approved policy; board-approved AI strategy and risk appetite with its review record; roles and responsibilities record; governance decision log; policy-to-control mapping; training and acknowledgement records.</td>
+<td>Approved policy; board-approved AI strategy and risk appetite with its review record; roles and responsibilities record; governance decision log; policy-to-control mapping; training and acknowledgement records; policy alignment record; employment and contractor terms covering AI use.</td>
 </tr>
 <tr>
 <td><strong>Audit Test Procedure</strong></td>
@@ -1099,11 +1101,11 @@
 </tr>
 <tr>
 <td><strong>ISO/IEC 42001</strong></td>
-<td>A.2.2 AI policy; A.2.4 Review of the AI policy; A.3.2 AI roles and responsibilities</td>
+<td>A.2.2 AI policy; A.2.4 Review of the AI policy; A.3.2 AI roles and responsibilities; A.2.3 Alignment with other organizational policies</td>
 </tr>
 <tr>
 <td><strong>ISO/IEC 27001</strong></td>
-<td>A.5.1 Policies for information security; A.5.2 Information security roles and responsibilities; A.5.4 Management responsibilities; A.5.10 Acceptable use of information and other associated assets</td>
+<td>A.5.1 Policies for information security; A.5.2 Information security roles and responsibilities; A.5.4 Management responsibilities; A.5.10 Acceptable use of information and other associated assets; A.6.2 Terms and conditions of employment; A.6.4 Disciplinary process</td>
 </tr>
 <tr>
 <td><strong>NIST CSF</strong></td>
@@ -1255,11 +1257,11 @@
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
-<td>Evaluate vendors against the vendor evaluation framework. Cover training use of customer data, retention, sub-processors, model changes and incident notification in contracts; by default the contract should bar the provider from using personal or confidential data to train or improve its models unless the organization has authorised it. Include audit rights, a right to have the service suspended, and exit and concentration risk where few providers can replace it. Re-evaluate when a vendor changes model or terms.</td>
+<td>Evaluate vendors against the vendor evaluation framework. Cover training use of customer data, retention, sub-processors, model changes and incident notification in contracts; by default the contract should bar the provider from using personal or confidential data to train or improve its models unless the organization has authorised it. Include audit rights, a right to have the service suspended, and exit and concentration risk where few providers can replace it. Re-evaluate when a vendor changes model or terms. Treat AI built into other products (document readers, content tools, chat widgets on payment pages) as a third-party service when it can reach sensitive data, list the provider with other service providers, and review its due diligence evidence on a set cycle. At contract end, have the provider return or delete the organization's data, fine-tuned models, embeddings and logs, and get written confirmation.</td>
 </tr>
 <tr>
 <td><strong>Evidence Required</strong></td>
-<td>Vendor assessments; contract clauses; sub-processor list; model change notices.</td>
+<td>Vendor assessments; contract clauses; sub-processor list; model change notices; exit return or deletion confirmation.</td>
 </tr>
 <tr>
 <td><strong>Audit Test Procedure</strong></td>
@@ -1295,7 +1297,7 @@
 </tr>
 <tr>
 <td><strong>ISO/IEC 27001</strong></td>
-<td>A.5.19 Information security in supplier relationships; A.5.20 Addressing information security within supplier agreements; A.5.21 Managing information security in the ICT supply chain; A.5.22 Monitoring, review and change management of supplier services; A.5.23 Information security for use of cloud services</td>
+<td>A.5.19 Information security in supplier relationships; A.5.20 Addressing information security within supplier agreements; A.5.21 Managing information security in the ICT supply chain; A.5.22 Monitoring, review and change management of supplier services; A.5.23 Information security for use of cloud services; A.5.11 Return of assets</td>
 </tr>
 <tr>
 <td><strong>NIST CSF</strong></td>
@@ -1310,8 +1312,8 @@
 <td>CC9.2 Vendor and business partner risk</td>
 </tr>
 <tr>
-<td><strong>Tested By (25 cases)</strong></td>
-<td><strong>D09:</strong> <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-018">018</a><br><strong>D12:</strong> <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-017">017</a><br><strong>D13:</strong> <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-019">019</a><br><strong>L01:</strong> <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-017">017</a><br><strong>L02:</strong> <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-021">021</a><br><strong>L03:</strong> <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-020">020</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-021">021</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-032">032</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-043">043</a><br><strong>L10:</strong> <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-025">025</a><br><strong>L11:</strong> <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-026">026</a><br><strong>L13:</strong> <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-009">009</a><br><strong>L15:</strong> <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-016">016</a><br><strong>L16:</strong> <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-008">008</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-009">009</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-010">010</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-011">011</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-012">012</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-018">018</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-019">019</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-020">020</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-021">021</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-022">022</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-023">023</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-025">025</a></td>
+<td><strong>Tested By (26 cases)</strong></td>
+<td><strong>D09:</strong> <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-018">018</a><br><strong>D12:</strong> <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-017">017</a><br><strong>D13:</strong> <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-019">019</a><br><strong>L01:</strong> <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-017">017</a><br><strong>L02:</strong> <a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html#tc-l02-021">021</a><br><strong>L03:</strong> <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-020">020</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-021">021</a><br><strong>L05:</strong> <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-036">036</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-032">032</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-043">043</a><br><strong>L10:</strong> <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-025">025</a><br><strong>L11:</strong> <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-026">026</a><br><strong>L13:</strong> <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-009">009</a><br><strong>L15:</strong> <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-016">016</a><br><strong>L16:</strong> <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-008">008</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-009">009</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-010">010</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-011">011</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-012">012</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-018">018</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-019">019</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-020">020</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-021">021</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-022">022</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-023">023</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-025">025</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -1347,11 +1349,11 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R02</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R18</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R28</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R02</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R18</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R28</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R55</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
-<td>Keep an AI risk register with an owner and a score for every risk. Use one scoring method so that different assessors reach the same result. Accept residual risk only at the right authority level. Give every exception an owner, a compensating control and an expiry date that the technical control enforces.</td>
+<td>Keep an AI risk register with an owner and a score for every risk. Use one scoring method so that different assessors reach the same result. Accept residual risk only at the right authority level. Give every exception an owner, a compensating control and an expiry date that the technical control enforces. Allow for attackers who use AI: set remediation and exception time limits for exposed systems on the assumption that a disclosed vulnerability can be exploited within days, and size vulnerability triage for a higher volume of findings (AI-R55).</td>
 </tr>
 <tr>
 <td><strong>Evidence Required</strong></td>
@@ -1543,7 +1545,7 @@
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
-<td>Keep a register of the authorities and ethics bodies relevant to each AI system and jurisdiction, with the duties each one sets and an owner for each duty. Track filings, registrations and local representative appointments to their due dates. Log every contact and its outcome. Watch for new guidance and pending rules, and review the register on a schedule.</td>
+<td>Keep a register of the authorities and ethics bodies relevant to each AI system and jurisdiction, with the duties each one sets and an owner for each duty. Track filings, registrations and local representative appointments to their due dates. Log every contact and its outcome. Watch for new guidance and pending rules, and review the register on a schedule. Keep contact with AI security interest groups and information-sharing communities, and record what is shared with them.</td>
 </tr>
 <tr>
 <td><strong>Evidence Required</strong></td>
@@ -1583,7 +1585,7 @@
 </tr>
 <tr>
 <td><strong>ISO/IEC 27001</strong></td>
-<td>A.5.5 Contact with authorities; A.5.31 Legal, statutory, regulatory and contractual requirements</td>
+<td>A.5.5 Contact with authorities; A.5.31 Legal, statutory, regulatory and contractual requirements; A.5.6 Contact with special interest groups</td>
 </tr>
 <tr>
 <td><strong>NIST CSF</strong></td>
@@ -1735,7 +1737,7 @@
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
-<td>Set, by risk tier, where a person must review, approve or be able to intervene: before the output is used, while the system runs, and after the fact by sampling. Give each overseer the evidence behind the output (sources, confidence, alternatives) and not only the result, the authority and time to override, and training that matches the role (<a class="chip" href="#ai-ctrl-044">AI-CTRL-044</a>). Keep the volume per reviewer low enough to be reviewed, and give overseers a way to stop or roll back the system (<a class="chip" href="#ai-ctrl-025">AI-CTRL-025</a>). Measure effectiveness: override and escalation rates, time per review, results of independent re-review of a sample, and detection of seeded errors. Reassess the design when the measures show rubber-stamping. This control covers oversight of AI-assisted decisions in general; <a class="chip" href="#ai-ctrl-023">AI-CTRL-023</a> gates specific irreversible agent actions.</td>
+<td>Set, by risk tier, where a person must review, approve or be able to intervene: before the output is used, while the system runs, and after the fact by sampling. Give each overseer the evidence behind the output (sources, confidence, alternatives) and not only the result, the authority and time to override, and training that matches the role (<a class="chip" href="#ai-ctrl-044">AI-CTRL-044</a>). Keep the volume per reviewer low enough to be reviewed, and give overseers a way to stop or roll back the system (<a class="chip" href="#ai-ctrl-025">AI-CTRL-025</a>). Measure effectiveness: override and escalation rates, time per review, results of independent re-review of a sample, and detection of seeded errors. Reassess the design when the measures show rubber-stamping. This control covers oversight of AI-assisted decisions in general; <a class="chip" href="#ai-ctrl-023">AI-CTRL-023</a> gates specific irreversible agent actions. Before an agent may act without per-action approval (a person over the loop rather than in it), record and approve: why per-action approval is not workable, the responsible person and why they are suited, which actions run without approval, the minimum privileges, how output is validated, how actions are logged and how often logs are reviewed, how the agent is disabled and on what triggers, and how its actions are reversed. Keep per-action approval for any action involving cleartext payment card data.</td>
 </tr>
 <tr>
 <td><strong>Evidence Required</strong></td>
@@ -1794,8 +1796,8 @@
 <td>None published in the SOC 2 criteria. The wiki's own identifier applies: AI-CTRL-045.</td>
 </tr>
 <tr>
-<td><strong>Tested By (3 cases)</strong></td>
-<td><strong>L01:</strong> <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-012">012</a><br><strong>L03:</strong> <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-040">040</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-041">041</a></td>
+<td><strong>Tested By (4 cases)</strong></td>
+<td><strong>L01:</strong> <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-012">012</a>, <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-022">022</a><br><strong>L03:</strong> <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-040">040</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-041">041</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -1936,7 +1938,7 @@
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
-<td>Discover AI services, extensions, plugins, embedded SaaS AI features and API usage continuously. Classify each as approved, tolerated or unapproved, and attribute use to a user, device and application.</td>
+<td>Discover AI services, extensions, plugins, embedded SaaS AI features and API usage continuously. Classify each as approved, tolerated or unapproved, and attribute use to a user, device and application. Look for local models and agents and for AI add-ons such as browser extensions and IDE plug-ins on endpoints, use software allow-listing to stop unapproved installs, and watch network traffic for AI patterns such as Model Context Protocol (MCP) connections. Policy and training alone do not stop shadow AI.</td>
 </tr>
 <tr>
 <td><strong>Evidence Required</strong></td>
@@ -1976,7 +1978,7 @@
 </tr>
 <tr>
 <td><strong>ISO/IEC 27001</strong></td>
-<td>A.5.9 Inventory of information and other associated assets; A.8.16 Monitoring activities; A.8.23 Web filtering</td>
+<td>A.5.9 Inventory of information and other associated assets; A.8.16 Monitoring activities; A.8.23 Web filtering; A.8.1 User endpoint devices</td>
 </tr>
 <tr>
 <td><strong>NIST CSF</strong></td>
@@ -2072,7 +2074,7 @@
 </tr>
 <tr>
 <td><strong>ISO/IEC 27001</strong></td>
-<td>A.5.12 Classification of information; A.8.11 Data masking; A.8.12 Data leakage prevention</td>
+<td>A.5.12 Classification of information; A.8.11 Data masking; A.8.12 Data leakage prevention; A.8.1 User endpoint devices</td>
 </tr>
 <tr>
 <td><strong>NIST CSF</strong></td>
@@ -2264,7 +2266,7 @@
 </tr>
 <tr>
 <td><strong>ISO/IEC 27001</strong></td>
-<td>A.8.4 Access to source code; A.8.12 Data leakage prevention; A.8.28 Secure coding</td>
+<td>A.8.4 Access to source code; A.8.12 Data leakage prevention; A.8.28 Secure coding; A.8.1 User endpoint devices</td>
 </tr>
 <tr>
 <td><strong>NIST CSF</strong></td>
@@ -2279,8 +2281,8 @@
 <td>CC6.7 Transmission, movement and removal of information; CC8.1 Change management</td>
 </tr>
 <tr>
-<td><strong>Tested By (18 cases)</strong></td>
-<td><strong>L04:</strong> <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-019">019</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-031">031</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-032">032</a><br><strong>L05:</strong> <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-004">004</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-031">031</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-032">032</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-033">033</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-034">034</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-035">035</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-037">037</a><br><strong>L07:</strong> <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-041">041</a><br><strong>L08:</strong> <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-007">007</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-041">041</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-042">042</a><br><strong>L09:</strong> <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-026">026</a><br><strong>L14:</strong> <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-021">021</a><br><strong>L16:</strong> <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-026">026</a><br><strong>L17:</strong> <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-031">031</a></td>
+<td><strong>Tested By (19 cases)</strong></td>
+<td><strong>L04:</strong> <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-019">019</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-031">031</a>, <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-032">032</a><br><strong>L05:</strong> <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-004">004</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-031">031</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-032">032</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-033">033</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-034">034</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-035">035</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-037">037</a><br><strong>L07:</strong> <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-041">041</a><br><strong>L08:</strong> <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-007">007</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-041">041</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-042">042</a><br><strong>L09:</strong> <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-026">026</a><br><strong>L14:</strong> <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-021">021</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-024">024</a><br><strong>L16:</strong> <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-026">026</a><br><strong>L17:</strong> <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-031">031</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -2417,7 +2419,7 @@
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
-<td>Issue a unique identity to each agent and AI workload, with a named human sponsor. Do not share keys between workloads. Recertify identities on a schedule and remove them when the sponsor leaves or the use case ends. Authenticate agents to each other and sign the messages they exchange, so that one agent cannot pass as another. Give training jobs, pipelines and model-serving processes their own workload identities.</td>
+<td>Issue a unique identity to each agent and AI workload, with a named human sponsor. Do not share keys between workloads. Recertify identities on a schedule and remove them when the sponsor leaves or the use case ends. Authenticate agents to each other and sign the messages they exchange, so that one agent cannot pass as another. Give training jobs, pipelines and model-serving processes their own workload identities. An agent cannot provide a possession or inherence factor, so it cannot perform multi-factor authentication. Where a person would need MFA for the same access, give the agent a device-bound credential, preferably cryptographic (for example a device-specific certificate over mutual TLS), limited in time and never reusable by another system or person, and never use the agent to get around an MFA requirement.</td>
 </tr>
 <tr>
 <td><strong>Evidence Required</strong></td>
@@ -2472,8 +2474,8 @@
 <td>CC6.1 Logical access security; CC6.2 Registration and removal of access</td>
 </tr>
 <tr>
-<td><strong>Tested By (44 cases)</strong></td>
-<td><strong>D09:</strong> <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-001">001</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-002">002</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-003">003</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-004">004</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-008">008</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-011">011</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-012">012</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-013">013</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-015">015</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-016">016</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-017">017</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-018">018</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-019">019</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-020">020</a><br><strong>D10:</strong> <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-015">015</a><br><strong>D11:</strong> <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-017">017</a><br><strong>L04:</strong> <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-030">030</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-010">010</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-018">018</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-035">035</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-038">038</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-041">041</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-042">042</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-043">043</a><br><strong>L09:</strong> <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-001">001</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-002">002</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-010">010</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-011">011</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-012">012</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-017">017</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-018">018</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-020">020</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-021">021</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-024">024</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-025">025</a><br><strong>L12:</strong> <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-013">013</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-026">026</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-027">027</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-030">030</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-031">031</a><br><strong>L13:</strong> <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-021">021</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-024">024</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-025">025</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-026">026</a></td>
+<td><strong>Tested By (45 cases)</strong></td>
+<td><strong>D09:</strong> <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-001">001</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-002">002</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-003">003</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-004">004</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-008">008</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-011">011</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-012">012</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-013">013</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-015">015</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-016">016</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-017">017</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-018">018</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-019">019</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-020">020</a><br><strong>D10:</strong> <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-015">015</a><br><strong>D11:</strong> <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-017">017</a><br><strong>L04:</strong> <a href="../10_Test_Case_Library/L04-human-interaction-layer.html#tc-l04-030">030</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-010">010</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-018">018</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-035">035</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-038">038</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-041">041</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-042">042</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-043">043</a><br><strong>L09:</strong> <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-001">001</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-002">002</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-010">010</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-011">011</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-012">012</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-017">017</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-018">018</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-020">020</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-021">021</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-024">024</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-025">025</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-027">027</a><br><strong>L12:</strong> <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-013">013</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-026">026</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-027">027</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-030">030</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-031">031</a><br><strong>L13:</strong> <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-021">021</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-024">024</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-025">025</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-026">026</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -2568,8 +2570,8 @@
 <td>CC6.1 Logical access security; CC6.3 Role-based access and least privilege</td>
 </tr>
 <tr>
-<td><strong>Tested By (51 cases)</strong></td>
-<td><strong>D09:</strong> <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-005">005</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-006">006</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-007">007</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-009">009</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-010">010</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-014">014</a><br><strong>D10:</strong> <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-003">003</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-021">021</a><br><strong>D13:</strong> <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-005">005</a><br><strong>L05:</strong> <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-010">010</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-012">012</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-013">013</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-017">017</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-019">019</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-039">039</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-044">044</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-047">047</a><br><strong>L07:</strong> <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-039">039</a><br><strong>L08:</strong> <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-029">029</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-039">039</a><br><strong>L09:</strong> <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-003">003</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-004">004</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-005">005</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-006">006</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-007">007</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-008">008</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-009">009</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-013">013</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-014">014</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-015">015</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-016">016</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-019">019</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-022">022</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-023">023</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-026">026</a><br><strong>L10:</strong> <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-017">017</a><br><strong>L11:</strong> <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-022">022</a><br><strong>L12:</strong> <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-014">014</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-026">026</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-028">028</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-029">029</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-030">030</a><br><strong>L13:</strong> <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-008">008</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-021">021</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-022">022</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-023">023</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-024">024</a><br><strong>L14:</strong> <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-004">004</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-008">008</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-022">022</a><br><strong>L15:</strong> <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-010">010</a></td>
+<td><strong>Tested By (53 cases)</strong></td>
+<td><strong>D09:</strong> <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-005">005</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-006">006</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-007">007</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-009">009</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-010">010</a>, <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-014">014</a><br><strong>D10:</strong> <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-003">003</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-021">021</a><br><strong>D13:</strong> <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-005">005</a><br><strong>L05:</strong> <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-010">010</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-012">012</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-013">013</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-017">017</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-019">019</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-039">039</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-044">044</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-047">047</a><br><strong>L07:</strong> <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-039">039</a><br><strong>L08:</strong> <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-029">029</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-039">039</a><br><strong>L09:</strong> <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-003">003</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-004">004</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-005">005</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-006">006</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-007">007</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-008">008</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-009">009</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-013">013</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-014">014</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-015">015</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-016">016</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-019">019</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-022">022</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-023">023</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-026">026</a>, <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-027">027</a><br><strong>L10:</strong> <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-017">017</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-034">034</a><br><strong>L11:</strong> <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-022">022</a><br><strong>L12:</strong> <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-014">014</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-026">026</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-028">028</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-029">029</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-030">030</a><br><strong>L13:</strong> <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-008">008</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-021">021</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-022">022</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-023">023</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-024">024</a><br><strong>L14:</strong> <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-004">004</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-008">008</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-022">022</a><br><strong>L15:</strong> <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-010">010</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -2610,7 +2612,7 @@
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
-<td>Carry data classification into AI pipelines. Minimize or mask sensitive fields before they reach a model. Keep tenants separate in indexes, caches, memory and logs, and record data lineage.</td>
+<td>Carry data classification into AI pipelines. Minimize or mask sensitive fields before they reach a model. Keep tenants separate in indexes, caches, memory and logs, and record data lineage. Never give a model or agent cleartext high-impact secrets (cryptographic keys, key components, passwords) or ask it to generate them or the random values behind them; route cryptography through a key service or HSM interface that exposes only the keys and functions the task needs. Judge the data an AI system can reach by what it could obtain, not what it is meant to use: tokens or encrypted data plus a reachable detokenisation, decryption or access-management path count as cleartext. Show in the data flow diagrams the data stores AI operation creates (prompt and response logs, transcripts, caches, retrieved context, tool results, agent scratchpads, orchestration state) and mask sensitive values before they are written.</td>
 </tr>
 <tr>
 <td><strong>Evidence Required</strong></td>
@@ -2665,8 +2667,8 @@
 <td>CC6.1 Logical access security; CC6.7 Transmission, movement and removal of information; C1.1 Identification of confidential information; C1.2 Disposal of confidential information</td>
 </tr>
 <tr>
-<td><strong>Tested By (36 cases)</strong></td>
-<td><strong>D08:</strong> <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-023">023</a><br><strong>D10:</strong> <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-017">017</a><br><strong>D11:</strong> <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-022">022</a><br><strong>L03:</strong> <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-015">015</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-018">018</a><br><strong>L05:</strong> <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-023">023</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-044">044</a><br><strong>L07:</strong> <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-043">043</a><br><strong>L08:</strong> <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-040">040</a><br><strong>L10:</strong> <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-001">001</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-002">002</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-003">003</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-004">004</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-005">005</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-007">007</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-008">008</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-009">009</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-010">010</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-011">011</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-015">015</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-016">016</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-020">020</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-023">023</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-029">029</a><br><strong>L11:</strong> <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-007">007</a>, <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-012">012</a>, <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-015">015</a>, <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-023">023</a>, <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-027">027</a><br><strong>L12:</strong> <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-033">033</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-034">034</a><br><strong>L13:</strong> <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-006">006</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-009">009</a><br><strong>L14:</strong> <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-015">015</a><br><strong>L15:</strong> <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-012">012</a><br><strong>L17:</strong> <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-032">032</a></td>
+<td><strong>Tested By (39 cases)</strong></td>
+<td><strong>D08:</strong> <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-023">023</a><br><strong>D10:</strong> <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-017">017</a><br><strong>D11:</strong> <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-022">022</a><br><strong>L03:</strong> <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-015">015</a>, <a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html#tc-l03-018">018</a><br><strong>L05:</strong> <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-023">023</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-044">044</a><br><strong>L07:</strong> <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-043">043</a><br><strong>L08:</strong> <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-040">040</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-044">044</a><br><strong>L10:</strong> <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-001">001</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-002">002</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-003">003</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-004">004</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-005">005</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-007">007</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-008">008</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-009">009</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-010">010</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-011">011</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-015">015</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-016">016</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-020">020</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-023">023</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-029">029</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-034">034</a>, <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-035">035</a><br><strong>L11:</strong> <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-007">007</a>, <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-012">012</a>, <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-015">015</a>, <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-023">023</a>, <a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html#tc-l11-027">027</a><br><strong>L12:</strong> <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-033">033</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-034">034</a><br><strong>L13:</strong> <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-006">006</a>, <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-009">009</a><br><strong>L14:</strong> <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-015">015</a><br><strong>L15:</strong> <a href="../10_Test_Case_Library/L15-infrastructure-layer.html#tc-l15-012">012</a><br><strong>L17:</strong> <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-032">032</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -3050,8 +3052,8 @@
 <td>PI1.4 Outputs</td>
 </tr>
 <tr>
-<td><strong>Tested By (13 cases)</strong></td>
-<td><strong>D11:</strong> <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-021">021</a><br><strong>L05:</strong> <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-014">014</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-015">015</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-016">016</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-017">017</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-020">020</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-022">022</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-024">024</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-030">030</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-040">040</a><br><strong>L07:</strong> <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-016">016</a><br><strong>L08:</strong> <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-020">020</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-035">035</a></td>
+<td><strong>Tested By (14 cases)</strong></td>
+<td><strong>D11:</strong> <a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html#tc-d11-021">021</a><br><strong>L05:</strong> <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-014">014</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-015">015</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-016">016</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-017">017</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-020">020</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-022">022</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-024">024</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-030">030</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-040">040</a><br><strong>L07:</strong> <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-016">016</a><br><strong>L08:</strong> <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-020">020</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-035">035</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-044">044</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -3435,8 +3437,8 @@
 <td>CC6.1 Logical access security; CC6.3 Role-based access and least privilege</td>
 </tr>
 <tr>
-<td><strong>Tested By (18 cases)</strong></td>
-<td><strong>D09:</strong> <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-010">010</a><br><strong>D10:</strong> <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-004">004</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-005">005</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-006">006</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-007">007</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-012">012</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-014">014</a><br><strong>L05:</strong> <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-022">022</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-011">011</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-014">014</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-019">019</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-024">024</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-033">033</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-036">036</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-039">039</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-040">040</a><br><strong>L07:</strong> <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-008">008</a><br><strong>L09:</strong> <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-006">006</a></td>
+<td><strong>Tested By (19 cases)</strong></td>
+<td><strong>D09:</strong> <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-010">010</a><br><strong>D10:</strong> <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-004">004</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-005">005</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-006">006</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-007">007</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-012">012</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-014">014</a><br><strong>L05:</strong> <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-022">022</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-011">011</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-014">014</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-019">019</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-024">024</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-033">033</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-036">036</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-039">039</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-040">040</a><br><strong>L07:</strong> <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-008">008</a><br><strong>L09:</strong> <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-006">006</a><br><strong>L14:</strong> <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-023">023</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -3531,8 +3533,8 @@
 <td>None published in the SOC 2 criteria. The wiki's own identifier applies: AI-CTRL-023.</td>
 </tr>
 <tr>
-<td><strong>Tested By (7 cases)</strong></td>
-<td><strong>D10:</strong> <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-006">006</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-013">013</a><br><strong>L01:</strong> <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-012">012</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-015">015</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-016">016</a><br><strong>L07:</strong> <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-038">038</a><br><strong>L09:</strong> <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-012">012</a></td>
+<td><strong>Tested By (8 cases)</strong></td>
+<td><strong>D10:</strong> <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-006">006</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-013">013</a><br><strong>L01:</strong> <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-012">012</a>, <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-022">022</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-015">015</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-016">016</a><br><strong>L07:</strong> <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-038">038</a><br><strong>L09:</strong> <a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-012">012</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -3572,7 +3574,7 @@
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
-<td>Keep an allow-list of tools, plugins and MCP servers with an owner for each. Validate tool schemas, pin versions, and re-approve when a tool definition changes after approval. The same governance applies to agent skills and plugins: approve them from an allowlist after review, pin the version, check integrity on load and keep a procedure to remove one quickly.</td>
+<td>Keep an allow-list of tools, plugins and MCP servers with an owner for each. Validate tool schemas, pin versions, and re-approve when a tool definition changes after approval. The same governance applies to agent skills and plugins: approve them from an allowlist after review, pin the version, check integrity on load and keep a procedure to remove one quickly. Treat tools that can override system or application controls, such as shells, database consoles and administration APIs, as privileged utilities: give them only to named agents that need them, and log every use.</td>
 </tr>
 <tr>
 <td><strong>Evidence Required</strong></td>
@@ -3612,7 +3614,7 @@
 </tr>
 <tr>
 <td><strong>ISO/IEC 27001</strong></td>
-<td>A.5.19 Information security in supplier relationships; A.5.21 Managing information security in the ICT supply chain; A.8.9 Configuration management; A.8.19 Installation of software on operational systems; A.8.32 Change management</td>
+<td>A.5.19 Information security in supplier relationships; A.5.21 Managing information security in the ICT supply chain; A.8.9 Configuration management; A.8.19 Installation of software on operational systems; A.8.32 Change management; A.8.18 Use of privileged utility programs</td>
 </tr>
 <tr>
 <td><strong>NIST CSF</strong></td>
@@ -3664,11 +3666,11 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R11</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R21</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R25</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R11</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R21</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R25</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R55</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
-<td>Provide a tested way to stop a single agent and to revoke credentials for all agents. Set limits on steps, time and spend per task. Know which actions can be rolled back and how. For every AI use case rated high risk or material, including models that are not agents (for example credit, fraud or pricing models) and third-party AI, name who may suspend it, set the triggers (risk tolerance breached, incident, regulator request), route decisions to a fallback or manual process while it is off, require re-approval before restart, and test activation at least once a year. Where a vendor runs the model, secure the right to have it suspended in the contract.</td>
+<td>Provide a tested way to stop a single agent and to revoke credentials for all agents. Set limits on steps, time and spend per task. Know which actions can be rolled back and how. For every AI use case rated high risk or material, including models that are not agents (for example credit, fraud or pricing models) and third-party AI, name who may suspend it, set the triggers (risk tolerance breached, incident, regulator request), route decisions to a fallback or manual process while it is off, require re-approval before restart, and test activation at least once a year. Where a vendor runs the model, secure the right to have it suspended in the contract. Keep the log of every action the AI system took through containment and rollback; nothing the stop or the reversal does may remove it. Where an agent can reach cleartext payment card data, shut it down automatically (fail secure) on unusual activity such as an attempt to reach a system outside its scope.</td>
 </tr>
 <tr>
 <td><strong>Evidence Required</strong></td>
@@ -3723,8 +3725,8 @@
 <td>CC6.2 Registration and removal of access; CC7.4 Incident response</td>
 </tr>
 <tr>
-<td><strong>Tested By (12 cases)</strong></td>
-<td><strong>D09:</strong> <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-016">016</a><br><strong>D10:</strong> <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-019">019</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-020">020</a><br><strong>D12:</strong> <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-011">011</a><br><strong>D13:</strong> <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-009">009</a><br><strong>L01:</strong> <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-021">021</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-021">021</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-022">022</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-023">023</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-024">024</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-046">046</a><br><strong>L17:</strong> <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-019">019</a></td>
+<td><strong>Tested By (13 cases)</strong></td>
+<td><strong>D09:</strong> <a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html#tc-d09-016">016</a><br><strong>D10:</strong> <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-019">019</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-020">020</a><br><strong>D12:</strong> <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-011">011</a><br><strong>D13:</strong> <a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html#tc-d13-009">009</a><br><strong>L01:</strong> <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-021">021</a>, <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-022">022</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-021">021</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-022">022</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-023">023</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-024">024</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-046">046</a><br><strong>L17:</strong> <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-019">019</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -3856,7 +3858,7 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R21</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R22</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R25</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R21</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R22</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R25</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R55</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
@@ -3915,8 +3917,8 @@
 <td>CC6.6 Protection against threats from outside the boundary; CC6.8 Unauthorized or malicious software</td>
 </tr>
 <tr>
-<td><strong>Tested By (11 cases)</strong></td>
-<td><strong>D10:</strong> <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-002">002</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-003">003</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-008">008</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-009">009</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-016">016</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-021">021</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-025">025</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-026">026</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-031">031</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-036">036</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-046">046</a></td>
+<td><strong>Tested By (12 cases)</strong></td>
+<td><strong>D10:</strong> <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-002">002</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-003">003</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-008">008</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-009">009</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-016">016</a>, <a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html#tc-d10-021">021</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-025">025</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-026">026</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-031">031</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-036">036</a>, <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-046">046</a><br><strong>L10:</strong> <a href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-035">035</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -4185,7 +4187,7 @@
 </tr>
 <tr>
 <td><strong>ISO/IEC 42001</strong></td>
-<td>A.6.2.5 AI system deployment; A.6.2.3 Documentation of AI system design and development</td>
+<td>A.6.2.5 AI system deployment; A.6.2.3 Documentation of AI system design and development; A.6.1.3 Processes for responsible design and development; A.6.2.7 AI system technical documentation</td>
 </tr>
 <tr>
 <td><strong>ISO/IEC 27001</strong></td>
@@ -4246,7 +4248,7 @@
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
-<td>Maintain an AI bill of materials per system. Take models and packages only from approved sources, verify provenance, and scan them. Re-run security tests when any component changes, including a provider-side model update. Pin model versions rather than using floating aliases such as "latest", and track provider deprecation and change notices so that a model change is a reviewed change.</td>
+<td>Maintain an AI bill of materials per system. Take models and packages only from approved sources, verify provenance, and scan them. Re-run security tests when any component changes, including a provider-side model update. Pin model versions rather than using floating aliases such as "latest", and track provider deprecation and change notices so that a model change is a reviewed change. Record in the AI-BOM the model and version, harness and orchestration components, where it is hosted and who runs it, the data and systems it can reach with the restrictions on them, the provider's data use and retention terms, and the intended users and use cases. Authorise, list and monitor for tampering any AI script or widget loaded on a payment page, as for any other page script.</td>
 </tr>
 <tr>
 <td><strong>Evidence Required</strong></td>
@@ -4282,7 +4284,7 @@
 </tr>
 <tr>
 <td><strong>ISO/IEC 42001</strong></td>
-<td>A.10.3 Suppliers; A.4.2 Resource documentation; A.7.5 Data provenance</td>
+<td>A.10.3 Suppliers; A.4.2 Resource documentation; A.7.5 Data provenance; A.6.2.7 AI system technical documentation</td>
 </tr>
 <tr>
 <td><strong>ISO/IEC 27001</strong></td>
@@ -4301,8 +4303,8 @@
 <td>CC7.1 Detection of configuration changes and vulnerabilities; CC9.2 Vendor and business partner risk</td>
 </tr>
 <tr>
-<td><strong>Tested By (24 cases)</strong></td>
-<td><strong>L05:</strong> <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-019">019</a><br><strong>L08:</strong> <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-028">028</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-042">042</a><br><strong>L12:</strong> <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-001">001</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-002">002</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-005">005</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-006">006</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-018">018</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-019">019</a><br><strong>L13:</strong> <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-014">014</a><br><strong>L14:</strong> <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-009">009</a><br><strong>L16:</strong> <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-001">001</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-002">002</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-003">003</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-004">004</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-005">005</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-006">006</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-007">007</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-013">013</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-014">014</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-015">015</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-016">016</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-017">017</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-024">024</a></td>
+<td><strong>Tested By (25 cases)</strong></td>
+<td><strong>L05:</strong> <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-019">019</a>, <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-036">036</a><br><strong>L08:</strong> <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-028">028</a>, <a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-042">042</a><br><strong>L12:</strong> <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-001">001</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-002">002</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-005">005</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-006">006</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-018">018</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-019">019</a><br><strong>L13:</strong> <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-014">014</a><br><strong>L14:</strong> <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-009">009</a><br><strong>L16:</strong> <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-001">001</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-002">002</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-003">003</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-004">004</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-005">005</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-006">006</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-007">007</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-013">013</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-014">014</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-015">015</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-016">016</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-017">017</a>, <a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html#tc-l16-024">024</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -4342,7 +4344,7 @@
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
-<td>Separate experimentation, training, evaluation and production. Isolate model runtimes at the network level and allow only required egress. Manage secrets centrally, and isolate tenants on shared GPUs.</td>
+<td>Separate experimentation, training, evaluation and production. Isolate model runtimes at the network level and allow only required egress. Manage secrets centrally, and isolate tenants on shared GPUs. Set security requirements for the model APIs and other network services that AI systems call, including authentication, encryption in transit and the endpoints allowed, and monitor them.</td>
 </tr>
 <tr>
 <td><strong>Evidence Required</strong></td>
@@ -4382,7 +4384,7 @@
 </tr>
 <tr>
 <td><strong>ISO/IEC 27001</strong></td>
-<td>A.5.23 Information security for use of cloud services; A.8.8 Management of technical vulnerabilities; A.8.9 Configuration management; A.8.20 Networks security; A.8.22 Segregation of networks; A.8.24 Use of cryptography</td>
+<td>A.5.23 Information security for use of cloud services; A.8.8 Management of technical vulnerabilities; A.8.9 Configuration management; A.8.20 Networks security; A.8.22 Segregation of networks; A.8.24 Use of cryptography; A.8.21 Security of network services</td>
 </tr>
 <tr>
 <td><strong>NIST CSF</strong></td>
@@ -4531,15 +4533,15 @@
 </tr>
 <tr>
 <td><strong>Risk Mapping</strong></td>
-<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R05</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R08</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R14</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R16</a></td>
+<td><a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R05</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R07</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R08</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R14</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R16</a>, <a class="chip" href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">AI-R55</a></td>
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
-<td>Threat model each system: assets, trust boundaries, worst-case output and maximum damage. Select controls from this library by risk tier. Record open risks and exceptions, and require sign-off before release.</td>
+<td>Threat model each system: assets, trust boundaries, worst-case output and maximum damage. Select controls from this library by risk tier. Record open risks and exceptions, and require sign-off before release. When an agent changes production systems, each change carries the same record as a person's change: reason, security impact, approval by an authorised person, test results and a rollback that was tested before approval. Set documented objectives for responsible development, such as security, privacy, reliability and fairness targets, and use them as release criteria.</td>
 </tr>
 <tr>
 <td><strong>Evidence Required</strong></td>
-<td>Threat models; architecture review records; control selection; approvals and exceptions.</td>
+<td>Threat models; architecture review records; control selection; approvals and exceptions; responsible development objectives.</td>
 </tr>
 <tr>
 <td><strong>Audit Test Procedure</strong></td>
@@ -4571,7 +4573,7 @@
 </tr>
 <tr>
 <td><strong>ISO/IEC 42001</strong></td>
-<td>A.5.2 AI system impact assessment process; A.6.2.2 AI system requirements and specification; A.6.2.4 AI system verification and validation; A.6.2.5 AI system deployment</td>
+<td>A.5.2 AI system impact assessment process; A.6.2.2 AI system requirements and specification; A.6.2.4 AI system verification and validation; A.6.2.5 AI system deployment; A.6.1.2 Objectives for responsible development of AI systems; A.6.1.3 Processes for responsible design and development</td>
 </tr>
 <tr>
 <td><strong>ISO/IEC 27001</strong></td>
@@ -4590,8 +4592,8 @@
 <td>CC3.4 Assessment of change; CC8.1 Change management</td>
 </tr>
 <tr>
-<td><strong>Tested By (7 cases)</strong></td>
-<td><strong>L01:</strong> <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-002">002</a>, <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-013">013</a>, <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-014">014</a>, <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-015">015</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-034">034</a><br><strong>L12:</strong> <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-032">032</a><br><strong>L14:</strong> <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-012">012</a></td>
+<td><strong>Tested By (8 cases)</strong></td>
+<td><strong>L01:</strong> <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-002">002</a>, <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-013">013</a>, <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-014">014</a>, <a href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-015">015</a><br><strong>L06:</strong> <a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html#tc-l06-034">034</a><br><strong>L12:</strong> <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-032">032</a><br><strong>L14:</strong> <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-012">012</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-023">023</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -4631,11 +4633,11 @@
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
-<td>Red team each system against defined threat cases before release. Run a regression suite in the pipeline and whenever the model, prompt, tools or data change. The risk owner sets the acceptable attack success rate in writing. Re-run the regression suite whenever the model version, prompt, retrieval source or guardrail changes, including changes made by the provider, and set a tolerance for run-to-run output variation.</td>
+<td>Red team each system against defined threat cases before release. Run a regression suite in the pipeline and whenever the model, prompt, tools or data change. The risk owner sets the acceptable attack success rate in writing. Re-run the regression suite whenever the model version, prompt, retrieval source or guardrail changes, including changes made by the provider, and set a tolerance for run-to-run output variation. Review each system's behaviour against its defined parameters at least quarterly, or at a frequency set by a documented risk analysis, and re-validate before go-live and after any change. Where an AI reviewer replaces manual code review, measure its detection rate on seeded flaws and re-measure when its model or configuration changes. Track AI threat intelligence, such as new MITRE ATLAS techniques, published incidents and provider advisories, and add relevant techniques to the threat cases and regression suite. Before testing a production system, agree the scope, timing and safeguards with its owner, and use test accounts and test data.</td>
 </tr>
 <tr>
 <td><strong>Evidence Required</strong></td>
-<td>Red team reports; regression suite results; agreed thresholds; retest records.</td>
+<td>Red team reports; regression suite results; agreed thresholds; retest records; threat intelligence review log; production test authorisations.</td>
 </tr>
 <tr>
 <td><strong>Audit Test Procedure</strong></td>
@@ -4671,7 +4673,7 @@
 </tr>
 <tr>
 <td><strong>ISO/IEC 27001</strong></td>
-<td>A.8.8 Management of technical vulnerabilities; A.8.29 Security testing in development and acceptance</td>
+<td>A.8.8 Management of technical vulnerabilities; A.8.29 Security testing in development and acceptance; A.5.7 Threat intelligence; A.8.34 Protection of information systems during audit testing</td>
 </tr>
 <tr>
 <td><strong>NIST CSF</strong></td>
@@ -4686,8 +4688,8 @@
 <td>CC4.1 Ongoing and separate evaluations; CC7.1 Detection of configuration changes and vulnerabilities</td>
 </tr>
 <tr>
-<td><strong>Tested By (37 cases)</strong></td>
-<td><strong>D08:</strong> <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-001">001</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-002">002</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-003">003</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-004">004</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-005">005</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-006">006</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-007">007</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-008">008</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-009">009</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-010">010</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-011">011</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-012">012</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-013">013</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-014">014</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-015">015</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-016">016</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-017">017</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-018">018</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-019">019</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-020">020</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-021">021</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-022">022</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-023">023</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-024">024</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-025">025</a><br><strong>D12:</strong> <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-014">014</a><br><strong>L05:</strong> <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-027">027</a><br><strong>L07:</strong> <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-024">024</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-040">040</a><br><strong>L12:</strong> <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-016">016</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-018">018</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-033">033</a><br><strong>L13:</strong> <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-010">010</a><br><strong>L14:</strong> <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-002">002</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-016">016</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-017">017</a><br><strong>L17:</strong> <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-029">029</a></td>
+<td><strong>Tested By (38 cases)</strong></td>
+<td><strong>D08:</strong> <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-001">001</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-002">002</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-003">003</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-004">004</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-005">005</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-006">006</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-007">007</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-008">008</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-009">009</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-010">010</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-011">011</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-012">012</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-013">013</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-014">014</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-015">015</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-016">016</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-017">017</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-018">018</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-019">019</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-020">020</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-021">021</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-022">022</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-023">023</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-024">024</a>, <a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html#tc-d08-025">025</a><br><strong>D12:</strong> <a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html#tc-d12-014">014</a><br><strong>L05:</strong> <a href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-027">027</a><br><strong>L07:</strong> <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-024">024</a>, <a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-040">040</a><br><strong>L12:</strong> <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-016">016</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-018">018</a>, <a href="../10_Test_Case_Library/L12-model-layer.html#tc-l12-033">033</a><br><strong>L13:</strong> <a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html#tc-l13-010">010</a><br><strong>L14:</strong> <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-002">002</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-016">016</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-017">017</a>, <a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-024">024</a><br><strong>L17:</strong> <a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-029">029</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -4859,7 +4861,7 @@
 </tr>
 <tr>
 <td><strong>ISO/IEC 42001</strong></td>
-<td>A.5.4 Assessing AI system impact on individuals or groups of individuals; A.6.2.4 AI system verification and validation; A.8.2 System documentation and information for users</td>
+<td>A.5.4 Assessing AI system impact on individuals or groups of individuals; A.6.2.4 AI system verification and validation; A.8.2 System documentation and information for users; A.10.4 Customers</td>
 </tr>
 <tr>
 <td><strong>ISO/IEC 27001</strong></td>
@@ -4920,7 +4922,7 @@
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
-<td>Log prompts, responses, uploads, retrieved sources, model calls, tool calls and policy decisions according to policy. Records must be timestamped, attributable, exportable and retained for the approved period.</td>
+<td>Log prompts, responses, uploads, retrieved sources, model calls, tool calls and policy decisions according to policy. Records must be timestamped, attributable, exportable and retained for the approved period. Record enough detail to validate, investigate, attribute and reconstruct each AI-assisted action, while masking or tokenising payment card and other sensitive data before it is written.</td>
 </tr>
 <tr>
 <td><strong>Evidence Required</strong></td>
@@ -5056,7 +5058,7 @@
 </tr>
 <tr>
 <td><strong>ISO/IEC 27001</strong></td>
-<td>A.5.25 Assessment and decision on information security events; A.8.15 Logging; A.8.16 Monitoring activities</td>
+<td>A.5.25 Assessment and decision on information security events; A.8.15 Logging; A.8.16 Monitoring activities; A.5.37 Documented operating procedures</td>
 </tr>
 <tr>
 <td><strong>NIST CSF</strong></td>
@@ -5112,7 +5114,7 @@
 </tr>
 <tr>
 <td><strong>Implementation Expectation</strong></td>
-<td>Maintain AI-specific playbooks and an incident taxonomy. Preserve state needed for investigation: prompts, context, index snapshots, memory and model version. Define containment options and how to work with the model provider.</td>
+<td>Maintain AI-specific playbooks and an incident taxonomy. Preserve state needed for investigation: prompts, context, index snapshots, memory and model version. Define containment options and how to work with the model provider. Include AI failure scenarios in the incident response plan and its tests, even before one has caused a loss: successful prompt injection, model poisoning, an agent acting outside its defined scope, and shadow AI found with access to sensitive data.</td>
 </tr>
 <tr>
 <td><strong>Evidence Required</strong></td>
@@ -5152,7 +5154,7 @@
 </tr>
 <tr>
 <td><strong>ISO/IEC 27001</strong></td>
-<td>A.5.24 Information security incident management planning and preparation; A.5.25 Assessment and decision on information security events; A.5.26 Response to information security incidents; A.5.27 Learning from information security incidents; A.5.28 Collection of evidence; A.6.8 Information security event reporting</td>
+<td>A.5.24 Information security incident management planning and preparation; A.5.25 Assessment and decision on information security events; A.5.26 Response to information security incidents; A.5.27 Learning from information security incidents; A.5.28 Collection of evidence; A.6.8 Information security event reporting; A.5.37 Documented operating procedures</td>
 </tr>
 <tr>
 <td><strong>NIST CSF</strong></td>
@@ -5301,7 +5303,7 @@ OWASP / MITRE ATLAS techniques and mitigations / NIST AI RMF / ISO/IEC 42001
 <p>Evidence should be exportable, timestamped, attributable to user/device/application where applicable, and suitable for audit or incident investigation.</p>
 </article>
 <nav class="pager" aria-label="Previous and next page"><a class="prev" href="index.html">&larr; Control Library</a><a class="next" href="04_Existing_Security_Control_Baseline.html">Existing Security Control Baseline &rarr;</a></nav>
-<footer class="site-footer">Author: Nachiket Sathaye &middot; Co-author: Ankush Jain &middot; Updated 25 October 2026 &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/03_Control_Library/03_AI_Security_Control_Objectives_Library.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
+<footer class="site-footer">Author: Nachiket Sathaye &middot; Co-author: Ankush Jain &middot; Updated 29 October 2026 &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/03_Control_Library/03_AI_Security_Control_Objectives_Library.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
 <div class="site-notice">
 <p><strong>Licence.</strong> <svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.441-3.5c8.951,0,16.572,3.125,22.857,9.372c3.008,3.009,5.295,6.448,6.857,10.314 c1.561,3.867,2.344,7.971,2.344,12.314c0,4.381-0.773,8.486-2.314,12.313c-1.543,3.828-3.82,7.21-6.828,10.143 c-3.123,3.085-6.666,5.448-10.629,7.086c-3.961,1.638-8.057,2.457-12.285,2.457s-8.276-0.808-12.143-2.429 c-3.866-1.618-7.333-3.961-10.4-7.027c-3.067-3.066-5.4-6.524-7-10.372S5.5,32.767,5.5,28.5c0-4.229,0.809-8.295,2.428-12.2 c1.619-3.905,3.972-7.4,7.057-10.486C21.08-0.394,28.565-3.5,37.441-3.5z M37.557,2.272c-7.314,0-13.467,2.553-18.458,7.657 c-2.515,2.553-4.448,5.419-5.8,8.6c-1.354,3.181-2.029,6.505-2.029,9.972c0,3.429,0.675,6.734,2.029,9.913 c1.353,3.183,3.285,6.021,5.8,8.516c2.514,2.496,5.351,4.399,8.515,5.715c3.161,1.314,6.476,1.971,9.943,1.971 c3.428,0,6.75-0.665,9.973-1.999c3.219-1.335,6.121-3.257,8.713-5.771c4.99-4.876,7.484-10.99,7.484-18.344 c0-3.543-0.648-6.895-1.943-10.057c-1.293-3.162-3.18-5.98-5.654-8.458C50.984,4.844,44.795,2.272,37.557,2.272z M37.156,23.187 l-4.287,2.229c-0.458-0.951-1.019-1.619-1.685-2c-0.667-0.38-1.286-0.571-1.858-0.571c-2.856,0-4.286,1.885-4.286,5.657 c0,1.714,0.362,3.084,1.085,4.113c0.724,1.029,1.791,1.544,3.201,1.544c1.867,0,3.181-0.915,3.944-2.743l3.942,2 c-0.838,1.563-2,2.791-3.486,3.686c-1.484,0.896-3.123,1.343-4.914,1.343c-2.857,0-5.163-0.875-6.915-2.629 c-1.752-1.752-2.628-4.19-2.628-7.313c0-3.048,0.886-5.466,2.657-7.257c1.771-1.79,4.009-2.686,6.715-2.686 C32.604,18.558,35.441,20.101,37.156,23.187z M55.613,23.187l-4.229,2.229c-0.457-0.951-1.02-1.619-1.686-2 c-0.668-0.38-1.307-0.571-1.914-0.571c-2.857,0-4.287,1.885-4.287,5.657c0,1.714,0.363,3.084,1.086,4.113 c0.723,1.029,1.789,1.544,3.201,1.544c1.865,0,3.18-0.915,3.941-2.743l4,2c-0.875,1.563-2.057,2.791-3.541,3.686 c-1.486,0.896-3.105,1.343-4.857,1.343c-2.896,0-5.209-0.875-6.941-2.629c-1.736-1.752-2.602-4.19-2.602-7.313 c0-3.048,0.885-5.466,2.658-7.257c1.77-1.79,4.008-2.686,6.713-2.686C51.117,18.558,53.938,20.101,55.613,23.187z"/></svg><svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.443-3.5c8.988,0,16.57,3.085,22.742,9.257C66.393,11.967,69.5,19.548,69.5,28.5c0,8.991-3.049,16.476-9.145,22.456 C53.879,57.319,46.242,60.5,37.443,60.5c-8.649,0-16.153-3.144-22.514-9.43C8.644,44.784,5.5,37.262,5.5,28.5 c0-8.761,3.144-16.342,9.429-22.742C21.101-0.415,28.604-3.5,37.443-3.5z M37.557,2.272c-7.276,0-13.428,2.553-18.457,7.657 c-5.22,5.334-7.829,11.525-7.829,18.572c0,7.086,2.59,13.22,7.77,18.398c5.181,5.182,11.352,7.771,18.514,7.771 c7.123,0,13.334-2.607,18.629-7.828c5.029-4.838,7.543-10.952,7.543-18.343c0-7.276-2.553-13.465-7.656-18.571 C50.967,4.824,44.795,2.272,37.557,2.272z M46.129,20.557v13.085h-3.656v15.542h-9.944V33.643h-3.656V20.557 c0-0.572,0.2-1.057,0.599-1.457c0.401-0.399,0.887-0.6,1.457-0.6h13.144c0.533,0,1.01,0.2,1.428,0.6 C45.918,19.5,46.129,19.986,46.129,20.557z M33.042,12.329c0-3.008,1.485-4.514,4.458-4.514s4.457,1.504,4.457,4.514 c0,2.971-1.486,4.457-4.457,4.457S33.042,15.3,33.042,12.329z"/></svg>This wiki is open to the community under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">Creative Commons Attribution-ShareAlike 4.0 International licence (CC BY-SA 4.0)</a>. You may copy, share and adapt it for any purpose, including commercially, as long as you credit the authors and release anything you build from it under the same licence.</p>
 <p><strong>Disclaimer.</strong> This wiki is an open, community driven educational reference, not legal, regulatory or professional advice. Regional regulatory content is compiled from secondary sources and its verification status is shown per row; verify against primary sources before relying on it. Content is provided "as is" without warranty. Named products and companies belong to their owners; statements about them reflect public information at the date shown. Views are the author's own.</p>

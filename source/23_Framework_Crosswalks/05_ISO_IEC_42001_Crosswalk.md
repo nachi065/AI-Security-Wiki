@@ -6,7 +6,7 @@ parent: "Framework Crosswalks"
 nav_order: 5
 description: "ISO/IEC 42001:2023 Annex A controls and management system clauses with the wiki control objectives and test cases that cite them, and the Annex A controls not yet cited."
 document_type: AI Security Wiki Reference
-version: 1.0
+version: 1.1
 ---
 
 # ISO/IEC 42001 Crosswalk
@@ -23,7 +23,7 @@ ISO/IEC 42001:2023 sets requirements for an AI management system. Its Annex A li
 
 The tables are generated each time the site is built. They are read from the ISO/IEC 42001 field of each control in the [AI Security Control Objectives Library](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md). To change a mapping, edit the control; this page follows on the next build.
 
-> **Verify before use.** Control numbers and titles are given as the control library cites them and were not checked against a copy of the standard for this page. The list of 38 Annex A numbers was written from the structure of the standard. Check every number and title against your own copy before quoting it in a statement of applicability or an audit. A wiki control citing an Annex A control means it supports that control, not that it satisfies it.
+> **Verify before use.** Control numbers and titles are given as the control library cites them. On 29 October 2026 the 38 Annex A numbers and their titles were checked against two published listings ([RiskProfs](https://riskprofs.com/iso-42001-annex-a-controls-list/) and [TCSA](https://www.tcsa.in/frameworks/iso-42001/controls)), not against a copy of the standard. The listings shorten some titles differently. Check every number and title against your own copy before quoting it in a statement of applicability or an audit. A wiki control citing an Annex A control means it supports that control, not that it satisfies it.
 
 ## How to read the tables
 

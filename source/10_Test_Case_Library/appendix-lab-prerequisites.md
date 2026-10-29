@@ -17,7 +17,7 @@ This appendix compiles the setup each layer assumes, taken directly from the Pre
 
 **Standard setup (all cases):** Isolated PoC tenant provisioned; fabricated use cases, policies, records and individuals seeded per this appendix; test users in the roles named in the case; platform connected to the lab directory with least-privilege test credentials.
 
-- **Lab environment** (21 cases): Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
+- **Lab environment** (22 cases): Written evidence request issued to the vendor before the PoC; sample use cases, policies, registers and records are fabricated; the assessor has copied the applicable requirement text and any numeric parameters (timelines, retention periods, thresholds) from the adopted framework into the Applicable Requirement field before testing.
 
 ## L02 Governance & Risk Mgmt
 
@@ -115,14 +115,14 @@ This appendix compiles the setup each layer assumes, taken directly from the Pre
 
 **Standard setup (all cases):** Isolated PoC lab provisioned; lab identity provider, directory, secret store and mock AI services seeded per this appendix; platform connected with least-privilege test credentials.
 
-- **Lab environment** (25 cases): Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
+- **Lab environment** (26 cases): Lab identity provider and directory with fabricated users and groups; lab secret store; mock AI services and agents using test credentials only; no production identities or secrets connected.
 - **Developer and IDE test bench** (1 case): Managed test workstations with two IDE families and AI coding assistant extensions, a CLI coding agent, corporate and personal test accounts, fabricated repositories (general, restricted and infrastructure-as-code) on a lab source-control server, a mock extension marketplace, mock MCP servers and a mock URL endpoint that records requests; no real source code, tokens or keys.
 
 ## L10 Data Layer
 
 **Standard setup (all cases):** Isolated PoC lab provisioned; test data stores, test tenants and fabricated records seeded per this appendix; platform connected with least-privilege test credentials.
 
-- **Lab environment** (29 cases): Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.
+- **Lab environment** (31 cases): Isolated data environment populated only with fabricated records; classification ground truth agreed and signed off before testing; no production data connected.
 - **Additional setup** ([TC-L10-012](L10-data-layer.md#tc-l10-012)): Endpoints in multiple regions available in the lab or mocked.
 
 ## L11 Knowledge & Retrieval Layer
@@ -147,7 +147,7 @@ This appendix compiles the setup each layer assumes, taken directly from the Pre
 
 **Standard setup (all cases):** Isolated PoC lab provisioned; lab CI/CD runner, mock registries, notebook server, test cluster and test users seeded per this appendix; platform connected with least-privilege test credentials.
 
-- **Lab environment** (20 cases): Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
+- **Lab environment** (22 cases): Lab MLOps environment with a CI/CD runner, mock model and container registries, notebook server, small training and serving pipeline, test Kubernetes cluster and test users; no production pipelines, registries or credentials connected.
 - **Developer and IDE test bench** (2 cases): Managed test workstations with two IDE families and AI coding assistant extensions, a CLI coding agent, corporate and personal test accounts, fabricated repositories (general, restricted and infrastructure-as-code) on a lab source-control server, a mock extension marketplace, mock MCP servers and a mock URL endpoint that records requests; no real source code, tokens or keys.
 
 ## L15 Infrastructure Layer

@@ -2,7 +2,7 @@
 title: "Framework Crosswalks"
 author: Nachiket Sathaye
 coauthors: Ankush Jain
-description: "Cross-references from this wiki to other frameworks: FINOS AIGF, AI BCF, NIST AI RMF, NIST AI 600-1, NIST AI 100-2, ISO/IEC 42001 and nine further ISO/IEC AI standards, OWASP, MITRE ATLAS, ISO/IEC 27001, NIST CSF, CIS Controls, SOC 2, the OECD AI Principles, trustworthy AI and ethics standards, international AI instruments, the AI Risk Map, the OWASP MCP Top 10, the NIST SSDF and its generative AI profile SP 800-218A, and eight privacy laws."
+description: "Cross-references from this wiki to other frameworks: FINOS AIGF, AI BCF, NIST AI RMF, NIST AI 600-1, NIST AI 100-2, ISO/IEC 42001 and nine further ISO/IEC AI standards, OWASP, MITRE ATLAS, ISO/IEC 27001, NIST CSF, CIS Controls, SOC 2, the OECD AI Principles, trustworthy AI and ethics standards, international AI instruments, the AI Risk Map, the OWASP MCP Top 10, the NIST SSDF and its generative AI profile SP 800-218A, PCI DSS with the PCI SSC guidance on AI systems, and eight privacy laws."
 nav_order: 13
 has_children: true
 ---
@@ -47,6 +47,12 @@ These four have no AI-specific content. Each crosswalk shows which wiki controls
 |---|---|
 | [NIST SSDF and SP 800-218A Crosswalk](20_NIST_SSDF_Crosswalk.md) | Your development lifecycle follows the NIST Secure Software Development Framework, or you produce or acquire generative AI models and systems under SP 800-218A, and need the controls, code and tests for each practice. |
 
+## Payment card security
+
+| Crosswalk | Use it when |
+|---|---|
+| [PCI DSS AI Crosswalk](21_PCI_DSS_AI_Crosswalk.md) | Your AI systems sit in or near a cardholder data environment, and you need the controls and tests behind each point of the PCI SSC supplement Security Considerations for AI Systems and the PCI DSS requirements it applies to AI. |
+
 ## Privacy laws
 
 | Crosswalk | Use it when |
@@ -55,7 +61,7 @@ These four have no AI-specific content. Each crosswalk shows which wiki controls
 
 The NIST AI RMF, ISO/IEC 42001, OWASP, MITRE ATLAS, ISO/IEC 27001, NIST CSF, CIS Controls and SOC 2 pages are generated from the control library and the test cases each time the site is built, so they stay in step with them. So is the table below.
 
-For regional laws and regulators, see the [Regional AI Regulatory Hub](../11_GCC_AI_Compliance/index.md) sections. For sector rules such as HIPAA, PCI DSS and insurance regulation, see the [Sector Overlays](../04_Domain_Standards/10B_Sector_Overlays.md).
+For regional laws and regulators, see the [Regional AI Regulatory Hub](../11_GCC_AI_Compliance/index.md) sections. For sector rules such as HIPAA, PCI DSS and insurance regulation, see the [Sector Overlays](../04_Domain_Standards/10B_Sector_Overlays.md); PCI DSS also has its own [crosswalk](21_PCI_DSS_AI_Crosswalk.md).
 
 ## All mappings by control
 

@@ -6,7 +6,7 @@ parent: "Templates"
 nav_order: 7
 description: "A downloadable Excel tracker for AI security testing: the wiki's quick-start PoC scenarios and every case in the Test Case Library, with columns to select, run, score and evidence each one, and coverage by control and by register risk."
 document_type: AI Security Wiki Template
-version: 1.2
+version: 1.5
 ---
 
 # AI Security Test Case Tracker Template (.xlsx)
@@ -42,6 +42,10 @@ version: 1.2
 ## How the scoring works
 
 Scores use the wiki scale of 5, 3, 0 or N/A. Evidence from vendor documentation or demo data, rather than the live PoC, scores no higher than 3, and the Score Check column flags any score that breaks that rule.
+
+## From the Builder Track
+
+The Builder Track's [Prove it](../24_Builder_Track/01_Secure_Your_First_Agent.md#prove-it) table lists the cases to run against a first agent. The [Builder Toolkit's](../24_Builder_Track/05_Builder_Toolkit.md#evidence-for-the-templates) `evidence_export.py` writes Date Run, Evidence Ref and Notes for the cases its evidence relates to. It leaves Score for the tester.
 
 ## Licence and credit
 

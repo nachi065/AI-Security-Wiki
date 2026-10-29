@@ -3,7 +3,7 @@ title: "Home"
 description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and {{n:tests}} test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.46
+version: 2.56
 status: Published
 author: Nachiket Sathaye
 coauthors: Ankush Jain
@@ -11,20 +11,20 @@ owner: AI Security Program
 custodian: Security Architecture Team
 review_cycle: Quarterly
 approval_authority: AI Governance Committee
-last_updated: 2026-10-25
+last_updated: 2026-10-29
 ---
 
 # AI Security Wiki Home
 
 > **Document Type:** Enterprise AI Security Reference Architecture and Governance Wiki  
-> **Version:** 2.46  
+> **Version:** 2.56  
 > **Status:** Published  
 > **Original Author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
 > **Co-Author:** Ankush Jain ([about the co-author](#23-about-the-co-author))  
 > **Intended Use:** Public, vendor-neutral reference and template set for AI security governance, engineering, risk management, assurance, audit, compliance, and vendor evaluation.  
 > **Source Repository:** [github.com/nachi065/AI-Security-Wiki](https://github.com/nachi065/AI-Security-Wiki): the Markdown source, the change history, issues and pull requests. See [Contributing](https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md) to suggest a change.
 
-> **Latest update (25 October 2026).** A new [Hong Kong](26_Hong_Kong_AI_Compliance/index.md) section covers the HKMA guidance on responsible AI adoption of 15 October 2026, read in the HKMA's own text. A new [Financial Regulator AI Comparison](04_Domain_Standards/10C_Financial_Regulator_AI_Comparison.md) sets MAS, RBI, SEBI, the EU AI Act, the FCA and the HKMA side by side on eight themes. The kill-switch control, AI-CTRL-025, now covers high-risk AI models as well as agents, with a new test case. India adds the RBI draft's kill-switch expectation and SEBI's announced AI guidelines; the UK row on the FCA records the Mills Review. The five workbooks built from wiki data (risk register, audit checklist, control library, test case tracker and requirements traceability matrix) were rebuilt with these changes, and the NIST SSDF crosswalk is now a column in the risk register and control library workbooks. See the [Update Notes](09_Reference/19_Update_Notes.md) for details and what is still open.
+<!-- latest-updates -->
 
 ## 1. Purpose
 
@@ -50,6 +50,7 @@ This wiki is the implementation layer: control objectives, evidence, audit proce
 | Set up a first, short AI governance baseline | AI Baseline Control Framework (AI BCF) | Control objectives, evidence and tests, through the [AI BCF crosswalk](23_Framework_Crosswalks/02_AI_BCF_Crosswalk.md) |
 | Structure a management system | ISO/IEC 42001 with ISO/IEC 27001 | Technical control objectives and test criteria, through the [ISO/IEC 42001](23_Framework_Crosswalks/05_ISO_IEC_42001_Crosswalk.md) and [ISO/IEC 27001](23_Framework_Crosswalks/08_ISO_IEC_27001_Crosswalk.md) crosswalks |
 | Extend an existing security programme to AI | NIST CSF, CIS Controls or SOC 2 | The AI control objectives under each category, control or criterion, through the [NIST CSF](23_Framework_Crosswalks/09_NIST_CSF_Crosswalk.md), [CIS Controls](23_Framework_Crosswalks/10_CIS_Controls_Crosswalk.md) and [SOC 2](23_Framework_Crosswalks/11_SOC_2_Crosswalk.md) crosswalks |
+| Keep AI systems in a payment environment secure | PCI DSS v4.0.1 and the PCI SSC supplement Security Considerations for AI Systems | Controls and tests for each requirement and theme the supplement applies to AI, and a scoping checklist, through the [PCI DSS AI Crosswalk](23_Framework_Crosswalks/21_PCI_DSS_AI_Crosswalk.md) |
 | Run a secure software development lifecycle | NIST SSDF (SP 800-218) and, for generative AI, SP 800-218A | AI-specific controls, code and tests per practice, through the [NIST SSDF Crosswalk](23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.md) |
 | Compare privacy duties across jurisdictions | GDPR, CCPA, Quebec Law 25, Singapore PDPA and the GCC data protection laws | Controls per theme, through the [Privacy Law Crosswalk](23_Framework_Crosswalks/13_Privacy_Law_Crosswalk.md) |
 | Structure risk language and a programme | NIST AI RMF | Engineering controls, evidence and scoring |
@@ -240,12 +241,14 @@ The cycle then repeats: each use case is reviewed, improved, renewed or retired,
 23_Framework_Crosswalks/
   Cross-references from this wiki to other frameworks: AI frameworks (FINOS AIGF, AI BCF, NIST AI RMF, NIST AI 600-1,
   ISO/IEC 42001, OWASP, MITRE ATLAS, OECD AI Principles), security frameworks (ISO/IEC 27001, NIST CSF, CIS Controls,
-  SOC 2), secure development (NIST SSDF and SP 800-218A) and a comparison of eight privacy laws.
+  SOC 2), secure development (NIST SSDF and SP 800-218A), payment card security (PCI DSS and the PCI SSC AI guidance)
+  and a comparison of eight privacy laws.
 
 24_Builder_Track/
   Start here if you are building with AI: ten controls for a first agent with reference code (guard, sandbox,
-  egress proxy) and a runnable demo, privacy duties in code (DPDP consent, rights, retention, children's data)
-  and developer pipeline checks, all with tests that run in CI.
+  egress proxy) and a runnable demo, privacy duties in code (DPDP consent, rights, retention, children's data),
+  developer pipeline checks, and a vendor-neutral toolkit (AI code checker, MCP server, evidence export,
+  instructions for every coding assistant), all with tests that run in CI.
 
 25_Templates/
   Downloadable .xlsx and .docx templates built from the wiki: AI risk register, system inventory, use-case
@@ -421,13 +424,13 @@ The three latest versions, newest first. The full history since version 1.0 is i
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
-| 2.46 | 2026-10-25 | Nachiket Sathaye | NIST SSDF crosswalk added to the template workbooks: its 20 practices are now a column in the AI Risk Register (version 1.2) and Control Library and Crosswalks (1.3) framework matrices and rows in their Framework Crosswalk sheets. |
-| 2.45 | 2026-10-25 | Nachiket Sathaye | Templates rebuilt from wiki 2.44: AI Risk Register (version 1.1), Audit and Evidence Checklist (1.2), Control Library and Crosswalks (1.2), Test Case Tracker (1.2) and Requirements Traceability Matrix (1.1) now carry AI-CTRL-025's new title and text, the extended control text, TC-L01-021 and a Hong Kong regulation column. |
-| 2.44 | 2026-10-25 | Nachiket Sathaye | Financial regulators: new Hong Kong section (HKMA Supervisory Guidance for Responsible Adoption of AI of 15 October 2026, read in the HKMA text; SFC, PCPD, PDPO; HK-T1 self-assessment; principle crosswalk); new Financial Regulator AI Comparison page (MAS, RBI, SEBI, EU AI Act, FCA, HKMA on eight themes); AI-CTRL-025 renamed AI Containment and Kill Switch and widened to high-risk models, with new test case TC-L01-021; AI-CTRL-011, 012, 014 and 041 extended (unlisted AI restricted, board-approved AI strategy, no vendor training on data without authorisation, customer AI-use notice); India IN6 verified against the RBI draft text and new row IN13 for SEBI; UK5 updated for the FCA Mills Review. |
+| 2.56 | 2026-10-29 | Nachiket Sathaye | ISO/IEC 42001 Crosswalk now covers all 38 Annex A controls (was 33) and ISO/IEC 27001 Crosswalk 75 of 93 (was 65), with titles checked against published listings; eight controls extended; four workbooks rebuilt. See the [Update Notes](09_Reference/19_Update_Notes.md). |
+| 2.55 | 2026-10-29 | Nachiket Sathaye | Risk register 1.5: AI-R55 AI-Accelerated Exploitation and Patch Gap, mapped to four controls, with AI-CTRL-037 extended and the earlier out-of-scope decision on AI-enabled attacks reopened for exploitation speed; PCI DSS AI Crosswalk rows updated; six workbooks rebuilt. See the [Update Notes](09_Reference/19_Update_Notes.md). |
+| 2.54 | 2026-10-29 | Nachiket Sathaye | PCI DSS AI Crosswalk for the PCI SSC information supplement Security Considerations for AI Systems (September 2026); eight test cases (TC-L01-022, TC-L05-036, TC-L08-044, TC-L09-027, TC-L10-034, TC-L10-035, TC-L14-023, TC-L14-024) and eleven controls extended from it; PCI DSS sector overlay row updated; five workbooks rebuilt with PCI DSS crosswalk columns and the new cases; drifted test case counts corrected. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 
 ## 21. Quick Links
 
-- [Secure Your First Agent: Ten Controls With Code](24_Builder_Track/01_Secure_Your_First_Agent.md)
+- [Builder Track](24_Builder_Track/index.md): [Secure Your First Agent: Ten Controls With Code](24_Builder_Track/01_Secure_Your_First_Agent.md) and the [Builder Toolkit](24_Builder_Track/05_Builder_Toolkit.md)
 - [Foundations: AI Security vs. Security of AI](00_Foundations/index.md)
 - [AI Security Market and Technology Landscape: Summary](01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.md)
 - [AI Risk Methodology](02_Risk_Management/02A_AI_Risk_Methodology.md)

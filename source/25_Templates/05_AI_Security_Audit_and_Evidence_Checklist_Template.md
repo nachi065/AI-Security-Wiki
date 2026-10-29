@@ -6,7 +6,7 @@ parent: "Templates"
 nav_order: 5
 description: "A downloadable Excel audit workbook: tests for every wiki control with evidence and audit procedures, the GCC and EU audit checklists and evidence registers, a findings log, an exception register and ISO/IEC 42001 certification readiness."
 document_type: AI Security Wiki Template
-version: 1.2
+version: 1.5
 ---
 
 # AI Security Audit and Evidence Checklist Template (.xlsx)
@@ -44,6 +44,10 @@ version: 1.2
 ## The result scale
 
 Results use the wiki T08 scale: E (effective), P (partially effective, finding raised), I (ineffective, finding raised) and N (not tested, with the reason).
+
+## From the Builder Track
+
+The [Builder Toolkit's](../24_Builder_Track/05_Builder_Toolkit.md#evidence-for-the-templates) `evidence_export.py` turns an agent's hash-chained audit log and the AI checker's SARIF results into rows with this workbook's Control ID, Control, Result, Evidence Ref, Evidence Collection Date and Auditor Notes columns. It leaves Result for the auditor.
 
 ## Licence and credit
 
