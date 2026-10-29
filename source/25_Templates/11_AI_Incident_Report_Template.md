@@ -31,6 +31,10 @@ version: 1.0
 
 For jurisdiction-specific notification workflows, see the incident templates in the regional sections, for example [GCC T05](../11_GCC_AI_Compliance/T05_AI_Incident_and_Breach_Notification_Workflow.md), [EU T05](../12_EU_AI_Compliance/T05_AI_Incident_and_Breach_Reporting_Workflow.md) and [India IN-T2](../17_India_AI_Compliance/IN-T2_Breach_and_Incident_Workflow.md). Their legal citations carry the verification tags of their sections.
 
+## From the Builder Track
+
+The Builder Track's [kill switch and audit log](../24_Builder_Track/01_Secure_Your_First_Agent.md#b9-cap-the-blast-radius-and-keep-a-kill-switch) produce the timeline and containment facts this report asks for.
+
 ## Licence and credit
 
 The document is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI Incident Report" by Nachiket Sathaye and Ankush Jain, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence.

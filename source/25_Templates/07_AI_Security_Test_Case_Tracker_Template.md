@@ -43,6 +43,10 @@ version: 1.3
 
 Scores use the wiki scale of 5, 3, 0 or N/A. Evidence from vendor documentation or demo data, rather than the live PoC, scores no higher than 3, and the Score Check column flags any score that breaks that rule.
 
+## From the Builder Track
+
+The Builder Track's [Prove it](../24_Builder_Track/01_Secure_Your_First_Agent.md#prove-it) table lists the cases to run against a first agent. The [Builder Toolkit's](../24_Builder_Track/05_Builder_Toolkit.md#evidence-for-the-templates) `evidence_export.py` writes Date Run, Evidence Ref and Notes for the cases its evidence relates to. It leaves Score for the tester.
+
 ## Licence and credit
 
 The workbook is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI Security Test Case Tracker" by Nachiket Sathaye and Ankush Jain, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence. Framework names, identifiers and short titles belong to their owners and are cited for mapping only.

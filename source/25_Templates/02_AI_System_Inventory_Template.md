@@ -43,6 +43,10 @@ version: 1.0
 
 Use the [AI Use-Case Risk Triage Template (.xlsx)](03_AI_Use_Case_Risk_Triage_Template.md) to set each system's tier, then assess each High and Medium system on the [AI Risk Register Template (.xlsx)](01_AI_Risk_Register_Template.md) and enter the risk IDs in the Register Risk IDs column.
 
+## From the Builder Track
+
+An agent built with the [Builder Track](../24_Builder_Track/01_Secure_Your_First_Agent.md#b1-register-the-agent-and-name-an-owner) already has most of a row: its `policy.json` entry names the owner, the tools it can call and its limits. Copy those into this inventory and record the date its kill switch was last tested.
+
 ## Licence and credit
 
 The workbook is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI System Inventory" by Nachiket Sathaye and Ankush Jain, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence. Framework names, identifiers and short titles belong to their owners and are cited for mapping only.

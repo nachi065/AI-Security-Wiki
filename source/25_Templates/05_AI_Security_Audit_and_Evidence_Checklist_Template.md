@@ -45,6 +45,10 @@ version: 1.2
 
 Results use the wiki T08 scale: E (effective), P (partially effective, finding raised), I (ineffective, finding raised) and N (not tested, with the reason).
 
+## From the Builder Track
+
+The [Builder Toolkit's](../24_Builder_Track/05_Builder_Toolkit.md#evidence-for-the-templates) `evidence_export.py` turns an agent's hash-chained audit log and the AI checker's SARIF results into rows with this workbook's Control ID, Control, Result, Evidence Ref, Evidence Collection Date and Auditor Notes columns. It leaves Result for the auditor.
+
 ## Licence and credit
 
 The workbook is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI Security Audit and Evidence Checklist" by Nachiket Sathaye and Ankush Jain, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence. Framework names, identifiers and short titles belong to their owners and are cited for mapping only.

@@ -1,0 +1,28 @@
+# Builder Track checks for the pre-commit framework (https://pre-commit.com).
+# Merge into .pre-commit-config.yaml, copy the tools to tools/, then run:
+#   pre-commit install --hook-type pre-commit --hook-type commit-msg
+# "language: python" gives each hook a Python from pre-commit's own
+# environment, so the same entry works on Linux, macOS and Windows
+# (check this against the pre-commit documentation for your version).
+repos:
+  - repo: local
+    hooks:
+      - id: aiwiki-check
+        name: AI-specific checks (staged lines)
+        entry: python tools/aiwiki_check.py --staged --fail-on HIGH
+        language: python
+        pass_filenames: false
+        always_run: true
+        stages: [pre-commit]
+      - id: builder-pipeline-checks
+        name: Secrets and personal data in logs (staged)
+        entry: python tools/pipeline_checks.py pre-commit
+        language: python
+        pass_filenames: false
+        always_run: true
+        stages: [pre-commit]
+      - id: builder-ai-assistance-trailer
+        name: AI-Assistance trailer
+        entry: python tools/pipeline_checks.py commit-msg
+        language: python
+        stages: [commit-msg]

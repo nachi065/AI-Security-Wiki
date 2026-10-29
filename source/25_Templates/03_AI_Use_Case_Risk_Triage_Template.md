@@ -49,6 +49,10 @@ The Result sheet asks for a full impact assessment on the wiki's own threshold: 
 
 Assess each applicable risk on the [AI Risk Register Template (.xlsx)](01_AI_Risk_Register_Template.md), and record the system on the [AI System Inventory Template (.xlsx)](02_AI_System_Inventory_Template.md).
 
+## From the Builder Track
+
+For an agent, the [Agent Architecture Patterns](../24_Builder_Track/02_Agent_Architecture_Patterns.md) review checklist and the lethal trifecta test help answer the triage questions about actions and data.
+
 ## Licence and credit
 
 The workbook is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI Use-Case Risk Triage" by Nachiket Sathaye and Ankush Jain, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence. The owner domains and risks AI-R29 to AI-R46 are adapted from the AI Risk Map v1.3 by Evan Wheeler (https://github.com/wheels344i-gte/ai-risk-map, RiskFramework.org), licensed under CC BY-SA 4.0. Framework names, identifiers and short titles belong to their owners and are cited for mapping only.

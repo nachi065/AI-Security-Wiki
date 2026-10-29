@@ -121,11 +121,13 @@ The [Builder Track tests workflow](https://github.com/nachi065/AI-Security-Wiki/
 
 - The secret patterns cover common formats only, and the personal-data check matches field names, not values. Both are prompts for a reviewer, not proof.
 - The trailer records what the author declares. It does not detect undeclared AI use.
-- It does not cover dependency scanning, package hallucination or code review of generated code. Those are in the [standard](../04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.md) and the release stages table.
+- It does not cover dependency scanning, package hallucination or code review of generated code. For AI-specific patterns in code and agent configuration, add the [Builder Toolkit's](05_Builder_Toolkit.md#the-checker) checker. Those are in the [standard](../04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.md) and the release stages table.
 
 ## Related pages
 
 - [AI Coding Assistant and Coding Agent Security Standard](../04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.md)
 - [NIST SSDF Crosswalk](../23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.md)
 - [Privacy Duties in Code](03_Privacy_Duties_in_Code.md)
+- [Builder Toolkit](05_Builder_Toolkit.md), which adds AI-specific checks with SARIF output and runs alongside these in the same hooks and CI job
+- [AI Security Audit and Evidence Checklist template](../25_Templates/05_AI_Security_Audit_and_Evidence_Checklist_Template.md), where CI results go as evidence
 - [Illustrative Operating Defaults: CI/CD release stages](../08_Governance/18_AI_Operating_Defaults.md#cicd-release-stages-for-ai-applications)
