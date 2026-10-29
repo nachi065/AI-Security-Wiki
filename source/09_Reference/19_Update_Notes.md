@@ -19,6 +19,24 @@ This page is the wiki's change record. It has two parts:
 
 Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.
 
+## 29 October 2026: AI-accelerated exploitation on the risk register
+
+This entry follows the one below ("PCI DSS and the PCI SSC guidance on AI systems") and closes the gap it recorded for attackers' use of AI.
+
+### What is new
+
+- **AI-R55 AI-Accelerated Exploitation and Patch Gap** on the [Enterprise AI Risk Register](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) (version 1.5), owner domain 05 (Security and Adversarial Threats), example rating High. It covers attackers using AI to find and exploit vulnerabilities faster than vulnerability management sized for human attackers can respond.
+- **A register decision reopened.** Under Considered and Not Added, attacks others carry out with AI were out of scope. The exploitation-speed part is now in scope as AI-R55, with the reason recorded; deepfake fraud, voice cloning and phishing stay out of scope.
+- **Controls.** The [AI Risk to Control Mapping](../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.md) maps AI-R55 to AI-CTRL-037, AI-CTRL-027, AI-CTRL-033 and AI-CTRL-025, and [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037) now asks for remediation and exception time limits set for fast exploitation and triage sized for more findings.
+- The [PCI DSS AI Crosswalk](../23_Framework_Crosswalks/21_PCI_DSS_AI_Crosswalk.md) (1.1) now shows the vulnerability scanning and rapid triage rows as partial matches through AI-R55, and [AI for Security and AI-Enabled Threats](../00_Foundations/10-AI-for-Security-and-AI-Enabled-Threats.md) links to the risk.
+- **Workbooks rebuilt** with 55 risks: AI Risk Register (1.5), AI Use-Case Risk Triage (1.2), Control Library and Crosswalks (1.6), Test Case Tracker (1.5), Audit and Evidence Checklist (1.4) and Requirements Traceability Matrix (1.3).
+
+### What was checked and what was not
+
+- AI-R55 passes the four tests in [What Belongs on the Register](../02_Risk_Management/02A_AI_Risk_Methodology.md#what-belongs-on-the-register). It is corroborated by the PCI SSC supplement and by the UK NCSC assessment *Impact of AI on cyber threat from now to 2027* (7 May 2025), whose wording on the disclosure-to-exploitation window was read on 29 October 2026.
+- No triage question was added: the risk applies to the whole organization rather than to one use case.
+- Most of the treatment is general vulnerability management, which the wiki does not cover; the mapped controls treat the AI-specific part. No new test case was added for it.
+
 ## 29 October 2026: PCI DSS and the PCI SSC guidance on AI systems
 
 ### What is new
@@ -609,6 +627,7 @@ Every version of the wiki, newest first. Rows are never edited after they are ad
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.55 | 2026-10-29 | Nachiket Sathaye | Risk register 1.5: AI-R55 AI-Accelerated Exploitation and Patch Gap, mapped to four controls, with AI-CTRL-037 extended and the earlier out-of-scope decision on AI-enabled attacks reopened for exploitation speed; PCI DSS AI Crosswalk rows updated; six workbooks rebuilt. See the [Update Notes](../09_Reference/19_Update_Notes.md). |
 | 2.54 | 2026-10-29 | Nachiket Sathaye | PCI DSS AI Crosswalk for the PCI SSC information supplement Security Considerations for AI Systems (September 2026); eight test cases (TC-L01-022, TC-L05-036, TC-L08-044, TC-L09-027, TC-L10-034, TC-L10-035, TC-L14-023, TC-L14-024) and eleven controls extended from it; PCI DSS sector overlay row updated; five workbooks rebuilt with PCI DSS crosswalk columns and the new cases; drifted test case counts corrected. See the [Update Notes](../09_Reference/19_Update_Notes.md). |
 | 2.53 | 2026-10-29 | Nachiket Sathaye | AI Security Incident Casebook: seven 2026 cases (Load/Mine on Hugging Face, the OpenClaw gym booking incident, the Hugging Face breach by autonomous agents, Clinejection and Cline CLI 2.3.0, the Moltbook database exposure, ClawHavoc on ClawHub and OpenClaw CVE-2026-25253), each mapped to risks, controls, OWASP items and test cases, with what is not confirmed marked. |
 | 2.52 | 2026-10-29 | Nachiket Sathaye | Home page "Latest update" now lists every update of the newest day, built by build.py from the Update Notes headings and the full version history, instead of a hand-written summary of the last change. |

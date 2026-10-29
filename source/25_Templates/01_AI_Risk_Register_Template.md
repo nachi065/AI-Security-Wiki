@@ -6,7 +6,7 @@ parent: "Templates"
 nav_order: 1
 description: "A downloadable Excel workbook for running an AI risk register: the wiki's risks pre-filled, use-case triage, likelihood and impact scoring, mapped controls and evidence, framework and regulatory crosswalks, a dashboard and tracking checks."
 document_type: AI Security Wiki Template
-version: 1.4
+version: 1.5
 ---
 
 # AI Risk Register Template (.xlsx)

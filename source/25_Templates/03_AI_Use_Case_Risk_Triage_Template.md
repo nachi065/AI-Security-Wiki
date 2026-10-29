@@ -6,7 +6,7 @@ parent: "Templates"
 nav_order: 3
 description: "A downloadable Excel questionnaire for one AI use case: a prohibited-use screen, the wiki's triage questions, T01 tier scoring, the register risks that apply with their controls and evidence, and whether a full impact assessment is needed."
 document_type: AI Security Wiki Template
-version: 1.1
+version: 1.2
 ---
 
 # AI Use-Case Risk Triage Template (.xlsx)

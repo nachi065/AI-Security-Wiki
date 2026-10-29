@@ -6,7 +6,7 @@ parent: "Templates"
 nav_order: 6
 description: "A downloadable Excel workbook of the wiki's AI security controls with every library field, ready to track implementation and testing, cross-referenced to every item of the wiki's framework crosswalks and to the register risks."
 document_type: AI Security Wiki Template
-version: 1.5
+version: 1.6
 ---
 
 # AI Security Control Library and Crosswalks Template (.xlsx)
