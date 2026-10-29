@@ -19,6 +19,22 @@ This page is the wiki's change record. It has two parts:
 
 Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.
 
+## 29 October 2026: Full ISO/IEC 42001 Annex A coverage and wider ISO/IEC 27001 coverage
+
+### What is new
+
+- **[ISO/IEC 42001 Crosswalk](../23_Framework_Crosswalks/05_ISO_IEC_42001_Crosswalk.md) (1.1):** all 38 Annex A controls are now cited by at least one wiki control, up from 33. The five new citations are A.2.3 Alignment with other organizational policies (AI-CTRL-012), A.6.1.2 Objectives for responsible development of AI systems (AI-CTRL-033), A.6.1.3 Processes for responsible design and development (AI-CTRL-030, AI-CTRL-033), A.6.2.7 AI system technical documentation (AI-CTRL-030, AI-CTRL-031) and A.10.4 Customers (AI-CTRL-041).
+- **[ISO/IEC 27001 Crosswalk](../23_Framework_Crosswalks/08_ISO_IEC_27001_Crosswalk.md) (1.1):** 75 of the 93 Annex A controls are now cited, up from 65. The ten new citations are A.5.6 Contact with special interest groups (AI-CTRL-043), A.5.7 Threat intelligence (AI-CTRL-034), A.5.11 Return of assets (AI-CTRL-014), A.5.37 Documented operating procedures (AI-CTRL-009, AI-CTRL-035), A.6.2 Terms and conditions of employment and A.6.4 Disciplinary process (AI-CTRL-012), A.8.1 User endpoint devices (AI-CTRL-001, AI-CTRL-002, AI-CTRL-004), A.8.18 Use of privileged utility programs (AI-CTRL-024), A.8.21 Security of network services (AI-CTRL-032) and A.8.34 Protection of information systems during audit testing (AI-CTRL-034). The 18 left uncited are the 14 physical controls and four people controls (A.6.1, A.6.5, A.6.6, A.6.7), which the page now names as left to the existing ISMS.
+- **Eight controls extended** where a new citation needed text to support it: policy alignment and AI use in employment terms (AI-CTRL-012), return or deletion of data and models at contract end (AI-CTRL-014), privileged tools for agents (AI-CTRL-024), security requirements for model APIs and other network services (AI-CTRL-032), responsible development objectives as release criteria (AI-CTRL-033), AI threat intelligence and safeguards for testing production systems (AI-CTRL-034), and contact with AI security interest groups (AI-CTRL-043). The other new citations rest on text the controls already had.
+- **Workbooks rebuilt:** AI Risk Register (1.6), Control Library and Crosswalks (1.7), Audit and Evidence Checklist (1.5) and Requirements Traceability Matrix (1.4). The matrix grows from 188 to 198 requirements because each new sentence is a requirement.
+
+### What was checked and what was not
+
+- Every Annex A number and title on both pages was checked on 29 October 2026 against two published listings per standard (for ISO/IEC 42001, RiskProfs and TCSA; for ISO/IEC 27001:2022, Open Security Architecture and HighTable). The ISO Online Browsing Platform could not be reached, so nothing was checked against the standards themselves. The listings word some titles differently; the wiki keeps the wording it already used where the two disagree.
+- This corrects the earlier note on the ISO/IEC 27001 Crosswalk that its numbers and titles were written from memory.
+- The new mappings are the wiki's own judgment from the control titles and have not been reviewed by ISO or a certification body. No test case was added, so the new citations count the existing test cases under each control.
+- All four workbooks were recalculated with no formula errors.
+
 ## 29 October 2026: AI-accelerated exploitation on the risk register
 
 This entry follows the one below ("PCI DSS and the PCI SSC guidance on AI systems") and closes the gap it recorded for attackers' use of AI.
@@ -627,6 +643,7 @@ Every version of the wiki, newest first. Rows are never edited after they are ad
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.56 | 2026-10-29 | Nachiket Sathaye | ISO/IEC 42001 Crosswalk now covers all 38 Annex A controls (was 33) and ISO/IEC 27001 Crosswalk 75 of 93 (was 65), with titles checked against published listings; eight controls extended; four workbooks rebuilt. See the [Update Notes](../09_Reference/19_Update_Notes.md). |
 | 2.55 | 2026-10-29 | Nachiket Sathaye | Risk register 1.5: AI-R55 AI-Accelerated Exploitation and Patch Gap, mapped to four controls, with AI-CTRL-037 extended and the earlier out-of-scope decision on AI-enabled attacks reopened for exploitation speed; PCI DSS AI Crosswalk rows updated; six workbooks rebuilt. See the [Update Notes](../09_Reference/19_Update_Notes.md). |
 | 2.54 | 2026-10-29 | Nachiket Sathaye | PCI DSS AI Crosswalk for the PCI SSC information supplement Security Considerations for AI Systems (September 2026); eight test cases (TC-L01-022, TC-L05-036, TC-L08-044, TC-L09-027, TC-L10-034, TC-L10-035, TC-L14-023, TC-L14-024) and eleven controls extended from it; PCI DSS sector overlay row updated; five workbooks rebuilt with PCI DSS crosswalk columns and the new cases; drifted test case counts corrected. See the [Update Notes](../09_Reference/19_Update_Notes.md). |
 | 2.53 | 2026-10-29 | Nachiket Sathaye | AI Security Incident Casebook: seven 2026 cases (Load/Mine on Hugging Face, the OpenClaw gym booking incident, the Hugging Face breach by autonomous agents, Clinejection and Cline CLI 2.3.0, the Moltbook database exposure, ClawHavoc on ClawHub and OpenClaw CVE-2026-25253), each mapped to risks, controls, OWASP items and test cases, with what is not confirmed marked. |

@@ -5,7 +5,7 @@ coauthors: Ankush Jain
 parent: "Control Library"
 nav_order: 1
 document_type: AI Security Wiki Reference
-version: 2.6
+version: 2.7
 ---
 
 # AI Security Control Objectives Library
@@ -204,8 +204,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Assurance Stage** | Discovery |
 | **Deployment Model** | All |
 | **Risk Mapping** | [AI-R02](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R03](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R18](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R19](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R27](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R28](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
-| **Implementation Expectation** | Publish an AI policy and acceptable-use standard with scope, owner and review date. Have the board, or the body that holds that authority, approve an AI strategy that states the organization's approach to AI and its AI risk appetite, and review it at least annually. Define roles and decision rights across the three lines, and record governance decisions. Map each policy statement to a control in this library. Train users and reinforce the rules at the point of use. |
-| **Evidence Required** | Approved policy; board-approved AI strategy and risk appetite with its review record; roles and responsibilities record; governance decision log; policy-to-control mapping; training and acknowledgement records. |
+| **Implementation Expectation** | Publish an AI policy and acceptable-use standard with scope, owner and review date. Have the board, or the body that holds that authority, approve an AI strategy that states the organization's approach to AI and its AI risk appetite, and review it at least annually. Define roles and decision rights across the three lines, and record governance decisions. Map each policy statement to a control in this library. Train users and reinforce the rules at the point of use. Align the AI policy with the information security, privacy, data and other organizational policies it touches, and record where they overlap or conflict. Include AI acceptable use in terms of employment and contractor agreements, and handle breaches through the existing disciplinary process. |
+| **Evidence Required** | Approved policy; board-approved AI strategy and risk appetite with its review record; roles and responsibilities record; governance decision log; policy-to-control mapping; training and acknowledgement records; policy alignment record; employment and contractor terms covering AI use. |
 | **Audit Test Procedure** | Select policy statements and trace each to a control and to evidence that it operates. Confirm the policy was reviewed within its cycle. |
 | **Control Owner** | GRC |
 | **Review Frequency** | Annually |
@@ -213,8 +213,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **MITRE ATLAS Techniques** | None published in MITRE ATLAS techniques. The wiki's own identifier applies: AI-CTRL-012. |
 | **MITRE ATLAS Mitigations** | AML.M0018 User Training |
 | **NIST AI RMF** | GOVERN 1.2; GOVERN 1.4; GOVERN 2.1; GOVERN 2.2 |
-| **ISO/IEC 42001** | A.2.2 AI policy; A.2.4 Review of the AI policy; A.3.2 AI roles and responsibilities |
-| **ISO/IEC 27001** | A.5.1 Policies for information security; A.5.2 Information security roles and responsibilities; A.5.4 Management responsibilities; A.5.10 Acceptable use of information and other associated assets |
+| **ISO/IEC 42001** | A.2.2 AI policy; A.2.4 Review of the AI policy; A.3.2 AI roles and responsibilities; A.2.3 Alignment with other organizational policies |
+| **ISO/IEC 27001** | A.5.1 Policies for information security; A.5.2 Information security roles and responsibilities; A.5.4 Management responsibilities; A.5.10 Acceptable use of information and other associated assets; A.6.2 Terms and conditions of employment; A.6.4 Disciplinary process |
 | **NIST CSF** | GV.PO Policy; GV.RR Roles, Responsibilities, and Authorities |
 | **CIS Controls** | None published in the CIS Controls. The wiki's own identifier applies: AI-CTRL-012. |
 | **SOC 2** | CC1.3 Structures, reporting lines and responsibilities; CC2.2 Internal communication; CC5.3 Policies and procedures |
@@ -260,8 +260,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Assurance Stage** | Discovery |
 | **Deployment Model** | Cloud |
 | **Risk Mapping** | [AI-R08](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R10](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R16](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
-| **Implementation Expectation** | Evaluate vendors against the vendor evaluation framework. Cover training use of customer data, retention, sub-processors, model changes and incident notification in contracts; by default the contract should bar the provider from using personal or confidential data to train or improve its models unless the organization has authorised it. Include audit rights, a right to have the service suspended, and exit and concentration risk where few providers can replace it. Re-evaluate when a vendor changes model or terms. Treat AI built into other products (document readers, content tools, chat widgets on payment pages) as a third-party service when it can reach sensitive data, list the provider with other service providers, and review its due diligence evidence on a set cycle. |
-| **Evidence Required** | Vendor assessments; contract clauses; sub-processor list; model change notices. |
+| **Implementation Expectation** | Evaluate vendors against the vendor evaluation framework. Cover training use of customer data, retention, sub-processors, model changes and incident notification in contracts; by default the contract should bar the provider from using personal or confidential data to train or improve its models unless the organization has authorised it. Include audit rights, a right to have the service suspended, and exit and concentration risk where few providers can replace it. Re-evaluate when a vendor changes model or terms. Treat AI built into other products (document readers, content tools, chat widgets on payment pages) as a third-party service when it can reach sensitive data, list the provider with other service providers, and review its due diligence evidence on a set cycle. At contract end, have the provider return or delete the organization's data, fine-tuned models, embeddings and logs, and get written confirmation. |
+| **Evidence Required** | Vendor assessments; contract clauses; sub-processor list; model change notices; exit return or deletion confirmation. |
 | **Audit Test Procedure** | Sample AI vendors in use and confirm each has a current assessment and the required contract terms. Confirm the last model or terms change triggered a review. |
 | **Control Owner** | Procurement / GRC |
 | **Review Frequency** | Annually and on vendor change |
@@ -270,7 +270,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **MITRE ATLAS Mitigations** | None published in MITRE ATLAS mitigations. The wiki's own identifier applies: AI-CTRL-014. |
 | **NIST AI RMF** | GOVERN 6.1; GOVERN 6.2; MANAGE 3.1 |
 | **ISO/IEC 42001** | A.10.2 Allocating responsibilities; A.10.3 Suppliers |
-| **ISO/IEC 27001** | A.5.19 Information security in supplier relationships; A.5.20 Addressing information security within supplier agreements; A.5.21 Managing information security in the ICT supply chain; A.5.22 Monitoring, review and change management of supplier services; A.5.23 Information security for use of cloud services |
+| **ISO/IEC 27001** | A.5.19 Information security in supplier relationships; A.5.20 Addressing information security within supplier agreements; A.5.21 Managing information security in the ICT supply chain; A.5.22 Monitoring, review and change management of supplier services; A.5.23 Information security for use of cloud services; A.5.11 Return of assets |
 | **NIST CSF** | GV.SC Cybersecurity Supply Chain Risk Management |
 | **CIS Controls** | CIS 15 Service Provider Management |
 | **SOC 2** | CC9.2 Vendor and business partner risk |
@@ -344,7 +344,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Assurance Stage** | Production |
 | **Deployment Model** | All |
 | **Risk Mapping** | [AI-R09](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R10](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
-| **Implementation Expectation** | Keep a register of the authorities and ethics bodies relevant to each AI system and jurisdiction, with the duties each one sets and an owner for each duty. Track filings, registrations and local representative appointments to their due dates. Log every contact and its outcome. Watch for new guidance and pending rules, and review the register on a schedule. |
+| **Implementation Expectation** | Keep a register of the authorities and ethics bodies relevant to each AI system and jurisdiction, with the duties each one sets and an owner for each duty. Track filings, registrations and local representative appointments to their due dates. Log every contact and its outcome. Watch for new guidance and pending rules, and review the register on a schedule. Keep contact with AI security interest groups and information-sharing communities, and record what is shared with them. |
 | **Evidence Required** | Authority register; filing and registration records; representative appointments; contact log; watchlist of pending rules. |
 | **Audit Test Procedure** | Sample AI systems and confirm each lists its authorities and duties. Trace one filing or notification to its due date and evidence. Confirm the register was reviewed in the period. |
 | **Control Owner** | Legal / Compliance |
@@ -354,7 +354,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **MITRE ATLAS Mitigations** | None published in MITRE ATLAS mitigations. The wiki's own identifier applies: AI-CTRL-043. |
 | **NIST AI RMF** | GOVERN 1.1; GOVERN 5.1 |
 | **ISO/IEC 42001** | Clause 4.2 Understanding the needs and expectations of interested parties; A.8.3 External reporting; A.8.5 Information for interested parties |
-| **ISO/IEC 27001** | A.5.5 Contact with authorities; A.5.31 Legal, statutory, regulatory and contractual requirements |
+| **ISO/IEC 27001** | A.5.5 Contact with authorities; A.5.31 Legal, statutory, regulatory and contractual requirements; A.5.6 Contact with special interest groups |
 | **NIST CSF** | GV.OC Organizational Context; RS.CO Incident Response Reporting and Communication |
 | **CIS Controls** | CIS 17 Incident Response Management |
 | **SOC 2** | CC2.3 External communication |
@@ -470,7 +470,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **MITRE ATLAS Mitigations** | None published in MITRE ATLAS mitigations. The wiki's own identifier applies: AI-CTRL-001. |
 | **NIST AI RMF** | GOVERN 1.6; GOVERN 6.1 |
 | **ISO/IEC 42001** | A.4.2 Resource documentation |
-| **ISO/IEC 27001** | A.5.9 Inventory of information and other associated assets; A.8.16 Monitoring activities; A.8.23 Web filtering |
+| **ISO/IEC 27001** | A.5.9 Inventory of information and other associated assets; A.8.16 Monitoring activities; A.8.23 Web filtering; A.8.1 User endpoint devices |
 | **NIST CSF** | ID.AM Asset Management; DE.CM Continuous Monitoring |
 | **CIS Controls** | CIS 1 Inventory and Control of Enterprise Assets; CIS 2 Inventory and Control of Software Assets; CIS 9 Email and Web Browser Protections |
 | **SOC 2** | CC6.8 Unauthorized or malicious software; CC7.2 Monitoring for anomalies |
@@ -498,7 +498,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **MITRE ATLAS Mitigations** | AML.M0020 Generative AI Guardrails |
 | **NIST AI RMF** | MEASURE 2.10; MANAGE 4.1 |
 | **ISO/IEC 42001** | A.9.2 Processes for responsible use of AI systems |
-| **ISO/IEC 27001** | A.5.12 Classification of information; A.8.11 Data masking; A.8.12 Data leakage prevention |
+| **ISO/IEC 27001** | A.5.12 Classification of information; A.8.11 Data masking; A.8.12 Data leakage prevention; A.8.1 User endpoint devices |
 | **NIST CSF** | PR.DS Data Security; DE.CM Continuous Monitoring |
 | **CIS Controls** | CIS 3 Data Protection |
 | **SOC 2** | CC6.7 Transmission, movement and removal of information; C1.1 Identification of confidential information |
@@ -554,7 +554,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **MITRE ATLAS Mitigations** | None published in MITRE ATLAS mitigations. The wiki's own identifier applies: AI-CTRL-004. |
 | **NIST AI RMF** | GOVERN 6.1; MEASURE 2.10; MANAGE 4.1 |
 | **ISO/IEC 42001** | A.9.2 Processes for responsible use of AI systems; A.4.4 Tooling resources |
-| **ISO/IEC 27001** | A.8.4 Access to source code; A.8.12 Data leakage prevention; A.8.28 Secure coding |
+| **ISO/IEC 27001** | A.8.4 Access to source code; A.8.12 Data leakage prevention; A.8.28 Secure coding; A.8.1 User endpoint devices |
 | **NIST CSF** | PR.DS Data Security; PR.PS Platform Security |
 | **CIS Controls** | CIS 3 Data Protection; CIS 16 Application Software Security |
 | **SOC 2** | CC6.7 Transmission, movement and removal of information; CC8.1 Change management |
@@ -944,7 +944,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Assurance Stage** | Implementation |
 | **Deployment Model** | All |
 | **Risk Mapping** | [AI-R07](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R08](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R23](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R24](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
-| **Implementation Expectation** | Keep an allow-list of tools, plugins and MCP servers with an owner for each. Validate tool schemas, pin versions, and re-approve when a tool definition changes after approval. The same governance applies to agent skills and plugins: approve them from an allowlist after review, pin the version, check integrity on load and keep a procedure to remove one quickly. |
+| **Implementation Expectation** | Keep an allow-list of tools, plugins and MCP servers with an owner for each. Validate tool schemas, pin versions, and re-approve when a tool definition changes after approval. The same governance applies to agent skills and plugins: approve them from an allowlist after review, pin the version, check integrity on load and keep a procedure to remove one quickly. Treat tools that can override system or application controls, such as shells, database consoles and administration APIs, as privileged utilities: give them only to named agents that need them, and log every use. |
 | **Evidence Required** | Tool and MCP server registry; allow-list configuration; change detection alerts. |
 | **Audit Test Procedure** | Connect an unlisted tool server and confirm it is blocked. Change the description of an approved tool and confirm the change is detected before use. |
 | **Control Owner** | AI Platform Team |
@@ -954,7 +954,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **MITRE ATLAS Mitigations** | AML.M0028 AI Agent Tools Permissions Configuration; AML.M0014 Verify AI Artifacts |
 | **NIST AI RMF** | GOVERN 6.1; MAP 4.1; MAP 4.2; MANAGE 3.1 |
 | **ISO/IEC 42001** | A.10.3 Suppliers; A.4.4 Tooling resources |
-| **ISO/IEC 27001** | A.5.19 Information security in supplier relationships; A.5.21 Managing information security in the ICT supply chain; A.8.9 Configuration management; A.8.19 Installation of software on operational systems; A.8.32 Change management |
+| **ISO/IEC 27001** | A.5.19 Information security in supplier relationships; A.5.21 Managing information security in the ICT supply chain; A.8.9 Configuration management; A.8.19 Installation of software on operational systems; A.8.32 Change management; A.8.18 Use of privileged utility programs |
 | **NIST CSF** | GV.SC Cybersecurity Supply Chain Risk Management; PR.PS Platform Security |
 | **CIS Controls** | CIS 2 Inventory and Control of Software Assets; CIS 15 Service Provider Management; CIS 16 Application Software Security |
 | **SOC 2** | CC6.8 Unauthorized or malicious software; CC8.1 Change management; CC9.2 Vendor and business partner risk |
@@ -1123,7 +1123,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **MITRE ATLAS Techniques** | AML.T0010 AI Supply Chain Compromise; AML.T0018 Manipulate AI Model; AML.T0119 Exploit Automated Artifact Processing Pipeline |
 | **MITRE ATLAS Mitigations** | AML.M0013 Code Signing; AML.M0014 Verify AI Artifacts |
 | **NIST AI RMF** | MEASURE 2.7; MAP 4.2 |
-| **ISO/IEC 42001** | A.6.2.5 AI system deployment; A.6.2.3 Documentation of AI system design and development |
+| **ISO/IEC 42001** | A.6.2.5 AI system deployment; A.6.2.3 Documentation of AI system design and development; A.6.1.3 Processes for responsible design and development; A.6.2.7 AI system technical documentation |
 | **ISO/IEC 27001** | A.8.4 Access to source code; A.8.9 Configuration management; A.8.25 Secure development life cycle; A.8.29 Security testing in development and acceptance; A.8.31 Separation of development, test and production environments; A.8.32 Change management |
 | **NIST CSF** | PR.AA Identity Management, Authentication, and Access Control; PR.PS Platform Security |
 | **CIS Controls** | CIS 4 Secure Configuration of Enterprise Assets and Software; CIS 16 Application Software Security |
@@ -1153,7 +1153,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **MITRE ATLAS Techniques** | AML.T0010 AI Supply Chain Compromise; AML.T0109 AI Supply Chain Rug Pull; AML.T0115 Publish Poisoned AI Artifacts; AML.T0111 AI Supply Chain Reputation Inflation |
 | **MITRE ATLAS Mitigations** | AML.M0023 AI Bill of Materials; AML.M0014 Verify AI Artifacts; AML.M0016 Vulnerability Scanning |
 | **NIST AI RMF** | GOVERN 6.1; MAP 4.1; MANAGE 3.1; MANAGE 3.2 |
-| **ISO/IEC 42001** | A.10.3 Suppliers; A.4.2 Resource documentation; A.7.5 Data provenance |
+| **ISO/IEC 42001** | A.10.3 Suppliers; A.4.2 Resource documentation; A.7.5 Data provenance; A.6.2.7 AI system technical documentation |
 | **ISO/IEC 27001** | A.5.9 Inventory of information and other associated assets; A.5.21 Managing information security in the ICT supply chain; A.8.8 Management of technical vulnerabilities; A.8.19 Installation of software on operational systems; A.8.30 Outsourced development |
 | **NIST CSF** | GV.SC Cybersecurity Supply Chain Risk Management; ID.AM Asset Management; ID.RA Risk Assessment |
 | **CIS Controls** | CIS 2 Inventory and Control of Software Assets; CIS 7 Continuous Vulnerability Management; CIS 15 Service Provider Management; CIS 16 Application Software Security |
@@ -1172,7 +1172,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Assurance Stage** | Platform |
 | **Deployment Model** | PaaS/IaaS/Self-hosted |
 | **Risk Mapping** | [AI-R08](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R10](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
-| **Implementation Expectation** | Separate experimentation, training, evaluation and production. Isolate model runtimes at the network level and allow only required egress. Manage secrets centrally, and isolate tenants on shared GPUs. |
+| **Implementation Expectation** | Separate experimentation, training, evaluation and production. Isolate model runtimes at the network level and allow only required egress. Manage secrets centrally, and isolate tenants on shared GPUs. Set security requirements for the model APIs and other network services that AI systems call, including authentication, encryption in transit and the endpoints allowed, and monitor them. |
 | **Evidence Required** | Network segmentation rules; secrets management configuration; hardening baseline; isolation tests. |
 | **Audit Test Procedure** | Attempt to reach production data from the experimentation environment and to open unapproved egress from a model runtime. Confirm both fail. |
 | **Control Owner** | Platform Engineering |
@@ -1182,7 +1182,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **MITRE ATLAS Mitigations** | AML.M0005 Control Access to AI Models and Data at Rest; AML.M0012 Encrypt Sensitive Information; AML.M0016 Vulnerability Scanning; AML.M0019 Control Access to AI Models and Data in Production |
 | **NIST AI RMF** | MEASURE 2.7; MAP 4.2 |
 | **ISO/IEC 42001** | A.4.5 System and computing resources |
-| **ISO/IEC 27001** | A.5.23 Information security for use of cloud services; A.8.8 Management of technical vulnerabilities; A.8.9 Configuration management; A.8.20 Networks security; A.8.22 Segregation of networks; A.8.24 Use of cryptography |
+| **ISO/IEC 27001** | A.5.23 Information security for use of cloud services; A.8.8 Management of technical vulnerabilities; A.8.9 Configuration management; A.8.20 Networks security; A.8.22 Segregation of networks; A.8.24 Use of cryptography; A.8.21 Security of network services |
 | **NIST CSF** | PR.DS Data Security; PR.PS Platform Security; PR.IR Technology Infrastructure Resilience |
 | **CIS Controls** | CIS 4 Secure Configuration of Enterprise Assets and Software; CIS 7 Continuous Vulnerability Management; CIS 12 Network Infrastructure Management; CIS 13 Network Monitoring and Defense |
 | **SOC 2** | CC6.1 Logical access security; CC6.6 Protection against threats from outside the boundary; CC7.1 Detection of configuration changes and vulnerabilities |
@@ -1230,8 +1230,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Assurance Stage** | Implementation |
 | **Deployment Model** | All |
 | **Risk Mapping** | [AI-R05](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R07](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R08](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R14](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R16](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R55](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
-| **Implementation Expectation** | Threat model each system: assets, trust boundaries, worst-case output and maximum damage. Select controls from this library by risk tier. Record open risks and exceptions, and require sign-off before release. When an agent changes production systems, each change carries the same record as a person's change: reason, security impact, approval by an authorised person, test results and a rollback that was tested before approval. |
-| **Evidence Required** | Threat models; architecture review records; control selection; approvals and exceptions. |
+| **Implementation Expectation** | Threat model each system: assets, trust boundaries, worst-case output and maximum damage. Select controls from this library by risk tier. Record open risks and exceptions, and require sign-off before release. When an agent changes production systems, each change carries the same record as a person's change: reason, security impact, approval by an authorised person, test results and a rollback that was tested before approval. Set documented objectives for responsible development, such as security, privacy, reliability and fairness targets, and use them as release criteria. |
+| **Evidence Required** | Threat models; architecture review records; control selection; approvals and exceptions; responsible development objectives. |
 | **Audit Test Procedure** | Sample production systems and confirm each has a current threat model, a control selection that matches its tier and a signed approval. |
 | **Control Owner** | Security Architecture |
 | **Review Frequency** | Before each release and annually |
@@ -1239,7 +1239,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **MITRE ATLAS Techniques** | None published in MITRE ATLAS techniques. The wiki's own identifier applies: AI-CTRL-033. |
 | **MITRE ATLAS Mitigations** | None published in MITRE ATLAS mitigations. The wiki's own identifier applies: AI-CTRL-033. |
 | **NIST AI RMF** | MANAGE 1.1; GOVERN 4.2; MEASURE 2.7 |
-| **ISO/IEC 42001** | A.5.2 AI system impact assessment process; A.6.2.2 AI system requirements and specification; A.6.2.4 AI system verification and validation; A.6.2.5 AI system deployment |
+| **ISO/IEC 42001** | A.5.2 AI system impact assessment process; A.6.2.2 AI system requirements and specification; A.6.2.4 AI system verification and validation; A.6.2.5 AI system deployment; A.6.1.2 Objectives for responsible development of AI systems; A.6.1.3 Processes for responsible design and development |
 | **ISO/IEC 27001** | A.5.8 Information security in project management; A.8.25 Secure development life cycle; A.8.27 Secure system architecture and engineering principles; A.8.29 Security testing in development and acceptance; A.8.32 Change management |
 | **NIST CSF** | ID.RA Risk Assessment; PR.PS Platform Security |
 | **CIS Controls** | CIS 16 Application Software Security |
@@ -1258,8 +1258,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Assurance Stage** | Implementation |
 | **Deployment Model** | All |
 | **Risk Mapping** | [AI-R05](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R07](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R16](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R17](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md), [AI-R20](../02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) |
-| **Implementation Expectation** | Red team each system against defined threat cases before release. Run a regression suite in the pipeline and whenever the model, prompt, tools or data change. The risk owner sets the acceptable attack success rate in writing. Re-run the regression suite whenever the model version, prompt, retrieval source or guardrail changes, including changes made by the provider, and set a tolerance for run-to-run output variation. Review each system's behaviour against its defined parameters at least quarterly, or at a frequency set by a documented risk analysis, and re-validate before go-live and after any change. Where an AI reviewer replaces manual code review, measure its detection rate on seeded flaws and re-measure when its model or configuration changes. |
-| **Evidence Required** | Red team reports; regression suite results; agreed thresholds; retest records. |
+| **Implementation Expectation** | Red team each system against defined threat cases before release. Run a regression suite in the pipeline and whenever the model, prompt, tools or data change. The risk owner sets the acceptable attack success rate in writing. Re-run the regression suite whenever the model version, prompt, retrieval source or guardrail changes, including changes made by the provider, and set a tolerance for run-to-run output variation. Review each system's behaviour against its defined parameters at least quarterly, or at a frequency set by a documented risk analysis, and re-validate before go-live and after any change. Where an AI reviewer replaces manual code review, measure its detection rate on seeded flaws and re-measure when its model or configuration changes. Track AI threat intelligence, such as new MITRE ATLAS techniques, published incidents and provider advisories, and add relevant techniques to the threat cases and regression suite. Before testing a production system, agree the scope, timing and safeguards with its owner, and use test accounts and test data. |
+| **Evidence Required** | Red team reports; regression suite results; agreed thresholds; retest records; threat intelligence review log; production test authorisations. |
 | **Audit Test Procedure** | Confirm the last model or prompt change triggered the regression suite. Reproduce a sample of reported findings and confirm fixes hold. |
 | **Control Owner** | AI Red Team / AppSec |
 | **Review Frequency** | Before each release and continuously |
@@ -1268,7 +1268,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **MITRE ATLAS Mitigations** | AML.M0035 AI Red Team |
 | **NIST AI RMF** | MEASURE 2.7; MEASURE 2.6; MEASURE 2.1; GOVERN 4.3 |
 | **ISO/IEC 42001** | A.6.2.4 AI system verification and validation |
-| **ISO/IEC 27001** | A.8.8 Management of technical vulnerabilities; A.8.29 Security testing in development and acceptance |
+| **ISO/IEC 27001** | A.8.8 Management of technical vulnerabilities; A.8.29 Security testing in development and acceptance; A.5.7 Threat intelligence; A.8.34 Protection of information systems during audit testing |
 | **NIST CSF** | ID.RA Risk Assessment; ID.IM Improvement |
 | **CIS Controls** | CIS 7 Continuous Vulnerability Management; CIS 18 Penetration Testing |
 | **SOC 2** | CC4.1 Ongoing and separate evaluations; CC7.1 Detection of configuration changes and vulnerabilities |
@@ -1323,7 +1323,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **MITRE ATLAS Techniques** | None published in MITRE ATLAS techniques. The wiki's own identifier applies: AI-CTRL-041. |
 | **MITRE ATLAS Mitigations** | None published in MITRE ATLAS mitigations. The wiki's own identifier applies: AI-CTRL-041. |
 | **NIST AI RMF** | MEASURE 2.11; MEASURE 2.9; MAP 5.1 |
-| **ISO/IEC 42001** | A.5.4 Assessing AI system impact on individuals or groups of individuals; A.6.2.4 AI system verification and validation; A.8.2 System documentation and information for users |
+| **ISO/IEC 42001** | A.5.4 Assessing AI system impact on individuals or groups of individuals; A.6.2.4 AI system verification and validation; A.8.2 System documentation and information for users; A.10.4 Customers |
 | **ISO/IEC 27001** | None published in ISO/IEC 27001 Annex A. The wiki's own identifier applies: AI-CTRL-041. |
 | **NIST CSF** | None published in the NIST CSF categories. The wiki's own identifier applies: AI-CTRL-041. |
 | **CIS Controls** | None published in the CIS Controls. The wiki's own identifier applies: AI-CTRL-041. |
@@ -1382,7 +1382,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **MITRE ATLAS Mitigations** | AML.M0024 AI Telemetry Logging |
 | **NIST AI RMF** | MEASURE 2.4; MEASURE 3.1; MANAGE 4.1 |
 | **ISO/IEC 42001** | A.6.2.6 AI system operation and monitoring; A.6.2.8 AI system recording of event logs |
-| **ISO/IEC 27001** | A.5.25 Assessment and decision on information security events; A.8.15 Logging; A.8.16 Monitoring activities |
+| **ISO/IEC 27001** | A.5.25 Assessment and decision on information security events; A.8.15 Logging; A.8.16 Monitoring activities; A.5.37 Documented operating procedures |
 | **NIST CSF** | DE.CM Continuous Monitoring; DE.AE Adverse Event Analysis |
 | **CIS Controls** | CIS 8 Audit Log Management; CIS 13 Network Monitoring and Defense |
 | **SOC 2** | CC7.2 Monitoring for anomalies; CC7.3 Evaluation of security events |
@@ -1410,7 +1410,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **MITRE ATLAS Mitigations** | AML.M0024 AI Telemetry Logging |
 | **NIST AI RMF** | MANAGE 4.3; MANAGE 2.3; GOVERN 4.3; GOVERN 6.2 |
 | **ISO/IEC 42001** | A.8.4 Communication of incidents; A.8.3 External reporting; A.3.3 Reporting of concerns; A.6.2.6 AI system operation and monitoring |
-| **ISO/IEC 27001** | A.5.24 Information security incident management planning and preparation; A.5.25 Assessment and decision on information security events; A.5.26 Response to information security incidents; A.5.27 Learning from information security incidents; A.5.28 Collection of evidence; A.6.8 Information security event reporting |
+| **ISO/IEC 27001** | A.5.24 Information security incident management planning and preparation; A.5.25 Assessment and decision on information security events; A.5.26 Response to information security incidents; A.5.27 Learning from information security incidents; A.5.28 Collection of evidence; A.6.8 Information security event reporting; A.5.37 Documented operating procedures |
 | **NIST CSF** | DE.AE Adverse Event Analysis; RS.MA Incident Management; RS.AN Incident Analysis; RS.CO Incident Response Reporting and Communication; RS.MI Incident Mitigation; RC.RP Incident Recovery Plan Execution |
 | **CIS Controls** | CIS 17 Incident Response Management |
 | **SOC 2** | CC7.3 Evaluation of security events; CC7.4 Incident response; CC7.5 Recovery from incidents |
