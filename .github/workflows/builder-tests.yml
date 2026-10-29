@@ -7,11 +7,13 @@ on:
   pull_request:
     paths:
       - "source/24_Builder_Track/**"
+      - "source/25_Templates/data/**"
       - ".github/workflows/builder-tests.yml"
   push:
     branches: [main]
     paths:
       - "source/24_Builder_Track/**"
+      - "source/25_Templates/data/**"
       - ".github/workflows/builder-tests.yml"
   workflow_dispatch:
 
@@ -35,3 +37,24 @@ jobs:
       - name: Run the tests (standard library only, nothing to install)
         working-directory: source/24_Builder_Track/code
         run: python -m unittest discover -v -p "test_*.py"
+
+  # The toolkit (checker, MCP server, data look-ups, evidence export and
+  # instruction files) promises to run the same on every operating system.
+  # The rest of the reference code needs Linux or macOS, so only the toolkit
+  # tests run here.
+  toolkit-portability:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - name: Run the toolkit tests
+        working-directory: source/24_Builder_Track/code
+        run: python -m unittest -v test_toolkit

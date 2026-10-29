@@ -19,6 +19,30 @@ This page is the wiki's change record. It has two parts:
 
 Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.
 
+## 29 October 2026: Builder Toolkit and Builder Track links
+
+This entry follows the one below ("CSV data files and rebuilt workbooks"). It acts on a review of the Builder Track against the rest of the wiki and on Ankush Jain's [ai-secure-by-design](https://github.com/ankush1982/ai-secure-by-design) v0.2 (commit `70ef026`, 24 October 2026).
+
+### What changed
+
+- **[Builder Toolkit](../24_Builder_Track/05_Builder_Toolkit.md)**, a new Builder Track page with tools in the track's `code/` folder, all standard-library Python:
+  - `aiwiki_check.py` with `ai_rules.json`: ten AI-specific rules (AIW-001 to AIW-010) for model output reaching `eval`, HTML or SQL, unsafe model loading, `trust_remote_code`, unpinned models and MCP servers, MCP over plain HTTP, auto-approved MCP tools and coding agents run with approvals off. Each rule names its controls, risks and test cases. Output is text, JSON or SARIF 2.1.0, with exit codes for hooks and CI and a mode that checks only the lines a change adds.
+  - `mcp_server.py`: a read-only MCP server (stdio, and HTTP on loopback with token and Host and Origin checks) with six tools for wiki look-ups and the checks, and a design-review prompt.
+  - `wiki_data.py`: offline look-ups and search over the CSV data files.
+  - `evidence_export.py`: rows for the Audit and Evidence Checklist and the Test Case Tracker from the guard's audit log and SARIF results, after checking the log's hash chain.
+  - `gen_instructions.py`: one set of rules written as `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, the Copilot instructions file and a Cursor rule.
+  - GitHub Actions, GitLab CI and pre-commit examples.
+- **Tests on three operating systems.** `test_toolkit.py` (32 tests) runs on Linux, macOS and Windows in the Builder Track tests workflow, which now also runs when the CSV data files change.
+- **Links across the track.** The ten controls table on [Secure Your First Agent](../24_Builder_Track/01_Secure_Your_First_Agent.md#the-ten-controls-at-a-glance) gains a column of register risks and a link to the OWASP Top 10 Crosswalk. The track's pages link the inventory, triage, audit checklist, test tracker, impact assessment and incident report templates; the [section index](../24_Builder_Track/index.md) adds a where-to-start table and an evidence table; and those six template pages link back. The home page links the section index and the toolkit.
+
+### What was checked and what is still open
+
+- All Builder Track tests pass locally on Linux with Python 3.13 (122 tests, 1 skipped where the kernel does not allow `unshare`). The macOS and Windows results come from the CI run on the pull request.
+- The checker reports nothing on the Builder Track's own reference code, on the Payload Kit or on the ai-secure-by-design repository. Its rules are line-based heuristics: they miss renamed variables and can flag safe code.
+- The register risks in the ten controls table are the main ones the risk-to-control mapping links to each step's control, chosen by hand; the test suite checks only that every ID exists.
+- **Not verified against vendor documentation:** MCP client configuration layouts, instruction-file locations for each assistant, the coding-agent flag names in AIW-010, and the MCP protocol revisions the server answers. The MCP server was tested with JSON-RPC messages written from the specification, not with any vendor's client.
+- **Not done:** Windows support for the sandbox and the shell-based git hooks on the pipeline page; a hosted, TLS-protected MCP endpoint; per-agent hook adapters; dedicated pages for retrieval authorisation, model supply chain and detection and response.
+
 ## 29 October 2026: CSV data files and rebuilt workbooks
 
 This entry follows the one below ("eight risks to close the AI Risk Map gaps").
@@ -522,6 +546,7 @@ Every version of the wiki, newest first. Rows are never edited after they are ad
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.50 | 2026-10-29 | Nachiket Sathaye | Builder Toolkit (Builder Track page 5): AI-specific code and configuration checker with ten rules and SARIF output, read-only MCP server, offline look-ups over the CSV data files, evidence export for the audit checklist and test tracker, instruction files for five coding assistants from one source, GitHub, GitLab and pre-commit examples, toolkit tests on Linux, macOS and Windows; Builder Track pages link register risks, templates, CSV files and the OWASP crosswalk, and six template pages link back. |
 | 2.49 | 2026-10-29 | Nachiket Sathaye | CSV data files for the risk register, risk-to-control mapping, controls, test cases and AI Risk Map crosswalk, regenerated on every build; four workbooks rebuilt with AI-R47 to AI-R54 and the AI Risk Map credit linking its GitHub repository: AI Risk Register (version 1.3), AI Use-Case Risk Triage (1.1), Control Library and Crosswalks (1.4), Test Case Tracker (1.3). |
 | 2.48 | 2026-10-29 | Nachiket Sathaye | Risk register 1.4: eight risks AI-R47 to AI-R54 (model extraction and inference, AI incidents, personal data inside models, training-serving skew, liability, unmaintained open-source components, unlabelled AI-generated content, agent actions others cannot identify), with control mappings and triage questions E13 to E19; AI-R29 and AI-R31 widened; the AI Risk Map Crosswalk now has 42 direct and 13 partial matches. |
 | 2.47 | 2026-10-29 | Nachiket Sathaye | Risk register rules: the four tests a risk must pass to join the register (AI Risk Methodology 1.3), a Considered and Not Added list on the register (1.3), a rule in the contributing guide that risk, control and test case IDs are never reused, and the AI Risk Map Crosswalk (1.1) updated after reading the map's website, and every credit for the map now links its GitHub repository (wheels344i-gte/ai-risk-map). |

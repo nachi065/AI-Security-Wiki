@@ -3,7 +3,7 @@ title: "Home"
 description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and {{n:tests}} test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.49
+version: 2.50
 status: Published
 author: Nachiket Sathaye
 coauthors: Ankush Jain
@@ -17,14 +17,14 @@ last_updated: 2026-10-25
 # AI Security Wiki Home
 
 > **Document Type:** Enterprise AI Security Reference Architecture and Governance Wiki  
-> **Version:** 2.49  
+> **Version:** 2.50  
 > **Status:** Published  
 > **Original Author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
 > **Co-Author:** Ankush Jain ([about the co-author](#23-about-the-co-author))  
 > **Intended Use:** Public, vendor-neutral reference and template set for AI security governance, engineering, risk management, assurance, audit, compliance, and vendor evaluation.  
 > **Source Repository:** [github.com/nachi065/AI-Security-Wiki](https://github.com/nachi065/AI-Security-Wiki): the Markdown source, the change history, issues and pull requests. See [Contributing](https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md) to suggest a change.
 
-> **Latest update (29 October 2026).** The [risk register](02_Risk_Management/02B_Enterprise_AI_Risk_Register.md) adds eight risks, AI-R47 to AI-R54, adapted from the [AI Risk Map](23_Framework_Crosswalks/18_AI_Risk_Map_Crosswalk.md) by Evan Wheeler ([wheels344i-gte/ai-risk-map](https://github.com/wheels344i-gte/ai-risk-map)): model extraction, AI incidents, personal data inside models, training-serving skew, liability, unmaintained open-source components, labelling of AI-generated content and agent actions seen from outside. The [AI Risk Methodology](02_Risk_Management/02A_AI_Risk_Methodology.md#what-belongs-on-the-register) now sets four tests a risk must pass to join the register, and risk, control and test case IDs are never reused. The risk register, controls and test cases can now also be downloaded as [CSV files](25_Templates/index.md#data-files-csv), and the risk register, triage, control library and test tracker workbooks were rebuilt with the new risks. See the [Update Notes](09_Reference/19_Update_Notes.md) for details and what is still open.
+> **Latest update (29 October 2026).** The [Builder Track](24_Builder_Track/index.md) adds a vendor-neutral [Builder Toolkit](24_Builder_Track/05_Builder_Toolkit.md): a checker for AI-specific risks in code and agent configuration (with SARIF output for CI), a read-only MCP server that any MCP-capable assistant can use to look up the wiki's controls, risks and test cases, an export that turns an agent's audit log into rows for the audit and test templates, and one set of rules written as each coding assistant's instruction file. It runs on Linux, macOS and Windows and complements Ankush Jain's [ai-secure-by-design](https://github.com/ankush1982/ai-secure-by-design). The track's pages now link the register risks, templates and CSV files they relate to. Earlier the same day: [CSV data files](25_Templates/index.md#data-files-csv) and eight new register risks. See the [Update Notes](09_Reference/19_Update_Notes.md) for details and what is still open.
 
 ## 1. Purpose
 
@@ -244,8 +244,9 @@ The cycle then repeats: each use case is reviewed, improved, renewed or retired,
 
 24_Builder_Track/
   Start here if you are building with AI: ten controls for a first agent with reference code (guard, sandbox,
-  egress proxy) and a runnable demo, privacy duties in code (DPDP consent, rights, retention, children's data)
-  and developer pipeline checks, all with tests that run in CI.
+  egress proxy) and a runnable demo, privacy duties in code (DPDP consent, rights, retention, children's data),
+  developer pipeline checks, and a vendor-neutral toolkit (AI code checker, MCP server, evidence export,
+  instructions for every coding assistant), all with tests that run in CI.
 
 25_Templates/
   Downloadable .xlsx and .docx templates built from the wiki: AI risk register, system inventory, use-case
@@ -421,13 +422,13 @@ The three latest versions, newest first. The full history since version 1.0 is i
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.50 | 2026-10-29 | Nachiket Sathaye | Builder Toolkit (Builder Track page 5): AI-specific code and configuration checker with ten rules and SARIF output, read-only MCP server, offline look-ups over the CSV data files, evidence export for the audit checklist and test tracker, instruction files for five coding assistants from one source, GitHub, GitLab and pre-commit examples, toolkit tests on Linux, macOS and Windows; Builder Track pages link register risks, templates, CSV files and the OWASP crosswalk, and six template pages link back. |
 | 2.49 | 2026-10-29 | Nachiket Sathaye | CSV data files for the risk register, risk-to-control mapping, controls, test cases and AI Risk Map crosswalk, regenerated on every build; four workbooks rebuilt with AI-R47 to AI-R54 and the AI Risk Map credit linking its GitHub repository: AI Risk Register (version 1.3), AI Use-Case Risk Triage (1.1), Control Library and Crosswalks (1.4), Test Case Tracker (1.3). |
 | 2.48 | 2026-10-29 | Nachiket Sathaye | Risk register 1.4: eight risks AI-R47 to AI-R54 (model extraction and inference, AI incidents, personal data inside models, training-serving skew, liability, unmaintained open-source components, unlabelled AI-generated content, agent actions others cannot identify), with control mappings and triage questions E13 to E19; AI-R29 and AI-R31 widened; the AI Risk Map Crosswalk now has 42 direct and 13 partial matches. |
-| 2.47 | 2026-10-29 | Nachiket Sathaye | Risk register rules: the four tests a risk must pass to join the register (AI Risk Methodology 1.3), a Considered and Not Added list on the register (1.3), a rule in the contributing guide that risk, control and test case IDs are never reused, and the AI Risk Map Crosswalk (1.1) updated after reading the map's website, and every credit for the map now links its GitHub repository (wheels344i-gte/ai-risk-map). |
 
 ## 21. Quick Links
 
-- [Secure Your First Agent: Ten Controls With Code](24_Builder_Track/01_Secure_Your_First_Agent.md)
+- [Builder Track](24_Builder_Track/index.md): [Secure Your First Agent: Ten Controls With Code](24_Builder_Track/01_Secure_Your_First_Agent.md) and the [Builder Toolkit](24_Builder_Track/05_Builder_Toolkit.md)
 - [Foundations: AI Security vs. Security of AI](00_Foundations/index.md)
 - [AI Security Market and Technology Landscape: Summary](01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.md)
 - [AI Risk Methodology](02_Risk_Management/02A_AI_Risk_Methodology.md)

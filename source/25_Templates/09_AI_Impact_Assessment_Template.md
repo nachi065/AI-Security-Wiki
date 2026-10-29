@@ -44,6 +44,10 @@ version: 1.0
 
 The wiki's ISO/IEC AI Standards Crosswalk notes that its impact assessment templates focus on harms, while ISO/IEC 42005 clause 6.8.2 asks for benefits as well. Section 3 closes that gap. The template also adds intended and unintended uses, misuse and interested parties, following the ISO/IEC 42005 rows of the same crosswalk.
 
+## From the Builder Track
+
+[Privacy Duties in Code](../24_Builder_Track/03_Privacy_Duties_in_Code.md) shows how the consent, rights, retention and children's-data answers in this assessment become code, driven by one data map.
+
 ## Licence and credit
 
 The document is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), like the rest of the wiki. Suggested credit: "AI Impact Assessment Template" by Nachiket Sathaye and Ankush Jain, AI Security Wiki, licensed under CC BY-SA 4.0. If you share an adapted version, say what you changed and release it under the same licence. Framework names, identifiers and short titles belong to their owners and are cited for mapping only.

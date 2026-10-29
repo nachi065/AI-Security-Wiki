@@ -1,0 +1,18 @@
+# AI Security Wiki Builder Track checks for GitLab CI.
+# Add this job to .gitlab-ci.yml and copy the Builder Track tools to tools/.
+# Pin the image by digest in production.
+ai-security-checks:
+  image: python:3.13-slim
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+  variables:
+    GIT_DEPTH: "0"              # the diff needs the target branch
+  before_script:
+    - apt-get update -qq && apt-get install -y -qq git > /dev/null
+    - git fetch origin "$CI_MERGE_REQUEST_TARGET_BRANCH_NAME"
+  script:
+    - python tools/pipeline_checks.py ci "origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME"
+    - python tools/aiwiki_check.py --diff "origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME" --format sarif --output aiwiki.sarif --fail-on HIGH
+  artifacts:
+    when: always
+    paths: [aiwiki.sarif]
