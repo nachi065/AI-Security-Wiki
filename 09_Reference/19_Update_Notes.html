@@ -317,16 +317,31 @@
 <li><strong><a href="#full-version-history">Full version history</a></strong>: every version since 1.0, newest first. The <a href="../index.html#20-version-history">home page</a> shows only the three latest.</li>
 </ul>
 <p>Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.</p>
+<h2 id="29-october-2026-csv-data-files-and-rebuilt-workbooks">29 October 2026: CSV data files and rebuilt workbooks</h2>
+<p>This entry follows the one below ("eight risks to close the AI Risk Map gaps").</p>
+<h3 id="what-changed">What changed</h3>
+<ul>
+<li><strong>CSV data files.</strong> The <a href="../25_Templates/index.html#data-files-csv">Templates</a> section now offers five CSV files: the risk register, the risk-to-control mapping, the control objectives, the test cases and the AI Risk Map crosswalk. A new script, <code>export_data.py</code>, writes them from the Markdown pages on every build, so they cannot fall out of step with the pages. This follows the AI Risk Map's practice of publishing a flat CSV with stable IDs.</li>
+<li><strong>Workbooks rebuilt.</strong> The <a href="../25_Templates/01_AI_Risk_Register_Template.html">AI Risk Register</a> (version 1.3), <a href="../25_Templates/03_AI_Use_Case_Risk_Triage_Template.html">AI Use-Case Risk Triage</a> (1.1), <a href="../25_Templates/06_AI_Security_Control_Library_and_Crosswalks_Template.html">Control Library and Crosswalks</a> (1.4) and <a href="../25_Templates/07_AI_Security_Test_Case_Tracker_Template.html">Test Case Tracker</a> (1.3) workbooks now include AI-R47 to AI-R54 and triage questions E13 to E19. Their licence sheets credit the AI Risk Map to Evan Wheeler (GitHub wheels344i-gte) and link https://github.com/wheels344i-gte/ai-risk-map.</li>
+<li><strong>Generator fixes.</strong> The risk register generator no longer assumes 46 risks. The data extraction now finds the Owner Domains table by its heading (the new Considered and Not Added table had come first), and it now reads the Hong Kong regulatory crosswalk, which it had been skipping.</li>
+</ul>
+<h3 id="what-was-checked-and-what-is-still-open">What was checked and what is still open</h3>
+<ul>
+<li>All four workbooks were recalculated with no formula errors. The register sheet holds AI-R01 to AI-R54 in rows 5 to 58, and rows 59 to 150 are free for new risks.</li>
+<li>The CSV files hold 54 risks, 46 controls and 674 test cases, the same counts the link check reports.</li>
+<li>The audit checklist, requirements traceability matrix and other workbooks were not rebuilt, because they do not list register risks.</li>
+<li>The CSV crosswalk maps the AI Risk Map's categories, not its factor IDs. Mapping each AIRM factor ID still needs the map's own CSV.</li>
+</ul>
 <h2 id="29-october-2026-eight-risks-to-close-the-ai-risk-map-gaps">29 October 2026: eight risks to close the AI Risk Map gaps</h2>
 <p>This entry follows the one below ("rules for what goes on the risk register") and applies its four tests.</p>
-<h3 id="what-changed">What changed</h3>
+<h3 id="what-changed_1">What changed</h3>
 <ul>
 <li><strong>Eight new risks.</strong> The <a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a> (version 1.4) adds AI-R47 Model Extraction and Inference Attacks, AI-R48 AI Incidents Not Recognised or Handled, AI-R49 Personal Data That Cannot Be Removed from Models, AI-R50 Training-Serving Skew and Unreproducible Models, AI-R51 Liability for Harm Caused by AI Decisions, AI-R52 Unmaintained Open-Source AI Components, AI-R53 Unlabelled AI-Generated Content and AI-R54 Agent Actions Others Cannot Identify as AI. Each is adapted from a category of the AI Risk Map by Evan Wheeler (<a href="https://github.com/wheels344i-gte/ai-risk-map" rel="noopener">wheels344i-gte/ai-risk-map</a>) that the register covered only in part.</li>
 <li><strong>Two risks widened instead of added.</strong> AI-R29 now includes customers reaching the organization through their own agents, and AI-R31 includes shortages of GPUs, compute and power. Segregation of duties was considered and not added. All three decisions are recorded under Considered and Not Added.</li>
 <li><strong>Controls and triage.</strong> The <a href="../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a> (1.3) maps each new risk to existing controls, so the <a href="../02_Risk_Management/02G_Risk_Control_Test_Traceability.html">traceability page</a> links them to existing test cases. The <a href="../02_Risk_Management/02F_AI_Use_Case_Risk_Triage.html">AI Use-Case Risk Triage</a> (1.2) adds questions E13 to E19.</li>
 <li><strong>Crosswalk.</strong> The <a href="../23_Framework_Crosswalks/18_AI_Risk_Map_Crosswalk.html">AI Risk Map Crosswalk</a> (1.2) now shows 42 direct and 13 partial matches, up from 31 and 24.</li>
 </ul>
-<h3 id="what-was-checked-and-what-is-still-open">What was checked and what is still open</h3>
+<h3 id="what-was-checked-and-what-is-still-open_1">What was checked and what is still open</h3>
 <ul>
 <li>Five of the eight narratives name a second source as well as the map: NIST AI 100-2 (AI-R47), the EU AI Act Article 73 (AI-R48), the GDPR and EDPB Opinion 28/2024 (AI-R49), the new EU Product Liability Directive (AI-R51), and the EU AI Act Article 50 and China's labelling rules (AI-R53). These sources are cited from the wiki's own regional pages and crosswalks and were not re-read for this change. AI-R50, AI-R52 and AI-R54 say that only the map names them.</li>
 <li>No new test cases were written. The new risks are tested through the cases already filed under their controls. Whether those cases cover each risk well has not been reviewed.</li>
@@ -334,7 +349,7 @@
 </ul>
 <h2 id="29-october-2026-rules-for-what-goes-on-the-risk-register">29 October 2026: rules for what goes on the risk register</h2>
 <p>A second comparison with the <em>AI Risk Map</em> by Evan Wheeler (RiskFramework.org), this time with its website, found that the map states why each factor is included and records what it left out, and that its factor IDs are never reused. The wiki had neither rule written down.</p>
-<h3 id="what-changed_1">What changed</h3>
+<h3 id="what-changed_2">What changed</h3>
 <ul>
 <li><strong>What Belongs on the Register.</strong> A new section of the <a href="../02_Risk_Management/02A_AI_Risk_Methodology.html#what-belongs-on-the-register">AI Risk Methodology</a> (version 1.3) sets four tests for a new register risk: AI-specific, a distinct response, corroborated by at least two independent sources (or marked as the wiki's own framing), and treatable by at least one control. The tests are adapted from the map's inclusion gates and credited to it.</li>
 <li><strong>Considered and Not Added.</strong> The <a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html#considered-and-not-added">Enterprise AI Risk Register</a> (version 1.3) now records proposed risks that were left out, with the reason. It starts with the two scope decisions the methodology already made: attacks others carry out with AI, and general IT risks with no AI-specific change.</li>
@@ -342,14 +357,14 @@
 <li><strong>Credit for the AI Risk Map.</strong> Every credit for the map (crosswalk, register, methodology, the three template pages and a new Third-party content section in the README) now names the author's GitHub account, wheels344i-gte, and links the map's repository, https://github.com/wheels344i-gte/ai-risk-map, as well as RiskFramework.org. The crosswalk gives the citation the author asks for.</li>
 <li><strong>AI Risk Map Crosswalk</strong> (version 1.1). The page no longer says the map's website could not be reached. It records that the website was read on 29 October 2026 and still shows version 1.3, and that the map's workbook and CSV have not yet been compared with the page.</li>
 </ul>
-<h3 id="what-was-checked-and-what-is-still-open_1">What was checked and what is still open</h3>
+<h3 id="what-was-checked-and-what-is-still-open_2">What was checked and what is still open</h3>
 <ul>
 <li>The website was read through a summarising web reader. The map's CSV, workbook and Markdown files could not be downloaded from the environment used, so the crosswalk is still by category, not by factor ID.</li>
 <li>The existing 46 register risks have not yet been re-tested against the four new tests. In particular, most narratives do not yet name their sources, which the corroboration test asks for.</li>
 </ul>
 <h2 id="25-october-2026-nist-ssdf-crosswalk-in-the-template-workbooks">25 October 2026: NIST SSDF crosswalk in the template workbooks</h2>
 <p>This entry closes the item left open in the entry below ("templates rebuilt for the regulator changes"), which said the NIST SSDF crosswalk was not yet a column in the risk register's framework matrix.</p>
-<h3 id="what-changed_2">What changed</h3>
+<h3 id="what-changed_3">What changed</h3>
 <ul>
 <li><strong>SSDF column.</strong> The <a href="../23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.html">NIST SSDF and SP 800-218A Crosswalk</a> (added in 2.41) is now read by the template generators. Its 20 practices (PO, PS, PW and RV) appear as a column in the framework matrix and as rows in the Framework Crosswalk sheet of the <a href="../25_Templates/01_AI_Risk_Register_Template.html">AI Risk Register</a> (version 1.2) and the <a href="../25_Templates/06_AI_Security_Control_Library_and_Crosswalks_Template.html">Control Library and Crosswalks</a> (1.3) workbooks. Before this, the generators skipped the SSDF page, so the crosswalk was missing from the control library workbook as well as the risk register.</li>
 <li><strong>Counts corrected.</strong> The control library workbook now lists 930 framework items (910 before) in 49 framework columns. The template page had said 47 columns, which was already one short after the Hong Kong column was added.</li>
@@ -362,7 +377,7 @@
 </ul>
 <h2 id="25-october-2026-templates-rebuilt-for-the-regulator-changes">25 October 2026: templates rebuilt for the regulator changes</h2>
 <p>This entry closes an item left open in the entry below ("financial regulators and the kill switch"), which said the Excel templates had not been rebuilt.</p>
-<h3 id="what-changed_3">What changed</h3>
+<h3 id="what-changed_4">What changed</h3>
 <ul>
 <li><strong>Five workbooks rebuilt from wiki 2.44.</strong> The <a href="../25_Templates/01_AI_Risk_Register_Template.html">AI Risk Register</a> (version 1.1), <a href="../25_Templates/05_AI_Security_Audit_and_Evidence_Checklist_Template.html">Audit and Evidence Checklist</a> (1.2), <a href="../25_Templates/06_AI_Security_Control_Library_and_Crosswalks_Template.html">Control Library and Crosswalks</a> (1.2), <a href="../25_Templates/07_AI_Security_Test_Case_Tracker_Template.html">Test Case Tracker</a> (1.2) and <a href="../25_Templates/12_AI_Security_Requirements_Traceability_Matrix_Template.html">Requirements Traceability Matrix</a> (1.1) now show AI-CTRL-025 as AI Containment and Kill Switch with its wider text, the extended text of AI-CTRL-011, 012, 014 and 041, and test case TC-L01-021.</li>
 <li><strong>Hong Kong column.</strong> The framework matrices and the traceability matrix have a Hong Kong regulation (incl. HKMA) column, and the crosswalk sheets carry the 18 Hong Kong items (nine instruments and nine HKMA principles). The control library workbook now lists 910 framework items.</li>
@@ -378,7 +393,7 @@
 </ul>
 <h2 id="25-october-2026-financial-regulators-and-the-kill-switch">25 October 2026: financial regulators and the kill switch</h2>
 <p>A comparison of the wiki with a published chart of six financial regulators' AI expectations (MAS, RBI, SEBI, the EU AI Act, the FCA and the HKMA) found that the wiki had no Hong Kong coverage at all, and that its only kill-switch control applied to agents, while MAS, the HKMA and the RBI draft expect a way to suspend any high-risk AI. It also found that the chart understated MAS, the RBI and the HKMA on kill switches, and showed SEBI's guidelines as requirements before they were issued.</p>
-<h3 id="what-changed_4">What changed</h3>
+<h3 id="what-changed_5">What changed</h3>
 <ul>
 <li><strong>Hong Kong section.</strong> A new <a href="../26_Hong_Kong_AI_Compliance/index.html">Hong Kong AI Compliance</a> section has a regulatory hub (nine instruments, HK1 to HK9), a role guide, the <a href="../26_Hong_Kong_AI_Compliance/HK-T1_HKMA_ART_Principles_Self_Assessment.html">HK-T1 HKMA ART Principles Self-Assessment</a> and a <a href="../26_Hong_Kong_AI_Compliance/03_Regulatory_Crosswalk.html">crosswalk</a> that maps the HKMA guidance principle by principle: seven direct and two partial. Both tables are also CSV files.</li>
 <li><strong>Financial regulator comparison.</strong> A new <a href="../04_Domain_Standards/10C_Financial_Regulator_AI_Comparison.html">Financial Regulator AI Comparison</a> sets the six regulators side by side on board accountability, risk tiering, inventory, lifecycle controls, human oversight, third-party AI, customer transparency and kill switch, with the strictest version of each and the wiki control that meets it.</li>
@@ -403,7 +418,7 @@
 </ul>
 <h2 id="24-october-2026-requirements-traceability-and-review-templates">24 October 2026: requirements traceability and review templates</h2>
 <p>The wiki lacked a requirements matrix: one row per testable requirement, scoped by assurance stage and deployment model, with columns for the vendor's answer and the assessor's review. No wiki page said which controls apply to SaaS, PaaS or IaaS delivery.</p>
-<h3 id="what-changed_5">What changed</h3>
+<h3 id="what-changed_6">What changed</h3>
 <ul>
 <li><strong>Assurance stage and deployment model.</strong> Every control in the <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#assurance-stages-and-deployment-models">Control Objectives Library</a> (version 2.5) now names the stage at which a reviewer first checks it and the deployment models it applies to. The link checker rejects a control without valid values. Both are starting values for a review to adjust.</li>
 <li><strong>Requirements traceability matrix.</strong> A new <a href="../25_Templates/12_AI_Security_Requirements_Traceability_Matrix_Template.html">AI Security Requirements Traceability Matrix Template</a> turns each sentence of a control's Implementation Expectation into one requirement, traced to the control, its risks, test cases and framework and regional crosswalks. It adds scoping, vendor and assessor columns, thirteen evidence types, a response check that treats a "Yes" with no detail as unanswered, and a live dashboard.</li>
@@ -426,7 +441,7 @@
 </ul>
 <h2 id="23-october-2026-secure-development-and-privacy-in-code">23 October 2026: secure development and privacy in code</h2>
 <p>A comparison with <a href="https://github.com/ankush1982/ai-secure-by-design" rel="noopener">ai-secure-by-design</a>, an open-source plugin for AI coding agents by the wiki's co-author Ankush Jain, found five gaps in the wiki. It never cited the NIST Secure Software Development Framework or its generative AI profile. Its standard for AI coding assistants was short and did not cover coding agents. It had no controls before commit. It described privacy duties as forms, not code. And the Builder Track tests were not run in CI. This update closes those gaps.</p>
-<h3 id="what-changed_6">What changed</h3>
+<h3 id="what-changed_7">What changed</h3>
 <ul>
 <li><strong>NIST SSDF crosswalk.</strong> A new <a href="../23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.html">NIST SSDF and SP 800-218A Crosswalk</a> maps the 19 practices of SSDF 1.1, plus the new PW.3 practice of SP 800-218A, to the wiki's controls, pages, code and test cases: 17 direct and 3 partial. It records the PW.3 renumbering and the new PO.5.3 task.</li>
 <li><strong>Coding assistants and coding agents.</strong> The <a href="../04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.html">AI Coding Assistant and Coding Agent Security Standard</a> (version 2.0, same address) now covers completion assistants, coding agents, pipeline agents, and the extensions, plugins, MCP servers and rules files that steer them. New requirements cover approved models and accounts, command and file-system guardrails, scoped agent credentials, MCP servers and plugins, repository content as untrusted input, managed agent settings and hooks, generated code review, dependency verification, provenance of AI-made changes, and review bot permissions. Each requirement links to the existing test case that proves it. A pipeline gates table shows which checks run in the agent, before commit, in CI and at merge, and which of them the author can bypass.</li>
@@ -452,7 +467,7 @@
 </ul>
 <h2 id="22-october-2026-weak-points-in-proof-rating-and-operation">22 October 2026: weak points in proof, rating and operation</h2>
 <p>A review of the wiki found that it shows proof weakly (test cases could be read as validated protection, risk ratings were not calibrated, regulatory claims were only partly verified) and is hard to run as a programme (no charter, few default numbers, thin governance detail). This update addresses those points.</p>
-<h3 id="what-changed_7">What changed</h3>
+<h3 id="what-changed_8">What changed</h3>
 <ul>
 <li><strong>Validation levels for test cases.</strong> Every case now shows a Validation Level: Documented, Executable, Lab-validated or Independently reproduced (<a href="../10_Test_Case_Library/index.html#validation-levels">Validation levels</a>). The build fills it in: a case with a payload file in the kit is Executable, every other case is Documented. A case can claim Lab-validated or Independently reproduced only with a Validated Against row that names the product and version, the date and an evidence link; the link check enforces this. No case is lab-validated: the payload kit has only been run against its own stand-in applications.</li>
 <li><strong>Self-contained test cases.</strong> Each case now ends with a closed box listing the <a href="../10_Test_Case_Library/standard-fields.html">Standard Fields</a> wording that applies to it, so a copied case keeps its pass and fail criteria, scoring and evidence rules. The <a href="../25_Templates/07_AI_Security_Test_Case_Tracker_Template.html">test case tracker workbook</a> (version 1.1) fills those fields into every row and adds the validation level.</li>
@@ -488,7 +503,7 @@
 <li><strong>Framework crosswalks (23 October 2026):</strong> every MITRE ATLAS technique and mitigation identifier the wiki cites (88 in all, in the control library and the test cases) was compared with MITRE's own ATLAS data, release 2026.09 of 15 September 2026, the latest release in the <a href="https://github.com/mitre-atlas/atlas-data" rel="noopener">atlas-data repository</a> on 23 October 2026. The <a href="../23_Framework_Crosswalks/16_Trustworthy_AI_Ethics_Crosswalk.html">Trustworthy AI and Ethics Standards Crosswalk</a> and the <a href="../23_Framework_Crosswalks/17_International_AI_Instruments_Crosswalk.html">International AI Instruments Crosswalk</a> were due for a check this week but could not be checked (see below).</li>
 <li><strong>Weekly change watch (24 October 2026):</strong> in every region, the rows still marked Proposed, pending, draft or under consultation were checked for news. Primary sources read: the European Commission's AI Act guideline pages, the Council of the EU, the Congresso Nacional page on <a href="../14_Brazil_AI_Compliance/03_Regulatory_Crosswalk.html">PL 2338/2023</a>, the Saudi NCA consultation page and the RBI draft on model risk. EUR-Lex was searched for new citations of AI Act harmonised standards, and the CEN-CENELEC AI page for news on JTC 21.</li>
 </ul>
-<h3 id="what-changed_8">What changed</h3>
+<h3 id="what-changed_9">What changed</h3>
 <ul>
 <li><strong>GCC, now [Verified]:</strong> U2 (UAE cybercrime law, Federal Decree-Law No. 34 of 2021) and S8 (NCA AI Cybersecurity Guidelines: a consultation draft, feedback closed 5 August 2026, no final text yet). U1 (UAE PDPL) was read again with no change.</li>
 <li><strong>GCC, U9 (CBUAE Guidance Note):</strong> the CBUAE press release confirms the date (23 February 2026) and that it applies to licensed financial institutions. The row stays [Reported] because the note's own text has not been read.</li>
@@ -807,6 +822,12 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>2.49</td>
+<td>2026-10-29</td>
+<td>Nachiket Sathaye</td>
+<td>CSV data files for the risk register, risk-to-control mapping, controls, test cases and AI Risk Map crosswalk, regenerated on every build; four workbooks rebuilt with AI-R47 to AI-R54 and the AI Risk Map credit linking its GitHub repository: AI Risk Register (version 1.3), AI Use-Case Risk Triage (1.1), Control Library and Crosswalks (1.4), Test Case Tracker (1.3).</td>
+</tr>
 <tr>
 <td>2.48</td>
 <td>2026-10-29</td>
