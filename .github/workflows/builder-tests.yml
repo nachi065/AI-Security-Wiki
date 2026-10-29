@@ -38,11 +38,11 @@ jobs:
         working-directory: source/24_Builder_Track/code
         run: python -m unittest discover -v -p "test_*.py"
 
-  # The toolkit (checker, MCP server, data look-ups, evidence export and
-  # instruction files) promises to run the same on every operating system.
-  # The rest of the reference code needs Linux or macOS, so only the toolkit
-  # tests run here.
-  toolkit-portability:
+  # The Builder Track promises that its code runs on every major operating
+  # system, so every test runs on each of them. Tests for things a platform
+  # cannot do (network removal outside Linux, file-size limits on Windows)
+  # are skipped there with the reason, and the code reports what it applied.
+  portability:
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -55,6 +55,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.10"
-      - name: Run the toolkit tests
+      - name: Run all Builder Track tests
         working-directory: source/24_Builder_Track/code
-        run: python -m unittest -v test_toolkit
+        run: python -m unittest discover -v -p "test_*.py"

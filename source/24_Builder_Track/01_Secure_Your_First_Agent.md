@@ -324,7 +324,7 @@ The approver is shown the real arguments, not a summary the model wrote. Keep th
 
 **Control:** [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027). If your agent writes and runs code, that code is attacker-influenced input. Run it in a separate process with hard limits and no secrets, inside a container that provides the real boundary.
 
-The Python wrapper sets CPU, memory, file-size and process limits, an empty environment, a throwaway working directory and a wall-clock timeout, and on Linux it removes the network when the kernel allows it:
+The Python wrapper sets CPU, memory, file-size and process limits, an empty environment, a throwaway working directory and a wall-clock timeout, and on Linux it removes the network when the kernel allows it. On Windows it puts the process in a Job Object ([`winjob.py`](code/winjob.py)) with CPU, memory and process-count limits instead; Windows has no per-process file-size limit, so the result's `limits` field says which limits were applied. The Unix version:
 
 <!-- excerpt: sandbox.py -->
 ```python
@@ -362,7 +362,7 @@ exec docker run --rm \
   python -I /job/main.py
 ```
 
-*From [`docker-sandbox.sh`](code/docker-sandbox.sh).*
+*From [`docker-sandbox.sh`](code/docker-sandbox.sh). [`docker-sandbox.ps1`](code/docker-sandbox.ps1) runs the same command from PowerShell on Windows.*
 
 For stronger isolation than a standard container, use a user-space kernel or a microVM, depending on your platform.
 
@@ -480,7 +480,7 @@ A kill switch you have never used is a hope, not a control. Test it on a schedul
         entry = {"ts": round(time.time(), 3), **fields, "prev": self._last}
         entry["hash"] = hashlib.sha256(json.dumps(entry, sort_keys=True, default=str).encode()).hexdigest()
         with self._lock:
-            with self.path.open("a") as f:
+            with self.path.open("a", encoding="utf-8") as f:
                 f.write(json.dumps(entry, sort_keys=True, default=str) + "\n")
             self._last = entry["hash"]
 ```
@@ -491,7 +491,7 @@ A kill switch you have never used is a hope, not a control. Test it on a schedul
 ```python
     def verify(path: str) -> tuple[bool, int]:
         prev, n = "0" * 64, 0
-        for line in Path(path).read_text().splitlines():
+        for line in Path(path).read_text(encoding="utf-8").splitlines():
             entry = json.loads(line)
             claimed = entry.pop("hash")
             expect = hashlib.sha256(json.dumps(entry, sort_keys=True, default=str).encode()).hexdigest()
@@ -583,4 +583,4 @@ These ten steps contain the damage a hijacked agent can do. They do not make the
 
 ## Limits of this reference
 
-> **Verify before use:** The Python code is a teaching reference and has not been security reviewed or hardened. The token format is deliberately simple and is not a substitute for your identity provider. The argument check resolves DNS at validation time, and the egress proxy repeats the check at connect time, which is the one that matters. The sandbox's process limits are not a security boundary. The Docker command and the Kubernetes manifest were not executed when this page was written, because the tests need no container runtime. Check every flag and field against the current documentation for your runtime and Kubernetes version, and pin container images by digest. The tests were run with Python 3.13 on Linux. The network-removal step needs `unshare` and is skipped where the kernel does not allow it.
+> **Verify before use:** The Python code is a teaching reference and has not been security reviewed or hardened. The token format is deliberately simple and is not a substitute for your identity provider. The argument check resolves DNS at validation time, and the egress proxy repeats the check at connect time, which is the one that matters. The sandbox's process limits are not a security boundary. The Docker command and the Kubernetes manifest were not executed when this page was written, because the tests need no container runtime. Check every flag and field against the current documentation for your runtime and Kubernetes version, and pin container images by digest. The tests run in CI on Linux, macOS and Windows. The network-removal step needs `unshare` and is skipped where the kernel does not allow it, which includes every macOS and Windows machine. On Windows the child process is placed in its Job Object just after it starts, so its first instructions run before the limits apply.

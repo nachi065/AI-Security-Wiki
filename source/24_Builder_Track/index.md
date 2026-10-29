@@ -42,9 +42,9 @@ Everything is in the [`code/`](code/) folder, uses only the Python standard libr
 | [`guard.py`](code/guard.py) | The enforcement layer: identity, scoped tokens, tool allow-list and pinning, argument validation, approval gate, rate limits, kill switch, audit log |
 | [`policy.json`](code/policy.json) and [`tool_definitions.json`](code/tool_definitions.json) | The agent registry, tool rules and reviewed tool definitions the guard reads |
 | [`pin_definitions.py`](code/pin_definitions.py) | Writes the hash of each reviewed tool definition into the policy |
-| [`sandbox.py`](code/sandbox.py) | Runs generated code with process limits and, where the kernel allows, no network |
+| [`sandbox.py`](code/sandbox.py) and [`winjob.py`](code/winjob.py) | Runs generated code with process limits (a Job Object on Windows) and, where the kernel allows, no network |
 | [`egress_proxy.py`](code/egress_proxy.py) | An allow-list forward proxy that checks hosts and resolved addresses |
-| [`docker-sandbox.sh`](code/docker-sandbox.sh) and [`k8s-agent-pod.yaml`](code/k8s-agent-pod.yaml) | Container and Kubernetes settings for the real isolation boundary |
+| [`docker-sandbox.sh`](code/docker-sandbox.sh), [`docker-sandbox.ps1`](code/docker-sandbox.ps1) and [`k8s-agent-pod.yaml`](code/k8s-agent-pod.yaml) | Container and Kubernetes settings for the real isolation boundary |
 | [`agent_demo.py`](code/agent_demo.py) | A hijacked agent, played end to end with a scripted stand-in for the model |
 | [`privacy.py`](code/privacy.py) and [`privacy_map.json`](code/privacy_map.json) | Consent ledger, rights desk, retention runner, children's gate and redacting logger, driven by one data map |
 | [`pipeline_checks.py`](code/pipeline_checks.py) | Secret, personal-data-in-log and AI-Assistance trailer checks for git hooks, a coding agent's hook and CI |
@@ -54,9 +54,9 @@ Everything is in the [`code/`](code/) folder, uses only the Python standard libr
 | [`evidence_export.py`](code/evidence_export.py) | Turns the guard's audit log and checker results into rows for the audit and test templates |
 | [`gen_instructions.py`](code/gen_instructions.py) and [`agent_instructions.txt`](code/agent_instructions.txt) | Writes one set of rules as each coding assistant's instruction file |
 | [`ci/`](code/ci/github-actions.yml) | GitHub Actions, GitLab CI and pre-commit examples |
-| `test_*.py` | Tests for all of the above, including a check that the pages' code excerpts match the files. The [Builder Track tests workflow](https://github.com/nachi065/AI-Security-Wiki/blob/main/.github/workflows/builder-tests.yml) runs them on Python 3.10 and 3.13 for every change to this section, and runs the toolkit tests on Linux, macOS and Windows |
+| `test_*.py` | Tests for all of the above, including a check that the pages' code excerpts match the files. The [Builder Track tests workflow](https://github.com/nachi065/AI-Security-Wiki/blob/main/.github/workflows/builder-tests.yml) runs them on Python 3.10 and 3.13 for every change to this section, on Linux, macOS and Windows |
 
-None of the code calls a model provider's API or depends on one assistant: the agent demo uses a scripted stand-in for the model, and the checks run from a terminal, git hooks, CI or any assistant that can run a command or call an MCP tool. The toolkit runs on Linux, macOS and Windows. The sandbox in [`sandbox.py`](code/sandbox.py) and the shell-based git hooks on the pipeline page need Linux or macOS.
+None of the code calls a model provider's API or depends on one assistant: the agent demo uses a scripted stand-in for the model, and the checks run from a terminal, git hooks, CI or any assistant that can run a command or call an MCP tool. All of it runs on Linux, macOS and Windows. Where a platform cannot do something, the code says so: on Windows, [`sandbox.py`](code/sandbox.py) uses a Job Object and has no file-size limit, and only Linux can remove the network from the sandboxed process.
 
 ## How this fits the rest of the wiki
 

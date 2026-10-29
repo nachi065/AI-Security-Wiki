@@ -19,6 +19,25 @@ This page is the wiki's change record. It has two parts:
 
 Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.
 
+## 29 October 2026: the Builder Track on Windows
+
+This entry follows the one below ("Builder Toolkit and Builder Track links"), which listed Windows support for the sandbox and the shell-based git hooks as not done.
+
+### What changed
+
+- **Sandbox.** On Windows, [`sandbox.py`](../24_Builder_Track/01_Secure_Your_First_Agent.md#b7-run-generated-code-in-a-sandbox) now places the child process in a Job Object (new file `winjob.py`, standard-library `ctypes`) that limits CPU time, memory and process count and kills everything the job started when it closes or times out. Its result has a new `limits` field that lists what the platform actually applied.
+- **Git hooks.** The hook commands on [Developer Pipeline Checks](../24_Builder_Track/04_Developer_Pipeline_Checks.md#wire-it-in) use `python3` where it exists and `python` otherwise, and the page says to install them from Git Bash on Windows.
+- **Text files.** The reference code and tests read and write files as UTF-8 instead of the platform's default encoding.
+- **Container command.** `docker-sandbox.ps1` runs the same locked-down container command from PowerShell.
+- **CI.** The Builder Track tests workflow runs every Builder Track test, not only the toolkit's, on Linux, macOS and Windows.
+
+### What was checked and what is still open
+
+- All Builder Track tests pass on Linux locally. The macOS and Windows results come from the CI run on the pull request.
+- Two tests are skipped where the platform cannot do what they test: the file-size limit on Windows, which has no per-process file-size limit, and network removal everywhere except Linux machines that allow `unshare --net`.
+- On Windows the child process joins its Job Object just after it starts, so its first instructions run before the limits apply. The sandbox remains hygiene, not a security boundary, on every platform.
+- `docker-sandbox.ps1` was not executed, like `docker-sandbox.sh`, because the tests need no container runtime.
+
 ## 29 October 2026: Builder Toolkit and Builder Track links
 
 This entry follows the one below ("CSV data files and rebuilt workbooks"). It acts on a review of the Builder Track against the rest of the wiki and on Ankush Jain's [ai-secure-by-design](https://github.com/ankush1982/ai-secure-by-design) v0.2 (commit `70ef026`, 24 October 2026).
@@ -546,6 +565,7 @@ Every version of the wiki, newest first. Rows are never edited after they are ad
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.51 | 2026-10-29 | Nachiket Sathaye | Builder Track runs on Windows: the sandbox uses a Windows Job Object for CPU, memory and process limits and reports which limits it applied, the git hooks fall back from python3 to python and run under Git for Windows, files are read and written as UTF-8, a PowerShell version of the container command, and every Builder Track test now runs in CI on Linux, macOS and Windows. |
 | 2.50 | 2026-10-29 | Nachiket Sathaye | Builder Toolkit (Builder Track page 5): AI-specific code and configuration checker with ten rules and SARIF output, read-only MCP server, offline look-ups over the CSV data files, evidence export for the audit checklist and test tracker, instruction files for five coding assistants from one source, GitHub, GitLab and pre-commit examples, toolkit tests on Linux, macOS and Windows; Builder Track pages link register risks, templates, CSV files and the OWASP crosswalk, and six template pages link back. |
 | 2.49 | 2026-10-29 | Nachiket Sathaye | CSV data files for the risk register, risk-to-control mapping, controls, test cases and AI Risk Map crosswalk, regenerated on every build; four workbooks rebuilt with AI-R47 to AI-R54 and the AI Risk Map credit linking its GitHub repository: AI Risk Register (version 1.3), AI Use-Case Risk Triage (1.1), Control Library and Crosswalks (1.4), Test Case Tracker (1.3). |
 | 2.48 | 2026-10-29 | Nachiket Sathaye | Risk register 1.4: eight risks AI-R47 to AI-R54 (model extraction and inference, AI incidents, personal data inside models, training-serving skew, liability, unmaintained open-source components, unlabelled AI-generated content, agent actions others cannot identify), with control mappings and triage questions E13 to E19; AI-R29 and AI-R31 widened; the AI Risk Map Crosswalk now has 42 direct and 13 partial matches. |
