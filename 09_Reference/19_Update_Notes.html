@@ -322,7 +322,7 @@
 <p>This entry follows the one below ("Builder Toolkit and Builder Track links"), which listed Windows support for the sandbox and the shell-based git hooks as not done.</p>
 <h3 id="what-changed">What changed</h3>
 <ul>
-<li><strong>Sandbox.</strong> On Windows, <a href="../24_Builder_Track/01_Secure_Your_First_Agent.html#b7-run-generated-code-in-a-sandbox"><code>sandbox.py</code></a> now places the child process in a Job Object (new file <code>winjob.py</code>, standard-library <code>ctypes</code>) that limits CPU time, memory and process count and kills everything the job started when it closes or times out. Its result has a new <code>limits</code> field that lists what the platform actually applied.</li>
+<li><strong>Sandbox.</strong> On macOS, the sandbox now starts (it failed there before). On Windows, <a href="../24_Builder_Track/01_Secure_Your_First_Agent.html#b7-run-generated-code-in-a-sandbox"><code>sandbox.py</code></a> now places the child process in a Job Object (new file <code>winjob.py</code>, standard-library <code>ctypes</code>) that limits CPU time, memory and process count and kills everything the job started when it closes or times out. Its result has a new <code>limits</code> field that lists what the platform actually applied.</li>
 <li><strong>Git hooks.</strong> The hook commands on <a href="../24_Builder_Track/04_Developer_Pipeline_Checks.html#wire-it-in">Developer Pipeline Checks</a> use <code>python3</code> where it exists and <code>python</code> otherwise, and the page says to install them from Git Bash on Windows.</li>
 <li><strong>Text files.</strong> The reference code and tests read and write files as UTF-8 instead of the platform's default encoding.</li>
 <li><strong>Container command.</strong> <code>docker-sandbox.ps1</code> runs the same locked-down container command from PowerShell.</li>
@@ -331,7 +331,8 @@
 <h3 id="what-was-checked-and-what-is-still-open">What was checked and what is still open</h3>
 <ul>
 <li>All Builder Track tests pass on Linux locally. The macOS and Windows results come from the CI run on the pull request.</li>
-<li>Two tests are skipped where the platform cannot do what they test: the file-size limit on Windows, which has no per-process file-size limit, and network removal everywhere except Linux machines that allow <code>unshare --net</code>.</li>
+<li><strong>macOS.</strong> Running every test on macOS for the first time showed that the sandbox had never worked there: macOS refuses one of the Unix limits (the address-space limit, as far as the tests show), and the whole launch failed. The sandbox now applies each limit it can, runs without the ones the system refuses, and lists the applied ones in <code>limits</code>, as it does on Windows.</li>
+<li>Tests skip what a platform cannot do, with the reason: the memory limit where the system refuses it (macOS), the file-size limit on Windows, and network removal everywhere except Linux machines that allow <code>unshare --net</code>.</li>
 <li>On Windows the child process joins its Job Object just after it starts, so its first instructions run before the limits apply. The sandbox remains hygiene, not a security boundary, on every platform.</li>
 <li><code>docker-sandbox.ps1</code> was not executed, like <code>docker-sandbox.sh</code>, because the tests need no container runtime.</li>
 </ul>
