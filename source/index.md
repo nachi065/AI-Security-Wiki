@@ -3,7 +3,7 @@ title: "Home"
 description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and {{n:tests}} test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.56
+version: 2.57
 status: Published
 author: Nachiket Sathaye
 coauthors: Ankush Jain
@@ -11,13 +11,13 @@ owner: AI Security Program
 custodian: Security Architecture Team
 review_cycle: Quarterly
 approval_authority: AI Governance Committee
-last_updated: 2026-10-29
+last_updated: 2026-10-31
 ---
 
 # AI Security Wiki Home
 
 > **Document Type:** Enterprise AI Security Reference Architecture and Governance Wiki  
-> **Version:** 2.56  
+> **Version:** 2.57  
 > **Status:** Published  
 > **Original Author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
 > **Co-Author:** Ankush Jain ([about the co-author](#23-about-the-co-author))  
@@ -424,9 +424,9 @@ The three latest versions, newest first. The full history since version 1.0 is i
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.57 | 2026-10-31 | Nachiket Sathaye | Weekly crosswalk verification, week ending 31 October 2026: seventeen regulatory rows checked against primary sources and now [Verified] (EU, GCC, India, UK, Singapore and US); EU E13 date corrected; UAE body in U5 renamed to the Artificial Intelligence and Data Authority; US7 marked [Conflict] on its operative date; India, South Korea and GCC rows updated from regulator pages; MITRE ATLAS citations moved to release 2026.10 (six names, AML.T0056 replaced), with AML.T0057 left for review. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 | 2.56 | 2026-10-29 | Nachiket Sathaye | ISO/IEC 42001 Crosswalk now covers all 38 Annex A controls (was 33) and ISO/IEC 27001 Crosswalk 75 of 93 (was 65), with titles checked against published listings; eight controls extended; four workbooks rebuilt. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 | 2.55 | 2026-10-29 | Nachiket Sathaye | Risk register 1.5: AI-R55 AI-Accelerated Exploitation and Patch Gap, mapped to four controls, with AI-CTRL-037 extended and the earlier out-of-scope decision on AI-enabled attacks reopened for exploitation speed; PCI DSS AI Crosswalk rows updated; six workbooks rebuilt. See the [Update Notes](09_Reference/19_Update_Notes.md). |
-| 2.54 | 2026-10-29 | Nachiket Sathaye | PCI DSS AI Crosswalk for the PCI SSC information supplement Security Considerations for AI Systems (September 2026); eight test cases (TC-L01-022, TC-L05-036, TC-L08-044, TC-L09-027, TC-L10-034, TC-L10-035, TC-L14-023, TC-L14-024) and eleven controls extended from it; PCI DSS sector overlay row updated; five workbooks rebuilt with PCI DSS crosswalk columns and the new cases; drifted test case counts corrected. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 
 ## 21. Quick Links
 
