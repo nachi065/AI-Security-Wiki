@@ -28,7 +28,7 @@ Each control cites the identifiers published by the framework owner. Where a fra
 |---|---|---|
 | OWASP Top 10 for LLM Applications | 2025 | `LLM01:2025` to `LLM10:2025` |
 | OWASP Top 10 for Agentic Applications | 2026 | `ASI01` to `ASI10` |
-| MITRE ATLAS | 2026.09 | Techniques `AML.T####`; mitigations `AML.M####` |
+| MITRE ATLAS | 2026.10, except `AML.T0057` LLM Data Leakage, which is from 2026.09: release 2026.10 moved it to `AML.T0085.002` and the wiki's citations have not yet been re-mapped | Techniques `AML.T####`; mitigations `AML.M####` |
 | NIST AI Risk Management Framework | 1.0 | Subcategories, for example `MEASURE 2.7` |
 | ISO/IEC 42001 | 2023 | Annex A controls, for example `A.6.2.4`; management system clauses, for example `Clause 9.2` |
 | ISO/IEC 27001 | 2022 | Annex A controls, for example `A.8.15`; management system clauses, for example `Clause 6.1.2` |
@@ -266,7 +266,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Owner** | Procurement / GRC |
 | **Review Frequency** | Annually and on vendor change |
 | **OWASP** | LLM03:2025 Supply Chain |
-| **MITRE ATLAS Techniques** | AML.T0010 AI Supply Chain Compromise; AML.T0109 AI Supply Chain Rug Pull |
+| **MITRE ATLAS Techniques** | AML.T0010 Supply Chain Compromise; AML.T0109 AI Supply Chain Rug Pull |
 | **MITRE ATLAS Mitigations** | None published in MITRE ATLAS mitigations. The wiki's own identifier applies: AI-CTRL-014. |
 | **NIST AI RMF** | GOVERN 6.1; GOVERN 6.2; MANAGE 3.1 |
 | **ISO/IEC 42001** | A.10.2 Allocating responsibilities; A.10.3 Suppliers |
@@ -637,7 +637,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Review Frequency** | Quarterly |
 | **OWASP** | LLM06:2025 Excessive Agency; ASI03 Identity & Privilege Abuse |
 | **MITRE ATLAS Techniques** | AML.T0012 Valid Accounts; AML.T0055 Unsecured Credentials; AML.T0083 Credentials from AI Agent Configuration; AML.T0098 AI Agent Tool Credential Harvesting |
-| **MITRE ATLAS Mitigations** | AML.M0026 Privileged AI Agent Permissions Configuration; AML.M0027 Single-User AI Agent Permissions Configuration; AML.M0028 AI Agent Tools Permissions Configuration |
+| **MITRE ATLAS Mitigations** | AML.M0026 Manage AI Agent Service Access; AML.M0027 Manage User-Delegated AI Agent Access; AML.M0028 Enforce Access Controls for AI Agent Tools |
 | **NIST AI RMF** | MEASURE 2.7; MANAGE 1.3 |
 | **ISO/IEC 42001** | None published in ISO/IEC 42001. The wiki's own identifier applies: AI-CTRL-016. |
 | **ISO/IEC 27001** | A.5.15 Access control; A.5.18 Access rights; A.8.2 Privileged access rights; A.8.3 Information access restriction |
@@ -695,7 +695,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Review Frequency** | Quarterly |
 | **OWASP** | LLM08:2025 Vector and Embedding Weaknesses; LLM02:2025 Sensitive Information Disclosure |
 | **MITRE ATLAS Techniques** | AML.T0057 LLM Data Leakage; AML.T0085 Data from AI Services; AML.T0064 Gather RAG-Indexed Targets; AML.T0082 RAG Credential Harvesting |
-| **MITRE ATLAS Mitigations** | AML.M0027 Single-User AI Agent Permissions Configuration; AML.M0019 Control Access to AI Models and Data in Production |
+| **MITRE ATLAS Mitigations** | AML.M0027 Manage User-Delegated AI Agent Access; AML.M0019 Control Access to AI Models and Data in Production |
 | **NIST AI RMF** | MEASURE 2.10; MEASURE 2.7 |
 | **ISO/IEC 42001** | None published in ISO/IEC 42001. The wiki's own identifier applies: AI-CTRL-018. |
 | **ISO/IEC 27001** | A.5.15 Access control; A.8.3 Information access restriction |
@@ -752,7 +752,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Owner** | AppSec |
 | **Review Frequency** | Before each release and quarterly |
 | **OWASP** | LLM01:2025 Prompt Injection; LLM07:2025 System Prompt Leakage; ASI01 Agent Goal Hijack |
-| **MITRE ATLAS Techniques** | AML.T0051 LLM Prompt Injection; AML.T0054 LLM Jailbreak; AML.T0056 Extract LLM System Prompt; AML.T0068 LLM Prompt Obfuscation; AML.T0093 Prompt Infiltration via Public-Facing Application |
+| **MITRE ATLAS Techniques** | AML.T0051 LLM Prompt Injection; AML.T0054 LLM Jailbreak; AML.T0085.003 Data from AI Services: System Instructions; AML.T0068 LLM Prompt Obfuscation; AML.T0093 Prompt Infiltration via Public-Facing Application |
 | **MITRE ATLAS Mitigations** | AML.M0020 Generative AI Guardrails; AML.M0021 Generative AI Guidelines; AML.M0033 Input and Output Validation for AI Agent Components |
 | **NIST AI RMF** | MEASURE 2.7; MANAGE 1.3 |
 | **ISO/IEC 42001** | A.6.2.4 AI system verification and validation; A.6.2.6 AI system operation and monitoring |
@@ -867,7 +867,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Review Frequency** | Quarterly |
 | **OWASP** | LLM06:2025 Excessive Agency; ASI10 Rogue Agents; ASI07 Insecure Inter-Agent Communication |
 | **MITRE ATLAS Techniques** | AML.T0081 Modify AI Agent Configuration |
-| **MITRE ATLAS Mitigations** | AML.M0038 AI Agent Scope Drift Detection; AML.M0024 AI Telemetry Logging |
+| **MITRE ATLAS Mitigations** | AML.M0038 AI Agent Scope Drift Detection; AML.M0024 AI Telemetry Logging and Monitoring |
 | **NIST AI RMF** | GOVERN 1.6; MEASURE 2.4 |
 | **ISO/IEC 42001** | A.4.2 Resource documentation; A.6.2.6 AI system operation and monitoring |
 | **ISO/IEC 27001** | A.5.15 Access control; A.8.15 Logging; A.8.16 Monitoring activities |
@@ -895,7 +895,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Review Frequency** | Semi-annually |
 | **OWASP** | LLM06:2025 Excessive Agency; ASI02 Tool Misuse & Exploitation |
 | **MITRE ATLAS Techniques** | AML.T0053 AI Agent Tool Invocation; AML.T0086 Exfiltration via AI Agent Tool Invocation; AML.T0101 Data Destruction via AI Agent Tool Invocation |
-| **MITRE ATLAS Mitigations** | AML.M0028 AI Agent Tools Permissions Configuration; AML.M0030 Restrict AI Agent Tool Invocation on Untrusted Data; AML.M0033 Input and Output Validation for AI Agent Components |
+| **MITRE ATLAS Mitigations** | AML.M0028 Enforce Access Controls for AI Agent Tools; AML.M0030 Restrict AI Agent Tool Invocation on Untrusted Data; AML.M0033 Input and Output Validation for AI Agent Components |
 | **NIST AI RMF** | MEASURE 2.7; MANAGE 1.3 |
 | **ISO/IEC 42001** | A.6.2.2 AI system requirements and specification |
 | **ISO/IEC 27001** | A.5.3 Segregation of duties; A.5.15 Access control; A.8.3 Information access restriction |
@@ -950,8 +950,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Owner** | AI Platform Team |
 | **Review Frequency** | Quarterly |
 | **OWASP** | LLM03:2025 Supply Chain; ASI04 Agentic Supply Chain Vulnerabilities; ASI02 Tool Misuse & Exploitation |
-| **MITRE ATLAS Techniques** | AML.T0110 AI Agent Tool Poisoning; AML.T0109 AI Supply Chain Rug Pull; AML.T0099 AI Agent Tool Data Poisoning; AML.T0010 AI Supply Chain Compromise |
-| **MITRE ATLAS Mitigations** | AML.M0028 AI Agent Tools Permissions Configuration; AML.M0014 Verify AI Artifacts |
+| **MITRE ATLAS Techniques** | AML.T0110 AI Agent Tool Poisoning; AML.T0109 AI Supply Chain Rug Pull; AML.T0099 AI Agent Tool Data Poisoning; AML.T0010 Supply Chain Compromise |
+| **MITRE ATLAS Mitigations** | AML.M0028 Enforce Access Controls for AI Agent Tools; AML.M0014 Verify AI Artifacts |
 | **NIST AI RMF** | GOVERN 6.1; MAP 4.1; MAP 4.2; MANAGE 3.1 |
 | **ISO/IEC 42001** | A.10.3 Suppliers; A.4.4 Tooling resources |
 | **ISO/IEC 27001** | A.5.19 Information security in supplier relationships; A.5.21 Managing information security in the ICT supply chain; A.8.9 Configuration management; A.8.19 Installation of software on operational systems; A.8.32 Change management; A.8.18 Use of privileged utility programs |
@@ -1120,7 +1120,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Owner** | MLOps / DevSecOps |
 | **Review Frequency** | Semi-annually |
 | **OWASP** | LLM03:2025 Supply Chain; LLM04:2025 Data and Model Poisoning |
-| **MITRE ATLAS Techniques** | AML.T0010 AI Supply Chain Compromise; AML.T0018 Manipulate AI Model; AML.T0119 Exploit Automated Artifact Processing Pipeline |
+| **MITRE ATLAS Techniques** | AML.T0010 Supply Chain Compromise; AML.T0018 Manipulate AI Model; AML.T0119 Exploit Automated Artifact Processing Pipeline |
 | **MITRE ATLAS Mitigations** | AML.M0013 Code Signing; AML.M0014 Verify AI Artifacts |
 | **NIST AI RMF** | MEASURE 2.7; MAP 4.2 |
 | **ISO/IEC 42001** | A.6.2.5 AI system deployment; A.6.2.3 Documentation of AI system design and development; A.6.1.3 Processes for responsible design and development; A.6.2.7 AI system technical documentation |
@@ -1150,8 +1150,8 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Owner** | DevSecOps |
 | **Review Frequency** | Quarterly |
 | **OWASP** | LLM03:2025 Supply Chain |
-| **MITRE ATLAS Techniques** | AML.T0010 AI Supply Chain Compromise; AML.T0109 AI Supply Chain Rug Pull; AML.T0115 Publish Poisoned AI Artifacts; AML.T0111 AI Supply Chain Reputation Inflation |
-| **MITRE ATLAS Mitigations** | AML.M0023 AI Bill of Materials; AML.M0014 Verify AI Artifacts; AML.M0016 Vulnerability Scanning |
+| **MITRE ATLAS Techniques** | AML.T0010 Supply Chain Compromise; AML.T0109 AI Supply Chain Rug Pull; AML.T0115 Publish Poisoned AI Artifacts; AML.T0111 AI Supply Chain Reputation Inflation |
+| **MITRE ATLAS Mitigations** | AML.M0023 Maintain an AI Bill of Materials; AML.M0014 Verify AI Artifacts; AML.M0016 Vulnerability Scanning |
 | **NIST AI RMF** | GOVERN 6.1; MAP 4.1; MANAGE 3.1; MANAGE 3.2 |
 | **ISO/IEC 42001** | A.10.3 Suppliers; A.4.2 Resource documentation; A.7.5 Data provenance; A.6.2.7 AI system technical documentation |
 | **ISO/IEC 27001** | A.5.9 Inventory of information and other associated assets; A.5.21 Managing information security in the ICT supply chain; A.8.8 Management of technical vulnerabilities; A.8.19 Installation of software on operational systems; A.8.30 Outsourced development |
@@ -1351,7 +1351,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Review Frequency** | Semi-annually |
 | **OWASP** | None published in the OWASP Top 10 lists. The wiki's own identifier applies: AI-CTRL-008. |
 | **MITRE ATLAS Techniques** | None published in MITRE ATLAS techniques. The wiki's own identifier applies: AI-CTRL-008. |
-| **MITRE ATLAS Mitigations** | AML.M0024 AI Telemetry Logging |
+| **MITRE ATLAS Mitigations** | AML.M0024 AI Telemetry Logging and Monitoring |
 | **NIST AI RMF** | MEASURE 2.4; MEASURE 2.8; MANAGE 4.1 |
 | **ISO/IEC 42001** | A.6.2.8 AI system recording of event logs |
 | **ISO/IEC 27001** | A.5.28 Collection of evidence; A.5.33 Protection of records; A.8.15 Logging; A.8.17 Clock synchronization |
@@ -1379,7 +1379,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Review Frequency** | Semi-annually |
 | **OWASP** | None published in the OWASP Top 10 lists. The wiki's own identifier applies: AI-CTRL-009. |
 | **MITRE ATLAS Techniques** | None published in MITRE ATLAS techniques. The wiki's own identifier applies: AI-CTRL-009. |
-| **MITRE ATLAS Mitigations** | AML.M0024 AI Telemetry Logging |
+| **MITRE ATLAS Mitigations** | AML.M0024 AI Telemetry Logging and Monitoring |
 | **NIST AI RMF** | MEASURE 2.4; MEASURE 3.1; MANAGE 4.1 |
 | **ISO/IEC 42001** | A.6.2.6 AI system operation and monitoring; A.6.2.8 AI system recording of event logs |
 | **ISO/IEC 27001** | A.5.25 Assessment and decision on information security events; A.8.15 Logging; A.8.16 Monitoring activities; A.5.37 Documented operating procedures |
@@ -1407,7 +1407,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Review Frequency** | Annually and after each incident |
 | **OWASP** | None published in the OWASP Top 10 lists. The wiki's own identifier applies: AI-CTRL-035. |
 | **MITRE ATLAS Techniques** | None published in MITRE ATLAS techniques. The wiki's own identifier applies: AI-CTRL-035. |
-| **MITRE ATLAS Mitigations** | AML.M0024 AI Telemetry Logging |
+| **MITRE ATLAS Mitigations** | AML.M0024 AI Telemetry Logging and Monitoring |
 | **NIST AI RMF** | MANAGE 4.3; MANAGE 2.3; GOVERN 4.3; GOVERN 6.2 |
 | **ISO/IEC 42001** | A.8.4 Communication of incidents; A.8.3 External reporting; A.3.3 Reporting of concerns; A.6.2.6 AI system operation and monitoring |
 | **ISO/IEC 27001** | A.5.24 Information security incident management planning and preparation; A.5.25 Assessment and decision on information security events; A.5.26 Response to information security incidents; A.5.27 Learning from information security incidents; A.5.28 Collection of evidence; A.6.8 Information security event reporting; A.5.37 Documented operating procedures |

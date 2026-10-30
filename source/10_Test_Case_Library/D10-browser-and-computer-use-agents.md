@@ -408,7 +408,7 @@ nav_order: 23
 | **Vendor Applicability** | Core: E, G |
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L07-011](L07-prompt-and-context-layer.md#tc-l07-011), [TC-L08-012](L08-ai-gateway-and-security-controls.md#tc-l08-012) |
-| **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
+| **MITRE ATLAS Mapping** | AML.T0010 Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
 | **Control(s) Tested** | [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) Agent Execution Isolation |

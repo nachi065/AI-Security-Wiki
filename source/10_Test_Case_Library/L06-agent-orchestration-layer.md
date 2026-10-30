@@ -279,7 +279,7 @@ nav_order: 9
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: E, G, P |
 | **Risk Severity** | Critical |
-| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 AI Supply Chain Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance |
@@ -330,7 +330,7 @@ nav_order: 9
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, E |
 | **Risk Severity** | Critical |
-| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 AI Supply Chain Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance |
@@ -379,7 +379,7 @@ nav_order: 9
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A \| Partial: E |
 | **Risk Severity** | Critical |
-| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 AI Supply Chain Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance |
@@ -428,7 +428,7 @@ nav_order: 9
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, E |
 | **Risk Severity** | Critical |
-| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 AI Supply Chain Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance |
@@ -477,7 +477,7 @@ nav_order: 9
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | High |
-| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 AI Supply Chain Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance |
@@ -523,7 +523,7 @@ nav_order: 9
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, P |
 | **Risk Severity** | High |
-| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 AI Supply Chain Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance; [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
@@ -572,7 +572,7 @@ nav_order: 9
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G |
 | **Risk Severity** | Critical |
-| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 AI Supply Chain Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance; [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization |
@@ -1582,7 +1582,7 @@ nav_order: 9
 | **Test Method** | Evidence |
 | **Vendor Applicability** | Core: P, G |
 | **Risk Severity** | High |
-| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 AI Supply Chain Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance; [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance |
@@ -1819,7 +1819,7 @@ nav_order: 9
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: E, P |
 | **Risk Severity** | High |
-| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 AI Supply Chain Compromise |
+| **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; LLM06:2025 Excessive Agency |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance; [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance |
@@ -2107,7 +2107,7 @@ nav_order: 9
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A \| Partial: P |
 | **Risk Severity** | High |
-| **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
+| **MITRE ATLAS Mapping** | AML.T0010 Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; ASI07 Insecure Inter-Agent Communication |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MANAGE 3.1 |
 | **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity; [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance |

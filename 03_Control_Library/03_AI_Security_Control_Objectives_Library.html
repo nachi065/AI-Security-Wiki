@@ -343,7 +343,7 @@
 </tr>
 <tr>
 <td>MITRE ATLAS</td>
-<td>2026.09</td>
+<td>2026.10, except <code>AML.T0057</code> LLM Data Leakage, which is from 2026.09: release 2026.10 moved it to <code>AML.T0085.002</code> and the wiki's citations have not yet been re-mapped</td>
 <td>Techniques <code>AML.T####</code>; mitigations <code>AML.M####</code></td>
 </tr>
 <tr>
@@ -1281,7 +1281,7 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Techniques</strong></td>
-<td>AML.T0010 AI Supply Chain Compromise; AML.T0109 AI Supply Chain Rug Pull</td>
+<td>AML.T0010 Supply Chain Compromise; AML.T0109 AI Supply Chain Rug Pull</td>
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mitigations</strong></td>
@@ -2543,7 +2543,7 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mitigations</strong></td>
-<td>AML.M0026 Privileged AI Agent Permissions Configuration; AML.M0027 Single-User AI Agent Permissions Configuration; AML.M0028 AI Agent Tools Permissions Configuration</td>
+<td>AML.M0026 Manage AI Agent Service Access; AML.M0027 Manage User-Delegated AI Agent Access; AML.M0028 Enforce Access Controls for AI Agent Tools</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
@@ -2736,7 +2736,7 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mitigations</strong></td>
-<td>AML.M0027 Single-User AI Agent Permissions Configuration; AML.M0019 Control Access to AI Models and Data in Production</td>
+<td>AML.M0027 Manage User-Delegated AI Agent Access; AML.M0019 Control Access to AI Models and Data in Production</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
@@ -2925,7 +2925,7 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Techniques</strong></td>
-<td>AML.T0051 LLM Prompt Injection; AML.T0054 LLM Jailbreak; AML.T0056 Extract LLM System Prompt; AML.T0068 LLM Prompt Obfuscation; AML.T0093 Prompt Infiltration via Public-Facing Application</td>
+<td>AML.T0051 LLM Prompt Injection; AML.T0054 LLM Jailbreak; AML.T0085.003 Data from AI Services: System Instructions; AML.T0068 LLM Prompt Obfuscation; AML.T0093 Prompt Infiltration via Public-Facing Application</td>
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mitigations</strong></td>
@@ -3314,7 +3314,7 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mitigations</strong></td>
-<td>AML.M0038 AI Agent Scope Drift Detection; AML.M0024 AI Telemetry Logging</td>
+<td>AML.M0038 AI Agent Scope Drift Detection; AML.M0024 AI Telemetry Logging and Monitoring</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
@@ -3410,7 +3410,7 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mitigations</strong></td>
-<td>AML.M0028 AI Agent Tools Permissions Configuration; AML.M0030 Restrict AI Agent Tool Invocation on Untrusted Data; AML.M0033 Input and Output Validation for AI Agent Components</td>
+<td>AML.M0028 Enforce Access Controls for AI Agent Tools; AML.M0030 Restrict AI Agent Tool Invocation on Untrusted Data; AML.M0033 Input and Output Validation for AI Agent Components</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
@@ -3598,11 +3598,11 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Techniques</strong></td>
-<td>AML.T0110 AI Agent Tool Poisoning; AML.T0109 AI Supply Chain Rug Pull; AML.T0099 AI Agent Tool Data Poisoning; AML.T0010 AI Supply Chain Compromise</td>
+<td>AML.T0110 AI Agent Tool Poisoning; AML.T0109 AI Supply Chain Rug Pull; AML.T0099 AI Agent Tool Data Poisoning; AML.T0010 Supply Chain Compromise</td>
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mitigations</strong></td>
-<td>AML.M0028 AI Agent Tools Permissions Configuration; AML.M0014 Verify AI Artifacts</td>
+<td>AML.M0028 Enforce Access Controls for AI Agent Tools; AML.M0014 Verify AI Artifacts</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
@@ -4175,7 +4175,7 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Techniques</strong></td>
-<td>AML.T0010 AI Supply Chain Compromise; AML.T0018 Manipulate AI Model; AML.T0119 Exploit Automated Artifact Processing Pipeline</td>
+<td>AML.T0010 Supply Chain Compromise; AML.T0018 Manipulate AI Model; AML.T0119 Exploit Automated Artifact Processing Pipeline</td>
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mitigations</strong></td>
@@ -4272,11 +4272,11 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Techniques</strong></td>
-<td>AML.T0010 AI Supply Chain Compromise; AML.T0109 AI Supply Chain Rug Pull; AML.T0115 Publish Poisoned AI Artifacts; AML.T0111 AI Supply Chain Reputation Inflation</td>
+<td>AML.T0010 Supply Chain Compromise; AML.T0109 AI Supply Chain Rug Pull; AML.T0115 Publish Poisoned AI Artifacts; AML.T0111 AI Supply Chain Reputation Inflation</td>
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mitigations</strong></td>
-<td>AML.M0023 AI Bill of Materials; AML.M0014 Verify AI Artifacts; AML.M0016 Vulnerability Scanning</td>
+<td>AML.M0023 Maintain an AI Bill of Materials; AML.M0014 Verify AI Artifacts; AML.M0016 Vulnerability Scanning</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
@@ -4950,7 +4950,7 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mitigations</strong></td>
-<td>AML.M0024 AI Telemetry Logging</td>
+<td>AML.M0024 AI Telemetry Logging and Monitoring</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
@@ -5046,7 +5046,7 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mitigations</strong></td>
-<td>AML.M0024 AI Telemetry Logging</td>
+<td>AML.M0024 AI Telemetry Logging and Monitoring</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>
@@ -5142,7 +5142,7 @@
 </tr>
 <tr>
 <td><strong>MITRE ATLAS Mitigations</strong></td>
-<td>AML.M0024 AI Telemetry Logging</td>
+<td>AML.M0024 AI Telemetry Logging and Monitoring</td>
 </tr>
 <tr>
 <td><strong>NIST AI RMF</strong></td>

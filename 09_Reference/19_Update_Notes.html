@@ -319,6 +319,59 @@
 <li><strong><a href="#full-version-history">Full version history</a></strong>: every version since 1.0, newest first. The <a href="../index.html#20-version-history">home page</a> shows only the three latest.</li>
 </ul>
 <p>Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.</p>
+<h2 id="week-ending-31-october-2026-crosswalk-verification">Week ending 31 October 2026: crosswalk verification</h2>
+<p>The nightly verification pass checks one slice of the wiki each night. This week's changes are proposed in one pull request and go live when it is merged.</p>
+<h3 id="what-was-checked">What was checked</h3>
+<ul>
+<li><strong>EU (25 October 2026):</strong> every row of the <a href="../12_EU_AI_Compliance/07_Regulatory_Crosswalk.html">EU Regulatory Crosswalk</a> was checked for changes. Rows not yet verified were checked against the European Commission's AI Act pages: the news items on the GPAI guidelines and on the Code of Practice on marking and labelling AI-generated content, the guidelines library page, the GPAI questions and answers, the AI Act standardisation page and the press release of 31 July 2026 on enforcement. E4 and E14 were left alone because last week's open pull request already changes them.</li>
+<li><strong>GCC (26 October 2026):</strong> every row of the <a href="../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.html">GCC Regulatory Crosswalk</a> was checked for changes. Ten rows not yet verified were checked against the issuing bodies' own pages where those pages could be read: the UAE AI Office and u.ae, the UAE Cabinet, the CBUAE Rulebook, the DIFC, Bahrain's Information &amp; eGovernment Authority (iGA) and Oman's Ministry of Transport, Communications and Information Technology (MTCIT).</li>
+<li><strong>India and UK (27 October 2026):</strong> every row of the <a href="../17_India_AI_Compliance/03_Regulatory_Crosswalk.html">India Regulatory Crosswalk</a> and the <a href="../21_UK_AI_Compliance/03_Regulatory_Crosswalk.html">UK Regulatory Crosswalk</a> was checked for changes. The nine rows not yet verified were checked against primary sources where they could be read: MeitY (the DPDP Act and its commencement notification), SEBI, CERT-In, legislation.gov.uk, the ICO, the FCA, GOV.UK (CMA) and Ofcom.</li>
+<li><strong>Singapore, US and South Korea (28 October 2026):</strong> every row of the <a href="../19_Singapore_AI_Compliance/03_Regulatory_Crosswalk.html">Singapore Regulatory Crosswalk</a>, the <a href="../22_US_AI_Compliance/03_Regulatory_Crosswalk.html">US Regulatory Crosswalk</a> and the <a href="../20_South_Korea_AI_Compliance/03_Regulatory_Crosswalk.html">South Korea Regulatory Crosswalk</a> was checked for changes. Nine rows not yet verified were checked against primary sources where they could be read: Singapore Statutes Online and the CSA, the Texas Legislature, the California Privacy Protection Agency, the Governor of California, the NAIC, eCFR, HHS and the Unified Agenda, and the PIPC.</li>
+<li><strong>Framework crosswalks (30 October 2026):</strong> every MITRE ATLAS identifier and name the wiki cites (88 identifiers, in the control library and the test cases) was compared with MITRE's own ATLAS data, release 2026.10 of 28 October 2026, the latest release in the <a href="https://github.com/mitre-atlas/atlas-data" rel="noopener">atlas-data repository</a> on 30 October 2026. The <a href="../23_Framework_Crosswalks/19_OWASP_MCP_Top_10_Crosswalk.html">OWASP MCP Top 10 Crosswalk</a> and the <a href="../23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.html">NIST SSDF and SP 800-218A Crosswalk</a> were due for a check this week but could not be checked (see below).</li>
+<li><strong>Australia, Brazil, Canada, China and Japan (29 October 2026):</strong> no primary page for these five regions could be read automatically that night, so no row was confirmed or changed. A web search found no new AI law, bill or adopted regulation since 22 October 2026.</li>
+<li><strong>Weekly change watch, all regions (31 October 2026):</strong> eighteen rows in ten regions are still proposals, drafts, consultations or pending. Twelve of them (E4, E14, E17, S8, B3, BR1, CA1, CA7, CN8, IN6, IN13 and HK9) were checked again for news by web search, together with the AI Act standardisation news from CEN-CENELEC. The HKMA press release of 15 October 2026 was read again: the discussion paper on agentic AI governance (HK9) is still described as upcoming, so the row is unchanged and its retrieval date was refreshed. No other row needed a change from what was found; the other six (U6, AU6, CN6, JP4, UK9 and UK13) were not searched this time.</li>
+</ul>
+<h3 id="what-changed">What changed</h3>
+<ul>
+<li><strong>EU, E16 now [Verified]:</strong> the Commission published the final Code of Practice on marking and labelling AI-generated content on 10 June 2026, and says it is voluntary.</li>
+<li><strong>EU, E13 date corrected:</strong> the Commission's guidelines for providers of general-purpose AI models were published on 18 July 2025, not 10 July 2025. 10 July 2025 is the date of the GPAI Code of Practice (E15). The row is now [Verified] for its title and date. The hub row and the <a href="../12_EU_AI_Compliance/T12_GPAI_Model_Checklist.html">GPAI Model Checklist</a> give the same date.</li>
+<li><strong>GCC, U4 and B2 now [Verified]:</strong> the UAE AI Ethics Principles and Guidelines (December 2022) say they are non-binding and name eight principles, and the AI Office's self-assessment is recommended, not compulsory. Bahrain's General Policy for the Use of AI (version 1.0) was approved on 20 May 2025 and all government entities must comply with it.</li>
+<li><strong>GCC, U5 renamed:</strong> the UAE Cabinet's announcement of 14 June 2026 names the new body the Artificial Intelligence and Data Authority, not the Federal Authority for AI and Data. It is the single national body for data, AI and digital government and brings together the AI Office, the TDRA Digital Government Sector and the UAE Data Office. The announcement names no founding law and does not mention data protection. The row is now [Verified] for its name, date and mandate.</li>
+<li><strong>GCC, U9 now [Verified]:</strong> the CBUAE Guidance Note on AI and machine learning was read on the CBUAE Rulebook. It applies to licensed financial institutions, including insurers, and is guidance. The Rulebook shows it issued on 11 February 2026; the press release of 23 February 2026 announced it. Each expectation in section 2.1 of the <a href="../11_GCC_AI_Compliance/01_GCC_AI_Regulatory_Hub.html">GCC hub</a> is now worded as in the note, with its section number.</li>
+<li><strong>GCC, U6 (DIFC Regulation 10):</strong> the DIFC says Regulation 10 was enacted on 1 September 2023 and lists an accreditation and certification framework with approved certification bodies. A June 2026 consultation proposes a new Regulation 11 and wider duties for the Autonomous Systems Officer; it is still a draft. No DIFC page gives the January 2026 date, so the row stays [Conflict].</li>
+<li><strong>UK, UK2, UK4 and UK12 now [Verified]:</strong> the Data Protection Act 2018 and the UK GDPR, and the Equality Act 2010, were read on legislation.gov.uk. The ICO guidance on AI and data protection exists as regulator guidance; the ICO says it is under review because of the Data (Use and Access) Act.</li>
+<li><strong>UK, UK5 now [Verified]:</strong> the FCA's own press release of 27 January 2026 says it "does not plan to introduce AI-specific regulation". Its press release of 6 July 2026 confirms the Mills Review date and promises an AI good and poor practice publication later this year.</li>
+<li><strong>UK, UK7 now [Verified]:</strong> the row now names the CMA's AI Foundation Models update paper (11 April 2024) and Ofcom's open letter of 8 November 2024 on how the Online Safety Act applies to generative AI and chatbots.</li>
+<li><strong>India, IN11 now [Verified]:</strong> section 44(2) of the DPDP Act omits section 43A of the IT Act. Under the commencement notification G.S.R. 843(E) of 13 November 2025, that takes effect eighteen months after publication, about 13 May 2027. The rest of the IT Act continues.</li>
+<li><strong>India, IN10:</strong> CERT-In issued Guidelines regarding AI-Accelerated Vulnerability Protection and Response Requirements for OEMs and Technology Providers on 10 June 2026. The row now names them. They use advisory wording; the 2022 directions stay the binding part of the row.</li>
+<li><strong>India, IN13:</strong> SEBI's own listing confirms the consultation paper of 20 June 2025. SEBI had listed no final AI and ML guidelines when checked, so the row stays Proposed and [Reported] for the announcement of 10 October 2026.</li>
+<li><strong>Singapore, SG8 now [Verified]:</strong> the Cybersecurity Act 2018 was read on Singapore Statutes Online; its Part 3 applies to critical information infrastructure, and the CSA describes the duties of its owners.</li>
+<li><strong>US, US8, US9, US15 and US17 now [Verified]:</strong> the CPPA says its regulations on ADMT, risk assessments and cybersecurity audits were approved on 22 September 2025 and took effect on 1 January 2026. The enrolled text of Texas HB 149 (TRAIGA) takes effect on 1 January 2026 and gives the attorney general sole enforcement power. The NAIC adopted its AI principles in 2020 and its model bulletin on 4 December 2023. The HIPAA rules in 45 CFR Part 164 apply to covered entities and business associates; the proposed Security Rule changes of January 2025 are still a proposal.</li>
+<li><strong>US, US7 now [Conflict]:</strong> the Governor of California signed SB 1000 (California AI Transparency Act) and AB 2713 on 30 September 2026. The bill author's office says the Act's implementation began on 1 August 2026; the row gave 2 August 2026. The statute text has to be read to settle the date.</li>
+<li><strong>South Korea, KR7:</strong> the PIPC says an amendment to the Personal Information Protection Act passed on 20 August 2026. It lets lawfully collected personal data be used to develop AI under extra safeguards, and takes effect six months after it is promulgated. The row tag is unchanged because the Act's text was not read.</li>
+<li><strong>MITRE ATLAS, six names updated:</strong> release 2026.10 renames six items the wiki cites; their identifiers stay the same. AML.T0010 is now Supply Chain Compromise, AML.M0023 Maintain an AI Bill of Materials, AML.M0024 AI Telemetry Logging and Monitoring, AML.M0026 Manage AI Agent Service Access, AML.M0027 Manage User-Delegated AI Agent Access and AML.M0028 Enforce Access Controls for AI Agent Tools. The control library and eleven test case pages now use the new names.</li>
+<li><strong>MITRE ATLAS, AML.T0056 replaced:</strong> release 2026.10 no longer has AML.T0056 Extract LLM System Prompt. MITRE moved it to the new sub-technique AML.T0085.003 Data from AI Services: System Instructions, which AI-CTRL-005 and three test cases now cite. The <a href="../23_Framework_Crosswalks/07_MITRE_ATLAS_Crosswalk.html">MITRE ATLAS Crosswalk</a> lists them under AML.T0085.</li>
+<li><strong>Control library, ATLAS version:</strong> the <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#framework-identifiers">framework identifiers</a> table now names ATLAS 2026.10, except AML.T0057 (see below).</li>
+</ul>
+<h3 id="still-work-in-progress">Still work in progress</h3>
+<ul>
+<li>EU: EUR-Lex could not be read automatically on 25 October 2026. E17 (EN 18286 and the Official Journal citation) and E18 (ISO/IEC 42001) were therefore not changed again: the Annex of Commission Implementing Decision (EU) 2026/2274 still has to be read before E17 is rewritten. E2, E5, E6 and E10 (GDPR, NIS2, DORA, Digital Services Act) were not checked against the Official Journal for the same reason.</li>
+<li>EU, E1e: the Commission's pages confirm that GPAI duties apply from 2 August 2025 and that the AI Office could enforce them from 2 August 2026, but the Official Journal text of Art. 113 was not read, so the row stays [Reported].</li>
+<li>EU: the Commission published guidelines on the transparency obligations of Article 50 on 20 July 2026. They are not yet a row in the crosswalk.</li>
+<li>GCC: the Qatar Central Bank's AI Guideline (Q4), Saudi Arabia's Umm Al-Qura gazette (S9, the copyright exception) and the MTCIT policy document (O1) refused automated retrieval or were not reachable on 26 October 2026, so those rows keep their tags. MTCIT lists a "General Policy for the Safe and Ethical Use of Artificial Intelligence Systems" published on 1 April 2025; the row gives 9 April 2025 and calls it the National AI Policy. Whether these are the same document is still to be checked.</li>
+<li>GCC, B3: a Gulf Daily News report of 11 October 2026 still describes Bahrain's AI law as under debate. No official text of an enacted law was found, so the row is unchanged.</li>
+<li>GCC, U5: the implementors' guide, T05 and T11 still use the old name "Federal Authority for AI and Data"; they will be updated after the owner reviews the U5 change.</li>
+<li>India, IN8 (IRDAI): irdai.gov.in refused automated retrieval on 27 October 2026, so the row stays [Unverified]. News reports describe an IRDAI request to insurers in May 2026 and an AI working group in June 2026, but no IRDAI document was read.</li>
+<li>India, IN7 (SEBI AI and ML amendments): SEBI lists both amendment regulations under 10 February 2025, but the regulation text could not be opened, so the notification date of 6 February 2025 and the AI content stay [Reported].</li>
+<li>UK, UK9: the bill page on the UK Parliament site could not be read on 27 October 2026, so the bill's progress since 20 October was not re-checked.</li>
+<li>US: leginfo.legislature.ca.gov could not be read on 28 October 2026, so the California rows (US6 for SB 53 and AB 2013, US7) were not checked against the statute text. Illinois HB 3773 (US10) could not be checked because ilga.gov refused automated retrieval. California also signed other AI bills on 30 September 2026 (among them SB 947 on automated decision systems in employment); none is a row yet.</li>
+<li>Singapore: the 2024 amendments to the Cybersecurity Act (new duties for foundational digital infrastructure and other new categories) are not yet described in SG8; their start date was found only in law-firm notes.</li>
+<li>South Korea: the Korean text on law.go.kr was still not read, so KR1 to KR6 stay [Reported]. A news report of 27 October 2026 says MSIT plans a public hearing on revising the AI Basic Act at the end of the year; no draft has been published.</li>
+<li>MITRE ATLAS, AML.T0057 LLM Data Leakage: release 2026.10 removes it. MITRE says the new AML.T0085.002 Data from AI Services: Conversation Context and Memory was moved from it, and adds AML.T0137 Training Data Information from AI Models for leaks of training data. The wiki cites AML.T0057 in 8 controls and 75 test cases. Each citation has to be re-mapped to one of the new techniques; that is left for review.</li>
+<li>Framework crosswalks: the OWASP project page for the <a href="../23_Framework_Crosswalks/19_OWASP_MCP_Top_10_Crosswalk.html">OWASP MCP Top 10</a> and the NIST pages for the <a href="../23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.html">SSDF</a> could not be read automatically on 30 October 2026, so neither page was changed. The <a href="../23_Framework_Crosswalks/18_AI_Risk_Map_Crosswalk.html">AI Risk Map Crosswalk</a> was not checked again because it was updated on 29 October 2026. The <a href="../23_Framework_Crosswalks/16_Trustworthy_AI_Ethics_Crosswalk.html">Trustworthy AI and Ethics Standards Crosswalk</a> and the <a href="../23_Framework_Crosswalks/17_International_AI_Instruments_Crosswalk.html">International AI Instruments Crosswalk</a>, due last week, are still not checked.</li>
+<li>EU, E17: CEN-CENELEC's news item of 15 October 2026 says the Commission Implementing Decision citing EN 18286:2026 (quality management system) has been published in the Official Journal. E17 still says the citation is pending. EUR-Lex again could not be read automatically on 31 October 2026, so the Annex of Decision (EU) 2026/2274 has still not been read and the row has not been rewritten yet.</li>
+<li>Brazil, BR4: Decreto 13.135/2026 on customer service is due to take effect on 2 November 2026. The row already says so, but the decree text was not read again this week.</li>
+</ul>
 <h2 id="29-october-2026-full-isoiec-42001-annex-a-coverage-and-wider-isoiec-27001-coverage">29 October 2026: Full ISO/IEC 42001 Annex A coverage and wider ISO/IEC 27001 coverage</h2>
 <h3 id="what-is-new">What is new</h3>
 <ul>
@@ -391,7 +444,7 @@
 </ul>
 <h2 id="29-october-2026-the-builder-track-on-windows">29 October 2026: the Builder Track on Windows</h2>
 <p>This entry follows the one below ("Builder Toolkit and Builder Track links"), which listed Windows support for the sandbox and the shell-based git hooks as not done.</p>
-<h3 id="what-changed">What changed</h3>
+<h3 id="what-changed_1">What changed</h3>
 <ul>
 <li><strong>Sandbox.</strong> On macOS, the sandbox now starts (it failed there before). On Windows, <a href="../24_Builder_Track/01_Secure_Your_First_Agent.html#b7-run-generated-code-in-a-sandbox"><code>sandbox.py</code></a> now places the child process in a Job Object (new file <code>winjob.py</code>, standard-library <code>ctypes</code>) that limits CPU time, memory and process count and kills everything the job started when it closes or times out. Its result has a new <code>limits</code> field that lists what the platform actually applied.</li>
 <li><strong>Git hooks.</strong> The hook commands on <a href="../24_Builder_Track/04_Developer_Pipeline_Checks.html#wire-it-in">Developer Pipeline Checks</a> use <code>python3</code> where it exists and <code>python</code> otherwise, and the page says to install them from Git Bash on Windows.</li>
@@ -409,7 +462,7 @@
 </ul>
 <h2 id="29-october-2026-builder-toolkit-and-builder-track-links">29 October 2026: Builder Toolkit and Builder Track links</h2>
 <p>This entry follows the one below ("CSV data files and rebuilt workbooks"). It acts on a review of the Builder Track against the rest of the wiki and on Ankush Jain's <a href="https://github.com/ankush1982/ai-secure-by-design" rel="noopener">ai-secure-by-design</a> v0.2 (commit <code>70ef026</code>, 24 October 2026).</p>
-<h3 id="what-changed_1">What changed</h3>
+<h3 id="what-changed_2">What changed</h3>
 <ul>
 <li><strong><a href="../24_Builder_Track/05_Builder_Toolkit.html">Builder Toolkit</a></strong>, a new Builder Track page with tools in the track's <code>code/</code> folder, all standard-library Python:</li>
 <li><code>aiwiki_check.py</code> with <code>ai_rules.json</code>: ten AI-specific rules (AIW-001 to AIW-010) for model output reaching <code>eval</code>, HTML or SQL, unsafe model loading, <code>trust_remote_code</code>, unpinned models and MCP servers, MCP over plain HTTP, auto-approved MCP tools and coding agents run with approvals off. Each rule names its controls, risks and test cases. Output is text, JSON or SARIF 2.1.0, with exit codes for hooks and CI and a mode that checks only the lines a change adds.</li>
@@ -431,7 +484,7 @@
 </ul>
 <h2 id="29-october-2026-csv-data-files-and-rebuilt-workbooks">29 October 2026: CSV data files and rebuilt workbooks</h2>
 <p>This entry follows the one below ("eight risks to close the AI Risk Map gaps").</p>
-<h3 id="what-changed_2">What changed</h3>
+<h3 id="what-changed_3">What changed</h3>
 <ul>
 <li><strong>CSV data files.</strong> The <a href="../25_Templates/index.html#data-files-csv">Templates</a> section now offers five CSV files: the risk register, the risk-to-control mapping, the control objectives, the test cases and the AI Risk Map crosswalk. A new script, <code>export_data.py</code>, writes them from the Markdown pages on every build, so they cannot fall out of step with the pages. This follows the AI Risk Map's practice of publishing a flat CSV with stable IDs.</li>
 <li><strong>Workbooks rebuilt.</strong> The <a href="../25_Templates/01_AI_Risk_Register_Template.html">AI Risk Register</a> (version 1.3), <a href="../25_Templates/03_AI_Use_Case_Risk_Triage_Template.html">AI Use-Case Risk Triage</a> (1.1), <a href="../25_Templates/06_AI_Security_Control_Library_and_Crosswalks_Template.html">Control Library and Crosswalks</a> (1.4) and <a href="../25_Templates/07_AI_Security_Test_Case_Tracker_Template.html">Test Case Tracker</a> (1.3) workbooks now include AI-R47 to AI-R54 and triage questions E13 to E19. Their licence sheets credit the AI Risk Map to Evan Wheeler (GitHub wheels344i-gte) and link https://github.com/wheels344i-gte/ai-risk-map.</li>
@@ -446,7 +499,7 @@
 </ul>
 <h2 id="29-october-2026-eight-risks-to-close-the-ai-risk-map-gaps">29 October 2026: eight risks to close the AI Risk Map gaps</h2>
 <p>This entry follows the one below ("rules for what goes on the risk register") and applies its four tests.</p>
-<h3 id="what-changed_3">What changed</h3>
+<h3 id="what-changed_4">What changed</h3>
 <ul>
 <li><strong>Eight new risks.</strong> The <a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a> (version 1.4) adds AI-R47 Model Extraction and Inference Attacks, AI-R48 AI Incidents Not Recognised or Handled, AI-R49 Personal Data That Cannot Be Removed from Models, AI-R50 Training-Serving Skew and Unreproducible Models, AI-R51 Liability for Harm Caused by AI Decisions, AI-R52 Unmaintained Open-Source AI Components, AI-R53 Unlabelled AI-Generated Content and AI-R54 Agent Actions Others Cannot Identify as AI. Each is adapted from a category of the AI Risk Map by Evan Wheeler (<a href="https://github.com/wheels344i-gte/ai-risk-map" rel="noopener">wheels344i-gte/ai-risk-map</a>) that the register covered only in part.</li>
 <li><strong>Two risks widened instead of added.</strong> AI-R29 now includes customers reaching the organization through their own agents, and AI-R31 includes shortages of GPUs, compute and power. Segregation of duties was considered and not added. All three decisions are recorded under Considered and Not Added.</li>
@@ -461,7 +514,7 @@
 </ul>
 <h2 id="29-october-2026-rules-for-what-goes-on-the-risk-register">29 October 2026: rules for what goes on the risk register</h2>
 <p>A second comparison with the <em>AI Risk Map</em> by Evan Wheeler (RiskFramework.org), this time with its website, found that the map states why each factor is included and records what it left out, and that its factor IDs are never reused. The wiki had neither rule written down.</p>
-<h3 id="what-changed_4">What changed</h3>
+<h3 id="what-changed_5">What changed</h3>
 <ul>
 <li><strong>What Belongs on the Register.</strong> A new section of the <a href="../02_Risk_Management/02A_AI_Risk_Methodology.html#what-belongs-on-the-register">AI Risk Methodology</a> (version 1.3) sets four tests for a new register risk: AI-specific, a distinct response, corroborated by at least two independent sources (or marked as the wiki's own framing), and treatable by at least one control. The tests are adapted from the map's inclusion gates and credited to it.</li>
 <li><strong>Considered and Not Added.</strong> The <a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html#considered-and-not-added">Enterprise AI Risk Register</a> (version 1.3) now records proposed risks that were left out, with the reason. It starts with the two scope decisions the methodology already made: attacks others carry out with AI, and general IT risks with no AI-specific change.</li>
@@ -476,36 +529,36 @@
 </ul>
 <h2 id="25-october-2026-nist-ssdf-crosswalk-in-the-template-workbooks">25 October 2026: NIST SSDF crosswalk in the template workbooks</h2>
 <p>This entry closes the item left open in the entry below ("templates rebuilt for the regulator changes"), which said the NIST SSDF crosswalk was not yet a column in the risk register's framework matrix.</p>
-<h3 id="what-changed_5">What changed</h3>
+<h3 id="what-changed_6">What changed</h3>
 <ul>
 <li><strong>SSDF column.</strong> The <a href="../23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.html">NIST SSDF and SP 800-218A Crosswalk</a> (added in 2.41) is now read by the template generators. Its 20 practices (PO, PS, PW and RV) appear as a column in the framework matrix and as rows in the Framework Crosswalk sheet of the <a href="../25_Templates/01_AI_Risk_Register_Template.html">AI Risk Register</a> (version 1.2) and the <a href="../25_Templates/06_AI_Security_Control_Library_and_Crosswalks_Template.html">Control Library and Crosswalks</a> (1.3) workbooks. Before this, the generators skipped the SSDF page, so the crosswalk was missing from the control library workbook as well as the risk register.</li>
 <li><strong>Counts corrected.</strong> The control library workbook now lists 930 framework items (910 before) in 49 framework columns. The template page had said 47 columns, which was already one short after the Hong Kong column was added.</li>
 <li><strong>Risk links are via controls.</strong> The SSDF crosswalk names controls, not risks, so the risk register links each practice to the risks its controls treat. The Framework Matrix marks that column "via controls".</li>
 </ul>
-<h3 id="what-was-checked">What was checked</h3>
+<h3 id="what-was-checked_1">What was checked</h3>
 <ul>
 <li>Both rebuilt workbooks were recalculated with no formula errors. In the risk register matrix, 24 of the 46 risks have at least one SSDF practice. In the control library matrix, 20 of the 46 controls do.</li>
 <li>The Requirements Traceability Matrix was not rebuilt: its framework columns come from each control's own fields, not from the crosswalks, so the SSDF change does not affect it.</li>
 </ul>
 <h2 id="25-october-2026-templates-rebuilt-for-the-regulator-changes">25 October 2026: templates rebuilt for the regulator changes</h2>
 <p>This entry closes an item left open in the entry below ("financial regulators and the kill switch"), which said the Excel templates had not been rebuilt.</p>
-<h3 id="what-changed_6">What changed</h3>
+<h3 id="what-changed_7">What changed</h3>
 <ul>
 <li><strong>Five workbooks rebuilt from wiki 2.44.</strong> The <a href="../25_Templates/01_AI_Risk_Register_Template.html">AI Risk Register</a> (version 1.1), <a href="../25_Templates/05_AI_Security_Audit_and_Evidence_Checklist_Template.html">Audit and Evidence Checklist</a> (1.2), <a href="../25_Templates/06_AI_Security_Control_Library_and_Crosswalks_Template.html">Control Library and Crosswalks</a> (1.2), <a href="../25_Templates/07_AI_Security_Test_Case_Tracker_Template.html">Test Case Tracker</a> (1.2) and <a href="../25_Templates/12_AI_Security_Requirements_Traceability_Matrix_Template.html">Requirements Traceability Matrix</a> (1.1) now show AI-CTRL-025 as AI Containment and Kill Switch with its wider text, the extended text of AI-CTRL-011, 012, 014 and 041, and test case TC-L01-021.</li>
 <li><strong>Hong Kong column.</strong> The framework matrices and the traceability matrix have a Hong Kong regulation (incl. HKMA) column, and the crosswalk sheets carry the 18 Hong Kong items (nine instruments and nine HKMA principles). The control library workbook now lists 910 framework items.</li>
 <li><strong>Risk register catch-up.</strong> The risk register had not been rebuilt since 17 October 2026, so this rebuild also brings in other wiki changes made since then. Its file properties now credit both authors.</li>
 </ul>
-<h3 id="what-was-checked_1">What was checked</h3>
+<h3 id="what-was-checked_2">What was checked</h3>
 <ul>
 <li>Every rebuilt workbook was recalculated with no formula errors, and its sheets match the previous version's sheet list.</li>
 </ul>
-<h3 id="still-work-in-progress">Still work in progress</h3>
+<h3 id="still-work-in-progress_1">Still work in progress</h3>
 <ul>
 <li>The NIST SSDF crosswalk (added in 2.41) is not yet a column in the risk register's framework matrix.</li>
 </ul>
 <h2 id="25-october-2026-financial-regulators-and-the-kill-switch">25 October 2026: financial regulators and the kill switch</h2>
 <p>A comparison of the wiki with a published chart of six financial regulators' AI expectations (MAS, RBI, SEBI, the EU AI Act, the FCA and the HKMA) found that the wiki had no Hong Kong coverage at all, and that its only kill-switch control applied to agents, while MAS, the HKMA and the RBI draft expect a way to suspend any high-risk AI. It also found that the chart understated MAS, the RBI and the HKMA on kill switches, and showed SEBI's guidelines as requirements before they were issued.</p>
-<h3 id="what-changed_7">What changed</h3>
+<h3 id="what-changed_8">What changed</h3>
 <ul>
 <li><strong>Hong Kong section.</strong> A new <a href="../26_Hong_Kong_AI_Compliance/index.html">Hong Kong AI Compliance</a> section has a regulatory hub (nine instruments, HK1 to HK9), a role guide, the <a href="../26_Hong_Kong_AI_Compliance/HK-T1_HKMA_ART_Principles_Self_Assessment.html">HK-T1 HKMA ART Principles Self-Assessment</a> and a <a href="../26_Hong_Kong_AI_Compliance/03_Regulatory_Crosswalk.html">crosswalk</a> that maps the HKMA guidance principle by principle: seven direct and two partial. Both tables are also CSV files.</li>
 <li><strong>Financial regulator comparison.</strong> A new <a href="../04_Domain_Standards/10C_Financial_Regulator_AI_Comparison.html">Financial Regulator AI Comparison</a> sets the six regulators side by side on board accountability, risk tiering, inventory, lifecycle controls, human oversight, third-party AI, customer transparency and kill switch, with the strictest version of each and the wiki control that meets it.</li>
@@ -514,14 +567,14 @@
 <li><strong>India and UK.</strong> IN6 now records the RBI draft's kill-switch, human oversight, fallback and board expectations. New row IN13 records SEBI's AI and ML guidelines as proposed. UK5 records the FCA's Mills Review and its reported position that it plans no AI-specific rules.</li>
 <li><strong>Sector Overlays.</strong> The financial-services table adds the HKMA, the RBI draft and SEBI where they apply, and a row on telling customers that AI is used.</li>
 </ul>
-<h3 id="what-was-checked_2">What was checked</h3>
+<h3 id="what-was-checked_3">What was checked</h3>
 <ul>
 <li>The HKMA Supervisory Guidance for Responsible Adoption of Artificial Intelligence (Annex A to the circular of 15 October 2026), the HKMA press release of the same day and the government's GenA.I. Sandbox++ announcement of 5 March 2026 were read on 25 October 2026 [Verified].</li>
 <li>The RBI draft Guidance on Regulatory Principles for Model Risk Management was read on 25 October 2026: paras 8 to 12, 43 and 59 to 63, including "override, suspension, or deactivation mechanisms, including kill-switch arrangements" (para 60(ii)) [Verified]. It is still a draft and has no effective date.</li>
 <li>The MAS Guidelines' kill-switch text (paras 5.3 and 5.23(b), footnote 29) was re-read on 25 October 2026 [Verified].</li>
 <li>The FCA's Mills Review page was read on 25 October 2026 [Verified]. The FCA's statement that it plans no AI-specific rules was seen only in secondary sources [Reported].</li>
 </ul>
-<h3 id="still-work-in-progress_1">Still work in progress</h3>
+<h3 id="still-work-in-progress_2">Still work in progress</h3>
 <ul>
 <li>The SFC circular of 12 November 2024, the PCPD framework and the PDPO rest on secondary sources or memory. The Insurance Authority's and the MPFA's AI guidance was not researched.</li>
 <li>SEBI's guidelines have not been issued; IN13 will need updating when they are.</li>
@@ -530,7 +583,7 @@
 </ul>
 <h2 id="24-october-2026-requirements-traceability-and-review-templates">24 October 2026: requirements traceability and review templates</h2>
 <p>The wiki lacked a requirements matrix: one row per testable requirement, scoped by assurance stage and deployment model, with columns for the vendor's answer and the assessor's review. No wiki page said which controls apply to SaaS, PaaS or IaaS delivery.</p>
-<h3 id="what-changed_8">What changed</h3>
+<h3 id="what-changed_9">What changed</h3>
 <ul>
 <li><strong>Assurance stage and deployment model.</strong> Every control in the <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#assurance-stages-and-deployment-models">Control Objectives Library</a> (version 2.5) now names the stage at which a reviewer first checks it and the deployment models it applies to. The link checker rejects a control without valid values. Both are starting values for a review to adjust.</li>
 <li><strong>Requirements traceability matrix.</strong> A new <a href="../25_Templates/12_AI_Security_Requirements_Traceability_Matrix_Template.html">AI Security Requirements Traceability Matrix Template</a> turns each sentence of a control's Implementation Expectation into one requirement, traced to the control, its risks, test cases and framework and regional crosswalks. It adds scoping, vendor and assessor columns, thirteen evidence types, a response check that treats a "Yes" with no detail as unanswered, and a live dashboard.</li>
@@ -541,19 +594,19 @@
 <p><strong>Two more templates.</strong> The <a href="../25_Templates/13_AI_System_Security_Risk_Review_Checklist_Template.html">AI System Security Risk Review Checklist</a> holds 150 review questions across the AI lifecycle, with impact and risk registers, threat and vulnerability lists and severity criteria. Organisation names were removed, its dropdowns rebuilt and the standard editions corrected. The <a href="../25_Templates/14_AI_Security_Assurance_Baseline_Template.html">AI Security Assurance Baseline</a> holds 165 testable requirements in 14 domains, mapped to ISO/IEC 42001, NIST AI RMF, the EU AI Act and OWASP, with vendor and assessor columns and a dashboard. Its UAE and Dubai requirements and references moved to optional sheets so that the baseline applies anywhere.</p>
 </li>
 </ul>
-<h3 id="what-was-checked_3">What was checked</h3>
+<h3 id="what-was-checked_4">What was checked</h3>
 <ul>
 <li>The baseline's dashboard and response check were recalculated with sample answers and gave the expected counts and flags. The checklist's dropdowns now read from its own Ref Tables sheet rather than an external workbook.</li>
 <li>The matrix dashboard's formulas were recalculated with sample answers (a Yes with no detail, an accepted row, a gap without an owner and an out-of-scope row) and gave the expected counts and flags. All three workbooks recalculate with no formula errors.</li>
 <li>The regulatory references in the matrix come from the wiki's crosswalks and keep their verification status. The UAE and Dubai instruments a Dubai Government review would cite (the DESC Information Security Regulation, the national AI security policy and the Dubai Data Law) were not added, because their text has not been read.</li>
 </ul>
-<h3 id="still-work-in-progress_2">Still work in progress</h3>
+<h3 id="still-work-in-progress_3">Still work in progress</h3>
 <ul>
 <li>About fifteen review topics have no or thin coverage in the control library, such as recovery time objectives, DDoS protection, key custody, model decommissioning and detection validation. They are listed for a later update.</li>
 </ul>
 <h2 id="23-october-2026-secure-development-and-privacy-in-code">23 October 2026: secure development and privacy in code</h2>
 <p>A comparison with <a href="https://github.com/ankush1982/ai-secure-by-design" rel="noopener">ai-secure-by-design</a>, an open-source plugin for AI coding agents by the wiki's co-author Ankush Jain, found five gaps in the wiki. It never cited the NIST Secure Software Development Framework or its generative AI profile. Its standard for AI coding assistants was short and did not cover coding agents. It had no controls before commit. It described privacy duties as forms, not code. And the Builder Track tests were not run in CI. This update closes those gaps.</p>
-<h3 id="what-changed_9">What changed</h3>
+<h3 id="what-changed_10">What changed</h3>
 <ul>
 <li><strong>NIST SSDF crosswalk.</strong> A new <a href="../23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.html">NIST SSDF and SP 800-218A Crosswalk</a> maps the 19 practices of SSDF 1.1, plus the new PW.3 practice of SP 800-218A, to the wiki's controls, pages, code and test cases: 17 direct and 3 partial. It records the PW.3 renumbering and the new PO.5.3 task.</li>
 <li><strong>Coding assistants and coding agents.</strong> The <a href="../04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.html">AI Coding Assistant and Coding Agent Security Standard</a> (version 2.0, same address) now covers completion assistants, coding agents, pipeline agents, and the extensions, plugins, MCP servers and rules files that steer them. New requirements cover approved models and accounts, command and file-system guardrails, scoped agent credentials, MCP servers and plugins, repository content as untrusted input, managed agent settings and hooks, generated code review, dependency verification, provenance of AI-made changes, and review bot permissions. Each requirement links to the existing test case that proves it. A pipeline gates table shows which checks run in the agent, before commit, in CI and at merge, and which of them the author can bypass.</li>
@@ -562,7 +615,7 @@
 <li><strong>Tests in CI.</strong> A new workflow, <code>builder-tests.yml</code>, runs every Builder Track test on Python 3.10 and 3.13 for every pull request that changes the section. It runs with a read-only token and no secrets. The check that page excerpts match the code now covers every Builder Track page. Its first run caught a real bug in the <a href="../24_Builder_Track/01_Secure_Your_First_Agent.html#b8-limit-egress-to-named-hosts">egress proxy</a>. When a name resolved to several addresses, the proxy connected only to the first one. On a dual-stack host that lists an IPv6 address first, connections to a service listening only on IPv4 therefore failed. The proxy now checks every address and tries each in turn, and a new test covers the case.</li>
 <li><strong>Cards.</strong> The Domain Standards, Framework Crosswalks, India and Builder Track cards on the home page describe the new content.</li>
 </ul>
-<h3 id="what-was-checked_4">What was checked</h3>
+<h3 id="what-was-checked_5">What was checked</h3>
 <ul>
 <li>The DPDP Act sections cited on the privacy page were read in the Act text published by MeitY on 23 October 2026 [Verified]. That reading confirmed two points. The Act has no "sensitive personal data" category. Section 7's legitimate uses include no general contract ground.</li>
 <li>The DPDP Rules numbers were also read on 23 October 2026, from the Hindi text only. The English text was not read. They are: at least 48 hours' notice before erasure (Rule 8(2)), a three-year retention for the classes in the Third Schedule (Rule 8(1)), and one year for logs (Rule 6). All three are tagged [Reported]. Two numbers are tagged [Unverified]: the ninety-day grievance limit (Rule 14(3)), because the extracted number was garbled, and the hours for the detailed breach report (Rule 7(2)(b)), because they were not legible.</li>
@@ -570,7 +623,7 @@
 <li>The Builder Track tests pass on Python 3.10, 3.11, 3.12 and 3.13 (90 tests, 1 skipped where the kernel does not allow a network namespace). The new git hook tests install the hooks in a throwaway repository and confirm that a secret or a missing trailer blocks the commit.</li>
 <li>The link and identifier check and the author check pass.</li>
 </ul>
-<h3 id="still-work-in-progress_3">Still work in progress</h3>
+<h3 id="still-work-in-progress_4">Still work in progress</h3>
 <ul>
 <li>The DPDP Rules numbers above need checking against the English text before anyone relies on them.</li>
 <li>The SSDF crosswalk maps at practice level. SP 800-218A adds recommendations at task level, and those are not yet mapped.</li>
@@ -579,7 +632,7 @@
 </ul>
 <h2 id="22-october-2026-weak-points-in-proof-rating-and-operation">22 October 2026: weak points in proof, rating and operation</h2>
 <p>A review of the wiki found that it shows proof weakly (test cases could be read as validated protection, risk ratings were not calibrated, regulatory claims were only partly verified) and is hard to run as a programme (no charter, few default numbers, thin governance detail). This update addresses those points.</p>
-<h3 id="what-changed_10">What changed</h3>
+<h3 id="what-changed_11">What changed</h3>
 <ul>
 <li><strong>Validation levels for test cases.</strong> Every case now shows a Validation Level: Documented, Executable, Lab-validated or Independently reproduced (<a href="../10_Test_Case_Library/index.html#validation-levels">Validation levels</a>). The build fills it in: a case with a payload file in the kit is Executable, every other case is Documented. A case can claim Lab-validated or Independently reproduced only with a Validated Against row that names the product and version, the date and an evidence link; the link check enforces this. No case is lab-validated: the payload kit has only been run against its own stand-in applications.</li>
 <li><strong>Self-contained test cases.</strong> Each case now ends with a closed box listing the <a href="../10_Test_Case_Library/standard-fields.html">Standard Fields</a> wording that applies to it, so a copied case keeps its pass and fail criteria, scoring and evidence rules. The <a href="../25_Templates/07_AI_Security_Test_Case_Tracker_Template.html">test case tracker workbook</a> (version 1.1) fills those fields into every row and adds the validation level.</li>
@@ -592,12 +645,12 @@
 <li><strong>Templates.</strong> Two new Word templates: the <a href="../25_Templates/10_AI_Security_Programme_Charter_Template.html">AI Security Programme Charter</a>, which brings the programme into one approvable document and links each section to the wiki page behind it, and the <a href="../25_Templates/11_AI_Incident_Report_Template.html">AI Incident Report</a>.</li>
 <li><strong>Build.</strong> The committed search index had been built with a different markdown version and showed fill-in blanks on 18 template pages as broken text; it is rebuilt correctly.</li>
 </ul>
-<h3 id="what-was-checked_5">What was checked</h3>
+<h3 id="what-was-checked_6">What was checked</h3>
 <ul>
 <li>The link and identifier check passes, including the new validation-level rule, which was tested by adding an invalid level and an unsupported Lab-validated claim to a copy of the source and confirming that both were rejected.</li>
 <li>The hand-kept case counts (layer headers, the Tested By rows of the control library and the tables on the library index) were recalculated by script from the case tables, after confirming that the same script reproduced the earlier counts exactly.</li>
 </ul>
-<h3 id="still-work-in-progress_4">Still work in progress</h3>
+<h3 id="still-work-in-progress_5">Still work in progress</h3>
 <ul>
 <li><strong>No real-system validation yet.</strong> No case has been run against a real model, agent framework or product. Publishing reproducible results against representative applications is still to do; until then every case is Documented or Executable.</li>
 <li><strong>EU obligations not yet read one by one.</strong> On 22 October 2026 the article text of the EU AI Act could not be retrieved from EUR-Lex (only the recitals came back), so the obligation-level tracker lists the articles as recalled and no new [Verified] tag was added. The deployer log retention period (Art. 26) and the serious incident time limits (Art. 73) in particular must be read before they are relied on.</li>
@@ -606,7 +659,7 @@
 <li><strong>Operating defaults and thresholds are untested.</strong> They are starting values to tune, not benchmarks.</li>
 </ul>
 <h2 id="week-ending-24-october-2026-crosswalk-verification">Week ending 24 October 2026: crosswalk verification</h2>
-<h3 id="what-was-checked_6">What was checked</h3>
+<h3 id="what-was-checked_7">What was checked</h3>
 <ul>
 <li><strong>GCC (19 October 2026):</strong> every row of the <a href="../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.html">GCC Regulatory Crosswalk</a> was checked for changes, and the rows not yet verified were checked against the issuing bodies' own pages where those pages could be read: the UAE legislation portal, the Central Bank of the UAE, the Saudi National Cybersecurity Authority (NCA) and the UAE AI Office.</li>
 <li><strong>India and UK (20 October 2026):</strong> every row of the <a href="../17_India_AI_Compliance/03_Regulatory_Crosswalk.html">India Regulatory Crosswalk</a> and the <a href="../21_UK_AI_Compliance/03_Regulatory_Crosswalk.html">UK Regulatory Crosswalk</a> was checked for changes. Ten rows not yet verified were checked against MeitY, the Lok Sabha, the Press Information Bureau, legislation.gov.uk, GOV.UK, the UK Parliament bill pages, the Bank of England and the NCSC.</li>
@@ -615,7 +668,7 @@
 <li><strong>Framework crosswalks (23 October 2026):</strong> every MITRE ATLAS technique and mitigation identifier the wiki cites (88 in all, in the control library and the test cases) was compared with MITRE's own ATLAS data, release 2026.09 of 15 September 2026, the latest release in the <a href="https://github.com/mitre-atlas/atlas-data" rel="noopener">atlas-data repository</a> on 23 October 2026. The <a href="../23_Framework_Crosswalks/16_Trustworthy_AI_Ethics_Crosswalk.html">Trustworthy AI and Ethics Standards Crosswalk</a> and the <a href="../23_Framework_Crosswalks/17_International_AI_Instruments_Crosswalk.html">International AI Instruments Crosswalk</a> were due for a check this week but could not be checked (see below).</li>
 <li><strong>Weekly change watch (24 October 2026):</strong> in every region, the rows still marked Proposed, pending, draft or under consultation were checked for news. Primary sources read: the European Commission's AI Act guideline pages, the Council of the EU, the Congresso Nacional page on <a href="../14_Brazil_AI_Compliance/03_Regulatory_Crosswalk.html">PL 2338/2023</a>, the Saudi NCA consultation page and the RBI draft on model risk. EUR-Lex was searched for new citations of AI Act harmonised standards, and the CEN-CENELEC AI page for news on JTC 21.</li>
 </ul>
-<h3 id="what-changed_11">What changed</h3>
+<h3 id="what-changed_12">What changed</h3>
 <ul>
 <li><strong>GCC, now [Verified]:</strong> U2 (UAE cybercrime law, Federal Decree-Law No. 34 of 2021) and S8 (NCA AI Cybersecurity Guidelines: a consultation draft, feedback closed 5 August 2026, no final text yet). U1 (UAE PDPL) was read again with no change.</li>
 <li><strong>GCC, U9 (CBUAE Guidance Note):</strong> the CBUAE press release confirms the date (23 February 2026) and that it applies to licensed financial institutions. The row stays [Reported] because the note's own text has not been read.</li>
@@ -659,7 +712,7 @@
 <li><strong>EU, E4:</strong> the Council agreed its negotiating mandate on the Digital Omnibus for data and the GDPR on 21 October 2026 [Verified]. Talks with Parliament start once Parliament adopts its own position. The row stays [Reported] because no adoption date is given; "not before 2027" still comes from secondary sources.</li>
 <li><strong>Home page (24 October 2026):</strong> version 2.42 records this week's verification.</li>
 </ul>
-<h3 id="still-work-in-progress_5">Still work in progress</h3>
+<h3 id="still-work-in-progress_6">Still work in progress</h3>
 <ul>
 <li>GCC: Bahrain's AI law (B3) is still listed as a draft; news reports this year disagree on whether it has passed. The Saudi copyright text and data mining exception (S9) and the Saudi AI risk framework (S5) still have no primary source.</li>
 <li>The SDAIA site rejected automated requests on 19 October 2026, so the Saudi rows S1 to S4 were not re-checked this week.</li>
@@ -771,7 +824,7 @@
 <li><strong>Builder Track:</strong> a new section with one page, <a href="../24_Builder_Track/01_Secure_Your_First_Agent.html">Secure Your First Agent: Ten Controls With Code</a>. It sets out ten controls in build order, each tied to an existing control objective, with working configuration and code for tool allow-lists, argument validation, scoped short-lived credentials, sandboxing, egress limits and approval gates.</li>
 <li><strong>Reference code:</strong> the <a href="../24_Builder_Track/index.html#the-code"><code>code/</code></a> folder holds a guard, a sandbox wrapper, an allow-list egress proxy, container and Kubernetes settings, a policy file, and a demo in which a hijacked agent is stopped at every step. It uses only the Python standard library.</li>
 </ul>
-<h3 id="what-was-checked_7">What was checked</h3>
+<h3 id="what-was-checked_8">What was checked</h3>
 <ul>
 <li>For the Standard Fields change, every field of every case was rebuilt from its explicit text or the standard for its test method, kind of case or layer and compared with the original. All matched, so no wording was lost or altered. The link check now fails if a case repeats a standard word for word, and a deliberate repeat was used to confirm it does.</li>
 <li>The payload kit runner and stand-in applications have a test suite (38 tests). Eight deliberate breakages of the runner's judging were each caught. Against the stand-ins, the tool-governance cases pass and the cases that depend on what a model says fail, as expected; the resource-limit sandbox fails three of five probes.</li>
@@ -796,7 +849,7 @@
 <li><strong>Observability:</strong> <a class="chip" href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-032">TC-L17-032</a> covers access, masking, retention and residency of AI tracing and evaluation tools, and <a class="chip" href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html#tc-l17-033">TC-L17-033</a> covers ownership and review of AI failures that are not security incidents.</li>
 <li>The library now holds 668 cases: 535 in the 17 layers and 133 in the six emerging domains.</li>
 </ul>
-<h3 id="what-was-checked_8">What was checked</h3>
+<h3 id="what-was-checked_9">What was checked</h3>
 <p>The OWASP and NIST AI RMF mappings on the 12 new cases were checked on 15 October 2026. The OWASP identifiers and titles were checked against the OWASP GenAI Security Project's pages for the <a href="https://genai.owasp.org/llmrisk/llm082025-vector-and-embedding-weaknesses/" rel="noopener">Top 10 for LLM Applications 2025</a>. The NIST identifiers were checked against the subcategory text in <a href="https://airc.nist.gov/airmf-resources/airmf/5-sec-core/" rel="noopener">section 5 of the AI RMF 1.0 Core</a>. Every identifier exists, but several did not fit the case and were changed:</p>
 <ul>
 <li>GOVERN 1.1 covers legal and regulatory requirements, not roles or approvals. On the ownership and approval cases it was replaced with GOVERN 2.1 (roles and responsibilities), and on the policy cases with GOVERN 1.4 (transparent policies and procedures).</li>
@@ -934,6 +987,12 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>2.57</td>
+<td>2026-10-31</td>
+<td>Nachiket Sathaye</td>
+<td>Weekly crosswalk verification, week ending 31 October 2026: seventeen regulatory rows checked against primary sources and now [Verified] (EU, GCC, India, UK, Singapore and US); EU E13 date corrected; UAE body in U5 renamed to the Artificial Intelligence and Data Authority; US7 marked [Conflict] on its operative date; India, South Korea and GCC rows updated from regulator pages; MITRE ATLAS citations moved to release 2026.10 (six names, AML.T0056 replaced), with AML.T0057 left for review. See the <a href="../09_Reference/19_Update_Notes.html">Update Notes</a>.</td>
+</tr>
 <tr>
 <td>2.56</td>
 <td>2026-10-29</td>
@@ -1286,7 +1345,7 @@
 </table></div>
 </article>
 <nav class="pager" aria-label="Previous and next page"><a class="prev" href="18_AI_Security_Glossary_and_Taxonomy.html">&larr; AI Security Glossary and Taxonomy</a><a class="next" href="20_AI_Security_Incident_Casebook.html">AI Security Incident Casebook &rarr;</a></nav>
-<footer class="site-footer">Author: Nachiket Sathaye &middot; Co-author: Ankush Jain &middot; Updated 29 October 2026 &middot; Last reviewed 29 October 2026 &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/09_Reference/19_Update_Notes.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
+<footer class="site-footer">Author: Nachiket Sathaye &middot; Co-author: Ankush Jain &middot; Updated 30 October 2026 &middot; Last reviewed 31 October 2026 &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/09_Reference/19_Update_Notes.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
 <div class="site-notice">
 <p><strong>Licence.</strong> <svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.441-3.5c8.951,0,16.572,3.125,22.857,9.372c3.008,3.009,5.295,6.448,6.857,10.314 c1.561,3.867,2.344,7.971,2.344,12.314c0,4.381-0.773,8.486-2.314,12.313c-1.543,3.828-3.82,7.21-6.828,10.143 c-3.123,3.085-6.666,5.448-10.629,7.086c-3.961,1.638-8.057,2.457-12.285,2.457s-8.276-0.808-12.143-2.429 c-3.866-1.618-7.333-3.961-10.4-7.027c-3.067-3.066-5.4-6.524-7-10.372S5.5,32.767,5.5,28.5c0-4.229,0.809-8.295,2.428-12.2 c1.619-3.905,3.972-7.4,7.057-10.486C21.08-0.394,28.565-3.5,37.441-3.5z M37.557,2.272c-7.314,0-13.467,2.553-18.458,7.657 c-2.515,2.553-4.448,5.419-5.8,8.6c-1.354,3.181-2.029,6.505-2.029,9.972c0,3.429,0.675,6.734,2.029,9.913 c1.353,3.183,3.285,6.021,5.8,8.516c2.514,2.496,5.351,4.399,8.515,5.715c3.161,1.314,6.476,1.971,9.943,1.971 c3.428,0,6.75-0.665,9.973-1.999c3.219-1.335,6.121-3.257,8.713-5.771c4.99-4.876,7.484-10.99,7.484-18.344 c0-3.543-0.648-6.895-1.943-10.057c-1.293-3.162-3.18-5.98-5.654-8.458C50.984,4.844,44.795,2.272,37.557,2.272z M37.156,23.187 l-4.287,2.229c-0.458-0.951-1.019-1.619-1.685-2c-0.667-0.38-1.286-0.571-1.858-0.571c-2.856,0-4.286,1.885-4.286,5.657 c0,1.714,0.362,3.084,1.085,4.113c0.724,1.029,1.791,1.544,3.201,1.544c1.867,0,3.181-0.915,3.944-2.743l3.942,2 c-0.838,1.563-2,2.791-3.486,3.686c-1.484,0.896-3.123,1.343-4.914,1.343c-2.857,0-5.163-0.875-6.915-2.629 c-1.752-1.752-2.628-4.19-2.628-7.313c0-3.048,0.886-5.466,2.657-7.257c1.771-1.79,4.009-2.686,6.715-2.686 C32.604,18.558,35.441,20.101,37.156,23.187z M55.613,23.187l-4.229,2.229c-0.457-0.951-1.02-1.619-1.686-2 c-0.668-0.38-1.307-0.571-1.914-0.571c-2.857,0-4.287,1.885-4.287,5.657c0,1.714,0.363,3.084,1.086,4.113 c0.723,1.029,1.789,1.544,3.201,1.544c1.865,0,3.18-0.915,3.941-2.743l4,2c-0.875,1.563-2.057,2.791-3.541,3.686 c-1.486,0.896-3.105,1.343-4.857,1.343c-2.896,0-5.209-0.875-6.941-2.629c-1.736-1.752-2.602-4.19-2.602-7.313 c0-3.048,0.885-5.466,2.658-7.257c1.77-1.79,4.008-2.686,6.713-2.686C51.117,18.558,53.938,20.101,55.613,23.187z"/></svg><svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.443-3.5c8.988,0,16.57,3.085,22.742,9.257C66.393,11.967,69.5,19.548,69.5,28.5c0,8.991-3.049,16.476-9.145,22.456 C53.879,57.319,46.242,60.5,37.443,60.5c-8.649,0-16.153-3.144-22.514-9.43C8.644,44.784,5.5,37.262,5.5,28.5 c0-8.761,3.144-16.342,9.429-22.742C21.101-0.415,28.604-3.5,37.443-3.5z M37.557,2.272c-7.276,0-13.428,2.553-18.457,7.657 c-5.22,5.334-7.829,11.525-7.829,18.572c0,7.086,2.59,13.22,7.77,18.398c5.181,5.182,11.352,7.771,18.514,7.771 c7.123,0,13.334-2.607,18.629-7.828c5.029-4.838,7.543-10.952,7.543-18.343c0-7.276-2.553-13.465-7.656-18.571 C50.967,4.824,44.795,2.272,37.557,2.272z M46.129,20.557v13.085h-3.656v15.542h-9.944V33.643h-3.656V20.557 c0-0.572,0.2-1.057,0.599-1.457c0.401-0.399,0.887-0.6,1.457-0.6h13.144c0.533,0,1.01,0.2,1.428,0.6 C45.918,19.5,46.129,19.986,46.129,20.557z M33.042,12.329c0-3.008,1.485-4.514,4.458-4.514s4.457,1.504,4.457,4.514 c0,2.971-1.486,4.457-4.457,4.457S33.042,15.3,33.042,12.329z"/></svg>This wiki is open to the community under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">Creative Commons Attribution-ShareAlike 4.0 International licence (CC BY-SA 4.0)</a>. You may copy, share and adapt it for any purpose, including commercially, as long as you credit the authors and release anything you build from it under the same licence.</p>
 <p><strong>Disclaimer.</strong> This wiki is an open, community driven educational reference, not legal, regulatory or professional advice. Regional regulatory content is compiled from secondary sources and its verification status is shown per row; verify against primary sources before relying on it. Content is provided "as is" without warranty. Named products and companies belong to their owners; statements about them reflect public information at the date shown. Views are the author's own.</p>
