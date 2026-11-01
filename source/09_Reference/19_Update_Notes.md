@@ -7,7 +7,7 @@ nav_order: 2
 description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."
 document_type: AI Security Wiki Reference
 version: 1.1
-last_reviewed: 2026-10-29
+last_reviewed: 2026-11-02
 ---
 
 # Update Notes
@@ -18,6 +18,22 @@ This page is the wiki's change record. It has two parts:
 - **[Full version history](#full-version-history)**: every version since 1.0, newest first. The [home page](../index.md#20-version-history) shows only the three latest.
 
 Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.
+
+## Week ending 7 November 2026: crosswalk verification
+
+The nightly verification pass checks one slice of the wiki each night. This week's changes are proposed in one pull request and go live when it is merged.
+
+### What was checked
+
+- **GCC (2 November 2026):** every row of the [GCC Regulatory Crosswalk](../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.md) was checked for changes by web search. Rows that last week's open pull request already changes (U4, U5, U6, U9 and B2) were left alone. Primary pages were tried for S1, S5, S8, S9, Q1, Q3, Q4, B3, O1, O2, U8, U10 and U12. Only the NCA pages for S8 could be read; the other government sites did not respond to automated retrieval.
+
+### What changed
+
+- **GCC, S8 retrieval date refreshed:** the NCA announcement and consultations page were read again on 2 November 2026. The AI Cybersecurity Guidelines are still listed as a closed consultation, and no final text is listed, so the row is unchanged.
+
+### Still work in progress
+
+- GCC: S1, S5, S9, Q1, Q3, Q4, B3, O1, O2, U8, U10 and U12 could not be checked against primary sources this week. For O2, an unofficial English translation of Royal Decree 68/2026 agrees with the row, but the Official Gazette has not been read, so the row stays [Reported].
 
 ## 29 October 2026: Full ISO/IEC 42001 Annex A coverage and wider ISO/IEC 27001 coverage
 
