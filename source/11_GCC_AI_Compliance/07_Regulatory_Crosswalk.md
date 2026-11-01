@@ -7,7 +7,7 @@ nav_order: 7
 description: "GCC instruments mapped one per row to AI security controls and control themes, with verification status. Also available as a CSV file."
 document_type: AI Security Wiki Reference
 version: 1.0
-last_reviewed: 2026-10-19
+last_reviewed: 2026-11-02
 ---
 
 # Regulatory Crosswalk
@@ -51,7 +51,7 @@ The same data is available as a CSV file for GRC tooling: [crosswalk.csv](data/c
 | S5 | Saudi | SDAIA National AI Risk Mgmt Framework (SDAIA-P145) | Unclear | Published 2026 | [AI-CTRL-037](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-037) | RSK; INV; CHG | Conflict | Date April vs July 2026; not listed on the SDAIA regulations page on 10 Oct 2026 |  |
 | S6 | Saudi | NCA ECC and CCC | Binding in scope | Binding gov and CNI | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005); [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008); [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) | AUD; BCP; INC | Reported | Applicability |  |
 | S7 | Saudi | NCA NCNICC-1:2025 | Unclear | Reported private sector from Jan 2026 | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005); [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008); [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) | AUD | Unverified | Applicability |  |
-| S8 | Saudi | NCA AI Cybersecurity Guidelines | Proposed | Consultation closed 5 Aug 2026 | All | VND; AUD; BCP | Verified | Final text | [NCA consultation announcement](https://nca.gov.sa/en/news/ai-cybersecurity-guidelines/); [NCA public consultations page](https://nca.gov.sa/en/public-consultations/ai-cybersecurity-guidelines/), retrieved 19 Oct 2026 (feedback deadline 5 Aug 2026; listed as Closed; no final text published) |
+| S8 | Saudi | NCA AI Cybersecurity Guidelines | Proposed | Consultation closed 5 Aug 2026 | All | VND; AUD; BCP | Verified | Final text | [NCA consultation announcement](https://nca.gov.sa/en/news/ai-cybersecurity-guidelines/); [NCA public consultations page](https://nca.gov.sa/en/public-consultations/ai-cybersecurity-guidelines/), retrieved 2 Nov 2026 (feedback deadline 5 Aug 2026; listed as Closed; no final text published; re-read 2 Nov 2026 with no change) |
 | S9 | Saudi | Copyright TDM exception | Binding law | Reported eff. 12 Aug 2026 | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) | POL | Reported | Text |  |
 | S10 | Saudi | NDMO/CST/SAMA localisation overlays | Unclear | Overlay | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) | XBT | Unverified | All |  |
 | Q1 | Qatar | Law 13/2016 PDPPL | Binding law | Binding | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013); [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007); [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) | PRV; XBT; RET; INC | Reported | Articles |  |
