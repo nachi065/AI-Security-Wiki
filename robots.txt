@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://nachi065.github.io/AI-Security-Wiki/sitemap-0.xml
