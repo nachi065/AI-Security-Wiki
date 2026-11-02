@@ -11,7 +11,10 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(ROOT, "source")
 SITE_TITLE = "AI Security Wiki"
 REPO_URL = "https://github.com/nachi065/AI-Security-Wiki"
-SITE_URL = "https://nachi065.github.io/AI-Security-Wiki"
+SITE_URL = os.environ.get(
+    "SITE_URL",
+    "https://nachi065.github.io/AI-Security-Wiki"
+).rstrip("/")
 HOME_TITLE = "AI Security Wiki: Governance, Risk, Standards and Test Cases"
 
 
