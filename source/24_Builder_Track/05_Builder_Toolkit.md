@@ -6,7 +6,8 @@ parent: "Builder Track"
 nav_order: 5
 description: "Vendor-neutral tools that bring the wiki into the developer's loop: an AI-specific code and configuration checker with SARIF output, a read-only MCP server for any MCP client, offline look-ups of controls, risks and test cases, an evidence export for the wiki's templates, and one set of instructions for every coding assistant."
 document_type: AI Security Wiki Reference
-version: 1.0
+version: 1.1
+last_reviewed: 2026-11-04
 ---
 
 # Builder Toolkit: Checks, MCP Server and Agent Instructions
@@ -37,21 +38,33 @@ Every tool uses only the Python standard library (3.10 or later), so there is no
 
 ## How it fits with ai-secure-by-design
 
-Ankush Jain's [ai-secure-by-design](https://github.com/ankush1982/ai-secure-by-design) (v0.2, commit `70ef026`, 24 October 2026) is a platform-neutral engine for secure and private development: NIST SSDF, ISO/IEC 27001 and India's DPDP Act, with code scaffolds for consent, data principal rights, audit logging and human oversight. This toolkit does not repeat it. It adds what that engine leaves out: AI-specific rules (what happens to model output, how models and MCP servers are loaded) and look-ups into this wiki's controls, risks and test cases.
+Ankush Jain's [ai-secure-by-design](https://github.com/ankush1982/ai-secure-by-design) ([release v0.2.0](https://github.com/ankush1982/ai-secure-by-design/releases/tag/v0.2.0), 4 November 2026) is a platform-neutral engine for secure and private development. Its own regimes are NIST SSDF 1.1, ISO/IEC 27001:2022 and India's DPDP Act. It blocks secrets and literal personal data (Aadhaar and PAN numbers, Indian mobile numbers and email addresses) in an agent's edit, at commit and in CI, and deploys editable code scaffolds for consent, data principal rights, retention, breach notice, children's data, audit logging, RBAC, PHI redaction, AI decision logs and human oversight, for TypeScript with Express and for Python with FastAPI.
 
-The two follow the same conventions, so they can run side by side in the same hooks and CI job:
+Since v0.2.0 the engine also reads this wiki. Add `ai-security-wiki` to the regimes in its manifest and it runs this toolkit's ten AIW rules, tags each finding with the wiki's AI-CTRL controls, explains any of the wiki's controls offline, and plans audit evidence for the [Audit and Evidence Checklist](../25_Templates/05_AI_Security_Audit_and_Evidence_Checklist_Template.md). Its copy of the rules and the control library is generated from a checkout of this wiki and names the wiki commit it came from; it stays under this wiki's CC BY-SA 4.0 licence.
 
-| Convention | ai-secure-by-design | This toolkit |
+So the two overlap on purpose. Pick by the runtime and the scope you need:
+
+| Need | ai-secure-by-design | This toolkit |
 |---|---|---|
-| Rules as data, each with a stable ID | `rules/*.yaml`, `SBD-*` | `ai_rules.json`, `AIW-*` |
-| Output | text, JSON, SARIF 2.1.0 | text, JSON, SARIF 2.1.0 |
-| Exit codes | 0 clean, 1 findings at or above `--fail-on`, 2 error | the same |
+| AI-specific checks (AIW-001 to AIW-010) | Yes, with the `ai-security-wiki` regime in the manifest | Yes, the source of the rules |
+| Secrets, literal personal data, personal data in logs | Yes (`SBD-SECRET-*`, `SBD-PII-*`, `SBD-CODE-*`) | No; [Developer Pipeline Checks](04_Developer_Pipeline_Checks.md) covers secrets and personal data in logs |
+| SSDF, ISO/IEC 27001 and DPDP control catalogues | Yes | No; see the [crosswalks](../23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.md) |
+| Privacy and security code scaffolds | Yes, TypeScript and Python, deployed into your repository | Reference code only, on [Privacy Duties in Code](03_Privacy_Duties_in_Code.md) |
+| Look-ups of controls | The 46 wiki controls, offline | Controls, risks and test cases, from the CSV data files |
+| Audit evidence | `sbd evidence`: each control as gap, checked or manual | `evidence_export.py`: rows from the guard's audit log and checker results |
+| Rules as data, each with a stable ID | `rules/*.yaml`, `SBD-*` and `AIW-*` | `ai_rules.json`, `AIW-*` |
+| Output and exit codes | Text, JSON, SARIF 2.1.0; 0, 1, 2 | The same |
 | Gate only the lines a change adds | `--staged`, `--diff` | `--staged`, `--diff` |
-| MCP server | read-only tools, stdio and HTTP | read-only tools, stdio and HTTP |
-| Instruction files from one source | yes | yes |
-| Runtime | Node.js 20 or later | Python 3.10 or later |
+| Accept one reviewed line | `sbd: ignore AIW-004` or `aiwiki: ignore AIW-004` | `aiwiki: ignore AIW-004` |
+| MCP server | Read-only tools, stdio and HTTP | Read-only tools, stdio and HTTP |
+| Instruction files from one source | Yes | Yes |
+| Runtime | Node.js 20 or later; Python 3.10 or later for the FastAPI scaffolds | Python 3.10 or later, standard library only |
 
-The comparison is from reading that repository's files on 29 October 2026; it may have changed since.
+Both can run in the same hooks and CI job. If they do, and the wiki regime is on, each AIW finding is reported twice, once by each tool.
+
+When this toolkit's `ai_rules.json` or the control library changes, the engine's copy does not change until its maintainer regenerates it, so check the wiki commit named at the top of its `regimes/ai-security-wiki.yaml`. On 4 November 2026 that was `5b99c1a` (2 November 2026), and its ten AIW rules had the same patterns, severities and controls as this page.
+
+The comparison is from reading that repository's files at commit `98fbdc0` on 4 November 2026, not from running it; it may have changed since.
 
 ## The checker
 
