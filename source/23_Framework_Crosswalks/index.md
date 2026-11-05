@@ -2,7 +2,7 @@
 title: "Framework Crosswalks"
 author: Nachiket Sathaye
 coauthors: Ankush Jain
-description: "Cross-references from this wiki to other frameworks: FINOS AIGF, AI BCF, NIST AI RMF, NIST AI 600-1, NIST AI 100-2, ISO/IEC 42001 and nine further ISO/IEC AI standards, OWASP, MITRE ATLAS, ISO/IEC 27001, NIST CSF, CIS Controls, SOC 2, the OECD AI Principles, trustworthy AI and ethics standards, international AI instruments, the AI Risk Map, the OWASP MCP Top 10, the NIST SSDF and its generative AI profile SP 800-218A, PCI DSS with the PCI SSC guidance on AI systems, and eight privacy laws."
+description: "Cross-references from this wiki to other frameworks: FINOS AIGF, AI BCF, NIST AI RMF, NIST AI 600-1, NIST AI 100-2, ISO/IEC 42001 and nine further ISO/IEC AI standards, OWASP, MITRE ATLAS, ISO/IEC 27001, NIST CSF, CIS Controls, SOC 2, the OECD AI Principles, trustworthy AI and ethics standards, international AI instruments, the AI Risk Map, the OWASP MCP Top 10, the NIST SSDF and its generative AI profile SP 800-218A, PCI DSS with the PCI SSC guidance on AI systems, CERT-In's AI security audit domains, and eight privacy laws."
 nav_order: 13
 has_children: true
 ---
@@ -29,6 +29,12 @@ This section connects the wiki to other frameworks. The wiki cites their identif
 | [Trustworthy AI and Ethics Standards Crosswalk](16_Trustworthy_AI_Ethics_Crosswalk.md) | Your ethics commitments follow the EU Ethics Guidelines for Trustworthy AI, the UNESCO Recommendation or the IEEE 7000-series standards. |
 | [International AI Instruments Crosswalk](17_International_AI_Instruments_Crosswalk.md) | You need to know where the Council of Europe Framework Convention on AI and the G7 Hiroshima Code of Conduct meet the wiki's controls. |
 | [AI Risk Map Crosswalk](18_AI_Risk_Map_Crosswalk.md) | You identify AI risks with the AI Risk Map from RiskFramework.org, organised by who owns each risk, and need the matching register risks and the categories the wiki covers only in part. |
+
+## National audit frameworks
+
+| Crosswalk | Use it when |
+|---|---|
+| [CERT-In AI Security Auditing Guidelines Crosswalk](22_CERT_In_AI_Security_Auditing_Guidelines_Crosswalk.md) | You run AI systems in India, or process Indian data, and will be audited against CERT-In's nine audit domains and four risk tiers. |
 
 ## Security frameworks
 
@@ -61,7 +67,7 @@ These four have no AI-specific content. Each crosswalk shows which wiki controls
 
 The NIST AI RMF, ISO/IEC 42001, OWASP, MITRE ATLAS, ISO/IEC 27001, NIST CSF, CIS Controls and SOC 2 pages are generated from the control library and the test cases each time the site is built, so they stay in step with them. So is the table below.
 
-For regional laws and regulators, see the [Regional AI Regulatory Hub](../11_GCC_AI_Compliance/index.md) sections. For sector rules such as HIPAA, PCI DSS and insurance regulation, see the [Sector Overlays](../04_Domain_Standards/10B_Sector_Overlays.md); PCI DSS also has its own [crosswalk](21_PCI_DSS_AI_Crosswalk.md).
+For regional laws and regulators, see the [Regional AI Regulatory Hub](../11_GCC_AI_Compliance/index.md) sections; India's audit framework has its own [crosswalk](22_CERT_In_AI_Security_Auditing_Guidelines_Crosswalk.md). For sector rules such as HIPAA, PCI DSS and insurance regulation, see the [Sector Overlays](../04_Domain_Standards/10B_Sector_Overlays.md); PCI DSS also has its own [crosswalk](21_PCI_DSS_AI_Crosswalk.md).
 
 ## All mappings by control
 

@@ -4,7 +4,7 @@ author: Nachiket Sathaye
 coauthors: Ankush Jain
 parent: "India AI Compliance"
 nav_order: 1
-description: "Indian AI-relevant law mapped to AI security controls: the DPDP Act and Rules, MeitY AI guidelines, RBI, SEBI and IRDAI expectations, and CERT-In reporting."
+description: "Indian AI-relevant law mapped to AI security controls: the DPDP Act and Rules, MeitY AI guidelines, RBI, SEBI and IRDAI expectations, CERT-In reporting and the CERT-In AI Security Auditing Guidelines."
 document_type: AI Security Wiki Reference
 version: 1.0
 last_reviewed: 2026-10-20
@@ -13,6 +13,8 @@ last_reviewed: 2026-10-20
 # India AI Regulatory Hub
 
 > **Verification status.** On 16 October 2026 the rows tagged [Verified] (IN1, IN2, IN4, IN5, IN6, IN10), on 20 October 2026 rows IN12, IN3 and IN9, and on 25 October 2026 the text of the RBI draft (IN6), were checked against primary documents; the crosswalk gives each source and what was and was not read. Everything else was compiled on 7 October 2026 from secondary sources or memory and is tagged [Reported], [Recalled], [Conflict] or [Unverified] as explained on the [section home page](index.md). Check the primary text before relying on any claim. This is not legal advice.
+
+> **Row IN14.** The CERT-In AI Security Auditing Guidelines were read in a copy of version 1.0 received on 4 November 2026 and are tagged [Verified] against that copy. No CERT-In web address for that version was recorded, so check your copy against the one CERT-In publishes.
 
 This page maps Indian laws, guidance and standards that bear on AI to the wiki's controls.
 
@@ -23,7 +25,7 @@ There are four layers [Recalled]:
 1. Data protection law: the DPDP Act 2023 and the DPDP Rules 2025, which are phased.
 2. National AI governance guidelines, which are non-binding.
 3. Sector regulators for banks, securities and insurance. Most of their output is non-binding guidance; some of it is directive.
-4. Cyber incident rules (CERT-In).
+4. Cyber incident rules (CERT-In), and from 4 November 2026 the CERT-In AI Security Auditing Guidelines, which set what an auditor checks and how deeply.
 
 Apply the strictest layer that fits. If personal data is involved, the DPDP Act applies whatever the AI label.
 
@@ -44,6 +46,7 @@ Apply the strictest layer that fits. If personal data is involved, the DPDP Act 
 | IN11 | IT Act 2000 and SPDI Rules | Existing law until the DPDP regime fully commences | Reasonable security practices for sensitive data | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005), [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) | [Recalled] | Transition provisions |
 | IN12 | IndiaAI Mission | Programme (Mar 2024; INR 10,372 crore) | Compute, datasets, skilling. Listed for context; it creates no obligation | None | [Verified] date and outlay, from the [PIB release of 7 Mar 2024](https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2012355) (Rs 10,371.92 crore), read 20 Oct 2026 | n/a |
 | IN13 | SEBI guidelines on responsible use of AI and ML in securities markets | Proposed. Consultation paper of 20 Jun 2025 [Reported]; on 10 Oct 2026 the SEBI chairman said the guidelines would be issued shortly [Reported] | The consultation paper reportedly proposed principles of accountability, transparency, safety and reliability, model governance, records of development, testing and monitoring, and disclosure of AI and ML use. The chairman's remarks of 10 Oct 2026 describe a tiered approach built on clear accountability, data controls, kill switches and human oversight, aligned with the IOSCO supervisory toolkit for AI. Nothing has been issued, so none of this binds yet, and whether a kill switch will be mandatory for every firm is not known | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011), [AI-CTRL-012](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-012), [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025), [AI-CTRL-045](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-045), [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) | [Reported] | The consultation paper text; the final guidelines when issued |
+| IN14 | CERT-In AI Security Auditing Guidelines v1.0 | Guidelines dated 4 Nov 2026, prepared by Sub-group 03 of the CERT-In Working Group on Indian Standards for Cybersecurity Auditing; guidance unless a regulator, contract or empanelment requirement adopts them | Nine core audit domains; four risk tiers (Low to Critical) scored from eight inherent-risk factors, with audit by a CERT-In empanelled organisation at Tier 3 and continuous monitoring at Tier 4; advanced requirements for generative, RAG, agentic, multimodal, multi-agent and cyber-physical AI; six-phase audit lifecycle; four finding severities; five-level maturity model; aligned with the MeitY seven sutras and six pillars (section 15). Mapped domain by domain in the [CERT-In crosswalk](../23_Framework_Crosswalks/22_CERT_In_AI_Security_Auditing_Guidelines_Crosswalk.md) | [AI-CTRL-011](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-011), [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030), [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034), [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038), [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041), [AI-CTRL-045](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-045) | [Verified] against the copy of v1.0 read on 4 Nov 2026 | Whether any sector regulator makes them mandatory; the CERT-In page for v1.0 |
 
 ## 3. Categories, tiers and roles
 
@@ -69,6 +72,7 @@ Apply the strictest layer that fits. If personal data is involved, the DPDP Act 
 | May 2026 | IRDAI AI-cybersecurity readiness directive | [Unverified] |
 | 24 Jun 2026 | RBI draft Model Risk Management guidance, including kill-switch arrangements for AI models | [Verified] |
 | 10 Oct 2026 | SEBI chairman says AI and ML guidelines, including kill switches and human oversight, will be issued shortly | [Reported] |
+| 4 Nov 2026 | CERT-In AI Security Auditing Guidelines v1.0 | [Verified] against the copy read 4 Nov 2026 |
 | About 13 Nov 2026 | Consent manager rule (Rule 4) in force, one year after publication | [Verified] |
 | About 13 May 2027 | Core DPDP obligations (Rules 3, 5 to 16, 22, 23), eighteen months after publication | [Verified] |
 
@@ -83,7 +87,11 @@ Apply the strictest layer that fits. If personal data is involved, the DPDP Act 
 | [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) Human approval | MeitY accountability and human centricity; RBI recommendations |
 | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) Incident response | DPDP breach duties; CERT-In reporting ([IN-T2](IN-T2_Breach_and_Incident_Workflow.md)) |
 | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) Content safety | Synthetic labelling rules, if notified |
-| [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) Fairness | MeitY fairness principle; RBI FREE-AI |
+| [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041) Fairness | MeitY fairness principle; RBI FREE-AI; CERT-In audit domain 8.4 |
+| [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) Pipeline and registry | CERT-In audit domain 8.3 (model registry, version control, validation, retirement) |
+| [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial testing | CERT-In audit domains 8.6 and 8.7 (adversarial testing, VAPT, drift and re-validation) |
+| [AI-CTRL-038](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-038) Control assurance | CERT-In audit evidence expectations across all nine domains, and the finding and corrective action process in section 12 |
+| [AI-CTRL-045](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-045) Human oversight | CERT-In audit domain 8.8 and the contestability and decision review requirements in section 11 |
 
 ## 6. Where the wiki covers this
 
@@ -95,6 +103,7 @@ The topics raised on this page are covered by the following controls, test cases
 | Consent artefacts and withdrawal | [IN-T1](IN-T1_DPDP_AI_Processing_Record_and_Notice.md); [TC-L03-004](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-004) |
 | Reporting to CERT-In and the Data Protection Board | [IN-T2](IN-T2_Breach_and_Incident_Workflow.md); [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035); [TC-L03-019](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-019) |
 | RBI, SEBI and IRDAI expectations | [IN-T3](IN-T3_Regulated_Entity_AI_Readiness.md); [AI-CTRL-041](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-041); [TC-L03-031](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-031); [Sector Overlays](../04_Domain_Standards/10B_Sector_Overlays.md) |
+| CERT-In audit domains, risk tiers and advanced AI requirements | The [CERT-In AI Security Auditing Guidelines Crosswalk](../23_Framework_Crosswalks/22_CERT_In_AI_Security_Auditing_Guidelines_Crosswalk.md), which maps the nine domains to controls and test cases and names what the wiki does not cover |
 | Synthetic-content labelling | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039); [TC-L03-003](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-003); labelling record [CN-T2](../16_China_AI_Compliance/CN-T2_Content_Labelling_Implementation_Record.md); [TC-L03-035](../10_Test_Case_Library/L03-legal-privacy-and-compliance.md#tc-l03-035) |
 
 ## 7. Conflicts and cautions
@@ -104,6 +113,7 @@ The topics raised on this page are covered by the following controls, test cases
 - The synthetic content labelling rules are described both as proposed and as amended. MeitY's consolidated text (read 20 October 2026) shows them in the IT Rules as amended by G.S.R. 120(E) of 10 February 2026. A separate draft Second Amendment Rules 2026 (March 2026) on MeitY's site does not touch synthetic content.
 - One source says the Board was not operational as of August 2026, so the enforcement route is uncertain. The Lok Sabha answer of 12 August 2026 (read 20 October 2026) names no appointment. Another secondary source says appointments were made on 6 June 2026; no primary source seen supports that.
 - The penalty and section detail comes from a single vendor blog.
+- The CERT-In AI Security Auditing Guidelines are guidance in their own right. They bind an organisation when a sector regulator, a contract or a CERT-In empanelment requirement adopts them, so establish who is imposing them before planning an audit against them.
 
 ## 8. Verification checklist
 
@@ -118,6 +128,7 @@ The topics raised on this page are covered by the following controls, test cases
 - [ ] IRDAI directive
 - [ ] Status of the IT Rules on synthetic content
 - [ ] CERT-In directions text
+- [ ] CERT-In page for the AI Security Auditing Guidelines, and whether v1.0 is still the current version
 - [ ] Add the primary URL and retrieval date beside every confirmed row
 
 ## 9. Sources

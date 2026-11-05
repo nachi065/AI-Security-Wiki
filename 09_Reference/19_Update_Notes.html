@@ -282,6 +282,7 @@
 <li><a href="../23_Framework_Crosswalks/19_OWASP_MCP_Top_10_Crosswalk.html">OWASP MCP Top 10 Crosswalk</a></li>
 <li><a href="../23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.html">NIST SSDF and SP 800-218A Crosswalk</a></li>
 <li><a href="../23_Framework_Crosswalks/21_PCI_DSS_AI_Crosswalk.html">PCI DSS AI Crosswalk</a></li>
+<li><a href="../23_Framework_Crosswalks/22_CERT_In_AI_Security_Auditing_Guidelines_Crosswalk.html">CERT-In AI Security Auditing Guidelines Crosswalk</a></li>
 </ul></details></li>
 <li style="--h:42"><details><summary><a href="../24_Builder_Track/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.6-.6-2.6z"/></svg>Builder Track</a></summary><ul>
 <li><a href="../24_Builder_Track/01_Secure_Your_First_Agent.html">Secure Your First Agent: Ten Controls With Code</a></li>
@@ -333,15 +334,32 @@
 <ul>
 <li>GCC: S1, S5, S9, Q1, Q3, Q4, B3, O1, O2, U8, U10 and U12 could not be checked against primary sources this week. For O2, an unofficial English translation of Royal Decree 68/2026 agrees with the row, but the Official Gazette has not been read, so the row stays [Reported].</li>
 </ul>
-<h2 id="29-october-2026-full-isoiec-42001-annex-a-coverage-and-wider-isoiec-27001-coverage">29 October 2026: Full ISO/IEC 42001 Annex A coverage and wider ISO/IEC 27001 coverage</h2>
+<h2 id="4-november-2026-the-cert-in-ai-security-auditing-guidelines">4 November 2026: the CERT-In AI Security Auditing Guidelines</h2>
 <h3 id="what-is-new">What is new</h3>
+<ul>
+<li><strong><a href="../23_Framework_Crosswalks/22_CERT_In_AI_Security_Auditing_Guidelines_Crosswalk.html">CERT-In AI Security Auditing Guidelines Crosswalk</a>:</strong> a new crosswalk page for the Artificial Intelligence (AI) Security Auditing Guidelines, version 1.0, dated 4 November 2026, prepared by Sub-group 03 of the CERT-In Working Group on Indian Standards for Cybersecurity Auditing. It maps all nine core audit domains to wiki controls and test cases, maps the eight CERT-In inherent-risk factors onto the eight questions of the <a href="../11_GCC_AI_Compliance/T01_AI_Use_Case_Intake_and_Risk_Tiering.html">T01 tiering form</a>, covers the advanced requirements for generative AI, RAG, agentic, multimodal, multi-agent and autonomous or cyber-physical systems, and places the audit lifecycle, contestability, finding severities and maturity model against the wiki's own pages.</li>
+<li><strong>Six domains are a direct match and three are partial.</strong> The partial ones are model risk management (8.3), ethics and fairness (8.4) and explainability (8.5).</li>
+<li><strong>Five requirements have no control behind them</strong>, and the page names them: validation by a function independent of the model developers, proxy-variable screening, counterfactual fairness testing, explanation-quality testing with a documented choice of technique, and cyber-physical safety controls such as sensor integrity and independent interlocks. The first four are in scope for a later control and test case update; the fifth is functional safety and stays out of scope.</li>
+<li><strong>India section:</strong> row <strong>IN14</strong> for the Guidelines in the <a href="../17_India_AI_Compliance/01_India_AI_Regulatory_Hub.html">India AI Regulatory Hub</a>, the <a href="../17_India_AI_Compliance/03_Regulatory_Crosswalk.html">India Regulatory Crosswalk</a> and its CSV, with a timeline entry, four more rows in the control mapping table (AI-CTRL-030, AI-CTRL-034, AI-CTRL-038, AI-CTRL-045) and a caution that the Guidelines bind an organisation only where a regulator, a contract or an empanelment requirement adopts them.</li>
+<li>The home page framework table, the control framework mapping and the section home page for <a href="../23_Framework_Crosswalks/index.html">Framework Crosswalks</a> list the new page, which is grouped there under national audit frameworks.</li>
+</ul>
+<h3 id="what-was-checked-and-what-was-not">What was checked and what was not</h3>
+<ul>
+<li>The Guidelines were read in full from a copy of the PDF supplied on 4 November 2026. Domain names and numbers, the four tier bands and their composite score ranges, the eight risk factors, the twelve escalation capabilities, the four finding severities with their remediation timelines, the five maturity levels and the section 15 alignment with the MeitY guidelines all come from that copy.</li>
+<li>No CERT-In web address for version 1.0 was recorded, and the CERT-In site was not reached from the environment used to write the page, so the copy used has not been compared with the published one. Row IN14 says so, and the page repeats it.</li>
+<li>Whether the Guidelines are mandatory for any sector is not settled. They read as guidance; nothing in the document makes them binding by itself. This is recorded as open in the India hub's cautions and verification checklist.</li>
+<li>No control text was changed and no test case was added, so every mapping on the page rests on control and case text that already existed, and the five gaps stay open.</li>
+<li>The mapping is this wiki's own judgement and has not been reviewed by CERT-In.</li>
+</ul>
+<h2 id="29-october-2026-full-isoiec-42001-annex-a-coverage-and-wider-isoiec-27001-coverage">29 October 2026: Full ISO/IEC 42001 Annex A coverage and wider ISO/IEC 27001 coverage</h2>
+<h3 id="what-is-new_1">What is new</h3>
 <ul>
 <li><strong><a href="../23_Framework_Crosswalks/05_ISO_IEC_42001_Crosswalk.html">ISO/IEC 42001 Crosswalk</a> (1.1):</strong> all 38 Annex A controls are now cited by at least one wiki control, up from 33. The five new citations are A.2.3 Alignment with other organizational policies (AI-CTRL-012), A.6.1.2 Objectives for responsible development of AI systems (AI-CTRL-033), A.6.1.3 Processes for responsible design and development (AI-CTRL-030, AI-CTRL-033), A.6.2.7 AI system technical documentation (AI-CTRL-030, AI-CTRL-031) and A.10.4 Customers (AI-CTRL-041).</li>
 <li><strong><a href="../23_Framework_Crosswalks/08_ISO_IEC_27001_Crosswalk.html">ISO/IEC 27001 Crosswalk</a> (1.1):</strong> 75 of the 93 Annex A controls are now cited, up from 65. The ten new citations are A.5.6 Contact with special interest groups (AI-CTRL-043), A.5.7 Threat intelligence (AI-CTRL-034), A.5.11 Return of assets (AI-CTRL-014), A.5.37 Documented operating procedures (AI-CTRL-009, AI-CTRL-035), A.6.2 Terms and conditions of employment and A.6.4 Disciplinary process (AI-CTRL-012), A.8.1 User endpoint devices (AI-CTRL-001, AI-CTRL-002, AI-CTRL-004), A.8.18 Use of privileged utility programs (AI-CTRL-024), A.8.21 Security of network services (AI-CTRL-032) and A.8.34 Protection of information systems during audit testing (AI-CTRL-034). The 18 left uncited are the 14 physical controls and four people controls (A.6.1, A.6.5, A.6.6, A.6.7), which the page now names as left to the existing ISMS.</li>
 <li><strong>Eight controls extended</strong> where a new citation needed text to support it: policy alignment and AI use in employment terms (AI-CTRL-012), return or deletion of data and models at contract end (AI-CTRL-014), privileged tools for agents (AI-CTRL-024), security requirements for model APIs and other network services (AI-CTRL-032), responsible development objectives as release criteria (AI-CTRL-033), AI threat intelligence and safeguards for testing production systems (AI-CTRL-034), and contact with AI security interest groups (AI-CTRL-043). The other new citations rest on text the controls already had.</li>
 <li><strong>Workbooks rebuilt:</strong> AI Risk Register (1.6), Control Library and Crosswalks (1.7), Audit and Evidence Checklist (1.5) and Requirements Traceability Matrix (1.4). The matrix grows from 188 to 198 requirements because each new sentence is a requirement.</li>
 </ul>
-<h3 id="what-was-checked-and-what-was-not">What was checked and what was not</h3>
+<h3 id="what-was-checked-and-what-was-not_1">What was checked and what was not</h3>
 <ul>
 <li>Every Annex A number and title on both pages was checked on 29 October 2026 against two published listings per standard (for ISO/IEC 42001, RiskProfs and TCSA; for ISO/IEC 27001:2022, Open Security Architecture and HighTable). The ISO Online Browsing Platform could not be reached, so nothing was checked against the standards themselves. The listings word some titles differently; the wiki keeps the wording it already used where the two disagree.</li>
 <li>This corrects the earlier note on the ISO/IEC 27001 Crosswalk that its numbers and titles were written from memory.</li>
@@ -350,7 +368,7 @@
 </ul>
 <h2 id="29-october-2026-ai-accelerated-exploitation-on-the-risk-register">29 October 2026: AI-accelerated exploitation on the risk register</h2>
 <p>This entry follows the one below ("PCI DSS and the PCI SSC guidance on AI systems") and closes the gap it recorded for attackers' use of AI.</p>
-<h3 id="what-is-new_1">What is new</h3>
+<h3 id="what-is-new_2">What is new</h3>
 <ul>
 <li><strong>AI-R55 AI-Accelerated Exploitation and Patch Gap</strong> on the <a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a> (version 1.5), owner domain 05 (Security and Adversarial Threats), example rating High. It covers attackers using AI to find and exploit vulnerabilities faster than vulnerability management sized for human attackers can respond.</li>
 <li><strong>A register decision reopened.</strong> Under Considered and Not Added, attacks others carry out with AI were out of scope. The exploitation-speed part is now in scope as AI-R55, with the reason recorded; deepfake fraud, voice cloning and phishing stay out of scope.</li>
@@ -358,14 +376,14 @@
 <li>The <a href="../23_Framework_Crosswalks/21_PCI_DSS_AI_Crosswalk.html">PCI DSS AI Crosswalk</a> (1.1) now shows the vulnerability scanning and rapid triage rows as partial matches through AI-R55, and <a href="../00_Foundations/10-AI-for-Security-and-AI-Enabled-Threats.html">AI for Security and AI-Enabled Threats</a> links to the risk.</li>
 <li><strong>Workbooks rebuilt</strong> with 55 risks: AI Risk Register (1.5), AI Use-Case Risk Triage (1.2), Control Library and Crosswalks (1.6), Test Case Tracker (1.5), Audit and Evidence Checklist (1.4) and Requirements Traceability Matrix (1.3).</li>
 </ul>
-<h3 id="what-was-checked-and-what-was-not_1">What was checked and what was not</h3>
+<h3 id="what-was-checked-and-what-was-not_2">What was checked and what was not</h3>
 <ul>
 <li>AI-R55 passes the four tests in <a href="../02_Risk_Management/02A_AI_Risk_Methodology.html#what-belongs-on-the-register">What Belongs on the Register</a>. It is corroborated by the PCI SSC supplement and by the UK NCSC assessment <em>Impact of AI on cyber threat from now to 2027</em> (7 May 2025), whose wording on the disclosure-to-exploitation window was read on 29 October 2026.</li>
 <li>No triage question was added: the risk applies to the whole organization rather than to one use case.</li>
 <li>Most of the treatment is general vulnerability management, which the wiki does not cover; the mapped controls treat the AI-specific part. No new test case was added for it.</li>
 </ul>
 <h2 id="29-october-2026-pci-dss-and-the-pci-ssc-guidance-on-ai-systems">29 October 2026: PCI DSS and the PCI SSC guidance on AI systems</h2>
-<h3 id="what-is-new_2">What is new</h3>
+<h3 id="what-is-new_3">What is new</h3>
 <ul>
 <li><strong><a href="../23_Framework_Crosswalks/21_PCI_DSS_AI_Crosswalk.html">PCI DSS AI Crosswalk</a>:</strong> a new crosswalk page for the PCI Security Standards Council information supplement <em>Security Considerations for AI Systems</em> (version 1.0, September 2026). It maps the PCI DSS requirements the supplement applies to AI (1.2.4, Requirement 3 and 3.3.1, 6.2.3 and 6.2.3.1, 6.5.1, 8.4.2, 12.5.1, 12.5.2, 12.8.x and 12.10.x) and every theme of the guidance to wiki controls and test cases, adds a short scoping checklist, and names what the wiki does not cover.</li>
 <li><strong>Eight test cases</strong>, bringing the library to 682: a human-over-the-loop authorisation record (<a class="chip" href="../10_Test_Case_Library/L01-business-and-use-cases.html#tc-l01-022">TC-L01-022</a>), AI chat widgets on payment pages (<a class="chip" href="../10_Test_Case_Library/L05-ai-applications.html#tc-l05-036">TC-L05-036</a>), egress DLP that the AI system cannot switch off or route around (<a class="chip" href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html#tc-l08-044">TC-L08-044</a>), agent credentials where a person would need MFA (<a class="chip" href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html#tc-l09-027">TC-L09-027</a>), keeping keys, passwords and random values away from models (<a class="chip" href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-034">TC-L10-034</a>), tokenised data plus a reachable detokenisation path (<a class="chip" href="../10_Test_Case_Library/L10-data-layer.html#tc-l10-035">TC-L10-035</a>), change control and tested rollback for changes agents make (<a class="chip" href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-023">TC-L14-023</a>), and measuring an AI code reviewer against seeded flaws (<a class="chip" href="../10_Test_Case_Library/L14-mlops-llmops-layer.html#tc-l14-024">TC-L14-024</a>).</li>
@@ -374,7 +392,7 @@
 <li><strong>Workbooks rebuilt.</strong> The <a href="../25_Templates/01_AI_Risk_Register_Template.html">AI Risk Register</a> (version 1.4) and <a href="../25_Templates/06_AI_Security_Control_Library_and_Crosswalks_Template.html">Control Library and Crosswalks</a> (1.5) have two new crosswalk columns, PCI DSS requirements and PCI SSC guidance themes. The <a href="../25_Templates/07_AI_Security_Test_Case_Tracker_Template.html">Test Case Tracker</a> (1.4) holds the eight new cases. The <a href="../25_Templates/05_AI_Security_Audit_and_Evidence_Checklist_Template.html">Audit and Evidence Checklist</a> (1.3) and <a href="../25_Templates/12_AI_Security_Requirements_Traceability_Matrix_Template.html">Requirements Traceability Matrix</a> (1.2) carry the extended control text; the matrix grows from 169 to 188 requirements because each new sentence is a requirement.</li>
 <li>Corrected hand-kept counts that had drifted in earlier updates: test case counts in the control index for seven controls, the per-method and per-domain totals on the test library home page, and the control theme counts and case lists in the <a href="../10_Test_Case_Library/framework-adoption-guide.html">framework adoption guide</a>.</li>
 </ul>
-<h3 id="what-was-checked-and-what-was-not_2">What was checked and what was not</h3>
+<h3 id="what-was-checked-and-what-was-not_3">What was checked and what was not</h3>
 <ul>
 <li>The supplement was read in full from a copy of the PDF supplied on 29 October 2026. Its publication was confirmed only through a Help Net Security report of 9 October 2026; the PCI SSC Document Library copy could not be reached, so the copy used has not been compared with it.</li>
 <li>Requirement numbers the supplement cites are marked as read from it. Numbers it does not cite (targeted risk analysis, logging, penetration and segmentation testing, payment page scripts and vulnerability scanning) were added from memory of PCI DSS v4.0.1 and are marked [Recalled] until checked against the standard.</li>
@@ -383,7 +401,7 @@
 <li>All five workbooks were recalculated with no formula errors.</li>
 </ul>
 <h2 id="29-october-2026-2026-cases-in-the-incident-casebook">29 October 2026: 2026 cases in the incident casebook</h2>
-<h3 id="what-is-new_3">What is new</h3>
+<h3 id="what-is-new_4">What is new</h3>
 <p>The <a href="20_AI_Security_Incident_Casebook.html">AI Security Incident Casebook</a> has seven cases from 2026, bringing it to sixteen:</p>
 <ul>
 <li><strong>Load/Mine</strong> (Pluto Security, 29 October): 31 Hugging Face repositories that ran a cryptominer through <code>trust_remote_code=True</code>.</li>
@@ -395,7 +413,7 @@
 <li><strong>OpenClaw CVE-2026-25253</strong> (31 January): one click on a link let an attacker take the agent's gateway token and run commands.</li>
 </ul>
 <p>New cases also list the test cases that check the controls they map to, and say under <strong>Not confirmed</strong> what the sources do not settle.</p>
-<h3 id="what-was-checked-and-what-was-not_3">What was checked and what was not</h3>
+<h3 id="what-was-checked-and-what-was-not_4">What was checked and what was not</h3>
 <ul>
 <li>Each case was checked on 29 October 2026 against the source linked beside it. The Hugging Face breach, the Moltbook exposure, Load/Mine and CVE-2026-25253 were read from the primary write-ups (Hugging Face and OpenAI, Wiz, Pluto Security, the GitHub advisory and depthfirst). The gym incident comes from the ABC's report of the user's own account, and ClawHavoc and Clinejection from security news and vendor reports that cite the original researchers, whose own posts were not read.</li>
 <li>Hugging Face's and OpenAI's accounts of the breach differ on the entry point and on what was accessed, and Hugging Face's post does not confirm OpenAI's attribution. OpenAI's later posts on the incident could not be retrieved and are not used.</li>
@@ -693,18 +711,18 @@
 <li>No change found for GCC S8 and B3, India IN6 or Brazil BR1. The US HIPAA Security Rule update (US17) was not checked against a primary source.</li>
 </ul>
 <h2 id="18-october-2026-full-version-history-moved-here">18 October 2026: Full version history moved here</h2>
-<h3 id="what-is-new_4">What is new</h3>
+<h3 id="what-is-new_5">What is new</h3>
 <ul>
 <li>The complete version history, from 1.0 to the latest version, now lives at the end of this page, newest first.</li>
 <li><a href="../index.html#20-version-history">Section 20 of the home page</a> shows only the three latest versions, with a link here.</li>
 <li>From now on this page is maintained as an append-only record, including the results of the regular verification runs on the regional and framework crosswalks.</li>
 </ul>
-<h3 id="what-was-checked-and-what-was-not_4">What was checked and what was not</h3>
+<h3 id="what-was-checked-and-what-was-not_5">What was checked and what was not</h3>
 <ul>
 <li>The rows were moved without changing their wording. The only new row is version 2.38, for this change.</li>
 </ul>
 <h2 id="17-october-2026-eight-more-templates">17 October 2026: Eight more templates</h2>
-<h3 id="what-is-new_5">What is new</h3>
+<h3 id="what-is-new_6">What is new</h3>
 <p>Eight templates were added to the <a href="../25_Templates/index.html">Templates</a> section, each on its own page with a download link. Page names now end in the file type, (.xlsx) or (.docx).</p>
 <ul>
 <li><strong><a href="../25_Templates/02_AI_System_Inventory_Template.html">AI System Inventory Template (.xlsx)</a>:</strong> the GCC and EU inventory templates and T01 tiering in one sheet, with record checks, review alerts, a discovery sweep log and a dashboard.</li>
@@ -716,19 +734,19 @@
 <li><strong><a href="../25_Templates/08_AI_Acceptable_Use_Policy_Template.html">AI Acceptable Use Policy Template (.docx)</a>:</strong> a policy draft with a policy-to-control mapping, a quick reference card and a user acknowledgement form.</li>
 <li><strong><a href="../25_Templates/09_AI_Impact_Assessment_Template.html">AI Impact Assessment Template (.docx)</a>:</strong> a combined data protection and fundamental rights impact assessment that adds benefits, misuse and interested parties from ISO/IEC 42005.</li>
 </ul>
-<h3 id="what-was-checked-and-what-was-not_5">What was checked and what was not</h3>
+<h3 id="what-was-checked-and-what-was-not_6">What was checked and what was not</h3>
 <ul>
 <li>The workbooks were recalculated with no formula errors, and the triage workbook gave the same result as the wiki for its three worked examples. The Word documents passed a schema check and were rendered to check their layout.</li>
 <li>Settings marked orange in the workbooks, and placeholders in the Word documents, are defaults or decisions for the organization, not values from a standard.</li>
 <li>The regional questions and citations come from the wiki's GCC and EU pages, which say they must be checked against the legal texts. The templates are not legal advice.</li>
 </ul>
 <h2 id="17-october-2026-templates-section-and-ai-risk-register-template">17 October 2026: Templates section and AI Risk Register Template</h2>
-<h3 id="what-is-new_6">What is new</h3>
+<h3 id="what-is-new_7">What is new</h3>
 <ul>
 <li><strong><a href="../25_Templates/index.html">Templates</a>:</strong> a new section, before Community Rules in the sidebar, for files you can download and fill in.</li>
 <li><strong><a href="../25_Templates/01_AI_Risk_Register_Template.html">AI Risk Register Template</a>:</strong> an Excel workbook with the 55 register risks pre-filled, use-case triage, likelihood by impact scoring with editable settings, mapped controls and evidence, the framework and regional regulatory crosswalks, a dashboard, deadline alerts and record checks. It carries a License sheet and file metadata for CC BY-SA 4.0.</li>
 </ul>
-<h3 id="what-was-checked-and-what-was-not_6">What was checked and what was not</h3>
+<h3 id="what-was-checked-and-what-was-not_7">What was checked and what was not</h3>
 <ul>
 <li>The workbook's formulas were recalculated with no errors, and sample triage answers, dates and treatment decisions were entered to check the triage result, deadlines, appetite check and record checks.</li>
 <li>Its ratings are the register's generic examples and its settings (scales, bands, deadlines, appetite, acceptance authority) are defaults, not values from a standard.</li>
@@ -736,14 +754,14 @@
 </ul>
 <h2 id="17-october-2026-incidents-agent-architecture-patterns-and-the-owasp-mcp-top-10">17 October 2026: Incidents, agent architecture patterns and the OWASP MCP Top 10</h2>
 <p>A review of the wiki against current agent and MCP security guidance found three gaps: the wiki named almost no real incidents, it said what to control in an agent but not how to arrange an agent so that a fooled model cannot leak data, and it did not cover the OWASP MCP Top 10.</p>
-<h3 id="what-is-new_7">What is new</h3>
+<h3 id="what-is-new_8">What is new</h3>
 <ul>
 <li><strong><a href="20_AI_Security_Incident_Casebook.html">AI Security Incident Casebook</a>:</strong> nine cases (EchoLeak, the GitHub MCP toxic agent flow, postmark-mcp, mcp-remote, MCP Inspector, the Amazon Q Developer extension, the Replit database deletion, the Air Canada chatbot ruling and Mata v. Avianca), each mapped to register risks, controls and OWASP items, with the control that would have broken the chain.</li>
 <li><strong><a href="../24_Builder_Track/02_Agent_Architecture_Patterns.html">Agent Architecture Patterns</a>:</strong> the lethal trifecta and Meta's Agents Rule of Two, six design patterns for containing prompt injection (including Dual LLM, Plan-Then-Execute and CaMeL), identity standards for agents (RFC 8693, RFC 8707, DPoP, workload identity), the MCP specification's ban on token passthrough, tracing and shutdown, a twelve-question architect's review checklist and four exercises.</li>
 <li><strong><a href="../23_Framework_Crosswalks/19_OWASP_MCP_Top_10_Crosswalk.html">OWASP MCP Top 10 Crosswalk</a>:</strong> the ten items mapped to wiki risks and controls; 8 direct and 2 partial.</li>
 <li><strong>Triage question A6</strong> in the <a href="../02_Risk_Management/02F_AI_Use_Case_Risk_Triage.html">AI Use-Case Risk Triage</a> asks whether a session combines all three legs of the trifecta.</li>
 </ul>
-<h3 id="what-was-checked-and-what-was-not_7">What was checked and what was not</h3>
+<h3 id="what-was-checked-and-what-was-not_8">What was checked and what was not</h3>
 <ul>
 <li>Each incident was checked against the source linked beside it (the researcher's or vendor's write-up, a CVE advisory, a court decision or a report citing one) on 17 October 2026. Four of the nine sources are secondary reports (SOC Prime, TechRadar, the AI Incident Database and a law firm's case summary) rather than the original advisory or decision.</li>
 <li>The MCP Top 10 identifiers and titles were read from the OWASP project page, which calls the list a beta; titles may still change. One title differs from some summaries of the list: MCP06 is "Prompt Injection via Contextual Payloads".</li>
@@ -755,7 +773,7 @@
 <p>Every statement on these pages that came from the review's source material was checked again against its primary source. Corrections made: EchoLeak now describes the actual exfiltration path (reference-style Markdown and a Teams domain allowed by the content security policy) with a second source; the Air Canada and Mata v. Avianca cases give exact dates, courts and what the source says; the mcp-remote case gives its disclosure date; the RFC descriptions now match each RFC's stated purpose; and the OpenTelemetry link points to the conventions' new repository with their stability level. None of the statements was contradicted by its source; the fixes add missing detail, correct imprecise wording or replace a link that had moved.</p>
 <h2 id="17-october-2026-risks-from-the-ai-risk-map">17 October 2026: Risks from the AI Risk Map</h2>
 <p>The wiki's risk register was compared with the <em>AI Risk Map</em> v1.3 (2026) by Evan Wheeler, RiskFramework.org, a one-page map of 196 AI risk factors in 12 domains, grouped by who owns each risk. The map is licensed CC BY-SA 4.0, the same licence as the wiki, so its content could be adapted with credit. The comparison found the register strong on security, data and agent risks and thin on risks owned outside security.</p>
-<h3 id="what-is-new_8">What is new</h3>
+<h3 id="what-is-new_9">What is new</h3>
 <ul>
 <li><strong>Eighteen register risks, AI-R29 to AI-R46</strong>, adapted from the map: unrealised value, cost volatility, provider concentration and lock-in, model monoculture, deskilling, workforce change, energy and water use, output ownership and model licences, obligations triggered by modifying a model, legal hold, independent model validation, AI in financial reporting controls, AI-washing, emotional dependence, hallucinated package dependencies, safety training removed from self-hosted models, agent activity that looks like an attack, and insiders using agents to exceed their access. Each has controls and evidence in the <a href="../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a>, and each names the map domain it came from.</li>
 <li><strong>Owner Domain column</strong> on the <a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a>, using the map's twelve domains, with a suggested owner for each.</li>
@@ -764,7 +782,7 @@
 <li><strong><a href="../23_Framework_Crosswalks/18_AI_Risk_Map_Crosswalk.html">AI Risk Map Crosswalk</a></strong>: the map's 55 categories mapped to register risks.</li>
 <li>The <a href="../23_Framework_Crosswalks/04_NIST_AI_600_1_GenAI_Profile_Crosswalk.html">NIST AI 600-1 Crosswalk</a> now maps Environmental Impacts, homogenization and anthropomorphism to the new risks.</li>
 </ul>
-<h3 id="what-was-checked-and-what-was-not_8">What was checked and what was not</h3>
+<h3 id="what-was-checked-and-what-was-not_9">What was checked and what was not</h3>
 <ul>
 <li>The domain, category and risk factor wording was read from the one-page map PDF. The map's companion workbook, which gives the source of each factor, was not available, and the RiskFramework.org website could not be reached, so the map was not checked against either.</li>
 <li>The ratings of the new risks are illustrative, like the rest of the register. The FINOS cross-references for AI-R29 to AI-R46 have not been checked and are marked Not checked.</li>
@@ -777,7 +795,7 @@
 <p>India, the GCC and the EU were checked against primary texts where the texts could be fetched. India: the DPDP Act, the DPDP Rules (G.S.R. 846(E), phased commencement dates), the AI Governance Guidelines, the RBI FREE-AI report, the RBI draft model risk guidance and the CERT-In directions are now <code>[Verified]</code>; the IT Rules synthetic-content amendment and the SEBI amendments stay <code>[Reported]</code>; the IRDAI AI directive could not be confirmed and is <code>[Unverified]</code>. GCC: the UAE data protection law (article numbers) is <code>[Verified]</code>. The original EU AI Act Article 113 could not be retrieved, so those dates keep their earlier tags. Nothing outside these three sections was checked. New regions are frozen until the others are verified (see CONTRIBUTING.md).</p>
 <h2 id="16-october-2026-builder-track">16 October 2026: Builder Track</h2>
 <p>A review of the wiki found that it said well what to look for in an agent but gave builders little on how to secure one. The practitioner pages were short (the agentic standard is a single table) and there was no code anywhere in the wiki. The updates on this date work through that gap in order. This section covers the first.</p>
-<h3 id="what-is-new_9">What is new</h3>
+<h3 id="what-is-new_10">What is new</h3>
 <ul>
 <li><strong>Standard Fields:</strong> wording that repeated in most of the 668 test cases (scoring, pass and fail criteria, reviewer notes, standard evidence, and the lab setup for each layer) now lives once on the <a href="../10_Test_Case_Library/standard-fields.html">Standard Fields</a> page, generated from <code>standard-fields.json</code>. A case shows a field only when it differs. This removes about 1.2 MB of repeated Markdown (about 42 percent of the case text) and 5,715 field entries; the cases now read as what is unique to each.</li>
 <li><strong>Payload Kit:</strong> a new page, <a href="../10_Test_Case_Library/payload-kit.html">Payload Kit</a>, with a <code>kit/</code> folder of attack and legitimate-request sets for 36 of the 169 Critical test cases (all Critical cases in L06, L07 and L11 that a payload can test, plus selected L08, L09 and L10 cases) and a runner that compares an unprotected build with a protected one. Each covered case links to its payload file.</li>
@@ -801,7 +819,7 @@
 </ul>
 <h2 id="15-october-2026-component-ownership">15 October 2026: component ownership</h2>
 <p>This update compared the wiki's 17 layers with a nine-part list of AI application stack components: LLMs, agents, embeddings, RAG, AI security, MCP and tools, observability, vector databases and memory. Each part came with an ownership question, such as "who decides which models are approved for use?". The original source of that list was not verified. Every part already had a home in the 17 layers, but the wiki answered only two of the nine ownership questions in full. Agent memory had no owner at all, and observability covered security incidents but not quality failures.</p>
-<h3 id="what-is-new_10">What is new</h3>
+<h3 id="what-is-new_11">What is new</h3>
 <ul>
 <li><strong>Component ownership:</strong> the <a href="../08_Governance/16_AI_Governance_Operating_Model.html#component-ownership">AI Governance Operating Model</a> now has a table that names the accountable role for each of the nine components, the roles to consult, and the test cases that check each decision. Two roles were added: AI Platform Owner and Agent Sponsor. The table is one workable allocation, not a requirement of any standard.</li>
 <li><strong>Agent memory:</strong> four new cases, <a class="chip" href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-042">TC-L07-042</a> to <a class="chip" href="../10_Test_Case_Library/L07-prompt-and-context-layer.html#tc-l07-045">TC-L07-045</a>, cover a memory store inventory with owners, a policy on what may be remembered, user visibility and control, and memory in data subject access and erasure requests. <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a> now asks for all four.</li>
@@ -884,7 +902,7 @@
 </ul>
 <h2 id="15-october-2026-ai-governance-frameworks">15 October 2026: AI governance frameworks</h2>
 <p>This update compared the wiki against a widely shared list of 30 AI governance frameworks and standards, and filled the gaps it found. Before it, the wiki mapped 10 of the 30 in depth, cited 2 without mapping them, and did not name the other 18.</p>
-<h3 id="what-is-new_11">What is new</h3>
+<h3 id="what-is-new_12">What is new</h3>
 <ul>
 <li><strong>Four new crosswalk pages</strong>, bringing the Framework Crosswalks section to 17 pages:</li>
 <li><a href="../23_Framework_Crosswalks/14_NIST_AI_100_2_Crosswalk.html">NIST AI 100-2 Crosswalk</a>: every NISTAML attack class identifier mapped to controls and test case layers.</li>
@@ -948,6 +966,12 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>2.57</td>
+<td>2026-11-04</td>
+<td>Nachiket Sathaye</td>
+<td>CERT-In AI Security Auditing Guidelines Crosswalk for version 1.0 of the guidelines, dated 4 November 2026: the nine core audit domains, the four risk tiers and eight risk factors, the advanced requirements for generative, RAG, agentic, multimodal, multi-agent and cyber-physical AI, and the audit lifecycle, contestability, finding severities and maturity model, mapped to wiki controls and test cases, with five requirements named as gaps; India hub, crosswalk and CSV row IN14.</td>
+</tr>
 <tr>
 <td>2.56</td>
 <td>2026-10-29</td>
@@ -1300,7 +1324,7 @@
 </table></div>
 </article>
 <nav class="pager" aria-label="Previous and next page"><a class="prev" href="18_AI_Security_Glossary_and_Taxonomy.html">&larr; AI Security Glossary and Taxonomy</a><a class="next" href="20_AI_Security_Incident_Casebook.html">AI Security Incident Casebook &rarr;</a></nav>
-<footer class="site-footer">Author: Nachiket Sathaye &middot; Co-author: Ankush Jain &middot; Updated 1 November 2026 &middot; Last reviewed 2 November 2026 &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/09_Reference/19_Update_Notes.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
+<footer class="site-footer">Author: Nachiket Sathaye &middot; Co-author: Ankush Jain &middot; Updated 5 November 2026 &middot; Last reviewed 4 November 2026 &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/09_Reference/19_Update_Notes.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
 <div class="site-notice">
 <p><strong>Licence.</strong> <svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.441-3.5c8.951,0,16.572,3.125,22.857,9.372c3.008,3.009,5.295,6.448,6.857,10.314 c1.561,3.867,2.344,7.971,2.344,12.314c0,4.381-0.773,8.486-2.314,12.313c-1.543,3.828-3.82,7.21-6.828,10.143 c-3.123,3.085-6.666,5.448-10.629,7.086c-3.961,1.638-8.057,2.457-12.285,2.457s-8.276-0.808-12.143-2.429 c-3.866-1.618-7.333-3.961-10.4-7.027c-3.067-3.066-5.4-6.524-7-10.372S5.5,32.767,5.5,28.5c0-4.229,0.809-8.295,2.428-12.2 c1.619-3.905,3.972-7.4,7.057-10.486C21.08-0.394,28.565-3.5,37.441-3.5z M37.557,2.272c-7.314,0-13.467,2.553-18.458,7.657 c-2.515,2.553-4.448,5.419-5.8,8.6c-1.354,3.181-2.029,6.505-2.029,9.972c0,3.429,0.675,6.734,2.029,9.913 c1.353,3.183,3.285,6.021,5.8,8.516c2.514,2.496,5.351,4.399,8.515,5.715c3.161,1.314,6.476,1.971,9.943,1.971 c3.428,0,6.75-0.665,9.973-1.999c3.219-1.335,6.121-3.257,8.713-5.771c4.99-4.876,7.484-10.99,7.484-18.344 c0-3.543-0.648-6.895-1.943-10.057c-1.293-3.162-3.18-5.98-5.654-8.458C50.984,4.844,44.795,2.272,37.557,2.272z M37.156,23.187 l-4.287,2.229c-0.458-0.951-1.019-1.619-1.685-2c-0.667-0.38-1.286-0.571-1.858-0.571c-2.856,0-4.286,1.885-4.286,5.657 c0,1.714,0.362,3.084,1.085,4.113c0.724,1.029,1.791,1.544,3.201,1.544c1.867,0,3.181-0.915,3.944-2.743l3.942,2 c-0.838,1.563-2,2.791-3.486,3.686c-1.484,0.896-3.123,1.343-4.914,1.343c-2.857,0-5.163-0.875-6.915-2.629 c-1.752-1.752-2.628-4.19-2.628-7.313c0-3.048,0.886-5.466,2.657-7.257c1.771-1.79,4.009-2.686,6.715-2.686 C32.604,18.558,35.441,20.101,37.156,23.187z M55.613,23.187l-4.229,2.229c-0.457-0.951-1.02-1.619-1.686-2 c-0.668-0.38-1.307-0.571-1.914-0.571c-2.857,0-4.287,1.885-4.287,5.657c0,1.714,0.363,3.084,1.086,4.113 c0.723,1.029,1.789,1.544,3.201,1.544c1.865,0,3.18-0.915,3.941-2.743l4,2c-0.875,1.563-2.057,2.791-3.541,3.686 c-1.486,0.896-3.105,1.343-4.857,1.343c-2.896,0-5.209-0.875-6.941-2.629c-1.736-1.752-2.602-4.19-2.602-7.313 c0-3.048,0.885-5.466,2.658-7.257c1.77-1.79,4.008-2.686,6.713-2.686C51.117,18.558,53.938,20.101,55.613,23.187z"/></svg><svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.443-3.5c8.988,0,16.57,3.085,22.742,9.257C66.393,11.967,69.5,19.548,69.5,28.5c0,8.991-3.049,16.476-9.145,22.456 C53.879,57.319,46.242,60.5,37.443,60.5c-8.649,0-16.153-3.144-22.514-9.43C8.644,44.784,5.5,37.262,5.5,28.5 c0-8.761,3.144-16.342,9.429-22.742C21.101-0.415,28.604-3.5,37.443-3.5z M37.557,2.272c-7.276,0-13.428,2.553-18.457,7.657 c-5.22,5.334-7.829,11.525-7.829,18.572c0,7.086,2.59,13.22,7.77,18.398c5.181,5.182,11.352,7.771,18.514,7.771 c7.123,0,13.334-2.607,18.629-7.828c5.029-4.838,7.543-10.952,7.543-18.343c0-7.276-2.553-13.465-7.656-18.571 C50.967,4.824,44.795,2.272,37.557,2.272z M46.129,20.557v13.085h-3.656v15.542h-9.944V33.643h-3.656V20.557 c0-0.572,0.2-1.057,0.599-1.457c0.401-0.399,0.887-0.6,1.457-0.6h13.144c0.533,0,1.01,0.2,1.428,0.6 C45.918,19.5,46.129,19.986,46.129,20.557z M33.042,12.329c0-3.008,1.485-4.514,4.458-4.514s4.457,1.504,4.457,4.514 c0,2.971-1.486,4.457-4.457,4.457S33.042,15.3,33.042,12.329z"/></svg>This wiki is open to the community under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">Creative Commons Attribution-ShareAlike 4.0 International licence (CC BY-SA 4.0)</a>. You may copy, share and adapt it for any purpose, including commercially, as long as you credit the authors and release anything you build from it under the same licence.</p>
 <p><strong>Disclaimer.</strong> This wiki is an open, community driven educational reference, not legal, regulatory or professional advice. Regional regulatory content is compiled from secondary sources and its verification status is shown per row; verify against primary sources before relying on it. Content is provided "as is" without warranty. Named products and companies belong to their owners; statements about them reflect public information at the date shown. Views are the author's own.</p>

@@ -16,7 +16,7 @@ Resources for people who build, sell, audit or run AI systems in India. The page
 
 ## India's position in one line
 
-India has no standalone AI law. Binding duties come from the DPDP Act and Rules (phased to May 2027), IT and cyber rules, and sector regulators (RBI, SEBI, IRDAI). Non-binding national AI governance guidelines sit on top [Reported].
+India has no standalone AI law. Binding duties come from the DPDP Act and Rules (phased to May 2027), IT and cyber rules, and sector regulators (RBI, SEBI, IRDAI). Non-binding national AI governance guidelines sit on top [Reported], and since 4 November 2026 CERT-In's AI Security Auditing Guidelines set how an AI system is tiered and audited [Verified].
 
 ## What is in this section
 
@@ -29,12 +29,13 @@ India has no standalone AI law. Binding duties come from the DPDP Act and Rules 
 | [IN-T3](IN-T3_Regulated_Entity_AI_Readiness.md) | Banks, NBFCs, intermediaries, insurers | Regulated-entity AI readiness checklist (RBI, SEBI, IRDAI) |
 | [Privacy Duties in Code](../24_Builder_Track/03_Privacy_Duties_in_Code.md) (Builder Track) | Developers | Tested reference code for DPDP consent, data principal rights, retention, children's data and log redaction |
 | [India Regulatory Crosswalk](03_Regulatory_Crosswalk.md) | GRC tooling | Instrument-to-control map with verification status, also as a CSV file |
+| [CERT-In AI Security Auditing Guidelines Crosswalk](../23_Framework_Crosswalks/22_CERT_In_AI_Security_Auditing_Guidelines_Crosswalk.md) | Auditors, GRC, security architects | The nine audit domains, four risk tiers and advanced AI requirements mapped to controls and test cases, with the gaps named |
 
 ## How claims are tagged
 
 | Tag | Meaning |
 |---|---|
-| **[Verified]** | Read in the primary text (statute, rules, regulator document) on 16 October 2026. The source and retrieval date are in the crosswalk. Only the facts listed in the row were checked. |
+| **[Verified]** | Read in the primary text (statute, rules, regulator document), on 16 October 2026 for most rows and on 4 November 2026 for the CERT-In AI Security Auditing Guidelines. The source and retrieval date are in the crosswalk. Only the facts listed in the row were checked. |
 | **[Reported]** | Stated by secondary web sources found on 7 October 2026 (law-firm notes, vendor blogs, research notes). Not read in the primary text. |
 | **[Recalled]** | Stated from memory of the law or guidance and not re-checked. Verify before citing it. |
 | **[Conflict]** | Secondary sources disagree. Resolve from the primary text. |
@@ -58,4 +59,4 @@ The GCC and EU sections contain working templates that are not tied to a region.
 
 ## Keeping this section current
 
-Re-check every quarter. The DPDP phasing, the Data Protection Board, RBI model-risk guidance and the synthetic-content rules are all moving.
+Re-check every quarter. The DPDP phasing, the Data Protection Board, RBI model-risk guidance and the synthetic-content rules are all moving, and the CERT-In AI Security Auditing Guidelines are at version 1.0 and will be revised.
