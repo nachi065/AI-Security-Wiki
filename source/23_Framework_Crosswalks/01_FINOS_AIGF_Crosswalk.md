@@ -24,6 +24,8 @@ The AIGF is published by FINOS (the Fintech Open Source Foundation) as an open c
 
 This page was built from the repository at commit `a149dd1` (7 October 2026), which holds 24 risks and 25 mitigations. FINOS changes its framework over time, so check the identifiers against the current version at https://air-governance-framework.finos.org/ before relying on them. AIR-SEC-030, AIR-PREV-024, AIR-PREV-025 are marked Draft by FINOS.
 
+**FINOS identifiers changed on 2 November 2026.** The FINOS v3 release (repository commit `67b8c32`, 2 November 2026) shows each item as `RI-NN` for a risk and `MI-NN` for a mitigation, without the type in the middle. The number is the same, so AIR-SEC-010 is RI-10 and AIR-PREV-018 is MI-18. This page still uses the older AIR form. On 6 November 2026 all 49 titles and statuses on this page were checked against that commit and still match.
+
 **What is taken from FINOS:** identifiers, titles, status, the links between FINOS risks and mitigations, and the EU AI Act and ISO/IEC 42001 references that FINOS lists for each entry. **What is not:** FINOS descriptions and guidance text. **What is this wiki's own:** every mapping to wiki risks and controls. Those are judgments made from FINOS titles and links, not from a line-by-line reading of each FINOS page, and they have not been reviewed by FINOS.
 
 ## FINOS risks to wiki risks
