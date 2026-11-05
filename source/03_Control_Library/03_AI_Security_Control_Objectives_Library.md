@@ -752,7 +752,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Owner** | AppSec |
 | **Review Frequency** | Before each release and quarterly |
 | **OWASP** | LLM01:2025 Prompt Injection; LLM07:2025 System Prompt Leakage; ASI01 Agent Goal Hijack |
-| **MITRE ATLAS Techniques** | AML.T0051 LLM Prompt Injection; AML.T0054 LLM Jailbreak; AML.T0056 Extract LLM System Prompt; AML.T0068 LLM Prompt Obfuscation; AML.T0093 Prompt Infiltration via Public-Facing Application |
+| **MITRE ATLAS Techniques** | AML.T0051 LLM Prompt Injection; AML.T0054 LLM Jailbreak; AML.T0085.003 Data from AI Services: System Instructions; AML.T0068 LLM Prompt Obfuscation; AML.T0093 Prompt Infiltration via Public-Facing Application |
 | **MITRE ATLAS Mitigations** | AML.M0020 Generative AI Guardrails; AML.M0021 Generative AI Guidelines; AML.M0033 Input and Output Validation for AI Agent Components |
 | **NIST AI RMF** | MEASURE 2.7; MANAGE 1.3 |
 | **ISO/IEC 42001** | A.6.2.4 AI system verification and validation; A.6.2.6 AI system operation and monitoring |

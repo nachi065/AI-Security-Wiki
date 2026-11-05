@@ -977,7 +977,7 @@ nav_order: 11
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | High |
-| **MITRE ATLAS Mapping** | AML.T0056 Extract LLM System Prompt |
+| **MITRE ATLAS Mapping** | AML.T0085.003 Data from AI Services: System Instructions |
 | **OWASP LLM / GenAI Mapping** | LLM07:2025 System Prompt Leakage |
 | **NIST AI RMF Mapping** | MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
