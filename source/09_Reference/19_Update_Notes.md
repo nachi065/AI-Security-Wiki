@@ -7,7 +7,7 @@ nav_order: 2
 description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."
 document_type: AI Security Wiki Reference
 version: 1.2
-last_reviewed: 2026-11-04
+last_reviewed: 2026-11-06
 ---
 
 # Update Notes
@@ -26,14 +26,22 @@ The nightly verification pass checks one slice of the wiki each night. This week
 ### What was checked
 
 - **GCC (2 November 2026):** every row of the [GCC Regulatory Crosswalk](../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.md) was checked for changes by web search. Rows that last week's open pull request already changes (U4, U5, U6, U9 and B2) were left alone. Primary pages were tried for S1, S5, S8, S9, Q1, Q3, Q4, B3, O1, O2, U8, U10 and U12. Only the NCA pages for S8 could be read; the other government sites did not respond to automated retrieval.
+- **Framework crosswalks (6 November 2026):** every MITRE ATLAS identifier and name the wiki cites was compared with MITRE's own ATLAS data, release 2026.10 of 28 October 2026, which is still the latest release in the [atlas-data repository](https://github.com/mitre-atlas/atlas-data). The [FINOS AI Governance Framework Crosswalk](../23_Framework_Crosswalks/01_FINOS_AIGF_Crosswalk.md) was compared with the FINOS repository at its v3 release of 2 November 2026: all 49 identifiers, titles and statuses on the page still match. The [AI BCF Crosswalk](../23_Framework_Crosswalks/02_AI_BCF_Crosswalk.md) was due too, but aibcf.org could not be read automatically, so it was not checked.
 
 ### What changed
 
 - **GCC, S8 retrieval date refreshed:** the NCA announcement and consultations page were read again on 2 November 2026. The AI Cybersecurity Guidelines are still listed as a closed consultation, and no final text is listed, so the row is unchanged.
+- **MITRE ATLAS, six names and AML.T0056:** release 2026.10 renames AML.T0010 to Supply Chain Compromise and five mitigations (AML.M0023, AML.M0024, AML.M0026, AML.M0027, AML.M0028), and moves AML.T0056 Extract LLM System Prompt to AML.T0085.003 Data from AI Services: System Instructions. The control library and the test cases now use the new names and identifier. The same change was proposed last week but not merged, so it is proposed again.
+- **Control library, ATLAS version:** the [framework identifiers](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#framework-identifiers) table now names ATLAS 2026.10, except AML.T0057 (see below).
+- **FINOS, new identifier style:** FINOS now shows its items as RI-NN and MI-NN instead of the AIR form. The number is the same, so AIR-SEC-010 is RI-10. The FINOS crosswalk says so and keeps the AIR form for now.
+- **FINOS, AIR-PREV-018:** FINOS now lists ISO/IEC 42001 A.9.2 and A.6.2.6 for the Agent Authority Least Privilege Framework, so the crosswalk does too.
 
 ### Still work in progress
 
 - GCC: S1, S5, S9, Q1, Q3, Q4, B3, O1, O2, U8, U10 and U12 could not be checked against primary sources this week. For O2, an unofficial English translation of Royal Decree 68/2026 agrees with the row, but the Official Gazette has not been read, so the row stays [Reported].
+- MITRE ATLAS: release 2026.10 removes AML.T0057 LLM Data Leakage and moves part of it to AML.T0085.002. The wiki still cites AML.T0057 in the control library and 14 test case pages. Re-mapping each citation needs a judgement and has not been done.
+- FINOS: whether to switch the crosswalk and the [AI Risk to Control Mapping](../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.md) to the RI-NN and MI-NN identifiers is still open. The FINOS website itself was not read; the change was confirmed in the FINOS repository.
+- Framework crosswalks: the [AI BCF Crosswalk](../23_Framework_Crosswalks/02_AI_BCF_Crosswalk.md), the [OWASP MCP Top 10 Crosswalk](../23_Framework_Crosswalks/19_OWASP_MCP_Top_10_Crosswalk.md) and the [NIST SSDF Crosswalk](../23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.md) have not been checked against their sources yet.
 
 ## 4 November 2026: the CERT-In AI Security Auditing Guidelines
 
