@@ -28,7 +28,7 @@ Each control cites the identifiers published by the framework owner. Where a fra
 |---|---|---|
 | OWASP Top 10 for LLM Applications | 2025 | `LLM01:2025` to `LLM10:2025` |
 | OWASP Top 10 for Agentic Applications | 2026 | `ASI01` to `ASI10` |
-| MITRE ATLAS | 2026.09 | Techniques `AML.T####`; mitigations `AML.M####` |
+| MITRE ATLAS | 2026.10, except `AML.T0057` LLM Data Leakage, which is from 2026.09: release 2026.10 moved it to `AML.T0085.002` and the wiki's citations have not yet been re-mapped | Techniques `AML.T####`; mitigations `AML.M####` |
 | NIST AI Risk Management Framework | 1.0 | Subcategories, for example `MEASURE 2.7` |
 | ISO/IEC 42001 | 2023 | Annex A controls, for example `A.6.2.4`; management system clauses, for example `Clause 9.2` |
 | ISO/IEC 27001 | 2022 | Annex A controls, for example `A.8.15`; management system clauses, for example `Clause 6.1.2` |
