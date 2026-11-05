@@ -7,6 +7,7 @@ nav_order: 1
 description: "Index from every FINOS AI Governance Framework risk and mitigation to this wiki's risks, control objectives and tests, with the regulatory references FINOS lists."
 document_type: AI Security Wiki Reference
 version: 1.0
+last_reviewed: 2026-11-06
 ---
 
 # FINOS AI Governance Framework Crosswalk
