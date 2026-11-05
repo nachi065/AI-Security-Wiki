@@ -123,7 +123,7 @@ nav_order: 15
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P, R |
 | **Risk Severity** | Critical |
-| **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
+| **MITRE ATLAS Mapping** | AML.T0010 Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
 | **Control(s) Tested** | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection; [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM |
@@ -169,7 +169,7 @@ nav_order: 15
 | **Test Method** | Technical |
 | **Vendor Applicability** | Partial: P, R |
 | **Risk Severity** | High |
-| **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
+| **MITRE ATLAS Mapping** | AML.T0010 Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
 | **Control(s) Tested** | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection |
@@ -260,7 +260,7 @@ nav_order: 15
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Critical |
-| **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
+| **MITRE ATLAS Mapping** | AML.T0010 Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
 | **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM |
@@ -1109,7 +1109,7 @@ nav_order: 15
 | **Test Method** | Technical |
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
-| **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
+| **MITRE ATLAS Mapping** | AML.T0010 Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
 | **Control(s) Tested** | [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) ML Pipeline and Model Registry Security |

@@ -410,7 +410,7 @@ nav_order: 24
 | **Vendor Applicability** | Core: G, A, P |
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L08-012](L08-ai-gateway-and-security-controls.md#tc-l08-012) |
-| **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
+| **MITRE ATLAS Mapping** | AML.T0010 Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
 | **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security |

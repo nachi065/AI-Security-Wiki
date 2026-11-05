@@ -866,7 +866,7 @@ nav_order: 25
 | **Vendor Applicability** | Core: W, P |
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L16-021](L16-supply-chain-and-third-party.md#tc-l16-021), [TC-L16-010](L16-supply-chain-and-third-party.md#tc-l16-010) |
-| **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
+| **MITRE ATLAS Mapping** | AML.T0010 Supply Chain Compromise |
 | **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
 | **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics; [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance |
