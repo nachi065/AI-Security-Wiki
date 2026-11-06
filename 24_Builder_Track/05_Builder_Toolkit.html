@@ -370,31 +370,57 @@
 </tbody>
 </table></div>
 <h2 id="how-it-fits-with-ai-secure-by-design">How it fits with ai-secure-by-design</h2>
-<p>Ankush Jain's <a href="https://github.com/ankush1982/ai-secure-by-design" rel="noopener">ai-secure-by-design</a> (v0.2, commit <code>70ef026</code>, 24 October 2026) is a platform-neutral engine for secure and private development: NIST SSDF, ISO/IEC 27001 and India's DPDP Act, with code scaffolds for consent, data principal rights, audit logging and human oversight. This toolkit does not repeat it. It adds what that engine leaves out: AI-specific rules (what happens to model output, how models and MCP servers are loaded) and look-ups into this wiki's controls, risks and test cases.</p>
-<p>The two follow the same conventions, so they can run side by side in the same hooks and CI job:</p>
+<p>Ankush Jain's <a href="https://github.com/ankush1982/ai-secure-by-design" rel="noopener">ai-secure-by-design</a> (<a href="https://github.com/ankush1982/ai-secure-by-design/releases/tag/v0.2.0" rel="noopener">release v0.2.0</a>, 4 November 2026) is a platform-neutral engine for secure and private development. Its own regimes are NIST SSDF 1.1, ISO/IEC 27001:2022 and India's DPDP Act. It blocks secrets and literal personal data (Aadhaar and PAN numbers, Indian mobile numbers and email addresses) in an agent's edit, at commit and in CI, and deploys editable code scaffolds for consent, data principal rights, retention, breach notice, children's data, audit logging, RBAC, PHI redaction, AI decision logs and human oversight, for TypeScript with Express and for Python with FastAPI.</p>
+<p>Since v0.2.0 the engine also reads this wiki. Add <code>ai-security-wiki</code> to the regimes in its manifest and it runs this toolkit's ten AIW rules, tags each finding with the wiki's AI-CTRL controls, explains any of the wiki's controls offline, and plans audit evidence for the <a href="../25_Templates/05_AI_Security_Audit_and_Evidence_Checklist_Template.html">Audit and Evidence Checklist</a>. Its copy of the rules and the control library is generated from a checkout of this wiki and names the wiki commit it came from; it stays under this wiki's CC BY-SA 4.0 licence.</p>
+<p>So the two overlap on purpose. Pick by the runtime and the scope you need:</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
-<th>Convention</th>
+<th>Need</th>
 <th>ai-secure-by-design</th>
 <th>This toolkit</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>AI-specific checks (AIW-001 to AIW-010)</td>
+<td>Yes, with the <code>ai-security-wiki</code> regime in the manifest</td>
+<td>Yes, the source of the rules</td>
+</tr>
+<tr>
+<td>Secrets, literal personal data, personal data in logs</td>
+<td>Yes (<code>SBD-SECRET-*</code>, <code>SBD-PII-*</code>, <code>SBD-CODE-*</code>)</td>
+<td>No; <a href="04_Developer_Pipeline_Checks.html">Developer Pipeline Checks</a> covers secrets and personal data in logs</td>
+</tr>
+<tr>
+<td>SSDF, ISO/IEC 27001 and DPDP control catalogues</td>
+<td>Yes</td>
+<td>No; see the <a href="../23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.html">crosswalks</a></td>
+</tr>
+<tr>
+<td>Privacy and security code scaffolds</td>
+<td>Yes, TypeScript and Python, deployed into your repository</td>
+<td>Reference code only, on <a href="03_Privacy_Duties_in_Code.html">Privacy Duties in Code</a></td>
+</tr>
+<tr>
+<td>Look-ups of controls</td>
+<td>The 46 wiki controls, offline</td>
+<td>Controls, risks and test cases, from the CSV data files</td>
+</tr>
+<tr>
+<td>Audit evidence</td>
+<td><code>sbd evidence</code>: each control as gap, checked or manual</td>
+<td><code>evidence_export.py</code>: rows from the guard's audit log and checker results</td>
+</tr>
+<tr>
 <td>Rules as data, each with a stable ID</td>
-<td><code>rules/*.yaml</code>, <code>SBD-*</code></td>
+<td><code>rules/*.yaml</code>, <code>SBD-*</code> and <code>AIW-*</code></td>
 <td><code>ai_rules.json</code>, <code>AIW-*</code></td>
 </tr>
 <tr>
-<td>Output</td>
-<td>text, JSON, SARIF 2.1.0</td>
-<td>text, JSON, SARIF 2.1.0</td>
-</tr>
-<tr>
-<td>Exit codes</td>
-<td>0 clean, 1 findings at or above <code>--fail-on</code>, 2 error</td>
-<td>the same</td>
+<td>Output and exit codes</td>
+<td>Text, JSON, SARIF 2.1.0; 0, 1, 2</td>
+<td>The same</td>
 </tr>
 <tr>
 <td>Gate only the lines a change adds</td>
@@ -402,23 +428,30 @@
 <td><code>--staged</code>, <code>--diff</code></td>
 </tr>
 <tr>
+<td>Accept one reviewed line</td>
+<td><code>sbd: ignore AIW-004</code> or <code>aiwiki: ignore AIW-004</code></td>
+<td><code>aiwiki: ignore AIW-004</code></td>
+</tr>
+<tr>
 <td>MCP server</td>
-<td>read-only tools, stdio and HTTP</td>
-<td>read-only tools, stdio and HTTP</td>
+<td>Read-only tools, stdio and HTTP</td>
+<td>Read-only tools, stdio and HTTP</td>
 </tr>
 <tr>
 <td>Instruction files from one source</td>
-<td>yes</td>
-<td>yes</td>
+<td>Yes</td>
+<td>Yes</td>
 </tr>
 <tr>
 <td>Runtime</td>
-<td>Node.js 20 or later</td>
-<td>Python 3.10 or later</td>
+<td>Node.js 20 or later; Python 3.10 or later for the FastAPI scaffolds</td>
+<td>Python 3.10 or later, standard library only</td>
 </tr>
 </tbody>
 </table></div>
-<p>The comparison is from reading that repository's files on 29 October 2026; it may have changed since.</p>
+<p>Both can run in the same hooks and CI job. If they do, and the wiki regime is on, each AIW finding is reported twice, once by each tool.</p>
+<p>When this toolkit's <code>ai_rules.json</code> or the control library changes, the engine's copy does not change until its maintainer regenerates it, so check the wiki commit named at the top of its <code>regimes/ai-security-wiki.yaml</code>. On 4 November 2026 that was <code>5b99c1a</code> (2 November 2026), and its ten AIW rules had the same patterns, severities and controls as this page.</p>
+<p>The comparison is from reading that repository's files at commit <code>98fbdc0</code> on 4 November 2026, not from running it; it may have changed since.</p>
 <h2 id="the-checker">The checker</h2>
 <pre><code class="language-sh">python tools/aiwiki_check.py src/ config/              # files or folders
 python tools/aiwiki_check.py --staged                  # only lines added in the staged change
@@ -678,7 +711,7 @@ python aiwiki_check.py .                 # the reference code is clean; the test
 </ul>
 </article>
 <nav class="pager" aria-label="Previous and next page"><a class="prev" href="04_Developer_Pipeline_Checks.html">&larr; Developer Pipeline Checks for AI-Assisted Code</a><a class="next" href="../25_Templates/index.html">Templates &rarr;</a></nav>
-<footer class="site-footer">Author: Nachiket Sathaye &middot; Co-author: Ankush Jain &middot; Updated 29 October 2026 &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/24_Builder_Track/05_Builder_Toolkit.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
+<footer class="site-footer">Author: Nachiket Sathaye &middot; Co-author: Ankush Jain &middot; Updated 4 November 2026 &middot; Last reviewed 4 November 2026 &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/24_Builder_Track/05_Builder_Toolkit.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
 <div class="site-notice">
 <p><strong>Licence.</strong> <svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.441-3.5c8.951,0,16.572,3.125,22.857,9.372c3.008,3.009,5.295,6.448,6.857,10.314 c1.561,3.867,2.344,7.971,2.344,12.314c0,4.381-0.773,8.486-2.314,12.313c-1.543,3.828-3.82,7.21-6.828,10.143 c-3.123,3.085-6.666,5.448-10.629,7.086c-3.961,1.638-8.057,2.457-12.285,2.457s-8.276-0.808-12.143-2.429 c-3.866-1.618-7.333-3.961-10.4-7.027c-3.067-3.066-5.4-6.524-7-10.372S5.5,32.767,5.5,28.5c0-4.229,0.809-8.295,2.428-12.2 c1.619-3.905,3.972-7.4,7.057-10.486C21.08-0.394,28.565-3.5,37.441-3.5z M37.557,2.272c-7.314,0-13.467,2.553-18.458,7.657 c-2.515,2.553-4.448,5.419-5.8,8.6c-1.354,3.181-2.029,6.505-2.029,9.972c0,3.429,0.675,6.734,2.029,9.913 c1.353,3.183,3.285,6.021,5.8,8.516c2.514,2.496,5.351,4.399,8.515,5.715c3.161,1.314,6.476,1.971,9.943,1.971 c3.428,0,6.75-0.665,9.973-1.999c3.219-1.335,6.121-3.257,8.713-5.771c4.99-4.876,7.484-10.99,7.484-18.344 c0-3.543-0.648-6.895-1.943-10.057c-1.293-3.162-3.18-5.98-5.654-8.458C50.984,4.844,44.795,2.272,37.557,2.272z M37.156,23.187 l-4.287,2.229c-0.458-0.951-1.019-1.619-1.685-2c-0.667-0.38-1.286-0.571-1.858-0.571c-2.856,0-4.286,1.885-4.286,5.657 c0,1.714,0.362,3.084,1.085,4.113c0.724,1.029,1.791,1.544,3.201,1.544c1.867,0,3.181-0.915,3.944-2.743l3.942,2 c-0.838,1.563-2,2.791-3.486,3.686c-1.484,0.896-3.123,1.343-4.914,1.343c-2.857,0-5.163-0.875-6.915-2.629 c-1.752-1.752-2.628-4.19-2.628-7.313c0-3.048,0.886-5.466,2.657-7.257c1.771-1.79,4.009-2.686,6.715-2.686 C32.604,18.558,35.441,20.101,37.156,23.187z M55.613,23.187l-4.229,2.229c-0.457-0.951-1.02-1.619-1.686-2 c-0.668-0.38-1.307-0.571-1.914-0.571c-2.857,0-4.287,1.885-4.287,5.657c0,1.714,0.363,3.084,1.086,4.113 c0.723,1.029,1.789,1.544,3.201,1.544c1.865,0,3.18-0.915,3.941-2.743l4,2c-0.875,1.563-2.057,2.791-3.541,3.686 c-1.486,0.896-3.105,1.343-4.857,1.343c-2.896,0-5.209-0.875-6.941-2.629c-1.736-1.752-2.602-4.19-2.602-7.313 c0-3.048,0.885-5.466,2.658-7.257c1.77-1.79,4.008-2.686,6.713-2.686C51.117,18.558,53.938,20.101,55.613,23.187z"/></svg><svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.443-3.5c8.988,0,16.57,3.085,22.742,9.257C66.393,11.967,69.5,19.548,69.5,28.5c0,8.991-3.049,16.476-9.145,22.456 C53.879,57.319,46.242,60.5,37.443,60.5c-8.649,0-16.153-3.144-22.514-9.43C8.644,44.784,5.5,37.262,5.5,28.5 c0-8.761,3.144-16.342,9.429-22.742C21.101-0.415,28.604-3.5,37.443-3.5z M37.557,2.272c-7.276,0-13.428,2.553-18.457,7.657 c-5.22,5.334-7.829,11.525-7.829,18.572c0,7.086,2.59,13.22,7.77,18.398c5.181,5.182,11.352,7.771,18.514,7.771 c7.123,0,13.334-2.607,18.629-7.828c5.029-4.838,7.543-10.952,7.543-18.343c0-7.276-2.553-13.465-7.656-18.571 C50.967,4.824,44.795,2.272,37.557,2.272z M46.129,20.557v13.085h-3.656v15.542h-9.944V33.643h-3.656V20.557 c0-0.572,0.2-1.057,0.599-1.457c0.401-0.399,0.887-0.6,1.457-0.6h13.144c0.533,0,1.01,0.2,1.428,0.6 C45.918,19.5,46.129,19.986,46.129,20.557z M33.042,12.329c0-3.008,1.485-4.514,4.458-4.514s4.457,1.504,4.457,4.514 c0,2.971-1.486,4.457-4.457,4.457S33.042,15.3,33.042,12.329z"/></svg>This wiki is open to the community under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">Creative Commons Attribution-ShareAlike 4.0 International licence (CC BY-SA 4.0)</a>. You may copy, share and adapt it for any purpose, including commercially, as long as you credit the authors and release anything you build from it under the same licence.</p>
 <p><strong>Disclaimer.</strong> This wiki is an open, community driven educational reference, not legal, regulatory or professional advice. Regional regulatory content is compiled from secondary sources and its verification status is shown per row; verify against primary sources before relying on it. Content is provided "as is" without warranty. Named products and companies belong to their owners; statements about them reflect public information at the date shown. Views are the author's own.</p>

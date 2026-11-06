@@ -6,7 +6,7 @@ parent: "Reference"
 nav_order: 2
 description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."
 document_type: AI Security Wiki Reference
-version: 1.2
+version: 1.3
 last_reviewed: 2026-11-04
 ---
 
@@ -18,6 +18,22 @@ This page is the wiki's change record. It has two parts:
 - **[Full version history](#full-version-history)**: every version since 1.0, newest first. The [home page](../index.md#20-version-history) shows only the three latest.
 
 Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.
+
+## 4 November 2026: Builder Toolkit brought up to ai-secure-by-design v0.2.0
+
+The [Builder Toolkit](../24_Builder_Track/05_Builder_Toolkit.md#how-it-fits-with-ai-secure-by-design) compared itself with Ankush Jain's [ai-secure-by-design](https://github.com/ankush1982/ai-secure-by-design) at commit `70ef026` (24 October 2026). That repository has since released [v0.2.0](https://github.com/ankush1982/ai-secure-by-design/releases/tag/v0.2.0) (4 November 2026), and the page's statement that the toolkit "adds what that engine leaves out" is no longer true: the engine now runs this wiki's AI rules itself.
+
+### What changed
+
+- **[Builder Toolkit](../24_Builder_Track/05_Builder_Toolkit.md) (1.1).** The "How it fits with ai-secure-by-design" section now describes v0.2.0: an opt-in `ai-security-wiki` regime that runs AIW-001 to AIW-010 and carries the 46 wiki controls offline, `sbd evidence` for the audit checklist, Python and FastAPI scaffolds beside the TypeScript ones, and checks for literal personal data. Its table now shows where the two tools overlap and where each one stands alone, and it notes that each AIW finding is reported twice if both run with the wiki regime on.
+- **Copies can drift.** The page says the engine's copy of the rules and the control library changes only when its maintainer regenerates it from the wiki, and where to find the wiki commit it came from.
+- **[Privacy Duties in Code](../24_Builder_Track/03_Privacy_Duties_in_Code.md) and [Developer Pipeline Checks](../24_Builder_Track/04_Developer_Pipeline_Checks.md)** link to ai-secure-by-design for deployable scaffolds and for detection of literal personal data.
+
+### What was checked and what is still open
+
+- Read from the repository at commit `98fbdc0` on 4 November 2026 [Verified]: the release tag v0.2.0 (on commit `00dd20a`), the README, ROADMAP and NOTICE, the file lists of `regimes/`, `rules/` and `templates/`, and the header of `regimes/ai-security-wiki.yaml`, which names wiki commit `5b99c1a` (2 November 2026) and lists 46 controls.
+- The engine's `rules/ai-wiki.yaml` was compared field by field with this wiki's `ai_rules.json`: the ten rules have the same patterns, file types, severities and controls [Verified].
+- The engine was not run. What it detects, its MCP tools and the fit of its evidence CSV to the audit workbook are as its README states them [Reported].
 
 ## 4 November 2026: the CERT-In AI Security Auditing Guidelines
 
@@ -661,6 +677,7 @@ Every version of the wiki, newest first. Rows are never edited after they are ad
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.58 | 2026-11-04 | Nachiket Sathaye | Builder Toolkit 1.1: the comparison with ai-secure-by-design brought up to its v0.2.0 release, which now runs the wiki's AIW rules and control library as an opt-in regime and adds Python scaffolds and personal-data detection; Privacy Duties in Code and Developer Pipeline Checks link to it. |
 | 2.57 | 2026-11-04 | Nachiket Sathaye | CERT-In AI Security Auditing Guidelines Crosswalk for version 1.0 of the guidelines, dated 4 November 2026: the nine core audit domains, the four risk tiers and eight risk factors, the advanced requirements for generative, RAG, agentic, multimodal, multi-agent and cyber-physical AI, and the audit lifecycle, contestability, finding severities and maturity model, mapped to wiki controls and test cases, with five requirements named as gaps; India hub, crosswalk and CSV row IN14. |
 | 2.56 | 2026-10-29 | Nachiket Sathaye | ISO/IEC 42001 Crosswalk now covers all 38 Annex A controls (was 33) and ISO/IEC 27001 Crosswalk 75 of 93 (was 65), with titles checked against published listings; eight controls extended; four workbooks rebuilt. See the [Update Notes](../09_Reference/19_Update_Notes.md). |
 | 2.55 | 2026-10-29 | Nachiket Sathaye | Risk register 1.5: AI-R55 AI-Accelerated Exploitation and Patch Gap, mapped to four controls, with AI-CTRL-037 extended and the earlier out-of-scope decision on AI-enabled attacks reopened for exploitation speed; PCI DSS AI Crosswalk rows updated; six workbooks rebuilt. See the [Update Notes](../09_Reference/19_Update_Notes.md). |

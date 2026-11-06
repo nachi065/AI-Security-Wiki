@@ -129,5 +129,6 @@ The [Builder Track tests workflow](https://github.com/nachi065/AI-Security-Wiki/
 - [NIST SSDF Crosswalk](../23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.md)
 - [Privacy Duties in Code](03_Privacy_Duties_in_Code.md)
 - [Builder Toolkit](05_Builder_Toolkit.md), which adds AI-specific checks with SARIF output and runs alongside these in the same hooks and CI job
+- [ai-secure-by-design](https://github.com/ankush1982/ai-secure-by-design) by Ankush Jain, a Node.js engine that also matches personal data by value (Aadhaar and PAN numbers, Indian mobile numbers, email addresses) where this page matches field names only
 - [AI Security Audit and Evidence Checklist template](../25_Templates/05_AI_Security_Audit_and_Evidence_Checklist_Template.md), where CI results go as evidence
 - [Illustrative Operating Defaults: CI/CD release stages](../08_Governance/18_AI_Operating_Defaults.md#cicd-release-stages-for-ai-applications)
