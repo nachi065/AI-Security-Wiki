@@ -6,8 +6,8 @@ parent: "Reference"
 nav_order: 2
 description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."
 document_type: AI Security Wiki Reference
-version: 1.3
-last_reviewed: 2026-11-06
+version: 1.4
+last_reviewed: 2026-11-07
 ---
 
 # Update Notes
@@ -27,6 +27,7 @@ The nightly verification pass checks one slice of the wiki each night. This week
 
 - **GCC (2 November 2026):** every row of the [GCC Regulatory Crosswalk](../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.md) was checked for changes by web search. Rows that last week's open pull request already changes (U4, U5, U6, U9 and B2) were left alone. Primary pages were tried for S1, S5, S8, S9, Q1, Q3, Q4, B3, O1, O2, U8, U10 and U12. Only the NCA pages for S8 could be read; the other government sites did not respond to automated retrieval.
 - **Framework crosswalks (6 November 2026):** every MITRE ATLAS identifier and name the wiki cites was compared with MITRE's own ATLAS data, release 2026.10 of 28 October 2026, which is still the latest release in the [atlas-data repository](https://github.com/mitre-atlas/atlas-data). The [FINOS AI Governance Framework Crosswalk](../23_Framework_Crosswalks/01_FINOS_AIGF_Crosswalk.md) was compared with the FINOS repository at its v3 release of 2 November 2026: all 49 identifiers, titles and statuses on the page still match. The [AI BCF Crosswalk](../23_Framework_Crosswalks/02_AI_BCF_Crosswalk.md) was due too, but aibcf.org could not be read automatically, so it was not checked.
+- **Weekly roll-up, all regions (7 November 2026):** the 16 rows whose legal force is Proposed or whose status says pending, draft, consultation or not before were checked for news by web search. The HKMA's discussion paper for HK9 and the European Commission's page of [AI Act harmonised standards](https://single-market-economy.ec.europa.eu/single-market/goods/european-standards/harmonised-standards/artificial-intelligence-ai_en) were read. EUR-Lex, the CEN-CENELEC and JTC 21 news pages, the SEBI circulars list and the NCA regulatory documents pages could not be read automatically.
 
 ### What changed
 
@@ -35,6 +36,7 @@ The nightly verification pass checks one slice of the wiki each night. This week
 - **Control library, ATLAS version:** the [framework identifiers](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#framework-identifiers) table now names ATLAS 2026.10, except AML.T0057 (see below).
 - **FINOS, new identifier style:** FINOS now shows its items as RI-NN and MI-NN instead of the AIR form. The number is the same, so AIR-SEC-010 is RI-10. The FINOS crosswalk says so and keeps the AIR form for now.
 - **FINOS, AIR-PREV-018:** FINOS now lists ISO/IEC 42001 A.9.2 and A.6.2.6 for the Agent Authority Least Privilege Framework, so the crosswalk does too.
+- **Hong Kong, HK9:** the HKMA has published its [Discussion Paper on Agentic A.I. Governance in the Banking Sector](https://www.hkma.gov.hk/media/eng/doc/key-information/press-release/2026/20261102e3a1.pdf) (November 2026). The row said it was announced and not yet published. It now gives the title, says the paper does not itself introduce binding requirements, and gives the 1 February 2027 deadline for first-round responses. The row stays Proposed.
 
 ### Still work in progress
 
@@ -42,6 +44,9 @@ The nightly verification pass checks one slice of the wiki each night. This week
 - MITRE ATLAS: release 2026.10 removes AML.T0057 LLM Data Leakage and moves part of it to AML.T0085.002. The wiki still cites AML.T0057 in the control library and 14 test case pages. Re-mapping each citation needs a judgement and has not been done.
 - FINOS: whether to switch the crosswalk and the [AI Risk to Control Mapping](../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.md) to the RI-NN and MI-NN identifiers is still open. The FINOS website itself was not read; the change was confirmed in the FINOS repository.
 - Framework crosswalks: the [AI BCF Crosswalk](../23_Framework_Crosswalks/02_AI_BCF_Crosswalk.md), the [OWASP MCP Top 10 Crosswalk](../23_Framework_Crosswalks/19_OWASP_MCP_Top_10_Crosswalk.md) and the [NIST SSDF Crosswalk](../23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.md) have not been checked against their sources yet.
+- EU, E17: the Commission's harmonised standards page lists Commission Implementing Decision (EU) 2026/2274 of 12 October 2026 (Official Journal of 14 October 2026) on harmonised standards for high-risk AI systems. Row E17 still says the Official Journal citation of EN 18286 is pending. The Decision itself could not be read, so the correction waits until its Annex has been read.
+- Hong Kong, HK9: only the opening part of the HKMA discussion paper was read. Its proposals have not been mapped to controls yet.
+- India, IN13: no final SEBI guidelines on AI and ML were found, but the SEBI circulars list could not be read. GCC, S8: no final NCA AI Cybersecurity Guidelines were found; the consultation is still listed as Closed.
 
 ## 4 November 2026: Builder Toolkit brought up to ai-secure-by-design v0.2.0
 
@@ -701,6 +706,7 @@ Every version of the wiki, newest first. Rows are never edited after they are ad
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.59 | 2026-11-07 | Nachiket Sathaye | Weekly crosswalk verification, week ending 7 November 2026: GCC row S8 re-checked against the NCA pages; MITRE ATLAS names and AML.T0056 updated to release 2026.10 in the control library and test cases; FINOS AIGF crosswalk notes the RI-NN and MI-NN identifiers and adds ISO/IEC 42001 A.9.2 and A.6.2.6 for AIR-PREV-018; Hong Kong row HK9 records the published HKMA discussion paper on agentic AI. See the [Update Notes](#week-ending-7-november-2026-crosswalk-verification) for what was checked and what is still open. |
 | 2.58 | 2026-11-04 | Nachiket Sathaye | Builder Toolkit 1.1: the comparison with ai-secure-by-design brought up to its v0.2.0 release, which now runs the wiki's AIW rules and control library as an opt-in regime and adds Python scaffolds and personal-data detection; Privacy Duties in Code and Developer Pipeline Checks link to it. |
 | 2.57 | 2026-11-04 | Nachiket Sathaye | CERT-In AI Security Auditing Guidelines Crosswalk for version 1.0 of the guidelines, dated 4 November 2026: the nine core audit domains, the four risk tiers and eight risk factors, the advanced requirements for generative, RAG, agentic, multimodal, multi-agent and cyber-physical AI, and the audit lifecycle, contestability, finding severities and maturity model, mapped to wiki controls and test cases, with five requirements named as gaps; India hub, crosswalk and CSV row IN14. |
 | 2.56 | 2026-10-29 | Nachiket Sathaye | ISO/IEC 42001 Crosswalk now covers all 38 Annex A controls (was 33) and ISO/IEC 27001 Crosswalk 75 of 93 (was 65), with titles checked against published listings; eight controls extended; four workbooks rebuilt. See the [Update Notes](../09_Reference/19_Update_Notes.md). |

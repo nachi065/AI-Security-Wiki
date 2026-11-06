@@ -3,7 +3,7 @@ title: "Home"
 description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and {{n:tests}} test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.58
+version: 2.59
 status: Published
 author: Nachiket Sathaye
 coauthors: Ankush Jain
@@ -11,13 +11,13 @@ owner: AI Security Program
 custodian: Security Architecture Team
 review_cycle: Quarterly
 approval_authority: AI Governance Committee
-last_updated: 2026-11-04
+last_updated: 2026-11-07
 ---
 
 # AI Security Wiki Home
 
 > **Document Type:** Enterprise AI Security Reference Architecture and Governance Wiki  
-> **Version:** 2.58  
+> **Version:** 2.59  
 > **Status:** Published  
 > **Original Author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
 > **Co-Author:** Ankush Jain ([about the co-author](#23-about-the-co-author))  
@@ -426,9 +426,9 @@ The three latest versions, newest first. The full history since version 1.0 is i
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.59 | 2026-11-07 | Nachiket Sathaye | Weekly crosswalk verification, week ending 7 November 2026: GCC row S8 re-checked against the NCA pages; MITRE ATLAS names and AML.T0056 updated to release 2026.10 in the control library and test cases; FINOS AIGF crosswalk notes the RI-NN and MI-NN identifiers and adds ISO/IEC 42001 A.9.2 and A.6.2.6 for AIR-PREV-018; Hong Kong row HK9 records the published HKMA discussion paper on agentic AI. See the [Update Notes](09_Reference/19_Update_Notes.md#week-ending-7-november-2026-crosswalk-verification) for what was checked and what is still open. |
 | 2.58 | 2026-11-04 | Nachiket Sathaye | Builder Toolkit 1.1: the comparison with ai-secure-by-design brought up to its v0.2.0 release, which now runs the wiki's AIW rules and control library as an opt-in regime and adds Python scaffolds and personal-data detection; Privacy Duties in Code and Developer Pipeline Checks link to it. |
 | 2.57 | 2026-11-04 | Nachiket Sathaye | CERT-In AI Security Auditing Guidelines Crosswalk for the guidelines CERT-In dated 4 November 2026: the nine core audit domains, the four risk tiers and the advanced requirements for generative, RAG, agentic, multimodal, multi-agent and cyber-physical AI, mapped to controls and test cases, with the five requirements the wiki does not cover. The India section gains row IN14 in the hub, the crosswalk and the CSV. See the [Update Notes](09_Reference/19_Update_Notes.md). |
-| 2.56 | 2026-10-29 | Nachiket Sathaye | ISO/IEC 42001 Crosswalk now covers all 38 Annex A controls (was 33) and ISO/IEC 27001 Crosswalk 75 of 93 (was 65), with titles checked against published listings; eight controls extended; four workbooks rebuilt. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 
 ## 21. Quick Links
 
