@@ -482,7 +482,7 @@ home = next(p for p in pages if p["src"] == "index.md")
 # The home page's "Latest update" callout lists every update of the newest day, so it never shows only the last one.
 LATEST = "<!-- latest-updates -->"
 if LATEST in home["body"]:
-    home["body"] = home["body"].replace(LATEST, latest_updates(next(p for p in pages if p["src"] == "09_Reference/19_Update_Notes.md")))
+    home["body"] = home["body"].replace(LATEST, latest_updates(next(p for p in pages if p["src"].replace(os.sep, "/") == "09_Reference/19_Update_Notes.md")))
 # Top-level entries in the sidebar: sections (which have child pages) and standalone pages.
 sections = sorted((p for p in pages if p is not home and not p["meta"].get("parent")), key=lambda p: int(p["meta"]["nav_order"]))
 for s in sections:

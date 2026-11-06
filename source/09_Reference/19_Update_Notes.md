@@ -6,7 +6,7 @@ parent: "Reference"
 nav_order: 2
 description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."
 document_type: AI Security Wiki Reference
-version: 1.1
+version: 1.3
 last_reviewed: 2026-11-04
 ---
 
@@ -34,6 +34,24 @@ The [Builder Toolkit](../24_Builder_Track/05_Builder_Toolkit.md#how-it-fits-with
 - Read from the repository at commit `98fbdc0` on 4 November 2026 [Verified]: the release tag v0.2.0 (on commit `00dd20a`), the README, ROADMAP and NOTICE, the file lists of `regimes/`, `rules/` and `templates/`, and the header of `regimes/ai-security-wiki.yaml`, which names wiki commit `5b99c1a` (2 November 2026) and lists 46 controls.
 - The engine's `rules/ai-wiki.yaml` was compared field by field with this wiki's `ai_rules.json`: the ten rules have the same patterns, file types, severities and controls [Verified].
 - The engine was not run. What it detects, its MCP tools and the fit of its evidence CSV to the audit workbook are as its README states them [Reported].
+
+## 4 November 2026: the CERT-In AI Security Auditing Guidelines
+
+### What is new
+
+- **[CERT-In AI Security Auditing Guidelines Crosswalk](../23_Framework_Crosswalks/22_CERT_In_AI_Security_Auditing_Guidelines_Crosswalk.md):** a new crosswalk page for the Artificial Intelligence (AI) Security Auditing Guidelines, version 1.0, dated 4 November 2026, prepared by Sub-group 03 of the CERT-In Working Group on Indian Standards for Cybersecurity Auditing. It maps all nine core audit domains to wiki controls and test cases, maps the eight CERT-In inherent-risk factors onto the eight questions of the [T01 tiering form](../11_GCC_AI_Compliance/T01_AI_Use_Case_Intake_and_Risk_Tiering.md), covers the advanced requirements for generative AI, RAG, agentic, multimodal, multi-agent and autonomous or cyber-physical systems, and places the audit lifecycle, contestability, finding severities and maturity model against the wiki's own pages.
+- **Six domains are a direct match and three are partial.** The partial ones are model risk management (8.3), ethics and fairness (8.4) and explainability (8.5).
+- **Five requirements have no control behind them**, and the page names them: validation by a function independent of the model developers, proxy-variable screening, counterfactual fairness testing, explanation-quality testing with a documented choice of technique, and cyber-physical safety controls such as sensor integrity and independent interlocks. The first four are in scope for a later control and test case update; the fifth is functional safety and stays out of scope.
+- **India section:** row **IN14** for the Guidelines in the [India AI Regulatory Hub](../17_India_AI_Compliance/01_India_AI_Regulatory_Hub.md), the [India Regulatory Crosswalk](../17_India_AI_Compliance/03_Regulatory_Crosswalk.md) and its CSV, with a timeline entry, four more rows in the control mapping table (AI-CTRL-030, AI-CTRL-034, AI-CTRL-038, AI-CTRL-045) and a caution that the Guidelines bind an organisation only where a regulator, a contract or an empanelment requirement adopts them.
+- The home page framework table, the control framework mapping and the section home page for [Framework Crosswalks](../23_Framework_Crosswalks/index.md) list the new page, which is grouped there under national audit frameworks.
+
+### What was checked and what was not
+
+- The Guidelines were read in full from a copy of the PDF supplied on 4 November 2026. Domain names and numbers, the four tier bands and their composite score ranges, the eight risk factors, the twelve escalation capabilities, the four finding severities with their remediation timelines, the five maturity levels and the section 15 alignment with the MeitY guidelines all come from that copy.
+- No CERT-In web address for version 1.0 was recorded, and the CERT-In site was not reached from the environment used to write the page, so the copy used has not been compared with the published one. Row IN14 says so, and the page repeats it.
+- Whether the Guidelines are mandatory for any sector is not settled. They read as guidance; nothing in the document makes them binding by itself. This is recorded as open in the India hub's cautions and verification checklist.
+- No control text was changed and no test case was added, so every mapping on the page rests on control and case text that already existed, and the five gaps stay open.
+- The mapping is this wiki's own judgement and has not been reviewed by CERT-In.
 
 ## 29 October 2026: Full ISO/IEC 42001 Annex A coverage and wider ISO/IEC 27001 coverage
 
@@ -659,7 +677,8 @@ Every version of the wiki, newest first. Rows are never edited after they are ad
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
-| 2.57 | 2026-11-04 | Nachiket Sathaye | Builder Toolkit 1.1: the comparison with ai-secure-by-design brought up to its v0.2.0 release, which now runs the wiki's AIW rules and control library as an opt-in regime and adds Python scaffolds and personal-data detection; Privacy Duties in Code and Developer Pipeline Checks link to it. |
+| 2.58 | 2026-11-04 | Nachiket Sathaye | Builder Toolkit 1.1: the comparison with ai-secure-by-design brought up to its v0.2.0 release, which now runs the wiki's AIW rules and control library as an opt-in regime and adds Python scaffolds and personal-data detection; Privacy Duties in Code and Developer Pipeline Checks link to it. |
+| 2.57 | 2026-11-04 | Nachiket Sathaye | CERT-In AI Security Auditing Guidelines Crosswalk for version 1.0 of the guidelines, dated 4 November 2026: the nine core audit domains, the four risk tiers and eight risk factors, the advanced requirements for generative, RAG, agentic, multimodal, multi-agent and cyber-physical AI, and the audit lifecycle, contestability, finding severities and maturity model, mapped to wiki controls and test cases, with five requirements named as gaps; India hub, crosswalk and CSV row IN14. |
 | 2.56 | 2026-10-29 | Nachiket Sathaye | ISO/IEC 42001 Crosswalk now covers all 38 Annex A controls (was 33) and ISO/IEC 27001 Crosswalk 75 of 93 (was 65), with titles checked against published listings; eight controls extended; four workbooks rebuilt. See the [Update Notes](../09_Reference/19_Update_Notes.md). |
 | 2.55 | 2026-10-29 | Nachiket Sathaye | Risk register 1.5: AI-R55 AI-Accelerated Exploitation and Patch Gap, mapped to four controls, with AI-CTRL-037 extended and the earlier out-of-scope decision on AI-enabled attacks reopened for exploitation speed; PCI DSS AI Crosswalk rows updated; six workbooks rebuilt. See the [Update Notes](../09_Reference/19_Update_Notes.md). |
 | 2.54 | 2026-10-29 | Nachiket Sathaye | PCI DSS AI Crosswalk for the PCI SSC information supplement Security Considerations for AI Systems (September 2026); eight test cases (TC-L01-022, TC-L05-036, TC-L08-044, TC-L09-027, TC-L10-034, TC-L10-035, TC-L14-023, TC-L14-024) and eleven controls extended from it; PCI DSS sector overlay row updated; five workbooks rebuilt with PCI DSS crosswalk columns and the new cases; drifted test case counts corrected. See the [Update Notes](../09_Reference/19_Update_Notes.md). |

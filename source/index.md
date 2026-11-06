@@ -3,7 +3,7 @@ title: "Home"
 description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and {{n:tests}} test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.57
+version: 2.58
 status: Published
 author: Nachiket Sathaye
 coauthors: Ankush Jain
@@ -11,13 +11,13 @@ owner: AI Security Program
 custodian: Security Architecture Team
 review_cycle: Quarterly
 approval_authority: AI Governance Committee
-last_updated: 2026-10-29
+last_updated: 2026-11-04
 ---
 
 # AI Security Wiki Home
 
 > **Document Type:** Enterprise AI Security Reference Architecture and Governance Wiki  
-> **Version:** 2.57  
+> **Version:** 2.58  
 > **Status:** Published  
 > **Original Author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
 > **Co-Author:** Ankush Jain ([about the co-author](#23-about-the-co-author))  
@@ -52,6 +52,7 @@ This wiki is the implementation layer: control objectives, evidence, audit proce
 | Extend an existing security programme to AI | NIST CSF, CIS Controls or SOC 2 | The AI control objectives under each category, control or criterion, through the [NIST CSF](23_Framework_Crosswalks/09_NIST_CSF_Crosswalk.md), [CIS Controls](23_Framework_Crosswalks/10_CIS_Controls_Crosswalk.md) and [SOC 2](23_Framework_Crosswalks/11_SOC_2_Crosswalk.md) crosswalks |
 | Keep AI systems in a payment environment secure | PCI DSS v4.0.1 and the PCI SSC supplement Security Considerations for AI Systems | Controls and tests for each requirement and theme the supplement applies to AI, and a scoping checklist, through the [PCI DSS AI Crosswalk](23_Framework_Crosswalks/21_PCI_DSS_AI_Crosswalk.md) |
 | Run a secure software development lifecycle | NIST SSDF (SP 800-218) and, for generative AI, SP 800-218A | AI-specific controls, code and tests per practice, through the [NIST SSDF Crosswalk](23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.md) |
+| Prepare for an AI security audit in India | CERT-In AI Security Auditing Guidelines v1.0 | The controls, evidence and tests behind each of the nine audit domains, and how the four risk tiers map onto the wiki's tiering form, through the [CERT-In crosswalk](23_Framework_Crosswalks/22_CERT_In_AI_Security_Auditing_Guidelines_Crosswalk.md) |
 | Compare privacy duties across jurisdictions | GDPR, CCPA, Quebec Law 25, Singapore PDPA and the GCC data protection laws | Controls per theme, through the [Privacy Law Crosswalk](23_Framework_Crosswalks/13_Privacy_Law_Crosswalk.md) |
 | Structure risk language and a programme | NIST AI RMF | Engineering controls, evidence and scoring |
 | Define attack classes for testing | OWASP lists, MITRE ATLAS, NIST AI 100-2 | The {{n:tests}}-case test library, and the [NIST AI 100-2 Crosswalk](23_Framework_Crosswalks/14_NIST_AI_100_2_Crosswalk.md) |
@@ -241,8 +242,8 @@ The cycle then repeats: each use case is reviewed, improved, renewed or retired,
 23_Framework_Crosswalks/
   Cross-references from this wiki to other frameworks: AI frameworks (FINOS AIGF, AI BCF, NIST AI RMF, NIST AI 600-1,
   ISO/IEC 42001, OWASP, MITRE ATLAS, OECD AI Principles), security frameworks (ISO/IEC 27001, NIST CSF, CIS Controls,
-  SOC 2), secure development (NIST SSDF and SP 800-218A), payment card security (PCI DSS and the PCI SSC AI guidance)
-  and a comparison of eight privacy laws.
+  SOC 2), secure development (NIST SSDF and SP 800-218A), payment card security (PCI DSS and the PCI SSC AI guidance),
+  national audit frameworks (the CERT-In AI Security Auditing Guidelines) and a comparison of eight privacy laws.
 
 24_Builder_Track/
   Start here if you are building with AI: ten controls for a first agent with reference code (guard, sandbox,
@@ -314,6 +315,7 @@ The wiki supports mapping AI security requirements to recognized control and gov
 | CIS Controls | Practical safeguards for inventory, identity, access, endpoint, network, data protection, monitoring, and response. See the [CIS Controls Crosswalk](23_Framework_Crosswalks/10_CIS_Controls_Crosswalk.md). |
 | SOC 2 | Trust Services Criteria for service organizations that put AI systems in the scope of an independent report. See the [SOC 2 Crosswalk](23_Framework_Crosswalks/11_SOC_2_Crosswalk.md). |
 | OECD AI Principles | Values-based principles that many national AI policies borrow from. See the [OECD AI Principles Crosswalk](23_Framework_Crosswalks/12_OECD_AI_Principles_Crosswalk.md). |
+| CERT-In AI Security Auditing Guidelines | Nine audit domains, four risk tiers and advanced AI requirements for AI systems audited in India. See the [CERT-In AI Security Auditing Guidelines Crosswalk](23_Framework_Crosswalks/22_CERT_In_AI_Security_Auditing_Guidelines_Crosswalk.md). |
 | UAE Information Assurance and Cybersecurity Expectations | Alignment to local cybersecurity governance, data handling, hosting, resilience, and assurance obligations. |
 | UAE Data Residency and Sovereignty Requirements | Jurisdictional control over regulated data, hosting location, cross-border processing, vendor access, and evidence. |
 | Privacy and Data Protection Obligations | Data minimization, purpose limitation, consent/legal basis, retention, access, and breach response considerations. See the [Privacy Law Crosswalk](23_Framework_Crosswalks/13_Privacy_Law_Crosswalk.md). |
@@ -424,9 +426,9 @@ The three latest versions, newest first. The full history since version 1.0 is i
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
-| 2.57 | 2026-11-04 | Nachiket Sathaye | Builder Toolkit 1.1: the comparison with ai-secure-by-design brought up to its v0.2.0 release, which now runs the wiki's AIW rules and control library as an opt-in regime and adds Python scaffolds and personal-data detection; Privacy Duties in Code and Developer Pipeline Checks link to it. |
+| 2.58 | 2026-11-04 | Nachiket Sathaye | Builder Toolkit 1.1: the comparison with ai-secure-by-design brought up to its v0.2.0 release, which now runs the wiki's AIW rules and control library as an opt-in regime and adds Python scaffolds and personal-data detection; Privacy Duties in Code and Developer Pipeline Checks link to it. |
+| 2.57 | 2026-11-04 | Nachiket Sathaye | CERT-In AI Security Auditing Guidelines Crosswalk for the guidelines CERT-In dated 4 November 2026: the nine core audit domains, the four risk tiers and the advanced requirements for generative, RAG, agentic, multimodal, multi-agent and cyber-physical AI, mapped to controls and test cases, with the five requirements the wiki does not cover. The India section gains row IN14 in the hub, the crosswalk and the CSV. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 | 2.56 | 2026-10-29 | Nachiket Sathaye | ISO/IEC 42001 Crosswalk now covers all 38 Annex A controls (was 33) and ISO/IEC 27001 Crosswalk 75 of 93 (was 65), with titles checked against published listings; eight controls extended; four workbooks rebuilt. See the [Update Notes](09_Reference/19_Update_Notes.md). |
-| 2.55 | 2026-10-29 | Nachiket Sathaye | Risk register 1.5: AI-R55 AI-Accelerated Exploitation and Patch Gap, mapped to four controls, with AI-CTRL-037 extended and the earlier out-of-scope decision on AI-enabled attacks reopened for exploitation speed; PCI DSS AI Crosswalk rows updated; six workbooks rebuilt. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 
 ## 21. Quick Links
 
@@ -457,7 +459,7 @@ The three latest versions, newest first. The full history since version 1.0 is i
 - [UK AI Compliance (regulatory hub, role guide and templates)](21_UK_AI_Compliance/index.md)
 - [US AI Compliance (regulatory hub, role guide and templates)](22_US_AI_Compliance/index.md)
 - [Hong Kong AI Compliance (regulatory hub, role guide and template)](26_Hong_Kong_AI_Compliance/index.md)
-- [Framework Crosswalks (AI frameworks, NIST AI 100-2, ISO/IEC AI standards, trustworthy AI and ethics, international instruments, ISO/IEC 27001, NIST CSF, CIS Controls, SOC 2, OECD AI Principles and privacy laws)](23_Framework_Crosswalks/index.md)
+- [Framework Crosswalks (AI frameworks, NIST AI 100-2, ISO/IEC AI standards, trustworthy AI and ethics, international instruments, ISO/IEC 27001, NIST CSF, CIS Controls, SOC 2, OECD AI Principles, the CERT-In audit guidelines and privacy laws)](23_Framework_Crosswalks/index.md)
 - [Templates (AI risk register, inventory, triage, vendor scorecard, audit checklist, control library, test tracker, acceptable use policy and impact assessment)](25_Templates/index.md)
 - [Community Rules](community-rules.md)
 - [AI Security Audit and Evidence Checklist](06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.md)
