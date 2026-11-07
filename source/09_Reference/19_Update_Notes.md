@@ -6,7 +6,7 @@ parent: "Reference"
 nav_order: 2
 description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."
 document_type: AI Security Wiki Reference
-version: 1.4
+version: 1.5
 last_reviewed: 2026-11-07
 ---
 
@@ -18,6 +18,29 @@ This page is the wiki's change record. It has two parts:
 - **[Full version history](#full-version-history)**: every version since 1.0, newest first. The [home page](../index.md#20-version-history) shows only the three latest.
 
 Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.
+
+## 7 November 2026: the OWASP Agent Control Standard
+
+The [7 November note below](#7-november-2026-owasp-top-10-for-llm-applications-moved-to-the-2026-edition) recorded the Agent Control Standard as a reference with nothing behind it. It now has a crosswalk page.
+
+### What is new
+
+- **[OWASP Agent Control Standard Crosswalk](../23_Framework_Crosswalks/23_OWASP_Agent_Control_Standard_Crosswalk.md):** a new crosswalk page for the standard the OWASP GenAI Security Project published alongside the 2026 LLM Top 10. It places all 22 enforcement points, the five verdicts and the seven conformance profiles against the wiki's controls, and names what the standard leaves to the deployment at each point.
+- **The mapping runs the other way from every other page in this section.** ACS is a wire protocol, not a control framework: it has no numbered control catalogue, nothing of the form "the organisation shall", and it says of itself that it "does not define what policies to enforce". There are no items to answer, so the page maps each of its hooks to the wiki control that supplies the policy belonging there, rather than mapping its items to wiki controls.
+- **Three wiki controls have no counterpart in it**, and the page says so because a team adopting it may assume otherwise: containment and kill switch ([AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025)), because the standard can deny the next decision point but defines no way to stop a session in flight and leaves mid-flight attachment undefined; execution isolation ([AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027)), which is a property of where code runs rather than of the wire; and tenant separation, because multi-tenancy is a reserved field with no isolation rules in version 0.1.
+- **Four status facts are on the page above the mapping**, because they change whether it can be relied on: it is pre-1.0 and may change its mandatory baseline in a patch release; nobody verifies a conformance claim, since profiles are self-declared and version 0.1.0 ships no test suite, registry or steward body; both the decision-failure default and the handshake-failure default are fail-open, so an unreachable policy point degrades to an audit log silently; and the standard states that a permissive policy point is conformant, so conformance says the wire is right rather than that the deployment is safe.
+- **An adoption order** that starts by overriding the two fail-open defaults, then wires the tool-call hook, then wraps MCP wherever MCP appears in a session. It is presented as what the standard makes mandatory and where its defaults need changing, not as a maturity model, because ACS defines none.
+- The standard's own mapping to the agentic risk list is reproduced in summary beside the wiki controls the [OWASP Top 10 Crosswalk](../23_Framework_Crosswalks/06_OWASP_Top_10_Crosswalk.md) already records for the same risk. The page notes that this mapping lives in the project's FAQ, which states it is non-normative and that the specification governs any disagreement.
+- The [Framework Crosswalks](../23_Framework_Crosswalks/index.md) index and the home page framework table list the new page, and reference [28] in the [Foundations references](../00_Foundations/References.md) now records the version, dates and licences instead of saying the standard had not been read.
+
+### What was checked and what was not
+
+- Read on 7 November 2026 from the project's repository and documentation site [Verified]: the three pillars, all 19 lifecycle hooks with their triggers and which of them can carry a decision, the three further methods, the five verdicts and their required fields, the seven conformance profiles, the eleven baseline requirements, the component inventory's eight component types, the numbered specification sections, and the eight error codes. Method and profile names are quoted exactly; requirements are paraphrased rather than reproduced, because the prose is CC BY-SA 4.0.
+- Version facts come from the project's own changelog and conformance pages: specification version `v0.1.0`, release `0.1.4` dated 16 October 2026, `v0.2.0` targeted for March 2027, no v1.0 date. The schemas change in place at the same addresses, and the project says the handshake cannot distinguish an old release from a new one, so the page tells readers to pin a commit.
+- **The normative concepts pages were not read**: identity, intent, capability, skill, provenance, trust basis and session lifecycle. The specification sections reference down into them rather than restating them, so they carry requirements this page does not reflect. This is the largest gap on the page and it says so.
+- **No control text was changed and no test case was added.** Every mapping rests on control text that already existed, so the page adds no coverage; it says where existing coverage lands on the wire.
+- The standard was not run and no implementation was tested. The project states that its own reference implementation is not conformant, implementing none of the required envelope signing and evaluating 2 of the 19 hooks live, so nothing on the page should be read as a report on working software.
+- The mapping is this wiki's judgement and has not been reviewed by OWASP or by the standard's maintainers.
 
 ## 7 November 2026: OWASP Top 10 for LLM Applications moved to the 2026 edition
 
@@ -708,6 +731,7 @@ Every version of the wiki, newest first. Rows are never edited after they are ad
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.60 | 2026-11-07 | Nachiket Sathaye | OWASP Agent Control Standard Crosswalk for specification v0.1.0 (release 0.1.4, 16 October 2026): its 22 enforcement points, five verdicts and seven conformance profiles placed against the wiki's controls, with the three controls it has no counterpart for, its fail-open defaults, and the fact that no body verifies a conformance claim. ACS is a wire protocol with no control catalogue, so the page maps its hooks to the controls that supply their policy rather than the reverse. |
 | 2.59 | 2026-11-07 | Nachiket Sathaye | OWASP Top 10 for LLM Applications moved from the 2025 to the 2026 edition, published 4 August 2026: 465 identifier references remapped across 23 pages, System Prompt Leakage renamed to Hidden Context Exposure, and the Foundations list rewritten with the rank movements, the new ranking method and the four widened categories. No mapping changed which risk it names; five test cases gained one because a category widened. |
 | 2.58 | 2026-11-04 | Nachiket Sathaye | Builder Toolkit 1.1: the comparison with ai-secure-by-design brought up to its v0.2.0 release, which now runs the wiki's AIW rules and control library as an opt-in regime and adds Python scaffolds and personal-data detection; Privacy Duties in Code and Developer Pipeline Checks link to it. |
 | 2.57 | 2026-11-04 | Nachiket Sathaye | CERT-In AI Security Auditing Guidelines Crosswalk for version 1.0 of the guidelines, dated 4 November 2026: the nine core audit domains, the four risk tiers and eight risk factors, the advanced requirements for generative, RAG, agentic, multimodal, multi-agent and cyber-physical AI, and the audit lifecycle, contestability, finding severities and maturity model, mapped to wiki controls and test cases, with five requirements named as gaps; India hub, crosswalk and CSV row IN14. |

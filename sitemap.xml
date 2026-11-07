@@ -206,7 +206,7 @@
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/09_Reference/19_Update_Notes.html</loc><lastmod>2026-11-07</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/09_Reference/20_AI_Security_Incident_Casebook.html</loc><lastmod>2026-11-07</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/09_Reference/21_Regulatory_Verification_Status.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/23_Framework_Crosswalks/</loc><lastmod>2026-11-04</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/23_Framework_Crosswalks/</loc><lastmod>2026-11-07</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/23_Framework_Crosswalks/01_FINOS_AIGF_Crosswalk.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/23_Framework_Crosswalks/02_AI_BCF_Crosswalk.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/23_Framework_Crosswalks/03_NIST_AI_RMF_Crosswalk.html</loc><lastmod>2026-10-23</lastmod></url>
@@ -229,6 +229,7 @@
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/23_Framework_Crosswalks/20_NIST_SSDF_Crosswalk.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/23_Framework_Crosswalks/21_PCI_DSS_AI_Crosswalk.html</loc><lastmod>2026-10-29</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/23_Framework_Crosswalks/22_CERT_In_AI_Security_Auditing_Guidelines_Crosswalk.html</loc><lastmod>2026-11-04</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/23_Framework_Crosswalks/23_OWASP_Agent_Control_Standard_Crosswalk.html</loc><lastmod>2026-11-07</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/24_Builder_Track/</loc><lastmod>2026-10-29</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/24_Builder_Track/01_Secure_Your_First_Agent.html</loc><lastmod>2026-11-07</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/24_Builder_Track/02_Agent_Architecture_Patterns.html</loc><lastmod>2026-10-29</lastmod></url>

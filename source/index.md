@@ -3,7 +3,7 @@ title: "Home"
 description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and {{n:tests}} test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.59
+version: 2.60
 status: Published
 author: Nachiket Sathaye
 coauthors: Ankush Jain
@@ -17,7 +17,7 @@ last_updated: 2026-11-07
 # AI Security Wiki Home
 
 > **Document Type:** Enterprise AI Security Reference Architecture and Governance Wiki  
-> **Version:** 2.59  
+> **Version:** 2.60  
 > **Status:** Published  
 > **Original Author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
 > **Co-Author:** Ankush Jain ([about the co-author](#23-about-the-co-author))  
@@ -309,6 +309,7 @@ The wiki supports mapping AI security requirements to recognized control and gov
 | AI Risk Map (RiskFramework.org) | Risk identification across twelve ownership domains, including strategy, finance, workforce and legal risks. See the [AI Risk Map Crosswalk](23_Framework_Crosswalks/18_AI_Risk_Map_Crosswalk.md). |
 | OWASP Top 10 for LLM Applications (2026 edition) and for Agentic Applications | Application and agent risk categories for developer guidance, threat modeling, and test-case design. See the [OWASP Top 10 Crosswalk](23_Framework_Crosswalks/06_OWASP_Top_10_Crosswalk.md). |
 | OWASP MCP Top 10 (beta) | Risks of agents that connect to tools and data through the Model Context Protocol. See the [OWASP MCP Top 10 Crosswalk](23_Framework_Crosswalks/19_OWASP_MCP_Top_10_Crosswalk.md). |
+| OWASP Agent Control Standard (v0.1.0, pre-1.0) | A wire protocol that standardises where an agent's actions can be allowed, denied or sent for approval, and the audit record of each decision. See the [OWASP Agent Control Standard Crosswalk](23_Framework_Crosswalks/23_OWASP_Agent_Control_Standard_Crosswalk.md). |
 | MITRE ATLAS | Adversary tactics and techniques against AI-enabled systems for threat-informed testing and incident description. |
 | EU AI Act | Legal obligations for in-scope providers and deployers of AI systems. |
 | NIST Cybersecurity Framework | Govern, Identify, Protect, Detect, Respond, and Recover coverage for AI-enabled systems. See the [NIST CSF Crosswalk](23_Framework_Crosswalks/09_NIST_CSF_Crosswalk.md). |
@@ -426,9 +427,9 @@ The three latest versions, newest first. The full history since version 1.0 is i
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.60 | 2026-11-07 | Nachiket Sathaye | OWASP Agent Control Standard Crosswalk for specification v0.1.0: its 22 enforcement points, five verdicts and seven conformance profiles placed against the wiki's controls, the three controls it has no counterpart for, and its fail-open defaults. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 | 2.59 | 2026-11-07 | Nachiket Sathaye | OWASP Top 10 for LLM Applications moved from the 2025 to the 2026 edition, published 4 August 2026: 465 identifier references remapped across 23 pages, System Prompt Leakage renamed to Hidden Context Exposure, the Foundations list rewritten with the rank movements and the new ranking method, and five test cases given a mapping that a widened category now covers. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 | 2.58 | 2026-11-04 | Nachiket Sathaye | Builder Toolkit 1.1: the comparison with ai-secure-by-design brought up to its v0.2.0 release, which now runs the wiki's AIW rules and control library as an opt-in regime and adds Python scaffolds and personal-data detection; Privacy Duties in Code and Developer Pipeline Checks link to it. |
-| 2.57 | 2026-11-04 | Nachiket Sathaye | CERT-In AI Security Auditing Guidelines Crosswalk for the guidelines CERT-In dated 4 November 2026: the nine core audit domains, the four risk tiers and the advanced requirements for generative, RAG, agentic, multimodal, multi-agent and cyber-physical AI, mapped to controls and test cases, with the five requirements the wiki does not cover. The India section gains row IN14 in the hub, the crosswalk and the CSV. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 
 ## 21. Quick Links
 

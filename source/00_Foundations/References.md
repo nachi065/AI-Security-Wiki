@@ -56,7 +56,7 @@ Numbers match in-text citations. "Status" notes how each entry was checked on 7 
 *Status: confirmed to exist; coverage period 1 Jan to 11 Apr 2026. Findings cited in this paper come from a page summary; read the full report before quoting specifics.*
 
 [28] OWASP GenAI Security Project. (2026). *Agent Control Standard (ACS).* https://genai.owasp.org/resource/agent-control-standard-acs/
-*Status: confirmed to exist on 7 November 2026; donated to the OWASP GenAI Security Project and announced with the 2026 LLM Top 10. The standard itself has not been read, and no wiki control cites it yet.*
+*Status: read on 7 November 2026 from the project's repository and documentation site. Specification version v0.1.0; latest release 0.1.4, dated 16 October 2026; v0.2.0 targeted for March 2027 and no v1.0 date set. Apache 2.0 for code and schemas, CC BY-SA 4.0 for prose. It is a wire protocol, not a control framework, and defines no numbered controls. Placed against the wiki's controls in the [Agent Control Standard Crosswalk](../23_Framework_Crosswalks/23_OWASP_Agent_Control_Standard_Crosswalk.md). The normative concepts pages on identity, intent, capability and trust were not read.*
 
 [29] OWASP GenAI Security Project. (2026). *GenAI Security Industry Framework Crosswalk.* https://genai-security-project.github.io/crosswalk/
 *Status: confirmed to exist on 7 November 2026; maps OWASP GenAI guidance to other security, risk and compliance frameworks. Not compared with this wiki's own crosswalks.*

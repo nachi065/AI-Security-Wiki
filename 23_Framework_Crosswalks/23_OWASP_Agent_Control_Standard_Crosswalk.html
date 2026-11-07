@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OWASP Agent Control Standard Crosswalk | AI Security Wiki</title>
+<meta name="author" content="Nachiket Sathaye, Ankush Jain">
+<meta name="description" content="The OWASP Agent Control Standard, a wire protocol for agent runtime enforcement, placed against the wiki&#x27;s controls: which control each ACS hook enforces, what each conformance profile needs, and what ACS deliberately leaves to the deployment.">
+<link rel="canonical" href="https://nachi065.github.io/AI-Security-Wiki/23_Framework_Crosswalks/23_OWASP_Agent_Control_Standard_Crosswalk.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="AI Security Wiki">
+<meta property="og:title" content="OWASP Agent Control Standard Crosswalk | AI Security Wiki">
+<meta property="og:description" content="The OWASP Agent Control Standard, a wire protocol for agent runtime enforcement, placed against the wiki&#x27;s controls: which control each ACS hook enforces, what each conformance profile needs, and what ACS deliberately leaves to the deployment.">
+<meta property="og:url" content="https://nachi065.github.io/AI-Security-Wiki/23_Framework_Crosswalks/23_OWASP_Agent_Control_Standard_Crosswalk.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../assets/style.css?v=aa70096b">
+</head>
+<body style="--h:120">
+<header class="topbar">
+  <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+  <a class="brand" href="../index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>AI Security Wiki</a>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Search the wiki" aria-label="Search the wiki" autocomplete="off">
+    <ul id="search-results" hidden></ul>
+  </div>
+  <a class="repo-link" href="https://github.com/nachi065/AI-Security-Wiki" rel="noopener">GitHub</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="sidebar" aria-label="Wiki sections">
+<ul class="nav">
+<li><a href="../index.html">Home</a></li>
+<li style="--h:255"><details><summary><a href="../00_Foundations/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h7a2 2 0 0 1 2 2v12a2 2 0 0 0-2-2H3zM21 5h-7a2 2 0 0 0-2 2v12a2 2 0 0 1 2-2h7z"/></svg>Foundations</a></summary><ul>
+<li><a href="../00_Foundations/01-Terminology-and-Two-Axis-Model.html">1. Terminology and the Two-Axis Model</a></li>
+<li><a href="../00_Foundations/02-AI-System-Boundary-and-Assets.html">2. The AI System Boundary and Assets</a></li>
+<li><a href="../00_Foundations/03-Threat-Taxonomy.html">3. Threat Taxonomy</a></li>
+<li><a href="../00_Foundations/04-LLMs-Prompt-Injection-and-RAG.html">4. LLMs, Prompt Injection and RAG</a></li>
+<li><a href="../00_Foundations/05-Agents-Identity-and-Excessive-Agency.html">5. Agents, Identity and Excessive Agency</a></li>
+<li><a href="../00_Foundations/06-Supply-Chain-and-Infrastructure.html">6. Supply Chain and Infrastructure</a></li>
+<li><a href="../00_Foundations/07-Reference-Architecture.html">7. Reference Architecture</a></li>
+<li><a href="../00_Foundations/08-Assurance-Testing-Monitoring-and-Response.html">8. Assurance: Testing, Monitoring and Response</a></li>
+<li><a href="../00_Foundations/09-Governance-Standards-and-Regulation.html">9. Governance, Standards and Regulation</a></li>
+<li><a href="../00_Foundations/10-AI-for-Security-and-AI-Enabled-Threats.html">10. AI for Security and AI-Enabled Threats</a></li>
+<li><a href="../00_Foundations/11-Maturity-Model-and-Roadmap.html">11. Maturity Model and Roadmap</a></li>
+<li><a href="../00_Foundations/12-Illustrative-Scenarios.html">12. Illustrative Scenarios</a></li>
+<li><a href="../00_Foundations/13-Limitations-and-Research-Gaps.html">13. Limitations and Research Gaps</a></li>
+<li><a href="../00_Foundations/Appendices.html">Appendices</a></li>
+<li><a href="../00_Foundations/References.html">References</a></li>
+</ul></details></li>
+<li style="--h:205"><details><summary><a href="../01_Strategy_and_Market/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg>Strategy and Market</a></summary><ul>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape.html">AI Security Market and Technology Landscape: Summary</a></li>
+<li><a href="../01_Strategy_and_Market/01_AI_Security_Market_and_Technology_Landscape_Expanded.html">AI Security Market and Technology Landscape</a></li>
+</ul></details></li>
+<li style="--h:8"><details><summary><a href="../02_Risk_Management/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l9 16H3z"/><path d="M12 10v4M12 17v.5"/></svg>Risk Management</a></summary><ul>
+<li><a href="../02_Risk_Management/02A_AI_Risk_Methodology.html">AI Risk Methodology</a></li>
+<li><a href="../02_Risk_Management/02B_Enterprise_AI_Risk_Register.html">Enterprise AI Risk Register</a></li>
+<li><a href="../02_Risk_Management/02C_AI_Risk_Treatment_Plan.html">AI Risk Treatment Plan</a></li>
+<li><a href="../02_Risk_Management/02D_AI_Risk_to_Control_Mapping.html">AI Risk to Control Mapping</a></li>
+<li><a href="../02_Risk_Management/02E_AI_Risk_Review_Template.html">AI Risk Review Template</a></li>
+<li><a href="../02_Risk_Management/02F_AI_Use_Case_Risk_Triage.html">AI Use-Case Risk Triage</a></li>
+<li><a href="../02_Risk_Management/02G_Risk_Control_Test_Traceability.html">Risk, Control and Test Traceability</a></li>
+</ul></details></li>
+<li style="--h:165"><details><summary><a href="../03_Control_Library/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>Control Library</a></summary><ul>
+<li><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></li>
+<li><a href="../03_Control_Library/04_Existing_Security_Control_Baseline.html">Existing Security Control Baseline</a></li>
+<li><a href="../03_Control_Library/05_Microsoft_Security_Overlap_and_AI_Gaps.html">Microsoft Security Overlap and AI Gaps</a></li>
+<li><a href="../03_Control_Library/06_Control_Tiers.html">Control Tiers</a></li>
+</ul></details></li>
+<li style="--h:280"><details><summary><a href="../04_Domain_Standards/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 12l9 5 9-5M3 16l9 5 9-5"/></svg>Domain Standards</a></summary><ul>
+<li><a href="../04_Domain_Standards/06_Browser_AI_Security_Standard.html">Browser AI Security Standard</a></li>
+<li><a href="../04_Domain_Standards/07_IDE_AI_Coding_Assistant_Security_Standard.html">AI Coding Assistant and Coding Agent Security Standard</a></li>
+<li><a href="../04_Domain_Standards/08_Custom_AI_Application_Runtime_Security_Standard.html">Custom AI Application Runtime Security Standard</a></li>
+<li><a href="../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
+<li><a href="../04_Domain_Standards/10_Sovereign_AI_UAE_Compliance_and_Data_Residency.html">Sovereign AI, UAE Compliance and Data Residency Requirements</a></li>
+<li><a href="../04_Domain_Standards/10B_Sector_Overlays.html">Sector Overlays: Financial Services, Insurance, Health and Government</a></li>
+<li><a href="../04_Domain_Standards/11_Predictive_Model_Monitoring_and_Adversarial_ML.html">Predictive Model Monitoring and Adversarial ML</a></li>
+<li><a href="../04_Domain_Standards/10C_Financial_Regulator_AI_Comparison.html">Financial Regulator AI Comparison</a></li>
+</ul></details></li>
+<li style="--h:32"><details><summary><a href="../05_Vendor_Evaluation/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Vendor Evaluation</a></summary><ul>
+<li><a href="../05_Vendor_Evaluation/11_AI_Security_Vendor_Evaluation_Master_Framework.html">AI Security Vendor Evaluation Master Framework</a></li>
+</ul></details></li>
+<li style="--h:325"><details><summary><a href="../06_Testing_and_Assurance/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/><path d="M7.5 15h9"/></svg>Testing and Assurance</a></summary><ul>
+<li><a href="../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.html">AI Security PoC Test Case Library</a></li>
+<li><a href="../06_Testing_and_Assurance/14_AI_Security_Audit_and_Evidence_Checklist.html">AI Security Audit and Evidence Checklist</a></li>
+<li><a href="../06_Testing_and_Assurance/15C_AI_Red_Team_Playbook.html">AI Red Team Playbook</a></li>
+</ul></details></li>
+<li style="--h:188"><details><summary><a href="../07_Role_Based_Playbooks/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.8.3 5 2.7 5 5.8"/></svg>Role-Based Playbooks</a></summary><ul>
+<li><a href="../07_Role_Based_Playbooks/15A_AI_Product_Developer_Playbook.html">AI Product Developer Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15B_AI_Security_Researcher_Playbook.html">AI Security Researcher Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15D_Security_Engineering_Playbook.html">Security Engineering Playbook</a></li>
+<li><a href="../07_Role_Based_Playbooks/15E_Vendor_Evaluation_and_Audit_Playbook.html">Vendor Evaluation and Audit Playbook</a></li>
+</ul></details></li>
+<li style="--h:228"><details><summary><a href="../08_Governance/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-5 9 5M5 9v9M9.5 9v9M14.5 9v9M19 9v9M3 20h18"/></svg>Governance</a></summary><ul>
+<li><a href="../08_Governance/16_AI_Governance_Operating_Model.html">AI Governance Operating Model</a></li>
+<li><a href="../08_Governance/17_AI_Policy_Standards_and_Acceptable_Use.html">AI Policy, Standards and Acceptable Use</a></li>
+<li><a href="../08_Governance/18_AI_Operating_Defaults.html">AI Operating Defaults</a></li>
+</ul></details></li>
+<li style="--h:145"><details><summary><a href="../10_Test_Case_Library/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l1.5 1.5L8 5M4 12l1.5 1.5L8 11M4 18l1.5 1.5L8 17M11 6h9M11 12h9M11 18h9"/></svg>Test Case Library</a></summary><ul>
+<li><a href="../10_Test_Case_Library/00-reference-index.html">Reference Index</a></li>
+<li><a href="../10_Test_Case_Library/framework-adoption-guide.html">Framework Adoption Guide</a></li>
+<li><a href="../10_Test_Case_Library/appendix-lab-prerequisites.html">Appendix: Lab Prerequisites</a></li>
+<li><a href="../10_Test_Case_Library/L01-business-and-use-cases.html">L01 Business &amp; Use Cases</a></li>
+<li><a href="../10_Test_Case_Library/payload-kit.html">Payload Kit: Runnable Attack Sets for Critical Cases</a></li>
+<li><a href="../10_Test_Case_Library/L02-governance-and-risk-mgmt.html">L02 Governance &amp; Risk Mgmt</a></li>
+<li><a href="../10_Test_Case_Library/test-your-own-app.html">Test Your Own Application</a></li>
+<li><a href="../10_Test_Case_Library/L03-legal-privacy-and-compliance.html">L03 Legal, Privacy &amp; Compliance</a></li>
+<li><a href="../10_Test_Case_Library/standard-fields.html">Standard Fields</a></li>
+<li><a href="../10_Test_Case_Library/L04-human-interaction-layer.html">L04 Human Interaction Layer</a></li>
+<li><a href="../10_Test_Case_Library/L05-ai-applications.html">L05 AI Applications</a></li>
+<li><a href="../10_Test_Case_Library/L06-agent-orchestration-layer.html">L06 Agent Orchestration Layer</a></li>
+<li><a href="../10_Test_Case_Library/L07-prompt-and-context-layer.html">L07 Prompt &amp; Context Layer</a></li>
+<li><a href="../10_Test_Case_Library/L08-ai-gateway-and-security-controls.html">L08 AI Gateway &amp; Security Controls</a></li>
+<li><a href="../10_Test_Case_Library/L09-identity-and-access-mgmt.html">L09 Identity &amp; Access Mgmt</a></li>
+<li><a href="../10_Test_Case_Library/L10-data-layer.html">L10 Data Layer</a></li>
+<li><a href="../10_Test_Case_Library/L11-knowledge-and-retrieval-layer.html">L11 Knowledge &amp; Retrieval Layer</a></li>
+<li><a href="../10_Test_Case_Library/L12-model-layer.html">L12 Model Layer</a></li>
+<li><a href="../10_Test_Case_Library/L13-training-and-fine-tuning-layer.html">L13 Training &amp; Fine-Tuning Layer</a></li>
+<li><a href="../10_Test_Case_Library/L14-mlops-llmops-layer.html">L14 MLOps / LLMOps Layer</a></li>
+<li><a href="../10_Test_Case_Library/L15-infrastructure-layer.html">L15 Infrastructure Layer</a></li>
+<li><a href="../10_Test_Case_Library/L16-supply-chain-and-third-party.html">L16 Supply Chain &amp; Third Party</a></li>
+<li><a href="../10_Test_Case_Library/L17-monitoring-detection-and-response.html">L17 Monitoring, Detection &amp; Response</a></li>
+<li><a href="../10_Test_Case_Library/D08-ai-red-teaming-and-continuous-testing.html">D08 AI Red Teaming and Continuous Testing</a></li>
+<li><a href="../10_Test_Case_Library/D09-agent-and-non-human-identity-governance.html">D09 Agent and Non-Human Identity Governance</a></li>
+<li><a href="../10_Test_Case_Library/D10-browser-and-computer-use-agents.html">D10 Browser and Computer-Use Agents</a></li>
+<li><a href="../10_Test_Case_Library/D11-multimodal-and-voice-input-security.html">D11 Multimodal and Voice Input Security</a></li>
+<li><a href="../10_Test_Case_Library/D12-ai-incident-response-and-forensics.html">D12 AI Incident Response and Forensics</a></li>
+<li><a href="../10_Test_Case_Library/D13-ai-cost-and-abuse-controls.html">D13 AI Cost and Abuse Controls</a></li>
+</ul></details></li>
+<li><details><summary><span class="nav-group"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg>Regional AI Regulatory Hub</span></summary><ul>
+<li style="--h:60"><details><summary><a href="../11_GCC_AI_Compliance/index.html"><span class="icon emblem-gcc" aria-hidden="true"></span>GCC AI Compliance</a></summary><ul>
+<li><a href="../11_GCC_AI_Compliance/01_GCC_AI_Regulatory_Hub.html">GCC AI Regulatory Hub</a></li>
+<li><a href="../11_GCC_AI_Compliance/02_Guide_AI_Practitioners.html">Guide for AI Practitioners in the GCC</a></li>
+<li><a href="../11_GCC_AI_Compliance/03_Guide_Product_Companies.html">Guide for AI Product Companies Selling into the GCC</a></li>
+<li><a href="../11_GCC_AI_Compliance/04_Guide_Auditors.html">Guide for Auditors of AI Systems in the GCC</a></li>
+<li><a href="../11_GCC_AI_Compliance/05_Guide_Implementors.html">Guide for Implementors: Building an AI Governance Programme in the GCC</a></li>
+<li><a href="../11_GCC_AI_Compliance/06_Proposed_Control_Fairness_Bias_Explainability.html">GCC Drivers for AI-CTRL-041: Fairness, Bias Testing and Explainability</a></li>
+<li><a href="../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.html">Regulatory Crosswalk</a></li>
+<li><a href="../11_GCC_AI_Compliance/08_Evidence_Register.html">Evidence Register</a></li>
+<li><a href="../11_GCC_AI_Compliance/T01_AI_Use_Case_Intake_and_Risk_Tiering.html">T01 AI Use-Case Intake and Risk Tiering</a></li>
+<li><a href="../11_GCC_AI_Compliance/T02_AI_Impact_Assessment.html">T02 AI Impact Assessment</a></li>
+<li><a href="../11_GCC_AI_Compliance/T03_Vendor_Due_Diligence_GCC_Addendum.html">T03 Vendor Due-Diligence GCC Addendum</a></li>
+<li><a href="../11_GCC_AI_Compliance/T04_Data_Residency_Attestation.html">T04 Data Residency and Sovereignty Attestation</a></li>
+<li><a href="../11_GCC_AI_Compliance/T05_AI_Incident_and_Breach_Notification_Workflow.html">T05 AI Incident and Breach Notification Workflow</a></li>
+<li><a href="../11_GCC_AI_Compliance/T06_Bilingual_AI_Use_Notice.html">T06 Bilingual AI Use Notice (Arabic and English)</a></li>
+<li><a href="../11_GCC_AI_Compliance/T07_Ethics_Self_Assessment_Worksheet.html">T07 AI Ethics Self-Assessment Worksheet</a></li>
+<li><a href="../11_GCC_AI_Compliance/T08_Audit_Checklist.html">T08 AI Audit Checklist</a></li>
+<li><a href="../11_GCC_AI_Compliance/T09_AI_System_Inventory.html">T09 AI Model and System Inventory</a></li>
+<li><a href="../11_GCC_AI_Compliance/T10_Bias_Testing_Record.html">T10 Bias Testing Record</a></li>
+<li><a href="../11_GCC_AI_Compliance/T11_Regulator_Engagement_Log.html">T11 Regulator and Ethics-Body Engagement Log</a></li>
+<li><a href="../11_GCC_AI_Compliance/T12_Risk_Register_4x4.html">T12 AI Risk Register (4x4)</a></li>
+</ul></details></li>
+<li style="--h:225"><details><summary><a href="../12_EU_AI_Compliance/index.html"><svg class="icon flag" viewBox="0 0 24 24" aria-hidden="true"><svg x="2" y="5" width="20" height="14" viewBox="0 0 20 14"><rect width="20" height="14" fill="#003399"/><circle cx="14.3" cy="7" r=".75" fill="#ffcc00"/><circle cx="13.72" cy="9.15" r=".75" fill="#ffcc00"/><circle cx="12.15" cy="10.72" r=".75" fill="#ffcc00"/><circle cx="10" cy="11.3" r=".75" fill="#ffcc00"/><circle cx="7.85" cy="10.72" r=".75" fill="#ffcc00"/><circle cx="6.28" cy="9.15" r=".75" fill="#ffcc00"/><circle cx="5.7" cy="7" r=".75" fill="#ffcc00"/><circle cx="6.28" cy="4.85" r=".75" fill="#ffcc00"/><circle cx="7.85" cy="3.28" r=".75" fill="#ffcc00"/><circle cx="10" cy="2.7" r=".75" fill="#ffcc00"/><circle cx="12.15" cy="3.28" r=".75" fill="#ffcc00"/><circle cx="13.72" cy="4.85" r=".75" fill="#ffcc00"/></svg><rect x="2" y="5" width="20" height="14" fill="none" stroke="#000" stroke-opacity=".3" stroke-width=".6"/></svg>EU AI Compliance</a></summary><ul>
+<li><a href="../12_EU_AI_Compliance/01_EU_AI_Regulatory_Hub.html">EU AI Regulatory Hub</a></li>
+<li><a href="../12_EU_AI_Compliance/02_Guide_AI_Practitioners.html">Guide for AI Practitioners Working Under EU Rules</a></li>
+<li><a href="../12_EU_AI_Compliance/03_Guide_Product_Companies.html">Guide for AI Product Companies Selling into the EU</a></li>
+<li><a href="../12_EU_AI_Compliance/04_Guide_Auditors.html">Guide for Auditors of AI Systems Under EU Rules</a></li>
+<li><a href="../12_EU_AI_Compliance/05_Guide_Implementors.html">Guide for Implementors: Building an EU AI Governance Programme</a></li>
+<li><a href="../12_EU_AI_Compliance/06_Proposed_Control_Fundamental_Rights_Impact_Assessment.html">EU Drivers for AI-CTRL-041 and AI-CTRL-042</a></li>
+<li><a href="../12_EU_AI_Compliance/07_Regulatory_Crosswalk.html">EU Regulatory Crosswalk</a></li>
+<li><a href="../12_EU_AI_Compliance/08_Evidence_Register.html">EU Evidence Register</a></li>
+<li><a href="../12_EU_AI_Compliance/T01_AI_System_Classification.html">T01 AI System Classification (Role and Risk Tier)</a></li>
+<li><a href="../12_EU_AI_Compliance/T02_Impact_Assessment_FRIA_DPIA.html">T02 Impact Assessment (FRIA and DPIA Combined)</a></li>
+<li><a href="../12_EU_AI_Compliance/T03_Supplier_Due_Diligence_EU_Addendum.html">T03 Supplier Due-Diligence EU Addendum</a></li>
+<li><a href="../12_EU_AI_Compliance/T04_Data_Location_and_Transfer_Record.html">T04 Data Location and International Transfer Record</a></li>
+<li><a href="../12_EU_AI_Compliance/T05_AI_Incident_and_Breach_Reporting_Workflow.html">T05 AI Incident and Breach Reporting Workflow (EU)</a></li>
+<li><a href="../12_EU_AI_Compliance/T06_Transparency_Notice.html">T06 Transparency Notice (AI Act Article 50 and GDPR)</a></li>
+<li><a href="../12_EU_AI_Compliance/T07_AI_Literacy_Programme_Record.html">T07 AI Literacy Programme Record</a></li>
+<li><a href="../12_EU_AI_Compliance/T08_Audit_Checklist.html">T08 AI Audit Checklist (EU)</a></li>
+<li><a href="../12_EU_AI_Compliance/T09_AI_System_Inventory.html">T09 AI System Inventory (EU)</a></li>
+<li><a href="../12_EU_AI_Compliance/T10_Technical_Documentation_and_Conformity_Checklist.html">T10 Technical Documentation Index and Conformity Checklist</a></li>
+<li><a href="../12_EU_AI_Compliance/T11_Authority_and_Standards_Engagement_Log.html">T11 Authority and Standards Engagement Log</a></li>
+<li><a href="../12_EU_AI_Compliance/T12_GPAI_Model_Checklist.html">T12 General-Purpose AI Model Checklist</a></li>
+</ul></details></li>
+<li style="--h:195"><details><summary><a href="../13_Australia_AI_Compliance/index.html"><svg class="icon flag" viewBox="0 0 24 24" aria-hidden="true"><svg x="2" y="5" width="20" height="14" viewBox="0 0 20 14"><rect width="20" height="14" fill="#012169"/><path d="M0 3.5h10M5 0v7" stroke="#fff" stroke-width="1.9"/><path d="M0 3.5h10M5 0v7" stroke="#e4002b" stroke-width=".9"/><circle cx="5" cy="10.5" r="1.3" fill="#fff"/><circle cx="15" cy="3" r=".8" fill="#fff"/><circle cx="17.5" cy="5.5" r=".8" fill="#fff"/><circle cx="15" cy="10.5" r=".8" fill="#fff"/><circle cx="12.8" cy="6.5" r=".8" fill="#fff"/><circle cx="16.2" cy="7.6" r=".5" fill="#fff"/></svg><rect x="2" y="5" width="20" height="14" fill="none" stroke="#000" stroke-opacity=".3" stroke-width=".6"/></svg>Australia AI Compliance</a></summary><ul>
+<li><a href="../13_Australia_AI_Compliance/01_Australia_AI_Regulatory_Hub.html">Australia AI Regulatory Hub</a></li>
+<li><a href="../13_Australia_AI_Compliance/02_Role_Guide.html">Australia: Role Guide</a></li>
+<li><a href="../13_Australia_AI_Compliance/03_Regulatory_Crosswalk.html">Australia Regulatory Crosswalk</a></li>
+<li><a href="../13_Australia_AI_Compliance/AU-T1_ADM_Transparency_Register.html">AU-T1 Automated Decision Transparency Register</a></li>
+<li><a href="../13_Australia_AI_Compliance/AU-T2_AI_Adoption_Self_Assessment.html">AU-T2 Guidance for AI Adoption Self-Assessment</a></li>
+</ul></details></li>
+<li style="--h:135"><details><summary><a href="../14_Brazil_AI_Compliance/index.html"><svg class="icon flag" viewBox="0 0 24 24" aria-hidden="true"><svg x="2" y="5" width="20" height="14" viewBox="0 0 20 14"><rect width="20" height="14" fill="#009739"/><path d="M10 1.6L18.2 7 10 12.4 1.8 7z" fill="#fedd00"/><circle cx="10" cy="7" r="3" fill="#012169"/></svg><rect x="2" y="5" width="20" height="14" fill="none" stroke="#000" stroke-opacity=".3" stroke-width=".6"/></svg>Brazil AI Compliance</a></summary><ul>
+<li><a href="../14_Brazil_AI_Compliance/01_Brazil_AI_Regulatory_Hub.html">Brazil AI Regulatory Hub</a></li>
+<li><a href="../14_Brazil_AI_Compliance/02_Role_Guide.html">Brazil: Role Guide</a></li>
+<li><a href="../14_Brazil_AI_Compliance/03_Regulatory_Crosswalk.html">Brazil Regulatory Crosswalk</a></li>
+<li><a href="../14_Brazil_AI_Compliance/BR-T1_LGPD_Automated_Decision_Review_Record.html">BR-T1 LGPD Automated Decision Review Record</a></li>
+<li><a href="../14_Brazil_AI_Compliance/BR-T2_PL2338_Readiness_Watchlist.html">BR-T2 PL 2338/2023 Readiness Watchlist and Tier Mapping</a></li>
+</ul></details></li>
+<li style="--h:355"><details><summary><a href="../15_Canada_AI_Compliance/index.html"><svg class="icon flag" viewBox="0 0 24 24" aria-hidden="true"><svg x="2" y="5" width="20" height="14" viewBox="0 0 20 14"><rect width="20" height="14" fill="#fff"/><path d="M0 0h5v14H0zM15 0h5v14h-5z" fill="#d80621"/><path d="M10 2.5l1 2.1 1.6-.6-.5 2.2 1.7.4-1.6 1.6.4 1-2.2-.3v2.4h-.8V8.9l-2.2.3.4-1-1.6-1.6 1.7-.4L7.4 4l1.6.6z" fill="#d80621"/></svg><rect x="2" y="5" width="20" height="14" fill="none" stroke="#000" stroke-opacity=".3" stroke-width=".6"/></svg>Canada AI Compliance</a></summary><ul>
+<li><a href="../15_Canada_AI_Compliance/01_Canada_AI_Regulatory_Hub.html">Canada AI Regulatory Hub</a></li>
+<li><a href="../15_Canada_AI_Compliance/02_Role_Guide.html">Canada: Role Guide</a></li>
+<li><a href="../15_Canada_AI_Compliance/03_Regulatory_Crosswalk.html">Canada Regulatory Crosswalk</a></li>
+<li><a href="../15_Canada_AI_Compliance/CA-T1_Algorithmic_Impact_Assessment_Worksheet.html">CA-T1 Algorithmic Impact Assessment Worksheet</a></li>
+<li><a href="../15_Canada_AI_Compliance/CA-T2_Quebec_Law_25_ADM_Record.html">CA-T2 Quebec Law 25 Automated Decision Record</a></li>
+<li><a href="../15_Canada_AI_Compliance/CA-T3_OSFI_E23_Inventory_Addendum.html">CA-T3 OSFI E-23 Model Inventory Addendum</a></li>
+</ul></details></li>
+<li style="--h:25"><details><summary><a href="../16_China_AI_Compliance/index.html"><svg class="icon flag" viewBox="0 0 24 24" aria-hidden="true"><svg x="2" y="5" width="20" height="14" viewBox="0 0 20 14"><rect width="20" height="14" fill="#de2910"/><polygon points="4.5,2 5.09,3.69 6.88,3.73 5.45,4.81 5.97,6.52 4.5,5.5 3.03,6.52 3.55,4.81 2.12,3.73 3.91,3.69" fill="#ffde00"/><circle cx="8.2" cy="1.9" r=".55" fill="#ffde00"/><circle cx="9.6" cy="3.4" r=".55" fill="#ffde00"/><circle cx="9.6" cy="5.4" r=".55" fill="#ffde00"/><circle cx="8.2" cy="6.9" r=".55" fill="#ffde00"/></svg><rect x="2" y="5" width="20" height="14" fill="none" stroke="#000" stroke-opacity=".3" stroke-width=".6"/></svg>China AI Compliance</a></summary><ul>
+<li><a href="../16_China_AI_Compliance/01_China_AI_Regulatory_Hub.html">China AI Regulatory Hub</a></li>
+<li><a href="../16_China_AI_Compliance/02_Role_Guide.html">China (Mainland): Role Guide</a></li>
+<li><a href="../16_China_AI_Compliance/03_Regulatory_Crosswalk.html">China Regulatory Crosswalk</a></li>
+<li><a href="../16_China_AI_Compliance/CN-T1_Filing_and_Registration_Readiness.html">CN-T1 Filing and Registration Readiness Checklist</a></li>
+<li><a href="../16_China_AI_Compliance/CN-T2_Content_Labelling_Implementation_Record.html">CN-T2 AI-Generated Content Labelling Implementation Record</a></li>
+<li><a href="../16_China_AI_Compliance/CN-T3_Ethics_Review_Committee_Record.html">CN-T3 AI Ethics Review Committee Record</a></li>
+</ul></details></li>
+<li style="--h:95"><details><summary><a href="../17_India_AI_Compliance/index.html"><svg class="icon flag" viewBox="0 0 24 24" aria-hidden="true"><svg x="2" y="5" width="20" height="14" viewBox="0 0 20 14"><rect width="20" height="14" fill="#fff"/><rect width="20" height="4.67" fill="#ff9933"/><rect y="9.33" width="20" height="4.67" fill="#138808"/><circle cx="10" cy="7" r="1.7" fill="none" stroke="#000080" stroke-width=".5"/><circle cx="10" cy="7" r=".4" fill="#000080"/></svg><rect x="2" y="5" width="20" height="14" fill="none" stroke="#000" stroke-opacity=".3" stroke-width=".6"/></svg>India AI Compliance</a></summary><ul>
+<li><a href="../17_India_AI_Compliance/01_India_AI_Regulatory_Hub.html">India AI Regulatory Hub</a></li>
+<li><a href="../17_India_AI_Compliance/02_Role_Guide.html">India: Role Guide</a></li>
+<li><a href="../17_India_AI_Compliance/03_Regulatory_Crosswalk.html">India Regulatory Crosswalk</a></li>
+<li><a href="../17_India_AI_Compliance/IN-T1_DPDP_AI_Processing_Record_and_Notice.html">IN-T1 DPDP AI Processing Record, Notice and Consent</a></li>
+<li><a href="../17_India_AI_Compliance/IN-T2_Breach_and_Incident_Workflow.html">IN-T2 India Breach and Incident Workflow</a></li>
+<li><a href="../17_India_AI_Compliance/IN-T3_Regulated_Entity_AI_Readiness.html">IN-T3 Regulated-Entity AI Readiness Checklist (RBI, SEBI, IRDAI)</a></li>
+</ul></details></li>
+<li style="--h:335"><details><summary><a href="../18_Japan_AI_Compliance/index.html"><svg class="icon flag" viewBox="0 0 24 24" aria-hidden="true"><svg x="2" y="5" width="20" height="14" viewBox="0 0 20 14"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="4.1" fill="#bc002d"/></svg><rect x="2" y="5" width="20" height="14" fill="none" stroke="#000" stroke-opacity=".3" stroke-width=".6"/></svg>Japan AI Compliance</a></summary><ul>
+<li><a href="../18_Japan_AI_Compliance/01_Japan_AI_Regulatory_Hub.html">Japan AI Regulatory Hub</a></li>
+<li><a href="../18_Japan_AI_Compliance/02_Role_Guide.html">Japan: Role Guide</a></li>
+<li><a href="../18_Japan_AI_Compliance/03_Regulatory_Crosswalk.html">Japan Regulatory Crosswalk</a></li>
+<li><a href="../18_Japan_AI_Compliance/JP-T1_AI_Guidelines_for_Business_Self_Assessment.html">JP-T1 Guidelines for AI Business Self-Assessment</a></li>
+<li><a href="../18_Japan_AI_Compliance/JP-T2_Training_Data_Copyright_Record.html">JP-T2 Training Data and Copyright Record</a></li>
+</ul></details></li>
+<li style="--h:172"><details><summary><a href="../19_Singapore_AI_Compliance/index.html"><svg class="icon flag" viewBox="0 0 24 24" aria-hidden="true"><svg x="2" y="5" width="20" height="14" viewBox="0 0 20 14"><rect width="20" height="14" fill="#fff"/><rect width="20" height="7" fill="#ed2939"/><circle cx="4.8" cy="3.5" r="2.2" fill="#fff"/><circle cx="5.7" cy="3.5" r="2.2" fill="#ed2939"/><circle cx="7.9" cy="2.1" r=".42" fill="#fff"/><circle cx="6.9" cy="2.9" r=".42" fill="#fff"/><circle cx="8.9" cy="2.9" r=".42" fill="#fff"/><circle cx="7.3" cy="4.1" r=".42" fill="#fff"/><circle cx="8.5" cy="4.1" r=".42" fill="#fff"/></svg><rect x="2" y="5" width="20" height="14" fill="none" stroke="#000" stroke-opacity=".3" stroke-width=".6"/></svg>Singapore AI Compliance</a></summary><ul>
+<li><a href="../19_Singapore_AI_Compliance/01_Singapore_AI_Regulatory_Hub.html">Singapore AI Regulatory Hub</a></li>
+<li><a href="../19_Singapore_AI_Compliance/02_Role_Guide.html">Singapore: Role Guide</a></li>
+<li><a href="../19_Singapore_AI_Compliance/03_Regulatory_Crosswalk.html">Singapore Regulatory Crosswalk</a></li>
+<li><a href="../19_Singapore_AI_Compliance/SG-T1_Agentic_AI_Risk_Bounding_Worksheet.html">SG-T1 Agentic AI Risk Bounding and Accountability Worksheet</a></li>
+<li><a href="../19_Singapore_AI_Compliance/SG-T2_MAS_Style_Inventory_and_Materiality.html">SG-T2 AI Inventory and Risk Materiality Assessment (Financial Institutions)</a></li>
+<li><a href="../19_Singapore_AI_Compliance/SG-T3_PDPA_AI_Use_Note.html">SG-T3 PDPA AI Use Note</a></li>
+</ul></details></li>
+<li style="--h:250"><details><summary><a href="../20_South_Korea_AI_Compliance/index.html"><svg class="icon flag" viewBox="0 0 24 24" aria-hidden="true"><svg x="2" y="5" width="20" height="14" viewBox="0 0 20 14"><rect width="20" height="14" fill="#fff"/><path d="M6.5 7a3.5 3.5 0 0 1 7 0z" fill="#cd2e3a"/><path d="M6.5 7a3.5 3.5 0 0 0 7 0z" fill="#0047a0"/><path d="M2.2 3.6l2.2-2.2M3 4.4l2.2-2.2M3.8 5.2L6 3M14 11l2.2-2.2M14.8 11.8l2.2-2.2M15.6 12.6l2.2-2.2M15.6 1.4l2.2 2.2M14.8 2.2l2.2 2.2M14 3l2.2 2.2M2.2 10.4l2.2 2.2M3 9.6l2.2 2.2M3.8 8.8L6 11" stroke="#000" stroke-width=".7"/></svg><rect x="2" y="5" width="20" height="14" fill="none" stroke="#000" stroke-opacity=".3" stroke-width=".6"/></svg>South Korea AI Compliance</a></summary><ul>
+<li><a href="../20_South_Korea_AI_Compliance/01_South_Korea_AI_Regulatory_Hub.html">South Korea AI Regulatory Hub</a></li>
+<li><a href="../20_South_Korea_AI_Compliance/02_Role_Guide.html">South Korea: Role Guide</a></li>
+<li><a href="../20_South_Korea_AI_Compliance/03_Regulatory_Crosswalk.html">South Korea Regulatory Crosswalk</a></li>
+<li><a href="../20_South_Korea_AI_Compliance/KR-T1_High_Impact_AI_Determination.html">KR-T1 High-Impact AI Determination and Impact Assessment</a></li>
+<li><a href="../20_South_Korea_AI_Compliance/KR-T2_Generative_AI_Labelling_and_Notice.html">KR-T2 Generative AI Labelling and Notice Record</a></li>
+<li><a href="../20_South_Korea_AI_Compliance/KR-T3_Domestic_Representative_Check.html">KR-T3 Domestic Representative Threshold Check</a></li>
+</ul></details></li>
+<li style="--h:278"><details><summary><a href="../21_UK_AI_Compliance/index.html"><svg class="icon flag" viewBox="0 0 24 24" aria-hidden="true"><svg x="2" y="5" width="20" height="14" viewBox="0 0 20 14"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="2.8"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4.4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2.6"/></svg><rect x="2" y="5" width="20" height="14" fill="none" stroke="#000" stroke-opacity=".3" stroke-width=".6"/></svg>UK AI Compliance</a></summary><ul>
+<li><a href="../21_UK_AI_Compliance/01_UK_AI_Regulatory_Hub.html">UK AI Regulatory Hub</a></li>
+<li><a href="../21_UK_AI_Compliance/02_Role_Guide.html">UK: Role Guide</a></li>
+<li><a href="../21_UK_AI_Compliance/03_Regulatory_Crosswalk.html">UK Regulatory Crosswalk</a></li>
+<li><a href="../21_UK_AI_Compliance/UK-T1_ADM_Safeguards_Record.html">UK-T1 Automated Decision-Making Safeguards Record</a></li>
+<li><a href="../21_UK_AI_Compliance/UK-T2_Regulated_Firm_AI_Checklist.html">UK-T2 Regulated-Firm AI Checklist (FCA and PRA)</a></li>
+<li><a href="../21_UK_AI_Compliance/UK-T3_Public_Sector_Transparency_Record.html">UK-T3 Public-Sector Algorithmic Transparency Record</a></li>
+</ul></details></li>
+<li style="--h:310"><details><summary><a href="../22_US_AI_Compliance/index.html"><svg class="icon flag" viewBox="0 0 24 24" aria-hidden="true"><svg x="2" y="5" width="20" height="14" viewBox="0 0 20 14"><rect width="20" height="14" fill="#fff"/><rect y="0" width="20" height="1.08" fill="#b22234"/><rect y="2.15" width="20" height="1.08" fill="#b22234"/><rect y="4.31" width="20" height="1.08" fill="#b22234"/><rect y="6.46" width="20" height="1.08" fill="#b22234"/><rect y="8.62" width="20" height="1.08" fill="#b22234"/><rect y="10.77" width="20" height="1.08" fill="#b22234"/><rect y="12.92" width="20" height="1.08" fill="#b22234"/><rect width="8.5" height="7.54" fill="#3c3b6e"/><circle cx="1.4" cy="1.3" r=".35" fill="#fff"/><circle cx="3.3" cy="1.3" r=".35" fill="#fff"/><circle cx="5.2" cy="1.3" r=".35" fill="#fff"/><circle cx="7.1" cy="1.3" r=".35" fill="#fff"/><circle cx="1.4" cy="2.95" r=".35" fill="#fff"/><circle cx="3.3" cy="2.95" r=".35" fill="#fff"/><circle cx="5.2" cy="2.95" r=".35" fill="#fff"/><circle cx="7.1" cy="2.95" r=".35" fill="#fff"/><circle cx="1.4" cy="4.6" r=".35" fill="#fff"/><circle cx="3.3" cy="4.6" r=".35" fill="#fff"/><circle cx="5.2" cy="4.6" r=".35" fill="#fff"/><circle cx="7.1" cy="4.6" r=".35" fill="#fff"/><circle cx="1.4" cy="6.25" r=".35" fill="#fff"/><circle cx="3.3" cy="6.25" r=".35" fill="#fff"/><circle cx="5.2" cy="6.25" r=".35" fill="#fff"/><circle cx="7.1" cy="6.25" r=".35" fill="#fff"/></svg><rect x="2" y="5" width="20" height="14" fill="none" stroke="#000" stroke-opacity=".3" stroke-width=".6"/></svg>US AI Compliance</a></summary><ul>
+<li><a href="../22_US_AI_Compliance/01_US_AI_Regulatory_Hub.html">US AI Regulatory Hub</a></li>
+<li><a href="../22_US_AI_Compliance/02_Role_Guide.html">US: Role Guide</a></li>
+<li><a href="../22_US_AI_Compliance/03_Regulatory_Crosswalk.html">US Regulatory Crosswalk</a></li>
+<li><a href="../22_US_AI_Compliance/US-T1_State_Applicability_Matrix.html">US-T1 State AI Law Applicability Matrix</a></li>
+<li><a href="../22_US_AI_Compliance/US-T2_Consequential_Decision_Impact_Assessment.html">US-T2 Consequential-Decision and Discrimination Impact Assessment</a></li>
+<li><a href="../22_US_AI_Compliance/US-T3_GenAI_Provenance_and_Transparency_Checklist.html">US-T3 Generative AI Provenance and Transparency Checklist</a></li>
+</ul></details></li>
+<li style="--h:350"><details><summary><a href="../26_Hong_Kong_AI_Compliance/index.html"><svg class="icon flag" viewBox="0 0 24 24" aria-hidden="true"><svg x="2" y="5" width="20" height="14" viewBox="0 0 20 14"><rect width="20" height="14" fill="#de2910"/><ellipse cx="10" cy="4.6" rx="1.1" ry="2.4" fill="#fff" transform="rotate(0 10 7)"/><ellipse cx="10" cy="4.6" rx="1.1" ry="2.4" fill="#fff" transform="rotate(72 10 7)"/><ellipse cx="10" cy="4.6" rx="1.1" ry="2.4" fill="#fff" transform="rotate(144 10 7)"/><ellipse cx="10" cy="4.6" rx="1.1" ry="2.4" fill="#fff" transform="rotate(216 10 7)"/><ellipse cx="10" cy="4.6" rx="1.1" ry="2.4" fill="#fff" transform="rotate(288 10 7)"/></svg><rect x="2" y="5" width="20" height="14" fill="none" stroke="#000" stroke-opacity=".3" stroke-width=".6"/></svg>Hong Kong AI Compliance</a></summary><ul>
+<li><a href="../26_Hong_Kong_AI_Compliance/01_Hong_Kong_AI_Regulatory_Hub.html">Hong Kong AI Regulatory Hub</a></li>
+<li><a href="../26_Hong_Kong_AI_Compliance/02_Role_Guide.html">Hong Kong: Role Guide</a></li>
+<li><a href="../26_Hong_Kong_AI_Compliance/03_Regulatory_Crosswalk.html">Hong Kong Regulatory Crosswalk</a></li>
+<li><a href="../26_Hong_Kong_AI_Compliance/HK-T1_HKMA_ART_Principles_Self_Assessment.html">HK-T1 HKMA ART Principles Self-Assessment (Banks)</a></li>
+</ul></details></li>
+</ul></details></li>
+<li style="--h:215"><details><summary><a href="../09_Reference/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg>Reference</a></summary><ul>
+<li><a href="../09_Reference/18_AI_Security_Glossary_and_Taxonomy.html">AI Security Glossary and Taxonomy</a></li>
+<li><a href="../09_Reference/19_Update_Notes.html">Update Notes</a></li>
+<li><a href="../09_Reference/20_AI_Security_Incident_Casebook.html">AI Security Incident Casebook</a></li>
+<li><a href="../09_Reference/21_Regulatory_Verification_Status.html">Regulatory Verification Status</a></li>
+</ul></details></li>
+<li style="--h:120"><details open><summary><a href="index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h14l-3-3M20 16H6l3 3"/></svg>Framework Crosswalks</a></summary><ul>
+<li><a href="01_FINOS_AIGF_Crosswalk.html">FINOS AI Governance Framework Crosswalk</a></li>
+<li><a href="02_AI_BCF_Crosswalk.html">AI BCF Crosswalk</a></li>
+<li><a href="03_NIST_AI_RMF_Crosswalk.html">NIST AI RMF Crosswalk</a></li>
+<li><a href="04_NIST_AI_600_1_GenAI_Profile_Crosswalk.html">NIST AI 600-1 Generative AI Profile Crosswalk</a></li>
+<li><a href="05_ISO_IEC_42001_Crosswalk.html">ISO/IEC 42001 Crosswalk</a></li>
+<li><a href="06_OWASP_Top_10_Crosswalk.html">OWASP Top 10 Crosswalk</a></li>
+<li><a href="07_MITRE_ATLAS_Crosswalk.html">MITRE ATLAS Crosswalk</a></li>
+<li><a href="08_ISO_IEC_27001_Crosswalk.html">ISO/IEC 27001 Crosswalk</a></li>
+<li><a href="09_NIST_CSF_Crosswalk.html">NIST CSF Crosswalk</a></li>
+<li><a href="10_CIS_Controls_Crosswalk.html">CIS Controls Crosswalk</a></li>
+<li><a href="11_SOC_2_Crosswalk.html">SOC 2 Crosswalk</a></li>
+<li><a href="12_OECD_AI_Principles_Crosswalk.html">OECD AI Principles Crosswalk</a></li>
+<li><a href="13_Privacy_Law_Crosswalk.html">Privacy Law Crosswalk</a></li>
+<li><a href="14_NIST_AI_100_2_Crosswalk.html">NIST AI 100-2 Crosswalk</a></li>
+<li><a href="15_ISO_IEC_AI_Standards_Crosswalk.html">ISO/IEC AI Standards Crosswalk</a></li>
+<li><a href="16_Trustworthy_AI_Ethics_Crosswalk.html">Trustworthy AI and Ethics Standards Crosswalk</a></li>
+<li><a href="17_International_AI_Instruments_Crosswalk.html">International AI Instruments Crosswalk</a></li>
+<li><a href="18_AI_Risk_Map_Crosswalk.html">AI Risk Map Crosswalk</a></li>
+<li><a href="19_OWASP_MCP_Top_10_Crosswalk.html">OWASP MCP Top 10 Crosswalk</a></li>
+<li><a href="20_NIST_SSDF_Crosswalk.html">NIST SSDF and SP 800-218A Crosswalk</a></li>
+<li><a href="21_PCI_DSS_AI_Crosswalk.html">PCI DSS AI Crosswalk</a></li>
+<li><a href="22_CERT_In_AI_Security_Auditing_Guidelines_Crosswalk.html">CERT-In AI Security Auditing Guidelines Crosswalk</a></li>
+<li><a class="current" href="23_OWASP_Agent_Control_Standard_Crosswalk.html">OWASP Agent Control Standard Crosswalk</a></li>
+</ul></details></li>
+<li style="--h:42"><details><summary><a href="../24_Builder_Track/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.6-.6-2.6z"/></svg>Builder Track</a></summary><ul>
+<li><a href="../24_Builder_Track/01_Secure_Your_First_Agent.html">Secure Your First Agent: Ten Controls With Code</a></li>
+<li><a href="../24_Builder_Track/02_Agent_Architecture_Patterns.html">Agent Architecture Patterns</a></li>
+<li><a href="../24_Builder_Track/03_Privacy_Duties_in_Code.html">Privacy Duties in Code: Consent, Rights, Retention and Children&#x27;s Data</a></li>
+<li><a href="../24_Builder_Track/04_Developer_Pipeline_Checks.html">Developer Pipeline Checks for AI-Assisted Code</a></li>
+<li><a href="../24_Builder_Track/05_Builder_Toolkit.html">Builder Toolkit: Checks, MCP Server and Agent Instructions</a></li>
+</ul></details></li>
+<li style="--h:75"><details><summary><a href="../25_Templates/index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M4 15h16M10 4v16"/></svg>Templates</a></summary><ul>
+<li><a href="../25_Templates/01_AI_Risk_Register_Template.html">AI Risk Register Template (.xlsx)</a></li>
+<li><a href="../25_Templates/02_AI_System_Inventory_Template.html">AI System Inventory Template (.xlsx)</a></li>
+<li><a href="../25_Templates/03_AI_Use_Case_Risk_Triage_Template.html">AI Use-Case Risk Triage Template (.xlsx)</a></li>
+<li><a href="../25_Templates/04_AI_Security_Vendor_Evaluation_Scorecard.html">AI Security Vendor Evaluation Scorecard (.xlsx)</a></li>
+<li><a href="../25_Templates/05_AI_Security_Audit_and_Evidence_Checklist_Template.html">AI Security Audit and Evidence Checklist Template (.xlsx)</a></li>
+<li><a href="../25_Templates/06_AI_Security_Control_Library_and_Crosswalks_Template.html">AI Security Control Library and Crosswalks Template (.xlsx)</a></li>
+<li><a href="../25_Templates/07_AI_Security_Test_Case_Tracker_Template.html">AI Security Test Case Tracker Template (.xlsx)</a></li>
+<li><a href="../25_Templates/08_AI_Acceptable_Use_Policy_Template.html">AI Acceptable Use Policy Template (.docx)</a></li>
+<li><a href="../25_Templates/09_AI_Impact_Assessment_Template.html">AI Impact Assessment Template (.docx)</a></li>
+<li><a href="../25_Templates/10_AI_Security_Programme_Charter_Template.html">AI Security Programme Charter Template (.docx)</a></li>
+<li><a href="../25_Templates/11_AI_Incident_Report_Template.html">AI Incident Report Template (.docx)</a></li>
+<li><a href="../25_Templates/12_AI_Security_Requirements_Traceability_Matrix_Template.html">AI Security Requirements Traceability Matrix Template (.xlsx)</a></li>
+<li><a href="../25_Templates/13_AI_System_Security_Risk_Review_Checklist_Template.html">AI System Security Risk Review Checklist Template (.xlsx)</a></li>
+<li><a href="../25_Templates/14_AI_Security_Assurance_Baseline_Template.html">AI Security Assurance Baseline Template (.xlsx)</a></li>
+</ul></details></li>
+<li><a href="../community-rules.html">Community Rules</a></li>
+</ul>
+</nav>
+<main>
+<p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Framework Crosswalks</a> / <span>OWASP Agent Control Standard Crosswalk</span></p>
+<article>
+<h1 id="owasp-agent-control-standard-crosswalk">OWASP Agent Control Standard Crosswalk</h1>
+<blockquote class="callout note">
+<p><strong>Purpose:</strong> Let a team adopting the Agent Control Standard see which wiki controls each of its enforcement points carries, and what the standard expects the deployment to supply for itself.</p>
+<p><strong>Audience:</strong> AI platform engineers, security architecture, agent developers, application security.</p>
+<p><strong>Using the two together:</strong> ACS gives you the places to enforce. This wiki gives you what to enforce there.</p>
+</blockquote>
+<h2 id="read-this-before-using-the-page">Read this before using the page</h2>
+<p>The Agent Control Standard is not a control framework and does not read like the other pages in this section. It has no numbered control catalogue, no requirements of the form "the organisation shall", and nothing to score an audit against. It is a JSON-RPC wire protocol between an agent and a policy enforcement point, and it says of itself that it "does not define what policies to enforce".</p>
+<p>That makes the usual crosswalk direction wrong. The other pages in this section take a framework's items and find the wiki controls that answer them. Here there are no items to answer. What ACS gives instead is a standard set of <strong>places</strong> where a decision can be taken, and a standard record of what was decided. So this page runs the mapping the other way: for each ACS enforcement point, which wiki control supplies the policy that belongs there.</p>
+<p>Four things about its status matter before anyone plans around it.</p>
+<ul>
+<li><strong>It is pre-1.0.</strong> The specification is version <code>v0.1.0</code>; the latest release when this page was written was <code>0.1.4</code>, dated 16 October 2026. Version <code>v0.2.0</code> is targeted for March 2027 and no v1.0 date has been set. Pre-1.0 releases may change the mandatory baseline in a patch version, and the schemas change in place at the same addresses, so pin a commit rather than a version when you depend on it.</li>
+<li><strong>Nobody verifies a conformance claim.</strong> Profiles are self-declared on the wire at the handshake. Version 0.1.0 ships no conformance test suite, no registry of conformant implementations and no body to arbitrate a disputed claim. A declared profile is a statement of intent, not evidence, and <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a> still applies to any vendor who claims one.</li>
+<li><strong>The defaults fail open.</strong> <code>on_decision_failure</code> defaults to <code>proceed</code>, and the startup posture when the handshake itself fails also defaults to <code>proceed</code>. A policy point that crashes, hangs or is unreachable therefore stops governing while the agent keeps acting. The standard states this plainly and describes the effect as converting control into audit. Any deployment that relies on ACS for enforcement should set the deny posture explicitly; see <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-040">AI-CTRL-040</a>.</li>
+<li><strong>A conformance claim covers the wire format only.</strong> The standard says a permissive policy point is "a conformant but permissive deployment, not a violation", and that ACS-Core does not assert the audit chain is tamper-evident against a compromised policy point. So a claim tells a reviewer that the messages are well formed, and nothing about how strict the policies behind them are.</li>
+</ul>
+<p>The mapping below is this wiki's judgement and has not been reviewed by OWASP. Identifiers, method names and profile names were read from the project's own repository and documentation site on 7 November 2026; see reference [28] in the <a href="../00_Foundations/References.html">Foundations references</a>. The OWASP lists of agentic and LLM risks are in the <a href="06_OWASP_Top_10_Crosswalk.html">OWASP Top 10 Crosswalk</a>, and the Model Context Protocol list is in the <a href="19_OWASP_MCP_Top_10_Crosswalk.html">OWASP MCP Top 10 Crosswalk</a>.</p>
+<h2 id="how-acs-is-put-together">How ACS is put together</h2>
+<p>Two parties sit on the wire. The <strong>Observed Agent</strong> is the system being watched. The <strong>Guardian Agent</strong> is the policy enforcement point, and it runs a deterministic policy layer first, with an optional model-based layer that is never shown the policy source. The agent itself is required to have no knowledge of the hooks, and provenance must be populated outside the model's output path, so neither can be talked out of firing by the content the agent is processing.</p>
+<p>The standard has three pillars.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Pillar</th>
+<th>What it standardises</th>
+<th>The wiki's nearest concern</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Instrument</strong></td>
+<td>The lifecycle hooks where a decision can be taken, and the five verdicts available</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">Deterministic Action Authorization</a></td>
+</tr>
+<tr>
+<td><strong>Trace</strong></td>
+<td>Deterministic event emission, mapped to OpenTelemetry semantic conventions and OCSF 1.9.0 event classes</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">Auditability</a> and <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">SOC Integration</a></td>
+</tr>
+<tr>
+<td><strong>Inspect</strong></td>
+<td>An Agent Bill of Materials of the components an agent uses, serialised to CycloneDX 1.6, SPDX 3.0 or SWID</td>
+<td><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-031">AI Supply Chain and AI-BOM</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>The five verdicts a Guardian may return are <code>ALLOW</code>, <code>DENY</code>, <code>MODIFY</code>, <code>ASK</code> and <code>DEFER</code>. Four must be supported; <code>MODIFY</code> is optional, and a Guardian that cannot use it has to substitute a <code>DENY</code> and say why. <code>ASK</code> routes the decision to a named approver, which is the wire-level form of <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a>. <code>DEFER</code> carries its own timeout, and its default on timeout is <code>deny</code>, which is the opposite of the fail-open default that applies when the channel breaks.</p>
+<h2 id="enforcement-points-to-wiki-controls">Enforcement points to wiki controls</h2>
+<p>Nineteen lifecycle hooks and three further methods make up the control surface. Fourteen of the nineteen can carry a decision; five are audit only. The column that matters for planning is the last one: what the deployment has to decide for itself once the hook is wired up.</p>
+<p><strong>Mandatory in ACS-Core</strong> marks the hooks a deployment must emit to claim the baseline profile at all.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ACS method</th>
+<th>Fires</th>
+<th>Decisions</th>
+<th>Wiki controls that supply the policy</th>
+<th>What ACS leaves to you</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sessionStart</code></td>
+<td>Session start, before any content enters. Mandatory in ACS-Core</td>
+<td>ALLOW, DENY</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a></td>
+<td>Which sessions to refuse, and the identity the agent must present</td>
+</tr>
+<tr>
+<td><code>agentTrigger</code></td>
+<td>External activation: user message, schedule, external event, inbound agent call. Mandatory in ACS-Core as an alternative to <code>userMessage</code></td>
+<td>ALLOW, DENY, MODIFY</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-002">AI-CTRL-002</a></td>
+<td>Which trigger types are allowed to start an agent unattended</td>
+</tr>
+<tr>
+<td><code>userMessage</code></td>
+<td>User input, before it reaches the agent's reasoning context. Mandatory in ACS-Core as an alternative to <code>agentTrigger</code></td>
+<td>ALLOW, DENY, MODIFY</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-002">AI-CTRL-002</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a></td>
+<td>What to look for in the input and what to redact</td>
+</tr>
+<tr>
+<td><code>turnStart</code>, <code>turnEnd</code></td>
+<td>Turn boundaries, so per-turn limits are computable rather than guessed</td>
+<td><code>turnStart</code> only</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a></td>
+<td>The per-turn budget and what to do when it is reached</td>
+</tr>
+<tr>
+<td><code>toolCallRequest</code></td>
+<td>Before a tool runs. Mandatory in ACS-Core</td>
+<td>ALLOW, DENY, MODIFY, ASK, DEFER</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a></td>
+<td>The whole authorisation decision: which caller, which tool, which arguments</td>
+</tr>
+<tr>
+<td><code>toolCallResult</code></td>
+<td>After a tool runs, before the agent reads the result. Mandatory in ACS-Core</td>
+<td>ALLOW, DENY, MODIFY</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-020">AI-CTRL-020</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
+<td>How to treat tool output as untrusted, and what to strip</td>
+</tr>
+<tr>
+<td><code>knowledgeRetrieval</code></td>
+<td>Retrieval from a knowledge source, before results enter context</td>
+<td>ALLOW, DENY, MODIFY</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-018">AI-CTRL-018</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-019">AI-CTRL-019</a></td>
+<td>Whether this user may read these documents, enforced on the user's identity</td>
+</tr>
+<tr>
+<td><code>memoryContextRetrieval</code></td>
+<td>Memory read into working context</td>
+<td>ALLOW, DENY, MODIFY</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-018">AI-CTRL-018</a></td>
+<td>Memory scoping between users, sessions and tenants</td>
+</tr>
+<tr>
+<td><code>memoryStore</code></td>
+<td>Memory write. The standard calls this the sink for cross-session influence</td>
+<td>ALLOW, DENY, MODIFY</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-019">AI-CTRL-019</a></td>
+<td>What may be written to memory, and at which scope</td>
+</tr>
+<tr>
+<td><code>agentResponse</code></td>
+<td>Agent output, before it reaches the user or a peer. Mandatory in ACS-Core</td>
+<td>ALLOW, DENY, MODIFY</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-020">AI-CTRL-020</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-039">AI-CTRL-039</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a></td>
+<td>Output encoding, leak detection and what the user is told</td>
+</tr>
+<tr>
+<td><code>preCompact</code></td>
+<td>Before the context window is compacted. The standard names compaction as where provenance is laundered</td>
+<td>ALLOW, DENY</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a></td>
+<td>Whether to refuse a compaction that would merge across a trust boundary</td>
+</tr>
+<tr>
+<td><code>postCompact</code></td>
+<td>After compaction, carrying the new summary's lineage. <code>DENY</code> is not legal here</td>
+<td>MODIFY only</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a></td>
+<td>Nothing to decide; this is where you check the lineage the framework wrote</td>
+</tr>
+<tr>
+<td><code>subagentStart</code></td>
+<td>A subagent is spawned in process. Mandatory in ACS-Core for subagent-capable clients</td>
+<td>ALLOW, DENY</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a></td>
+<td>Whether a child may hold authority the parent was not granted</td>
+</tr>
+<tr>
+<td><code>subagentStop</code></td>
+<td>A subagent ends</td>
+<td>Audit only</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a></td>
+<td>Nothing to decide</td>
+</tr>
+<tr>
+<td><code>skillRegister</code></td>
+<td>A skill enters the available set, with its definition, digest and declared capabilities visible</td>
+<td>ALLOW, DENY</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-031">AI-CTRL-031</a></td>
+<td>The vetting decision, and whether declared capabilities match what the skill composes</td>
+</tr>
+<tr>
+<td><code>skillLoad</code></td>
+<td>A registered skill activates in a session</td>
+<td>ALLOW, DENY</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a></td>
+<td>Whether this activation traces back to an approved definition and digest</td>
+</tr>
+<tr>
+<td><code>skillUnload</code></td>
+<td>A skill leaves the active set</td>
+<td>Audit only</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a></td>
+<td>Nothing to decide</td>
+</tr>
+<tr>
+<td><code>sessionEnd</code></td>
+<td>Session ends and the audit chain is sealed. Mandatory in ACS-Core</td>
+<td>Audit only</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a></td>
+<td>Reading the per-class count of decision failures, which is how you learn enforcement lapsed</td>
+</tr>
+<tr>
+<td><code>agbom/snapshot</code></td>
+<td>Once per session, before any content-bearing hook</td>
+<td>ALLOW, DENY</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-031">AI-CTRL-031</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a></td>
+<td>Which components are banned, and what an unexpected one means</td>
+</tr>
+<tr>
+<td><code>agbom/changed</code></td>
+<td>A component is added, removed or changed mid-session</td>
+<td>ALLOW, DENY</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-031">AI-CTRL-031</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a></td>
+<td>Whether a hot swap mid-session is allowed at all</td>
+</tr>
+<tr>
+<td><code>protocols/MCP/*</code></td>
+<td>MCP traffic wrapped in the ACS envelope. Mandatory for any deployment whose sessions involve MCP</td>
+<td>Yes, and audited</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a></td>
+<td>The MCP policy itself. The standard calls <code>resources/read</code> the canonical prompt-injection ingress</td>
+</tr>
+<tr>
+<td><code>system/ping</code></td>
+<td>Liveness probe. Always allowed, outside the audit chain</td>
+<td>None</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-040">AI-CTRL-040</a></td>
+<td>The standard warns a successful ping does not prove enforcement is healthy; monitor decision failures instead</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>protocols/A2A/*</code> is reserved for version 0.2, so agent-to-agent traffic across a network boundary is not covered. The wiki's controls for it stand on their own until then; see <a href="../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a>.</p>
+<h2 id="conformance-profiles-to-wiki-controls">Conformance profiles to wiki controls</h2>
+<p>Seven profiles are declared at the handshake. <code>acs-core</code> is the mandatory floor and the other six layer on it independently, except <code>acs-inspect-dynamic</code>, which extends <code>acs-inspect</code>. The right-hand column is the wiki control a reviewer should ask for evidence against when a vendor or a team claims the profile.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Profile</th>
+<th>What claiming it commits you to</th>
+<th>Wiki controls that evidence it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>acs-core</code></td>
+<td>Handshake, signed envelopes, the minimum hook set, four verdicts, session context with a rolling hash chain, replay rejection, honouring decisions, declared liveness, and wrapped MCP where MCP is in play</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a></td>
+</tr>
+<tr>
+<td><code>acs-trace</code></td>
+<td>An OpenTelemetry or OCSF event for every supported step, with the decision, its reasoning and provenance carried onto it</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a></td>
+</tr>
+<tr>
+<td><code>acs-inspect</code></td>
+<td>A component inventory at session start, serialised to CycloneDX, SPDX or SWID on request</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-031">AI-CTRL-031</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a></td>
+</tr>
+<tr>
+<td><code>acs-inspect-dynamic</code></td>
+<td>The same, plus an event on every mid-session component change, written into the audit chain</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-031">AI-CTRL-031</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a></td>
+</tr>
+<tr>
+<td><code>acs-provenance</code></td>
+<td>A provenance object on every data-bearing field in every hook, produced deterministically rather than by the model. Partial population is non-conformant</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-019">AI-CTRL-019</a></td>
+</tr>
+<tr>
+<td><code>acs-crypto</code></td>
+<td>Post-quantum signatures, at least <code>ML-DSA-65</code>, giving non-repudiation the shared-secret baseline cannot</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-032">AI-CTRL-032</a></td>
+</tr>
+<tr>
+<td><code>acs-audit</code></td>
+<td>A hash of the request content on every chain entry, so the chain commits to what was asked and not only that something was asked</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-008">AI-CTRL-008</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-035">AI-CTRL-035</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-038">AI-CTRL-038</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>ACS-Core explicitly does not require provenance objects, trace emission, a component inventory, asymmetric signatures or request hashing. A deployment can be fully conformant with none of them, so "ACS conformant" on its own tells a reviewer very little. Ask which profiles.</p>
+<p>The project publishes a one-page conformance claim template whose cells are limited to <code>EXERCISED</code>, <code>NOT CLAIMED</code> and <code>NOT ESTABLISHED</code>, with reason codes for each. It is the closest thing the standard has to an assessment instrument, and a completed one is reasonable evidence to request under <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a>.</p>
+<h2 id="where-the-two-overlap-and-where-each-stands-alone">Where the two overlap and where each stands alone</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th></th>
+<th>ACS</th>
+<th>This wiki</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Where a decision is taken</td>
+<td>Standardises 22 named points on the wire</td>
+<td>Names the control objective but not the hook</td>
+</tr>
+<tr>
+<td>What the decision is</td>
+<td>Deliberately out of scope</td>
+<td>The substance of the 46 controls</td>
+</tr>
+<tr>
+<td>Audit record</td>
+<td>A hash-chained session record with mappings to OpenTelemetry and OCSF</td>
+<td>Says what to log and keep, not the schema</td>
+</tr>
+<tr>
+<td>Component inventory</td>
+<td>A schema and three serialisations</td>
+<td>Requires an AI-BOM, no format mandated</td>
+</tr>
+<tr>
+<td>Human approval</td>
+<td>A wire primitive with an authenticated approver</td>
+<td>An approval gate with an accountable owner</td>
+</tr>
+<tr>
+<td>Governance, risk tiering, procurement, training</td>
+<td>Not in scope</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-011">AI-CTRL-011</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-012">AI-CTRL-012</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-044">AI-CTRL-044</a></td>
+</tr>
+<tr>
+<td>Testing that enforcement holds</td>
+<td>No test suite in v0.1.0</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> and the <a href="../10_Test_Case_Library/index.html">Test Case Library</a></td>
+</tr>
+<tr>
+<td>Model and training-data concerns</td>
+<td>Not in scope</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-028">AI-CTRL-028</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-029">AI-CTRL-029</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-030">AI-CTRL-030</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>Three wiki controls have no counterpart in ACS at all and are worth naming, because a team that adopts ACS may assume otherwise. <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a> covers containment and a kill switch: ACS can deny the next decision-eligible hook, but it defines no way to stop a session already in flight, and mid-flight attachment of a Guardian is undefined in version 0.1. <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a> covers execution isolation, which is a property of where the code runs and not of the wire. And multi-tenancy is a reserved field with no isolation rules in version 0.1, so tenant separation rests entirely on <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a> and <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-018">AI-CTRL-018</a>.</p>
+<h2 id="what-acs-says-about-the-agentic-risk-list">What ACS says about the agentic risk list</h2>
+<p>The standard publishes one mapping of its own, from its mechanisms to the OWASP Top 10 for Agentic Applications. It appears in the project's FAQ, which states that it is non-normative and that the specification governs where the two disagree, and it describes itself as "mechanism-to-control, not promise-to-eliminate". The table below is this wiki's summary of which ACS mechanism that mapping names, next to the wiki controls the <a href="06_OWASP_Top_10_Crosswalk.html">OWASP Top 10 Crosswalk</a> already records for the same risk.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Agentic risk</th>
+<th>The ACS mechanism its own mapping names</th>
+<th>Wiki controls</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ASI01 Agent Goal Hijack</td>
+<td>Intent fixed at session start and immutable to the model, extended only through an approved <code>ASK</code></td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a></td>
+</tr>
+<tr>
+<td>ASI02 Tool Misuse and Exploitation</td>
+<td><code>toolCallRequest</code> before every outward action, with argument rewriting where <code>MODIFY</code> is supported</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a></td>
+</tr>
+<tr>
+<td>ASI03 Identity and Privilege Abuse</td>
+<td>Per-session signing keys, replay rejection, and denial of a subagent spawn that would widen authority</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a></td>
+</tr>
+<tr>
+<td>ASI04 Agentic Supply Chain Vulnerabilities</td>
+<td>The component inventory, decision-eligible component changes, and skill vetting on definition and digest</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-031">AI-CTRL-031</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a></td>
+</tr>
+<tr>
+<td>ASI05 Unexpected Code Execution</td>
+<td>Shell, process and code actions must cross <code>toolCallRequest</code> even when the tool registry does not model them</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a></td>
+</tr>
+<tr>
+<td>ASI06 Memory and Context Poisoning</td>
+<td>Memory reads and writes gated, with lineage carried and compaction bound to what it compacted</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-019">AI-CTRL-019</a></td>
+</tr>
+<tr>
+<td>ASI07 Insecure Inter-Agent Communication</td>
+<td>In-process spawning crosses a decision point; signed envelopes with replay rejection. Network A2A waits for v0.2</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a></td>
+</tr>
+<tr>
+<td>ASI08 Cascading Failures</td>
+<td>A denial at the spawn boundary stops a cascade; parent and child references preserve the path</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-040">AI-CTRL-040</a></td>
+</tr>
+<tr>
+<td>ASI09 Human-Agent Trust Exploitation</td>
+<td><code>ASK</code> as a wire primitive with an authenticated approver, and <code>agentResponse</code> gating output</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-045">AI-CTRL-045</a></td>
+</tr>
+<tr>
+<td>ASI10 Rogue Agents</td>
+<td>Handshake identity, a component baseline, and continuous hook traffic that makes behaviour observable</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a>, <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>The standard publishes no mapping to the OWASP Top 10 for LLM Applications. It also states that it does not prevent prompt injection, and that what it offers against that class is deviation detection after the fact rather than prevention. Treat <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a> and <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-002">AI-CTRL-002</a> as unaffected by adopting it.</p>
+<h2 id="if-you-are-adopting-it">If you are adopting it</h2>
+<p>The order below reflects what the standard makes mandatory and where its defaults need overriding, not a maturity model of its own; ACS defines none.</p>
+<ol>
+<li>Set the fail-closed posture before anything else. Both the decision-failure default and the handshake-failure default are permissive out of the box, and an unreachable policy point otherwise degrades to an audit log without saying so.</li>
+<li>Claim <code>acs-core</code> and wire <code>toolCallRequest</code> first. It is the point the standard calls central, and it is where <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a> lands. Make sure filesystem, network and process actions fire it even when the tool registry does not call them tools.</li>
+<li>Wrap MCP if MCP is anywhere in the session. It is mandatory in the baseline for those deployments, and without it the ingress the standard names as the main injection route is unmediated.</li>
+<li>Add <code>acs-trace</code> next if you have a SOC. The OCSF class mappings are what make agent decisions legible to existing tooling, which is <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-009">AI-CTRL-009</a>.</li>
+<li>Measure enforcement by its failures. The per-class count of decision failures at session end is the honest measure of how often enforcement lapsed, and the standard warns that a healthy liveness probe does not mean a healthy enforcement path.</li>
+<li>Test the enforcement path yourself. There is no conformance suite, so the evidence that a hook actually denies comes from <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a> and the agent cases in the <a href="../10_Test_Case_Library/index.html">Test Case Library</a>.</li>
+</ol>
+<h2 id="attribution">Attribution</h2>
+<p>The Agent Control Standard is published by the OWASP GenAI Security Project, with code and schemas under the Apache License 2.0 and prose documentation under CC BY-SA 4.0. This page cites method names, profile names and structure only, and paraphrases requirements rather than reproducing specification text. Check the project's licensing before reusing its wording.</p>
+<h2 id="related-pages">Related pages</h2>
+<ul>
+<li><a href="06_OWASP_Top_10_Crosswalk.html">OWASP Top 10 Crosswalk</a></li>
+<li><a href="19_OWASP_MCP_Top_10_Crosswalk.html">OWASP MCP Top 10 Crosswalk</a></li>
+<li><a href="../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.html">Agentic AI Security and Tool Governance</a></li>
+<li><a href="../24_Builder_Track/02_Agent_Architecture_Patterns.html">Agent Architecture Patterns</a></li>
+<li><a href="../24_Builder_Track/01_Secure_Your_First_Agent.html">Secure Your First Agent</a></li>
+<li><a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html">AI Security Control Objectives Library</a></li>
+</ul>
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="22_CERT_In_AI_Security_Auditing_Guidelines_Crosswalk.html">&larr; CERT-In AI Security Auditing Guidelines Crosswalk</a><a class="next" href="../24_Builder_Track/index.html">Builder Track &rarr;</a></nav>
+<footer class="site-footer">Author: Nachiket Sathaye &middot; Co-author: Ankush Jain &middot; Updated 7 November 2026 &middot; Last reviewed 7 November 2026 &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/23_Framework_Crosswalks/23_OWASP_Agent_Control_Standard_Crosswalk.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
+<div class="site-notice">
+<p><strong>Licence.</strong> <svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.441-3.5c8.951,0,16.572,3.125,22.857,9.372c3.008,3.009,5.295,6.448,6.857,10.314 c1.561,3.867,2.344,7.971,2.344,12.314c0,4.381-0.773,8.486-2.314,12.313c-1.543,3.828-3.82,7.21-6.828,10.143 c-3.123,3.085-6.666,5.448-10.629,7.086c-3.961,1.638-8.057,2.457-12.285,2.457s-8.276-0.808-12.143-2.429 c-3.866-1.618-7.333-3.961-10.4-7.027c-3.067-3.066-5.4-6.524-7-10.372S5.5,32.767,5.5,28.5c0-4.229,0.809-8.295,2.428-12.2 c1.619-3.905,3.972-7.4,7.057-10.486C21.08-0.394,28.565-3.5,37.441-3.5z M37.557,2.272c-7.314,0-13.467,2.553-18.458,7.657 c-2.515,2.553-4.448,5.419-5.8,8.6c-1.354,3.181-2.029,6.505-2.029,9.972c0,3.429,0.675,6.734,2.029,9.913 c1.353,3.183,3.285,6.021,5.8,8.516c2.514,2.496,5.351,4.399,8.515,5.715c3.161,1.314,6.476,1.971,9.943,1.971 c3.428,0,6.75-0.665,9.973-1.999c3.219-1.335,6.121-3.257,8.713-5.771c4.99-4.876,7.484-10.99,7.484-18.344 c0-3.543-0.648-6.895-1.943-10.057c-1.293-3.162-3.18-5.98-5.654-8.458C50.984,4.844,44.795,2.272,37.557,2.272z M37.156,23.187 l-4.287,2.229c-0.458-0.951-1.019-1.619-1.685-2c-0.667-0.38-1.286-0.571-1.858-0.571c-2.856,0-4.286,1.885-4.286,5.657 c0,1.714,0.362,3.084,1.085,4.113c0.724,1.029,1.791,1.544,3.201,1.544c1.867,0,3.181-0.915,3.944-2.743l3.942,2 c-0.838,1.563-2,2.791-3.486,3.686c-1.484,0.896-3.123,1.343-4.914,1.343c-2.857,0-5.163-0.875-6.915-2.629 c-1.752-1.752-2.628-4.19-2.628-7.313c0-3.048,0.886-5.466,2.657-7.257c1.771-1.79,4.009-2.686,6.715-2.686 C32.604,18.558,35.441,20.101,37.156,23.187z M55.613,23.187l-4.229,2.229c-0.457-0.951-1.02-1.619-1.686-2 c-0.668-0.38-1.307-0.571-1.914-0.571c-2.857,0-4.287,1.885-4.287,5.657c0,1.714,0.363,3.084,1.086,4.113 c0.723,1.029,1.789,1.544,3.201,1.544c1.865,0,3.18-0.915,3.941-2.743l4,2c-0.875,1.563-2.057,2.791-3.541,3.686 c-1.486,0.896-3.105,1.343-4.857,1.343c-2.896,0-5.209-0.875-6.941-2.629c-1.736-1.752-2.602-4.19-2.602-7.313 c0-3.048,0.885-5.466,2.658-7.257c1.77-1.79,4.008-2.686,6.713-2.686C51.117,18.558,53.938,20.101,55.613,23.187z"/></svg><svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.443-3.5c8.988,0,16.57,3.085,22.742,9.257C66.393,11.967,69.5,19.548,69.5,28.5c0,8.991-3.049,16.476-9.145,22.456 C53.879,57.319,46.242,60.5,37.443,60.5c-8.649,0-16.153-3.144-22.514-9.43C8.644,44.784,5.5,37.262,5.5,28.5 c0-8.761,3.144-16.342,9.429-22.742C21.101-0.415,28.604-3.5,37.443-3.5z M37.557,2.272c-7.276,0-13.428,2.553-18.457,7.657 c-5.22,5.334-7.829,11.525-7.829,18.572c0,7.086,2.59,13.22,7.77,18.398c5.181,5.182,11.352,7.771,18.514,7.771 c7.123,0,13.334-2.607,18.629-7.828c5.029-4.838,7.543-10.952,7.543-18.343c0-7.276-2.553-13.465-7.656-18.571 C50.967,4.824,44.795,2.272,37.557,2.272z M46.129,20.557v13.085h-3.656v15.542h-9.944V33.643h-3.656V20.557 c0-0.572,0.2-1.057,0.599-1.457c0.401-0.399,0.887-0.6,1.457-0.6h13.144c0.533,0,1.01,0.2,1.428,0.6 C45.918,19.5,46.129,19.986,46.129,20.557z M33.042,12.329c0-3.008,1.485-4.514,4.458-4.514s4.457,1.504,4.457,4.514 c0,2.971-1.486,4.457-4.457,4.457S33.042,15.3,33.042,12.329z"/></svg>This wiki is open to the community under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">Creative Commons Attribution-ShareAlike 4.0 International licence (CC BY-SA 4.0)</a>. You may copy, share and adapt it for any purpose, including commercially, as long as you credit the authors and release anything you build from it under the same licence.</p>
+<p><strong>Disclaimer.</strong> This wiki is an open, community driven educational reference, not legal, regulatory or professional advice. Regional regulatory content is compiled from secondary sources and its verification status is shown per row; verify against primary sources before relying on it. Content is provided "as is" without warranty. Named products and companies belong to their owners; statements about them reflect public information at the date shown. Views are the author's own.</p>
+<p><strong>Privacy.</strong> This site does not use cookies or analytics and collects no personal data itself. It is hosted on GitHub Pages; GitHub may process technical data such as IP addresses under its own <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">privacy statement</a>. If you contribute through GitHub, your contribution and username are public under GitHub's terms.</p>
+</div>
+</footer>
+</main>
+</div>
+<script>window.SITE_BASE = "../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/site.js?v=f655e2dc"></script>
+</body>
+</html>
