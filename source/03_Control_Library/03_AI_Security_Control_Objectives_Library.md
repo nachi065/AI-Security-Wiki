@@ -5,7 +5,7 @@ coauthors: Ankush Jain
 parent: "Control Library"
 nav_order: 1
 document_type: AI Security Wiki Reference
-version: 2.7
+version: 2.8
 ---
 
 # AI Security Control Objectives Library
@@ -26,7 +26,7 @@ Each control cites the identifiers published by the framework owner. Where a fra
 
 | Framework | Version used | Identifier format |
 |---|---|---|
-| OWASP Top 10 for LLM Applications | 2025 | `LLM01:2025` to `LLM10:2025` |
+| OWASP Top 10 for LLM Applications | 2026 | `LLM01:2026` to `LLM10:2026` |
 | OWASP Top 10 for Agentic Applications | 2026 | `ASI01` to `ASI10` |
 | MITRE ATLAS | 2026.09 | Techniques `AML.T####`; mitigations `AML.M####` |
 | NIST AI Risk Management Framework | 1.0 | Subcategories, for example `MEASURE 2.7` |
@@ -237,7 +237,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | Run a data subject access and deletion request against a test identity and confirm the data is found and removed across prompts, logs, indexes and memory. |
 | **Control Owner** | Privacy Office / Legal |
 | **Review Frequency** | Annually and on material change |
-| **OWASP** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP** | LLM02:2026 Sensitive Information Disclosure |
 | **MITRE ATLAS Techniques** | AML.T0057 LLM Data Leakage |
 | **MITRE ATLAS Mitigations** | None published in MITRE ATLAS mitigations. The wiki's own identifier applies: AI-CTRL-013. |
 | **NIST AI RMF** | GOVERN 1.1; MAP 5.1; MEASURE 2.10 |
@@ -265,7 +265,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | Sample AI vendors in use and confirm each has a current assessment and the required contract terms. Confirm the last model or terms change triggered a review. |
 | **Control Owner** | Procurement / GRC |
 | **Review Frequency** | Annually and on vendor change |
-| **OWASP** | LLM03:2025 Supply Chain |
+| **OWASP** | LLM04:2026 Supply Chain |
 | **MITRE ATLAS Techniques** | AML.T0010 AI Supply Chain Compromise; AML.T0109 AI Supply Chain Rug Pull |
 | **MITRE ATLAS Mitigations** | None published in MITRE ATLAS mitigations. The wiki's own identifier applies: AI-CTRL-014. |
 | **NIST AI RMF** | GOVERN 6.1; GOVERN 6.2; MANAGE 3.1 |
@@ -406,7 +406,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Control Owner** | AI Governance Lead / Application Owner |
 | **Review Frequency** | Semi-annually and on material change |
 | **Regulatory Pointers** | EU AI Act Article 14 (Human Oversight) and Article 26(2) (deployers assign oversight to competent, trained people with authority and support); GDPR Article 22 (Automated individual decision-making, including profiling). GCC: see rows U3, U6, U9 and Q4 of the [GCC AI Regulatory Hub](../11_GCC_AI_Compliance/01_GCC_AI_Regulatory_Hub.md). Article titles and paragraph content were checked on 10 October 2026 against a secondary source (artificialintelligenceact.eu) that shows amended text; check the Official Journal text before citing. |
-| **OWASP** | LLM06:2025 Excessive Agency; ASI09 Human-Agent Trust Exploitation |
+| **OWASP** | LLM03:2026 Excessive Agency; ASI09 Human-Agent Trust Exploitation |
 | **MITRE ATLAS Techniques** | None published in MITRE ATLAS techniques. The wiki's own identifier applies: AI-CTRL-045. |
 | **MITRE ATLAS Mitigations** | AML.M0029 Human In-the-Loop for AI Agent Actions |
 | **NIST AI RMF** | MAP 3.5; GOVERN 3.2 |
@@ -465,7 +465,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | Seed a known set of approved and unapproved AI tools in a test group and compare the discovered inventory with ground truth. Confirm new tools appear within the stated interval. |
 | **Control Owner** | Security Engineering |
 | **Review Frequency** | Quarterly |
-| **OWASP** | LLM03:2025 Supply Chain |
+| **OWASP** | LLM04:2026 Supply Chain |
 | **MITRE ATLAS Techniques** | None published in MITRE ATLAS techniques. The wiki's own identifier applies: AI-CTRL-001. |
 | **MITRE ATLAS Mitigations** | None published in MITRE ATLAS mitigations. The wiki's own identifier applies: AI-CTRL-001. |
 | **NIST AI RMF** | GOVERN 1.6; GOVERN 6.1 |
@@ -493,7 +493,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | Submit a labelled set of sensitive and benign prompts through each channel. Measure detection rate and false positives, and confirm each detection is logged with user, device and destination. |
 | **Control Owner** | AI Security Team |
 | **Review Frequency** | Quarterly |
-| **OWASP** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP** | LLM02:2026 Sensitive Information Disclosure |
 | **MITRE ATLAS Techniques** | AML.T0057 LLM Data Leakage |
 | **MITRE ATLAS Mitigations** | AML.M0020 Generative AI Guardrails |
 | **NIST AI RMF** | MEASURE 2.10; MANAGE 4.1 |
@@ -521,7 +521,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | Upload labelled test files of each supported type to approved and unapproved services. Confirm the expected action and log entry for each. |
 | **Control Owner** | DLP Team |
 | **Review Frequency** | Quarterly |
-| **OWASP** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP** | LLM02:2026 Sensitive Information Disclosure |
 | **MITRE ATLAS Techniques** | AML.T0057 LLM Data Leakage |
 | **MITRE ATLAS Mitigations** | AML.M0020 Generative AI Guardrails |
 | **NIST AI RMF** | MEASURE 2.10; MANAGE 4.1 |
@@ -549,7 +549,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | Send seeded secrets and marked source code through each approved assistant. Confirm detection, policy action and attribution. Confirm an unapproved extension is discovered. |
 | **Control Owner** | DevSecOps |
 | **Review Frequency** | Quarterly |
-| **OWASP** | LLM02:2025 Sensitive Information Disclosure; LLM03:2025 Supply Chain |
+| **OWASP** | LLM02:2026 Sensitive Information Disclosure; LLM04:2026 Supply Chain |
 | **MITRE ATLAS Techniques** | AML.T0057 LLM Data Leakage; AML.T0055 Unsecured Credentials |
 | **MITRE ATLAS Mitigations** | None published in MITRE ATLAS mitigations. The wiki's own identifier applies: AI-CTRL-004. |
 | **NIST AI RMF** | GOVERN 6.1; MEASURE 2.10; MANAGE 4.1 |
@@ -577,7 +577,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | For each policy action, run a matching test and confirm the action and log entry. Attempt documented bypass methods and record the result. |
 | **Control Owner** | AI Security Team |
 | **Review Frequency** | Quarterly |
-| **OWASP** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP** | LLM02:2026 Sensitive Information Disclosure |
 | **MITRE ATLAS Techniques** | AML.T0057 LLM Data Leakage |
 | **MITRE ATLAS Mitigations** | AML.M0020 Generative AI Guardrails |
 | **NIST AI RMF** | GOVERN 1.4; MANAGE 1.3 |
@@ -607,7 +607,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | Sample agent identities and confirm each has a sponsor and a current recertification. Remove a test sponsor and confirm the agent identity is flagged. |
 | **Control Owner** | IAM Team |
 | **Review Frequency** | Semi-annually |
-| **OWASP** | LLM06:2025 Excessive Agency; ASI03 Identity & Privilege Abuse; ASI07 Insecure Inter-Agent Communication |
+| **OWASP** | LLM03:2026 Excessive Agency; ASI03 Identity & Privilege Abuse; ASI07 Insecure Inter-Agent Communication |
 | **MITRE ATLAS Techniques** | AML.T0012 Valid Accounts; AML.T0073 Impersonation; AML.T0091 Use Alternate Authentication Material |
 | **MITRE ATLAS Mitigations** | AML.M0019 Control Access to AI Models and Data in Production |
 | **NIST AI RMF** | MEASURE 2.7; MEASURE 2.8 |
@@ -635,7 +635,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | Have a test agent attempt a tool or resource outside its scope and confirm it is denied and logged. Confirm credentials expire as configured. |
 | **Control Owner** | IAM Team |
 | **Review Frequency** | Quarterly |
-| **OWASP** | LLM06:2025 Excessive Agency; ASI03 Identity & Privilege Abuse |
+| **OWASP** | LLM03:2026 Excessive Agency; ASI03 Identity & Privilege Abuse |
 | **MITRE ATLAS Techniques** | AML.T0012 Valid Accounts; AML.T0055 Unsecured Credentials; AML.T0083 Credentials from AI Agent Configuration; AML.T0098 AI Agent Tool Credential Harvesting |
 | **MITRE ATLAS Mitigations** | AML.M0026 Privileged AI Agent Permissions Configuration; AML.M0027 Single-User AI Agent Permissions Configuration; AML.M0028 AI Agent Tools Permissions Configuration |
 | **NIST AI RMF** | MEASURE 2.7; MANAGE 1.3 |
@@ -665,7 +665,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | Send labelled sensitive records through the pipeline and confirm masking at each stage. Attempt to read another tenant's data through the AI interface. |
 | **Control Owner** | Data Owner / Security Engineering |
 | **Review Frequency** | Semi-annually |
-| **OWASP** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP** | LLM02:2026 Sensitive Information Disclosure |
 | **MITRE ATLAS Techniques** | AML.T0057 LLM Data Leakage; AML.T0085 Data from AI Services; AML.T0025 Exfiltration via Cyber Means |
 | **MITRE ATLAS Mitigations** | AML.M0012 Encrypt Sensitive Information; AML.M0005 Control Access to AI Models and Data at Rest |
 | **NIST AI RMF** | MEASURE 2.10; MEASURE 2.7 |
@@ -693,7 +693,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | Query as users with different entitlements and confirm restricted documents are never retrieved. Revoke access to a document and measure how long it remains retrievable. |
 | **Control Owner** | Application Owner |
 | **Review Frequency** | Quarterly |
-| **OWASP** | LLM08:2025 Vector and Embedding Weaknesses; LLM02:2025 Sensitive Information Disclosure |
+| **OWASP** | LLM09:2026 Vector and Embedding Weaknesses; LLM02:2026 Sensitive Information Disclosure |
 | **MITRE ATLAS Techniques** | AML.T0057 LLM Data Leakage; AML.T0085 Data from AI Services; AML.T0064 Gather RAG-Indexed Targets; AML.T0082 RAG Credential Harvesting |
 | **MITRE ATLAS Mitigations** | AML.M0027 Single-User AI Agent Permissions Configuration; AML.M0019 Control Access to AI Models and Data in Production |
 | **NIST AI RMF** | MEASURE 2.10; MEASURE 2.7 |
@@ -721,7 +721,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | Add a document with a planted instruction and a false fact through each ingestion path. Confirm it is detected or neutralized, and that it can be traced and removed. |
 | **Control Owner** | Application Owner |
 | **Review Frequency** | Quarterly |
-| **OWASP** | LLM04:2025 Data and Model Poisoning; LLM08:2025 Vector and Embedding Weaknesses |
+| **OWASP** | LLM05:2026 Data and Model Poisoning; LLM09:2026 Vector and Embedding Weaknesses |
 | **MITRE ATLAS Techniques** | AML.T0070 RAG Poisoning; AML.T0071 False RAG Entry Injection; AML.T0066 Retrieval Content Crafting |
 | **MITRE ATLAS Mitigations** | AML.M0025 Maintain AI Dataset Provenance |
 | **NIST AI RMF** | MEASURE 2.7; MAP 2.3 |
@@ -751,7 +751,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | Run the prompt injection and jailbreak cases with the control disabled and then enabled. Record attack success rate in both states against the agreed threshold. |
 | **Control Owner** | AppSec |
 | **Review Frequency** | Before each release and quarterly |
-| **OWASP** | LLM01:2025 Prompt Injection; LLM07:2025 System Prompt Leakage; ASI01 Agent Goal Hijack |
+| **OWASP** | LLM01:2026 Prompt Injection; LLM08:2026 Hidden Context Exposure; ASI01 Agent Goal Hijack |
 | **MITRE ATLAS Techniques** | AML.T0051 LLM Prompt Injection; AML.T0054 LLM Jailbreak; AML.T0056 Extract LLM System Prompt; AML.T0068 LLM Prompt Obfuscation; AML.T0093 Prompt Infiltration via Public-Facing Application |
 | **MITRE ATLAS Mitigations** | AML.M0020 Generative AI Guardrails; AML.M0021 Generative AI Guidelines; AML.M0033 Input and Output Validation for AI Agent Components |
 | **NIST AI RMF** | MEASURE 2.7; MANAGE 1.3 |
@@ -779,7 +779,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | Induce the model to emit script, markup and command payloads and confirm none executes downstream. Confirm sensitive data in a response is detected. |
 | **Control Owner** | AppSec |
 | **Review Frequency** | Before each release and quarterly |
-| **OWASP** | LLM05:2025 Improper Output Handling; LLM02:2025 Sensitive Information Disclosure |
+| **OWASP** | LLM10:2026 Improper Output Handling; LLM02:2026 Sensitive Information Disclosure |
 | **MITRE ATLAS Techniques** | AML.T0077 LLM Response Rendering; AML.T0067 LLM Trusted Output Components Manipulation; AML.T0057 LLM Data Leakage |
 | **MITRE ATLAS Mitigations** | AML.M0033 Input and Output Validation for AI Agent Components; AML.M0020 Generative AI Guardrails |
 | **NIST AI RMF** | MEASURE 2.7; MEASURE 2.10 |
@@ -807,7 +807,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | Submit images, documents and audio carrying sensitive data and hidden instructions. Compare detection with the text-channel result for the same content. |
 | **Control Owner** | AI Security Team |
 | **Review Frequency** | Semi-annually |
-| **OWASP** | LLM01:2025 Prompt Injection; LLM02:2025 Sensitive Information Disclosure |
+| **OWASP** | LLM01:2026 Prompt Injection; LLM02:2026 Sensitive Information Disclosure |
 | **MITRE ATLAS Techniques** | AML.T0129 Triggers in Multimodal Inputs; AML.T0051 LLM Prompt Injection; AML.T0088 Generate Deepfakes |
 | **MITRE ATLAS Mitigations** | AML.M0034 Deepfake Detection; AML.M0020 Generative AI Guardrails |
 | **NIST AI RMF** | MEASURE 2.7; MEASURE 2.10 |
@@ -835,7 +835,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | Ask questions the sources cannot answer and confirm the assistant says so. Confirm fabricated package names and links are flagged, and off-topic requests are refused. |
 | **Control Owner** | Application Owner / AppSec |
 | **Review Frequency** | Before each release and quarterly |
-| **OWASP** | LLM09:2025 Misinformation |
+| **OWASP** | LLM07:2026 Misinformation |
 | **MITRE ATLAS Techniques** | AML.T0062 Discover LLM Hallucinations; AML.T0060 Publish Hallucinated Entities; AML.T0048 External Harms |
 | **MITRE ATLAS Mitigations** | AML.M0020 Generative AI Guardrails; AML.M0022 Generative AI Model Alignment |
 | **NIST AI RMF** | MEASURE 2.5; MEASURE 2.6; MAP 2.2 |
@@ -865,7 +865,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | Deploy registered and unregistered test agents. Confirm the unregistered agents are detected, and that owner, tools and data scope are correct for the registered ones. |
 | **Control Owner** | AI Platform Team |
 | **Review Frequency** | Quarterly |
-| **OWASP** | LLM06:2025 Excessive Agency; ASI10 Rogue Agents; ASI07 Insecure Inter-Agent Communication |
+| **OWASP** | LLM03:2026 Excessive Agency; ASI10 Rogue Agents; ASI07 Insecure Inter-Agent Communication |
 | **MITRE ATLAS Techniques** | AML.T0081 Modify AI Agent Configuration |
 | **MITRE ATLAS Mitigations** | AML.M0038 AI Agent Scope Drift Detection; AML.M0024 AI Telemetry Logging |
 | **NIST AI RMF** | GOVERN 1.6; MEASURE 2.4 |
@@ -893,7 +893,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | Instruct a test agent, through injected content, to make a call the policy forbids. Confirm the enforcement point denies it regardless of what the model outputs. |
 | **Control Owner** | Security Architecture |
 | **Review Frequency** | Semi-annually |
-| **OWASP** | LLM06:2025 Excessive Agency; ASI02 Tool Misuse & Exploitation |
+| **OWASP** | LLM03:2026 Excessive Agency; ASI02 Tool Misuse & Exploitation |
 | **MITRE ATLAS Techniques** | AML.T0053 AI Agent Tool Invocation; AML.T0086 Exfiltration via AI Agent Tool Invocation; AML.T0101 Data Destruction via AI Agent Tool Invocation |
 | **MITRE ATLAS Mitigations** | AML.M0028 AI Agent Tools Permissions Configuration; AML.M0030 Restrict AI Agent Tool Invocation on Untrusted Data; AML.M0033 Input and Output Validation for AI Agent Components |
 | **NIST AI RMF** | MEASURE 2.7; MANAGE 1.3 |
@@ -921,7 +921,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | Trigger a gated action and confirm it does not run without approval. Confirm the approver sees the real parameters and that the decision is logged. |
 | **Control Owner** | Application Owner |
 | **Review Frequency** | Semi-annually |
-| **OWASP** | LLM06:2025 Excessive Agency; ASI09 Human-Agent Trust Exploitation |
+| **OWASP** | LLM03:2026 Excessive Agency; ASI09 Human-Agent Trust Exploitation |
 | **MITRE ATLAS Techniques** | AML.T0053 AI Agent Tool Invocation; AML.T0101 Data Destruction via AI Agent Tool Invocation |
 | **MITRE ATLAS Mitigations** | AML.M0029 Human In-the-Loop for AI Agent Actions |
 | **NIST AI RMF** | MAP 3.5; GOVERN 3.2 |
@@ -949,7 +949,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | Connect an unlisted tool server and confirm it is blocked. Change the description of an approved tool and confirm the change is detected before use. |
 | **Control Owner** | AI Platform Team |
 | **Review Frequency** | Quarterly |
-| **OWASP** | LLM03:2025 Supply Chain; ASI04 Agentic Supply Chain Vulnerabilities; ASI02 Tool Misuse & Exploitation |
+| **OWASP** | LLM04:2026 Supply Chain; ASI04 Agentic Supply Chain Vulnerabilities; ASI02 Tool Misuse & Exploitation |
 | **MITRE ATLAS Techniques** | AML.T0110 AI Agent Tool Poisoning; AML.T0109 AI Supply Chain Rug Pull; AML.T0099 AI Agent Tool Data Poisoning; AML.T0010 AI Supply Chain Compromise |
 | **MITRE ATLAS Mitigations** | AML.M0028 AI Agent Tools Permissions Configuration; AML.M0014 Verify AI Artifacts |
 | **NIST AI RMF** | GOVERN 6.1; MAP 4.1; MAP 4.2; MANAGE 3.1 |
@@ -977,7 +977,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | Start a long-running test agent and stop it. Measure the time until no further actions occur and credentials are invalid. Sample high-risk use cases and confirm each has a kill switch, a fallback and a test within the last year; suspend one model in the lab and confirm decisions route to the fallback. |
 | **Control Owner** | AI Platform Team / SOC |
 | **Review Frequency** | Semi-annually |
-| **OWASP** | LLM06:2025 Excessive Agency; ASI08 Cascading Failures; ASI10 Rogue Agents |
+| **OWASP** | LLM03:2026 Excessive Agency; ASI08 Cascading Failures; ASI10 Rogue Agents |
 | **MITRE ATLAS Techniques** | AML.T0053 AI Agent Tool Invocation; AML.T0034 Cost Harvesting |
 | **MITRE ATLAS Mitigations** | AML.M0037 AI Agent Authority Expansion Controls; AML.M0036 Limit AI Workload Resource Consumption |
 | **NIST AI RMF** | MANAGE 2.4; MANAGE 2.3 |
@@ -1005,7 +1005,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | Plant an instruction in memory through untrusted content and confirm it does not affect a later session. Confirm one user cannot read another's memory. |
 | **Control Owner** | Application Owner |
 | **Review Frequency** | Semi-annually |
-| **OWASP** | LLM04:2025 Data and Model Poisoning; LLM01:2025 Prompt Injection; ASI06 Memory & Context Poisoning |
+| **OWASP** | LLM05:2026 Data and Model Poisoning; LLM01:2026 Prompt Injection; ASI06 Memory & Context Poisoning |
 | **MITRE ATLAS Techniques** | AML.T0080 AI Agent Context Poisoning; AML.T0092 Manipulate User LLM Chat History; AML.T0094 Delay Execution of LLM Instructions |
 | **MITRE ATLAS Mitigations** | AML.M0031 Memory Hardening |
 | **NIST AI RMF** | MEASURE 2.7; MEASURE 2.10 |
@@ -1033,7 +1033,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | Have a test agent run code that tries to reach the network, read secrets and write outside its workspace. Confirm each attempt fails and is logged. |
 | **Control Owner** | Platform Engineering |
 | **Review Frequency** | Semi-annually |
-| **OWASP** | LLM06:2025 Excessive Agency; ASI05 Unexpected Code Execution (RCE) |
+| **OWASP** | LLM03:2026 Excessive Agency; ASI05 Unexpected Code Execution (RCE) |
 | **MITRE ATLAS Techniques** | AML.T0050 Command and Scripting Interpreter; AML.T0105 Escape to Host; AML.T0102 Generate Malicious Commands |
 | **MITRE ATLAS Mitigations** | AML.M0032 Segmentation of AI Agent Components; AML.M0011 Restrict Library Loading |
 | **NIST AI RMF** | MEASURE 2.7; MANAGE 1.3 |
@@ -1063,7 +1063,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | Run a scripted extraction pattern against a test endpoint and confirm it is detected and throttled. Attempt to read model weights with a non-privileged identity. |
 | **Control Owner** | ML Engineering |
 | **Review Frequency** | Semi-annually |
-| **OWASP** | LLM10:2025 Unbounded Consumption; LLM02:2025 Sensitive Information Disclosure |
+| **OWASP** | LLM06:2026 Unbounded Consumption; LLM02:2026 Sensitive Information Disclosure |
 | **MITRE ATLAS Techniques** | AML.T0024 Exfiltration via AI Inference API; AML.T0043 Craft Adversarial Data; AML.T0015 Evade AI Model; AML.T0044 Full AI Model Access; AML.T0018 Manipulate AI Model |
 | **MITRE ATLAS Mitigations** | AML.M0004 Limit AI Service Query Volume and Rate; AML.M0005 Control Access to AI Models and Data at Rest; AML.M0003 Predictive AI Model Hardening; AML.M0015 Predictive AI Adversarial Input Detection; AML.M0008 Validate AI Model |
 | **NIST AI RMF** | MEASURE 2.7; MEASURE 2.5 |
@@ -1091,7 +1091,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | Alter a sample of a test dataset and confirm the integrity check fails the run. Trace a deployed model back to the exact dataset versions used. |
 | **Control Owner** | ML Engineering / Data Owner |
 | **Review Frequency** | Before each training run |
-| **OWASP** | LLM04:2025 Data and Model Poisoning |
+| **OWASP** | LLM05:2026 Data and Model Poisoning |
 | **MITRE ATLAS Techniques** | AML.T0020 Training Data Poisoning; AML.T0059 Erode Dataset Integrity |
 | **MITRE ATLAS Mitigations** | AML.M0007 Sanitize Training Data; AML.M0025 Maintain AI Dataset Provenance |
 | **NIST AI RMF** | MAP 2.3; MAP 4.1; MEASURE 2.7; MEASURE 2.10 |
@@ -1119,7 +1119,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | Attempt to deploy an unsigned or altered artifact and confirm it is rejected. Confirm a failed security test blocks a release. |
 | **Control Owner** | MLOps / DevSecOps |
 | **Review Frequency** | Semi-annually |
-| **OWASP** | LLM03:2025 Supply Chain; LLM04:2025 Data and Model Poisoning |
+| **OWASP** | LLM04:2026 Supply Chain; LLM05:2026 Data and Model Poisoning |
 | **MITRE ATLAS Techniques** | AML.T0010 AI Supply Chain Compromise; AML.T0018 Manipulate AI Model; AML.T0119 Exploit Automated Artifact Processing Pipeline |
 | **MITRE ATLAS Mitigations** | AML.M0013 Code Signing; AML.M0014 Verify AI Artifacts |
 | **NIST AI RMF** | MEASURE 2.7; MAP 4.2 |
@@ -1149,7 +1149,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | Compare the AI-BOM of a sampled system with what is deployed. Introduce a component from an unapproved source and confirm it is blocked or flagged. |
 | **Control Owner** | DevSecOps |
 | **Review Frequency** | Quarterly |
-| **OWASP** | LLM03:2025 Supply Chain |
+| **OWASP** | LLM04:2026 Supply Chain |
 | **MITRE ATLAS Techniques** | AML.T0010 AI Supply Chain Compromise; AML.T0109 AI Supply Chain Rug Pull; AML.T0115 Publish Poisoned AI Artifacts; AML.T0111 AI Supply Chain Reputation Inflation |
 | **MITRE ATLAS Mitigations** | AML.M0023 AI Bill of Materials; AML.M0014 Verify AI Artifacts; AML.M0016 Vulnerability Scanning |
 | **NIST AI RMF** | GOVERN 6.1; MAP 4.1; MANAGE 3.1; MANAGE 3.2 |
@@ -1177,7 +1177,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | Attempt to reach production data from the experimentation environment and to open unapproved egress from a model runtime. Confirm both fail. |
 | **Control Owner** | Platform Engineering |
 | **Review Frequency** | Semi-annually |
-| **OWASP** | LLM03:2025 Supply Chain |
+| **OWASP** | LLM04:2026 Supply Chain |
 | **MITRE ATLAS Techniques** | AML.T0049 Exploit Public-Facing Application; AML.T0132 Misconfigured or Publicly Exposed AI Services; AML.T0055 Unsecured Credentials; AML.T0025 Exfiltration via Cyber Means |
 | **MITRE ATLAS Mitigations** | AML.M0005 Control Access to AI Models and Data at Rest; AML.M0012 Encrypt Sensitive Information; AML.M0016 Vulnerability Scanning; AML.M0019 Control Access to AI Models and Data in Production |
 | **NIST AI RMF** | MEASURE 2.7; MAP 4.2 |
@@ -1263,7 +1263,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | Confirm the last model or prompt change triggered the regression suite. Reproduce a sample of reported findings and confirm fixes hold. |
 | **Control Owner** | AI Red Team / AppSec |
 | **Review Frequency** | Before each release and continuously |
-| **OWASP** | LLM01:2025 Prompt Injection; LLM02:2025 Sensitive Information Disclosure; LLM03:2025 Supply Chain; LLM04:2025 Data and Model Poisoning; LLM05:2025 Improper Output Handling; LLM06:2025 Excessive Agency; LLM07:2025 System Prompt Leakage; LLM08:2025 Vector and Embedding Weaknesses; LLM09:2025 Misinformation; LLM10:2025 Unbounded Consumption |
+| **OWASP** | LLM01:2026 Prompt Injection; LLM02:2026 Sensitive Information Disclosure; LLM03:2026 Excessive Agency; LLM04:2026 Supply Chain; LLM05:2026 Data and Model Poisoning; LLM06:2026 Unbounded Consumption; LLM07:2026 Misinformation; LLM08:2026 Hidden Context Exposure; LLM09:2026 Vector and Embedding Weaknesses; LLM10:2026 Improper Output Handling |
 | **MITRE ATLAS Techniques** | None published in MITRE ATLAS techniques. The wiki's own identifier applies: AI-CTRL-034. |
 | **MITRE ATLAS Mitigations** | AML.M0035 AI Red Team |
 | **NIST AI RMF** | MEASURE 2.7; MEASURE 2.6; MEASURE 2.1; GOVERN 4.3 |
@@ -1435,7 +1435,7 @@ A test case is counted under every control it tests, so the counts add up to mor
 | **Audit Test Procedure** | Drive a test key past its budget and confirm enforcement. Simulate a traffic spike on a public endpoint and confirm detection and throttling. |
 | **Control Owner** | FinOps / AI Platform Team |
 | **Review Frequency** | Quarterly |
-| **OWASP** | LLM10:2025 Unbounded Consumption |
+| **OWASP** | LLM06:2026 Unbounded Consumption |
 | **MITRE ATLAS Techniques** | AML.T0034 Cost Harvesting; AML.T0029 Denial of AI Service; AML.T0046 Spamming AI System with Chaff Data |
 | **MITRE ATLAS Mitigations** | AML.M0004 Limit AI Service Query Volume and Rate; AML.M0036 Limit AI Workload Resource Consumption |
 | **NIST AI RMF** | MEASURE 2.7; MANAGE 4.1 |

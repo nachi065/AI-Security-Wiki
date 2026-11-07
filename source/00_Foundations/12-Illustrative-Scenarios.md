@@ -20,7 +20,7 @@ document_type: Practitioner Research Paper
 
 | Axis cell | Failure | Control |
 |---|---|---|
-| Application × Prevent | Rendering model-generated links/images with sensitive parameters | Restrict rendering and outbound fetches; output encoding (LLM05) |
+| Application × Prevent | Rendering model-generated links/images with sensitive parameters | Restrict rendering and outbound fetches; output encoding (LLM10) |
 | AI asset × Detect | No visibility into uploaded-content provenance | Log document source; flag outbound URLs in output |
 | Enterprise process × Govern | Data-classification rules not enforced for uploads | DLP at the gateway; acceptable-use policy |
 

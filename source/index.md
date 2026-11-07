@@ -3,7 +3,7 @@ title: "Home"
 description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and {{n:tests}} test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.58
+version: 2.59
 status: Published
 author: Nachiket Sathaye
 coauthors: Ankush Jain
@@ -11,13 +11,13 @@ owner: AI Security Program
 custodian: Security Architecture Team
 review_cycle: Quarterly
 approval_authority: AI Governance Committee
-last_updated: 2026-11-04
+last_updated: 2026-11-07
 ---
 
 # AI Security Wiki Home
 
 > **Document Type:** Enterprise AI Security Reference Architecture and Governance Wiki  
-> **Version:** 2.58  
+> **Version:** 2.59  
 > **Status:** Published  
 > **Original Author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
 > **Co-Author:** Ankush Jain ([about the co-author](#23-about-the-co-author))  
@@ -307,7 +307,7 @@ The wiki supports mapping AI security requirements to recognized control and gov
 | Trustworthy AI and ethics (EU HLEG, UNESCO, IEEE 7000 series) | Ethical requirements, well-being and bias considerations. See the [Trustworthy AI and Ethics Crosswalk](23_Framework_Crosswalks/16_Trustworthy_AI_Ethics_Crosswalk.md). The IEEE content is based on available public data. |
 | International AI instruments (Council of Europe Framework Convention, G7 Hiroshima Process) | Treaty and international code of conduct commitments. See the [International AI Instruments Crosswalk](23_Framework_Crosswalks/17_International_AI_Instruments_Crosswalk.md). |
 | AI Risk Map (RiskFramework.org) | Risk identification across twelve ownership domains, including strategy, finance, workforce and legal risks. See the [AI Risk Map Crosswalk](23_Framework_Crosswalks/18_AI_Risk_Map_Crosswalk.md). |
-| OWASP Top 10 for LLM Applications and for Agentic Applications | Application and agent risk categories for developer guidance, threat modeling, and test-case design. |
+| OWASP Top 10 for LLM Applications (2026 edition) and for Agentic Applications | Application and agent risk categories for developer guidance, threat modeling, and test-case design. See the [OWASP Top 10 Crosswalk](23_Framework_Crosswalks/06_OWASP_Top_10_Crosswalk.md). |
 | OWASP MCP Top 10 (beta) | Risks of agents that connect to tools and data through the Model Context Protocol. See the [OWASP MCP Top 10 Crosswalk](23_Framework_Crosswalks/19_OWASP_MCP_Top_10_Crosswalk.md). |
 | MITRE ATLAS | Adversary tactics and techniques against AI-enabled systems for threat-informed testing and incident description. |
 | EU AI Act | Legal obligations for in-scope providers and deployers of AI systems. |
@@ -426,9 +426,9 @@ The three latest versions, newest first. The full history since version 1.0 is i
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.59 | 2026-11-07 | Nachiket Sathaye | OWASP Top 10 for LLM Applications moved from the 2025 to the 2026 edition, published 4 August 2026: 465 identifier references remapped across 23 pages, System Prompt Leakage renamed to Hidden Context Exposure, the Foundations list rewritten with the rank movements and the new ranking method, and five test cases given a mapping that a widened category now covers. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 | 2.58 | 2026-11-04 | Nachiket Sathaye | Builder Toolkit 1.1: the comparison with ai-secure-by-design brought up to its v0.2.0 release, which now runs the wiki's AIW rules and control library as an opt-in regime and adds Python scaffolds and personal-data detection; Privacy Duties in Code and Developer Pipeline Checks link to it. |
 | 2.57 | 2026-11-04 | Nachiket Sathaye | CERT-In AI Security Auditing Guidelines Crosswalk for the guidelines CERT-In dated 4 November 2026: the nine core audit domains, the four risk tiers and the advanced requirements for generative, RAG, agentic, multimodal, multi-agent and cyber-physical AI, mapped to controls and test cases, with the five requirements the wiki does not cover. The India section gains row IN14 in the hub, the crosswalk and the CSV. See the [Update Notes](09_Reference/19_Update_Notes.md). |
-| 2.56 | 2026-10-29 | Nachiket Sathaye | ISO/IEC 42001 Crosswalk now covers all 38 Annex A controls (was 33) and ISO/IEC 27001 Crosswalk 75 of 93 (was 65), with titles checked against published listings; eight controls extended; four workbooks rebuilt. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 
 ## 21. Quick Links
 

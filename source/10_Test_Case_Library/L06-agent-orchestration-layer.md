@@ -89,7 +89,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: P, E \| Partial: G |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
 | **Control(s) Tested** | [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) Agent Governance |
 
@@ -184,7 +184,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: E, P |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
 | **Control(s) Tested** | [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) Agent Governance |
 
@@ -232,7 +232,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
 | **Control(s) Tested** | [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) Agent Governance |
 
@@ -280,7 +280,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: E, G, P |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 AI Supply Chain Compromise |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain; LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance |
 
@@ -331,7 +331,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: G, E |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 AI Supply Chain Compromise |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain; LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance |
 
@@ -380,7 +380,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: G, A \| Partial: E |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 AI Supply Chain Compromise |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain; LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance |
 
@@ -429,7 +429,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: G, E |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 AI Supply Chain Compromise |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain; LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance |
 
@@ -478,7 +478,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 AI Supply Chain Compromise |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain; LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance |
 
@@ -524,7 +524,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: G, P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 AI Supply Chain Compromise |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain; LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance; [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
@@ -573,7 +573,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: G |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 AI Supply Chain Compromise |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain; LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance; [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization |
 
@@ -670,7 +670,7 @@ nav_order: 9
 | **Risk Severity** | Critical |
 | **Quick-Start Scenario** | [AI-POC-AG-001](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md#agentic-ai-test-cases), [AI-POC-AG-004](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md#agentic-ai-test-cases) |
 | **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials; [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance |
 
@@ -719,7 +719,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization |
 
@@ -768,7 +768,7 @@ nav_order: 9
 | **Risk Severity** | Critical |
 | **Quick-Start Scenario** | [AI-POC-AG-005](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md#agentic-ai-test-cases) |
 | **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) Human Approval for Sensitive Actions |
 
@@ -818,7 +818,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) Human Approval for Sensitive Actions |
 
@@ -865,7 +865,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency; ASI07 Insecure Inter-Agent Communication |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency; ASI07 Insecure Inter-Agent Communication |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials; [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) Agent Governance |
 
@@ -914,7 +914,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: G, A \| Partial: P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency; ASI07 Insecure Inter-Agent Communication |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency; ASI07 Insecure Inter-Agent Communication |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
@@ -961,7 +961,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization; [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
@@ -1009,7 +1009,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
-| **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect); ASI07 Insecure Inter-Agent Communication |
+| **OWASP LLM / GenAI Mapping** | LLM01:2026 Prompt Injection (indirect); ASI07 Insecure Inter-Agent Communication |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
@@ -1058,7 +1058,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
-| **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
+| **OWASP LLM / GenAI Mapping** | LLM06:2026 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
 | **Control(s) Tested** | [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) AI Containment and Kill Switch; [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
@@ -1104,7 +1104,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: G, A, P |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) AI Containment and Kill Switch |
 
@@ -1154,7 +1154,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: G, A, P |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) AI Containment and Kill Switch |
 
@@ -1203,7 +1203,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) AI Containment and Kill Switch; [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization |
 
@@ -1250,7 +1250,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: A, P |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0050 Command and Scripting Interpreter |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) Agent Execution Isolation |
 
@@ -1300,7 +1300,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: E, P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0050 Command and Scripting Interpreter |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) Agent Execution Isolation |
 
@@ -1347,7 +1347,7 @@ nav_order: 9
 | **Risk Severity** | High |
 | **Quick-Start Scenario** | [AI-POC-AG-003](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md#agentic-ai-test-cases) |
 | **MITRE ATLAS Mapping** | AML.T0051 LLM Prompt Injection |
-| **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection |
+| **OWASP LLM / GenAI Mapping** | LLM01:2026 Prompt Injection |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
@@ -1489,7 +1489,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) Output Handling |
 
@@ -1535,7 +1535,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: E, G |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) Agent Execution Isolation |
 
@@ -1583,7 +1583,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: P, G |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 AI Supply Chain Compromise |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain; LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance; [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance |
 
@@ -1770,7 +1770,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: E, A |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0050 Command and Scripting Interpreter |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) Agent Execution Isolation; [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization |
 
@@ -1820,7 +1820,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: E, P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation; AML.T0010 AI Supply Chain Compromise |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain; LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance; [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance |
 
@@ -1918,7 +1918,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: G, A \| Partial: P |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency; ASI07 Insecure Inter-Agent Communication |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency; ASI07 Insecure Inter-Agent Communication |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 1.3 |
 | **Control(s) Tested** | [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization; [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
@@ -1967,7 +1967,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: G, A \| Partial: P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
-| **OWASP LLM / GenAI Mapping** | LLM05:2025 Improper Output Handling; ASI07 Insecure Inter-Agent Communication |
+| **OWASP LLM / GenAI Mapping** | LLM10:2026 Improper Output Handling; ASI07 Insecure Inter-Agent Communication |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 1.3 |
 | **Control(s) Tested** | [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) Output Handling; [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022) Deterministic Action Authorization |
 
@@ -2014,7 +2014,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: G, A \| Partial: P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0073 Impersonation |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; ASI07 Insecure Inter-Agent Communication |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain; ASI07 Insecure Inter-Agent Communication |
 | **NIST AI RMF Mapping** | MEASURE 2.7; GOVERN 6.1 |
 | **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity; [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance |
 
@@ -2108,7 +2108,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: G, A \| Partial: P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain; ASI07 Insecure Inter-Agent Communication |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain; ASI07 Insecure Inter-Agent Communication |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MANAGE 3.1 |
 | **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity; [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance |
 
@@ -2155,7 +2155,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: G, A \| Partial: P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure; ASI07 Insecure Inter-Agent Communication |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure; ASI07 Insecure Inter-Agent Communication |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 1.3 |
 | **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines; [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
@@ -2251,7 +2251,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: G, A \| Partial: P |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0081 Modify AI Agent Configuration |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency; ASI07 Insecure Inter-Agent Communication |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency; ASI07 Insecure Inter-Agent Communication |
 | **NIST AI RMF Mapping** | MANAGE 2.3; MANAGE 2.4 |
 | **Control(s) Tested** | [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) AI Containment and Kill Switch; [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) Agent Execution Isolation |
 
@@ -2301,7 +2301,7 @@ nav_order: 9
 | **Vendor Applicability** | Core: W, P \| Partial: G |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | GOVERN 2.1; MAP 4.1 |
 | **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance; [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 

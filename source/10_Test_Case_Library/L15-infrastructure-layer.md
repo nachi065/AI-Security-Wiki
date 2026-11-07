@@ -62,7 +62,7 @@ nav_order: 18
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
 | **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening; [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
@@ -162,7 +162,7 @@ nav_order: 18
 | **Vendor Applicability** | Core: P \| Partial: R |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
@@ -260,7 +260,7 @@ nav_order: 18
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0049 Exploit Public-Facing Application (where exposed); general cloud and infrastructure controls apply |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (infrastructure components) |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain (infrastructure components) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
@@ -310,7 +310,7 @@ nav_order: 18
 | **Vendor Applicability** | Core: P, G |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0049 Exploit Public-Facing Application (where exposed); general cloud and infrastructure controls apply |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (infrastructure components) |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain (infrastructure components) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
@@ -360,7 +360,7 @@ nav_order: 18
 | **Vendor Applicability** | Core: P, G, E |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0049 Exploit Public-Facing Application (where exposed); general cloud and infrastructure controls apply |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (infrastructure components) |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain (infrastructure components) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
@@ -408,7 +408,7 @@ nav_order: 18
 | **Vendor Applicability** | Core: P, G |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0049 Exploit Public-Facing Application (where exposed); general cloud and infrastructure controls apply |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (infrastructure components) |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain (infrastructure components) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
@@ -458,7 +458,7 @@ nav_order: 18
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0055 Unsecured Credentials |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
@@ -506,7 +506,7 @@ nav_order: 18
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials; [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
@@ -556,7 +556,7 @@ nav_order: 18
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening; [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection |
 
@@ -750,7 +750,7 @@ nav_order: 18
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) Data Sovereignty; [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
@@ -797,7 +797,7 @@ nav_order: 18
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0049 Exploit Public-Facing Application (where exposed); general cloud and infrastructure controls apply |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (infrastructure components) |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain (infrastructure components) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening; [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance |
 
@@ -848,7 +848,7 @@ nav_order: 18
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
-| **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
+| **OWASP LLM / GenAI Mapping** | LLM06:2026 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
 | **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 

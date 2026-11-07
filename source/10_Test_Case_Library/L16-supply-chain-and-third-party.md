@@ -68,7 +68,7 @@ nav_order: 19
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
 | **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM |
 
@@ -117,7 +117,7 @@ nav_order: 19
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
 | **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM |
 
@@ -163,7 +163,7 @@ nav_order: 19
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
 | **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM |
 
@@ -210,7 +210,7 @@ nav_order: 19
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
 | **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM |
 
@@ -256,7 +256,7 @@ nav_order: 19
 | **Vendor Applicability** | Core: P, E |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
 | **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM; [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection |
 
@@ -302,7 +302,7 @@ nav_order: 19
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
 | **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM |
 
@@ -350,7 +350,7 @@ nav_order: 19
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
 | **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM |
 
@@ -730,7 +730,7 @@ nav_order: 19
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
 | **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM; [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance |
 
@@ -778,7 +778,7 @@ nav_order: 19
 | **Vendor Applicability** | Core: P, A |
 | **Risk Severity** | Medium |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
 | **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM; [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
@@ -826,7 +826,7 @@ nav_order: 19
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
 | **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM; [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
@@ -921,7 +921,7 @@ nav_order: 19
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage (secondary) |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; GOVERN 6.1 |
 | **Control(s) Tested** | [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance; [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) Data Sovereignty |
 
@@ -1254,7 +1254,7 @@ nav_order: 19
 | **Risk Severity** | High |
 | **Quick-Start Scenario** | [AI-POC-ID-004](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md#ide-ai-test-cases) |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
 | **Control(s) Tested** | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) Tool and MCP Server Governance; [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance |
 

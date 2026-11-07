@@ -260,7 +260,7 @@ nav_order: 22
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L09-004](L09-identity-and-access-mgmt.md#tc-l09-004) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
@@ -309,7 +309,7 @@ nav_order: 22
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L09-021](L09-identity-and-access-mgmt.md#tc-l09-021), [TC-L12-030](L12-model-layer.md#tc-l12-030) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
@@ -455,7 +455,7 @@ nav_order: 22
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L09-013](L09-identity-and-access-mgmt.md#tc-l09-013) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
@@ -604,7 +604,7 @@ nav_order: 22
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L09-006](L09-identity-and-access-mgmt.md#tc-l09-006), [TC-L09-025](L09-identity-and-access-mgmt.md#tc-l09-025), [TC-L06-045](L06-agent-orchestration-layer.md#tc-l06-045) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity; [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability |
 
@@ -653,7 +653,7 @@ nav_order: 22
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L09-001](L09-identity-and-access-mgmt.md#tc-l09-001), [TC-L06-043](L06-agent-orchestration-layer.md#tc-l06-043) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
@@ -702,7 +702,7 @@ nav_order: 22
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L09-014](L09-identity-and-access-mgmt.md#tc-l09-014), [TC-L09-016](L09-identity-and-access-mgmt.md#tc-l09-016) |
 | **MITRE ATLAS Mapping** | AML.T0055 Unsecured Credentials |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
@@ -751,7 +751,7 @@ nav_order: 22
 | **Risk Severity** | Medium |
 | **Related Layer Cases** | [TC-L09-024](L09-identity-and-access-mgmt.md#tc-l09-024), [TC-L13-021](L13-training-and-fine-tuning-layer.md#tc-l13-021), [TC-L12-026](L12-model-layer.md#tc-l12-026) |
 | **MITRE ATLAS Mapping** | AML.T0055 Unsecured Credentials |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
@@ -800,7 +800,7 @@ nav_order: 22
 | **Risk Severity** | Critical |
 | **Related Layer Cases** | [TC-L06-023](L06-agent-orchestration-layer.md#tc-l06-023), [TC-L17-019](L17-monitoring-detection-and-response.md#tc-l17-019) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) AI Containment and Kill Switch; [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
@@ -898,7 +898,7 @@ nav_order: 22
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L16-010](L16-supply-chain-and-third-party.md#tc-l16-010), [TC-L06-043](L06-agent-orchestration-layer.md#tc-l06-043) |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
 | **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity; [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance |
 

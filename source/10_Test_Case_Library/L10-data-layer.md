@@ -77,7 +77,7 @@ nav_order: 13
 | **Vendor Applicability** | Core: P \| Partial: E |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
@@ -126,7 +126,7 @@ nav_order: 13
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
@@ -175,7 +175,7 @@ nav_order: 13
 | **Vendor Applicability** | Core: P, E |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
@@ -224,7 +224,7 @@ nav_order: 13
 | **Vendor Applicability** | Core: P, E |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
@@ -320,7 +320,7 @@ nav_order: 13
 | **Vendor Applicability** | Core: A, P |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-018](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-018) Retrieval Access Control |
 
@@ -366,7 +366,7 @@ nav_order: 13
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
@@ -505,7 +505,7 @@ nav_order: 13
 | **Vendor Applicability** | Core: A, P |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
@@ -552,7 +552,7 @@ nav_order: 13
 | **Vendor Applicability** | Core: A, G |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
@@ -696,7 +696,7 @@ nav_order: 13
 | **Vendor Applicability** | Core: E, G, P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-007](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-007) Data Sovereignty |
 
@@ -839,7 +839,7 @@ nav_order: 13
 | **Vendor Applicability** | Core: P, A |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
@@ -888,7 +888,7 @@ nav_order: 13
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-018](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-018) Retrieval Access Control |
 
@@ -935,7 +935,7 @@ nav_order: 13
 | **Vendor Applicability** | Core: G, A, P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0025 Exfiltration via Cyber Means |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-018](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-018) Retrieval Access Control |
 
@@ -982,7 +982,7 @@ nav_order: 13
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage (secondary) |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; GOVERN 1.1 |
 | **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance; [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
@@ -1032,7 +1032,7 @@ nav_order: 13
 | **Vendor Applicability** | Core: A, P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage (secondary) |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; GOVERN 1.1 |
 | **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
@@ -1079,7 +1079,7 @@ nav_order: 13
 | **Vendor Applicability** | Core: P, A |
 | **Risk Severity** | Medium |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage (secondary) |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; GOVERN 1.1 |
 | **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
@@ -1125,7 +1125,7 @@ nav_order: 13
 | **Vendor Applicability** | Core: P, E |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines; [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
@@ -1171,7 +1171,7 @@ nav_order: 13
 | **Vendor Applicability** | Core: P, A |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0020 Training Data Poisoning (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
-| **OWASP LLM / GenAI Mapping** | LLM04:2025 Data and Model Poisoning; LLM01:2025 Prompt Injection |
+| **OWASP LLM / GenAI Mapping** | LLM05:2026 Data and Model Poisoning; LLM01:2026 Prompt Injection |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) Knowledge Base Integrity |
 
@@ -1561,7 +1561,7 @@ nav_order: 13
 | **Vendor Applicability** | Core: A \| Partial: P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | N/A (operational and monitoring control) |
-| **OWASP LLM / GenAI Mapping** | LLM09:2025 Misinformation |
+| **OWASP LLM / GenAI Mapping** | LLM07:2026 Misinformation |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-019](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-019) Knowledge Base Integrity |
 
@@ -1673,7 +1673,7 @@ nav_order: 13
 | **Vendor Applicability** | Core: A, P |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0055 Unsecured Credentials |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines; [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
@@ -1722,7 +1722,7 @@ nav_order: 13
 | **Vendor Applicability** | Core: P, A |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines; [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) Agent Execution Isolation |
 

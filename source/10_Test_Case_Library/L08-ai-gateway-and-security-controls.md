@@ -235,7 +235,7 @@ nav_order: 11
 | **Vendor Applicability** | Core: E, G, A |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002) Prompt Inspection |
 
@@ -285,7 +285,7 @@ nav_order: 11
 | **Vendor Applicability** | Core: E, G, A |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002) Prompt Inspection |
 
@@ -334,7 +334,7 @@ nav_order: 11
 | **Vendor Applicability** | Core: E, G, A |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002) Prompt Inspection |
 
@@ -384,7 +384,7 @@ nav_order: 11
 | **Risk Severity** | Critical |
 | **Quick-Start Scenario** | [AI-POC-BR-003](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md#browser-ai-test-cases), [AI-POC-ID-001](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md#ide-ai-test-cases), [AI-POC-ID-002](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md#ide-ai-test-cases) |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002) Prompt Inspection; [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) IDE AI Governance |
 
@@ -436,7 +436,7 @@ nav_order: 11
 | **Vendor Applicability** | Core: E, G |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002) Prompt Inspection |
 
@@ -534,7 +534,7 @@ nav_order: 11
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | Medium |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002) Prompt Inspection; [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) Policy Enforcement |
 
@@ -584,7 +584,7 @@ nav_order: 11
 | **Vendor Applicability** | Core: E, G, A |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002) Prompt Inspection |
 
@@ -633,7 +633,7 @@ nav_order: 11
 | **Vendor Applicability** | Core: E, G |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-003](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-003) File Upload Protection |
 
@@ -683,7 +683,7 @@ nav_order: 11
 | **Vendor Applicability** | Core: E, G |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security; [AI-CTRL-003](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-003) File Upload Protection |
 
@@ -731,7 +731,7 @@ nav_order: 11
 | **Vendor Applicability** | Core: E, G, A |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002) Prompt Inspection |
 
@@ -779,7 +779,7 @@ nav_order: 11
 | **Vendor Applicability** | Core: G, A \| Partial: R |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0051 LLM Prompt Injection |
-| **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection |
+| **OWASP LLM / GenAI Mapping** | LLM01:2026 Prompt Injection |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
@@ -829,7 +829,7 @@ nav_order: 11
 | **Vendor Applicability** | Core: G, A \| Partial: R |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0054 LLM Jailbreak |
-| **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (jailbreak) |
+| **OWASP LLM / GenAI Mapping** | LLM01:2026 Prompt Injection (jailbreak) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
@@ -929,7 +929,7 @@ nav_order: 11
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0054 LLM Jailbreak |
-| **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (jailbreak) |
+| **OWASP LLM / GenAI Mapping** | LLM01:2026 Prompt Injection (jailbreak) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) Output Reliability and Content Safety |
 
@@ -978,7 +978,7 @@ nav_order: 11
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0056 Extract LLM System Prompt |
-| **OWASP LLM / GenAI Mapping** | LLM07:2025 System Prompt Leakage |
+| **OWASP LLM / GenAI Mapping** | LLM08:2026 Hidden Context Exposure |
 | **NIST AI RMF Mapping** | MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
@@ -1028,7 +1028,7 @@ nav_order: 11
 | **Risk Severity** | High |
 | **Quick-Start Scenario** | [AI-POC-RT-004](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md#runtime-ai-test-cases) |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) Output Handling |
 
@@ -1077,7 +1077,7 @@ nav_order: 11
 | **Vendor Applicability** | Core: G, A \| Partial: R |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0054 LLM Jailbreak |
-| **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (jailbreak) |
+| **OWASP LLM / GenAI Mapping** | LLM01:2026 Prompt Injection (jailbreak) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-010](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-010) Policy Enforcement |
 
@@ -1371,7 +1371,7 @@ nav_order: 11
 | **Vendor Applicability** | Core: G, A \| Partial: R |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0054 LLM Jailbreak |
-| **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (jailbreak) |
+| **OWASP LLM / GenAI Mapping** | LLM01:2026 Prompt Injection (jailbreak) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002) Prompt Inspection |
 
@@ -1519,7 +1519,7 @@ nav_order: 11
 | **Risk Severity** | High |
 | **Quick-Start Scenario** | [AI-POC-RT-005](../06_Testing_and_Assurance/13_AI_Security_PoC_Test_Case_Library.md#runtime-ai-test-cases) |
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
-| **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
+| **OWASP LLM / GenAI Mapping** | LLM06:2026 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
 | **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
@@ -1569,7 +1569,7 @@ nav_order: 11
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | Medium |
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
-| **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
+| **OWASP LLM / GenAI Mapping** | LLM06:2026 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
 | **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
@@ -1667,7 +1667,7 @@ nav_order: 11
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
-| **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
+| **OWASP LLM / GenAI Mapping** | LLM06:2026 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
 | **Control(s) Tested** | [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) AI Service Resilience and Fail-Safe Operation |
 
@@ -1765,7 +1765,7 @@ nav_order: 11
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | Medium |
 | **MITRE ATLAS Mapping** | AML.T0049 Exploit Public-Facing Application (downstream impact) |
-| **OWASP LLM / GenAI Mapping** | LLM05:2025 Improper Output Handling |
+| **OWASP LLM / GenAI Mapping** | LLM10:2026 Improper Output Handling |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-040](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-040) AI Service Resilience and Fail-Safe Operation; [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) Output Handling |
 
@@ -2016,7 +2016,7 @@ nav_order: 11
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage (secondary) |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; GOVERN 1.1 |
 | **Control(s) Tested** | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability; [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
@@ -2214,7 +2214,7 @@ nav_order: 11
 | **Vendor Applicability** | Core: G, A |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) Output Handling; [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 

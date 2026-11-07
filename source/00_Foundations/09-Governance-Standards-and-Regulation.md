@@ -29,7 +29,7 @@ AI risk cannot be delegated to the security team alone. Product owners, data own
 | **ISO/IEC 42001:2023** [4] | AI management system requirements | Certifiable management-system approach; governance evidence |
 | **ISO/IEC 23894:2023** [5] | Guidance on AI risk management | Integrating AI into enterprise risk processes |
 | **ISO/IEC 27001:2022** [6] | Information security management systems | Existing ISMS into which AI controls are added |
-| **OWASP Top 10 for LLM Applications 2025** [11] | Community catalogue of LLM application risks | Developer awareness; test-case design |
+| **OWASP Top 10 for LLM Applications 2026** [11] | Community catalogue of LLM application risks | Developer awareness; test-case design |
 | **OWASP Top 10 for Agentic Applications** (Dec 2025) [12] | Community catalogue of agentic risks | Agent threat modelling |
 | **MITRE ATLAS** [14] | Knowledge base of adversary tactics and techniques against AI-enabled systems | Threat-informed testing; incident description |
 | **Google SAIF** [15] | Practitioner framework with a risk map and controls, including an agent-security section | Control-selection ideas for AI development and deployment |

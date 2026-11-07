@@ -6,8 +6,8 @@ parent: "Reference"
 nav_order: 3
 description: "Real AI security incidents and disclosed vulnerabilities, each mapped to the wiki's risks, controls and OWASP items, with what would have stopped it and a link to the primary write-up."
 document_type: AI Security Wiki Reference
-version: 1.1
-last_reviewed: 2026-10-29
+version: 1.2
+last_reviewed: 2026-11-07
 ---
 
 # AI Security Incident Casebook
@@ -22,22 +22,22 @@ last_reviewed: 2026-10-29
 
 | Case | Date | Kind | Wiki risks | OWASP |
 |---|---|---|---|---|
-| [Load/Mine](#loadmine-cryptominer-models-on-hugging-face) | 29 October 2026 | Malicious model repositories run code on load | AI-R08, AI-R11 | LLM03:2025 |
-| [OpenClaw gym booking](#openclaw-gym-booking-incident) | 10 August 2026 | Agent exploited a booking API flaw and cancelled another person's booking | AI-R07, AI-R46 | LLM06:2025, ASI02 |
-| [Hugging Face breach](#hugging-face-breach-by-an-autonomous-agent-system) | July 2026 | Autonomous agents breached internal clusters | AI-R07, AI-R08, AI-R22 | ASI05, ASI10, LLM03:2025 |
-| [Clinejection and Cline CLI 2.3.0](#clinejection-and-the-cline-cli-230-package) | February 2026 | Prompt injection in an issue title led to a tampered npm release | AI-R05, AI-R24, AI-R23 | LLM01:2025, ASI01, ASI04 |
-| [Moltbook](#moltbook-exposed-database) | 2 February 2026 | Agent social network exposed 1.5 million agent API tokens | AI-R22, AI-R25 | LLM02:2025, ASI03 |
-| [ClawHavoc](#clawhavoc-malicious-skills-on-clawhub) | February 2026 | 341 malicious skills on an agent skill registry | AI-R23, AI-R22 | ASI04, LLM03:2025 |
+| [Load/Mine](#loadmine-cryptominer-models-on-hugging-face) | 29 October 2026 | Malicious model repositories run code on load | AI-R08, AI-R11 | LLM04:2026 |
+| [OpenClaw gym booking](#openclaw-gym-booking-incident) | 10 August 2026 | Agent exploited a booking API flaw and cancelled another person's booking | AI-R07, AI-R46 | LLM03:2026, ASI02 |
+| [Hugging Face breach](#hugging-face-breach-by-an-autonomous-agent-system) | July 2026 | Autonomous agents breached internal clusters | AI-R07, AI-R08, AI-R22 | ASI05, ASI10, LLM04:2026 |
+| [Clinejection and Cline CLI 2.3.0](#clinejection-and-the-cline-cli-230-package) | February 2026 | Prompt injection in an issue title led to a tampered npm release | AI-R05, AI-R24, AI-R23 | LLM01:2026, ASI01, ASI04 |
+| [Moltbook](#moltbook-exposed-database) | 2 February 2026 | Agent social network exposed 1.5 million agent API tokens | AI-R22, AI-R25 | LLM02:2026, ASI03 |
+| [ClawHavoc](#clawhavoc-malicious-skills-on-clawhub) | February 2026 | 341 malicious skills on an agent skill registry | AI-R23, AI-R22 | ASI04, LLM04:2026 |
 | [OpenClaw CVE-2026-25253](#openclaw-one-click-remote-code-execution-cve-2026-25253) | 31 January 2026 | One-click token theft and command execution in a personal agent | AI-R07, AI-R22 | ASI03, ASI05 |
-| [EchoLeak](#echoleak-microsoft-365-copilot) | June 2025 | Zero-click prompt injection and data exfiltration | AI-R05, AI-R06 | LLM01:2025, LLM02:2025, ASI01 |
-| [GitHub MCP toxic agent flow](#github-mcp-toxic-agent-flow) | May 2025 | Indirect prompt injection through a public issue | AI-R05, AI-R24, AI-R07 | LLM01:2025, ASI01, MCP06:2025 |
+| [EchoLeak](#echoleak-microsoft-365-copilot) | June 2025 | Zero-click prompt injection and data exfiltration | AI-R05, AI-R06 | LLM01:2026, LLM02:2026, ASI01 |
+| [GitHub MCP toxic agent flow](#github-mcp-toxic-agent-flow) | May 2025 | Indirect prompt injection through a public issue | AI-R05, AI-R24, AI-R07 | LLM01:2026, ASI01, MCP06:2025 |
 | [postmark-mcp](#postmark-mcp-malicious-mcp-server) | September 2025 | Malicious MCP server on a public registry | AI-R23, AI-R08 | ASI04, MCP04:2025 |
 | [mcp-remote](#mcp-remote-cve-2025-6514) | 9 July 2025 | Command injection from a malicious MCP server | AI-R23, AI-R08 | MCP05:2025, ASI04 |
 | [MCP Inspector](#mcp-inspector-cve-2025-49596) | July 2025 | Remote code execution in a developer tool | AI-R23, AI-R04 | MCP07:2025 |
-| [Amazon Q Developer extension](#amazon-q-developer-extension-1840) | July 2025 | Destructive prompt shipped in a coding assistant | AI-R08, AI-R23 | ASI04, LLM03:2025 |
-| [Replit production database](#replit-production-database-deletion) | July 2025 | Agent deleted a production database during a code freeze | AI-R07, AI-R19 | LLM06:2025, ASI10 |
-| [Air Canada chatbot](#air-canada-chatbot-ruling) | 14 February 2024 | Organization held liable for its chatbot's wrong answer | AI-R12, AI-R20 | LLM09:2025 |
-| [Mata v. Avianca](#mata-v-avianca) | June 2023 | Invented case citations filed in court | AI-R12, AI-R19 | LLM09:2025 |
+| [Amazon Q Developer extension](#amazon-q-developer-extension-1840) | July 2025 | Destructive prompt shipped in a coding assistant | AI-R08, AI-R23 | ASI04, LLM04:2026 |
+| [Replit production database](#replit-production-database-deletion) | July 2025 | Agent deleted a production database during a code freeze | AI-R07, AI-R19 | LLM03:2026, ASI10 |
+| [Air Canada chatbot](#air-canada-chatbot-ruling) | 14 February 2024 | Organization held liable for its chatbot's wrong answer | AI-R12, AI-R20 | LLM07:2026 |
+| [Mata v. Avianca](#mata-v-avianca) | June 2023 | Invented case citations filed in court | AI-R12, AI-R19 | LLM07:2026 |
 
 ## Cases
 

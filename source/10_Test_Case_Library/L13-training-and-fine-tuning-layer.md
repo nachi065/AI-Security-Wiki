@@ -68,7 +68,7 @@ nav_order: 16
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
 | **Control(s) Tested** | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity |
 
@@ -117,7 +117,7 @@ nav_order: 16
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
 | **Control(s) Tested** | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity; [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
@@ -166,7 +166,7 @@ nav_order: 16
 | **Vendor Applicability** | Core: P, R |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0020 Training Data Poisoning (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
-| **OWASP LLM / GenAI Mapping** | LLM04:2025 Data and Model Poisoning; LLM01:2025 Prompt Injection |
+| **OWASP LLM / GenAI Mapping** | LLM05:2026 Data and Model Poisoning; LLM01:2026 Prompt Injection |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity |
 
@@ -213,7 +213,7 @@ nav_order: 16
 | **Vendor Applicability** | Core: P, R |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0020 Training Data Poisoning (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
-| **OWASP LLM / GenAI Mapping** | LLM04:2025 Data and Model Poisoning; LLM01:2025 Prompt Injection |
+| **OWASP LLM / GenAI Mapping** | LLM05:2026 Data and Model Poisoning; LLM01:2026 Prompt Injection |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity |
 
@@ -260,7 +260,7 @@ nav_order: 16
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
 | **MITRE ATLAS Mapping** | AML.T0020 Training Data Poisoning (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
-| **OWASP LLM / GenAI Mapping** | LLM04:2025 Data and Model Poisoning; LLM01:2025 Prompt Injection |
+| **OWASP LLM / GenAI Mapping** | LLM05:2026 Data and Model Poisoning; LLM01:2026 Prompt Injection |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity |
 
@@ -306,7 +306,7 @@ nav_order: 16
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity; [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
@@ -400,7 +400,7 @@ nav_order: 16
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency; LLM05:2026 Data and Model Poisoning (fine-tuning subversion) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials; [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity |
 
@@ -446,7 +446,7 @@ nav_order: 16
 | **Vendor Applicability** | Core: G, E, P |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines; [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance |
 
@@ -491,7 +491,7 @@ nav_order: 16
 | **Vendor Applicability** | Core: R \| Partial: P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | N/A (evaluation control) |
-| **OWASP LLM / GenAI Mapping** | LLM09:2025 Misinformation; LLM01:2025 Prompt Injection (policy robustness) |
+| **OWASP LLM / GenAI Mapping** | LLM05:2026 Data and Model Poisoning (fine-tuning subversion); LLM07:2026 Misinformation; LLM01:2026 Prompt Injection (policy robustness) |
 | **NIST AI RMF Mapping** | MEASURE 2.6; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) Adversarial Testing and Continuous Evaluation |
 
@@ -538,7 +538,7 @@ nav_order: 16
 | **Vendor Applicability** | Core: P, E |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0050 Command and Scripting Interpreter |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-032](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-032) AI Infrastructure Hardening |
 
@@ -584,7 +584,7 @@ nav_order: 16
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
 | **Control(s) Tested** | [AI-CTRL-030](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-030) ML Pipeline and Model Registry Security |
 
@@ -675,7 +675,7 @@ nav_order: 16
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
 | **Control(s) Tested** | [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) AI Supply Chain and AI-BOM; [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity |
 
@@ -722,7 +722,7 @@ nav_order: 16
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
 | **MITRE ATLAS Mapping** | AML.T0020 Training Data Poisoning (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
-| **OWASP LLM / GenAI Mapping** | LLM04:2025 Data and Model Poisoning; LLM01:2025 Prompt Injection |
+| **OWASP LLM / GenAI Mapping** | LLM05:2026 Data and Model Poisoning; LLM01:2026 Prompt Injection |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity |
 
@@ -771,7 +771,7 @@ nav_order: 16
 | **Vendor Applicability** | Partial: P, R |
 | **Risk Severity** | Medium |
 | **MITRE ATLAS Mapping** | AML.T0020 Training Data Poisoning (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
-| **OWASP LLM / GenAI Mapping** | LLM04:2025 Data and Model Poisoning; LLM01:2025 Prompt Injection |
+| **OWASP LLM / GenAI Mapping** | LLM05:2026 Data and Model Poisoning; LLM01:2026 Prompt Injection |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity |
 
@@ -818,7 +818,7 @@ nav_order: 16
 | **Vendor Applicability** | Core: R |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0024 Exfiltration via AI Inference API (includes model extraction and inversion techniques) |
-| **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption; LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM06:2026 Unbounded Consumption; LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MEASURE 2.10 |
 | **Control(s) Tested** | [AI-CTRL-028](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-028) Model Protection |
 
@@ -866,7 +866,7 @@ nav_order: 16
 | **Vendor Applicability** | Core: P, A |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0020 Training Data Poisoning (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
-| **OWASP LLM / GenAI Mapping** | LLM04:2025 Data and Model Poisoning; LLM01:2025 Prompt Injection |
+| **OWASP LLM / GenAI Mapping** | LLM05:2026 Data and Model Poisoning; LLM01:2026 Prompt Injection |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity |
 
@@ -914,7 +914,7 @@ nav_order: 16
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Medium |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage (secondary) |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; GOVERN 1.1 |
 | **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
@@ -963,7 +963,7 @@ nav_order: 16
 | **Vendor Applicability** | Core: P, E |
 | **Risk Severity** | Medium |
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
-| **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
+| **OWASP LLM / GenAI Mapping** | LLM06:2026 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
 | **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
@@ -1010,7 +1010,7 @@ nav_order: 16
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0055 Unsecured Credentials |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity; [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
@@ -1057,7 +1057,7 @@ nav_order: 16
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 1.3 |
 | **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials; [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity |
 
@@ -1104,7 +1104,7 @@ nav_order: 16
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0055 Unsecured Credentials |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
@@ -1151,7 +1151,7 @@ nav_order: 16
 | **Vendor Applicability** | Core: P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity; [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 

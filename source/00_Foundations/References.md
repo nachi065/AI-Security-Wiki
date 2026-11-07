@@ -46,14 +46,20 @@ Numbers match in-text citations. "Status" notes how each entry was checked on 7 
 
 ## Community frameworks and knowledge bases
 
-[11] OWASP GenAI Security Project. (2025). *OWASP Top 10 for LLM Applications 2025.* https://genai.owasp.org/llm-top-10/
-*Status: confirmed; ten categories LLM01 to LLM10 as listed in Page 4.*
+[11] OWASP GenAI Security Project. (2026). *OWASP Top 10 for Large Language Model Applications* (Version 2026). OWASP Foundation. https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/
+*Status: confirmed on 7 November 2026 against the publication page and the canonical Markdown source. Published 4 August 2026. DOI 10.5281/zenodo.22109015 for this edition; 10.5281/zenodo.22109014 always resolves to the newest. Ten categories LLM01:2026 to LLM10:2026. Note that https://genai.owasp.org/llm-top-10/ still served the 2025 list on that date, so cite the resource page above.*
 
 [12] OWASP GenAI Security Project. (2025, 9 December). *OWASP Top 10 for Agentic Applications (2026).* https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/
 *Status: publication date confirmed on the OWASP page; category names taken from a secondary summary (cycode.com). Check names against the primary document.*
 
 [13] OWASP GenAI Security Project. (2026, 14 April). *OWASP GenAI Exploit Round-up Report Q1 2026.* https://genai.owasp.org/2026/04/14/owasp-genai-exploit-round-up-report-q1-2026/
 *Status: confirmed to exist; coverage period 1 Jan to 11 Apr 2026. Findings cited in this paper come from a page summary; read the full report before quoting specifics.*
+
+[28] OWASP GenAI Security Project. (2026). *Agent Control Standard (ACS).* https://genai.owasp.org/resource/agent-control-standard-acs/
+*Status: confirmed to exist on 7 November 2026; donated to the OWASP GenAI Security Project and announced with the 2026 LLM Top 10. The standard itself has not been read, and no wiki control cites it yet.*
+
+[29] OWASP GenAI Security Project. (2026). *GenAI Security Industry Framework Crosswalk.* https://genai-security-project.github.io/crosswalk/
+*Status: confirmed to exist on 7 November 2026; maps OWASP GenAI guidance to other security, risk and compliance frameworks. Not compared with this wiki's own crosswalks.*
 
 [14] MITRE. *ATLAS: Adversarial Threat Landscape for Artificial-Intelligence Systems.* https://atlas.mitre.org/ and https://github.com/mitre-atlas/atlas-data
 *Status: confirmed to exist; data repository shows content version 2026.05 and monthly updates. Technique counts not verified.*

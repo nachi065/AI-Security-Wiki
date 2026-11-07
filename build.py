@@ -112,7 +112,7 @@ def traceability(page):
 
 LIBRARY = "03_Control_Library/03_AI_Security_Control_Objectives_Library.md"
 # Framework identifiers as the control records and test cases write them.
-ITEM = r"LLM\d\d:2025|ASI\d\d|AML\.[TM]\d{4}(?:\.\d{3})?|(?:GOVERN|MAP|MEASURE|MANAGE) \d\.\d+|A\.\d+(?:\.\d+)+|Clause [\d.]+\d"
+ITEM = r"LLM\d\d:20\d\d|ASI\d\d|AML\.[TM]\d{4}(?:\.\d{3})?|(?:GOVERN|MAP|MEASURE|MANAGE) \d\.\d+|A\.\d+(?:\.\d+)+|Clause [\d.]+\d"
 # NIST AI RMF 1.0 Core: the number of subcategories in each category, in order.
 NIST_CORE = {"GOVERN": [7, 3, 2, 3, 2, 2], "MAP": [6, 3, 5, 2, 2], "MEASURE": [3, 13, 3, 3], "MANAGE": [4, 4, 2, 3]}
 # ISO/IEC 42001:2023 Annex A control numbers.
@@ -216,8 +216,10 @@ def framework_crosswalk(page, kind):
         out += ["", "### Management system clauses", ""] + table([i for i in known if i.startswith("Clause")], "Clause", with_direct=False)
         out += ["", "### Annex A controls that no wiki control cites", "", uncited(ISO_ANNEX_A) + "."]
     elif kind == "owasp":
-        llm, agentic = [f"LLM{n:02d}:2025" for n in range(1, 11)], [f"ASI{n:02d}" for n in range(1, 11)]
-        out += ["### Top 10 for LLM Applications 2025", ""] + table(llm, "Item") + ["", "### Top 10 for Agentic Applications", ""] + table(agentic, "Item")
+        llm, agentic = [f"LLM{n:02d}:2026" for n in range(1, 11)], [f"ASI{n:02d}" for n in range(1, 11)]
+        out += [f"{sum(1 for i in llm if i in cited)} of the 10 items on the LLM list and "
+                f"{sum(1 for i in agentic if i in cited)} of the 10 on the agentic list are cited by at least one wiki control.", ""]
+        out += ["### Top 10 for LLM Applications 2026", ""] + table(llm, "Item") + ["", "### Top 10 for Agentic Applications", ""] + table(agentic, "Item")
         out += ["", "### Items that no control cites", "", uncited(llm + agentic) + "."]
     elif kind == "mitre-atlas":
         out += ["### Techniques", ""] + table([i for i in known if i.startswith("AML.T")], "Technique")
@@ -887,7 +889,9 @@ for dirpath, dirs, files in os.walk(SRC):
 
 open(os.path.join(ROOT, "assets", "search-index.js"), "w", encoding="utf-8").write(
     "window.SEARCH_INDEX = " + json.dumps(index, ensure_ascii=False) + ";\n")
-open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8").write(
-    '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-    + "".join(f"  <url><loc>{canonical(p)}</loc><lastmod>{modified(p)}</lastmod></url>\n" for p in order) + "</urlset>\n")
+sitemap = ('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+           + "".join(f"  <url><loc>{canonical(p)}</loc><lastmod>{modified(p)}</lastmod></url>\n" for p in order) + "</urlset>\n")
+# robots.txt advertises sitemap-0.xml; sitemap.xml stays so the address search engines already hold keeps working.
+for name in ("sitemap.xml", "sitemap-0.xml"):
+    open(os.path.join(ROOT, name), "w", encoding="utf-8").write(sitemap)
 print(f"Built {len(order)} pages")

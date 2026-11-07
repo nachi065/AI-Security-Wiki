@@ -56,7 +56,7 @@ Agents need identities. The common failure is to run them under a developer's to
 | **Short-lived, scoped credentials** | Limits value of a stolen or leaked token |
 | **Act on behalf of the user, not above them** | Prevents the agent from becoming a privilege-escalation path (confused-deputy problem) |
 | **Separate read and write capabilities** | Most tasks do not need write access |
-| **No secrets in prompts, memory or logs** | Prompts and context are not a secure store; they can be leaked (LLM07) [11] |
+| **No secrets in prompts, memory or logs** | Prompts and context are not a secure store; they can be leaked (LLM08) [11] |
 | **Explicit delegation records** | Who authorised what, for how long, for which scope |
 | **Kill switch** | Ability to revoke credentials and halt execution quickly |
 

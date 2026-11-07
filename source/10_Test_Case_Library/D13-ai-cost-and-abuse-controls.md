@@ -265,7 +265,7 @@ nav_order: 26
 | **Risk Severity** | Critical |
 | **Related Layer Cases** | [TC-L09-014](L09-identity-and-access-mgmt.md#tc-l09-014), [TC-L09-017](L09-identity-and-access-mgmt.md#tc-l09-017) |
 | **MITRE ATLAS Mapping** | AML.T0055 Unsecured Credentials |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls; [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) Least Privilege and Scoped Credentials |
 
@@ -314,7 +314,7 @@ nav_order: 26
 | **Risk Severity** | Critical |
 | **Related Layer Cases** | [TC-L08-030](L08-ai-gateway-and-security-controls.md#tc-l08-030), [TC-L08-023](L08-ai-gateway-and-security-controls.md#tc-l08-023) |
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
-| **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
+| **OWASP LLM / GenAI Mapping** | LLM06:2026 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
 | **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
@@ -363,7 +363,7 @@ nav_order: 26
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L08-030](L08-ai-gateway-and-security-controls.md#tc-l08-030) |
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
-| **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
+| **OWASP LLM / GenAI Mapping** | LLM06:2026 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
 | **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
@@ -411,7 +411,7 @@ nav_order: 26
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L12-022](L12-model-layer.md#tc-l12-022), [TC-L07-032](L07-prompt-and-context-layer.md#tc-l07-032) |
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
-| **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
+| **OWASP LLM / GenAI Mapping** | LLM06:2026 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
 | **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
@@ -460,7 +460,7 @@ nav_order: 26
 | **Risk Severity** | Critical |
 | **Related Layer Cases** | [TC-L06-021](L06-agent-orchestration-layer.md#tc-l06-021), [TC-L06-024](L06-agent-orchestration-layer.md#tc-l06-024) |
 | **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls; [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) AI Containment and Kill Switch |
 
@@ -509,7 +509,7 @@ nav_order: 26
 | **Risk Severity** | Medium |
 | **Related Layer Cases** | [TC-L08-033](L08-ai-gateway-and-security-controls.md#tc-l08-033) |
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
-| **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
+| **OWASP LLM / GenAI Mapping** | LLM06:2026 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
 | **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
@@ -558,7 +558,7 @@ nav_order: 26
 | **Risk Severity** | Medium |
 | **Related Layer Cases** | [TC-L08-031](L08-ai-gateway-and-security-controls.md#tc-l08-031), [TC-L10-010](L10-data-layer.md#tc-l10-010) |
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
-| **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
+| **OWASP LLM / GenAI Mapping** | LLM06:2026 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
 | **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
@@ -656,7 +656,7 @@ nav_order: 26
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L08-030](L08-ai-gateway-and-security-controls.md#tc-l08-030) |
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
-| **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
+| **OWASP LLM / GenAI Mapping** | LLM06:2026 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
 | **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
@@ -705,7 +705,7 @@ nav_order: 26
 | **Risk Severity** | Critical |
 | **Related Layer Cases** | [TC-L08-031](L08-ai-gateway-and-security-controls.md#tc-l08-031) |
 | **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
@@ -754,7 +754,7 @@ nav_order: 26
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L06-024](L06-agent-orchestration-layer.md#tc-l06-024) |
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
-| **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
+| **OWASP LLM / GenAI Mapping** | LLM06:2026 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
 | **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
@@ -803,7 +803,7 @@ nav_order: 26
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L13-020](L13-training-and-fine-tuning-layer.md#tc-l13-020), [TC-L15-017](L15-infrastructure-layer.md#tc-l15-017) |
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
-| **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
+| **OWASP LLM / GenAI Mapping** | LLM06:2026 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
 | **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls |
 
@@ -852,7 +852,7 @@ nav_order: 26
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L04-001](L04-human-interaction-layer.md#tc-l04-001), [TC-L05-001](L05-ai-applications.md#tc-l05-001) |
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
 | **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls; [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
@@ -950,7 +950,7 @@ nav_order: 26
 | **Risk Severity** | Medium |
 | **Related Layer Cases** | [TC-L05-005](L05-ai-applications.md#tc-l05-005), [TC-L16-010](L16-supply-chain-and-third-party.md#tc-l16-010) |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
 | **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls; [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance |
 

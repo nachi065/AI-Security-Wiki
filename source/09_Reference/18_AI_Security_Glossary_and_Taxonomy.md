@@ -5,7 +5,7 @@ coauthors: Ankush Jain
 parent: "Reference"
 nav_order: 1
 document_type: AI Security Wiki Reference
-version: 1.0
+version: 1.1
 ---
 
 # AI Security Glossary and Taxonomy
@@ -35,7 +35,7 @@ version: 1.0
 | AI for Security | Use of AI to perform or augment defensive security functions. |
 | Adversarial Machine Learning | Study and mitigation of attacks that exploit machine-learning behaviour. |
 | Data Poisoning / Model Poisoning | Malicious manipulation of training data or model artifacts. |
-| Excessive Agency | Unnecessary functionality, permissions or autonomy that enables harmful actions (OWASP LLM06). |
+| Excessive Agency | Unnecessary functionality, permissions or autonomy that enables harmful actions (OWASP LLM03). |
 | Policy Enforcement Point | A deterministic component that authorizes or denies an action independently of the model. |
 | Provenance | The origin and transformation history of an artifact or data item. |
 | Robustness | Resilience under relevant perturbations and unexpected conditions. |

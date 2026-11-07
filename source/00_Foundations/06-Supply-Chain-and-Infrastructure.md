@@ -12,7 +12,7 @@ document_type: Practitioner Research Paper
 
 ## 6.1 The AI supply chain is wider than the software supply chain
 
-Organisations consume foundation models and hosted APIs, fine-tuned adapters, open-source frameworks, datasets, embedding models, vector stores, evaluation tools, agent frameworks, plugins and tool servers, and GPU and cloud infrastructure. Foundation models in particular concentrate capability into reusable artifacts; a single model may sit beneath thousands of downstream applications, creating concentration risk [26]. The security boundary is distributed across suppliers and cannot be reduced to the organisation's own code. OWASP lists supply chain as LLM03 [11] and, for agents, ASI04 [12]; ENISA's 2020 threat-landscape report already emphasised the supply chain as a significant dimension of AI cybersecurity [9]. **[Documented]**
+Organisations consume foundation models and hosted APIs, fine-tuned adapters, open-source frameworks, datasets, embedding models, vector stores, evaluation tools, agent frameworks, plugins and tool servers, and GPU and cloud infrastructure. Foundation models in particular concentrate capability into reusable artifacts; a single model may sit beneath thousands of downstream applications, creating concentration risk [26]. The security boundary is distributed across suppliers and cannot be reduced to the organisation's own code. OWASP lists supply chain as LLM04 [11] and, for agents, ASI04 [12]; ENISA's 2020 threat-landscape report already emphasised the supply chain as a significant dimension of AI cybersecurity [9]. **[Documented]**
 
 | Component | Typical risks | Controls |
 |---|---|---|

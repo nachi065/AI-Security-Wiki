@@ -49,7 +49,7 @@ Boundaries to draw explicitly on any architecture diagram:
 
 ## 2.4 Model versus application
 
-Many "AI vulnerabilities" are application vulnerabilities in disguise: an LLM output rendered unescaped in a browser, a tool endpoint without authorisation checks, a secret placed in a system prompt. OWASP classifies these separately (for example *Improper Output Handling*, LLM05:2025) from model-level risks [11]. Practical implication: a large share of risk can be reduced with conventional application security, applied carefully to the new data flows. The remainder (model manipulation, extraction, poisoning) needs AI-specific methods. [Analysis]
+Many "AI vulnerabilities" are application vulnerabilities in disguise: an LLM output rendered unescaped in a browser, a tool endpoint without authorisation checks, a secret placed in a system prompt. OWASP classifies these separately (for example *Improper Output Handling*, LLM10:2026) from model-level risks [11]. Practical implication: a large share of risk can be reduced with conventional application security, applied carefully to the new data flows. The remainder (model manipulation, extraction, poisoning) needs AI-specific methods. [Analysis]
 
 ## 2.5 What must be protected
 
@@ -58,12 +58,12 @@ Many "AI vulnerabilities" are application vulnerabilities in disguise: an LLM ou
 | Model weights | Theft of proprietary model | Backdoored or swapped weights | Loss or corruption of the only copy |
 | Training / fine-tuning data | Exposure of sensitive records | Poisoning | Dataset unavailable for retraining |
 | Embeddings / vector index | Reconstruction of source content; cross-user leakage | Injected or altered documents | Index corruption |
-| System prompts and policies | Disclosure of logic and embedded secrets (OWASP LLM07) | Tampering to disable guardrails | Misconfiguration breaking service |
+| System prompts and policies | Disclosure of logic and embedded secrets (OWASP LLM08) | Tampering to disable guardrails | Misconfiguration breaking service |
 | Tool definitions and permissions | Disclosure of internal API surface | Malicious or altered tool descriptions | Tool outage cascading to the agent |
 | Agent identities and credentials | Credential exposure | Impersonation, privilege escalation | Credential revocation breaking workflows |
-| Inference endpoint | Prompt and output leakage | Output manipulation | Resource exhaustion (OWASP LLM10) |
+| Inference endpoint | Prompt and output leakage | Output manipulation | Resource exhaustion (OWASP LLM06) |
 
-*[Analysis], structured using OWASP LLM Top 10 2025 categories [11].*
+*[Analysis], structured using OWASP LLM Top 10 2026 categories [11].*
 
 ## 2.6 Control principles for this layer
 

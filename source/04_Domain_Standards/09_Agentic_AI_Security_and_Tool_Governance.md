@@ -5,7 +5,7 @@ coauthors: Ankush Jain
 parent: "Domain Standards"
 nav_order: 4
 document_type: AI Security Wiki Reference
-version: 1.0
+version: 1.1
 ---
 
 # Agentic AI Security and Tool Governance
@@ -35,13 +35,13 @@ No AI agent should be approved for enterprise use unless the following are expli
 | Excessive Privileges | Agent has broader permissions than required. | Least privilege, access review | [AI-CTRL-016](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-016) | ASI03 Identity & Privilege Abuse |
 | Unauthorized Tool Execution | Agent invokes scripts, APIs or workflows outside scope. | Tool allowlist, runtime enforcement | [AI-CTRL-022](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-022), [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024) | ASI02 Tool Misuse & Exploitation |
 | Prompt Manipulation | Agent behavior altered by malicious instructions. | Prompt injection controls, input validation | [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) | ASI01 Agent Goal Hijack |
-| Lack of Human Oversight | Sensitive actions occur without approval. | Approval workflow, escalation controls | [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) | LLM06 Excessive Agency; ASI09 Human-Agent Trust Exploitation |
+| Lack of Human Oversight | Sensitive actions occur without approval. | Approval workflow, escalation controls | [AI-CTRL-023](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-023) | LLM03 Excessive Agency; ASI09 Human-Agent Trust Exploitation |
 | Agent-to-Agent Trust Abuse | Agents cascade actions or propagate privilege. | Trust boundaries, agent relationship mapping, authenticated and authorised agent-to-agent requests | [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006), [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025), [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) | ASI07 Insecure Inter-Agent Communication; ASI08 Cascading Failures |
 | Memory and Context Poisoning | Poisoned persistent memory influences later sessions. | Memory integrity controls, expiry, ability to inspect and purge | [AI-CTRL-026](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-026) | ASI06 Memory & Context Poisoning |
 | Unexpected Code Execution | Agent runs generated or injected code with access to network, files or secrets. | Sandboxed execution, no network or filesystem access by default | [AI-CTRL-027](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-027) | ASI05 Unexpected Code Execution (RCE) |
 | Agentic Supply Chain Compromise | A third-party tool server, MCP server, plugin or agent framework is malicious or compromised. | Allowlist and vet tool servers, isolate them, monitor calls | [AI-CTRL-024](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-024), [AI-CTRL-031](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-031) | ASI04 Agentic Supply Chain Vulnerabilities |
 
-OWASP references are to the Top 10 for Agentic Applications (ASI) and the Top 10 for LLM Applications 2025 (LLM). Confirm the exact category wording against the OWASP documents before quoting it. The reasoning behind these controls, including approval-gate design and autonomy limits, is in [Agents, Identity and Excessive Agency](../00_Foundations/05-Agents-Identity-and-Excessive-Agency.md).
+OWASP references are to the Top 10 for Agentic Applications (ASI) and the Top 10 for LLM Applications 2026 (LLM). Confirm the exact category wording against the OWASP documents before quoting it. The reasoning behind these controls, including approval-gate design and autonomy limits, is in [Agents, Identity and Excessive Agency](../00_Foundations/05-Agents-Identity-and-Excessive-Agency.md).
 
 ## Agent Control Objectives
 

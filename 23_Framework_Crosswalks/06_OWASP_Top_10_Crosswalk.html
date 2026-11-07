@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OWASP Top 10 Crosswalk | AI Security Wiki</title>
 <meta name="author" content="Nachiket Sathaye, Ankush Jain">
-<meta name="description" content="Each item in the OWASP Top 10 for LLM Applications 2025 and the OWASP Top 10 for Agentic Applications with the wiki control objectives and test cases that cover it.">
+<meta name="description" content="Each item in the OWASP Top 10 for LLM Applications 2026 and the OWASP Top 10 for Agentic Applications with the wiki control objectives and test cases that cover it.">
 <link rel="canonical" href="https://nachi065.github.io/AI-Security-Wiki/23_Framework_Crosswalks/06_OWASP_Top_10_Crosswalk.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="AI Security Wiki">
 <meta property="og:title" content="OWASP Top 10 Crosswalk | AI Security Wiki">
-<meta property="og:description" content="Each item in the OWASP Top 10 for LLM Applications 2025 and the OWASP Top 10 for Agentic Applications with the wiki control objectives and test cases that cover it.">
+<meta property="og:description" content="Each item in the OWASP Top 10 for LLM Applications 2026 and the OWASP Top 10 for Agentic Applications with the wiki control objectives and test cases that cover it.">
 <meta property="og:url" content="https://nachi065.github.io/AI-Security-Wiki/23_Framework_Crosswalks/06_OWASP_Top_10_Crosswalk.html">
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="../assets/style.css?v=aa70096b">
@@ -320,11 +320,75 @@
 <p><strong>Using the two together:</strong> Use the OWASP lists to name and rank the risks of an LLM application or an agent. Use this wiki for the control objectives, evidence and test cases for each item.</p>
 </blockquote>
 <h2 id="about-the-lists-and-this-page">About the lists and this page</h2>
-<p>The OWASP GenAI Security Project publishes two lists that the wiki cites: the Top 10 for LLM Applications, 2025 edition (<code>LLM01:2025</code> to <code>LLM10:2025</code>), and the Top 10 for Agentic Applications (<code>ASI01</code> to <code>ASI10</code>). The editions used are the ones named in the <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#framework-identifiers">control library</a>.</p>
+<p>The OWASP GenAI Security Project publishes two lists that the wiki cites: the Top 10 for LLM Applications, 2026 edition (<code>LLM01:2026</code> to <code>LLM10:2026</code>), and the Top 10 for Agentic Applications (<code>ASI01</code> to <code>ASI10</code>). The editions used are the ones named in the <a href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#framework-identifiers">control library</a>.</p>
 <p>The tables are generated each time the site is built. They are read from the OWASP field of each control and from the OWASP mapping field of each test case. To change a mapping, edit the control or the test case; this page follows on the next build.</p>
 <blockquote class="callout caution">
 <p><strong>Verify before use.</strong> OWASP revises its lists and renumbers items between editions. Check identifiers and titles against the current published lists before quoting them. The mappings are the wiki's own judgment and have not been reviewed by OWASP.</p>
 </blockquote>
+<h2 id="moving-from-the-2025-identifiers">Moving from the 2025 identifiers</h2>
+<p>The wiki cited the 2025 edition until 7 November 2026. The 2026 edition keeps all ten categories and adds none, so a 2025 identifier in an older report, RFP or test plan maps to exactly one 2026 identifier. Use this table to read the two against each other.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>2025</th>
+<th>Category in the 2026 edition</th>
+<th>2026</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LLM01:2025</code></td>
+<td>Prompt Injection</td>
+<td><code>LLM01:2026</code></td>
+</tr>
+<tr>
+<td><code>LLM02:2025</code></td>
+<td>Sensitive Information Disclosure</td>
+<td><code>LLM02:2026</code></td>
+</tr>
+<tr>
+<td><code>LLM03:2025</code></td>
+<td>Supply Chain</td>
+<td><code>LLM04:2026</code></td>
+</tr>
+<tr>
+<td><code>LLM04:2025</code></td>
+<td>Data and Model Poisoning</td>
+<td><code>LLM05:2026</code></td>
+</tr>
+<tr>
+<td><code>LLM05:2025</code></td>
+<td>Improper Output Handling</td>
+<td><code>LLM10:2026</code></td>
+</tr>
+<tr>
+<td><code>LLM06:2025</code></td>
+<td>Excessive Agency</td>
+<td><code>LLM03:2026</code></td>
+</tr>
+<tr>
+<td><code>LLM07:2025</code> System Prompt Leakage</td>
+<td>Hidden Context Exposure</td>
+<td><code>LLM08:2026</code></td>
+</tr>
+<tr>
+<td><code>LLM08:2025</code></td>
+<td>Vector and Embedding Weaknesses</td>
+<td><code>LLM09:2026</code></td>
+</tr>
+<tr>
+<td><code>LLM09:2025</code></td>
+<td>Misinformation</td>
+<td><code>LLM07:2026</code></td>
+</tr>
+<tr>
+<td><code>LLM10:2025</code></td>
+<td>Unbounded Consumption</td>
+<td><code>LLM06:2026</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>Two cautions when reading an older document against the new list. <code>LLM07:2025</code> System Prompt Leakage was renamed to Hidden Context Exposure and widened beyond the system prompt to the context supplied to a connected AI system, so a finding written against the old name may now sit inside a larger category. And four categories widened in scope without changing name, so the 2026 entry may cover more than the 2025 text a finding was written against: Prompt Injection now covers instructions hidden in an image or an audio track, Data and Model Poisoning absorbs fine-tuning subversion, Supply Chain covers a promoted model artifact that is not what it claims to be, and Improper Output Handling spans insecure code generated at scale by coding assistants.</p>
 <h2 id="how-to-read-the-tables">How to read the tables</h2>
 <ul>
 <li><strong>Wiki controls</strong> are the control objectives whose record cites the item.</li>
@@ -332,7 +396,8 @@
 <li><strong>Test cases that cite it</strong> counts the test cases whose own record names the item. Most test cases name items from the LLM list only. The agent-to-agent cases also name ASI07, so it is the one agentic item with a count in this column.</li>
 </ul>
 <h2 id="items-to-wiki-controls">Items to wiki controls</h2>
-<h3 id="top-10-for-llm-applications-2025">Top 10 for LLM Applications 2025</h3>
+<p>10 of the 10 items on the LLM list and 10 of the 10 on the agentic list are cited by at least one wiki control.</p>
+<h3 id="top-10-for-llm-applications-2026">Top 10 for LLM Applications 2026</h3>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -345,74 +410,74 @@
 </thead>
 <tbody>
 <tr>
-<td>LLM01:2025</td>
+<td>LLM01:2026</td>
 <td>Prompt Injection</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
 <td>119</td>
 <td>66</td>
 </tr>
 <tr>
-<td>LLM02:2025</td>
+<td>LLM02:2026</td>
 <td>Sensitive Information Disclosure</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-002">AI-CTRL-002</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-003">AI-CTRL-003</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-004">AI-CTRL-004</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-010">AI-CTRL-010</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-013">AI-CTRL-013</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-017">AI-CTRL-017</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-018">AI-CTRL-018</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-020">AI-CTRL-020</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-021">AI-CTRL-021</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-028">AI-CTRL-028</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
 <td>232</td>
 <td>96</td>
 </tr>
 <tr>
-<td>LLM03:2025</td>
-<td>Supply Chain</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-004">AI-CTRL-004</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-030">AI-CTRL-030</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-031">AI-CTRL-031</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-032">AI-CTRL-032</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
-<td>182</td>
-<td>81</td>
-</tr>
-<tr>
-<td>LLM04:2025</td>
-<td>Data and Model Poisoning</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-019">AI-CTRL-019</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-029">AI-CTRL-029</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-030">AI-CTRL-030</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
-<td>92</td>
-<td>15</td>
-</tr>
-<tr>
-<td>LLM05:2025</td>
-<td>Improper Output Handling</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-020">AI-CTRL-020</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
-<td>52</td>
-<td>8</td>
-</tr>
-<tr>
-<td>LLM06:2025</td>
+<td>LLM03:2026</td>
 <td>Excessive Agency</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-006">AI-CTRL-006</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-015">AI-CTRL-015</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-016">AI-CTRL-016</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-022">AI-CTRL-022</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-023">AI-CTRL-023</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-025">AI-CTRL-025</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-027">AI-CTRL-027</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-045">AI-CTRL-045</a></td>
 <td>183</td>
 <td>90</td>
 </tr>
 <tr>
-<td>LLM07:2025</td>
-<td>System Prompt Leakage</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
-<td>89</td>
-<td>3</td>
+<td>LLM04:2026</td>
+<td>Supply Chain</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-001">AI-CTRL-001</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-004">AI-CTRL-004</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-014">AI-CTRL-014</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-024">AI-CTRL-024</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-030">AI-CTRL-030</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-031">AI-CTRL-031</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-032">AI-CTRL-032</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
+<td>182</td>
+<td>83</td>
 </tr>
 <tr>
-<td>LLM08:2025</td>
-<td>Vector and Embedding Weaknesses</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-018">AI-CTRL-018</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-019">AI-CTRL-019</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
-<td>62</td>
-<td>6</td>
+<td>LLM05:2026</td>
+<td>Data and Model Poisoning</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-019">AI-CTRL-019</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-026">AI-CTRL-026</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-029">AI-CTRL-029</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-030">AI-CTRL-030</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
+<td>92</td>
+<td>17</td>
 </tr>
 <tr>
-<td>LLM09:2025</td>
+<td>LLM06:2026</td>
+<td>Unbounded Consumption</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-028">AI-CTRL-028</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a></td>
+<td>87</td>
+<td>23</td>
+</tr>
+<tr>
+<td>LLM07:2026</td>
 <td>Misinformation</td>
 <td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-039">AI-CTRL-039</a></td>
 <td>47</td>
 <td>10</td>
 </tr>
 <tr>
-<td>LLM10:2025</td>
-<td>Unbounded Consumption</td>
-<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-028">AI-CTRL-028</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-036">AI-CTRL-036</a></td>
-<td>87</td>
-<td>23</td>
+<td>LLM08:2026</td>
+<td>Hidden Context Exposure</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-005">AI-CTRL-005</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
+<td>89</td>
+<td>3</td>
+</tr>
+<tr>
+<td>LLM09:2026</td>
+<td>Vector and Embedding Weaknesses</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-018">AI-CTRL-018</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-019">AI-CTRL-019</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
+<td>62</td>
+<td>6</td>
+</tr>
+<tr>
+<td>LLM10:2026</td>
+<td>Improper Output Handling</td>
+<td><a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-020">AI-CTRL-020</a>; <a class="chip" href="../03_Control_Library/03_AI_Security_Control_Objectives_Library.html#ai-ctrl-034">AI-CTRL-034</a></td>
+<td>52</td>
+<td>9</td>
 </tr>
 </tbody>
 </table></div>
@@ -512,7 +577,7 @@
 </ul>
 </article>
 <nav class="pager" aria-label="Previous and next page"><a class="prev" href="05_ISO_IEC_42001_Crosswalk.html">&larr; ISO/IEC 42001 Crosswalk</a><a class="next" href="07_MITRE_ATLAS_Crosswalk.html">MITRE ATLAS Crosswalk &rarr;</a></nav>
-<footer class="site-footer">Author: Nachiket Sathaye &middot; Co-author: Ankush Jain &middot; Updated 23 October 2026 &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/23_Framework_Crosswalks/06_OWASP_Top_10_Crosswalk.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
+<footer class="site-footer">Author: Nachiket Sathaye &middot; Co-author: Ankush Jain &middot; Updated 7 November 2026 &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/edit/main/source/23_Framework_Crosswalks/06_OWASP_Top_10_Crosswalk.md" rel="noopener">Suggest an edit to this page</a> &middot; <a href="../community-rules.html">Community rules</a> &middot; <a href="https://github.com/nachi065/AI-Security-Wiki/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
 <div class="site-notice">
 <p><strong>Licence.</strong> <svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.441-3.5c8.951,0,16.572,3.125,22.857,9.372c3.008,3.009,5.295,6.448,6.857,10.314 c1.561,3.867,2.344,7.971,2.344,12.314c0,4.381-0.773,8.486-2.314,12.313c-1.543,3.828-3.82,7.21-6.828,10.143 c-3.123,3.085-6.666,5.448-10.629,7.086c-3.961,1.638-8.057,2.457-12.285,2.457s-8.276-0.808-12.143-2.429 c-3.866-1.618-7.333-3.961-10.4-7.027c-3.067-3.066-5.4-6.524-7-10.372S5.5,32.767,5.5,28.5c0-4.229,0.809-8.295,2.428-12.2 c1.619-3.905,3.972-7.4,7.057-10.486C21.08-0.394,28.565-3.5,37.441-3.5z M37.557,2.272c-7.314,0-13.467,2.553-18.458,7.657 c-2.515,2.553-4.448,5.419-5.8,8.6c-1.354,3.181-2.029,6.505-2.029,9.972c0,3.429,0.675,6.734,2.029,9.913 c1.353,3.183,3.285,6.021,5.8,8.516c2.514,2.496,5.351,4.399,8.515,5.715c3.161,1.314,6.476,1.971,9.943,1.971 c3.428,0,6.75-0.665,9.973-1.999c3.219-1.335,6.121-3.257,8.713-5.771c4.99-4.876,7.484-10.99,7.484-18.344 c0-3.543-0.648-6.895-1.943-10.057c-1.293-3.162-3.18-5.98-5.654-8.458C50.984,4.844,44.795,2.272,37.557,2.272z M37.156,23.187 l-4.287,2.229c-0.458-0.951-1.019-1.619-1.685-2c-0.667-0.38-1.286-0.571-1.858-0.571c-2.856,0-4.286,1.885-4.286,5.657 c0,1.714,0.362,3.084,1.085,4.113c0.724,1.029,1.791,1.544,3.201,1.544c1.867,0,3.181-0.915,3.944-2.743l3.942,2 c-0.838,1.563-2,2.791-3.486,3.686c-1.484,0.896-3.123,1.343-4.914,1.343c-2.857,0-5.163-0.875-6.915-2.629 c-1.752-1.752-2.628-4.19-2.628-7.313c0-3.048,0.886-5.466,2.657-7.257c1.771-1.79,4.009-2.686,6.715-2.686 C32.604,18.558,35.441,20.101,37.156,23.187z M55.613,23.187l-4.229,2.229c-0.457-0.951-1.02-1.619-1.686-2 c-0.668-0.38-1.307-0.571-1.914-0.571c-2.857,0-4.287,1.885-4.287,5.657c0,1.714,0.363,3.084,1.086,4.113 c0.723,1.029,1.789,1.544,3.201,1.544c1.865,0,3.18-0.915,3.941-2.743l4,2c-0.875,1.563-2.057,2.791-3.541,3.686 c-1.486,0.896-3.105,1.343-4.857,1.343c-2.896,0-5.209-0.875-6.941-2.629c-1.736-1.752-2.602-4.19-2.602-7.313 c0-3.048,0.885-5.466,2.658-7.257c1.77-1.79,4.008-2.686,6.713-2.686C51.117,18.558,53.938,20.101,55.613,23.187z"/></svg><svg class="cc-icon" viewBox="5.5 -3.5 64 64" aria-hidden="true"><path d="M37.443-3.5c8.988,0,16.57,3.085,22.742,9.257C66.393,11.967,69.5,19.548,69.5,28.5c0,8.991-3.049,16.476-9.145,22.456 C53.879,57.319,46.242,60.5,37.443,60.5c-8.649,0-16.153-3.144-22.514-9.43C8.644,44.784,5.5,37.262,5.5,28.5 c0-8.761,3.144-16.342,9.429-22.742C21.101-0.415,28.604-3.5,37.443-3.5z M37.557,2.272c-7.276,0-13.428,2.553-18.457,7.657 c-5.22,5.334-7.829,11.525-7.829,18.572c0,7.086,2.59,13.22,7.77,18.398c5.181,5.182,11.352,7.771,18.514,7.771 c7.123,0,13.334-2.607,18.629-7.828c5.029-4.838,7.543-10.952,7.543-18.343c0-7.276-2.553-13.465-7.656-18.571 C50.967,4.824,44.795,2.272,37.557,2.272z M46.129,20.557v13.085h-3.656v15.542h-9.944V33.643h-3.656V20.557 c0-0.572,0.2-1.057,0.599-1.457c0.401-0.399,0.887-0.6,1.457-0.6h13.144c0.533,0,1.01,0.2,1.428,0.6 C45.918,19.5,46.129,19.986,46.129,20.557z M33.042,12.329c0-3.008,1.485-4.514,4.458-4.514s4.457,1.504,4.457,4.514 c0,2.971-1.486,4.457-4.457,4.457S33.042,15.3,33.042,12.329z"/></svg>This wiki is open to the community under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">Creative Commons Attribution-ShareAlike 4.0 International licence (CC BY-SA 4.0)</a>. You may copy, share and adapt it for any purpose, including commercially, as long as you credit the authors and release anything you build from it under the same licence.</p>
 <p><strong>Disclaimer.</strong> This wiki is an open, community driven educational reference, not legal, regulatory or professional advice. Regional regulatory content is compiled from secondary sources and its verification status is shown per row; verify against primary sources before relying on it. Content is provided "as is" without warranty. Named products and companies belong to their owners; statements about them reflect public information at the date shown. Views are the author's own.</p>

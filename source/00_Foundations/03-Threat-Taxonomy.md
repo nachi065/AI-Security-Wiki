@@ -30,7 +30,7 @@ In both taxonomies, attacks are classified by the attacker's objective, and each
 | Threat | Description | Key sources |
 |---|---|---|
 | **Data poisoning** | Attacker alters training data to degrade a model or install targeted behaviour | Biggio et al. showed poisoning against SVMs in 2012 [19]; Carlini et al. showed web-scale dataset poisoning is practical [25] |
-| **Backdoors / trojans** | A hidden trigger causes attacker-chosen behaviour while normal accuracy is preserved | NIST AI 100-2e2025 [1]; OWASP LLM04 [11] |
+| **Backdoors / trojans** | A hidden trigger causes attacker-chosen behaviour while normal accuracy is preserved | NIST AI 100-2e2025 [1]; OWASP LLM05 [11] |
 | **Compromised pre-trained models** | A downloaded model or adapter is already tampered with | See [Page 6](06-Supply-Chain-and-Infrastructure.md) |
 
 **Documented example.** Carlini et al. describe *split-view poisoning* (buying expired domains that host content indexed in datasets such as LAION-400M, so later downloaders receive attacker-controlled content) and *frontrunning poisoning* (editing content just before a predictable snapshot, as with Wikipedia dumps). They report that they could have controlled roughly 0.01% of some datasets for about US$60, and proposed integrity checks and snapshot-timing defences [25]. **[Documented]** *Verify the figures against the paper before quoting them.*
@@ -43,7 +43,7 @@ In both taxonomies, attacks are classified by the attacker's objective, and each
 | **Prompt injection (direct)** | User-supplied text overrides intended behaviour | Perez & Ribeiro [22]; OWASP LLM01 [11] |
 | **Prompt injection (indirect)** | Instructions hidden in retrieved or third-party content | Greshake et al. [23] |
 | **Adversarial suffixes / jailbreaks** | Automatically generated strings that transfer across aligned models | Zou et al. [24] |
-| **Resource abuse** | Cost or capacity exhaustion through crafted use | OWASP LLM10 [11] |
+| **Resource abuse** | Cost or capacity exhaustion through crafted use | OWASP LLM06 [11] |
 
 ### Model-level
 
@@ -52,17 +52,17 @@ In both taxonomies, attacks are classified by the attacker's objective, and each
 | **Membership inference** | Determining whether a record was in the training set | Shokri et al. [20] |
 | **Model extraction** | Reconstructing a model's function through repeated queries to its API | Tramèr et al. [21] |
 | **Training-data extraction / leakage** | Eliciting memorised content | NIST AI 100-2e2025 privacy attacks [1]; OWASP LLM02 [11] |
-| **System-prompt leakage** | Disclosure of hidden instructions | OWASP LLM07 [11] |
+| **System-prompt leakage** | Disclosure of hidden instructions | OWASP LLM08 [11] |
 
 ### Application and ecosystem
 
 | Threat | Description | Key sources |
 |---|---|---|
-| **Insecure output handling** | Model output reaches an interpreter (browser, shell, SQL) unescaped | OWASP LLM05 [11] |
-| **Excessive agency** | Over-broad tools, permissions or autonomy | OWASP LLM06 [11]; OWASP Agentic Top 10 [12] |
-| **Vector/embedding weaknesses** | Cross-tenant leakage, poisoned retrieval | OWASP LLM08 [11] |
-| **Supply-chain compromise** | Malicious packages, models, plugins, datasets | OWASP LLM03 [11]; OWASP Round-up Q1 2026 [13] |
-| **Misinformation / over-reliance** | False output acted on without verification | OWASP LLM09 [11] |
+| **Insecure output handling** | Model output reaches an interpreter (browser, shell, SQL) unescaped | OWASP LLM10 [11] |
+| **Excessive agency** | Over-broad tools, permissions or autonomy | OWASP LLM03 [11]; OWASP Agentic Top 10 [12] |
+| **Vector/embedding weaknesses** | Cross-tenant leakage, poisoned retrieval | OWASP LLM09 [11] |
+| **Supply-chain compromise** | Malicious packages, models, plugins, datasets | OWASP LLM04 [11]; OWASP Round-up Q1 2026 [13] |
+| **Misinformation / over-reliance** | False output acted on without verification | OWASP LLM07 [11] |
 
 ## 3.3 What is "new" and what is not
 

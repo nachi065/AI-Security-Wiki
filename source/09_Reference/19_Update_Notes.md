@@ -6,8 +6,8 @@ parent: "Reference"
 nav_order: 2
 description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."
 document_type: AI Security Wiki Reference
-version: 1.3
-last_reviewed: 2026-11-04
+version: 1.4
+last_reviewed: 2026-11-07
 ---
 
 # Update Notes
@@ -18,6 +18,37 @@ This page is the wiki's change record. It has two parts:
 - **[Full version history](#full-version-history)**: every version since 1.0, newest first. The [home page](../index.md#20-version-history) shows only the three latest.
 
 Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.
+
+## 7 November 2026: OWASP Top 10 for LLM Applications moved to the 2026 edition
+
+The wiki cited the 2025 edition of the OWASP Top 10 for LLM Applications. OWASP published the 2026 edition on 4 August 2026 and announced it on 2 September 2026. Every `LLM` identifier in the wiki now names the 2026 edition.
+
+### What changed
+
+- **465 identifier references across 23 pages** moved from `LLMnn:2025` to `LLMnn:2026`. The 2026 edition keeps all ten categories of the 2025 edition and adds none, so each mapping moved to the new number for the category it already named. No mapping changed which risk it points at.
+- **Eight of the ten categories changed rank.** Excessive Agency rose three places to `LLM03:2026` and Improper Output Handling fell five to `LLM10:2026`. Unbounded Consumption rose four to `LLM06:2026`, Misinformation rose two to `LLM07:2026`, and Supply Chain, Data and Model Poisoning and Vector and Embedding Weaknesses each fell one, to `LLM04:2026`, `LLM05:2026` and `LLM09:2026`. Prompt Injection and Sensitive Information Disclosure held first and second place.
+- **One category was renamed.** `LLM07:2025` System Prompt Leakage is now `LLM08:2026` Hidden Context Exposure, which OWASP widened from the system prompt to the context supplied to a connected AI system. Three test cases and one control carried the old name and now carry the new one: the mapping on [TC-L08-019](../10_Test_Case_Library/L08-ai-gateway-and-security-controls.md#tc-l08-019) changed but its title still says "System Prompt Leakage", because that is the technique the case exercises.
+- **[LLMs, Prompt Injection and RAG](../00_Foundations/04-LLMs-Prompt-Injection-and-RAG.md)** carries the 2026 list with a column showing where each category moved, the change in ranking method, the four categories OWASP widened, and the boundary OWASP draws between this list and the Top 10 for Agentic Applications.
+- **[Threat Taxonomy](../00_Foundations/03-Threat-Taxonomy.md), [AI System Boundary and Assets](../00_Foundations/02-AI-System-Boundary-and-Assets.md), [Agents, Identity and Excessive Agency](../00_Foundations/05-Agents-Identity-and-Excessive-Agency.md), [Supply Chain and Infrastructure](../00_Foundations/06-Supply-Chain-and-Infrastructure.md), [Illustrative Scenarios](../00_Foundations/12-Illustrative-Scenarios.md), [Governance, Standards and Regulation](../00_Foundations/09-Governance-Standards-and-Regulation.md), [Agentic AI Security and Tool Governance](../04_Domain_Standards/09_Agentic_AI_Security_and_Tool_Governance.md) (1.1), the [Glossary](18_AI_Security_Glossary_and_Taxonomy.md) (1.1) and [Secure Your First Agent](../24_Builder_Track/01_Secure_Your_First_Agent.md) (1.1)** cite categories by bare number in running text. Each was moved by hand.
+- **The [Control Objectives Library](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md) (2.8)** now records the version used as 2026 in its [framework identifiers table](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#framework-identifiers), and reference [11] in the [Foundations references](../00_Foundations/References.md) names the 2026 edition with its DOI.
+- **[OWASP Top 10 Crosswalk](../23_Framework_Crosswalks/06_OWASP_Top_10_Crosswalk.md) (1.1)** gains a table mapping each 2025 identifier to its 2026 one, for reading an older report, RFP or test plan against the new list. Its generated tables come from the control and test case records, so they followed on the next build.
+- **[AI Security Incident Casebook](20_AI_Security_Incident_Casebook.md) (1.2)** moved the OWASP column of its case table. The casebook states that its OWASP mapping is this wiki's judgement rather than a record of a dated check, so the mapping follows the current edition.
+- **The site build had the list hardcoded.** The generator that writes the crosswalk tables held the 2025 identifiers, so after the content moved it rendered all ten items with no controls and no cases against them. It now reads the 2026 identifiers, counts how many items of each list a control cites, and matches any edition year, so the next edition needs a one-line change. The generator also writes `sitemap-0.xml`, the address `robots.txt` gives search engines, which until now kept whatever the last manual copy held.
+- **Ranking method.** The 2026 edition is the first to weigh the community vote against incident data: the vote at three-quarters, and a corpus of 7,714 real incidents at one quarter, of which 6,639 could be classified. Prompt Injection held first place on the vote; OWASP records that incident data alone would have put it outside the ten.
+
+### What was checked and what was not
+
+- Checked on 7 November 2026 against the OWASP publication page and the canonical Markdown source in the project's repository [Verified]: the ten identifiers and titles, the 4 August 2026 publication date, the rank movements, the rename of System Prompt Leakage, that no category was added or removed, and the incident-corpus figures. The rank movements and the incident figures are quoted from the edition's own preface.
+- `https://genai.owasp.org/llm-top-10/`, the address reference [11] used, still served the 2025 list on that date. Reference [11] now points at the resource page for the 2026 edition and records this.
+- **Each mapping was moved to the new number for the category it already named**, so no mapping changed which risk it points at. The four categories OWASP widened were then checked case by case, and five cases gained a mapping:
+    - **Prompt Injection** now covers instructions hidden in an image or an audio track. The nine cross-modal cases in [D11 Multimodal and Voice Input Security](../10_Test_Case_Library/D11-multimodal-and-voice-input-security.md) already cited it, so nothing changed. [TC-D11-004](../10_Test_Case_Library/D11-multimodal-and-voice-input-security.md#tc-d11-004) stays unmapped, because adversarial image perturbation is classic model robustness and the list still has no entry for it.
+    - **Data and Model Poisoning** absorbs fine-tuning subversion, so [TC-L13-008](../10_Test_Case_Library/L13-training-and-fine-tuning-layer.md#tc-l13-008) (fine-tuning job approval) and [TC-L13-010](../10_Test_Case_Library/L13-training-and-fine-tuning-layer.md#tc-l13-010) (safety regression after fine-tuning) now cite it beside what they cited before.
+    - **Supply Chain** covers a promoted model artefact that is not what it claims to be. [TC-L14-012](../10_Test_Case_Library/L14-mlops-llmops-layer.md#tc-l14-012) (promotion workflow across environments) cited nothing and now cites it, and [TC-L14-004](../10_Test_Case_Library/L14-mlops-llmops-layer.md#tc-l14-004) (model registry access control and immutability) cites it beside Excessive Agency.
+    - **Improper Output Handling** spans insecure code generated at scale by coding assistants, so [TC-L05-034](../10_Test_Case_Library/L05-ai-applications.md#tc-l05-034) (insecure code suggestion detection) now cites it ahead of Misinformation.
+    - No control objective gained a mapping. [AI-CTRL-004](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-004) governs coding assistants but its objective is source-code and secret leakage rather than the quality of generated code, and [AI-CTRL-034](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-034) already cites all ten items.
+- **The 15 October 2026 entry below was left alone.** It records a mapping check made against the 2025 edition and names 2025 identifiers. Rewriting it would misreport what was checked on that date.
+- The [Agent Control Standard](https://genai.owasp.org/resource/agent-control-standard-acs/), donated to the OWASP GenAI Security Project, and the project's own [GenAI Security Industry Framework Crosswalk](https://genai-security-project.github.io/crosswalk/) were published alongside the 2026 edition. Both are now recorded as references [28] and [29] in the [Foundations references](../00_Foundations/References.md). Neither document has been read in full and no wiki control cites either, so a crosswalk page for the Agent Control Standard is still to come.
+- The OWASP MCP Top 10 identifiers (`MCP01:2025` onward) and the Top 10 for Agentic Applications (`ASI01` to `ASI10`, 2026 edition) were not touched. Both are separate lists and both were already at their current edition.
 
 ## 4 November 2026: Builder Toolkit brought up to ai-secure-by-design v0.2.0
 
@@ -677,6 +708,7 @@ Every version of the wiki, newest first. Rows are never edited after they are ad
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.59 | 2026-11-07 | Nachiket Sathaye | OWASP Top 10 for LLM Applications moved from the 2025 to the 2026 edition, published 4 August 2026: 465 identifier references remapped across 23 pages, System Prompt Leakage renamed to Hidden Context Exposure, and the Foundations list rewritten with the rank movements, the new ranking method and the four widened categories. No mapping changed which risk it names; five test cases gained one because a category widened. |
 | 2.58 | 2026-11-04 | Nachiket Sathaye | Builder Toolkit 1.1: the comparison with ai-secure-by-design brought up to its v0.2.0 release, which now runs the wiki's AIW rules and control library as an opt-in regime and adds Python scaffolds and personal-data detection; Privacy Duties in Code and Developer Pipeline Checks link to it. |
 | 2.57 | 2026-11-04 | Nachiket Sathaye | CERT-In AI Security Auditing Guidelines Crosswalk for version 1.0 of the guidelines, dated 4 November 2026: the nine core audit domains, the four risk tiers and eight risk factors, the advanced requirements for generative, RAG, agentic, multimodal, multi-agent and cyber-physical AI, and the audit lifecycle, contestability, finding severities and maturity model, mapped to wiki controls and test cases, with five requirements named as gaps; India hub, crosswalk and CSV row IN14. |
 | 2.56 | 2026-10-29 | Nachiket Sathaye | ISO/IEC 42001 Crosswalk now covers all 38 Annex A controls (was 33) and ISO/IEC 27001 Crosswalk 75 of 93 (was 65), with titles checked against published listings; eight controls extended; four workbooks rebuilt. See the [Update Notes](../09_Reference/19_Update_Notes.md). |

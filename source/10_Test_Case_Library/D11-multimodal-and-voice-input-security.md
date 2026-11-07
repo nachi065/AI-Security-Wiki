@@ -66,7 +66,7 @@ nav_order: 24
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L05-001](L05-ai-applications.md#tc-l05-001), [TC-L04-021](L04-human-interaction-layer.md#tc-l04-021) |
 | **MITRE ATLAS Mapping** | N/A (visibility control); Reconnaissance/Discovery context only |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain (unmanaged AI components) |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain (unmanaged AI components) |
 | **NIST AI RMF Mapping** | MAP 1.1; GOVERN 6.1 |
 | **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security; [AI-CTRL-001](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-001) AI Discovery |
 
@@ -117,7 +117,7 @@ nav_order: 24
 | **Risk Severity** | Critical |
 | **Related Layer Cases** | [TC-L07-014](L07-prompt-and-context-layer.md#tc-l07-014), [TC-L07-023](L07-prompt-and-context-layer.md#tc-l07-023) |
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
-| **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
+| **OWASP LLM / GenAI Mapping** | LLM01:2026 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security; [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
@@ -166,7 +166,7 @@ nav_order: 24
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L07-014](L07-prompt-and-context-layer.md#tc-l07-014) |
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
-| **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
+| **OWASP LLM / GenAI Mapping** | LLM01:2026 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security; [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
@@ -264,7 +264,7 @@ nav_order: 24
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L04-022](L04-human-interaction-layer.md#tc-l04-022) |
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
-| **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
+| **OWASP LLM / GenAI Mapping** | LLM01:2026 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security |
 
@@ -313,7 +313,7 @@ nav_order: 24
 | **Risk Severity** | Critical |
 | **Related Layer Cases** | [TC-L08-013](L08-ai-gateway-and-security-controls.md#tc-l08-013), [TC-L04-020](L04-human-interaction-layer.md#tc-l04-020) |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security; [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002) Prompt Inspection |
 
@@ -362,7 +362,7 @@ nav_order: 24
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L08-004](L08-ai-gateway-and-security-controls.md#tc-l08-004) |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage (secondary) |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; GOVERN 1.1 |
 | **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance; [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security |
 
@@ -411,7 +411,7 @@ nav_order: 24
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L08-012](L08-ai-gateway-and-security-controls.md#tc-l08-012) |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
 | **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security |
 
@@ -460,7 +460,7 @@ nav_order: 24
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L05-014](L05-ai-applications.md#tc-l05-014), [TC-L05-015](L05-ai-applications.md#tc-l05-015) |
 | **MITRE ATLAS Mapping** | AML.T0049 Exploit Public-Facing Application (downstream impact) |
-| **OWASP LLM / GenAI Mapping** | LLM05:2025 Improper Output Handling |
+| **OWASP LLM / GenAI Mapping** | LLM10:2026 Improper Output Handling |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security |
 
@@ -508,7 +508,7 @@ nav_order: 24
 | **Risk Severity** | Critical |
 | **Related Layer Cases** | [TC-L07-011](L07-prompt-and-context-layer.md#tc-l07-011), [TC-L04-022](L04-human-interaction-layer.md#tc-l04-022) |
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
-| **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
+| **OWASP LLM / GenAI Mapping** | LLM01:2026 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security |
 
@@ -557,7 +557,7 @@ nav_order: 24
 | **Risk Severity** | Medium |
 | **Related Layer Cases** | [TC-L12-022](L12-model-layer.md#tc-l12-022), [TC-L08-012](L08-ai-gateway-and-security-controls.md#tc-l08-012) |
 | **MITRE ATLAS Mapping** | AML.T0029 Denial of AI Service; AML.T0034 Cost Harvesting |
-| **OWASP LLM / GenAI Mapping** | LLM10:2025 Unbounded Consumption |
+| **OWASP LLM / GenAI Mapping** | LLM06:2026 Unbounded Consumption |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 4.1 |
 | **Control(s) Tested** | [AI-CTRL-036](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-036) AI Cost and Abuse Controls; [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security |
 
@@ -606,7 +606,7 @@ nav_order: 24
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L07-026](L07-prompt-and-context-layer.md#tc-l07-026), [TC-L07-035](L07-prompt-and-context-layer.md#tc-l07-035) |
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
-| **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
+| **OWASP LLM / GenAI Mapping** | LLM01:2026 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security; [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
@@ -655,7 +655,7 @@ nav_order: 24
 | **Risk Severity** | Critical |
 | **Related Layer Cases** | [TC-L04-021](L04-human-interaction-layer.md#tc-l04-021), [TC-L07-001](L07-prompt-and-context-layer.md#tc-l07-001) |
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
-| **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
+| **OWASP LLM / GenAI Mapping** | LLM01:2026 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security; [AI-CTRL-005](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-005) Runtime AI Security |
 
@@ -704,7 +704,7 @@ nav_order: 24
 | **Risk Severity** | Medium |
 | **Related Layer Cases** | [TC-L04-021](L04-human-interaction-layer.md#tc-l04-021) |
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
-| **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
+| **OWASP LLM / GenAI Mapping** | LLM01:2026 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security |
 
@@ -753,7 +753,7 @@ nav_order: 24
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L08-014](L08-ai-gateway-and-security-controls.md#tc-l08-014), [TC-L08-006](L08-ai-gateway-and-security-controls.md#tc-l08-006) |
 | **MITRE ATLAS Mapping** | AML.T0054 LLM Jailbreak |
-| **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (jailbreak) |
+| **OWASP LLM / GenAI Mapping** | LLM01:2026 Prompt Injection (jailbreak) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security; [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002) Prompt Inspection |
 
@@ -802,7 +802,7 @@ nav_order: 24
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L08-035](L08-ai-gateway-and-security-controls.md#tc-l08-035) |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security; [AI-CTRL-002](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-002) Prompt Inspection |
 
@@ -851,7 +851,7 @@ nav_order: 24
 | **Risk Severity** | Critical |
 | **Related Layer Cases** | [TC-L09-012](L09-identity-and-access-mgmt.md#tc-l09-012) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security; [AI-CTRL-015](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-015) Human and Agent Identity |
 
@@ -900,7 +900,7 @@ nav_order: 24
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L10-021](L10-data-layer.md#tc-l10-021) |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage (secondary) |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; GOVERN 1.1 |
 | **Control(s) Tested** | [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance; [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security |
 
@@ -1001,7 +1001,7 @@ nav_order: 24
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L07-014](L07-prompt-and-context-layer.md#tc-l07-014), [TC-L04-020](L04-human-interaction-layer.md#tc-l04-020) |
 | **MITRE ATLAS Mapping** | AML.T0051.001 LLM Prompt Injection: Indirect |
-| **OWASP LLM / GenAI Mapping** | LLM01:2025 Prompt Injection (indirect) |
+| **OWASP LLM / GenAI Mapping** | LLM01:2026 Prompt Injection (indirect) |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security; [AI-CTRL-013](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-013) Privacy and Regulatory Compliance |
 
@@ -1050,7 +1050,7 @@ nav_order: 24
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L08-020](L08-ai-gateway-and-security-controls.md#tc-l08-020), [TC-L08-013](L08-ai-gateway-and-security-controls.md#tc-l08-013) |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-020](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-020) Output Handling; [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security |
 
@@ -1099,7 +1099,7 @@ nav_order: 24
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L10-020](L10-data-layer.md#tc-l10-020), [TC-L10-021](L10-data-layer.md#tc-l10-021) |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage (secondary) |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; GOVERN 1.4 |
 | **Control(s) Tested** | [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines; [AI-CTRL-021](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-021) Multimodal and Voice Input Security |
 

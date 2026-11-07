@@ -518,7 +518,7 @@ nav_order: 20
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0025 Exfiltration via Cyber Means |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration |
 
@@ -565,7 +565,7 @@ nav_order: 20
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration |
 
@@ -612,7 +612,7 @@ nav_order: 20
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration; [AI-CTRL-006](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-006) Agent Governance |
 
@@ -753,7 +753,7 @@ nav_order: 20
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | Critical |
 | **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics; [AI-CTRL-009](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-009) SOC Integration |
 
@@ -951,7 +951,7 @@ nav_order: 20
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics; [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) AI Containment and Kill Switch |
 
@@ -1481,7 +1481,7 @@ nav_order: 20
 | **Vendor Applicability** | Core: all |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | AML.T0057 LLM Data Leakage (secondary) |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; GOVERN 1.1 |
 | **Control(s) Tested** | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability |
 
@@ -1580,7 +1580,7 @@ nav_order: 20
 | **Vendor Applicability** | Core: A, P |
 | **Risk Severity** | High |
 | **MITRE ATLAS Mapping** | N/A (data handling control) |
-| **OWASP LLM / GenAI Mapping** | LLM02:2025 Sensitive Information Disclosure |
+| **OWASP LLM / GenAI Mapping** | LLM02:2026 Sensitive Information Disclosure |
 | **NIST AI RMF Mapping** | MEASURE 2.10; MANAGE 4.1 |
 | **Control(s) Tested** | [AI-CTRL-008](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-008) Auditability; [AI-CTRL-017](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-017) Data Protection in AI Pipelines |
 
@@ -1631,7 +1631,7 @@ nav_order: 20
 | **Vendor Applicability** | Core: W, P \| Partial: A |
 | **Risk Severity** | Medium |
 | **MITRE ATLAS Mapping** | N/A (governance and policy control) |
-| **OWASP LLM / GenAI Mapping** | LLM09:2025 Misinformation |
+| **OWASP LLM / GenAI Mapping** | LLM07:2026 Misinformation |
 | **NIST AI RMF Mapping** | MANAGE 4.1; MANAGE 4.3; MEASURE 2.5 |
 | **Control(s) Tested** | [AI-CTRL-039](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-039) Output Reliability and Content Safety; [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics |
 

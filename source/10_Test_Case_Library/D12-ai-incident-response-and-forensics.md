@@ -521,7 +521,7 @@ nav_order: 25
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L17-022](L17-monitoring-detection-and-response.md#tc-l17-022) |
 | **MITRE ATLAS Mapping** | AML.T0049 Exploit Public-Facing Application (downstream impact) |
-| **OWASP LLM / GenAI Mapping** | LLM05:2025 Improper Output Handling |
+| **OWASP LLM / GenAI Mapping** | LLM10:2026 Improper Output Handling |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics |
 
@@ -570,7 +570,7 @@ nav_order: 25
 | **Risk Severity** | Critical |
 | **Related Layer Cases** | [TC-L17-015](L17-monitoring-detection-and-response.md#tc-l17-015), [TC-L06-022](L06-agent-orchestration-layer.md#tc-l06-022) |
 | **MITRE ATLAS Mapping** | AML.T0053 AI Agent Tool Invocation |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics; [AI-CTRL-025](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-025) AI Containment and Kill Switch |
 
@@ -669,7 +669,7 @@ nav_order: 25
 | **Risk Severity** | Critical |
 | **Related Layer Cases** | [TC-L13-004](L13-training-and-fine-tuning-layer.md#tc-l13-004), [TC-L10-008](L10-data-layer.md#tc-l10-008) |
 | **MITRE ATLAS Mapping** | AML.T0020 Training Data Poisoning (applied by analogy to stored context, memory and ingested data); verify against current ATLAS |
-| **OWASP LLM / GenAI Mapping** | LLM04:2025 Data and Model Poisoning; LLM01:2025 Prompt Injection |
+| **OWASP LLM / GenAI Mapping** | LLM05:2026 Data and Model Poisoning; LLM01:2026 Prompt Injection |
 | **NIST AI RMF Mapping** | MAP 2.3; MEASURE 2.7 |
 | **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics; [AI-CTRL-029](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-029) Training and Fine-Tuning Data Integrity |
 
@@ -867,7 +867,7 @@ nav_order: 25
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L16-021](L16-supply-chain-and-third-party.md#tc-l16-021), [TC-L16-010](L16-supply-chain-and-third-party.md#tc-l16-010) |
 | **MITRE ATLAS Mapping** | AML.T0010 AI Supply Chain Compromise |
-| **OWASP LLM / GenAI Mapping** | LLM03:2025 Supply Chain |
+| **OWASP LLM / GenAI Mapping** | LLM04:2026 Supply Chain |
 | **NIST AI RMF Mapping** | GOVERN 6.1; MAP 4.1 |
 | **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics; [AI-CTRL-014](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-014) Third-Party and Vendor AI Assurance |
 
@@ -965,7 +965,7 @@ nav_order: 25
 | **Risk Severity** | High |
 | **Related Layer Cases** | [TC-L17-030](L17-monitoring-detection-and-response.md#tc-l17-030) |
 | **MITRE ATLAS Mapping** | AML.T0012 Valid Accounts |
-| **OWASP LLM / GenAI Mapping** | LLM06:2025 Excessive Agency |
+| **OWASP LLM / GenAI Mapping** | LLM03:2026 Excessive Agency |
 | **NIST AI RMF Mapping** | MEASURE 2.7; MANAGE 2.3 |
 | **Control(s) Tested** | [AI-CTRL-035](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md#ai-ctrl-035) AI Incident Response and Forensics |
 
