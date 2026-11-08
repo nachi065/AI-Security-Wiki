@@ -7,7 +7,7 @@ nav_order: 2
 description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."
 document_type: AI Security Wiki Reference
 version: 1.5
-last_reviewed: 2026-11-07
+last_reviewed: 2026-11-09
 ---
 
 # Update Notes
@@ -18,6 +18,22 @@ This page is the wiki's change record. It has two parts:
 - **[Full version history](#full-version-history)**: every version since 1.0, newest first. The [home page](../index.md#20-version-history) shows only the three latest.
 
 Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.
+
+## Week ending 14 November 2026: crosswalk verification
+
+The nightly verification pass checks one slice of the wiki each night. This week's changes are proposed in one pull request and go live when it is merged.
+
+### What was checked
+
+- **GCC (9 November 2026):** every row of the [GCC Regulatory Crosswalk](../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.md) was checked for changes by web search. Primary pages were tried for U4, U5, U9, B1, B2, S1, S5, S7 and S8 (UAE Government, UAE Cabinet, CBUAE Rulebook, Bahrain iGA and PDP Authority, SDAIA and NCA), but none could be retrieved by the automated tool this night, so no row was verified and no retrieval date was refreshed.
+
+### What changed
+
+- **GCC, U6 (needs review):** one secondary source reports that DIFC enacted amended Data Protection Regulations on AI and autonomous systems on 15 August 2026. The DIFC news page it cites could not be read, so the claim is added to the row's "To verify" column only. The tag stays [Conflict] and no other part of the row changed.
+
+### Still work in progress
+
+- GCC: no row could be checked against a primary source this week. The findings for U4, U5, U6, U9 and B2 proposed in the week ending 31 October were not merged and still need a fresh primary read.
 
 ## 7 November 2026: the OWASP Agent Control Standard
 
