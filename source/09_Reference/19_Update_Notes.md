@@ -7,7 +7,7 @@ nav_order: 2
 description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."
 document_type: AI Security Wiki Reference
 version: 1.5
-last_reviewed: 2026-11-10
+last_reviewed: 2026-11-11
 ---
 
 # Update Notes
@@ -27,17 +27,21 @@ The nightly verification pass checks one slice of the wiki each night. This week
 
 - **GCC (9 November 2026):** every row of the [GCC Regulatory Crosswalk](../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.md) was checked for changes by web search. Primary pages were tried for U4, U5, U9, B1, B2, S1, S5, S7 and S8 (UAE Government, UAE Cabinet, CBUAE Rulebook, Bahrain iGA and PDP Authority, SDAIA and NCA), but none could be retrieved by the automated tool this night, so no row was verified and no retrieval date was refreshed.
 - **India and UK (10 November 2026):** every row of the [India Regulatory Crosswalk](../17_India_AI_Compliance/03_Regulatory_Crosswalk.md) and the [UK Regulatory Crosswalk](../21_UK_AI_Compliance/03_Regulatory_Crosswalk.md) was checked for changes by web search. Primary pages were tried for IN3, IN6, IN7, IN8, IN11 and IN13 (MeitY, RBI, SEBI, IRDAI, India Code) and for UK2, UK4, UK5, UK7, UK9 and UK12 (legislation.gov.uk, UK Parliament, ICO, FCA, CMA, Ofcom), but none could be retrieved by the automated tool this night, so no row was verified and no retrieval date was refreshed.
+- **Singapore, US and South Korea (11 November 2026):** every row of the [Singapore Regulatory Crosswalk](../19_Singapore_AI_Compliance/03_Regulatory_Crosswalk.md), the [US Regulatory Crosswalk](../22_US_AI_Compliance/03_Regulatory_Crosswalk.md) and the [South Korea Regulatory Crosswalk](../20_South_Korea_AI_Compliance/03_Regulatory_Crosswalk.md) was checked for changes by web search. Primary pages were tried for SG8 (Singapore Statutes Online, CSA), for US6 to US10 and US15 to US17 (California, Texas, Illinois and Colorado legislatures, the CPPA, the Colorado Division of Insurance, NAIC, eCFR, the Federal Register and HHS) and for KR1 and KR7 (law.go.kr, KLRI, MSIT), but none could be retrieved by the automated tool this night, so no row was verified and no retrieval date was refreshed.
 
 ### What changed
 
 - **GCC, U6 (needs review):** one secondary source reports that DIFC enacted amended Data Protection Regulations on AI and autonomous systems on 15 August 2026. The DIFC news page it cites could not be read, so the claim is added to the row's "To verify" column only. The tag stays [Conflict] and no other part of the row changed.
 - **India, IN3 (needs review):** the secondary source that reported Data Protection Board appointments on 6 June 2026 published a correction on 1 November 2026 saying nobody was appointed. It also reports that on 7 October 2026 the Kerala High Court directed that the Board be made functional within eight weeks. Both points are added to the row's "To verify" column only; the court order was not read, and the row's tag and status are unchanged.
 - **UK, UK5 (needs review):** one secondary source reports that the FCA's publication of 19 October 2026, "AI in financial services: good practice and areas for improvement", is its response to the Mills Review, adopting six of seven recommendations and making no new rules. The FCA page could not be read, so this is added to "To verify" only and the tag stays [Reported].
+- **US, US5 (needs review):** search results show a Colorado Attorney General notice of proposed rulemaking dated 11 August 2026 under SB 26-189, and secondary sources report interim draft rules in October 2026. Neither was read, so both are added to the row's "To verify" column only. The tag stays [Verified] for the facts already in the row.
+- **US, US1 (needs review):** search results mention a federal bill, the Great American AI Act, reported from June 2026. No page was read and its status was not checked, so it is added to "To verify" only. The row still says there is no comprehensive federal AI law.
 
 ### Still work in progress
 
 - GCC: no row could be checked against a primary source this week. The findings for U4, U5, U6, U9 and B2 proposed in the week ending 31 October were not merged and still need a fresh primary read.
 - India and UK: no row could be checked against a primary source this week. Unverified rows remain IN7, IN8, IN11 and IN13 (India) and UK2, UK4, UK5, UK7 and UK12 (UK).
+- Singapore, US and South Korea: no row could be checked against a primary source this week. Rows not yet [Verified] remain SG8 (Singapore); US1, US4 [Conflict], US6 to US10 and US12 to US17 (US); and KR1 to KR7 (South Korea). Change watch found nothing new for Singapore or South Korea beyond what the rows already record.
 
 ## 7 November 2026: the OWASP Agent Control Standard
 
