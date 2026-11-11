@@ -7,7 +7,7 @@ nav_order: 2
 description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."
 document_type: AI Security Wiki Reference
 version: 1.5
-last_reviewed: 2026-11-11
+last_reviewed: 2026-11-12
 ---
 
 # Update Notes
@@ -28,6 +28,7 @@ The nightly verification pass checks one slice of the wiki each night. This week
 - **GCC (9 November 2026):** every row of the [GCC Regulatory Crosswalk](../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.md) was checked for changes by web search. Primary pages were tried for U4, U5, U9, B1, B2, S1, S5, S7 and S8 (UAE Government, UAE Cabinet, CBUAE Rulebook, Bahrain iGA and PDP Authority, SDAIA and NCA), but none could be retrieved by the automated tool this night, so no row was verified and no retrieval date was refreshed.
 - **India and UK (10 November 2026):** every row of the [India Regulatory Crosswalk](../17_India_AI_Compliance/03_Regulatory_Crosswalk.md) and the [UK Regulatory Crosswalk](../21_UK_AI_Compliance/03_Regulatory_Crosswalk.md) was checked for changes by web search. Primary pages were tried for IN3, IN6, IN7, IN8, IN11 and IN13 (MeitY, RBI, SEBI, IRDAI, India Code) and for UK2, UK4, UK5, UK7, UK9 and UK12 (legislation.gov.uk, UK Parliament, ICO, FCA, CMA, Ofcom), but none could be retrieved by the automated tool this night, so no row was verified and no retrieval date was refreshed.
 - **Singapore, US and South Korea (11 November 2026):** every row of the [Singapore Regulatory Crosswalk](../19_Singapore_AI_Compliance/03_Regulatory_Crosswalk.md), the [US Regulatory Crosswalk](../22_US_AI_Compliance/03_Regulatory_Crosswalk.md) and the [South Korea Regulatory Crosswalk](../20_South_Korea_AI_Compliance/03_Regulatory_Crosswalk.md) was checked for changes by web search. Primary pages were tried for SG8 (Singapore Statutes Online, CSA), for US6 to US10 and US15 to US17 (California, Texas, Illinois and Colorado legislatures, the CPPA, the Colorado Division of Insurance, NAIC, eCFR, the Federal Register and HHS) and for KR1 and KR7 (law.go.kr, KLRI, MSIT), but none could be retrieved by the automated tool this night, so no row was verified and no retrieval date was refreshed.
+- **Australia, Brazil, Canada, China and Japan (12 November 2026):** every row of the [Australia Regulatory Crosswalk](../13_Australia_AI_Compliance/03_Regulatory_Crosswalk.md), the [Brazil Regulatory Crosswalk](../14_Brazil_AI_Compliance/03_Regulatory_Crosswalk.md), the [Canada Regulatory Crosswalk](../15_Canada_AI_Compliance/03_Regulatory_Crosswalk.md), the [China Regulatory Crosswalk](../16_China_AI_Compliance/03_Regulatory_Crosswalk.md) and the [Japan Regulatory Crosswalk](../18_Japan_AI_Compliance/03_Regulatory_Crosswalk.md) was checked for changes by web search. The primary page for CA4 (the Treasury Board Directive on Automated Decision-Making) was tried but could not be retrieved by the automated tool this night, so no row was verified and no retrieval date was refreshed. Search found nothing that contradicts these rows: secondary sources still give 10 December 2026 for the Australian automated decision transparency duty (AU2), Brazil's AI bill (BR1) is still reported as awaiting a vote in the Chamber, Canada's Bill C-34 was still at second reading on 29 October 2026 (CA7), and no draft of a comprehensive Chinese AI law (CN8) was found.
 
 ### What changed
 
@@ -42,6 +43,7 @@ The nightly verification pass checks one slice of the wiki each night. This week
 - GCC: no row could be checked against a primary source this week. The findings for U4, U5, U6, U9 and B2 proposed in the week ending 31 October were not merged and still need a fresh primary read.
 - India and UK: no row could be checked against a primary source this week. Unverified rows remain IN7, IN8, IN11 and IN13 (India) and UK2, UK4, UK5, UK7 and UK12 (UK).
 - Singapore, US and South Korea: no row could be checked against a primary source this week. Rows not yet [Verified] remain SG8 (Singapore); US1, US4 [Conflict], US6 to US10 and US12 to US17 (US); and KR1 to KR7 (South Korea). Change watch found nothing new for Singapore or South Korea beyond what the rows already record.
+- Australia, Brazil, Canada, China and Japan: no row could be checked against a primary source this week. Rows not yet [Verified] remain AU1, AU6, AU7 and AU8 (Australia); BR2 and BR4 (Brazil); CA1 and CA4 (Canada); CN7 and CN9 (China); and JP5 and JP6 (Japan). Australia's automated decision transparency duty (AU2) starts on 10 December 2026.
 
 ## 7 November 2026: the OWASP Agent Control Standard
 
