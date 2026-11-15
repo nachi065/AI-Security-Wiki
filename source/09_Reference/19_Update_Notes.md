@@ -7,7 +7,7 @@ nav_order: 2
 description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."
 document_type: AI Security Wiki Reference
 version: 1.5
-last_reviewed: 2026-11-07
+last_reviewed: 2026-11-16
 ---
 
 # Update Notes
@@ -18,6 +18,26 @@ This page is the wiki's change record. It has two parts:
 - **[Full version history](#full-version-history)**: every version since 1.0, newest first. The [home page](../index.md#20-version-history) shows only the three latest.
 
 Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.
+
+## Week ending 21 November 2026: crosswalk verification
+
+The nightly verification pass checks one slice of the wiki each night. This week's changes are proposed in one pull request and go live when it is merged.
+
+### What was checked
+
+- **GCC (16 November 2026):** every row of the [GCC Regulatory Crosswalk](../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.md) was checked for changes by web search. Primary pages were read for U1 and U2 (UAE legislation portal), U5 (UAE Cabinet), B1 (Bahrain Personal Data Protection Authority), S8 (NCA), O2 (Oman Ministry of Transport, Communications and Information Technology) and the DIFC news pages for U6. The SDAIA documents behind S2, S3, S4 and S5 were refused by the retrieval proxy, and the CBUAE pages for U9 and the decree text for O2 could not be retrieved.
+
+### What changed
+
+- **GCC, U1, U2, B1 and S8:** re-read with no change; retrieval dates refreshed to 16 November 2026. The NCA consultation on the AI Cybersecurity Guidelines (S8) is still listed as closed, and the only NCA file found (AICG-1:2026) is still labelled a draft, so last week's hint that final controls had been published is not borne out.
+- **GCC, U5 (needs review):** the UAE Cabinet's own announcement of 14 June 2026 was read. It names the body the Artificial Intelligence and Data Authority, the single national body for data, AI and digital government, reporting to the Cabinet and taking over the work of three earlier bodies. The row is now [Verified] under that name; the establishing legal instrument was not read.
+- **GCC, S5 (needs review):** the Saudi Press Agency reported SDAIA's launch of the national AI risk management framework on 14 July 2026. This is added to "To verify"; the tag stays [Conflict] until the SDAIA document itself is read.
+- **GCC, O2 (needs review):** the Oman ministry's library page for Royal Decree 68/2026 confirms the title and a published date of 6 September 2026. It is added as a partial primary source; the tag stays [Reported] until the decree text is read.
+
+### Still work in progress
+
+- GCC: U6 is unchanged here. DIFC's own pages show a consultation on amended Data Protection Regulations from 18 June to 18 July 2026; no DIFC page confirming the amendments were enacted was found. The DIFC page titled "DIFC Enacts Amended Data Protection Regulations" is dated 7 September 2023.
+- GCC: rows not yet [Verified] remain U3, U4, U6 to U12, S1, S5 to S7, S9, S10, Q1 to Q4, B2 to B4, O1, O2 and K1.
 
 ## 7 November 2026: the OWASP Agent Control Standard
 
