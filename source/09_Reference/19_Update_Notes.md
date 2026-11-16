@@ -7,7 +7,7 @@ nav_order: 2
 description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."
 document_type: AI Security Wiki Reference
 version: 1.5
-last_reviewed: 2026-11-16
+last_reviewed: 2026-11-17
 ---
 
 # Update Notes
@@ -26,6 +26,7 @@ The nightly verification pass checks one slice of the wiki each night. This week
 ### What was checked
 
 - **GCC (16 November 2026):** every row of the [GCC Regulatory Crosswalk](../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.md) was checked for changes by web search. Primary pages were read for U1 and U2 (UAE legislation portal), U5 (UAE Cabinet), B1 (Bahrain Personal Data Protection Authority), S8 (NCA), O2 (Oman Ministry of Transport, Communications and Information Technology) and the DIFC news pages for U6. The SDAIA documents behind S2, S3, S4 and S5 were refused by the retrieval proxy, and the CBUAE pages for U9 and the decree text for O2 could not be retrieved.
+- **India and UK (17 November 2026):** every row of the [India Regulatory Crosswalk](../17_India_AI_Compliance/03_Regulatory_Crosswalk.md) and the [UK Regulatory Crosswalk](../21_UK_AI_Compliance/03_Regulatory_Crosswalk.md) was checked for changes by web search. Searches found nothing to change: the RBI model risk guidance (IN6) is still reported as a draft, the SEBI AI and ML guidelines (IN13) are still reported as coming, and no appointment to the Data Protection Board (IN3) was found. Primary pages were tried for IN6, IN7, IN8, IN13, UK2, UK4, UK7, UK9 and UK12 (RBI, SEBI, IRDAI, legislation.gov.uk, ICO, UK Parliament, GOV.UK, Ofcom) but none could be retrieved, so no tag or retrieval date changed.
 
 ### What changed
 
@@ -38,6 +39,7 @@ The nightly verification pass checks one slice of the wiki each night. This week
 
 - GCC: U6 is unchanged here. DIFC's own pages show a consultation on amended Data Protection Regulations from 18 June to 18 July 2026; no DIFC page confirming the amendments were enacted was found. The DIFC page titled "DIFC Enacts Amended Data Protection Regulations" is dated 7 September 2023.
 - GCC: rows not yet [Verified] remain U3, U4, U6 to U12, S1, S5 to S7, S9, S10, Q1 to Q4, B2 to B4, O1, O2 and K1.
+- India and UK: no row could be checked against a primary source this week. Rows not yet [Verified] remain IN7, IN8, IN11 and IN13 (India) and UK2, UK4, UK5, UK7 and UK12 (UK).
 
 ## 7 November 2026: the OWASP Agent Control Standard
 
