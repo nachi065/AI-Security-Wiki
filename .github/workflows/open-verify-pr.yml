@@ -1,0 +1,56 @@
+name: Open weekly verification PR
+
+# The nightly verification task pushes to a verify/<year>-W<week> branch.
+# This workflow opens that branch's pull request as github-actions[bot],
+# so the PR's author is not Nachi and either code owner (Nachi or Ankush)
+# can approve it. The review rule on main is unchanged.
+#
+# It never checks out or runs the branch's code: it only calls the GitHub API.
+# Needs "Allow GitHub Actions to create and approve pull requests" switched on
+# under Settings > Actions > General > Workflow permissions.
+on:
+  push:
+    branches: ["verify/**"]
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: "verify/<year>-W<week> branch to open a PR for"
+        required: true
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: open-verify-pr-${{ inputs.branch || github.ref_name }}
+
+jobs:
+  open-pr:
+    if: github.event.deleted != true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open the PR if the branch has none
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          BRANCH: ${{ inputs.branch || github.ref_name }}
+        run: |
+          set -euo pipefail
+          case "$BRANCH" in
+            verify/*) ;;
+            *) echo "Only verify/ branches get a PR from this workflow."; exit 1 ;;
+          esac
+          open=$(gh pr list --repo "$REPO" --head "$BRANCH" --state open --json number --jq 'length')
+          if [ "$open" != "0" ]; then
+            echo "An open PR for $BRANCH already exists."
+            exit 0
+          fi
+          ahead=$(gh api "repos/$REPO/compare/main...$BRANCH" --jq '.ahead_by')
+          if [ "$ahead" = "0" ]; then
+            echo "$BRANCH has no commits ahead of main."
+            exit 0
+          fi
+          week="${BRANCH##*-W}"
+          body="Weekly verification pull request, opened by the repository workflow so that either code owner can approve it. The nightly task adds each night's findings to this description."
+          gh pr create --repo "$REPO" --base main --head "$BRANCH" \
+            --title "Weekly verification $week" --body "$body"
