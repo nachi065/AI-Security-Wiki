@@ -19,6 +19,18 @@ This page is the wiki's change record. It has two parts:
 
 Entries are only ever added. Past entries are not rewritten or removed; when something in an earlier entry turns out to be wrong, the correction is recorded as a new entry that names the earlier one.
 
+## 18 November 2026: correction to GCC row U6 (DIFC)
+
+This corrects the GCC bullet in the [week ending 14 November 2026 note](#week-ending-14-november-2026-crosswalk-verification), which added to row U6 that DIFC was reported to have enacted amended Data Protection Regulations on AI and autonomous systems on 15 August 2026.
+
+### What changed
+
+- **GCC, U6:** the [GCC Regulatory Crosswalk](../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.md) no longer presents the 15 August 2026 enactment as the reported position. DIFC's own news page (read 16 November 2026) shows a consultation on the amended regulations from 18 June to 18 July 2026, refining Regulation 10 and adding a Regulation 11 on accreditation and certification. No DIFC page confirming that the amendments were enacted was found, and the DIFC page titled "DIFC Enacts Amended Data Protection Regulations" is dated 7 September 2023. The single secondary report of a 15 August 2026 enactment is kept in the row's "To verify" column as unconfirmed. The tag stays [Conflict].
+
+### Still work in progress
+
+- U6: whether and when the amended regulations were enacted still needs DIFC's own announcement or the regulation text.
+
 ## Week ending 21 November 2026: crosswalk verification
 
 The nightly verification pass checks one slice of the wiki each night. This week's changes are proposed in one pull request and go live when it is merged.
@@ -794,6 +806,7 @@ Every version of the wiki, newest first. Rows are never edited after they are ad
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.62 | 2026-11-18 | Nachiket Sathaye | Correction to GCC row U6 (DIFC): the reported 15 August 2026 enactment of amended DIFC Data Protection Regulations is marked unconfirmed, since DIFC's own pages show only the June to July 2026 consultation. See the [Update Notes](#18-november-2026-correction-to-gcc-row-u6-difc). |
 | 2.61 | 2026-11-14 | Nachiket Sathaye | Weekly crosswalk verification, week ending 14 November 2026: every regional crosswalk and the MITRE ATLAS, NIST AI RMF and NIST AI 600-1 crosswalks checked for changes. Primary sources could not be retrieved this week, so no row was verified. Proposed for review: MITRE ATLAS 2026.10 names and AML.T0056 moved to AML.T0085.003; reported developments added to "To verify" for U6, IN3, UK5, US1, US5, E17 (the Official Journal citation of EN 18286) and HK9. See the [Update Notes](#week-ending-14-november-2026-crosswalk-verification). |
 | 2.60 | 2026-11-07 | Nachiket Sathaye | OWASP Agent Control Standard Crosswalk for specification v0.1.0 (release 0.1.4, 16 October 2026): its 22 enforcement points, five verdicts and seven conformance profiles placed against the wiki's controls, with the three controls it has no counterpart for, its fail-open defaults, and the fact that no body verifies a conformance claim. ACS is a wire protocol with no control catalogue, so the page maps its hooks to the controls that supply their policy rather than the reverse. |
 | 2.59 | 2026-11-07 | Nachiket Sathaye | OWASP Top 10 for LLM Applications moved from the 2025 to the 2026 edition, published 4 August 2026: 465 identifier references remapped across 23 pages, System Prompt Leakage renamed to Hidden Context Exposure, and the Foundations list rewritten with the rank movements, the new ranking method and the four widened categories. No mapping changed which risk it names; five test cases gained one because a category widened. |

@@ -3,7 +3,7 @@ title: "Home"
 description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and {{n:tests}} test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.61
+version: 2.62
 status: Published
 author: Nachiket Sathaye
 coauthors: Ankush Jain
@@ -11,13 +11,13 @@ owner: AI Security Program
 custodian: Security Architecture Team
 review_cycle: Quarterly
 approval_authority: AI Governance Committee
-last_updated: 2026-11-14
+last_updated: 2026-11-18
 ---
 
 # AI Security Wiki Home
 
 > **Document Type:** Enterprise AI Security Reference Architecture and Governance Wiki  
-> **Version:** 2.61  
+> **Version:** 2.62  
 > **Status:** Published  
 > **Original Author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
 > **Co-Author:** Ankush Jain ([about the co-author](#23-about-the-co-author))  
@@ -427,9 +427,9 @@ The three latest versions, newest first. The full history since version 1.0 is i
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.62 | 2026-11-18 | Nachiket Sathaye | Correction to GCC row U6 (DIFC): the reported 15 August 2026 enactment of amended DIFC Data Protection Regulations is marked unconfirmed, since DIFC's own pages show only the June to July 2026 consultation. See the [Update Notes](09_Reference/19_Update_Notes.md#18-november-2026-correction-to-gcc-row-u6-difc). |
 | 2.61 | 2026-11-14 | Nachiket Sathaye | Weekly crosswalk verification, week ending 14 November 2026: all regional crosswalks and the MITRE ATLAS and NIST crosswalks checked for changes; no row could be verified against a primary source. Proposed for review: MITRE ATLAS 2026.10 names, and reported developments added to "To verify" for seven rows including E17 (EN 18286 in the Official Journal). See the [Update Notes](09_Reference/19_Update_Notes.md#week-ending-14-november-2026-crosswalk-verification). |
 | 2.60 | 2026-11-07 | Nachiket Sathaye | OWASP Agent Control Standard Crosswalk for specification v0.1.0: its 22 enforcement points, five verdicts and seven conformance profiles placed against the wiki's controls, the three controls it has no counterpart for, and its fail-open defaults. See the [Update Notes](09_Reference/19_Update_Notes.md). |
-| 2.59 | 2026-11-07 | Nachiket Sathaye | OWASP Top 10 for LLM Applications moved from the 2025 to the 2026 edition, published 4 August 2026: 465 identifier references remapped across 23 pages, System Prompt Leakage renamed to Hidden Context Exposure, the Foundations list rewritten with the rank movements and the new ranking method, and five test cases given a mapping that a widened category now covers. See the [Update Notes](09_Reference/19_Update_Notes.md). |
 
 ## 21. Quick Links
 
