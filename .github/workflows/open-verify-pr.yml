@@ -6,6 +6,10 @@ name: Open weekly verification PR
 # can approve it. The review rule on main is unchanged.
 #
 # It never checks out or runs the branch's code: it only calls the GitHub API.
+# A PR opened with the workflow token does not start pull_request_target
+# checks, so after opening it this workflow starts author-lock (required)
+# and link-check on the branch by workflow_dispatch, which the token may do.
+#
 # Needs "Allow GitHub Actions to create and approve pull requests" switched on
 # under Settings > Actions > General > Workflow permissions.
 on:
@@ -18,6 +22,7 @@ on:
         required: true
 
 permissions:
+  actions: write
   contents: read
   pull-requests: write
 
@@ -54,3 +59,6 @@ jobs:
           body="Weekly verification pull request, opened by the repository workflow so that either code owner can approve it. The nightly task adds each night's findings to this description."
           gh pr create --repo "$REPO" --base main --head "$BRANCH" \
             --title "Weekly verification $week" --body "$body"
+          # Start the checks on the branch head, since opening the PR did not.
+          gh workflow run author-lock.yml --repo "$REPO" --ref "$BRANCH"
+          gh workflow run link-check.yml --repo "$REPO" --ref "$BRANCH" -f external=false

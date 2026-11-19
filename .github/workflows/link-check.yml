@@ -10,6 +10,11 @@ on:
   schedule:
     - cron: "0 5 * * 1"
   workflow_dispatch:
+    inputs:
+      external:
+        description: "Also check external links"
+        type: boolean
+        default: true
 
 permissions:
   contents: read
@@ -30,4 +35,4 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
           path: candidate
           persist-credentials: false
-      - run: python3 trusted/check_links.py --root candidate ${{ (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && '--external' || '' }}
+      - run: python3 trusted/check_links.py --root candidate ${{ (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.external)) && '--external' || '' }}
