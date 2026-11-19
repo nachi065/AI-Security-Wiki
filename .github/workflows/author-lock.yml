@@ -3,10 +3,15 @@ name: Author lock
 # pull_request_target runs this file and the checker from main, so a pull
 # request cannot weaken the check. The pull request's files are only read,
 # never executed.
+#
+# workflow_dispatch lets "Open weekly verification PR" start this check on a
+# PR it opens: a PR opened with the workflow token does not start
+# pull_request_target runs, so the required author-lock check never reported.
 on:
   pull_request_target:
   push:
     branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
