@@ -14,13 +14,14 @@ That is all. You do not need to install anything or rebuild the HTML; the mainta
 
 1. Fork this repository and create a branch.
 2. Edit or add Markdown under `source/`. Do not edit the `.html` files or the CSV files in `source/25_Templates/data/` by hand; they are generated.
-3. Rebuild the pages and run the two checks:
+3. Rebuild the pages and run the three checks:
 
    ```sh
    pip install markdown
    python3 build.py
    python3 check_author.py
    python3 check_links.py
+   python3 check_home.py
    ```
 
 4. Commit the Markdown and the regenerated HTML together, then open a pull request against `main`.
@@ -55,7 +56,7 @@ A new region is accepted only when its first version has `[Verified]` rows for i
 
 - Every pull request is reviewed and approved by the author (Nachiket Sathaye) or the co-author (Ankush Jain), and only they merge it. Your commits keep your name as their author after the merge.
 - Do not type totals that the site can count (cases, layers, controls, risks, families). Write `{{n:tests}}`, `{{n:layer_tests}}`, `{{n:domain_tests}}`, `{{n:layers}}`, `{{n:controls}}`, `{{n:families}}`, `{{n:risks}}`, `{{n:critical}}`, `{{n:kit_cases}}` or a validation-level count such as `{{n:documented}}`; `build.py` fills them in and the link check fails on a hand-typed total. The list is in `counts.py`. Version-history rows and the Update Notes record what was true at the time and keep their numbers.
-- Do not edit the "Latest update" callout on the home page. `build.py` writes it from the [Update Notes](source/09_Reference/19_Update_Notes.md): every entry whose heading starts with the newest date in the full version history, and every version with that date. For each update, add an Update Notes entry headed `## D Month YYYY: title` and a version-history row.
+- Do not edit the "Latest update" callout on the home page. `build.py` writes it from the [Update Notes](source/09_Reference/19_Update_Notes.md): every entry whose heading starts with the newest date in the full version history, and every version with that date. For each update, add an Update Notes entry headed `## D Month YYYY: title` and a version-history row dated the day it goes live; a row can also link to an entry named after another day (such as a weekly note, `(#week-ending-...)`), which then shows under that row's date. Put the row on the home page too (`version:`, the Version line and the three-row Version History table). `check_home.py` fails a pull request whose update notes changed without a new version row, or whose home page tiles, version or "What's new" box no longer match the source; after every merge a workflow rebuilds the home page and opens a pull request if main has gone stale.
 - Do not mark a test case as validated unless it has been run against a real system. A case shows its [validation level](https://nachi065.github.io/AI-Security-Wiki/10_Test_Case_Library/index.html#validation-levels) automatically; to record a run, add a `Validation Level` row (Lab-validated or Independently reproduced) and a `Validated Against` row with the product and version, the date (YYYY-MM-DD), the result and an evidence link. The link check rejects anything else.
 - Never reuse or renumber an ID. Risk (AI-R), control (AI-CTRL) and test case (TC) numbers are permanent, because registers, workbooks and audits outside this wiki point at them. A new item takes the next unused number. To retire an item, keep its heading and ID, mark it **Retired** with the date and the reason, and name the item that replaces it, if any; do not delete it or give its number to something else.
 - A new risk must pass the four tests in [What Belongs on the Register](https://nachi065.github.io/AI-Security-Wiki/02_Risk_Management/02A_AI_Risk_Methodology.html#what-belongs-on-the-register). A proposed risk that is turned down is recorded under Considered and Not Added on the register, with the reason.

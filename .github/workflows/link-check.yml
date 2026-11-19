@@ -35,4 +35,10 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
           path: candidate
           persist-credentials: false
-      - run: python3 trusted/check_links.py --root candidate ${{ (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.external)) && '--external' || '' }}
+      - name: Check links and identifiers
+        run: python3 trusted/check_links.py --root candidate ${{ (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.external)) && '--external' || '' }}
+      # The home page header (stat tiles, Version line, "What's new" box) must match the source,
+      # and a change to the update notes must add a version row. Compared with main.
+      - name: Check the home page header
+        if: always()
+        run: python3 trusted/check_home.py --root candidate --base trusted
