@@ -7,7 +7,7 @@ nav_order: 2
 description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."
 document_type: AI Security Wiki Reference
 version: 1.5
-last_reviewed: 2026-11-18
+last_reviewed: 2026-11-19
 ---
 
 # Update Notes
@@ -40,6 +40,7 @@ The nightly verification pass checks one slice of the wiki each night. This week
 - **GCC (16 November 2026):** every row of the [GCC Regulatory Crosswalk](../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.md) was checked for changes by web search. Primary pages were read for U1 and U2 (UAE legislation portal), U5 (UAE Cabinet), B1 (Bahrain Personal Data Protection Authority), S8 (NCA), O2 (Oman Ministry of Transport, Communications and Information Technology) and the DIFC news pages for U6. The SDAIA documents behind S2, S3, S4 and S5 were refused by the retrieval proxy, and the CBUAE pages for U9 and the decree text for O2 could not be retrieved.
 - **India and UK (17 November 2026):** every row of the [India Regulatory Crosswalk](../17_India_AI_Compliance/03_Regulatory_Crosswalk.md) and the [UK Regulatory Crosswalk](../21_UK_AI_Compliance/03_Regulatory_Crosswalk.md) was checked for changes by web search. Searches found nothing to change: the RBI model risk guidance (IN6) is still reported as a draft, the SEBI AI and ML guidelines (IN13) are still reported as coming, and no appointment to the Data Protection Board (IN3) was found. Primary pages were tried for IN6, IN7, IN8, IN13, UK2, UK4, UK7, UK9 and UK12 (RBI, SEBI, IRDAI, legislation.gov.uk, ICO, UK Parliament, GOV.UK, Ofcom) but none could be retrieved, so no tag or retrieval date changed.
 - **Singapore, US and South Korea (18 November 2026):** every row of the [Singapore Regulatory Crosswalk](../19_Singapore_AI_Compliance/03_Regulatory_Crosswalk.md), the [US Regulatory Crosswalk](../22_US_AI_Compliance/03_Regulatory_Crosswalk.md) and the [South Korea Regulatory Crosswalk](../20_South_Korea_AI_Compliance/03_Regulatory_Crosswalk.md) was checked for changes by web search. A primary page was tried for US9 (Texas Legislature) but could not be retrieved, so the rest of the verification batch was not attempted and no tag or retrieval date changed.
+- **Australia, Brazil, Canada, China and Japan (19 November 2026):** every row of the [Australia Regulatory Crosswalk](../13_Australia_AI_Compliance/03_Regulatory_Crosswalk.md), the [Brazil Regulatory Crosswalk](../14_Brazil_AI_Compliance/03_Regulatory_Crosswalk.md), the [Canada Regulatory Crosswalk](../15_Canada_AI_Compliance/03_Regulatory_Crosswalk.md), the [China Regulatory Crosswalk](../16_China_AI_Compliance/03_Regulatory_Crosswalk.md) and the [Japan Regulatory Crosswalk](../18_Japan_AI_Compliance/03_Regulatory_Crosswalk.md) was checked for changes by web search. Primary texts were tried for all twelve rows not yet [Verified] (AU1, AU6, AU7, AU8, BR2, BR4, CA1, CA4, CN7, CN9, JP5 and JP6). Several were read in part, but none confirmed a whole row, so no tag was raised to [Verified]. The Brazilian government sites, the Canadian Treasury Board directive, the NPC site and e-Gov could not be retrieved by the automated tool.
 
 ### What changed
 
@@ -48,6 +49,13 @@ The nightly verification pass checks one slice of the wiki each night. This week
 - **GCC, S5 (needs review):** the Saudi Press Agency reported SDAIA's launch of the national AI risk management framework on 14 July 2026. This is added to "To verify"; the tag stays [Conflict] until the SDAIA document itself is read.
 - **GCC, O2 (needs review):** the Oman ministry's library page for Royal Decree 68/2026 confirms the title and a published date of 6 September 2026. It is added as a partial primary source; the tag stays [Reported] until the decree text is read.
 - **US, US17 (needs review):** law-firm and trade press reports from July 2026 say HHS moved the expected final HIPAA Security Rule to July 2027. This is added to "To verify" as a report only; the tag stays [Recalled] until the Federal Register or HHS page is read.
+- **Canada, CA7 (needs review):** LEGISinfo, read on 19 November 2026, shows Bill C-34 completed second reading on 29 October 2026 and was referred to the Standing Committee on Canadian Heritage. Bill C-36 is still at second reading. The row no longer says both bills are at second reading.
+- **Australia, AU8 (needs review):** the Federal Register of Legislation lists two instruments called "determination No. 1 of 2026" (registered 29 April and 21 May 2026), and neither details page names CPS 230. This is added to "To verify"; the row's wording is unchanged.
+- **Australia, AU6 (needs review):** press reports of a Commonwealth "Digital Duty of Care" bill, linked to nudify apps, are added to "To verify" only. The government page could not be read.
+- **Australia, AU7 (needs review):** the ACCC's own page gives 17 December 2025 for its AI industry snapshot. It is added as a source; the tag stays [Reported] because the Australian Consumer Law itself was not read.
+- **Brazil, BR4 (needs review):** the Senate legislation database copy of Decreto 13.135 was read. It is dated 9 October 2026, and Art. 3 para 3, Art. 24 and Art. 25 say what the row says. It is added as a source; the tag stays [Recalled] because the Consumer Defence Code was not read.
+- **Japan, JP5 (needs review):** the 2018 act that inserted Art. 30-4 and the Agency for Cultural Affairs overview of its General Understanding on AI and Copyright were read. The row moves from [Recalled] to [Reported], not [Verified], because the consolidated Act on e-Gov could not be read.
+- **Japan, JP4 (needs review):** a PPC consultation on draft amendments to the APPI Enforcement Rules (public-notice provisions of the 2026 amendment, planned for mid-January 2027) is noted in "To verify". It is not about AI.
 
 ### Still work in progress
 
@@ -55,6 +63,7 @@ The nightly verification pass checks one slice of the wiki each night. This week
 - GCC: rows not yet [Verified] remain U3, U4, U6 to U12, S1, S5 to S7, S9, S10, Q1 to Q4, B2 to B4, O1, O2 and K1.
 - India and UK: no row could be checked against a primary source this week. Rows not yet [Verified] remain IN7, IN8, IN11 and IN13 (India) and UK2, UK4, UK5, UK7 and UK12 (UK).
 - Singapore, US and South Korea: no row could be checked against a primary source this week. Rows not yet [Verified] remain SG8 (Singapore); US1, US4, US6 to US10 and US12 to US17 (US); and KR1 to KR7 (South Korea).
+- Australia, Brazil, Canada, China and Japan: rows not yet [Verified] remain AU1, AU6, AU7 and AU8 (Australia); BR2 and BR4 (Brazil); CA1 and CA4 (Canada); CN7 and CN9 (China); and JP5 and JP6 (Japan). Two leads were found but not added because only secondary or copied sources were read: the NPC Standing Committee's reported ratification in November 2026 of the agreement establishing a World AI Cooperation Organization (CN8 context), and a State Council opinion on AI and employment published 24 October 2026.
 
 ## Week ending 14 November 2026: crosswalk verification
 
