@@ -40,6 +40,7 @@ for dirpath, dirs, files in os.walk(SRC):
 
 # Counts that pages quote are written as {{n:name}} and filled in from the source files here.
 from counts import site_counts
+import home_header
 import export_data
 export_data.main(SRC)  # CSV copies of the register, controls and test cases, served from 25_Templates/data/
 COUNTS = site_counts(SRC)
@@ -461,19 +462,12 @@ for p in pages:
     p["body"] = re.sub(r"<!-- framework-crosswalk: ([\w-]+) -->", lambda m: framework_crosswalk(p, m.group(1)), p["body"])
 
 def latest_updates(notes):
-    # Every update of the newest day: its date comes from the full version history, its entries from the dated note headings.
-    versions = re.findall(r"^\| (\d+\.\d+) \| (\d{4}-\d{2}-\d{2}) \|", notes["body"], flags=re.M)
-    if not versions:
-        raise SystemExit(f"{notes['src']}: no rows in the full version history")
-    day = max(d for _, d in versions)
-    numbers = [v for v, d in versions if d == day]
-    when = datetime.date.fromisoformat(day)
-    heading = f"{when.day} {when:%B %Y}"
-    entries = re.findall(rf"^## ((?:Week ending )?{re.escape(heading)}: (.+))$", notes["body"], flags=re.M)
+    # Every update of the newest day; home_header.latest picks them, so check_home.py checks the same list.
+    heading, entries, numbers = home_header.latest(notes["body"])
     page = "09_Reference/19_Update_Notes.md"
     lines = [f"> **What's new: {heading}**", ">"]
-    for full, title in entries:
-        lines += [f"> - [{title[0].upper() + title[1:]}]({page}#{slugify(full, '-')})"]
+    for full, label in entries:
+        lines += [f"> - [{label}]({page}#{slugify(full, '-')})"]
     span = numbers[0] if len(numbers) == 1 else f"{numbers[-1]} to {numbers[0]}"
     lines += [">", f"> Version{'s' if len(numbers) > 1 else ''} {span}; the [full version history]({page}#full-version-history) summarises each. "
               f"See the [Update Notes]({page}) for what was checked and what is still open."]
@@ -654,14 +648,7 @@ def decorate(content):
 
 def hero(page, details=""):
     """The banner on the home page: headline, live counts, the document details and a card for every section."""
-    text = "\n".join(p["body"] for p in pages)
-    stats = [(len(re.findall(r"^### TC-[LD]\d\d-\d{3}:", text, re.M)), "Test Cases"),
-             (len(re.findall(r"^#### AI-CTRL-\d{3}:", text, re.M)), "Control Objectives"),
-             (len(re.findall(r"^### AI-R\d\d: ", text, re.M)), "Register Risks"),
-             (sum(1 for s in sections if s["meta"].get("group")), "Regional Sections"),
-             (sum(1 for p in pages if p["src"].replace(os.sep, "/").startswith("23_Framework_Crosswalks/")
-                  and not p["src"].endswith("index.md")), "Framework Crosswalks"),
-             (len(pages), "Pages")]
+    stats = home_header.stats(SRC)  # check_home.py checks the committed tiles against the same numbers
     tiles = "".join(f'<div class="stat"><b>{n}</b><span>{html.escape(label)}</span></div>' for n, label in stats)
     return (f'<section class="hero"><p class="hero-kicker">Open &middot; Vendor-neutral &middot; {LICENCE_LINK}</p>'
             f'<h1>{SITE_TITLE}</h1><p class="hero-lead">{html.escape(page["meta"]["description"])}</p>'

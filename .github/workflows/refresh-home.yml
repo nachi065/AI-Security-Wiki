@@ -1,0 +1,63 @@
+name: Refresh home page after merge
+
+# Every pull request is checked for a current home page header before it
+# merges (check_home.py in the link-check job). Two pull requests that were
+# each current can still leave main stale once both merge, for example when
+# one adds test cases and the other bumps the version. After every push to
+# main this workflow rebuilds the site from main's own files; if index.html
+# changes, it opens a pull request with only that file, as github-actions[bot],
+# so either code owner can approve it. It runs main's code only.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: refresh-home
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0  # build.py dates each page from its last commit
+      - run: pip install markdown==3.11.1
+      - name: Rebuild and open a pull request if the home page changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          python3 build.py
+          if git diff --quiet -- index.html; then
+            echo "index.html is current."
+            python3 check_home.py
+            exit 0
+          fi
+          git diff --stat -- index.html
+          branch="refresh/home-$(git rev-parse --short HEAD)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add index.html
+          git commit -m "Refresh the home page header from main's source"
+          git push origin "$branch"
+          gh pr create --repo "$REPO" --base main --head "$branch" \
+            --title "Refresh home page header" \
+            --body "main's index.html no longer matched its source after the last merge, so the stat tiles, Version line or What's new box were out of date. This rebuilds index.html from main with build.py and changes nothing else. Opened by the repository workflow, so either code owner can approve it."
+          # A PR opened with the workflow token does not start pull_request_target checks.
+          gh workflow run author-lock.yml --repo "$REPO" --ref "$branch"
+          gh workflow run link-check.yml --repo "$REPO" --ref "$branch" -f external=false
+          # Older refresh PRs are superseded by this one.
+          for n in $(gh pr list --repo "$REPO" --state open --json number,headRefName \
+                       --jq ".[] | select(.headRefName | startswith(\"refresh/home-\")) | select(.headRefName != \"$branch\") | .number"); do
+            gh pr close "$n" --repo "$REPO" --delete-branch --comment "Superseded by a newer home page refresh."
+          done
