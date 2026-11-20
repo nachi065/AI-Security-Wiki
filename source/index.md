@@ -11,7 +11,7 @@ owner: AI Security Program
 custodian: Security Architecture Team
 review_cycle: Quarterly
 approval_authority: AI Governance Committee
-last_updated: 2026-11-20
+last_updated: 2026-11-21
 ---
 
 # AI Security Wiki Home
@@ -427,7 +427,7 @@ The three latest versions, newest first. The full history since version 1.0 is i
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
-| 2.64 | 2026-11-20 | Nachiket Sathaye | Weekly crosswalk verification, week ending 21 November 2026 (the framework crosswalks night of 20 November): every MITRE ATLAS identifier the wiki cites re-checked against release 2026.10, still the latest; the MITRE ATLAS Crosswalk review date moved to 20 November 2026 (already live). The ISO/IEC 42001 and OWASP Top 10 crosswalks were checked by web search only; nothing changed. See the [Update Notes](09_Reference/19_Update_Notes.md#week-ending-21-november-2026-crosswalk-verification). |
+| 2.64 | 2026-11-21 | Nachiket Sathaye | Weekly crosswalk verification, week ending 21 November 2026 (the nights of 20 and 21 November): every MITRE ATLAS identifier the wiki cites re-checked against release 2026.10, still the latest, and the MITRE ATLAS Crosswalk review date moved to 20 November 2026; the sixteen proposal, draft and pending rows across all regions checked for changes, with GCC S8 re-read against the NCA's own pages (retrieval date refreshed). Both changes are already live; no row's wording changed. See the [Update Notes](09_Reference/19_Update_Notes.md#week-ending-21-november-2026-crosswalk-verification). |
 | 2.63 | 2026-11-19 | Nachiket Sathaye | Weekly crosswalk verification, week ending 21 November 2026 (the nights of 16 to 19 November; went live on 19 November): the GCC, India, UK, Singapore, US, South Korea, Australia, Brazil, Canada, China and Japan crosswalks checked for changes. GCC U5 is now [Verified] against the UAE Cabinet's own announcement, under the name Artificial Intelligence and Data Authority; Japan JP5 moves from [Recalled] to [Reported]; Canada CA7 now has Bill C-34 at committee stage; primary sources added for O2, AU7 and BR4; reported developments added to "To verify" for S5, US17, AU6, AU8 and JP4. See the [Update Notes](09_Reference/19_Update_Notes.md#week-ending-21-november-2026-crosswalk-verification). |
 | 2.62 | 2026-11-18 | Nachiket Sathaye | Correction to GCC row U6 (DIFC): the reported 15 August 2026 enactment of amended DIFC Data Protection Regulations is marked unconfirmed, since DIFC's own pages show only the June to July 2026 consultation. See the [Update Notes](09_Reference/19_Update_Notes.md#18-november-2026-correction-to-gcc-row-u6-difc). |
 
