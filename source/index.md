@@ -3,7 +3,7 @@ title: "Home"
 description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and {{n:tests}} test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.64
+version: 2.65
 status: Published
 author: Nachiket Sathaye
 coauthors: Ankush Jain
@@ -11,13 +11,13 @@ owner: AI Security Program
 custodian: Security Architecture Team
 review_cycle: Quarterly
 approval_authority: AI Governance Committee
-last_updated: 2026-11-21
+last_updated: 2026-11-22
 ---
 
 # AI Security Wiki Home
 
 > **Document Type:** Enterprise AI Security Reference Architecture and Governance Wiki  
-> **Version:** 2.64  
+> **Version:** 2.65  
 > **Status:** Published  
 > **Original Author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
 > **Co-Author:** Ankush Jain ([about the co-author](#23-about-the-co-author))  
@@ -427,9 +427,9 @@ The three latest versions, newest first. The full history since version 1.0 is i
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.65 | 2026-11-22 | Nachiket Sathaye | Weekly crosswalk verification, week ending 28 November 2026 (the night of 22 November): the EU crosswalk checked for changes. E16 (Code of Practice on marking and labelling AI content) is now [Verified] against the Commission's own page (already live), and now records that the Commission and the AI Board assessed the Code as adequate for Art. 50(2), (4) and (5). See the [Update Notes](09_Reference/19_Update_Notes.md#week-ending-28-november-2026-crosswalk-verification). |
 | 2.64 | 2026-11-21 | Nachiket Sathaye | Weekly crosswalk verification, week ending 21 November 2026 (the nights of 20 and 21 November): every MITRE ATLAS identifier the wiki cites re-checked against release 2026.10, still the latest, and the MITRE ATLAS Crosswalk review date moved to 20 November 2026; the sixteen proposal, draft and pending rows across all regions checked for changes, with GCC S8 re-read against the NCA's own pages (retrieval date refreshed). Both changes are already live; no row's wording changed. See the [Update Notes](09_Reference/19_Update_Notes.md#week-ending-21-november-2026-crosswalk-verification). |
 | 2.63 | 2026-11-19 | Nachiket Sathaye | Weekly crosswalk verification, week ending 21 November 2026 (the nights of 16 to 19 November; went live on 19 November): the GCC, India, UK, Singapore, US, South Korea, Australia, Brazil, Canada, China and Japan crosswalks checked for changes. GCC U5 is now [Verified] against the UAE Cabinet's own announcement, under the name Artificial Intelligence and Data Authority; Japan JP5 moves from [Recalled] to [Reported]; Canada CA7 now has Bill C-34 at committee stage; primary sources added for O2, AU7 and BR4; reported developments added to "To verify" for S5, US17, AU6, AU8 and JP4. See the [Update Notes](09_Reference/19_Update_Notes.md#week-ending-21-november-2026-crosswalk-verification). |
-| 2.62 | 2026-11-18 | Nachiket Sathaye | Correction to GCC row U6 (DIFC): the reported 15 August 2026 enactment of amended DIFC Data Protection Regulations is marked unconfirmed, since DIFC's own pages show only the June to July 2026 consultation. See the [Update Notes](09_Reference/19_Update_Notes.md#18-november-2026-correction-to-gcc-row-u6-difc). |
 
 ## 21. Quick Links
 
