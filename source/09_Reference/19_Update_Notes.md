@@ -7,7 +7,7 @@ nav_order: 2
 description: "The full record of how the AI Security Wiki has changed: a note for each substantial update, with what was checked and what is still work in progress, and the complete version history since version 1.0."
 document_type: AI Security Wiki Reference
 version: 1.5
-last_reviewed: 2026-11-22
+last_reviewed: 2026-11-23
 ---
 
 # Update Notes
@@ -26,16 +26,21 @@ The nightly verification pass checks one slice of the wiki each night. This week
 ### What was checked
 
 - **EU (22 November 2026):** every row of the [EU Regulatory Crosswalk](../12_EU_AI_Compliance/07_Regulatory_Crosswalk.md) was checked for changes by web search. Primary pages were read for E14 (the Commission's draft high-risk guidelines page, still a draft) and E16 (the Commission's news page on the final Code of Practice, its FAQ and its opinion on the assessment of the Code). EUR-Lex could not be retrieved by the automated tool, so the GDPR, NIS2, DORA, Digital Services Act and AI Act texts behind E1d, E1e, E2, E5, E6 and E10 were not read, and nor was Implementing Decision (EU) 2026/2274 behind E17. The Commission pages on the GPAI guidelines (E13), the GPAI Code of Practice (E15) and the high-risk guidelines policy page (E14) could not be retrieved either.
+- **GCC (23 November 2026):** every row of the [GCC Regulatory Crosswalk](../11_GCC_AI_Compliance/07_Regulatory_Crosswalk.md) was checked for changes by web search. Searches found no DIFC page confirming that the amended Data Protection Regulations behind U6 were enacted, no final text of the NCA AI Cybersecurity Guidelines (S8) and no report that Bahrain's draft AI law (B3) has been enacted. Primary pages were read for S8 (NCA news and consultation pages, and NCA's draft document) and O2 (a scan of the Oman Official Gazette). The pages behind U3, U6, U7, U9, S1, S5, Q1 and B1 (UAE legislation portal, DIFC, ADGM, CBUAE, SDAIA, Al Meezan, Bahrain PDP Authority) and the Oman ministry page for O2 could not be retrieved by the automated tool, so their tags and dates did not change.
 
 ### What changed
 
 - **EU, E16 (already live):** the Commission's news page of 10 June 2026 says it published the final Code of Practice on marking and labelling of AI-generated content and that the Code is voluntary. The row is now [Verified] with that source, and the EU crosswalk has a review date of 22 November 2026. This went live on 22 November 2026 in [pull request 51](https://github.com/nachi065/AI-Security-Wiki/pull/51).
 - **EU, E16 (needs review):** the Commission's opinion, published 9 July 2026, concludes that the Code adequately covers the obligations in Art. 50(2), (4) and (5) of the AI Act, and the AI Board adopted its own adequacy assessment. The page also says adherence to the Code is not conclusive evidence of compliance. The row now says this, and "To verify" moves from the adequacy assessment to the signatory list.
+- **GCC, S8 and crosswalk review date (already live):** the NCA news and consultation pages were re-read with no change (feedback closed on 5 August 2026; no final text). The retrieval date is now 23 November 2026 and the GCC crosswalk has a review date of 23 November 2026. This went live on 23 November 2026 in [pull request 53](https://github.com/nachi065/AI-Security-Wiki/pull/53).
+- **GCC, S8 (needs review):** "To verify" now notes that the consultation draft on NCA's file server is titled "Draft of AI Cybersecurity Guidelines (AICG-1:2026)" and gives no issue or effective date.
+- **GCC, O2 (needs review):** a scan of Official Gazette issue 1664 (pages 91 to 96) is added as a source. It shows Royal Decree 68/2026 of 3 September 2026, which takes effect the day after publication, and lists the amended articles. The scan is hosted by qanoon.om, which says it is not an official source, so the tag stays [Reported].
 
 ### Still work in progress
 
 - EU, E17 and E18: the correction for EN 18286:2026, cited in the Official Journal by Implementing Decision (EU) 2026/2274 of 12 October 2026, is still not made. The Decision and its Annex could not be read tonight, so the row is not yet split and no note was added to E18. EUR-Lex page metadata gives the Decision's title and a date of entry into force of 14 October 2026.
 - EU: rows not yet fully [Verified] remain E1d (in part), E1e, E2, E4, E5, E6, E10, E13, E17 and E18.
+- GCC: U6 still waits for DIFC's own announcement or the regulation text. Rows not yet [Verified] remain U3, U4, U6 to U12, S1, S5 to S7, S9, S10, Q1 to Q4, B2 to B4, O1, O2 and K1.
 
 ## 18 November 2026: correction to GCC row U6 (DIFC)
 
@@ -841,7 +846,7 @@ Every version of the wiki, newest first. Rows are never edited after they are ad
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
-| 2.65 | 2026-11-22 | Nachiket Sathaye | Weekly crosswalk verification, week ending 28 November 2026 (the night of 22 November): the EU crosswalk checked for changes. E16 (Code of Practice on marking and labelling AI content) is now [Verified] against the Commission's own page (already live), and now records that the Commission and the AI Board assessed the Code as adequate for Art. 50(2), (4) and (5). See the [Update Notes](#week-ending-28-november-2026-crosswalk-verification). |
+| 2.65 | 2026-11-23 | Nachiket Sathaye | Weekly crosswalk verification, week ending 28 November 2026 (the nights of 22 and 23 November): the EU and GCC crosswalks checked for changes. E16 (Code of Practice on marking and labelling AI content) is now [Verified] against the Commission's own page (already live), and now records that the Commission and the AI Board assessed the Code as adequate for Art. 50(2), (4) and (5). GCC S8 re-read against NCA's pages (already live), with the NCA consultation draft AICG-1:2026 noted; O2 (Oman PDPL amendments) gains a scan of Official Gazette issue 1664 as a source and stays [Reported]. See the [Update Notes](#week-ending-28-november-2026-crosswalk-verification). |
 | 2.64 | 2026-11-21 | Nachiket Sathaye | Weekly crosswalk verification, week ending 21 November 2026 (the nights of 20 and 21 November): every MITRE ATLAS identifier the wiki cites re-checked against release 2026.10, still the latest, and the MITRE ATLAS Crosswalk review date moved to 20 November 2026; the sixteen proposal, draft and pending rows across all regions checked for changes, with GCC S8 re-read against the NCA's own pages (retrieval date refreshed). Both changes are already live; no row's wording changed. See the [Update Notes](#week-ending-21-november-2026-crosswalk-verification). |
 | 2.63 | 2026-11-19 | Nachiket Sathaye | Weekly crosswalk verification, week ending 21 November 2026 (the nights of 16 to 19 November; went live on 19 November): the GCC, India, UK, Singapore, US, South Korea, Australia, Brazil, Canada, China and Japan crosswalks checked for changes. GCC U5 is now [Verified] against the UAE Cabinet's own announcement, under the name Artificial Intelligence and Data Authority; Japan JP5 moves from [Recalled] to [Reported]; Canada CA7 now has Bill C-34 at committee stage; primary sources added for O2, AU7 and BR4; reported developments added to "To verify" for S5, US17, AU6, AU8 and JP4. See the [Update Notes](#week-ending-21-november-2026-crosswalk-verification). |
 | 2.62 | 2026-11-18 | Nachiket Sathaye | Correction to GCC row U6 (DIFC): the reported 15 August 2026 enactment of amended DIFC Data Protection Regulations is marked unconfirmed, since DIFC's own pages show only the June to July 2026 consultation. See the [Update Notes](#18-november-2026-correction-to-gcc-row-u6-difc). |
