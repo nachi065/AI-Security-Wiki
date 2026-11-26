@@ -7,6 +7,7 @@ nav_order: 9
 description: "The 22 categories of the NIST Cybersecurity Framework 2.0 with the wiki control objectives and test cases that cite them, and the categories not yet cited."
 document_type: AI Security Wiki Reference
 version: 1.0
+last_reviewed: 2026-11-27
 ---
 
 # NIST CSF Crosswalk
