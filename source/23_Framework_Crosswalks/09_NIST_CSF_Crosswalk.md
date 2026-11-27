@@ -26,7 +26,7 @@ The wiki maps at category level, for example `PR.DS` for Data Security. Subcateg
 
 The tables are generated each time the site is built. They are read from the NIST CSF field of each control in the [AI Security Control Objectives Library](../03_Control_Library/03_AI_Security_Control_Objectives_Library.md). To change a mapping, edit the control; this page follows on the next build.
 
-> **Verify before use.** Category identifiers and names were written from memory of CSF 2.0 and were not checked against the published Core for this page. The mapping is this wiki's own judgment and has not been reviewed by NIST. A wiki control citing a category means it supports that category for AI systems, not that it satisfies it.
+> **Verify before use.** On 27 November 2026 all 22 category identifiers and names were checked against Table 1 in Appendix A of the published CSF 2.0 ([NIST CSWP 29](https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.pdf), 26 February 2024) and match it. The mapping is this wiki's own judgment and has not been reviewed by NIST. A wiki control citing a category means it supports that category for AI systems, not that it satisfies it.
 
 ## How to read the tables
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/</loc><lastmod>2026-11-21</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/</loc><lastmod>2026-11-28</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/00_Foundations/</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/00_Foundations/01-Terminology-and-Two-Axis-Model.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/00_Foundations/02-AI-System-Boundary-and-Assets.html</loc><lastmod>2026-11-07</lastmod></url>
@@ -115,7 +115,7 @@
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/12_EU_AI_Compliance/04_Guide_Auditors.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/12_EU_AI_Compliance/05_Guide_Implementors.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/12_EU_AI_Compliance/06_Proposed_Control_Fundamental_Rights_Impact_Assessment.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/12_EU_AI_Compliance/07_Regulatory_Crosswalk.html</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/12_EU_AI_Compliance/07_Regulatory_Crosswalk.html</loc><lastmod>2026-11-28</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/12_EU_AI_Compliance/08_Evidence_Register.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/12_EU_AI_Compliance/T01_AI_System_Classification.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/12_EU_AI_Compliance/T02_Impact_Assessment_FRIA_DPIA.html</loc><lastmod>2026-10-23</lastmod></url>
@@ -132,7 +132,7 @@
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/13_Australia_AI_Compliance/</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/13_Australia_AI_Compliance/01_Australia_AI_Regulatory_Hub.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/13_Australia_AI_Compliance/02_Role_Guide.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/13_Australia_AI_Compliance/03_Regulatory_Crosswalk.html</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/13_Australia_AI_Compliance/03_Regulatory_Crosswalk.html</loc><lastmod>2026-11-26</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/13_Australia_AI_Compliance/AU-T1_ADM_Transparency_Register.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/13_Australia_AI_Compliance/AU-T2_AI_Adoption_Self_Assessment.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/14_Brazil_AI_Compliance/</loc><lastmod>2026-10-23</lastmod></url>
@@ -144,14 +144,14 @@
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/15_Canada_AI_Compliance/</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/15_Canada_AI_Compliance/01_Canada_AI_Regulatory_Hub.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/15_Canada_AI_Compliance/02_Role_Guide.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/15_Canada_AI_Compliance/03_Regulatory_Crosswalk.html</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/15_Canada_AI_Compliance/03_Regulatory_Crosswalk.html</loc><lastmod>2026-11-26</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/15_Canada_AI_Compliance/CA-T1_Algorithmic_Impact_Assessment_Worksheet.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/15_Canada_AI_Compliance/CA-T2_Quebec_Law_25_ADM_Record.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/15_Canada_AI_Compliance/CA-T3_OSFI_E23_Inventory_Addendum.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/16_China_AI_Compliance/</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/16_China_AI_Compliance/01_China_AI_Regulatory_Hub.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/16_China_AI_Compliance/02_Role_Guide.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/16_China_AI_Compliance/03_Regulatory_Crosswalk.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/16_China_AI_Compliance/03_Regulatory_Crosswalk.html</loc><lastmod>2026-11-26</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/16_China_AI_Compliance/CN-T1_Filing_and_Registration_Readiness.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/16_China_AI_Compliance/CN-T2_Content_Labelling_Implementation_Record.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/16_China_AI_Compliance/CN-T3_Ethics_Review_Committee_Record.html</loc><lastmod>2026-10-23</lastmod></url>
@@ -199,11 +199,11 @@
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/26_Hong_Kong_AI_Compliance/</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/26_Hong_Kong_AI_Compliance/01_Hong_Kong_AI_Regulatory_Hub.html</loc><lastmod>2026-11-13</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/26_Hong_Kong_AI_Compliance/02_Role_Guide.html</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/26_Hong_Kong_AI_Compliance/03_Regulatory_Crosswalk.html</loc><lastmod>2026-11-13</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/26_Hong_Kong_AI_Compliance/03_Regulatory_Crosswalk.html</loc><lastmod>2026-11-28</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/26_Hong_Kong_AI_Compliance/HK-T1_HKMA_ART_Principles_Self_Assessment.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/09_Reference/</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/09_Reference/18_AI_Security_Glossary_and_Taxonomy.html</loc><lastmod>2026-11-07</lastmod></url>
-  <url><loc>https://nachi065.github.io/AI-Security-Wiki/09_Reference/19_Update_Notes.html</loc><lastmod>2026-11-21</lastmod></url>
+  <url><loc>https://nachi065.github.io/AI-Security-Wiki/09_Reference/19_Update_Notes.html</loc><lastmod>2026-11-28</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/09_Reference/20_AI_Security_Incident_Casebook.html</loc><lastmod>2026-11-07</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/09_Reference/21_Regulatory_Verification_Status.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://nachi065.github.io/AI-Security-Wiki/23_Framework_Crosswalks/</loc><lastmod>2026-11-07</lastmod></url>

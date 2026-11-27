@@ -3,7 +3,7 @@ title: "Home"
 description: "Open, vendor-neutral AI security wiki: governance, risk, security controls, agentic AI standards, vendor evaluation, regional compliance and {{n:tests}} test cases."
 nav_order: 1
 document_type: Enterprise AI Security Reference Architecture and Governance Wiki
-version: 2.64
+version: 2.65
 status: Published
 author: Nachiket Sathaye
 coauthors: Ankush Jain
@@ -11,13 +11,13 @@ owner: AI Security Program
 custodian: Security Architecture Team
 review_cycle: Quarterly
 approval_authority: AI Governance Committee
-last_updated: 2026-11-21
+last_updated: 2026-11-28
 ---
 
 # AI Security Wiki Home
 
 > **Document Type:** Enterprise AI Security Reference Architecture and Governance Wiki  
-> **Version:** 2.64  
+> **Version:** 2.65  
 > **Status:** Published  
 > **Original Author:** Nachiket Sathaye ([about the author](#22-about-the-author))  
 > **Co-Author:** Ankush Jain ([about the co-author](#23-about-the-co-author))  
@@ -427,9 +427,9 @@ The three latest versions, newest first. The full history since version 1.0 is i
 
 | Version | Date | Author | Summary of Change |
 |---|---|---|---|
+| 2.65 | 2026-11-28 | Nachiket Sathaye | Weekly crosswalk verification, week ending 28 November 2026 (the nights of 22 to 28 November): the EU, GCC, India, UK, Singapore, US, South Korea, Australia, Brazil, Canada, China and Japan crosswalks checked for changes. E16 (Code of Practice on marking and labelling AI content) is now [Verified] against the Commission's own page (already live), and now records that the Commission and the AI Board assessed the Code as adequate for Art. 50(2), (4) and (5). GCC S8 re-read against NCA's pages (already live), with the NCA consultation draft AICG-1:2026 noted; O2 (Oman PDPL amendments) gains a scan of Official Gazette issue 1664 as a source and stays [Reported]. UK2, UK4 and UK12 are now [Verified] against legislation.gov.uk and the ICO (already live); UK5 now rests on the FCA's own pages, UK4 notes that the ICO guidance is under review, UK9 notes the new parliamentary session; India IN13 cites SEBI's consultation paper and IN6 is still a draft. Singapore SG8 and US15 (NAIC model bulletin) and US17 (HIPAA, 45 CFR Part 164) are now [Verified] against the issuers' own pages (already live); SG8 notes the 2024 amendments in force on 31 October 2025, US9 gains the enrolled Texas HB 149 text as a source, US15 notes 30 adopting jurisdictions, US16 gains Colorado's bill and Division of Insurance pages, and US17 notes reported HIPAA Privacy Rule changes. Brazil BR2 (LGPD) is now [Verified] against the compiled LGPD (already live); Australia gains row AU9 for the proposed AI Standards legislation and AI safety regulator announced on 10 November 2026; Canada CA7 notes C-34's committee meetings of 17 and 19 November, CA1 gains the C-27 LEGISinfo page as a source, and China CN7 gains the Data Security Law as a source; every MITRE ATLAS identifier the wiki cites re-checked against release 2026.10, still the latest, and the NIST CSF category names checked against CSF 2.0 Table 1, with both crosswalks given a review date of 27 November 2026 (already live) and the NIST CSF verify note reworded; Hong Kong HK9 now records that the HKMA discussion paper on agentic AI governance is published (feedback before 1 February 2027), and EU E17 notes the Commission's list of cited standards and the JTC 21 renumbering of 18 November 2026. See the [Update Notes](09_Reference/19_Update_Notes.md#week-ending-28-november-2026-crosswalk-verification). |
 | 2.64 | 2026-11-21 | Nachiket Sathaye | Weekly crosswalk verification, week ending 21 November 2026 (the nights of 20 and 21 November): every MITRE ATLAS identifier the wiki cites re-checked against release 2026.10, still the latest, and the MITRE ATLAS Crosswalk review date moved to 20 November 2026; the sixteen proposal, draft and pending rows across all regions checked for changes, with GCC S8 re-read against the NCA's own pages (retrieval date refreshed). Both changes are already live; no row's wording changed. See the [Update Notes](09_Reference/19_Update_Notes.md#week-ending-21-november-2026-crosswalk-verification). |
 | 2.63 | 2026-11-19 | Nachiket Sathaye | Weekly crosswalk verification, week ending 21 November 2026 (the nights of 16 to 19 November; went live on 19 November): the GCC, India, UK, Singapore, US, South Korea, Australia, Brazil, Canada, China and Japan crosswalks checked for changes. GCC U5 is now [Verified] against the UAE Cabinet's own announcement, under the name Artificial Intelligence and Data Authority; Japan JP5 moves from [Recalled] to [Reported]; Canada CA7 now has Bill C-34 at committee stage; primary sources added for O2, AU7 and BR4; reported developments added to "To verify" for S5, US17, AU6, AU8 and JP4. See the [Update Notes](09_Reference/19_Update_Notes.md#week-ending-21-november-2026-crosswalk-verification). |
-| 2.62 | 2026-11-18 | Nachiket Sathaye | Correction to GCC row U6 (DIFC): the reported 15 August 2026 enactment of amended DIFC Data Protection Regulations is marked unconfirmed, since DIFC's own pages show only the June to July 2026 consultation. See the [Update Notes](09_Reference/19_Update_Notes.md#18-november-2026-correction-to-gcc-row-u6-difc). |
 
 ## 21. Quick Links
 
